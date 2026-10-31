@@ -1,5 +1,19 @@
-/* tr.js v3.7 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.8 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
+   v3.8 (the drawer body = the studio menu — «منوی سبک ترجمه یک کشو رو ک
+   باز میکنی به هم ریختس»):
+     - the drawer column carried v3.5's accordion pile: 4 presets, two
+       accordons spilling 8 toggle rows each, share rows with stray
+       X-looking icons — a wall of floating text the user called MESSY
+     - fix: the drawer body now IS studioMenuHtml(true) — the sectioned
+       drill-down menu the user approved for اتاق کاستوم: root view =
+       4 presets + 4 «برو داخل» rows (+ اتاق کاستوم link), each category
+       GOES INTO its own view with a back row. Both places identical.
+     - flash() walks into the owning view for drawer AND studio kinds
+     - trdrawer.css gains the stmenu styles scoped to .tr-bar-drawer
+       (studio.css is not loaded outside translate.html)
+     - engine, share-code bits, popInnerHtml (legacy mount popup): untouched
+
    v3.7 (the drawer works on EVERY page — «اینده نگری کن چون بزودی صفحات
    زیادی خواهیم داشت و نباید مشکل داشته باشه»):
      - the user: the سبک ترجمه menu was OK on item pages but broke on the
@@ -873,11 +887,21 @@
       + '<p class="trd-title"><i class="tr-ic" aria-hidden="true"></i><span>سبک ترجمه</span><b class="tr-cur">' + esc(PRESET_NAME[cfg.m]) + "</b></p>"
       + '<button type="button" class="trd-close" aria-label="بستن تنظیمات"><i aria-hidden="true"></i></button>'
       + "</div>"
-      + '<div class="tr-pop">' + popInnerHtml() + "</div>";
+      /* v3.8: the drawer body IS the studio menu (sectioned root + drill-down
+         views) — the tidy structure the user approved for اتاق کاستوم, so
+         both places behave and look identically. withExt adds the studio
+         room link row. */
+      + '<div class="tr-pop">' + studioMenuHtml(true) + "</div>";
     document.body.appendChild(scrim);
     document.body.appendChild(bar);
     document.body.appendChild(fab);
     var wired = wirePanel(bar);
+    [].slice.call(bar.querySelectorAll(".stmenu-nav[data-go]")).forEach(function (b) {
+      b.addEventListener("click", function () { showStudioView(bar, b.getAttribute("data-go")); });
+    });
+    [].slice.call(bar.querySelectorAll(".stmenu-back")).forEach(function (b) {
+      b.addEventListener("click", function () { showStudioView(bar, "root"); });
+    });
     mounted = { bar: bar, pop: bar.querySelector(".tr-pop"), btn: fab, scrim: scrim,
       presetEls: wired.presetEls, domEls: wired.domEls,
       statsEl: bar.querySelector(".tr-stats"), kind: "drawer" };
@@ -924,7 +948,7 @@
       + '<p class="stmenu-title">' + esc(lbl) + "</p></div>"
       + inner + "</div>";
   }
-  function studioMenuHtml() {
+  function studioMenuHtml(withExt) {
     var h = '<div class="stmenu-view stmenu-root" data-view="root">';
     h += '<p class="stmenu-cap">حالت ترجمه</p>';
     h += '<div class="tr-presets">';
@@ -937,6 +961,11 @@
     h += '<button type="button" class="stmenu-nav" data-go="texts">خط‌های تولتیپ<i class="st-chev" aria-hidden="true"></i></button>';
     h += '<button type="button" class="stmenu-nav" data-go="share">اشتراک‌گذاری سبک ترجمهٔ من<i class="st-chev" aria-hidden="true"></i></button>';
     h += '<button type="button" class="stmenu-nav" data-go="other">سبک ترجمهٔ بقیه…<i class="st-chev" aria-hidden="true"></i></button>';
+    /* v3.8: the drawer (withExt) also links to the studio room — same drill
+       of settings, plus the live-preview entry point */
+    if (withExt) {
+      h += '<a class="stmenu-nav stmenu-ext" href="' + TR_BASE + 'translate.html">اتاق کاستوم ترجمه — پیش‌نمایش زنده<i class="st-chev" aria-hidden="true"></i></a>';
+    }
     h += "</div>";
     h += studioView("vocab", "واژه‌نامهٔ بازی", studioRows(GROUPS[0].rows));
     h += studioView("texts", "خط‌های تولتیپ", studioRows(GROUPS[1].rows.concat(GROUPS[2].rows))
@@ -995,7 +1024,7 @@
     if (document.querySelector('link[href*="trdrawer.css"]')) return null;
     var l = document.createElement("link");
     l.rel = "stylesheet";
-    l.href = TR_BASE + "assets/css/trdrawer.css?v=20261113a";
+    l.href = TR_BASE + "assets/css/trdrawer.css?v=20261114a";
     (document.head || document.documentElement).appendChild(l);
     return l;
   }
@@ -1036,21 +1065,25 @@
   }
   function flash(k) {
     if (!mounted) return;
-    if (mounted.kind === "studio") {
-      /* the fixed studio menu: walk INTO the view owning this row first */
-      var srow = mounted.pop.querySelector('.tr-row[data-k="' + String(k).replace(/[^a-z]/gi, "") + '"]');
-      if (!srow) return;
-      var sview = srow.closest ? srow.closest(".stmenu-view") : null;
-      if (sview && sview.hidden) showStudioView(mounted.bar, sview.getAttribute("data-view"));
-    } else if (mounted.kind === "drawer") {
+    /* v3.8: drawer AND studio share the drill-down menu — walk INTO the view
+       owning this row first (the drawer body is studioMenuHtml too now) */
+    var sel = '.tr-row[data-k="' + String(k).replace(/[^a-z]/gi, "") + '"]';
+    var hasViews = !!mounted.bar.querySelector(".stmenu-view");
+    if (hasViews) {
+      var vrow = mounted.pop.querySelector(sel);
+      var vew = vrow && vrow.closest ? vrow.closest(".stmenu-view") : null;
+      if (vew && vew.hidden) showStudioView(mounted.bar, vew.getAttribute("data-view"));
+    }
+    if (mounted.kind === "drawer") {
       if (!drawerOpen()) openDrawer();
-    } else if (mounted.pop.hidden) {
+    } else if (mounted.kind !== "studio" && mounted.pop.hidden) {
       mounted.pop.hidden = false;
       if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "true");
     }
     /* v3.5: rows live in accordions — open the owning section first, then
-       flash the row itself (always the row, no combo redirect) */
-    var row = mounted.pop.querySelector('.tr-row[data-k="' + String(k).replace(/[^a-z]/gi, "") + '"]');
+       flash the row itself (always the row, no combo redirect). In the
+       stmenu structure there are no accordions, so this is a no-op there. */
+    var row = mounted.pop.querySelector(sel);
     if (!row) return;
     var sec = row.closest ? row.closest(".tr-sec") : null;
     if (sec) {

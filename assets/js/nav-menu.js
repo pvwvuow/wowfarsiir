@@ -30,7 +30,7 @@
    ========================================================= */
 "use strict";
 (function () {
-  var V = "20261112a";
+  var V = "20261114a";
   /* pages living in a sub-directory (news/<id>-<slug>.html, item/<id>-<slug>.html,
      guides/<spec>/index.html) need ../ prefixes; without this the injected CSS,
      the spec fetch and every panel link 404 there */
@@ -70,7 +70,7 @@
      the studio room (translate.html) is skipped by tr.js's own guards. */
   if (!document.querySelector('script[src*="tr.js"]')) {
     var trLoader = document.createElement("script");
-    trLoader.src = BASE + "assets/js/tr.js?v=20261113a";
+    trLoader.src = BASE + "assets/js/tr.js"; /* versionless: tr.js bumps its own tags; Pages max-age=600 keeps staleness ≤10min */
     document.head.appendChild(trLoader);
   }
 

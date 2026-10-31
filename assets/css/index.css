@@ -353,33 +353,32 @@
 }
 
 /* ================= big «شخصی‌سازی ترجمه» CTA — under the hero buttons =================
-   One wide, impossible-to-miss button into اتاق کاستوم (translate.html):
-   gold-rimmed slab, sliders glyph, title + one-line promise. */
+   v2: the site's own engraved-plate button (.btn DNA in site.css — hairline
+   gold frame, bottom ring flourish, diamond waking on hover) at CTA size:
+   title + one short line, centered. No rounded app-card, no icon tile —
+   the user: «یک دکمه مینیمال و فانتزی باشه مثل بقیه ولی بهتر». */
 .btn-castom {
-  display: flex; align-items: center; gap: .95rem; width: min(560px, 100%);
-  margin: 1.15rem auto 0; padding: .95rem 1.3rem;
-  border: 1px solid rgba(240, 199, 94, .48); border-radius: 16px;
-  background: linear-gradient(165deg, rgba(50, 39, 17, .78), rgba(17, 13, 8, .82));
-  box-shadow: 0 12px 36px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(240, 199, 94, .16);
-  text-decoration: none;
-  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  --ln: rgba(240, 199, 94, 0.55);
+  --fill:
+    radial-gradient(ellipse 70% 130% at 50% 118%, rgba(240, 199, 94, 0.14), transparent 72%),
+    linear-gradient(180deg, rgba(24, 28, 44, 0.5), rgba(8, 11, 20, 0.66));
+  flex-direction: column;
+  gap: 0.34rem;
+  width: min(560px, 100%);
+  margin: 1.15rem auto 0;
+  padding: 1.02rem 2.1rem 0.94rem;
 }
 .btn-castom:hover {
-  transform: translateY(-3px);
-  border-color: rgba(240, 199, 94, .85);
-  box-shadow: 0 18px 46px rgba(0, 0, 0, .58), 0 0 26px rgba(240, 199, 94, .16);
+  --ln: rgba(246, 224, 163, 0.95);
+  --fill:
+    radial-gradient(ellipse 70% 130% at 50% 118%, rgba(240, 199, 94, 0.22), transparent 72%),
+    linear-gradient(180deg, rgba(240, 199, 94, 0.06), rgba(8, 11, 20, 0.66));
 }
-.btn-castom .cz-ic {
-  flex: none; display: grid; place-items: center; width: 48px; height: 48px;
-  border-radius: 13px; color: #f6e0a3;
-  background: rgba(240, 199, 94, .11); border: 1px solid rgba(240, 199, 94, .32);
-}
-.btn-castom .cz-t { display: flex; flex-direction: column; gap: .18rem; text-align: start; min-width: 0; }
-.btn-castom .cz-t b { font-size: 1.1rem; font-weight: 800; color: #f6e0a3; letter-spacing: .01em; }
-.btn-castom .cz-t small { font-size: .8rem; line-height: 1.75; color: #cfc4ab; }
+.btn-castom .cz-t { display: flex; flex-direction: column; gap: 0.3rem; text-align: center; min-width: 0; }
+.btn-castom .cz-t b { font-size: 1.16rem; font-weight: 800; color: var(--gold-1, #f0c75e); letter-spacing: 0.02em; }
+.btn-castom .cz-t small { font-size: 0.8rem; line-height: 1.8; color: #bdb7a6; font-weight: 400; letter-spacing: 0.01em; }
 @media (max-width: 560px) {
-  .btn-castom { padding: .85rem 1rem; gap: .75rem; }
-  .btn-castom .cz-ic { width: 42px; height: 42px; }
-  .btn-castom .cz-t b { font-size: 1rem; }
-  .btn-castom .cz-t small { font-size: .74rem; }
+  .btn-castom { padding: 0.92rem 1.1rem 0.86rem; }
+  .btn-castom .cz-t b { font-size: 1.05rem; }
+  .btn-castom .cz-t small { font-size: 0.75rem; }
 }

@@ -387,6 +387,114 @@ html body .tr-bar-drawer .tr-shrmsg.err { color: #e08a8a; }
 html body .tr-bar-drawer .tr-shrnote { display: none; } /* over-explained — gone */
 html body .tr-bar-drawer .tr-note { display: none; }
 
+/* ---------- v3.8: the drawer body = the studio drill-down menu ----------
+   The drawer column now carries the SAME structure as translate.html's
+   fixed menu (studioMenuHtml): sectioned root view + views you GO INTO.
+   studio.css is not loaded outside translate.html, so the stmenu styles
+   live here, scoped to the drawer. Presets/rows/share keep their v3.5
+   float rules above. */
+html body .tr-bar-drawer .stmenu-view { animation: trdViewIn 0.28s ease; }
+html body .tr-bar-drawer .stmenu-view[hidden] { display: none; }
+@keyframes trdViewIn { from { opacity: 0; transform: translateX(-9px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html body .tr-bar-drawer .stmenu-view { animation: none; }
+}
+
+html body .tr-bar-drawer .stmenu-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0 0 0.6rem;
+  border-bottom: 1px solid rgba(240, 199, 94, 0.16);
+  padding-bottom: 0.6rem;
+}
+html body .tr-bar-drawer .stmenu-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  align-self: flex-start;
+  font: inherit;
+  font-size: 0.76rem;
+  color: #b7b1a2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.14rem 0.25rem;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.75);
+}
+html body .tr-bar-drawer .stmenu-back:hover { color: #f6e0a3; }
+html body .tr-bar-drawer .stmenu-back i {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-top: 1.6px solid currentColor;
+  border-right: 1.6px solid currentColor;
+  transform: rotate(45deg); /* RTL: back arrow points right */
+}
+html body .tr-bar-drawer .stmenu-title {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #f6e0a3;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+html body .tr-bar-drawer .stmenu-cap {
+  margin: 0.95rem 0 0.1rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  color: rgba(240, 199, 94, 0.72);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+html body .tr-bar-drawer .stmenu-view[data-view="root"] .stmenu-cap:first-child { margin-top: 0; }
+html body .tr-bar-drawer .stmenu-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  font-size: 0.86rem;
+  padding: 0.44rem 0.2rem;
+  margin: 0;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: #e8e2d2;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+}
+html body .tr-bar-drawer .stmenu-nav:hover { color: #f6e0a3; }
+html body .tr-bar-drawer .stmenu-nav .st-chev {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  margin-inline-start: auto;
+  border-bottom: 1.6px solid rgba(216, 212, 200, 0.55);
+  border-left: 1.6px solid rgba(216, 212, 200, 0.55);
+  transform: rotate(45deg); /* points left = deeper (RTL) */
+  transition: border-color 0.2s ease;
+}
+html body .tr-bar-drawer .stmenu-nav:hover .st-chev { border-color: rgba(246, 224, 163, 0.65); }
+/* the اتاق کاستوم link row: separated, slightly quieter */
+html body .tr-bar-drawer .stmenu-ext {
+  margin-top: 0.4rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(240, 199, 94, 0.14);
+  color: #b7b1a2;
+  font-size: 0.78rem;
+}
+html body .tr-bar-drawer .stmenu-hint {
+  margin: 0.15rem 0 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.95;
+  color: #bdb7a6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
 html body .tr-bar-drawer .tr-studiolink {
   display: flex;
   font: inherit;
