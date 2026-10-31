@@ -1,5 +1,26 @@
-/* tr.js v3.4 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.5 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
+   v3.5 (settings rework round 2 — «ساده مینیمال، بدون پنل بزرگ»):
+     - the drawer has NO panel chrome any more (trdrawer.css): the column is
+       fully transparent — texts and buttons FLOAT on the site background
+       (same material as the page); no head bar, no cards, no seams
+     - the column is now just a FEW buttons:
+         4 mode buttons (presets as plain text rows)
+         واژه‌نامهٔ بازی / خط‌های تولتیپ  — two accordion buttons; رابط سایت
+           lives INSIDE تولتیپ as one more row (user: «اون رابط رو هم بیار
+           توی تولتیپ»)
+         اشتراک‌گذاری سبک ترجمهٔ من  (one tap: reveals the code + copies)
+         سبک ترجمهٔ بقیه…  (reveals: «کد سبک بقیه رو بگیر و اینجا ثبت کن»
+           + input + ثبت)
+     - the simple/advanced toggle is GONE from the UI: inside an accordion
+       both the combo quick-toggle AND its member rows stay visible; the
+       adv storage/API remain for compat
+     - flash() opens the owning accordion first, then scrolls to the row
+     - no auto-open restore on plain pages: the float loads CLOSED, only
+       the studio room (translate.html) forces it open
+     - ENGINE UNTOUCHED: 14 frozen keys/order (WF4 share-code spec + addon
+       parity), CATMAP, MK, TERMS, storage keys, derive/preset logic
+
    v3.3 (settings-panel rework — «انگار کاربر اومده به تنظیمات»):
      - the panel is ORGANIZED, not a flat list: three sections with headers
        and one-line descriptions —
@@ -561,34 +582,57 @@
     }
     return h;
   }
-  /* v3.4: the pop CONTENT is shared by the legacy popup and the new drawer */
+  /* v3.5: the column is a FEW buttons — two accordion categories, the ui
+     group folded into تولتیپ («اون رابط رو هم بیار توی تولتیپ»). The share-
+     code bit order is untouched: only the VIEW groups. */
+  var UI_SECS = [
+    { id: "vocab", lbl: "واژه‌نامهٔ بازی", rows: GROUPS[0].rows },
+    { id: "texts", lbl: "خط‌های تولتیپ", rows: GROUPS[1].rows.concat(GROUPS[2].rows) }
+  ];
+  function secHtml(sec) {
+    var h = '<div class="tr-sec" data-sec="' + sec.id + '">'
+      + '<button type="button" class="tr-secbtn" aria-expanded="false">' + esc(sec.lbl)
+      + '<i class="tr-chev" aria-hidden="true"></i></button>'
+      + '<div class="tr-secbody" hidden>';
+    var emitted = {};
+    for (var i = 0; i < sec.rows.length; i++) {
+      var row = sec.rows[i], ck = COMBO_OF_MEMBER[row.k];
+      if (ck && !emitted[ck]) { emitted[ck] = 1; h += rowHtml(COMBO_BY_KEY[ck], true); }
+      h += rowHtml(row);
+    }
+    if (sec.id === "texts") {
+      h += '<label class="tr-catsrow"><input type="checkbox" class="tr-catscb"' + (catsOn ? " checked" : "") + "> "
+        + "راهنما: دستهٔ هر خط روی تولتیپ نشان داده شود</label>";
+    }
+    return h + "</div></div>";
+  }
+  /* v3.5: the pop CONTENT — shared by the drawer (and the unused legacy
+     popup). A few plain buttons; long paragraphs are gone. */
   function popInnerHtml() {
     var h = "";
     h += '<p class="tr-pop-h"><span>سبک ترجمه</span><i aria-hidden="true"></i></p>';
-    h += '<p class="tr-pop-sub">هر کلید یک <b>نوع محتوا</b> است — یک‌جا در آیتم، ست، کوئست، استعداد، راهنما و نقشه اعمال می‌شود.</p>';
-    h += '<a class="tr-studiolink" href="translate.html">اتاق کاستوم ترجمه — پیش‌نمایش زندهٔ تنظیمات <i dir="ltr">&crarr;</i></a>';
     h += '<div class="tr-presets">';
     PRESETS.forEach(function (p) {
-      h += '<button type="button" class="tr-preset" data-m="' + p[0] + '"><b>' + esc(p[1]) + "</b><span>" + esc(p[2]) + "</span></button>";
+      h += '<button type="button" class="tr-preset" data-m="' + p[0] + '" title="' + esc(p[2]) + '"><b>' + esc(p[1]) + "</b></button>";
     });
     h += "</div>";
-    h += '<button type="button" class="tr-advbtn"></button>';
-    h += '<div class="tr-doms">';
-    h += rowsHtml();
-    h += "</div>";
-    h += '<label class="tr-catsrow"><input type="checkbox" class="tr-catscb"' + (catsOn ? " checked" : "") + "> "
-      + "راهنما: دستهٔ هر خط روی تولتیپ نشان داده شود" + "</label>";
+    UI_SECS.forEach(function (sec) { h += secHtml(sec); });
     h += '<p class="tr-stats" hidden></p>';
     h += '<div class="tr-share">'
-      + '<p class="tr-shrh">کد اشتراک تنظیمات <i dir="ltr">share code</i></p>'
+      + '<button type="button" class="tr-shrbtn2 tr-share-my">اشتراک‌گذاری سبک ترجمهٔ من</button>'
+      + '<div class="tr-mycode" hidden>'
       + '<div class="tr-shrow"><input class="tr-shr-out" dir="ltr" readonly spellcheck="false" aria-label="کد تنظیمات شما">'
       + '<button type="button" class="tr-shrbtn tr-shrcopy">کپی</button></div>'
-      + '<div class="tr-shrow"><input class="tr-shr-in" dir="ltr" spellcheck="false" placeholder="کد دریافتی را بچسبان…" aria-label="وارد کردن کد تنظیمات">'
-      + '<button type="button" class="tr-shrbtn tr-shrapply">اعمال</button></div>'
+      + "</div>"
+      + '<button type="button" class="tr-shrbtn2 tr-share-other">سبک ترجمهٔ بقیه…</button>'
+      + '<div class="tr-other" hidden>'
+      + '<p class="tr-other-hint">کد سبک بقیه رو بگیر و اینجا ثبت کن</p>'
+      + '<div class="tr-shrow"><input class="tr-shr-in" dir="ltr" spellcheck="false" placeholder="WF4-…" aria-label="کد سبک ترجمهٔ بقیه">'
+      + '<button type="button" class="tr-shrbtn tr-shrapply">ثبت</button></div>'
+      + "</div>"
       + '<p class="tr-shrmsg" hidden></p>'
-      + '<p class="tr-shrnote">این کد فقط یک متن کوتاه است — کاملاً آفلاین؛ هم در سایت و هم در افزونهٔ بازی کار می‌کند. کدهای قدیمی WF2 و WF3 هم پذیرفته می‌شوند.</p>'
       + "</div>";
-    h += '<p class="tr-note">روی هر خطِ تولتیپ کلیک کن تا سوییچ کنترل‌کننده‌اش را نشان بدهی. تنظیمات ذخیره می‌شود و در همهٔ صفحه‌ها و افزونهٔ بازی با همین ساختار اعمال می‌شود.</p>';
+    h += '<a class="tr-studiolink" href="translate.html">اتاق کاستوم ترجمه — پیش‌نمایش زنده <i dir="ltr">&crarr;</i></a>';
     return h;
   }
   /* legacy popup chrome (still exposed via mount(); the drawer is the default) */
@@ -604,7 +648,10 @@
     if (!mounted) return;
     var cur = mounted.bar.querySelector(".tr-cur");
     if (cur) cur.textContent = PRESET_NAME[cfg.m];
-    mounted.bar.classList.toggle("tr-simple", !adv);
+    /* v3.5: the simple/advanced toggle is gone from the UI — the accordion
+       IS the grouping, so the combo quick-toggles and their member rows
+       both stay visible (trdrawer.css shows .tr-incombo in the drawer) */
+    mounted.bar.classList.add("tr-simple");
     var ab = mounted.bar.querySelector(".tr-advbtn");
     if (ab) ab.textContent = adv ? "حالت ساده — فقط دسته‌های اصلی" : "حالت پیشرفته — هر ۱۴ دسته با مثال";
     mounted.presetEls.forEach(function (el) {
@@ -656,6 +703,37 @@
     });
     domEls.forEach(function (row) {
       row.querySelector(".tr-sw").addEventListener("click", function () { toggle(row.getAttribute("data-k")); });
+    });
+    /* v3.5 accordion categories: open/close, no persistence — the float
+       loads as «فقط چند دکمه», flash() opens a section when needed */
+    [].slice.call(root.querySelectorAll(".tr-secbtn")).forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var sec = btn.closest(".tr-sec");
+        if (!sec) return;
+        var body = sec.querySelector(".tr-secbody");
+        var open = sec.classList.toggle("open");
+        if (body) body.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+    /* share-my: one tap reveals the code AND copies it */
+    var myBtn = root.querySelector(".tr-share-my");
+    var myCode = root.querySelector(".tr-mycode");
+    if (myBtn) myBtn.addEventListener("click", function () {
+      if (myCode) myCode.hidden = false;
+      var code = encodeCode(cfg.d);
+      var done = function () { shrMsg("کد کپی شد — برای دوستانت بفرست ✓", true); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, function () { fallbackCopy(code); done(); });
+      } else { fallbackCopy(code); done(); }
+    });
+    /* share-other: reveals the import field with its one-line instruction */
+    var othBtn = root.querySelector(".tr-share-other");
+    var othBox = root.querySelector(".tr-other");
+    if (othBtn && othBox) othBtn.addEventListener("click", function () {
+      othBox.hidden = false;
+      var inf = othBox.querySelector(".tr-shr-in");
+      if (inf) try { inf.focus(); } catch (e) { /* ignore */ }
     });
     var ab = root.querySelector(".tr-advbtn");
     if (ab) ab.addEventListener("click", function () { adv = !adv; saveAdv(); refreshUI(); });
@@ -729,19 +807,16 @@
      a scrim because pushing a narrow screen is hostile. The column reuses
      popInnerHtml() so presets/switches/share behave identically everywhere. */
   var escWired = false;
-  var DRAWER_OPEN_KEY = "wf-tr-drawer-open";
   function drawerOpen() { return document.body.classList.contains("wf-tr-open"); }
   function openDrawer() {
     if (!mounted || mounted.kind !== "drawer" || drawerOpen()) return;
     document.body.classList.add("wf-tr-open");
     if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "true");
-    try { localStorage.setItem(DRAWER_OPEN_KEY, "1"); } catch (e) {}
   }
   function closeDrawer() {
     if (!mounted || mounted.kind !== "drawer" || !drawerOpen()) return;
     document.body.classList.remove("wf-tr-open");
     if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "false");
-    try { localStorage.setItem(DRAWER_OPEN_KEY, "0"); } catch (e) {}
   }
   function toggleDrawer() { if (drawerOpen()) closeDrawer(); else openDrawer(); }
   function mountDrawer(opts) {
@@ -788,16 +863,13 @@
         if (ev.key === "Escape" && drawerOpen()) closeDrawer();
       });
     }
-    /* restore the last open/closed state (desktop only — a narrow screen
-       must never load with an overlay covering the content); opts.force
-       skips the restore (the studio room always opens with its panel) */
-    var desktop = !(window.matchMedia && window.matchMedia("(max-width: 960px)").matches);
-    var st = null;
-    try { st = localStorage.getItem(DRAWER_OPEN_KEY); } catch (e) {}
-    if (!opts.force) {
-      if (st === "1") opts.open = true; else if (st === "0") opts.open = false;
+    /* v3.5: the float loads CLOSED on every normal page — a transparent
+       settings menu opening itself over content reads as noise. Only a
+       caller that explicitly passes open:true (the studio room) opens it. */
+    if (opts.open) {
+      var desktop = !(window.matchMedia && window.matchMedia("(max-width: 960px)").matches);
+      if (desktop) openDrawer();
     }
-    if (opts.open && desktop) openDrawer();
     refreshUI();
     return bar;
   }
@@ -826,10 +898,20 @@
       mounted.pop.hidden = false;
       if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "true");
     }
-    /* simple mode: a member switch flashes its combo row instead */
-    var sel = (!adv && COMBO_OF_MEMBER[k]) ? COMBO_OF_MEMBER[k] : k;
-    var row = mounted.pop.querySelector('.tr-row[data-k="' + String(sel).replace(/[^a-z]/gi, "") + '"]');
+    /* v3.5: rows live in accordions — open the owning section first, then
+       flash the row itself (always the row, no combo redirect) */
+    var row = mounted.pop.querySelector('.tr-row[data-k="' + String(k).replace(/[^a-z]/gi, "") + '"]');
     if (!row) return;
+    var sec = row.closest ? row.closest(".tr-sec") : null;
+    if (sec) {
+      var body = sec.querySelector(".tr-secbody");
+      if (body && body.hidden) {
+        sec.classList.add("open");
+        body.hidden = false;
+        var btn = sec.querySelector(".tr-secbtn");
+        if (btn) btn.setAttribute("aria-expanded", "true");
+      }
+    }
     [].slice.call(mounted.pop.querySelectorAll(".tr-flash")).forEach(function (el) { el.classList.remove("tr-flash"); });
     if (row.scrollIntoView) try { row.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) { row.scrollIntoView(); }
     row.classList.remove("tr-flash");

@@ -1,12 +1,18 @@
-/* trdrawer.css — the global translation-settings DRAWER (assets/js/tr.js v3.4)
-   Pattern: a fixed pill button on the LEFT edge; clicking it slides a settings
-   column in from the left and PUSHES the page content to the right.
+/* trdrawer.css — the global translation-settings FLOAT (tr.js v3.5)
+   v3.5 «ساده مینیمال معلق» — the user killed the big sliding PANEL:
+   «نمیخام یک صفحه معلق کشویی باشه، هم جنس بک گراند باشه، متن‌ها و دکمه‌ها
+   روی صفحهٔ اصلی معلق باشن». So the left-edge button still opens a sliding
+   column that PUSHES the page right, but the column has NO chrome of its
+   own — no opaque card, no border, no shadow. Only floating text and
+   buttons on top of the site background (same material as the page).
      desktop (>960px): body padding-left shift = a real push (layout reflows)
-     mobile  (<=960px): overlay column + scrim (pushing a narrow screen is
-                        hostile), scrim click / Escape / close button dismiss
-   The column root carries .tr-bar too, so every inner style (presets, rows,
-   switches, share code) in retail.css applies unchanged; only the chrome is
-   overridden here. RTL site: physical left/right values are intentional. */
+     mobile  (<=960px): overlay + light scrim, scrim click / Escape dismiss
+   Structure inside (v3.5): a simple column with just a few buttons —
+     4 mode buttons (presets, plain text rows)
+     واژه‌نامهٔ بازی / خط‌های تولتیپ   (two accordion buttons at the bottom;
+        the رابط سایت group lives inside تولتیپ as one more row)
+     اشتراک‌گذاری سبک ترجمهٔ من / سبک ترجمهٔ بقیه (share + import)
+   RTL site: physical left/right values are intentional. */
 
 /* ---------- the left-edge pill button (FAB) ---------- */
 html body .trd-fab {
@@ -22,7 +28,7 @@ html body .trd-fab {
   font: inherit;
   font-size: 0.82rem;
   color: #d8d4c8;
-  background: linear-gradient(270deg, rgba(9, 11, 17, 0.55), rgba(9, 11, 17, 0.88));
+  background: linear-gradient(270deg, rgba(9, 11, 17, 0.4), rgba(9, 11, 17, 0.78));
   border: 1px solid rgba(240, 199, 94, 0.32);
   border-right: none;
   border-radius: 0 12px 12px 0;
@@ -45,7 +51,7 @@ html body .trd-fab .tr-ic {
   border-radius: 2px;
 }
 html body .trd-fab .trd-fab-t { white-space: nowrap; letter-spacing: 0.02em; }
-/* while the drawer is open the button fades out (the column has its own close) */
+/* while the float is open the button fades out (the column has its own close) */
 html body.wf-tr-open .trd-fab {
   opacity: 0;
   pointer-events: none;
@@ -56,27 +62,30 @@ html body.wf-tr-open .trd-fab {
   html body.wf-tr-open .trd-fab { transform: translateX(-14px); }
 }
 
-/* ---------- the sliding column ---------- */
+/* ---------- the floating column (NO panel chrome) ----------
+   Same material as the page background: fully transparent, the site's
+   bg-photo/bg-veil shows through. Text carries a soft shadow instead of a
+   box so it stays readable over busy artwork. */
 html body .tr-bar-drawer {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  width: min(21.5rem, 92vw);
+  width: min(18.5rem, 92vw);
   margin: 0;
   z-index: 66;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(13, 16, 24, 0.985), rgba(9, 11, 17, 0.985));
-  border-right: 1px solid rgba(240, 199, 94, 0.3);
-  box-shadow: 24px 0 60px rgba(0, 0, 0, 0.5);
+  background: none;
+  border: none;
+  box-shadow: none;
   transform: translateX(-103%);
   visibility: hidden;
   transition: transform 0.32s cubic-bezier(0.33, 1, 0.68, 1), visibility 0.32s;
 }
 html body.wf-tr-open .tr-bar-drawer { transform: none; visibility: visible; }
 
-/* the inner pop becomes the column body (kill the popup chrome) */
+/* the inner pop becomes the floating body (kill the popup chrome) */
 html body .tr-bar-drawer .tr-pop {
   position: static;
   transform: none;
@@ -86,16 +95,16 @@ html body .tr-bar-drawer .tr-pop {
   flex: 1;
   overflow-y: auto;
   scrollbar-width: thin;
-  padding: 0 1.15rem 1rem;
+  padding: 0 1.15rem 1.1rem;
   background: none;
   border: none;
   border-radius: 0;
   box-shadow: none;
   backdrop-filter: none;
 }
-html body .tr-bar-drawer .tr-pop-h { display: none; } /* the head below replaces it */
+html body .tr-bar-drawer .tr-pop-h { display: none; } /* the float head replaces it */
 
-/* column head: title + current preset + close */
+/* floating head: tiny title + close — no bar, no gradient */
 html body .trd-head {
   position: sticky;
   top: 0;
@@ -103,8 +112,8 @@ html body .trd-head {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.95rem 1.15rem 0.7rem;
-  background: linear-gradient(180deg, rgba(9, 11, 17, 0.995) 65%, rgba(9, 11, 17, 0));
+  padding: 1rem 1.15rem 0.55rem;
+  background: linear-gradient(180deg, rgba(9, 11, 17, 0.82) 30%, rgba(9, 11, 17, 0));
 }
 html body .trd-title {
   margin: 0;
@@ -113,13 +122,14 @@ html body .trd-title {
   gap: 0.5rem;
   flex: 1;
   min-width: 0;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #f6e0a3;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
 }
 html body .trd-title .tr-ic {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   flex: none;
   background: linear-gradient(135deg, rgba(240, 199, 94, 0.95), rgba(240, 199, 94, 0.4));
   transform: rotate(45deg);
@@ -127,29 +137,28 @@ html body .trd-title .tr-ic {
 }
 html body .trd-title .tr-cur {
   font-weight: 400;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   color: #f0c75e;
-  background: rgba(240, 199, 94, 0.08);
-  border: 1px solid rgba(240, 199, 94, 0.28);
+  border: 1px solid rgba(240, 199, 94, 0.3);
   border-radius: 999px;
-  padding: 0.02rem 0.55rem;
+  padding: 0.02rem 0.5rem;
   white-space: nowrap;
 }
 html body .trd-close {
   flex: none;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
   font: inherit;
-  color: #97917f;
-  background: rgba(240, 199, 94, 0.05);
-  border: 1px solid rgba(240, 199, 94, 0.2);
-  border-radius: 8px;
+  color: #b3ad9c;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
-html body .trd-close:hover { color: #f6e0a3; border-color: rgba(246, 224, 163, 0.5); }
+html body .trd-close:hover { color: #f6e0a3; }
 html body .trd-close i {
   width: 9px;
   height: 9px;
@@ -157,13 +166,231 @@ html body .trd-close i {
     linear-gradient(45deg, transparent 44%, currentColor 44%, currentColor 56%, transparent 56%),
     linear-gradient(-45deg, transparent 44%, currentColor 44%, currentColor 56%, transparent 56%);
 }
-/* the studio link is pointless inside the drawer on the studio page itself */
+/* the studio link is pointless inside the float on the studio page itself */
 html body.str-page .tr-bar-drawer .tr-studiolink { display: none; }
+
+/* ---------- v3.5: kill the card look of every inner element ----------
+   Everything floats: presets are plain text rows, switches keep only their
+   toggle, sections are accordion text buttons, share is two text buttons. */
+html body .tr-bar-drawer .tr-presets {
+  display: block;
+  margin: 0.2rem 0 0.4rem;
+}
+html body .tr-bar-drawer .tr-preset {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.34rem 0.2rem;
+  margin: 0;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: #cfcabb;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.75);
+}
+html body .tr-bar-drawer .tr-preset::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  transform: rotate(45deg);
+  border-radius: 1.5px;
+  border: 1px solid rgba(216, 212, 200, 0.45);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+html body .tr-bar-drawer .tr-preset b { display: inline; font-weight: 400; font-size: inherit; }
+html body .tr-bar-drawer .tr-preset span { display: none; } /* desc moves to title */
+html body .tr-bar-drawer .tr-preset:hover { color: #f6e0a3; }
+html body .tr-bar-drawer .tr-preset.on { color: #f0c75e; }
+html body .tr-bar-drawer .tr-preset.on::before {
+  background: #f0c75e;
+  border-color: #f0c75e;
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.6);
+}
+
+/* the two accordion category buttons (واژه‌نامهٔ بازی / خط‌های تولتیپ) */
+html body .tr-bar-drawer .tr-secbtn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.42rem 0.2rem;
+  margin: 0.1rem 0 0;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: #e8e2d2;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.75);
+}
+html body .tr-bar-drawer .tr-secbtn .tr-chev {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  margin-inline-start: auto;
+  border-inline-start: 1.5px solid rgba(216, 212, 200, 0.55);
+  border-bottom: 1.5px solid rgba(216, 212, 200, 0.55);
+  transform: rotate(-45deg); /* RTL: closed = chevron pointing left-ish */
+  transition: transform 0.22s ease, border-color 0.2s ease;
+}
+html body .tr-bar-drawer .tr-secbtn:hover { color: #f6e0a3; }
+html body .tr-bar-drawer .tr-sec.open .tr-secbtn { color: #f0c75e; }
+html body .tr-bar-drawer .tr-sec.open .tr-secbtn .tr-chev {
+  transform: rotate(135deg);
+  border-color: rgba(240, 199, 94, 0.8);
+}
+html body .tr-bar-drawer .tr-secbody { padding: 0.1rem 0 0.35rem; }
+html body .tr-bar-drawer .tr-secbody[hidden] { display: none; }
+
+/* switch rows — transparent, only the toggle is a control */
+html body .tr-bar-drawer .tr-row {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.2rem;
+  margin: 0;
+}
+html body .tr-bar-drawer .tr-row:hover { background: rgba(240, 199, 94, 0.07); }
+html body .tr-bar-drawer .tr-row .tr-ex { color: #938d7c; }
+html body .tr-bar-drawer .tr-row.on .tr-ex { color: #9a947f; }
+/* both the combo quick-toggle AND its members stay reachable: the section
+   IS the grouping, so no more simple/advanced hiding inside the float
+   (selector strength matches retail.css's .tr-bar:not(.tr-simple) rule and
+   loads later, so it always wins) */
+html body .tr-bar-drawer .tr-secbody .tr-combo { display: flex; }
+html body .tr-bar-drawer .tr-secbody .tr-incombo { display: flex; }
+html body .tr-bar-drawer .tr-secbody .tr-combo .tr-t { color: #f0c75e; }
+
+/* keep every inner divider invisible — float has no seams */
+html body .tr-bar-drawer .tr-sec-h,
+html body .tr-bar-drawer .tr-sec-d { display: none; } /* groups replaced by the two accordion buttons */
+html body .tr-bar-drawer .tr-advbtn { display: none; } /* simple/advanced toggle is gone */
+html body .tr-bar-drawer .tr-catsrow,
+html body .tr-bar-drawer .tr-share { border-top: none; }
+html body .tr-bar-drawer .tr-catsrow { color: #b7b1a2; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7); }
+html body .tr-bar-drawer .tr-stats {
+  background: none;
+  border: none;
+  padding: 0.15rem 0.2rem;
+  color: #d8cba0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* share + import — two plain buttons; code/import areas reveal beneath */
+html body .tr-bar-drawer .tr-share { margin-top: 0.35rem; }
+html body .tr-bar-drawer .tr-shrh { display: none; } /* the buttons speak for themselves */
+html body .tr-bar-drawer .tr-shrbtn2 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.42rem 0.2rem;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: #e8e2d2;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.75);
+}
+html body .tr-bar-drawer .tr-shrbtn2:hover { color: #f6e0a3; }
+html body .tr-bar-drawer .tr-shrbtn2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+html body .tr-bar-drawer .tr-shrbtn2.tr-share-my::before {
+  background:
+    linear-gradient(135deg, transparent 35%, rgba(240, 199, 94, 0.9) 35%, rgba(240, 199, 94, 0.9) 65%, transparent 65%),
+    linear-gradient(-135deg, transparent 35%, rgba(240, 199, 94, 0.9) 35%, rgba(240, 199, 94, 0.9) 65%, transparent 65%);
+}
+html body .tr-bar-drawer .tr-shrbtn2.tr-share-other::before {
+  background:
+    linear-gradient(45deg, transparent 35%, rgba(216, 212, 200, 0.8) 35%, rgba(216, 212, 200, 0.8) 65%, transparent 65%),
+    linear-gradient(-45deg, transparent 35%, rgba(216, 212, 200, 0.8) 35%, rgba(216, 212, 200, 0.8) 65%, transparent 65%);
+}
+html body .tr-bar-drawer .tr-mycode,
+html body .tr-bar-drawer .tr-other { padding: 0.1rem 0 0.2rem; }
+html body .tr-bar-drawer .tr-mycode[hidden],
+html body .tr-bar-drawer .tr-other[hidden] { display: none; }
+html body .tr-bar-drawer .tr-other-hint {
+  margin: 0 0 0.4rem;
+  font-size: 0.74rem;
+  color: #bdb7a6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+html body .tr-bar-drawer .tr-shrow { display: flex; gap: 0.4rem; margin: 0 0 0.4rem; }
+html body .tr-bar-drawer .tr-shr-out,
+html body .tr-bar-drawer .tr-shr-in {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.74rem;
+  direction: ltr;
+  padding: 0.38rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(240, 199, 94, 0.3);
+  background: rgba(9, 11, 17, 0.62);
+  color: #f0e6c8;
+  outline: none;
+}
+html body .tr-bar-drawer .tr-shr-out:focus,
+html body .tr-bar-drawer .tr-shr-in:focus { border-color: rgba(240, 199, 94, 0.6); }
+html body .tr-bar-drawer .tr-shrbtn {
+  flex: none;
+  font: inherit;
+  font-size: 0.76rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(240, 199, 94, 0.4);
+  background: rgba(9, 11, 17, 0.62);
+  color: #f0c75e;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+html body .tr-bar-drawer .tr-shrbtn:hover { color: #f6e0a3; border-color: rgba(246, 224, 163, 0.6); }
+html body .tr-bar-drawer .tr-shrmsg {
+  margin: 0.15rem 0 0;
+  font-size: 0.72rem;
+  color: #7fd0a0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+html body .tr-bar-drawer .tr-shrmsg.err { color: #e08a8a; }
+html body .tr-bar-drawer .tr-shrnote { display: none; } /* over-explained — gone */
+html body .tr-bar-drawer .tr-note { display: none; }
+
+html body .tr-bar-drawer .tr-studiolink {
+  display: flex;
+  font: inherit;
+  font-size: 0.74rem;
+  color: #b7b1a2;
+  text-decoration: none;
+  padding: 0.35rem 0.2rem 0;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+html body .tr-bar-drawer .tr-studiolink:hover { color: #f6e0a3; }
 
 /* ---------- the push: content slides right (desktop) ---------- */
 html body.tr-body-anim { transition: padding-left 0.32s cubic-bezier(0.33, 1, 0.68, 1); }
 @media (min-width: 961px) {
-  html body.wf-tr-open { padding-left: 21.5rem; }
+  html body.wf-tr-open { padding-left: 18.5rem; }
 }
 /* full-bleed fixed decorations must not shift */
 html body .bg-layers, html body #embers, html body .dn-float { transition: none; }
@@ -173,15 +400,20 @@ html body .trd-scrim {
   position: fixed;
   inset: 0;
   z-index: 65;
-  background: rgba(4, 5, 9, 0.55);
+  background: rgba(4, 5, 9, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 @media (max-width: 960px) {
   html body.wf-tr-open .trd-scrim { opacity: 1; pointer-events: auto; }
-  /* the floating donate orb (z 70) would sit ON TOP of the overlay drawer */
+  /* the floating donate orb (z 70) would sit ON TOP of the overlay float */
   html body.wf-tr-open .dn-float { opacity: 0; pointer-events: none; }
+  /* a bare float needs a whisper of ground on mobile or busy art eats it */
+  html body .tr-bar-drawer {
+    background: linear-gradient(180deg, rgba(9, 11, 17, 0.72), rgba(9, 11, 17, 0.55));
+    box-shadow: 18px 0 44px rgba(0, 0, 0, 0.35);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
