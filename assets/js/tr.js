@@ -1,5 +1,17 @@
-/* tr.js v3.5 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.6 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
+   v3.6 (اتاق کاستوم gets its OWN fixed menu — the drawer is for items only):
+     - the user: «منو مثل بقیه منوهای سایت‌ها بچسبه به اون محتوا … کاربر کلیک
+       کنه روی واژه نامه بازی یک منو بره داخل نه که کشویی باز بشه … اتاق
+       کاستوم اصلا نباید منو هاید بشه همونجا ثابته — اون برای بخش ایتم‌هاست»
+     - mountStudio(container): a PERMANENT column for translate.html, glued
+       to the preview, never hidden, no drawer/scrim/FAB — root view is just
+       a few buttons (4 presets + 4 «برو داخل» rows); clicking a category
+       GOES INTO its own view (back row returns). The left-edge drawer stays
+       untouched for item/spellbook and every other page.
+     - flash() knows the studio kind: it walks INTO the owning view first
+     - drawer/pop HTML, engine, share-code bits: untouched
+
    v3.5 (settings rework round 2 — «ساده مینیمال، بدون پنل بزرگ»):
      - the drawer has NO panel chrome any more (trdrawer.css): the column is
        fully transparent — texts and buttons FLOAT on the site background
@@ -873,8 +885,88 @@
     refreshUI();
     return bar;
   }
+  /* ---------- v3.6: the STUDIO MENU — translate.html's fixed column -------
+     NOT a drawer, NOT an accordion: a permanent menu attached to the
+     preview (like any site menu), never hidden. Root view = a few buttons;
+     a category click GOES INTO its own submenu view (the user: «یک منو بره
+     داخل نه که کشویی باز بشه»). Back rows return. Everything reuses the
+     shared classes (.tr-preset/.tr-row/.tr-sw/.tr-shrow/…) so wirePanel(),
+     refreshUI(), shrMsg(), setTipStats() and flash() behave identically. */
+  function studioRows(rows) {
+    var h = "", emitted = {};
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i], ck = COMBO_OF_MEMBER[row.k];
+      if (ck && !emitted[ck]) { emitted[ck] = 1; h += rowHtml(COMBO_BY_KEY[ck], true); }
+      h += rowHtml(row);
+    }
+    return h;
+  }
+  function studioView(id, lbl, inner) {
+    return '<div class="stmenu-view" data-view="' + id + '" hidden>'
+      + '<div class="stmenu-top"><button type="button" class="stmenu-back" data-back="1">'
+      + '<i aria-hidden="true"></i>بازگشت</button>'
+      + '<p class="stmenu-title">' + esc(lbl) + "</p></div>"
+      + inner + "</div>";
+  }
+  function studioMenuHtml() {
+    var h = '<div class="stmenu-view stmenu-root" data-view="root">';
+    h += '<p class="stmenu-cap">حالت ترجمه</p>';
+    h += '<div class="tr-presets">';
+    PRESETS.forEach(function (p) {
+      h += '<button type="button" class="tr-preset" data-m="' + p[0] + '" title="' + esc(p[2]) + '"><b>' + esc(p[1]) + "</b><span>" + esc(p[2]) + "</span></button>";
+    });
+    h += "</div>";
+    h += '<p class="stmenu-cap">تنظیمات</p>';
+    h += '<button type="button" class="stmenu-nav" data-go="vocab">واژه‌نامهٔ بازی<i class="st-chev" aria-hidden="true"></i></button>';
+    h += '<button type="button" class="stmenu-nav" data-go="texts">خط‌های تولتیپ<i class="st-chev" aria-hidden="true"></i></button>';
+    h += '<button type="button" class="stmenu-nav" data-go="share">اشتراک‌گذاری سبک ترجمهٔ من<i class="st-chev" aria-hidden="true"></i></button>';
+    h += '<button type="button" class="stmenu-nav" data-go="other">سبک ترجمهٔ بقیه…<i class="st-chev" aria-hidden="true"></i></button>';
+    h += "</div>";
+    h += studioView("vocab", "واژه‌نامهٔ بازی", studioRows(GROUPS[0].rows));
+    h += studioView("texts", "خط‌های تولتیپ", studioRows(GROUPS[1].rows.concat(GROUPS[2].rows))
+      + '<label class="tr-catsrow"><input type="checkbox" class="tr-catscb"' + (catsOn ? " checked" : "") + "> "
+      + "راهنما: دستهٔ هر خط روی تولتیپ نشان داده شود</label>");
+    h += studioView("share", "اشتراک‌گذاری سبک ترجمهٔ من",
+      '<p class="stmenu-hint">این کد تنظیمات فعلی توست — کپی کن و برای دوستانت بفرست:</p>'
+      + '<div class="tr-shrow"><input class="tr-shr-out" dir="ltr" readonly spellcheck="false" aria-label="کد تنظیمات شما">'
+      + '<button type="button" class="tr-shrbtn tr-shrcopy">کپی</button></div>');
+    h += studioView("other", "سبک ترجمهٔ بقیه…",
+      '<p class="stmenu-hint">کد سبک بقیه رو بگیر و اینجا ثبت کن</p>'
+      + '<div class="tr-shrow"><input class="tr-shr-in" dir="ltr" spellcheck="false" placeholder="WF4-…" aria-label="کد سبک ترجمهٔ بقیه">'
+      + '<button type="button" class="tr-shrbtn tr-shrapply">ثبت</button></div>');
+    h += '<p class="tr-stats" hidden></p>';
+    h += '<p class="tr-shrmsg" hidden></p>';
+    return h;
+  }
+  function showStudioView(root, name) {
+    var views = [].slice.call(root.querySelectorAll(".stmenu-view")), i;
+    for (i = 0; i < views.length; i++) {
+      views[i].hidden = views[i].getAttribute("data-view") !== name;
+    }
+    root.setAttribute("data-cur", name);
+  }
+  function mountStudio(container) {
+    if (!container) return null;
+    if (mounted && mounted.bar === container) { refreshUI(); return container; }
+    if (mounted) return null; /* another panel owns this page */
+    container.innerHTML = studioMenuHtml();
+    container.classList.add("stmenu");
+    var wired = wirePanel(container);
+    [].slice.call(container.querySelectorAll(".stmenu-nav")).forEach(function (b) {
+      b.addEventListener("click", function () { showStudioView(container, b.getAttribute("data-go")); });
+    });
+    [].slice.call(container.querySelectorAll(".stmenu-back")).forEach(function (b) {
+      b.addEventListener("click", function () { showStudioView(container, "root"); });
+    });
+    mounted = { bar: container, pop: container, btn: null,
+      presetEls: wired.presetEls, domEls: wired.domEls,
+      statsEl: container.querySelector(".tr-stats"), kind: "studio" };
+    refreshUI();
+    return container;
+  }
   /* auto-mount: every page that loads tr.js gets the left-edge drawer,
-     except the studio room (translate.html) which mounts it itself — open. */
+     except the studio room (translate.html) which mounts its own FIXED
+     menu via mountStudio() — the drawer is for the item pages. */
   (function () {
     if (document.getElementById("pv-body") || document.getElementById("str-panel")) return;
     var go = function () { mountDrawer({}); };
@@ -892,7 +984,13 @@
   }
   function flash(k) {
     if (!mounted) return;
-    if (mounted.kind === "drawer") {
+    if (mounted.kind === "studio") {
+      /* the fixed studio menu: walk INTO the view owning this row first */
+      var srow = mounted.pop.querySelector('.tr-row[data-k="' + String(k).replace(/[^a-z]/gi, "") + '"]');
+      if (!srow) return;
+      var sview = srow.closest ? srow.closest(".stmenu-view") : null;
+      if (sview && sview.hidden) showStudioView(mounted.bar, sview.getAttribute("data-view"));
+    } else if (mounted.kind === "drawer") {
       if (!drawerOpen()) openDrawer();
     } else if (mounted.pop.hidden) {
       mounted.pop.hidden = false;
@@ -939,6 +1037,7 @@
     onChange: function (cb) { listeners.push(cb); },
     mount: mount,
     mountDrawer: mountDrawer,
+    mountStudio: mountStudio,
     openDrawer: openDrawer,
     closeDrawer: closeDrawer,
     toggleDrawer: toggleDrawer,

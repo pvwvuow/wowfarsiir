@@ -1,7 +1,8 @@
-/* studio.js — «اتاق کاستوم ترجمه» (translate.html) — tr.js v3.4 edition
+/* studio.js — «اتاق کاستوم ترجمه» (translate.html) — tr.js v3.6 edition
    Live preview room for the GLOBAL content-type engine:
-     - the settings live in the global left-edge DRAWER (WFTR.mountDrawer)
-       which PUSHES the preview column to the right while open
+     - the settings are a FIXED menu column (WFTR.mountStudio) glued to the
+       preview — never hidden, no drawer here; a category click goes INTO
+       its own view (back returns). The left-edge drawer is for item pages.
      - the preview column = one sample per section:
          آیتم (REAL 19019 data — same shards the site serves)
          / کوئست / تلنت / راهنما / نقشه  (labeled «نمونهٔ نمایشی»)
@@ -434,10 +435,10 @@
     var k;
     for (k in HL) HL[k] = HL[k].join(", ");
   })();
-  /* v3.4: the settings column is the global DRAWER (assets/js/tr.js) —
-     mounted open on desktop (it pushes the preview to the right), closed on
-     mobile (overlay); the FAB on the left edge toggles it at any time */
-  var panelEl = WF.mountDrawer({ open: true, force: true });
+  /* v3.6: the settings column is the STUDIO'S OWN FIXED MENU (tr.js
+     mountStudio) — mounted into aside#str-menu inside .str-room, glued to
+     the preview, always visible; categories navigate INTO their views. */
+  var panelEl = WF.mountStudio(document.getElementById("str-menu"));
   var jumpEl = document.getElementById("pv-jump");
   var curKey = null, pinned = false;
   function setJump(v) { if (jumpEl) jumpEl.hidden = !v; }

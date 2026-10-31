@@ -1,7 +1,9 @@
-/* studio.css — «اتاق کاستوم ترجمه» (translate.html) — v3.4 edition
-   The room is now a single preview column; the settings live in the global
-   left-edge DRAWER (trdrawer.css) that PUSHES the whole page right while
-   open. Hovering a switch row in the drawer blinks (.hl-red) every preview
+/* studio.css — «اتاق کاستوم ترجمه» (translate.html) — v3.6 edition
+   The room is a two-column grid: the preview (right) + the settings MENU
+   column (left) — a permanent menu attached to the preview like any site
+   menu, NEVER hidden (the left-edge drawer is for the item pages). Menu
+   root view = a few buttons; a category click GOES INTO its own view and a
+   back row returns. Hovering a row still blinks (.hl-red) every preview
    line that switch controls. Keep tokens/markers in sync with retail.js. */
 
 .str-wrap{max-width:1180px;margin:0 auto;padding:9.6rem 1.2rem 3rem;position:relative;z-index:2}
@@ -10,8 +12,9 @@
 .str-sub{margin:0;font-size:.88rem;line-height:2.05;color:#bdb7a6;max-width:70rem}
 .str-sub b{color:#f0c75e}
 
-/* the preview column takes the full width; the drawer push moves it right */
-.str-room{min-width:0}
+/* the room: preview (RTL right) + fixed menu column (RTL left) */
+.str-room{display:grid;grid-template-columns:minmax(0,1fr) 18.5rem;gap:1.9rem;align-items:start}
+.str-main{min-width:0}
 .str-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 .9rem}
 .str-tab{font:inherit;cursor:pointer;padding:.4rem 1.05rem;border-radius:999px;font-size:.9rem;
   border:1px solid rgba(240,199,94,.25);background:rgba(9,11,17,.72);color:#d8d4c8;
@@ -95,6 +98,11 @@ html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .str-wrap{padding-top:6.4rem}
+  /* mobile: one column — the menu stays FIRST and visible, never hidden */
+  .str-room{grid-template-columns:minmax(0,1fr);gap:1.1rem}
+  .stmenu{position:static;max-height:none;overflow:visible;order:-1;
+    padding:.2rem .2rem .9rem;margin:0 0 .4rem;
+    border-bottom:1px solid rgba(240,199,94,.14)}
 }
 /* v3.1: glossary/marker hits get a subtle dotted hint only inside the studio
    so the user can SEE which words each switch owns */
@@ -117,3 +125,77 @@ html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
 .ent-en{color:#b7b1a2;direction:ltr;text-align:left;font-size:.82rem;flex:1 1 auto;word-break:break-word}
 .ent-fa{color:#f0e6c8;flex:0 1 auto;text-align:right}
 .ent-count{font-size:.76rem;color:#97917f;margin:.1rem 0 .5rem}
+
+/* ============================================================
+   v20261112b — the FIXED STUDIO MENU (.stmenu / .stmenu-view)
+   User: «منو مثل بقیه منوهای سایت‌ها بچسبه به اون محتوا … کاربر کلیک کنه
+   روی واژه نامه بازی یک منو بره داخل نه که کشویی باز بشه … اتاق کاستوم
+   اصلا نباید منو هاید بشه همونجا ثابته — اون برای بخش ایتم‌ها می‌باشد».
+   No drawer chrome here either — same material as the background, texts
+   and buttons float (v3.5 aesthetic), but the column is permanent and
+   navigation is drill-down (into a view / back), not accordions.
+   ============================================================ */
+.stmenu{position:sticky;top:7rem;max-height:calc(100vh - 8.6rem);overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:rgba(240,199,94,.35) transparent;
+  padding:.2rem .5rem 1rem .15rem;min-width:0}
+.stmenu:empty{display:none}
+.stmenu-view{animation:stViewIn .28s ease}
+.stmenu-view[hidden]{display:none}
+@keyframes stViewIn{from{opacity:0;transform:translateX(-9px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.stmenu-view{animation:none}}
+
+/* view head: back row + view title */
+.stmenu-top{display:flex;flex-direction:column;gap:.3rem;margin:0 0 .6rem;
+  border-bottom:1px solid rgba(240,199,94,.16);padding-bottom:.6rem}
+.stmenu-back{display:inline-flex;align-items:center;gap:.42rem;align-self:flex-start;
+  font:inherit;font-size:.76rem;color:#b7b1a2;background:none;border:none;cursor:pointer;
+  padding:.14rem .25rem;border-radius:6px;transition:color .2s ease;
+  text-shadow:0 1px 7px rgba(0,0,0,.75)}
+.stmenu-back:hover{color:#f6e0a3}
+.stmenu-back i{width:7px;height:7px;flex:none;
+  border-top:1.6px solid currentColor;border-right:1.6px solid currentColor;
+  transform:rotate(45deg)} /* RTL: back arrow points right */
+.stmenu-title{margin:0;font-size:1.02rem;font-weight:700;color:#f6e0a3;
+  text-shadow:0 1px 8px rgba(0,0,0,.8)}
+
+/* root view: captions + the «برو داخل» nav rows */
+.stmenu-cap{margin:.95rem 0 .1rem;font-size:.66rem;letter-spacing:.13em;
+  color:rgba(240,199,94,.72);text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.stmenu-view[data-view="root"] .stmenu-cap:first-child{margin-top:0}
+.stmenu-nav{display:flex;align-items:center;gap:.45rem;width:100%;text-align:start;
+  font:inherit;font-size:.86rem;padding:.44rem .2rem;margin:0;background:none;border:none;
+  border-radius:8px;color:#e8e2d2;cursor:pointer;transition:color .2s ease;
+  text-shadow:0 1px 7px rgba(0,0,0,.75)}
+.stmenu-nav:hover{color:#f6e0a3}
+.stmenu-nav .st-chev{width:8px;height:8px;flex:none;margin-inline-start:auto;
+  border-bottom:1.6px solid rgba(216,212,200,.55);border-left:1.6px solid rgba(216,212,200,.55);
+  transform:rotate(45deg);transition:border-color .2s ease} /* points left = deeper (RTL) */
+.stmenu-nav:hover .st-chev{border-color:rgba(246,224,163,.65)}
+
+/* hints inside the share/import views */
+.stmenu-hint{margin:.15rem 0 .5rem;font-size:.78rem;line-height:1.95;color:#bdb7a6;
+  text-shadow:0 1px 6px rgba(0,0,0,.7)}
+
+/* the menu floats: strip retail.css's card look of presets/rows */
+html body .stmenu .tr-presets{display:block;margin:.15rem 0 .3rem}
+html body .stmenu .tr-preset{display:flex;align-items:center;gap:.45rem;width:100%;
+  text-align:start;font:inherit;font-size:.86rem;padding:.36rem .2rem;margin:0;
+  background:none;border:none;border-radius:8px;color:#cfcabb;cursor:pointer;
+  transition:color .2s ease;text-shadow:0 1px 7px rgba(0,0,0,.75)}
+html body .stmenu .tr-preset::before{content:"";width:7px;height:7px;flex:none;
+  transform:rotate(45deg);border-radius:1.5px;border:1px solid rgba(216,212,200,.45);
+  transition:background .2s ease,border-color .2s ease,box-shadow .2s ease}
+html body .stmenu .tr-preset b{display:inline;font-weight:400;font-size:inherit}
+html body .stmenu .tr-preset span{display:none}
+html body .stmenu .tr-preset:hover{color:#f6e0a3}
+html body .stmenu .tr-preset.on{color:#f0c75e}
+html body .stmenu .tr-preset.on::before{background:#f0c75e;border-color:#f0c75e;
+  box-shadow:0 0 8px rgba(240,199,94,.6)}
+html body .stmenu .tr-row{background:none;border:none;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+html body .stmenu .tr-catsrow{text-shadow:0 1px 6px rgba(0,0,0,.7)}
+html body .stmenu .tr-stats{background:none;border:none;padding:.5rem .2rem 0;
+  color:#d8cba0;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+html body .stmenu .tr-shrmsg{font-size:.74rem;color:#7fd0a0;
+  text-shadow:0 1px 6px rgba(0,0,0,.7)}
+html body .stmenu .tr-shrmsg.err{color:#e08a8a}
+html body .stmenu .tr-shrow input{background:rgba(9,11,17,.62)}
