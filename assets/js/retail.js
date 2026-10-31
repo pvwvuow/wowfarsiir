@@ -31,12 +31,25 @@
     var sp = new URLSearchParams(location.search);
     if (v === "retail") sp.delete("ver"); else sp.set("ver", v);
     var s = sp.toString();
-    location.href = location.pathname + (s ? "?" + s : location.search);
+    /* s === "" means the query held ONLY ?ver — drop it entirely. The old
+       `: location.search` fallback re-applied the previous ?ver=forever, so
+       the Retail button could never leave the Forever bank (the user's
+       «اگ ریتیل میزنه لیست ریتیل رو نشون بده» bug). */
+    location.href = location.pathname + (s ? "?" + s : "") + location.hash;
   }
   function verOpts(sel) {
     return IT_VERSIONS.map(function (v) {
       return '<option value="' + esc(v.id) + '"' + (v.id === sel ? " selected" : v.on ? "" : " disabled") + ">" +
         esc((TLANG === "en" ? v.en : v.fa) || v.id) + (v.id === sel || v.on ? "" : L_SOON) + "</option>";
+    }).join("");
+  }
+  /* version as two BIG tappable buttons (the user: «وقتی کاربر روی forever میزنه
+     باید لیست اونو بیاره اگ ریتیل میزنه لیست ریتیل رو نشون بده») — a plain
+     segmented control instead of the old <select>; disabled builds stay out */
+  function verSeg(sel) {
+    return IT_VERSIONS.filter(function (v) { return v.on; }).map(function (v) {
+      return '<button type="button" class="db-seg' + (v.id === sel ? " on" : "") +
+        '" data-v="' + esc(v.id) + '">' + esc((TLANG === "en" ? v.en : v.fa) || v.id) + "</button>";
     }).join("");
   }
   var L_SOON = " (به‌زودی)";
@@ -188,7 +201,7 @@
     var nav = [
       ["index.html", "خانه"], ["retail.html", "Midnight"],
       ["forever.html", "Forever"], ["news.html", "wowheadFA"],
-      ["db.html", "آیتم‌ها"], ["addon.html", "افزونه"],
+      ["item.html", "آیتم‌ها"], ["addon.html", "افزونه"],
       ["status.html", "وضعیت ترجمه"]
     ].map(function (n) {
       return '<a href="' + n[0] + '"' + (n[2] ? ' class="is-active"' : "") + ">" + n[1] + "</a>";
@@ -206,7 +219,7 @@
       '<div class="rt-wrap" id="rt-root"><p class="rt-loading">' + (MODE === "items" && TLANG === "en" ? "Loading…" : "در حال بارگذاری…") + "</p></div></section></main>" +
       '<footer class="footer"><div class="brand-logo"><img src="assets/img/logo.webp" alt="wowfarsi"></div>' +
       '<p class="footer-word font-cinzel" dir="ltr">wowfarsi</p><p class="footer-line">ساخته‌شده برای جامعهٔ ایرانیِ وارکرفت</p>' +
-      '<div class="footer-links"><a href="retail.html">Retail</a><span>✦</span><a href="db.html">آیتم‌ها</a><span>✦</span><a href="news.html">اخبار</a><span>✦</span><span class="font-cinzel" dir="ltr">wowfarsi · Midnight 12.1.5</span></div>' +
+      '<div class="footer-links"><a href="retail.html">Retail</a><span>✦</span><a href="item.html">آیتم‌ها</a><span>✦</span><a href="news.html">اخبار</a><span>✦</span><span class="font-cinzel" dir="ltr">wowfarsi · Midnight 12.1.5</span></div>' +
       '<p class="footer-note">متن راهنماها اورجینال فارسی است؛ منابع داده‌ها (مثل Wowhead و Icy Veins) هرجا لازم باشد ذکر می‌شوند. پروژه‌ای هواداری و غیرتجاری است؛ وابسته به Blizzard یا آن منابع نیست.</p>' +
       '<p class="footer-note" dir="ltr">World of Warcraft is a trademark of Blizzard Entertainment, Inc. Fan-made, non-commercial community site.</p></footer>' +
       '<div class="rt-tip" id="rt-tip"></div>');
@@ -461,7 +474,7 @@
       root().innerHTML = head("Retail", "Midnight · Patch 12.1.5") +
         '<p class="rt-lead">راهنمای فارسی کلاس‌ها و اسپک‌های Retail: تلنت، روتیشن، گیر، استت و مصرفی‌ها. روی اسم هر اسپل یا آیتم موس ببر تا توضیح فارسی‌اش را ببینی. فعلاً شروع کار است و اسپک‌ها یک‌یک کامل می‌شوند.</p>' +
         '<div class="rt-orn"></div><div class="rt-classes">' + cards + "</div>" +
-        '<div class="rt-tools"><a class="btn btn-medallion btn-sm" href="items.html">گیر و آیتم‌ها</a><a class="btn btn-medallion btn-sm" href="db.html">بانک کامل آیتم‌ها</a><a class="btn btn-stone btn-sm" href="talents.html">Talent Tree</a></div>';
+        '<div class="rt-tools"><a class="btn btn-medallion btn-sm" href="items.html">گیر و آیتم‌ها</a><a class="btn btn-medallion btn-sm" href="item.html">بانک کامل آیتم‌ها</a><a class="btn btn-stone btn-sm" href="talents.html">Talent Tree</a></div>';
     });
   }
 
@@ -1018,11 +1031,11 @@
     /* a name-only set card (no pieces/bonuses) duplicates the tooltip's own set block */
     var set = it.set && ((it.set.bonus || []).length || (it.set.pieces || []).length) ? setHtml(it.set, it.name, true) : "";
     root().innerHTML =
-      (STATIC ? "" : '<nav class="rt-crumb"><a href="retail.html">Retail</a><i></i><a href="db.html">بانک آیتم‌ها</a><i></i><span class="rt-en">' + esc(dbName(it)) + "</span></nav>") +
+      (STATIC ? "" : '<nav class="rt-crumb"><a href="retail.html">Retail</a><i></i><a href="item.html">بانک آیتم‌ها</a><i></i><span class="rt-en">' + esc(dbName(it)) + "</span></nav>") +
       '<div class="rt-item' + (it.q != null ? " q" + it.q : "") + '"><div class="im">' + localIconImg(it.icon) + "</div>" +
       '<div class="bd"><' + (STATIC ? "h1" : "h2") + ' class="rt-en" dir="ltr">' + esc(dbName(it)) + "</" + (STATIC ? "h1" : "h2") + '><p class="sub">' + sub.join(" · ") + "</p>" + body + "</div></div>" +
       (set ? '<div class="rt-cards">' + set + "</div>" : "") +
-      '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="db.html">بازگشت به جست‌وجو</a>' +
+      '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="item.html">بازگشت به جست‌وجو</a>' +
       '<a class="btn btn-stone btn-sm" href="https://www.wowhead.com/item=' + esc(it.id) + '" target="_blank" rel="noopener">Wowhead</a></div>';
   }
   function dbLookup(id) {
@@ -2579,7 +2592,7 @@
           : 'جست‌وجوی حرفه‌ای در ' + faNum(all.length) + " آیتمِ Midnight (بیلد <b class=\"rt-en\">" + esc(meta.build || "12.1.5") + '</b>) — مثل Auction House خود بازی: فیلتر کلاس، اسلات، جنس (پارچه/چرم/میل/پلیت و انواع سلاح)، نوع آیتم (ریجنت کرفت، ریجنت تکمیلی، اسباب‌بازی، مانت و…)، آیل‌ول و سطح لازم. دسته‌بندی‌ها در دیتابیس ثبت‌اند و همه ستون‌ها قابل مرتب‌سازی‌اند. اسم آیتم‌ها طبق قاعدهٔ سایت انگلیسی می‌ماند.</p>') +
         '<div class="db-ah">' +
         '<aside class="db-side">' +
-        '<div class="db-fgroup"><label>نسخهٔ بانک</label><select id="db-ver" aria-label="نسخهٔ بانک آیتم">' + verOpts(CUR_VER) + "</select></div>" +
+        '<div class="db-fgroup"><label>نسخهٔ بانک</label><div class="db-verseg" role="group" aria-label="نسخهٔ بانک آیتم">' + verSeg(CUR_VER) + "</div></div>" +
         '<div class="db-fgroup"><input id="db-q" type="search" placeholder="Search item name یا شناسه…" dir="auto" autocomplete="off"></div>' +
         '<div class="db-fgroup"><label>دسته</label>' + ddHtml("db-cat", cats.map(function (c) { return { v: c, fa: CAT_FA[c] || c, en: CAT_EN[c] || c, cnt: catCount[c] }; }), "همهٔ دسته‌ها") + "</div>" +
         '<div class="db-fgroup"><label>کلاس (قابل استفاده)</label>' + ddHtml("db-cls", CLASSES.map(function (c) { return { v: c[0], fa: "", en: c[1], color: c[3] }; }), "همهٔ کلاس‌ها") + "</div>" +
@@ -2606,8 +2619,11 @@
         "</div></div>";
       Object.keys(DDS).forEach(function (id) { ddBuildPanel(id); ddBind(id); ddSync(id); });
       document.addEventListener("click", ddCloseAll);
-      var verSel = document.getElementById("db-ver");
-      if (verSel) verSel.addEventListener("change", function () { switchVer(verSel.value); });
+      var verSegEl = document.querySelector(".db-verseg");
+      if (verSegEl) verSegEl.addEventListener("click", function (e) {
+        var b = e.target.closest("button[data-v]");
+        if (b && b.getAttribute("data-v") !== CUR_VER) switchVer(b.getAttribute("data-v"));
+      });
       var body = document.getElementById("db-body"), countEl = document.getElementById("db-count"), moreEl = document.getElementById("db-more"), endEl = document.getElementById("db-end");
       var state = { key: "ilvl", dir: -1, shown: DB_PAGE };
       /* deep links: ?cat=&q=&qf= (old) + &cls=&slot=&sub=&type=&imin=&imax=&lmin=&lmax=&sort=&dir= */

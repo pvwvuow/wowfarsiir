@@ -351,3 +351,35 @@
   .wf-portal-card, .wf-portal-backdrop { animation: none; }
   .wf-portal-opt, .wf-portal-x { transition: none; }
 }
+
+/* ================= big «شخصی‌سازی ترجمه» CTA — under the hero buttons =================
+   One wide, impossible-to-miss button into اتاق کاستوم (translate.html):
+   gold-rimmed slab, sliders glyph, title + one-line promise. */
+.btn-castom {
+  display: flex; align-items: center; gap: .95rem; width: min(560px, 100%);
+  margin: 1.15rem auto 0; padding: .95rem 1.3rem;
+  border: 1px solid rgba(240, 199, 94, .48); border-radius: 16px;
+  background: linear-gradient(165deg, rgba(50, 39, 17, .78), rgba(17, 13, 8, .82));
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(240, 199, 94, .16);
+  text-decoration: none;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.btn-castom:hover {
+  transform: translateY(-3px);
+  border-color: rgba(240, 199, 94, .85);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .58), 0 0 26px rgba(240, 199, 94, .16);
+}
+.btn-castom .cz-ic {
+  flex: none; display: grid; place-items: center; width: 48px; height: 48px;
+  border-radius: 13px; color: #f6e0a3;
+  background: rgba(240, 199, 94, .11); border: 1px solid rgba(240, 199, 94, .32);
+}
+.btn-castom .cz-t { display: flex; flex-direction: column; gap: .18rem; text-align: start; min-width: 0; }
+.btn-castom .cz-t b { font-size: 1.1rem; font-weight: 800; color: #f6e0a3; letter-spacing: .01em; }
+.btn-castom .cz-t small { font-size: .8rem; line-height: 1.75; color: #cfc4ab; }
+@media (max-width: 560px) {
+  .btn-castom { padding: .85rem 1rem; gap: .75rem; }
+  .btn-castom .cz-ic { width: 42px; height: 42px; }
+  .btn-castom .cz-t b { font-size: 1rem; }
+  .btn-castom .cz-t small { font-size: .74rem; }
+}

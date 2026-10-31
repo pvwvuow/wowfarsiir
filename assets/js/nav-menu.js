@@ -14,7 +14,7 @@
        ├─ کلاس‌ها  -> 13 -> specs    ├─ تلنت‌های فورور
        │             ├─ راهنما       ├─ کتاب اسپل‌ها
        │             └─ تلنت‌ها      ├─ آیتم‌ها
-       └─ صفحهٔ Midnight / DB        └─ کوئست‌ها (وضعیت ترجمه)
+       └─ صفحهٔ Midnight / آیتم‌ها    └─ کوئست‌ها (وضعیت ترجمه)
 
    How consistency is guaranteed:
      1. this script REWRITES .nav-links on every page (nav.dataset
@@ -30,7 +30,7 @@
    ========================================================= */
 "use strict";
 (function () {
-  var V = "20261111b";
+  var V = "20261112a";
   /* pages living in a sub-directory (news/<id>-<slug>.html, item/<id>-<slug>.html,
      guides/<spec>/index.html) need ../ prefixes; without this the injected CSS,
      the spec fetch and every panel link 404 there */
@@ -122,7 +122,7 @@
     '<span class="rtx-wrap" data-dd="midnight"></span>' +
     '<span class="rtx-wrap" data-dd="forever"></span>' +
     '<a href="' + BASE + 'news.html"' + (M_NEWS ? ' class="is-active"' : "") + '>wowheadFA</a>' +
-    '<a href="' + BASE + 'db.html"' + (onPage("db.html") ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
+    '<a href="' + BASE + 'item.html"' + (onPage("item.html") || onPage("db.html") ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
     '<a href="' + BASE + 'addon.html"' + (onPage("addon.html") ? ' class="is-active"' : "") + '>افزونه</a>' +
     '<a href="' + BASE + 'status.html"' + (onPage("status.html") ? ' class="is-active"' : "") + '>وضعیت ترجمه</a>' +
     '<a href="' + BASE + 'donate.html" class="dn-nav' + (onPage("donate.html") ? " is-active" : "") + '">حمایت</a>';
@@ -335,7 +335,7 @@
       "</button>" +
       '<div class="rtx-sep" aria-hidden="true"></div>' +
       '<a class="rtx-mini" href="' + BASE + 'retail.html">صفحهٔ Midnight<small dir="ltr">MIDNIGHT 12.1.5</small></a>' +
-      '<a class="rtx-mini" href="' + BASE + 'db.html">دیتابیس آیتم‌ها<small dir="ltr">ITEM DB</small></a>' +
+      '<a class="rtx-mini" href="' + BASE + 'item.html">بانک آیتم‌ها<small dir="ltr">ITEM BANK</small></a>' +
     "</div>" +
     '<div class="rtx-lvl" data-lvl="items">' +
       '<div class="rtx-hd">' +
@@ -344,7 +344,7 @@
         '<small class="rtx-cap" dir="ltr">CATEGORIES</small>' +
       "</div>" +
       '<div class="rtx-g2">' + CATS.map(function (c) {
-        return '<a class="rtx-cell" href="' + BASE + 'db.html?cat=' + c[0] + '">' +
+        return '<a class="rtx-cell" href="' + BASE + 'item.html?cat=' + c[0] + '">' +
           '<span class="rtx-l1"><i class="rtx-d" aria-hidden="true"></i><b>' + c[1] + "</b></span>" +
           '<small dir="ltr">' + esc(c[2]) + "</small></a>";
       }).join("") + "</div>" +
