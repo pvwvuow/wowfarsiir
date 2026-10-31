@@ -1,0 +1,962 @@
+{
+ "slug": "demonology-warlock",
+ "class": "warlock",
+ "class_en": "Warlock",
+ "spec_en": "Demonology",
+ "spec_no": 2,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Demonology Warlock",
+ "lead": "بازی Demonology Warlock فرمانروایی اهریمنان است: مدام [[Call Dreadstalkers]] و [[Wild Imp]]ها را احضار می‌کنی و [[Felguard]] را فرمان می‌دهی؛ همه‌چیز با [[Soul Shards]] تأمین می‌شود و برست تو [[Summon Demonic Tyrant]] است که به‌ازای هر شیطانِ احضارشده قوی‌تر می‌شود. دو مسیر Hero Tree داری: [[Diabolist]] که برچسب Best منبع را در هر چهار مد دارد و [[Soul Harvester]] که هم‌پایه است.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warlock/demonology/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warlock/demonology/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warlock/demonology/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warlock/demonology/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warlock/demonology/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Soul Shards": {
+   "fa": "منبع اصلی دمولوژی با سقف 5؛ با [[Call Dreadstalkers]] و [[Hand of Gul'dan]] خرج می‌شود."
+  },
+  "Call Dreadstalkers": {
+   "fa": "جنراتور و خرج‌کنندهٔ اصلی؛ تنها اسپلی که [[Summon Demonic Tyrant]] تمدید می‌کند."
+  },
+  "Hand of Gul'dan": {
+   "fa": "خرج‌کنندهٔ شاردها برای فرود شبح‌های دم."
+  },
+  "Demonic Core": {
+   "fa": "پروکی که [[Demonbolt]] آنی می‌دهد و تا 4 استک می‌رود؛ قبل از تایرنت 2 شارژ بانک کن."
+  },
+  "Demonbolt": {
+   "fa": "جنراتور شارد که با [[Demonic Core]] آنی و کارآمد می‌شود."
+  },
+  "Shadow Bolt": {
+   "fa": "جنراتور پایه."
+  },
+  "Infernal Bolt": {
+   "fa": "جایگزین [[Shadow Bolt]] در بعضی بیلدها."
+  },
+  "Wild Imp": {
+   "fa": "ایمپ‌های احضارشده که منبع اصلی [[Implosion]] هستند."
+  },
+  "Implosion": {
+   "fa": "خرج‌کنندهٔ AoE که ایمپ‌ها را منفجر می‌کند."
+  },
+  "Dreadstalkers": {
+   "fa": "شیطان‌های احضارشدهٔ اصلی که باید همیشه بیرون باشند."
+  },
+  "Felguard": {
+   "fa": "پت همیشگی تو که تانک هم می‌کند."
+  },
+  "Summon Demonic Tyrant": {
+   "fa": "کول‌داون اصلی که به‌ازای هر شیطان قوی‌تر می‌شود و [[Call Dreadstalkers]] را تمدید می‌کند."
+  },
+  "Reign of Tyranny": {
+   "fa": "تلنتی که تمدید [[Call Dreadstalkers]] توسط تایرنت را فعال می‌کند."
+  },
+  "Summon Doomguard": {
+   "fa": "احضار شیطان بزرگ تک‌هدف."
+  },
+  "Grimoire: Imp Lord": {
+   "fa": "شیطان Grimoire برای پنجرهٔ تایرنت."
+  },
+  "Grimoire: Fel Ravager": {
+   "fa": "شیطان Grimoire برای پنجرهٔ تایرنت."
+  },
+  "Ruination": {
+   "fa": "جایگزین [[Hand of Gul'dan]] در بعضی بیلدها."
+  },
+  "Power Siphon": {
+   "fa": "جنراتور شارد که در اولویت بالای لیست می‌آید."
+  },
+  "Doom": {
+   "fa": "DoTای که با [[Demonbolt]] روی چند هدف پخش می‌شود."
+  },
+  "Diabolist": {
+   "fa": "درخت قهرمانی با [[Soul-Etched Circles]] و [[Infernal Vitality]]؛ برچسب Best هر ۴ مد."
+  },
+  "Soul Harvester": {
+   "fa": "درخت قهرمانی هم‌پایهٔ دیابولیست."
+  },
+  "Soul-Etched Circles": {
+   "fa": "تلنت دفاعی/جابجایی دیابولیست."
+  },
+  "Infernal Vitality": {
+   "fa": "تلنت دفاعی دیابولیست."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek."
+  },
+  "Aln'hara Lantern": {
+   "fa": "Off-Hand Crafted فصل که در BiS هم هست."
+  },
+  "Damned Necrolyte's Shattered Restraints": {
+   "fa": "ست تیر فصل وارلاک؛ 2 تیکه ایمپ و ایمپلوشن را قوی و 4 تیکه ایمپلود خودکار می‌دهد."
+  },
+  "Venomkeeper's Horrific Cowl": {
+   "fa": "کلاه BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Cackling Soultreads": {
+   "fa": "کفش BiS فصل از The Coiled Altar."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت BiS فصل از Kith'ix."
+  },
+  "Stormbound Emblem of Dazar": {
+   "fa": "ترینکت دوم BiS فصل از King Dazar."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر BiS فصل از Sszorak."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر دوم BiS فصل از Kith'ix."
+  },
+  "Martyr's Waistwrap": {
+   "fa": "کمربند Crafted فصل که در BiS هم هست."
+  },
+  "Damned Necrolyte's Shackles": {
+   "fa": "دستبند BiS فصل از Entombed Sentinels."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک بهترین فصل."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Enchant Weapon - Jan'alai's Precision": {
+   "fa": "افزونهٔ سلاح فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل."
+  },
+  "Enchant Shoulders - Flight of the Eagle": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "افزونهٔ انگشتر فصل برای Demonology."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Quick Garnet": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم فصل."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم فصل."
+  },
+  "Brood Cleanser's Amice": {
+   "fa": "گزینهٔ Catalyst شانه از Temple of Sethraliss."
+  },
+  "Tidebound Sorcereress's Robes": {
+   "fa": "گزینهٔ Catalyst سینه از Nymrissa Wavecaller."
+  },
+  "Grasps of the Eternal Shadow": {
+   "fa": "گزینهٔ Catalyst دست از The Coiled Altar."
+  },
+  "Voidweaver's Leggings": {
+   "fa": "گزینهٔ Catalyst پا از Kith'ix."
+  },
+  "Spires of the Damned Necrolyte": {
+   "fa": "شانهٔ ست فصل."
+  },
+  "Damned Necrolyte's Rattling Robes": {
+   "fa": "سینهٔ ست فصل."
+  },
+  "Damned Necrolyte's Charred Grasps": {
+   "fa": "دستکش ست فصل از Entombed Sentinels."
+  },
+  "Damned Necrolyte's Leg Bindings": {
+   "fa": "شلوار ست فصل از Kith'ix."
+  },
+  "Demonic Gateway": {
+   "fa": "پورتال گروهی برای اسکیپ اینستنس."
+  },
+  "Soulstone": {
+   "fa": "احیا؛ ابزار یوتیلیتی وارلاک."
+  },
+  "Demonic Circle": {
+   "fa": "پورتال شخصی جابجایی."
+  },
+  "Create Soulwell": {
+   "fa": "بازوی [[Healthstone]] برای گروه."
+  },
+  "Healthstone": {
+   "fa": "پاتشن سلامتی شخصی‌سازی‌شدهٔ وارلاک."
+  },
+  "Intellect": {
+   "fa": "استت اصلی که Spell Power و دمیج اسپل‌ها را بالا می‌برد؛ روی پارچه می‌آید."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Demonology Warlock فرمانروایی اهریمنان است: مدام [[Call Dreadstalkers]] و [[Wild Imp]]ها را احضار می‌کنی و [[Felguard]] را فرمان می‌دهی؛ همه‌چیز با [[Soul Shards]] تأمین می‌شود و اولویت خرجش [[Call Dreadstalkers]] و بعد [[Hand of Gul'dan]] است. برست تو [[Summon Demonic Tyrant]] است که به‌ازای هر شیطانِ حاضر روی زمین قوی‌تر می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Diabolist]] که برچسب Best منبع را در هر چهار مد دارد و برای حرکت و دفاع [[Soul-Etched Circles]] و [[Infernal Vitality]] می‌دهد؛ و [[Soul Harvester]] که هم‌پایه است و بازی‌کردنش هم بازی‌شکن نیست. AoE دیابولیست منفعل‌تر است و کمتر به پروک‌های [[Demonic Core]] وابسته است."
+    },
+    {
+     "t": "p",
+     "x": "روتیشن‌ات حول بهینه‌کردن دمیج در پنجره‌های کول‌داون می‌چرخد: قبل از ورود به چرخهٔ [[Summon Demonic Tyrant]] حتماً [[Call Dreadstalkers]] را کست و روی کول‌داون گذاشته باشی تا با تلنت [[Reign of Tyranny]] تمدید شود؛ و هرگز [[Soul Shards]] را روی 5 کپ نگذار."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "AoE",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "برست",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "بقا",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "سولو",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "اسپک بادوام با بقا و دفاع بالا",
+       "تنوع بالای تلنت برای ترکیب‌های گروهی مختلف",
+       "سولوی قوی به‌لاطر تانک‌کردن با پت و سلف‌هیل",
+       "اسکیپ اینستنس با [[Demonic Gateway]] و [[Soulstone]]"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "ایمنی دمیج نداری",
+       "رَمپ دمیج بالاتر از بقیه اسپک‌هاست",
+       "برست کم بیرون از کول‌داون‌ها در بیشتر موقعیت‌ها"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Diabolist",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Raid و Raid Cleave و Mythic+ و Delves؛ در شرایط افراطی (بازی 0.1%) انتخاب بهینه است. [[Soul-Etched Circles]] و [[Infernal Vitality]] حرکت و دفاع بیشتری می‌دهند و AoEاش منفعل‌تر و کم‌وابسته‌تر به پروک‌های [[Demonic Core]] است."
+      },
+      {
+       "title": "Soul Harvester",
+       "tag": "هم‌پایه",
+       "x": "خروجی خوب در تک‌هدف و چندهدف می‌دهد و بازی‌کردنش بازی‌شکن نیست؛ بر اساس نیاز به دفاع یا یوتیلیتی بین این و دیابولیست انتخاب کن."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Demonology Warlock در پچ 12.1.5 دو درخت قهرمانی دارد: Diabolist و Soul Harvester؛ هر جدول چهار ردیف کد دارد: Raid، Raid Cleave، Mythic+ و Delves. دیابولیست برچسب Best هر چهار مد را دارد و هر دو درخت هم‌پایه‌اند؛ انتخاب بر اساس نیاز دفاعی/یوتیلیتی."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Diabolist (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmZMzoZjhZmxsMAAAAAAAgxMGWgB2GtQDLGjxysMzMjZAgZGzMzMzAMzMmZAAAGzMzMDDLzYAD"
+      },
+      {
+       "title": "Diabolist (Raid Cleave)",
+       "tag": "بهترین برای Raid Cleave",
+       "x": "برچسب Best منبع برای کِلیو ریید.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmhZGNbmx2MzYWGAAAAAAAwYGDLwAbj2ohFjZGLz2MzMmBAmZMmZmZAmZGmZDAAMmZmxwwyMGwA"
+      },
+      {
+       "title": "Diabolist (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ کدش همان بیلد Delves است.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmhZGNbmx2MzYWGAAAAAAAwYGDLwAbj2ohFjZGLz2MzMmBAmZMmZmZAmZGmZDAAMmZmxwwyMGwA"
+      },
+      {
+       "title": "Diabolist (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmhZGNbmx2MzYWGAAAAAAAwYGDLwAbj2ohFjZGLz2MzMmBAmZMmZmZAmZGmZDAAMmZmxwwyMGwA"
+      },
+      {
+       "title": "Soul Harvester (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد ریید سولهاروستر.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmZMzoZjhZmxsMAAAAAAAjllBGwAmhlQGbmhZ2mlZmZMDAYMzMzAMzMzMmZAAAmZmZmZMDLDAD"
+      },
+      {
+       "title": "Soul Harvester (Raid Cleave)",
+       "tag": "آلترناتیو Raid Cleave",
+       "x": "بیلد کِلیو ریید سولهاروستر.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmhZGNbmx2MzYWGAAAAAAgxyyADYAzwSIjNDGLz2MzMmBAmxMzMDwMzMzwMbAAgZmZmxMD2mBwA"
+      },
+      {
+       "title": "Soul Harvester (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+ سولهاروستر.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmhZGNbmx2MzYWGAAAAAAgxyyADYAzwSIjNDGLjZmZmZAgZMzYGgZmZmhZ2AAAzMzMjZGsNzAMA"
+      },
+      {
+       "title": "Soul Harvester (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "بیلد Delves سولهاروستر.",
+       "code": "CoQAAAAAAAAAAAAAAAAAAAAAAYmhZGNbmx2MzYWGAAAAAAgxyyADYAzwSIjNDGLz2MzMmBAmxMzMDwMzMzwMbAAgZmZmxMD2mBwA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=warlock&spec=demonology",
+     "x": "مشاهده تمام تلنت‌های Demonology Warlock"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "دو قاعدهٔ اصلی: اول، [[Soul Shards]] را کپ نکن؛ هیچ‌وقت روی 5 بی‌خرج نمان و با جنراتور در 4 [[Demonbolt]] یا 5 [[Shadow Bolt]] هم کپ نکن. اولویت خرج: [[Call Dreadstalkers]] و بعد [[Hand of Gul'dan]]. دوم، چرخهٔ [[Summon Demonic Tyrant]]: چون باف تایرنت به‌ازای هر شیطانِ احضارشده به‌روز می‌شود و فقط [[Call Dreadstalkers]] را تمدید می‌کند، قبل از ورود به چرخهٔ کول‌داون حتماً دِرِداستاکرها بیرون و روی کول‌داون باشند."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف (Diabolist)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Power Siphon]] را کست کن (یا [[Implosion]] در AoE).",
+      "[[Call Dreadstalkers]] را کست کن.",
+      "[[Hand of Gul'dan]] را کست کن (یا [[Ruination]]).",
+      "[[Grimoire: Imp Lord]] یا [[Grimoire: Fel Ravager]] را کست کن.",
+      "[[Summon Demonic Tyrant]] را احضار کن.",
+      "[[Summon Doomguard]] را احضار کن.",
+      "با [[Demonic Core]] [[Demonbolt]] را کست کن.",
+      "[[Shadow Bolt]] یا [[Infernal Bolt]] را کست کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Implosion]] را بزن.",
+      "[[Summon Doomguard]] را احضار کن.",
+      "[[Call Dreadstalkers]] را کست کن.",
+      "[[Hand of Gul'dan]] را کست کن (یا [[Ruination]]).",
+      "[[Grimoire: Imp Lord]] یا [[Grimoire: Fel Ravager]] را کست کن.",
+      "[[Summon Demonic Tyrant]] را احضار کن.",
+      "با [[Demonic Core]] [[Demonbolt]] را کست کن.",
+      "[[Shadow Bolt]] یا [[Infernal Bolt]] را کست کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در AoE همهٔ همان دکمه‌ها به‌اضافهٔ [[Implosion]] و [[Summon Doomguard]] زده می‌شود؛ بازیکنان پیشرفته [[Demonbolt]] را روی هدف‌های اضافه می‌بافند تا [[Doom]] را پخش کنند چون هر اعمالش یک منبع دمیج مستقل است."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "حداقل 4 ثانیه قبل از پایان تایمر پول، [[Demonbolt]] را پریکست کن.",
+      "[[Grimoire: Imp Lord]] را کست کن.",
+      "[[Call Dreadstalkers]] را کست کن.",
+      "[[Shadow Bolt]] را کست کن.",
+      "[[Summon Demonic Tyrant]] را احضار کن.",
+      "دو بار [[Hand of Gul'dan]] را کست کن.",
+      "[[Shadow Bolt]] را کست کن.",
+      "[[Implosion]] را بزن.",
+      "با [[Demonic Core]] [[Demonbolt]] و بدون آن [[Shadow Bolt]] بزن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: باف غذا و روغن بزن، [[Felguard]] را احضار کن، با [[Create Soulwell]] [[Healthstone]] بده، [[Demonic Circle]] و [[Demonic Gateway]] را بگذار و تلنت‌هایت را چک کن."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Summon Demonic Tyrant",
+       "x": "کول‌داون پایه که توالی دمیجت را می‌راند: فقط [[Call Dreadstalkers]] را تمدید می‌کند (با [[Reign of Tyranny]]) و به‌ازای هر شیطانِ احضارشده یک ضریب دمیج اضافه می‌گیرد؛ پس بیشترین شیطان را روی زمین داشته باش."
+      },
+      {
+       "s": "Implosion",
+       "x": "خرج‌کنندهٔ AoE که [[Wild Imp]]ها را مصرف می‌کند؛ ست 4 تیکه شانس ایمپلوشن‌های رایگان و قوی‌تر می‌دهد."
+      },
+      {
+       "s": "Summon Doomguard",
+       "x": "احضار شیطان بزرگ تک‌هدف که داخل اولویت و AoE زده می‌شود."
+      },
+      {
+       "s": "Grimoire: Imp Lord",
+       "x": "شیطان Grimoire که قبل از پنجرهٔ تایرنت کست می‌شود؛ بیلدهای دیگر از [[Grimoire: Fel Ravager]] استفاده می‌کنند."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "[[Demonic Core]] پرتکرارترین پروک تو و راه کارآمد ساخت [[Soul Shards]] است و تا 4 استک می‌رود: قبل از هر [[Summon Demonic Tyrant]] دست‌کم 2 شارژ بانک کن تا داخل پنجره سریع شارد بسازی و ایمپ بیشتر بفرستی؛ ایده‌آل این است که اغلب 2 شارژ نگه داری تا پروک هدر نرود."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "قاعدهٔ کلی استت Haste = Critical Strike > Mastery > Versatility است و هیچ‌وقت ارزش [[Intellect]] را دست‌کم نگیر: جهش بزرگ Item Level معمولاً از استت بهینه بهتر است. دمولوژی همهٔ استت‌ها را تقریباً برابر می‌خواهد با ترجیح کمی Haste و Crit؛ استت‌ها آن‌قدر نزدیک‌اند که عملاً Item Level بهترین استت توست."
+    },
+    {
+     "t": "call",
+     "x": "برای مقدار دقیق با Raidbots سیم بزن؛ جدول هر دو هرو یکسان است."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 245769
+      },
+      {
+       "slot": "سر",
+       "id": 271874
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271544
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271549
+      },
+      {
+       "slot": "دستبند",
+       "id": 271542
+      },
+      {
+       "slot": "دست",
+       "id": 271547
+      },
+      {
+       "slot": "کمر",
+       "id": 239649
+      },
+      {
+       "slot": "پا",
+       "id": 271545
+      },
+      {
+       "slot": "کفش",
+       "id": 268255
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 273649
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271549
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        281215,
+        273649
+       ],
+       "names": [
+        "Twisted Horror's Tendril",
+        "Stormbound Emblem of Dazar"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Damned Necrolyte's Shattered Restraints: 2 تیکه دمیج [[Wild Imp]] را 10% و [[Implosion]] را 20% بالا می‌برد (خودش هم با توجه به سهم بالای ایمپ‌ها قوی است). 4 تیکه وقتی انرژی ایمپ‌ها تمام می‌شود 20% شانس می‌دهد خودشان را به هدف پرت کنند و در 250% اثر برای هدف اصلی و 225% برای بقیه ایمپلود کنند؛ بخش عمدهٔ قدرت ست پشت همین 4 تیکه است."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Venomkeeper's Horrific Cowl (سر)، Brood Cleanser's Amice (شانه)، Tidebound Sorcereress's Robes (سینه)، Grasps of the Eternal Shadow (دست) و Voidweaver's Leggings (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Aln'hara Lantern (Off-Hand) و Martyr's Waistwrap (کمربند) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Critical Strike",
+      "Mastery",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] روی پارچه است و بعدش Haste = Critical Strike، بعد Mastery و در پایان Versatility؛ جدول هر دو هرو یکسان است."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "دمولوژی همهٔ استت‌ها را تقریباً برابر می‌پسندد با کمی ترجیح Haste و Critical Strike.",
+      "استت‌ها آن‌قدر نزدیک‌اند که عملاً Item Level را بهترین استت خودت بدان."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Demonology Warlock در Midnight Season 2؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بهترین فلاسک [[Flask of the Shattered Sun]] است ولی بسته به وزن استت‌هایت فلاسک‌های دیگر هم قابل استفاده‌اند."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در پنجرهٔ [[Summon Demonic Tyrant]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Jan'alai's Precision",
+       "ids": [
+        243970
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Flight of the Eagle",
+       "ids": [
+        243960
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Silvermoon's Alacrity",
+       "ids": [
+        244014
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ انگشتر این اسپک [[Enchant Ring - Silvermoon's Alacrity]] است نه Eyes of the Eagle."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Quick Garnet، Flawless Deadly Amethyst، Flawless Masterful Peridot",
+       "ids": [
+        240905,
+        240897,
+        240891
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Indecipherable Eversong Diamond]] و بقیهٔ سوکت‌ها بین گارنت و آمتیست و پریدوت بسته به نیاز استت."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Demonology Warlock در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "دیابولیست برچسب Best منبع برای Mythic+ و Delves را دارد با AoE منفعل‌تر و کم‌وابسته به پروک‌های [[Demonic Core]]؛ سولهاروستر هم‌پایه است. بازی AoE همان دکمه‌های تک‌هدف به‌اضافهٔ [[Implosion]] و [[Summon Doomguard]] است."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Implosion]] را وقتی بزن که [[Wild Imp]]ها دمیجشان را زده‌اند.",
+      "[[Demonbolt]] را روی هدف‌های اضافه بباف تا [[Doom]] پخش شود؛ هر اعمالش یک منبع دمیج مستقل است.",
+      "قبل از هر [[Summon Demonic Tyrant]] دست‌کم 2 شارژ [[Demonic Core]] بانک کن.",
+      "[[Call Dreadstalkers]] را قبل از ورود به پنجرهٔ تایرنت کست و روی کول‌داون گذاشته باش.",
+      "با [[Demonic Gateway]] و [[Soulstone]] و پت تانکر ابزار سولوی و اسکیپ گروه را همیشه داشته باش."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "برست بیرون از کول‌داون کم است: پنجره‌های پول را بشناس و [[Summon Demonic Tyrant]] را همیشه روی بیشترین شیطان ممکن بزن."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Demonology Warlock (دیمونولوژی) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل دیمونولوژی (Demonology Warlock) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Demonology Warlock talent build midnight",
+   "Demonology Warlock guide midnight",
+   "Demonology Warlock guide 12.1.5",
+   "best Demonology Warlock talents",
+   "Demonology Warlock talent tree midnight",
+   "Demonology Warlock pve guide",
+   "Demonology Warlock rotation midnight",
+   "Demonology Warlock rotation and cooldowns",
+   "Demonology Warlock bis list midnight",
+   "Demonology Warlock best in slot",
+   "Demonology Warlock gear guide",
+   "Demonology Warlock food and potion",
+   "best food for Demonology Warlock",
+   "best flask for Demonology Warlock",
+   "best potion for Demonology Warlock",
+   "Demonology Warlock enchants and gems",
+   "best enchants for Demonology Warlock",
+   "best gems for Demonology Warlock",
+   "Demonology Warlock stat priority midnight",
+   "Demonology Warlock tier set midnight",
+   "Demonology Warlock tier set bonuses",
+   "Demonology Warlock mythic+ guide",
+   "Demonology Warlock m+ guide midnight",
+   "Demonology Warlock raid guide",
+   "Demonology Warlock hero talents",
+   "Demonology Warlock hero tree",
+   "best dps build Demonology Warlock midnight",
+   "Demonology Warlock cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای دیمونولوژی",
+   "تلنت دیمونولوژی",
+   "تلنت برای Demonology Warlock",
+   "تلنت Warlock دیمونولوژی",
+   "بیلد دیمونولوژی",
+   "بیلد تلنت دیمونولوژی میدنایت",
+   "روتیشن دیمونولوژی",
+   "روتیشن و کول‌داون‌های دیمونولوژی",
+   "غذا برای دیمونولوژی",
+   "غذا برای Demonology Warlock",
+   "غذا و معجون دیمونولوژی",
+   "بهترین غذای دیمونولوژی",
+   "فلسک دیمونولوژی",
+   "بهترین فلسک برای دیمونولوژی",
+   "معجون دیمونولوژی",
+   "انچنت دیمونولوژی",
+   "انچنت و جم دیمونولوژی",
+   "بهترین انچنت برای دیمونولوژی",
+   "جم دیمونولوژی",
+   "بست آیتم دیمونولوژی",
+   "بهترین آیتم‌های دیمونولوژی",
+   "گیر دیمونولوژی",
+   "استت دیمونولوژی",
+   "اولویت استت دیمونولوژی",
+   "ست تیر دیمونولوژی",
+   "مایتی پلاس دیمونولوژی",
+   "ام پلاس دیمونولوژی",
+   "راهنمای دیمونولوژی",
+   "راهنمای Demonology Warlock",
+   "راهنمای وارلاک",
+   "دیمونولوژی میدنایت",
+   "وارلاک میدنایت",
+   "هرو تیلنت دیمونولوژی",
+   "بیلد دی‌پی‌اس دیمونولوژی",
+   "بهترین دی‌پی‌اس میدنایت دیمونولوژی"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Demonology Warlock (دیمونولوژی) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Demonology Warlock به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای دیمونولوژی چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Light's Potential»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای دیمونولوژی چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای دیمونولوژی کدام‌اند؟",
+    "a": "ست تیر فعلی «Twisted Horror's Tendril» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Demonology Warlock در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

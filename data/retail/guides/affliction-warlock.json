@@ -1,0 +1,977 @@
+{
+ "slug": "affliction-warlock",
+ "class": "warlock",
+ "class_en": "Warlock",
+ "spec_en": "Affliction",
+ "spec_no": 1,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Affliction Warlock",
+ "lead": "بازی Affliction Warlock حول DoTها می‌چرخد: [[Agony]] و [[Wither]] و [[Corruption]] روی اهداف می‌مانند و خرج‌کنندهٔ تو [[Unstable Affliction]] است که با [[Soul Shards]] کست می‌شود. برست هر 2 دقیقه با [[Summon Darkglare]] می‌آید که دمیج همهٔ DoTهای فعال را 20% بالا می‌برد. دو مسیر Hero Tree داری: [[Soul Harvester]] با [[Dark Harvest]] و [[Hellcaller]] با تمرکز روی [[Wither]]؛ برچسب‌های Best منبع بین هر دو پخش شده و هر دو از دفاع‌های کلاس‌تعریف‌شدهٔ وارلاک بهره می‌برند.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warlock/affliction/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warlock/affliction/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warlock/affliction/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warlock/affliction/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warlock/affliction/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Soul Shards": {
+   "fa": "منبع اصلی افلیکشن با سقف 5؛ با [[Unstable Affliction]] و [[Seed of Corruption]] خرج می‌شود."
+  },
+  "Unstable Affliction": {
+   "fa": "خرج‌کنندهٔ اصلی تک‌هدف که با ست 4 تیکه دمیج کل را بالا می‌برد."
+  },
+  "Seed of Corruption": {
+   "fa": "خرج‌کنندهٔ AoE که در 12.1 با اثر 20% [[Unstable Affliction]] روی هدف می‌گذارد."
+  },
+  "Agony": {
+   "fa": "DoT انباشتی که باید روی چند هدف نگه داشته شود؛ پاندمیکش 4.5 ثانیه است."
+  },
+  "Wither": {
+   "fa": "DoT شاخص هلکالر که تلنت‌های درخت مستقیمش را تقویت می‌کنند."
+  },
+  "Corruption": {
+   "fa": "DoT پایه؛ پاندمیکش 4.2 ثانیه است."
+  },
+  "Haunt": {
+   "fa": "اسپل اولویت‌دار اولویت‌لیست که روی هدف اولویت‌دار نگه داشته می‌شود."
+  },
+  "Malefic Grasp": {
+   "fa": "پرکنندهٔ تک‌هدف."
+  },
+  "Drain Soul": {
+   "fa": "پرکنندهٔ AoE/تک‌هدف."
+  },
+  "Shadow Bolt": {
+   "fa": "پرکنندهٔ پایه."
+  },
+  "Summon Darkglare": {
+   "fa": "کول‌داون 2 دقیقه‌ای: 20% باف دمیج DoTهای فعال؛ قبل از زنجیرهٔ UA بزن."
+  },
+  "Dark Harvest": {
+   "fa": "کول‌داون [[Soul Harvester]]: 3 شارد هر 35 تا 40 ثانیه با CDR خرج‌محور."
+  },
+  "Malevolence": {
+   "fa": "کول‌داون 1 دقیقه‌ای هلکالر."
+  },
+  "Shard Instability": {
+   "fa": "پروکی که [[Unstable Affliction]] یا [[Seed of Corruption]] رایگان آنی می‌دهد."
+  },
+  "Nightfall": {
+   "fa": "پروکی که در پنجرهٔ AoE بافته می‌شود."
+  },
+  "Hedonic Gorging": {
+   "fa": "آبیلیتی جدید Midnight."
+  },
+  "Impetuous Wrath": {
+   "fa": "آبیلیتی جدید Midnight."
+  },
+  "Nocturnal Yield": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Patient Zero": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Hellcaller": {
+   "fa": "درخت قهرمانی با تمرکز روی [[Wither]] و [[Malevolence]]؛ برچسب Best ریید و کِلیو."
+  },
+  "Soul Harvester": {
+   "fa": "درخت قهرمانی با [[Dark Harvest]]؛ برچسب Best Mythic+ و Delves."
+  },
+  "Zevrim's Resilience": {
+   "fa": "تلنت دفاعی مشترک دو درخت."
+  },
+  "Friends In Dark Places": {
+   "fa": "تلنت دفاعی مشترک دو درخت."
+  },
+  "Demonic Gateway": {
+   "fa": "پورتال گروهی برای اسکیپ اینستنس."
+  },
+  "Soulstone": {
+   "fa": "احیا؛ ابزار یوتیلیتی وارلاک."
+  },
+  "Demonic Circle": {
+   "fa": "پورتال شخصی جابجایی."
+  },
+  "Create Soulwell": {
+   "fa": "بازوی [[Healthstone]] برای گروه."
+  },
+  "Healthstone": {
+   "fa": "پاتشن سلامتی شخصی‌سازی‌شدهٔ وارلاک."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek."
+  },
+  "Aln'hara Lantern": {
+   "fa": "Off-Hand Crafted فصل که در BiS هم هست."
+  },
+  "Damned Necrolyte's Shattered Restraints": {
+   "fa": "ست تیر فصل وارلاک؛ 2 تیکه DoTها را قوی و 4 تیکه هر UA را 2% باف کل می‌کند."
+  },
+  "Venomkeeper's Horrific Cowl": {
+   "fa": "کلاه BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Ethereal Netherwrap": {
+   "fa": "کمربند BiS فصل از Voidscar Arena."
+  },
+  "Cackling Soultreads": {
+   "fa": "کفش BiS فصل از The Coiled Altar."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت BiS فصل از Kith'ix."
+  },
+  "Stormbound Emblem of Dazar": {
+   "fa": "ترینکت دوم BiS فصل از King Dazar."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر BiS فصل از Sszorak."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر دوم BiS فصل از Kith'ix."
+  },
+  "Martyr's Bindings": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "فلاسک فهرست‌شده در جدول منبع."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسکی که متن منبع بهترین می‌داند."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Enchant Weapon - Jan'alai's Precision": {
+   "fa": "افزونهٔ سلاح فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل."
+  },
+  "Enchant Shoulders - Flight of the Eagle": {
+   "fa": "افزونهٔ شانه فصل برای Affliction."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Quick Garnet": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم فصل."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم فصل."
+  },
+  "Brood Cleanser's Amice": {
+   "fa": "گزینهٔ Catalyst شانه از Temple of Sethraliss."
+  },
+  "Primordial Robe of Rites": {
+   "fa": "گزینهٔ Catalyst سینه از Altar of Fangs."
+  },
+  "Grasps of the Eternal Shadow": {
+   "fa": "گزینهٔ Catalyst دست از The Coiled Altar."
+  },
+  "Leggings of Entwined Serpents": {
+   "fa": "گزینهٔ Catalyst پا از Altar of Fangs."
+  },
+  "Spires of the Damned Necrolyte": {
+   "fa": "شانهٔ ست فصل از The Lost Explorers."
+  },
+  "Damned Necrolyte's Rattling Robes": {
+   "fa": "سینهٔ ست فصل از Vashnik the Malignant."
+  },
+  "Damned Necrolyte's Charred Grasps": {
+   "fa": "دستکش ست فصل از The Coiled Altar."
+  },
+  "Damned Necrolyte's Leg Bindings": {
+   "fa": "شلوار ست فصل از Kith'ix."
+  },
+  "Intellect": {
+   "fa": "استت اصلی که Spell Power و دمیج اسپل‌ها را بالا می‌برد؛ روی پارچه می‌آید."
+  },
+  "Mastery": {
+   "fa": "مستری افلیکشن دمیج DoTها و افکت‌های Affliction را درصدی بالا می‌برد."
+  },
+  "Soul Shard": {
+   "fa": "منبع اصلی با سقف 5؛ همان [[Soul Shards]] در جمع است."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Affliction Warlock حول DoTها می‌چرخد: [[Agony]] و [[Wither]] و [[Corruption]] روی اهداف می‌مانند و خرج‌کنندهٔ تو [[Unstable Affliction]] است که با [[Soul Shards]] کست می‌شود. برست هر 2 دقیقه با [[Summon Darkglare]] می‌آید که دمیج همهٔ DoTهای فعال را 20% بالا می‌برد؛ پس قبل از زنجیرهٔ UA آن را بزن."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Soul Harvester]] با [[Dark Harvest]] که هر 35 تا 40 ثانیه 3 [[Soul Shard]] می‌دهد و CDRش با خرج‌کردن شارد کار می‌کند؛ و [[Hellcaller]] با تمرکز روی [[Wither]] و کول‌داون یک‌دقیقه‌ای [[Malevolence]]. برچسب‌های Best منبع بین هر دو پخش شده: ریید و کِلیو ریید مال هلکالر و Mythic+ و Delves مال سولهاروستر."
+    },
+    {
+     "t": "p",
+     "x": "دفاع تو یکی از بهترین کیت‌های بازی است و هر دو درخت با تلنت‌هایی مثل [[Zevrim's Resilience]] و [[Friends In Dark Places]] رویش می‌سازند. ضعف اصلی: ایمنی دمیج نداری، رَمپ بالا است و تعویض سریع هدف سخت. در عوض فوق‌العاده موبایلی: تازه‌کردن DoTها در حرکت سود است نه ضرر."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "کِلیو انبوه",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "برست",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بقا",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "جابجایی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "اسپک بادوام با بقا و دفاع بالا",
+       "پروفایل کِلیو انبوه قوی با کول‌داون‌های کوتاه",
+       "اسکیپ اینستنس با [[Demonic Gateway]] و [[Soulstone]]",
+       "یکی از بهترین کیت‌های دفاعی بازی"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "ایمنی دمیج (Damage Immunity) نداری",
+       "رَمپ دمیج بالاتر از بقیه اسپک‌هاست",
+       "تعویض سریع هدف نداری",
+       "مسیر تلنت اجازه نمی‌دهد هم‌زمان تلنت‌های تک‌هدف و AoE را داشته باشی"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Hellcaller",
+       "tag": "برچسب Best ریید",
+       "x": "برچسب Best منبع برای Raid و Raid Cleave و طبق صفحهٔ تلنت قوی‌ترین گزینه در تک‌هدف و Mythic+؛ حول تلنت‌هایی می‌چرخد که مستقیم [[Wither]] را قوی می‌کنند و [[Malevolence]] کول‌داون یک‌دقیقه‌ای‌اش است."
+      },
+      {
+       "title": "Soul Harvester",
+       "tag": "برچسب Best Mythic+",
+       "x": "برچسب Best منبع برای Mythic+ و Delves؛ [[Dark Harvest]] موتور دمیجش است و هر 35 تا 40 ثانیه 3 [[Soul Shard]] می‌دهد با CDR بر اساس خرج‌کردن شارد. صفحهٔ overview به‌طور کلی سولهاروستر را مقدم می‌داند و دو صفحه منبع کمی ناهم‌خوان‌اند."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Affliction Warlock در پچ 12.1.5 دو درخت قهرمانی دارد: Hellcaller و Soul Harvester؛ هر جدول چهار ردیف کد دارد: Raid، Raid Cleave، Mythic+ و Delves و ردیف Mythic+ هر دو هرو همان کد Delves را دارد. صفحهٔ تلنت می‌گوید هلکالر الان در تک‌هدف و Mythic+ قوی‌ترین است و بهترین گزینهٔ کلی؛ صفحهٔ overview اما سولهاروستر را مقدم می‌داند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Hellcaller (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZhhZmZmlBAAYmZZWmZmlxAAWgBmFjGzAysAWGAAAmBAAmZAzMjxYGmZMzMGMzMzAAmBG"
+      },
+      {
+       "title": "Hellcaller (Raid Cleave)",
+       "tag": "بهترین برای Raid Cleave",
+       "x": "برچسب Best منبع برای کِلیو ریید.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMmZGNbM2mZGzyAAAmZmlZxMzyYAALwAziRjZAZ2ALDAAAzAAAzMYMjZmtxwYmZmZYYmZGAgZgB"
+      },
+      {
+       "title": "Hellcaller (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+ هلکالر؛ کدش همان بیلد Delves است.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMmZGNbM2MzMzyAAAmZmlZZmZWGDAYBGYWMaMDIzCYZAAAwAAAzMYMjZmNwMzYmxMDzMzAAMDMA"
+      },
+      {
+       "title": "Hellcaller (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMmZGNbM2MzMzyAAAmZmlZZmZWGDAYBGYWMaMDIzCYZAAAwAAAzMYMjZmNwMzYmxMDzMzAAMDMA"
+      },
+      {
+       "title": "Soul Harvester (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد ریید سولهاروستر.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZhhZmZmlBAAYmZZ2mZmlxAAjllBGwEMDbBG2GAAAmBAAwMDzMjBzwMzMzMGMzMzAAmBG"
+      },
+      {
+       "title": "Soul Harvester (Raid Cleave)",
+       "tag": "آلترناتیو Raid Cleave",
+       "x": "بیلد کِلیو ریید سولهاروستر.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZhhZmZmlBAAYmZZ2mZmlxAAjllBGwEMDbBG2GAAAmBAAwMDzMjBzwMzMzMGMzMzAAmBG"
+      },
+      {
+       "title": "Soul Harvester (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMMzoZzMz2MzYWGAAwMmlZZmZWGDAM22GYATwMsFYYbAAAYAAAYmZmZMjNmxMzMzMMDzMzAAMgB"
+      },
+      {
+       "title": "Soul Harvester (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves؛ کدش همان بیلد Mythic+ است.",
+       "code": "CkQAAAAAAAAAAAAAAAAAAAAAAwMMzoZzMz2MzYWGAAwMmlZZmZWGDAM22GYATwMsFYYbAAAYAAAYmZmZMjNmxMzMzMMDzMzAAMgB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=warlock&spec=affliction",
+     "x": "مشاهده تمام تلنت‌های Affliction Warlock"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "هستهٔ بازی یک چرخهٔ سادهٔ generator و spender است با چند قاعده: [[Soul Shards]] را کپ نکن (سقف 5 است و کپ‌شدن یعنی دمیج از دست رفته مگر قبل از پنجرهٔ دمیج جمع کنی)؛ به پروک‌ها واکنش نشان بده ([[Shard Instability]] و [[Nightfall]] مرتب می‌آیند)."
+    },
+    {
+     "t": "p",
+     "x": "پنجره‌های دمیج تو [[Summon Darkglare]] هر 2 دقیقه است (و [[Malevolence]] هر 1 دقیقه با هلکالر): شارژها را برایش جمع کن، ولی [[Unstable Affliction]] را هم نگه دار. [[Dark Harvest]] شارد اضافه می‌دهد و کول‌داونش با خرج‌کردن شارد کم می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف (Hellcaller)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Haunt]] را کست کن.",
+      "[[Agony]] را کست کن.",
+      "[[Wither]] را کست کن.",
+      "[[Dark Harvest]] را بزن.",
+      "[[Summon Darkglare]] را احضار کن.",
+      "[[Malevolence]] را بزن.",
+      "هر چه می‌توانی [[Unstable Affliction]] را کست کن.",
+      "[[Malefic Grasp]] را کست کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "به‌عنوان [[Soul Harvester]] همین لیست بدون [[Malevolence]] بازی می‌شود چون آن کول‌داون یک‌دقیقه‌ای مال هلکالر است؛ موتور تو [[Dark Harvest]] با تولید شارد است."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Seed of Corruption]] را کست کن.",
+      "[[Haunt]] را روی هدف اولویت‌دار بزن.",
+      "[[Agony]] را روی چند هدف بگذار.",
+      "[[Summon Darkglare]] را احضار کن.",
+      "[[Malevolence]] را بزن (هلکالر).",
+      "[[Dark Harvest]] را بزن.",
+      "هر چه می‌توانی [[Seed of Corruption]] را کست کن.",
+      "[[Drain Soul]] یا [[Shadow Bolt]] را کست کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بازی AoEات حول کست هرچه بیشتر [[Seed of Corruption]] می‌چرخد با نگه‌داشتن چند [[Agony]] و زدن [[Dark Harvest]] روی کول‌داون؛ پروک‌های [[Nightfall]] را در پنجرهٔ AoE بباف (در 12.1 Seed به [[Shard Instability]] اضافه شده است)."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Haunt]] را پریکست کن.",
+      "[[Agony]] را روی پول بگذار.",
+      "[[Wither]] را کست کن.",
+      "[[Dark Harvest]] را بزن.",
+      "[[Summon Darkglare]] را احضار کن.",
+      "[[Malevolence]] را بزن (هلکالر).",
+      "هر چه می‌توانی [[Unstable Affliction]] را کست کن.",
+      "[[Malefic Grasp]] را کست کن و به اولویت عادی برو."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اوپنر سولهاروستر هم همین است بدون [[Malevolence]] و با [[Corruption]] به‌جای [[Wither]]. قبل از فایت هم باف غذا و روغن بزن، پت را احضار کن، با [[Create Soulwell]] [[Healthstone]] بده، [[Demonic Circle]] و [[Demonic Gateway]] را در جای مناسب بگذار و تلنت‌هایت را برای باس چک کن."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Summon Darkglare",
+       "x": "کول‌داون اصلی 2 دقیقه‌ای: دمیج DoTهای فعال را 20% بالا می‌برد؛ پس قبل از زنجیرهٔ [[Unstable Affliction]] بزن تا کل مدت UAها زیر باف باشد."
+      },
+      {
+       "s": "Dark Harvest",
+       "x": "تقریباً روی کول‌داون بزن مگر بخواهی [[Soul Shards]] را کپ کنی؛ فقط به‌عنوان [[Soul Harvester]] شارد می‌سازد و به پنجرهٔ [[Summon Darkglare]] سینکش کن."
+      },
+      {
+       "s": "Malevolence",
+       "x": "کول‌داون 1 دقیقه‌ای هلکالر؛ جمع‌کردن و خرج‌کردن منابع حولش."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "پاندمیک DoTهایت: [[Agony]] 4.5 ثانیه و [[Corruption]]/[[Wither]] 4.2 ثانیه. تازه‌کردن قبل از پنجرهٔ پاندمیک ضرر کوچکی است ولی تازه‌کردن در حین حرکت سود است: اسپک تو فوق‌العاده موبایل است."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "قاعدهٔ کلی استت Haste > Critical Strike > Mastery > Versatility است و هیچ‌وقت ارزش [[Intellect]] را دست‌کم نگیر: جهش بزرگ Item Level معمولاً از استت بهینه بهتر است. افلیکشن ترکیب همهٔ استت‌های ثانویه را می‌پسندد ولی Haste و Crit را ترجیح می‌دهد و Item Level ارزش تیکه را خیلی جابه‌جا می‌کند."
+    },
+    {
+     "t": "call",
+     "x": "برای مقدار دقیق با Raidbots سیم بزن؛ جدول‌های هر دو هرو یکسان‌اند."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 245769
+      },
+      {
+       "slot": "سر",
+       "id": 271874
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271544
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271549
+      },
+      {
+       "slot": "دستبند",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271547
+      },
+      {
+       "slot": "کمر",
+       "id": 251222
+      },
+      {
+       "slot": "پا",
+       "id": 271545
+      },
+      {
+       "slot": "کفش",
+       "id": 268255
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 273649
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271549
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        281215,
+        273649
+       ],
+       "names": [
+        "Twisted Horror's Tendril",
+        "Stormbound Emblem of Dazar"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Damned Necrolyte's Shattered Restraints: 2 تیکه دمیج [[Wither]] یا [[Corruption]] را 25% و [[Agony]] را 15% بالا می‌برد. 4 تیکه به‌ازای هر [[Unstable Affliction]] فعال 2% (تا سقف 6%) به دمیج کل اسپل‌ها و ابیلیتی‌ها اضافه می‌کند و [[Seed of Corruption]] روی هدف با اثر 20% UA می‌گذارد؛ بیشتر قدرت ست پشت همین 4 تیکهٔ انباشتی است."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Venomkeeper's Horrific Cowl (سر)، Brood Cleanser's Amice (شانه)، Primordial Robe of Rites (سینه)، Grasps of the Eternal Shadow (دست) و Leggings of Entwined Serpents (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Aln'hara Lantern (Off-Hand) و Martyr's Bindings (دستبند) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Critical Strike",
+      "Mastery",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] روی پارچه است و Spell Power را بالا می‌برد؛ بعدش Haste و بعد Critical Strike."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Mastery]] دمیج DoTها و افکت‌های Affliction را درصدی بالا می‌برد.",
+      "Critical Strike شانس اثر اضافه روی حمله‌ها را می‌دهد.",
+      "ترکیب همهٔ استت‌های ثانویه برای افلیکشن قابل قبول است ولی Haste و Crit جلوترند و Item Level ارزش تیکه را زیاد جابه‌جا می‌کند."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Affliction Warlock در Midnight Season 2؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights یا Flask of the Magisters",
+       "ids": [
+        241324,
+        241322
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "جدول منبع [[Flask of the Blood Knights]] را فهرست کرده و متنش [[Flask of the Magisters]] را بهترین می‌داند؛ بسته به وزن استت‌هایت انتخاب کن."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در پنجرهٔ [[Summon Darkglare]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Jan'alai's Precision",
+       "ids": [
+        243970
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Flight of the Eagle",
+       "ids": [
+        243960
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ شانهٔ این اسپک [[Enchant Shoulders - Flight of the Eagle]] است."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Quick Garnet، Flawless Deadly Amethyst، Flawless Masterful Peridot",
+       "ids": [
+        240905,
+        240897,
+        240891
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Indecipherable Eversong Diamond]] و بقیهٔ سوکت‌ها بین گارنت و آمتیست و پریدوت بسته به نیاز استت."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Affliction Warlock در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "[[Soul Harvester]] برچسب Best منبع برای Mythic+ را دارد و هلکالر در تک‌هدف نزدیک است. کِلیو انبوه با کول‌داون‌های کوتاه نقطهٔ قوت توست و رَمپ بالا و تعویض کند هدف نقطهٔ ضعف؛ روی پک‌های چسبیده بمان و [[Seed of Corruption]] را باران کن."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "هر چه می‌توانی [[Seed of Corruption]] کست کن و [[Agony]] را روی چند هدف نگه دار.",
+      "پروک‌های [[Nightfall]] را در پنجرهٔ AoE بباف؛ [[Shard Instability]] حالا [[Seed of Corruption]] رایگان هم می‌دهد.",
+      "[[Soul Shards]] را در سقف 5 کپ نکن و فقط قبل از پنجرهٔ [[Summon Darkglare]] جمع کن.",
+      "[[Haunt]] را روی هدف اولویت‌دار نگه دار و بقیه را DoTها انجام می‌دهند.",
+      "با [[Demonic Gateway]] و [[Soulstone]] ابزار اسکیپ و نجات گروه را همیشه آماده داشته باش."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در حرکت هم محصول تولید می‌کنی: DoTها را هنگام جابه‌جایی تازه کن؛ این مزیت اصلی افلیکشن در دانجن‌های پرحرکت است."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Affliction Warlock (افلیکشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل افلیکشن (Affliction Warlock) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Affliction Warlock talent build midnight",
+   "Affliction Warlock guide midnight",
+   "Affliction Warlock guide 12.1.5",
+   "best Affliction Warlock talents",
+   "Affliction Warlock talent tree midnight",
+   "Affliction Warlock pve guide",
+   "Affliction Warlock rotation midnight",
+   "Affliction Warlock rotation and cooldowns",
+   "Affliction Warlock bis list midnight",
+   "Affliction Warlock best in slot",
+   "Affliction Warlock gear guide",
+   "Affliction Warlock food and potion",
+   "best food for Affliction Warlock",
+   "best flask for Affliction Warlock",
+   "best potion for Affliction Warlock",
+   "Affliction Warlock enchants and gems",
+   "best enchants for Affliction Warlock",
+   "best gems for Affliction Warlock",
+   "Affliction Warlock stat priority midnight",
+   "Affliction Warlock tier set midnight",
+   "Affliction Warlock tier set bonuses",
+   "Affliction Warlock mythic+ guide",
+   "Affliction Warlock m+ guide midnight",
+   "Affliction Warlock raid guide",
+   "Affliction Warlock hero talents",
+   "Affliction Warlock hero tree",
+   "best dps build Affliction Warlock midnight",
+   "Affliction Warlock cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای افلیکشن",
+   "تلنت افلیکشن",
+   "تلنت برای Affliction Warlock",
+   "تلنت Warlock افلیکشن",
+   "بیلد افلیکشن",
+   "بیلد تلنت افلیکشن میدنایت",
+   "روتیشن افلیکشن",
+   "روتیشن و کول‌داون‌های افلیکشن",
+   "غذا برای افلیکشن",
+   "غذا برای Affliction Warlock",
+   "غذا و معجون افلیکشن",
+   "بهترین غذای افلیکشن",
+   "فلسک افلیکشن",
+   "بهترین فلسک برای افلیکشن",
+   "معجون افلیکشن",
+   "انچنت افلیکشن",
+   "انچنت و جم افلیکشن",
+   "بهترین انچنت برای افلیکشن",
+   "جم افلیکشن",
+   "بست آیتم افلیکشن",
+   "بهترین آیتم‌های افلیکشن",
+   "گیر افلیکشن",
+   "استت افلیکشن",
+   "اولویت استت افلیکشن",
+   "ست تیر افلیکشن",
+   "مایتی پلاس افلیکشن",
+   "ام پلاس افلیکشن",
+   "راهنمای افلیکشن",
+   "راهنمای Affliction Warlock",
+   "راهنمای وارلاک",
+   "افلیکشن میدنایت",
+   "وارلاک میدنایت",
+   "هرو تیلنت افلیکشن",
+   "بیلد دی‌پی‌اس افلیکشن",
+   "بهترین دی‌پی‌اس میدنایت افلیکشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Affliction Warlock (افلیکشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Affliction Warlock به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای افلیکشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، معجون جنگی «Light's Potential»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای افلیکشن چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای افلیکشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Twisted Horror's Tendril» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Affliction Warlock در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

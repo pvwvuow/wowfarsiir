@@ -1,0 +1,753 @@
+{
+ "slug": "brewmaster-monk",
+ "class": "monk",
+ "class_en": "Monk",
+ "spec_en": "Brewmaster",
+ "spec_no": 1,
+ "role": "Tank",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Brewmaster Monk",
+ "lead": "Brewmaster تانک نرم‌سازی آسیب (Stagger) است: به‌جای جلوگیری از ضربه، آن را پخش و قابل مدیریت می‌کند و با Purifying Brew دفع می‌کند. دو مسیر Hero Tree داری: [[Shado-Pan]] با Flurry Strike های خودکار و [[Master of Harmony]] با Celestial Brew/Infusion و دفاع قابل تنظیم‌تر.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/overview-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/talent-builds-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/enchants-gems-pve-tank",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Stagger": {
+   "fa": "یک مکانیک منحصربه‌فرد مونک که آسیب را به آرامی دریافت می‌کند."
+  },
+  "Shado-Pan": {
+   "fa": "درخت هرو که به شما امکان می‌دهد تا با استفاده از اسپل‌های دفاعی، آسیب‌پذیری دشمنان را افزایش دهید و آسیب کمتری بگیرید."
+  },
+  "Master of Harmony": {
+   "fa": "درخت هرو که به شما امکان می‌دهد تا زمان کول‌داون اسپل‌های دفاعی خود را افزایش دهید و آسیب کمتری بگیرید."
+  },
+  "Mystic Touch": {
+   "fa": "افزایش آسیب دریافت شده از دشمنان توسط بروماستر"
+  },
+  "Windwalking": {
+   "fa": "اورای حرکتی که توسط بروماستر به گروه داده می‌شود"
+  },
+  "Touch of Death": {
+   "fa": "یک مهارت کشنده که دشمنان با سلامت پایین را از بین می‌برد و آسیب قابل توجهی وارد می‌کند."
+  },
+  "Blackout Kick": {
+   "fa": "یک ضربه قدرتمند که باف [[Blackout Combo]] را ایجاد می‌کند و بخشی از آسیب را با [[Stagger]] کاهش می‌دهد."
+  },
+  "Chi Burst": {
+   "fa": "یک مهارت رنجی که چی تولید می‌کند و به اهداف اطراف آسیب می‌زند."
+  },
+  "Celestial Brew": {
+   "fa": "یک نوشیدنی قدرتمند که آسیب را جذب می‌کند و بسته به تلنت‌ها می‌تواند درمان هم ارائه دهد."
+  },
+  "Celestial Infusion": {
+   "fa": "تلنت که به [[Celestial Brew]] قابلیت درمان اضافه می‌کند."
+  },
+  "Invoke Niuzao, the Black Ox": {
+   "fa": "یک موجود موقت قدرتمند که به شما در جنگ کمک می‌کند و آسیب قابل توجهی وارد می‌کند."
+  },
+  "Blackout Combo": {
+   "fa": "باف ایجاد شده توسط [[Blackout Kick]] که با استفاده از [[Tiger Palm]] مصرف می‌شود."
+  },
+  "Tiger Palm": {
+   "fa": "یک ضربه سریع که چی تولید می‌کند و باف [[Blackout Combo]] را مصرف می‌کند."
+  },
+  "Bring Me Another": {
+   "fa": "یک تلنت که بشکه‌های خالی ایجاد می‌کند که می‌توانید برای مهارت‌های مختلف استفاده کنید."
+  },
+  "Breath of Fire": {
+   "fa": "یک AoE که به اهداف اطراف آسیب می‌زند و باف [[Stagger]] را افزایش می‌دهد."
+  },
+  "Exploding Keg": {
+   "fa": "یک بشکه که پس از کوتاهی منفجر شده و به اهداف اطراف آسیب می‌زند."
+  },
+  "Keg Smash": {
+   "fa": "یک ضربه قدرتمند با بشکه که آسیار می‌زند و باف [[Stagger]] دشمنان را افزایش می‌دهد."
+  },
+  "Purifying Brew": {
+   "fa": "یک نوشیدنی که Stagger را پاکسازی می‌کند."
+  },
+  "Special Delivery": {
+   "fa": "یک تلنت که با مصرف [[Purifying Brew]] بشکه‌های خالی از [[Bring Me Another]] را فعال می‌کند."
+  },
+  "Shuffle": {
+   "fa": "باف ایجاد شده توسط [[Blackout Kick]] که نرخ کاهش [[Stagger]] را افزایش می‌دهد."
+  },
+  "Abyssal Broodfiend's Bardiche": {
+   "fa": "اسلحهٔ دو دسته با آیتم لول بالا برای برست مونک"
+  },
+  "Aman'muso, Warlord's Vengeance": {
+   "fa": "اسلحهٔ یک دسته که در جفت با اسلحه‌های دیگر استفاده می‌شود"
+  },
+  "Slithering Savage's Gavel": {
+   "fa": "اسلحهٔ یک دسته که در جفت با Aman'muso استفاده می‌شود"
+  },
+  "Flurry Strikes": {
+   "fa": "ضربات سریع و متعدد که به صورت خودکار پس از استفاده از Keg Smash فعال می‌شود."
+  },
+  "Leg Sweep": {
+   "fa": "یک اسپل کنترل جمعیت که دشمنان را زمین‌گیر می‌کند."
+  },
+  "Ring of Peace": {
+   "fa": "یک حلقه آرامش که دشمنان را از داخل آن دور می‌کند."
+  },
+  "Paralysis": {
+   "fa": "یک اسپل کنترل فردی که هدف را فلج می‌کند."
+  },
+  "Transcendence": {
+   "fa": "یک اسپل که به شما اجازه می‌دهد یک پورت ایجاد کنید."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Brewmaster تانک نرم‌سازی آسیب (Stagger) است: به‌جای جلوگیری از ضربه، آن را پخش و قابل مدیریت می‌کند و با Purifying Brew دفع می‌کند. دو مسیر Hero Tree داری: [[Shado-Pan]] با Flurry Strike های خودکار و [[Master of Harmony]] با Celestial Brew/Infusion و دفاع قابل تنظیم‌تر."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "سازگاری",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دسترسی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "نقشه راه",
+       "v": "خوب",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "مقاومت بالا با Stagger و Shuffle",
+       "انعطاف‌پذیری دفاعی با انتخاب‌های تلنت",
+       "حرکت سریع با Roll و Tiger's Lust",
+       "منحصربه‌فرد بودن با Mystic Touch و Windwalking",
+       "کارایی بالا در موقعیت‌های مختلف با Paralysis و Ring of Peace"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "پیچیدگی بالا در مدیریت کلیدها",
+       "حجم سلامت کم در میان تانک‌ها",
+       "جریمه سنگین برای اشتباهات"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Shado-Pan",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "درخت تلنت Shado-Pan بیشتر به دامنه‌ی دفاعی و پایداری تمرکز دارد و برای بیشتر موقعیت‌های بازی مناسب است."
+      },
+      {
+       "title": "Master of Harmony",
+       "tag": "گزینه جایگزین",
+       "x": "درخت Master of Harmony بهبودهای منفردی روی اسپل‌های دفاعی اصلی ارائه می‌دهد و در شرایط خاص می‌تواند مفید باشد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای واریر بیرو، دو درخت اصلی تلنت وجود دارد: Shado-Pan و Master of Harmony. هر دو درخت در موقعیت‌های مختلف عملکرد خوبی دارند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Shado-Pan (Mythic+)",
+       "tag": "بهترین",
+       "x": "این ساختار برای Mythic+ بسیار مناسب است و تمرکز بر افزایش آسیب‌پذیری دشمنان و افزایش دفاع شخصی دارد.",
+       "code": "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMLbGDzwyM2MmZMAAAAAAALLgYmBmhBzgZmZGzsNMjZWGW2stNbzYWAAgNEAAgZbWamZmNG2AYmhpxAGAwA"
+      },
+      {
+       "title": "Shado-Pan (Raid)",
+       "tag": "استاندارد",
+       "x": "این ساختار برای حالت رید استاندارد مناسب است و بر کاهش آسیب‌پذیری گروه و افزایش آسیب‌پذیری باس‌ها تمرکز دارد.",
+       "code": "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGPwYWM2mxMDAAAAAAALLYEmBmhxmZMmZmZMzywMmZZYZzy2sNMLAAwGCAAwsNLNzMziZYDgZGmGDAAYA"
+      },
+      {
+       "title": "Master of Harmony (Raid)",
+       "tag": "بهترین",
+       "x": "این ساختار برای حالت رید استاندارد بهترین عملکرد را دارد و بر افزایش زمان کول‌داون و افزایش دفاع شخصی تمرکز دارد.",
+       "code": "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGPwYWM2mxMDAAAAAAALLYEmBmhxmZMmZmZMzywMmZZYZzy2sNMLAAwysMtMbzsMAAQAmhNwMDYaMAAgB"
+      },
+      {
+       "title": "Master of Harmony (Delves/Open World)",
+       "tag": "بهترین",
+       "x": "این ساختار برای حالت دلوز و دنیای باز بهترین عملکرد را دارد و بر افزایش زمان کول‌داون و افزایش دفاع شخصی تمرکز دارد.",
+       "code": "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZZzYGzwyM2MmZMAAAAAAALLgYmBmhBzgZmZGzsNMjZWGW2ssNbzYWAAglZZaZ2mZZAAgAYYDMzAmGDYAAD"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=monk",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ جنگ برای برست مونک در حالت تک‌هدف بر بهینه‌سازی استقامت و کنترل آسیب متمرکز است."
+    },
+    {
+     "t": "p",
+     "x": "استراتیاس اصلی شامل حفظ بار اسکیپ، مدیریت چرخهٔ برست‌های آسمانی و استفاده هوشمندانه از مهارت‌های کلیدی است."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت‌های چرخه"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اجرای [[Touch of Death]] بر روی دشمنان با سلامت پایین",
+      "استفاده از [[Blackout Kick]] برای فعال‌سازی [[Blackout Combo]]",
+      "تابش [[Chi Burst]] برای تولید چی و آسیب",
+      "مصرف یکی از بارهای [[Celestial Brew]] یا [[Celestial Infusion]] فقط برای آسیب اضافی در دو بار",
+      "فعال‌سازی [[Invoke Niuzao, the Black Ox]]",
+      "مصرف باف [[Blackout Combo]] با [[Tiger Palm]]",
+      "مصرف یک بشکه خالی از [[Bring Me Another]]",
+      "تابش [[Breath of Fire]]",
+      "قرار دادن [[Exploding Keg]]",
+      "استفاده از یکی از بارهای [[Keg Smash]]",
+      "در صورت دریافت آسیب کم، استفاده از بار اضافی [[Purifying Brew]] برای فعال‌سازی [[Special Delivery]] یا بشکه‌های خالی",
+      "استفاده از [[Tiger Palm]] زمانی که مهارت دیگری برای فشار وجود ندارد"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در حالت چندهدفه، اولویت‌ها مشابه تک‌هدف است اما با تمرکز بر پاک‌سازی گروهی. با دو بار [[Keg Smash]]، اولین بار (یا یک بشکه خالی) را قبل از [[Exploding Keg]] و دومین بار را بعد از آن مصرف کنید. [[Breath of Fire]] همچنان در لیست بالا برای آسیب پاک قرار دارد."
+    },
+    {
+     "t": "p",
+     "x": "مدیریت [[Stagger]] بخش جدایی‌ناپذیر چرخهٔ دفاعی است. [[Stagger]] آسیب فیزیکی را به بخش فوری و یک دام (DoT) تقسیم می‌کند که می‌توانید آن را پاک‌سازی کنید. [[Shuffle]] (از طریق [[Blackout Kick]]) بخش معوق را کاهش می‌دهد. زمانی که آسیب معوق به سطوح خطرناک نزدیک می‌شود، آن را پاک کنید، نه بر اساس زمان کول‌داون."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 268215
+      },
+      {
+       "slot": "سلاح",
+       "id": 268209
+      },
+      {
+       "slot": "سلاح",
+       "id": 268206
+      },
+      {
+       "slot": "سر",
+       "id": 271519
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271517
+      },
+      {
+       "slot": "شنل",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271522
+      },
+      {
+       "slot": "مچ",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271520
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271518
+      },
+      {
+       "slot": "چکمه",
+       "id": 272240
+      },
+      {
+       "slot": "انگشتر",
+       "id": 251148
+      },
+      {
+       "slot": "انگشتر",
+       "id": 251513
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270160
+      },
+      {
+       "slot": "ترینکت",
+       "id": 159617
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در گیرینگ، سطح آیتم (Agility) بر بهینه‌سازی ثانویه ارجحیت دارد؛ در سطح برابر، Critical Strike = Versatility = Mastery > Haste. اولویت با اسلحهٔ سطح بالا، سپس ست تیر و ترینکت‌های مورد نظر است؛ برای فیلرها از آیتم‌های سفارشی بدون تزئین استفاده کنید. برای محاسبهٔ داماز، از شبیه‌سازی استفاده نمایید."
+    },
+    {
+     "t": "call",
+     "x": "در شبزن دوم مید‌نایت، یک اسلحهٔ دو دسته ارزش کلی بیشتری دارد."
+    },
+    {
+     "t": "h3",
+     "x": "اسلحه‌ها"
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Critical Strike",
+      "Versatility",
+      "Mastery",
+      "Haste"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای برست مانک، اسپک اصلی آجیلیتی است که به تمام استت‌های دیگر قدرت می‌بخشد."
+    },
+    {
+     "t": "p",
+     "x": "در سطح آیتم‌های یکسان، اولویت استت‌ها به این صورت است: کریتیکال استرایک = ورساتیلتی = ماستری > هیست."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون",
+       "v": "Flask of Thalassian Resistance",
+       "ids": [
+        241320
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون جنگی",
+       "v": "Liquid Luster",
+       "ids": [
+        271886
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion / Healthstone",
+       "ids": [
+        271883
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "افزونه سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei (2h and dual-wield)",
+       "ids": [
+        244028
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "غذا",
+       "v": "(Hearty) Silvermoon Parade",
+       "ids": [
+        255845
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "غذا شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Deadly Lapis, Flawless Versatile Garnet",
+       "ids": [
+        240913,
+        240909
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Deadly Amethyst (higher gear)",
+       "ids": [
+        240897
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تخمین سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تخمین شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تخمین سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تخمین پا",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تخمین حلقه",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پتشن Thalassian Resistance مقاومت در برابر آسیب‌های جادویی را افزایش می‌دهد که در برابر باس‌های Midnight Season 2 بسیار مفید است."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "میت‌پلاس برای بروماستر مونک"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "برای میت‌پلاس، درخت Shado-Pan بهترین گزینه است زیرا Flurry Strikes خودکار برای مدیریت گروه‌ها مناسب است.",
+      "Leg Sweep و Ring of Peace کنترل استخراج عالی هستند و Paralysis برای کنترل کاسترهای خطرناک کاربرد دارد.",
+      "مهم‌ترین نکته در Purifying Brew این است که Stagger را در زمان کشتارهای بزرگ از حالت زرد/قرمز نگه دارید.",
+      "استفاده از Transcendence برای حل بسیاری از مکانیک‌های دونژن بدون نیاز به حرکت اضافی بسیار مؤثر است."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "فصل Midnight Season 2"
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Brewmaster Monk (برومستر) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل برومستر (Brewmaster Monk) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Brewmaster Monk talent build midnight",
+   "Brewmaster Monk guide midnight",
+   "Brewmaster Monk guide 12.1.5",
+   "best Brewmaster Monk talents",
+   "Brewmaster Monk talent tree midnight",
+   "Brewmaster Monk pve guide",
+   "Brewmaster Monk rotation midnight",
+   "Brewmaster Monk rotation and cooldowns",
+   "Brewmaster Monk bis list midnight",
+   "Brewmaster Monk best in slot",
+   "Brewmaster Monk gear guide",
+   "Brewmaster Monk food and potion",
+   "best food for Brewmaster Monk",
+   "best flask for Brewmaster Monk",
+   "best potion for Brewmaster Monk",
+   "Brewmaster Monk enchants and gems",
+   "best enchants for Brewmaster Monk",
+   "best gems for Brewmaster Monk",
+   "Brewmaster Monk stat priority midnight",
+   "Brewmaster Monk tier set midnight",
+   "Brewmaster Monk tier set bonuses",
+   "Brewmaster Monk mythic+ guide",
+   "Brewmaster Monk m+ guide midnight",
+   "Brewmaster Monk raid guide",
+   "Brewmaster Monk hero talents",
+   "Brewmaster Monk hero tree",
+   "best dps build Brewmaster Monk midnight",
+   "Brewmaster Monk cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای برومستر",
+   "تلنت برومستر",
+   "تلنت برای Brewmaster Monk",
+   "تلنت Monk برومستر",
+   "بیلد برومستر",
+   "بیلد تلنت برومستر میدنایت",
+   "روتیشن برومستر",
+   "روتیشن و کول‌داون‌های برومستر",
+   "غذا برای برومستر",
+   "غذا برای Brewmaster Monk",
+   "غذا و معجون برومستر",
+   "بهترین غذای برومستر",
+   "فلسک برومستر",
+   "بهترین فلسک برای برومستر",
+   "معجون برومستر",
+   "انچنت برومستر",
+   "انچنت و جم برومستر",
+   "بهترین انچنت برای برومستر",
+   "جم برومستر",
+   "بست آیتم برومستر",
+   "بهترین آیتم‌های برومستر",
+   "گیر برومستر",
+   "استت برومستر",
+   "اولویت استت برومستر",
+   "ست تیر برومستر",
+   "مایتی پلاس برومستر",
+   "ام پلاس برومستر",
+   "راهنمای برومستر",
+   "راهنمای Brewmaster Monk",
+   "راهنمای مانک",
+   "برومستر میدنایت",
+   "مانک میدنایت",
+   "هرو تیلنت برومستر",
+   "بیلد برومستر",
+   "بهترین برومستر"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Brewmaster Monk (برومستر) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Brewmaster Monk به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای برومستر چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: معجون جنگی «Liquid Luster»، غذا «Silvermoon Parade»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای برومستر چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Acuity of the Ren'dorei»، جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای برومستر کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Brewmaster Monk در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

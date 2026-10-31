@@ -1,0 +1,949 @@
+{
+ "slug": "protection-warrior",
+ "class": "warrior",
+ "class_en": "Warrior",
+ "spec_en": "Protection",
+ "spec_no": 3,
+ "role": "tank",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Protection Warrior",
+ "lead": "بازی Protection Warrior تانک اصلی وارکرافت است: شمشیر و سپر با سبک تهاجمی که هرچه بیشتر بجنگی قوی‌تر می‌شوی. دفاع تو روی Block سوار است و [[Shield Block]] قوی‌ترین مکانیزم کاستن دمیج بازی است؛ با [[Spell Reflection]] هم ضعف‌هایت را در Mythic+ به قدرت تبدیل می‌کنی. دو مسیر Hero Tree داری: [[Mountain Thane]] که برچسب Best منبع را برای Raid و Mythic+ دارد و [[Colossus]] با [[Demolish]] که Best Delves را دارد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warrior/protection/overview-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warrior/protection/talent-builds-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warrior/protection/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warrior/protection/stat-priority-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warrior/protection/enchants-gems-pve-tank",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Rage": {
+   "fa": "منبع پروتکت که با [[Shield Slam]] و اتواک و ابلیتی‌ها ساخته می‌شود و اضافه‌اش داخل [[Ignore Pain]] می‌رود."
+  },
+  "Shield Slam": {
+   "fa": "ضربهٔ اصلی با بیشترین رِیج و تریت و دمیج؛ همیشه وقتی آماده است بزن."
+  },
+  "Thunder Clap": {
+   "fa": "ضربهٔ AoE که [[Rend]] را هم اعمال می‌کند."
+  },
+  "Revenge": {
+   "fa": "ضربه‌ای که با داج و پَری و اتواک رایگان می‌شود؛ در 12.1 20% قوی‌تر شده است."
+  },
+  "Ignore Pain": {
+   "fa": "سپر رِیج‌سوز که مخزن دمپ گیر توست؛ 25% قوی‌تر شده در 12.1."
+  },
+  "Shield Block": {
+   "fa": "قوی‌ترین مکانیزم کاستن دمیج بازی؛ بلاک مله با اپتایم 100%."
+  },
+  "Spell Reflection": {
+   "fa": "بازتاب اسپل‌ها که در Mythic+ هم دفاع است هم دمیج."
+  },
+  "Shield Wall": {
+   "fa": "دفاع بزرگ برای صاف‌کردن دمیج."
+  },
+  "Demoralizing Shout": {
+   "fa": "کول‌داون مکرر کاهش‌دهندهٔ دمیج دشمن."
+  },
+  "Shield Charge": {
+   "fa": "کول‌داون تهاجمی با شارژ به داخل پک."
+  },
+  "Avatar": {
+   "fa": "کول‌داون هر‌دقیقه‌ای که دمیج کل را بالا می‌برد."
+  },
+  "Ravager": {
+   "fa": "در 12.1: دشمنانِ داخلش 12 ثانیه 50% دمیج بیشتر از خونریزی می‌خورند."
+  },
+  "Execute": {
+   "fa": "فینیشر زیر 20% سلامتی (35% با تلنت)."
+  },
+  "Impending Victory": {
+   "fa": "سلف‌هیل که با سلامتی کم می‌ارزد."
+  },
+  "Fueled by Violence": {
+   "fa": "تلنتی که 125% دمیج خونریزی را شفا می‌دهد."
+  },
+  "Brutal Vitality": {
+   "fa": "تلنتی که 10% دمیج را به [[Ignore Pain]] اضافه می‌کند."
+  },
+  "Devastating Focus": {
+   "fa": "تلنتی که [[Execute]] روی هدف اصلی را هم تقویت می‌کند."
+  },
+  "Battle Shout": {
+   "fa": "باف گروهی که قبل از هر فایتی باید فعال باشد."
+  },
+  "Charge": {
+   "fa": "گپ‌کلوزر همیشگی تو."
+  },
+  "Heroic Leap": {
+   "fa": "پرش جابجایی برای صفرکردن downtime."
+  },
+  "Rallying Cry": {
+   "fa": "کول‌داون دفاعی رییدگستردهٔ واریر."
+  },
+  "Intimidating Shout": {
+   "fa": "ترس انبوه واریر."
+  },
+  "Mountain Thane": {
+   "fa": "درخت قهرمانی طوفان؛ برچسب Best ریید و Mythic+."
+  },
+  "Colossus": {
+   "fa": "درخت قهرمانی [[Demolish]]‌محور؛ برچسب Best Delves."
+  },
+  "Storm Shield": {
+   "fa": "افزودهٔ مانتن‌تین به کیت."
+  },
+  "Demolish": {
+   "fa": "کانال سنگین کولاسوس با کول‌داون کوتاه."
+  },
+  "Berserker Stance": {
+   "fa": "استنس درست برای شروع فایت."
+  },
+  "Aman'muso, Warlord's Vengeance": {
+   "fa": "سلاح BiS فصل از The Coiled Altar."
+  },
+  "Venom-Slashed Scuteward": {
+   "fa": "سپر BiS فصل از The Lost Explorers."
+  },
+  "Jade Warlord's Dominion": {
+   "fa": "ست تیر فصل واریر؛ 2 تیکه رِیونج رایگان و 4 تیکه خونریزی و کاهش CD [[Ravager]]."
+  },
+  "Corroded Hulk's Skullcap": {
+   "fa": "کلاه BiS فصل از Kithix و گزینهٔ Catalyst."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Spellbreaker's Bracers": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Girdle of Toxic Regret": {
+   "fa": "کمربند BiS فصل از The Coiled Altar."
+  },
+  "Spellbreaker's March": {
+   "fa": "کفش Crafted فصل که در BiS هم هست."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر BiS فصل از Sszorak."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر دوم BiS فصل از Kith'ix."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت BiS فصل از The Coiled Altar."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت دوم BiS فصل از Ula'tek."
+  },
+  "Raging Pauldrons of the Jade Warlord": {
+   "fa": "شانهٔ ست فصل."
+  },
+  "Cuirass of the Jade Warlord": {
+   "fa": "سینهٔ ست فصل."
+  },
+  "Jeweled Gauntlets of the Jade Warlord": {
+   "fa": "دستکش ست فصل."
+  },
+  "Chausses of Unbound Rancor": {
+   "fa": "شلوار BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Cinderfury Shoulderguards": {
+   "fa": "گزینهٔ Catalyst شانه از Murder Row."
+  },
+  "Reckless Spirit Breastplate": {
+   "fa": "گزینهٔ Catalyst سینه از The Coiled Altar."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "فلاسک بهترین فصل."
+  },
+  "Draught of Rampant Abandon": {
+   "fa": "پاتشن مبارزهٔ فصل (گزینهٔ اول)."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ فصل (گزینهٔ دوم)."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Silvermoon Parade": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast فصل."
+  },
+  "Enchant Weapon - Berserker's Rage": {
+   "fa": "افزونهٔ سلاح فصل برای Protection."
+  },
+  "Enchant Helm - Empowered Blessing of Speed": {
+   "fa": "افزونهٔ سر فصل برای Protection."
+  },
+  "Enchant Shoulders - Akil'zon's Swiftness": {
+   "fa": "افزونهٔ شانه فصل برای Protection."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Farstrider's Hunt": {
+   "fa": "افزونهٔ کفش فصل برای Protection."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "افزونهٔ انگشتر فصل برای Protection."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Versatile Peridot": {
+   "fa": "جم Versatility فصل برای همهٔ سوکت‌ها."
+  },
+  "Thunderous Roar": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Uproar": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Thunderous Words": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Immovable Object": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Piercing Challenge": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Champion's Might": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Seismic Reverberation": {
+   "fa": "تلنت حذف‌شده در Midnight."
+  },
+  "Phalanx": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Javelineer": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Battlefield Commander": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Stance Mastery": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Strength": {
+   "fa": "استت اصلی واریر که Attack Power را بالا می‌برد؛ جهش‌های Item Level معمولاً از استت بهینه بهترند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Protection Warrior تانک اصلی وارکرافت است: شمشیر و سپر با سبکی مهاجم که هرچه بیشتر بجنگی قوی‌تر می‌شوی. دفاع تو روی Block سوار است و [[Shield Block]] قوی‌ترین مکانیزم کاستن دمیج بازی است که حتی بعضی حملات جادویی را هم بلاک می‌کند؛ با [[Spell Reflection]] هم در Mythic+ ضعف‌هایت را به قدرت تبدیل می‌کنی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Mountain Thane]] که با تنظیم فعلی از نظر جریان بازی، سرعت روتیشن و تولید [[Rage]] از [[Colossus]] جلوتر است و از نظر دفاعی هم ترجیح دارد؛ برچسب Best منبع برای Raid و Mythic+ را دارد. کولاسوس با روتیشن کندتر و کانال [[Demolish]] بازی می‌شود و برچسب Best Delves را دارد؛ هر دو از نظر دمیج و یوتیلیتی رقابتی‌اند."
+    },
+    {
+     "t": "p",
+     "x": "پچ 12.1 باف‌های فوق‌العاده‌ای داده: دمیج کل ابیلیتی‌ها 11% بالا رفته، [[Execute]] دوباره قابل استفاده شده، پروک‌های [[Revenge]] بیشتر شده و [[Ignore Pain]] 25% قوی‌تر است. نقطهٔ ضعف تو دمیج‌های غیرقابل بلاک مثل DoTهاست که برنامه‌ریزی کول‌داون می‌خواهد."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "دفاع مکانیکی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "ثبات دریافتی دمیج",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "دمیج",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "یوتیلیتی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "سلف‌هیل",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "کول‌داون‌های تهاجمی قوی که زیاد استفاده می‌شوند",
+       "کول‌داون‌های کوتاه روی بیشتر دفاع‌ها که با چیدمان درست مکانیک‌ها را می‌پوشانند",
+       "[[Heroic Leap]] و [[Charge]] جابجایی عالی می‌دهند",
+       "[[Shield Block]] قوی‌ترین مکانیزم کاستن دمیج بازی است",
+       "ثبات دفاعی عالی: اپتایم 100% [[Shield Block]] ممکن است"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "اگر [[Shield Block]] بیفتد یا پشتت به دشمن باشد آسیب اسپایک می‌خوری",
+       "سلف‌هیل مثل Vengeance Demon Hunter یا Blood Death Knight با دمیج دریافتی مقیاس نمی‌گیرد",
+       "مدیریت کول‌داون‌های دفاعی مهارت و شناخت فایت می‌خواهد",
+       "در برابر دمیج غیرقابل بلاک مثل DoTهای مکرر ضعیفی و باید کول‌داون‌ها را پیشاپیش برنامه‌ریزی کنی"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Mountain Thane",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Raid و Mythic+: جریان بازی، سرعت روتیشن و تولید [[Rage]] بهتری دارد و از نظر دفاعی هم ترجیح می‌گیرد. قدرت آذرخش را فرا می‌خواند و [[Storm Shield]] هم اضافه می‌کند."
+      },
+      {
+       "title": "Colossus",
+       "tag": "برچسب Best Delves",
+       "x": "روی قدرت خام ماهیچه‌های خودت تمرکز دارد و [[Demolish]] را می‌دهد؛ روتیشن کندتری دارد که بسته به سلیقه ممکن است بهتر یا بدتر حس شود. از نظر دمیج و یوتیلیتی رقابتی است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Protection Warrior در پچ 12.1.5 دو درخت قهرمانی دارد: Mountain Thane و Colossus؛ هر جدول سه ردیف کد دارد: Raid، Mythic+ و Delves و ردیف Delves هر دو هرو همان کد Mythic+ است. مانتن‌تین برچسب Best ریید و Mythic+ را دارد و کولاسوس برچسب Delves را."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Mountain Thane (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید.",
+       "code": "CkEAAAAAAAAAAAAAAAAAAAAAA0yAAAzMzYmZGzY2MzsMjxYmGmZYZMzMDzYmBAAAAbDAzYAGYD2WMaMDgZLmZDmxMDmNAYmBAgBMG"
+      },
+      {
+       "title": "Mountain Thane (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ کدش همان بیلد Delves است.",
+       "code": "CkEAAAAAAAAAAAAAAAAAAAAAAkBAAGzYmZmZmxsZmZZGjxImxwyMzMzYGmZAAAAwyMDwMGgB2glFjGzAYWiZ2AmZGGbAwMDAAzAjB"
+      },
+      {
+       "title": "Mountain Thane (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CkEAAAAAAAAAAAAAAAAAAAAAAkBAAGzYmZmZmxsZmZZGjxImxwyMzMzYGmZAAAAwyMDwMGgB2glFjGzAYWiZ2AmZGGbAwMDAAzAjB"
+      },
+      {
+       "title": "Colossus (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد ریید کولاسوس.",
+       "code": "CkEAAAAAAAAAAAAAAAAAAAAAA0yAAAzMDzMzMzMzmxsMjxYmGmZGLjZmZYGzMAAAAYZAYGDAsZGDbkBmhFaMzCMDzgZDAwMDAYAjB"
+      },
+      {
+       "title": "Colossus (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+ کولاسوس.",
+       "code": "CkEAAAAAAAAAAAAAAAAAAAAAA0yAAAjZYmZmZGzmZmlZMGz0YGzYZMzMDzYmBAAAALDAzYAgNzYYjMwMsQjZWgZGzgZDAwMDAYAjB"
+      },
+      {
+       "title": "Colossus (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CkEAAAAAAAAAAAAAAAAAAAAAA0yAAAjZYmZmZGzmZmlZMGz0YGzYZMzMDzYmBAAAALDAzYAgNzYYjMwMsQjZWgZGzgZDAwMDAYAjB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=warrior&spec=protection",
+     "x": "مشاهده تمام تلنت‌های Protection Warrior"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "روتیشن تند و شاد است و پروک‌های مکرر دائماً تو را روی پنجه نگه می‌دارند: هرچه بیشتر [[Rage]] بسازی و خرج کنی کول‌داون‌هایت سریع‌تر می‌چرخند. سه قاعده: به پروک‌های [[Shield Slam]] واکنش نشان بده (هر وقت آماده بود بزن: بیشترین رِیج و تریت و دمیج)، [[Rage]] را زیر سقف نگه دار (اضافه‌اش را داخل [[Ignore Pain]] بریز) و کول‌داون‌ها را مدام استفاده کن ([[Avatar]] حدوداً هر دقیقه، [[Demoralizing Shout]] خیلی مکرر و [[Shield Wall]] برای صاف‌کردن دمیج)."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف و AoE (یکسان)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همیشه با [[Charge]] وارد فایت شو.",
+      "[[Demolish]] را روی کول‌داون بزن.",
+      "[[Shield Slam]] را روی کول‌داون بزن.",
+      "[[Thunder Clap]] را روی کول‌داون و برای اعمال [[Rend]] بزن.",
+      "[[Revenge]] را بزن.",
+      "اضافهٔ [[Rage]] را داخل [[Ignore Pain]] بریز.",
+      "اهداف زیر 20% سلامتی (35% با تلنت) را [[Execute]] کن.",
+      "اگر سلامتی‌ات کم است [[Impending Victory]] را بزن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "از تک‌هدف به AoE چیز زیادی عوض نمی‌شود: روتیشن تو ذاتاً AoE می‌زند ([[Thunder Clap]]، [[Revenge]] و [[Ravager]]) و همان لیست را ادامه بده. قانون Always Be Casting هم پایهٔ کار است: اگر 10 تا 20% کست‌هایت را از دست بدهی هم دمیج و هم تولید رِیج و هم CDR کم می‌آورد؛ کست‌هایت لازم نیست بی‌نقص باشند فقط روی چیزی بزن که آماده است."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همیشه با [[Charge]] وارد شو و سریع شروع به چرخاندن کول‌داون‌ها کن؛ باقی اوپنر همان اولویت است."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: [[Battle Shout]] را به گروه بزن، استنس درست را چک کن و غذا و فلاسک و روغن سلاح را مصرف کن."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Avatar",
+       "x": "کول‌داونی تقریباً هر‌دقیقه‌ای با چند امتیاز متغیر بر اساس تلنت‌ها؛ اساساً دمیج کل را بالا می‌برد و معمولاً کول‌داون [[Thunder Clap]] را کم می‌کند."
+      },
+      {
+       "s": "Demoralizing Shout",
+       "x": "کول‌داون مخلوط دفاعی/تهاجمی که خیلی زود برمی‌گردد؛ بدون ترس ازش استفاده کن."
+      },
+      {
+       "s": "Shield Charge",
+       "x": "سومین کول‌داون تهاجمی اصلی که روی کول‌داون چرخانده می‌شود."
+      },
+      {
+       "s": "Shield Block",
+       "x": "قوی‌ترین مکانیزم کاستن دمیج بازی؛ مقابل دمیج مِله اپتایم 100% نگهش دار."
+      },
+      {
+       "s": "Shield Wall",
+       "x": "دفاع بزرگ برای صاف‌کردن دمیج در لحظه‌های لازم."
+      },
+      {
+       "s": "Ravager",
+       "x": "در 12.1 بازطراحی شده: دشمنانی که می‌خورد 12 ثانیه 50% دمیج بیشتر از خونریزی‌های تو می‌خورند و ست 4 تیکه کول‌داونش را 30 ثانیه کم می‌کند."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "قاعدهٔ کلی استت Haste > Versatility = Critical Strike > Mastery است و هیچ‌وقت ارزش [[Strength]] را دست‌کم نگیر: جهش بزرگ Item Level معمولاً از استت بهینه بهتر است. دفاعاً Haste (سرعت روتیشن و رِیج) و Crit (پَری زیاد روی پول‌های بزرگ که دمیج دریافتی را خیلی کم می‌کند) اولویت‌اند؛ تهاجمی هر چهار استت ثانویه نزدیک‌اند و بسته به توزیع فعلی تو عوض می‌شوند."
+    },
+    {
+     "t": "call",
+     "x": "تمرکز تو تکمیل ست تیر و برداشتن هم ترینکت تهاجمی و هم دفاعی است (چون ممکن است برای بقا لازمشان کنی)؛ انعطاف کول‌داون ترینکت‌ها بالاست چون [[Avatar]] مدام در دسترس است. برای مقدار دقیق با Raidbots سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268209
+      },
+      {
+       "slot": "سپر",
+       "id": 268196
+      },
+      {
+       "slot": "سر",
+       "id": 281239
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271454
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271459
+      },
+      {
+       "slot": "دستبند",
+       "id": 237834
+      },
+      {
+       "slot": "دست",
+       "id": 271457
+      },
+      {
+       "slot": "کمر",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271878
+      },
+      {
+       "slot": "کفش",
+       "id": 237828
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271459
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270173,
+        270175
+       ],
+       "names": [
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Ula'tek"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Jade Warlord's Dominion: 2 تیکه [[Revenge]]های رایگان تو 15% قوی‌تر می‌زنند و [[Shield Slam]] بعدی را 20% قوی می‌کنند. 4 تیکه [[Ravager]] و رِیونج‌های رایگان باعث خونریزی 12 ثانیه‌ای همهٔ اهداف می‌شوند و کول‌داون [[Ravager]] را 30 ثانیه کم می‌کنند؛ ست پسیو است و با زحمت کمی اسپل‌های عادی روتیشن را باف می‌کند و بازی با نسخهٔ فعال [[Ravager]] را تشویق می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Corroded Hulk's Skullcap (سر)، Cinderfury Shoulderguards (شانه)، Reckless Spirit Breastplate (سینه) و Chausses of Unbound Rancor (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Spellbreaker's Bracers (دستبند) و Spellbreaker's March (کفش) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Strength",
+      "Haste",
+      "Critical Strike",
+      "Versatility",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Strength]] است؛ جدول بقا و جدول دمیج هر دو یکی‌اند: Strength > Haste > Critical Strike > Versatility > Mastery و در صفحهٔ BiS هم Haste > Versatility = Crit > Mastery بعد از Strength آمده."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Haste روتیشن و تولید [[Rage]] را سریع‌تر می‌کند.",
+      "Critical Strike پَری زیادی برای پول‌های بزرگ می‌دهد که دمیج دریافتی را سنگین کم می‌کند.",
+      "تهاجمی، هر چهار استت ثانویه نزدیک‌اند و بسته به توزیع فعلی گیرت ترتیب عوض می‌شود."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Protection Warrior در Midnight Season 2؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Silvermoon Parade",
+       "ids": [
+        255845
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بهترین فلاسک [[Flask of the Blood Knights]] است."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Draught of Rampant Abandon یا Light's Potential",
+       "ids": [
+        241292,
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را برای پول‌های سخت یا فازهای برست باس نگه دار."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Berserker's Rage",
+       "ids": [
+        243972
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Blessing of Speed",
+       "ids": [
+        243980
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Akil'zon's Swiftness",
+       "ids": [
+        243962
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Farstrider's Hunt",
+       "ids": [
+        244008
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Silvermoon's Alacrity",
+       "ids": [
+        244014
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونه‌های این اسپک مخصوص تانک است: کفش [[Enchant Boots - Farstrider's Hunt]] و سر [[Enchant Helm - Empowered Blessing of Speed]] را در بقیهٔ اسپک‌ها نمی‌بینی."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Versatile Peridot در همهٔ سوکت‌ها",
+       "ids": [
+        240893
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پرو تکت همهٔ سوکت‌ها را با [[Flawless Versatile Peridot]] پر می‌کند؛ Versatility برای تانک ارزش ویژه دارد."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Protection Warrior در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "مانتن‌تین برچسب Best منبع برای Mythic+ را دارد. [[Spell Reflection]] تو در پک‌های کست‌محور هم کاهش دمیج رایگان است و هم دمیج، [[Shield Block]] روی پک‌های مله دریافتی را نرم می‌کند و کول‌داون‌های کوتاه دفاعی‌ات با چیدمان درست تقریباً همهٔ مکانیک‌ها را می‌پوشانند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "اپتایم 100% [[Shield Block]] را مقابل دمیج مله حفظ کن؛ اگر بیفتد اسپایک می‌خوری.",
+      "[[Spell Reflection]] را پیش‌دستانه روی کست‌های پک‌گسترده استفاده کن.",
+      "اضافهٔ [[Rage]] را هر بار داخل [[Ignore Pain]] بریز تا هیچ‌وقت کپ نشود.",
+      "[[Avatar]] و [[Demoralizing Shout]] و [[Shield Charge]] را بی‌ترس بچرخان؛ زود برمی‌گردند.",
+      "مقابل دمیج DoT غیرقابل بلاک، کول‌داون‌ها را از قبل برای آن پنجره‌ها نگه دار."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "یوتیلیتی مخصوص تانک بودنت را خرج کن: [[Intimidating Shout]] و استان‌ها برای وقفه انداختن در کست‌ها و [[Rallying Cry]] برای نجات کل گروه در لحظات بحرانی."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Protection Warrior (پروتکشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل پروتکشن (Protection Warrior) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Protection Warrior talent build midnight",
+   "Protection Warrior guide midnight",
+   "Protection Warrior guide 12.1.5",
+   "best Protection Warrior talents",
+   "Protection Warrior talent tree midnight",
+   "Protection Warrior pve guide",
+   "Protection Warrior rotation midnight",
+   "Protection Warrior rotation and cooldowns",
+   "Protection Warrior bis list midnight",
+   "Protection Warrior best in slot",
+   "Protection Warrior gear guide",
+   "Protection Warrior food and potion",
+   "best food for Protection Warrior",
+   "best flask for Protection Warrior",
+   "best potion for Protection Warrior",
+   "Protection Warrior enchants and gems",
+   "best enchants for Protection Warrior",
+   "best gems for Protection Warrior",
+   "Protection Warrior stat priority midnight",
+   "Protection Warrior tier set midnight",
+   "Protection Warrior tier set bonuses",
+   "Protection Warrior mythic+ guide",
+   "Protection Warrior m+ guide midnight",
+   "Protection Warrior raid guide",
+   "Protection Warrior hero talents",
+   "Protection Warrior hero tree",
+   "best tank build Protection Warrior midnight",
+   "Protection Warrior cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای پروتکشن",
+   "تلنت پروتکشن",
+   "تلنت برای Protection Warrior",
+   "تلنت Warrior پروتکشن",
+   "بیلد پروتکشن",
+   "بیلد تلنت پروتکشن میدنایت",
+   "روتیشن پروتکشن",
+   "روتیشن و کول‌داون‌های پروتکشن",
+   "غذا برای پروتکشن",
+   "غذا برای Protection Warrior",
+   "غذا و معجون پروتکشن",
+   "بهترین غذای پروتکشن",
+   "فلسک پروتکشن",
+   "بهترین فلسک برای پروتکشن",
+   "معجون پروتکشن",
+   "انچنت پروتکشن",
+   "انچنت و جم پروتکشن",
+   "بهترین انچنت برای پروتکشن",
+   "جم پروتکشن",
+   "بست آیتم پروتکشن",
+   "بهترین آیتم‌های پروتکشن",
+   "گیر پروتکشن",
+   "استت پروتکشن",
+   "اولویت استت پروتکشن",
+   "ست تیر پروتکشن",
+   "مایتی پلاس پروتکشن",
+   "ام پلاس پروتکشن",
+   "راهنمای پروتکشن",
+   "راهنمای Protection Warrior",
+   "راهنمای واریر",
+   "پروتکشن میدنایت",
+   "واریر میدنایت",
+   "هرو تیلنت پروتکشن",
+   "بیلد تانک پروتکشن",
+   "بهترین تانک میدنایت پروتکشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Protection Warrior (پروتکشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Protection Warrior به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای پروتکشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، معجون جنگی «Draught of Rampant Abandon»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای پروتکشن چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای پروتکشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Protection Warrior در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

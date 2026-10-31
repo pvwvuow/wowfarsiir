@@ -1,0 +1,976 @@
+{
+ "slug": "destruction-warlock",
+ "class": "warlock",
+ "class_en": "Warlock",
+ "spec_en": "Destruction",
+ "spec_no": 3,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Destruction Warlock",
+ "lead": "بازی Destruction Warlock ضربه‌های بزرگ [[Chaos Bolt]] و کِلیو قدرتمند [[Havoc]] است: شاردهای تو به 10 تکه تقسیم می‌شوند و خرجشان بین [[Chaos Bolt]] تک‌هدف و [[Rain of Fire]] AoE دست خودت است. امضای اسپک [[Summon Infernal]] است. دو مسیر Hero Tree داری: [[Hellcaller]] که [[Immolate]] را به [[Wither]] تبدیل می‌کند و برچسب Best منبع را در تک‌هدف و کِلیو و Council و Delves دارد، و [[Diabolist]] که با احضار شیطان‌ها در روتیشن عادی دمیج اضافه می‌دهد و برچسب Best آن در Mythic+/AoE است.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Soul Shards": {
+   "fa": "منبع دستراکشن که هر شاردش 10 تکه (fragment) دارد؛ با [[Chaos Bolt]] و [[Rain of Fire]] خرج می‌شود."
+  },
+  "Chaos Bolt": {
+   "fa": "خرج‌کنندهٔ بزرگ تک‌هدف."
+  },
+  "Rain of Fire": {
+   "fa": "خرج‌کنندهٔ AoE با دمیج در طول زمان."
+  },
+  "Havoc": {
+   "fa": "کول‌داون کِلیو که اسپل‌های تک‌هدف‌ات را روی هدف دوم کپی می‌کند."
+  },
+  "Mayhem": {
+   "fa": "هم‌افزای [[Havoc]]."
+  },
+  "Immolate": {
+   "fa": "DoT پایهٔ دستراکشن که در هلکالر به [[Wither]] تبدیل می‌شود."
+  },
+  "Wither": {
+   "fa": "DoT هلکالر با هم‌افزایی [[Malevolence]] و [[Cataclysm]]."
+  },
+  "Conflagrate": {
+   "fa": "جنراتور شارد و منبع [[Backdraft]]؛ ابزار حرکت تو هم هست."
+  },
+  "Backdraft": {
+   "fa": "استک‌هایی که [[Chaos Bolt]] و [[Incinerate]] را سریع می‌کنند."
+  },
+  "Incinerate": {
+   "fa": "جنراتور پایهٔ شارد."
+  },
+  "Shadowburn": {
+   "fa": "فینیشر زیر 20% سلامتی با هزینهٔ 1 شارد و بدون کول‌داون در بازطراحی 12.1."
+  },
+  "Soul Fire": {
+   "fa": "اسپلی که زیر 4 شارد ارزش دارد و با [[Dimensional Rift]] گره خورده است."
+  },
+  "Dimensional Rift": {
+   "fa": "پسیوی که به خرج‌کننده‌های تک‌هدف شانس فراخوان شکاف بعدی می‌دهد."
+  },
+  "Echo of Sargeras": {
+   "fa": "افکت ست 2 تیکه که با [[Incinerate]] فراخوانده می‌شود و با ست 4 تیکه باف می‌دهد."
+  },
+  "Summon Infernal": {
+   "fa": "کول‌داون امضای دستراکشن که باید همیشه دستی زده شود."
+  },
+  "Malevolence": {
+   "fa": "باف هلکالر برای انباشت [[Wither]] روی دشمنان."
+  },
+  "Cataclysm": {
+   "fa": "اسپل AoE هلکالر که [[Wither]] را پخش می‌کند."
+  },
+  "Infernal Bolt": {
+   "fa": "جنراتور جایگزین با شرط زیر 2 شارد."
+  },
+  "Chaotic Inferno": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Lake of Fire": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Practiced Chaos": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Improved Havoc": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Alythess's Ire": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Destructive Rapidity": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Xorothian Research": {
+   "fa": "تلنت جدید Midnight."
+  },
+  "Embers of Nihilam": {
+   "fa": "تلنت Apex جدید Midnight."
+  },
+  "Roaring Blaze": {
+   "fa": "تلنت بازطراحی‌شده که [[Conflagrate]] را تا 3 هدف [[Immolate]] می‌زند."
+  },
+  "Blistering Atrophy": {
+   "fa": "تلنتی که کریت [[Shadowburn]] را 100% می‌کند."
+  },
+  "Conflagration of Chaos": {
+   "fa": "تلنتی که [[Shadowburn]] را بدون محدودیت سلامتی و با کریت تضمینی می‌کند."
+  },
+  "Avatar of Destruction": {
+   "fa": "تلنت بازطراحی‌شده که Overfiend احضار می‌کند."
+  },
+  "Overfiend": {
+   "fa": "شیطانی که با [[Avatar of Destruction]] یا کست [[Soul Fire]] می‌آید."
+  },
+  "Unending Resolve": {
+   "fa": "دفاع برست وارلاک."
+  },
+  "Dark Pact": {
+   "fa": "دفاع وارلاک با پت."
+  },
+  "Hellcaller": {
+   "fa": "درخت قهرمانی [[Wither]]‌محور با برچسب Best تک‌هدف/کِلیو/Council/Delves."
+  },
+  "Diabolist": {
+   "fa": "درخت قهرمانی احضار منفعل با برچسب Best Mythic+/AoE."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek."
+  },
+  "Nocuous Focal Fang": {
+   "fa": "Off-Hand BiS فصل از The Writhing Coil."
+  },
+  "Damned Necrolyte's Shattered Restraints": {
+   "fa": "ست تیر فصل وارلاک؛ 2 تیکه [[Incinerate]] و 4 تیکه [[Echo of Sargeras]] را تقویت می‌کند."
+  },
+  "Venomkeeper's Horrific Cowl": {
+   "fa": "کلاه BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Cackling Soultreads": {
+   "fa": "کفش BiS فصل از The Coiled Altar."
+  },
+  "Gebbo's Bottomless Bag": {
+   "fa": "ترینکت BiS فصل از The Lost Explorers."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت دوم BiS فصل از Kith'ix."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر BiS فصل از Sszorak."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر دوم BiS فصل از Kith'ix."
+  },
+  "Martyr's Bindings": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Martyr's Waistwrap": {
+   "fa": "کمربند Crafted فصل که در BiS هم هست."
+  },
+  "Voidweaver's Leggings": {
+   "fa": "شلوار BiS فصل از Kith'ix و گزینهٔ Catalyst."
+  },
+  "Spires of the Damned Necrolyte": {
+   "fa": "شانهٔ ست فصل از The Lost Explorers."
+  },
+  "Damned Necrolyte's Rattling Robes": {
+   "fa": "سینهٔ ست فصل از Vashnik the Malignant."
+  },
+  "Damned Necrolyte's Charred Grasps": {
+   "fa": "دستکش ست فصل از The Coiled Altar."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک بهترین فصل."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "افزونهٔ سلاح فصل برای Destruction."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "افزونهٔ شانه فصل برای Destruction."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Quick Garnet": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم فصل."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم فصل."
+  },
+  "Brood Cleanser's Amice": {
+   "fa": "گزینهٔ Catalyst شانه از Temple of Sethraliss."
+  },
+  "Primordial Robe of Rites": {
+   "fa": "گزینهٔ Catalyst سینه از Altar of Fangs."
+  },
+  "Grasps of the Eternal Shadow": {
+   "fa": "گزینهٔ Catalyst دست از The Coiled Altar."
+  },
+  "Demonic Gateway": {
+   "fa": "پورتال گروهی برای اسکیپ اینستنس."
+  },
+  "Soulstone": {
+   "fa": "احیا؛ ابزار یوتیلیتی وارلاک."
+  },
+  "Demonic Circle": {
+   "fa": "پورتال شخصی جابجایی."
+  },
+  "Create Soulwell": {
+   "fa": "بازوی [[Healthstone]] برای گروه."
+  },
+  "Healthstone": {
+   "fa": "پاتشن سلامتی شخصی‌سازی‌شدهٔ وارلاک."
+  },
+  "Ritual of Summoning": {
+   "fa": "احضار گروهی وارلاک."
+  },
+  "Intellect": {
+   "fa": "استت اصلی که Spell Power و دمیج اسپل‌ها را بالا می‌برد؛ روی پارچه می‌آید."
+  },
+  "Mastery": {
+   "fa": "مستری دستراکشن به اسپل‌ها درصد ثابت دمیج به‌اضافهٔ مقداری تصادفی اضافه می‌کند."
+  },
+  "Eradication": {
+   "fa": "تلنتی که در Midnight حذف شده است."
+  },
+  "Power Overwhelming": {
+   "fa": "تلنتی که در Midnight حذف شده است."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Destruction Warlock ضربه‌های بزرگ [[Chaos Bolt]] و کِلیو قدرتمند [[Havoc]] است: منبع تو [[Soul Shards]] است که برخلاف دو اسپک دیگر وارلاک هر شارد به 10 تکه تقسیم می‌شود و خرجش بین [[Chaos Bolt]] تک‌هدف و [[Rain of Fire]] AoE دست خودت است. امضای اسپک هم [[Summon Infernal]] است."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Hellcaller]] که [[Immolate]] را به [[Wither]] تبدیل می‌کند و با آن DoT هم‌افزایی دارد؛ برچسب Best منبع برای تک‌هدف، کِلیو ریید، Council و Delves را دارد و روی کِلیو پخش‌شده و AoE سنگین قوی است. [[Diabolist]] با احضار منفعل شیطان‌ها هنگام خرج‌کردن شاردها دمیج اضافه می‌دهد و برچسب Best آن در Mythic+/AoE است."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight اسپک لاغر شده: تعداد زیادی تلنت حذف شده (مثل [[Eradication]] و [[Power Overwhelming]]) و تلنت‌های تازه‌ای مثل [[Chaotic Inferno]] و [[Lake of Fire]] آمده‌اند؛ [[Shadowburn]] هم بازطراحی شده: زیر 20% سلامتی بدون کول‌داون و با 1 شارد. قاعده‌های بازی سه چیز است: مدیریت شاردها، مدیریت کول‌داون‌ها ([[Havoc]] و [[Summon Infernal]]) و مدیریت حرکت با [[Demonic Circle]] و [[Demonic Gateway]]."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف (ریید)",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "کِلیو و AoE",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "تعویض هدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "بقا (برست)",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بقا (rot)",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "کم",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "کِلیو عالی با [[Havoc]] و [[Mayhem]]",
+       "در Mythic+ دمیج AoE پایدار روی پول‌های بزرگ و تعویض هدف عالی برای اددهای تازه",
+       "بدون Diminishing Returns در AoE: هر هدف اضافه قدرت برابر می‌دهد؛ یکی از قوی‌ترین منابع AoE بازی",
+       "دفاع خوب برست‌محور با [[Unending Resolve]] و [[Dark Pact]] و یوتیلیتی کامل وارلاکی"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "خروجی تک‌هدف متوسط در ریید",
+       "دفاع ضعیف در برابر آسیب rot",
+       "در پول‌های کوچک رَمپ طولانی و برست AoE کم (مثل دمولوژی) دارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Hellcaller",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Single Target و Raid Cleave و Raid Council و Delves. [[Immolate]] را به [[Wither]] تبدیل می‌کند و با این DoT هم‌افزایی می‌سازد؛ روی کِلیو پخش‌شده و AoE سنگین قوی است و [[Wither]] را با [[Cataclysm]] روی چند هدف می‌گذارد."
+      },
+      {
+       "title": "Diabolist",
+       "tag": "برچسب Best Mythic+",
+       "x": "با خرج‌کردن [[Soul Shards]]، به‌طور منفعل در روتیشن عادی شیطان احضار می‌کند و دمیج اضافه می‌گیرد؛ برچسب Best منبع برای Mythic+/AoE. سبک بازی بین دو درخت تفاوت زیادی ندارد و بیلدها شبیه‌اند."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Destruction Warlock در پچ 12.1.5 دو درخت قهرمانی دارد: Hellcaller و Diabolist؛ هر جدول پنج ردیف کد دارد: Single Target، Mythic+/AoE، Raid Cleave، Raid Council و Delves. دو ردیف اضافی Raid Council هم در صفحه هست که اینجا آورده نشده‌اند و در یادداشت منبع ثبت شده‌اند. هلکالر برچسب Best چهار مد را دارد و دیابولیست برچسب Mythic+/AoE را."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Hellcaller (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای تک‌هدف.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGNLMzmZmZWmFzMzsYMWMDAAmZGzMziNYgZxoxMAmtYjBAAGDM2AAmZwYGzYDAAwMzMAAMGG"
+      },
+      {
+       "title": "Hellcaller (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+/AoE هلکالر؛ کدش همان بیلد Delves است.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxiZGzysNzMzsYGLLjBAAzYMzMLWgBmFjGzAY2iNGAAYMYYDAYmBjZGzsBAAYmZmBAwYYA"
+      },
+      {
+       "title": "Hellcaller (Raid Cleave)",
+       "tag": "بهترین برای Raid Cleave",
+       "x": "برچسب Best منبع برای کِلیو ریید.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGNLMzmZmZWmlZmZmFjZbxMAAYGjZmZxGMwsY0YGAzWsxAAAjBYDAYmBjZMjNAAAzMzAAwYYA"
+      },
+      {
+       "title": "Hellcaller (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxiZGzysNzMzsYGLLjBAAzYMzMLWgBmFjGzAY2iNGAAYMYYDAYmBjZGzsBAAYmZmBAwYYA"
+      },
+      {
+       "title": "Diabolist (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد تک‌هدف دیابولیست.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZjhZmZmlZzMzMLGjFzAAgZmxMzsAGzYYhMw2wGNWYAAgxAjNAMzAYmxYAAAYmZmBAwYYA"
+      },
+      {
+       "title": "Diabolist (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+/AoE.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMMzoZzMz2MzYWmtZGzsYGLLjBAAzYMzMLgxMGWIDsNsQjFGAAYMDDbAYmBYMjZmNAAAzMzAAwYYA"
+      },
+      {
+       "title": "Diabolist (Raid Cleave)",
+       "tag": "آلترناتیو Raid Cleave",
+       "x": "بیلد کِلیو ریید دیابولیست.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZjhZmxsMbzMzMLGz2iZAAwMGzMzCYMjhFyAbDb0YhBAAGDwGAmZAmZGjZDAAwMzMAAMGG"
+      },
+      {
+       "title": "Diabolist (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "بیلد Delves دیابولیست.",
+       "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZjhZmxsMbzMzMLGz2iZAAwMGzMzCYMjhFyAbDb0YhBAAGDwGAmZAmZGjZDAAwMzMAAMGG"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=warlock&spec=destruction",
+     "x": "مشاهده تمام تلنت‌های Destruction Warlock"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "سه ستون بازی: مدیریت [[Soul Shards]] (هر شارد 10 تکه دارد و نباید کپ شود)، مدیریت کول‌داون‌ها ([[Havoc]] و [[Summon Infernal]] با شمار شارد درست و بدون از دست دادن استفاده‌ها) و مدیریت حرکت (در حرکت فقط [[Conflagrate]] داری؛ با [[Demonic Circle]] و [[Demonic Gateway]] مسیرها را کوتاه کن)."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف (Hellcaller)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Wither]] را نگه دار.",
+      "[[Shadowburn]] را وقتی در دسترس است و داری به سقف شارد می‌رسی بزن.",
+      "[[Chaos Bolt]] را برای جلوگیری از کپ‌شدن شاردها کست کن.",
+      "[[Soul Fire]] را وقتی در دسترس است و کمتر از 4 شارد داری بزن.",
+      "[[Conflagrate]] را برای زیر 2 استک ماندن یا در حرکت بزن.",
+      "[[Conflagrate]] را برای ساخت شارد و استک‌های [[Backdraft]] بزن و آن‌ها را تا جای ممکن روی [[Chaos Bolt]] خرج کن.",
+      "[[Incinerate]] را برای ساخت شارد کست کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "به‌عنوان [[Diabolist]] همین لیست با [[Immolate]] به‌جای [[Wither]] بازی می‌شود و بقیهٔ اولویت یکسان است. یادت باشد دستیار روتیشن حدود 3.8% در تک‌هدف و 11% در AoE ضرر می‌دهد (تک‌دکمه: 10.4% و 14%) به شرطی که [[Summon Infernal]] را خودت یادت نرود!"
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Wither]] را روی هر چه بیشتر هدف نگه دار (هلکالر) یا [[Immolate]] را روی هدف اصلی و هر هدفی که بیشتر از 10 ثانیه زنده می‌ماند (دیابولیست).",
+      "وقتی بیشترین دشمنان [[Wither]] دارند [[Malevolence]] را بزن (هلکالر).",
+      "شاردها را برای جلوگیری از کپ‌شدن خرج کن: [[Chaos Bolt]] روی تک‌هدف و [[Rain of Fire]] در AoE.",
+      "قبل از کست [[Infernal Bolt]] بیشتر از 2 شارد نداشته باش.",
+      "[[Conflagrate]] را برای ساخت شارد و [[Backdraft]] بزن.",
+      "[[Incinerate]] را برای ساخت شارد کست کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در AoE هیچ Diminishing Return نداری: هر هدف اضافه قدرت برابر می‌دهد و پول‌های بزرگ را یکی از قوی‌ترین منابع AoE بازی می‌کند."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Soul Fire]] را پریکست کن.",
+      "[[Summon Infernal]] را همراه پاتشن‌ها و ترینکت‌ها و راسیال‌ها بزن.",
+      "[[Malevolence]] را برای انباشت [[Wither]] بزن (هلکالر).",
+      "[[Conflagrate]] را برای انداختنش روی کول‌داون و ساخت شارد و [[Backdraft]] بزن.",
+      "در طول کول‌داون‌ها هر چه می‌توانی شارد بساز و خرج کن و همهٔ شارژهای کول‌داون را خالی کن.",
+      "به اولویت عادی برو."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: باف غذا و روغن بزن، پت را احضار کن، با [[Create Soulwell]] [[Healthstone]] بده، پورتال‌ها را بگذار و تلنت‌هایت را برای باس چک کن."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "قاعدهٔ کلی استت Intellect > Haste > Mastery >= Critical Strike > Versatility برای هر دو هرو؛ دستراکشن همهٔ استت‌ها را تقریباً برابر می‌خواهد با کمی ترجیح Haste و Crit و استت‌ها آن‌قدر نزدیک‌اند که عملاً Item Level بهترین استت توست."
+    },
+    {
+     "t": "call",
+     "x": "برای مقدار دقیق با Raidbots سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 273779
+      },
+      {
+       "slot": "سر",
+       "id": 271874
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271544
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271549
+      },
+      {
+       "slot": "دستبند",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271547
+      },
+      {
+       "slot": "کمر",
+       "id": 239649
+      },
+      {
+       "slot": "پا",
+       "id": 281235
+      },
+      {
+       "slot": "کفش",
+       "id": 268255
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270164
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271549
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270164,
+        281215
+       ],
+       "names": [
+        "Gebbo's Bottomless Bag",
+        "Twisted Horror's Tendril"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Damned Necrolyte's Shattered Restraints: 2 تیکه دمیج [[Incinerate]] را 25% بالا می‌برد و شانس فراخواندن [[Echo of Sargeras]] را 10% زیاد می‌کند. 4 تیکه اهدافی که [[Echo of Sargeras]] به آن‌ها دمیج زده 6 ثانیه 6% دمیج بیشتر از اسپل‌های تو می‌خورند؛ بیشتر قدرت ست پشت 4 تیکهٔ انباشتی است."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Venomkeeper's Horrific Cowl (سر)، Brood Cleanser's Amice (شانه)، Primordial Robe of Rites (سینه)، Grasps of the Eternal Shadow (دست) و Voidweaver's Leggings (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Martyr's Bindings (دستبند) و Martyr's Waistwrap (کمربند) که هر دو در BiS هستند؛ Off-Hand BiS تو Nocuous Focal Fang است که از The Writhing Coil می‌افتد."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Mastery",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] روی پارچه است و بعدش Haste و بعد Mastery >= Critical Strike و در پایان Versatility؛ جدول هر دو هرو یکسان است."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Mastery]] به اسپل‌هایت درصد ثابت دمیج اضافه می‌دهد به‌اضافهٔ مقداری تصادفی تا همان درصد.",
+      "همهٔ استت‌ها تقریباً برابرند و Item Level عملاً بهترین استت توست."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Destruction Warlock در Midnight Season 2؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بهترین فلاسک [[Flask of the Shattered Sun]] است ولی بسته به وزن استت‌هایت فلاسک‌های دیگر هم قابل استفاده‌اند."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در اوپنر کنار [[Summon Infernal]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ سلاح این اسپک [[Enchant Weapon - Acuity of the Ren'dorei]] است و شانه [[Enchant Shoulders - Amirdrassil's Grace]]؛ با اسپک‌های دیگر وارلاک فرق دارد."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Quick Garnet، Flawless Deadly Amethyst، Flawless Masterful Peridot",
+       "ids": [
+        240905,
+        240897,
+        240891
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Indecipherable Eversong Diamond]] و بقیهٔ سوکت‌ها بین گارنت و آمتیست و پریدوت بسته به نیاز استت."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Destruction Warlock در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "دیابولیست برچسب Best منبع برای Mythic+/AoE را دارد و هلکالر بقیه را؛ روی پول‌های بزرگ هیچ Diminishing Return نداری و هر هدف اضافه قدرت برابر می‌دهد. رَمپ طولانی یعنی روی پول‌های کوچک ضعیف‌تری، پس مسیر کشتن را با هوش انتخاب کن."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "روی پول‌های بزرگ شاردها را روی [[Rain of Fire]] خرج کن و نگران سقف AoE نباش.",
+      "[[Havoc]] را برای تعویض هدف روی اددهای تازه بباف.",
+      "[[Shadowburn]] را زیر 20% سلامتی برای شارد اضافه بزن (بدون کول‌داون و با هزینهٔ 1 شارد).",
+      "[[Conflagrate]] را در حرکت بزن و استک‌های [[Backdraft]] را برای [[Chaos Bolt]] نگه دار.",
+      "[[Demonic Circle]] را قبل از مکانیک‌های حرکتی بگذار تا کست‌هایت نمیرند."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "دفاع در برابر rot ضعیف است: [[Unending Resolve]] و [[Dark Pact]] را برای لحظات برست نگه دار و یوتیلیتی ([[Create Soulwell]]، [[Demonic Gateway]]، [[Soulstone]]) را همیشه در دسترس گروه بگذار."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Destruction Warlock (دستراکنش) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل دستراکنش (Destruction Warlock) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Destruction Warlock talent build midnight",
+   "Destruction Warlock guide midnight",
+   "Destruction Warlock guide 12.1.5",
+   "best Destruction Warlock talents",
+   "Destruction Warlock talent tree midnight",
+   "Destruction Warlock pve guide",
+   "Destruction Warlock rotation midnight",
+   "Destruction Warlock rotation and cooldowns",
+   "Destruction Warlock bis list midnight",
+   "Destruction Warlock best in slot",
+   "Destruction Warlock gear guide",
+   "Destruction Warlock food and potion",
+   "best food for Destruction Warlock",
+   "best flask for Destruction Warlock",
+   "best potion for Destruction Warlock",
+   "Destruction Warlock enchants and gems",
+   "best enchants for Destruction Warlock",
+   "best gems for Destruction Warlock",
+   "Destruction Warlock stat priority midnight",
+   "Destruction Warlock tier set midnight",
+   "Destruction Warlock tier set bonuses",
+   "Destruction Warlock mythic+ guide",
+   "Destruction Warlock m+ guide midnight",
+   "Destruction Warlock raid guide",
+   "Destruction Warlock hero talents",
+   "Destruction Warlock hero tree",
+   "best dps build Destruction Warlock midnight",
+   "Destruction Warlock cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای دستراکنش",
+   "تلنت دستراکنش",
+   "تلنت برای Destruction Warlock",
+   "تلنت Warlock دستراکنش",
+   "بیلد دستراکنش",
+   "بیلد تلنت دستراکنش میدنایت",
+   "روتیشن دستراکنش",
+   "روتیشن و کول‌داون‌های دستراکنش",
+   "غذا برای دستراکنش",
+   "غذا برای Destruction Warlock",
+   "غذا و معجون دستراکنش",
+   "بهترین غذای دستراکنش",
+   "فلسک دستراکنش",
+   "بهترین فلسک برای دستراکنش",
+   "معجون دستراکنش",
+   "انچنت دستراکنش",
+   "انچنت و جم دستراکنش",
+   "بهترین انچنت برای دستراکنش",
+   "جم دستراکنش",
+   "بست آیتم دستراکنش",
+   "بهترین آیتم‌های دستراکنش",
+   "گیر دستراکنش",
+   "استت دستراکنش",
+   "اولویت استت دستراکنش",
+   "ست تیر دستراکنش",
+   "مایتی پلاس دستراکنش",
+   "ام پلاس دستراکنش",
+   "راهنمای دستراکنش",
+   "راهنمای Destruction Warlock",
+   "راهنمای وارلاک",
+   "دستراکنش میدنایت",
+   "وارلاک میدنایت",
+   "هرو تیلنت دستراکنش",
+   "بیلد دی‌پی‌اس دستراکنش",
+   "بهترین دی‌پی‌اس میدنایت دستراکنش"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Destruction Warlock (دستراکنش) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Destruction Warlock به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای دستراکنش چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Light's Potential»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای دستراکنش چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای دستراکنش کدام‌اند؟",
+    "a": "ست تیر فعلی «Gebbo's Bottomless Bag» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Destruction Warlock در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

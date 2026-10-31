@@ -1,0 +1,769 @@
+{
+ "slug": "preservation-evoker",
+ "class": "evoker",
+ "class_en": "Evoker",
+ "spec_en": "Preservation",
+ "spec_no": 3,
+ "role": "Healer",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Preservation Evoker",
+ "lead": "Preservation یک هیلی آرام ولی پرقدرت است: با منابع دوگانهٔ Mana و Essence و کست‌های Empower بازی می‌کند؛ با [[Echo]] نصف ریید را آماده می‌کنی و با اسپل‌های پرقیمت مصرفش می‌کنی. دو مسیر Hero Tree داری: [[Flameshaper]] که در فصل 2 شفای بیشتری می‌دهد و [[Chronowarden]] با رَمپ‌های بزرگ‌تر و Tip the Scales دفاعی.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/evoker/preservation/overview-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/evoker/preservation/talent-builds-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/evoker/preservation/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/evoker/preservation/enchants-gems-pve-healer",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Echo": {
+   "fa": "افکتی که توسط برخی اسپل‌ها بر روی اتحادیه قرار می‌گیرد و با زدن اسپل بعدی، آن اسپل را برای تمام افراد دارای اکو تکرار می‌کند."
+  },
+  "Flameshaper": {
+   "fa": "درخت هرو Preservation Evoker که روی افزایش قدرت هیل‌های گروهی و مدیریت سلامت متمرکز است."
+  },
+  "Chronowarden": {
+   "fa": "درخت هرو Preservation Evoker که روی مدیریت کول‌داون‌ها و تأخیر در آسیب‌ها تمرکز دارد."
+  },
+  "Rewind": {
+   "fa": "کول‌داون راید قدرتمند Preservation که مقداری از سلامت از دست رفتهٔ اتحادیه را در بازهٔ زمانی کوتاهی بازمی‌گرداند."
+  },
+  "Dream Breath": {
+   "fa": "اسپل اصلی که در Flameshaper تقویت می‌شود و با buffs دیگر ترکیب می‌شود."
+  },
+  "Emerald Blossom": {
+   "fa": "اسپل که در Flameshaper با buffs Dream Bomb ترکیب می‌شود برای افزایش درمان."
+  },
+  "Verdant Embrace": {
+   "fa": "تلنت درمانی که با تراوش زمینی، حرکت شما را بهبود می‌بخشد و پوشش درمانی بهتری ارائه می‌دهد."
+  },
+  "Preservation": {
+   "fa": "نقش هیلر ایووکر که با استفاده از اسپل‌های draconic و arcane گروه را زنده نگه می‌دارد."
+  },
+  "Evoker": {
+   "fa": "کلاس جدید در World of Warcraft که با استفاده از توانایی‌های اژدهایی به مبارزه می‌پردازد."
+  },
+  "Temporal Anomaly": {
+   "fa": "تالنت درخت هیرو که به شما اجازه می‌دهد با استفاده از کول‌داون‌ها، اکوها را پیش‌بارگذاری کنید."
+  },
+  "Merithra's Blessing": {
+   "fa": "افکتی که با زدن [[Dream Breath]] تولید می‌شود و به شما اجازه می‌دهد تا اسپل‌های بیشتری را بدون مصرف مانا اجرا کنید."
+  },
+  "Time Dilation": {
+   "fa": "کول‌داون دفاعی که باعث کاهش درصدی از آسیب دریافتی توسط اتحادیه در مدت زمان کوتاهی می‌شود."
+  },
+  "Tip the Scales": {
+   "fa": "کول‌داون دفاعی دیگر Preservation که با فعال‌سازی آن، بخشی از آسیب دریافتی توسط اتحادیه به شما منتقل می‌شود."
+  },
+  "Consuming Essence Burst": {
+   "fa": "اسپل اصلی که با تلنت‌های مرتبط بهبود می‌یابد."
+  },
+  "Essence Burst": {
+   "fa": "افکت تلنتی که بهبودی اضافی می‌دهد."
+  },
+  "Rescue": {
+   "fa": "اسپل نجات سریع که به شما اجازه می‌دهد هم‌تیمی‌ها را از موقعیت‌های خطرناک خارج کنید."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Preservation یک هیلی آرام ولی پرقدرت است: با منابع دوگانهٔ Mana و Essence و کست‌های Empower بازی می‌کند؛ با [[Echo]] نصف ریید را آماده می‌کنی و با اسپل‌های پرقیمت مصرفش می‌کنی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Flameshaper]] که در فصل 2 شفای بیشتری می‌دهد و [[Chronowarden]] با رَمپ‌های بزرگ‌تر و Tip the Scales دفاعی."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "دفاعی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "موبایل",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دست‌دستی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "کول‌داون‌های قوی مانند [[Rewind]]",
+       "کست‌های Empowered بسیار قوی و با فراوانی بالا",
+       "دفاعیات و خودشفای خوب",
+       "مشارکت قابل توجه در آسیب در طول فایت‌ها و دانجون‌ها",
+       "مجموعه‌ای از کول‌داون‌های موبایل"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "دامنه کم برای یک هیلی (30-yard)، در برخی فایت‌ها آزاردهنده",
+       "شفای قوی ترجیحاً برای گروه جمع شده است؛ شفای زمانی که گروه پخش می‌شود کاهش می‌یابد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Flameshaper",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "تخصص در درمان مداوم به‌جای درمان اوجی؛ با تقویت [[Dream Breath]] و استفاده از [[Emerald Blossom]] و [[Verdant Embrace]] برای بهره‌برداری از انفجار buffs."
+      }
+     ]
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Chronowarden",
+       "tag": "گزینه جایگزین",
+       "x": "تمرکز بر اسپل‌های برنزی و [[Verdant Embrace]]؛ بازی کلاسیک رامپ Preservation با درمان هدفمند در اوج."
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "فصل ۲ Flameshaper عملکرد درمان بهتری دارد و تمرکز اصلی بر درمان مداوم است."
+    },
+    {
+     "t": "p",
+     "x": "Chronowarden برای رامپ‌های بزرگ‌تر با هدف بیشتر مناسب است و [[Tip the Scales]] به عنوان کول‌داون درمانی برجسته عمل می‌کند."
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای Preservation Evoker در پچ 12.1.5، دو درخت هرو اصلی وجود دارد: Flameshaper و Chronowarden. هر دو درخت برای نقش هیلر قدرتمند هستند اما رویکرد متفاوتی دارند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Flameshaper (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این بیلد روی افزایش هیل‌های گروهی و مدیریت سلامت متمرکز است.",
+       "code": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMDmZMYGzmhZmZbYAAgZMj5BYGzIzMDAAAwMzIzYmxsNzMAYGzALgFwMMhsZYzwAYmZMA"
+      },
+      {
+       "title": "Flameshaper (Mythic+)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این بیلد برای محیط‌های پویای Mythic+ طراحی شده و روی هیل‌های فوری و انفجاری تمرکز دارد.",
+       "code": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WmZGDjxsZGw2wAAAzYmZmZMMTMmBAAAMzMTGzMzMGzAAjZgFwGYGmQ2YsZYGgZGGA"
+      },
+      {
+       "title": "Chronowarden (Raid)",
+       "tag": "گزینه جایگزین",
+       "x": "این بیلد روی مدیریت کول‌داون‌ها و تأخیر در آسیب‌ها تمرکز دارد.",
+       "code": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2WmHADzMmNjZmZWmxAAAzYGDmxMyMzAAAAMzMTmxMjZbmZAwAjZsxCMwMaoBsAjZGgxA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=Evoker&spec=Preservation",
+     "x": "مشاهده تمام بیلدهای Preservation Evoker"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ Preservation Evoker بر اساس مکانیک اکو و استفاده هوشمندانه از کول‌داون‌های کوتاه‌مدت ساخته شده است. این چرخه به شما امکان می‌دهد تا در لحظات بحرانی به گروه خود پشتیبانی قدرتمند ارائه دهید."
+    },
+    {
+     "t": "h3",
+     "x": "مکانیک اکو"
+    },
+    {
+     "t": "p",
+     "x": "اسپل‌هایی مانند [[Echo]] و [[Temporal Anomaly]] افکت‌های اکو را بر روی اتحادیه شما قرار می‌دهند. هر اسپلی که بعد از این افکت‌ها روی یک هدف زده شود، تمام افکت‌های اکو را مصرف کرده و آن اسپل را برای تمام افراد دارای اکو تکرار می‌کند. مثلاً پنج افکت اکو از [[Temporal Anomaly]] به همراه یک [[Reversion]] باعث می‌شود پنج هدف شما افکت هوتی (HoT) از ریورژن دریافت کنند."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ رایج در رید"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "ابتدا با زدن [[Dream Breath]]، افکت [[Merithra's Blessing]] را تولید کنید",
+      "با استفاده از اسپل‌هایی مانند [[Temporal Anomaly]]، افکت‌های اکو را روی گروه قرار دهید",
+      "با توجه به الگوی آسیب، یکی از اسپل‌های [[Reversion]]، [[Verdant Embrace]] یا [[Spiritbloom]] را برای مصرف افکت‌های اکو استفاده کنید"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های کلیدی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Rewind",
+       "x": "یک کول‌داون راید بسیار قدرتمند برای جبران آسیب‌های سنگین"
+      },
+      {
+       "s": "Time Dilation",
+       "x": "بخشی از کیت دفاعی و درمانی شما برای کاهش آسیب دریافتی"
+      },
+      {
+       "s": "Tip the Scales",
+       "x": "یک ابزار دیگر در کیت دفاعی شما که در فازهای آسیب‌برای استفاده برنامه‌ریزی شود"
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "برای بهره‌برداری حداکثری از چرخهٔ Preservation، همیشه کول‌داون‌های بزرگ خود را با فازهای آسیب‌زا هماهنگ کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "آپگرید تجهیزات برای Evoker محافظ در ریدینگ و Mythic+ بر اساس استات‌های متفاوت است. در ریدینگ، کریتیکال و Mastery اولویت اصلی هستند. در Mythic+، هاست و Mastery برابر و اولویت دارند. هوش و سطح آیتم همیشه اولویت دارند."
+    },
+    {
+     "t": "call",
+     "x": "آیتم‌های ریدینگ خاص مانند Awoken Dreadfang Cuirass و Aqirbane Reliquary ارزش بالایی دارند. دو باس آخر ریدینگ آیتم‌های ۳۴۴ آیلمی می‌دهند که از هر چیز دیگری بالاتر هستند."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "دست راست",
+       "id": 271092
+      },
+      {
+       "slot": "دست چپ",
+       "id": 268197
+      },
+      {
+       "slot": "سر",
+       "id": 271501
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271499
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271504
+      },
+      {
+       "slot": "مچ دست",
+       "id": 268217
+      },
+      {
+       "slot": "دست",
+       "id": 271502
+      },
+      {
+       "slot": "کمر",
+       "id": 268254
+      },
+      {
+       "slot": "پا",
+       "id": 271500
+      },
+      {
+       "slot": "پا",
+       "id": 159388
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268249
+      },
+      {
+       "slot": "انگشتر",
+       "id": 158366
+      },
+      {
+       "slot": "افزونه",
+       "id": 270164
+      },
+      {
+       "slot": "افزونه",
+       "id": 270162
+      }
+     ]
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        250255,
+        249343
+       ],
+       "names": [
+        "Unstable Felheart Crystal",
+        "Gaze of the Alnseer"
+       ]
+      },
+      {
+       "r": "A",
+       "ids": [
+        251788,
+        251789
+       ],
+       "names": [
+        "Gift of Light",
+        "Consecrated Chalice"
+       ]
+      },
+      {
+       "r": "B",
+       "ids": [
+        252957,
+        193748
+       ],
+       "names": [
+        "Tangle of Vibrant Vines",
+        "Kyrakka's Searing Embers"
+       ]
+      },
+      {
+       "r": "F",
+       "ids": [
+        264701
+       ],
+       "names": [
+        "Cosmic Bell"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271501
+    },
+    {
+     "t": "p",
+     "x": "ست تیر دو قطعه‌ای [[Consuming Essence Burst]] یک اسپل زنده به هدف می‌فرستد. چهار قطعه‌ای [[Verdant Embrace]] بهبودی بیشتر می‌دهد و شانس [[Essence Burst]] می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "دو قطعه‌ای بسیار قدرتمند است و بهبودی تک‌نقطه‌ای عالی می‌دهد. چهار قطعه‌ای کمتر جذاب است اما همچنان ارزش استفاده دارد."
+    },
+    {
+     "t": "h3",
+     "x": "کاتالیست‌ها"
+    },
+    {
+     "t": "p",
+     "x": "کاتالیست‌های قابل دریافت Sethraliss' Fanged Helm، Soulslither Spaulders و Awoken Dreadfang Cuirass هستند."
+    },
+    {
+     "t": "h3",
+     "x": "استات‌های اولویت"
+    },
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ترتیب اولویت استت‌ها بسته به نوع محتوا متفاوت است. در حالت رایید، کریتیکال استرایک بر Mastery برتر است."
+    },
+    {
+     "t": "p",
+     "x": "در حالت پلاس‌ها، هیت اولویت اصلی را دارد و Mastery و کریتیکال تقریباً برابر قرار می‌گیرند. همیشه اینتلکت را نادیده نگیرید."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پیش‌غذاها",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "پیش‌غذا جایگزین",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Silvermoon Health Potion",
+       "ids": [
+        241304
+       ]
+      },
+      {
+       "k": "روشنایی سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "مجسمه‌های تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Quick Amethyst, Flawless Masterful Garnet",
+       "ids": [
+        240899,
+        240907
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه‌ها",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Arcanoweave Spellthread",
+       "ids": [
+        240154
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "حلقه‌ها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استفاده از پیش‌غذاها و پت‌های جنگی برای به حداکثر رساندن عملکرد در درگیری‌های طولانی بسیار مهم است."
+    },
+    {
+     "t": "p",
+     "x": "پیش‌غذاهای مختلف را بسته به محتوای فعلی بازی و نیازهای تیم خود انتخاب کنید."
+    },
+    {
+     "t": "p",
+     "x": "پت‌های جنگی را در لحظات حساس مانند [[Dragonrage]] یا کول‌داون‌های کلیدی استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "پت‌های درمانی را برای نجات خود یا هم‌تیمی‌ها در مواقع ضروری نگه دارید."
+    },
+    {
+     "t": "p",
+     "x": "روشنایی و روغن سلاح برای افزایش بهره‌وری و قدرت اسپل‌های شما طراحی شده‌اند."
+    },
+    {
+     "t": "p",
+     "x": "مجسمه‌های تقویتی برای افزایش آمارهای پایه‌ای کاراکتر شما بسیار مفید هستند."
+    },
+    {
+     "t": "p",
+     "x": "غذاها و جواهرات را متناسب با آمارهای مورد نیاز برای بهینه‌سازی ساختار خود انتخاب کنید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای Preservation Evoker برای م_plus در پچ 12.1.5، Midnight Season 2، با تمرکز بر نقش Healer."
+    },
+    {
+     "t": "p",
+     "x": "فلیمشِیپر (Flameshaper) بهترین گزینه برای م_plus است؛ درمان مداوم آن با الگوهای آسیب درون دونژن‌ها هماهنگ است."
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "در طول جمع‌آوری بازیکنان، از [[Temporal Anomaly|تالنت تالنت]] برای پیش‌بارگذاری اکوها استفاده کنید.",
+      "تراوش زمینی (Emerald Blossom) همراه با [[Verdant Embrace|تالنت تالنت]] پوشش بهتری برای آسیب‌های پخش‌شده نسبت به ریمپ‌های معمولی ارائه می‌دهد.",
+      "اسپل [[Rescue|تالنت تالنت]] ابزار کاربردی عالی برای خارج کردن هم‌تیمی‌ها از خطرات فوری است."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های پیشنهادی"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تالنت‌های اصلی",
+       "v": "Temporal Anomaly, Verdant Embrace, Rescue"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Preservation Evoker (پریزرویشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل پریزرویشن (Preservation Evoker) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Preservation Evoker talent build midnight",
+   "Preservation Evoker guide midnight",
+   "Preservation Evoker guide 12.1.5",
+   "best Preservation Evoker talents",
+   "Preservation Evoker talent tree midnight",
+   "Preservation Evoker pve guide",
+   "Preservation Evoker rotation midnight",
+   "Preservation Evoker rotation and cooldowns",
+   "Preservation Evoker bis list midnight",
+   "Preservation Evoker best in slot",
+   "Preservation Evoker gear guide",
+   "Preservation Evoker food and potion",
+   "best food for Preservation Evoker",
+   "best flask for Preservation Evoker",
+   "best potion for Preservation Evoker",
+   "Preservation Evoker enchants and gems",
+   "best enchants for Preservation Evoker",
+   "best gems for Preservation Evoker",
+   "Preservation Evoker stat priority midnight",
+   "Preservation Evoker tier set midnight",
+   "Preservation Evoker tier set bonuses",
+   "Preservation Evoker mythic+ guide",
+   "Preservation Evoker m+ guide midnight",
+   "Preservation Evoker raid guide",
+   "Preservation Evoker hero talents",
+   "Preservation Evoker hero tree",
+   "best dps build Preservation Evoker midnight",
+   "Preservation Evoker cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای پریزرویشن",
+   "تلنت پریزرویشن",
+   "تلنت برای Preservation Evoker",
+   "تلنت Evoker پریزرویشن",
+   "بیلد پریزرویشن",
+   "بیلد تلنت پریزرویشن میدنایت",
+   "روتیشن پریزرویشن",
+   "روتیشن و کول‌داون‌های پریزرویشن",
+   "غذا برای پریزرویشن",
+   "غذا برای Preservation Evoker",
+   "غذا و معجون پریزرویشن",
+   "بهترین غذای پریزرویشن",
+   "فلسک پریزرویشن",
+   "بهترین فلسک برای پریزرویشن",
+   "معجون پریزرویشن",
+   "انچنت پریزرویشن",
+   "انچنت و جم پریزرویشن",
+   "بهترین انچنت برای پریزرویشن",
+   "جم پریزرویشن",
+   "بست آیتم پریزرویشن",
+   "بهترین آیتم‌های پریزرویشن",
+   "گیر پریزرویشن",
+   "استت پریزرویشن",
+   "اولویت استت پریزرویشن",
+   "ست تیر پریزرویشن",
+   "مایتی پلاس پریزرویشن",
+   "ام پلاس پریزرویشن",
+   "راهنمای پریزرویشن",
+   "راهنمای Preservation Evoker",
+   "راهنمای ایوکر",
+   "پریزرویشن میدنایت",
+   "ایوکر میدنایت",
+   "هرو تیلنت پریزرویشن",
+   "بیلد پریزرویشن",
+   "بهترین پریزرویشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Preservation Evoker (پریزرویشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Preservation Evoker به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای پریزرویشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: معجون جنگی «Potion of Recklessness»، غذا «Flask of the Magisters» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای پریزرویشن چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای پریزرویشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Unstable Felheart Crystal» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Preservation Evoker در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

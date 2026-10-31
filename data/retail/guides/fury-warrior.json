@@ -1,0 +1,1027 @@
+{
+ "slug": "fury-warrior",
+ "class": "warrior",
+ "class_en": "Warrior",
+ "spec_en": "Fury",
+ "spec_no": 2,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Fury Warrior",
+ "lead": "بازی Fury Warrior تند و پیوسته است: فقط یک خرج‌کنندهٔ [[Rage]] داری به نام [[Rampage]] و هدف روتیشن تولید رِیج کافی و حفظ دائمی [[Enrage]] است؛ بقیهٔ دکمه‌ها ([[Bloodthirst]]، [[Raging Blow]]، [[Execute]] و پرکننده‌ها) کول‌داون کوتاه یا صفر دارند و هیچ وقفه‌ای در کار نیست. دو مسیر Hero Tree داری: [[Mountain Thane]] با [[Thunder Clap]] و آذرخش‌ها و [[Slayer]] که [[Execute]] و [[Bladestorm]] را پرتکرارتر می‌کند؛ برچسب Best منبع مال سلیر است.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warrior/fury/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warrior/fury/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warrior/fury/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warrior/fury/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warrior/fury/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warrior/fury/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Rage": {
+   "fa": "منبع واریر که در فیوری تقریباً فقط با [[Rampage]] خرج می‌شود."
+  },
+  "Rampage": {
+   "fa": "تنها خرج‌کنندهٔ رِیج فیوری که [[Enrage]] می‌سازد."
+  },
+  "Enrage": {
+   "fa": "باف اصلی فیوری که باید همیشه فعال بماند."
+  },
+  "Bloodthirst": {
+   "fa": "ضربهٔ اصلی فیوری که با ست 4 تیکه کریت [[Recklessness]] را بالا می‌برد."
+  },
+  "Raging Blow": {
+   "fa": "ضربهٔ قوی که ریست‌های [[Hack and Slash]] آن را تقویت می‌کنند."
+  },
+  "Execute": {
+   "fa": "فینیشر زیر 20% سلامتی."
+  },
+  "Sudden Death": {
+   "fa": "پروکی که [[Execute]] رایگان می‌دهد."
+  },
+  "Whirlwind": {
+   "fa": "جنراتور/پرکننده‌ای که با [[Improved Whirlwind]] کِلیو می‌شود."
+  },
+  "Improved Whirlwind": {
+   "fa": "تلنتی که روتیشن را روی 4 هدف اضافه کِلیو می‌کند."
+  },
+  "Rend": {
+   "fa": "خونریزی دوباره‌اضافه‌شده که با [[Whirlwind]] و [[Thunder Clap]] پسیو اعمال می‌شود."
+  },
+  "Hack and Slash": {
+   "fa": "تلنتی که ریست‌هایش باف بزرگی به [[Raging Blow]] می‌دهد."
+  },
+  "Crushing Blow": {
+   "fa": "ضربهٔ داخل پنجرهٔ کول‌داون."
+  },
+  "Bloodbath": {
+   "fa": "ضربهٔ داخل پنجرهٔ کول‌داون."
+  },
+  "Odyn's Fury": {
+   "fa": "کول‌داون اصلی AoE که در اوپنر زده می‌شود."
+  },
+  "Recklessness": {
+   "fa": "کول‌داون تولید رِیج که با [[Anger Management]] کار می‌کند."
+  },
+  "Avatar": {
+   "fa": "کول‌داون برست هم‌تراز [[Recklessness]]."
+  },
+  "Bladestorm": {
+   "fa": "کانال برست که با سلیر پرتکرار می‌شود."
+  },
+  "Champion's Spear": {
+   "fa": "کول‌داون فهرست‌شدهٔ روتیشن."
+  },
+  "Anger Management": {
+   "fa": "تلنتی که کول‌داون [[Recklessness]] و [[Avatar]] را کم می‌کند."
+  },
+  "Rampaging Berserker": {
+   "fa": "تلنت Apex تقویت [[Recklessness]]."
+  },
+  "Thunder Blast": {
+   "fa": "نسخهٔ قوی [[Thunder Clap]] در مانتن‌تین با اولویت داخل [[Avatar]]."
+  },
+  "Thunder Clap": {
+   "fa": "ضربهٔ AoE بازگردانده‌شده به فیوری توسط مانتن‌تین."
+  },
+  "Crashing Thunder": {
+   "fa": "تلنتی که [[Thunder Clap]] را به جنراتور رِیج سنگین تبدیل می‌کند."
+  },
+  "Lightning Strikes": {
+   "fa": "آذرخش‌های مانتن‌تین."
+  },
+  "Burst of Power": {
+   "fa": "تلنت مانتن‌تین."
+  },
+  "Frenzied Enrage": {
+   "fa": "انتخاب باف [[Enrage]] که ارزش بلندمدت استت‌ها را عوض می‌کند."
+  },
+  "Powerful Enrage": {
+   "fa": "انتخاب باف [[Enrage]] که ارزش بلندمدت استت‌ها را عوض می‌کند."
+  },
+  "Unhinged": {
+   "fa": "تلنتی که یکی از باف‌های [[Recklessness]] را برای سلیر خودکار می‌کند."
+  },
+  "Storm Bolt": {
+   "fa": "استان تک‌هدف با ارزش دمیج ناچیز حین [[Bladestorm]]."
+  },
+  "Berserker Stance": {
+   "fa": "استنس فیوری که قبل از فایت باید فعال باشد."
+  },
+  "Battle Shout": {
+   "fa": "باف گروهی که قبل از هر فایتی باید فعال باشد."
+  },
+  "Charge": {
+   "fa": "گپ‌کلوزر با باف رِیج."
+  },
+  "Heroic Leap": {
+   "fa": "پرش جابجایی برای صفرکردن downtime."
+  },
+  "Die by the Sword": {
+   "fa": "دفاع شخصی واریر."
+  },
+  "Rallying Cry": {
+   "fa": "کول‌داون دفاعی رییدگستردهٔ واریر."
+  },
+  "Slayer": {
+   "fa": "درخت قهرمانی با تقویت [[Execute]] و [[Bladestorm]]؛ برچسب Best تک‌هدف/مولتی‌تارگت/Mythic+."
+  },
+  "Mountain Thane": {
+   "fa": "درخت قهرمانی طوفان با [[Thunder Clap]] و آذرخش."
+  },
+  "Skyfury": {
+   "fa": "باف شمن."
+  },
+  "Maze-roa, Warlord's Fury": {
+   "fa": "سلاح دست اصلی BiS فصل از The Coiled Altar."
+  },
+  "Lu'selama, Light's Justice": {
+   "fa": "سلاح دست دوم BiS فصل از Kithix."
+  },
+  "Jade Warlord's Dominion": {
+   "fa": "ست تیر فصل واریر؛ 2 تیکه [[Raging Blow]] و 4 تیکه [[Bloodthirst]] درون [[Recklessness]]."
+  },
+  "Tempered Horns of the Jade Warlord": {
+   "fa": "کلاه ست فصل از Kithix."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Spellbreaker's Bracers": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Girdle of Toxic Regret": {
+   "fa": "کمربند BiS فصل از The Coiled Altar."
+  },
+  "Spellbreaker's March": {
+   "fa": "کفش Crafted فصل که در BiS هم هست."
+  },
+  "Sickening Signet of Atroxus": {
+   "fa": "انگشتر BiS فصل از Voidscar Arena."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر دوم BiS فصل از Kithix."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت BiS فصل از The Coiled Altar."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت دوم BiS فصل از Ula'tek."
+  },
+  "Corroded Hulk's Skullcap": {
+   "fa": "گزینهٔ Catalyst سر از Kithix."
+  },
+  "Cinderfury Shoulderguards": {
+   "fa": "گزینهٔ Catalyst شانه از Murder Row."
+  },
+  "Reckless Spirit Breastplate": {
+   "fa": "گزینهٔ Catalyst سینه از The Coiled Altar."
+  },
+  "Chausses of Unbound Rancor": {
+   "fa": "شلوار BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Raging Pauldrons of the Jade Warlord": {
+   "fa": "شانهٔ ست فصل از Murder Row."
+  },
+  "Cuirass of the Jade Warlord": {
+   "fa": "سینهٔ ست فصل از The Coiled Altar."
+  },
+  "Jeweled Gauntlets of the Jade Warlord": {
+   "fa": "دستکش ست فصل از Entombed Sentinels."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "فلاسک فصل (گزینهٔ اول)."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسک فصل (گزینهٔ دوم)."
+  },
+  "Blooming Feast": {
+   "fa": "feast فصل."
+  },
+  "Champion's Bento": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Liquid Luster": {
+   "fa": "پاتشن مبارزهٔ جایگزین فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "افزونهٔ سلاح فصل (گزینهٔ اول)."
+  },
+  "Enchant Weapon - Berserker's Rage": {
+   "fa": "افزونهٔ سلاح فصل (جایگزین)."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "افزونهٔ سر با Leech."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Blood Knight's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Zul'jin's Mastery": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر جایگزین فصل."
+  },
+  "Enchant Shoulders - Thalassian Recovery": {
+   "fa": "افزونهٔ شانه جایگزین فصل."
+  },
+  "Enchant Chest - Mark of Nalorakk": {
+   "fa": "افزونهٔ سینه جایگزین فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار جایگزین فصل."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "افزونهٔ کفش جایگزین فصل."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "افزونهٔ انگشتر جایگزین فصل."
+  },
+  "Onslaught": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Ravager": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Bitter Immunity": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Thunderous Roar": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Strength": {
+   "fa": "استت اصلی واریر که Attack Power را بالا می‌برد؛ جهش‌های Item Level معمولاً از استت بهینه بهترند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Fury Warrior تند و پیوسته است: فقط یک خرج‌کنندهٔ [[Rage]] داری به نام [[Rampage]] و هدف روتیشن، تولید رِیج کافی و حفظ دائمی [[Enrage]] است؛ بقیهٔ دکمه‌ها ([[Bloodthirst]]، [[Raging Blow]]، [[Execute]]) کول‌داون کوتاه یا صفر دارند و هیچ لحظه بیکاری در کار نیست."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Mountain Thane]] که با [[Crashing Thunder]]، [[Thunder Clap]] را به‌جای [[Whirlwind]] در روتیشن می‌آورد و آذرخش [[Lightning Strikes]] را فرود می‌آورد؛ و [[Slayer]] که [[Execute]] و [[Bladestorm]] دوباره‌اضافه‌شده را پرتکرارتر و قوی‌تر می‌کند. برچسب Best منبع: تک‌هدف، مولتی‌تارگت ریید و Mythic+."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight تغییرهای بزرگی رسیده: [[Onslaught]] و [[Ravager]] و [[Thunderous Roar]] حذف شده‌اند، [[Rend]] دوباره آمده و با [[Whirlwind]] و [[Thunder Clap]] پسیو اعمال می‌شود و ریست‌های [[Hack and Slash]] باف بزرگی به [[Raging Blow]] می‌دهند."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "تعویض پویا",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "جابجایی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بقا",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "کم",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "تعویض پویا بین تک‌هدف و چندهدف",
+       "کول‌داون‌های چندهدف برست‌محور",
+       "جابجایی برستی و گپ‌کلوزرهای قوی",
+       "دفاع شخصی خوب و یک کول‌داون دفاعی رییدگسترده"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "بدون اسپل رِنج یا تولید منبع پسیو، هر downtime یعنی ضرر سنگین",
+       "پروفایل دمیج تخت برای فازهای برست و فایت‌های خیلی کوتاه مناسب نیست",
+       "محدودیت برد حداقلی و کول‌داون‌ها در موقعیت‌های بد جابجایی را محدود می‌کنند",
+       "مرگ‌گریز سرگرم‌کننده‌اش در بیشتر محتوای PvE کاربردی نیست"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Slayer",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Single Target و Raid Multitarget و Mythic+ Dungeons. [[Execute]] و [[Bladestorm]] دوباره‌اضافه‌شده را خیلی پرتکرارتر و قوی‌تر می‌کند؛ بونس [[Charge]] و [[Heroic Leap]] و اینتراپت/استان حین کانال بلیدرم. دفاع جالبی ندارد."
+      },
+      {
+       "title": "Mountain Thane",
+       "tag": "آلترناتیو",
+       "x": "قدرت طوفان را فرا می‌خواند: [[Lightning Strikes]] فرود می‌آید و [[Thunder Clap]] بعد از سال‌ها به فیوری برمی‌گردد؛ [[Crashing Thunder]] آن را به جنراتور رِیج سنگینی تبدیل می‌کند که جای [[Whirlwind]] در روتیشن می‌نشیند و با [[Burst of Power]] و [[Thunder Blast]] قوی‌تر هم می‌شود."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Fury Warrior در پچ 12.1.5 دو درخت قهرمانی دارد: Mountain Thane و Slayer؛ هر جدول چهار ردیف کد دارد: Single Target، Raid Multitarget، Mythic+ Dungeons و Delves/Open World. سلیر برچسب Best سه مد اول را دارد و ردیف Delves هر دو هرو همان کد Mythic+ است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Slayer (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای تک‌هدف.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDzMmZ2MzMzMDjZmZGzMzsMzMmZmZzYmBAAixy2ALgJYGmAzwGwMDjNAAYmhxYYMYM"
+      },
+      {
+       "title": "Slayer (Raid Multitarget)",
+       "tag": "بهترین برای Raid Multitarget",
+       "x": "برچسب Best منبع برای مولتی‌تارگت ریید.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjxMzmZmZmZYMzMzMzYmlZMmZMbmZmBAAixy2ALgJYGmAzwGwMzmxGAAMzwYWGGDGD"
+      },
+      {
+       "title": "Slayer (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ کدش همان بیلد Delves است.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjxMzmZmZmZmZMzMzMzYmlZMmZMbmZmBAAixy2ALgJYGmAzwGwMzmBAAYmhxsMwgxA"
+      },
+      {
+       "title": "Slayer (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjxMzmZmZmZmZMzMzMzYmlZMmZMbmZmBAAixy2ALgJYGmAzwGwMzmBAAYmhxsMwgxA"
+      },
+      {
+       "title": "Mountain Thane (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد تک‌هدف مانتن‌تین.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjZmZ2MzMzMDjZmZGzMzsMzMzMjZ5BGzMAAQYgNYZxoxMgMLYYBwMMzGAMzAMGYMgxA"
+      },
+      {
+       "title": "Mountain Thane (Raid Multitarget)",
+       "tag": "آلترناتیو Raid Multitarget",
+       "x": "بیلد مولتی‌تارگت مانتن‌تین.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjZmZ2WmZmZMMmZmZmZMzyMzMzMmFzMzAAAhB2glFjGzAysgZsAYmNGAwMDADLmBYM"
+      },
+      {
+       "title": "Mountain Thane (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+ مانتن‌تین.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjZMz2yMzMjZmxMzMzMjZWmZmZmxsYmZGAAIMwGssY0YGQmFMjFAzgBAMzAwwiZAGD"
+      },
+      {
+       "title": "Mountain Thane (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjZMz2yMzMjZmxMzMzMjZWmZmZmxsYmZGAAIMwGssY0YGQmFMjFAzgBAMzAwwiZAGD"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=warrior&spec=fury",
+     "x": "مشاهده تمام تلنت‌های Fury Warrior"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "سه قاعدهٔ بازی: اول، downtime نداشته باش؛ رِیج فیوری از ابیلیتی‌ها می‌آید و [[Charge]] و [[Heroic Leap]] ابزار چسبیدن به هدف‌اند. دوم، همهٔ دکمه‌ها را روی کول‌داون بزن: تقریباً همه جنراتور رِیج‌اند و فقط [[Rampage]] خرج می‌کند؛ حتی وقتی صبرکردن قبل از Rampage رِیج را کارآمدتر خرج می‌کند، [[Enrage]] هرگز نباید بیفتد. سوم، رِیج را هدر نده: از صفر شروع می‌شود و بیرون فایت می‌پاشد."
+    },
+    {
+     "t": "h3",
+     "x": "تک‌هدف: داخل کول‌داون‌ها"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Rampage]] را با بیش از 100 رِیج بزن.",
+      "درست قبل از [[Bladestorm]] هر چه می‌توانی [[Rampage]] بزن.",
+      "[[Bladestorm]] را بزن.",
+      "[[Execute]] را با [[Sudden Death]] بزن.",
+      "اگر [[Hack and Slash]] فعال نیست [[Rampage]] را بزن.",
+      "[[Crushing Blow]] را بزن.",
+      "[[Odyn's Fury]] را بزن.",
+      "[[Execute]] را بزن.",
+      "[[Bloodbath]] را بزن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "تک‌هدف: بیرون کول‌داون‌ها"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Recklessness]] را بزن.",
+      "[[Rampage]] را با بیش از 100 رِیج یا وقتی [[Enrage]] نزدیک تمام‌شدن است بزن.",
+      "[[Odyn's Fury]] را بزن.",
+      "[[Execute]] را بزن.",
+      "[[Raging Blow]] را بزن.",
+      "[[Rampage]] را بزن.",
+      "[[Bloodthirst]] را بزن.",
+      "اگر چیزی آزاد نیست [[Whirlwind]] را بزن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چندهدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اگر باف [[Whirlwind]] فعال نیست آن را بزن.",
+      "[[Recklessness]] را بزن (خارج کول‌داون‌ها) و [[Rampage]] را هر چه می‌توانی بزن.",
+      "[[Bladestorm]] را بزن (داخل کول‌داون‌ها).",
+      "[[Execute]] را با [[Sudden Death]] بزن.",
+      "[[Odyn's Fury]] را بزن.",
+      "[[Crushing Blow]] را بزن (داخل کول‌داون‌ها).",
+      "[[Bloodbath]] را بزن (داخل کول‌داون‌ها).",
+      "[[Execute]] را بزن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "[[Improved Whirlwind]] روتیشن تک‌هدف را روی 4 هدف اضافه کِلیو می‌کند و به‌طور طبیعی داخل چرخه می‌نشیند؛ کِلیو گرفتن در فیوری تقریباً رایگان است و بهای کمی از تک‌هدف می‌پردازد."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اوپنر فیوری عملاً همان اولویت تک‌هدف است و هدف اصلی، فعال‌کردن سریع [[Enrage]] است؛ جایی که ممکن [[Recklessness]] را پریکست کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: داخل [[Berserker Stance]] باش، [[Battle Shout]] را بزن، غذا و فلاسک مصرف کن و روغن سلاح و Augment Rune را یادت نرود."
+    },
+    {
+     "t": "call",
+     "x": "نکته‌های پیشرفته: تایمینگ [[Execute]] به پروک‌های [[Sudden Death]] بستگی دارد؛ [[Storm Bolt]] حین [[Bladestorm]] افزایش دمیج بسیار ناچیزی دارد و ارزش تلنت شدن ندارد؛ [[Whirlwind]] را وسط [[Charge]] بزن تا بافش موقع رسیدن فعال باشد؛ اگر بعد از پول هدف‌های بیشتری می‌آیند کول‌داون‌ها را برای آن‌ها نگه دار؛ [[Odyn's Fury]] را قبل از بازکردن کول‌داون‌ها بزن تا روتیشن شلوغ نشود؛ چون [[Thunder Blast]] داخل [[Avatar]] اولویت بالا دارد لازم نیست باف [[Whirlwind]] را پیشاپیش بگذاری؛ و [[Recklessness]] و [[Avatar]] هر دو با [[Anger Management]] کار می‌کنند و می‌توانی در یک ماکرو ببندی‌شان."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Recklessness",
+       "x": "تولید رِیج را بالا می‌برد تا [[Rampage]] خیلی منظم‌تر زده شود؛ با تلنت Apex به نام [[Rampaging Berserker]] قوی‌تر می‌شود، کول‌داونش با [[Anger Management]] کم می‌شود و با [[Avatar]] هم‌تراز است."
+      },
+      {
+       "s": "Avatar",
+       "x": "کول‌داون برست که با [[Recklessness]] هم‌تراز می‌شود."
+      },
+      {
+       "s": "Bladestorm",
+       "x": "بازطراحی‌شده و با سلیر خیلی پرتکرار؛ اینتراپت و استان هم‌زمان می‌دهد."
+      },
+      {
+       "s": "Odyn's Fury",
+       "x": "کول‌داون اصلی فهرست‌شده که در اوپنر قبل از بازکردن بقیه زده می‌شود."
+      },
+      {
+       "s": "Champion's Spear",
+       "x": "از کول‌داون‌های اصلی فهرست‌شدهٔ روتیشن."
+      },
+      {
+       "s": "Thunder Blast",
+       "x": "نسخهٔ قوی‌تر [[Thunder Clap]] در مانتن‌تین با اولویت بالا داخل [[Avatar]]."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "هر دو هرو روی دمیج سلاح و Strength (از طریق Item Level) به‌اضافهٔ Haste و Mastery تأکید دارند: Strength > Haste > Mastery > Crit > Versatility. ارزش استت‌های ثانویه با گیر تو نوسان سنگین دارد چون استت‌های انباشته بعد از Diminishing Returns افت می‌کنند و انتخاب بین [[Frenzied Enrage]] و [[Powerful Enrage]] هم ارزش بلندمدت استت‌ها را عوض می‌کند."
+    },
+    {
+     "t": "call",
+     "x": "برای مقدار دقیق با Raidbots سیم بزن؛ جدول هر دو هرو یکسان است و این فهرست شامل آیتم‌های cantrip و آیتم‌های Mythic+ که فقط از Great Vault هفتگی با آیتم‌لول کامل می‌آیند هم هست."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268213
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 280799
+      },
+      {
+       "slot": "سر",
+       "id": 271456
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271454
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271459
+      },
+      {
+       "slot": "دستبند",
+       "id": 237834
+      },
+      {
+       "slot": "دست",
+       "id": 271457
+      },
+      {
+       "slot": "کمر",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271878
+      },
+      {
+       "slot": "کفش",
+       "id": 237828
+      },
+      {
+       "slot": "انگشت",
+       "id": 252258
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271456
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270173,
+        270175
+       ],
+       "names": [
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Ula'tek"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Jade Warlord's Dominion: 2 تیکه دمیج [[Raging Blow]] را 15% بالا می‌برد و در طول [[Recklessness]] هر [[Raging Blow]] مدت آن را 2 ثانیه (تا سقف 6 ثانیه) تمدید می‌کند. 4 تیکه دمیج [[Bloodthirst]] را 10% زیاد می‌کند و در طول Recklessness بونس کریت آن را هر بار 5% (تا 10%) بالا می‌برد. تلنت [[Unhinged]] یکی از این دو باف را برای سلیر خودکار می‌گذارد و مانتن‌تین هر دو را دستی در هر چرخه اعمال می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Corroded Hulk's Skullcap (سر)، Cinderfury Shoulderguards (شانه)، Reckless Spirit Breastplate (سینه) و Chausses of Unbound Rancor (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Spellbreaker's Bracers (دستبند) و Spellbreaker's March (کفش) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Strength",
+      "Haste",
+      "Mastery",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Strength]] است و دمیج سلاح همیشه بزرگ‌ترین ضریب توست؛ بعدش Haste و Mastery. ارزش استت‌ها با گیر تو نوسان سنگین دارد و انتخاب [[Frenzied Enrage]] یا [[Powerful Enrage]] هم در ارزش بلندمدت اثر می‌گذارد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "جدول هر دو هرو Mountain Thane و Slayer یکسان است: Strength > Haste > Mastery > Crit > Versatility.",
+      "استت‌های انباشته بعد از Diminishing Returns ارزششان می‌افتد؛ همیشه با سیم نهایی کن."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Fury Warrior در Midnight Season 2؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights یا Flask of the Magisters",
+       "ids": [
+        241324,
+        241322
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Blooming Feast",
+       "ids": [
+        242273
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Champion's Bento",
+       "ids": [
+        242274
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بهترین فلاسک بین این دو بسته به وزن استت‌هایت عوض می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness (جایگزین: Liquid Luster)",
+       "ids": [
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در پنجرهٔ [[Recklessness]] و [[Avatar]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey (جایگزین: Enchant Weapon - Berserker's Rage)",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Blood Knight's Armor Kit",
+       "ids": [
+        244642
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Zul'jin's Mastery",
+       "ids": [
+        243958
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای هر اسلات یک جایگزین هم در راهنمای منبع هست: سر Empowered Rune of Avoidance، شانه Thalassian Recovery، سینه Mark of Nalorakk، شلوار Forest Hunter's Armor Kit، کفش Shaladrassil's Roots و انگشتر Silvermoon's Alacrity."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Powerful Eversong Diamond]] انتخاب اول است."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Fury Warrior در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "سلیر برچسب Best منبع برای Mythic+ را دارد: [[Execute]]های پرتکرار با [[Sudden Death]] و [[Bladestorm]] خیلی موبیلی با ریتم دانجن جور است و [[Improved Whirlwind]] کِلیو را تقریباً رایگان می‌کند. دمیج تخت فیوری برای پول‌های بلند عالی و برای برست‌های کوتاه کمتر مناسب است."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "باف [[Whirlwind]] را همیشه نگه دار؛ چسبِ روتیشن AoE توست.",
+      "[[Rampage]] را حتی در حرکت‌ها هر چه می‌توانی بزن تا [[Enrage]] نبیفتد.",
+      "[[Recklessness]] و [[Avatar]] را در یک ماکرو ببند و برای پول‌های بزرگ نگه دار.",
+      "[[Odyn's Fury]] را قبل از بازکردن کول‌داون‌ها بزن تا روتیشن تمیز بماند.",
+      "[[Whirlwind]] را وسط [[Charge]] بزن تا موقع رسیدن باف فعال باشد."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "ایمنی دمیج و سلف‌هیل نداری: [[Die by the Sword]] و [[Rallying Cry]] را برای لحظات خطر نگه دار و مرگ‌گریز سرگرم‌کنندهٔ فیوری را در PvE حساب نیاور."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Fury Warrior (فیوری) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل فیوری (Fury Warrior) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Fury Warrior talent build midnight",
+   "Fury Warrior guide midnight",
+   "Fury Warrior guide 12.1.5",
+   "best Fury Warrior talents",
+   "Fury Warrior talent tree midnight",
+   "Fury Warrior pve guide",
+   "Fury Warrior rotation midnight",
+   "Fury Warrior rotation and cooldowns",
+   "Fury Warrior bis list midnight",
+   "Fury Warrior best in slot",
+   "Fury Warrior gear guide",
+   "Fury Warrior food and potion",
+   "best food for Fury Warrior",
+   "best flask for Fury Warrior",
+   "best potion for Fury Warrior",
+   "Fury Warrior enchants and gems",
+   "best enchants for Fury Warrior",
+   "best gems for Fury Warrior",
+   "Fury Warrior stat priority midnight",
+   "Fury Warrior tier set midnight",
+   "Fury Warrior tier set bonuses",
+   "Fury Warrior mythic+ guide",
+   "Fury Warrior m+ guide midnight",
+   "Fury Warrior raid guide",
+   "Fury Warrior hero talents",
+   "Fury Warrior hero tree",
+   "best dps build Fury Warrior midnight",
+   "Fury Warrior cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای فیوری",
+   "تلنت فیوری",
+   "تلنت برای Fury Warrior",
+   "تلنت Warrior فیوری",
+   "بیلد فیوری",
+   "بیلد تلنت فیوری میدنایت",
+   "روتیشن فیوری",
+   "روتیشن و کول‌داون‌های فیوری",
+   "غذا برای فیوری",
+   "غذا برای Fury Warrior",
+   "غذا و معجون فیوری",
+   "بهترین غذای فیوری",
+   "فلسک فیوری",
+   "بهترین فلسک برای فیوری",
+   "معجون فیوری",
+   "انچنت فیوری",
+   "انچنت و جم فیوری",
+   "بهترین انچنت برای فیوری",
+   "جم فیوری",
+   "بست آیتم فیوری",
+   "بهترین آیتم‌های فیوری",
+   "گیر فیوری",
+   "استت فیوری",
+   "اولویت استت فیوری",
+   "ست تیر فیوری",
+   "مایتی پلاس فیوری",
+   "ام پلاس فیوری",
+   "راهنمای فیوری",
+   "راهنمای Fury Warrior",
+   "راهنمای واریر",
+   "فیوری میدنایت",
+   "واریر میدنایت",
+   "هرو تیلنت فیوری",
+   "بیلد دی‌پی‌اس فیوری",
+   "بهترین دی‌پی‌اس میدنایت فیوری"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Fury Warrior (فیوری) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Fury Warrior به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای فیوری چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، معجون جنگی «Potion of Recklessness»، غذا «Blooming Feast» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای فیوری چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Powerful Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای فیوری کدام‌اند؟",
+    "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Fury Warrior در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

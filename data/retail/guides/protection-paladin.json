@@ -1,0 +1,851 @@
+{
+ "slug": "protection-paladin",
+ "class": "paladin",
+ "class_en": "Paladin",
+ "spec_en": "Protection",
+ "spec_no": 2,
+ "role": "tank",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Protection Paladin",
+ "lead": "Protection Paladin یک تانک سپردار است که با چرخهٔ تولید و خرج کردن Holy Power، آسیب‌گیری را با [[Shield of the Righteous]] نرم می‌کند و با blessing ها پشتیبانی بی‌نظیری به گروه می‌دهد. پچ 12.1 ریموک بزرگ درخت اسپک و باف‌های قابل توجه برای او آورد. دو مسیر Hero Tree داری: [[Templar]] با [[Hammer of Light]] و [[Lightsmith]] با Holy Armaments؛ در اکثر محتواها هر دو خیلی نزدیک‌اند.",
+ "sources": [
+  {
+   "name": "Wowhead",
+   "url": "https://www.wowhead.com/guide/classes/paladin/protection/overview-pve-tank"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/paladin/protection/talent-builds-pve-tank",
+   "updated": "2026-10-27"
+  },
+  {
+   "name": "Wowhead BiS",
+   "url": "https://www.wowhead.com/guide/classes/paladin/protection/bis-gear"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/paladin/protection/stat-priority-pve-tank"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/paladin/protection/enchants-gems-pve-tank"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Shield of the Righteous": {
+   "fa": "اسپل اصلی دفاعی شما که با Holy Power فعال می‌شود و تانکینگ قدرتمندی ارائه می‌دهد"
+  },
+  "Hammer of Light": {
+   "fa": "یک اسپل قدرتمند که Holy Power تولید می‌کند و آسیب قابل توجهی وارد می‌کند"
+  },
+  "Lightsmith": {
+   "fa": "یک درخت قهرمانی برای Protection Paladin که تمرکز بر توانایی‌های دفاعی و پشتیبانی گروه دارد و برای Mythic+ گزینهٔ به‌شمار می‌رود."
+  },
+  "Templar": {
+   "fa": "یک درخت قهرمانی جایگزین برای Protection Paladin که عملکردی بسیار نزدیک به Lightsmith دارد و در تمام محتوا قابل استفاده است."
+  },
+  "Blessing of Sacrifice": {
+   "fa": "یک برکشن قدرتمند که آسیب وارد شده به هدف را به خود شما منتقل می‌کند و برای پول‌های خطرناک در دونژن عالی است."
+  },
+  "Blessing of Freedom": {
+   "fa": "بلیسینگ برای رفع افکت‌های کنترل حرکت از هدف"
+  },
+  "Blessing of Protection": {
+   "fa": "یک برکشن که یک هدف را از تمام آسیب‌های فیزیکی مصون نگه می‌دارد و برای پاک کردن افکت‌های بلیت بسیار مفید است."
+  },
+  "Divine Shield": {
+   "fa": "یک اسپل دفاعی که شما را از تمام آسیب‌ها مصون نگه می‌دارد و برای مدیریت افکت‌های خاص مانند کانک‌بک استفاده می‌شود."
+  },
+  "Blessing of Spellwarding": {
+   "fa": "یک برکشن که از یک هدف در برابر تمام آسیب‌های جادویی محافظت می‌کند و در برابر آتش‌باهای جادویی هیولاها کاربرد دارد."
+  },
+  "Mastery: Divine Bulwark": {
+   "fa": "استت پسیو برای کاهش آسیب جادویی و برید"
+  },
+  "Hammer of Justice": {
+   "fa": "یک کنترل کوتاه‌مدت که یک هیولا را برای چند ثانیه فلج می‌کند و برای قطع کردن اسپل‌های هیولاها استفاده می‌شود."
+  },
+  "Turn Evil": {
+   "fa": "یک کنترل که هیولاهای غیرانسان را فراری می‌دهد و برای مدیریت هیولاهای خاص در دونژن کاربرد دارد."
+  },
+  "Blinding Light": {
+   "fa": "یک افکت کنترل گروهی که هیولاها را کوری می‌کند و برای کنترل چندین هیولا در یک زمان مفید است."
+  },
+  "Cleanse Toxins": {
+   "fa": "یک اسپل که سموم و بیماری‌ها را از اعضای گروه پاک می‌کند بدون اینکه نیاز به مصرف GCD治疗师 داشته باشد."
+  },
+  "Word of Glory": {
+   "fa": "یک اسپل درمانی که با Holy Power فعال می‌شود و برای مدیریت سلامتی استفاده می‌شود"
+  },
+  "Hand of the Protector": {
+   "fa": "اسپل درمانی گروهی با مصرف Holy Power"
+  },
+  "Holy Power": {
+   "fa": "منبع اصلی Protection Paladin برای فعال کردن اسپل‌های قوی"
+  },
+  "Divine Purpose": {
+   "fa": "تلنت برای شانس فعال‌سازی فوری Shield of the Righteous"
+  },
+  "Ardent Defender": {
+   "fa": "یک کول‌داون دفاعی که آسیب وارد شده را کاهش می‌دهد و شما را از مرگ نجات می‌دهد"
+  },
+  "Divine Steed": {
+   "fa": "یک حرکت سریع که به شما اجازه می‌دهد مسافت‌های کوتاه را سریع طی کنید و تنها قابلیت حرکتی پایه شماست."
+  },
+  "Sentinel": {
+   "fa": "اسپل برای افزایش آسیب و درمان"
+  },
+  "Bulwark of Order": {
+   "fa": "اسپل برای جذب آسیب بر اساس Avenger's Shield"
+  },
+  "Seal of Reprisal": {
+   "fa": "تلنت جدید در پچ 12.1 برای کاهش آسیب دریافتی"
+  },
+  "Improved Ardent Defender": {
+   "fa": "تلنت بازطراحی شده در پچ 12.1 برای افزایش پلحه سلامت"
+  },
+  "Blessed Word": {
+   "fa": "تلنت جدید در پچ 12.1 برای تبدیل اورヒل به جذب"
+  },
+  "Divine Exaction": {
+   "fa": "تلنت با کاهش 70% اثربخشی Divine Toll در پچ 12.1"
+  },
+  "Empyrean Hammer": {
+   "fa": "اسپل در Hero Tree با کاهش 33% آسیب در پچ 12.1"
+  },
+  "Judgment": {
+   "fa": "اسپلی که به یک هدف آسیب می‌زند و اثرها را فعال می‌کند"
+  },
+  "Consecration": {
+   "fa": "اسپلی که زمینی را مقدس کرده و به مدت زمانی مشخص به دشمنان آسیب می‌زند"
+  },
+  "Avenging Wrath": {
+   "fa": "کول‌داون قدرتمند که آسیب، درمان و شانس کریتیک را افزایش می‌دهد و [[Judgment]] را به [[Hammer of Wrath]] تبدیل می‌کند"
+  },
+  "Avenger's Shield": {
+   "fa": "یک اسپل پرتابی که چند دشمن را هدف قرار می‌دهد و Holy Power تولید می‌کند"
+  },
+  "Divine Toll": {
+   "fa": "یک اسپل قدرتمند که با Holy Power فعال می‌شود و آسیب قابل توجهی وارد می‌کند"
+  },
+  "Holy Bulwark": {
+   "fa": "یک اسپل دفاعی که مقداری Holy Power تولید می‌کند و در درخت Lightsmith استفاده می‌شود."
+  },
+  "Sacred Weapon": {
+   "fa": "یک اسپل که به یک متحد قدرت Holy Power می‌دهد و در درخت Lightsmith استفاده می‌شود."
+  },
+  "Shake the Heavens": {
+   "fa": "یک افکت در درخت Templار که با استفاده از Judgment و Blessed Hammer/Hammer of the Righteous فعال می‌شود و قدرت شما را افزایش می‌دهد."
+  },
+  "A Just Reward": {
+   "fa": "تلنت که با استفاده از برست، به شما اجازه می‌دهد تا یک اسپل برتر را به طور خود فعال کنید."
+  },
+  "Afterimage": {
+   "fa": "تلنت که یک کپی از شما ایجاد می‌کند که بخشی از آسیب‌های شما را دریافت می‌کند."
+  },
+  "Beacon of Faith": {
+   "fa": "اسپل که به شما اجازه می‌دهد دو هدف را به طور همزمان درمان کنید."
+  },
+  "Guardian of Ancient Kings": {
+   "fa": "یک کول‌داون دفاعی اصلی که آسیب دریافتی را به طور قابل توجهی کاهش می‌دهد"
+  },
+  "Holy Shield": {
+   "fa": "افزایش دفاع و ایجاد آسیب برگشتی به دشمنان."
+  },
+  "Lay on Hands": {
+   "fa": "کول‌داون درمانی قدرتمند که می‌تواند شما یا یک هم‌تیمی را نجات دهد."
+  },
+  "Righteous Protector": {
+   "fa": "تلنت که با استفاده از برست، کول‌داون‌های شما را کاهش می‌دهد."
+  },
+  "Blessed Hammer": {
+   "fa": "توپ‌های نورانی که به دشمنان اطراف آسیب می‌زند"
+  },
+  "Hammer of the Righteous": {
+   "fa": "ضربه‌ای قدرتمند به همهٔ دشمنان اطراف"
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پتشن سلامتی که در لحظه‌های بحرانی برای حفظ بقای پالین استفاده می‌شود."
+  },
+  "Draught of Rampant Abandon": {
+   "fa": "پتشن جنگی که باعث افزایش قابل توجه استت‌ها می‌شود و برای مواقعی که نیاز به افزایش دفاع سریع دارید مناسب است."
+  },
+  "Light's Potential": {
+   "fa": "پتشن جنگی جایگزین که تمرکز بیشتری روی افزایش استت‌های ضروری دارد."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "عطر سلاح که باعث افزایش قابل توجه قدرت و استت‌ها می‌شود."
+  },
+  "Enchant Weapon - Berserker's Rage": {
+   "fa": "پوشش سلاح که باعث افزایش قدرت و استت‌ها می‌شود."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "رنت تقویتی که به آیتم‌ها قدرت اضافی می‌بخشد."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "خمیر که باعث افزایش قابل توجه استت‌ها می‌شود."
+  },
+  "Silvermoon Parade": {
+   "fa": "غذای گروهی که تمام استت‌های ضروری را برای هم‌تیمی‌ها افزایش می‌دهد."
+  },
+  "Harandar Celebration": {
+   "fa": "غذای اصلی که تمرکز بیشتری روی استت‌های اصلی دارد."
+  },
+  "Enchant Helm - Empowered Blessing of Speed": {
+   "fa": "پوشش سر که باعث افزایش سرعت و استت‌ها می‌شود."
+  },
+  "Enchant Shoulders - Akil'zon's Swiftness": {
+   "fa": "پوشش شانه‌ها که باعث افزایش سرعت و استت‌ها می‌شود."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "پوشش سینه که باعث افزایش قابل توجه استت‌ها می‌شود."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "پوشش پا که باعث افزایش استت‌ها و دفاع می‌شود."
+  },
+  "Enchant Boots - Farstrider's Hunt": {
+   "fa": "پوشش پا که باعث افزایش سرعت و استت‌ها می‌شود."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "پوشش حلقه که باعث افزایش سرعت و استت‌ها می‌شود."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "الماس که باعث افزایش قابل توجه استت‌ها می‌شود."
+  },
+  "Flawless Versatile Peridot": {
+   "fa": "الماس زمرد که باعث افزایش استت‌های چندمنظیر می‌شود."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Protection Paladin یک تانک سپردار است که با چرخهٔ تولید و خرج کردن Holy Power، آسیب‌گیری را با [[Shield of the Righteous]] نرم می‌کند و با blessing ها پشتیبانی بی‌نظیری به گروه می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "پچ 12.1 ریموک بزرگ درخت اسپک و باف‌های قابل توجه برای او آورد. دو مسیر Hero Tree داری: [[Templar]] با [[Hammer of Light]] و [[Lightsmith]] با Holy Armaments؛ در اکثر محتواها هر دو خیلی نزدیک‌اند."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "آسیب‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "حرکتی",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پشتیبانی",
+       "v": "عالی",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "پشتیبانی گروهی عالی با blessing ها: Blessing of Sacrifice, Blessing of Freedom, Blessing of Protection",
+       "درمان خود و راید قوی با Word of Glory و Hand of the Protector",
+       "مدیریت آسیب جادویی و برید عالی: Blessing of Protection, Divine Shield, Blessing of Spellwarding",
+       "گزینه‌های کنترل جمعیت متعدد: Hammer of Justice, Turn Evil, Blinding Light",
+       "Cleanse Toxins سم و بیماری را از اعضای گروه پاک می‌کند"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "بدون 3 Holy Power یا Divine Purpose، فعال کردن Shield of the Righteous چند ثانیه زمان می‌برد",
+       "پایین‌ترین پلحه سلامت بین تمام تانک‌ها",
+       "اشتباهات مجازاتگر: پنجره‌های واکنش کوتاه و مرگ آسان در صورت آماده نبودن",
+       "حرکت‌پذیری بسیار محدود: Divine Steed تنها توان سرعتی پایه است",
+       "مکانیک‌های پس زدن و حرکت اجباری نیاز به مصرف Divine Shield, Blessing of Protection یا Blessing of Spellwarding دارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "درخت قهرمانی"
+    },
+    {
+     "t": "p",
+     "x": "دو درخت قهرمانی Protection Paladin در پچ 12.1.5 بسیار نزدیک عملکرد دارند. Lightsmith برای راید و Mythic+ و Templar برای Delves برچسب (Best) را از Wowhead دریافت کرده‌اند. درخت مورد علاقه خود را انتخاب کنید."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Lightsmith",
+       "tag": "انتخاب پیش‌فرض برای راید و Mythic+",
+       "x": "یک بار در دقیقه [[Holy Bulwark]] یا [[Sacred Weapon]] را بزنید. در طول [[Avenging Wrath]] مقدار زیادی Holy Power تولید کنید تا [[Blessing of the Forge]] را به حداکثر برسانید. در بقیه زمان‌ها چرخه عادی بازی را اجرا کنید."
+      },
+      {
+       "title": "Templar",
+       "tag": "انتخاب پیش‌فرض برای Delves",
+       "x": "[[Divine Toll]] و [[Hammer of Light]] را به عنوان کول‌داون استفاده کنید. روی [[Judgment]] و [[Blessed Hammer]]/[[Hammer of the Righteous]] تمرکز کنید تا مدت زمان [[Shake the Heavens]] را به حداکثر برسانید. باید [[Divine Toll]] را در درخت کلاس انتخاب کنید."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "درخت تلنت پروتکشن پالادین در پچ 12.1.5 به دو درخت اصلی و هرو تقسیم می‌شود. درخت اصلی برای توانمندی‌های پایه و هرو برای انتخاب‌های قدرتمند در موقعیت‌های خاص طراحی شده است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Templar",
+       "tag": "Raid",
+       "x": "",
+       "code": "CIEAAAAAAAAAAAAAAAAAAAAAAsNzYWmZYGzM2WGDLzithBAYAAAAAAQamZxMmZGjZrNAMgBMYbAAgZm2mZWmBAYzyGzYAMmhxAAsNDwMDyYB"
+      },
+      {
+       "title": "Templar",
+       "tag": "Mythic+",
+       "x": "",
+       "code": "CIEAAAAAAAAAAAAAAAAAAAAAAsZYWGzYmZmZWWGjZZWmlZMAADAAAAAAaamhZMzwY2aDADMgZw2AAAzMtNzsMDAwmlFMAgZYMAALzAmZGkxC"
+      },
+      {
+       "title": "Templar",
+       "tag": "Delves | پیشنهاد منبع",
+       "x": "",
+       "code": "CIEAAAAAAAAAAAAAAAAAAAAAAsZYWGzYmZmZWWGjZZWmlZMAADAAAAAAaamhZMzwY2aDADMgZw2AAAzMtNzsMDAwmlFMAgZYMAALzAmZGkxC"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Raid | پیشنهاد منبع",
+       "x": "",
+       "code": "CIEAAAAAAAAAAAAAAAAAAAAAAsNDzyYmHYmZmx2yYMLzithBAYAAAAAAQamZxMmZYMbtBgBMwMYbAAAEgZmttlWmZsYZjZMAGzwYAwMDAmZQGL"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Mythic+ | پیشنهاد منبع",
+       "x": "",
+       "code": "CIEAAAAAAAAAAAAAAAAAAAAAAsZsNLjZMjZmZZbMmlZZWmxAAMAAAAAAopZGmxMDjZrNAMwAmBbDAAgAMzstt0yMjFLLYAAzwYAwMDAzMDyYB"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Delves",
+       "x": "",
+       "code": "CIEAAAAAAAAAAAAAAAAAAAAAAsZsNLjZMjZmZZbMmlZZWmxAAMAAAAAAopZGmxMDjZrNAMwAmBbDAAgAMzstt0yMjFLLYAAzwYAwMDAzMDyYB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=paladin&spec=protection",
+     "x": "محاسبه‌گر تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در نقش Protection Paladin، استراتژی اصلی شما ساختن و مصرف Holy Power است. هرگز Holy Power بیش از حد جمع نکنید و همیشه از اسپل‌های دفاعی خود برای مدیریت آسیب‌های پیش‌بینی‌شده استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ اسپل‌ها"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اولویت ۱: استفاده از [[Avenging Wrath]] در هر فرصت",
+      "اولویت ۲: استفاده از [[Hammer of Light]] در هر فرصت",
+      "اولویت ۳: استفاده از [[Judgment]] در هر فرصت",
+      "اولویت ۴: استفاده از [[Shield of the Righteous]] با ۳-۵ Holy Power یا وقتی رایگان است؛ سعی نکنید Holy Power بیش از حد جمع کنید",
+      "اولویت ۵: استفاده از [[Word of Glory]] اگر سلامتی زیر ۵۰% شود یا قبل از ضربه‌های بزرگ",
+      "اولویت ۶: استفاده از [[Avenger's Shield]] در هر فرصت",
+      "اولویت ۷: استفاده از [[Divine Toll]] با ۰ Holy Power؛ هماهنگ با [[Avenging Wrath]]",
+      "اولویت ۸: استفاده از [[Blessed Hammer]] / [[Hammer of the Righteous]] در هر فرصت",
+      "اولویت ۹: استفاده از [[Consecration]] به عنوان پرکننده"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در حالت چندهدفه، [[Judgment]] و [[Blessed Hammer]] را در هر فرصت استفاده کنید و بقیهٔ GCDها را با [[Avenger's Shield]] و [[Consecration]] پر کنید؛ حالت چندهدفه عمدتاً در ابزارهای طبیعی شما وجود دارد."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های دفاعی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Avenging Wrath",
+       "x": "در هر فرصت استفاده کنید؛ [[Judgment]] را به [[Hammer of Wrath]] تبدیل کرده و آسیب، درمان و شانس کریتیک را افزایش می‌دهد"
+      },
+      {
+       "s": "Ardent Defender",
+       "x": "در لحظهٔ اول استفاده کنید تا چند ثانیهٔ اولیه را پوشش دهد"
+      },
+      {
+       "s": "Guardian of Ancient Kings",
+       "x": "یک کول‌داون دفاعی اصلی؛ برای پنجره‌های آسیب‌پذیری قابل پیش‌بینی برنامه‌ریزی کنید"
+      },
+      {
+       "s": "Divine Shield",
+       "x": "ایمنی کامل؛ ابزاری برای جلوگیری از پس زده شدن یا حرکت اجباری زمانی که [[Blessing of Protection]] یا [[Blessing of Spellwarding]] مناسب نیستند"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای پروک پالادین در پچ ۱۲.۱.۵، تمرکز اصلی باید روی تکمیل ست تیر و انتخاب افزونه‌های مناسب باشد."
+    },
+    {
+     "t": "call",
+     "x": "هستهٔ گیرینگ شما ست تیر Radiance of the Consecrated Flame خواهد بود که دو افکت قدرتمند برای دفاع و آسیب‌رسانی دارد."
+    },
+    {
+     "t": "h3",
+     "x": "قواعد کلی گیرینگ"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268209
+      },
+      {
+       "slot": "سر",
+       "id": 281239
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271463
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271468
+      },
+      {
+       "slot": "دستبند",
+       "id": 237834
+      },
+      {
+       "slot": "دست",
+       "id": 271466
+      },
+      {
+       "slot": "کمر",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271878
+      },
+      {
+       "slot": "کفش",
+       "id": 237828
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 281239
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "names": [
+        "Gebbo's Bottomless Bag",
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Ula'tek",
+        "Keeper's Seething Core",
+        "Font of Venomous Rage"
+       ],
+       "ids": [
+        270164,
+        270173,
+        270175,
+        270165,
+        270168
+       ]
+      },
+      {
+       "r": "A",
+       "names": [
+        "Vile Vial of Volatile Venom",
+        "Sszorak's Ferocity",
+        "Twisted Horror's Tendril",
+        "Lightbearer's Shield Fragment",
+        "Tattered Amani War Banner",
+        "Merektha's Fang",
+        "Sapling of the Dawnroot",
+        "Tumor of the Swarm",
+        "Idol of the War Loa"
+       ],
+       "ids": [
+        273796,
+        270163,
+        281215,
+        280617,
+        273797,
+        158367,
+        250259,
+        250245,
+        250229
+       ]
+      },
+      {
+       "r": "B",
+       "names": [
+        "Resonant Bellowstone",
+        "Coiled Fangstone",
+        "Blazebinder's Hoof"
+       ],
+       "ids": [
+        250228,
+        273795,
+        193762
+       ]
+      },
+      {
+       "r": "C",
+       "names": [
+        "Magister's Alchemist Stone",
+        "Seed of the Devouring Wild",
+        "Ruby Whelp Shell"
+       ],
+       "ids": [
+        241340,
+        250238,
+        193757
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Strength",
+      "Haste",
+      "Mastery",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت‌های اصلی برای پالادین پروتکشن به ترتیب اولویت Strength، Haste، Mastery، Critical Strike و Versatility هستند."
+    },
+    {
+     "t": "p",
+     "x": "برای زنده‌مانی: Strength > Haste > Mastery > Critical Strike > Versatility؛ برای دی‌پی‌اس: Strength > Haste > Critical Strike > Mastery > Versatility."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Draught of Rampant Abandon or Light's Potential",
+       "ids": [
+        241292,
+        241308
+       ]
+      },
+      {
+       "k": "عطر",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "پوشش سلاح",
+       "v": "Enchant Weapon - Berserker's Rage",
+       "ids": [
+        243972
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "خمیر",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "غذا (آستات)",
+       "v": "Silvermoon Parade (feast)",
+       "ids": [
+        255845
+       ]
+      },
+      {
+       "k": "غذا (استت)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در بخش افزونه‌ها، اولویت با سرآغازها و سپس پوشش‌های سلاح است. برای حلقه‌ها، فقط یک پوشش مجاز است."
+    },
+    {
+     "t": "p",
+     "x": "برای سر، پوشش سرعت و برای شانه‌ها نیز پوشش سرعت انتخاب می‌شود. برای پاها، پوشش شکارگر دوردست مناسب است."
+    },
+    {
+     "t": "p",
+     "x": "برای الماس، الماس فهم‌ناپذیر ایورسونگ و برای الماس‌های دیگر، زمرد چندمنظیر بی‌نقص گزینه‌های بهتری هستند."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "راهنمای Mythic+ برای Protection Paladin"
+    },
+    {
+     "t": "p",
+     "x": "پالادین Protection در Mythic+ نقش یک تانک همه‌کاره را با توانایی‌های منحصربه‌فرد برای حفاظت از گروه ایفا می‌کند. این راهنما برای پچ 12.1.5 و Midnight Season 2 تنظیم شده است."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "برای Mythic+ دو انتخاب اصلی در درخت قهرمانی وجود دارد: Lightsmith که برچسب (Best) را دارد و Templar که بسیار نزدیک به آن است.",
+      "بازیکنان در تمام محتوا می‌توانند بین این دو قهرمان انتخاب کنند چون عملکردشان بسیار مشابه است."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی برای Mythic+"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "برکشن‌ها (Blessings) توانایی‌های فوق‌العاده‌ای در دونژن هستند: Blessing of Sacrifice برای پول‌های خطرناک، Blessing of Protection برای پاک کردن بلیت‌ها، و Blessing of Spellwarding در برابر آتش‌باهای جادویی.",
+      "از [[Hammer of Justice]]، [[Turn Evil]] و [[Blinding Light]] برای قطع کردن و کنترل هیولاها در مواجهه با تراش استفاده کنید.",
+      "اسپل [[Cleanse Toxins]] سموم و بیماری‌ها را از گروه بدون مصرف GCD治疗师 پاک می‌کند.",
+      "همیشه از کول‌داون‌های دفاعی خود برنامه‌ریزی کنید چون پالادین دارای دومین پل هیلث کم بین تمام تانک‌هاست.",
+      "[[Divine Steed]] تنها قابلیت حرکتی پایه شماست؛ برای مدیریت کانک‌بک‌ها و حرکات اجباری از [[Divine Shield]] یا برکشن‌ها استفاده کنید."
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "قهرمان پیشنهادی",
+       "v": "Lightsmith"
+      },
+      {
+       "k": "فصل فعلی",
+       "v": "Midnight Season 2"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Protection Paladin (پروتکشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل پروتکشن (Protection Paladin) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Protection Paladin talent build midnight",
+   "Protection Paladin guide midnight",
+   "Protection Paladin guide 12.1.5",
+   "best Protection Paladin talents",
+   "Protection Paladin talent tree midnight",
+   "Protection Paladin pve guide",
+   "Protection Paladin rotation midnight",
+   "Protection Paladin rotation and cooldowns",
+   "Protection Paladin bis list midnight",
+   "Protection Paladin best in slot",
+   "Protection Paladin gear guide",
+   "Protection Paladin food and potion",
+   "best food for Protection Paladin",
+   "best flask for Protection Paladin",
+   "best potion for Protection Paladin",
+   "Protection Paladin enchants and gems",
+   "best enchants for Protection Paladin",
+   "best gems for Protection Paladin",
+   "Protection Paladin stat priority midnight",
+   "Protection Paladin tier set midnight",
+   "Protection Paladin tier set bonuses",
+   "Protection Paladin mythic+ guide",
+   "Protection Paladin m+ guide midnight",
+   "Protection Paladin raid guide",
+   "Protection Paladin hero talents",
+   "Protection Paladin hero tree",
+   "best tank build Protection Paladin midnight",
+   "Protection Paladin cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای پروتکشن",
+   "تلنت پروتکشن",
+   "تلنت برای Protection Paladin",
+   "تلنت Paladin پروتکشن",
+   "بیلد پروتکشن",
+   "بیلد تلنت پروتکشن میدنایت",
+   "روتیشن پروتکشن",
+   "روتیشن و کول‌داون‌های پروتکشن",
+   "غذا برای پروتکشن",
+   "غذا برای Protection Paladin",
+   "غذا و معجون پروتکشن",
+   "بهترین غذای پروتکشن",
+   "فلسک پروتکشن",
+   "بهترین فلسک برای پروتکشن",
+   "معجون پروتکشن",
+   "انچنت پروتکشن",
+   "انچنت و جم پروتکشن",
+   "بهترین انچنت برای پروتکشن",
+   "جم پروتکشن",
+   "بست آیتم پروتکشن",
+   "بهترین آیتم‌های پروتکشن",
+   "گیر پروتکشن",
+   "استت پروتکشن",
+   "اولویت استت پروتکشن",
+   "ست تیر پروتکشن",
+   "مایتی پلاس پروتکشن",
+   "ام پلاس پروتکشن",
+   "راهنمای پروتکشن",
+   "راهنمای Protection Paladin",
+   "راهنمای پالادین",
+   "پروتکشن میدنایت",
+   "پالادین میدنایت",
+   "هرو تیلنت پروتکشن",
+   "بیلد تانک پروتکشن",
+   "بهترین تانک میدنایت پروتکشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Protection Paladin (پروتکشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Protection Paladin به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای پروتکشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: معجون جنگی «Draught of Rampant Abandon»، غذا «Silvermoon Parade»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای پروتکشن چیست؟",
+    "a": "انچنت سلاح و جم‌های پیشنهادی بر اساس اولویت استت این اسپک انتخاب می‌شوند. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای پروتکشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Gebbo's Bottomless Bag» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Protection Paladin در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

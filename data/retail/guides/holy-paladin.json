@@ -1,0 +1,1058 @@
+{
+ "slug": "holy-paladin",
+ "class": "paladin",
+ "class_en": "Paladin",
+ "spec_en": "Holy",
+ "spec_no": 1,
+ "role": "healer",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Holy Paladin",
+ "lead": "Holy Paladin یک هیلی سنتی با بازی Holy Power است که شفای تک‌هدف قدرتمند و دیفنزهای بیرونی مانند [[Blessing of Sacrifice]] را با هم ترکیب می‌کند. در Midnight با باف‌های بزرگ پچ 12.1 به یکی از هیلی‌های قوی فصل تبدیل شده است. دو مسیر Hero Tree داری: [[Herald of the Sun]] با تراپوت بالاتر برای ریید و Mythic+، و [[Lightsmith]] با Holy Armaments و پشتیبانی دفاعی از گروه.",
+ "sources": [
+  {
+   "name": "Wowhead",
+   "url": "https://www.wowhead.com/guide/classes/paladin/holy/overview-pve-healer"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/paladin/holy/rotation-cooldowns-pve-healer"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/paladin/holy/talent-builds-pve-healer",
+   "updated": "2026-10-27"
+  },
+  {
+   "name": "Wowhead BiS",
+   "url": "https://www.wowhead.com/guide/classes/paladin/holy/bis-gear"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/paladin/holy/stat-priority-pve-healer"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/paladin/holy/enchants-gems-pve-healer"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Blessing of Sacrifice": {
+   "fa": "یک برست که درصدی از آسیب دریافت شده توسط هدف را به شما منتقل می‌کند."
+  },
+  "Divine Shield": {
+   "fa": "یک اسپل شخصی که شما را از تمام آسیب‌ها و اثرات منفی مصون می‌کند."
+  },
+  "Aura Mastery": {
+   "fa": "یک کول‌داون که اثر اوراه‌های شما را برای مدت کوتاهی تقویت می‌کند."
+  },
+  "Holy Power": {
+   "fa": "منبع اصلی هیلی پالادین که با استفاده از اسپل‌ها ساخته می‌شود و برای اسپل‌های قوی‌تر استفاده می‌شود"
+  },
+  "Herald of the Sun": {
+   "fa": "تلنت Hero پیش‌فرض برای Mythic+ که بهبود واکنش‌دهی به آسیب‌ها و افزایش عملکرد درمانی را فراهم می‌کند."
+  },
+  "Lightsmith": {
+   "fa": "تلنت Hero جایگزین که با ساختارهای Beacon of Faith برای مدیریت راحت‌تر مانا ترکیب می‌شود."
+  },
+  "Holy Armaments": {
+   "fa": "تلنتی که Holy Bulwark و Sacred Weapon را فعال می‌کند."
+  },
+  "Eternal Flame": {
+   "fa": "یک تلنت که Dawnlight را روی اهداف خاص قرار می‌دهد."
+  },
+  "Dawnlight": {
+   "fa": "یک افکت که توسط Divine Toll و Holy Prism ایجاد می‌شود."
+  },
+  "Sun's Avatar": {
+   "fa": "یک اسپل در درخت Herald of the Sun است که پرتوهای نوری از شما به Dawnlight‌ها ایجاد می‌کند و به طور مداوم افراد داخل آن‌ها را درمان می‌کند."
+  },
+  "Holy Bulwark": {
+   "fa": "یک سپر مقدس که از یک هدف محافظت می‌کند."
+  },
+  "Sacred Weapon": {
+   "fa": "اسپلی که به یک اسلحه نیرو مقدس می‌بخشد و درمان ایجاد می‌کند."
+  },
+  "Laying Down Arms": {
+   "fa": "تلنتی که پراک Infusion of Light رایگان ایجاد می‌کند."
+  },
+  "Beacon of Virtue": {
+   "fa": "اسپل درمان گروهی که با مصرف پاور مقدس، نور به اهداف نزدیک منتشر می‌کند."
+  },
+  "Beacon of Faith": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد دو هدف را با هم بیکن کنید."
+  },
+  "Light's Protection": {
+   "fa": "تلنت کلیدی در درخت Lightsmith که کاهش دریافت آسیب توسط اعضای گروه را افزایش می‌دهد."
+  },
+  "Holy Shock": {
+   "fa": "یک اسپل دو منظوره که می‌تواند هم برای درمان هم برای آسیب استفاده شود."
+  },
+  "Divine Toll": {
+   "fa": "یک طلسم درمانی فوری که با مصرف پاور مقدس، هدف و اطراف آن را درمان می‌کند."
+  },
+  "Light of Dawn": {
+   "fa": "اسپل درمان گروهی که با مصرف پاور مقدس، نور به اهداف نزدیک پخش می‌کند."
+  },
+  "Light of the Martyr": {
+   "fa": "اسپل درمانی تک‌هدف قدرتمند که با دریافت آسیب برای خودکار افزایش قدرت همراه است."
+  },
+  "Infusion of Light": {
+   "fa": "پراک تلنتی که مصرف Holy Shock یا Holy Light را سریع‌تر می‌کند."
+  },
+  "Holy Light": {
+   "fa": "یک طلسم درمانی قدرتمند که مقداری مانا مصرف می‌کند."
+  },
+  "Judgment": {
+   "fa": "یک طلسم فوری که هم آسیب می‌زند و هم پاور مقدس تولید می‌کند."
+  },
+  "Flash of Light": {
+   "fa": "یک طلسم درمانی سریع که مقداری مانا مصرف می‌کند."
+  },
+  "Avenging Wrath": {
+   "fa": "کول‌داون قدرتمند که قدرت تمام اسپل‌ها را افزایش می‌دهد."
+  },
+  "Beacon of the Savior": {
+   "fa": "تلنتی که Beacon of Virtue را به چند هدف اعمال می‌کند."
+  },
+  "Ringing of the Heavens": {
+   "fa": "تلنتی که اثر Aura Mastery را در هنگام Beacon of Virtue افزایش می‌دهد."
+  },
+  "Solidarity": {
+   "fa": "تلنتی که کپی از Holy Bulwark را به تانک منتقل می‌کند."
+  },
+  "Shield of the Righteous": {
+   "fa": "یک اسپل دفاعی که آسیب وارد می‌کند و مقداری مانا برمی‌گرداند."
+  },
+  "Holy Prism": {
+   "fa": "یک طلسم که هم آسیب می‌زند و هم Dawnlight ایجاد می‌کند."
+  },
+  "Soulcoiler Ritual Vessel": {
+   "fa": "افزونه‌ای که با هیلینگ به شما پاور می‌دهد و با اسپل‌های هولی ترکیب می‌شود."
+  },
+  "Gebbo's Bottomless Bag": {
+   "fa": "افزونه‌ای که پاور تولید می‌کند و با هیلینگ بزرگتر بهتر عمل می‌کند."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "افزونه‌ای که به شما اجازه می‌دهد سریع‌تر اسپل‌های فوری استفاده کنید."
+  },
+  "Wavecaller's Seastone": {
+   "fa": "افزونه‌ای که با هیت به شما شیلد می‌دهد."
+  },
+  "Sigil of the Impending Eclipse": {
+   "fa": "افزونه‌ای که با استفاده از اسپل‌های کول‌داون به شما هیت می‌دهد."
+  },
+  "Radiance of the Consecrated Flame": {
+   "fa": "تییر ست که هیلینگ و قدرت دفاعی شما را بهبود می‌بخشد."
+  },
+  "Magister's Mana Sword": {
+   "fa": "سلاح سفارشی با استت‌های مناسب برای پالادین هولی."
+  },
+  "Spellbreaker's Rebuke": {
+   "fa": "سپر سفارشی با استت‌های مناسب برای پالادین هولی."
+  },
+  "Cinderfury Shoulderguards": {
+   "fa": "کاتالیست برای شانه‌ها که استت‌های را افزایش می‌دهد."
+  },
+  "Reckless Spirit Breastplate": {
+   "fa": "کاتالیست برای سینه که با هیت به شما شیلد می‌دهد."
+  },
+  "Vile Alchemist's Band": {
+   "fa": "حلقه‌ای که با هیت به شما پاور می‌دهد."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "حلقه‌ای که با هیت به شما هیت می‌دهد."
+  },
+  "Sickening Signet of Atroxus": {
+   "fa": "حلقه‌ای مناسب برای حالت Mythic+ که با هیت به شما هیت می‌دهد."
+  },
+  "Mastery": {
+   "fa": "استت ماستری برای پالادین هولی، به نام Lightbringer است و باعث افزایش هیلینگ هدف‌های داخل Consecration و افزایش قدرت کلی هیلینگ می‌شود."
+  },
+  "Intellect": {
+   "fa": "استت اینتلیجکت، قدرت اصلی هیلینگ برای پالادین هولی است و میزان مانا و قدرت اسپل‌ها را افزایش می‌دهد."
+  },
+  "Flask of the Magisters": {
+   "fa": "عصاره‌ای که قدرت Spellpower را افزایش می‌دهد برای پالادین‌های هولی"
+  },
+  "Amani Cornucopia": {
+   "fa": "پت غذا که برای گروه مناسب است و قدرت ثانویه را افزایش می‌دهد"
+  },
+  "Hearty Royal Roast": {
+   "fa": "غذا که قدرت اصلی را افزایش می‌دهد برای پالادین‌های هولی"
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پت سلامتی سریع که در مواقع ضروری برای نجات جان خود یا دیگران استفاده می‌شود"
+  },
+  "Potion of Recklessness": {
+   "fa": "پت جنگی که برای افزایش آسیب‌دهی در لحظات حساس استفاده می‌شود"
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح که آسیب‌دهی اسپل‌ها را افزایش می‌دهد"
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "طلسم سلاح که آسیب‌دهی اسپل‌ها را افزایش می‌دهد"
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "آگمنتی که قدرت اصلی را افزایش می‌دهد"
+  },
+  "Telluric Eversong Diamond": {
+   "fa": "جواهر الماسی که قدرت اصلی و ثانویه را افزایش می‌دهد"
+  },
+  "Flawless Quick Amethyst": {
+   "fa": "جواهری که سرعت (Haste) را افزایش می‌دهد"
+  },
+  "Flawless Masterful Garnet": {
+   "fa": "جواهری که تسلط (Mastery) را افزایش می‌دهد"
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جواهری که تسلط (Mastery) را افزایش می‌دهد"
+  },
+  "Flawless Masterful Lapis": {
+   "fa": "جواهری که تسلط (Mastery) را افزایش می‌دهد"
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "طلسم سر که هیل در لحظات ضروری را افزایش می‌دهد"
+  },
+  "Enchant Shoulders - Silvermoon's Mending": {
+   "fa": "طلسم شانه که هیل را افزایش می‌دهد"
+  },
+  "Enchant Chest - Mark of the Magister": {
+   "fa": "طلسم سینه که قدرت اصلی را افزایش می‌دهد"
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "طلسم پا که قدرت اصلی را افزایش می‌دهد"
+  },
+  "Arcanoweave Spellthread": {
+   "fa": "دوخت پا که قدرت اصلی را افزایش می‌دهد"
+  },
+  "Enchant Ring - Zul'jin's Mastery": {
+   "fa": "طلسم انگشتر که تسلط (Mastery) را افزایش می‌دهد"
+  },
+  "Blessing of Protection": {
+   "fa": "یک برست که هدف را از تمام آسیب‌های فیزیکی و برخی جادویی مصون نگه می‌دارد."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Holy Paladin یک هیلی سنتی با بازی Holy Power است که شفای تک‌هدف قدرتمند و دیفنزهای بیرونی مانند [[Blessing of Sacrifice]] را با هم ترکیب می‌کند. در Midnight با باف‌های بزرگ پچ 12.1 به یکی از هیلی‌های قوی فصل تبدیل شده است. دو مسیر Hero Tree داری: [[Herald of the Sun]] با تراپوت بالاتر برای ریید و Mythic+، و [[Lightsmith]] با Holy Armaments و پشتیبانی دفاعی از گروه."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "ماب",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "ریید",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "دفاع شخصی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "دفاع گروهی",
+       "v": "خوب",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "شفای تک‌هدف قدرتمند",
+       "بقا بالا شامل ایمنی مطلق (Divine Shield)",
+       "دی‌فنس‌های بیرونی قدرتمند: Blessing of Sacrifice و Blessing of Protection",
+       "Aura Mastery با Devotion Aura یک کاهش ریدگسترده قوی ایجاد می‌کند"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "موبیلیت ضعیف",
+       "سیستم منابع Holy Power ممکن است غیرشهودی باشد",
+       "باید برای آسیب زدن به کول‌داون‌ها و منابع هیلی استفاده کند"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "درخت Hero"
+    },
+    {
+     "t": "p",
+     "x": "دو انتخاب اصلی برای درخت Hero وجود دارد که هرکدام برای موقعیت‌های مختلف مناسب هستند."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Herald of the Sun",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این درخت برای هر دو حالت رید و Mythic+ گزینهٔ اصلی است. Holy Shock را تقویت می‌کند و Eternal Flame را جایگزین Word of Glory می‌کند که مقدار بیشتری درمان دارد. Dawnlight یک HoT با اندازهٔ متوسط است و Sun's Avatar پرتوهای نوری از شما به این Dawnlight‌ها ایجاد می‌کند که به طور مداوم هر کسی در داخل آن‌ها را درمان می‌کند."
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "گزینهٔ جایگزین",
+       "x": "این درخت با افزایش قدرت دفاعی و خروجی گروهی از طریق Holy Bulwark و Sacred Weapon شناخته می‌شود. Laying Down Arms تعداد زیادی Infusion of Light رایگان ایجاد می‌کند که به شما اجازه می‌دهد کمتر به Holy Shock تکی کنید و مانا بیشتری برای Holy Light ذخیره کنید."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نکتهٔ مهم در انتخاب Beacon: Lightsmith با Beacon of Faith بهترین ترکیب را دارد چون این درخت منابع زیادی تولید می‌کند که ممکن است همه را مصرف نکنید. Beacon of Virtue درمان‌های قوی‌تر و HPS بالاتری ارائه می‌دهد اما نیاز به استفاده نزدیک به کول‌داون دارد."
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "تلنت‌های پالادین هولی در پچ 12.1.5 بر اساس نقش هیلیر و محیط بازی بهینه‌سازی شده‌اند. دو درخت قهرمانی اصلی Herald of the Sun و Lightsmith انتخاب‌های برتر هستند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Herald of the Sun",
+       "tag": "Raid - Virtue | پیشنهاد منبع",
+       "x": "انتخاب پیش‌فرض ریید با Beacon of Virtue؛ برست شفایی قوی‌تر.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAAw2MzMjZMzYxYmZYZwMLmpJGGzMDjZLDADYYDsxyMmZZ2mZmtGAAAgFAYzwYGzwMAAmZYGjRDA"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Raid - Faith",
+       "x": "نسخهٔ Beacon of Faith برای مدیریت بهتر مانا.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAAwyMzMjZ2mZmNYMsM2MziZaihxMzwY2yAwAG2AbsMjZWmtZmZrBAAAYBA2MMmxMMDAgZGmxY0A"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Mythic+ - Virtue | پیشنهاد منبع",
+       "x": "بیلد توصیه‌شدهٔ Mythic+ با برست [[Beacon of Virtue]].",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAAD2GzMzMjZmZBmZYZsZmFjmYYMzMMmtMAMAsB2YZmZmlZbmZ2aAAAAWAmhNDMjZYGAAzMMjxoB"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Mythic+ - Faith",
+       "x": "نسخهٔ Faith با منای کمتر در کیزهای بلند.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAADWGzMzMjZmZBGDLzsZmFjmYYMzMMmtMAMAsB2YZmZmlZbmZ2aAAAAWAmhNDMjZwAAYmhZMGNA"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Delves",
+       "x": "برای Delves با هر دو Hero Tree کار می‌کند.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAADMmZmZGzMzixMmxyYzMLGNxYGjZYMbZAYAYDsxyMzMLz2Mzs1AAAAsAMDbGYGzwAAwMDzYMaA"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Raid - Virtue",
+       "x": "نسخهٔ پیشرفته با Holy Armaments و Beacon of Virtue.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAbAwMAAw2MzMjZ2mZsYMzMsMYmFz0EDjZmhxslBgBMsB2YZGDACAYmZZZx2MDbAwmhxMmhBgZGAmxY0A"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Raid - Faith",
+       "x": "پیشنهاد منبع برای Lightsmith: Beacon of Faith برای منای کمتر.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAAwyMzMjZMzMbGzYYZsZmFz0EDjZmhxslBgBMsB2YZGDACAYmZZZx2MDbAwmhxMmhBgZGAmxY0A"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Mythic+ - Virtue",
+       "x": "Lightsmith با برست Virtue در کیزهای بالا.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAAD2GwMz2MzsMjZmhFzmZWMTTMMmZGGzWGAGA2AbsYmBABAMzsssYZmhN2wMsZgZMDAYmBgZMGNA"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Mythic+ - Faith",
+       "x": "Lightsmith با Beacon of Faith؛ ساده‌تر و باثبات‌تر.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAADWGwMz2MzsMjZMsMzmZWMTTMMmZGGzWGAGA2AbsYmBABAMzsssYZmhN2wMsZgZMDAYmBgZMGNA"
+      },
+      {
+       "title": "Lightsmith",
+       "tag": "Delves | پیشنهاد منبع",
+       "x": "توصیه‌شدهٔ Delves از سوی منبع.",
+       "code": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAALAwMAADMmZmZGzMzixMmxyYzMLGNxwYMDjZLDADAbgNWmZGAEAwMz22ilZG2AzMsZgZYYAYmBgZMGNA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=paladin",
+     "x": "مشاهده همه ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ بازی هالی پالادین بر پایهٔ مدیریت مستمر پاور مقدس و استفادهٔ بهینه از کول‌داون‌ها بنا شده است."
+    },
+    {
+     "t": "h3",
+     "x": "اصول کلی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "به‌طور مداوم پاور مقدس تولید و مصرف کنید.",
+      "کول‌داون‌ها را در دست نگذارید.",
+      "پراک‌های Infusion of Light را هدر ندهید."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "از Beacon of Virtue برای درمان گروهی استفاده کنید.",
+      "در صورت داشتن ۵ پاور مقدس، آن را مصرف کنید.",
+      "از Divine Toll برای یک هم‌تیمی استفاده کنید.",
+      "پراک‌های Infusion of Light را مصرف کنید.",
+      "از Holy Shock برای یک هم‌تیمی استفاده کنید.",
+      "پاور مقدس را مصرف کنید.",
+      "با توجه به مانای موجود، Holy Light بزنید.",
+      "در هنگام اجرای Beacon of Virtue، از Flash of Light استفاده کنید.",
+      "Judgment را اجرا کنید.",
+      "Flash of Light بزنید."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "اولویتٔ درمان گروهی مانند تک‌هدف است؛ Beacon of Virtue نقطهٔ شروع شماست و Light of Dawn پاور مقدس را برای گروه مصرف می‌کند."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Divine Toll",
+       "x": "نزدیک به زمان کول‌داون استفاده کنید، مگر باعث اورヒلینگ بیش از حد شود."
+      },
+      {
+       "s": "Avenging Wrath",
+       "x": "تلاش کنید تا از این اسپل به تعداد دفعات ممکن استفاده کنید."
+      },
+      {
+       "s": "Aura Mastery",
+       "x": "در هنگام اجرای Beacon of Virtue و همراه با Ringing of the Heavens استفاده کنید."
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "تلنت Lightsmith"
+    },
+    {
+     "t": "p",
+     "x": "با Lightsmith، پراک‌های Infusion of Light رایگان زیادی از Laying Down Arms دریافت می‌کنید: کمتر به Holy Shock تکیه کنید و مانا را برای Holy Light ذخیره نمایید؛ با ست ۴ پیس نسخهٔ ۲، هر Holy Light نیز یک پراک Infusion of Light می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "از تلنت‌های مرتبط با Holy Shock به‌عنوان Lightsmith اجتناب کنید؛ Holy Shock را فقط در دوره‌های کم‌دمیج برای درمان استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "تلنت Holy Armaments"
+    },
+    {
+     "t": "p",
+     "x": "Holy Bulwark را روی اهداف آسیب‌پذیر اولویت دهید (اجرای آن روی خودتان نسخهٔ Solidarity را روی تانک منتقل می‌کند)."
+    },
+    {
+     "t": "p",
+     "x": "Sacred Weapon را روی خودتان بزنید تا درمان را به حداکثر برسانید؛ Holy Armaments را زمانی که به ۳ پاور مقدس نیاز دارید و از بالای ۲ پاور مقدس استفاده از آن خودداری کنید."
+    },
+    {
+     "t": "p",
+     "x": "موجود بودن Holy Bulwark یا Sacred Weapon بلافاصله یک پراک Infusion of Light ایجاد می‌کند."
+    },
+    {
+     "t": "h3",
+     "x": "آمادگی قبل از نبرد"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Holy Light را پیش‌کست کنید و Beacon of Virtue را در انتهای کست آن قرار دهید."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در تجهیز کردن پالادین هولی، سلاح و سپر همیشه بالاترین اولویت را دارند."
+    },
+    {
+     "t": "p",
+     "x": "افزونه‌های قوی با سطح آیتم بالا به‌راحتی جایگزین نمی‌شوند و باید حفظ شوند."
+    },
+    {
+     "t": "p",
+     "x": "پس از سلاح و سپر، روی آیتم‌هایی با استت‌های بالا مانند سینه، پاها و سر تمرکز کنید."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌های پیشنهادی"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268211
+      },
+      {
+       "slot": "سر",
+       "id": 271465
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271463
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271468
+      },
+      {
+       "slot": "دستبند",
+       "id": 268239
+      },
+      {
+       "slot": "دست",
+       "id": 271466
+      },
+      {
+       "slot": "کمر",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271464
+      },
+      {
+       "slot": "کفش",
+       "id": 268260
+      },
+      {
+       "slot": "انگشت",
+       "id": 268249
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 252258
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270162
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270164
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271465
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "names": [
+        "Soulcoiler Ritual Vessel",
+        "Twisted Horror's Tendril",
+        "Gebbo's Bottomless Bag"
+       ],
+       "ids": [
+        270162,
+        281215,
+        270164
+       ]
+      },
+      {
+       "r": "A",
+       "names": [
+        "Wavecaller's Seastone",
+        "Sigil of the Impending Eclipse",
+        "Freightrunner's Flask",
+        "Lightspire Core",
+        "Hex Lord's Dooming Idol"
+       ],
+       "ids": [
+        270167,
+        280835,
+        250215,
+        250214,
+        270169
+       ]
+      },
+      {
+       "r": "B",
+       "names": [
+        "Preternatural Antivenom",
+        "Drum of Renewed Bonds",
+        "Glorious Crusader's Keepsake",
+        "Vile Vial of Volatile Venom",
+        "Stormbound Emblem of Dazar",
+        "Mycolic Medicine",
+        "Unstable Felheart Crystal",
+        "Magister's Alchemist Stone",
+        "Darkmoon Deck: Hunt"
+       ],
+       "ids": [
+        270171,
+        248583,
+        251792,
+        273796,
+        273649,
+        250248,
+        250255,
+        241340,
+        245829
+       ]
+      },
+      {
+       "r": "C",
+       "names": [
+        "Seed of Radiant Hope",
+        "Ruby Whelp Shell"
+       ],
+       "ids": [
+        250254,
+        193757
+       ]
+      },
+      {
+       "r": "D",
+       "names": [
+        "Kyrakka's Searing Embers"
+       ],
+       "ids": [
+        193748
+       ]
+      }
+     ]
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Soulcoiler Ritual Vessel",
+      "Gebbo's Bottomless Bag",
+      "Twisted Horror's Tendril",
+      "Wavecaller's Seastone",
+      "Sigil of the Impending Eclipse"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "دو تییر ست رادیانس آف دی کنسکرتد فلام (Radiance of the Consecrated Flame) بهبودهای چشمگیری در هیلینگ شما ایجاد می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "برای ساخت آیتم‌های سفارشی، می‌توانید از Magister's Mana Sword و Spellbreaker's Rebuke استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "کاتالیست‌ها مانند Cinderfury Shoulderguards و Reckless Spirit Breastplate گزینه‌های خوبی برای ارتقا هستند."
+    },
+    {
+     "t": "call",
+     "x": "تجهیزات میدان نبرد (BIS) ممکن است بسته به محتوای بازی تغییر کند، اما آیتم‌های ذکر شده نقطه شروع خوبی هستند."
+    },
+    {
+     "t": "p",
+     "x": "برای حلقه‌ها، Vile Alchemist's Band و Band of the Swarmcaller گزینه‌های عالی هستند."
+    },
+    {
+     "t": "p",
+     "x": "در حالت Mythic+، Sickening Signet of Atroxus می‌تواند جایگزین خوبی باشد."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Mastery",
+      "Haste",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اولویت اصلی استت‌ها برای پالادین هولی، اینتلیجکت است که قدرت هیلینگ شما را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "بعد از اینتلیجکت، ماستری اولویت دوم است که به هیلینگ هدف‌های داخل [[Consecration]] شما وافزایش قدرت کلی هیلینگ کمک می‌کند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "مواد مصرفی"
+    },
+    {
+     "t": "p",
+     "x": "برای بهینه‌سازی عملکرد پالادین هولی در پچ 12.1.5، انتخاب مواد مصرفی مناسب تأثیر چشمگیری بر عملکرد شما خواهد داشت."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "عصاره",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "معجون",
+       "v": "Amani Cornucopia (feast)",
+       "ids": [
+        275264
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Hearty Royal Roast",
+       "ids": [
+        242747
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "طلسم سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای جواهرسازی و طلسم‌ها، بهترین انتخاب‌ها به شرح زیر هستند:"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Telluric Eversong Diamond",
+       "ids": [
+        240968
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Quick Amethyst, Flawless Masterful Garnet, Flawless Masterful Peridot, Flawless Masterful Lapis",
+       "ids": [
+        240899,
+        240907,
+        240891,
+        240918
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Magister",
+       "ids": [
+        244002
+       ]
+      },
+      {
+       "k": "پا",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "دستکش‌ها",
+       "v": "Arcanoweave Spellthread",
+       "ids": [
+        240154
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Zul'jin's Mastery",
+       "ids": [
+        243958
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای پالادین هولی برای Mythic+ در پچ 12.1.5 و Midnight Season 2 با تمرکز بر نقش healer."
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های پیشنهادی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "استفاده از درخت Hero Talent Herald of the Sun به عنوان پیش‌فرض به دلیل بهبود واکنش‌دهی به آسیب‌ها و افزایش عملکرد درمانی.",
+      "Lightsmith نیز گزینه‌ی قابل بازی است و با ساختارهای Beacon of Faith برای مدیریت راحت‌تر مانا ترکیب می‌شود."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Blessing of Sacrifice و Blessing of Protection ابزارهای دفاعی قدرتمند برای پول‌های خطرناک و مکانیک‌های تله هستند.",
+      "Divine Shield یک ایمنی شخصی برای مکانیک‌های خاص است؛ Blessing of Protection می‌تواند خونریزی‌های دشمن را از هدف پاک کند.",
+      "Aura Mastery با Devotion Aura یک کول‌داون کاهش آسیب قوی برای گروه/رید است.",
+      "از Holy Shock برای پر کردن گلوبال‌ها در زمان حرکت استفاده کنید و Shield of the Righteous برای آسیب رایگان که مانا برمی‌گرداند.",
+      "ضعف اصلی حرکت پایین است: موقعیت‌یابی را حول مکانیک‌ها برنامه‌ریزی کنید چون ابزارهای حرکت قابل اعتماد ندارید."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سر",
+       "v": "Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Primal Pyrite Insignia"
+      },
+      {
+       "k": "دست راست",
+       "v": "Bulwark of Divine Order"
+      },
+      {
+       "k": "دست چپ",
+       "v": "Shard of the Sunwell"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Holy Paladin (هولی) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل هولی (Holy Paladin) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Holy Paladin talent build midnight",
+   "Holy Paladin guide midnight",
+   "Holy Paladin guide 12.1.5",
+   "best Holy Paladin talents",
+   "Holy Paladin talent tree midnight",
+   "Holy Paladin pve guide",
+   "Holy Paladin rotation midnight",
+   "Holy Paladin rotation and cooldowns",
+   "Holy Paladin bis list midnight",
+   "Holy Paladin best in slot",
+   "Holy Paladin gear guide",
+   "Holy Paladin food and potion",
+   "best food for Holy Paladin",
+   "best flask for Holy Paladin",
+   "best potion for Holy Paladin",
+   "Holy Paladin enchants and gems",
+   "best enchants for Holy Paladin",
+   "best gems for Holy Paladin",
+   "Holy Paladin stat priority midnight",
+   "Holy Paladin tier set midnight",
+   "Holy Paladin tier set bonuses",
+   "Holy Paladin mythic+ guide",
+   "Holy Paladin m+ guide midnight",
+   "Holy Paladin raid guide",
+   "Holy Paladin hero talents",
+   "Holy Paladin hero tree",
+   "best healer build Holy Paladin midnight",
+   "Holy Paladin cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای هولی",
+   "تلنت هولی",
+   "تلنت برای Holy Paladin",
+   "تلنت Paladin هولی",
+   "بیلد هولی",
+   "بیلد تلنت هولی میدنایت",
+   "روتیشن هولی",
+   "روتیشن و کول‌داون‌های هولی",
+   "غذا برای هولی",
+   "غذا برای Holy Paladin",
+   "غذا و معجون هولی",
+   "بهترین غذای هولی",
+   "فلسک هولی",
+   "بهترین فلسک برای هولی",
+   "معجون هولی",
+   "انچنت هولی",
+   "انچنت و جم هولی",
+   "بهترین انچنت برای هولی",
+   "جم هولی",
+   "بست آیتم هولی",
+   "بهترین آیتم‌های هولی",
+   "گیر هولی",
+   "استت هولی",
+   "اولویت استت هولی",
+   "ست تیر هولی",
+   "مایتی پلاس هولی",
+   "ام پلاس هولی",
+   "راهنمای هولی",
+   "راهنمای Holy Paladin",
+   "راهنمای پالادین",
+   "هولی میدنایت",
+   "پالادین میدنایت",
+   "هرو تیلنت هولی",
+   "بیلد هیلر هولی",
+   "بهترین هیلر میدنایت هولی"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Holy Paladin (هولی) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Holy Paladin به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای هولی چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: معجون جنگی «Potion of Recklessness»، غذا «Hearty Royal Roast»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای هولی چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Rite of the Hash'ey»، جم «Telluric Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای هولی کدام‌اند؟",
+    "a": "ست تیر فعلی «Soulcoiler Ritual Vessel» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Holy Paladin در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

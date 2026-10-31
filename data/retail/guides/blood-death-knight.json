@@ -1,0 +1,1300 @@
+{
+  "slug": "blood-death-knight",
+  "class": "death-knight",
+  "class_en": "Death Knight",
+  "spec_en": "Blood",
+  "spec_no": 1,
+  "role": "Tank",
+  "patch": "12.1.5",
+  "season": "Midnight Season 2",
+  "updated": "2026-10-28",
+  "title": "راهنمای Blood Death Knight",
+  "lead": "Blood یک تانک خوددرمان‌گر است که بیشترِ بقا و آسیبش را از مدیریت Runic Power و [[Death Strike]] می‌گیرد. در Midnight و پچ 12.1.5 دو مسیر Hero Tree پیش روی توست: [[San'layn]] برای ریید و [[Deathbringer]] برای Mythic+؛ این صفحه بیلد، روتیشن، گیر و مصرفی‌های هر دو را جمع کرده است.",
+  "sources": [
+    {
+      "name": "Wowhead",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/overview",
+      "updated": "2026-10-13"
+    },
+    {
+      "name": "Wowhead BiS",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/bis-gear"
+    },
+    {
+      "name": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow/blood-death-knight-pve-tank-guide",
+      "updated": "2026-10-12"
+    },
+    {
+      "name": "Wowhead Talent Builds",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/talent-builds-pve-tank",
+      "updated": "2026-10-13"
+    },
+    {
+      "name": "Wowhead Rotation",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/rotation-cooldowns-pve-tank",
+      "updated": "2026-10-13"
+    },
+    {
+      "name": "Wowhead Consumables",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/enchants-gems-pve-tank",
+      "updated": "2026-10-27"
+    }
+  ],
+  "glossary": {
+    "Death Strike": {
+      "fa": "اسپل اصلی بقا برای تانکینگ Blood؛ با مصرف Runic Power، بخشی از آسیب وارد شده را به صورت جبرانی درمان می‌کند."
+    },
+    "San'layn": {
+      "fa": "مسیر Hero Tree برای ریید؛ با تمرکز روی بهبود [[Vampiric Blood]]، [[Death's Advance]] و خروجی Runic Power."
+    },
+    "Deathbringer": {
+      "fa": "مسیر Hero Tree برای Mythic+؛ با تمرکز روی بهبود [[Marrowrend]]، [[Blood Boil]] و مدیریت تالنت‌های دفاعی."
+    },
+    "Vampiric Blood": {
+      "fa": "کول‌داون دفاعی اصلی که بقای شخصی و گروهی را افزایش می‌دهد"
+    },
+    "Anti-Magic Zone": {
+      "fa": "اسپل گروهی که منطقه‌ای ایجاد می‌کند که در آن آسیب جادویی کاهش می‌یابد و از افکت‌های منفی جلوگیری می‌کند."
+    },
+    "Purgatory": {
+      "fa": "یک توانایی که به Death Knight اجازه می‌دهد یک بار بمیرد بدون اینکه واقعاً بمیرد."
+    },
+    "Reaper's Mark": {
+      "fa": "علامتی که بر هدف قرار می‌گیرد و با استفاده از Exterminate از بین می‌رود. این برست اساس مکانیک هیرو Deathbringer است."
+    },
+    "Essence of the Blood Queen": {
+      "fa": "استک‌هایی که با استفاده از [[Dancing Rune Weapon]] در هیرو San'layn ساخته می‌شوند و در پایان پنجره آسیب‌رسانی بالا را افزایش می‌دهند."
+    },
+    "Dancing Rune Weapon": {
+      "fa": "یک اسپل کلیدی که در هر دو هیرو استفاده می‌شود. در Deathbringer برای پروک‌های اضافه و در San'layn برای ساخت استک‌های Essence of the Blood Queen به کار می‌رود."
+    },
+    "Zul'jin's Guillotine Technique": {
+      "fa": "افزونهٔ سطح بالا که با فعال شدن، آسیب قابل توجهی به اهداف نزدیک وارد می‌کند."
+    },
+    "Voracious Heart of Ula'tek": {
+      "fa": "افزونهٔ سطح بالا که با فعال شدن، بهبودی قابل توجه و پاداش اسپک ارائه می‌دهد."
+    },
+    "Sudden Doom": {
+      "fa": "تلنت که به شما اجازه می‌دهد یک [[Death Strike]] بدون مصرف ران استفاده کنید."
+    },
+    "Blood Mirror": {
+      "fa": "یک اسپل دفاعی که با دریافت آسیب، بخشی از آن را به اطرافیان منتقل می‌کند."
+    },
+    "Blooddrinker": {
+      "fa": "یک اسپل DOT که آسیب قابل توجهی در طول زمان وارد می‌کند و با استت Critical Strike هم‌افزایی دارد."
+    },
+    "Flask of the Blood Knights": {
+      "fa": "فلاسک قدرتمند برای تانک‌های بلود که استت‌ها را افزایش می‌دهد."
+    },
+    "Flask of the Shattered Sun": {
+      "fa": "فلاسک جایگزین برای موقعیت‌های خاص با استت‌های متفاوت."
+    },
+    "Harandar Celebration": {
+      "fa": "غذا با استت‌های بالا برای تانک‌ها."
+    },
+    "Blooming Feast": {
+      "fa": "غذا جایگزین با استت‌های ثانویه مناسب."
+    },
+    "Concentrated Silvermoon Health Potion": {
+      "fa": "پوشن درمانی قوی برای موقعیت‌های اضطراری."
+    },
+    "Potion of Recklessness": {
+      "fa": "پوشن جنگی که قدرت آسیب‌رسانی را افزایش می‌دهد."
+    },
+    "Thalassian Phoenix Oil": {
+      "fa": "روغن سلاح برای افزایش قدرت حمله."
+    },
+    "Void-Touched Augment Rune": {
+      "fa": "رون افزایشی برای آیتم‌ها."
+    },
+    "Enchant Helm - Empowered Blessing of Speed": {
+      "fa": "انچنت کلاه برای افزایش اسپد."
+    },
+    "Enchant Shoulders - Akil'zon's Swiftness": {
+      "fa": "انچنت شانه برای افزایش اسپد."
+    },
+    "Enchant Chest - Mark of the Worldsoul": {
+      "fa": "انچنت سینه برای افزایش استت‌ها."
+    },
+    "Forest Hunter's Armor Kit": {
+      "fa": "کیت زره برای پاها."
+    },
+    "Enchant Boots - Farstrider's Hunt": {
+      "fa": "انچنت چکمه برای افزایش استت‌ها."
+    },
+    "Enchant Ring - Nature's Fury": {
+      "fa": "انچنت انگشتر برای افزایش آسیب‌رسانی."
+    },
+    "Enchant Ring - Eyes of the Eagle": {
+      "fa": "انچنت انگشتر برای افزایش آسیب‌رسانی خالص."
+    },
+    "Anti-Magic Shell": {
+      "fa": "اسپل دفاعی که اکثر debuffs و نفرین‌های جادویی را بی‌اثر می‌کند."
+    },
+    "Lichborne": {
+      "fa": "اسپل که به Death Knight در برابر Charm، Fear و Sleep ایمنی می‌دهد."
+    },
+    "Icebound Fortitude": {
+      "fa": "اسپل دفاعی که به Death Knight در برابر Stun ایمنی می‌دهد."
+    },
+    "Death's Advance": {
+      "fa": "افزایش تحرک و ایمنی از knockback برای مدت کوتاه؛ یکی از ابزارهای اصلی برای جای‌گیری صحیح."
+    },
+    "Death Grip": {
+      "fa": "یک اسپل که دشمن را به سمت Death Knight می‌کشد."
+    },
+    "Gorefiend's Grasp": {
+      "fa": "یک اسپل که چندین دشمن را به سمت Death Knight می‌کشد."
+    },
+    "Blinding Sleet": {
+      "fa": "یک اسپل AoE که دشمنان را گیج می‌کند."
+    },
+    "Wraith Walk": {
+      "fa": "یک اسپل که به Death Knight اجازه می‌دهد نامرئی شود و سریع حرکت کند."
+    },
+    "Voidbound": {
+      "fa": "یک affix در Mythic+ که Void Emissary را به گروه اضافه می‌کند که باید کنترل شود."
+    },
+    "Pulsar": {
+      "fa": "یک affix در Mythic+ که orbهایی ایجاد می‌کند که باید در زمان مشخصی soak شوند."
+    },
+    "Devour": {
+      "fa": "یک affix در Mythic+ که بازیکنان را با debuffی مبتلا می‌کند که باید با شفا درمان شود."
+    },
+    "Rapid Decomposition": {
+      "fa": "تلنت که بهبود می‌دهد؛ leech بیشتری از Blood Plauge می‌دهد."
+    },
+    "Permafrost": {
+      "fa": "تلنت که بهبود می‌دهد؛ سرعت ساخت استک‌های [[Icebound Fortitude]] را افزایش می‌دهد."
+    },
+    "Umbilicus Eternus": {
+      "fa": "تلنت که بهبود می‌دهد؛ leech بیشتری از [[Heart Strike]] می‌دهد."
+    },
+    "Sanguinary Burst": {
+      "fa": "تلنت که بهبود می‌دهد؛ درمان بیشتری از [[Blood Boil]] می‌دهد."
+    },
+    "Frenzied Bloodthirst": {
+      "fa": "تلنت که آسیب [[Blood Boil]] را با هر استک از [[Blood Plague]] افزایش می‌دهد."
+    },
+    "Visceral Strength": {
+      "fa": "تلنت که قدرت را افزایش می‌دهد؛ هر استک از [[Blood Plague]] مقدار مشخصی قدرت اضافه می‌کند."
+    },
+    "Death's Caress": {
+      "fa": "پرتاب رونیک دوربرد که هدف را با Blood Plague آلوده می‌کند و Runic Power می‌سازد؛ در opener و برای refresh کردن Bone Shield وقتی تانت ممکن نیست به کار می‌آید."
+    },
+    "Dark Command": {
+      "fa": "تانت تک‌هدف با برد بلند؛ تانک اول Death Knight. کنار Death Grip یکی از دو ابزار جلب توجه توست."
+    },
+    "Death and Decay": {
+      "fa": "ناحیهٔ آلوده‌شده که به دشمن‌های داخلش آسیب می‌زند؛ ایستادن داخل آن بونوس دفاعی و خروجی می‌دهد و پیش‌قرار شدنش بخشی از روتیشن Blood است."
+    },
+    "Pillar of Frost": {
+      "fa": "یخ، اندام‌های دیث نایت را می‌پوشاند و ۱۵٪ Strength را به مدت ۲۰ ثانیه بالا می‌برد؛ برای انفجارهای دمیج کوتاه یا کنار دفاع‌ها در لحظه‌های فشار استفاده می‌شود."
+    },
+    "Bone Shield": {
+      "fa": "استک‌های دفاعی Blood Death Knight که با Marrowrend ساخته می‌شوند؛ هر charge کاهش هزینهٔ Runic Power و بونوس armor می‌دهد و نگه‌داشتن حداقل ۵ استک ستون چرخهٔ بازی است."
+    },
+    "Blood Plague": {
+      "fa": "دبیاف بیماری Blood Death Knight که با Blood Boil روی اهداف اعمال می‌شود؛ در طول Dancing Rune Weapon هر نسخهٔ کپی‌شده هم خودش Blood Plague جداگانه می‌گذارد."
+    },
+    "Crimson Scourge": {
+      "fa": "پروکی که cast بعدی Death and Decay را رایگان و فوری می‌کند؛ اولویت بالایی در چرخه دارد چون هم دمیج می‌دهد هم بوف داخل DnD را فعال می‌کند."
+    }
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "title": "معرفی",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Blood یک تانک خوددرمان‌گر است که بیشترِ بقا و آسیبش را از مدیریت Runic Power و [[Death Strike]] می‌گیرد."
+        },
+        {
+          "t": "p",
+          "x": "در Midnight و پچ 12.1.5 دو مسیر Hero Tree پیش روی توست: [[San'layn]] برای ریید و [[Deathbringer]] برای Mythic+."
+        },
+        {
+          "t": "ratings",
+          "items": [
+            {
+              "k": "تک‌هدف",
+              "v": "عالی",
+              "n": 5
+            },
+            {
+              "k": "چندهدف (AoE)",
+              "v": "خوب",
+              "n": 4
+            },
+            {
+              "k": "Mythic+",
+              "v": "متوسط",
+              "n": 3
+            },
+            {
+              "k": "ابزار گروه",
+              "v": "متوسط",
+              "n": 3
+            },
+            {
+              "k": "بقا",
+              "v": "عالی",
+              "n": 5
+            },
+            {
+              "k": "تحرک",
+              "v": "ضعیف",
+              "n": 2
+            }
+          ]
+        },
+        {
+          "t": "two",
+          "a": {
+            "cls": "good",
+            "title": "نقاط قوت",
+            "items": [
+              "بخش اصلی بقا در پچ 12.1.5 تقویت شده؛ [[Rapid Decomposition]]، [[Permafrost]]، [[Umbilicus Eternus]] و [[Sanguinary Burst]] بهتر شده‌اند",
+              "ابزارهای منحصر به فرد گروهی مثل [[Anti-Magic Zone]]، [[Death Grip]] و [[Gorefiend's Grasp]]",
+              "دو تاント مجزا: [[Dark Command]] و [[Death Grip]]",
+              "کنترل خوب با [[Blinding Sleet]] و [[Death's Advance]] برای ایمنی از knockback",
+              "پنجرهٔ برست قوی با [[Pillar of Frost]] و [[Vampiric Blood]]"
+            ]
+          },
+          "b": {
+            "cls": "bad",
+            "title": "نقاط ضعف",
+            "items": [
+              "تحرک پایه محدود است؛ برای بهبودش باید به [[Death's Echo]] یا [[Wraith Walk]] تالنت بدهی",
+              "بازی‌کننده باید آسیب اولیه را بپذیرد و سپس با [[Death Strike]] آن را جبران کند",
+              "تعداد انتخاب‌های دفاعی در پچ 12.1.5 نسبت به expansions قبلی کمتر شده"
+            ]
+          }
+        },
+        {
+          "t": "h3",
+          "x": "تغییرات پچ 12.1.5"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "آسیب [[Marrowrend]] و [[Heart Strike]] / [[Vampiric Strike]] افزایش یافته",
+            "آسیب [[Reaper's Mark]] و [[Exterminate]] روی هدف اصلی بیشتر شده",
+            "تالنت‌های دفاعی مثل [[Rapid Decomposition]]، [[Permafrost]]، [[Umbilicus Eternus]] و [[Sanguinary Burst]] بهبود یافته‌اند",
+            "تالنت [[Frenzied Bloodthirst]] کاهش یافته (5% به ازای هر استک)",
+            "تالنت [[Visceral Strength]] کاهش یافته (10% قدرت)"
+          ]
+        },
+        {
+          "t": "call",
+          "x": "بهبودهای دفاعی پچ 12.1.5 با 25% افزایش دنیای بازی تطابق داده شده‌اند."
+        },
+        {
+          "t": "p",
+          "x": "این راهنما شامل بیلد، روتیشن، گیر و مصرفی‌های هر دو مسیر Hero Tree است."
+        },
+        {
+          "t": "link",
+          "href": "talents.html?class=DeathKnight&spec=Blood",
+          "x": "مشاهده بیلدها و تلنت‌ها"
+        },
+        {
+          "t": "h3",
+          "x": "Hero Tree: کدام مسیر؟"
+        },
+        {
+          "t": "cards",
+          "items": [
+            {
+              "title": "Deathbringer",
+              "tag": "انتخاب پیش‌فرض برای Mythic+",
+              "x": "این هیرو بازی بسیار ساده‌تری دارد و مزایای دفاعی قابل توجهی دارد. تمرکزش روی برست ۴۵ ثانیه‌ای [[Reaper's Mark]] (که با تلنت به ۳۰ ثانیه کاهش می‌یابد) و پروک‌های اضافه از [[Dancing Rune Weapon]] است."
+            },
+            {
+              "title": "San'layn",
+              "tag": "انتخاب پیش‌فرض برای ریید",
+              "x": "این هیرو بهترین عملکرد را برای ریید تک‌هدف و تا ۸ هدف ثابت ارائه می‌دهد. مکانیک اصلی آن چرخش استفاده از [[Dancing Rune Weapon]] برای ساختن و حفظ استک‌های [[Essence of the Blood Queen]] است."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "x": "سیستم دفاعی [[Deathbringer]] شامل کاهش آسیب دائمی ۷.۵٪، دو برابر شدن بهبودی از Blood Plague و کاهش کول‌داون [[Lichborne]] است. در مقابل، [[San'layn]] مزایای دفاعی متفاوتی مانند شیلد هنگام احیای یک فرد، افزایه لچ برای گروه و کاهش کول‌داون [[Icebound Fortitude]] ارائه می‌دهد."
+        },
+        {
+          "t": "call",
+          "x": "در پچ 12.1.5، [[San'layn]] کمی ضعیف‌تر شده است، اما هنوز برای ریید گزینه بهتری محسوب می‌شود. [[Deathbringer]] در حال حاضر از نظر عددی جلوتر است و بازی آن پیچیده‌تر شده است."
+        },
+        {
+          "t": "two",
+          "a": {
+            "cls": "good",
+            "title": "نقاط قوت Deathbringer",
+            "items": [
+              "بازی ساده‌تر",
+              "مزایای دفاعی قوی",
+              "بهترین انتخاب برای Mythic+"
+            ]
+          },
+          "b": {
+            "cls": "bad",
+            "title": "نقاط ضعف Deathbringer",
+            "items": [
+              "کمی ضعیف‌تر در ریید تک‌هدف",
+              "وابستگی به زمان‌بندی [[Reaper's Mark]]"
+            ]
+          }
+        },
+        {
+          "t": "two",
+          "a": {
+            "cls": "good",
+            "title": "نقاط قوت San'layn",
+            "items": [
+              "بهترین عملکرد در ریید",
+              "پنجره‌های آسیب‌رسانی بالا",
+              "بهبودهای دفاعی گروهی"
+            ]
+          },
+          "b": {
+            "cls": "bad",
+            "title": "نقاط ضعف San'layn",
+            "items": [
+              "پیچیدگی در مدیریت استک‌ها",
+              "کمی ضعیف‌تر شده در پچ فعلی"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "leveling",
+      "title": "لولینگ",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Blood برای لولینگ خون‌سرد و بی‌خطر است: [[Blood Boil]] پک‌ها را جمع می‌کند، [[Death Strike]] با هر ضربه جانت را برمی‌گرداند و توقف بین پول‌ها تقریباً صفر است؛ بیشتر وقت‌ها با جان کامل پول بعدی را باز می‌کنی."
+        },
+        {
+          "t": "h3",
+          "x": "تلنت‌های کلیدی حین لولینگ"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "لول ۱۰ [[Death Strike]] · لول ۱۱ [[Outbreak]] برای پخش [[Blood Plague]] روی پک‌ها",
+            "ستون چرخهٔ اسپک را حین لولینگ می‌سازی: [[Heart Strike]]، [[Marrowrend]]، [[Blood Boil]]، [[Vampiric Blood]] و [[Dancing Rune Weapon]]",
+            "لول ۳۶ [[Wraith Walk]] برای جابه‌جایی سریع بین پک‌ها",
+            "لول ۷۱ [[On a Paler Horse]] یکی از پرتحرک‌ترین کلاس‌های بازی برای لولینگ می‌شود",
+            "لول ۹۰ هرو [[Deathbringer]] یا [[San'layn]]؛ تلنت‌های Apex بین لول ۸۰ تا ۹۰ باز می‌شوند"
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "چرخهٔ لولینگ"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Blood Boil]] را برای پخش [[Blood Plague]] و جمع‌کردن پک بزن",
+            "[[Marrowrend]] را فقط برای نگه‌داشتن ۵ استک [[Bone Shield]] بزن",
+            "[[Heart Strike]] را برای خرج Runic Power بزن",
+            "[[Death Strike]] را برای درمان خرج کن؛ بالای ۷۵ Runic Power هم بزن تا cap نشود",
+            "[[Dancing Rune Weapon]] و [[Vampiric Blood]] را روی پک‌های سخت یا الیت خالی کن",
+            "با [[Death Grip]] ماب‌ها را جمع کن و حین کست خطرناک با [[Mind Freeze]] اینتراپت کن"
+          ]
+        },
+        {
+          "t": "call",
+          "kind": "tip",
+          "x": "رون‌فورج حین لولینگ پیچیدگی ندارد: Rune of the Fallen Crusader روی هر دو سلاح انتخاب ساده و مؤثر است؛ بعد از رسیدن به لول ۹۰ ترکیب بخش «انچنت، جم و مصرفی» را بگیر."
+        }
+      ]
+    },
+    {
+      "id": "easy-mode",
+      "title": "حالت ساده",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "این بخش نسخهٔ فشردهٔ راهنماست: دو بیلد آماده، یک اولویت تک‌هدف ساده، یک تغییر کوچک برای AoE و سه کول‌داون. همین برای شروع کافی است؛ جزئیات کامل در بخش‌های تلنت‌ها و روتیشن است."
+        },
+        {
+          "t": "builds",
+          "items": [
+            {
+              "title": "بیلد ریید",
+              "tag": "Deathbringer",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMjhZZmZmmZxYmxMmBAAAAmZmZmZmZYGjZAYMzMzAAAMmtBGwSwywEYYBwMMAAMzAYYA",
+              "x": "بیلد استاندارد ریید با [[Deathbringer]]: رشتهٔ import را کپی کن و در بازی (Talents ← Import) بچسبان."
+            },
+            {
+              "title": "بیلد Mythic+ / Delves",
+              "tag": "Deathbringer",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMz0MLGjxMGAAAAwMmZmZmZYGDAYmZmZGAAgxsNwAWCWGmADLAmxMAAMzAYYA",
+              "x": "بیلد استاندارد میت‌پلاس و دامنه با [[Deathbringer]]: رشتهٔ import را کپی کن و در بازی (Talents ← Import) بچسبان."
+            }
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "اولویت تک‌هدف"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر نیاز به درمان داری یا بالای ۷۵ Runic Power هستی",
+            "حداقل ۵ استک [[Bone Shield]] نگه دار؛ اگر در حال expire شدن است، [[Marrowrend]] را بزن",
+            "[[Death and Decay]] را بزن و داخلش بمان؛ با پروک [[Crimson Scourge]] رایگان است",
+            "[[Reaper's Mark]] و [[Dancing Rune Weapon]] را روی کول‌داون بزن",
+            "[[Blood Boil]] وقتی [[Dancing Rune Weapon]] فعال است و هدف [[Blood Plague]] ندارد، یا charges در حال cap شدن است",
+            "[[Exterminate]] را قبل از انفجار [[Reaper's Mark]] خرج کن",
+            "[[Consumption]] را به رتبه ۱ برسان و [[Heart Strike]] را به‌عنوان فیلر بزن"
+          ]
+        },
+        {
+          "t": "call",
+          "kind": "info",
+          "x": "اولویت AoE تغییر چندانی ندارد: روی empowering کامل [[Consumption]] تمرکز کن و [[Death and Decay]] را روی پک‌های بزرگ با [[Blood Boil]] هم‌زمان کن."
+        },
+        {
+          "t": "h3",
+          "x": "کول‌داون‌ها"
+        },
+        {
+          "t": "cds",
+          "items": [
+            {
+              "s": "Dancing Rune Weapon",
+              "x": "روی کول‌داون؛ ۱۲ ثانیه ۳۰٪ پری می‌دهد و [[Heart Strike]]، [[Marrowrend]] و [[Blood Boil]] را کپی می‌کند؛ [[Marrowrend]] داخل آن ۳ استک [[Bone Shield]] اضافی می‌دهد."
+            },
+            {
+              "s": "Vampiric Blood",
+              "x": "دفاع اصلی‌ات: روی پک‌های بزرگ یا وقتی جان سرازیر شد بزن؛ با [[Improved Vampiric Blood]] سود بیشتری می‌گیری."
+            },
+            {
+              "s": "Anti-Magic Shell",
+              "x": "جذب جادویی و ایمنی از debuffها؛ در Mythic+ برای کست‌های جادویی خطرناک نگهش دار."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "talents",
+      "title": "تلنت‌ها",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "برای هر سه بیلد، رشتهٔ import را کپی کن و داخل بازی (Talents ← Import) بچسبان. اگر می‌خواهی ببینی هر تلنت چه می‌کند، ساختار کامل با توضیح فارسی در صفحهٔ Talent Tree هست."
+        },
+        {
+          "t": "builds",
+          "items": [
+            {
+              "title": "تک‌هدف / ریید",
+              "tag": "Deathbringer",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMjhZZmZmmZxYmxMmBAAAAmZmZmZmZYGjZAYMzMzAAAMmtBGwSwywEYYBwMMAAMzAYYA",
+              "x": "بیلد استاندارد برای باس‌های تک‌هدفی."
+            },
+            {
+              "title": "Mythic+",
+              "tag": "Deathbringer",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMz0MLGjxMGAAAAwMmZmZmZYGDAYmZmZGAAgxsNwAWCWGmADLAmxMAAMzAYYA",
+              "x": "نسبت به نسخهٔ ریید، Howling Blades جایش را به Northwinds می‌دهد."
+            },
+            {
+              "title": "Delves",
+              "tag": "Deathbringer",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZmxMmZmhZZmZmmZxYmxMGAAAAwMzMzMzMDzYMAYMzMzAAAMmtBGwSwywEYYBghZAAMzAMYA",
+              "x": "تعادل تک‌هدف و AoE مثل Mythic+، به‌علاوهٔ سرعت حرکت بیشتر از Rider."
+            },
+            {
+              "title": "تک‌هدف / ریید",
+              "tag": "San'layn",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZmxMmZmhZZmZmmZxYMmxAAAAAmZmZmZmZYGjZAYMzMzAAAYgBmxiGLLgsMgNAzwAAAmZghB",
+              "x": "بیلد جایگزین با تمرکز بیشتر روی AoE و سالمندگی."
+            },
+            {
+              "title": "Mythic+",
+              "tag": "San'layn",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMz0MLGjxMGAAAAwMmZmZmZYGDAYmZmZGAAADMwMW0YZBklBsBYGzAAAmZghB",
+              "x": "بیلد استاندارد برای Mythic+ با تمرکز روی AoE."
+            },
+            {
+              "title": "Delves",
+              "tag": "San'layn",
+              "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZmxMmZmhZZmZmmZxYMmxAAAAAmxMzMzMDzYMAYMzMzAAAYgBmxiGLLgsMgNAzYmBAAmZwgB",
+              "x": "بیلد جایگزین برای Delves با تمرکز روی AoE."
+            }
+          ]
+        },
+        {
+          "t": "link",
+          "href": "talents.html?class=death-knight",
+          "x": "دیدن Talent Tree کامل Death Knight"
+        },
+        {
+          "t": "call",
+          "x": "**Deathbringer** بهترین انتخاب برای ریید و Mythic+ است، در حالی که **San'layn** برای Delves و برخی رییدها بهتر عمل می‌کند."
+        },
+        {
+          "t": "p",
+          "x": "در درخت اصلی، **Blood Mist** و **Blood Boil** برای AoE ضروری هستند. **Blood-Soaked Ground** و **Ossuary** دو گزینهٔ اصلی برای سالمندگی هستند."
+        },
+        {
+          "t": "p",
+          "x": "در درخت قهرمان، **Deathbringer** روی AoE و سالمندگی تمرکز دارد، در حالی که **San'layn** روی توانایی‌های دفاعی و بهبود [[Vampiric Blood]] متمرکز است."
+        },
+        {
+          "t": "p",
+          "x": "تلنت‌های کلیدی برای تک‌هدف شامل **Improved Death Strike** و **Ossuary** هستند. برای AoE، **Blood Boil** و **Blood Mist** ضروری هستند."
+        },
+        {
+          "t": "p",
+          "x": "استفاده از [[Deathbringer]] به شما [[Pact of the Deathbringer]] می‌دهد که یک توانایی دفاعی قوی است. **San'layn** به شما [[Pact of the San'layn]] می‌دهد که روی درمان تمرکز دارد."
+        },
+        {
+          "t": "p",
+          "x": "برای ریید، **Deathbringer** با **Blood-Soaked Ground** انتخاب بهتری است. برای Mythic+، **Deathbringer** با **Ossuary** عملکرد بهتری دارد."
+        },
+        {
+          "t": "p",
+          "x": "در Delves، **Deathbringer** با **Blood-Soaked Ground** برای AoE و سالمندگی بهتر است. **San'layn** برای محتوای سنگین‌تر مناسب‌تر است."
+        },
+        {
+          "t": "p",
+          "x": "تلنت‌های اضافی مانند **Improved Vampiric Blood** و **Runic Protection** برای افزایش سالمندگی بسیار مفید هستند."
+        },
+        {
+          "t": "p",
+          "x": "برای بهینه‌سازی، همیشه **Blood-Soaked Ground** یا **Ossuary** را بگیرید. انتخاب بین این دو بستگی به محتوا و سبک بازی شما دارد."
+        }
+      ]
+    },
+    {
+      "id": "rotation",
+      "title": "روتیشن و کول‌داون‌ها",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "چند اصل کلیدی در بازی Blood Death Knight وجود دارد. باید از بوف‌ها و دباف‌ها به‌درستی مراقبت کنی. منابع را بهینه‌سازی کن تا به [[Death Strike]] بیشتری برسی."
+        },
+        {
+          "t": "p",
+          "x": "حداقل ۵ بار Bone Shield داشته باش. اگر در حال expire شدن است، [[Marrowrend]] را بزن. هر ۴۵ ثانیه دو بار [[Exterminate]] تضمین می‌کند که Bone Shield تازه شود."
+        },
+        {
+          "t": "h3",
+          "x": "اولویت تک‌هدف برای Deathbringer"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر نیاز به درمان داری یا بالای ۷۵ Runic Power هستی.",
+            "حداقل ۵ بار Bone Shield داشته باش؛ اگر در حال expire شدن است، [[Marrowrend]] را بزن.",
+            "[[Death and Decay]] و داخل آن بمان اگر تحت تأثیر بوف آن نیستی.",
+            "[[Death and Decay]] با یک Crimson Scourge proc.",
+            "[[Reaper's Mark]] روی کول‌داون.",
+            "[[Dancing Rune Weapon]] روی کول‌داون.",
+            "[[Blood Boil]] اگر [[Dancing Rune Weapon]] فعال است و هدف Blood Plague ندارد، یا اگر در حال cap شدن charges هستی.",
+            "یک بار [[Exterminate]] را از طریق [[Marrowrend]] خرج کن.",
+            "تمام [[Exterminate]]‌های باقی‌مانده را قبل از انفجار [[Reaper's Mark]] خرج کن.",
+            "[[Consumption]] اگر نسخه hard-cast [[Dancing Rune Weapon]] فعال نیست؛ به رتبه ۱ ارتقا بده.",
+            "[[Blood Boil]] با یک [[Boiling Point]] proc.",
+            "[[Heart Strike]] به‌عنوان filler; در ۴۵ ثانیه بعدی [[Reaper's Mark]]، Rune‌ها را تمام نکن."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "اولویت تک‌هدف برای San'layn در Gift"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر نیاز به درمان داری یا بالای ۷۵ Runic Power هستی.",
+            "حداقل ۵ بار Bone Shield داشته باش.",
+            "[[Blood Boil]] اگر کپی Blood Plague از [[Dancing Rune Weapon]] روی هدف نیست.",
+            "[[Death and Decay]] با یک Crimson Scourge proc.",
+            "با [[Vampiric Strike]] پر کن.",
+            "اگر Rune تمام شده، [[Blood Boil]] بزن."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "اولویت تک‌هدف برای San'layn خارج از Gift"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر نیاز به درمان داری یا بالای ۷۵ Runic Power هستی.",
+            "حداقل ۵ بار Bone Shield داشته باش؛ [[Marrowrend]] اگر در حال expire شدن است ([[Death Grip]] refresh کار می‌کند؛ [[Death's Caress]] اگر نمی‌توانی taunt کنی).",
+            "[[Consumption]] به رتبه ۱ ارتقا داده شده.",
+            "[[Death and Decay]] و داخل آن با یک Crimson Scourge proc بمان اگر [[Visceral Strength]] فعال نیست.",
+            "[[Blood Boil]] با یک [[Boiling Point]] proc.",
+            "اگر در دسترس است، [[Vampiric Strike]] بزن.",
+            "[[Blood Boil]] برای جلوگیری از cap شدن charges.",
+            "[[Heart Strike]]"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "برای AoE، اولویت کلی تغییر نمی‌کند. روی empowering کامل [[Consumption]] تمرکز کن و [[Death and Decay]] uptime را سخت‌گیرانه‌تر رعایت کن."
+        },
+        {
+          "t": "h3",
+          "x": "اولویت AoE برای Deathbringer"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر به درمان نیاز داری یا بالای ۷۵ Runic Power هستی.",
+            "حداقل ۵ بار [[Bone Shield]] را نگه دار؛ اگر در حال expire شدن است، [[Marrowrend]] بزن.",
+            "[[Death and Decay]] بزن و داخل آن بمان اگر بوف آن را نداری.",
+            "[[Reaper's Mark]] روی کول‌داون.",
+            "[[Dancing Rune Weapon]] روی کول‌داون.",
+            "[[Blood Boil]] اگر [[Dancing Rune Weapon]] فعال است و هدف [[Blood Plague]] ندارد، یا اگر در حال cap شدن charges هستی.",
+            "یک بار charge [[Exterminate]] را قبل از انفجار [[Reaper's Mark]] خرج کن.",
+            "تمام chargeهای [[Exterminate]] را قبل از انفجار [[Reaper's Mark]] خرج کن.",
+            "[[Blood Boil]] با یک [[Boiling Point]] proc.",
+            "[[Consumption]] اگر نسخه hard-cast [[Dancing Rune Weapon]] فعال نیست؛ به رتبه ۱ ارتقا بده.",
+            "[[Blood Boil]] به‌عنوان filler اگر charge آزاد داری.",
+            "[[Heart Strike]] به‌عنوان filler؛ هرگز Runes را خالی نکن، مخصوصاً نزدیک ۴۵ ثانیه که [[Reaper's Mark]] از کول‌داون درمی‌آید."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "اولویت AoE برای San'layn در Gift"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر به درمان نیاز داری یا بالای ۷۵ Runic Power هستی.",
+            "حداقل ۵ بار [[Bone Shield]] را نگه دار.",
+            "[[Blood Boil]] اگر کپی [[Blood Plague]] از [[Dancing Rune Weapon]] روی هدف نیست.",
+            "[[Death and Decay]] با یک [[Crimson Scourge]] proc.",
+            "با [[Vampiric Strike]] filler بزن.",
+            "اگر Rune تمام شد، [[Blood Boil]] بزن."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "اولویت AoE برای San'layn خارج از Gift"
+        },
+        {
+          "t": "steps",
+          "items": [
+            "[[Death Strike]] اگر به درمان نیاز داری یا بالای ۷۵ Runic Power هستی.",
+            "حداقل ۵ بار [[Bone Shield]] را نگه دار؛ اگر در حال expire شدن است، [[Marrowrend]] بزن.",
+            "[[Consumption]] را به رتبه ۳ ارتقا بده و بلافاصله هنگام خروج از [[Dancing Rune Weapon]] استفاده کن؛ اگر در زمان دیگری از کول‌داون درآمد، به رتبه ۱ ارتقا بده.",
+            "[[Death and Decay]] بزن و داخل آن بمان اگر بوف آن را نداری یا [[Crimson Scourge]] proc گرفتی.",
+            "[[Blood Boil]] با یک [[Boiling Point]] proc.",
+            "[[Vampiric Strike]] اگر موجود است.",
+            "[[Blood Boil]] برای جلوگیری از cap شدن charges.",
+            "[[Heart Strike]]."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "آغاز بازی تک‌هدف برای Deathbringer"
+        },
+        {
+          "t": "seq",
+          "items": [
+            "Death's Caress",
+            "Death and Decay",
+            "Reaper's Mark",
+            "Dancing Rune Weapon",
+            "Blood Boil",
+            "Marrowrend",
+            "Death Strike"
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "آغاز بازی تک‌هدف برای San'layn"
+        },
+        {
+          "t": "seq",
+          "items": [
+            "Death's Caress",
+            "Death and Decay",
+            "Dancing Rune Weapon",
+            "Blood Boil",
+            "Vampiric Strike",
+            "Vampiric Strike",
+            "Death Strike"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "[[Dancing Rune Weapon]]: ۱۲ ثانیه ۳۰% parry، [[Heart Strike]]، [[Marrowrend]]، [[Blood Boil]] و [[Death Strike]] را کپی می‌کند. [[Marrowrend]] در آن ۳ Bone Shield اضافی می‌دهد. [[Blood Boil]] در آن هر سلاح Blood Plague جداگانه‌ای می‌زند."
+        },
+        {
+          "t": "p",
+          "x": "Bone Shield هر ۳۰ ثانیه به یک نیاز دارد. [[Deathbringer]] با [[Reaper's Onslaught]] به‌طور خودکار مدیریت می‌شود. [[San'layn]] هیچ تولید منفعل ندارد - آن را با UI ردیابی کن."
+        },
+        {
+          "t": "p",
+          "x": "قبل از مبارزه: پاتشن‌ها و غذاها را چک کن. در M+، Bone Shield بین pulls باقی می‌ماند; Runic Power هر ثانیه ۱ RP کم می‌شود. در پایان یک pull، Bone Shield را refresh کن و RP را برای pull بعدی pool کن."
+        }
+      ]
+    },
+    {
+      "id": "gear",
+      "title": "گیر و آیتم‌ها",
+      "blocks": [
+        {
+          "t": "p",
+          "x": "این لیست، بهترین ست ممکن از همهٔ منابع است. هر آیتمی که اینجا نیست لزوماً بد نیست؛ ستاپ‌های دیگر هم در حاشیهٔ خطا کار می‌کنند. بهترین کار این است که با Raidbots برای کاراکتر خودت sim بگیری."
+        },
+        {
+          "t": "call",
+          "x": "ست تیر فصل 2 با سبک بازی [[San'layn]] هم‌افزایی دارد؛ Wowhead می‌گوید در لول 90 و با ست جدید، [[San'layn]] برای همهٔ محتواها به میز بازگشته است."
+        },
+        {
+          "t": "h3",
+          "x": "Best in Slot"
+        },
+        {
+          "t": "bis",
+          "items": [
+            {
+              "slot": "سلاح",
+              "id": 268213
+            },
+            {
+              "slot": "سر",
+              "id": 271474
+            },
+            {
+              "slot": "گردن",
+              "id": 268265
+            },
+            {
+              "slot": "شانه",
+              "id": 271472
+            },
+            {
+              "slot": "شنل",
+              "id": 268253
+            },
+            {
+              "slot": "سینه",
+              "id": 271477
+            },
+            {
+              "slot": "مچ",
+              "id": 237834
+            },
+            {
+              "slot": "دست",
+              "id": 271475
+            },
+            {
+              "slot": "کمربند",
+              "id": 268259
+            },
+            {
+              "slot": "پا",
+              "id": 271878
+            },
+            {
+              "slot": "چکمه",
+              "id": 273777
+            },
+            {
+              "slot": "انگشتر",
+              "id": 240949
+            },
+            {
+              "slot": "انگشتر",
+              "id": 281029
+            },
+            {
+              "slot": "ترینکت",
+              "id": 270175
+            },
+            {
+              "slot": "ترینکت",
+              "id": 270173
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "x": "برای انگشتر‌ها، گزینه‌های جایگزین {{159459}} و {{252258}} برای **San'layn** مناسب هستند."
+        },
+        {
+          "t": "h3",
+          "x": "رتبه‌بندی ترینکت‌ها"
+        },
+        {
+          "t": "tiers",
+          "items": [
+            {
+              "r": "S",
+              "ids": [
+                270173,
+                270175
+              ],
+              "names": [
+                "Zul'jin's Guillotine Technique",
+                "Voracious Heart of Ula'tek"
+              ]
+            },
+            {
+              "r": "A",
+              "ids": [
+                270165,
+                273796,
+                250238,
+                250259
+              ],
+              "names": [
+                "Keeper's Seething Core",
+                "Vile Vial of Volatile Venom",
+                "Seed of the Devouring Wild",
+                "Sapling of the Dawnroot"
+              ]
+            },
+            {
+              "r": "B",
+              "ids": [
+                193762,
+                273797,
+                270164,
+                274493
+              ],
+              "names": [
+                "Blazebinder's Hoof",
+                "Tattered Amani War Banner",
+                "Gebbo's Bottomless Bag",
+                "Effigy of Ula'tek's Faithful"
+              ]
+            },
+            {
+              "r": "C",
+              "ids": [
+                158367,
+                250245,
+                270168,
+                270163
+              ],
+              "names": [
+                "Merektha's Fang",
+                "Tumor of the Swarm",
+                "Font of Venomous Rage",
+                "Sszorak's Ferocity"
+              ]
+            },
+            {
+              "r": "D",
+              "ids": [
+                251783,
+                250228,
+                273795,
+                250229,
+                250244
+              ],
+              "names": [
+                "Lost Idol of the Hash'ey",
+                "Resonant Bellowstone",
+                "Coiled Fangstone",
+                "Idol of the War Loa",
+                "Permafrost Essence"
+              ]
+            }
+          ]
+        },
+        {
+          "t": "set",
+          "id": 271474
+        },
+        {
+          "t": "p",
+          "x": "ست Tier جدید Midnight Season 2، سبک بازی **San'layn** را تقویت می‌کند."
+        },
+        {
+          "t": "h3",
+          "x": "قواعد گیرینگ"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "در قطعاتی با استت Strength (همه غیر از جواهر و Embellishment)، افزایش سطح آیتم بر انتخاب استت‌های ثانویه ارجحیت دارد.",
+            "در جواهر‌ها و با سطح آیتم برابر: **San'layn** به اسپک علاقه دارد، اما **Deathbringer** از آن دوری می‌کند.",
+            "از Raidbots Top Gear برای ارزیابی جایگزین‌ها استفاده کن؛ ست BiS لزوماً به این معنا نیست که هر قطعه به تنهایی بهینه است."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stats",
+      "title": "اولویت استت",
+      "blocks": [
+        {
+          "t": "stat",
+          "items": [
+            "Strength",
+            "Haste",
+            "Critical Strike",
+            "Mastery",
+            "Versatility"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "استت اصلی Strength است. برای آپ‌گرید آیتم‌ها، Strength اولویت دارد. در نسخه‌های دیگر بازی ممکن است ترتیب استت‌ها فرق کند، اما در پچ ۱۲.۱.۵ این ترتیب بهترین عملکرد را دارد."
+        },
+        {
+          "t": "p",
+          "x": "با [[San'layn]]: Strength > Haste ≥ Critical Strike ≥ Mastery = Versatility. با [[Deathbringer]] برای Mythic+: Strength > Critical Strike ≥ Mastery = Versatility > Haste. برای ریید: Critical Strike = Mastery = Versatility > Haste."
+        },
+        {
+          "t": "p",
+          "x": "Haste سرعت بازگشت Rune و تولید Runic Power را بالا می‌برد؛ برای [[San'layn]] استت اول است. [[Deathbringer]] برعکس، Haste را آخر می‌گذارد."
+        },
+        {
+          "t": "p",
+          "x": "نقطه‌های Diminishing Returns: Crit و Mastery در ۱۳۸۰ / ۱۸۴۰ / ۲۳۰۰ رتینگ برای ۱۰ / ۲۰ / ۳۰ درصد؛ Haste در ۱۳۲۰ / ۱۷۶۰ / ۲۲۰۰؛ Versatility در ۱۶۲۰ / ۲۱۶۰ / ۲۷۰۰. این اعداد ممکن است با آپ‌دیت‌های بازی تغییر کنند."
+        },
+        {
+          "t": "two",
+          "a": {
+            "cls": "good",
+            "title": "نقاط قوت",
+            "items": [
+              "استت‌ها به خوبی با مکانیک‌های کلاس هماهنگ هستند",
+              "تنوع در انتخاب استت‌ها بسته به محتوای بازی"
+            ]
+          },
+          "b": {
+            "cls": "bad",
+            "title": "نقاط ضعف",
+            "items": [
+              "ترتیب استت‌ها بسته به نسخه‌های مختلف بازی ممکن است گیج‌کننده باشد"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "enchants",
+      "title": "انچنت، جم و مصرفی",
+      "blocks": [
+        {
+          "t": "h3",
+          "x": "مصرف‌های بهینه"
+        },
+        {
+          "t": "p",
+          "x": "در این بخش به مصرف‌های ضروری برای اوج‌گیری عملکرد Blood Death Knight در پچ 12.1.5 می‌پردازیم."
+        },
+        {
+          "t": "h3",
+          "x": "پتشن‌ها و فلاسک‌ها"
+        },
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "فلاسک",
+              "v": "Flask of the Blood Knights",
+              "ids": [
+                241324
+              ]
+            },
+            {
+              "k": "معجون",
+              "v": "Potion of Recklessness",
+              "ids": [
+                241288
+              ]
+            },
+            {
+              "k": "معجون سلامتی",
+              "v": "Concentrated Silvermoon Health Potion",
+              "ids": [
+                271883
+              ]
+            }
+          ]
+        },
+        {
+          "t": "call",
+          "x": "پتشن Recklessness را در پنجرهٔ برست ([[Dancing Rune Weapon]] + [[Reaper's Mark]]) استفاده کن و معجون سلامتی را برای اورژانس نگه دار."
+        },
+        {
+          "t": "h3",
+          "x": "تجهیزات و جواهرات"
+        },
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "جم‌ها",
+              "v": "Indecipherable Eversong Diamond",
+              "ids": [
+                240982
+              ]
+            },
+            {
+              "k": "جم‌ها",
+              "v": "Flawless Deadly Peridot (San'layn)، Flawless Masterful Garnet (Deathbringer)",
+              "ids": [
+                240889,
+                240907
+              ]
+            },
+            {
+              "k": "روغن سلاح",
+              "v": "Thalassian Phoenix Oil",
+              "ids": [
+                243733
+              ]
+            },
+            {
+              "k": "Augment Rune",
+              "v": "Void-Touched Augment Rune",
+              "ids": [
+                259085
+              ]
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "x": "جم ثانویه را بر اساس هرو تیلنت انتخاب کن: {{240889}} برای [[San'layn]] و {{240908}} برای [[Deathbringer]]. روی سوکت الماس، {{240983}} ثابت است."
+        },
+        {
+          "t": "h3",
+          "x": "غذا و انچنت‌ها"
+        },
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "غذا",
+              "v": "Harandar Celebration",
+              "ids": [
+                255846
+              ]
+            },
+            {
+              "k": "سر",
+              "v": "Enchant Helm - Empowered Blessing of Speed",
+              "ids": [
+                243980
+              ]
+            },
+            {
+              "k": "شانه",
+              "v": "Enchant Shoulders - Akil'zon's Swiftness",
+              "ids": [
+                243962
+              ]
+            },
+            {
+              "k": "سینه",
+              "v": "Enchant Chest - Mark of the Worldsoul",
+              "ids": [
+                243976
+              ]
+            },
+            {
+              "k": "ساق",
+              "v": "Forest Hunter's Armor Kit",
+              "ids": [
+                244640
+              ]
+            },
+            {
+              "k": "چکمه",
+              "v": "Enchant Boots - Farstrider's Hunt",
+              "ids": [
+                244008
+              ]
+            },
+            {
+              "k": "انگشترها",
+              "v": "Enchant Ring - Nature's Fury",
+              "ids": [
+                243986
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mplus",
+      "title": "نکته‌های Mythic+",
+      "blocks": [
+        {
+          "t": "h3",
+          "x": "راهنمای Mythic+ برای Blood Death Knight"
+        },
+        {
+          "t": "p",
+          "x": "در پچ 12.1.5 و Midnight Season 2، Blood Death Knight انتخاب بسیار خوبی برای Mythic+ است؛ سادگی بازی و مزایای دفاعی، مخصوصاً با [[Deathbringer]]، آن را برای این محیط مطمئن می‌کند."
+        },
+        {
+          "t": "p",
+          "x": "[[Deathbringer]] به‌طور پیش‌فرض بهترین انتخاب برای Mythic+ است. این بیلد بازی را آسان‌تر کرده و مزایای دفاعی قوی‌تری دارد."
+        },
+        {
+          "t": "h3",
+          "x": "ابزارهای دفاعی"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "[[Anti-Magic Shell]]: اکثر debuffs و نفرین‌های جادویی را بی‌اثر می‌کند.",
+            "[[Lichborne]]: ایمنی در برابر Charm، Fear و Sleep.",
+            "[[Icebound Fortitude]]: ایمنی در برابر Stun.",
+            "[[Death's Advance]]: ایمنی در برابر knockback."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "کارایی گروه"
+        },
+        {
+          "t": "ul",
+          "items": [
+            "[[Anti-Magic Zone]]: منطقه‌ای برای کاهش جادویی به گروه.",
+            "[[Death Grip]] و [[Gorefiend's Grasp]]: جمع کردن دشمنان.",
+            "دو taunt جداگانه: [[Dark Command]] و [[Death Grip]].",
+            "[[Blinding Sleet]]: AoE disorient با کول‌داون کوتاه.",
+            "[[Purgatory]]: مرگ یک‌باره که به شکل نامحدود فعال می‌شود."
+          ]
+        },
+        {
+          "t": "h3",
+          "x": "جابجایی"
+        },
+        {
+          "t": "p",
+          "x": "جابجایی پایه Blood Death Knight محدود است. [[Death's Advance]] یک حرکت سریع است و [[Death's Echo]] به آن دومین Charge می‌دهد. [[Wraith Walk]] جایگزین تلنت برای جابجایی بیشتر است."
+        },
+        {
+          "t": "h3",
+          "x": "Affixهای Midnight Season 2"
+        },
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "Voidbound",
+              "v": "روی Void Emissary سوییچ کن و اینتراپتش کن؛ کول‌داون‌ها را برای ظاهر شدنش نگه دار."
+            },
+            {
+              "k": "Pulsar",
+              "v": "orbهای بازیکن را در ۱۵ ثانیه soak کن، با [[Wraith Walk]] یا [[Death's Advance]]."
+            },
+            {
+              "k": "Devour",
+              "v": "[[Anti-Magic Shell]] می‌تواند جذب شفا را از قبل ایمن کند اما بافِ حذفش را از دست می‌دهی؛ وگرنه با [[Death Strike]] و مصرفی‌های سلامت کمک کن حذف شود."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "title_fa": "راهنمای Blood Death Knight (بلاد): بیلد تلنت، روتیشن، BiS و انچنت",
+    "description_fa": "راهنمای کامل بلاد (Blood Death Knight) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم، همه با توضیح فارسی.",
+    "queries_en": [
+      "Blood Death Knight talent build midnight",
+      "Blood Death Knight guide midnight",
+      "Blood Death Knight guide 12.1.5",
+      "best Blood Death Knight talents",
+      "Blood Death Knight talent tree midnight",
+      "Blood Death Knight pve guide",
+      "Blood Death Knight rotation midnight",
+      "Blood Death Knight rotation and cooldowns",
+      "Blood Death Knight bis list midnight",
+      "Blood Death Knight best in slot",
+      "Blood Death Knight gear guide",
+      "Blood Death Knight food and potion",
+      "best food for Blood Death Knight",
+      "best flask for Blood Death Knight",
+      "best potion for Blood Death Knight",
+      "Blood Death Knight enchants and gems",
+      "best enchants for Blood Death Knight",
+      "best gems for Blood Death Knight",
+      "Blood Death Knight stat priority midnight",
+      "Blood Death Knight tier set midnight",
+      "Blood Death Knight tier set bonuses",
+      "Blood Death Knight mythic+ guide",
+      "Blood Death Knight m+ guide midnight",
+      "Blood Death Knight raid guide",
+      "Blood Death Knight hero talents",
+      "Blood Death Knight hero tree",
+      "best dps build Blood Death Knight midnight",
+      "Blood Death Knight cheat sheet"
+    ],
+    "queries_fa": [
+      "تلنت برای بلاد",
+      "تلنت بلاد",
+      "تلنت برای Blood Death Knight",
+      "تلنت Death Knight بلاد",
+      "بیلد بلاد",
+      "بیلد تلنت بلاد میدنایت",
+      "روتیشن بلاد",
+      "روتیشن و کول‌داون‌های بلاد",
+      "غذا برای بلاد",
+      "غذا برای Blood Death Knight",
+      "غذا و معجون بلاد",
+      "بهترین غذای بلاد",
+      "فلسک بلاد",
+      "بهترین فلسک برای بلاد",
+      "معجون بلاد",
+      "انچنت بلاد",
+      "انچنت و جم بلاد",
+      "بهترین انچنت برای بلاد",
+      "جم بلاد",
+      "بست آیتم بلاد",
+      "بهترین آیتم‌های بلاد",
+      "گیر بلاد",
+      "استت بلاد",
+      "اولویت استت بلاد",
+      "ست تیر بلاد",
+      "مایتی پلاس بلاد",
+      "ام پلاس بلاد",
+      "راهنمای بلاد",
+      "راهنمای Blood Death Knight",
+      "راهنمای دث‌نایت",
+      "بلاد میدنایت",
+      "دث‌نایت میدنایت",
+      "هرو تیلنت بلاد",
+      "بیلد بلاد",
+      "بهترین بلاد"
+    ],
+    "faq": [
+      {
+        "q": "بهترین بیلد تلنت برای Blood Death Knight (بلاد) در میدنایت چیست؟",
+        "a": "بیلد پیشنهادی پچ 12.1.5 برای Blood Death Knight به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+      },
+      {
+        "q": "برای بلاد چه غذا، فلسک و معجونی استفاده کنم؟",
+        "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+      },
+      {
+        "q": "بهترین انچنت و جم برای بلاد چیست؟",
+        "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+      },
+      {
+        "q": "بهترین آیتم‌ها (BiS) برای بلاد کدام‌اند؟",
+        "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+      },
+      {
+        "q": "روتیشن Blood Death Knight در پچ 12.1.5 چگونه است؟",
+        "a": "روتیشن کامل، شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر، در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+      }
+    ]
+  }
+}

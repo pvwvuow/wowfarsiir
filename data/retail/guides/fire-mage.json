@@ -1,0 +1,693 @@
+{
+ "slug": "fire-mage",
+ "class": "mage",
+ "class_en": "Mage",
+ "spec_en": "Fire",
+ "spec_no": 2,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Fire Mage",
+ "lead": "Fire بازی برست و کلید-واکنشی است: بیشتر آسیب تو در پنجرهٔ [[Combustion]] می‌آید که در آن همهٔ کست‌ها Crit می‌شوند و با Mastery: Ignite شعله به اهداف نزدیک می‌پرد. دو مسیر Hero Tree داری: [[Sunfury]] با Spellfire Sphere و ققنوس Arcane و [[Frostfire]] با Frostfire Bolt و Isothermic Core.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/mage/fire/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/mage/fire/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/mage/fire/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/mage/fire/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Combustion": {
+   "fa": "کول‌داون قدرتمند آتش‌انداز که آسیب را به شدت افزایش می‌دهد."
+  },
+  "Sunfury": {
+   "fa": "ترکیب تلنت که برای Mythic Plus و رید مناسب است و بر افزایش آسیب و توانایی‌های گروه‌کننده تمرکز دارد."
+  },
+  "Frostfire": {
+   "fa": "ترکیب تلنت که برای حالت Delves بهینه شده و بین آتش و یخ تعادل برقرار می‌کند."
+  },
+  "Spellfire Spheres": {
+   "fa": "کروب‌های آتشین که توسط Sunfury تولید می‌شوند و توسط Arcane Phoenix مصرف می‌گردند"
+  },
+  "Arcane Phoenix": {
+   "fa": "فراخوانی توسط Sunfury که Spellfire Spheres را مصرف می‌کند"
+  },
+  "Glorious Incandescence": {
+   "fa": "تلنت که امکان فرود Meteorite را فراهم می‌سازد"
+  },
+  "Frostfire Bolt": {
+   "fa": "اسپلی که Fire و Frost را در درخت Frostfire ترکیب می‌کند"
+  },
+  "Isothermic Core": {
+   "fa": "تلنت در Frostfire که استفاده از Meteor را ضروری می‌کند"
+  },
+  "Pyroclasm": {
+   "fa": "تلنت که باعث می‌شود فلیم‌استرایک و پایروبلاست همیشه کریتیکال زنند."
+  },
+  "Flask of the Magisters": {
+   "fa": "پیش‌غذا اصلی برای ماج‌های آتش با افزایش قدرت اسپل‌ها"
+  },
+  "Flask of the Blood Knights": {
+   "fa": "پیش‌غذا جایگزین با افزایش قدرت اسپل‌ها و هاست"
+  },
+  "Light's Potential": {
+   "fa": "پوشانندهٔ جنگی با افزایش قابل توجه قدرت اسپل‌ها"
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پوشانندهٔ درمانی سریع برای حفظ زنده ماندن در مواقع خطر"
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "نقشۀ تقویتی که به شما اجازه می‌دهد یک درخت تلنت اضافه داشته باشید"
+  },
+  "Harandar Celebration": {
+   "fa": "غذا با افزایش قدرت هاست و Mastery"
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "جواهر اصلی برای افزایش قدرت هاست"
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جواهر با افزایش قدرت Mastery"
+  },
+  "Flawless Quick Amethyst": {
+   "fa": "جواهر با افزایش قدرت کریتیک"
+  },
+  "Flawless Quick Lapis": {
+   "fa": "جواهر با افزایش قدرت کول‌داون"
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "سحر و جادو روی سلاح با افزایش قدرت هاست"
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن روی سلاح با افزایش قدرت اسپل‌ها"
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "روشن کردن سر با افزایش قدرت هاست"
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "روشن کردن شانه‌ها با افزایش قدرت اسپل‌ها"
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "روشن کردن سینه با افزایش قدرت هاست"
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "نخ دوزندگی با افزایش قدرت هاست"
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "روشن کردن کفش با افزایش قدرت هاست"
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "روشن کردن حلقه با افزایش قدرت هاست"
+  },
+  "Ignite": {
+   "fa": "افزایش آسیب آتش که به اهداف نزدیک به هدف اصلی آسیب چرخشی می‌زند."
+  },
+  "Living Bomb": {
+   "fa": "تلنت که آتش را به اهداف اطراف پخش می‌کند."
+  },
+  "Flamestrike": {
+   "fa": "اسپل آتش‌انداز که برای از بین بردن گروه‌های بزرگ از ماب‌ها بسیار مؤثر است."
+  },
+  "Shimmer": {
+   "fa": "تلنت که به شما اجازه می‌دهد با استفاده از Blink از مه‌ها و خطرات فرار کنید."
+  },
+  "Alter Time": {
+   "fa": "تلنت که به شما اجازه می‌دهد زمان را به عقب برگردانید و اسپل‌های خود را دوباره استفاده کنید."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Fire بازی برست و کلید-واکنشی است: بیشتر آسیب تو در پنجرهٔ [[Combustion]] می‌آید که در آن همهٔ کست‌ها Crit می‌شوند و با Mastery: Ignite شعله به اهداف نزدیک می‌پرد."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Sunfury]] با Spellfire Sphere و ققنوس Arcane و [[Frostfire]] با Frostfire Bolt و Isothermic Core."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "بازدهی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بازیابی منابع",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "بیشتر آسیب در اهداف با سلامت بالا و فاز اجرا",
+       "گیم‌پلی واکنشی جذاب با کول‌داون Combustion رضایت‌بخش",
+       "کلاو از طریق Mastery: Ignite بدون آسیب به تک‌هدف",
+       "مرگ تقلبی داخلی با Cauterize",
+       "حرکت عالی: Shimmer، Alter Time، Hot Streak!، Scorch"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "کلاو پخش‌شده وقتی اهداف جدا هستند",
+       "کاهش آسیب منفعل بسیار کم و ترمیم خود واکنشی ندارد",
+       "انگشت‌های سریع برای کست کردن کول‌داون‌ها لازم است"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Sunfury",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "تولید Spellfire Spheres و فراخوانی Arcane Phoenix برای مصرف آن‌ها؛ فرود Meteorite از طریق Glorious Incandescence."
+      },
+      {
+       "title": "Frostfire",
+       "tag": "گزینهٔ جایگزین",
+       "x": "ترکیب Fire و Frost با Frostfire Bolt؛ Isothermic Core استفاده از Meteor را ضروری می‌کند؛ افزایش‌های منفعل آسیب و بهبودهای جزئی اسپل."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، ماج‌های آتش دو مسیر اصلی برای انتخاب هیرو تالنت دارند: Sunfury و Frostfire. هر دو برای حالت DPS مناسب هستند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Sunfury (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای حالت رید بهینه شده و ترکیبی از قدرت بالا و ثبات در آسیب‌رسانی ارائه می‌دهد.",
+       "code": "C8DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMzIzMzAAAwAAmZmmlttZAA2MzM2mZmZGLAAAAAYxMjZAAgZMmZmZMzsMAMzQGjBMDjB"
+      },
+      {
+       "title": "Sunfury (Mythic+)",
+       "tag": "گزینه جایگزین",
+       "x": "برای حالت Mythic+، این ساختار روی افزایش آسیب‌رسانی به اهداف متعدد تمرکز دارد.",
+       "code": "C8DAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmFMzIzMzMAAAGAwMz0sstNDAwmZmx2MzMzYDAAAAALmZmZAAgZMmZmZMzsMAMzQYMgZYMA"
+      },
+      {
+       "title": "Frostfire (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "در حالت Delves، این ساختار با ترکیب آتش و یخ، عملکرد بهتری در مواجهه با دشمنان متنوع ارائه می‌دهد.",
+       "code": "C8DAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmFMzIzMzAAAwMLzYmZZWgAAAWMzM2mZmZmZDAAAAALmZmZAAgZMmZmZMzsAMzAyYMgBjB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=mage",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ بازی مگ آتش بر پایهٔ مدیریت کول‌داون اصلی یعنی [[Combustion]] بنا شده است. این چرخه در دو حالت اصلی اجرا می‌شود: درون و بیرون از پنجرهٔ Combustion."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت‌ها درون Combustion"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Meteor]] اگر در طول Combustion فرود آید",
+      "[[Pyroblast]] با فعال بودن پروک [[Hot Streak!]]",
+      "دوباره Pyroblast اگر در انتهای اسپل‌های Scorch یا Pyroblast سخت‌کست شده، از Hot Streak! استفاده شده باشد",
+      "اسپل [[Fire Blast]] برای تولید Hot Streak!",
+      "سخت‌کست Pyroblast با پروک [[Pyroclasm]]",
+      "اسپل [[Scorch]] به عنوان فیلر"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت‌ها بیرون از Combustion"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "آماده‌سازی Combustion: با Pyroclasm، سخت‌کست Pyroblast و فشردن Combustion قبل از پایان کست؛ بدون Pyroclasm، Meteor را بزنید تا Pyroclasm دریافت کنید؛ در غیر این صورت، Scorch یا Fireball را شروع کرده و Combustion را قبل از پایان کست بزنید",
+      "Pyroblast فوری با فعال بودن Hot Streak! یا پروک [[Hyperthermia]]",
+      "سخت‌کست Pyroblast با Pyroclasm",
+      "Meteor اگر Combustion بعدی حدود ۳۰ ثانیه دیگر آماده باشد",
+      "Fire Blast با Heating Up در حین کست Fireball (یا Pyroblast)",
+      "Fire Blast پس از مصرف Hot Streak! وقتی کریت تضمین شده است",
+      "Scorch به عنوان فیلر"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "بازی با Combustion کلید عملکرد مگ آتش است. همیشه سعی کنید Combustion را با شرایط ایده‌آل اجرا کنید تا بیشترین آسیب را وارد نمایید."
+    },
+    {
+     "t": "p",
+     "x": "استارت بازی: با پنجرهٔ Combustion که با سخت‌کست Pyroclasm و فعال کردن Combustion در انتهای آن شروع می‌شود، آغاز کنید. این روش در صورت امکان باید اجرا گردد."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "آیتم‌ها برای مگ فایر اهمیت زیادی دارند اما استت‌ها حتی مهم‌تر هستند. یک آیتم سطح پایین با استت‌های خوب می‌تواند از قطعات سطح بالاتر بهتر عمل کند. بهترین آیتم‌ها اغلب از راید به دست می‌آیند."
+    },
+    {
+     "t": "call",
+     "x": "اولویت استت برای فایر مگ، کریت هاست. همیشه با Raidbots سیم خود را انجام دهید تا بهترین ترکیب را پیدا کنید."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های موجود (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 271092
+      },
+      {
+       "slot": "آف‌هند",
+       "id": 245769
+      },
+      {
+       "slot": "سر",
+       "id": 271564
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271562
+      },
+      {
+       "slot": "شنل",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271567
+      },
+      {
+       "slot": "مچ",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271565
+      },
+      {
+       "slot": "کمر",
+       "id": 268257
+      },
+      {
+       "slot": "پا",
+       "id": 271563
+      },
+      {
+       "slot": "چکمه",
+       "id": 268255
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268266
+      },
+      {
+       "slot": "انگشتر",
+       "id": 159459
+      },
+      {
+       "slot": "ترینکت",
+       "id": 273796
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270164
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت‌های اصلی برای ماج فایر بر اساس اولویت، اینت، کریتیکال استریک، Mastery، هاست و ورساتیلتی هستند."
+    },
+    {
+     "t": "p",
+     "x": "در حالت کلی هاست اولویت دارد؛ اما برای ساختارهای کریتیک‌هیvy می‌توان مقدار بیشتری کریتیکال استریک در نظر گرفت. برای محاسبهٔ تقسیم دقیق استت‌ها از شبیه‌سازی استفاده کنید."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پیش‌غذا",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "پیش‌غذا جایگزین",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "پوشانندهٔ جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      },
+      {
+       "k": "پوشانندهٔ درمانی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Peridot, Flawless Quick Amethyst, Flawless Quick Lapis",
+       "ids": [
+        240891,
+        240899,
+        240915
+       ]
+      },
+      {
+       "k": "سحر و جادو روی سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "روغن روی سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "روشن کردن سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "روشن کردن شانه‌ها",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "روشن کردن سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "نخ دوزندگی",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "روشن کردن کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "روشن کردن حلقه",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پیش‌غذاها و پوشاننده‌های جنگی در تمام محتوای بازی ضروری هستند. هرگز بدون آن‌ها وارد نبرید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در دنیای Mythic Plus، ماج‌های آتشین به لطف توانایی‌های گروه‌کننده و آسیب بالا بسیار قدرتمند عمل می‌کنند. این راهنما برای پچ ۱۲.۱.۵ و فصل Midnight Season 2 تدوین شده تا به شما کمک کند عملکرد خود را در این محیط بهینه کنید."
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی Mythic Plus"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "آتش‌اندازها در Mythic Plus به دلیل آسیب چرخشی (Cleave) بالا و توانایی کنترل گروهی، یکی از بهترین انتخاب‌ها محسوب می‌شوند.",
+      "ترکیب Sunfury برای حالت‌های رید/Mythic Plus بسیار مناسب است، در حالی که Frostfire برای حالت Delves انتخاب بهتری است.",
+      "استفاده از Ignite فقط زمانی مؤثر است که اهداف به هم نزدیک باشند؛ برای پنجره‌های Combustion، گروه‌سازی اهداف ضروری است.",
+      "Living Bomb آتش را بین گروه‌های مختلف پخش می‌کند و Flamestrike برای جمع‌آوری ماب‌ها بسیار کارآمد است.",
+      "ترکیب Shimmer با Alter Time به شما اجازه می‌دهد مکانیک‌های دونژن را مدیریت کنید و در عین حال اسپل‌های خود را قطع نکنید."
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "ترکیب پیشنهادی",
+       "v": "Sunfury"
+      },
+      {
+       "k": "ترکیب Delves",
+       "v": "Frostfire"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Fire Mage (فایر) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل فایر (Fire Mage) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Fire Mage talent build midnight",
+   "Fire Mage guide midnight",
+   "Fire Mage guide 12.1.5",
+   "best Fire Mage talents",
+   "Fire Mage talent tree midnight",
+   "Fire Mage pve guide",
+   "Fire Mage rotation midnight",
+   "Fire Mage rotation and cooldowns",
+   "Fire Mage bis list midnight",
+   "Fire Mage best in slot",
+   "Fire Mage gear guide",
+   "Fire Mage food and potion",
+   "best food for Fire Mage",
+   "best flask for Fire Mage",
+   "best potion for Fire Mage",
+   "Fire Mage enchants and gems",
+   "best enchants for Fire Mage",
+   "best gems for Fire Mage",
+   "Fire Mage stat priority midnight",
+   "Fire Mage tier set midnight",
+   "Fire Mage tier set bonuses",
+   "Fire Mage mythic+ guide",
+   "Fire Mage m+ guide midnight",
+   "Fire Mage raid guide",
+   "Fire Mage hero talents",
+   "Fire Mage hero tree",
+   "best dps build Fire Mage midnight",
+   "Fire Mage cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای فایر",
+   "تلنت فایر",
+   "تلنت برای Fire Mage",
+   "تلنت Mage فایر",
+   "بیلد فایر",
+   "بیلد تلنت فایر میدنایت",
+   "روتیشن فایر",
+   "روتیشن و کول‌داون‌های فایر",
+   "غذا برای فایر",
+   "غذا برای Fire Mage",
+   "غذا و معجون فایر",
+   "بهترین غذای فایر",
+   "فلسک فایر",
+   "بهترین فلسک برای فایر",
+   "معجون فایر",
+   "انچنت فایر",
+   "انچنت و جم فایر",
+   "بهترین انچنت برای فایر",
+   "جم فایر",
+   "بست آیتم فایر",
+   "بهترین آیتم‌های فایر",
+   "گیر فایر",
+   "استت فایر",
+   "اولویت استت فایر",
+   "ست تیر فایر",
+   "مایتی پلاس فایر",
+   "ام پلاس فایر",
+   "راهنمای فایر",
+   "راهنمای Fire Mage",
+   "راهنمای مج",
+   "فایر میدنایت",
+   "مج میدنایت",
+   "هرو تیلنت فایر",
+   "بیلد فایر",
+   "بهترین فایر"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Fire Mage (فایر) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Fire Mage به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای فایر چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: غذا «Flask of the Magisters»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای فایر چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Powerful Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای فایر کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Fire Mage در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

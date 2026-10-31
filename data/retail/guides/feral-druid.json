@@ -1,0 +1,706 @@
+{
+ "slug": "feral-druid",
+ "class": "druid",
+ "class_en": "Druid",
+ "spec_en": "Feral",
+ "spec_no": 2,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Feral Druid",
+ "lead": "Feral یک اسپک میله‌ای فرم‌عوض‌کن است که با ساختن و خرج کردن Combo Point و Energy بازی می‌کند و بیشتر آسیبش خونریزی (Bleed) است. دو مسیر Hero Tree داری: [[Wildstalker]] با Bloodseeker Vines و [[Druid of the Claw]] که Ferocious Bite را به Ravage تبدیل می‌کند؛ در پچ 12.1 هر دو تقریباً هم‌ترازند.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/druid/feral/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/druid/feral/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/druid/feral/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/druid/feral/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/druid/feral/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Wildstalker": {
+   "fa": "درخت تلنت که بر خون‌ریزی持续推进 و پایداری تمرکز دارد. Bloodseeker Vines را فعال می‌کند که آسیب به هدف را افزایش می‌دهد."
+  },
+  "Druid of the Claw": {
+   "fa": "درخت تلنت که بر آسیب مستقیم و دفاع تمرکز دارد. Ferocious Bite را به Ravage تبدیل می‌کند و قابلیت‌های دفاعی قوی‌تری دارد."
+  },
+  "Rampant Ferocity": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Tiger's Fury]]، آسیب‌های خود را به طور موقت افزایش دهید."
+  },
+  "Chomp": {
+   "fa": "تلنت که به Tiger's Fury اجازه می‌دهد یک بار اضافی Rake را اجرا کند"
+  },
+  "Saber Jaws": {
+   "fa": "تلنت که آسیب Ferocious Bite را بر اساس تعداد Combo Point افزایش می‌دهد"
+  },
+  "Focused Frenzy": {
+   "fa": "تلنت که با استفاده از Ferocious Bite، سرعت Tiger's Fury را افزایش می‌دهد"
+  },
+  "Abundance": {
+   "fa": "با فعال شدن تلنت، یک بخش از آسیب‌های وارده به هدف توسط شما، بهبودی برای گروه ایجاد می‌کند."
+  },
+  "Apex Predator's Craving": {
+   "fa": "تلنت که با استفاده از [[Ferocious Bite]] به شما Combo Point اضافی می‌دهد"
+  },
+  "Berserk": {
+   "fa": "کول‌داون کلیدی فیرال دروید که قدرت حمله را به شدت افزایش می‌دهد و اجازه استفاده از رِیو را بدون نیاز به انرژی می‌دهد."
+  },
+  "Berserk: Heart of the Lion": {
+   "fa": "کول‌داون اصلی Feral که آسیب و تولید Combo Point را افزایش می‌دهد"
+  },
+  "Blood Frenzy": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Feral Frenzy]]، آسیب‌های خود را به هدفی که در حال مرگ است، افزایش دهید."
+  },
+  "Claw Rampage": {
+   "fa": "با فعال شدن این تلنت، استفاده از [[Maul]] به جای [[Rake]] در حالت Bear Form، آسیب بیشتری وارد می‌کند."
+  },
+  "Carnivorous Instinct": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Rip]] یا [[Rake]]، انرژی بیشتری کسب کنید."
+  },
+  "Double-Clawed Rake": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا در حالت Cat Form، دو بار از [[Rake]] استفاده کنید و آسیب بیشتری وارد کنید."
+  },
+  "Feral Frenzy": {
+   "fa": "اسپل قدرتمند که به طور مکرر آسیب‌های خالص به هدف وارد می‌کند و با تلنت‌های مرتبط، قدرت بیشتری پیدا می‌کند."
+  },
+  "Gore": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Shred]] یا [[Mangle]]، آسیب‌های بیشتری وارد کنید."
+  },
+  "Incarnation: Avatar of Ashamane": {
+   "fa": "نسخه ارتقا یافته برست که با تلنت Ashamane's Guidance هماهنگی دارد."
+  },
+  "Killer Instinct": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Tiger's Fury]]، آسیب‌های خود را به طور موقت افزایش دهید."
+  },
+  "Lacerating Claws": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Shred]] یا [[Mangle]]، آسیب‌های بیشتری وارد کنید."
+  },
+  "Predator": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Rake]] یا [[Rip]]، آسیب‌های بیشتری وارد کنید."
+  },
+  "Primal Fury": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Maul]] یا [[Mangle]]، انرژی بیشتری کسب کنید."
+  },
+  "Ravage": {
+   "fa": "اسپل قدرتمند که در حالت Berserk یا Incarnation قابل استفاده است و آسیب‌های خالص قابل توجهی به هدف وارد می‌کند."
+  },
+  "Rip": {
+   "fa": "اسپل که به طور مداوم آسیب‌های خالص به هدف وارد می‌کند و با تلنت‌های مرتبط، قدرت بیشتری پیدا می‌کند."
+  },
+  "Rake": {
+   "fa": "اسپل که آسیب‌های خالص به هدف وارد می‌کند و با تلنت‌های مرتبط، قدرت بیشتری پیدا می‌کند."
+  },
+  "Savage Fury": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Shred]] یا [[Mangle]]، آسیب‌های بیشتری وارد کنید."
+  },
+  "Taste for Blood": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا با استفاده از [[Rip]] یا [[Rake]]، آسیب‌های بیشتری وارد کنید."
+  },
+  "Tiger's Fury": {
+   "fa": "کول‌داون که انرژی و آسیب شما را افزایش می‌دهد"
+  },
+  "Unseen Predator": {
+   "fa": "این تلنت به شما اجازه می‌دهد تا از پشت هدف، آسیب‌های بیشتری وارد کنید."
+  },
+  "Convoke the Spirits": {
+   "fa": "اسپل قدرتمند که تصادفاً چندین اسپل را اجرا می‌کند"
+  },
+  "Ferocious Bite": {
+   "fa": "اسپل نهایی با ۵ Combo Point که آسیب بالایی دارد"
+  },
+  "Primal Wrath": {
+   "fa": "تلنت که Rip را بر روی گروه‌ها اعمال می‌کند."
+  },
+  "Bark of the Enigmatic Dreamwatcher": {
+   "fa": "ست کامل درخت هرو برای فیرال دروید که با برست کار می‌کند و زمان آن را افزایش می‌دهد."
+  },
+  "Rejuvenation": {
+   "fa": "اسپل درمانی که برای گروه در کلیدها مفید است."
+  },
+  "Mark of the Wild": {
+   "fa": "اسپل تقویتی که برای گروه ارزش ایجاد می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Feral یک اسپک میله‌ای فرم‌عوض‌کن است که با ساختن و خرج کردن Combo Point و Energy بازی می‌کند و بیشتر آسیبش خونریزی (Bleed) است. دو مسیر Hero Tree داری: [[Wildstalker]] با Bloodseeker Vines و [[Druid of the Claw]] که Ferocious Bite را به Ravage تبدیل می‌کند؛ در پچ 12.1 هر دو تقریباً هم‌ترازند."
+    },
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، Feral افزایش 3% آسیب کلی دریافت کرد. تلنت‌های Rampant Ferocity و Chomp نیز به ترتیب 25% و 30% قوی‌تر شدند. Saber Jaws هم بهبود یافت در حالی که Focused Frenzy کمی ضعیف‌تر شد."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "دفاعی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "سادگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "گزینه‌های قوی AoE در درخت تلنت",
+       "کول‌داون‌های قوی و پرکاربرد با تنوع خوب",
+       "توانایی درمان خوب و گزینه‌های دفاعی قوی",
+       "موبیلیتی یکی از بهترین اسپک‌های بازی",
+       "افزونه Mark of the Wild (افزایش Versatility)"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "ساخت‌های تلنت بسیار تخصصی: ساخت‌های تک‌هدف در AoE ضعیف هستند و برعکس",
+       "همه چیز Feral توسط اسپک‌های دیگری ارائه می‌شود و به تنظیمات بستگی دارد",
+       "به عنوان یک اسپک میله‌ای، به طور منفعل شکننده است"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Druid of the Claw",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "در تجهیزات اولیه قدرتمندتر است و دفاع بهتری ارائه می‌دهد. Ferocious Bite را به Ravage تبدیل می‌کند و آسیب مستقیم را تقویت می‌کند."
+      },
+      {
+       "title": "Wildstalker",
+       "tag": "انتخاب جایگزین",
+       "x": "تمرکز بر روی خون‌ریزی持续推进 دارد و پایداری بیشتری در طول战斗 دارد. در تجهیزات پیشرفته عملکرد بهتری دارد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، درخت تلنت Feral Druid تغییرات چشمگیری نداشته و همچنان با ترکیبی از تلنت‌های پرقدرت، یکی از بهترین انتخاب‌ها برای DPS در حالت تک‌هدف و چندهدف محسوب می‌شود."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Raid - Druid of the Claw",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای باس‌های رید بهینه شده و تمرکز اصلی روی آسیب‌پذیری‌های هدف دارد.",
+       "code": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAwghxYmZmxsxDsMz2MzMmZGAAAAWCmNYMzomxswMzMGzMDAAAAAAgBAAAQzsMLzMzACsAmZAWMzwAAAYmNMA"
+      },
+      {
+       "title": "Mythic+/Delves - Wildstalker",
+       "tag": "بهترین برای ماج‌ها",
+       "x": "این بیلد برای محیط‌های چندهدف و دامنه‌های زیرزمینی بهینه شده و روی پایداری و آسیب‌پذیری‌های متمرکز است.",
+       "code": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZ2YmZmxY2MPw2YbGzMmZAAAAYJY2gxMjaGzCzMzsMmZGAAAAAAADAAAgAgZbmlmlZW2AzMALMDDAgZGAMA"
+      },
+      {
+       "title": "Mythic+ و Delves",
+       "tag": "Druid of the Claw",
+       "code": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZ2YmZmxY2MPw2YbGzMmZAAAAYLY2MwMzUzYWMzMzsMmxAAAAAAwADAAAgmZZWmZmBEYBmZGgFGMAAAmZDD",
+       "x": "Mythic+ و Delves برای Druid of the Claw."
+      },
+      {
+       "title": "تک‌هدف / ریید",
+       "tag": "Wildstalker",
+       "code": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAwYMjxYmZMmtFWGbzMzYmZAAAAYJY2gxMjaGzCzMzYMzMAAAAAAAGAAAABAz2MLNLzssBmZAWMzwAAYmBAD",
+       "x": "تک‌هدف / ریید برای Wildstalker."
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=druid&spec=feral",
+     "x": "مشاهده تمام تلنت‌های Feral"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ اسپل‌ها"
+    },
+    {
+     "t": "p",
+     "x": "چرخهٔ اصلی Feral Druid بر اساس مدیریت Combo Points و انرژی است. این چرخه با استفاده از [[Tiger's Fury]] و [[Berserk: Heart of the Lion]] قدرت بسیار بالایی پیدا می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "در حالت تک‌هدف، اولویت با حفظ [[Rip]] و استفاده از [[Ferocious Bite]] با تلنت [[Apex Predator's Craving]] است. [[Moonfire]] و [[Rake]] را همیشه در حالت پاندمیک یا تقویت‌شده حفظ کنید."
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اولویت ۱: [[Ferocious Bite]] با پروک‌های [[Apex Predator's Craving]]",
+      "اولویت ۲: [[Rip]] با ۵ Combo Point اگر در حالت پاندمیک باشد و [[Tiger's Fury]] فعال باشد",
+      "اولویت ۳: [[Ferocious Bite]] با ۵ Combo Point و ۵۰ انرژی",
+      "اولویت ۴: هماهنگ کردن [[Berserk: Heart of the Lion]] و [[Convoke the Spirits]] با [[Tiger's Fury]]",
+      "اولویت ۵: [[Tiger's Fury]] روی کول‌داون",
+      "اولویت ۶: [[Rake]] و [[Moonfire]] اگر در حالت پاندمیک باشند",
+      "اولویت ۷: [[Shred]] برای تولید Combo Point"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در حالت AOE، از [[Primal Wrath]] برای چند هدف استفاده کنید. در طول [[Berserk: Heart of the Lion]]، [[Swipe]] برای تولید Combo Point و فعال کردن [[Claw Rampage]] بسیار مؤثر است."
+    },
+    {
+     "t": "p",
+     "x": "برای شروع مبارزه، از حالت مخفی استفاده کنید و [[Rake]] را بزنید. سپس با تولید ۵ Combo Point، [[Berserk: Heart of the Lion]] و [[Tiger's Fury]] را فعال کنید."
+    },
+    {
+     "t": "call",
+     "x": "در طول [[Berserk: Heart of the Lion]]، هر اسپل یک Combo Point اضافی تولید می‌کند و Combo Points بالای ۵ به بافر تبدیل می‌شوند."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "پیش از هر چیز، اولویت اصلی شما باید به دست آوردن ست کامل درخت هرو Bark of the Enigmatic Dreamwatcher باشد."
+    },
+    {
+     "t": "call",
+     "x": "این ست با افزایش زمان برست و افزایش قدرت پس از پایان آن، عملکرد فیرال دروید را به شدت بهبود می‌بخشد."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت استات‌ها"
+    },
+    {
+     "t": "p",
+     "x": "ماستری > اسپید = کریتیکال استایک > ورساتیلتی برای هر دو هرو؛ این اولویت بر اگیلتی غلبه دارد، هرچند آپگریدهای بزرگ آی‌ال‌ویل همچنان ارزش خود را دارند."
+    },
+    {
+     "t": "p",
+     "x": "باید با ابزارهای شبیه‌سازی مانند Raidbots وضعیت خود را بررسی کنید."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های برتر"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 268215
+      },
+      {
+       "slot": "سر",
+       "id": 271528
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271526
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271531
+      },
+      {
+       "slot": "دست‌بند",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 244575
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271527
+      },
+      {
+       "slot": "پا",
+       "id": 268261
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268249
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "مجسمه",
+       "id": 270173
+      },
+      {
+       "slot": "مجسمه",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "کالیست‌های مهم"
+    },
+    {
+     "t": "p",
+     "x": "با تغییرات کالیست در نسخه ۱۲.۱، انتخاب کالیست بسیار مهم شده است؛ ست کامل درخت هرو مهم‌ترین عامل است."
+    },
+    {
+     "t": "p",
+     "x": "کالیست‌های پیشنهادی: Gaze of the Coiled Watcher (Ula'tek)، Frothing Venom Spaulders (Vashnik the Malignant)، Vest of Reverent Adoration (King's Rest)، Desiccator's Blessed Gloves (King's Rest)، Coiled Hex Legguards (The Coiled Altar)."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های ساخته شده"
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های ساخته شده Silvermoon Agent's Deflectors و Silvermoon Agent's Handwraps می‌توانند گزینه‌های خوبی باشند تا به ست کامل درخت هرو برسید."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Mastery",
+      "Haste",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اولویت اصلی برای استت‌ها در درید اف ولد استاکر و درید آو کلاو، یکی است."
+    },
+    {
+     "t": "p",
+     "x": "افزایش سطح آیتم‌ها حتی اگر استت‌های ضعیف‌تری داشته باشند، همیشه بر بهبود استت‌ها ارجحیت دارد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun (بهترین گزینه)، Flask of the Magisters (جایگزین)",
+       "ids": [
+        241326,
+        241322
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون جنگی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil (برای هر دو سلاح)",
+       "ids": [
+        243733
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "غذا",
+       "v": "Feast: Harandar Celebration، شخصی: Royal Roast، اضافی: Sanguithorn Tea (قابل ترکیب با سایر غذاها)",
+       "ids": [
+        255846,
+        242275,
+        242299
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond، سایر جواهرها: Flawless Quick Amethyst، Flawless Masterful Peridot، Flawless Masterful Garnet، Flawless Masterful Lapis (از هر رنگ یک عدد انتخاب کنید)",
+       "ids": [
+        240966,
+        240899,
+        240891,
+        240907,
+        240918
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "رون تقویتی",
+       "v": "سر: Empowered Rune of Avoidance، شانه‌ها: Amirdrassil's Grace، سینه: Mark of the Worldsoul، پاها: Forest Hunter's Armor Kit، پاها: Lynx's Dexterity، حلقه: Eyes of the Eagle، سلاح اصلی: Acuity of the Ren'dorei",
+       "ids": [
+        244007,
+        243991,
+        243977,
+        244640,
+        243953,
+        243957,
+        244029
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در Mythic+ و Delves، درخت Wildstalker برترین گزینه است. درخت Druid of the Claw در ابتدای بازی با تجهیزات پایین عملکرد بهتری دارد."
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "ساختارهای AoE بسیار تخصصی هستند: برای هفته‌های سنگین AoE، ساختار را تغییر دهید.",
+      "Primal Wrath پوشش Rip روی گروه‌ها را ارائه می‌دهد؛ Rake را تا 5 هدف استفاده کنید.",
+      "Mark of the Wild و درمان فرعی (Rejuvenation) ارزش واقعی برای گروه در کلیدها ایجاد می‌کنند."
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فصل",
+       "v": "Midnight Season 2"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Feral Druid (فرال) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل فرال (Feral Druid) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Feral Druid talent build midnight",
+   "Feral Druid guide midnight",
+   "Feral Druid guide 12.1.5",
+   "best Feral Druid talents",
+   "Feral Druid talent tree midnight",
+   "Feral Druid pve guide",
+   "Feral Druid rotation midnight",
+   "Feral Druid rotation and cooldowns",
+   "Feral Druid bis list midnight",
+   "Feral Druid best in slot",
+   "Feral Druid gear guide",
+   "Feral Druid food and potion",
+   "best food for Feral Druid",
+   "best flask for Feral Druid",
+   "best potion for Feral Druid",
+   "Feral Druid enchants and gems",
+   "best enchants for Feral Druid",
+   "best gems for Feral Druid",
+   "Feral Druid stat priority midnight",
+   "Feral Druid tier set midnight",
+   "Feral Druid tier set bonuses",
+   "Feral Druid mythic+ guide",
+   "Feral Druid m+ guide midnight",
+   "Feral Druid raid guide",
+   "Feral Druid hero talents",
+   "Feral Druid hero tree",
+   "best dps build Feral Druid midnight",
+   "Feral Druid cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای فرال",
+   "تلنت فرال",
+   "تلنت برای Feral Druid",
+   "تلنت Druid فرال",
+   "بیلد فرال",
+   "بیلد تلنت فرال میدنایت",
+   "روتیشن فرال",
+   "روتیشن و کول‌داون‌های فرال",
+   "غذا برای فرال",
+   "غذا برای Feral Druid",
+   "غذا و معجون فرال",
+   "بهترین غذای فرال",
+   "فلسک فرال",
+   "بهترین فلسک برای فرال",
+   "معجون فرال",
+   "انچنت فرال",
+   "انچنت و جم فرال",
+   "بهترین انچنت برای فرال",
+   "جم فرال",
+   "بست آیتم فرال",
+   "بهترین آیتم‌های فرال",
+   "گیر فرال",
+   "استت فرال",
+   "اولویت استت فرال",
+   "ست تیر فرال",
+   "مایتی پلاس فرال",
+   "ام پلاس فرال",
+   "راهنمای فرال",
+   "راهنمای Feral Druid",
+   "راهنمای دروید",
+   "فرال میدنایت",
+   "دروید میدنایت",
+   "هرو تیلنت فرال",
+   "بیلد فرال",
+   "بهترین فرال"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Feral Druid (فرال) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Feral Druid به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای فرال چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Potion of Recklessness»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای فرال چیست؟",
+    "a": "انچنت سلاح و جم‌های پیشنهادی بر اساس اولویت استت این اسپک انتخاب می‌شوند. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای فرال کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Feral Druid در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

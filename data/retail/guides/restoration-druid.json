@@ -1,0 +1,726 @@
+{
+ "slug": "restoration-druid",
+ "class": "druid",
+ "class_en": "Druid",
+ "spec_en": "Restoration",
+ "spec_no": 4,
+ "role": "Healer",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Restoration Druid",
+ "lead": "Restoration شفای HoT-محور است: با لایه‌لایه کردن Rejuvenation و Lifebloom گروه را برای آسیب‌های پیوسته آماده می‌کنی و با [[Regrowth]] که از HoTها قدرت می‌گیرد شفای مستقیم می‌دهی. دو مسیر Hero Tree داری: [[Keeper of the Grove]] با Grove Guardianها برای برست شفایی و [[Wildstalker]] با پروفایل تک‌هدفی قوی و هم‌افزایی با Everbloom.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/druid/restoration/talent-builds-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/druid/restoration/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/druid/restoration/enchants-gems-pve-healer",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Regrowth": {
+   "fa": "اسپل ترمیمی فوری با زمان بازیابی کوتاه که می‌تواند با تلنت‌ها تقویت شود."
+  },
+  "Keeper of the Grove": {
+   "fa": "مسیر Hero Tree که بر توانایی‌های دفاعی و پشتیبانی گروهی تمرکز دارد"
+  },
+  "Wildstalker": {
+   "fa": "مسیر Hero Tree که تمرکز بر افزایش پایداری و توانایی‌های هیلینگ در شرایط فشار بالا دارد"
+  },
+  "Abundance": {
+   "fa": "یک تلنت در درخت اصلی که به شما اجازه می‌دهد با داشتن پنج افکت [[Rejuvenation]]، هیلینگ [[Regrowth]] را کاهش دهید."
+  },
+  "Everbloom": {
+   "fa": "یک تلنت در درخت اصلی که هیلینگ شما را هنگام داشتن چندین افکت هیلینگ فعال افزایش می‌دهد."
+  },
+  "Tranquility": {
+   "fa": "یک کول‌داون قدرتمند که یک منطقه بزرگ را به مدت ۸ ثانیه هیل می‌کند."
+  },
+  "Incarnation: Tree of Life": {
+   "fa": "یک کول‌داون که شما را به درخت زندگی تبدیل کرده و هیلینگ شما را به شدت افزایش می‌دهد."
+  },
+  "Convoke the Spirits": {
+   "fa": "یک کول‌داون که به صورت خودکار چندین اسپل هیلینگ و دپافکت روی اهداف دوستانه اجرا می‌کند."
+  },
+  "Rejuvenation": {
+   "fa": "اسپل ترمیمی پایه که روی هدف اثر می‌گذارد و به‌تدریج سلامت را بازیابی می‌کند."
+  },
+  "Lifebloom": {
+   "fa": "یکی از قدرتمندترین افکت‌های هیلینگ دروریست که روی یک هدف فعال می‌شود و با ریفرش شدن، هیلینگ بیشتری ارائه می‌دهد."
+  },
+  "Grove Guardians": {
+   "fa": "تلنت که با استفاده از Swiftمد، دو نگهبان طبیعی ایجاد می‌کند که به ترمیم گروه کمک می‌کنند."
+  },
+  "Protective Growth": {
+   "fa": "تلنت که با فعال شدن، یک سپر دفاعی به همراه بهبودی برای شما و هم‌تیمی‌های اطراف ایجاد می‌کند"
+  },
+  "Cat Form": {
+   "fa": "شکل گربه دروری که برای آسیب رسانی سریع و حرکت سریع استفاده می‌شود"
+  },
+  "Swiftmend": {
+   "fa": "اسپل فوری که یک اسپل ترمیمی دیگر را فوراً فعال می‌کند و اثرات جانبی تلنت‌ها را ایجاد می‌نماید."
+  },
+  "Wild Growth": {
+   "fa": "یک اسپل هیلینگ منطقه‌ای که به چندین هدف اطراف شما هیل می‌دهد و مصرف مانای بالایی دارد."
+  },
+  "Nature's Swiftness": {
+   "fa": "یک کول‌داون که هیلینگ بعدی [[Regrowth]] شما را به شدت افزایش می‌دهد."
+  },
+  "Overgrowth": {
+   "fa": "یک تلنت در درخت اصلی که به شما اجازه می‌دهد [[Nature's Swiftness]] را روی خود بزنید."
+  },
+  "Genesis": {
+   "fa": "مهارتی که با استفاده از آن، تمام اثرهای درمانی مداوم خود برای مدت کوتاهی قدرتمندتر می‌شوند."
+  },
+  "Reforestation": {
+   "fa": "تلنت که با استفاده از Swiftmend، درختان رستوریشن در اطراف هدف ایجاد می‌کند که به ترمیم کمک می‌کنند."
+  },
+  "Implant": {
+   "fa": "تلنت که با استفاده از Swiftmend، گلوله‌های ترمیمی روی هدف ایجاد می‌کند که در زمان آسیب فعال می‌شوند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Restoration شفای HoT-محور است: با لایه‌لایه کردن Rejuvenation و Lifebloom گروه را برای آسیب‌های پیوسته آماده می‌کنی و با [[Regrowth]] که از HoTها قدرت می‌گیرد شفای مستقیم می‌دهی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Keeper of the Grove]] با Grove Guardianها برای برست شفایی و [[Wildstalker]] با پروفایل تک‌هدفی قوی و هم‌افزایی با Everbloom."
+    },
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، بازی ساده‌تر شده و تمرکز بیشتری روی Regrowth وجود دارد. تلنت Abundance بازطراحی شد: با حداقل 5 Rejuvenation فعال، Regrowth ارزان‌تر و با Crit بالاتر می‌شود."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "چندهدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "بالا",
+       "n": 4
+      },
+      {
+       "k": "انرژی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دوره‌ای",
+       "v": "عالی",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "شفاهای تأثیرگذار مانند Tranquility و Incarnation: Tree of Life",
+       "قابلیت تمرکز روی HoTs برای شفای عالی تک‌هدفی",
+       "جابجایی عالی همراه با کول‌داون‌های حرکتی",
+       "بقا فوق‌العاده برای یک برست"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "تعداد زیادی مکانیزم برای مدیریت؛ سخت در تسلط",
+       "پاسخ کمتر به برست‌های غیرقابل پیش‌بینی",
+       "آسیب پایین در رید"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Keeper of the Grove",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "بافه درمانی قوی از طریق جمع‌آوری Grove Guardians؛ Protective Growth برای دفاع"
+      },
+      {
+       "title": "Wildstalker",
+       "tag": "گزینه جایگزین",
+       "x": "پروفایل تک‌هدف درمانی قوی؛ هماهنگی عالی با Everbloom؛ آسیب قابل توجه اضافی در Cat Form (اختیاری)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، رستوریشن درایدو به‌عنوان یک هیلر قدرتمند در محیط‌های PvE عمل می‌کند. ترکیب تلنت‌ها بسته به محیط بازی (رید، Mythic+ یا دلوز) متفاوت است و دو مسیر اصلی در Hero Tree وجود دارد: Wildstalker و Keeper of the Grove."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "ویلداستاکر (رید)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای محیط‌های رید بهینه شده و تمرکز اصلی بر افزایش توانایی‌های هیلینگ و پایداری در برابر آسیب‌های گروهی دارد.",
+       "code": "CkGAAAAAAAAAAAAAAAAAAAAAAYMmZZmZMzMmthHYYmNjtxMAAAAAAAAAAYbQzGjpZGDPgZZmZmZYYGAAAAAAAAAABAAMbzs0sNzmNGzMDmBGNDAwMDADA"
+      },
+      {
+       "title": "ویلداستاکر (مایتیک پلاس)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای مایتیک پلاس طراحی شده و بر افزایش چابکی و توانایی هیلینگ در مواجهه با آسیب‌های متناوب تمرکز دارد.",
+       "code": "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsN8AMzsMjNbzAAAAAAAAAAglBNbGmmZMDmFzMzMLzwYAAAAAAAwAAQAAAzyMbNbzsYjxMDMzCoZAAmZAYA"
+      },
+      {
+       "title": "کیپر آو د گروو (رید)",
+       "tag": "گزینه جایگزین",
+       "x": "این ساختار بر توانایی‌های دفاعی و پشتیبانی گروهی تمرکز دارد و در مواجهه با باس‌هایی که آسیب‌های گروهی قابل توجهی دارند کارایی بهتری نشان می‌دهد.",
+       "code": "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMLzMjZmxsN8ADzsYsxMAAAAAAAAAAYbQzGjpZGDPgZZmZmZYYGAAAAAAAAYbbsgpZmlBAAIgFGzMDzMwoZAwMDAYA"
+      },
+      {
+       "title": "کیپر آو د گروو (مایتیک پلاس)",
+       "tag": "گزینه جایگزین",
+       "x": "این ساختار برای مایتیک پلاس بهینه شده و بر افزایش پایداری و توانایی‌های هیلینگ در شرایط فشار بالا تمرکز دارد.",
+       "code": "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMmlZsZbGAAAAAAAAAAsMoZzw0MjZwsYmZmZZGGDAAAAAAAGw2yYBTzMLDAAQALMmZgZ2ANDAmZAADA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=druid&spec=restoration",
+     "x": "مشاهده ساختارهای تلنت دیگر"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ اسپل‌ها"
+    },
+    {
+     "t": "p",
+     "x": "در حالت رید، باید روی حفظ چندین افکت هیلینگ فعال روی خود و هم‌تیمی‌ها تمرکز کنید."
+    },
+    {
+     "t": "p",
+     "x": "با استفاده از تلنت [[Everbloom]]، باید همیشه [[Lifebloom]] روی خود داشته باشید و چندین افکت هیلینگ دیگر مانند دو تا [[Rejuvenation]] فعال نگه دارید."
+    },
+    {
+     "t": "p",
+     "x": "از [[Swiftmend]] برای برست خود در هر فرصت استفاده کنید و به لطف تلنت [[Rampant Growth]]، یک افکت هیلینگ [[Regrowth]] به صورت خودکار روی شما فعال می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "در حالت استفاده از تلنت [[Abundance]]، باید پنج افکت [[Rejuvenation]] فعال داشته باشید تا از این تلنت به بهترین شکل استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "برای فعال نگه داشتن آسان‌تر [[Abundance]]، می‌توانید قبل از زدن [[Rejuvenation]]، [[Swiftmend]] را بزنید تا افکت‌ها به سه نفر پخش شود."
+    },
+    {
+     "t": "p",
+     "x": "اسپل [[Wild Growth]] هیلینگ بالایی دارد اما مانای زیادی مصرف می‌کند؛ آن را در مواقع خطرناک استفاده کنید و در صورت کم آمدن مانا، از آن کمتر بزنید."
+    },
+    {
+     "t": "p",
+     "x": "از [[Nature's Swiftness]] برای افزایش قدرت هیلینگ بعدی [[Regrowth]] استفاده کنید و با وجود تلنت [[Overgrowth]]، می‌توانید آن را روی خود در لحظات خطرناک بزنید."
+    },
+    {
+     "t": "p",
+     "x": "می‌توانید هر افکت هیلینگ با زمان باقی‌مانده کمتر از ۵ تا ۶ ثانیه را بدون هیچ جریمه‌ای ریفرش کنید."
+    },
+    {
+     "t": "steps",
+     "items": [
+      "فعال نگه داشتن چندین هاف آف روی خود و هم‌تیمی‌ها",
+      "استفاده هوشمندانه از [[Wild Growth]] در مواقع ضروری",
+      "ریفرش کردن افکت‌های هیلینگ در زمان مناسب",
+      "هماهنگ کردن کول‌داون‌ها با فازهای سخت فایت"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "کول‌داون‌های اصلی مانند [[Tranquility]]، [[Incarnation: Tree of Life]] و [[Convoke the Spirits]] باید از قبل برنامه‌ریزی شده و به طور مکرر استفاده شوند."
+    },
+    {
+     "t": "p",
+     "x": "این کول‌داون‌ها را با فازهای سخت فایت هماهنگ کنید تا بیشترین فایده را ببرید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در تجهیز کردن درودیو ریستوریشن، اولویت با هاست است که سرعت بازی شما را افزایش می‌دهد. ماستری بعد از هاست اهمیت دارد و سپس ورساتیلتی و کریتیکال استرایک می‌آیند."
+    },
+    {
+     "t": "call",
+     "x": "تجهیزات با آیلم بالاتر همیشه اولویت دارند. برای آیتم‌های خاص، باید راید هیروئیک را حداقل یک بار کامل بزنید."
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات بهتر (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "دست راست",
+       "id": 271092
+      },
+      {
+       "slot": "دست چپ",
+       "id": 268197
+      },
+      {
+       "slot": "سر",
+       "id": 271528
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 244572
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271531
+      },
+      {
+       "slot": "دست‌بند",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271529
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271527
+      },
+      {
+       "slot": "پا",
+       "id": 244569
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "انگشتر",
+       "id": 252258
+      },
+      {
+       "slot": "افزونه",
+       "id": 270167
+      },
+      {
+       "slot": "افزونه",
+       "id": 270162
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست تیر ۴ پوستهٔ درودیوهای رویایی (Bark of the Enigmatic Dreamwatcher) یک گزینهٔ عالی برای هیلی است."
+    },
+    {
+     "t": "set",
+     "id": 271528
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        271528,
+        271531,
+        271529,
+        271527
+       ],
+       "names": [
+        "Enigmatic Dreamwatcher's Somnolent Stare",
+        "Enigmatic Dreamwatcher's Lunar Raiment",
+        "Enigmatic Dreamwatcher's Gauntlets",
+        "Enigmatic Dreamwatcher's Leggings"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "این ست با افزایش ۱۵ درصدی به治疗效果‌های مداوم و افزایش مدت زمان اثر مهارت Genesis، عملکرد خوبی دارد."
+    },
+    {
+     "t": "p",
+     "x": "کاتالیست‌های موجود در بازی می‌توانند تجهیزات شما را بهبود بخشند."
+    },
+    {
+     "t": "p",
+     "x": "برای ساخت برخی آیتم‌ها می‌توانید از مهارت‌های مربوط به صنایع دستی استفاده کنید."
+    },
+    {
+     "t": "stat",
+     "items": [
+      "Haste",
+      "Mastery",
+      "Versatility",
+      "Critical Strike"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Mastery",
+      "Versatility",
+      "Critical Strike"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اولویت اصلی برای رستوریشن دروید در این پچ، آیتم‌های با آیتم لول بالا و استت‌های مناسب است."
+    },
+    {
+     "t": "p",
+     "x": "به‌طور کلی، اسپک هیت از Mastery و ورساتیلتی و کریتیک استرایک اولویت بالاتری دارد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پیش‌نویس",
+       "v": "Flask of the Blood Knights (all raid fights)",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "پوشانندهٔ جنگی",
+       "v": "Potion of Recklessness (preferred) / Lightfused Mana Potion (situational, raiding)",
+       "ids": [
+        241288,
+        241300
+       ]
+      },
+      {
+       "k": "پوشانندهٔ سلامتی",
+       "v": "Silvermoon Health Potion",
+       "ids": [
+        241304
+       ]
+      },
+      {
+       "k": "طلسم سلاح",
+       "v": "Enchant Weapon - Berserker's Rage",
+       "ids": [
+        243972
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Peridot",
+       "ids": [
+        240891
+       ]
+      },
+      {
+       "k": "تالسم سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "تالسم شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "تالسم سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "تالسم پا",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "تالسم حلقه",
+       "v": "Enchant Ring - Silvermoon's Alacrity",
+       "ids": [
+        244014
+       ]
+      },
+      {
+       "k": "نخ پا",
+       "v": "Arcanoweave Spellthread",
+       "ids": [
+        240154
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "راهنمای M+ برای رستوریشن درایید"
+    },
+    {
+     "t": "p",
+     "x": "در حالت M+، نقش رستوریشن درایید به‌خاطر انعطاف‌پذیری و قابلیت‌های ترمیم گروهی بسیار قدرتمند است. در این راهنما، رویکرد و استراتژی‌های کلیدی برای موفقیت در دونژون‌های افسانه‌ای را بررسی می‌کنیم."
+    },
+    {
+     "t": "p",
+     "x": "درایید رستوریشن می‌تواند همزمان با ترمیم چندین هدف و مدیریت کول‌داون‌های گروهی، نقش اصلی ترمیم را ایفا کند. استفاده هوشمندانه از اسپل‌های ترمیمی و تلنت‌ها، کلید موفقیت در محیط‌های M+ است."
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های پیشنهادی"
+    },
+    {
+     "t": "p",
+     "x": "برای M+، دو مسیر اصلی وجود دارد: Keeper of the Grove که برای ترمیم گروه بهینه‌تر است و Wildstalker که برای ترمیم تک‌هدفه مناسب‌تر است. انتخاب بین این دو بسته به سبک بازی و ترکیب گروه بستگی دارد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Keeper of the Grove: برای ترمیم گروهی در دونژون‌های با آسیب‌پذیری زیاد",
+      "Wildstalker: برای ترمیم تانک‌ها و مدیریت آسیب‌های تک‌هدفه",
+      "ترکیب مناسب تلنت‌ها برای مدیریت کول‌داون‌های گروهی"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "استراتژی‌های کلیدی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "لایه‌گذاری Rejuvenation در حین جمع‌شدن گروه تا Regrowth ارزان بماند",
+      "استفاده زودهنگام و مکرر از Swiftmend برای بهره‌برداری از اثرات جانبی آن",
+      "استفاده از شکل‌های مختلف Shapeshift برای انعطاف‌پذیری و قابلیت‌های اضافی"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نکتهٔ برجسته: در M+، Shapeshifting به‌صورت Cat یا Bear برای حرکت سریع و قابلیت‌های اضافی بخشی جدایی‌ناپذیر از سبک بازی است."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Restoration Druid (رستوریشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل رستوریشن (Restoration Druid) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Restoration Druid talent build midnight",
+   "Restoration Druid guide midnight",
+   "Restoration Druid guide 12.1.5",
+   "best Restoration Druid talents",
+   "Restoration Druid talent tree midnight",
+   "Restoration Druid pve guide",
+   "Restoration Druid rotation midnight",
+   "Restoration Druid rotation and cooldowns",
+   "Restoration Druid bis list midnight",
+   "Restoration Druid best in slot",
+   "Restoration Druid gear guide",
+   "Restoration Druid food and potion",
+   "best food for Restoration Druid",
+   "best flask for Restoration Druid",
+   "best potion for Restoration Druid",
+   "Restoration Druid enchants and gems",
+   "best enchants for Restoration Druid",
+   "best gems for Restoration Druid",
+   "Restoration Druid stat priority midnight",
+   "Restoration Druid tier set midnight",
+   "Restoration Druid tier set bonuses",
+   "Restoration Druid mythic+ guide",
+   "Restoration Druid m+ guide midnight",
+   "Restoration Druid raid guide",
+   "Restoration Druid hero talents",
+   "Restoration Druid hero tree",
+   "best dps build Restoration Druid midnight",
+   "Restoration Druid cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای رستوریشن",
+   "تلنت رستوریشن",
+   "تلنت برای Restoration Druid",
+   "تلنت Druid رستوریشن",
+   "بیلد رستوریشن",
+   "بیلد تلنت رستوریشن میدنایت",
+   "روتیشن رستوریشن",
+   "روتیشن و کول‌داون‌های رستوریشن",
+   "غذا برای رستوریشن",
+   "غذا برای Restoration Druid",
+   "غذا و معجون رستوریشن",
+   "بهترین غذای رستوریشن",
+   "فلسک رستوریشن",
+   "بهترین فلسک برای رستوریشن",
+   "معجون رستوریشن",
+   "انچنت رستوریشن",
+   "انچنت و جم رستوریشن",
+   "بهترین انچنت برای رستوریشن",
+   "جم رستوریشن",
+   "بست آیتم رستوریشن",
+   "بهترین آیتم‌های رستوریشن",
+   "گیر رستوریشن",
+   "استت رستوریشن",
+   "اولویت استت رستوریشن",
+   "ست تیر رستوریشن",
+   "مایتی پلاس رستوریشن",
+   "ام پلاس رستوریشن",
+   "راهنمای رستوریشن",
+   "راهنمای Restoration Druid",
+   "راهنمای دروید",
+   "رستوریشن میدنایت",
+   "دروید میدنایت",
+   "هرو تیلنت رستوریشن",
+   "بیلد رستوریشن",
+   "بهترین رستوریشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Restoration Druid (رستوریشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Restoration Druid به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای رستوریشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: غذا «Harandar Celebration»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای رستوریشن چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Berserker's Rage»، جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای رستوریشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Enigmatic Dreamwatcher's Somnolent Stare» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Restoration Druid در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

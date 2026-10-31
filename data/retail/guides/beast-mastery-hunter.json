@@ -1,0 +1,680 @@
+{
+ "slug": "beast-mastery-hunter",
+ "class": "hunter",
+ "class_en": "Hunter",
+ "spec_en": "Beast Mastery",
+ "spec_no": 1,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Beast Mastery Hunter",
+ "lead": "Beast Mastery تنها اسپک ranged بازی است که ۱۰۰٪ آسیبش را در حال حرکت می‌زند؛ بیشتر آسیب تو از پت‌هات می‌آید و با [[Bestial Wrath]] و Barbed Shot چرخه می‌سازی. دو مسیر Hero Tree داری: [[Pack Leader]] که در همهٔ حالت‌ها قوی‌ترین است و [[Dark Ranger]] با [[Black Arrow]] و دفاع Smoke Screen.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Bestial Wrath": {
+   "fa": "کول‌داون قدرتمند که قدرت شکارچی و حیوانش را افزایش می‌دهد"
+  },
+  "Barbed Shot": {
+   "fa": "اسپلی که چارج‌های اضافی ایجاد می‌کند و برای مدیریت چارج‌های Barbed Shot ضروری است"
+  },
+  "Pack Leader": {
+   "fa": "مسیر Hero Tree که پت را به یک ماشین کشتار تبدیل می‌کند و آسیب گروهی را افزایش می‌دهد"
+  },
+  "Dark Ranger": {
+   "fa": "مسیر Hero Tree با تمرکز بر Black Arrow و ابزارهای دفاعی Smoke Screen"
+  },
+  "Black Arrow": {
+   "fa": "اسپلی که مقدار زیادی آسیب اولیه وارد کرده و DoTها را روی دشمنان پخش می‌کند."
+  },
+  "Smoke Screen": {
+   "fa": "یک اسپل دفاعی که آسیب دریافتی را کاهش می‌دهد و برای Dark Ranger یک گزینه قوی محسوب می‌شود."
+  },
+  "Howl of the Pack Leader": {
+   "fa": "بافتی از درخت Hero که Kill Command را تقویت می‌کند"
+  },
+  "Kill Command": {
+   "fa": "اسپل اصلی که با buffهای Howl of the Pack Leader یا Nature's Ally قدرت بیشتری می‌گیرد"
+  },
+  "Cobra Shot": {
+   "fa": "اسپلی که منابع را پر می‌کند و با Cobra Fang قوی‌تر می‌شود"
+  },
+  "Wild Thrash": {
+   "fa": "اسپل AOE که Beast Cleave را فعال می‌کند"
+  },
+  "Nature's Ally": {
+   "fa": "بافتی از درخت Hero که Kill Command را تقویت می‌کند"
+  },
+  "Cobra Fang": {
+   "fa": "تلنتی که Cobra Shot را قوی‌تر می‌کند"
+  },
+  "Hunter's Mark": {
+   "fa": "مارکی که باید قبل از کشتن روی هدف اصلی زده شود"
+  },
+  "Misdirection": {
+   "fa": "هدایت تهدید خود به تانک یا پت دیگر برای جلوگیری از گرفتن تهدید اولیه"
+  },
+  "Beast Cleave": {
+   "fa": "افکت AOE که با Wild Thrash فعال می‌شود"
+  },
+  "Bloodshed": {
+   "fa": "افکتی که فقط روی هدف حمله‌شده توسط پت اعمال می‌شود"
+  },
+  "Skulking Viper's Ambush": {
+   "fa": "ست تجهیزات Beast Mastery برای پچ 12.1.5"
+  },
+  "Skulking Viper's Weeping Fangs": {
+   "fa": "سر ست چهار تکه‌ای Skulking Viper's Ambush"
+  },
+  "Skulking Viper's Scuteplate": {
+   "fa": "سینه‌بند ست چهار تکه‌ای Skulking Viper's Ambush"
+  },
+  "Light's Potential": {
+   "fa": "پتک جنگی قدرتمند که در سناریوهای رید استفاده می‌شود و آسیب را به‌طور قابل توجهی افزایش می‌دهد."
+  },
+  "Liquid Luster": {
+   "fa": "پتشن اصلی برای بیست‌های مایتیک پلاس که آسیب فیزیکی و جادویی را افزایش می‌دهد"
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "رایجمنت تقویتی که به طور مداوم آتاک پاور را افزایش می‌دهد و برای همه سناریوها مناسب است."
+  },
+  "Harandar Celebration": {
+   "fa": "پذیرایی گروهی که به اعضای گروه آتاک پاور می‌بخشد."
+  },
+  "Royal Roast": {
+   "fa": "غذا شخصی که آتاک پاور و استامینا را افزایش می‌دهد."
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "الماس قدرتمند که آتاک پاور را به طور قابل توجهی افزایش می‌دهد."
+  },
+  "Eyes of the Eagle": {
+   "fa": "طلسم دستبند که آسیب‌پذیری دشمنان را در برابر حمله افزایش می‌دهد."
+  },
+  "Tranquilizing Shot": {
+   "fa": "اسپلی که حالت خشم دشمنان را از بین می‌برد"
+  },
+  "Primal Rage": {
+   "fa": "پتشن جایگزین لست برای کلیدهای مایتیک پلاس"
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Beast Mastery تنها اسپک ranged بازی است که ۱۰۰٪ آسیبش را در حال حرکت می‌زند؛ بیشتر آسیب تو از پت‌هات می‌آید و با [[Bestial Wrath]] و Barbed Shot چرخه می‌سازی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Pack Leader]] که در همهٔ حالت‌ها قوی‌ترین است و [[Dark Ranger]] با [[Black Arrow]] و دفاع Smoke Screen."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دونفره",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "گروهی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "ایزوله",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "PvP",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "نامحدود بودن حرکت: تمام آسیب تو در حال حرکت می‌زند",
+       "ابزارهای خوب در دونژ: Primal Rage, Tranquilizing Shot",
+       "قابلیت بالای سولو کردن محتویات قدیمی و جدید",
+       "ایمنی Aspect of the Turtle به همراه ابزارهای دفاعی اضطراری قوی"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "AI ناقص پت: پت‌ها در رید/دونژ گیر می‌کنند",
+       "محدود بودن DPS روی اهداف چندگانه که روی هم قرار ندارند",
+       "ابزارهای کاربردی ممکن است استفاده ازشان دشوار باشد",
+       "گیم‌پلی نسبتاً ساده"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Pack Leader",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "قوی‌ترین درخت هیرو در تمام شرایط فعلی است. سه نوع هیولا را از طریق Howl of the Pack Leader فرامی‌خواند: خرس حمله می‌کند و یک خونریزی بزرگ ایجاد می‌کند، خوک از دشمنان عبور می‌کند، و مارمولک به شما و حیوان خانگارتان آسیب می‌زند."
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "تلنت‌های دیگر این اثرات را تقویت می‌کنند؛ چرخهٔ اصلی بازی تقریباً بدون تغییر باقی می‌ماند."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Dark Ranger",
+       "tag": "گزینه جایگزین",
+       "x": "Black Arrow مقدار زیادی آسیب اولیه وارد می‌کند در حالی که DoTها را پخش می‌کند؛ سبک بازی پویا مبتنی بر حالت دشمن و تصادفی بودن پروک‌ها؛ گزینه دفاعی قوی در Smoke Screen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در Beast Mastery، ماکزیمم DPS با ترکیب صحیح تلنت‌ها و انتخاب Hero Tree به دست می‌آید. دو انتخاب اصلی پیش‌روی شماست: Pack Leader برای بهینه‌سازی در تمام حالت‌ها، و Dark Ranger برای سبک خاص."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Pack Leader (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای ریدز بهینه شده و تمرکز روی پشتیبانی از همراه و افزایش خسارت دارد.",
+       "code": "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwQDbAAYGGzsMzwMmZYYmxYmxMzYGzwMzYGzghmBAAAAMDAAAzMzMAzsRYYWAbDAD"
+      },
+      {
+       "title": "Pack Leader (Mythic+)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای دنج‌پلاس بهینه شده و تمرکز بر پاکسازی گروه و زنده‌مانی بیشتر دارد.",
+       "code": "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsBzwQDbAAYGPwMzsMzwMzMjZGMzYmhZGzMzYbmZYMDLDNDAAAAAAAAmHYMzAmZjAmFw2AwA"
+      },
+      {
+       "title": "Pack Leader (Delves)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای دلوز بهینه شده و تمرکز بر زنده‌مانی و انعطاف‌پذیری در مواجهه با انواع دشمنان دارد.",
+       "code": "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwQDbAAYGPwMzsMzwMzMjZGMzYmhZmZGzwMzwYmhx0MAAAAAAAAYMmBYmNCWmZBsNAM"
+      },
+      {
+       "title": "Dark Ranger (Raid)",
+       "tag": "گزینه جایگزین",
+       "x": "این ساختار برای ریدز با تمرکز بر کنترل دشمنان و افزایش خسارت در شرایط خاص طراحی شده است.",
+       "code": "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBZsAAgZMjZWMDzYmxMMzYYGzMjZMDzMjZMDGaGAAAAwMAAAMzMzgZGQYYWAbDAD"
+      },
+      {
+       "title": "Dark Ranger (Mythic+)",
+       "tag": "گزینه جایگزین",
+       "x": "این ساختار برای دنج‌پلاس با تمرکز بر کنترل گروهی و پاکسازی سریع دشمنان مناسب است.",
+       "code": "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBZsAAgZGzMziZYGmxMjZmZYGzMjZmZsNzMMmhlhmBAAAAMDAAAzDMmZYmBEwsA2GAA"
+      },
+      {
+       "title": "Dark Ranger (Delves)",
+       "tag": "گزینه جایگزین",
+       "x": "این ساختار برای دلوز با تمرکز بر انعطاف‌پذیری در برابر انواع دشمنان و زنده‌مانی بیشتر طراحی شده است.",
+       "code": "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBZsAAgZGzMziZYGmxMjZmZYGzMzMjZYmZYMzwYaGAAAAwMAAAMGzgZGQwyMLgtBA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=Hunter",
+     "x": "مشاهده تمام ساختارهای ممکن"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ اسپل‌ها"
+    },
+    {
+     "t": "p",
+     "x": "چرخهٔ Beast Mastery بر مدیریت تلنت‌ها و کول‌داون‌ها تمرکز دارد. اولویت با حفظ افکت‌های دائمی و استفاده بهینه از Bestial Wrath است."
+    },
+    {
+     "t": "p",
+     "x": "در حالت تک‌هدف، ابتدا Barbed Shot را زمانی استفاده کن که Bestial Wrath در ۳ ثانیهٔ آتی آماده باشد یا به ۲ چارج رسیده‌ای."
+    },
+    {
+     "t": "p",
+     "x": "بلافاصله Bestial Wrath را اجرا کن، سپس با buff Howl of the Pack Leader یا Nature's Ally از Kill Command استفاده."
+    },
+    {
+     "t": "p",
+     "x": "در صورت داشتن Cobra Fang، Cobra Shot بزن، سپس دوباره Barbed Shot و Cobra Shot را به ترتیب اجرا کن."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ چندهدفه"
+    },
+    {
+     "t": "p",
+     "x": "در حالت AOE، ابتدا Barbed Shot را روی هدف اصلی بزن، سپس Wild Thrash را اجرا کن تا Beast Cleave فعال شود."
+    },
+    {
+     "t": "p",
+     "x": "پس از فعال شدن Beast Cleave، Bestial Wrath را استفاده کن تا از synergy آن بهره‌مند شوی."
+    },
+    {
+     "t": "p",
+     "x": "Kill Command را با buff مناسب اجرا، سپس Cobra Shot با Cobra Fang و دوباره Barbed Shot را به ترتیب بزن."
+    },
+    {
+     "t": "h3",
+     "x": "آغاز نبرد"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "قبل از کشتن، Hunter's Mark را روی هدف بزن",
+      "Misdirection را روی تانک اجرا",
+      "کشروع نبرد: دو بار Barbed Shot",
+      "پوشن، رشال‌ها و تریک‌های تقویتی stats را استفاده",
+      "Bestial Wrath را فعال کن (مطمئن شو حیوانت حمله کرده)",
+      "Kill Command را بزن",
+      "Cobra Shot را اجرا و به چرخهٔ عادی ادامه بده"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "Bestial Wrath یک کول‌داون کوتاه‌مدت اما بسیار تأثیرگذار است. هر دو درخت Hero آن را به شکل متفاوتی تغییر می‌دهند. افکت Bloodshed فقط روی هدف حمله‌شده توسط پت اعمال می‌شود؛ بدون حملهٔ پت، بلید ایجاد نمی‌شود."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 268207
+      },
+      {
+       "slot": "سر",
+       "id": 271492
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271490
+      },
+      {
+       "slot": "شنل",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271495
+      },
+      {
+       "slot": "مچ",
+       "id": 244584
+      },
+      {
+       "slot": "دست",
+       "id": 271493
+      },
+      {
+       "slot": "کمر",
+       "id": 244581
+      },
+      {
+       "slot": "پا",
+       "id": 271491
+      },
+      {
+       "slot": "چکمه",
+       "id": 159388
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268249
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270168
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در Beast Mastery، اولویت اصلی برای تجهیزات افزایش Agility است. سپس Mastery، Crit، Haste و در نهایت Versatility می‌آیند. برای بهترین نتیجه، از Raidbots برای شبیه‌سازی دقیق استفاده کنید."
+    },
+    {
+     "t": "call",
+     "x": "توجه داشته باشید که ست چهار تکه‌ای Skulking Viper's Ambush تغییراتی در چرخه اسپل ایجاد می‌کند؛ در مدت زمان فعال بودن ست، Cobra Shot را کمی اولویت بدهید."
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات برتر"
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Mastery",
+      "Critical Strike",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت‌های اصلی برای بیست متری عبارتند از: اسپید، Mastery و کریتیکال استرایک."
+    },
+    {
+     "t": "p",
+     "x": "Mastery به‌طور مداوم دامنهٔ [[Bestial Wrath]] را افزایش می‌دهد و با تلنت‌های مرتبط، یکی از بهترین استت‌ها برای نقش است."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پوشش",
+       "v": "Flask of the Magisters (all scenarios)",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "پتک جنگی",
+       "v": "Light's Potential (Raid) / Potion of Recklessness (near-BiS gear with low Versatility) / Liquid Luster (Mythic+)",
+       "ids": [
+        241308,
+        241288,
+        271886
+       ]
+      },
+      {
+       "k": "پتک درمانی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "طلسم سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "نفت سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "پذیرایی",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذا شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "دست‌بندها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای حداکثر کارایی، از پتک جنگی Light's Potential در رید و Liquid Luster در Mythic+ استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "الماس‌های Deadly و Quick Amethyst بهترین انتخاب‌ها برای جای خالی الماس‌ها هستند."
+    },
+    {
+     "t": "p",
+     "x": "استفاده از طلسم سلاح Rite of the Hash'ey و نفت سلاح Thalassian Phoenix Oil به‌صورت همزمان بهترین عملکرد را دارد."
+    },
+    {
+     "t": "p",
+     "x": "در رینگ‌ها، طلسم Eyes of the Eagle بهترین گزینه برای افزایش آسیب‌پذیری دشمنان است."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "میت‌پلاس برای بیست مسترینتر"
+    },
+    {
+     "t": "p",
+     "x": "بیست مسترینتر برای بیست‌های مایتیک پلاس به‌ویژه با درخت Pack Leader انتخاب عالی است. در این حالت Wild Thrash و Beast Cleave مسئول اصلی آسیب‌رسانی به گروه‌های دشمن هستند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Misdirection را در هر کش روی تانک بزنید تا از تهدید اولیه پت خود در برابر انفجار اولیه جلوگیری کنید.",
+      "از پتشن مایع درخشان (Liquid Luster) به عنوان پتشن اصلی در بیست‌های مایتیک استفاده کنید.",
+      "اسپل آرامش‌بخش (Tranquilizing Shot) برای از بین‌بردن حالت خشم دشمنان و رجی پریمال (Primal Rage) برای کلیدهایی که لست ندارند، کاربرد دارد."
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Beast Mastery Hunter (بیست مستری) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل بیست مستری (Beast Mastery Hunter) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Beast Mastery Hunter talent build midnight",
+   "Beast Mastery Hunter guide midnight",
+   "Beast Mastery Hunter guide 12.1.5",
+   "best Beast Mastery Hunter talents",
+   "Beast Mastery Hunter talent tree midnight",
+   "Beast Mastery Hunter pve guide",
+   "Beast Mastery Hunter rotation midnight",
+   "Beast Mastery Hunter rotation and cooldowns",
+   "Beast Mastery Hunter bis list midnight",
+   "Beast Mastery Hunter best in slot",
+   "Beast Mastery Hunter gear guide",
+   "Beast Mastery Hunter food and potion",
+   "best food for Beast Mastery Hunter",
+   "best flask for Beast Mastery Hunter",
+   "best potion for Beast Mastery Hunter",
+   "Beast Mastery Hunter enchants and gems",
+   "best enchants for Beast Mastery Hunter",
+   "best gems for Beast Mastery Hunter",
+   "Beast Mastery Hunter stat priority midnight",
+   "Beast Mastery Hunter tier set midnight",
+   "Beast Mastery Hunter tier set bonuses",
+   "Beast Mastery Hunter mythic+ guide",
+   "Beast Mastery Hunter m+ guide midnight",
+   "Beast Mastery Hunter raid guide",
+   "Beast Mastery Hunter hero talents",
+   "Beast Mastery Hunter hero tree",
+   "best dps build Beast Mastery Hunter midnight",
+   "Beast Mastery Hunter cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای بیست مستری",
+   "تلنت بیست مستری",
+   "تلنت برای Beast Mastery Hunter",
+   "تلنت Hunter بیست مستری",
+   "بیلد بیست مستری",
+   "بیلد تلنت بیست مستری میدنایت",
+   "روتیشن بیست مستری",
+   "روتیشن و کول‌داون‌های بیست مستری",
+   "غذا برای بیست مستری",
+   "غذا برای Beast Mastery Hunter",
+   "غذا و معجون بیست مستری",
+   "بهترین غذای بیست مستری",
+   "فلسک بیست مستری",
+   "بهترین فلسک برای بیست مستری",
+   "معجون بیست مستری",
+   "انچنت بیست مستری",
+   "انچنت و جم بیست مستری",
+   "بهترین انچنت برای بیست مستری",
+   "جم بیست مستری",
+   "بست آیتم بیست مستری",
+   "بهترین آیتم‌های بیست مستری",
+   "گیر بیست مستری",
+   "استت بیست مستری",
+   "اولویت استت بیست مستری",
+   "ست تیر بیست مستری",
+   "مایتی پلاس بیست مستری",
+   "ام پلاس بیست مستری",
+   "راهنمای بیست مستری",
+   "راهنمای Beast Mastery Hunter",
+   "راهنمای هانتر",
+   "بیست مستری میدنایت",
+   "هانتر میدنایت",
+   "هرو تیلنت بیست مستری",
+   "بیلد بیست مستری",
+   "بهترین بیست مستری"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Beast Mastery Hunter (بیست مستری) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Beast Mastery Hunter به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای بیست مستری چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: غذا «Royal Roast»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای بیست مستری چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Rite of the Hash'ey»، جم «Powerful Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای بیست مستری کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Beast Mastery Hunter در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

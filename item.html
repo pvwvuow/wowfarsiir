@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آیتم — wowfarsi</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css?v=20261031b">
+<link rel="stylesheet" href="assets/css/index.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/fantasy.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/extra.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/support.css?v=20261031a">
+<link rel="stylesheet" href="assets/css/panels.css?v=20261030a">
+<link rel="stylesheet" href="assets/css/retail.css?v=20261111k">
+<style>
+/* same shell as the static item pages (item/<id>-<slug>.html) — retail.js
+   renders the identical .rt-item card into #rt-root. Widened for the
+   forever sources layout: card on the left + maps/sources on the right. */
+.it-wrap{max-width:1360px;margin:0 auto;padding:7.5rem 1rem 3rem;position:relative;z-index:2}
+.it-langbar{display:flex;justify-content:flex-end;margin:0 0 .7rem}
+.rt-lang{display:inline-flex;align-items:center;gap:.3rem;padding:.26rem .55rem .26rem .6rem;
+  border:1px solid rgba(214,178,94,.26);border-radius:999px;background:rgba(20,16,10,.55)}
+.rt-lang-lb{font-size:11.5px;color:#bdb7a6;margin-inline-end:.15rem}
+.rt-lang-btn{cursor:pointer;font-family:inherit;font-size:11.5px;line-height:1.7;padding:.05rem .62rem;
+  border-radius:999px;border:1px solid transparent;background:transparent;color:#bdb7a6;
+  transition:color .2s,background .2s,border-color .2s}
+.rt-lang-btn:hover{color:#f6e0a3}
+.rt-lang-btn.on{color:#f6e0a3;background:rgba(240,199,94,.13);border-color:rgba(240,199,94,.5)}
+.rt-lang-btn[dir="ltr"]{font-family:"Cinzel","Times New Roman",serif;letter-spacing:.04em}
+</style>
+</head>
+<body data-rt="item" data-static="1">
+<div class="bg-layers" aria-hidden="true">
+  <div class="bg-photo"></div>
+  <div class="bg-veil"></div>
+  <div class="bg-grain"></div>
+</div>
+<div id="embers" aria-hidden="true" style="position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none"></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-brand" aria-label="wowfarsi — خانه">
+      <span class="brand-logo"><img src="assets/img/logo.webp" alt="لوگوی wowfarsi"></span>
+      <b class="font-cinzel" dir="ltr">wowfarsi</b>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="retail.html" class="is-active">Midnight</a>
+      <a href="forever.html">Forever</a>
+      <a href="talents.html">Talent Tree</a>
+      <a href="news.html">wowheadFA</a>
+      <a href="addon.html">افزونه</a>
+      <a href="status.html">وضعیت ترجمه</a>
+      <a href="donate.html" class="dn-nav">حمایت</a>
+    </nav>
+  </div>
+  <div class="nav-rule"></div>
+</header>
+
+<main>
+<div class="it-wrap">
+  <div class="it-langbar"><div class="rt-lang" role="group" aria-label="زبان توضیحات آیتم"><span class="rt-lang-lb">توضیحات:</span><button type="button" class="rt-lang-btn on" data-l="fa">فا</button><button type="button" class="rt-lang-btn" data-l="en" dir="ltr">EN</button></div></div>
+  <!-- retail.js appends #rt-root here and renders the card -->
+</div>
+</main>
+<footer class="footer">
+  <div class="brand-logo"><img src="assets/img/logo.webp" alt="wowfarsi"></div>
+  <p class="footer-word font-cinzel" dir="ltr">wowfarsi</p>
+  <p class="footer-line">ساخته‌شده برای جامعهٔ ایرانیِ وارکرفت</p>
+  <div class="footer-links">
+    <a href="news.html">اخبار</a>
+    <span>✦</span>
+    <a href="index.html">خانه</a>
+    <span>✦</span>
+    <span class="font-cinzel" dir="ltr">wowfarsi · Forever 1.60.1</span>
+  </div>
+  <p class="footer-note" dir="ltr">World of Warcraft is a trademark of Blizzard Entertainment, Inc. Wowhead is a trademark of its respective owner. This is a fan-made, non-commercial community site; item data via the Forever community API and QuestieDB; not affiliated with Blizzard Entertainment.</p>
+</footer>
+<a class="dn-float" href="donate.html" aria-label="حمایت از پروژهٔ wowfarsi"><span class="dn-float-tag">حمایت از پروژه</span><span class="dn-float-orb"><img src="assets/img/logo.webp" alt=""><span class="dn-float-heart" aria-hidden="true">♥</span></span></a>
+<script>
+/* item.html — two jobs:
+   1) ?ver=forever&id=<id> → the Forever item page (retail.js renders it on
+      the same card design as the retail static pages).
+   2) any other ?id=<id> → old item.html?id= links redirect to the static
+      retail page /item/<id>-<slug>.html (item-urls.json); unknown → db.html. */
+(function () {
+  var p = new URLSearchParams(location.search);
+  if (p.get("ver") === "forever") return; /* let retail.js render */
+  function end() { location.replace("db.html"); }
+  var id = p.get("id");
+  if (!id || !/^\d+$/.test(id)) { end(); return; }
+  fetch("data/retail/db/item-urls.json")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      var f = d && d.urls && d.urls[id];
+      if (f) location.replace("item/" + f);
+      else end();
+    })
+    .catch(end);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=db.html"></noscript>
+<script src="assets/js/tr.js?v=20261111k"></script>
+<script src="assets/js/retail.js?v=20261111j"></script>
+<script src="assets/js/main.js?v=20261104a"></script>
+<script src="assets/js/support.js?v=20261031a"></script>
+<script src="assets/js/nav-menu.js?v=20261111j"></script>
+</body>
+</html>

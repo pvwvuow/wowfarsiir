@@ -1,0 +1,157 @@
+/* wowfarsi - fantasy panels: no boxes. Fading rules, rune ornaments, a slow light sweep. Loads after every other sheet. */
+@property --sx { syntax: '<percentage>'; inherits: false; initial-value: -40%; }
+
+/* ===== big panels: donate hero, crypto card, current world ===== */
+html body :is(.dn-hero, .dn-pay, .wd-main) {
+  --ln: rgba(240, 199, 94, 0.5);
+  --tint: rgba(240, 199, 94, 0.14);
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 240, 190, 0.95), transparent) var(--sx) 0 / 24% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 16%, var(--ln) 84%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 16%, var(--ln) 84%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(180deg, transparent, var(--ln) 20%, var(--ln) 80%, transparent) left top / 1px 100% no-repeat,
+    linear-gradient(180deg, transparent, var(--ln) 20%, var(--ln) 80%, transparent) right top / 1px 100% no-repeat,
+    radial-gradient(ellipse 62% 78% at 50% 0%, var(--tint), transparent 74%),
+    linear-gradient(90deg, transparent, rgba(6, 9, 16, 0.6) 12%, rgba(6, 9, 16, 0.6) 88%, transparent);
+  animation: pn-sweep 11s ease-in-out infinite;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), --ln 0.4s ease;
+}
+html body .wd-main { --ln: color-mix(in srgb, var(--wd, #8fd4a4) 50%, transparent); --tint: color-mix(in srgb, var(--wd, #8fd4a4) 12%, transparent); animation-delay: 2.5s; }
+html body .dn-pay { animation: pn-sweep 11s ease-in-out 4s infinite, pn-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+html body .dn-hero { animation: pn-sweep 11s ease-in-out infinite, pn-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+html body :is(.dn-hero, .dn-pay):hover { --ln: rgba(246, 224, 163, 0.85); }
+html body .wd-main:hover { --ln: color-mix(in srgb, var(--wd, #8fd4a4) 82%, transparent); }
+
+/* top ornament (dot, ring, two satellites) and a diamond at the bottom edge */
+html body :is(.dn-hero, .dn-pay, .wd-main)::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 0;
+  width: 44px; height: 13px;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px);
+  filter: drop-shadow(0 0 4px rgba(240, 199, 94, 0.55));
+  pointer-events: none;
+}
+html body :is(.dn-hero, .dn-pay, .wd-main)::after {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 6px; height: 6px;
+  background: var(--gold-2);
+  box-shadow: 0 0 10px rgba(240, 199, 94, 0.9);
+  transform: translate(-50%, 50%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* ===== small cards: stats, world cards ===== */
+html body :is(.dn-stat, .wd-card) {
+  --ln: rgba(240, 199, 94, 0.3);
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.07) 25%, rgba(240, 199, 94, 0.07) 75%, transparent);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), --ln 0.35s ease;
+}
+html body :is(.dn-stat, .wd-card):hover { --ln: rgba(246, 224, 163, 0.8); }
+html body :is(.dn-stat, .wd-card)::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 0;
+  width: 5px; height: 5px;
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.8);
+  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+html body .wd-card::before { transform: translate(-50%, -50%) rotate(45deg) scale(0); }
+html body .wd-card:hover::before { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+html body .wd-card:hover { opacity: 1; }
+html body .dn-stat { animation: pn-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+html body .dn-stat:nth-child(2) { animation-delay: 0.12s; }
+html body .dn-stat:nth-child(3) { animation-delay: 0.24s; }
+/* thin vertical rule between the three stats, fading at both ends */
+html body .dn-stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: -0.5rem; top: 16%; bottom: 16%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(240, 199, 94, 0.3), transparent);
+  pointer-events: none;
+}
+
+/* ===== tags and code boxes: two fading rules instead of a frame ===== */
+html body .wd-state, html body .wd-zone {
+  border: 0;
+  border-radius: 0;
+  border-block: 1px solid rgba(240, 199, 94, 0.26);
+  padding-inline: 1.1rem;
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.08) 24%, rgba(240, 199, 94, 0.08) 76%, transparent);
+}
+html body .wd-main .wd-state, html body .wd-main .wd-zone {
+  border-block-color: color-mix(in srgb, var(--wd, #8fd4a4) 45%, transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--wd, #8fd4a4) 11%, transparent) 24%, color-mix(in srgb, var(--wd, #8fd4a4) 11%, transparent) 76%, transparent);
+}
+html body .wd-main .wd-state { box-shadow: none; animation: wowfa-pulse 2.6s ease-in-out infinite; }
+html body :is(.dn-addr, .dn-soon) {
+  border: 0;
+  border-radius: 0;
+  border-block: 1px solid rgba(240, 199, 94, 0.28);
+  padding-inline: 1.5rem;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.42) 10%, rgba(0, 0, 0, 0.42) 90%, transparent);
+}
+
+/* ===== small touches ===== */
+html body .dn-hero-label, html body .dn-h { display: flex; align-items: center; justify-content: center; gap: 0.8rem; }
+html body .dn-hero-label::before, html body .dn-h::before {
+  content: '';
+  width: 3rem; height: 1px;
+  background: linear-gradient(90deg, rgba(240, 199, 94, 0.7), transparent);
+}
+html body .dn-hero-label::after, html body .dn-h::after {
+  content: '';
+  width: 3rem; height: 1px;
+  background: linear-gradient(270deg, rgba(240, 199, 94, 0.7), transparent);
+}
+html body .dn-hero-total { animation: pn-breathe 5s ease-in-out infinite; }
+html body .dn-qr { border-radius: 0; outline: 1px solid rgba(240, 199, 94, 0.35); outline-offset: 5px; }
+
+/* floating support button: tag as two fading rules (the orb already speaks the same language) */
+html body .dn-float-tag {
+  --ln: rgba(240, 199, 94, 0.55);
+  padding: 0.32rem 1.6rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 20%, var(--ln) 80%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 20%, var(--ln) 80%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(8, 10, 18, 0.9) 20%, rgba(8, 10, 18, 0.9) 80%, transparent);
+  transition: transform 0.25s ease, --ln 0.25s ease;
+}
+html body .dn-float:hover .dn-float-tag { --ln: rgba(246, 224, 163, 0.95); }
+html body .dn-float-orb { border-width: 1px; }
+
+@keyframes pn-sweep { 0% { --sx: -40%; } 50%, 100% { --sx: 140%; } }
+@keyframes pn-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes pn-breathe { 0%, 100% { text-shadow: 0 0 18px rgba(240, 199, 94, 0.28); } 50% { text-shadow: 0 0 32px rgba(240, 199, 94, 0.58); } }
+
+@media (max-width: 640px) {
+  html body .dn-stat:not(:last-child)::after { display: none; }
+  html body :is(.dn-hero-label, .dn-h)::before, html body :is(.dn-hero-label, .dn-h)::after { width: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body :is(.dn-hero, .dn-pay, .wd-main, .dn-stat, .dn-hero-total, .wd-main .wd-state) { animation: none; }
+}

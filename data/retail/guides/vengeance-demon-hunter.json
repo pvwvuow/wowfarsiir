@@ -1,0 +1,986 @@
+{
+ "slug": "vengeance-demon-hunter",
+ "class": "demon-hunter",
+ "class_en": "Demon Hunter",
+ "spec_en": "Vengeance",
+ "spec_no": 3,
+ "role": "Tank",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Vengeance Demon Hunter",
+ "lead": "Vengeance یک تانک دو-دستهٔ چابک است که با کاهش آسیب کوتاه‌مدت، خوددرمانی و کنترل دشمن بازی می‌کند؛ یکی از دو اسپکی است که بر اساس آسیبِ دریافت‌شده شفا می‌دهد (کنار Blood Death Knight). دو مسیر Hero Tree داری: [[Annihilator]] که در جدول‌های فعلی برای همهٔ حالت‌ها «Best» است و [[Aldrachi Reaver]] با بازی روی Reaver's Glaive و مارک هدف اولویت.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/talent-builds-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/rotation-cooldowns-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/enchants-gems-pve-tank",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Fiery Brand": {
+   "fa": "یک برند که دشمن را به حالت Fiery درمی‌آورد و به او آسیار می‌زند."
+  },
+  "Frailty": {
+   "fa": "یک تلنت که دشمنان را آسیب‌پذیرتر می‌کند و به آن‌ها آسیار بیشتری وارد می‌کند."
+  },
+  "Chaos Brand": {
+   "fa": "یک افکت منحصر به فرد که آسیب جادویی دشمن را افزایش می‌دهد"
+  },
+  "Annihilator": {
+   "fa": "هرو اصلی ونگنس دمون هانتر که تمرکز اصلی آن بر آسیب‌پذیری دشمنان و افزایش آسیب وارد شده به آن‌ها است."
+  },
+  "Aldrachi Reaver": {
+   "fa": "هرو جایگزین که بر افزایش آسیب پذیری دشمنان و افزایش آسیب دریافت شده توسط خودتان تمرکز دارد."
+  },
+  "Infernal Strike": {
+   "fa": "یک پرش سریع به سمت دشمنان که آسیب وارد کرده و Souls جمع می‌کند."
+  },
+  "Metamorphosis": {
+   "fa": "یک تبدیل قدرتمند که آسیب و زور شما را افزایش می‌دهد و افکت‌های ویژه‌ای به شما می‌دهد."
+  },
+  "Fracture": {
+   "fa": "یک حمله سریع که Souls تولید می‌کند. با دو بار شارژ."
+  },
+  "Spirit Bomb": {
+   "fa": "یک انفجار از انرژی روحی که دشمنان آسیب‌پذیر را هدف قرار می‌دهد."
+  },
+  "Sigil of Flame": {
+   "fa": "طلسمی که به دشمنان آسیب می‌زند و آن‌ها را به حالت Burning درمی‌آورد."
+  },
+  "Sigil of Spite": {
+   "fa": "یک سیگیل که Souls تولید می‌کند."
+  },
+  "Soul Cleave": {
+   "fa": "یک حمله که Souls مصرف می‌کند و به دشمن آسیب می‌زند."
+  },
+  "Fel Devastation": {
+   "fa": "یک حمله قدرتمند که کانال می‌شود و Souls تولید می‌کند."
+  },
+  "Felblade": {
+   "fa": "یک پرتاب سریع که شما را به دشمن نزدیک می‌کند و Fury تولید می‌کند."
+  },
+  "Throw Glaive": {
+   "fa": "یک پرتاب سریع که به دشمن آسیب می‌زند و برای پرکردن یا کیت کردن استفاده می‌شود."
+  },
+  "Voidfall": {
+   "fa": "یک افکت پسیو که با استفاده از [[Spirit Bomb]] فعال می‌شود و آسیب شما را افزایش می‌دهد."
+  },
+  "Fiery Demise": {
+   "fa": "یک تلنت که آسیب [[Fiery Brand]] را افزایش می‌دهد."
+  },
+  "Down in Flames": {
+   "fa": "یک تلنت که کول‌داون [[Fiery Brand]] را کاهش می‌دهد."
+  },
+  "Darkglare Boon": {
+   "fa": "یک تلنت که کول‌داون [[Fel Devastation]] را کاهش می‌دهد."
+  },
+  "Soul Carver": {
+   "fa": "یک اسپل که Souls تولید می‌کند."
+  },
+  "Rending Strike": {
+   "fa": "یک افکت پسیو که با استفاده از [[Reaver's Glaive]] فعال می‌شود."
+  },
+  "Reaver's Glaive": {
+   "fa": "یک پرتاب گلاو که به دشمنان آسیب می‌زند و افکت‌های ویژه‌ای به شما می‌دهد."
+  },
+  "Glaive Flurry": {
+   "fa": "یک افکت پسیو که با استفاده از [[Reaver's Glaive]] فعال می‌شود."
+  },
+  "Fury of the Aldrachi": {
+   "fa": "یک افکت پسیو که با استفاده از [[Soul Cleave]] با [[Glaive Flurry]] فعال می‌شود."
+  },
+  "Thrill of the Fight": {
+   "fa": "یک افکت پسیو که با استفاده از [[Fury of the Aldrachi]] فعال می‌شود."
+  },
+  "Art of the Glaive": {
+   "fa": "یک افکت پسیو که با استفاده از [[Sigil of Spite]] فعال می‌شود."
+  },
+  "Aman'muso, Warlord's Vengeance": {
+   "fa": "دو دست قدرتمند برای Vengeance Demon Hunter که آسیب بالا و ویژگی‌های دفاعی را ارائه می‌دهد."
+  },
+  "Spellbreaker's Warglaive": {
+   "fa": "دست راست ساخته شده با افزایش سرعت و آسیب."
+  },
+  "Abyssal Doomhound's Relentless Stare": {
+   "fa": "کلاه با تمرکز بر افزایش آسیب و دوام."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردنبند که با کاهش آسیب دریافتی و افزایش توانایی‌های دفاعی همراه است."
+  },
+  "Abyssal Doomhound's Jaws": {
+   "fa": "پوشش شانه با مزایای دفاعی و افزایش آسیب."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "پوشش پشت که دوام و مقاومت را افزایش می‌دهد."
+  },
+  "Abyssal Doomhound's Coreguard": {
+   "fa": "زره سینه با تمرکز بر افزایش دوام و کاهش آسیب."
+  },
+  "Silvermoon Agent's Deflectors": {
+   "fa": "آیتم ساخته شده برای افزایش سرعت و توانایی‌های دفاعی."
+  },
+  "Abyssal Doomhound's Studded Gauntlets": {
+   "fa": "دستکش با تمرکز بر افزایش آسیب و دوام."
+  },
+  "Sash of the Forlorn Vessel": {
+   "fa": "کمربند با مزایای دفاعی و افزایش دوام."
+  },
+  "Abyssal Doomhound's Legwraps": {
+   "fa": "پوشش پا که دوام و توانایی‌های دفاعی را افزایش می‌دهد."
+  },
+  "Arctic Explorer's Legwraps": {
+   "fa": "پوشش پا با ویژگی‌های دفاعی و افزایش سرعت."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": " حلقه چپ با افزایش آسیب و ویژگی‌های دفاعی."
+  },
+  "Ritual Binder's Ring": {
+   "fa": "حلقه راست با تمرکز بر افزایش دوام و کاهش آسیب."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت که با افزایش آسیب و دوام همراه است."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت که با افزایش دوام و توانایی‌های دفاعی همراه است."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت با تمرکز بر افزایش آسیب."
+  },
+  "Lightbearer's Shield Fragment": {
+   "fa": "ترینکت که با افزایش دفاع گروهی همراه است."
+  },
+  "Abyssal Doomhound's Pursuit": {
+   "fa": "ست تیر که با تقویت Sigil of Flame و Immolation Aura همراه است."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "پیش‌نویس قدرتمند برای دیمن‌هانتر‌های انتقام‌جو که استقامت و مقاومت در برابر آسیب را افزایش می‌دهد."
+  },
+  "Light's Potential": {
+   "fa": "پیش‌نویس جنگی که قدرت و مقاومت را به‌طور همزمان افزایش می‌دهد و برای تانک‌ها ایده‌آل است."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پیش‌نویس سلامتی که مقدار زیادی سلامت را سریعاً بازیابی می‌کند و برای مواقع اضطراری ضروری است."
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "طلسم اسلحه که مقاومت و هاست را افزایش می‌دهد و برای تانک‌های دفاعی مناسب است."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "طلسم اسلحه که قدرت و آسیب‌پذیری را افزایش می‌دهد و برای تانک‌های تهاجمی مناسب است."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن اسلحه که آسیب را افزایش می‌دهد و برای افزایش خروجی دمی مفید است."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "طلسم تقویت‌کننده که تمام مشخصات را افزایش می‌دهد و یکی از بهترین گزینه‌ها برای تانک‌هاست."
+  },
+  "Harandar Celebration": {
+   "fa": "غذا که تمام مشخصات را افزایش می‌دهد و برای تانک‌ها بسیار مناسب است."
+  },
+  "Blooming Feast": {
+   "fa": "غذا جایگزین که تمام مشخصات را افزایش می‌دهد و در نبود گزینهٔ اصلی قابل استفاده است."
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "جواهرات الماسی که آسیب را به‌طور قابل توجهی افزایش می‌دهد و برای حداکثر خروجی دمی مناسب است."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جواهرات الماسی که مشخصات اصلی و دفاع را افزایش می‌دهد و برای تانک‌های متعادل مناسب است."
+  },
+  "Flawless Deadly Peridot": {
+   "fa": "جواهرات زمردی که آسیب را افزایش می‌دهد و برای افزایش خروجی دمی مفید است."
+  },
+  "Flawless Versatile Peridot": {
+   "fa": "جواهرات زمردی که همه‌چیز را افزایش می‌دهد و برای تعادل مشخصات مناسب است."
+  },
+  "Flawless Quick Lapis": {
+   "fa": "جواهرات لاجوردی که سرعت و سرعت بازیابی را افزایش می‌دهد."
+  },
+  "Flawless Quick Garnet": {
+   "fa": "جواهرات گارنت که سرعت و سرعت بازیابی را افزایش می‌دهد."
+  },
+  "Flawless Quick Amethyst": {
+   "fa": "جواهرات عقیق که سرعت و سرعت بازیابی را افزایش می‌دهد."
+  },
+  "Enchant Helm - Empowered Blessing of Speed": {
+   "fa": "طلسم کلاه که هاست و سرعت بازیابی را افزایش می‌دهد و برای تانک‌ها ایده‌آل است."
+  },
+  "Enchant Shoulders - Akil'zon's Swiftness": {
+   "fa": "طلسم شانه که هاست و سرعت را افزایش می‌دهد و برای بهبود چرخهٔ دمی مناسب است."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "طلسم سینه که تمام مشخصات را افزایش می‌دهد و یکی از بهترین گزینه‌هاست."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "کیت زره که مقاومت و سرعت را افزایش می‌دهد و برای تانک‌ها مناسب است."
+  },
+  "Enchant Boots - Farstrider's Hunt": {
+   "fa": "طلسم کفش که هاست و سرعت را افزایش می‌دهد و برای بهبود چرخهٔ دمی مناسب است."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "طلسم حلقه که قدرت و هاست را افزایش می‌دهد و برای تانک‌ها مناسب است."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Vengeance یک تانک دو-دستهٔ چابک است که با کاهش آسیب کوتاه‌مدت، خوددرمانی و کنترل دشمن بازی می‌کند؛ یکی از دو اسپکی است که بر اساس آسیبِ دریافت‌شده شفا می‌دهد (کنار Blood Death Knight)."
+    },
+    {
+     "t": "p",
+     "x": "در این پچ، Vengeance یک بوف ۵.۵٪ در تمام آسیب‌ها دریافت کرده و برخی اسپل‌های شفابخش قدرت بیشتری پیدا کرده‌اند. ساختار درخت‌های Hero نیز تغییر کرده است."
+    },
+    {
+     "t": "h3",
+     "x": "ارزیابی کلی"
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "آسیب‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "چابکی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "خوددرمانی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "کنترل جمعی",
+       "v": "خوب",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "بورست اولیه قوی برای گرفتن تارگت اولیه",
+       "کاهش آسیب و شفابخش متعادل",
+       "آسیب ثابت و قابلیت بالای سولو",
+       "جابجایی دقیق و مکرر",
+       "برند کردن دشمنان با Chaos Brand"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "دفاعیهای کوتاه‌مدت نیاز به مدیریت دارند",
+       "شفابخش روی آسیب محیطی کار نمی‌کند"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Annihilator",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "سبک بازی نسبتاً منفعلانه اما پاداش درستی چرخش اسپل‌ها. هر بار که Metamorphosis را می‌کُشی، Spirit Bomb ریست می‌شود. با فعال شدن Apex بلافاصله پس از تبدیل شدن استفاده کن. برای جلوگیری از همپوشانی Meteor، باید برخی اسپل‌ها را نگه داری."
+      }
+     ]
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Aldrachi Reaver",
+       "tag": "گزینه جایگزین قوی",
+       "x": "تمرکز روی آپتایم باف‌های کوتاه، هم‌دمیج به هدف اولویت. پس از مصرف 20 Soul، Throw Glaive بعدی به Reaver's Glaive تبدیل می‌شود. اولین Fracture دباфф اعمال می‌کند و اولین Soul Cleaedamage AoE اضافی می‌دهد. در حالت AoE، Reaver's Mark را روی هدفی که بیشترین عمر را دارد بزن."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "تلنت‌های ونگنس دمون هانتر در پچ ۱۲.۱.۵ به دو درخت اصلی تقسیم می‌شوند: یکی برای زره و دیگری برای سلاح. هر درخت دارای دو مسیر اصلی است که یکی از آن‌ها را به عنوان هرو (Hero) انتخاب می‌کنید."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Annihilator",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این بیلد برای تمام حالت‌های بازی از جمله رید تک‌هدف، Mythic+ و دلوها مناسب است و بهترین عملکرد را دارد.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmZkZmZY2MzMjhZMzYGzYmZYGmx2MzYMAAAAAAAQAzMjNAAAAMYMzMzs02MzMAwAAAAYA"
+      },
+      {
+       "title": "Annihilator",
+       "tag": "Mythic+/AoE",
+       "x": "این واریانت برای مواجهات با تعداد زیادی دشمن و در دانژون‌ها بهینه شده است.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjhZkZmBWMjZwMjZGz8AzMzYYmZmx2YGjxMAAAAAAACYmZsBAAAgBmZmZml2mZmBAzAAAAYA"
+      },
+      {
+       "title": "Annihilator",
+       "tag": "رید کلیو/کونسیل",
+       "x": "این بیلد برای باس‌های رید که نیاز به مدیریت تهدید چند هدف دارند مناسب است.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmZkZmZYWMzMzMMjZGzYGzYYGmx2MzYMAAAAAAAQAzMjNAAAAMYMzMzs02MzMAwAAAAYA"
+      },
+      {
+       "title": "Annihilator",
+       "tag": "دلوها",
+       "x": "این بیلد برای حالت دلوها که نیاز به ترکیبی از دفاع و آسیب‌پذیری دشمنان دارد بهینه شده است.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjxMjMzMwmZMDmZMzYmHYGzYMzMzM2GzgxMAAAAAAACYmZsBAAAgBzMzMzs02MzMAwAAAAYA"
+      },
+      {
+       "title": "Aldrachi Reaver",
+       "tag": "رید تک‌هدف",
+       "x": "این بیلد جایگزین خوبی برای Annihilator در حالت تک‌هدف است اما عملکرد کمی پایین‌تر دارد.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmZkZmZY2MzMjhZMzYGzYmZYGmx2MzYMAAAAgZbGMMW2YCDzMjFAAAAMYAIAzMADAAAgB"
+      },
+      {
+       "title": "Aldrachi Reaver",
+       "tag": "Mythic+/AoE",
+       "x": "این واریانت برای مواجهات با تعداد زیادی دشمن در دانژون‌ها مناسب است.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjhZkZmBWMjZwMjZGz8AzMzYYmZmx2YGjxMAAAAMbzghxyGTYYmZsAAAAgBGABYmBMDAAAgB"
+      },
+      {
+       "title": "Aldrachi Reaver",
+       "tag": "دلوها",
+       "x": "این بیلد برای حالت دلوها که نیاز به ترکیبی از دفاع و آسیب‌پذیری دشمنان دارد بهینه شده است.",
+       "code": "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjxMjMzMwmZMDmZMzYmHYGzYMzMzM2GzgxMAAAAMbzghxyGTYYmZsAAAAgBzAIAzMADAAAgB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=demon-hunter&spec=vengeance",
+     "x": "مشاهده تمام تلنت‌های موجود"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ جنگی تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "استفاده از [[Infernal Strike]] وقتی دو بار شارژ دارد و نیاز به حرکت نیست",
+      "نگهداری 75 Fury اگر دو بار شارژ [[Voidfall]] دارید یا [[Metamorphosis]] بزودتر از کول‌داون خارج می‌شود",
+      "استفاده از [[Metamorphosis]] اگر زمان باقی‌مانده بیش از حد کوتاه نشود و کول‌داون [[Spirit Bomb]] بیش از 10 ثانیه باقی مانده",
+      "استفاده از [[Fracture]] وقتی دو بار شارژ دارد",
+      "استفاده از [[Spirit Bomb]] با 4+ Souls اگر کول‌داون [[Fiery Brand]] به پایان نزدیک است",
+      "استفاده از [[Fiery Brand]] اگر افکت آن فعال نیست",
+      "استفاده از [[Spirit Bomb]] با 5+ Souls؛ اگر [[Voidfall]] را فعال کرد، در بعدی GCD از [[Soul Cleave]] استفاده کنید",
+      "استفاده از [[Immolation Aura]]",
+      "استفاده از [[Sigil of Flame]]",
+      "استفاده از [[Sigil of Spite]] اگر Souls شما پر نمی‌شود",
+      "استفاده از [[Soul Cleave]] با 1 یا بیشتر Souls",
+      "استفاده از [[Fel Devastation]] اگر حداقل 50 Fury دارید",
+      "استفاده از [[Soul Cleave]] برای مصرف کردن Fury بدون Souls",
+      "استفاده از [[Fracture]] اگر Fury یا Souls شما پر نمی‌شود",
+      "استفاده از [[Felblade]] اگر Fury شما پر نمی‌شود",
+      "استفاده از [[Throw Glaive]] برای پرکردن یا هنگام کیت کردن"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "هدف: هرگز کول‌داون، Fury یا Souls را هدر ندهید. شارژهای [[Voidfall]] به طور طبیعی چرخه می‌شوند اما [[Metamorphosis]] این چرخه را مختل می‌کند؛ چند ثانیه صبر کنید تا انیمیشن‌های ماس آسیدشن کامل شود."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ جنگی گروهی"
+    },
+    {
+     "t": "p",
+     "x": "تقریباً مشابه تک‌هدف است با این تفاوت که اولویت [[Fel Devastation]] کمی بالاتر می‌رود؛ افکت‌های Annihilator عمدتاً پسیو هستند."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ جنگی Aldrachi"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "استفاده از [[Infernal Strike]] وقتی دو بار شارژ دارد",
+      "استفاده از [[Metamorphosis]]",
+      "استفاده از [[Fracture]] وقتی دو بار شارژ دارد",
+      "استفاده از [[Fracture]] با [[Rending Strike]] روی هدف اصلی برای فعال کردن [[Reaver's Mark]] و تولید Souls/Fury",
+      "استفاده از [[Spirit Bomb]] با 4+ Souls اگر کول‌داون [[Fiery Brand]] به پایان نزدیک است",
+      "استفاده از [[Fiery Brand]] اگر افکت آن فعال نیست",
+      "استفاده از [[Spirit Bomb]] با 5+ Souls",
+      "استفاده از [[Soul Cleave]] با [[Glaive Flurry]] برای فعال کردن [[Fury of the Aldrachi]] و فعال کردن [[Thrill of the Fight]]",
+      "استفاده از [[Sigil of Spite]] برای فعال کردن [[Art of the Glaive]] اگر [[Reaver's Glaive]] در دسترس نیست",
+      "استفاده از [[Reaver's Glaive]] برای فعال کردن [[Rending Strike]] و افکت‌های [[Glaive Flurry]]",
+      "استفاده از [[Immolation Aura]]",
+      "استفاده از [[Sigil of Flame]]",
+      "استفاده از [[Soul Cleave]] با 1 یا بیشتر Souls",
+      "استفاده از [[Fel Devastation]] اگر حداقل 50 Fury دارید",
+      "استفاده از [[Soul Cleave]] برای مصرف کردن Fury بدون Souls",
+      "استفاده از [[Fracture]] اگر Fury یا Souls شما پر نمی‌شود",
+      "استفاده از [[Felblade]] اگر Fury شما پر نمی‌شود",
+      "استفاده از [[Throw Glaive]] برای پرکردن یا هنگام کیت کردن"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "اولویت تولید Souls بر هر چیز دیگری در تضادها می‌رود؛ uptime به دلیل جریان مداوم glaives برای حفظ افکت‌ها حیاتی است."
+    },
+    {
+     "t": "h3",
+     "x": "آغازگر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "استفاده از [[Sigil of Flame]] قبل از جنگ روی تک‌هدف یا یک گروه",
+      "استفاده از [[Infernal Strike]] به سمت دشمن (یا لبه گروه)",
+      "استفاده از [[Spirit Bomb]] در حین [[Infernal Strike]] اگر Souls و Fury را از پول قبلی ذخیره کرده‌اید",
+      "استفاده از [[Fracture]] برای تولید Souls و Fury",
+      "استفاده از [[Immolation Aura]]",
+      "استفاده از [[Fracture]] اگر Souls شما پر نمی‌شود",
+      "استفاده از [[Fiery Brand]] برای دریافت افکت دامنه آتش",
+      "استفاده از [[Spirit Bomb]] با 5+ Souls",
+      "استفاده از [[Sigil of Spite]]",
+      "استفاده از [[Fracture]] اگر Souls شما پر نمی‌شود",
+      "استفاده از [[Felblade]] برای تولید Fury اگر کم دارید",
+      "استفاده از [[Metamorphosis]] وقتی دشمنان گروه شده‌اند",
+      "استفاده از [[Spirit Bomb]] با 6 Souls",
+      "استفاده از [[Soul Cleave]]",
+      "استفاده از [[Fracture]]",
+      "کانال کامل [[Fel Devastation]] برای Souls",
+      "استفاده از [[Soul Cleave]] با 0 Souls",
+      "ادامه با چرخهٔ اصلی"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "p",
+     "x": "استفاده از [[Fel Devastation]] (40 ثانیه، 28-34 ثانیه با [[Darkglare Boon]]) روی کول‌داون، هماهنگ با [[Fiery Brand]] اگر [[Fiery Demise]] + [[Down in Flames]] را دارید؛ [[Soul Carver]] (1 دقیقه) با کمتر از 3 souls، هماهنگ با [[Fiery Brand]] اگر [[Fiery Demise]] را دارید؛ [[Sigil of Spite]] (1 دقیقه) روی کول‌داون، بهتر است هماهنگ با [[Fiery Brand]] باشد."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 268209
+      },
+      {
+       "slot": "آف‌هند",
+       "id": 237840
+      },
+      {
+       "slot": "سر",
+       "id": 271537
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271535
+      },
+      {
+       "slot": "شنل",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271540
+      },
+      {
+       "slot": "مچ",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271538
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271536
+      },
+      {
+       "slot": "چکمه",
+       "id": 251153
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268252
+      },
+      {
+       "slot": "انگشتر",
+       "id": 159459
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 280617
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای تجهیز شدن به عنوان Vengeance Demon Hunter Tank در پچ 12.1.5، همیشه آیتم با بالاترین سطح آیتم (ilvl) را انتخاب کنید. در مقایسه ثانویه‌ها فقط در سطح آیتم برابر، مقایسه انجام دهید."
+    },
+    {
+     "t": "p",
+     "x": "از نظر دفاعی، سطح آیتم اولویت اصلی است و بعد از آن Haste >= Critical Strike = Versatility = Mastery. برای ارزیابی آسیب‌رسانی، از Raidbots استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "پوشیدن آیتم‌های تیر (tier set) در اولویت بالایی قرار دارد و باید به سرعت آن‌ها را به دست آورید."
+    },
+    {
+     "t": "h3",
+     "x": "اسلحه و سپر"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "دو دست",
+       "v": "Aman'muso, Warlord's Vengeance"
+      },
+      {
+       "k": "دست راست",
+       "v": "Spellbreaker's Warglaive",
+       "ids": [
+        237840
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های پیشنهادی"
+    },
+    {
+     "t": "p",
+     "x": "برای هر اسلات، بهترین آیتم‌ها عبارتند از:"
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "اسلات‌های اصلی",
+      "items": [
+       "سر: {{271537}}",
+       "گردن: {{268265}}",
+       "شانه: {{271535}}",
+       "پشت: {{268253}}",
+       "سینه: {{271540}}",
+       "مچ: {{244576}}",
+       "دست: {{271538}}",
+       "کمر: {{268256}}",
+       "پا: {{251153}}"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "انگشتان",
+      "items": [
+       "چپ: {{268252}}",
+       "راست: {{159459}}"
+      ]
+     }
+    },
+    {
+     "t": "h3",
+     "x": "ترینکت‌ها"
+    },
+    {
+     "t": "p",
+     "x": "جفت پیش‌فرض Twisted Horror's Tendril و Voracious Heart of Ula'tek است. برای آسیب بیشتر، Zul'jin's Guillotine Technique و برای دفاع گروهی، Lightbearer's Shield Fragment انتخاب خوبی است."
+    },
+    {
+     "t": "h3",
+     "x": "ست تیر"
+    },
+    {
+     "t": "p",
+     "x": "ست Abyssal Doomhound's Pursuit به درستی چرخش بازی را تقویت می‌کند اما در دونژن‌ها جمع شدن را جریمه می‌کند. دو تکه آن Sigil of Flame را تقویت می‌کند و چهار تکه آن Immolation Aura و Sigil of Spite را در برابر اهداف تحت تأثیر Sigil of Flame قدرتمندتر می‌سازد."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های ساخته شده"
+    },
+    {
+     "t": "p",
+     "x": "از Silvermoon Agent's Deflectors و Spellbreaker's Warglaive برای ساخت آیتم‌های سفارشی استفاده کنید."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Haste",
+      "Critical Strike",
+      "Versatility",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در اولویت‌بندی استت‌ها، آیتم لول مهم‌تر از ارزش ثانویه است. فقط زمانی که آیتم‌ها از نظر لول یکسان باشند، باید به استت‌ها توجه کنید."
+    },
+    {
+     "t": "p",
+     "x": "از نظر دفاعی، پس از رسیدن به آیتم لول مناسب، اسپک اولویت اصلی است و بعد از آن کریتیکال استرایک، ورساتیلتی و Mastery ارزش‌های تقریباً برابری دارند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پیش‌نویس",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Double Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Blooming Feast",
+       "ids": [
+        242273
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Enchant Helm - Empowered Blessing of Speed",
+       "ids": [
+        243980
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Enchant Shoulders - Akil'zon's Swiftness",
+       "ids": [
+        243962
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Enchant Boots - Farstrider's Hunt",
+       "ids": [
+        244008
+       ]
+      },
+      {
+       "k": "پیش‌نویس",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای پیش‌نویس‌ها، [[Flask of the Blood Knights]] بهترین گزینه است. پیش‌نویس جنگی [[Light's Potentia]] را به‌طور مداوم استفاده کنید. پتانسیل بالاتر [[Draught of Rampant Abandon]] می‌تواند خطرناک باشد."
+    },
+    {
+     "t": "p",
+     "x": "برای سلامتی، از [[Concentrated Silvermoon Health Potion]] استفاده کنید. برای اسلحه، دو [[Enchant Weapon - Acuity of the Ren'dorei]] برای دفاع یا دو [[Enchant Weapon - Rite of the Hash'ey]] برای حمله مناسب است."
+    },
+    {
+     "t": "p",
+     "x": "برای غذا، [[Harandar Celebration]] گزینهٔ اصلی و [[Blooming Feast]] جایگزین خوبی است. برای جواهرات، از [[Powerful Eversong Diamond]] برای حداکثر آسیب یا [[Indecipherable Eversong Diamond]] برای دفاع استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "برای جواهرات دیگر، از [[Flawless Deadly Peridot]]، [[Flawless Versatile Peridot]] و انواع [[Flawless Quick]] استفاده کنید. برای طلسم‌ها، [[Enchant Helm - Empowered Blessing of Speed]] و [[Enchant Shoulders - Akil'zon's Swiftness]] انتخاب‌های خوبی هستند."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "راهنمای Vengeance Demon Hunter برای M+ در پچ 12.1.5"
+    },
+    {
+     "t": "p",
+     "x": "در دنیای Mythic Plus، ساختار Annihilator بهترین انتخاب برای تانک دیمن هانتر است. ساختار Aldrachi Reaver نیز عملکرد خوبی دارد اما نیاز به مدیریت بهتر uptime دارد."
+    },
+    {
+     "t": "call",
+     "x": "برای بازیکنان آلیانس، نژاد Night Elf با مزایای زنده‌ماندن و کارایی یا Void Elf با آسیب بیشتر مناسب است. برای هورد، Blood Elf تنها گزینه است."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "قبل از شروع کشتار روی یک گروه دشمن، Sigil of Flame را از پیش کست کنید و هنگام تانک کردن با Infernal Strike به لبه دشمنان بپرید.",
+      "بین کشتارها Souls و Fury را ذخیره کنید: Spirit Bomb را دقیقاً در لحظه Infernal Strike بزنید تا گروه دشمنان در جای خود نگه داشته شوند.",
+      "Fiery Brand و Frailty نیاز به هدف دارند؛ آن‌ها را برای بزرگترین ضربات برنامه‌ریزی کنید."
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "نژاد",
+       "v": "Night Elf (آلیانس)، Blood Elf (هورد)"
+      },
+      {
+       "k": "ساختار پیشنهادی",
+       "v": "Annihilator"
+      },
+      {
+       "k": "فصل",
+       "v": "Midnight Season 2"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Vengeance Demon Hunter (ونچنس) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل ونچنس (Vengeance Demon Hunter) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Vengeance Demon Hunter talent build midnight",
+   "Vengeance Demon Hunter guide midnight",
+   "Vengeance Demon Hunter guide 12.1.5",
+   "best Vengeance Demon Hunter talents",
+   "Vengeance Demon Hunter talent tree midnight",
+   "Vengeance Demon Hunter pve guide",
+   "Vengeance Demon Hunter rotation midnight",
+   "Vengeance Demon Hunter rotation and cooldowns",
+   "Vengeance Demon Hunter bis list midnight",
+   "Vengeance Demon Hunter best in slot",
+   "Vengeance Demon Hunter gear guide",
+   "Vengeance Demon Hunter food and potion",
+   "best food for Vengeance Demon Hunter",
+   "best flask for Vengeance Demon Hunter",
+   "best potion for Vengeance Demon Hunter",
+   "Vengeance Demon Hunter enchants and gems",
+   "best enchants for Vengeance Demon Hunter",
+   "best gems for Vengeance Demon Hunter",
+   "Vengeance Demon Hunter stat priority midnight",
+   "Vengeance Demon Hunter tier set midnight",
+   "Vengeance Demon Hunter tier set bonuses",
+   "Vengeance Demon Hunter mythic+ guide",
+   "Vengeance Demon Hunter m+ guide midnight",
+   "Vengeance Demon Hunter raid guide",
+   "Vengeance Demon Hunter hero talents",
+   "Vengeance Demon Hunter hero tree",
+   "best dps build Vengeance Demon Hunter midnight",
+   "Vengeance Demon Hunter cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای ونچنس",
+   "تلنت ونچنس",
+   "تلنت برای Vengeance Demon Hunter",
+   "تلنت Demon Hunter ونچنس",
+   "بیلد ونچنس",
+   "بیلد تلنت ونچنس میدنایت",
+   "روتیشن ونچنس",
+   "روتیشن و کول‌داون‌های ونچنس",
+   "غذا برای ونچنس",
+   "غذا برای Vengeance Demon Hunter",
+   "غذا و معجون ونچنس",
+   "بهترین غذای ونچنس",
+   "فلسک ونچنس",
+   "بهترین فلسک برای ونچنس",
+   "معجون ونچنس",
+   "انچنت ونچنس",
+   "انچنت و جم ونچنس",
+   "بهترین انچنت برای ونچنس",
+   "جم ونچنس",
+   "بست آیتم ونچنس",
+   "بهترین آیتم‌های ونچنس",
+   "گیر ونچنس",
+   "استت ونچنس",
+   "اولویت استت ونچنس",
+   "ست تیر ونچنس",
+   "مایتی پلاس ونچنس",
+   "ام پلاس ونچنس",
+   "راهنمای ونچنس",
+   "راهنمای Vengeance Demon Hunter",
+   "راهنمای دی‌هاو",
+   "ونچنس میدنایت",
+   "دی‌هاو میدنایت",
+   "هرو تیلنت ونچنس",
+   "بیلد ونچنس",
+   "بهترین ونچنس"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Vengeance Demon Hunter (ونچنس) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Vengeance Demon Hunter به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای ونچنس چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "لیست کامل و به‌روز فلسک، معجون، غذا و رون در بخش «انچنت، جم و مصرفی» همین راهنما آمده است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای ونچنس چیست؟",
+    "a": "انچنت سلاح و جم‌های پیشنهادی بر اساس اولویت استت این اسپک انتخاب می‌شوند. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای ونچنس کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Vengeance Demon Hunter در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

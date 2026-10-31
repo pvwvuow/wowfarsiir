@@ -1,0 +1,282 @@
+/* =========================================================
+   wowfarsi — Retail dropdown (header nav)
+   Classic click-driven multi-level menu, spoken in the site's
+   own language: hairlines that fade at their ends, ring + dot,
+   small diamonds. No boxes.
+
+   Opening choreography (the "golden thread"):
+     1. a 1px gold line drops fast from under the trigger
+     2. it unfurls left+right into the site flourish (panel top)
+     3. the menu unfolds suddenly from the line (clip reveal)
+   ========================================================= */
+
+/* ---------- trigger ---------- */
+.rtx-wrap { position: relative; display: inline-flex; }
+.rtx-trigger {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: none; border: 0; padding: .4rem .1rem;
+  font: inherit; font-size: 13px; color: #c3bdb0; cursor: pointer;
+  position: relative; transition: color .2s ease;
+}
+.rtx-trigger:hover, .rtx-trigger.is-active,
+.rtx-wrap.open .rtx-trigger { color: var(--gold-2); }
+.rtx-trigger:focus-visible { outline: 1px dotted var(--gold-1); outline-offset: 4px; }
+.rtx-trigger .chev { transition: transform .25s ease; opacity: .7; }
+.rtx-wrap.open .rtx-trigger .chev { transform: rotate(180deg); }
+
+/* same "── ● ──" flourish underline as .nav-links a (site.css) */
+.rtx-trigger::after {
+  content: "";
+  position: absolute; left: 50%; bottom: -4px;
+  width: 40px; height: 7px;
+  transform: translateX(-50%) scaleX(0.25);
+  opacity: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 1.9px, transparent 2.5px),
+    linear-gradient(90deg, transparent, var(--gold-3)) left 50% / calc(50% - 6px) 1px no-repeat,
+    linear-gradient(270deg, transparent, var(--gold-3)) right 50% / calc(50% - 6px) 1px no-repeat;
+  filter: drop-shadow(0 0 3px rgba(240, 199, 94, 0.6));
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), opacity .25s ease;
+}
+.rtx-trigger:hover::after,
+.rtx-wrap.open .rtx-trigger::after { transform: translateX(-50%) scaleX(1); opacity: 1; }
+
+/* ---------- the golden thread (drops from the trigger) ---------- */
+.rtx-plumb {
+  position: absolute; top: calc(100% - 2px);
+  inset-inline-start: 50%; margin-inline-start: -.5px;
+  width: 1px; height: 16px;
+  background: linear-gradient(180deg, rgba(240, 199, 94, 0), rgba(240, 199, 94, .9));
+  box-shadow: 0 0 6px rgba(240, 199, 94, .35);
+  transform: scaleY(0); transform-origin: top center;
+  opacity: 0; pointer-events: none; z-index: 6;
+  transition: transform .26s cubic-bezier(.5, 0, .25, 1), opacity .18s ease;
+}
+.rtx-wrap.open .rtx-plumb {
+  transform: scaleY(1); opacity: 1;
+  transition: transform .26s cubic-bezier(.5, 0, .25, 1), opacity .14s ease .04s;
+}
+
+/* ---------- panel ---------- */
+.rtx-panel {
+  position: absolute; top: calc(100% + 1px); inset-inline-start: 12px;
+  width: 296px; max-width: calc(100vw - 24px);
+  opacity: 0; visibility: hidden; pointer-events: none; z-index: 5;
+  background: linear-gradient(180deg, rgba(11, 15, 26, .97) 0%, rgba(6, 9, 16, .98) 100%);
+  border: 1px solid rgba(240, 199, 94, .14);
+  border-top-color: transparent;
+  border-radius: 3px 3px 14px 14px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .62), inset 0 0 44px rgba(240, 199, 94, .035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition:
+    opacity .2s ease,
+    visibility 0s linear .28s,
+    inset-inline-start .32s cubic-bezier(.22, .8, .26, 1),
+    width .32s cubic-bezier(.22, .8, .26, 1);
+}
+.rtx-panel.open {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition:
+    opacity .24s ease .1s,
+    inset-inline-start .32s cubic-bezier(.22, .8, .26, 1),
+    width .32s cubic-bezier(.22, .8, .26, 1);
+}
+.rtx-panel::after { /* faint bottom hairline */
+  content: ""; position: absolute; bottom: 0; left: 12%; right: 12%; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(240, 199, 94, .3), transparent);
+  pointer-events: none;
+}
+
+/* the flourish: hairline unfurls left+right, ring + dot pop in */
+.rtx-fl {
+  position: absolute; top: -1px; left: 14px; right: 14px; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(240, 199, 94, .5) 26%, rgba(240, 199, 94, .85) 50%, rgba(240, 199, 94, .5) 74%, transparent);
+  transform: scaleX(0); transform-origin: center;
+  transition: transform .46s cubic-bezier(.22, .8, .26, 1) .1s;
+  pointer-events: none;
+}
+.rtx-panel.open .rtx-fl { transform: scaleX(1); }
+.rtx-fl .rg {
+  position: absolute; left: 50%; top: 50%;
+  width: 9px; height: 9px; margin: -5px 0 0 -5px;
+  border: 1px solid rgba(240, 199, 94, .55); border-radius: 50%;
+  background: #070a12; /* breaks the hairline */
+  transform: scale(0);
+  transition: transform .3s cubic-bezier(.34, 1.4, .44, 1) .34s;
+}
+.rtx-fl .dt {
+  position: absolute; left: 50%; top: 50%;
+  width: 4px; height: 4px; margin: -2px 0 0 -2px;
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, .9);
+  transform: rotate(45deg) scale(0);
+  transition: transform .28s cubic-bezier(.34, 1.4, .44, 1) .42s;
+}
+.rtx-panel.open .rtx-fl .rg { transform: scale(1); }
+.rtx-panel.open .rtx-fl .dt { transform: rotate(45deg) scale(1); }
+
+/* menu body unfolds suddenly from the line, left+right */
+.rtx-view {
+  position: relative; overflow: hidden;
+  clip-path: inset(0 50% 0 50%);
+  transition:
+    clip-path .38s cubic-bezier(.22, .8, .26, 1) .2s,
+    height .32s cubic-bezier(.22, .8, .26, 1);
+}
+.rtx-panel.open .rtx-view { clip-path: inset(0 0 0 0); }
+
+/* ---------- levels (drill-down views) ---------- */
+.rtx-lvl {
+  position: absolute; top: 0; inset-inline-start: 0; width: 100%;
+  padding: 1rem 1.05rem 1.1rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity .22s ease, transform .3s cubic-bezier(.22, .8, .26, 1);
+}
+.rtx-lvl.act { opacity: 1; pointer-events: auto; z-index: 2; }
+.rtx-lvl.enter-l { transform: translateX(-18px); transition: none; } /* RTL: deeper = from the left */
+.rtx-lvl.enter-r { transform: translateX(18px); transition: none; }
+.rtx-lvl.exit-r { opacity: 0; transform: translateX(18px); z-index: 1; }
+.rtx-lvl.exit-l { opacity: 0; transform: translateX(-18px); z-index: 1; }
+
+/* instant state resets (used while panel is closed) */
+.rtx-panel.noanim, .rtx-panel.noanim * { transition: none !important; }
+
+/* ---------- level header ---------- */
+.rtx-hd {
+  display: flex; align-items: center; gap: .6rem;
+  padding: 0 .2rem .55rem; margin-bottom: .45rem;
+  border-bottom: 1px solid rgba(240, 199, 94, .1);
+  position: relative; min-width: 0;
+}
+.rtx-hd::after {
+  content: ""; position: absolute; bottom: -1px; inset-inline-start: 0;
+  width: 64px; height: 1px;
+  background: linear-gradient(to left, rgba(240, 199, 94, .75), transparent);
+}
+.rtx-back {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: none; border: 0; padding: .15rem .1rem;
+  color: var(--parch-dim); font: inherit; font-size: .72rem; cursor: pointer;
+  transition: color .18s ease; flex: none;
+}
+.rtx-back:hover { color: var(--gold-2); }
+.rtx-back svg { opacity: .6; }
+.rtx-ttl { font-size: .92rem; font-weight: 700; color: var(--gold-2); white-space: nowrap; }
+.rtx-ttl-cls { font-family: Cinzel, serif; letter-spacing: .05em; }
+.rtx-cap {
+  margin-inline-start: auto;
+  font-family: Cinzel, serif; font-size: .55rem; letter-spacing: .2em;
+  color: var(--mut); white-space: nowrap;
+}
+
+/* ---------- root: two big rows + quick links ---------- */
+.rtx-panel a { text-decoration: none; }
+.rtx-big {
+  display: flex; align-items: center; gap: .7rem; width: 100%;
+  padding: .68rem .55rem; text-align: start;
+  border-radius: 8px; cursor: pointer; color: inherit;
+  transition: background .18s ease;
+}
+.rtx-big:hover { background: rgba(240, 199, 94, .055); }
+.rtx-big:focus-visible { outline: 1px dotted var(--gold-1); outline-offset: 2px; }
+.rtx-bt { display: flex; flex-direction: column; gap: .05rem; min-width: 0; }
+.rtx-bt b { font-size: .95rem; font-weight: 700; color: var(--parch); transition: color .18s ease; }
+.rtx-bt small { font-family: Cinzel, serif; font-size: .56rem; letter-spacing: .18em; color: var(--mut); }
+.rtx-big:hover .rtx-bt b { color: var(--gold-2); }
+.rtx-big .chev { margin-inline-start: auto; opacity: .45; color: var(--parch-dim); flex: none; transition: opacity .18s ease, transform .18s ease, color .18s ease; }
+.rtx-big:hover .chev { opacity: 1; color: var(--gold-2); transform: translateX(-2px); }
+
+.rtx-sep {
+  height: 1px; margin: .5rem .15rem .45rem;
+  background: linear-gradient(to left, transparent, rgba(240, 199, 94, .2), transparent);
+}
+.rtx-mini {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  padding: .42rem .55rem; color: var(--mut); font-size: .76rem;
+  border-radius: 8px; transition: color .18s ease, background .18s ease;
+}
+.rtx-mini small { font-family: Cinzel, serif; font-size: .55rem; letter-spacing: .16em; opacity: .85; }
+.rtx-mini:hover { color: var(--gold-2); background: rgba(240, 199, 94, .05); }
+.rtx-mini:focus-visible { outline: 1px dotted var(--gold-1); outline-offset: 2px; }
+
+/* ---------- shared bits ---------- */
+.rtx-d {
+  flex: none; width: 5px; height: 5px;
+  transform: rotate(45deg);
+  background: var(--gold-dim);
+  transition: background .18s ease, box-shadow .18s ease;
+}
+.rtx-cell:hover .rtx-d, .rtx-big:hover .rtx-d {
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, .8);
+}
+
+/* ---------- grids: items (2-col) / classes (3-col) ---------- */
+.rtx-g2 { display: grid; grid-template-columns: 1fr 1fr; gap: .05rem .7rem; }
+.rtx-g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: .05rem .55rem; }
+.rtx-cell {
+  display: flex; flex-direction: column; gap: .08rem;
+  padding: .5rem .55rem; border-radius: 8px; min-width: 0;
+  color: var(--parch-dim); text-align: start; cursor: pointer;
+  transition: background .18s ease;
+}
+.rtx-cell:hover { background: rgba(240, 199, 94, .055); }
+.rtx-cell:focus-visible { outline: 1px dotted var(--gold-1); outline-offset: 2px; }
+.rtx-l1 { display: flex; align-items: center; gap: .5rem; min-width: 0; }
+.rtx-cell b {
+  font-size: .84rem; font-weight: 600; color: var(--parch);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color .18s ease;
+}
+.rtx-cell small {
+  font-family: Cinzel, serif; font-size: .58rem; letter-spacing: .1em;
+  color: var(--mut); padding-inline-start: .95rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.rtx-cell:hover b { color: var(--gold-1); }
+
+/* class cells: diamond + name take the class color */
+.rtx-cls .rtx-d { background: var(--cls, var(--gold-dim)); box-shadow: 0 0 7px var(--cls, transparent); opacity: .9; }
+.rtx-cls .rtx-cn {
+  font-family: Cinzel, serif; font-size: .76rem; font-weight: 600;
+  letter-spacing: .03em; color: var(--parch-dim);
+}
+.rtx-cls:hover .rtx-cn { color: var(--cls, var(--gold-1)); }
+.rtx-cls:hover b { color: var(--cls, var(--gold-1)); }
+
+/* ---------- specs view ---------- */
+.rtx-specs { display: flex; flex-direction: column; }
+.rtx-spec { display: flex; align-items: center; gap: .6rem; padding: .6rem .3rem; }
+.rtx-spec + .rtx-spec { border-top: 1px solid rgba(240, 199, 94, .08); }
+.rtx-sn { display: flex; flex-direction: column; gap: .05rem; min-width: 0; }
+.rtx-sn b { font-family: Cinzel, serif; font-size: .85rem; letter-spacing: .03em; color: var(--parch); }
+.rtx-role { font-size: .64rem; color: var(--mut); }
+.rtx-acts { margin-inline-start: auto; display: inline-flex; gap: .4rem; flex: none; }
+.rtx-act {
+  font-size: .7rem; padding: .26rem .62rem;
+  border: 1px solid rgba(240, 199, 94, .26); border-radius: 8px;
+  color: var(--gold-2); white-space: nowrap;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.rtx-act:hover { color: var(--ink-0); background: var(--gold-2); border-color: var(--gold-2); }
+.rtx-act-d { border-color: rgba(232, 227, 214, .16); color: var(--parch-dim); }
+.rtx-act-d:hover { color: var(--parch); background: rgba(232, 227, 214, .08); border-color: rgba(232, 227, 214, .3); }
+.rtx-specs > * { animation: rtxRise .3s ease both; }
+.rtx-specs > *:nth-child(2) { animation-delay: .04s; }
+.rtx-specs > *:nth-child(3) { animation-delay: .08s; }
+.rtx-specs > *:nth-child(4) { animation-delay: .12s; }
+@keyframes rtxRise {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rtx-panel, .rtx-panel *, .rtx-plumb, .rtx-lvl, .rtx-view, .rtx-trigger, .rtx-trigger::after {
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+  }
+}

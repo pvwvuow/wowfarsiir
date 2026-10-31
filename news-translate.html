@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مترجم wowheadFA — wowfarsi</title>
+<meta name="description" content="اخبار Wowhead را با کلید API خودت به مقالهٔ اورجینال فارسی تبدیل کن؛ کلید فقط در مرورگر تو می‌ماند و انتشار با گیت‌های کیفیت خودکار انجام می‌شود.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://wowfarsi.ir/news-translate.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css?v=20261031b">
+<link rel="stylesheet" href="assets/css/index.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/fantasy.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/extra.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/support.css?v=20261031a">
+<style>
+/* ---------- translator ---------- */
+.t-wrap{max-width:44rem;margin:0 auto}
+.t-steps{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.t-stepdot{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--mut)}
+.t-stepdot b{width:1.7rem;height:1.7rem;border-radius:50%;border:1px solid rgba(240,199,94,.3);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--gold-2);background:rgba(11,15,26,.7)}
+.t-stepdot.on b{background:var(--gold-3);color:#0b0f1a;border-color:var(--gold-1)}
+.t-stepdot.done b{background:rgba(61,159,255,.25);border-color:var(--blue-1);color:var(--blue-1)}
+.tstep{background:linear-gradient(180deg,rgba(23,38,63,.4),rgba(7,10,18,.65));border:1px solid rgba(240,199,94,.2);border-radius:12px;padding:1.4rem 1.5rem;margin-bottom:1rem}
+.tstep h3{margin:0 0 .8rem;font-size:1.02rem;color:var(--gold-1)}
+.tstep .hint{font-size:.78rem;color:var(--parch-dim);line-height:2;margin:.4rem 0 .8rem}
+.t-row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.t-row .wf-input{flex:1 1 14rem;min-width:11rem;direction:ltr;text-align:left}
+select.wf-input{direction:rtl;text-align:right}
+.t-note{background:rgba(61,159,255,.08);border:1px solid rgba(143,180,232,.3);border-radius:9px;padding:.7rem 1rem;font-size:.78rem;color:var(--parch-dim);line-height:2;margin-top:.8rem}
+.t-ok{background:rgba(61,215,135,.08);border:1px solid rgba(61,215,135,.4);border-radius:9px;padding:.7rem 1rem;font-size:.85rem;color:#a8e6c3;line-height:2;margin-top:.8rem}
+.t-warn{background:rgba(240,180,60,.08);border:1px solid rgba(240,199,94,.4);border-radius:9px;padding:.7rem 1rem;font-size:.85rem;color:var(--gold-1);line-height:2;margin-top:.8rem}
+.t-err{background:rgba(220,80,80,.09);border:1px solid rgba(220,90,90,.45);border-radius:9px;padding:.7rem 1rem;font-size:.8rem;color:#f0b0b0;line-height:2;margin-top:.8rem}
+.t-label{display:block;font-size:.8rem;color:var(--parch-dim);margin:.7rem 0 .3rem}
+.wf-input, textarea.wf-input{width:100%}
+textarea.wf-input{min-height:9rem;font-size:.82rem;line-height:2;resize:vertical}
+textarea.wf-input.mono{direction:ltr;text-align:left;font-family:ui-monospace,Consolas,monospace;font-size:.75rem}
+.t-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.8rem 0}
+.t-chip{border-radius:99px;padding:.1rem .6rem;font-size:.72rem;border:1px solid}
+.t-chip.pass{color:#a8e6c3;border-color:rgba(61,215,135,.5);background:rgba(61,215,135,.08)}
+.t-chip.fail{color:#f0b0b0;border-color:rgba(220,90,90,.5);background:rgba(220,80,80,.09)}
+.t-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.t-preview{border:1px solid rgba(240,199,94,.25);border-radius:9px;padding:1rem 1.1rem;margin-top:1rem;background:rgba(11,15,26,.5)}
+.t-preview h4{margin:.1rem 0 .4rem;color:var(--gold-1);font-size:1rem;line-height:2}
+.t-preview .t-pv-lead{border-right:3px solid var(--gold-3);padding-right:.7rem;color:var(--parch);font-size:.85rem;line-height:2.1;margin:.5rem 0}
+.t-preview .t-pv-body p{color:var(--parch);font-size:.83rem;line-height:2.1;margin:.6rem 0}
+.t-spin{display:inline-block;width:.95rem;height:.95rem;border:2px solid rgba(240,199,94,.35);border-top-color:var(--gold-2);border-radius:50%;animation:tspin .8s linear infinite;vertical-align:-2px}
+@keyframes tspin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="bg-layers" aria-hidden="true">
+  <div class="bg-photo"></div>
+  <div class="bg-veil"></div>
+  <div class="bg-grain"></div>
+</div>
+<div id="embers" aria-hidden="true" style="position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none"></div>
+
+<!-- ================= nav ================= -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-brand" aria-label="wowfarsi — خانه">
+      <span class="brand-logo"><img src="assets/img/logo.webp" alt="لوگوی wowfarsi"></span>
+      <b class="font-cinzel" dir="ltr">wowfarsi</b>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="retail.html">Midnight</a>
+      <a href="forever.html">Forever</a>
+      <a href="talents.html">Talent Tree</a>
+      <a href="news.html" class="is-active">wowheadFA</a>
+      <a href="addon.html">افزونه</a>
+      <a href="status.html">وضعیت ترجمه</a>
+      <a href="donate.html" class="dn-nav">حمایت</a>
+    </nav>
+  </div>
+  <div class="nav-rule"></div>
+</header>
+
+<main>
+<section class="section" style="padding-top:7.5rem" id="translate">
+  <div class="bg-scrim" aria-hidden="true"></div>
+  <div class="sect-head reveal">
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>مترجم <span class="font-cinzel" dir="ltr">wowheadFA</span></h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-en font-cinzel" dir="ltr">BYOK Translator</p>
+    <p class="st-lead">لینک خبر Wowhead را بده، کلید <span class="font-cinzel" dir="ltr">API</span> خودت را وارد کن؛ مدل متن کامل را می‌خواند و یک مقالهٔ اورجینال فارسی می‌نویسد. کلید تو فقط در مرورگر خودت استفاده می‌شود و به هیچ سروری — حتی ما — ارسال نمی‌شود.</p>
+  </div>
+
+  <div class="t-wrap reveal">
+    <div class="t-steps" id="t-steps"></div>
+
+    <!-- step 1: link -->
+    <div class="tstep" id="step1">
+      <h3>۱) لینک خبر Wowhead</h3>
+      <p class="hint">مثل: <span dir="ltr">https://www.wowhead.com/news=383544</span></p>
+      <div class="t-row">
+        <input id="t-url" class="wf-input" type="url" placeholder="https://www.wowhead.com/news=..." spellcheck="false">
+        <button class="btn btn-medallion btn-sm" id="t-check">بررسی</button>
+      </div>
+      <div id="t-check-out"></div>
+    </div>
+
+    <!-- step 2: source text -->
+    <div class="tstep" id="step2" hidden>
+      <h3>۲) متن کامل خبر</h3>
+      <p class="hint">ما از سه مسیر مختلف سعی می‌کنیم متن مقاله را بگیریم؛ اگر هیچ‌کدام نشد، خودت متن را از صفحهٔ Wowhead کپی و اینجا بچسبان.</p>
+      <div class="t-row" style="margin-bottom:.6rem">
+        <button class="btn btn-stone btn-sm" id="t-fetch">دریافت خودکار متن</button>
+        <span id="t-fetch-status" class="hint" style="margin:0"></span>
+      </div>
+      <textarea id="t-source" class="wf-input" placeholder="متن کامل مقالهٔ انگلیسی اینجا قرار می‌گیرد…" spellcheck="false"></textarea>
+      <div id="t-source-info" class="hint"></div>
+      <div class="t-actions">
+        <button class="btn btn-medallion btn-sm" id="t-to3">ادامه ← انتخاب مدل</button>
+      </div>
+    </div>
+
+    <!-- step 3: provider & key -->
+    <div class="tstep" id="step3" hidden>
+      <h3>۳) مدل و کلید <span class="font-cinzel" dir="ltr">API</span></h3>
+      <p class="hint">کلید فقط در حافظهٔ همین صفحه می‌ماند؛ با بستن تب پاک می‌شود و جایی ذخیره یا ارسال نمی‌شود.</p>
+      <label class="t-label" for="t-provider">ارائه‌دهنده</label>
+      <select id="t-provider" class="wf-input">
+        <option value="openai">OpenAI</option>
+        <option value="gemini">Google Gemini</option>
+        <option value="openrouter">OpenRouter</option>
+        <option value="anthropic">Anthropic Claude</option>
+        <option value="compat">سازگار با OpenAI (لوکال/سرویس دیگر)</option>
+      </select>
+      <p class="hint" style="margin-bottom:0">بعضی ارائه‌دهنده‌ها (مثل OpenAI، Gemini و Anthropic) ممکن است از ایران بدون VPN جواب ندهند؛ اگر لازم شد VPN باید روی خود مرورگر فعال باشد.</p>
+      <div id="t-compat-row" hidden>
+        <label class="t-label" for="t-base">Base URL</label>
+        <input id="t-base" class="wf-input" dir="ltr" placeholder="http://localhost:1234/v1">
+      </div>
+      <label class="t-label" for="t-model">نام مدل</label>
+      <input id="t-model" class="wf-input" dir="ltr" value="gpt-4o-mini" spellcheck="false">
+      <p class="hint" style="margin-bottom:0">نام دقیق مدل را از پنل ارائه‌دهنده بردار. برای Gemini شناسه با حروف کوچک است، مثل <span dir="ltr">gemini-2.5-flash</span>.</p>
+      <label class="t-label" for="t-key">کلید API</label>
+      <input id="t-key" class="wf-input" type="password" dir="ltr" autocomplete="off" placeholder="sk-...">
+      <div class="t-actions">
+        <button class="btn btn-stone btn-sm" id="t-back2">→ بازگشت</button>
+        <button class="btn btn-medallion btn-sm" id="t-to4">ادامه ← تولید مقاله</button>
+      </div>
+    </div>
+
+    <!-- step 4: generate -->
+    <div class="tstep" id="step4" hidden>
+      <h3>۴) تولید مقالهٔ فارسی</h3>
+      <p class="hint">مدل پرامپت سردبیری wowheadFA را می‌گیرد: بازنویسی اورجینال، حفظ اعداد و اسم‌ها، نیم‌فاصلهٔ درست. حدود ۳۰ تا ۹۰ ثانیه طول می‌کشد.</p>
+      <div class="t-actions">
+        <button class="btn btn-stone btn-sm" id="t-back3">→ بازگشت</button>
+        <button class="btn btn-medallion btn-sm" id="t-generate">✨ نوشتن مقاله</button>
+      </div>
+      <div id="t-gen-out"></div>
+    </div>
+
+    <!-- step 5: review & submit -->
+    <div class="tstep" id="step5" hidden>
+      <h3>۵) بازبینی و ثبت</h3>
+      <p class="hint">متن را ویرایش کن؛ چراغ‌های پیش‌بررسی سبز شوند، بعد «کپی JSON» و ثبت با Issue. سرور همان لحظه گیت‌های کامل را دوباره اجرا می‌کند و اگر پاس شود خودکار منتشر می‌شود.</p>
+
+      <label class="t-label" for="t-title">تیتر فارسی</label>
+      <input id="t-title" class="wf-input">
+      <label class="t-label" for="t-lead">لید (۱–۲ جمله)</label>
+      <textarea id="t-lead" class="wf-input" style="min-height:4.5rem"></textarea>
+      <label class="t-label" for="t-body">بدنه (پاراگراف‌ها را با یک خط خالی جدا کن)</label>
+      <textarea id="t-body" class="wf-input" style="min-height:13rem"></textarea>
+      <label class="t-label" for="t-tags">تگ‌ها (با ، جدا کن — حداکثر ۵)</label>
+      <input id="t-tags" class="wf-input">
+
+      <div class="t-chips" id="t-qa"></div>
+      <div id="t-qa-msg"></div>
+
+      <div class="t-preview" id="t-preview" hidden></div>
+
+      <div class="t-actions">
+        <button class="btn btn-stone btn-sm" id="t-recheck">🔁 پیش‌بررسی</button>
+        <button class="btn btn-stone btn-sm" id="t-copy">📋 کپی JSON</button>
+        <a class="btn btn-medallion btn-sm" id="t-gh" href="#" target="_blank" rel="noopener">ثبت در GitHub → انتشار خودکار</a>
+      </div>
+      <div id="t-submit-out"></div>
+      <div class="t-note">
+        «ثبت در GitHub» یک Issue آماده در ریپوی <span class="font-cinzel" dir="ltr">wowheadFA</span> باز می‌کند؛ JSON کپی‌شده را در کادر بچسبان و Issue را بفرست. بات متن اصلی را دوباره از Wowhead می‌گیرد، گیت‌های کیفیت را اجرا می‌کند و در صورت قبولی خبر را منتشر و Issue را می‌بندد. اگر خبر قبلاً منتشر شده باشد، با پیام «تکراری» بسته می‌شود. اگر دسترسی همکاری (Owner/Member/Collaborator) نداشته باشی، Issue فقط لیبل <span dir="ltr">needs-review</span> می‌گیرد و پس از بازبینی دستی منتشر می‌شود.
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= footer ================= -->
+<footer class="footer">
+  <div class="brand-logo"><img src="assets/img/logo.webp" alt="wowfarsi"></div>
+  <p class="footer-word font-cinzel" dir="ltr">wowfarsi</p>
+  <p class="footer-line">ساخته‌شده برای جامعهٔ ایرانیِ وارکرفت</p>
+  <div class="footer-links">
+    <a href="news.html">اخبار wowheadFA</a>
+    <span>✦</span>
+    <a href="index.html">خانه</a>
+    <span>✦</span>
+    <span class="font-cinzel" dir="ltr">wowfarsi · Midnight 12.1.5</span>
+  </div>
+  <p class="footer-note">خروجی مترجم پیش از انتشار از گیت‌های کیفیت و بازبینی عبور می‌کند. مقالات با ذکر منبع Wowhead و به‌صورت بازنویسی اورجینال منتشر می‌شوند؛ پروژه‌ای هواداری و غیرتجاری است.</p>
+  <p class="footer-note" dir="ltr">World of Warcraft is a trademark of Blizzard Entertainment, Inc. Wowhead is a trademark of its respective owner. Fan-made, non-commercial; source articles are credited in full.</p>
+</footer>
+
+<script src="assets/js/main.js?v=20261104a"></script>
+<script src="assets/js/support.js?v=20261031a"></script>
+<script src="assets/js/news-body.js?v=20261104a"></script>
+<script>
+(() => {
+"use strict";
+/* ============================================================
+   wowheadFA BYOK translator - the API key never leaves this tab.
+   Flow: link → duplicate check → source text → AI rewrite →
+   client QA → GitHub issue → server workflow publishes.
+   ============================================================ */
+const NEWS_SOURCES = [
+  "https://pvwvuow.github.io/wowheadFA/news.json",
+  "https://raw.githubusercontent.com/pvwvuow/wowheadFA/main/docs/news.json",
+];
+const PROMPT_URL =
+  "https://raw.githubusercontent.com/pvwvuow/wowheadFA/main/config/prompt.md";
+const PROMPT_FALLBACK = `# System prompt — WowheadFA original rewriter
+
+You are the senior Persian-language editor of **WowheadFA**, an unofficial
+Persian WoW community news outlet. You receive the full text of one Wowhead
+news post (English). You DO NOT translate it. You write a **brand-new,
+original Persian article** that reports the same facts in our own voice.
+
+## Hard rules
+
+1. **Rewrite, never translate.** Your own headline, your own lead, your own
+   structure and paragraph order. Zero copied sentences. If a fact is in the
+   source, you may report it; the wording must be yours.
+2. **Facts are sacred.** Every number, date, percentage, patch/build id,
+   name and quoted statement in your article must come from the source text.
+   Do not add outside knowledge, speculation, or filler. If the source is
+   thin, write a short article — never pad.
+3. **Game proper nouns stay in English:** spell names, item names, talent
+   names, NPC names, zone/instance names, class/spec names, patch numbers,
+   Mythic+, PTR, Beta and brand names (Wowhead, Blizzard).
+   Example: «Damage توانایی Bladestorm ۱۵٪ افزایش می‌یابد».
+4. **Numbers:** use Persian digits (۱۲۳) inside Persian prose; keep patch
+   numbers and Latin-adjacent values as written in source (12.1.5, 30%)
+   when embedded next to English terms — consistency beats purity.
+5. **Persian typography (non-negotiable):**
+   - نیم‌فاصله (ZWNJ, U+200C) در «می‌شود، نمی‌توان، خانه‌ها، بازی‌کننده»
+   - Persian «ی، ک» never Arabic «ي، ك»
+   - one space after ،؛:! — never before them
+6. **Tone:** informed gamer-journalist, concise, no clickbait, no
+   translationese, no machine-flavored repetition. Sentences short.
+7. **Structure:** lead = ۱–۲ جملهٔ خلاصهٔ خبر. body = ۳–۷ پاراگراف کوته.
+8. **No meta talk.** You are the publication, not a translator.
+9. **Rich body (v2 blocks):** body_fa is an array that mixes plain strings
+   (paragraphs) with small structured objects so the site can build real
+   sections, item cards and lists. Use them freely, never invent HTML.
+
+## Output
+
+Return ONLY a JSON object, no code fences:
+
+\`\`\`json
+{
+  "title_fa": "تیتر فارسی (۲۰ تا ۹۰ نویسه)",
+  "lead_fa": "لید ۱–۲ جمله‌ای",
+  "body_fa": [
+    "پاراگراف ساده",
+    {"t":"h","x":"تیتر بخش"},
+    {"t":"ul","xs":["مورد ۱","مورد ۲"]},
+    {"t":"quote","x":"متن نقل‌قول","by":"Blizzard — نام"},
+    {"t":"note","x":"نکتهٔ مهم","kind":"tip|warn|info"},
+    {"t":"table","head":["ستون"],"rows":[["مقدار"]]},
+    {"t":"item","id":277283},
+    "پاراگراف پایانی با مارکر آیتم [[item:Exact EN Name]]"
+  ],
+  "tags_fa": ["حداکثر ۴ تگ فارسی"]
+}
+\`\`\`
+
+Block rules: 2..14 blocks total; \`item\` only with an id/url copied from the
+source article or an exact English item name; never translate item names;
+no other block types than the ones shown; strings may contain
+[[item:...]] markers exactly as listed above.
+`;  /* end PROMPT_FALLBACK */
+const OUTPUT_SPEC =
+  'Return ONLY this JSON (no fences, no commentary). body_fa is an array of\n' +
+  'plain-string paragraphs AND v2 blocks: {"t":"h","x":"..."} heading,\n' +
+  '{"t":"ul","xs":[...]} list, {"t":"quote","x":"...","by":"..."},\n' +
+  '{"t":"note","x":"...","kind":"tip|warn|info"}, {"t":"table","head":[...],"rows":[[...]]},\n' +
+  '{"t":"item","id":123} (real item id/URL from the source) — plus inline\n' +
+  '[[item:Exact EN Name]] markers inside any string (never translate names,\n' +
+  'never invent ids). See the system prompt for the full spec.\n' +
+  '{"title_fa": "...", "lead_fa": "...", "body_fa": ["...", {...}], "tags_fa": ["..."]}\n\n' +
+  'ARTICLE SOURCE TEXT (Wowhead):\n';
+const PROV_DEFAULTS = {
+  openai: "gpt-4o-mini", gemini: "gemini-2.5-flash",
+  openrouter: "openai/gpt-4o-mini", anthropic: "claude-sonnet-4-20250514",
+  compat: "local-model",
+};
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
+  (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const faDigits = (v) => String(v).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+
+const S = { url: "", id: null, titleEn: "", news: null, prompt: PROMPT_FALLBACK, result: null };
+
+/* ---------- stepper ---------- */
+const STEP_LABELS = ["لینک", "متن", "مدل و کلید", "تولید", "بازبینی و ثبت"];
+function showStep(n) {
+  for (let i = 1; i <= 5; i++) $("step" + i).hidden = i !== n;
+  $("t-steps").innerHTML = STEP_LABELS.map((l, i) => {
+    const cls = i + 1 === n ? "on" : i + 1 < n ? "done" : "";
+    return `<span class="t-stepdot ${cls}"><b>${faDigits(i + 1)}</b>${esc(l)}</span>`;
+  }).join("");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ---------- news.json (duplicate check) ---------- */
+async function loadNews() {
+  if (S.news) return S.news;
+  for (const url of NEWS_SOURCES) {
+    try {
+      const r = await fetch(url + "?t=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (Array.isArray(j.published) && Array.isArray(j.queue)) {
+        S.news = j; return j;
+      }
+    } catch { /* next source */ }
+  }
+  S.news = { published: [], queue: [] };
+  return S.news;
+}
+
+/* ---------- step 1 ---------- */
+function parseWowheadUrl(raw) {
+  let u = (raw || "").trim();
+  if (!u) return null;
+  if (!/^https?:\/\//i.test(u)) u = "https://" + u;
+  try { u = new URL(u).href; } catch { return null; }
+  let m = u.match(/[?&]news=(\d+)/) || u.match(/\/news\/[^?#]*?-(\d+)(?:[?#]|$)/)
+       || u.match(/\/news=(\d+)/);
+  if (!m) return null;
+  return { id: Number(m[1]), norm: "https://www.wowhead.com/news=" + m[1] };
+}
+
+async function checkUrl() {
+  const out = $("t-check-out");
+  const p = parseWowheadUrl($("t-url").value);
+  if (!p) {
+    out.innerHTML = `<div class="t-err">این آدرس شبیه لینک خبر Wowhead نیست. نمونهٔ درست:
+      <span dir="ltr">https://www.wowhead.com/news=383544</span></div>`;
+    return;
+  }
+  S.url = p.norm; S.id = p.id;
+  out.innerHTML = `<div class="t-note"><span class="t-spin"></span> در حال بررسی تکراری بودن…</div>`;
+  const news = await loadNews();
+  const pub = news.published.find((a) => Number(a.id) === S.id);
+  if (pub) {
+    out.innerHTML = `<div class="t-ok">✅ این خبر قبلاً فارسی‌سازی و منتشر شده است:
+      «${esc(pub.title_fa)}»<br>
+      <a class="btn btn-stone btn-sm" style="margin-top:.4rem"
+         href="news.html#read-${esc(pub.id)}">خواندن در همین سایت</a>
+      <a class="btn btn-stone btn-sm" style="margin-top:.4rem"
+         href="${esc(pub.source_url)}" target="_blank" rel="noopener">منبع Wowhead</a>
+    </div>`;
+    return;
+  }
+  const q = news.queue.find((x) => Number(x.id) === S.id);
+  if (q) {
+    S.titleEn = q.title_en || "";
+    out.innerHTML = `<div class="t-warn">📰 این خبر در صف ترجمه است:
+      «${esc(q.title_en)}» — ادامه بده، پس از انتشار از صف حذف می‌شود.</div>`;
+  } else {
+    out.innerHTML = `<div class="t-warn">📰 خبر تازه‌ای است (خودکار در صف نیست)؛
+      با همین جریان می‌توانی فارسی‌سازی و ثبتش کنی — بات سمت سرور متن اصلی را دوباره بررسی می‌کند.</div>`;
+  }
+  showStep(2);
+}
+
+/* ---------- step 2: source text ---------- */
+const BOILER = /^(related|tweet|load more|follow us|was this|quadrant|live ptr|classic\)|the wowhead client|donate|patreon|subscribe)/i;
+function extractFromHtml(htmlText) {
+  const doc = new DOMParser().parseFromString(htmlText, "text/html");
+  doc.querySelectorAll("script,style,noscript,nav,header,footer,aside,form,iframe").forEach((n) => n.remove());
+  let title = "";
+  const og = doc.querySelector('meta[property="og:title"], meta[name="og:title"]');
+  if (og) title = og.content || "";
+  const cands = [
+    doc.querySelector("article"),
+    doc.querySelector('[class*="news-article" i], [class*="article-body" i], [class*="article-content" i]'),
+    doc.querySelector("main"),
+    doc.body,
+  ].filter(Boolean);
+  let best = "", bestScore = 0;
+  for (const c of cands) {
+    const paras = [...c.querySelectorAll("p,li,h2,h3")]
+      .map((n) => (n.textContent || "").replace(/\s+/g, " ").trim())
+      .filter((t) => t.length >= 40 && !BOILER.test(t));
+    const text = paras.join("\n\n");
+    if (text.length > bestScore) { best = text; bestScore = text.length; }
+  }
+  if (!title) { const h = doc.querySelector("h1"); if (h) title = h.textContent.trim(); }
+  return { title, text: best };
+}
+
+async function fetchWithTimeout(url, ms, opts) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), ms);
+  try {
+    return await fetch(url, Object.assign({ signal: ctl.signal, cache: "no-store" }, opts || {}));
+  } finally { clearTimeout(t); }
+}
+
+async function fetchSource() {
+  const st = $("t-fetch-status");
+  const proxies = [
+    ["allorigins", (u) => "https://api.allorigins.win/raw?url=" + encodeURIComponent(u), "html"],
+    ["corsproxy", (u) => "https://corsproxy.io/?url=" + encodeURIComponent(u), "html"],
+    ["codetabs", (u) => "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(u), "html"],
+    ["jina", (u) => "https://r.jina.ai/" + u, "md"],
+  ];
+  for (const [name, mk, kind] of proxies) {
+    st.innerHTML = `<span class="t-spin"></span> تلاش از مسیر ${esc(name)}…`;
+    try {
+      const r = await fetchWithTimeout(mk(S.url), 25000);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const raw = await r.text();
+      let text = "", title = "";
+      if (kind === "md") {
+        title = (raw.match(/^Title:\s*(.+)$/m) || [])[1] || "";
+        text = raw.split("\n")
+          .map((l) => l.replace(/!\[[^\]]*\]\([^)]*\)/g, "").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/^#{1,6}\s*/, "").trim())
+          .filter((l) => l.length >= 40 && !BOILER.test(l)).join("\n\n");
+      } else {
+        const ex = extractFromHtml(raw);
+        text = ex.text; title = ex.title || "";
+      }
+      if (text.length >= 400) {
+        $("t-source").value = text;
+        if (title && !S.titleEn) S.titleEn = title;
+        st.innerHTML = `✅ از مسیر ${esc(name)} — ${faDigits(text.length)} نویسه`;
+        sourceInfo();
+        return;
+      }
+      throw new Error("متن کوتاه بود");
+    } catch (e) { /* next proxy */ }
+  }
+  st.innerHTML = `⚠️ هیچ مسیری جواب نداد — لطفاً متن را از صفحهٔ Wowhead کپی کن و پایین بچسبان.`;
+  $("t-source").focus();
+}
+
+function sourceInfo() {
+  const n = $("t-source").value.trim().length;
+  $("t-source-info").textContent = n
+    ? `${faDigits(n)} نویسه ${n < 400 ? "— خیلی کوتاه است؛ متن کامل را بچسبان" : "— آمادهٔ مرحلهٔ بعد ✅"}`
+    : "";
+}
+$("t-source").addEventListener("input", sourceInfo);
+
+function goto3() {
+  if ($("t-source").value.trim().length < 400) {
+    $("t-source-info").textContent = "حداقل ۴۰۰ نویسه لازم است — متن کامل خبر را بچسبان.";
+    return;
+  }
+  showStep(3);
+}
+
+/* ---------- step 3 ---------- */
+$("t-provider").addEventListener("change", () => {
+  const p = $("t-provider").value;
+  $("t-model").value = PROV_DEFAULTS[p];
+  $("t-compat-row").hidden = p !== "compat";
+});
+function goto4() {
+  if (!$("t-key").value.trim()) { $("t-key").focus();
+    $("t-key").placeholder = "کلید API را وارد کن"; return; }
+  if ($("t-provider").value === "compat" && !$("t-base").value.trim()) {
+    $("t-base").focus(); return; }
+  showStep(4);
+}
+
+/* ---------- step 4: provider calls ---------- */
+function parseJSONReply(raw) {
+  let t = raw.trim().replace(/^```(?:json)?/m, "").replace(/```$/m, "").trim();
+  const m = t.match(/\{[\s\S]*\}/);
+  if (!m) throw new Error("مدل خروجی JSON برنگرداند");
+  return JSON.parse(m[0]);
+}
+
+/* fetch with a hard timeout (reasoning models can be slow, but not endless) */
+async function apiFetch(url, init, ms) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), ms || 150000);
+  try {
+    return await fetch(url, Object.assign({}, init, { signal: ctl.signal }));
+  } finally { clearTimeout(t); }
+}
+
+/* turn a failed response into an Error that carries the provider's own message */
+async function apiError(r) {
+  let detail = "";
+  try {
+    const raw = await r.text();
+    try {
+      const j = JSON.parse(raw);
+      const e = j && j.error ? j.error : j;
+      detail = typeof e === "string" ? e : ((e && e.message) || raw);
+    } catch { detail = raw; }
+  } catch { /* no body */ }
+  detail = String(detail).replace(/\s+/g, " ").trim().slice(0, 300);
+  const err = new Error("HTTP " + r.status + (detail ? ": " + detail : ""));
+  err.detail = detail;
+  return err;
+}
+
+/* 400s that a retry cannot fix (bad key, region, billing) */
+const FATAL_400 = /api key|api_key|incorrect|location|country|billing|quota/i;
+
+function geminiModelId(m) {
+  return String(m || "").trim().replace(/^models\//i, "").replace(/\s+/g, "-").toLowerCase();
+}
+
+async function callProvider() {
+  const prov = $("t-provider").value;
+  const key = $("t-key").value.trim();
+  let model = $("t-model").value.trim();
+  const user = OUTPUT_SPEC +
+    `TITLE: ${S.titleEn || "-"}\nCATEGORY: News\nSOURCE URL: ${S.url}\n\n` +
+    $("t-source").value.trim();
+  let base = null;
+  if (prov === "openai") base = "https://api.openai.com/v1";
+  if (prov === "openrouter") base = "https://openrouter.ai/api/v1";
+  if (prov === "compat") base = $("t-base").value.trim().replace(/\/$/, "");
+
+  if (prov === "anthropic") {
+    const r = await apiFetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-api-key": key,
+        "anthropic-version": "2023-06-01",
+        "anthropic-dangerous-direct-browser-access": "true" },
+      body: JSON.stringify({ model, max_tokens: 4000, temperature: 0.4,
+        system: S.prompt,
+        messages: [{ role: "user", content: user }] }),
+    });
+    if (!r.ok) throw await apiError(r);
+    const j = await r.json();
+    return (j.content || []).map((b) => b.text || "").join("");
+  }
+
+  if (prov === "gemini") {
+    model = geminiModelId(model);
+    $("t-model").value = model;   // show the id we actually used
+    const url = "https://generativelanguage.googleapis.com/v1beta/models/" +
+      encodeURIComponent(model) + ":generateContent?key=" + encodeURIComponent(key);
+    const send = (gc) => apiFetch(url, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ role: "user", parts: [{ text: S.prompt + "\n\n" + user }] }],
+        generationConfig: gc,
+      }),
+    });
+    let r = await send({ temperature: 0.4, responseMimeType: "application/json" });
+    if (r.status === 400) {
+      const first = await apiError(r);
+      if (FATAL_400.test(first.detail)) throw first;
+      // some models refuse a custom temperature: retry with the bare minimum
+      r = await send({ responseMimeType: "application/json" });
+    }
+    if (!r.ok) throw await apiError(r);
+    const j = await r.json();
+    const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
+    const text = parts.filter((p) => !p.thought).map((p) => p.text || "").join("");
+    if (!text) {
+      const why = (j.promptFeedback && j.promptFeedback.blockReason) || ((j.candidates || [])[0] || {}).finishReason || "";
+      throw new Error("پاسخ خالی از Gemini" + (why ? " (" + why + ")" : ""));
+    }
+    return text;
+  }
+
+  // openai-compatible (OpenAI, OpenRouter, local servers)
+  const body = { model, temperature: 0.4,
+    messages: [{ role: "system", content: S.prompt }, { role: "user", content: user }],
+    response_format: { type: "json_object" } };
+  const send = (b) => apiFetch(base + "/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: "Bearer " + key },
+    body: JSON.stringify(b),
+  });
+  let r = await send(body);
+  if (!r.ok && (r.status === 400 || r.status === 422)) {
+    const first = await apiError(r);
+    if (FATAL_400.test(first.detail)) throw first;
+    // newer / local models reject temperature or json mode: retry plain
+    delete body.response_format;
+    delete body.temperature;
+    r = await send(body);
+  }
+  if (!r.ok) throw await apiError(r);
+  const j = await r.json();
+  const content = (((j.choices || [])[0] || {}).message || {}).content;
+  return Array.isArray(content) ? content.map((x) => x.text || "").join("") : (content || "");
+}
+
+/* when Gemini says the model is unknown, ask Google which ones this key can use */
+async function listGeminiModels() {
+  try {
+    const r = await apiFetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=100&key=" +
+      encodeURIComponent($("t-key").value.trim()), {}, 15000);
+    if (!r.ok) return "";
+    const j = await r.json();
+    const names = (j.models || [])
+      .filter((m) => (m.supportedGenerationMethods || []).includes("generateContent"))
+      .map((m) => String(m.name || "").replace("models/", ""))
+      .filter((n) => n.includes("flash") || n.includes("pro"))
+      .slice(0, 14);
+    return names.length
+      ? `<br>مدل‌های در دسترس کلید تو: <span dir="ltr">${names.map(esc).join(" · ")}</span>`
+      : "";
+  } catch { return ""; }
+}
+
+async function generate() {
+  const out = $("t-gen-out");
+  out.innerHTML = `<div class="t-note"><span class="t-spin"></span> مدل در حال خواندن متن و نوشتن مقالهٔ فارسی است… (تا ۱۵۰ ثانیه)</div>`;
+  $("t-generate").disabled = true;
+  try {
+    const rawText = await callProvider();
+    const j = parseJSONReply(rawText);
+    S.result = {
+      title_fa: String(j.title_fa || "").trim(),
+      lead_fa: String(j.lead_fa || "").trim(),
+      /* v2: keep structured blocks (strings AND objects) as the model sent */
+      body_fa: Array.isArray(j.body_fa)
+        ? j.body_fa.map((b) => (typeof b === "string" ? b.trim()
+            : (b && typeof b === "object" ? b : String(b))))
+        : String(j.body_fa || "").split(/\n\s*\n/),
+      tags_fa: Array.isArray(j.tags_fa) ? j.tags_fa.map(String) : String(j.tags_fa || "").split(/[,،]/),
+    };
+    S.bodyRaw = S.result.body_fa.slice();   /* untouched model output */
+    S.bodyDirty = false;
+    fillStep5();
+    out.innerHTML = "";
+    showStep(5);
+  } catch (e) {
+    const prov = $("t-provider").value;
+    let msg = String((e && e.message) || e);
+    if (e && e.name === "AbortError") msg = "timeout: مدل در زمان مجاز جواب نداد";
+    let hint = "پیام بالا را خود ارائه‌دهنده برگردانده است.";
+    const notFound = /not found|HTTP 404|is not supported for/i.test(msg);
+    if (/location is not supported|FAILED_PRECONDITION|unsupported_country|not available in your|region/i.test(msg)) {
+      hint = "ارائه‌دهنده از منطقهٔ تو جواب نمی‌دهد؛ VPN را روی خود مرورگر روشن کن و دوباره امتحان کن.";
+    } else if (/api key not valid|API_KEY_INVALID|invalid_api_key|incorrect api key|HTTP 401|HTTP 403|permission/i.test(msg)) {
+      hint = "کلید API نامعتبر است یا دسترسی لازم را ندارد.";
+    } else if (/HTTP 429|quota|rate limit|resource_exhausted/i.test(msg)) {
+      hint = "سهمیه یا محدودیت نرخ پر شده؛ کمی بعد دوباره امتحان کن یا کلید/پلن دیگری بگذار.";
+    } else if (notFound) {
+      hint = "نام مدل را دقیق بنویس (حروف کوچک، بدون فاصله؛ مثل gemini-2.5-flash).";
+    } else if (/timeout|abort/i.test(msg)) {
+      hint = "مدل خیلی طول کشید؛ دوباره تلاش کن یا مدل سریع‌تری بگذار.";
+    } else if (/Failed to fetch|NetworkError|Load failed/i.test(msg)) {
+      hint = "اتصال یا CORS مشکل دارد؛ VPN/شبکه را بررسی کن (برای سرور لوکال باید CORS فعال باشد).";
+    }
+    let extra = "";
+    if (prov === "gemini" && notFound) extra = await listGeminiModels();
+    out.innerHTML = `<div class="t-err">تولید ناموفق: <span dir="ltr">${esc(msg)}</span><br>${esc(hint)}${extra}</div>`;
+  } finally {
+    $("t-generate").disabled = false;
+  }
+}
+
+/* ---------- step 5: review, QA, submit ---------- */
+/* (S.bodyRaw / S.bodyDirty live on the S object declared at the top) */
+function blockFlat(b) {
+  if (typeof b === "string") return b;
+  if (!b || typeof b !== "object") return String(b);
+  if (b.x) return (b.t === "h" ? "# " : b.t === "quote" ? "» " : b.t === "note" ? "! " : "") + b.x;
+  if (Array.isArray(b.xs)) return b.xs.map((x) => "- " + x).join("\n");
+  if (b.t === "table") return "[جدول] " + (b.head || []).join(" / ");
+  if (b.t === "item") return "[آیتم] " + (b.ids || b.name || "");
+  return JSON.stringify(b);
+}
+/* canonical body: model's v2 blocks unless the user edited the text box */
+function bodyCanonical() {
+  return (S.bodyDirty || !Array.isArray(S.bodyRaw))
+    ? bodyParas().map(String) : S.bodyRaw;
+}
+function fillStep5() {
+  const r = S.result || {};
+  $("t-title").value = r.title_fa || "";
+  $("t-lead").value = r.lead_fa || "";
+  $("t-body").value = (r.body_fa || []).map(blockFlat).filter(Boolean).join("\n\n");
+  $("t-body").title = "بلاک‌های v2 (# تیتر، - فهرست، » نقل‌قول، ! نکته) را دستی ویرایش نکن — ویرایش دستی بلاک‌ها را به پاراگراف ساده تبدیل می‌کند.";
+  $("t-tags").value = (r.tags_fa || []).slice(0, 5).join("، ");
+  $("t-gh").href = ghLink();
+  runQA(); preview();
+}
+function bodyParas() {
+  return $("t-body").value.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+}
+function chip(label, ok) {
+  return `<span class="t-chip ${ok ? "pass" : "fail"}">${ok ? "✓" : "✗"} ${esc(label)}</span>`;
+}
+function runQA() {
+  const title = $("t-title").value.trim();
+  const lead = $("t-lead").value.trim();
+  const body = bodyCanonical();
+  const paras = body.filter((b) => typeof b === "string");
+  const whole = [title, lead, ...body.map(blockFlat)].join("\n");
+  const letters = whole.match(/[A-Za-z\u0600-\u06FF]/g) || [];
+  const faN = (whole.match(/[\u0600-\u06FF]/g) || []).length;
+  const ratio = letters.length ? faN / letters.length : 0;
+  const enRun = /[A-Za-z][A-Za-z0-9+.'-]*(?:\s+[A-Za-z][A-Za-z0-9+.'-]*){12,}/.test(whole);
+  const dupS = (s) => new Set(String(s).split(/[.!؟\n]/).map((x) => x.replace(/\s+/g, " ").trim().toLowerCase()).filter((x) => x.length > 25));
+  const dup = [...dupS(lead)].some((x) => dupS(body.map(blockFlat).join("\n")).has(x));
+  const tests = [
+    ["نسبت فارسی ≥ ۵۵٪ (" + faDigits(Math.round(ratio * 100)) + "٪)", ratio >= 0.55],
+    ["بدون «ي/ك» عربی", !/[يك]/.test(whole)],
+    ["بدون رشتهٔ طولانی انگلیسی", !enRun],
+    ["نیم‌فاصله (ZWNJ) به کار رفته", /\u200c/.test(whole)],
+    ["تیتر ۱۵ تا ۱۱۰ نویسه", title.length >= 15 && title.length <= 110],
+    ["بدنه ۲ تا ۱۴ بلاک (پاراگراف‌ها ≥ ۴۰ نویسه)", body.length >= 2 && body.length <= 14 && paras.every((b) => b.length >= 40)],
+    ["لید در بدنه تکرار نشده", !dup],
+    ["بدون فاصلهٔ مضاعف / فاصله قبل از ویرگول", !/  |\s[،؛:!]/.test(whole)],
+  ];
+  const pass = tests.every(([, ok]) => ok);
+  $("t-qa").innerHTML = tests.map(([l, ok]) => chip(l, ok)).join("");
+  $("t-qa-msg").innerHTML = pass
+    ? `<div class="t-ok">همهٔ پیش‌بررسی‌ها سبز است — ثبت کن ✅</div>`
+    : `<div class="t-warn">چند مورد قرمز است؛ سرور هم همین گیت‌ها را سخت‌گیرانه‌تر اجرا می‌کند — بهتر است اصلاح کنی.</div>`;
+  return pass;
+}
+function preview() {
+  const pv = $("t-preview");
+  pv.hidden = false;
+  const body = bodyCanonical();
+  pv.innerHTML = `
+    <h4>${esc($("t-title").value)}</h4>
+    <div class="t-pv-lead">${esc($("t-lead").value)}</div>
+    <div class="t-pv-body">${
+      (window.NB && NB.renderBody)
+        ? NB.renderBody(body)
+        : body.map(blockFlat).filter(Boolean).map((p) => `<p>${esc(p)}</p>`).join("")
+    }</div>`;
+}
+function buildPayload() {
+  // COPYRIGHT: the English source text stays in this browser only - it is
+  // never included in the payload/issue. The server re-fetches the source
+  // transiently itself and stores only qa_facts (numbers/entities).
+  return {
+    source_url: S.url,
+    title_en: S.titleEn || "",
+    model: $("t-model").value.trim(),
+    title_fa: $("t-title").value.trim(),
+    lead_fa: $("t-lead").value.trim(),
+    /* v2: structured blocks survive untouched unless the user edited text */
+    body_fa: bodyCanonical(),
+    tags_fa: $("t-tags").value.split(/[,،]/).map((t) => t.trim()).filter(Boolean).slice(0, 5),
+  };
+}
+function payloadText() {
+  const p = buildPayload();
+  return "<!-- wowheadfa-payload -->\n```json\n" +
+    JSON.stringify(p, null, 1) + "\n```\n<!-- /wowheadfa-payload -->";
+}
+async function copyPayload() {
+  const txt = payloadText();
+  try { await navigator.clipboard.writeText(txt); }
+  catch {
+    const ta = document.createElement("textarea");
+    ta.value = txt; document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); ta.remove();
+  }
+  $("t-submit-out").innerHTML =
+    `<div class="t-ok">📋 JSON کپی شد. حالا دکمهٔ «ثبت در GitHub» را بزن و در کادر خروجی مترجم بچسبان (Ctrl+V) و Issue را بفرست.</div>`;
+}
+function ghLink() {
+  const t = encodeURIComponent("📰 Publish " + (S.id || "new"));
+  return "https://github.com/pvwvuow/wowheadFA/issues/new?template=translate-article.yml&title=" + t;
+}
+
+/* ---------- wiring ---------- */
+$("t-check").addEventListener("click", checkUrl);
+$("t-url").addEventListener("keydown", (e) => { if (e.key === "Enter") checkUrl(); });
+$("t-fetch").addEventListener("click", fetchSource);
+$("t-to3").addEventListener("click", goto3);
+$("t-back2").addEventListener("click", () => showStep(2));
+$("t-to4").addEventListener("click", goto4);
+$("t-back3").addEventListener("click", () => showStep(3));
+$("t-generate").addEventListener("click", generate);
+$("t-recheck").addEventListener("click", () => { runQA(); preview(); });
+$("t-copy").addEventListener("click", copyPayload);
+["t-title", "t-lead", "t-body", "t-tags"].forEach((id) =>
+  $(id).addEventListener("input", () => {
+    if (id === "t-body") S.bodyDirty = true;
+    runQA(); preview();
+  }));
+
+(async () => {
+  showStep(1);
+  $("t-gh").href = ghLink();
+  /* live item tooltips/cards for the preview (tiny, best effort) */
+  if (window.NB && NB.loadTips) NB.loadTips("news/tips.json").catch(() => {});
+  // keep the editorial prompt in sync with the repo (best effort)
+  fetchWithTimeout(PROMPT_URL, 6000)
+    .then((r) => (r.ok ? r.text() : Promise.reject()))
+    .then((t) => { if (t && t.length > 400) S.prompt = t; })
+    .catch(() => {});
+  const pre = new URLSearchParams(location.search).get("url");
+  if (pre) {
+    $("t-url").value = pre;
+    checkUrl();
+  }
+})();
+
+})();
+</script>
+<script src="assets/js/nav-menu.js?v=20261111j"></script>
+</body>
+</html>

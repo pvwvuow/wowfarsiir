@@ -1,0 +1,532 @@
+{
+  "slug": "blood-death-knight",
+  "spec_slug": "blood",
+  "class": "death-knight",
+  "class_en": "Death Knight",
+  "spec_en": "Blood",
+  "role": "Tank",
+  "patch": "12.1.5",
+  "season": "Midnight Season 2",
+  "updated": "2026-10-27",
+  "sources": [
+    {
+      "name": "Wowhead",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/overview",
+      "updated": "2026-10-13"
+    },
+    {
+      "name": "Wowhead BiS",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/bis-gear"
+    },
+    {
+      "name": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow/blood-death-knight-pve-tank-guide",
+      "updated": "2026-10-12"
+    },
+    {
+      "name": "Wowhead Talent Builds",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/talent-builds-pve-tank",
+      "updated": "2026-10-13"
+    },
+    {
+      "name": "Wowhead Rotation",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/rotation-cooldowns-pve-tank",
+      "updated": "2026-10-13"
+    },
+    {
+      "name": "Wowhead Consumables",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/enchants-gems-pve-tank",
+      "updated": "2026-10-27"
+    }
+  ],
+  "lead_fa": "Blood یک تانک خوددرمان‌گر است که بیشترِ بقا و آسیبش را از مدیریت Runic Power و [[Death Strike]] می‌گیرد. در Midnight و پچ 12.1.5 دو مسیر Hero Tree پیش روی توست: [[San'layn]] برای ریید و [[Deathbringer]] برای Mythic+؛ این صفحه بیلد، روتیشن، گیر و مصرفی‌های هر دو را جمع کرده است.",
+  "hero": {
+    "recommendation": "San'layn back on the menu for everything at level 90 with full Apex talents + Death Strike buff; particularly strong single-target and up to 5-8 consistent targets; new tier set amplifies it further.",
+    "deathbringer": {
+      "pitch": "Significantly easier to play, defensive advantages, very good choice for Mythic+ specifically.",
+      "kit": "Revolves around [[Reaper's Mark]] (45s cd, or 30s with a talent) with hooks tied to its application and expiration; minor burst tied to Dancing Rune Weapon.",
+      "defense": "Near-permanent 7.5% damage reduction buff, doubled Blood Plague healing (Rapid Decomposition interaction), Permafrost tie-in from Exterminate damage, cooldown reduction on Lichborne.",
+      "note_12_1": "Numerically ahead where it matters per Icy Veins; gained complexity through Echoing Fury; Soul Reaper removed which removed some clunk."
+    },
+    "sanlayn": {
+      "pitch": "Best throughput for raid single target and 5-8 targets; recommended default for raids.",
+      "kit": "Commits to using [[Dancing Rune Weapon]] rotationally (90s cd) to build and keep stacks of [[Essence of the Blood Queen]]; [[The Blood is Life]] funnels and duplicates Shadow damage at the end of the window.",
+      "defense": "Small bonus Mastery, shield on you and your target when you resurrect somebody, party leech buff while Lichborne active or Icebound Fortitude cooldown reduction, optional 5% physical damage reduction via Blood-Soaked Ground.",
+      "note_12_1": "Nerfed: Frenzied Bloodthirst to 5% per stack, Visceral Strength to 10% strength; lost end-of-DRW Infliction of Sorrow burst; redesigned Consumption adds complexity (cast after DRW ends); Heart Strike buffs without matching Vampiric Strike buffs push it further down per Icy Veins."
+    },
+    "comparison_source_note": "Both sources agree: San'layn = raid/ST throughput (Wowhead) while Icy Veins currently leans Deathbringer numerically; both agree Deathbringer = easier + M+ pick."
+  },
+  "builds": {
+    "codes_source": "Wowhead 'Best Blood Death Knight Talent Builds' page (wowhead.com/guide/classes/death-knight/blood/talent-builds-pve-tank), export strings captured verbatim via the page's Copy buttons on 2026-10-27; do not modify.",
+    "hero_ranking": {
+      "raid": [
+        "San'layn",
+        "Deathbringer"
+      ],
+      "mplus": [
+        "Deathbringer",
+        "San'layn"
+      ],
+      "delves": [
+        "Deathbringer"
+      ]
+    },
+    "variants": [
+      {
+        "hero": "Deathbringer",
+        "mode": "Raid",
+        "best": false,
+        "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMjhZZmZmmZxYmxMmBAAAAmZmZmZmZYGjZAYMzMzAAAMmtBGwSwywEYYBwMMAAMzAYYA"
+      },
+      {
+        "hero": "Deathbringer",
+        "mode": "Mythic+",
+        "best": true,
+        "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMz0MLGjxMGAAAAwMmZmZmZYGDAYmZmZGAAgxsNwAWCWGmADLAmxMAAMzAYYA"
+      },
+      {
+        "hero": "Deathbringer",
+        "mode": "Delves",
+        "best": true,
+        "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZmxMmZmhZZmZmmZxYmxMGAAAAwMzMzMzMDzYMAYMzMzAAAMmtBGwSwywEYYBghZAAMzAMYA"
+      },
+      {
+        "hero": "San'layn",
+        "mode": "Raid",
+        "best": true,
+        "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZmxMmZmhZZmZmmZxYMmxAAAAAmZmZmZmZYGjZAYMzMzAAAYgBmxiGLLgsMgNAzwAAAmZghB"
+      },
+      {
+        "hero": "San'layn",
+        "mode": "Mythic+",
+        "best": true,
+        "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMz0MLGjxMGAAAAwMmZmZmZYGDAYmZmZGAAADMwMW0YZBklBsBYGzAAAmZghB"
+      },
+      {
+        "hero": "San'layn",
+        "mode": "Delves",
+        "best": false,
+        "code": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZmxMmZmhZZmZmmZxYMmxAAAAAmxMzMzMDzYMAYMzMzAAAYgBmxiGLLgsMgNAzYmBAAmZwgB"
+      }
+    ]
+  },
+  "priority": {
+    "concepts_wowhead": [
+      "Manage buffs and debuffs: positional (Death and Decay), throughput checks (Ossuary), rotational checks (Hemostasis), maintenance buffs (Coagulopathy).",
+      "Keep cooldowns on cooldown: Dancing Rune Weapon is loaded with defensive and offensive value; delaying it wastes those effects.",
+      "Optimize resources: Death Strike is bread and butter both offensively and defensively; maximize its use."
+    ],
+    "principles_icyveins": [
+      "Generate Runic Power by spending runes and maximizing Heart Strike usage.",
+      "Spend Runic Power on Death Strike without wasting any (no overcap).",
+      "Keep Bone Shield above 5 stacks.",
+      "Press Death Strike before Hemostasis stacks beyond 5.",
+      "Use Death and Decay when Crimson Scourge procs or when cleaving 4+ targets.",
+      "Dancing Rune Weapon and Reaper's Mark are the two main offensive cooldowns; keep them as close to on cooldown as possible."
+    ],
+    "resource_frame": "Runic Power generated by rune-spending strikes (Heart Strike); runes regenerate over time (Haste scales it). Marrowrend is the Bone Shield maintainer but is a damage loss versus Heart Strike when Bone Shield is safe.",
+    "new_midnight_tool": "Consumption is now an empower spell: consumes up to 75% of remaining damage on plagues to heal you; San'layn redesign wants it cast after Dancing Rune Weapon ends.",
+    "removed_in_midnight": [
+      "Bonestorm",
+      "Tombstone",
+      "Soul Reaper",
+      "Rune Tap",
+      "Blood Tap"
+    ]
+  },
+  "gear": {
+    "gearing_rules": [
+      "On pieces with Strength (all non-jewelry and trinkets), item level gains outweigh most secondary stat choices.",
+      "On jewelry and at equal item level: San'layn favors Haste, Deathbringer aims to avoid it.",
+      "Use Raidbots Top Gear to evaluate sidegrades; the exact gearset being BiS does not make each piece individually optimal."
+    ],
+    "weapon": [
+      {
+        "name": "Maze-roa, Warlord's Fury",
+        "id": 268213
+      }
+    ],
+    "head": [
+      {
+        "name": "Baleful Grave-Knight's Casque",
+        "id": 271474
+      }
+    ],
+    "neck": [
+      {
+        "name": "Aqirbane Reliquary",
+        "id": 268265
+      }
+    ],
+    "shoulder": [
+      {
+        "name": "Baleful Grave-Knight's Gibbets",
+        "id": 271472
+      }
+    ],
+    "back": [
+      {
+        "name": "Silken Voodoo Drape",
+        "id": 268253
+      }
+    ],
+    "chest": [
+      {
+        "name": "Baleful Grave-Knight's Breastplate",
+        "id": 271477
+      }
+    ],
+    "wrist": [
+      {
+        "name": "Spellbreaker's Bracers",
+        "id": 237834
+      }
+    ],
+    "hands": [
+      {
+        "name": "Baleful Grave-Knight's Deathgrips",
+        "id": 271475
+      }
+    ],
+    "waist": [
+      {
+        "name": "Girdle of Toxic Regret",
+        "id": 268259
+      }
+    ],
+    "legs": [
+      {
+        "name": "Chausses of Unbound Rancor",
+        "id": 271878
+      }
+    ],
+    "feet": [
+      {
+        "name": "Poison-Proof Stompers",
+        "id": 273777
+      }
+    ],
+    "finger": [
+      {
+        "name": "Masterwork Sin'dorei Band",
+        "id": 240949
+      },
+      {
+        "name": "Band of the Swarmcaller",
+        "id": 281029
+      },
+      {
+        "name": "Ritual Binder's Ring",
+        "note": "San'layn alternative",
+        "id": 159459
+      },
+      {
+        "name": "Sickening Signet of Atroxus",
+        "note": "San'layn alternative",
+        "id": 252258
+      }
+    ],
+    "trinket": [
+      {
+        "name": "Voracious Heart of Ula'tek",
+        "id": 270175
+      },
+      {
+        "name": "Zul'jin's Guillotine Technique",
+        "id": 270173
+      }
+    ],
+    "trinket_ranking": [
+      {
+        "r": "S",
+        "names": [
+          "Zul'jin's Guillotine Technique",
+          "Voracious Heart of Ula'tek"
+        ],
+        "ids": [
+          270173,
+          270175
+        ]
+      },
+      {
+        "r": "A",
+        "names": [
+          "Keeper's Seething Core",
+          "Vile Vial of Volatile Venom",
+          "Seed of the Devouring Wild",
+          "Sapling of the Dawnroot"
+        ],
+        "ids": [
+          270165,
+          273796,
+          250238,
+          250259
+        ]
+      },
+      {
+        "r": "B",
+        "names": [
+          "Blazebinder's Hoof",
+          "Tattered Amani War Banner",
+          "Gebbo's Bottomless Bag",
+          "Effigy of Ula'tek's Faithful"
+        ],
+        "ids": [
+          193762,
+          273797,
+          270164,
+          274493
+        ]
+      },
+      {
+        "r": "C",
+        "names": [
+          "Merektha's Fang",
+          "Tumor of the Swarm",
+          "Font of Venomous Rage",
+          "Sszorak's Ferocity"
+        ],
+        "ids": [
+          158367,
+          250245,
+          270168,
+          270163
+        ]
+      },
+      {
+        "r": "D",
+        "names": [
+          "Lost Idol of the Hash'ey",
+          "Resonant Bellowstone",
+          "Coiled Fangstone",
+          "Idol of the War Loa",
+          "Permafrost Essence"
+        ],
+        "ids": [
+          251783,
+          250228,
+          273795,
+          250229,
+          250244
+        ]
+      }
+    ],
+    "tier_set": {
+      "note": "The new Midnight Season 2 tier set amplifies the San'layn playstyle (Wowhead)."
+    }
+  },
+  "stats": {
+    "sanlayn": [
+      "Strength",
+      "Haste",
+      "Critical Strike",
+      "Mastery",
+      "Versatility"
+    ],
+    "deathbringer": [
+      "Strength",
+      "Critical Strike",
+      "Mastery",
+      "Versatility",
+      "Haste"
+    ],
+    "note_wowhead_cheatsheet": "San'layn: str >> haste >= crit >= mastery = versatility. Deathbringer (M+): str >> crit >= mastery = versatility > haste; raid variant listed crit = mastery = versatility > haste.",
+    "primary_note": "Strength is primary; ilvl upgrades on Strength pieces beat secondary stat choices.",
+    "dr_breakpoints_status": "PENDING: fetch from stats page (frost guide used Crit/Mastery 1380/1840/2300, Haste 1320/1760/2200, Versatility 1620/2160/2700 for 10/20/30% - confirm same for Midnight tank ratings before reusing)"
+  },
+  "consumables": {
+    "flasks": [
+      "Flask of the Blood Knights",
+      "Flask of the Shattered Sun"
+    ],
+    "food": {
+      "secondary": "Blooming Feast",
+      "primary": "Harandar Celebration"
+    },
+    "health_potion": "Concentrated Silvermoon Health Potion",
+    "combat_potion": "Potion of Recklessness",
+    "weapon": "Thalassian Phoenix Oil",
+    "augment_rune": "Void-Touched Augment Rune",
+    "enchants": {
+      "head": "Enchant Helm - Empowered Blessing of Speed",
+      "shoulders": "Enchant Shoulders - Akil'zon's Swiftness",
+      "chest": "Enchant Chest - Mark of the Worldsoul",
+      "legs": "Forest Hunter's Armor Kit",
+      "feet": "Enchant Boots - Farstrider's Hunt",
+      "rings": [
+        "Enchant Ring - Nature's Fury",
+        "Enchant Ring - Eyes of the Eagle (pure damage)"
+      ]
+    },
+    "gems": {
+      "diamond": "Indecipherable Eversong Diamond",
+      "others": [
+        "Flawless Deadly Peridot (San'layn)",
+        "Flawless Masterful Garnet (Deathbringer)"
+      ]
+    },
+    "source": "https://www.wowhead.com/guide/classes/death-knight/blood/enchants-gems-pve-tank"
+  },
+  "mplus": {
+    "hero_note": "Deathbringer is the very good choice for Mythic+ (easier play, defensive advantages) per Wowhead; Icy Veins agrees.",
+    "tips": [
+      "Blood's defensive toolkit: Anti-Magic Shell (immune most magic debuffs and curses), Lichborne (Charm/Fear/Sleep immunity), Icebound Fortitude (Stun immunity), Death's Advance (knockback immunity).",
+      "Group utility: Anti-Magic Zone, Death Grip, Gorefiend's Grasp; two separate taunts (Dark Command, Death Grip); Blinding Sleet AoE disorient on a very short cooldown; Purgatory uncapped cheat death.",
+      "Limited mobility baseline: Death's Advance; Death's Echo gives a second charge, Wraith Walk is the alternative talent."
+    ],
+    "season": "Midnight Season 2"
+  },
+  "changes_12_1": {
+    "damage_buffs": [
+      "Marrowrend",
+      "Heart Strike / Vampiric Strike",
+      "Reaper's Mark (primary target only)",
+      "Exterminate (primary target only)"
+    ],
+    "defensive_buffs": [
+      "Rapid Decomposition: leeches 85% more from Blood Plague",
+      "Permafrost: accumulates 25% faster (health cap unchanged)",
+      "Umbilicus Eternus: accumulates 20% more (health cap unchanged)",
+      "Sanguinary Burst: heals for 20% more",
+      "Voracious: grants 15% leech (was 12%)",
+      "Bloodshot: now grants 4% damage reduction while active",
+      "Perseverance of the Ebon Blade: changed to provide 4% damage reduction"
+    ],
+    "nerfs": [
+      "Frenzied Bloodthirst: reduced to 5% per stack",
+      "Visceral Strength: reduced to 10% strength"
+    ],
+    "world_scaling": "12.1 defensive buffs account for the 25% world scaling."
+  },
+  "strengths_weaknesses": {
+    "strengths": [
+      "Excellent self-sustain when played optimally",
+      "Unique group utility: Anti-Magic Zone, Death Grip, Gorefiend's Grasp",
+      "Lichborne: temporary immunity to Charm, Fear, Sleep; Icebound Fortitude for Stuns",
+      "Knockback immunity via Death's Advance",
+      "Anti-Magic Shell immune most magic debuffs and curses",
+      "Two separate taunts: Dark Command and Death Grip",
+      "Blinding Sleet: AoE disorient on a very short cooldown",
+      "Purgatory: uncapped cheat death"
+    ],
+    "weaknesses": [
+      "Limited mobility: Death's Advance baseline; augmentations via Death's Echo or Wraith Walk",
+      "Tuned around taking higher damage upfront and healing back; newcomers misread it as unavoidable one-shots",
+      "Significantly reduced defensive cooldown choice versus previous expansions"
+    ]
+  },
+  "section_titles": {
+    "overview": "معرفی",
+    "hero": "Hero Tree",
+    "talents": "تلنت‌ها",
+    "rotation": "روتیشن و کول‌داون‌ها",
+    "gear": "گیر و آیتم‌ها",
+    "stats": "اولویت استت",
+    "consumables": "انچنت، جم و مصرفی",
+    "mplus": "نکته‌های Mythic+"
+  },
+  "rotation": {
+    "concepts": [
+      "Manage buffs and debuffs: Bone Shield (bonus armor + Runic Power cost reduction), Hemostasis (amplifies self-healing), Death and Decay standing buff, Ossuary, Coagulopathy.",
+      "Keep cooldowns on cooldown: Dancing Rune Weapon and all defensive cooldowns are the bread and butter of the spec.",
+      "Optimize resources: spend Runes to convert them into Runic Power efficiently; more Runic Power = more Death Strike."
+    ],
+    "rp_rule": "Cast Death Strike if you need the healing or are above 75 Runic Power (Wowhead's measured breakpoint: keeps two Death Strikes available and prevents overcapping at 45 RP = two to three full Heart Strikes).",
+    "bone_shield_rule": "Maintain at least 5 charges of Bone Shield; if it is about to expire, press Marrowrend. As Deathbringer, every 45s two Exterminate charges guarantee a refresh; if 8+ bones, Death Grip works as an effective refresh (Death's Caress if taunting is not possible).",
+    "st_deathbringer": [
+      "Death Strike if you need the healing or are above 75 Runic Power",
+      "Maintain at least 5 charges of Bone Shield; Marrowrend if about to expire",
+      "Death and Decay and stand in it if not affected by its buff",
+      "Death and Decay with a Crimson Scourge proc",
+      "Reaper's Mark on cooldown",
+      "Dancing Rune Weapon on cooldown",
+      "Blood Boil if Dancing Rune Weapon is active and target lacks Blood Plague, or if about to cap charges",
+      "Spend one Exterminate charge (from Echoing Fury) before Reaper's Mark detonates",
+      "Spend all remaining Exterminate charges (from Echoing Fury) before Reaper's Mark detonates",
+      "Consumption if the hard-cast Dancing Rune Weapon is not active; empower to rank 1",
+      "Blood Boil with a Boiling Point proc",
+      "Heart Strike as filler; do not run out of runes around the 45s mark when Reaper's Mark returns"
+    ],
+    "st_sanlayn_in_gift": [
+      "Death Strike if you need the healing or are above 75 Runic Power",
+      "Maintain at least 5 charges of Bone Shield",
+      "Blood Boil if the Dancing Rune Weapon copy of Blood Plague is not on the target",
+      "Death and Decay with a Crimson Scourge proc",
+      "Fill with Vampiric Strike",
+      "If out of runes, Blood Boil"
+    ],
+    "st_sanlayn_outside_gift": [
+      "Death Strike if you need the healing or are above 75 Runic Power",
+      "Maintain at least 5 charges of Bone Shield; Marrowrend if about to expire (Death Grip refresh works; Death's Caress if cannot taunt)",
+      "Consumption empowered to rank 1",
+      "Death and Decay and stand in it with a Crimson Scourge proc if Visceral Strength is not active",
+      "Blood Boil with a Boiling Point proc",
+      "Vampiric Strike if available",
+      "Blood Boil to prevent charge capping",
+      "Heart Strike"
+    ],
+    "aoe_note": "AoE does not fundamentally change the broad priority; emphasize fully empowering Consumption and be stricter about Death and Decay uptime. AoE openers are the same as single target but with a gather phase first (weave Blood Boil / Heart Strike / Death Strike for threat, pre-place Death and Decay at the end of the gather).",
+    "opener_deathbringer_st": [
+      "Death's Caress",
+      "While Death's Caress is in flight, pre-place Death and Decay",
+      "Reaper's Mark",
+      "Dancing Rune Weapon",
+      "Blood Boil",
+      "Spend one Exterminate charge via Marrowrend",
+      "Death Strike",
+      "Proceed with normal priority"
+    ],
+    "opener_sanlayn_st": [
+      "Death's Caress",
+      "While Death's Caress is in flight, pre-place Death and Decay (primes Blood Plague ahead of Dancing Rune Weapon so the first Blood Boil pandemics it)",
+      "Dancing Rune Weapon",
+      "Blood Boil",
+      "Vampiric Strike",
+      "Vampiric Strike",
+      "Death Strike",
+      "Proceed with normal priority"
+    ],
+    "drw_details": "Dancing Rune Weapon: 30% parry for 12s, replicates Heart Strike, Marrowrend, Blood Boil and Death Strike; Marrowrend during it grants 3 bonus Bone Shield per active weapon; Blood Boil during it makes each weapon apply its own Blood Plague copy; talents add 5% parry for the first 8s and up to 10 Runic Power per second for the first 8s. San'layn uses it as the main activator of its Hero Talent window.",
+    "bone_shield_advanced": "Bone Shield needs one generator every 30s. Deathbringer with Reaper's Onslaught handles it automatically; with Dark Talons, delay one Exterminate explosion by ~5s or slot Death Grip to refresh the full stack. San'layn has no passive generation and Apex talents randomize Marrowrend charges (each Apex Dancing Rune Weapon adds 3 stacks) - track it with UI.",
+    "pre_combat": [
+      "Raid: check consumables - flask, food, augment rune, temporary weapon oils/whetstones at all times.",
+      "M+: Bone Shield persists between pulls while time remains; Runic Power decays 1 RP/s out of combat; refresh Bone Shield at the end of a pull and pool RP for the next pull.",
+      "M+ key start: Bone Shield charges stay and up to 25 Runic Power remains; hit target dummies before the key starts to prepare both resources."
+    ],
+    "aoe": {
+      "source": "wowhead.com/guide/classes/death-knight/blood/rotation (AoE section, 2026-10-28)",
+      "deathbringer": [
+        "Death Strike if healing needed or above 75 Runic Power",
+        "Maintain 5+ Bone Shield (Marrowrend if expiring)",
+        "Death and Decay and stand in it if buff missing",
+        "Reaper's Mark on cooldown",
+        "Dancing Rune Weapon on cooldown",
+        "Blood Boil if DRW active and target lacks Blood Plague, or charges about to cap",
+        "Spend one Exterminate charge before Reaper's Mark detonates",
+        "Spend all Exterminate charges before Reaper's Mark detonates",
+        "Blood Boil with Boiling Point proc",
+        "Consumption if hard-cast DRW not active (empower rank 1)",
+        "Blood Boil as filler with a free charge",
+        "Heart Strike as filler; do not run out of runes"
+      ],
+      "sanlayn_in_gift": [
+        "Death Strike if healing needed or above 75 Runic Power",
+        "Maintain 5+ Bone Shield",
+        "Blood Boil if the Blood Plague copy from DRW is not on target",
+        "Death and Decay with Crimson Scourge proc",
+        "Fill with Vampiric Strike",
+        "Blood Boil if out of runes"
+      ],
+      "sanlayn_outside_gift": [
+        "Death Strike if healing needed or above 75 Runic Power",
+        "Maintain 5+ Bone Shield (Marrowrend if expiring)",
+        "Empower Consumption to rank 3 and use on exiting DRW; otherwise rank 1",
+        "Death and Decay and stand in it if buff missing or Crimson Scourge proc",
+        "Blood Boil with Boiling Point proc",
+        "Vampiric Strike if available",
+        "Blood Boil to prevent charge cap",
+        "Heart Strike"
+      ]
+    }
+  }
+}

@@ -1,0 +1,867 @@
+{
+ "slug": "devourer-demon-hunter",
+ "class": "demon-hunter",
+ "class_en": "Demon Hunter",
+ "spec_en": "Devourer",
+ "spec_no": 1,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Devourer Demon Hunter",
+ "lead": "Devourer یک اسپک کست‌کنندهٔ ۲۵ یاردی است که با قدرت Void بازی می‌کند؛ با [[Consume]] و [[Reap]] Fury و Soul Fragment می‌سازی و با ورود به [[Void Metamorphosis]] به برست اصلی می‌رسی. دو مسیر Hero Tree داری: [[Annihilator]] که برای همهٔ محتواها به‌جز Delves انتخاب اول است و [[Void-Scarred]] که سبک میله‌ای-هیبرید دارد و در Delves برتر است.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Consume": {
+   "fa": "یک اسپل کلیدی که قطعات روح را جمع‌آوری می‌کند و در حالت Void به Devour ارتقا می‌یابد."
+  },
+  "Reap": {
+   "fa": "یک اسپل آتشین که در حالت Void به Cull تبدیل می‌شود."
+  },
+  "Void Metamorphosis": {
+   "fa": "حالت دمو اصلی که با جمع‌آوری قطعات روح فعال می‌شود. در این حالت Mastery افزایش می‌یابد و برخی اسپل‌ها ارتقا پیدا می‌کنند."
+  },
+  "Annihilator": {
+   "fa": "مسیر Hero Tree که برای محتوای عمومی بهینه شده"
+  },
+  "Void-Scarred": {
+   "fa": "مسیر Hero Tree با سبک میله‌ای-هیبرید برای Delves"
+  },
+  "Voidfall": {
+   "fa": "یک اسپل قدرتمند که متوردهای خالی را فراخوانی می‌کند و هستهٔ استراتژی Annihilator است."
+  },
+  "World Killer": {
+   "fa": "تلنت که تولید منابع را افزایش می‌دهد و به چرخهٔ Voidfall کمک می‌کند."
+  },
+  "Celestial Echoes": {
+   "fa": "تلنت که منابع اضافی فراهم می‌آورد و قدرت Voidfall را تقویت می‌کند."
+  },
+  "Swift Erasure": {
+   "fa": "یک تلنت پسیو که با افزایش سرعت، چرخش بازی را تسریع می‌کند."
+  },
+  "Phase Shift": {
+   "fa": "یک مکانیزم دفاعی که کاهش آسیب متغیری بین ۲ تا ۸٪ را فراهم می‌کند."
+  },
+  "Voidblade": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد با استفاده از [[Vengeful Retreat]] سریع‌تر حرکت کنید."
+  },
+  "Hungering Slash": {
+   "fa": "یک اسپل حمله که با The Hunt ترکیب شده و Voidsurge را فعال می‌کند."
+  },
+  "The Hunt": {
+   "fa": "یک حرکات سریع که با استفاده از Vengeful Retreat در هوا فعال می‌شود."
+  },
+  "Voidsurge": {
+   "fa": "یک اسپل قدرتمند که توسط Voidblade و Hungering Slash فعال می‌شود."
+  },
+  "Enduring Torment": {
+   "fa": "یک تلنت که خارج از حالت Void Meta، کاراکتر را تقویت می‌کند."
+  },
+  "Monster Rising": {
+   "fa": "یک تلنت که خارج از Void Meta، قدرت را افزایش می‌دهد."
+  },
+  "Set Fire to the Pain": {
+   "fa": "یک تلنت دفاعی جزئی با کاهش آسیب ۰.۵٪."
+  },
+  "Improved Soul Rending": {
+   "fa": "یک تلنت دفاعی با امکان لچ کردن آسیب."
+  },
+  "Pursuit of Angriness": {
+   "fa": "یک امکانات که استون را فراهم می‌کند."
+  },
+  "Wave of Debilitation": {
+   "fa": "یک اسپل با قابلیت استون."
+  },
+  "Devour": {
+   "fa": "نسخهٔ ارتقا یافتهٔ Consume در حالت Void که دامنه و آسیب بیشتری دارد."
+  },
+  "Cull": {
+   "fa": "نسخهٔ ارتقا یافتهٔ Reap در حالت Void که برای چند هدفه مناسب‌تر است."
+  },
+  "Void Ray": {
+   "fa": "یک اسپل کانالی که در حالت Void بدون مصرف انرژی کار می‌کند و آسیب قابل توجهی وارد می‌کند."
+  },
+  "Soul Immolation": {
+   "fa": "یک اسپل آتشین قدرتمند که در چرخهٔ دموها نقش کلیدی دارد."
+  },
+  "Eradicate": {
+   "fa": "یک اسپل آتشین برای چند هدفه که قطعات روح را جمع‌آوری می‌کند."
+  },
+  "Collapsing Star": {
+   "fa": "یک اسپل جدید در حالت Void که با جمع‌آوری زیاد قطعات روح فعال می‌شود."
+  },
+  "Vengeful Retreat": {
+   "fa": "فرار سریع که کول‌داون‌ها را بازمی‌گرداند"
+  },
+  "Potion of Recklessness": {
+   "fa": "پتشن قدرتمند که برای افزایش آسیب در لحظات حساس استفاده می‌شود."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پتشن سلامتی که مقدار قابل توجهی سلامتی را بازیابی می‌کند."
+  },
+  "Rite of the Hash'ey": {
+   "fa": "انچنت سلاح که بالاترین استات شما را بالای 80% سلامتی اعطا می‌کند."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "رام افزایشی که استات‌ها را به طور دائمی بالا می‌برد."
+  },
+  "Feast of Knowledge": {
+   "fa": "غذای گروهی که استات‌های ذهنی را افزایش می‌دهد."
+  },
+  "Champion's Bento": {
+   "fa": "غذا شخصی با مزایای قابل توجه برای دشمن‌خواران."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جواهر نایاب که استات‌های کلیدی را افزایش می‌دهد."
+  },
+  "Metamorphosis": {
+   "fa": "تبدیل به شکل شیطانی برای افزایش آسیب و زنده ماندن"
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Devourer یک اسپک کست‌کنندهٔ ۲۵ یاردی است که با قدرت Void بازی می‌کند؛ با [[Consume]] و [[Reap]] Fury و Soul Fragment می‌سازی و با ورود به [[Void Metamorphosis]] به برست اصلی می‌رسی. دو مسیر Hero Tree داری: [[Annihilator]] که برای همهٔ محتواها به‌جز Delves انتخاب اول است و [[Void-Scarred]] که سبک میله‌ای-هیبرید دارد و در Delves برتر است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "استقامت",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "سازگاری Delves",
+       "v": "عالی",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "قدرت فوق‌العادهٔ حرکتی (کیت پایه به‌همراه Shift)",
+       "پنجره‌های مکرر و پرقدرت Void Metamorphosis",
+       "توانایی درمان خود بالا و دفاعی قوی در Blur",
+       "افزایش آسیب جادویی دشمنان از طریق Chaos Brand"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "محدودیت برد ۲۵ یاردی",
+       "اشتباهات در پنجرهٔ Void Metamorphosis شدیداً تنبیهی است",
+       "استفاده از Voidblade و تلنت‌های دیگر می‌تواند خطرناک باشد",
+       "نیاز به تلنت‌های Melee برای درخت Void-Scarred",
+       "زمان کست طولانی روی Collapsing Star و The Hunt"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "انتخاب هرو"
+    },
+    {
+     "t": "p",
+     "x": "برای تمام محتوا به جز دلوز، Annihilator گزینهٔ پیشنهادی است."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Annihilator",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "تمرکز بر فراخوانی متوردهای خالی از طریق Voidfall؛ منابع بیشتر از World Killer و Celestial Echoes؛ افزایش سرعت چرخش بازی با Swift Erasure. دفاع: Phase Shift با کاهش آسیب ۲-۸٪ متغیر، تولید بیشتر قطعات روح."
+      }
+     ]
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Void-Scarred",
+       "tag": "گزینه جایگزین",
+       "x": "هیبرید نزدیک‌مجاز: استفاده از Voidblade، Hungering Slash و The Hunt برای فعال‌سازی Voidsurge قدرتمند و تقویت Void Metamorphosis؛ تقویت خارج از Void Meta با Enduring Torment و Monster Rising. دفاع: Set Fire to the Pain (کاهش آسیب جزئی ۰.۵٪) یا Improved Soul Rending (لچ). امکانات: استون Pursuit of Angriness و Wave of Debilitation."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "هر دو درخت هرو از نظر دفاعی ضعیف هستند؛ تفاوت در این بخش ناچیز است."
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت‌های دیمون هنتر داورر برای پچ ۱۲.۱.۵ در نقش دی‌پی‌اس ارائه شده است. این راهنما برای حالت‌های مختلف بازی از جمله رید، متیک پلاس و دلوز بهینه شده است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Annihilator",
+       "tag": "رید تک‌هدف",
+       "x": "این ساختار برای بهترین عملکرد در حالت تک‌هدف در ریدها طراحی شده است. تمرکز اصلی روی بهینه‌سازی دامنه و آسیب‌های بلندمدت است.",
+       "code": "CgcBAAAAAAAAAAAAAAAAAAAAAAA2MmZmZmZmxwMAAAAAAALPwY2GMDAAAAAAAAzYwMzMzMmZmZMziZMW0yCzMzMbtNzMDgZMAE4BGDGGA"
+      },
+      {
+       "title": "Annihilator",
+       "tag": "رید کل",
+       "x": "این ساختار برای بهینه‌سازی عملکرد در محیط‌های کل‌آور طراحی شده است. تمرکز اصلی روی افزایش خسارت‌های منطقه‌ای و پایداری در مبارزات گروهی است.",
+       "code": "CgcBAAAAAAAAAAAAAAAAAAAAAAA2MmZmZmZmBmBAAAAAAY5BGz2gZAAAAAAAAYGzwMzMzMzMzMMziZMWkFmZmZ2abmZGADDABegxMMmB"
+      },
+      {
+       "title": "Annihilator",
+       "tag": "متیک پلاس",
+       "x": "این ساختار برای بهترین عملکرد در حالت متیک پلاس بهینه شده است. تمرکز اصلی روی انعطاف‌پذیری و پایداری در مبارزات سریع و پرتنش است.",
+       "code": "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzYmxwMAAAAAAALGz2gZAAAAAAAAYGzwMzMzMzMzMMziZMWkFmZmZ2abmZGADDABegxMMmB"
+      },
+      {
+       "title": "Void-Scarred",
+       "tag": "دلوز",
+       "x": "این ساختار برای بهترین عملکرد در حالت دلوز طراحی شده است. تمرکز اصلی روی افزایش آسیب‌های زمان‌بندی شده و پایداری در محیط‌های چالش‌برانگیز است.",
+       "code": "CgcBAAAAAAAAAAAAAAAAAAAAAAAWMmZmZmZmxwMAAAAAAAmxAmBAAAAAAAgZMDjZmZmZmZGmZbmxYTbbAIgBwMzMz2Mz0sNzmZGjZMA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=demon-hunter",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ دموها"
+    },
+    {
+     "t": "p",
+     "x": "با [[Void Metamorphosis]] وارد حالت Void می‌شوید که با جمع‌آوری ۵۰ قطعه روح فعال می‌شود. در این حالت، Mastery افزایش می‌یابد و [[Consume]] به [[Devour]] ارتقا پیدا می‌کند. چرخهٔ اصلی شما حول محور جمع‌آوری قطعات روح و استفاده بهینه از آن‌ها در حالت Void است."
+    },
+    {
+     "t": "p",
+     "x": "در حالت Void، [[Void Ray]] بدون مصرف انرژی کار می‌کند و [[Reap]] به [[Cull]] تبدیل می‌شود. چرخهٔ شما بسته به انتخاب‌های درخت تلنت (Annihilator یا Void-Scarred) و تعداد اهداف متفاوت خواهد بود."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ تک‌هدف (Annihilator)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Consume]] اگر باعث Soulburst شود",
+      "[[Reap]] با ۴+ قطعه روح",
+      "[[Void Metamorphosis]]",
+      "[[Void Ray]]",
+      "[[Soul Immolation]]",
+      "[[Consume]]"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ تک‌هدف در حالت Void (Annihilator)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Devour]] اگر باعث Soulburst شود",
+      "[[Void Ray]] مگر اینکه قطعات روح شما بیش از حد پر شود",
+      "[[Collapsing Star]]",
+      "[[Cull]] با ۴+ قطعه روح",
+      "[[Devour]]",
+      "[[Soul Immolation]] هنگام خروج از حالت Void"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ چندهدفه (Annihilator)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Consume]] اگر باعث Soulburst شود",
+      "[[Eradicate]] با ۱۰ قطعه روح یا ۴+ اگر Voidfall فعال شود",
+      "[[Void Ray]]",
+      "[[Void Metamorphosis]]",
+      "[[Reap]] اگر Voidfall فعال شود",
+      "[[Soul Immolation]]",
+      "[[Consume]]"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ چند هدفه در حالت Void (Annihilator)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Collapsing Star]] اگر قطعات روح شما از ۴۰ بیشتر شود",
+      "[[Devour]] اگر باعث Soulburst شود",
+      "[[Eradicate]] با ۱۰ قطعه روح یا ۴+ اگر Voidfall فعال شود",
+      "[[Void Ray]]",
+      "[[Collapsing Star]]",
+      "[[Cull]] اگر Voidfall فعال شود یا بتوانید Collapsing Star را بزنید",
+      "[[Devour]]",
+      "[[Soul Immolation]] هنگام خروج از حالت Void"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "تکنیک 'Huggle': با داشتن حدود ۱۴% Haste، می‌توانید [[Voidblade]] را بزنید، سپس [[Vengeful Retreat]] را اجرا کرده و در هوا [[The Hunt]] را فعال کنید و در نهایت وارد حالت Void شوید. این تکنیک در تک‌هدف همیشه ارزشمند است."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در تجهیز شدن برای دیمون هانتر Devourer، باید تا حد ممکن روی استت‌های Haste و Mastery تمرکز کنید اما تعداد زیاد افکت‌های کانتریپ باعث کاهش ارزش Haste می‌شود؛ بنابراین قطعات بی‌آی‌اس (BiS) معمولاً دارای Crit هستند."
+    },
+    {
+     "t": "call",
+     "x": "از دو ترینکت با استت‌های پسیو استفاده کنید. تمام ۴ آیتم کانتریپ را برای دریافت پروک‌های استت با آی‌ال (IL) بالاتر جمع‌آوری نمایید. برای شبیه‌سازی دقیق، از ابزار Raidbots استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "قطعات بی‌آی‌اس"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "دست راست",
+       "id": 271092
+      },
+      {
+       "slot": "دست چپ",
+       "id": 268211
+      },
+      {
+       "slot": "سر",
+       "id": 271537
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271535
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271540
+      },
+      {
+       "slot": "مچ",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271538
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271536
+      },
+      {
+       "slot": "پا",
+       "id": 244569
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "انگشتر",
+       "id": 158366
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270164
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271538
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        271538
+       ],
+       "names": [
+        "دستکش Abyssal Doomhound's Studded"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "کالیست"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Gaze of the Coiled Watcher (Ula'tek)",
+      "Frothing Venom Spaulders (Vashnik the Malignant)",
+      "Chestwrap of Palpable Terror (General Kith'ix)",
+      "Ruthless Slaughtergrips (Sszorak)",
+      "Coiled Hex Legguards (The Coiled Altar)"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های ساخته شده"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "مچ Silvermoon Agent's Deflectors",
+       "v": "با روکش Arcanoweave"
+      },
+      {
+       "k": "کفش Silvermoon Agent's Sneakers",
+       "v": "با روکش Arcanoweave"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Mastery",
+      "Haste",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اولویت اصلی استت برای دیوورر دمون‌هانتر این است: اینتلیجِ بالاتر همیشه اولویت دارد."
+    },
+    {
+     "t": "p",
+     "x": "بعد از اینتلیج، Mastery بهترین استت است، سپس Haste و Critical Strike تقریباً برابر هستند، و در نهایت Versatility کمترین اولویت را دارد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Devourer Demon Hunter برای پایداری استات‌ها و برست تمیز در پنجرهٔ کول‌داون‌ها انتخاب شده‌اند؛ فهرست زیر از راهنمای Wowhead برای پچ 12.1.5 برداشته شده است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters یا Flask of the Shattered Sun یا Flask of the Blood Knights (useful for Annihilator)",
+       "ids": [
+        241322,
+        241326,
+        241324
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Feast of Knowledge",
+       "ids": [
+        275266
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Champion's Bento",
+       "ids": [
+        242274
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "معجون جنگی را هم‌زمان با شروع برست و ترینکت‌های on-use استفاده کن تا همهٔ باف‌ها در یک پنجره بنشینند."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "هر دو سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "[[Enchant Weapon - Rite of the Hash'ey]] بالای ۸۰٪ سلامتی همیشه بالاترین استات تو را تقویت می‌کند؛ [[Thalassian Phoenix Oil]] هم برای پوشش دائمی روی هر دو سلاح در دسترس است."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Deadly Amethyst یا Flawless Quick Amethyst",
+       "ids": [
+        240897,
+        240899
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "انچنت‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "با آمدن آفلای یا پچ جدید ممکن است اولویت‌ها کمی جابه‌جا شود؛ قبل از ریید یا Mythic+ یک بار دیگر همین فهرست را چک کن."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "نکته‌های Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "برای Mythic+ هم Annihilator انتخاب اول است؛ Void-Scarred در برابر اختلال (مثل اینتراپت و حرکت اجباری) ضعیف می‌شود و جایش در Delves است. اولویت چندهدفی از ۲ هدف شروع می‌شود و در AoE تولید Soul Fragment با Shattered Souls بالا می‌رود، پس پنجره‌های Void Metamorphosis پشت‌سرهم‌تر می‌آیند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "ترینکت پسیو به on-use می‌چربد؛ پنجره‌های برست تو پرتکرارتر از کول‌داون on-useها هستند.",
+      "از دل فضای ۲۵ یاردی بیرون نرو؛ Collapsing Star و The Hunt کست ثابت می‌خواهند، پس Shift را پیش‌دستانه برای جای‌گیری خرج کن.",
+      "Night Elf با Shadowmeld می‌تواند skip بزند؛ Blood Elf با Arcane Torrent پک‌ها را پاک‌سازی می‌کند؛ Void Elf با Spatial Rift راحت جابه‌جا می‌شود."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های حیاتی در طول دنج"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Void Metamorphosis",
+       "x": "کول‌داون اصلی تو؛ با ۵۰ Soul Fragment فعال می‌شود (۳۵ با Soul Glutton). هر جای فایت که می‌توانی بدون اختلال بزنش."
+      },
+      {
+       "s": "Collapsing Star",
+       "x": "داخل فرم؛ در AoE اگر قرار است Soul از ۴۰ بالاتر برود اول این را بزن تا هدر نرود."
+      },
+      {
+       "s": "Eradicate",
+       "x": "در چندهدفی روی ۱۰ souls، یا ۴+ وقتی Voidfall پروک می‌کند."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "خطا در پنجرهٔ Void Metamorphosis گران است: وقتی Fury به صفر برسد از فرم می‌افتی. قبل از ورود، جای امن و بدون اینتراپت انتخاب کن."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Devourer Demon Hunter (دیواورر) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل دیواورر (Devourer Demon Hunter) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Devourer Demon Hunter talent build midnight",
+   "Devourer Demon Hunter guide midnight",
+   "Devourer Demon Hunter guide 12.1.5",
+   "best Devourer Demon Hunter talents",
+   "Devourer Demon Hunter talent tree midnight",
+   "Devourer Demon Hunter pve guide",
+   "Devourer Demon Hunter rotation midnight",
+   "Devourer Demon Hunter rotation and cooldowns",
+   "Devourer Demon Hunter bis list midnight",
+   "Devourer Demon Hunter best in slot",
+   "Devourer Demon Hunter gear guide",
+   "Devourer Demon Hunter food and potion",
+   "best food for Devourer Demon Hunter",
+   "best flask for Devourer Demon Hunter",
+   "best potion for Devourer Demon Hunter",
+   "Devourer Demon Hunter enchants and gems",
+   "best enchants for Devourer Demon Hunter",
+   "best gems for Devourer Demon Hunter",
+   "Devourer Demon Hunter stat priority midnight",
+   "Devourer Demon Hunter tier set midnight",
+   "Devourer Demon Hunter tier set bonuses",
+   "Devourer Demon Hunter mythic+ guide",
+   "Devourer Demon Hunter m+ guide midnight",
+   "Devourer Demon Hunter raid guide",
+   "Devourer Demon Hunter hero talents",
+   "Devourer Demon Hunter hero tree",
+   "best dps build Devourer Demon Hunter midnight",
+   "Devourer Demon Hunter cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای دیواورر",
+   "تلنت دیواورر",
+   "تلنت برای Devourer Demon Hunter",
+   "تلنت Demon Hunter دیواورر",
+   "بیلد دیواورر",
+   "بیلد تلنت دیواورر میدنایت",
+   "روتیشن دیواورر",
+   "روتیشن و کول‌داون‌های دیواورر",
+   "غذا برای دیواورر",
+   "غذا برای Devourer Demon Hunter",
+   "غذا و معجون دیواورر",
+   "بهترین غذای دیواورر",
+   "فلسک دیواورر",
+   "بهترین فلسک برای دیواورر",
+   "معجون دیواورر",
+   "انچنت دیواورر",
+   "انچنت و جم دیواورر",
+   "بهترین انچنت برای دیواورر",
+   "جم دیواورر",
+   "بست آیتم دیواورر",
+   "بهترین آیتم‌های دیواورر",
+   "گیر دیواورر",
+   "استت دیواورر",
+   "اولویت استت دیواورر",
+   "ست تیر دیواورر",
+   "مایتی پلاس دیواورر",
+   "ام پلاس دیواورر",
+   "راهنمای دیواورر",
+   "راهنمای Devourer Demon Hunter",
+   "راهنمای دی‌هاو",
+   "دیواورر میدنایت",
+   "دی‌هاو میدنایت",
+   "هرو تیلنت دیواورر",
+   "بیلد دیواورر",
+   "بهترین دیواورر"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Devourer Demon Hunter (دیواورر) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Devourer Demon Hunter به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای دیواورر چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "لیست کامل و به‌روز فلسک، معجون، غذا و رون در بخش «انچنت، جم و مصرفی» همین راهنما آمده است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای دیواورر چیست؟",
+    "a": "انچنت سلاح و جم‌های پیشنهادی بر اساس اولویت استت این اسپک انتخاب می‌شوند. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای دیواورر کدام‌اند؟",
+    "a": "ست تیر فعلی «دستکش Abyssal Doomhound's Studded» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Devourer Demon Hunter در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

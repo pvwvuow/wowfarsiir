@@ -1,0 +1,779 @@
+{
+ "slug": "devastation-evoker",
+ "class": "evoker",
+ "class_en": "Evoker",
+ "spec_en": "Devastation",
+ "spec_no": 2,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Devastation Evoker",
+ "lead": "Devastation یک بتل‌مج رنج‌بر است که با قدرت انفجاری Red و جادوی متمرکز Blue از فاصلهٔ میانی دشمنان را قصاب می‌کند؛ Dragonrage کول‌داون اصلی توست. دو مسیر Hero Tree داری: [[Scalecommander]] که در همهٔ محتواها توصیه می‌شود و [[Flameshaper]] با Consume Flame که در cleave پخش‌شده کم می‌آورد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/evoker/devastation/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/evoker/devastation/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/evoker/devastation/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/evoker/devastation/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/evoker/devastation/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Scalecommander": {
+   "fa": "مسیر Hero Tree که در همهٔ محتواها برای Devastation Evoker توصیه می‌شود"
+  },
+  "Flameshaper": {
+   "fa": "مسیر Hero Tree با Consume Flame که در cleave پخش‌شده عملکرد بهتری دارد"
+  },
+  "Consume Flame": {
+   "fa": "تلنت Hero Tree که به [[Firestorm]] و [[Pyre]] قدرت می‌دهد"
+  },
+  "Dragonrage": {
+   "fa": "کول‌داون قدرتمند که Essence Burst را تضمین می‌کند"
+  },
+  "Deep Breath": {
+   "fa": "اسپل قدرتمند که دامنه وسیعی را با آتش می‌پوشاند."
+  },
+  "Tip the Scales": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد دو اسپل را همزمان استفاده کنید"
+  },
+  "Eternity Surge": {
+   "fa": "اسپل اصلی داواکشن دی‌واستیشن که با انپاور تقویت می‌شود."
+  },
+  "Fire Breath": {
+   "fa": "اسپل اصلی آسیب‌زا که با Eternity Surge ترکیب می‌شود"
+  },
+  "Disintegrate": {
+   "fa": "کانال آسیب‌زا که با Essence تقویت می‌شود"
+  },
+  "Living Flame": {
+   "fa": "اسپل Filler که با Essence Burst ترکیب می‌شود"
+  },
+  "Azure Strike": {
+   "fa": "اسپل تک‌هدف برای حرکت"
+  },
+  "Pyre": {
+   "fa": "اسپل آتشینی که چند هدف را در یک ناحیه هدف قرار می‌دهد."
+  },
+  "Strafing Run": {
+   "fa": "یک تلنت که Deep Breath را قدرتمندتر می‌کند"
+  },
+  "Leaping Flames": {
+   "fa": "یک تلنت که Living Flame را تقویت می‌کند"
+  },
+  "Burnout": {
+   "fa": "یک تلنت که Essence را سریع‌تر جمع می‌کند"
+  },
+  "Mass Disintegrate": {
+   "fa": "کانال اسپل که خسارت جادویی به چند هدف وارد می‌کند."
+  },
+  "Rising Fury": {
+   "fa": "استت که با استفاده از اسپل‌ها جمع می‌شود"
+  },
+  "Hover": {
+   "fa": "حالت پرواز که به شما اجازه می‌دهد از روی زمین پرواز کنید."
+  },
+  "Essence Burst": {
+   "fa": "یک افکت که با استفاده از اسپل‌ها فعال می‌شود"
+  },
+  "Animosity": {
+   "fa": "یک تلنت که Dragonrage را طولانی‌تر می‌کند"
+  },
+  "Tyranny": {
+   "fa": "یک تلنت که Mastery را با Dragonrage تقویت می‌کند"
+  },
+  "Mastery: Giantkiller": {
+   "fa": "استت Mastery که با Dragonrage قدرتمندتر می‌شود"
+  },
+  "Shattering Star": {
+   "fa": "یک اسپل دامنه قدرتمند که توسط داواکشن دی‌واستیشن استفاده می‌شود."
+  },
+  "Causality": {
+   "fa": "یک تلنت که با وقوع رویدادهای خاص، کول‌داون اسپل‌ها را کاهش می‌دهد."
+  },
+  "Scintillation": {
+   "fa": "یک تلنت که شانس ایجاد پراک از [[Shattering Star]] را افزایش می‌دهد."
+  },
+  "Crown of the Eternal Fang": {
+   "fa": "یک کالیست برای سر که می‌تواند جایگزین خوبی برای آیتم‌های تیر باشد."
+  },
+  "Soulslither Spaulders": {
+   "fa": "یک کالیست برای شانه که برای داواکشن دی‌واستیشن مناسب است."
+  },
+  "Awoken Dreadfang Cuirass": {
+   "fa": "یک کالیست برای سینه که می‌تواند در گیرینگ استفاده شود."
+  },
+  "Aberrant Commander's Gauntlets": {
+   "fa": "یک کالیست برای دست که برای این کلاس مناسب است."
+  },
+  "Cuisses of the Uncoiled Union": {
+   "fa": "یک کالیست برای پا که می‌تواند جایگزین خوبی باشد."
+  },
+  "Farstrider's Plated Bracers": {
+   "fa": "یک آیتم ساخته شده برای مچ که برای داواکشن مناسب است."
+  },
+  "Aln'hara Lantern": {
+   "fa": "یک آیتم ساخته شده برای دست راست که می‌تواند در گیرینگ استفاده شود."
+  },
+  "Fury of the Aspects": {
+   "fa": "کول‌داون گروهی که سرعت گروه را افزایش می‌دهد."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Devastation یک بتل‌مج رنج‌بر است که با قدرت انفجاری Red و جادوی متمرکز Blue از فاصلهٔ میانی دشمنان را قصاب می‌کند؛ Dragonrage کول‌داون اصلی توست."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Scalecommander]] که در همهٔ محتواها توصیه می‌شود و [[Flameshaper]] با Consume Flame که در cleave پخش‌شده کم می‌آورد."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دورکاری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "اجتماعی",
+       "v": "خوب",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "قدرت انفجاری بالا در AoE و اولویت‌بندی اهداف جدید",
+       "cleave دوهدفه قوی",
+       "cleave پخش‌شده تا ۲۵ یارد",
+       "ابزارهای منحصربه‌فرد",
+       "زندگی‌پذیری خوب در برابر آسیب‌های فیزیکی",
+       "انعطاف‌پذیری عالی در حرکت",
+       "قابلیت هیل به عنوان DPS"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "حداکثر رنج ۲۵ یارد به عنوان رنج‌بر",
+       "خروجی تهدید بسیار بالا بدون راه کاهش",
+       "عدم مصونیت؛ باید از ابزارهای دفاعی قبل از آسیب استفاده شود",
+       "اشتراک کلاس با Augmentation که گاهی سایر DPSها را سایه می‌اندازد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Scalecommander",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "بهبود یافته Mass Disintegrate و Deep Breath با Maneuverability در حالی که با Bombardments دشمنان را بمباران می‌کنید."
+      }
+     ]
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Flameshaper",
+       "tag": "گزینه جایگزین",
+       "x": "Fire Breath تقویت شده منجر به انفجارات قدرتمند Consume Flame می‌شود."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "Scalecommander در تمام محتویات توصیه می‌شود. Flameshaper در تک‌هدف و AoE عملکرد مشابهی دارد اما در سناریوهای کلینگ (به خصوص کلینگ پخش شده) کوتاهی می‌کند که در Raid و Mythic+ رایج است؛ همچنین Hover uptime پایین‌تری دارد (بدون بازنشانی Slipstream)."
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "درخت تلنت Devastation Evoker برای پچ 12.1.5 تغییرات جالبی داشته است. دو مسیر اصلی درخت هرو وجود دارد که هرکدام برای موقعیت‌های مختلف بهینه شده‌اند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Scalecommander",
+       "tag": "انتخاب پیش‌فرض (Raid)",
+       "x": "این بیلد برای ریدز بهینه شده و روی افزایش آسیب مستقیم و پایداری تمرکز دارد.",
+       "code": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjZwMDzwMgBjZaMzMNzM2mZmZmZmZmZGwMmZGzMLzMDMwYwGsMGN2GQmBBbYgZGMjHA"
+      },
+      {
+       "title": "Scalecommander",
+       "tag": "انتخاب پیش‌فرض (Mythic+)",
+       "x": "این بیلد برای دنج پلاس طراحی شده و روی انفجار آسیب و تطبیق‌پذیری تمرکز دارد.",
+       "code": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjZwgZGmBGYMTjZmpZmZ2mZmZmZmZmZGwMzMzYmZZmZgBGD2glxox2AyMIYDzgZGM8AA"
+      },
+      {
+       "title": "Scalecommander",
+       "tag": "انتخاب پیش‌فرض (Delves)",
+       "x": "این بیلد برای دلوز بهینه شده و روی بقای بیشتر و آسیب قابل توجه تمرکز دارد.",
+       "code": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMjZgZYmhBGGjZaMzMNjxyMmZmZmZmZGwMzYYmZZmZgBYwGsMGN2GQmBBbYgZGMjB"
+      },
+      {
+       "title": "Flameshaper",
+       "tag": "گزینه جایگزین (Raid)",
+       "x": "این بیلد برای ریدز با مکانیک‌های زمانی طراحی شده و روی افزایش آسیب از اسپل‌های زمانی تمرکز دارد.",
+       "code": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZwMDGMgBjZamZmJjxyMzMzwMzMzAmxMzYmZZmZwMwMmB2ALgZYCsFsMMAmZGG"
+      },
+      {
+       "title": "Flameshaper",
+       "tag": "گزینه جایگزین (Mythic+)",
+       "x": "این بیلد برای دنج پلاس با مکانیک‌های زمانی طراحی شده و روی افزایش آسیب از اسپل‌های زمانی تمرکز دارد.",
+       "code": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjZwMjZGzMwMGDTDzMZM2mZmZGGzMzAmZmxYmZbmZwMwMmBWAbgZYCsFsMMDwMzwA"
+      },
+      {
+       "title": "Flameshaper",
+       "tag": "گزینه جایگزین (Delves)",
+       "x": "این بیلد برای دلوز با مکانیک‌های زمانی طراحی شده و روی افزایش آسیب از اسپل‌های زمانی تمرکز دارد.",
+       "code": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMDmZMzYmBmxYYaYmJjx2MzMzwYmZGwMzMGzMmZGMDMjZgFwGYGmAbBLDzAMzMMA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=Evoker&spec=Devastation",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ بازی Devastation Evoker بر اساس جمع‌آوری Essence و استفاده بهینه از آن در زمان Dragonrage ساخته شده است. این کلاس در حالت تک‌هدف و AoE هر دو قدرت بالایی دارند، اما مدیریت زمان‌بندی اسپل‌ها کلید موفقیت است."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ تک‌هدف (Scalecommander)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Hover اگر Essence کامل است و Deep Breath به‌زودی آماده می‌شود",
+      "Deep Breath",
+      "Deep Breath زمانی که Strafing Run به پایان رسیده باشد",
+      "Dragonrage",
+      "Tip the Scales",
+      "Eternity Surge Rank 1",
+      "Fire Breath Rank 1",
+      "استفاده از Essence Burst یا Essence برای کانال Disintegrate با Mass Disintegrate",
+      "استفاده از Essence Burst یا Essence برای کانال Disintegrate",
+      "Living Flame با Leaping Flames و Burnout",
+      "Living Flame به عنوان Filler",
+      "Azure Strike برای حرکت"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ AoE (Scalecommander)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Hover اگر Essence کامل است و Deep Breath به‌زودی آماده می‌شود",
+      "Deep Breath",
+      "Dragonrage",
+      "Tip the Scales روی Eternity Surge",
+      "Fire Breath Rank 1",
+      "Eternity Surge",
+      "Deep Breath با Strafing Run",
+      "کانال Disintegrate با Mass Disintegrate",
+      "Pyre روی ۳+ هدف",
+      "در غیر این صورت کانال Disintegrate",
+      "Living Flame با Leaping Flames و Burnout",
+      "Azure Strike به عنوان Filler"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "آغازگر (Opener)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Hover دو بار قبل از شروع combate",
+      "پیش‌کست Living Flame",
+      "استفاده از پت شیمیایی آسیب",
+      "Deep Breath",
+      "Dragonrage",
+      "Tip the Scales",
+      "Eternity Surge",
+      "Fire Breath Rank 1",
+      "فقط در AoE: Deep Breath دوباره",
+      "کانال Disintegrate",
+      "ادامه چرخه عادی؛ خارج از AoE تأخیر استت آسیب‌زا تا ۴ استک Rising Fury"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "Dragonrage تضمین‌کننده proc Essence Burst از Living Flame و Azure Strike در طول مدت زمان خود است؛ فعال‌سازی آن ۳ Pyre روی اهداف تصادفی شلیک می‌کند؛ با Mastery: Giantkiller و Tyrancy اثر کامل دارد؛ Fire Breath و Eternity Surge آن را با Animosity طولانی‌تر می‌کنند."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای داواکشن دی‌واستیشن، اولویت اصلی در گیرینگ، افزایش هوش (Intellect) است. پس از آن، کریتیکال (Crit) بیشترین ارزش را دارد و Mastery و است (Haste) و ورساتیلتی (Versatility) در مراتب پایین‌تر قرار می‌گیرند. برای بهینه‌سازی، از سیمولیشن در Raidbots استفاده کنید."
+    },
+    {
+     "t": "call",
+     "x": "توجه داشته باشید که بسیاری از اسلات‌های رید آیتم‌های ویژه هستند که ممکن است سطح آیلم بالاتر، افکت‌های کانتریک یا استات‌های تک داشته باشند. در این موارد، ارتقا بر اساس هوش و سطح آیلم همچنان برنده است."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 271092
+      },
+      {
+       "slot": "دست راست",
+       "id": 245769
+      },
+      {
+       "slot": "سر",
+       "id": 271501
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271499
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271504
+      },
+      {
+       "slot": "مچ",
+       "id": 244584
+      },
+      {
+       "slot": "دست",
+       "id": 271502
+      },
+      {
+       "slot": "کمر",
+       "id": 268254
+      },
+      {
+       "slot": "پا",
+       "id": 271500
+      },
+      {
+       "slot": "پا",
+       "id": 268233
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268249
+      },
+      {
+       "slot": "انگشتر",
+       "id": 158366
+      },
+      {
+       "slot": "دستکش",
+       "id": 270164
+      },
+      {
+       "slot": "دستکش",
+       "id": 281215
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271501
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        271501,
+        271499,
+        271504,
+        271502,
+        271500
+       ],
+       "names": [
+        "Calamitous Echo's Magmashapers",
+        "Calamitous Echo's Sundered Peaks",
+        "Searing Caldera of Calamity",
+        "Calamitous Echo's Ebon Greathorns",
+        "Earthen Pillars of Calamity"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست تیر ۲ پیس این ست، قدرت دامنه [[Shattering Star]] را افزایش می‌دهد و آن را در حداکثر سطح انپاور اجرا می‌کند. ست تیر ۴، افزایش دامنه [[Eternity Surge]] و کاهش بیشتر کول‌داون اسپل‌های انپاور از طریق [[Causality]] را فراهم می‌کند. نکته مهم این است که پراک‌های [[Scintillation]] روی دامنه [[Shattering Star]] تحت تأثیر ضریب ۴۰٪ قرار می‌گیرند."
+    },
+    {
+     "t": "h3",
+     "x": "کالیست‌ها"
+    },
+    {
+     "t": "p",
+     "x": "کالیست‌ها می‌توانند جایگزین خوبی برای آیتم‌های تیر باشند. گزینه‌های قابل توجه شامل [[Crown of the Eternal Fang]]، [[Soulslither Spaulders]]، [[Awoken Dreadfang Cuirass]]، [[Aberrant Commander's Gauntlets]] و [[Cuisses of the Uncoiled Union]] هستند."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های ساخته شده"
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های ساخته شده می‌توانند به خصوص در اوایل بازی یا برای پر کردن اسلات‌های خاص مفید باشند. [[Farstrider's Plated Bracers]] و [[Aln'hara Lantern]] از گزینه‌های قابل توجه هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "**اینتلکت** همیشه اولویت اصلی است چون هم استت بالایی می‌دهد هم قدرت اسپل‌ها را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "بعد از آن **کریتیکال استرایک** و **مستری** بهترین گزینه‌ها هستند و تقریباً ارزش یکسانی دارند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "افزونه سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": [
+        "Indecipherable Eversong Diamond",
+        "Flawless Quick Garnet",
+        "Flawless Masterful Garnet",
+        "Flawless Deadly Peridot",
+        "Flawless Deadly Amethyst",
+        "Flawless Deadly Lapis"
+       ],
+       "ids": [
+        240982,
+        240905,
+        240907,
+        240889,
+        240897,
+        240913
+       ]
+      },
+      {
+       "k": "تالسمان‌ها",
+       "v": [
+        "Enchant Helm - Empowered Rune of Avoidance",
+        "Enchant Shoulders - Amirdrassil's Grace",
+        "Enchant Chest - Mark of the Worldsoul",
+        "Sunfire Silk Spellthread",
+        "Enchant Boots - Lynx's Dexterity",
+        "Enchant Ring - Eyes of the Eagle"
+       ],
+       "ids": [
+        244006,
+        243990,
+        243976,
+        240094,
+        243952,
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای غذا می‌توانید از Quel'dorei Medley نیز استفاده کنید که گزینهٔ خوبی برای موقعیت‌های خاص است."
+    },
+    {
+     "t": "p",
+     "x": "جوهر Indecipherable Eversong Diamond بهترین انتخاب است اما باید حداقل یک جوهر از هر رنگ داشته باشید."
+    },
+    {
+     "t": "p",
+     "x": "برای پیکربندی‌های مختلف، ممکن است لازم باشد برخی از تالسمان‌ها را با گزینه‌های جایگزین تعویض کنید."
+    },
+    {
+     "t": "p",
+     "x": "استفاده از پیش‌دار جنگی در لحظات حساس مانند کول‌داون‌های اصلی می‌تواند عملکرد شما را به شدت افزایش دهد."
+    },
+    {
+     "t": "p",
+     "x": "در صورت عدم دسترسی به بهترین آیتم‌ها، گزینه‌های جایگزین موجود در منابع معتبر را بررسی کنید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در دنیای Mythic+ به عنوان Devastation Evoker، شما باید همزمان خسیره‌ای انفجاری و کنترل‌شده باشید."
+    },
+    {
+     "t": "h3",
+     "x": "راهنمای Mythic+"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "اسکیل کامندر (Scalecommander) انتخاب پیش‌فرض است چون هم دفاعی هم آفنسی دارد.",
+      "در مودهای انبوه از ۳+ هدف از پیِر (Pyre) استفاده کنید و برای گروه‌های فشرده از نفس عمیق (Deep Breath) بهره ببرید.",
+      "ماس دیسینتگریت (Mass Disintegrate) می‌تواند از میان گروه‌ها کانال شود.",
+      "خطر تهدید بالا وجود دارد: حواستان به آگرو باشد و هاور (Hover) را برای دفاع استفاده کنید.",
+      "فوریتی آو د اِسپکتس (Fury of the Aspects) یک کول‌داون هاست؛ زمان‌بندی آن با لاست تانک هماهنگ کنید."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در اسکیل کامندر هم برای دفاع و هم برای آفنسی بهتر عمل می‌کنید."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Devastation Evoker (دیوستیشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل دیوستیشن (Devastation Evoker) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Devastation Evoker talent build midnight",
+   "Devastation Evoker guide midnight",
+   "Devastation Evoker guide 12.1.5",
+   "best Devastation Evoker talents",
+   "Devastation Evoker talent tree midnight",
+   "Devastation Evoker pve guide",
+   "Devastation Evoker rotation midnight",
+   "Devastation Evoker rotation and cooldowns",
+   "Devastation Evoker bis list midnight",
+   "Devastation Evoker best in slot",
+   "Devastation Evoker gear guide",
+   "Devastation Evoker food and potion",
+   "best food for Devastation Evoker",
+   "best flask for Devastation Evoker",
+   "best potion for Devastation Evoker",
+   "Devastation Evoker enchants and gems",
+   "best enchants for Devastation Evoker",
+   "best gems for Devastation Evoker",
+   "Devastation Evoker stat priority midnight",
+   "Devastation Evoker tier set midnight",
+   "Devastation Evoker tier set bonuses",
+   "Devastation Evoker mythic+ guide",
+   "Devastation Evoker m+ guide midnight",
+   "Devastation Evoker raid guide",
+   "Devastation Evoker hero talents",
+   "Devastation Evoker hero tree",
+   "best dps build Devastation Evoker midnight",
+   "Devastation Evoker cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای دیوستیشن",
+   "تلنت دیوستیشن",
+   "تلنت برای Devastation Evoker",
+   "تلنت Evoker دیوستیشن",
+   "بیلد دیوستیشن",
+   "بیلد تلنت دیوستیشن میدنایت",
+   "روتیشن دیوستیشن",
+   "روتیشن و کول‌داون‌های دیوستیشن",
+   "غذا برای دیوستیشن",
+   "غذا برای Devastation Evoker",
+   "غذا و معجون دیوستیشن",
+   "بهترین غذای دیوستیشن",
+   "فلسک دیوستیشن",
+   "بهترین فلسک برای دیوستیشن",
+   "معجون دیوستیشن",
+   "انچنت دیوستیشن",
+   "انچنت و جم دیوستیشن",
+   "بهترین انچنت برای دیوستیشن",
+   "جم دیوستیشن",
+   "بست آیتم دیوستیشن",
+   "بهترین آیتم‌های دیوستیشن",
+   "گیر دیوستیشن",
+   "استت دیوستیشن",
+   "اولویت استت دیوستیشن",
+   "ست تیر دیوستیشن",
+   "مایتی پلاس دیوستیشن",
+   "ام پلاس دیوستیشن",
+   "راهنمای دیوستیشن",
+   "راهنمای Devastation Evoker",
+   "راهنمای ایوکر",
+   "دیوستیشن میدنایت",
+   "ایوکر میدنایت",
+   "هرو تیلنت دیوستیشن",
+   "بیلد دیوستیشن",
+   "بهترین دیوستیشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Devastation Evoker (دیوستیشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Devastation Evoker به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای دیوستیشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Potion of Recklessness»، غذا «Harandar Celebration»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای دیوستیشن چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Acuity of the Ren'dorei» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای دیوستیشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Calamitous Echo's Magmashapers» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Devastation Evoker در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

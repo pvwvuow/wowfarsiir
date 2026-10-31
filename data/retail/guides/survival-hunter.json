@@ -1,0 +1,728 @@
+{
+ "slug": "survival-hunter",
+ "class": "hunter",
+ "class_en": "Hunter",
+ "spec_en": "Survival",
+ "spec_no": 3,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Survival Hunter",
+ "lead": "Survival یک اسپک میله‌ای پرسرعت است که هر ثانیه دکمه‌ای برای فشردن دارد: با [[Raptor Strike]] و [[Kill Command]] در کنار پت می‌جنگی و Focus و Tip of the Spear را مدیریت می‌کنی. دو مسیر Hero Tree داری: [[Sentinel]] که با تنظیم فعلی انتخاب اول ST و AoE است و [[Pack Leader]] با چرخهٔ سریع Raptor Strike/Kill Command.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/hunter/survival/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/hunter/survival/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/hunter/survival/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/hunter/survival/bis-gear",
+   "updated": "2026-10-25"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/hunter/survival/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Raptor Strike": {
+   "fa": "ضربهٔ رپتور پایه"
+  },
+  "Kill Command": {
+   "fa": "فرمان کشتن که آسیب قابل توجهی وارد می‌کند"
+  },
+  "Tip of the Spear": {
+   "fa": "تلنت که Takedown را تقویت می‌کند"
+  },
+  "Sentinel": {
+   "fa": "تلنت اصلی برای مایپلاس که Wildfire Bomb را برای آسیب پک‌ها تقویت می‌کند"
+  },
+  "Pack Leader": {
+   "fa": "مسیر Hero Tree با چرخه سریع Raptor Strike/Kill Command"
+  },
+  "Hunter's Mark": {
+   "fa": "مارک هدف برای افزایش آسیب‌پذیری"
+  },
+  "Mastery: Spirit Bond": {
+   "fa": "استت که کاهش آسیب را به همراه دارد"
+  },
+  "Sentinel's Mark": {
+   "fa": "مارک اسنتری برای افزایش آسیب"
+  },
+  "Howl of the Pack Leader": {
+   "fa": "فراخوانی حیوان همراه توسط تلنت Pack Leader که با استفاده از Raptor Strike و Kill Command فعال می‌شود."
+  },
+  "Wildfire Bomb": {
+   "fa": "اسپل اصلی چند هدفه سروایول هانتر که با Sentinel's Mark قدرت می‌گیرد"
+  },
+  "Boomstick": {
+   "fa": "تلنت که آسیب Boomshot را افزایش می‌دهد"
+  },
+  "Takedown": {
+   "fa": "کول‌داون قدرتمند برای آسیب سریع"
+  },
+  "Moonlight Chakram": {
+   "fa": "چاکر ماه‌تاب برای آسیب دوربرد"
+  },
+  "Raptor Swipe": {
+   "fa": "ضربهٔ رپتور برای آسیب نزدیک"
+  },
+  "Savagery": {
+   "fa": "تلنت برای کاهش کول‌داون Takedown"
+  },
+  "Freezing Trap": {
+   "fa": "تله یخ که دشمنان را برای مدتی منجمد می‌کند"
+  },
+  "Tar Trap": {
+   "fa": "تله قیر که سرعت دشمنان را کاهش می‌دهد"
+  },
+  "Misdirection": {
+   "fa": "اسپل که تهدیدها را به تانک منتقل می‌کند"
+  },
+  "Primal Rage": {
+   "fa": "افزایش دفاعی از حیوان همراه"
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "اسپک Survival Hunter در پچ 12.1.5 یک نقش DPS پرانرژی و پویا است که با [[Raptor Strike]] و [[Kill Command]] در کنار پت خود به جنگ می‌رود. مدیریت Focus و Tip of the Spear کلید موفقیت در این اسپک است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "آسیب‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "سهولت استفاده",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "قدرت در آغاز نبرد",
+       "v": "خوب",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "مقاومت بالا به لطف Mastery: Spirit Bond",
+       "گیم‌پلی جذاب و بصری",
+       "امنیت بالا در محتوای تک‌نفره و دنیای باز",
+       "ابزارهای منحصر به فرد از طریق Hunter's Mark",
+       "قدرت تحرک بالا"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "بازی ضعیف باعث کمبود منابع و توقف می‌شود",
+       "نیاز به پت برای تولید منابع و آسیب",
+       "کیت ابزاری بیشتر برای Mythic+ مناسب است",
+       "وابستگی شدید به تنظیمات نسبت به سایر اسپک‌های هانتر"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Sentinel",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "انتخاب اصلی در حالت تک‌هدف و گروهی در Midnight Season 2. این راهنما بر اساس این ساختار نوشته شده است."
+      },
+      {
+       "title": "Pack Leader",
+       "tag": "گزینه جایگزین",
+       "x": "گزینه نزدیک اما بیشتر تحت تأثیر زمان بیکاری است. خوک این تلنت ممکن است دچار پارری یا ماس شود."
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "Hero Tree Overview"
+    },
+    {
+     "t": "p",
+     "x": "Hero Tree Survival Hunter در پچ 12.1.5 بر مدیریت [[Sentinel's Mark]] یا چرخش [[Raptor Strike]] و [[Kill Command]] برای فعال‌سازی حداکثری [[Howl of the Pack Leader]] متمرکز است."
+    },
+    {
+     "t": "p",
+     "x": "ساختار اصلی بازی بر اساس [[Wildfire Bomb]] با پشتیبانی از [[Kill Command]] و [[Kill Shot]] طراحی شده است."
+    },
+    {
+     "t": "p",
+     "x": "این راهنما برای بازیکنانی که سبک بازی نرمال و کارآمد را ترجیح می‌دهند، مناسب است."
+    },
+    {
+     "t": "call",
+     "x": "Sentinel در حالت تک‌هدف و گروهی عملکرد بهتری دارد، در حالی که Pack Leader بیشتر به زمان فعال بودن وابسته است."
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "درخت تلنت سروایوال هانتر در پچ ۱۲.۱.۵ به شدت بر روی افزایش خسارت و پایداری در نبردهای گروهی متمرکز شده است. انتخاب‌های درخت اصلی و قهرمانی هر دو نقش مهمی در بهینه‌سازی عملکرد شما دارند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Sentinel (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای محیط‌های رید بهینه شده و بر روی افزایش خسارت چندهدف و پایداری متمرکز است.",
+       "code": "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxoxyAYmgNjZmxwyAAAAAAwMmZmhZMmxMYMNDAAAwAgZmllZmHYhZmZGzMzAwMWAjxMziBA"
+      },
+      {
+       "title": "Sentinel (Mythic+)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای دンジون‌ها بهینه شده و بر روی انعطاف‌پذیری و افزایش خسارت در برابر اهداف متعدد متمرکز است.",
+       "code": "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxoxyAYmgtZmZmxY2mHAAAAAAwMmZmhZMmxMYMNDAAAwAAzssMzYBzMzYMzAwM2wixYmZxAA"
+      },
+      {
+       "title": "Sentinel (Delves)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای دلوز بهینه شده و بر روی افزایش بقا و خسارت در شرایط مبارزه خاص متمرکز است.",
+       "code": "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxoxyAYmgtZmZmZmZ2mBAAAAAwMzMzMMjhxMDjpZAAAAGAgltZGLDzMGjxAwM2gZMMziBA"
+      },
+      {
+       "title": "Pack Leader (Raid)",
+       "tag": "واریانت",
+       "x": "این ساختار جایگزین برای رید است که بر روی حمایت از گروه و افزایش خسارت از طریق افکت‌های گروهی متمرکز است.",
+       "code": "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMGWIbwMM0gFjZmxMWGAAAAAAmZmZmhZMmxMYMNDAAAwAgZssMzMLMzMzYmxAmZDAjxMWMAA"
+      },
+      {
+       "title": "Pack Leader (Mythic+)",
+       "tag": "واریانت",
+       "x": "این ساختار جایگزین برای دنجون‌ها است که بر روی افزایش خسارت در برابر اهداف متعدد و انعطاف‌پذیری متمرکز است.",
+       "code": "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2ILwMM0gFzMzMzMWGAAAAAAmZmZmhZMmxMYMNDAAAwAgHYssMzYhZmZGzMGwMbAYMmZWMAA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=hunter&spec=survival",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ Survival Hunter بر اساس استفادهٔ بهینه از تلنت‌ها و کول‌داون‌های کلیدی بنا شده است. این چرخه با در نظر گرفتن پچ 12.1.5 و Midnight Season 2 تنظیم شده است."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ اصلی"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Hunter's Mark اگر هنوز فعال نیست",
+      "Kill Command وقتی stacks Tip of the Spear تمام شد",
+      "Boomstick",
+      "Wildfire Bomb اگر هدف تحت تأثیر Sentinel's Mark است یا ~4-6 ثانیه تا شارژ کامل Wildfire Bomb باقی مانده",
+      "Kill Command یک بار قبل از ورود به Takedown برای maximizing stacks Tip of the Spear",
+      "Takedown اگر یک stack Tip of the Spear برای مصرف دارید",
+      "Moonlight Chakram",
+      "Raptor Swipe",
+      "Raptor Strike"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "Takedown یک کول‌داون بسیار کوتاه مدت است که همیشه باید با Tip of the Spear تقویت شود. 20% buff به شما و حیوانات شما فقط روی abilityهای آسیب‌زا تأثیر می‌گذارد (هیچ trinket یا خارجی). معمولاً 60s CD با 2 point در Savagery."
+    },
+    {
+     "t": "h3",
+     "x": "آغاز"
+    },
+    {
+     "t": "p",
+     "x": "با Hunter's Mark فعال و Kill Command به Takedown با کامل stacks Tip of thepeare شروع کنید. trinket on-use را با پنجره‌های Takeup هماهنگ کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای Survival Hunter در پچ 12.1.5، اولویت اصلی در گیرینگ ماستری است، سپس کریتیکال استرایک، هیت و در نهاییت ورساتیلتی. اثرات کانتریپ‌ها مانند {{268252}} و {{268253}} را به حداکثر برسانید و نسبت استت‌ها را بهینه نگه دارید."
+    },
+    {
+     "t": "call",
+     "x": "یک آیتم یون-یوز با یک پسیو، هماهنگ با [[Takedown]] استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "سلاح‌های پیشنهادی"
+    },
+    {
+     "t": "p",
+     "x": "دو دست: {{268209}} در دست اصلی و {{271093}} در دست فرعی. جایگزین یک دسته: {{268213}}."
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات برتر (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سر",
+       "id": 271492
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271490
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271876
+      },
+      {
+       "slot": "مچ",
+       "id": 244584
+      },
+      {
+       "slot": "دست",
+       "id": 271493
+      },
+      {
+       "slot": "کمر",
+       "id": 244581
+      },
+      {
+       "slot": "پا",
+       "id": 268258
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268252
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "آویز",
+       "id": 270175
+      },
+      {
+       "slot": "آویز",
+       "id": 270173
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "ست تیر"
+    },
+    {
+     "t": "set",
+     "id": 271492
+    },
+    {
+     "t": "p",
+     "x": "این ست از چهار قطعه تشکیل شده و قطعات آن از کاتالیز کردن موارد زیر به دست می‌آیند: {{244584}}، {{244581}}، {{268253}} و {{268253}}."
+    },
+    {
+     "t": "h3",
+     "x": "سازمان‌دهی استت‌ها"
+    },
+    {
+     "t": "stat",
+     "items": [
+      "Mastery",
+      "Critical Strike",
+      "Haste",
+      "Versatility"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Mastery",
+      "Critical Strike",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی برای سروایوال هانتر استادسری (Mastery) است که به طور قابل توجهی قوی‌تر از بقیه استت‌ها عمل می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "تعادل معقولی بین کریتیکال استرایک (Critical Strike) و هاست (Haste) از طریق جواهر و افکت‌ها حفظ کنید."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پیش‌غذا",
+       "v": "Fleeting Flask of the Magisters",
+       "ids": [
+        245932
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "افزونه اسلحه",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن اسلحه",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Loa's Gathering",
+       "ids": [
+        275265
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بهترین عملکرد در محیط‌های PvE، از این آیتم‌ها و افزونه‌ها استفاده کنید تا تمام مزیت‌های Survival Hunter را به کار بگیرید."
+    },
+    {
+     "t": "h3",
+     "x": "جواهر"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond (حداکثر 1 عدد)",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Deadly Amethyst",
+       "ids": [
+        240897
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پا",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "حلقه",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      },
+      {
+       "k": "پا",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "راهنمای مایپلاس برای سروایول هانتر"
+    },
+    {
+     "t": "p",
+     "x": "در مایپلاس، سروایول هانتر یک کلاس بسیار قدرتمند برای نقش DPS است که با تلنت‌های مناسب می‌تواند هم در تک‌هدف و هم در چندین هدف عملکرد فوق‌العاده‌ای داشته باشد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "تلنت اصلی برای مایپلاس، **Sentinel** است که با Wildfire Bomb برای آسیب پک‌ها ترکیب می‌شود.",
+      "کیت ابزاریتان در کلیرها بسیار ارزشمند است: Freezing Trap، Tar Trap و Misdirection تانک در هر پول."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "همیشه حیوان همراه خود را با آف‌های مناسب نگه دارید؛ حیوانات Ferocity یک جایگزین دفاعی Primal Rage ارائه می‌دهند.",
+      "از Boomstick و Wildfire Bomb برای پک‌های پخش شده استفاده کنید و Tip of the Spear را برای Takedown روی اهداف بزرگ ذخیره کنید."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "فصل Midnight Season 2 تغییرات مهمی در بهینه‌سازی سروایول هانتر برای مایپلاس ایجاد کرده است."
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "آسیب بالا در پک‌های متعدد با Wildfire Bomb و Sentinel's Mark",
+       "ابزاریتان بالا با تله‌ها و Misdirection",
+       "انعطاف‌پذیری در مدیریت حیوان همراه"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "وابستگی به حیوان همراه برای برخی تلنت‌ها",
+       "نیاز به مدیریت صحیح کول‌داون‌ها برای اهداف بزرگ"
+      ]
+     }
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=Hunter&spec=Survival",
+     "x": "مشاهده درخت تلنت"
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Survival Hunter (سروایول) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل سروایول (Survival Hunter) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Survival Hunter talent build midnight",
+   "Survival Hunter guide midnight",
+   "Survival Hunter guide 12.1.5",
+   "best Survival Hunter talents",
+   "Survival Hunter talent tree midnight",
+   "Survival Hunter pve guide",
+   "Survival Hunter rotation midnight",
+   "Survival Hunter rotation and cooldowns",
+   "Survival Hunter bis list midnight",
+   "Survival Hunter best in slot",
+   "Survival Hunter gear guide",
+   "Survival Hunter food and potion",
+   "best food for Survival Hunter",
+   "best flask for Survival Hunter",
+   "best potion for Survival Hunter",
+   "Survival Hunter enchants and gems",
+   "best enchants for Survival Hunter",
+   "best gems for Survival Hunter",
+   "Survival Hunter stat priority midnight",
+   "Survival Hunter tier set midnight",
+   "Survival Hunter tier set bonuses",
+   "Survival Hunter mythic+ guide",
+   "Survival Hunter m+ guide midnight",
+   "Survival Hunter raid guide",
+   "Survival Hunter hero talents",
+   "Survival Hunter hero tree",
+   "best dps build Survival Hunter midnight",
+   "Survival Hunter cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای سروایول",
+   "تلنت سروایول",
+   "تلنت برای Survival Hunter",
+   "تلنت Hunter سروایول",
+   "بیلد سروایول",
+   "بیلد تلنت سروایول میدنایت",
+   "روتیشن سروایول",
+   "روتیشن و کول‌داون‌های سروایول",
+   "غذا برای سروایول",
+   "غذا برای Survival Hunter",
+   "غذا و معجون سروایول",
+   "بهترین غذای سروایول",
+   "فلسک سروایول",
+   "بهترین فلسک برای سروایول",
+   "معجون سروایول",
+   "انچنت سروایول",
+   "انچنت و جم سروایول",
+   "بهترین انچنت برای سروایول",
+   "جم سروایول",
+   "بست آیتم سروایول",
+   "بهترین آیتم‌های سروایول",
+   "گیر سروایول",
+   "استت سروایول",
+   "اولویت استت سروایول",
+   "ست تیر سروایول",
+   "مایتی پلاس سروایول",
+   "ام پلاس سروایول",
+   "راهنمای سروایول",
+   "راهنمای Survival Hunter",
+   "راهنمای هانتر",
+   "سروایول میدنایت",
+   "هانتر میدنایت",
+   "هرو تیلنت سروایول",
+   "بیلد سروایول",
+   "بهترین سروایول"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Survival Hunter (سروایول) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Survival Hunter به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای سروایول چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: معجون جنگی «Potion of Recklessness»، غذا «Fleeting Flask of the Magisters»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای سروایول چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Rite of the Hash'ey»، جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای سروایول کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Survival Hunter در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

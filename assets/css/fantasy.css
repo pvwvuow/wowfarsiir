@@ -1,0 +1,265 @@
+/* =========================================================
+   wowfarsi - fantasy layer (loads last)
+   Same language as the logo flourish: hairlines that fade
+   out, a ring + dot, little diamonds. No boxes.
+   ========================================================= */
+
+/* ---------- nav: light glass, blur keeps page text from clashing ---------- */
+html body .nav {
+  background: linear-gradient(180deg, rgba(4, 6, 11, 0.5) 0%, rgba(4, 6, 11, 0.28) 65%, rgba(4, 6, 11, 0.06) 100%);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+}
+
+/* ---------- sync: orbs + flow ---------- */
+html body .sigil { width: 8rem; gap: 1.3rem; }
+html body .flow-line { align-self: flex-start; margin-top: 46px; }
+html body .orb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 78px; height: 78px;
+  border-radius: 9999px;
+  color: var(--gold-2);
+  background: radial-gradient(circle at 50% 36%, rgba(34, 52, 88, 0.85), rgba(7, 10, 18, 0.94) 72%);
+  box-shadow: inset 0 0 0 1px rgba(240, 199, 94, 0.45), inset 0 0 22px rgba(61, 95, 150, 0.3), 0 0 28px -8px rgba(240, 199, 94, 0.4);
+}
+html body .orb::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: inherit;
+  border: 1px dashed rgba(240, 199, 94, 0.26);
+  animation: wf-spin 30s linear infinite;
+}
+html body .orb::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: -11px;
+  width: 5px; height: 5px;
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.9);
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+html body .orb-main { width: 94px; height: 94px; }
+html body .orb-logo {
+  position: static;
+  width: 60px; height: auto;
+  filter: drop-shadow(0 0 10px rgba(240, 199, 94, 0.35));
+}
+html body .flow-line-rev .wf-flow-dot { animation-direction: reverse; }
+html body .build-banner p:first-child { letter-spacing: 0.04em; }
+
+/* ---------- classes: crest buttons ---------- */
+html body .crest-cell { width: 92px; gap: 0.45rem; }
+html body .crest-fa { font-size: 11px; font-weight: 600; line-height: 1.3; text-align: center; color: var(--mut); }
+html body .crest-cell[aria-pressed="true"]::after { transform: translateX(-50%) scaleX(1); opacity: 1; }
+html body .crest-cell[aria-pressed="true"] .crest-fa { color: var(--parch-dim); }
+
+/* ---------- classes: the tome ---------- */
+html body .tome {
+  --ln: rgba(240, 199, 94, 0.5);
+  position: relative;
+  padding: 3rem 1.5rem 2.5rem;
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(180deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) left top / 1px 100% no-repeat,
+    linear-gradient(180deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) right top / 1px 100% no-repeat,
+    radial-gradient(ellipse 55% 60% at 22% 0%, color-mix(in srgb, var(--cc, #f0c75e) 16%, transparent), transparent 72%),
+    linear-gradient(180deg, rgba(8, 12, 21, 0.62), rgba(4, 6, 11, 0.8));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+html body .tome::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 0;
+  width: 44px; height: 13px;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px);
+  filter: drop-shadow(0 0 4px rgba(240, 199, 94, 0.55));
+}
+html body .tome::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 6px; height: 6px;
+  background: var(--gold-2);
+  box-shadow: 0 0 10px rgba(240, 199, 94, 0.9);
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+html body .tome-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 768px) {
+  html body .tome { padding: 3.25rem 2.5rem 2.75rem; }
+  html body .tome-grid { grid-template-columns: 17rem 1fr; gap: 3.5rem; }
+}
+html body .tome-id { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+html body .tome-id::after {
+  content: "";
+  display: none;
+  position: absolute;
+  inset-inline-end: -1.75rem; top: 6%; bottom: 6%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(240, 199, 94, 0.3), transparent);
+}
+@media (min-width: 768px) { html body .tome-id::after { display: block; } }
+html body .tome-id h3 { margin-top: 1.25rem; font-size: 1.5rem; font-weight: 900; letter-spacing: 0.04em; }
+html body .tome-fa { margin-top: 0.15rem; font-size: 0.85rem; font-weight: 700; color: var(--parch-dim); }
+html body .tome-stats { margin-top: 1.4rem; display: flex; gap: 1.4rem; }
+html body .tome-stats div { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+html body .tome-stats b { font-size: 1.4rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+html body .tome-stats span { font-size: 11px; font-weight: 700; color: var(--mut); }
+html body .tome-meter { margin-top: 1.5rem; width: 100%; max-width: 13rem; }
+html body .tome-meter-line { position: relative; height: 1px; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.28), transparent); }
+html body .tome-meter-line i {
+  position: absolute; top: 0; inset-inline-start: 0;
+  height: 2px; margin-top: -0.5px;
+  background: linear-gradient(270deg, var(--cc, #f0c75e), transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cc, #f0c75e) 60%, transparent);
+}
+html body .tome-meter p { margin-top: 0.6rem; font-size: 11px; font-weight: 700; color: var(--mut); }
+html body .tome-id .btn { margin-top: 1.75rem; }
+
+html body .tome-cap {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 11px; font-weight: 800; color: var(--mut);
+}
+html body .tome-cap span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.26)); }
+html body .tome-cap span:last-child { background: linear-gradient(270deg, transparent, rgba(240, 199, 94, 0.26)); }
+
+html body .spec-card {
+  position: relative;
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.1rem 0.75rem;
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.2) 30%, rgba(240, 199, 94, 0.2) 70%, transparent) center bottom / 100% 1px no-repeat;
+  transition: background-color 0.3s ease;
+}
+html body .spec-card:last-child { background-image: none; }
+html body .spec-card:hover { background-color: rgba(240, 199, 94, 0.035); }
+html body .spec-gem {
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+  width: 9px; height: 9px;
+  transform: rotate(45deg);
+  border: 1px solid var(--cc);
+  background: color-mix(in srgb, var(--cc) 30%, transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cc) 55%, transparent);
+}
+html body .spec-name { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.06em; color: var(--parch); }
+html body .spec-new {
+  margin-inline-start: 0.6rem;
+  padding: 0.05rem 0.5rem;
+  font-style: normal; font-size: 10px; font-weight: 800; letter-spacing: 0;
+  color: #d98ef5;
+  background: linear-gradient(90deg, transparent, rgba(197, 88, 232, 0.16), transparent);
+  border-block: 1px solid rgba(197, 88, 232, 0.4);
+}
+html body .spec-heroes { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; }
+html body .hero-tag {
+  position: relative;
+  padding-inline-start: 0.95rem;
+  font-size: 11.5px; letter-spacing: 0.04em; color: var(--blue-1);
+}
+html body .hero-tag::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0.05rem; top: 50%;
+  width: 5px; height: 5px;
+  border: 1px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ---------- progress bars: a thread with a diamond at its tip ---------- */
+html body .cp-track { height: 2px; border-radius: 0; overflow: visible; background: linear-gradient(90deg, rgba(240, 199, 94, 0.04), rgba(240, 199, 94, 0.2), rgba(240, 199, 94, 0.04)); }
+html body .cp-fill {
+  position: relative;
+  height: 2px; border-radius: 0;
+  background: linear-gradient(270deg, var(--c, #f0c75e), transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--c, #f0c75e) 55%, transparent);
+}
+html body .cp-fill::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: -3px; top: 50%;
+  width: 6px; height: 6px;
+  background: var(--c, #f0c75e);
+  box-shadow: 0 0 8px var(--c, #f0c75e);
+  transform: translateY(-50%) rotate(45deg);
+}
+html body .cp-fill[data-w="0"]::after { opacity: 0; }
+html body .progress-note { font-size: 12px; }
+
+/* ---------- roadmap: keep the text clear of the rail ---------- */
+html body .quest { padding-left: 0; padding-inline-start: 3rem; }
+
+/* ---------- talent page: class tabs ---------- */
+html body .tt-class-tabs { max-width: 46rem; margin-inline: auto; }
+html body .tt-class-tab .wf-crest { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease; }
+html body .tt-class-tab:hover .wf-crest { transform: translateY(-5px) scale(1.04); }
+
+/* ---------- talent page: spec chips ---------- */
+html body .tt-chip {
+  --gap: 18px;
+  --orn: 0.85;
+  padding: 0.75rem 2.1rem;
+  font-family: "Cinzel", "Times New Roman", serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+html body .tt-chip::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 0;
+  width: 5px; height: 5px;
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.8);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+html body .tt-chip:hover::before,
+html body .tt-chip[data-active="true"]::before { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+html body .tt-chip[data-active="true"] { text-shadow: 0 0 14px rgba(240, 199, 94, 0.5); }
+
+/* ---------- talent page: zoom buttons as diamonds ---------- */
+html body .tt-toolbar { gap: 0.55rem; }
+html body .tt-zoom-btn {
+  position: relative;
+  width: 36px; height: 36px;
+  background: none;
+  border: 0;
+  color: var(--gold-1);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+html body .tt-zoom-btn::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(240, 199, 94, 0.55);
+  background: rgba(5, 8, 14, 0.82);
+  transform: rotate(45deg);
+  transition: inset 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+html body .tt-zoom-btn::after { content: none; }
+html body .tt-zoom-btn svg { position: relative; z-index: 1; }
+html body .tt-zoom-btn:hover { color: var(--gold-1); }
+html body .tt-zoom-btn:hover::before {
+  inset: 4px;
+  border-color: var(--gold-1);
+  box-shadow: 0 0 14px rgba(240, 199, 94, 0.55), inset 0 0 8px rgba(240, 199, 94, 0.18);
+}
+html body .tt-zoom-btn:active::before { inset: 5px; }
+html body .tt-zoom-val { min-width: 52px; letter-spacing: 0.06em; }
+
+@media (prefers-reduced-motion: reduce) {
+  html body .orb::before { animation: none; }
+}

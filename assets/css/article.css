@@ -1,0 +1,105 @@
+/* wowfarsi - news article page + fantasy-minimal news cards. No boxes: fading rules, diamonds, soft rise-in. */
+html body .ar-wrap { max-width: 46rem; margin: 0 auto; padding: 0 1rem 2rem; }
+
+/* breadcrumb */
+html body .ar-crumb { display: flex; align-items: center; justify-content: center; gap: 0.7rem; margin-bottom: 1.6rem; font-size: 12px; color: var(--mut); }
+html body .ar-crumb a { color: var(--parch-dim); transition: color 0.25s ease; }
+html body .ar-crumb a:hover { color: var(--gold-1); }
+html body .ar-crumb i, html body .ar-meta i { display: inline-block; width: 5px; height: 5px; background: var(--gold-3); box-shadow: 0 0 6px rgba(240, 199, 94, 0.6); transform: rotate(45deg); }
+
+/* tags: two fading rules, no pill */
+html body .ar-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 1.2rem; }
+html body .ar-tag { padding: 0.05rem 1rem; font-size: 11px; font-weight: 700; color: var(--gold-2); border-block: 1px solid rgba(240, 199, 94, 0.3); background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.08), transparent); transition: border-color 0.25s ease, color 0.25s ease; }
+html body a.ar-tag:hover { color: var(--gold-1); border-block-color: rgba(246, 224, 163, 0.8); }
+
+/* title + meta */
+html body .ar-title { margin: 0 0 1rem; text-align: center; font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 900; line-height: 2; }
+html body .ar-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.8rem; font-size: 12.5px; color: var(--parch-dim); }
+html body .ar-meta a { color: var(--blue-1); transition: color 0.25s ease; }
+html body .ar-meta a:hover { color: var(--gold-1); }
+
+/* ornament: ---- o.o ---- (same as the logo flourish) */
+html body .ar-orn { height: 13px; margin: 1.7rem auto; max-width: 30rem; background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.55)) left 50% / calc(50% - 26px) 1px no-repeat,
+    linear-gradient(270deg, transparent, rgba(240, 199, 94, 0.55)) right 50% / calc(50% - 26px) 1px no-repeat;
+  filter: drop-shadow(0 0 4px rgba(240, 199, 94, 0.35)); }
+
+/* lead: a pull-quote with two fading rules instead of a side bar */
+html body .ar-lead { position: relative; margin: 0 0 1.8rem; padding: 1.3rem 1.2rem; text-align: center; font-size: 1.02rem; line-height: 2.2; color: var(--parch); background:
+    linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.4) 20%, rgba(240, 199, 94, 0.4) 80%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.4) 20%, rgba(240, 199, 94, 0.4) 80%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.06) 20%, rgba(240, 199, 94, 0.06) 80%, transparent); }
+html body .ar-lead::before, html body .ar-lead::after { content: ''; position: absolute; left: 50%; width: 5px; height: 5px; background: var(--gold-2); box-shadow: 0 0 8px rgba(240, 199, 94, 0.8); }
+html body .ar-lead::before { top: 0; transform: translate(-50%, -50%) rotate(45deg); }
+html body .ar-lead::after { bottom: 0; transform: translate(-50%, 50%) rotate(45deg); }
+
+/* body */
+html body .ar-body p { margin: 1.15rem 0; font-size: 0.97rem; line-height: 2.35; color: var(--parch); }
+html body .ar-body p:first-child { font-size: 1rem; }
+
+/* source note */
+html body .ar-src { position: relative; margin-top: 0.5rem; padding: 1.1rem 1.4rem; font-size: 12.5px; line-height: 2.1; color: var(--parch-dim); background:
+    linear-gradient(90deg, transparent, rgba(143, 180, 232, 0.4) 20%, rgba(143, 180, 232, 0.4) 80%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(143, 180, 232, 0.4) 20%, rgba(143, 180, 232, 0.4) 80%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(143, 180, 232, 0.07) 20%, rgba(143, 180, 232, 0.07) 80%, transparent); }
+html body .ar-src a { color: var(--blue-1); transition: color 0.25s ease; }
+html body .ar-src a:hover { color: var(--gold-1); }
+html body .ar-src .ar-en { display: block; direction: ltr; text-align: left; font-family: "Cinzel", "Times New Roman", serif; letter-spacing: 0.03em; color: var(--parch); }
+
+/* actions */
+html body .ar-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin: 2rem 0 0.5rem; }
+
+/* related */
+html body .ar-rel { margin-top: 3rem; }
+html body .ar-rel h2 { display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin: 0 0 1rem; font-size: 0.95rem; font-weight: 800; color: var(--gold-2); }
+html body .ar-rel h2::before { content: ''; width: 3rem; height: 1px; background: linear-gradient(90deg, rgba(240, 199, 94, 0.7), transparent); }
+html body .ar-rel h2::after { content: ''; width: 3rem; height: 1px; background: linear-gradient(270deg, rgba(240, 199, 94, 0.7), transparent); }
+html body .ar-rel a { position: relative; display: block; padding: 0.95rem 2rem 0.95rem 0.5rem; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.22) 25%, rgba(240, 199, 94, 0.22) 75%, transparent) center bottom / 100% 1px no-repeat; transition: background-color 0.3s ease; }
+html body .ar-rel a:last-child { background-image: none; }
+html body .ar-rel a::before { content: ''; position: absolute; inset-inline-start: 0.6rem; top: 1.45rem; width: 6px; height: 6px; background: var(--gold-3); box-shadow: 0 0 8px rgba(240, 199, 94, 0.6); transform: rotate(45deg); transition: background-color 0.25s ease, box-shadow 0.25s ease; }
+html body .ar-rel a:hover { background-color: rgba(240, 199, 94, 0.035); }
+html body .ar-rel a:hover::before { background: var(--gold-1); box-shadow: 0 0 12px rgba(246, 224, 163, 0.9); }
+html body .ar-rel b { display: block; font-size: 0.93rem; font-weight: 700; line-height: 1.9; color: var(--parch); padding-inline-start: 1.2rem; }
+html body .ar-rel span { display: block; font-size: 11.5px; color: var(--mut); padding-inline-start: 1.2rem; }
+
+html body .ar-empty { padding: 4rem 1rem; text-align: center; color: var(--parch-dim); }
+html body .ar-loading { padding: 5rem 1rem; text-align: center; color: var(--mut); font-size: 13px; animation: wowfa-pulse 2.4s ease-in-out infinite; }
+
+/* rise-in, staggered */
+html body .ar-rise { animation: ar-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+html body .ar-rise.d1 { animation-delay: 0.08s; }
+html body .ar-rise.d2 { animation-delay: 0.16s; }
+html body .ar-rise.d3 { animation-delay: 0.24s; }
+html body .ar-rise.d4 { animation-delay: 0.32s; }
+@keyframes ar-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ===== news list (news.html): same language, no boxes ===== */
+html body .nw-card { padding: 1.2rem 1.3rem 1.05rem; border: 0; border-radius: 0; box-shadow: none; --ln: rgba(240, 199, 94, 0.32); background:
+    linear-gradient(90deg, transparent, var(--ln) 16%, var(--ln) 84%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 16%, var(--ln) 84%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(11, 15, 26, 0.6) 14%, rgba(11, 15, 26, 0.6) 86%, transparent); transition: --ln 0.35s ease, transform 0.35s ease; }
+html body .nw-card:hover { --ln: rgba(246, 224, 163, 0.85); transform: translateY(-2px); box-shadow: none; border: 0; }
+html body .nw-card::before { content: ''; position: absolute; left: 50%; top: 0; width: 5px; height: 5px; background: var(--gold-2); box-shadow: 0 0 8px rgba(240, 199, 94, 0.8); transform: translate(-50%, -50%) rotate(45deg) scale(0); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; }
+html body .nw-card:hover::before { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+html body .nw-tag { border: 0; border-radius: 0; border-block: 1px solid rgba(240, 199, 94, 0.28); padding: 0 0.8rem; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.08), transparent); }
+html body .nw-qrow { border: 0; border-radius: 0; padding: 0.8rem 0.6rem; background: linear-gradient(90deg, transparent, rgba(143, 180, 232, 0.28) 25%, rgba(143, 180, 232, 0.28) 75%, transparent) center bottom / 100% 1px no-repeat; }
+
+@media (prefers-reduced-motion: reduce) {
+  html body .ar-rise, html body .ar-loading { animation: none; }
+}
+
+/* ===== item/decor cards (auto-extracted from Wowhead tooltips) ===== */
+html body .ar-items-title { margin: 2.2rem 0 .6rem; font-size: 1.02rem; color: var(--mut); font-weight: 600; }
+html body .item-card { background: linear-gradient(180deg, rgba(143, 180, 232, 0.045), rgba(11, 15, 26, 0.35)); border: 1px solid rgba(74, 222, 128, 0.35); border-radius: 10px; padding: .8rem 1.1rem; margin: .9rem 0; max-width: 34rem; direction: rtl; }
+html body .item-card .ic-name { color: #4ade80; font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: .45rem; direction: ltr; justify-content: flex-end; text-shadow: 0 0 10px rgba(74, 222, 128, .35); }
+html body .item-card .ic-icon { font-style: normal; filter: drop-shadow(0 0 4px rgba(74, 222, 128, .5)); }
+html body .item-card table { width: 100%; border-collapse: collapse; margin-top: .4rem; font-size: .95rem; }
+html body .item-card th { color: var(--mut); font-weight: 400; white-space: nowrap; padding: .18rem .6rem .18rem 0; text-align: right; vertical-align: top; }
+html body .item-card td { color: var(--parch); padding: .18rem 0; text-align: right; }
+html body .item-card td .ltr, html body .item-card .ic-name .ltr { direction: ltr; unicode-bidi: embed; }
+html body .item-card .ic-spec { color: #d2a8ff; font-size: .95rem; margin: .25rem 0 0; direction: ltr; text-align: right; }
+html body .item-card .ic-img { width: 44px; height: 44px; border-radius: 8px; border: 1px solid rgba(74, 222, 128, 0.35); background: rgba(11, 15, 26, 0.6); object-fit: cover; flex: none; }

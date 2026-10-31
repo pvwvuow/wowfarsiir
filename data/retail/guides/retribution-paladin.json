@@ -1,0 +1,851 @@
+{
+ "slug": "retribution-paladin",
+ "class": "paladin",
+ "class_en": "Paladin",
+ "spec_en": "Retribution",
+ "spec_no": 3,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Retribution Paladin",
+ "lead": "Retribution Paladin یک DPS مبارز با Holy Power است که با [[Final Verdict]] و [[Divine Storm]] و زنجیرهٔ کول‌داون‌هایش ([[Avenging Wrath]] و [[Execution Sentence]]) آسیب می‌زند. دو مسیر Hero Tree داری: [[Templar]] با برست پنجره‌کوتاه و [[Hammer of Light]]، و [[Herald of the Sun]] با آسیب دوره‌ای و کلوی پایدار؛ فاصلهٔ این دو کم است و بسته به پروفایل آسیب هر دو ارزش بازی دارند.",
+ "sources": [
+  {
+   "name": "Wowhead",
+   "url": "https://www.wowhead.com/guide/classes/paladin/retribution/overview-pve-dps"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/paladin/retribution/rotation-cooldowns-pve-dps"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/paladin/retribution/talent-builds-pve-dps",
+   "updated": "2026-10-27"
+  },
+  {
+   "name": "Wowhead BiS",
+   "url": "https://www.wowhead.com/guide/classes/paladin/retribution/bis-gear"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/paladin/retribution/stat-priority-pve-dps"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/paladin/retribution/enchants-gems-pve-dps"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Final Verdict": {
+   "fa": "تلنت جایگزین برای Divine Storm که با پروک Divine Arbiter همراه است"
+  },
+  "Divine Storm": {
+   "fa": "یک اسپل آوئی که به اهداف اطراف آسیب می‌زند و هولی پاور مصرف می‌کند"
+  },
+  "Avenging Wrath": {
+   "fa": "قدرت نهایی پالادین که آسیب و سرعت افزایش می‌دهد"
+  },
+  "Execution Sentence": {
+   "fa": "یک اسپل قوی که روی هدف اولیه آسیب می‌زند و سپس به اهداف دیگر انتقال می‌یابد"
+  },
+  "Templar": {
+   "fa": "تلنت که برای باس‌ها و پیک‌های سریع قوی‌تر است"
+  },
+  "Herald of the Sun": {
+   "fa": "تلنت که برای پیک‌های طولانی با کلی دپس قوی‌تر است"
+  },
+  "Divine Shield": {
+   "fa": "اسپل دفاعی که آسیب را نادیده می‌گیرد"
+  },
+  "Divine Protection": {
+   "fa": "اسپل دفاعی کاهش‌دهندهٔ آسیب دریافتی"
+  },
+  "Divine Steed": {
+   "fa": "اسپل حرکتی سریع برای جابجایی"
+  },
+  "Wake of Ashes": {
+   "fa": "یک اسپل اولیه که هولی پاور تولید می‌کند و اهداف را از بین می‌برد"
+  },
+  "Divine Toll": {
+   "fa": "یک اسپل با کول‌داون کوتاه که آسیب می‌زند و هولی پاور تولید می‌کند"
+  },
+  "Blade of Justice": {
+   "fa": "یک اسپل پایه که هولی پاور تولید می‌کند"
+  },
+  "Hammer of Wrath": {
+   "fa": "یک اسپل قوی که در پایان عمر اهداف قابل اجراست"
+  },
+  "Judgment": {
+   "fa": "یک اسپل با کول‌داون کوتاه که آسیب می‌زند و تلنت‌ها را فعال می‌کند"
+  },
+  "Art of War": {
+   "fa": "یک پروک که به شما اجازه می‌دهد Blade of Justice یا Hammer of Wrath را بدون مصرف هولی پاور اجرا کنید"
+  },
+  "Light Within": {
+   "fa": "یک پروک که به شما اجازه می‌دهد Holy Shock را بدون مصرف هولی پاور اجرا کنید"
+  },
+  "Crusade": {
+   "fa": "یک تلنت که Avenging Wrath را تقویت می‌کند و آن را طولانی‌تر می‌کند"
+  },
+  "Divine Resonance": {
+   "fa": "یک تلنت که Hammer of Wrath را تقویت می‌کند"
+  },
+  "Expurgation": {
+   "fa": "یک تلنت که Judgment را روی چند هدف اعمال می‌کند"
+  },
+  "Radiance of the Consecrated Flame": {
+   "fa": "ست تیر رادیانس آو د کنسرکیتد فلام"
+  },
+  "Divine Purpose": {
+   "fa": "تلنت دیواین پرپاس"
+  },
+  "Divine Power": {
+   "fa": "افکت دیواین پاور"
+  },
+  "Divine Arbiter": {
+   "fa": "افکت دیواین آربیت"
+  },
+  "Loa Worshiper's Band": {
+   "fa": "افزونه حلقه Loa Worshiper's Band"
+  },
+  "Stabilizing Gemstone Bandolier": {
+   "fa": "افزونه Stabilizing Gemstone Bandolier"
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جواهر Flawless Masterful Peridot"
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "الماس Indecipherable Eversong Diamond"
+  },
+  "Matrix Catalyst": {
+   "fa": "ماتریکس کالیستیر"
+  },
+  "Raidbots": {
+   "fa": "سایت سیم Raidbots"
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پیش‌فرض‌ترین پوتیون درمانی برای بازیکنان، با مقدار قابل توجهی بهبودی."
+  },
+  "Potion of Recklessness": {
+   "fa": "پوتیون جنگی که مقدار زیادی اسپک به شما می‌دهد و برای استفاده در لحظات حساس مناسب است."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "طلسم موقت سلاح که با هر ضربه به دشمن، آتش به آن وارد می‌کند."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "طلسم دائمی سلاح که مقداری کریت و اسپک به شما می‌دهد."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "جوهر افزوده که به شما اجازه می‌دهد یک درخت تلنت اضافی باز کنید."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسک که مقدار زیادی اسپک و استت‌های دیگر را افزایش می‌دهد."
+  },
+  "Royal Roast": {
+   "fa": "غذایی که مقدار زیادی استت‌های ثانویه را افزایش می‌دهد."
+  },
+  "Harandar Celebration": {
+   "fa": "غذایی جایگزین که مانند Royal Roast عمل می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Retribution Paladin یک DPS مبارز با Holy Power است که با [[Final Verdict]] و [[Divine Storm]] و زنجیرهٔ کول‌داون‌هایش ([[Avenging Wrath]] و [[Execution Sentence]]) آسیب می‌زند."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Templar]] با برست پنجره‌کوتاه و [[Hammer of Light]]، و [[Herald of the Sun]] با آسیب دوره‌ای و کلوی پایدار؛ فاصلهٔ این دو کم است و بسته به پروفایل آسیب هر دو ارزش بازی دارند."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "آسان",
+       "n": 2
+      },
+      {
+       "k": "اجباری بودن",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دوره‌ای",
+       "v": "خوب",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "سبک بازی آسان که اشتباهات را به شدت تنبیه نمی‌کند",
+       "ابزارهای دفاعی قوی، هم فعال و منفعل مانند [[Divine Shield]] و [[Divine Protection]]",
+       "گزینه‌های کاربردی برای هر نوع محتوا",
+       "توانایی درمان خود و گروه قوی"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "جابجایی کم: [[Divine Steed]] گزینهٔ اصلی است",
+       "ابزارهای کمکی در محتوای پیشرفته تکراری می‌شوند",
+       "سقف مهارت پایین: جزئیات فراتر از اصول اولیه زیاد ندارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "دو قهرمان اصلی برای رت‌پالی در نقش دی‌پی‌اس وجود دارد: Templar و Herald of the Sun. هر دو گزینه بسیار رقابتی هستند و انتخاب بین‌شان به سبک بازی شما بستگی دارد."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Templar",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این قهرمان برای پنجره‌های کوتاه آسیب‌رسانی بالا در تک‌هدف و اِی‌او‌ای عالی عمل می‌کند و دفاع‌های قوی‌تری دارد."
+      }
+     ]
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Herald of the Sun",
+       "tag": "گزینه جایگزین",
+       "x": "تمرکز این قهرمان بر آسیب‌های دوره‌ای به‌ویژه Dawnlight است که در حین کول‌داون‌ها به‌طور خودکار فعال می‌شود و به Divine Storm و Hammer of Wrath قدرت می‌بخشد."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "تفاوت بین این دو قهرمان برای محتوای پوی‌ای بسیار ناچیز است. به‌جای انتخاب یک برنده ثابت، بر اساس پروفایل آسیب‌رسانی که نیاز دارید تصمیم بگیرید."
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت Templar",
+      "items": [
+       "آسیب‌رسانی بالا در پنجره‌های کوتاه",
+       "دفعات بیشتر استفاده از Hammer of Light",
+       "دفاع‌های قوی‌تر"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف Templar",
+      "items": [
+       "آسیب‌رسانی پایین‌تر در کشیدگی‌های طولانی"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "پالادین انتقام‌جو در پچ ۱۲.۱.۵ با دو انتخاب درخت قهرمانی Templar و Herald of the Sun بهترین عملکرد را دارد. هر دو گزینه برای راید، Mythic+ و دلوز مناسب هستند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Templar",
+       "tag": "Raid | پیشنهاد منبع",
+       "x": "",
+       "code": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAANbbzMzywMDAAAAAAzUGzwMjtxsNMz2MGjxwMWYbAAAZmptZmtZAAbAGAMmhZwMmZ2w2MYYMjBD"
+      },
+      {
+       "title": "Templar",
+       "tag": "Mythic+ | پیشنهاد منبع",
+       "x": "",
+       "code": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAwoZbbmZWGzMzAAAAAAYmyYGmZsNmthZ2mxYMGmxGbAAAZmptZmtZAAbAGAMmhBmxMzGWmBDjZMYA"
+      },
+      {
+       "title": "Templar",
+       "tag": "Delves | پیشنهاد منبع",
+       "x": "",
+       "code": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAwoZbbmZWGjZmBAAAAAYmyYGMjtZmthZ2mxYMzwM2YDAAIzMtNzsNDAYDwAAmhBmxM2wyMYMjZMYA"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Raid | پیشنهاد منبع",
+       "x": "",
+       "code": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAANbbzMzywMDAAAAAAzUGzwMjtxsNMz2MGjxwMWYbAYWmtZmZrBBAAsAYAwYGmBzYmZDYmZYMjBD"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Mythic+ | پیشنهاد منبع",
+       "x": "",
+       "code": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAwoZbbmZWGzMzAAAAAAYmyYGmZsNmthZ2mxYMGmxCbAYWmtZmZrBBAAsAYAwYGGYGzMbAzMDjZMYA"
+      },
+      {
+       "title": "Herald of the Sun",
+       "tag": "Delves",
+       "x": "",
+       "code": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAwoZbbmZWGjZmBAAAAAYmyYGMjtZmthZ2mxYMzwMWYDAzysNzMbNIAAgFADAYGGYGzYDYmZMjZMYA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=paladin&spec=retribution",
+     "x": "مشاهدهٔ تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ بازی Retribution پالادین بر مدیریت هولی پاور و هماهنگی کول‌داون‌ها بنا شده است. به‌جای تولید بیش از حد هولی پاور، آن را به‌سرعت مصرف کنید."
+    },
+    {
+     "t": "p",
+     "x": "پروک‌های Art of War و Light Within را فوراً استفاده کنید و کول‌داون‌ها را هماهنگ نگه دارید؛ فقط زمانی آن‌ها را نگه دارید که برای هماهنگی بهتر لازم باشد."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اجرا کردن Avenging Wrath",
+      "اجرا کردن Execution Sentence",
+      "اجرا کردن Divine Storm با پروک Divine Arbiter از Final Verdict و 5 Holy Power",
+      "اجرا کردن Final Verdict با 5 Holy Power",
+      "اجرا کردن Wake of Ashes",
+      "اجرا کردن Divine Toll",
+      "اگر Avenging Wrath فعال نیست، Blade of Justice را با 2 استک Art of War اجرا کنید",
+      "اجرا کردن Hammer of Wrath با 2 شارژ",
+      "اجرا کردن Divine Storm با پروک Divine Arbiter از Final Verdict",
+      "اجرا کردن Final Verdict",
+      "اجرا کردن Hammer of Wrath",
+      "اجرا کردن Blade of Justice",
+      "اجرا کردن Judgment"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای آوئی، تمرکز روی Divine Storm و کلویس تغییر می‌کند. Herald of the Sun برای کلویس پایدارتر و کشیدگی طولانی‌تر مناسب‌تر است، در حالی که Templar در پنجره‌های کوتاه آوئی قدرتمندتر عمل می‌کند. Expurgation و Judgment را روی تمام اهداف حفظ کنید."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Execution Sentence",
+       "x": "حداکثر آسیب را در پنجرهٔ زمانی آن جای دهید؛ تمام آسیب به اهدافی که توسط آسیب اولیه هدف قرار می‌گیرند، به بخش funnel کمک می‌کند، بنابراین از توانایی‌های آوئی روی چند هدف استفاده کنید."
+      },
+      {
+       "s": "Avenging Wrath",
+       "x": "به‌جای اجرای فوری Execution Sentence بعد از Avenging Wrath، آن را تا زمانی که Crusade به حداکثر برسد نگه دارید؛ این کار بهینه‌سازی شده و باعث می‌شود تمام Hammer of Wrath های تقویت‌شده با Divine Resonance داخل Execution Sentence قرار گیرند."
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از شروع نبرد، ابتدا Avenging Wrath و سپس Execution Sentence را اجرا کنید."
+    },
+    {
+     "t": "call",
+     "x": "چرخهٔ بازی رت پالادین نیازمند تمرین است تا بتوانید هماهنگی بین کول‌داون‌ها و مصرف هولی پاور را به‌درستی مدیریت کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای پالادین انتقام‌جو، قدرت اصلی است. هر افزایش در سطح آیتم روی آیتم‌های Strength، حتی با کاهش در استت‌های ثانویه، برنده است."
+    },
+    {
+     "t": "p",
+     "x": "اولویت استت‌ها: Mastery > Haste > Critical Strike > Versatility. این ترتیب بسته به گیر و بیلد شما می‌تواند تغییر کند. با استفاده از Raidbots سیم کنید."
+    },
+    {
+     "t": "p",
+     "x": "از ماتریکس کالیستیر روی آیتم‌های غیرتیر برای تکمیل бонус 4 تی‌پیس استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "برای افزونه‌ها، Loa Worshiper's Band به همراه Stabilizing Gemstone Bandolier انتخاب می‌شود. با Loa Worshiper's Band تجهیز شده، تمام اساکت‌ها را به جز Indecipherable Eversong Diamond با Flawless Masterful Peridot پر کنید."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های بهتر"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268213
+      },
+      {
+       "slot": "سر",
+       "id": 271465
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271463
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271468
+      },
+      {
+       "slot": "دستبند",
+       "id": 237834
+      },
+      {
+       "slot": "دست",
+       "id": 271466
+      },
+      {
+       "slot": "کمر",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271464
+      },
+      {
+       "slot": "کفش",
+       "id": 268260
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 251513
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271463
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270173,
+        270175
+       ],
+       "names": [
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Uula'tek"
+       ]
+      },
+      {
+       "r": "A",
+       "ids": [
+        270164,
+        270165,
+        273796,
+        193762,
+        270168,
+        281215
+       ],
+       "names": [
+        "Gebbo's Bottomless Bag",
+        "Keeper's Seething Core",
+        "Vile Vial of Volatile Venom",
+        "Blazebinder's Hoof",
+        "Font of Venomous Rage",
+        "Twisted Horror's Tendril"
+       ]
+      },
+      {
+       "r": "B",
+       "ids": [
+        250259,
+        250228,
+        270163,
+        158367,
+        250229,
+        273797,
+        250245
+       ],
+       "names": [
+        "Sapling of the Dawnroot",
+        "Resonant Bellowstone",
+        "Sszorak's Ferocity",
+        "Merektha's Fang",
+        "Idol of the War Loa",
+        "Tattered Amani War Banner",
+        "Tumor of the Swarm"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "تیر کالیستیر: Corroded Hulk's Skullcap (سر)، Cinderfury Shoulderguards (شانه)، Reckless Spirit Breastplate (سینه)، Bonds of the Hash'ura (دست)، Chausses of Unbound Rancor (پا)"
+    },
+    {
+     "t": "p",
+     "x": "برای آیتم‌های ساخته شده: Loa Worshiper's Band (افزونه حلقه) و Stabilizing Gemstone Bandolier (افزونه). گزینه اختیاری اولیه: Blood Knight's Warblade with Hunter's Ritual Stone."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Strength",
+      "Mastery",
+      "Haste",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Strength مهم‌ترین استت اصلی برای پالادین انتقام‌جو است و باید همیشه در اولویت قرار گیرد. این استت به طور مستقیم آسیب‌های شما را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "بعد از Strength، Mastery به دلیل تأثیرش بر آسیب‌های مقدس، دومین استت اصلی محسوب می‌شود. سپس Haste، Critical Strike و در نهایت Versatility قرار دارند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "اسپل‌های بهبودی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "اسپل‌های جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "طلسم سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "طلسم سلاح (دائمی)",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "طلسم‌های تجهیزات",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "طلسم شانه‌ها",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "طلسم سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "طلسم پاها",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "طلسم حلقه‌ها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Peridot",
+       "ids": [
+        240891
+       ]
+      },
+      {
+       "k": "کیت زره",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Royal Roast or Harandar Celebration",
+       "ids": [
+        242275,
+        255846
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بهینه‌سازی عملکرد Retribution Paladin در پچ 12.1.5، انتخاب صحیح مواد مصرفی اهمیت زیادی دارد. این موارد به شما کمک می‌کنند تا در تمام فایت‌ها عملکرد خود را به حداکثر برسانید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای رت‌پالی رونین برای مای‌پلاس در پچ ۱۲.۱.۵ فصل شب‌نوردی ۲ ارائه می‌شود. این راهنما برای نقش دپس نوشته شده و بهترین انتخاب‌های تلنت و استراتژی‌های بازی را پوشش می‌دهد."
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های پیشنهادی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Templar برای باس‌ها و پیک‌های سریع",
+      "Herald of the Sun برای پیک‌های طولانی با کلی دپس"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی برای مای‌پلاس"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "از شیلد و پروتکشن برای ایمنی در برابر دامنه‌ها و کاهش دامنه معمولی استفاده کنید",
+      "اسکرایف و جاجمنت را روی پیک‌ها حفظ کنید",
+      "کول‌داون‌ها را برای پیک‌های بزرگ نگه دارید",
+      "موبیلیتی شما محدود به دیواین استید است: موقعیت‌دهی زودتر برای مکانیک‌ها"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "دیواین شیلد و دیواین پروتکشن هر دو نیازهای ایمنی و کاهش دامنه معمولی را در ترش و باس‌ها پوشش می‌دهند."
+    },
+    {
+     "t": "call",
+     "x": "اسکرایف اسکرایف، اسکرایف اسکرایف و اسکرایف اسکرایف همگی ابزارهای برتر دونجون هستند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تلنت‌های برتر",
+       "v": "Templar برای باس‌ها و پیک‌های سریع، Herald of the Sun برای پیک‌های طولانی با کلی دپس"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Retribution Paladin (ریتریبیوشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل ریتریبیوشن (Retribution Paladin) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Retribution Paladin talent build midnight",
+   "Retribution Paladin guide midnight",
+   "Retribution Paladin guide 12.1.5",
+   "best Retribution Paladin talents",
+   "Retribution Paladin talent tree midnight",
+   "Retribution Paladin pve guide",
+   "Retribution Paladin rotation midnight",
+   "Retribution Paladin rotation and cooldowns",
+   "Retribution Paladin bis list midnight",
+   "Retribution Paladin best in slot",
+   "Retribution Paladin gear guide",
+   "Retribution Paladin food and potion",
+   "best food for Retribution Paladin",
+   "best flask for Retribution Paladin",
+   "best potion for Retribution Paladin",
+   "Retribution Paladin enchants and gems",
+   "best enchants for Retribution Paladin",
+   "best gems for Retribution Paladin",
+   "Retribution Paladin stat priority midnight",
+   "Retribution Paladin tier set midnight",
+   "Retribution Paladin tier set bonuses",
+   "Retribution Paladin mythic+ guide",
+   "Retribution Paladin m+ guide midnight",
+   "Retribution Paladin raid guide",
+   "Retribution Paladin hero talents",
+   "Retribution Paladin hero tree",
+   "best dps build Retribution Paladin midnight",
+   "Retribution Paladin cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای ریتریبیوشن",
+   "تلنت ریتریبیوشن",
+   "تلنت برای Retribution Paladin",
+   "تلنت Paladin ریتریبیوشن",
+   "بیلد ریتریبیوشن",
+   "بیلد تلنت ریتریبیوشن میدنایت",
+   "روتیشن ریتریبیوشن",
+   "روتیشن و کول‌داون‌های ریتریبیوشن",
+   "غذا برای ریتریبیوشن",
+   "غذا برای Retribution Paladin",
+   "غذا و معجون ریتریبیوشن",
+   "بهترین غذای ریتریبیوشن",
+   "فلسک ریتریبیوشن",
+   "بهترین فلسک برای ریتریبیوشن",
+   "معجون ریتریبیوشن",
+   "انچنت ریتریبیوشن",
+   "انچنت و جم ریتریبیوشن",
+   "بهترین انچنت برای ریتریبیوشن",
+   "جم ریتریبیوشن",
+   "بست آیتم ریتریبیوشن",
+   "بهترین آیتم‌های ریتریبیوشن",
+   "گیر ریتریبیوشن",
+   "استت ریتریبیوشن",
+   "اولویت استت ریتریبیوشن",
+   "ست تیر ریتریبیوشن",
+   "مایتی پلاس ریتریبیوشن",
+   "ام پلاس ریتریبیوشن",
+   "راهنمای ریتریبیوشن",
+   "راهنمای Retribution Paladin",
+   "راهنمای پالادین",
+   "ریتریبیوشن میدنایت",
+   "پالادین میدنایت",
+   "هرو تیلنت ریتریبیوشن",
+   "بیلد دی‌پی‌اس ریتریبیوشن",
+   "بهترین دی‌پی‌اس میدنایت ریتریبیوشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Retribution Paladin (ریتریبیوشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Retribution Paladin به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای ریتریبیوشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، غذا «Royal Roast»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای ریتریبیوشن چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Thalassian Phoenix Oil»، جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای ریتریبیوشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Retribution Paladin در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

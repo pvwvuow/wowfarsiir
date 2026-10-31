@@ -1,0 +1,402 @@
+/* wowfarsi - retail2.css: enchant layer for retail guides.
+   Design language lifted from the retail dropdown (nav-menu.css):
+   hairlines that fade at their ends, ring + dot, tiny accents only,
+   no boxes. Pure CSS, RTL-safe (logical properties). */
+
+/* ---------- arcane ambience behind the article ---------- */
+html body article.rt-art { position: relative; }
+html body article.rt-art::before {
+  content: ""; position: absolute; inset: -3rem -2rem auto -2rem; height: 340px;
+  pointer-events: none; z-index: 0; opacity: .5;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 0%, rgba(240,199,94,.10), transparent 70%),
+    radial-gradient(ellipse 30% 30% at 12% 18%, rgba(143,180,232,.07), transparent 70%),
+    radial-gradient(ellipse 30% 30% at 88% 18%, rgba(240,120,120,.05), transparent 70%);
+}
+html body article.rt-art > * { position: relative; z-index: 1; }
+/* the ambience ::before bleeds 2rem past the article on narrow screens;
+   clip (not hidden) so the sticky TOC keeps working */
+@media (max-width: 560px) {
+  html body main.wrap { overflow-x: clip; }
+}
+
+/* ---------- h4 sub-headers: level-header hairline (nav-menu language) ---------- */
+html body .rt-h4 {
+  margin: 1.3rem 0 .55rem; font-size: 1.02rem; color: var(--gold-1, #f6e0a3);
+  display: flex; align-items: center; gap: .65rem; position: relative;
+}
+html body .rt-h4::after {
+  content: ""; flex: none; width: 64px; height: 1px;
+  background: linear-gradient(to left, rgba(240,199,94,.7), transparent);
+}
+
+/* ---------- cards: soft panel, ring+dot flourish unfurls on hover ---------- */
+html body .rt-card {
+  border-radius: 4px 4px 12px 12px;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+/* ring, breaks the top hairline like the dropdown flourish */
+html body .rt-card::before {
+  content: ""; position: absolute; top: -5px; inset-inline-start: calc(50% - 4.5px);
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1px solid rgba(240,199,94,.55); background: #070a12;
+  transform: scale(0); transition: transform .3s cubic-bezier(.34, 1.4, .44, 1) .06s;
+}
+/* the dot inside the ring */
+html body .rt-card::after {
+  content: ""; position: absolute; top: -2px; inset-inline-start: calc(50% - 2px);
+  width: 4px; height: 4px; background: var(--gold-2, #f0c75e);
+  box-shadow: 0 0 8px rgba(240,199,94,.9);
+  transform: rotate(45deg) scale(0); transition: transform .28s cubic-bezier(.34, 1.4, .44, 1) .14s;
+}
+html body .rt-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px -12px rgba(0,0,0,.55), 0 2px 12px -4px rgba(240,199,94,.22);
+  filter: brightness(1.05);
+}
+html body .rt-card:hover::before { transform: scale(1); }
+html body .rt-card:hover::after { transform: rotate(45deg) scale(1); }
+
+/* staggered entrance */
+@media (prefers-reduced-motion: no-preference) {
+  html body .rt-cards > * { animation: rt-in .45s ease backwards; }
+  html body .rt-cards > *:nth-child(2) { animation-delay: .06s; }
+  html body .rt-cards > *:nth-child(3) { animation-delay: .12s; }
+  html body .rt-cards > *:nth-child(4) { animation-delay: .18s; }
+  html body .rt-cards > *:nth-child(5) { animation-delay: .24s; }
+  html body .rt-cards > *:nth-child(6) { animation-delay: .30s; }
+  html body .rt-cards > *:nth-child(7) { animation-delay: .36s; }
+  html body .rt-cards > *:nth-child(n+8) { animation-delay: .42s; }
+  @keyframes rt-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- steps: keep the round badges, add the golden thread ---------- */
+html body .rt-steps li::before {
+  background: linear-gradient(180deg, #101625, #0a0e19); border-radius: 50%;
+  box-shadow: 0 0 10px rgba(240,199,94,.25);
+}
+html body .rt-steps li::after {
+  content: ""; position: absolute; inset-inline-start: auto; width: 1px;
+  top: 2.45rem; bottom: -.5rem;
+  background: linear-gradient(180deg, rgba(240,199,94,.4), rgba(240,199,94,.05));
+}
+html body .rt-steps li:last-child::after { content: none; }
+
+/* ---------- priority ladder (rotation): the golden thread ----------
+   A vertical gold thread runs behind numbered round badges; each badge
+   breaks the thread like the dropdown's ring breaks the hairline. */
+html body ol.rt-prio { list-style: none; counter-reset: pr; margin: .9rem 0; padding: 0; }
+html body ol.rt-prio li {
+  counter-increment: pr; position: relative;
+  padding: .42rem 3rem .42rem .4rem; border-radius: 8px;
+  transition: background .18s ease;
+}
+html body ol.rt-prio li:hover { background: rgba(240,199,94,.055); }
+html body ol.rt-prio::before {
+  content: ""; position: absolute; top: 1.15rem; bottom: 1.15rem; width: 1px;
+  inset-inline-end: 1.28rem;
+  background: linear-gradient(180deg, rgba(240,199,94,.5), rgba(240,199,94,.28) 80%, rgba(240,199,94,.05));
+  pointer-events: none;
+}
+html body ol.rt-prio li::before {
+  content: counter(pr); position: absolute; inset-inline-end: .68rem; top: .68rem;
+  width: 22px; height: 22px; display: grid; place-items: center;
+  font-size: 11px; font-weight: 800; color: var(--gold-1, #f6e0a3);
+  border: 1px solid rgba(240,199,94,.45); border-radius: 50%;
+  background: linear-gradient(180deg, #101625, #0a0e19);
+  box-shadow: 0 0 8px rgba(240,199,94,.18);
+  z-index: 1; transition: box-shadow .2s ease, border-color .2s ease;
+}
+html body ol.rt-prio li:hover::before {
+  border-color: rgba(240,199,94,.85); box-shadow: 0 0 12px rgba(240,199,94,.45);
+}
+html body ol.rt-prio .rt-cond {
+  font-style: normal; color: var(--mut, #8e97ab); font-size: .88em;
+  margin-inline-start: .55rem;
+}
+html body ol.rt-prio .rt-cond::before { content: "· "; color: rgba(240,199,94,.5); }
+
+/* ---------- callouts: vertical hairline, kind variants ---------- */
+html body .rt-call::before {
+  content: ""; position: absolute; inset-inline-start: 0; top: .65rem; bottom: .65rem; width: 3px;
+  border-radius: 2px; background: linear-gradient(180deg, rgba(143,180,232,.7), rgba(143,180,232,.15));
+}
+html body .rt-call.k-tip::before { background: linear-gradient(180deg, rgba(240,199,94,.85), rgba(240,199,94,.15)); box-shadow: 0 0 8px rgba(240,199,94,.35); }
+html body .rt-call.k-warn::before { background: linear-gradient(180deg, rgba(240,110,110,.8), rgba(240,110,110,.12)); box-shadow: 0 0 8px rgba(240,110,110,.3); }
+html body .rt-call.k-info::before { background: linear-gradient(180deg, rgba(143,180,232,.85), rgba(143,180,232,.15)); }
+
+/* ---------- cooldown rows: tag pill in the rtx-act language ---------- */
+html body .cd-tag {
+  display: inline-block; margin-inline-start: .55rem; padding: .18rem .55rem .26rem;
+  border: 1px solid rgba(240,199,94,.26); border-radius: 8px;
+  color: var(--gold-2, #f0c75e); font-size: .7rem; font-weight: 600;
+  white-space: nowrap; vertical-align: middle;
+}
+
+/* ---------- TOC: the 9-section guide bar (sticky, fantasy, fade) ----------
+   Hairlines fade at both ends like the dropdown; pills get a staggered
+   entrance; the section in view earns the ring + dot. */
+html body article.rt-art > .rt-toc {
+  position: sticky; top: 3.6rem; z-index: 5; display: flex; flex-wrap: wrap; gap: .3rem .45rem;
+  padding: .6rem .75rem; margin: 1rem 0 1.2rem;
+  background: linear-gradient(180deg, rgba(11,15,26,.94), rgba(11,15,26,.84));
+  -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
+  border-radius: 6px;
+  animation: toc-in .7s ease backwards;
+}
+html body .rt-toc::before, html body .rt-toc::after {
+  content: ""; position: absolute; left: 5%; right: 5%; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(240,199,94,.4), transparent);
+  pointer-events: none;
+}
+html body .rt-toc::before { top: 0; }
+html body .rt-toc::after { bottom: 0; }
+html body .rt-toc a {
+  position: relative; font-size: .8rem; color: var(--parch-dim, #bdb7a6);
+  padding: .2rem .6rem .26rem; border-radius: 99px;
+  border: 1px solid transparent; transition: color .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+html body .rt-toc a:hover {
+  color: var(--gold-1, #f6e0a3); border-color: rgba(240,199,94,.35);
+  background: rgba(240,199,94,.06);
+}
+/* active section: gold ring pill + glowing dot underneath (ring+dot language) */
+html body .rt-toc a.on {
+  color: var(--gold-1, #f6e0a3);
+  border-color: rgba(240,199,94,.5);
+  background: linear-gradient(180deg, rgba(240,199,94,.1), rgba(240,199,94,.02));
+  box-shadow: 0 0 12px -4px rgba(240,199,94,.45);
+}
+html body .rt-toc a.on::after {
+  content: ""; position: absolute; bottom: -.45rem; left: 50%; transform: translateX(-50%);
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold-2, #f0c75e); box-shadow: 0 0 9px rgba(240,199,94,.95);
+  animation: dot-in .3s cubic-bezier(.34,1.4,.44,1);
+}
+html body .rt-toc a { opacity: 0; animation: toc-fade .5s ease forwards; }
+html body .rt-toc a:nth-child(1) { animation-delay: .05s; }
+html body .rt-toc a:nth-child(2) { animation-delay: .1s; }
+html body .rt-toc a:nth-child(3) { animation-delay: .15s; }
+html body .rt-toc a:nth-child(4) { animation-delay: .2s; }
+html body .rt-toc a:nth-child(5) { animation-delay: .25s; }
+html body .rt-toc a:nth-child(6) { animation-delay: .3s; }
+html body .rt-toc a:nth-child(7) { animation-delay: .35s; }
+html body .rt-toc a:nth-child(8) { animation-delay: .4s; }
+html body .rt-toc a:nth-child(n+9) { animation-delay: .45s; }
+@keyframes toc-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@keyframes toc-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes dot-in { from { transform: translateX(-50%) scale(0); } to { transform: translateX(-50%) scale(1); } }
+
+/* ---------- hero tabs (rotation): Icy-Veins-style hero choice ----------
+   One menu per hero tree, categories inside each panel, opener last.
+   The whole block is a card in the rt-card hairline language; the panel
+   carries the spec artwork fading down into the page. All panels are
+   server-rendered; guide.js adds .js so only the active one shows. */
+html body .rt-hero {
+  position: relative; margin: 1.5rem 0 1.7rem; padding: 1.1rem 1.3rem 1.05rem;
+  border-radius: 4px 4px 12px 12px;
+  background:
+    linear-gradient(90deg, transparent, rgba(240,199,94,.38) 16%, rgba(240,199,94,.38) 84%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(240,199,94,.38) 16%, rgba(240,199,94,.38) 84%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(180deg, rgba(240,199,94,.035), rgba(11,15,26,.55));
+}
+html body .ht-strip { display: flex; flex-wrap: wrap; gap: .5rem; position: relative; padding: 0 0 .85rem; }
+/* hairline under the strip, fading at its ends */
+html body .ht-strip::after {
+  content: ""; position: absolute; left: 3%; right: 3%; bottom: 0; height: 1px;
+  background: linear-gradient(to left, transparent, rgba(240,199,94,.45), transparent);
+}
+html body .ht-tab {
+  flex: 1 1 240px; position: relative; display: flex; align-items: center; gap: .8rem;
+  padding: .55rem .85rem; text-align: start; cursor: pointer; font: inherit; color: inherit;
+  background: transparent; border: 0; border-radius: 8px;
+  opacity: .52; filter: saturate(.55);
+  transition: opacity .3s ease, filter .3s ease, background .3s ease, box-shadow .3s ease;
+}
+html body .ht-tab:hover { opacity: .85; }
+html body .ht-tab:focus-visible { outline: 1px solid rgba(240,199,94,.6); outline-offset: 2px; }
+html body .ht-tab.is-on {
+  opacity: 1; filter: none;
+  background: linear-gradient(180deg, rgba(240,199,94,.09), rgba(240,199,94,.015));
+  box-shadow: inset 0 0 0 1px rgba(240,199,94,.24), 0 8px 20px -12px rgba(240,199,94,.3);
+}
+/* the active dot that breaks the hairline, like the dropdown flourish */
+html body .ht-tab.is-on::after {
+  content: ""; position: absolute; bottom: -.92rem; left: 50%; transform: translateX(-50%);
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold-2, #f0c75e); box-shadow: 0 0 10px rgba(240,199,94,.95);
+  animation: dot-in .35s cubic-bezier(.34,1.4,.44,1);
+}
+html body .ht-ic {
+  width: 42px; height: 42px; border-radius: 50%; flex: none;
+  border: 1px solid rgba(240,199,94,.32); background: linear-gradient(180deg, #101625, #0a0e19);
+  box-shadow: 0 0 0 3px rgba(240,199,94,.05);
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+html body .ht-tab.is-on .ht-ic { border-color: rgba(240,199,94,.8); box-shadow: 0 0 14px rgba(240,199,94,.4); }
+html body .ht-name { display: flex; flex-direction: column; gap: .12rem; min-width: 0; }
+html body .ht-name b { font-size: .97rem; letter-spacing: .02em; color: #f6e0a3; line-height: 1.3; }
+html body .ht-name i { font-style: normal; font-size: .78rem; color: var(--parch-dim, #bdb7a6); }
+html body .ht-tab.is-on .ht-name i { color: #cfc6b0; }
+
+/* panels: spec artwork behind, fading down; content above */
+html body .rt-hero.js .ht-panel { display: none; }
+html body .rt-hero.js .ht-panel.is-on { display: block; }
+html body .ht-panel { position: relative; padding: .55rem .2rem .3rem; }
+html body .ht-panel::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; border-radius: 10px;
+  background-image: var(--ht-art, none);
+  background-size: cover; background-position: center 15%;
+  opacity: .17; filter: saturate(.62);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.95), rgba(0,0,0,.45) 40%, transparent 80%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.95), rgba(0,0,0,.45) 40%, transparent 80%);
+}
+html body .ht-panel > * { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  html body .rt-hero.js .ht-panel.is-on { animation: ht-fade .5s ease; }
+}
+@keyframes ht-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* interactive nav (.rt-tabs on retail.html): same dot treatment for .on */
+html body .rt-tabs a { position: relative; }
+html body .rt-tabs a.on::after {
+  content: ""; position: absolute; bottom: -.32rem; left: 50%; transform: translateX(-50%);
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold-2, #f0c75e); box-shadow: 0 0 9px rgba(240,199,94,.95);
+}
+
+/* ---------- ratings: soft glow on filled marks ---------- */
+html body .rt-dia i.f { box-shadow: 0 0 5px rgba(240,199,94,.45); }
+
+/* ---------- stat priority chain ---------- */
+html body .rt-seq .arr { animation: none; font-size: 13px; text-shadow: 0 0 6px rgba(240,199,94,.4); }
+
+/* ---------- gear / kv rows: hover wash only ---------- */
+html body .rt-gr { transition: background .2s ease; border-radius: 4px; }
+html body .rt-gr:hover { background: rgba(240,199,94,.05); }
+html body .rt-kv { transition: background .2s ease; border-radius: 4px; }
+html body .rt-kv:hover { background: rgba(240,199,94,.045); }
+
+/* ---------- code (import strings) ---------- */
+html body .rt-code {
+  border: 1px solid rgba(240,199,94,.18); border-radius: 8px;
+  background: linear-gradient(180deg, rgba(240,199,94,.05), rgba(11,15,26,.4));
+}
+html body .rt-code code { color: var(--gold-1, #f6e0a3); }
+
+/* ---------- related links ---------- */
+html body .rt-rel {
+  display: inline-block; margin: .15rem .1rem; padding: .22rem .7rem .3rem; border-radius: 99px;
+  border: 1px solid rgba(240,199,94,.3); color: var(--parch-dim, #bdb7a6); font-size: .85rem;
+  transition: all .2s ease;
+}
+html body .rt-rel:hover {
+  color: var(--gold-1, #f6e0a3); border-color: rgba(240,199,94,.7);
+  background: rgba(240,199,94,.08); box-shadow: 0 0 10px rgba(240,199,94,.25); text-decoration: none;
+}
+
+/* ---------- hero-talent badge on cards ---------- */
+html body .rt-card .hero-badge {
+  display: inline-block; margin-inline-start: .4rem; padding: .05rem .5rem .13rem; border-radius: 99px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .02em;
+  color: var(--blue-1, #8fb4e8); border: 1px solid rgba(143,180,232,.45); background: rgba(143,180,232,.08);
+}
+
+/* ---------- motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html body .rt-card, html body .rt-card::before, html body .rt-card::after,
+  html body ol.rt-prio li, html body ol.rt-prio li::before,
+  html body .rt-cards > *, html body .rt-toc, html body .rt-toc a,
+  html body .rt-toc a.on::after, html body .ht-tab, html body .ht-tab.is-on::after,
+  html body .rt-hero.js .ht-panel.is-on { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0s !important; }
+}
+
+
+/* ===== phase 3: selector / why / tier / timeline / gauge / faq / mech / apex ===== */
+html body .rt-sel { display: grid; gap: .1rem; margin: .9rem 0 1.1rem; }
+html body .rt-selrow { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding: .5rem 0; border-bottom: 1px solid rgba(240,199,94,.12); }
+html body .rt-selrow > span { font-size: .78rem; color: var(--parch-dim, #a99e8a); min-width: 6.4rem; }
+html body .rt-selrow button { background: none; border: 0; color: var(--parch, #e8dcc2); font: inherit; font-size: .85rem; padding: .25rem .55rem; cursor: pointer; position: relative; opacity: .6; transition: opacity .3s, color .3s; }
+html body .rt-selrow button:hover { opacity: 1; }
+html body .rt-selrow button.on { color: var(--gold-2, #f0c75e); opacity: 1; }
+html body .rt-selrow button.on::after { content: ""; position: absolute; inset-inline: .45rem; bottom: -3px; height: 1px; background: linear-gradient(90deg, transparent, rgba(240,199,94,.8), transparent); }
+html body .rt-selrow button b.rt-en { font-weight: 600; }
+html body .rt-selrow button i { display: block; font-size: .72rem; font-style: normal; color: var(--parch-dim, #a99e8a); }
+html body ol.rt-prio li[hidden] { display: none; }
+html body .rt-whyb { background: none; border: 0; color: var(--parch-dim, #a99e8a); font: inherit; font-size: .74rem; cursor: pointer; padding: 0 .15rem; text-decoration: underline dotted; opacity: .85; }
+html body .rt-whyb:hover { color: var(--gold-2, #f0c75e); opacity: 1; }
+html body .rt-why { display: block; margin-top: .35rem; font-size: .78rem; color: var(--parch-dim, #a99e8a); border-inline-start: 2px solid rgba(240,199,94,.28); padding-inline-start: .6rem; animation: rt-in .4s ease both; }
+html body .rt-tiersets { display: grid; gap: .6rem; margin: .9rem 0; }
+html body .rt-tierset { display: flex; gap: .9rem; align-items: flex-start; padding: .5rem 0; border-bottom: 1px solid rgba(240,199,94,.1); }
+html body .rt-tierset > b { color: var(--gold-2, #f0c75e); min-width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border: 1px solid rgba(240,199,94,.3); border-radius: 50%; font-size: 1rem; box-shadow: 0 0 8px rgba(240,199,94,.15); }
+html body .rt-tierset > div { flex: 1; font-size: .9rem; line-height: 1.9; }
+html body .rt-tschips { margin: .35rem 0 0; }
+html body .rt-tl { margin: .9rem 0; position: relative; padding-inline-start: 1.15rem; }
+html body .rt-tl::before { content: ""; position: absolute; inset-inline-start: 0; top: .4rem; bottom: .4rem; width: 1px; background: linear-gradient(180deg, rgba(240,199,94,.45), rgba(240,199,94,.06)); }
+html body .rt-tlr { position: relative; display: flex; gap: .7rem; padding: .35rem 0; }
+html body .rt-tlr::before { content: ""; position: absolute; inset-inline-start: calc(-1.15rem + 3px); top: .9rem; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-2, #f0c75e); box-shadow: 0 0 6px rgba(240,199,94,.5); }
+html body .rt-tlt { font-size: .78rem; color: var(--gold-2, #f0c75e); min-width: 3.8rem; opacity: .95; padding-top: .25rem; }
+html body .rt-tlr > div { flex: 1; display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; font-size: .85rem; }
+html body .rt-gauges { display: grid; gap: .9rem; margin: .9rem 0; }
+html body .rt-gauge b { font-size: .9rem; }
+html body .rt-gbar { position: relative; height: 4px; margin: .45rem 0 .3rem; background: rgba(240,199,94,.12); border-radius: 2px; }
+html body .rt-gbar i { position: absolute; top: -4px; width: 2px; height: 12px; background: var(--gold-2, #f0c75e); box-shadow: 0 0 6px rgba(240,199,94,.6); transform: translateX(-50%); }
+html body .rt-gauge em { font-style: normal; font-size: .78rem; color: var(--parch-dim, #a99e8a); }
+html body .rt-gauge p { margin: .3rem 0 0; font-size: .82rem; color: var(--parch-dim, #a99e8a); }
+html body details.rt-faq { border-bottom: 1px solid rgba(240,199,94,.12); padding: .55rem 0; }
+html body details.rt-faq summary { cursor: pointer; font-size: .92rem; list-style: none; position: relative; padding-inline-start: 1.2rem; }
+html body details.rt-faq summary::-webkit-details-marker { display: none; }
+html body details.rt-faq summary::before { content: ""; position: absolute; inset-inline-start: .15rem; top: .55em; width: 6px; height: 6px; background: var(--gold-3, #c9a232); transform: rotate(45deg); box-shadow: 0 0 6px rgba(240,199,94,.6); transition: transform .3s; }
+html body details.rt-faq[open] summary::before { transform: rotate(225deg); }
+html body details.rt-faq summary:hover { color: var(--gold-1, #f6e0a3); }
+html body .rt-faqa { padding: .45rem .2rem 0 0; font-size: .86rem; color: var(--parch-dim, #a99e8a); line-height: 1.9; }
+html body .rt-mechs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .2rem 1.2rem; margin: .9rem 0; }
+html body .rt-mechcard { padding: .75rem .15rem .55rem; border-top: 1px solid rgba(240,199,94,.16); animation: rt-in .5s ease both; }
+html body .rt-mechcard h4 { margin: .45rem 0 .3rem; font-size: .95rem; color: var(--gold-1, #f6e0a3); }
+html body .rt-mechcard .rt-ul li { font-size: .84rem; }
+html body .rt-apex { margin: 1rem 0; }
+html body .rt-apexh { margin-bottom: .4rem; }
+html body ol.rt-apexr { list-style: none; margin: 0; padding: 0 1.15rem 0 0; position: relative; }
+html body ol.rt-apexr::before { content: ""; position: absolute; inset-inline-start: 0; top: .5rem; bottom: .5rem; width: 1px; background: linear-gradient(180deg, rgba(240,199,94,.5), rgba(240,199,94,.08)); }
+html body ol.rt-apexr li { position: relative; display: flex; gap: .75rem; padding: .45rem 0; animation: rt-in .5s ease both; }
+html body ol.rt-apexr li::before { content: ""; position: absolute; inset-inline-start: calc(-1.15rem + 3px); top: 1rem; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-2, #f0c75e); box-shadow: 0 0 6px rgba(240,199,94,.5); }
+html body ol.rt-apexr li > b { color: var(--gold-2, #f0c75e); min-width: 1.3rem; text-align: center; padding-top: .1rem; }
+html body ol.rt-apexr li > div { flex: 1; font-size: .88rem; line-height: 1.9; }
+
+/* ---- guide page: real section tabs (click switches, hash deep-links) ---- */
+html body .rt-secmode .rt-sec { display: none; }
+html body .rt-secmode .rt-sec.is-on { display: block; animation: ht-fade .35s ease; }
+
+/* ---- hero panel: Raid / Mythic+ mode badges ---- */
+html body .ht-modes { display: flex; flex-wrap: wrap; gap: .4rem; margin: .15rem 0 .65rem; }
+html body .mode-chip { display: inline-flex; align-items: center; gap: .45rem; padding: .18rem .65rem; font-size: 11.5px; font-weight: 700; border: 1px solid rgba(240,199,94,.2); border-radius: 999px; color: var(--parch-dim, #bdb7a6); background: rgba(8,11,20,.5); }
+html body .mode-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: #5c6470; display: inline-block; flex: none; }
+html body .mode-chip.best { border-color: rgba(240,199,94,.55); color: var(--gold-1, #f6e0a3); }
+html body .mode-chip.best .dot { background: #58c07a; box-shadow: 0 0 8px rgba(88,192,122,.8); }
+html body .mode-chip.best b { font-size: 10.5px; font-weight: 800; letter-spacing: .02em; color: #0b0e15; background: linear-gradient(90deg, #f0c75e, #f6e0a3); border-radius: 999px; padding: .06rem .5rem; }
+html body .mode-chip.rec { border-color: rgba(88,166,255,.4); }
+html body .mode-chip.rec .dot { background: #58a6ff; }
+
+/* ---- hero panel: active / passive talent chips ---- */
+html body .ht-tal { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin: 0 0 .9rem; }
+html body .ht-talcol { border: 1px solid rgba(240,199,94,.14); border-radius: 10px; padding: .55rem .7rem .45rem; background: rgba(8,11,20,.45); }
+html body .ht-talcol h5 { margin: 0 0 .45rem; font-size: 11.5px; font-weight: 800; color: var(--gold-2, #f0c75e); }
+html body .ht-talcol .ht-chip { display: inline-flex; margin: 0 .15rem .3rem 0; }
+html body .ht-chip.off .sp { opacity: .38; filter: grayscale(.75); }
+
+/* ---- hero panel: ST / AoE sub-tabs ---- */
+html body .st-strip { display: flex; flex-wrap: wrap; gap: .4rem; margin: .15rem 0 .55rem; padding: 0 0 .55rem; border-bottom: 1px solid rgba(240,199,94,.16); }
+html body .st-tab { padding: .24rem .95rem; font-size: 12px; font-weight: 700; color: var(--parch-dim, #bdb7a6); background: rgba(8,11,20,.4); border: 1px solid rgba(240,199,94,.18); border-radius: 999px; cursor: pointer; transition: color .25s, background .25s, border-color .25s; }
+html body .st-tab:hover { color: var(--gold-1, #f6e0a3); border-color: rgba(240,199,94,.4); }
+html body .st-tab.is-on { color: #0b0e15; background: linear-gradient(90deg, #f0c75e, #f6e0a3); border-color: transparent; }
+html body .rt-subtabs.js .st-panel { display: none; }
+html body .rt-subtabs.js .st-panel.is-on { display: block; animation: ht-fade .35s ease; }
+html body .st-gen { margin-top: .4rem; }
+@media (max-width: 640px) { html body .ht-tal { grid-template-columns: 1fr; } }
+/* real Raid/Mythic+ branch tabs (hero panels) */
+html body .rt-branches { margin-top: .55rem; }
+html body .st-strip-mode { gap: .5rem; padding-bottom: .6rem; }
+html body .st-strip-mode .st-tab { padding: .34rem 1.15rem; font-size: 13px; }
+html body .st-strip-mode .st-tab small { opacity: .75; font-weight: 600; font-size: 10px; margin-inline-start: .35rem; }
+html body .rt-branches.js .st-panel { display: none; }
+html body .rt-branches.js .st-panel.is-on { display: block; animation: ht-fade .35s ease; }

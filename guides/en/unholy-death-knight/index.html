@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unholy Death Knight DPS Guide — Patch 12.1.5</title>
+<meta name="description" content="Unholy Death Knight DPS guide for World of Warcraft: Midnight — Patch 12.1.5. Overview, Midnight changes, new Apex talents, gameplay basics, gearing, hero talents and the full changelog.">
+<link rel="canonical" href="https://wowfarsi.ir/guides/en/unholy-death-knight/">
+<style>
+:root{--blue:#0a7fb5;--blue-d:#086a99;--ink:#24292e;--mut:#6a737d;--line:#e3e6ea;--bg:#ffffff;--soft:#f6f7f9;--gold:#ffb400;--nav:#14171c;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:15.5px;line-height:1.65}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+b,strong{color:#1b1f24}
+.wrap{max-width:1280px;margin:0 auto;padding:0 18px}
+/* ---------- top bar ---------- */
+.topbar{background:var(--nav);position:sticky;top:0;z-index:60;box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.35)}
+.topbar-in{max-width:1280px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:18px;height:52px}
+.logo{font-weight:800;font-size:21px;letter-spacing:.2px;color:#fff;white-space:nowrap}
+.logo span{color:#39b5e6}
+.logo:hover{text-decoration:none}
+.mainnav{display:flex;align-items:center;gap:2px;flex:1}
+.mainnav>a,.mi-btn{color:#c8cdd3;font-size:13.5px;font-weight:600;padding:9px 11px;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:inherit;white-space:nowrap}
+.mainnav>a:hover,.mi:hover>.mi-btn{color:#fff;text-decoration:none;background:rgba(255,255,255,.06);border-radius:4px}
+.mi{position:relative}
+.mi b{font-size:9px;transform:translateY(1px)}
+.drop,.mega{position:absolute;top:100%;left:0;background:#1b1f26;border:1px solid #2a2f37;border-radius:6px;display:none;min-width:230px;padding:8px 0;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mi:hover>.drop,.mi:hover>.mega,.mi.open>.drop,.mi.open>.mega{display:block}
+.drop a{display:block;padding:8px 16px;color:#c8cdd3;font-size:13.5px}
+.drop a:hover{background:#232830;color:#fff;text-decoration:none}
+.mega{width:min(880px,92vw);padding:18px 20px;display:none;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:20px}
+.mega h5{color:#8fd7f5;font-size:11.5px;text-transform:uppercase;letter-spacing:.8px;margin:2px 0 7px}
+.mega h5 .va{float:right;color:#5b6672;text-transform:none;letter-spacing:0;font-weight:500}
+.mega a{display:block;color:#c8cdd3;font-size:13px;padding:3.5px 0}
+.mega a:hover{color:#fff;text-decoration:none}
+.mega .cls a{display:inline-block;margin-right:12px}
+.top-cta{display:flex;align-items:center;gap:8px;margin-left:auto}
+.top-cta a{font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.top-cta a:hover{text-decoration:none;filter:brightness(1.08)}
+.ghost{color:#c8cdd3;border:1px solid #3a4048}
+.gold{background:var(--gold);color:#241c00}
+.burger{display:none;background:none;border:1px solid #3a4048;color:#fff;border-radius:4px;font-size:17px;padding:4px 10px;cursor:pointer}
+/* promo strip inside nav area */
+.promo-strip{background:#0f1216;color:#9fb6c4;font-size:12px;padding:6px 0}
+.promo-strip .wrap{display:flex;gap:16px;justify-content:flex-end}
+/* ---------- layout ---------- */
+.layout{display:grid;grid-template-columns:248px minmax(0,1fr) 300px;gap:30px;padding:26px 0 40px}
+.rail-left,.rail-right{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 90px);overflow:auto}
+.side-box{border:1px solid var(--line);border-radius:8px;background:var(--soft);margin-bottom:18px;overflow:hidden}
+.side-head{background:#eef1f4;border-bottom:1px solid var(--line);padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#3d4a57}
+.spec-switch{display:flex;border-bottom:1px solid var(--line)}
+.spec-switch a,.spec-switch span{flex:1;text-align:center;padding:9px 4px;font-size:13px;font-weight:700;color:#54636f;border-right:1px solid var(--line)}
+.spec-switch :last-child{border-right:0}
+.spec-switch span.on{background:var(--blue);color:#fff}
+.page-list,.class-list{list-style:none;padding:6px 0}
+.page-list a,.class-list a{display:flex;justify-content:space-between;align-items:center;padding:7px 14px;font-size:13.5px;color:#33414d}
+.page-list a.on{background:#e8f3f9;color:var(--blue-d);font-weight:700;border-left:3px solid var(--blue);padding-left:11px}
+.class-list a{padding:5.5px 14px;font-size:13px}
+.soon{font-size:10px;background:#f0ad4e;color:#3d2c00;border-radius:3px;padding:1px 5px;font-style:normal;font-weight:800;letter-spacing:.4px}
+/* ---------- article ---------- */
+.crumbs{font-size:12.5px;color:var(--mut);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.crumbs .chip{background:#e8f3f9;color:var(--blue-d);font-weight:800;border-radius:4px;padding:1px 7px;font-size:11.5px}
+.ghead{display:flex;gap:16px;align-items:flex-start;margin-top:12px}
+.gicon{width:76px;height:76px;border-radius:8px;object-fit:cover;border:1px solid var(--line);flex:0 0 auto;background:#111}
+h1{font-size:31px;line-height:1.2;color:#14293d;letter-spacing:-.3px}
+.byline{margin-top:8px;font-size:13px;color:var(--mut);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.byline .av{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.byline a{font-weight:700}
+.btn-w{background:#fff;border:1px solid var(--line);border-radius:4px;padding:4px 10px;font-size:12px;font-weight:700;color:var(--blue)}
+.promos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+.promo{border:1px solid var(--line);border-radius:8px;padding:11px 13px;background:linear-gradient(180deg,#fbfcfd,#f2f5f8);font-size:12.5px}
+.promo .pt{font-weight:800;font-size:12.5px;color:#14293d;margin-bottom:3px}
+.promo .pt .new{color:#d9534f;font-size:10.5px;vertical-align:middle;margin-right:4px}
+.promo a{font-weight:800;font-size:12px;display:inline-block;margin-top:5px}
+article p{margin:0 0 14px}
+article li{margin:0 0 7px}
+.welcome{font-size:16.5px}
+/* TOC */
+.toc{border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:16px 20px;margin:18px 0 6px}
+.toc-h{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#3d4a57;margin-bottom:8px}
+.toc ol{list-style:none;counter-reset:t}
+.toc li{counter-increment:t;border-top:1px solid #e9ecef;padding:7px 0;font-size:14.5px}
+.toc li:first-child{border-top:0}
+.toc li::before{content:counter(t) ".";color:var(--blue);font-weight:800;margin-right:9px}
+/* sections */
+section.gsec{margin-top:34px}
+h2.sh{font-size:25px;color:#14293d;border-bottom:2px solid #e8eaee;padding-bottom:9px;margin-bottom:16px;letter-spacing:-.2px}
+h2.sh .num{color:var(--blue);margin-right:10px}
+h3{font-size:19.5px;color:#1d3a55;margin:26px 0 10px}
+h3 .num{color:var(--blue);margin-right:8px;font-size:16px}
+h4{font-size:16.5px;color:#2c3e50;margin:20px 0 8px}
+h4 .num{color:var(--blue);margin-right:7px;font-size:13.5px}
+.sp{color:var(--blue);font-weight:600;border-bottom:1px dotted #9cc9e0;cursor:help}
+/* rating tabs */
+.tabs{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:16px 0}
+.tab-row{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;background:#f2f5f8;border-bottom:1px solid var(--line)}
+.tab{border:1px solid #c5d3dd;background:#fff;border-radius:999px;padding:6px 15px;font-size:13px;font-weight:700;color:#41525f;cursor:pointer;font-family:inherit}
+.tab:hover{border-color:var(--blue);color:var(--blue)}
+.tab.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab-panel{display:none;padding:16px 20px 6px}
+.tab-panel.on{display:block}
+.tab-panel .verdict{font-size:17px;font-weight:800;color:#14293d;margin-bottom:8px}
+/* callouts + boxes */
+.callout{border:1px solid #f1dfa8;border-left:4px solid var(--gold);background:#fff9e8;border-radius:6px;padding:12px 16px;margin:16px 0;font-size:14.5px}
+.note{border:1px solid #cfe3ee;border-left:4px solid var(--blue);background:#f3f9fd;border-radius:6px;padding:12px 16px;margin:16px 0;font-size:14.5px}
+.navbox{border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:14px 18px;margin:20px 0}
+.navbox .nb-t{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#3d4a57}
+.navbox .nb-s{font-size:14px;font-weight:700;color:#14293d;margin:3px 0 4px}
+.navbox .nb-d{font-size:13px;color:var(--mut);margin-bottom:10px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{border:1px solid #c5d3dd;background:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--blue-d)}
+.pill:hover{border-color:var(--blue);text-decoration:none}
+.pill .new{color:#d9534f;font-size:11px;margin-right:4px}
+/* accordion */
+.acc{border:1px solid var(--line);border-radius:6px;margin:16px 0;overflow:hidden}
+.acc-btn{width:100%;text-align:left;background:#f2f5f8;border:0;padding:11px 16px;font-size:13.5px;font-weight:800;color:#1d3a55;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between}
+.acc-btn::after{content:"Show ▾";color:var(--blue);font-weight:700}
+.acc.open .acc-btn::after{content:"Hide ▴"}
+.acc-body{display:none;padding:4px 20px 10px;background:#fff}
+.acc.open .acc-body{display:block}
+.acc-body ul{margin:8px 0 10px;padding-left:20px}
+.acc-body li{margin-bottom:8px;font-size:14.5px}
+/* keypoint list */
+.kp{list-style:none;margin:14px 0}
+.kp li{border-left:3px solid var(--blue);background:var(--soft);border-radius:0 6px 6px 0;padding:11px 16px;margin-bottom:10px}
+.kp b{display:block;font-size:14.5px;color:#14293d;margin-bottom:3px}
+/* author card */
+.author{display:flex;gap:16px;border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:16px 18px;margin:30px 0 8px}
+.author .aav{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#0a7fb5,#123c5c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;flex:0 0 auto}
+.author .an{font-weight:800;font-size:15.5px;color:#14293d}
+.author .ar{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
+/* changelog */
+.chlog{list-style:none;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.chlog li{padding:9px 16px;border-top:1px solid #eef1f4;font-size:13.8px;display:flex;gap:12px}
+.chlog li:first-child{border-top:0}
+.chlog .cd{flex:0 0 92px;font-weight:800;color:#14293d;font-size:12.5px;padding-top:1px}
+/* right rail */
+.rb{border:1px solid var(--line);border-radius:8px;margin-bottom:18px;overflow:hidden}
+.rb .side-head{background:#eef1f4}
+.rb ul{list-style:none;padding:6px 0}
+.rb a{display:flex;justify-content:space-between;gap:8px;padding:7px 14px;font-size:13.2px;color:#33414d}
+.rb a:hover{color:var(--blue);text-decoration:none}
+.ad{border:1px dashed #cfd6dd;border-radius:8px;color:#a8b2bc;font-size:11px;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;height:270px;margin-bottom:18px;background:#fbfcfd}
+.ad.slim{height:110px}
+/* footer */
+footer{background:#17191d;color:#9aa1a9;margin-top:46px}
+.ft{max-width:1280px;margin:0 auto;padding:34px 18px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.ft h6{color:#e6e9ec;font-size:12px;text-transform:uppercase;letter-spacing:.9px;margin-bottom:10px}
+.ft a{display:block;font-size:13px;color:#9aa1a9;padding:3px 0}
+.ft a:hover{color:#fff;text-decoration:none}
+.ft-base{border-top:1px solid #262a30;padding:14px 18px 22px;text-align:center;font-size:12px;color:#6d757e;max-width:1280px;margin:0 auto}
+/* misc */
+#toTop{position:fixed;right:18px;bottom:18px;background:var(--nav);color:#fff;border:0;border-radius:6px;width:40px;height:40px;font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:.25s;z-index:70}
+#toTop.show{opacity:.9;pointer-events:auto}
+.src-note{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+/* responsive */
+@media (max-width:1180px){.layout{grid-template-columns:230px minmax(0,1fr)}.rail-right{display:none}}
+@media (max-width:960px){
+ .layout{grid-template-columns:1fr}
+ .rail-left{position:static;max-height:none}
+ .mainnav{display:none;position:absolute;top:52px;left:0;right:0;background:#1b1f26;flex-direction:column;align-items:stretch;padding:10px 14px 16px;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+ .mainnav.open{display:flex}
+ .mi{width:100%}
+ .drop,.mega{position:static;display:none;width:auto;grid-template-columns:1fr;box-shadow:none;border:0;border-top:1px solid #262a30;border-radius:0}
+ .mi.open .drop,.mi.open .mega{display:block}
+ .top-cta .ghost{display:none}
+ .burger{display:block;margin-left:auto}
+ .top-cta{margin-left:0}
+ .promos{grid-template-columns:1fr}
+ h1{font-size:25px}
+ .gicon{width:58px;height:58px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="topbar-in">
+  <a class="logo" href="/">icy<span>veins</span></a>
+  <button class="burger" id="burger" aria-label="Open menu">☰</button>
+  <nav class="mainnav" id="mainnav">
+    <a href="#">News &amp; Guides</a>
+    <a href="/">Home</a>
+    <div class="mi">
+      <button class="mi-btn" aria-expanded="false">World of Warcraft <b>▾</b></button>
+      <div class="mega">
+        <div>
+          <h5>Class Guides <span class="va">View all</span></h5>
+          <div class="cls">
+            <a href="/guides/death-knight/">Death Knight</a><a href="/guides/demon-hunter/">Demon Hunter</a><a href="/guides/druid/">Druid</a><a href="/guides/evoker/">Evoker</a><a href="/guides/hunter/">Hunter</a><a href="/guides/mage/">Mage</a><a href="/guides/monk/">Monk</a><a href="/guides/paladin/">Paladin</a><a href="/guides/priest/">Priest</a><a href="/guides/rogue/">Rogue</a><a href="/guides/shaman/">Shaman</a><a href="/guides/warlock/">Warlock</a><a href="/guides/warrior/">Warrior</a>
+          </div>
+          <h5 style="margin-top:14px">General</h5>
+          <a href="#">Simming Your Character</a><a href="#">Healing Guide</a><a href="#">Tanking Guide</a><a href="#">Set Up your UI</a><a href="#">PvE Gearing Guide</a>
+        </div>
+        <div>
+          <h5>Season 2 Content <span class="va">View all</span></h5>
+          <a href="#">Midnight Dungeons Overview</a><a href="#">Follower Dungeons</a><a href="#">Mythic+ Season 2</a><a href="#">Venomous Abyss Raid</a><a href="#">Unbinding of Kithix Raid</a><a href="#">Delves Season 2</a><a href="#">PvP Season 2</a><a href="#">Glory Raid Achievement</a><a href="#">Tier Sets Season 2</a>
+          <h5 style="margin-top:14px">Season 2 Features</h5>
+          <a href="#">Voidforge (Bonus Rolls)</a><a href="#">Void Assaults</a><a href="#">Field Accolades</a>
+        </div>
+        <div>
+          <h5>Midnight Guides <span class="va">View all</span></h5>
+          <a href="#">Midnight Overview</a><a href="#">Weekly To-Do List</a><a href="#">Catalyst Guide</a><a href="#">Great Vault</a><a href="#">Gear Upgrading</a><a href="#">Renown Overview</a><a href="#">Trading Post</a><a href="#">Patch 12.1.5 Hub</a>
+          <h5 style="margin-top:14px">Tier Lists</h5>
+          <a href="#">Mythic+ DPS Tier List</a><a href="#">Raid DPS Tier List</a><a href="#">Healer Tier List</a>
+        </div>
+        <div>
+          <h5>Professions <span class="va">View all</span></h5>
+          <a href="#">Profession Overview</a><a href="#">Crafting Orders/Recrafting</a><a href="#">Spark Crafting Guide</a><a href="#">Making Gold with Crafting</a>
+          <h5 style="margin-top:14px">General Info</h5>
+          <a href="#">Darkmoon Faire</a><a href="#">Timewalking</a><a href="#">Transmog Guide</a><a href="#">Player Housing</a>
+          <h5 style="margin-top:14px">Tools</h5>
+          <a href="#">Talent Calculator</a>
+        </div>
+      </div>
+    </div>
+    <div class="mi">
+      <button class="mi-btn" aria-expanded="false">Diablo <b>▾</b></button>
+      <div class="drop"><a href="#">Diablo IV</a><a href="#">Diablo III</a><a href="#">Diablo II</a></div>
+    </div>
+    <a href="#">Final Fantasy XIV</a>
+    <div class="mi">
+      <button class="mi-btn" aria-expanded="false">Gacha <b>▾</b></button>
+      <div class="drop"><a href="#">Genshin Impact</a><a href="#">Honkai: Star Rail</a><a href="#">Zenless Zone Zero</a><a href="#">Arknights: Endfield</a><a href="#">Neverness to Everness</a><a href="#">Honkai: Nexus Anima</a></div>
+    </div>
+    <div class="mi">
+      <button class="mi-btn" aria-expanded="false">More Games <b>▾</b></button>
+      <div class="drop"><a href="#">Path of Exile 2</a><a href="#">Path of Exile</a><a href="#">Chrono Odyssey</a><a href="#">Monster Hunter Wilds</a><a href="#">Heroes of the Storm</a><a href="#">All.gg</a></div>
+    </div>
+    <a href="#">PvP</a>
+  </nav>
+  <div class="top-cta">
+    <a class="ghost" href="#">Download App</a>
+    <a class="ghost" href="#">Discord Webhook</a>
+    <a class="ghost" href="#">Sign In</a>
+    <a class="gold" href="#">Go Premium</a>
+  </div>
+ </div>
+</header>
+
+<div class="layout wrap">
+ <aside class="rail-left">
+  <nav class="side-box" aria-label="Guide pages">
+    <div class="side-head">Unholy Death Knight</div>
+    <div class="spec-switch">
+      <a href="/guides/blood-death-knight/">Blood</a>
+      <a href="/guides/frost-death-knight/">Frost</a>
+      <span class="on">Unholy</span>
+    </div>
+    <ul class="page-list">
+      <li><a class="on" href="#" aria-current="page">Overview</a></li>
+      <li><a href="/guides/unholy-death-knight/#leveling">Leveling</a></li>
+      <li><a href="/guides/unholy-death-knight/#easy-mode">Easy Mode</a></li>
+      <li><a href="/guides/unholy-death-knight/#talents">Talents</a></li>
+      <li><a href="/guides/unholy-death-knight/#rotation">Rotation</a></li>
+      <li><a href="/guides/unholy-death-knight/#gear">Gear</a></li>
+      <li><a href="/guides/unholy-death-knight/#stats">Stats</a></li>
+      <li><a href="/guides/unholy-death-knight/#enchants">Enchants</a></li>
+      <li><a href="/guides/unholy-death-knight/#mplus">Mythic+</a></li>
+      <li><a href="#" title="Coming soon">Macros <em class="soon">SOON</em></a></li>
+    </ul>
+  </nav>
+  <nav class="side-box" aria-label="Class guides">
+    <div class="side-head">Class Guides</div>
+    <ul class="class-list">
+      <li><a href="/guides/death-knight/">Death Knight</a></li>
+      <li><a href="/guides/demon-hunter/">Demon Hunter</a></li>
+      <li><a href="/guides/druid/">Druid</a></li>
+      <li><a href="/guides/evoker/">Evoker</a></li>
+      <li><a href="/guides/hunter/">Hunter</a></li>
+      <li><a href="/guides/mage/">Mage</a></li>
+      <li><a href="/guides/monk/">Monk</a></li>
+      <li><a href="/guides/paladin/">Paladin</a></li>
+      <li><a href="/guides/priest/">Priest</a></li>
+      <li><a href="/guides/rogue/">Rogue</a></li>
+      <li><a href="/guides/shaman/">Shaman</a></li>
+      <li><a href="/guides/warlock/">Warlock</a></li>
+      <li><a href="/guides/warrior/">Warrior</a></li>
+    </ul>
+  </nav>
+ </aside>
+
+ <main>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="#">World of Warcraft</a> <span>›</span> <a href="/guides/death-knight/">Death Knight</a> <span>›</span> <span>Unholy Death Knight</span> <span class="chip">12.1.5</span>
+  </nav>
+
+  <div class="ghead">
+    <img class="gicon" src="../../../assets/img/specs/unholy-death-knight.jpg" alt="Unholy Death Knight spec art" onerror="this.style.display='none'">
+    <div>
+      <h1>Unholy Death Knight DPS Guide — 12.1.5</h1>
+      <div class="byline">
+        <span>Last Updated: <b>Oct 12, 2026</b></span>
+        <span class="av">T</span>
+        <a href="#" rel="author">Taeznak</a>
+        <a class="btn-w" href="#">Support Our Writers</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="promos">
+    <div class="promo"><div class="pt">Talebound Talent Calculator</div>Plan your Witch, Slayer, or Inquisitor talents and share your build!<br><a href="#">Build Your Talents →</a></div>
+    <div class="promo"><div class="pt"><span class="new">NEW!</span>News Webhook for Discord</div>Get guide and patch news delivered straight into a channel on your server!<br><a href="#">Get Discord Webhook →</a></div>
+    <div class="promo"><div class="pt"><span class="new">NEW!</span>The companion app is here</div>Try the WoW Class Codex addon together with the mobile app.<br><a href="#">Download App →</a></div>
+  </div>
+
+  <p class="welcome">Welcome to our Unholy Death Knight guide for World of Warcraft Patch <b>12.1.5</b> (Midnight, Season 2). Here you will learn how to take an Unholy Death Knight into raids and Mythic+ dungeons — from your very first pull to the last percent of optimal DPS. Every deeper chapter of the guide lives on its own page: Talents, Rotation, Gear, Stats, Enchants, Mythic+ and more are all linked throughout.</p>
+
+  <div class="toc">
+    <div class="toc-h">Table of Contents</div>
+    <ol>
+      <li><a href="#overview">Unholy Death Knight Overview</a></li>
+      <li><a href="#midnight">Unholy Death Knight in Midnight</a></li>
+      <li><a href="#basics">Basics of Unholy Death Knight Gameplay</a></li>
+      <li><a href="#gearup">How to Gear Up as a Unholy Death Knight</a></li>
+      <li><a href="#changelog">Changelog</a></li>
+    </ol>
+  </div>
+
+  <section class="gsec" id="overview">
+    <h2 class="sh"><span class="num">1.</span>Unholy Death Knight Overview</h2>
+    <p>Unholy Death Knight builds its damage around plagues and a horde of summoned undead. The spec is at its strongest in single-target fights, while its area damage comes from cleaving pets, scaling <span class="sp" title="Area damage that grows with the number of targets">Epidemic</span> casts and the built-in cleave of <span class="sp">Scourge Strike</span>.</p>
+    <p>The core loop is easy to describe and satisfying to execute: keep your diseases running, raise as many minions as possible, and deal direct damage with abilities that stay effective even from 30 yards away. On top of all that, Unholy is one of the hardest specs to kill in the game — a perk that matters in every piece of PvE content.</p>
+
+    <div class="tabs" id="ratings">
+      <div class="tab-row" role="tablist" aria-label="Spec performance ratings">
+        <button class="tab on" data-t="dmg" role="tab">Damage</button>
+        <button class="tab" data-t="raid" role="tab">Raid</button>
+        <button class="tab" data-t="mp" role="tab">Mythic+</button>
+        <button class="tab" data-t="util" role="tab">Utility</button>
+        <button class="tab" data-t="surv" role="tab">Survivability</button>
+        <button class="tab" data-t="mob" role="tab">Mobility</button>
+      </div>
+      <div class="tab-panel on" id="p-dmg" role="tabpanel">
+        <div class="verdict">Big burst windows — and range to spend them with</div>
+        <p>The damage profile revolves around a major burst window roughly every 1.5 minutes, backed up by smaller spikes about every 45 seconds. Unholy hits hard from range, but swapping targets takes time: pets have to run over and plagues need to be re-applied. The execute is strong, and the spec loves <span class="sp">Bloodlust</span> timings that land while the boss is below 35% health.</p>
+      </div>
+      <div class="tab-panel" id="p-raid" role="tabpanel">
+        <div class="verdict">A dependable single-target raid pick</div>
+        <p>In raids, Unholy offers high single-target output, a strong execute and excellent survivability — an easy DPS slot to justify. <span class="sp">Death Grip</span> solves very specific encounter problems, but the spec brings no meaningful raid buff, which is the main thing holding it back from an even higher standing.</p>
+      </div>
+      <div class="tab-panel" id="p-mp" role="tabpanel">
+        <div class="verdict">Good damage, thin utility</div>
+        <p>In dungeons, Unholy pairs solid single-target damage with respectable AoE. What limits the spec in keys is utility: <span class="sp">Death Grip</span> and <span class="sp">Anti-Magic Zone</span> are welcome but not enough on their own. The flip side is survivability — an Unholy DK that plays well can shrug off mistakes that would kill other DPS, which matters when you are pushing keys at the limit of your gear.</p>
+      </div>
+      <div class="tab-panel" id="p-util" role="tabpanel">
+        <div class="verdict">Minimal — but every piece has its moment</div>
+        <p>Unholy brings little group utility. You get <span class="sp">Death Grip</span> (occasionally fight-defining), <span class="sp">Anti-Magic Zone</span> (a valuable magic defensive) and a stop in <span class="sp">Blinding Sleet</span>. Outside of Grip being a hard requirement for certain encounters, groups rarely bring an Unholy Death Knight for its utility alone.</p>
+      </div>
+      <div class="tab-panel" id="p-surv" role="tabpanel">
+        <div class="verdict">Arguably the tankiest DPS spec in the game</div>
+        <p>Unholy trades blows with Frost Death Knight for the title of most durable DPS spec. Passive defenses such as <span class="sp">Will of the Necropolis</span>, <span class="sp">Veteran of the Third War</span>, <span class="sp">Gloom Ward</span> and <span class="sp">Null Magic</span> stack on top of <span class="sp">Death Strike</span>, which can heal you back from the brink in the scariest scenarios. It is no surprise that Unholy sits among the DPS specs with the fewest deaths in raid.</p>
+      </div>
+      <div class="tab-panel" id="p-mob" role="tabpanel">
+        <div class="verdict">Slow feet — fast horse</div>
+        <p>Unholy has never been famous for mobility; historically the spec prefers to avoid moving rather than to move quickly. The big exception is <span class="sp">Rider of the Apocalypse</span>, whose <span class="sp">Death Charge</span> transforms the spec's mobility. With it, Unholy is no longer bottom-tier — somewhere comfortably in the middle of the pack.</p>
+      </div>
+    </div>
+
+    <div class="navbox">
+      <div class="nb-t">Starter Information</div>
+      <div class="nb-s">Beginner Guides</div>
+      <div class="nb-d">Brand new to the spec (or the class)? Start with these two before moving on to the full pages.</div>
+      <div class="pills"><a class="pill" href="/guides/unholy-death-knight/#leveling">Leveling</a><a class="pill" href="/guides/unholy-death-knight/#easy-mode">Easy Mode</a></div>
+    </div>
+  </section>
+  <section class="gsec" id="midnight">
+    <h2 class="sh"><span class="num">2.</span>Unholy Death Knight in Midnight</h2>
+
+    <h3><span class="num">2.1.</span>Midnight Patch 12.1.5 Content Guides</h3>
+    <p>Patch 12.1.5 introduces no balance changes for Unholy Death Knights, but that does not mean there is nothing new to do. As a mid-season patch it is intentionally light on content — yet there is still a brand-new raid built around the new Kith'ix encounter, and Delves players get the new Labyrinth Mega-Delve to chew through.</p>
+    <div class="navbox">
+      <div class="nb-t">New Patch Content</div>
+      <div class="pills"><a class="pill" href="#">Delves Guide</a><a class="pill" href="#">Unbinding of Kith'ix Raid</a><a class="pill" href="#">Labyrinth of Kindo'jan Delve</a></div>
+    </div>
+
+    <h3><span class="num">2.2.</span>Patch 12.1.5 Changes</h3>
+    <p>Even without class tuning, 12.1.5 matters for your gear. The new Kith'ix raid and the Labyrinth Mega-Delve both serve as fresh gearing sources for Unholy Death Knights, and almost everything the raid drops is worth fighting for. On top of that, <b>Weapons, Trinkets and Necklaces</b> can be upgraded with <span class="sp">Ascendant Venomstones</span> once the currency becomes available on <b>October 20th</b>.</p>
+    <div class="note"><b>Patch 12.1.5 Overview.</b> For everything the update brings — new content, quality-of-life changes and more — the dedicated 12.1.5 patch hub has you covered: <a href="#">Midnight Patch 12.1.5 Guide</a>.</div>
+
+    <h3><span class="num">2.3.</span>Class Changes</h3>
+    <p>Patch 12.1.5 ships no changes to Unholy Death Knights so far. As a result, our <a href="/guides/unholy-death-knight/#talents">Talent</a> recommendations and <a href="/guides/unholy-death-knight/#rotation">rotational</a> priorities carry over unchanged. There are new gear recommendations from the raid and the Labyrinth on the <a href="/guides/unholy-death-knight/#gear">gear page</a>, along with a shortlist of the highest-value items to spend your first <span class="sp">Ascendant Venomstones</span> on.</p>
+    <div class="acc" id="acc121">
+      <button class="acc-btn" aria-expanded="false">Click for Previous Season 2 Changes — Patch 12.1 Class Tuning</button>
+      <div class="acc-body">
+        <p><b>Unholy 12.1 changes.</b> Unholy received a large batch of tuning in Patch 12.1. The most important points:</p>
+        <ul>
+          <li><span class="sp">Army of the Dead</span> was reworked: it now raises <b>eight Lesser Ghouls</b> up front, and for the next 30 seconds every new ghoul summon instead commands the existing pack to cast <span class="sp">Death Order</span> (single target) or <span class="sp">Epidemic Order</span> (AoE). Peak minion count drops sharply, but the way the spec plays barely changes.</li>
+          <li><span class="sp">Reanimation</span> was renamed <span class="sp">Lord of the Dead</span>: when you control three <span class="sp">Magus of the Dead</span>, you can sacrifice them to summon a Lord of the Dead for 15 seconds that hurls chaining Frost Bolts — a fun payoff for stacking Magus spawns.</li>
+          <li><span class="sp">Soul Reaper</span> now consumes up to three <b>Lesser Ghoul stacks</b> instead of <span class="sp">Putrefy</span> stacks. Putrefy returns to being its own ability, and awkward situations (holding Soul Reaper because you do not want to cash your Putrefy charges yet) are gone.</li>
+          <li><span class="sp">Dread Plague</span> keeps its remaining duration when it jumps to a new target, which smooths out spreading; plague duration extension was tuned down slightly.</li>
+          <li><span class="sp">Blood Beast</span> auto-attack damage was increased by <b>1,400%</b> — a hilarious number with no real gameplay impact.</li>
+          <li><span class="sp">Commander of the Dead</span> no longer extends lesser ghoul duration through <span class="sp">Mastery: Dreadblade</span>.</li>
+          <li>Blizzard attempted to redistribute damage into a less cooldown-focused profile, but the overall shape stayed largely the same.</li>
+        </ul>
+        <p>The <span class="sp">Soul Reaper</span> change is the one that actually reshapes your priority: execute usage is now decoupled from the Putrefy loop.</p>
+      </div>
+    </div>
+
+    <h3><span class="num">2.4.</span>Midnight Changes for Unholy Death Knight</h3>
+    <p>Unholy Death Knight was significantly reworked in Midnight. <span class="sp">Festering Wounds</span> — a defining mechanic since Legion — are gone, replaced by a minion-summoning gameplay loop at the heart of the spec. Plagues matter more than ever: a new pure single-target disease called <span class="sp">Dread Plague</span> joins the kit, and far more talents interact with your diseases. AoE is decoupled from <span class="sp">Death and Decay</span>; you instead passively cleave through <span class="sp">Scourge Strike</span>. Finally, a new core rotational ability, <span class="sp">Putrefy</span>, sums up the fantasy: summon a ghoul, then blow it up.</p>
+    <p>The familiar bones remain. <span class="sp">Festering Strike</span>, <span class="sp">Scourge Strike</span> and <span class="sp">Death Coil</span> still anchor the rotation — you just press <span class="sp">Putrefy</span> every so often as well. The AoE rotation has changed the most and now looks nearly identical to single-target. Pestilence returns as <span class="sp">Blightfall</span>, a huge burst button that scales with your plague durations. Overall the rotation is simpler, at the cost of fewer opportunities for skill expression.</p>
+
+    <h3><span class="num">2.5.</span>New Apex Talents</h3>
+    <p>Unholy received <b>three new talents</b> in the spec tree that you unlock while leveling from <b>80 to 90</b>. They are among the most powerful nodes in the tree, significantly buffing <span class="sp">Army of the Dead</span> and firing automatic <span class="sp">Putrefy</span> casts as your <span class="sp">Dread Plague</span> ticks.</p>
+
+    <h4><span class="num">2.5.1.</span>Putrefy</h4>
+    <p><span class="sp">Putrefy</span> summons a lesser ghoul that leaps at your target, deals direct damage on arrival and then explodes for AoE damage. A whole cluster of talents builds on this interaction:</p>
+    <ul>
+      <li><span class="sp">Unholy Devotion</span> makes your permanent ghoul deal more damage for a while whenever you cast Putrefy — multiple applications can overlap.</li>
+      <li><span class="sp">Blightburst</span> makes the Putrefy explosion extend your plague durations and instantly deals a portion of the damage those diseases would have dealt. It also applies your plagues to unaffected targets — a big synergy that heavily reduces how many <span class="sp">Outbreak</span> casts you need.</li>
+      <li><span class="sp">Reanimation</span> reanimates the ghoul you just Putrefied as a <span class="sp">Magus of the Dead</span> and increases your Magi's damage — your main source of Magus summons.</li>
+      <li><span class="sp">Putrid Echoes</span> grants a second charge of Putrefy and increases its damage. The extra charge adds flexibility: you can space the casts out or dump them back-to-back — for example, summoning two Magus of the Dead during <span class="sp">Dark Transformation</span> for a burst of AoE.</li>
+      <li><span class="sp">Harbinger of Doom</span> reduces Putrefy's cooldown whenever <span class="sp">Scourge Strike</span> summons a ghoul.</li>
+      <li><span class="sp">Soul Reaper</span> automatically consumes and uses all your Putrefy stacks, removing the need to cast Putrefy during the execute window.</li>
+      <li><span class="sp">Blightfall</span> grants a charge of Putrefy when used.</li>
+    </ul>
+    <p>Because nearly every part of the kit touches Putrefy, learning when to spend its charges is a big part of playing the spec well.</p>
+
+    <h4><span class="num">2.5.2.</span>Festering Wound Removal</h4>
+    <p>Festering Wounds are completely gone. Instead of applying a debuff to enemies, <span class="sp">Festering Strike</span> now stacks a buff on <b>your</b> lesser ghoul (2–3 stacks per cast, up to 8). <span class="sp">Scourge Strike</span> consumes those stacks to summon a lesser ghoul. Because the stacks live on you rather than on the enemy, target swapping and setup feel far smoother — and the spec leans fully into the necromancer fantasy of raising a small army. Two iconic cooldowns, <span class="sp">Unholy Assault</span> and <span class="sp">Apocalypse</span>, were removed along with the wounds.</p>
+
+    <h4><span class="num">2.5.3.</span>Plagues</h4>
+    <p>Midnight introduces <span class="sp">Dread Plague</span>, applied via <span class="sp">Outbreak</span> or via Putrefy with <span class="sp">Blightburst</span>. It damages a single enemy (talented into a second, weaker target with <span class="sp">Superstrain</span>) and is your new source of <span class="sp">Sudden Doom</span> procs. When its target dies, the plague detonates and jumps to a new enemy — which keeps it alive in AoE and occasionally sets off delightful chain reactions where packs die one after another.</p>
+    <p>The tree is full of plague interactions: <span class="sp">Death Coil</span> and <span class="sp">Epidemic</span> now extend <span class="sp">Virulent Plague</span> and Dread Plague by default; <span class="sp">Scourge Strike</span> deals bonus damage per plague on the target; <span class="sp">Festering Scythe</span> increases plague tick rate; and <span class="sp">Blightburst</span> extends durations while dealing damage based on your plague damage. The star is <span class="sp">Blightfall</span>: when you press <span class="sp">Dark Transformation</span>, your next Outbreak becomes Blightfall, consuming your plagues for 100% of their remaining damage in one burst. The loop — transform, inflate your plague durations, then consume them for a massive hit — is the signature play pattern of the rework, and <b>San'layn</b> executes it best thanks to <span class="sp">Infliction of Sorrow</span> extending plague durations.</p>
+
+    <h4><span class="num">2.5.4.</span>AoE Rework</h4>
+    <p><span class="sp">Clawing Shadows</span> was reworked: it no longer grants range (<span class="sp">Scourge Strike</span> hits from 30 yards by default) and instead becomes your AoE enabler — every Scourge Strike cleaves to one additional target, up to <b>4 extra targets</b> (6 with <span class="sp">Scourging</span>), with no <span class="sp">Death and Decay</span> required. Tanks can drag bosses out of ground effects all they like; you just follow and keep hitting. The trade-off is a ramping AoE profile: cleave stacks last only <b>12 seconds</b>, so you want to chain-pull to keep them alive. <b>San'layn</b> ignores this entirely, reaching max stacks instantly through the <span class="sp">Inevitable</span> talent.</p>
+    <p>The new <span class="sp">Outnumber</span> talent grants your lesser ghouls the Claw AoE ability during <span class="sp">Dark Transformation</span>, making <span class="sp">Army of the Dead</span> a stronger AoE cooldown and giving <span class="sp">Rune of the Apocalypse</span> extra AoE value. Meanwhile, Death and Decay is in a strange spot: it deals okay damage only in very large pulls, retains some San'layn synergy (<span class="sp">Desecrate</span>, <span class="sp">Blood-Soaked Ground</span>) and can be auto-cast by <span class="sp">Scythe of Decay</span> when you use <span class="sp">Festering Scythe</span> — but as a button it is simply not worth pressing anymore. Its main remaining value is utility via <span class="sp">Grip of the Dead</span>.</p>
+
+    <h4><span class="num">2.5.5.</span>Ranged Effectiveness</h4>
+    <p>Unholy is far more effective at range in Midnight. <span class="sp">Scourge Strike</span> hits from 30 yards by default, <span class="sp">Sudden Doom</span> procs from Dread Plague hits rather than melee swings, and <span class="sp">Unholy Aura</span> works off your minion summons. In practice you step into melee to land <span class="sp">Festering Strike</span>, then spend the next several seconds attacking from range while losing minimal damage. You do lose melee swings (roughly 2% of your damage) and your pets have slightly longer to travel when summoned — otherwise, you can legitimately pretend to be a ranged DPS for large stretches of any fight.</p>
+
+    <h3><span class="num">2.6.</span>Hero Talents</h3>
+    <p>Both hero trees — <span class="sp">Rider of the Apocalypse</span> and <span class="sp">San'layn</span> — received <b>three new talents</b> each. None of them move the needle much; they mostly echo effects we have previously seen from tier set bonuses. For the full hero-by-hero breakdown, see the <a href="/guides/unholy-death-knight/#talents">Talents page</a>.</p>
+
+    <h3><span class="num">2.7.</span>Class Tree Changes</h3>
+    <p>The Death Knight class tree saw smaller adjustments. <span class="sp">Blood Bond</span>, <span class="sp">Death Defiance</span> and <span class="sp">Death Notes</span> were added — nice defensives, plus a hook that finally makes <span class="sp">Death Pact</span> worth considering. <span class="sp">Soul Reaper</span> moved into the spec tree and was reworked to buff your minions and plagues, while <span class="sp">Sacrificial Pact</span> was removed entirely. Several nodes moved around: <span class="sp">Death's Reach</span> now sits in a much better spot as a choice node with <span class="sp">Asphyxiate</span>, <span class="sp">Wraith Walk</span> moved up the tree as a choice with <span class="sp">March of Darkness</span>, and <span class="sp">Unholy Momentum</span> became a 2-point talent. On the downside, <span class="sp">Death Strike</span> and <span class="sp">Unholy Endurance</span> were nerfed slightly — a small dent in the spec's legendary durability, nothing more.</p>
+  </section>
+
+  <section class="gsec" id="basics">
+    <h2 class="sh"><span class="num">3.</span>Basics of Unholy Death Knight Gameplay</h2>
+    <p>Unholy Death Knight is a resource-management spec: your damage comes from spending Runes and Runic Power at the right moments, keeping your diseases ticking, and aligning your cooldowns into burst windows. Master the three habits below and the rest of the guide follows naturally.</p>
+    <ul class="kp">
+      <li><b>Maintain your buffs</b>Chain <span class="sp">Festering Strike</span> into <span class="sp">Festering Scythe</span> to keep the Scythe buff alive, and never press <span class="sp">Scourge Strike</span> with zero Lesser Ghoul stacks — build with Festering Strike, spend with Scourge Strike.</li>
+      <li><b>Manage your resources</b>Runes and Runic Power are your two resources, and starving on either is lost DPS. Prioritise spending Runes (always keep about three recharging) and never let Runic Power sit at its cap.</li>
+      <li><b>Keep your plagues rolling</b>Your diseases — <span class="sp">Dread Plague</span> above all — are a major source of damage both directly and through talent synergy. Letting them fall off is the single most common beginner mistake.</li>
+    </ul>
+
+    <div class="navbox">
+      <div class="nb-t">Combat Information</div>
+      <div class="nb-s">Talents and Rotations</div>
+      <div class="nb-d">For the up-to-date builds and full priority lists, these two pages are always current.</div>
+      <div class="pills"><a class="pill" href="/guides/unholy-death-knight/#talents">Talents</a><a class="pill" href="/guides/unholy-death-knight/#rotation">Rotation</a></div>
+    </div>
+  </section>
+
+  <section class="gsec" id="gearup">
+    <h2 class="sh"><span class="num">4.</span>How to Gear Up as a Unholy Death Knight</h2>
+    <p>Simming your own character always beats any static list, but we still maintain a dedicated Unholy gearing page with our current <b>Season Two</b> recommendations, so you can step into endgame Midnight content on the right foot. Once the gear is in place, round it out with the right consumables, gems and enchants to make every item count.</p>
+
+    <div class="navbox">
+      <div class="nb-t">Itemization</div>
+      <div class="nb-s">Gearing and Enchants</div>
+      <div class="nb-d">Everything about slots, trinkets, stat weights, gems, enchants and consumables lives on these two pages.</div>
+      <div class="pills"><a class="pill" href="/guides/unholy-death-knight/#gear">Gear</a><a class="pill" href="/guides/unholy-death-knight/#enchants">Enchants</a></div>
+    </div>
+  </section>
+
+  <div class="author">
+    <div class="aav">T</div>
+    <div>
+      <div class="an">Taeznak</div>
+      <div class="ar">Guide Author</div>
+      <p style="margin:0;font-size:14px">Taeznak is a Death Knight theorycrafter, SimCraft maintainer and Acherus community moderator who has also worked as an analyst for Method during the Race to World First. He is known for agonising over even the smallest tuning details that help DPS death knights squeeze out more damage.</p>
+      <a href="#" style="font-size:13px;font-weight:700">Follow Taeznak →</a>
+    </div>
+  </div>
+  <section class="gsec" id="changelog">
+    <h2 class="sh"><span class="num">5.</span>Changelog</h2>
+    <ul class="chlog">
+      <li><span class="cd">12 Oct 2026</span><span>Guide and all sub-pages (Leveling, Gear, Addons, Enchants, Stats, Mythic+, Rotation, Talents, Spells, Easy Mode) reviewed and updated for <b>Patch 12.1.5</b>.</span></li>
+      <li><span class="cd">05 Oct 2026</span><span>Performance ratings adjusted after the <span class="sp">Blightfall</span> nerf.</span></li>
+      <li><span class="cd">30 Sep 2026</span><span>Performance ratings adjusted after the Blightfall bugfix.</span></li>
+      <li><span class="cd">25 Sep 2026</span><span>Rotation: default talent selections updated to include <span class="sp">Soul Reaper</span>.</span></li>
+      <li><span class="cd">23 Sep 2026</span><span>Rotation default hero switched to <b>San'layn</b>; Talents: recommended single-target raid build moved to San'layn; builds updated around <span class="sp">Blightfall</span>.</span></li>
+      <li><span class="cd">08 Sep 2026</span><span>Batch review for Patch 12.1: Festering Strike stack-count update on the Leveling page, macro description order fixed on the Addons page, removed <span class="sp">Commander of the Dead</span> mastery interactions from Stats and Spells, Mythic+ reviewed, rotation priority updated for hotfixes, Easy Mode rotation updated for the new Epidemic/Graveyard target counts.</span></li>
+      <li><span class="cd">07 Sep 2026</span><span>Gear page reviewed and updated after hotfixes.</span></li>
+      <li><span class="cd">04 Sep 2026</span><span>Mythic+ recommended build switched to <b>San'layn Minion</b>; Talents: single-target raid build moved to <b>Rider</b>; Easy Mode beginner raid build moved to Rider.</span></li>
+    </ul>
+    <p class="src-note">This page is an English reference build for wowfarsi.ir, mirroring the structure and section model of the Icy Veins Unholy Death Knight guide (Patch 12.1.5). World of Warcraft and related names are trademarks of Blizzard Entertainment.</p>
+  </section>
+ </main>
+
+ <aside class="rail-right">
+  <div class="rb">
+    <div class="side-head">Unholy Mythic+ Resources</div>
+    <ul>
+      <li><a href="#"><span><span style="color:#d9534f;font-weight:800">NEW!</span> Top Unholy Talent Builds</span></a></li>
+      <li><a href="#"><span>Top Unholy Mythic+ Players</span></a></li>
+      <li><a href="#"><span>Unholy Mythic+ Heatmaps</span></a></li>
+      <li><a href="#"><span>Popular Unholy Group Comps</span></a></li>
+    </ul>
+  </div>
+  <div class="ad">Advertisement</div>
+  <div class="rb">
+    <div class="side-head">Related Guides</div>
+    <ul>
+      <li><a href="/guides/blood-death-knight/"><span>Blood Death Knight Guide</span></a></li>
+      <li><a href="/guides/frost-death-knight/"><span>Frost Death Knight Guide</span></a></li>
+      <li><a href="/guides/death-knight/"><span>Death Knight Class Guide</span></a></li>
+      <li><a href="/retail.html"><span>Midnight Season 2 Hub</span></a></li>
+    </ul>
+  </div>
+  <div class="rb">
+    <div class="side-head">Support Us</div>
+    <ul>
+      <li><a href="/donate.html"><span>Donate — keep wowfarsi ad-light</span></a></li>
+      <li><a href="#"><span>Go Premium</span></a></li>
+    </ul>
+  </div>
+  <div class="ad slim">Advertisement</div>
+ </aside>
+</div>
+
+<footer>
+  <div class="ft">
+    <div>
+      <h6>Games</h6>
+      <a href="#">World of Warcraft</a><a href="#">Diablo IV</a><a href="#">Final Fantasy XIV</a><a href="#">Genshin Impact</a><a href="#">Path of Exile 2</a>
+    </div>
+    <div>
+      <h6>WoW Guides</h6>
+      <a href="/retail.html">Class Guides</a><a href="#">Tier Lists</a><a href="#">Midnight Guides</a><a href="#">Professions</a><a href="#">Delves</a>
+    </div>
+    <div>
+      <h6>Site</h6>
+      <a href="/">Home</a><a href="/retail.html">Retail Hub</a><a href="/items.html">Items</a><a href="/news.html">News</a><a href="/donate.html">Donate</a>
+    </div>
+    <div>
+      <h6>Community</h6>
+      <a href="#">Discord</a><a href="#">Sign In</a><a href="#">Go Premium</a><a href="#">About</a><a href="#">Privacy</a>
+    </div>
+  </div>
+  <div class="ft-base">English replica build · wowfarsi.ir · World of Warcraft content and trademarks belong to Blizzard Entertainment.</div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">▲</button>
+
+<script>
+(function(){
+  // mobile menu
+  var burger=document.getElementById('burger'),nav=document.getElementById('mainnav');
+  if(burger&&nav){burger.addEventListener('click',function(){nav.classList.toggle('open');});}
+  // dropdowns (click + aria for touch/keyboard)
+  document.querySelectorAll('.mi-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var mi=btn.parentElement,was=mi.classList.contains('open');
+      document.querySelectorAll('.mi.open').forEach(function(o){o.classList.remove('open');o.querySelector('.mi-btn').setAttribute('aria-expanded','false');});
+      if(!was){mi.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.mi.open').forEach(function(o){o.classList.remove('open');o.querySelector('.mi-btn').setAttribute('aria-expanded','false');});
+  });
+  // rating tabs
+  document.querySelectorAll('#ratings .tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('#ratings .tab').forEach(function(t){t.classList.remove('on');});
+      document.querySelectorAll('#ratings .tab-panel').forEach(function(p){p.classList.remove('on');});
+      tab.classList.add('on');
+      var p=document.getElementById('p-'+tab.getAttribute('data-t'));
+      if(p){p.classList.add('on');}
+    });
+  });
+  // accordions
+  document.querySelectorAll('.acc-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var acc=btn.parentElement;
+      acc.classList.toggle('open');
+      btn.setAttribute('aria-expanded',acc.classList.contains('open')?'true':'false');
+    });
+  });
+  // back to top
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>

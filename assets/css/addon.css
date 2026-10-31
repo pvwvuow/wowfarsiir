@@ -1,0 +1,189 @@
+/* =========================================================
+   wowfarsi — addon page (fantasy-minimal, same design language:
+   fading gold hairlines instead of boxes, slow light sweep)
+   ========================================================= */
+@property --sx { syntax: '<percentage>'; inherits: false; initial-value: -40%; }
+@keyframes pn-sweep { 0% { --sx: -40%; } 50%, 100% { --sx: 140%; } }
+
+.ad-wrap { max-width: 46rem; margin: 0 auto; }
+.ad-lead {
+  margin: 1.6rem auto 0;
+  max-width: 40rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 2.1;
+  color: var(--parch-dim);
+}
+.ad-lead b { color: var(--parch); }
+.ad-lead .font-cinzel { color: var(--gold-2); }
+
+/* ---------- download hero ---------- */
+.ad-hero {
+  --ln: rgba(240, 199, 94, 0.5);
+  --tint: rgba(240, 199, 94, 0.14);
+  position: relative;
+  margin-top: 2.6rem;
+  padding: 2.4rem 1.4rem 2rem;
+  text-align: center;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 240, 190, 0.95), transparent) var(--sx) 0 / 24% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 16%, var(--ln) 84%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 16%, var(--ln) 84%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(180deg, transparent, var(--ln) 20%, var(--ln) 80%, transparent) left top / 1px 100% no-repeat,
+    linear-gradient(180deg, transparent, var(--ln) 20%, var(--ln) 80%, transparent) right top / 1px 100% no-repeat,
+    radial-gradient(ellipse 62% 78% at 50% 0%, var(--tint), transparent 74%),
+    linear-gradient(90deg, transparent, rgba(6, 9, 16, 0.6) 12%, rgba(6, 9, 16, 0.6) 88%, transparent);
+  animation: pn-sweep 11s ease-in-out infinite, ad-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: --ln 0.4s ease;
+}
+.ad-hero:hover { --ln: rgba(246, 224, 163, 0.85); }
+.ad-hero::before {
+  content: '';
+  position: absolute; left: 50%; top: 0;
+  width: 44px; height: 13px;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px);
+  filter: drop-shadow(0 0 4px rgba(240, 199, 94, 0.55));
+  pointer-events: none;
+}
+.ad-hero::after {
+  content: '';
+  position: absolute; left: 50%; bottom: 0;
+  width: 6px; height: 6px;
+  background: var(--gold-2);
+  box-shadow: 0 0 10px rgba(240, 199, 94, 0.9);
+  transform: translate(-50%, 50%) rotate(45deg);
+  pointer-events: none;
+}
+.ad-hero-label, .ad-note b {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+}
+.ad-hero-label { font-size: 0.85rem; font-weight: 700; color: var(--parch-dim); }
+.ad-hero-label::before, .ad-hero-label::after {
+  content: '';
+  width: 3rem; height: 1px;
+  background: linear-gradient(90deg, rgba(240, 199, 94, 0.7), transparent);
+}
+.ad-hero-label::after { background: linear-gradient(270deg, rgba(240, 199, 94, 0.7), transparent); }
+.ad-hero-ver { margin-top: 0.9rem; font-size: 1.35rem; color: var(--parch); }
+.ad-hero-ver .text-gold-grad { font-size: 1.9rem; font-weight: 900; }
+.ad-hero-sub { margin-top: 0.5rem; font-size: 0.8rem; color: var(--parch-dim); }
+.ad-btns {
+  margin-top: 1.5rem;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 0.8rem;
+}
+.ad-hero-note { margin-top: 1.2rem; font-size: 0.75rem; color: var(--mut); }
+
+/* ---------- cards: fading rules, no boxes ---------- */
+.ad-grid {
+  margin-top: 2.2rem;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+.ad-grid-2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 860px) { .ad-grid { grid-template-columns: 1fr; } }
+.ad-card {
+  --ln: rgba(240, 199, 94, 0.3);
+  position: relative;
+  padding: 1.6rem 1.3rem 1.5rem;
+  text-align: center;
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.06) 25%, rgba(240, 199, 94, 0.06) 75%, transparent);
+  transition: --ln 0.35s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ad-card:hover { --ln: rgba(246, 224, 163, 0.8); transform: translateY(-4px); }
+.ad-card::before {
+  content: '';
+  position: absolute; left: 50%; top: 0;
+  width: 5px; height: 5px;
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.8);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.ad-card:hover::before { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+.ad-ic {
+  display: inline-grid; place-items: center;
+  width: 46px; height: 46px;
+  color: var(--gold-2);
+  border: 1px solid rgba(240, 199, 94, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(240, 199, 94, 0.12) inset, 0 0 14px rgba(240, 199, 94, 0.1);
+}
+.ad-card h3 { margin-top: 1rem; font-size: 1rem; color: var(--parch); }
+.ad-card p {
+  margin-top: 0.7rem;
+  font-size: 0.82rem; line-height: 2;
+  color: var(--parch-dim);
+}
+.ad-card p a { color: var(--gold-2); text-decoration: none; }
+.ad-card p a:hover { color: var(--gold-1); text-decoration: underline; }
+.ad-card .btn { margin-top: 1.1rem; }
+
+/* install steps */
+.ad-steps {
+  margin: 1.1rem auto 0;
+  max-width: 20rem;
+  text-align: right;
+  list-style: none;
+  counter-reset: ad;
+  display: flex; flex-direction: column; gap: 0.85rem;
+}
+.ad-steps li {
+  counter-increment: ad;
+  position: relative;
+  padding-inline-start: 2.1rem;
+  font-size: 0.82rem; line-height: 1.95;
+  color: var(--parch-dim);
+}
+.ad-steps li::before {
+  content: counter(ad);
+  position: absolute; inset-inline-start: 0; top: 0.15rem;
+  display: grid; place-items: center;
+  width: 1.45rem; height: 1.45rem;
+  font: 700 0.72rem/1 Vazirmatn, sans-serif;
+  color: var(--gold-2);
+  border: 1px solid rgba(240, 199, 94, 0.35);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(240, 199, 94, 0.12);
+}
+.ad-steps a { color: var(--gold-2); text-decoration: none; }
+.ad-steps a:hover { color: var(--gold-1); text-decoration: underline; }
+
+/* ---------- notes ---------- */
+.ad-note {
+  --ln: rgba(240, 199, 94, 0.26);
+  position: relative;
+  margin-top: 2.6rem;
+  padding: 1.6rem 1.3rem;
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.3) 80%, transparent);
+}
+.ad-note p { font-size: 0.8rem; line-height: 2.1; color: var(--parch-dim); }
+.ad-note p + p { margin-top: 0.8rem; }
+.ad-note a { color: var(--gold-2); text-decoration: none; }
+.ad-note a:hover { color: var(--gold-1); text-decoration: underline; }
+.ad-note .font-cinzel { color: var(--parch); }
+
+@keyframes ad-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 640px) {
+  .ad-hero-label::before, .ad-hero-label::after { width: 1.6rem; }
+  .ad-hero { padding: 2.2rem 1rem 1.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ad-hero { animation: none; }
+  .ad-card, .ad-hero { transition: none; }
+}

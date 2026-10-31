@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کتاب اسپل‌های فورور — wowfarsi</title>
+<meta name="description" content="کتاب کامل اسپل‌ها و تلنت‌های ۹ کلاس WoW Forever (بتا 1.60.1) در برابر کلاسیک؛ توضیح فارسی، فیلتر سطح و وضعیت، مقایسهٔ فورور/کلاسیک.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="canonical" href="https://wowfarsi.ir/spellbook.html">
+<meta property="og:title" content="کتاب اسپل‌های WoW Forever — wowfarsi">
+<meta property="og:description" content="همهٔ اسپل‌ها و تلنت‌های ۹ کلاس فورور، رده‌به‌رده، با ترجمهٔ فارسی و مقایسه با کلاسیک.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wowfarsi.ir/assets/img/logo.webp">
+<link rel="stylesheet" href="assets/css/site.css?v=20261031b">
+<link rel="stylesheet" href="assets/css/fantasy.css?v=20261111j">
+<link rel="stylesheet" href="assets/css/extra.css?v=20261111j">
+<link rel="stylesheet" href="assets/css/spellbook.css?v=20261111j">
+</head>
+<body>
+<div class="bg-layers" aria-hidden="true">
+  <div class="bg-photo"></div>
+  <div class="bg-veil"></div>
+  <div class="bg-grain"></div>
+</div>
+<div id="embers" aria-hidden="true" style="position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none"></div>
+
+<!-- ================= nav ================= -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-brand" aria-label="wowfarsi — خانه">
+      <span class="brand-logo"><img src="assets/img/logo.webp" alt="لوگوی wowfarsi"></span>
+      <b class="font-cinzel" dir="ltr">wowfarsi</b>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="retail.html">Midnight</a>
+      <a href="forever.html" class="is-active">Forever</a>
+      <a href="talents.html">Talent Tree</a>
+      <a href="news.html">wowheadFA</a>
+      <a href="addon.html">افزونه</a>
+      <a href="status.html">وضعیت ترجمه</a>
+      <a href="donate.html" class="dn-nav">حمایت</a>
+    </nav>
+  </div>
+  <div class="nav-rule"></div>
+</header>
+
+<main>
+<section class="section" style="padding-top:7.5rem" id="sb-root">
+  <div class="bg-scrim" aria-hidden="true"></div>
+
+  <div class="sb-head reveal">
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کتاب اسپل‌های فورور</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-en font-cinzel" dir="ltr">Forever Spellbook · Build 1.60.1.70685 vs Classic 1.15.9</p>
+    <p class="sb-sub">همهٔ اسپل‌ها و تلنت‌های ۹ کلاس، همان‌طور که در کلاینت بتای فورور آموزش داده می‌شوند — رده‌به‌رده، کنار نسخهٔ کلاسیک. روی هر اسپل بزنید تا جزئیات و مقایسه را ببینید.</p>
+  </div>
+
+  <!-- class tabs -->
+  <div class="sb-class-tabs reveal" id="sb-classes" role="tablist" aria-label="انتخاب کلاس"></div>
+
+  <!-- stats chips -->
+  <div class="sb-stats reveal" id="sb-stats"></div>
+
+  <!-- toolbar -->
+  <div class="sb-toolbar reveal" id="sb-toolbar">
+    <div class="sb-tabs" id="sb-tabs" role="tablist" aria-label="شاخه"></div>
+    <div class="sb-filters">
+      <div class="sb-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="sb-q" type="search" placeholder="جست‌وجوی اسپل… ( / )" autocomplete="off" dir="auto" aria-label="جست‌وجوی اسپل">
+      </div>
+      <div class="sb-chips" id="sb-status" role="group" aria-label="فیلتر وضعیت"></div>
+      <select id="sb-lvl" aria-label="فیلتر سطح"></select>
+      <select id="sb-sort" aria-label="ترتیب">
+        <option value="lv">ترتیب: سطح</option>
+        <option value="az">ترتیب: الفبا</option>
+        <option value="tab">ترتیب: شاخه</option>
+      </select>
+      <button id="sb-fav" class="sb-chip" title="فقط نشان‌شده‌ها" aria-pressed="false">★ نشان‌شده‌ها</button>
+      <button id="sb-tr" class="sb-chip" title="تنظیمات ترجمه" type="button">⚙ ترجمه</button>
+    </div>
+  </div>
+
+  <!-- grid -->
+  <div class="sb-frame reveal" style="transition-delay:80ms">
+    <div class="sb-panel">
+      <div class="sb-count" id="sb-count"></div>
+      <div class="sb-grid" id="sb-grid">
+        <div class="sb-skeleton"><p>در حال بارگذاری کتاب اسپل‌ها…</p></div>
+      </div>
+      <span class="sb-build" id="sb-build" dir="ltr"></span>
+    </div>
+  </div>
+
+  <!-- detail drawer -->
+  <div class="sb-drawer" id="sb-drawer" hidden aria-modal="true" role="dialog" aria-label="جزئیات اسپل">
+    <div class="sb-drawer-backdrop" id="sb-backdrop"></div>
+    <div class="sb-drawer-panel" dir="rtl">
+      <button class="sb-close" id="sb-close" aria-label="بستن">✕</button>
+      <div id="sb-detail"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= footer ================= -->
+<footer class="footer">
+  <div class="footer-rule" aria-hidden="true"><span></span><span>✦</span><span></span></div>
+  <div class="footer-brand font-cinzel" dir="ltr">wowfarsi</div>
+  <div class="footer-sep" aria-hidden="true"><span>✦</span><span class="font-cinzel" dir="ltr">Forever Spellbook</span><span>✦</span></div>
+  <p class="footer-note">داده‌ها از کلاینت بتای WoW Forever (ساخت ۱٫۶۰٫۱٫۷۰۶۸۵) و مقایسه با Classic Era (ساخت ۱٫۱۵٫۹) گردآوری و ترجمه شده است؛ اعداد، مقادیر پایهٔ کلاینت‌اند.</p>
+  <p class="footer-note" dir="ltr">Fan-made Persian translation, not affiliated with or endorsed by Blizzard Entertainment.</p>
+</footer>
+
+<script src="assets/js/main.js?v=20261104a"></script>
+<script src="assets/js/tr.js?v=20261111k"></script>
+<script src="assets/js/spellbook.js?v=20261111j"></script>
+<script src="assets/js/nav-menu.js?v=20261111j"></script>
+</body>
+</html>

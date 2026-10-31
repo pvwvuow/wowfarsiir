@@ -1,0 +1,778 @@
+{
+ "slug": "augmentation-evoker",
+ "class": "evoker",
+ "class_en": "Evoker",
+ "spec_en": "Augmentation",
+ "spec_no": 1,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Augmentation Evoker",
+ "lead": "Augmentation یک اسپک حمایتی-تهاجمی یکتاست: با جادوی سیاه زمین به دشمن آسیب می‌زنی و همزمان متحدها را با [[Ebon Might]] و [[Prescience]] تقویت می‌کنی. دو مسیر Hero Tree داری: [[Chronowarden]] با پتانسیل آسیب بالاتر در سطح حرفه‌ای و [[Scalecommander]] با بازی ساده‌تر که برای بازیکن متوسط در Mythic+ نتیجه بهتری می‌دهد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Ebon Might": {
+   "fa": "باف قدرتمندی که آسیب و درمان را افزایش می‌دهد"
+  },
+  "Prescience": {
+   "fa": "تلنت پیش‌بینی که به دو هم‌تیمی قدرتمند تاثیر می‌دهد."
+  },
+  "Chronowarden": {
+   "fa": "مسیر هیرو تمرکز بر زمان و کنترل."
+  },
+  "Scalecommander": {
+   "fa": "مسیر هیرو تمرکز بر قدرت و آسیب‌رسانی."
+  },
+  "Bronze time-magic theme": {
+   "fa": "تم جادوی زمان برنزی با تمرکز بر افزایش هاست و کاهش کول‌داون‌ها"
+  },
+  "Personal damage emphasis": {
+   "fa": "تمرکز ویژه بر آسیب شخصی"
+  },
+  "Breath of Eons": {
+   "fa": "اسپل پرواز برای حرکت سریع در میدان نبرد."
+  },
+  "Accretion": {
+   "fa": "تلنت که به [[Eternity Surge]] اجازه می‌دهد تا دو بار استفاده شود."
+  },
+  "Aerial Mastery": {
+   "fa": "افزایش برد پرواز و کاهش کول‌داون [[Dream Flight]]."
+  },
+  "Afterimage": {
+   "fa": "ایجاد یک کپی از شما که به هدف حمله می‌کند و آسیب می‌زند."
+  },
+  "Anachronism": {
+   "fa": "افزایش آسیب اسپل‌ها پس از استفاده از [[Time Dilation]]."
+  },
+  "Ancient Flame": {
+   "fa": "افزایش آسیب [[Living Flame]] و [[Pyre]]."
+  },
+  "Arcane Intensity": {
+   "fa": "افزایش آسیب اسپل‌های جادویی با استفاده از [[Font of Magic]]."
+  },
+  "Tip the Scales": {
+   "fa": "کول‌داون که به شما اجازه می‌دهد اسپل‌ها را در حداکثر رتبه اجرا کنید"
+  },
+  "Fire Breath": {
+   "fa": "اسپل اصلی آسیب‌زای درخت آتش"
+  },
+  "Upheaval": {
+   "fa": "یک اسپل قدرتمند که باعث آسیب قابل توجه به دشمنان اطراف می‌شود."
+  },
+  "Time Skip": {
+   "fa": "کول‌داون که به شما اجازه می‌دهد زمان را به عقب برگردانید"
+  },
+  "Eruption": {
+   "fa": "اسپل آتش که باعث انفجار می‌شود"
+  },
+  "Living Flame": {
+   "fa": "اسپل فیلر اصلی که درمان و آسیب می‌زند"
+  },
+  "Azure Strike": {
+   "fa": "ضربه سریع فیزیکی که دشمنان را کند می‌کند"
+  },
+  "Blistering Scales": {
+   "fa": "اسپل محافظتی که روی تانک استفاده می‌شود."
+  },
+  "Leaping Flames": {
+   "fa": "تلنت که باعث می‌شود آتش‌باد از یک هدف به هدف دیگر بپرد"
+  },
+  "Fate Mirror": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد بخشی از دメージ دریافت شده را به دشمنان بازتاب دهید."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "افزونه Evoker یک اسپک حمایتی-تهاجمی یکتاست: با جادوی سیاه زمین به دشمن آسیب می‌زنی و همزمان متحدها را با [[Ebon Might]] و [[Prescience]] تقویت می‌کنی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Chronowarden]] با پتانسیل آسیب بالاتر در سطح حرفه‌ای و [[Scalecommander]] با بازی ساده‌تر که برای بازیکن متوسط در Mythic+ نتیجه بهتری می‌دهد."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "انفجار",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بازی آسان",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "کاربردی",
+       "v": "عالی",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "بازی آسان و قابل دسترس برای شروع",
+       "آسیب گروهی بالا با تقویت متحدها",
+       "زندگی‌پذیری عالی با Defy Fate و دفاع‌های اضافی",
+       "جابجایی استثنایی با Hover و Glide",
+       "ابزارهای گروهی بی‌نظیر: Rescue، Time Spiral و Spatial Paradox"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "حداکثر برد ۲۵ یارد برای یک اسپک دوربرد",
+       "آسیب مستقیم محدود؛ خروجی به کارایی متحدان بستگی دارد",
+       "اثربخشی کاهش می‌یابد اگر هدف تقویت بمیرد، به‌ویژه در دونژن‌ها",
+       "مقیاس‌پذیری AoE محدود؛ انفجار اولویت یا پاک‌سازی گسترده فراتر از تقویت متحدان ندارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Chronowarden",
+       "tag": "انتخاب پیش‌فرض برای رایدز",
+       "x": "این درخت با تمرکز بر جادوی زمان برنزی، افزایش هاست و کاهش کول‌داون‌ها، بهبود باف‌های گروهی را به ارمغان می‌آورد و بالاترین پتانسیل آسیب را دارد."
+      },
+      {
+       "title": "Scalecommander",
+       "tag": "گزینهٔ ساده‌تر برای Mythic+",
+       "x": "این درخت با تأکید آسیب شخصی و تمرکز ویژه بر اسپل Breath of Eons، برای بازیکنان متوسط دسترسی بهتری دارد و کمتر به باف‌های هم‌تیمی‌ها وابسته است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "اینجا راهنمای تکمیلی تلنت‌های Augmentation Evoker برای پچ ۱۲.۱.۵ ارائه می‌شود. این راهنما بر ساختارهای پیشنهادی برای حالت‌های مختلف بازی متمرکز است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Chronowarden (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "ساختار اصلی برای ریدینگ با تمرکز بر بهینه‌سازی زمان‌بندی اسپل‌ها و حمایت از تیم.",
+       "code": "CEcBAAAAAAAAAAAAAAAAAAAAAMMzMbzMzgZYmZZGzMjZ2AAAAAAAAYmhxMYM1YmZGAAAAMjZMmZWGzMwMMwYGLsADMDDNiFMGzMAwA"
+      },
+      {
+       "title": "Scalecommander (Mythic+/Delves)",
+       "tag": "بهترین برای Mythic+ و Delves",
+       "x": "ساختار با تمرکز بر انعطاف‌پذیری و عملکرد در مواجهه با چند هدف.",
+       "code": "CEcBAAAAAAAAAAAAAAAAAAAAAMMzMbzMzMzyAzsMjxMmBAAAAAAAAmhZGYM1YmZGAAAAMzMjxMz2YmBmZzYwCsMGGbDgZiYDjZwMDgB"
+      },
+      {
+       "title": "Mythic+",
+       "tag": "Chronowarden",
+       "code": "CEcBAAAAAAAAAAAAAAAAAAAAAMMzMbzMzgZYmZZGzMjZ2AAAAAAAAwMMzAjpGzMzAAAAgZmZMmZ2GzMwMMwYGLsADMDDNiFMmZmBAG",
+       "x": "Mythic+ برای Chronowarden."
+      },
+      {
+       "title": "Delves",
+       "tag": "Chronowarden",
+       "code": "CEcBAAAAAAAAAAAAAAAAAAAAAMMzMbjZmxyMYmlZMzMmBAAAAAAAAmhZGYM1YmZGAAAAMzMjxMzyYmBmZzAjZswCMwMM0IWwYmZGAYA",
+       "x": "Delves برای Chronowarden."
+      },
+      {
+       "title": "تک‌هدف / ریید",
+       "tag": "Scalecommander",
+       "code": "CEcBAAAAAAAAAAAAAAAAAAAAAMMzMbzMzgZYmZZGzMjZ2AAAAAAAAYmhxMYM1YmZGAAAAMjZMmZWGzMwMMGsALjhx2AYmI2wYgZGAD",
+       "x": "تک‌هدف / ریید برای Scalecommander."
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=evoker",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ بازی با Augmentation Evoker در نقش DPS بر بهینه‌سازی استفاده از کول‌داون‌ها و اسپل‌های قدرتمند تمرکز دارد. چرخهٔ اصلی به‌طور قابل توجهی با انتخاب درخت تلنت Chronowarden یا Flameshaper تغییر می‌کند."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ اصلی (درخت Chronowarden)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "حفظ [[Prescience]] روی بازیکنان DPS متحد",
+      "استفاده از [[Ebon Might]] اگر زمان باقی‌مانده روی باف کمتر از چند ثانیه باشد",
+      "استفاده از [[Breath of Eons]] (نحوه استفاده از کول‌داون‌ها را ببینید)",
+      "استفاده از [[Tip the Scales]] (نحوه استفاده از کول‌داون‌ها را ببینید)",
+      "استفاده از [[Fire Breath]] در رتبه ۱ یا حداکثر رتبه",
+      "استفاده از [[Upheaval]] در رتبه ۱ مگر به افزایش شعاع نیاز باشد",
+      "استفاده از [[Time Skip]] اگر تلنت شده‌اید (نحوه استفاده از کول‌داون‌ها را ببینید)",
+      "استفاده از [[Eruption]]",
+      "استفاده از [[Living Flame]] به عنوان فیلر در تقریباً تمام شرایط",
+      "استفاده از [[Azure Strike]] به عنوان فیلر پشتیبان هنگام حرکت یا برای کند کردن دشمنان",
+      "حفظ [[Blistering Scales]] روی تانک"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "اولویت AoE تفاوت چندانی با تک‌هدف ندارد. صفحه AoE ساختار مشابهی را حفظ می‌کند اما با اولویت بیشتر برای Eruption در پنجره‌های Ebon Might."
+    },
+    {
+     "t": "h3",
+     "x": "آغازگر (Opener)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "پیش‌کاست کردن [[Blistering Scales]] روی تانک",
+      "پیش‌کاست کردن [[Living Flame]]",
+      "استفاده از تریک‌ها و پوشن Potion of Recklessness",
+      "استفاده از [[Prescience]] روی هدف ۱ (برای موقعیت‌دهی Breath of Eons)",
+      "استفاده از [[Prescience]] روی هدف ۲",
+      "استفاده از [[Breath of Eons]] با مسیر پروازی کوتاه و امن",
+      "استفاده فوری از [[Ebon Might]] پس از شروع نبرد (تغییر Midnight: باف کردن ریید در اسرع وقت)",
+      "استفاده از [[Tip the Scales]] (خارج از جریان جادو)",
+      "استفاده از [[Fire Breath]] در حداکثر رتبه از طریق Tip the Scales",
+      "استفاده از [[Upheaval]] در رتبه ۱ مگر به شعاع بیشتر نیاز باشد",
+      "ادامه با لیست اولویت‌ها"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "نکات مهم در مورد اسپل‌های تقویت‌شده"
+    },
+    {
+     "t": "p",
+     "x": "استفاده از [[Fire Breath]] در رتبه‌های بالاتر آسیب اولیه را افزایش می‌دهد اما مدت زمان افکت DoT را کاهش می‌دهد. [[Leaping Flames]] از رتبه‌های بالاتر بهره می‌برد. فقط اسپل‌های تقویت‌شده را در پنجره‌های Ebon Might اجرا کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 271092
+      },
+      {
+       "slot": "آف‌هند",
+       "id": 268197
+      },
+      {
+       "slot": "سر",
+       "id": 271501
+      },
+      {
+       "slot": "گردن",
+       "id": 268251
+      },
+      {
+       "slot": "شانه",
+       "id": 271499
+      },
+      {
+       "slot": "شنل",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271504
+      },
+      {
+       "slot": "مچ",
+       "id": 244584
+      },
+      {
+       "slot": "دست",
+       "id": 271502
+      },
+      {
+       "slot": "کمر",
+       "id": 244581
+      },
+      {
+       "slot": "پا",
+       "id": 271500
+      },
+      {
+       "slot": "چکمه",
+       "id": 268233
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268249
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270168
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای یک اگمنتشن اواکر DPS در پچ 12.1.5، تمرکز اصلی باید روی افزایش استت‌های اصلی باشد. اولویت اصلی شما باید آیکیو (Intellect) باشد که از طریق آیتم‌ها و استت‌ها به دست می‌آید."
+    },
+    {
+     "t": "call",
+     "x": "همیشه از شبیه‌سازی با Raidbots برای بررسی دقیق‌تر استفاده کنید، زیرا شرایط گیم‌پلی می‌تواند نتایج را تغییر دهد."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت استت‌ها"
+    },
+    {
+     "t": "p",
+     "x": "پس از آیکیو، Mastery (Mastery) بهترین گزینه است. بعد از آن Critical Strike و سپس Haste و در نهایت Versatility قرار دارند."
+    },
+    {
+     "t": "p",
+     "x": "دسته‌بندی استت‌ها به این صورت است: Mastery > Critical Strike > Haste > Versatility. آیکیو و آی‌ال‌ال (ilvl) همیشه اولویت دارند."
+    },
+    {
+     "t": "h3",
+     "x": "بازو"
+    },
+    {
+     "t": "p",
+     "x": "بازو اصلی شما باید [[Jan'thrazet, the Soul Fang]] باشد که یک سلاح بسیار قدرتمند برای این کلاس محسوب می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "برای دست دوم، [[Spine of the Hissing Abyss]] انتخاب مناسبی است که به طور قابل توجهی عملکرد شما را افزایش می‌دهد."
+    },
+    {
+     "t": "h3",
+     "x": "سایر اسلات‌ها"
+    },
+    {
+     "t": "p",
+     "x": "برای سر، [[Calamitous Echo's Magmashapers]] بهترین گزینه است. برای گردن، [[Amulet of the Twin Fangs]] انتخاب مناسبی دارد."
+    },
+    {
+     "t": "p",
+     "x": "برای شانه‌ها، [[Calamitous Echo's Sundered Peaks]] و برای پشت، [[Silken Voodoo Drape]] پیشنهاد می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "برای سینه، [[Searing Caldera of Calamity]] و برای مچ دست، [[Farstrider's Plated Bracers]] انتخاب‌های خوبی هستند."
+    },
+    {
+     "t": "p",
+     "x": "برای دست‌ها، [[Calamitous Echo's Ebon Greathorns]] و برای کمر، [[Farstrider's Trophy Belt]] گزینه‌های مناسبی محسوب می‌شوند."
+    },
+    {
+     "t": "p",
+     "x": "برای پاها، [[Earthen Pillars of Calamity]] و برای کفش‌ها، [[Ferocious Scaleboots]] انتخاب‌های پیشنهادی هستند."
+    },
+    {
+     "t": "p",
+     "x": "برای انگشتان، می‌توانید از [[Vile Alchemist's Band]] یا [[Band of the Swarmcaller]] استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "ترینکت‌ها"
+    },
+    {
+     "t": "p",
+     "x": "برای ترینکت‌ها، [[Font of Venomous Rage]] و [[Twisted Horror's Tendril]] گزینه‌های بسیار خوبی هستند که عملکرد شما را به شکل چشمگیری افزایش می‌دهند."
+    },
+    {
+     "t": "h3",
+     "x": "ست تیر (Tier Set)"
+    },
+    {
+     "t": "p",
+     "x": "ست تیر شما باید [[Echo of Calamity]] باشد که شامل پنج قطعه مختلف است."
+    },
+    {
+     "t": "p",
+     "x": "با ۲ قطعه از این ست، کول‌داون اسپل [[Upheaval]] ۱۰ ثانیه کاهش می‌یابد."
+    },
+    {
+     "t": "p",
+     "x": "با ۴ قطعه از این ست، اسپل [[Upheaval]] اثرات [[Fate Mirror]] را برای ۸ ثانیه تقویت می‌کند و میزان دメージ بازتابی را تا ۴۵٪ افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "این ست بر روی چرخه اصلی اسپل‌ها تأثیر چندانی ندارد و کمی به سمت Chronowarden تمایل دارد."
+    },
+    {
+     "t": "h3",
+     "x": "کرفت‌ها"
+    },
+    {
+     "t": "p",
+     "x": "برای کرفت‌ها، [[Farstrider's Plated Bracers]] و [[Farstrider's Trophy Belt]] گزینه‌های خوبی هستند که می‌توانید از آن‌ها استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "کاتالیست‌ها"
+    },
+    {
+     "t": "p",
+     "x": "کاتالیست‌ها شامل Sethraliss' Fanged Helm، Soulslither Spaulders، Awoken Dreadfang Cuirass، Aberrant Commander's Gauntlets و Cuisses of the Uncoiled Union هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Mastery",
+      "Critical Strike",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "**اینتلکت** همیشه اولویت اصلی دارد، زیرا به طور مستقیم قدرت اسپل‌ها را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "پس از اینتلکت، **مستری** بهترین استت برای اوجینیشن اِووکر است، زیرا به طور قابل توجهی خسارت تولیدی را بالا می‌برد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "تزیین سلاح",
+       "v": "Enchant Weapon - Arcane Mastery",
+       "ids": [
+        244030
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Hearty Silvermoon Parade",
+       "ids": [
+        266985
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Deadly Amethyst",
+       "ids": [
+        240897
+       ]
+      },
+      {
+       "k": "تزیین سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "تزیین شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "تزیین سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "تزیین پا",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "نخ پا",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "تزیین حلقه",
+       "v": "Enchant Ring - Zul'jin's Mastery",
+       "ids": [
+        243958
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استفاده از Flask و پتشن جنگی برای افزایش خروجی ضروری است. پوشنٔ سلامتی برای مواقع اضطراری حفظ جان در نظر گرفته شده. تزیینات و جواهرها باید با استت‌ها هماهنگ باشند."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای مای‌پلاس برای اگمنتشن ایووکر در پچ 12.1.5، فصل Midnight Season 2 با نقش DPS."
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "اسکیل‌کامندر برای بازی‌کنان متوسط مناسب‌تر است؛ کرونواردن سقف عملکرد بالاتری دارد.",
+      "پرساینس را روی دو قوی‌ترین دی‌پی‌ایس بگذارید و uptime آن را نزدیک به ۱۰۰٪ حفظ کنید.",
+      "بلایسترینگ اسکیلز را قبل از هر پول روی تانک بزنید و بعد از اتمام آن دوباره استفاده کنید.",
+      "مسیر پرواز براث آیونز مهم‌ترین بخش مهارت در کلیدها است."
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فصل",
+       "v": "Midnight Season 2"
+      },
+      {
+       "k": "نقش",
+       "v": "DPS"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Augmentation Evoker (آگمنتیشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل آگمنتیشن (Augmentation Evoker) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Augmentation Evoker talent build midnight",
+   "Augmentation Evoker guide midnight",
+   "Augmentation Evoker guide 12.1.5",
+   "best Augmentation Evoker talents",
+   "Augmentation Evoker talent tree midnight",
+   "Augmentation Evoker pve guide",
+   "Augmentation Evoker rotation midnight",
+   "Augmentation Evoker rotation and cooldowns",
+   "Augmentation Evoker bis list midnight",
+   "Augmentation Evoker best in slot",
+   "Augmentation Evoker gear guide",
+   "Augmentation Evoker food and potion",
+   "best food for Augmentation Evoker",
+   "best flask for Augmentation Evoker",
+   "best potion for Augmentation Evoker",
+   "Augmentation Evoker enchants and gems",
+   "best enchants for Augmentation Evoker",
+   "best gems for Augmentation Evoker",
+   "Augmentation Evoker stat priority midnight",
+   "Augmentation Evoker tier set midnight",
+   "Augmentation Evoker tier set bonuses",
+   "Augmentation Evoker mythic+ guide",
+   "Augmentation Evoker m+ guide midnight",
+   "Augmentation Evoker raid guide",
+   "Augmentation Evoker hero talents",
+   "Augmentation Evoker hero tree",
+   "best dps build Augmentation Evoker midnight",
+   "Augmentation Evoker cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای آگمنتیشن",
+   "تلنت آگمنتیشن",
+   "تلنت برای Augmentation Evoker",
+   "تلنت Evoker آگمنتیشن",
+   "بیلد آگمنتیشن",
+   "بیلد تلنت آگمنتیشن میدنایت",
+   "روتیشن آگمنتیشن",
+   "روتیشن و کول‌داون‌های آگمنتیشن",
+   "غذا برای آگمنتیشن",
+   "غذا برای Augmentation Evoker",
+   "غذا و معجون آگمنتیشن",
+   "بهترین غذای آگمنتیشن",
+   "فلسک آگمنتیشن",
+   "بهترین فلسک برای آگمنتیشن",
+   "معجون آگمنتیشن",
+   "انچنت آگمنتیشن",
+   "انچنت و جم آگمنتیشن",
+   "بهترین انچنت برای آگمنتیشن",
+   "جم آگمنتیشن",
+   "بست آیتم آگمنتیشن",
+   "بهترین آیتم‌های آگمنتیشن",
+   "گیر آگمنتیشن",
+   "استت آگمنتیشن",
+   "اولویت استت آگمنتیشن",
+   "ست تیر آگمنتیشن",
+   "مایتی پلاس آگمنتیشن",
+   "ام پلاس آگمنتیشن",
+   "راهنمای آگمنتیشن",
+   "راهنمای Augmentation Evoker",
+   "راهنمای ایوکر",
+   "آگمنتیشن میدنایت",
+   "ایوکر میدنایت",
+   "هرو تیلنت آگمنتیشن",
+   "بیلد آگمنتیشن",
+   "بهترین آگمنتیشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Augmentation Evoker (آگمنتیشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Augmentation Evoker به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای آگمنتیشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، معجون جنگی «Potion of Recklessness»، غذا «Hearty Silvermoon Parade»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای آگمنتیشن چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای آگمنتیشن کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Augmentation Evoker در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

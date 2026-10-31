@@ -1,0 +1,1010 @@
+{
+ "slug": "subtlety-rogue",
+ "class": "rogue",
+ "class_en": "Rogue",
+ "spec_en": "Subtlety",
+ "spec_no": 3,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Subtlety Rogue",
+ "lead": "Subtlety اسپک کول‌داون‌محور راگ است: همهٔ دمیجت داخل پنجره‌های کوتاه و سنگین هر 90 ثانیه می‌نشیند و امضایش [[Shadow Dance]] است. با تلنت [[Shadow Techniques]] اقتصاد منابع به اتواک گره خورده و همهٔ کول‌داون‌ها روی [[Secret Technique]] هم‌تراز می‌شوند. دو مسیر Hero Tree داری: [[Trickster]] با [[Coup de Grace]] که با تغییرهای اخیر بهترین انتخاب در همهٔ موقعیت‌هاست، و [[Deathstalker]] با [[Deathstalker's Mark]] که روی کاغذ تک‌هدفش حدود 2% جلوتر ولی سخت‌تر است.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Shadow Dance": {
+   "fa": "کول‌داون امضای Subtlety که اسپل‌های مخصوص Stealth را آزاد می‌کند."
+  },
+  "Secret Technique": {
+   "fa": "فینیشر سه‌ضربی و کول‌داون هم‌ترازی همهٔ چیزها؛ ضربه‌های سایه‌اش Clone Attack حساب می‌شوند."
+  },
+  "Shadow Blades": {
+   "fa": "کول‌داون 90 ثانیه‌ای: دوبرابرکردن تولید کانبو پوینت و اکوی 20% دمیج."
+  },
+  "Shadowstrike": {
+   "fa": "جنراتور از داخل Stealth یا Dance که در Dance جای [[Backstab]] را می‌گیرد."
+  },
+  "Backstab": {
+   "fa": "جنراتور پایهٔ تک‌هدف بیرون از Dance؛ با ست 2 تیکه 10 انرژی ارزان‌تر و 100% قوی‌تر."
+  },
+  "Shuriken Storm": {
+   "fa": "جنراتور چندهدف؛ با ست 2 تیکه 5 انرژی ارزان‌تر و 60% قوی‌تر."
+  },
+  "Black Powder": {
+   "fa": "فینیشر AoE که با ست 4 تیکه از [[Lingering Shadow]] بهره می‌برد."
+  },
+  "Eviscerate": {
+   "fa": "فینیشر پایه؛ در Trickster با [[Coup de Grace]] ارتقا می‌یابد."
+  },
+  "Coup de Grace": {
+   "fa": "نسخهٔ ارتقایافتهٔ [[Eviscerate]] در Trickster."
+  },
+  "Goremaw's Bite": {
+   "fa": "کول‌داونی که قبل از [[Shadow Dance]] استفاده می‌شود و برای [[Lingering Darkness]] اجباری است."
+  },
+  "Lingering Darkness": {
+   "fa": "تلنتی که فقط با گرفتن [[Goremaw's Bite]] در دسترس می‌آید."
+  },
+  "Lingering Shadow": {
+   "fa": "افکت ست 4 تیکه که با آن [[Eviscerate]] و [[Black Powder]] هم تقویت می‌شوند."
+  },
+  "Shadow Techniques": {
+   "fa": "تلنت پسیو که با اتواک منبع تولید می‌کند؛ ماندن در برد اتواک ضروری است."
+  },
+  "Deepening Shadows": {
+   "fa": "تلنتی که [[Shadow Dance]] را بر اساس هِیس تمدید می‌کند."
+  },
+  "Ancient Arts": {
+   "fa": "بافی که با [[Shuriken Storm]] یا [[Goremaw's Bite]] در ابتدای Dance ساخته می‌شود."
+  },
+  "Supercharger": {
+   "fa": "بافی که در AoE روی دو فینیشر اول Dance می‌نشیند."
+  },
+  "Darkest Night": {
+   "fa": "مکانیک [[Deathstalker's Mark]] که فینیش با حداکثر کانبو پوینت را پاداش می‌دهد."
+  },
+  "Deathstalker's Mark": {
+   "fa": "مکانیک اصلی درخت Deathstalker با جابه‌جایی دستی."
+  },
+  "Mark for Death": {
+   "fa": "ابزار جابه‌جایی [[Deathstalker's Mark]]."
+  },
+  "Quietus Celeris": {
+   "fa": "پروکی که چرخهٔ مارک را بهم می‌زند و با [[Vanish]] حل می‌شود."
+  },
+  "Vanish": {
+   "fa": "در Subtlety روی کول‌داون با کانبو پوینت کم استفاده می‌شود و در اوپنر بعد از اولین فینیشر می‌آید."
+  },
+  "Replicating Shadows": {
+   "fa": "تلنتی که با Clone Attackهای [[Secret Technique]] کار می‌کند."
+  },
+  "Disorienting Strikes": {
+   "fa": "تلنتی که پروک‌هایش از [[Secret Technique]] می‌آید."
+  },
+  "Ethereal Cloak": {
+   "fa": "تلنت دفاعی Deathstalker که مدت [[Cloak of Shadows]] را کمی زیاد می‌کند."
+  },
+  "Bait and Switch": {
+   "fa": "تلنت دفاعی Deathstalker که کاهش دمیج دفاع‌ها را بیشتر می‌کند."
+  },
+  "Shadewalker": {
+   "fa": "تلنت یوتیلیتی Deathstalker که [[Shadowstep]] را پرتکرارتر می‌کند."
+  },
+  "Shroud of Night": {
+   "fa": "تلنتی که مدت [[Shroud of Concealment]] را بیشتر می‌کند."
+  },
+  "Don't Be Suspicious": {
+   "fa": "تلنت Trickster که کول‌داون [[Shroud of Concealment]] را کم می‌کند."
+  },
+  "So Tricky": {
+   "fa": "تلنت Trickster که [[Tricks of the Trade]] را یک‌ساعته می‌کند."
+  },
+  "Cut to the Chase": {
+   "fa": "تلنتی که [[Slice and Dice]] را پسیو نگه می‌دارد."
+  },
+  "Slice and Dice": {
+   "fa": "باف سرعت حمله که معمولاً پسیو نگه داشته می‌شود."
+  },
+  "Instant Poison": {
+   "fa": "سم کشندهٔ استاندارد Subtlety که پیش از پول اعمال می‌شود."
+  },
+  "Atrophic Poison": {
+   "fa": "سم کاربردی کاهش‌دهندهٔ دمیج دشمن."
+  },
+  "Mastery: Executioner": {
+   "fa": "مستری کلاس: دمیج فینیشرها را بالا می‌برد."
+  },
+  "Zatha'tek, Breath of Corruption": {
+   "fa": "خنجر دست اصلی BiS فصل از Ula'tek."
+  },
+  "Farstrider's Mercy": {
+   "fa": "خنجر Off-Hand Crafted فصل که در BiS هم هست."
+  },
+  "Chosen Bloodslayer's Hexweave": {
+   "fa": "ست تیر فصل راگ؛ برای Subtlety 2 تیکه [[Backstab]] و [[Shuriken Storm]] را ارزان‌تر و قوی‌تر می‌کند و 4 تیکه [[Lingering Shadow]] را گسترش می‌دهد."
+  },
+  "Chosen Bloodslayer's Spirit Shroud": {
+   "fa": "کلاه ست فصل از Ula'tek."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Goldfeather Boots": {
+   "fa": "کفش BiS فصل از King's Rest."
+  },
+  "Jade Ophidian Band": {
+   "fa": "انگشتر دوم BiS فصل از Temple of Sethraliss."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت BiS فصل از The Coiled Altar."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت دوم BiS فصل از Ula'tek و ترینکت اوپنر."
+  },
+  "Sash of the Forlorn Vessel": {
+   "fa": "کمربند BiS فصل از The Coiled Altar."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر BiS فصل از Kith'ix."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسک بهترین فصل برای Subtlety."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک جایگزین فصل."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ پیش‌فرض فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزهٔ فصل وقتی Mastery بگیری."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل برای هر دو دست."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Silvermoon Parade": {
+   "fa": "feast فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "افزونهٔ هر دو خنجر فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل برای Subtlety."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "افزونهٔ شانه فصل برای Subtlety."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Quick Amethyst": {
+   "fa": "جم آمتیست فصل (Haste)."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم آمتیست فصل (Crit)."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم پریدوت فصل (Mastery)."
+  },
+  "Gaze of the Coiled Watcher": {
+   "fa": "آیتم افکت‌دار سر و اولویت ارتقا از Ula'tek."
+  },
+  "Frothing Venom Spaulders": {
+   "fa": "گزینهٔ Catalyst شانه از Vashnik the Malignant."
+  },
+  "Chestwrap of Palpable Terror": {
+   "fa": "گزینهٔ Catalyst سینه از Kith'ix."
+  },
+  "Grips of Electrified Defense": {
+   "fa": "گزینهٔ Catalyst دست از Temple of Sethraliss."
+  },
+  "Coiled Hex Legguards": {
+   "fa": "گزینهٔ Catalyst پا از The Coiled Altar."
+  },
+  "Silvermoon Agent's Deflectors": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Bloodlust": {
+   "fa": "باف هِیس گروهی که نمونهٔ دوم Dance را با [[Secret Technique]] هم‌تراز می‌کند."
+  },
+  "Cloak of Shadows": {
+   "fa": "دفاع جادویی راگ که با [[Ethereal Cloak]] طولانی‌تر می‌شود."
+  },
+  "Shadowstep": {
+   "fa": "جابجایی که با [[Shadewalker]] پرتکرارتر می‌شود."
+  },
+  "Shroud of Concealment": {
+   "fa": "ابزار مخفی‌سازی گروهی که با تلنت‌ها تقویت می‌شود."
+  },
+  "Tricks of the Trade": {
+   "fa": "ابزار تهدید که با [[So Tricky]] یک‌ساعته می‌شود."
+  },
+  "Stealth": {
+   "fa": "استت پایهٔ راگ؛ Subtlety همیشه از داخل آن فایت را شروع می‌کند و [[Shadowstrike]] از آن زده می‌شود."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Subtlety حول کول‌داون‌ها می‌چرخد: همهٔ دمیجت داخل پنجره‌های سنگین هر 90 ثانیه جمع می‌شود و امضایش [[Shadow Dance]] است؛ بیرون از کول‌داون‌ها خروجی کم است و این پروفایل بازیِ این اسپک است. هستهٔ چرخه build-and-spend است: فینیش در 6 یا 7 کانبو پوینت و انرژی همان منبع محدودکننده است."
+    },
+    {
+     "t": "p",
+     "x": "موتور منابع تو تلنت پسیو [[Shadow Techniques]] است که بخش بزرگی از درآمد انرژی و کانبو پوینت را از اتواک می‌گیرد؛ ماندن در برد اتواک در تک‌هدف و AoE ضروری است. [[Shadow Dance]] را دو بار همراه [[Shadow Blades]] می‌زنی و همه‌چیز به [[Secret Technique]] گره خورده است."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Trickster]] با فینیشر قوی [[Coup de Grace]] که با تغییرهای اخیر بهترین انتخاب در همهٔ موقعیت‌هاست، و [[Deathstalker]] با [[Deathstalker's Mark]] که در تک‌هدف خالص حدود 2% جلوتر است ولی جابه‌جایی دستی مارک سربار ذهنی دارد. در پچ 12.1.5 اسپک باف جبرانی 14% گرفت تا افت دمیجِ اصلاح تعامل‌های سایه جبران شود."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "برست",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "کِلیو",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "AoE",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بقا",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "پنجره‌های برست قوی هر 90 ثانیه",
+       "کول‌داون‌های دمیج پرتکرار",
+       "خروجی تک‌هدف خوب",
+       "بازی تند داخل کول‌داون‌ها با روتیشن ساده"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "دمیج ضعیف بیرون از کول‌داون‌ها",
+       "کِلیو ضعیف؛ هر دو درخت هرو کِلیو ندارند",
+       "به تنظیم (Tuning) حساس است و با هر پچ بالا و پایین می‌شود"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Trickster",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "با تغییرهای اخیر بهترین گزینه در همهٔ موقعیت‌هاست: برست عالی، AoE خوب، تک‌هدف مشابه و بازی ساده‌تر. [[Unseen Blade]] فینیشر قوی [[Coup de Grace]] می‌دهد؛ یوتیلیتی هم با [[Don't Be Suspicious]] و [[So Tricky]] بالا می‌رود."
+      },
+      {
+       "title": "Deathstalker",
+       "tag": "تک‌هدف خالص",
+       "x": "حول [[Deathstalker's Mark]] است و روی کاغذ در تک‌هدف حدود 2% جلوتر است؛ مشکلش جابه‌جایی دستی مارک با [[Mark for Death]] و سربار ذهنی در چندهدف است. دفاعش کمی بهتر ([[Ethereal Cloak]] و [[Bait and Switch]]) و یوتیلیتی با [[Shadewalker]] و [[Shroud of Night]] بیشتر است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Subtlety Rogue در پچ 12.1.5 دو درخت قهرمانی دارد: Trickster و Deathstalker؛ هر جدول سه ردیف کد دارد: Raid، Mythic+ و Delves. پیشنهاد منبع بازی با Trickster در همه‌جاست و دث‌استالکر فقط وقتی دیده می‌شود که پروفایل دمیج اولویت‌دار مزیت واقعی باشد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Trickster (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید؛ به‌خاطر سادگی و برست قوی انتخاب اول است.",
+       "code": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbbjxMjZgZmZGzMbzYGbbzMzMzMjBjZ2GAAAAGMGwYWMMwAziWoFbYGwMDmxA"
+      },
+      {
+       "title": "Trickster (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ AoE خوب و بازی ساده‌تر.",
+       "code": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbLjxMjZMMzMzwMbzYGbbzMzMzMjBjZ2GAAAAGMGwYWMMwAziWoFbYGwMDmxA"
+      },
+      {
+       "title": "Trickster (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbLjxMjZgZmZGzMbzYGbbzMzMzMjBjZ2GAAAAGMGwYWMMwAziWoFbYGwMDmxA"
+      },
+      {
+       "title": "Deathstalker (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "گزینهٔ رقابتی ریید؛ در تک‌هدف خالص حدود 2% جلوتر ولی سخت‌تر.",
+       "code": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbbjxMDDzMzMzw8AbzYGbbzMzMzMjBjZ2GAAAAGMmFzyADYBsMMhMLYGmZAmxA"
+      },
+      {
+       "title": "Deathstalker (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "برای موردهایی که پروفایل دمیج اولویت‌دار در چندهدف مزیتی است.",
+       "code": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbbjxMDjZmZmZGGbzYGbbzMzMzMjBjZ2GAAAAGMmFzyADYBsMMhMLYGmZAmxA"
+      },
+      {
+       "title": "Deathstalker (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbbjxMDjZmZmZGGbzYGbbzMzMzMjBjZ2GAAAAGMmFzyADYBsMMhMLYGmZAmxA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=rogue&spec=subtlety",
+     "x": "مشاهده تمام تلنت‌های Subtlety Rogue"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "اقتصاد منابع در Subtlety عجیب است: بیرون از کول‌داون‌ها تولید انرژی و کانبو پوینت کم و داخل آن‌ها زیاد است؛ تلنت پسیو [[Shadow Techniques]] بخش بزرگی از درآمد را می‌سازد و به همین دلیل ماندن در برد اتواک حیاتی است. ریتم بازی بیرون از کول‌داون‌ها آرام حس می‌شود و این طبیعی است."
+    },
+    {
+     "t": "p",
+     "x": "همهٔ دمیج به کول‌داون‌ها بسته است و این فرصت یکتای Subtlety برای روی‌هم‌چیدنشان است: همه‌چیز روی [[Secret Technique]] هم‌تراز می‌شود. [[Shadow Blades]] را با [[Shadow Dance]] بزن و نمونهٔ دوم Dance را معمولاً بلافاصله بعد از پایان اولی؛ کول‌داون‌ها ذاتاً خوب جفت نمی‌شوند پس وقتی Blades نزدیک برگشتن است، کمی ST و Dance را عقب بینداز."
+    },
+    {
+     "t": "p",
+     "x": "کارایی GCD حیاتی است: [[Shadow Dance]] را داخل یک GCD کست نکن و بلافاصله بعدش اسپل بعدی را بزن؛ تلنت [[Deepening Shadows]] ممکن است Dance را فقط به‌اندازهٔ یک کست دیگر تمدید کند و کوچک‌ترین تأخیر یعنی حسرت. راه‌حل رایج، ماکروی کول‌داون با جنراتور یا فینیشر است."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Trickster"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Shadowstrike]] را از داخل [[Stealth]] بزن.",
+      "داخل [[Shadow Dance]]: با 6 کانبو پوینت یا بیشتر فینیش کن؛ اول [[Secret Technique]] و بعد [[Eviscerate]]؛ جنراتورت [[Shadowstrike]] است.",
+      "بیرون از [[Shadow Dance]]: با 6 کانبو پوینت یا بیشتر [[Eviscerate]] بزن؛ جنراتورت [[Backstab]] است.",
+      "[[Shadow Dance]] را با 6 کانبو پوینت یا بیشتر بزن وقتی [[Secret Technique]] آماده است یا داخل [[Shadow Blades]].",
+      "[[Shadow Blades]] را وقتی [[Shadow Dance]] آماده است بزن.",
+      "[[Goremaw's Bite]] را روی کول‌داون قبل از [[Shadow Dance]] بزن.",
+      "[[Vanish]] را روی کول‌داون با کانبو پوینت کم بزن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Deathstalker"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Shadowstrike]] را از داخل [[Stealth]] بزن.",
+      "داخل [[Shadow Dance]]: با 6 کانبو پوینت یا بیشتر فینیش کن؛ اگر [[Darkest Night]] بالاست [[Eviscerate]]، بعد [[Secret Technique]] و بعد [[Eviscerate]]؛ جنراتورت [[Shadowstrike]] است.",
+      "بیرون از Dance: با 6 کانبو پوینت یا بیشتر [[Eviscerate]] بزن؛ جنراتورت [[Backstab]] است.",
+      "[[Shadow Dance]] را با کانبو پوینت کم بزن وقتی [[Darkest Night]] بالاست یا [[Secret Technique]] آماده است.",
+      "[[Shadow Blades]] را وقتی [[Shadow Dance]] آماده است بزن.",
+      "[[Goremaw's Bite]] را روی کول‌داون قبل از Dance بزن.",
+      "[[Vanish]] را روی کول‌داون با کانبو پوینت کم بزن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "با Deathstalker مراقب [[Deathstalker's Mark]] باش: بعضی رخدادها و تعویض فاز فایت مارک را پاک می‌کنند و [[Mark for Death]] باید سریع جایگزین شود. چرخهٔ مارک معمولاً خودش جفت می‌شود ولی پروک‌های [[Quietus Celeris]] می‌توانند بهم بزنندش که با [[Vanish]] حل می‌شود. نمونهٔ دوم [[Shadow Dance]] در پنجرهٔ [[Shadow Blades]] بدون [[Secret Technique]] خواهد بود مگر [[Bloodlust]] داشته باشی."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Shadowstrike]] را از داخل [[Stealth]] بزن.",
+      "داخل [[Shadow Dance]]: با 6 کانبو پوینت یا بیشتر فینیش کن؛ اول [[Secret Technique]]، بعد [[Eviscerate]] با [[Coup de Grace]] و بعد [[Black Powder]]؛ جنراتورت [[Shuriken Storm]] است.",
+      "بیرون از Dance: با 6 کانبو پوینت یا بیشتر [[Eviscerate]] با [[Coup de Grace]] و بعد [[Black Powder]]؛ جنراتورت [[Shuriken Storm]] است.",
+      "[[Shadow Dance]] را با 6 کانبو پوینت یا بیشتر بزن وقتی [[Secret Technique]] آماده است یا داخل [[Shadow Blades]].",
+      "[[Shadow Blades]] را وقتی Dance آماده است بزن.",
+      "[[Goremaw's Bite]] را روی کول‌داون قبل از Dance بزن.",
+      "[[Vanish]] را روی کول‌داون با کانبو پوینت کم بزن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بازی Subtlety از همان 2 هدف به روتیشن چندهدف می‌رود و جنراتور و فینیشرهای تک‌هدف را با گزینه‌های چندهدف عوض می‌کند؛ تلنت‌های Apex و هرو هم روی این تصمیم‌ها اثر می‌گذارند و گاهی به اسپل‌های تک‌هدف برمی‌گردند."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر (Trickster)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "قبل از پول حتماً داخل [[Stealth]] باش.",
+      "فایت را با [[Shadowstrike]] شروع کن.",
+      "[[Eviscerate]] را بزن.",
+      "[[Vanish]] را بزن و بعد [[Shadowstrike]].",
+      "[[Goremaw's Bite]] را استفاده کن.",
+      "[[Eviscerate]] را بزن.",
+      "[[Shadow Dance]] را بزن.",
+      "[[Shadow Blades]] را بزن.",
+      "ترینکت را استفاده کن (Voracious Heart of Ula'tek).",
+      "پاتشن مبارزه را استفاده کن (Light's Potential).",
+      "[[Shuriken Storm]] را بزن و بعد [[Secret Technique]].",
+      "برای بقیهٔ [[Shadow Dance]]، [[Shadowstrike]] و [[Eviscerate]] را تکرار کن.",
+      "روتیشن عادی را ادامه بده."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "[[Slice and Dice]] معمولاً با تلنت [[Cut to the Chase]] پسیو نگه داشته می‌شود؛ در موقعیت‌های چندهدفِ اوپنر شاید لازم باشد با [[Eviscerate]] اعمالش کنی. پیش از پول هم سم‌ها چک شود: [[Instant Poison]] به‌عنوان سم کشنده و [[Atrophic Poison]] به‌عنوان سم کاربردی."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Secret Technique",
+       "x": "فینیشر سه‌ضربی با کول‌داون ثابت که با هِیس کم می‌شود؛ ضربهٔ اول فیزیکی و دو ضربهٔ بعد سایه هستند و به‌عنوان Clone Attack حساب می‌شوند (تلنت‌هایی مثل [[Replicating Shadows]] با آن‌ها کار می‌کنند). سقف نرم 5 هدف دارد و بهترین استفاده، هرچه سریع‌تر و ترجیحاً داخل [[Shadow Dance]] برای پروک‌های [[Disorienting Strikes]] است."
+      },
+      {
+       "s": "Shadow Dance",
+       "x": "کول‌داون تعیین‌کنندهٔ اسپک: در طولش اسپل‌های مخصوص Stealth آزاد می‌شود؛ داخل Stealth قابل استفاده نیست و ماکروی آن با [[Shadowstrike]] رایج است. با [[Shadow Blades]] دو بار می‌زنی و تلنت [[Deepening Shadows]] می‌تواند مدتش را تمدید کند."
+      },
+      {
+       "s": "Shadow Blades",
+       "x": "کول‌داون 90 ثانیه‌ای که تولید کانبو پوینت جنراتورها را دوبرابر می‌کند و 20% دمیج اسپل‌های زده‌شده در طولش را به‌صورت سایه تکرار می‌کند؛ کول‌داونش با شروع فایت ریست می‌شود."
+      },
+      {
+       "s": "Goremaw's Bite",
+       "x": "روی کول‌داون و قبل از [[Shadow Dance]] استفاده می‌شود؛ گرفتنش برای رسیدن به [[Lingering Darkness]] اجباری است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "اولویت استت Mastery > Haste >= Versatility = Critical Strike است و برای هر دو هرو یکسان است. ترینکت‌های قوی و آیتم‌های افکت‌دار سر و گردن و خنجر بیشترین گزینه‌های خوب را دارند؛ یعنی بخش بزرگی از گیر از دو باس آخر ریید می‌آید و بقیهٔ اسلات‌ها را با بهترین چیزی که می‌افتد پر می‌کنی."
+    },
+    {
+     "t": "call",
+     "x": "اولویت ارتقا با Mistcrests: اول خنجر دست اصلی (دمیج سلاح بزرگ‌ترین ضریب دمیج ابیلیتی‌هاست)، بعد ترینکت‌های قوی، بعد آیتم‌های افکت‌دار مثل Gaze of the Coiled Watcher و Aqirbane Reliquary که ارتقایشان هم بودجهٔ استت را بالا می‌برد هم افکت را، و در پایان تیکه‌های کم‌آیتم‌لول. برای مقدار دقیق با Raidbots سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271093
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 237837
+      },
+      {
+       "slot": "سر",
+       "id": 271510
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271508
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271513
+      },
+      {
+       "slot": "دستبند",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271511
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271509
+      },
+      {
+       "slot": "کفش",
+       "id": 159304
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 162544
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271510
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270173,
+        270175
+       ],
+       "names": [
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Ula'tek"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Chosen Bloodslayer's Hexweave برای Subtlety: 2 تیکه [[Backstab]] را 10 انرژی ارزان‌تر با 100% دمیج بیشتر می‌کند و [[Shuriken Storm]] را 5 انرژی ارزان‌تر با 60% دمیج بیشتر. 4 تیکه [[Lingering Shadow]] حالا [[Eviscerate]] و [[Black Powder]] را هم با اثر کامل تقویت می‌کند. یادت بماند [[Goremaw's Bite]] برای رسیدن به [[Lingering Darkness]] اجباری است و باید بازی شود."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Gaze of the Coiled Watcher (سر)، Frothing Venom Spaulders (شانه)، Chestwrap of Palpable Terror (سینه)، Grips of Electrified Defense (دست) و Coiled Hex Legguards (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Silvermoon Agent's Deflectors (دستبند) و خنجر Off-Hand به‌نام Farstrider's Mercy که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Mastery",
+      "Haste",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی Agility است و بعدش Mastery > Haste >= Versatility = Critical Strike؛ این ترتیب برای هر دو هرو یکسان است. در فایت‌های چندهدف و Mythic+ بیشتر بودجهٔ استت سراغ Mastery می‌رود."
+    },
+    {
+     "t": "p",
+     "x": "در تک‌هدف، ترتیب Deathstalker این‌گونه است: Agility > Mastery > Haste (~700) > Versatility > Critical Strike و ترتیب Trickster: Agility > Mastery > Haste (~700) > Critical Strike > Versatility؛ فقط جای دو استت آخر عوض می‌شود."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Haste کپ سختی ندارد ولی حدود 700 هِیس قانون سرانگشتی است تا یک global دیگر داخل [[Shadow Dance]] جا شود.",
+      "مقدار 700 با پروک‌های استت (folio، گیر افکت‌دار، افزونهٔ سلاح، embellishment و ترینکت‌ها) پایین‌تر می‌آید.",
+      "برای مقدار دقیق با Raidbots سیم بزن؛ جدول‌ها جنریک‌اند."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Subtlety Rogue در Midnight Season 2 حول Mastery و برست می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters (بهترین) یا Flask of the Shattered Sun (جایگزین)",
+       "ids": [
+        241322,
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Silvermoon Parade",
+       "ids": [
+        255845
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "انتخاب فلاسک بسته به گیر بین Magisters و Shattered Sun عوض می‌شود؛ با سیم نهاییش کن."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential (پیش‌فرض) یا Potion of Recklessness (اگر Mastery بگیری)",
+       "ids": [
+        241308,
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را داخل اوپنر هم‌زمان با ترینکت و [[Shadow Dance]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "هر دو خنجر",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil (هر دو دست)",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ سر این اسپک [[Enchant Helm - Empowered Rune of Avoidance]] است و شانه [[Enchant Shoulders - Amirdrassil's Grace]]؛ این دو با اسپک‌های دیگر راگ فرق دارد."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Quick Amethyst یا Flawless Deadly Amethyst و Flawless Masterful Peridot",
+       "ids": [
+        240899,
+        240897,
+        240891
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج الماس [[Indecipherable Eversong Diamond]] است؛ بقیهٔ سوکت‌ها بین آمتیست و پریدوت بسته به گیر پخش می‌شود."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Subtlety Rogue در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "تریکستر انتخاب همه‌جاست: برست عالی، AoE خوب و بازی ساده‌تر. Subtlety از همان 2 هدف به روتیشن چندهدف می‌رود؛ [[Shuriken Storm]] جنراتور و [[Black Powder]] فینیشر چندهدف توست و [[Secret Technique]] همان کول‌داون هم‌ترازی می‌ماند. در Mythic+ بیشتر بودجهٔ استت به Mastery می‌رود."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "داخل برد اتواک بمان: [[Shadow Techniques]] مهم‌ترین منبع انرژی و کانبو پوینت توست، مخصوصاً بیرون از کول‌داون‌ها.",
+      "[[Secret Technique]] و [[Shadow Dance]] را هم‌تراز نگه دار و وقتی [[Shadow Blades]] نزدیک برگشتن است هر دو را کمی عقب بینداز.",
+      "در AoE، [[Secret Technique]] را با [[Supercharger]] در دو فینیشر اول Dance و با [[Ancient Arts]] روی 4 هدف یا بیشتر استفاده کن.",
+      "ماکروی [[Secret Technique]] با [[Shadow Dance]] (برای Trickster) ببند تا تمدید [[Deepening Shadows]] روی تأخیر GCD هدر نرود.",
+      "با [[Deathstalker]]، جابه‌جایی [[Deathstalker's Mark]] بین اهداف را با [[Mark for Death]] مدیریت کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "کِلیو ضعیف است: در پک‌های پراکنده یا فایت‌هایی که کِلیو مهم است، راگ‌های دیگر را انتخاب کن؛ ولی در پک‌های چسبیده و فایت‌های برست‌محور، Subtlety درخشان است."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Subtlety Rogue (سابتلتی) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل سابتلتی (Subtlety Rogue) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Subtlety Rogue talent build midnight",
+   "Subtlety Rogue guide midnight",
+   "Subtlety Rogue guide 12.1.5",
+   "best Subtlety Rogue talents",
+   "Subtlety Rogue talent tree midnight",
+   "Subtlety Rogue pve guide",
+   "Subtlety Rogue rotation midnight",
+   "Subtlety Rogue rotation and cooldowns",
+   "Subtlety Rogue bis list midnight",
+   "Subtlety Rogue best in slot",
+   "Subtlety Rogue gear guide",
+   "Subtlety Rogue food and potion",
+   "best food for Subtlety Rogue",
+   "best flask for Subtlety Rogue",
+   "best potion for Subtlety Rogue",
+   "Subtlety Rogue enchants and gems",
+   "best enchants for Subtlety Rogue",
+   "best gems for Subtlety Rogue",
+   "Subtlety Rogue stat priority midnight",
+   "Subtlety Rogue tier set midnight",
+   "Subtlety Rogue tier set bonuses",
+   "Subtlety Rogue mythic+ guide",
+   "Subtlety Rogue m+ guide midnight",
+   "Subtlety Rogue raid guide",
+   "Subtlety Rogue hero talents",
+   "Subtlety Rogue hero tree",
+   "best dps build Subtlety Rogue midnight",
+   "Subtlety Rogue cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای سابتلتی",
+   "تلنت سابتلتی",
+   "تلنت برای Subtlety Rogue",
+   "تلنت Rogue سابتلتی",
+   "بیلد سابتلتی",
+   "بیلد تلنت سابتلتی میدنایت",
+   "روتیشن سابتلتی",
+   "روتیشن و کول‌داون‌های سابتلتی",
+   "غذا برای سابتلتی",
+   "غذا برای Subtlety Rogue",
+   "غذا و معجون سابتلتی",
+   "بهترین غذای سابتلتی",
+   "فلسک سابتلتی",
+   "بهترین فلسک برای سابتلتی",
+   "معجون سابتلتی",
+   "انچنت سابتلتی",
+   "انچنت و جم سابتلتی",
+   "بهترین انچنت برای سابتلتی",
+   "جم سابتلتی",
+   "بست آیتم سابتلتی",
+   "بهترین آیتم‌های سابتلتی",
+   "گیر سابتلتی",
+   "استت سابتلتی",
+   "اولویت استت سابتلتی",
+   "ست تیر سابتلتی",
+   "مایتی پلاس سابتلتی",
+   "ام پلاس سابتلتی",
+   "راهنمای سابتلتی",
+   "راهنمای Subtlety Rogue",
+   "راهنمای روگ",
+   "سابتلتی میدنایت",
+   "روگ میدنایت",
+   "هرو تیلنت سابتلتی",
+   "بیلد دی‌پی‌اس سابتلتی",
+   "بهترین دی‌پی‌اس میدنایت سابتلتی"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Subtlety Rogue (سابتلتی) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Subtlety Rogue به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای سابتلتی چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، معجون جنگی «Light's Potential»، غذا «Silvermoon Parade» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای سابتلتی چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای سابتلتی کدام‌اند؟",
+    "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Subtlety Rogue در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

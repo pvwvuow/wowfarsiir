@@ -1,0 +1,901 @@
+{
+ "slug": "holy-priest",
+ "class": "priest",
+ "class_en": "Priest",
+ "spec_en": "Holy",
+ "spec_no": 2,
+ "role": "healer",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Holy Priest",
+ "lead": "هستهٔ بازی Holy Priest دو اسپل شاخص است: [[Holy Word: Serenity]] برای شفای تک‌هدف و [[Holy Word: Sanctify]] برای شفای گروهی؛ کست‌های [[Flash Heal]] و [[Prayer of Healing]] و [[Renew]] این دو را شارژ می‌کنند و تو دائماً بین ساختن و خرج‌کردن آن‌ها می‌چرخی. دو مسیر Hero Tree داری: [[Oracle]] با دو شارژ [[Prayer of Mending]] و بازی تک‌هدف‌محور، و [[Archon]] با [[Halo]] و [[Apotheosis]] برای برست سنگین گروهی. در Midnight Season 2 انتخاب اول برای Raid و Mythic+ اوراکل است و آرکن برای Delves و رییدهای ۳۰ نفره جذاب می‌شود.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/priest/holy/overview-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/priest/holy/talent-builds-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/priest/holy/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/priest/holy/stat-priority-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/priest/holy/enchants-gems-pve-healer",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Holy Word: Serenity": {
+   "fa": "شفای تک‌هدف قدرتمند با کول‌داون کوتاه؛ کست‌های [[Flash Heal]] کول‌داونش را می‌کاهند و با تلنت [[Ultimate Serenity]] به اهداف اطراف هم هیل می‌زند."
+  },
+  "Holy Word: Sanctify": {
+   "fa": "شفای AoE روی یک دایرهٔ زمینی؛ کست‌های [[Renew]] و [[Prayer of Healing]] کول‌داونش را می‌کاهند."
+  },
+  "Flash Heal": {
+   "fa": "شفای مستقیم سریع؛ ستون اسپات‌هیل تو و منبع اصلی کاهش کول‌داون [[Holy Word: Serenity]]."
+  },
+  "Prayer of Healing": {
+   "fa": "شفای گروهی روی کل پارتی؛ در بازی Oracle کنار گذاشته می‌شود ولی با Archon به‌عنوان خرج‌کنندهٔ مانا و مصرف‌کنندهٔ پروک [[Surge of Light]] به کار می‌رود."
+  },
+  "Renew": {
+   "fa": "HoT تک‌هدف؛ با بونس 4 تیکه ست، کست [[Prayer of Mending]] یک Renew روی هدف تضمین می‌کند."
+  },
+  "Prayer of Mending": {
+   "fa": "اسپلی که روی هدف می‌نشیند و با آسیب به هم‌تیمی بعدی می‌پرد؛ با Oracle دو شارژ دارد و تا 14 استک روی اهداف می‌ماند."
+  },
+  "Oracle": {
+   "fa": "درخت قهرمانی با شارژ دوم [[Prayer of Mending]]، هیل پسیو روی کست‌هایش و بازی تک‌هدف‌محور بدون [[Prayer of Healing]]؛ برچسب Best برای Raid و Mythic+."
+  },
+  "Archon": {
+   "fa": "درخت قهرمانی با [[Halo]] قوی‌تر، [[Apotheosis]] مؤثرتر و شفای بیشتر Holy Wordها؛ انتخاب Delves و رییدهای 30 نفره."
+  },
+  "Apotheosis": {
+   "fa": "کول‌داونی که کول‌داون Holy Wordها را ریست می‌کند و مانای آن‌ها را 70% کم می‌کند؛ در طولش هر GCD باید Holy Word بسازی یا خرج کنی."
+  },
+  "Dispersing Light": {
+   "fa": "تلنتی که شفای [[Flash Heal]] را به اهداف اطراف هم می‌رساند؛ بازی Oracle با کست‌های زیاد Flash Heal تغذیه‌اش می‌کند."
+  },
+  "Ultimate Serenity": {
+   "fa": "تلنتی که [[Holy Word: Serenity]] را به اهداف اطراف هم هیل می‌دهد و انعطاف Mythic+ را بالا می‌برد."
+  },
+  "Divine Hymn": {
+   "fa": "کانال شفای رییدگسترده؛ در پچ 12.1 هنگام کانال [[Guardian Spirit]] به خودت می‌دهد و در دانجن‌ها شفای بیشتری می‌زند."
+  },
+  "Guardian Spirit": {
+   "fa": "اکسترنال تانک؛ اگر هدف آسیب کشنده بخورد به 40% سلامتی برمی‌گردد."
+  },
+  "Surge of Light": {
+   "fa": "پروکی که یک [[Flash Heal]] یا [[Prayer of Healing]] اینستنت و قوی‌تر می‌دهد؛ با [[Smite]] هم می‌توانی شانسش را بالا ببری."
+  },
+  "Smite": {
+   "fa": "اسپل دمیج ارزان برای زمان بیکاری؛ پروک [[Surge of Light]] می‌گیرد و کول‌داون Holy Wordها را کم می‌کند."
+  },
+  "Halo": {
+   "fa": "موج دمیج و شفای دایره‌ای؛ با Archon ماندگاری و شفایش بیشتر است و شفای دریافتی اهداف را 10 ثانیه بالا می‌برد."
+  },
+  "Desperate Prayer": {
+   "fa": "دفاع شخصی برای لحظه‌های خطر که بخشی از سلامتی‌ات را فوری برمی‌گرداند."
+  },
+  "Fade": {
+   "fa": "کاهش تهدید و ابزار فرار؛ همراه [[Desperate Prayer]] دفاع اصلی توست."
+  },
+  "Protective Light": {
+   "fa": "پسیوی که با کست [[Flash Heal]] روی هر هم‌تیمی 10% کاهش دمیج به خودت می‌دهد."
+  },
+  "Benediction": {
+   "fa": "نسخهٔ ارتقایافتهٔ [[Flash Heal]]؛ [[Holy Word: Serenity]] کست بعدی Flash Heal را ارتقا می‌دهد و بیش از 2 استک نگه‌داشتنش هدر دادن منبع است."
+  },
+  "Divinity": {
+   "fa": "تلنتی که ساخت Holy Wordها را سریع‌تر می‌کند؛ در پنجرهٔ [[Apotheosis]] کمک بزرگی است."
+  },
+  "Mastery: Echo of Light": {
+   "fa": "مستری کلاس: بعد از هر شفای مستقیم یک HoT اضافه روی هدف می‌گذارد."
+  },
+  "Spirit of Redemption": {
+   "fa": "پسیوی که هنگام مرگ اجازه می‌دهد چند ثانیه به‌صورت روح به شفا دادن ادامه بدهی."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek؛ اولویت اول Bonus Roll با Nebulous Voidcores."
+  },
+  "Frostscale's Mystic Frond": {
+   "fa": "Off-Hand BiS فصل از Nymrissa Wavecaller."
+  },
+  "Venomkeeper's Horrific Cowl": {
+   "fa": "کلاه BiS فصل از Ula'tek و اولویت دوم Bonus Roll."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek و اولویت سوم Bonus Roll."
+  },
+  "Cosmic Penitent's Raiment": {
+   "fa": "ست تیر فصل پریست؛ 2 تیکه تا 6% Critical Strike با نگه‌داشتن 3 [[Renew]] می‌دهد و 4 تیکه شفای Renew را پسیو بالا می‌برد."
+  },
+  "Gebbo's Bottomless Bag": {
+   "fa": "ترینکت BiS فصل از Mor'zahi."
+  },
+  "Soulcoiler Ritual Vessel": {
+   "fa": "ترینکت دوم BiS فصل از Nek'zali the Soulcoiler."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزه برای پنجره‌های پرریسک."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ جایگزین برای Raid."
+  },
+  "Void-Shrouded Tincture": {
+   "fa": "پاتشن نامرئی‌شدن برای اسکیپ پک‌ها در Mythic+."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک BiS فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast گروهی فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "افزونهٔ سلاح فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "افزونهٔ سر با Leech."
+  },
+  "Enchant Shoulders - Silvermoon's Mending": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Nature's Fury": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Versatile Garnet": {
+   "fa": "جم Versatility فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "هستهٔ بازی Holy Priest دو اسپل شاخص است: [[Holy Word: Serenity]] برای شفای تک‌هدف و [[Holy Word: Sanctify]] برای شفای گروهی؛ کست‌های [[Flash Heal]] و [[Prayer of Healing]] و [[Renew]] این دو را شارژ می‌کنند و تو دائماً بین ساختن و خرج‌کردن آن‌ها می‌چرخی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Oracle]] با دو شارژ [[Prayer of Mending]] و بازی تک‌هدف‌محور، و [[Archon]] با [[Halo]] و [[Apotheosis]] برای برست سنگین گروهی."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight Season 2 بیلدهای [[Oracle]] برچسب Best منبع Wowhead را برای Raid و Mythic+ دارند؛ [[Archon]] انتخاب Delves است و در رییدهای 30 نفره می‌تواند قوی‌تر ظاهر شود."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "گروهی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "دفاع شخصی",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "جابجایی",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "پروفایل شفای انعطاف‌پذیر با [[Miracle Worker]]: هر شفای مستقیم یک HoT از [[Mastery: Echo of Light]] باقی می‌گذارد",
+       "کول‌داون‌های شفای قوی و چند اسپل اینستنت‌کست",
+       "[[Spirit of Redemption]] اجازه می‌دهد بعد از مرگ هم چند لحظه شفا بدهی",
+       "اسپات‌هیل و تریاژ قوی: هم بیلد تک‌هدف و هم AoE رقابتی است"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "جابجایی ضعیف؛ فایت‌های پرحرکت را سخت می‌کند",
+       "دفاع شخصی ضعیف‌تر از بیشتر هیلی‌ها"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Oracle",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Raid و Mythic+ در Midnight Season 2. دو شارژ [[Prayer of Mending]] برای ذخیره‌کردن در زمان حرکت و هیل پسیو؛ بازی بدون [[Prayer of Healing]] و با کست‌های پرمیزان [[Flash Heal]]."
+      },
+      {
+       "title": "Archon",
+       "tag": "انتخاب Delves",
+       "x": "برای Delves بهترین است و در رییدهای 30 نفره می‌تواند از Oracle قوی‌تر شود: [[Halo]] با ماندگاری بیشتر همراه [[Apotheosis]] و شفای بیشتر [[Holy Word: Serenity]] و [[Holy Word: Sanctify]]."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Holy Priest در پچ 12.1.5 دو درخت قهرمانی دارد: Oracle برای Raid و Mythic+ (برچسب Best منبع) و Archon برای Delves. بیلدهای Oracle تمرکز تک‌هدف دارند و بیلدهای Archon حول ترکیب Halo و Apotheosis می‌چرخند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Oracle (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "بیلد تک‌هدف‌محور: کست‌های پیوسته [[Flash Heal]] برای تغذیهٔ [[Dispersing Light]] و تعداد زیاد [[Prayer of Mending]] و [[Holy Word: Serenity]] با تلنت [[Ultimate Serenity]].",
+       "code": "CEQAAAAAAAAAAAAAAAAAAAAAAADAAAAAAYBmZWGzMmZMMDzsMzYGAAAAzYWmBzMzwMMDgZqBwMbYIMmlBYMwiZmZBQzYMGDzMAzMzAD"
+      },
+      {
+       "title": "Oracle (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "شبیه بیلد Raid؛ تفاوت اصلی حذف [[Prayer of Healing]] و گرفتن تلنت‌های [[Holy Fire]] برای آسیب بیشتر در زمان بیکاری است.",
+       "code": "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAMzMmlxMjZGDzALzMzMAAAAGzsMDmZmxmxMD2wMFAzshhwYWGgxALGzsAoZMzYMYGgZmBMA"
+      },
+      {
+       "title": "Archon (Raid)",
+       "tag": "جایگزین ریید",
+       "x": "بازی حول ترکیب [[Halo]] و [[Apotheosis]]: Halo را با شروع آسیب گروهی بزن و با Apotheosis کول‌داون Holy Wordها را ریست کن.",
+       "code": "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAgZmlxMjZmZYmZYZGmBAAAwwsMDzMzMYGzAYmaAgZWMTmFDAMGsZmZ2A0MMjxwMz2yAMDMA"
+      },
+      {
+       "title": "Archon (Mythic+)",
+       "tag": "جایگزین Mythic+",
+       "x": "خروجی برست خوب با مدیریت مانا؛ Apotheosis هم برای صرفه‌جویی مانا و هم به‌عنوان کول‌داون آسیب در زمان بیکاری به کار می‌رود.",
+       "code": "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAMmxsMYMzMDzMDLzMzMAAAAGzsMDmZmBjZGDYmCAMzmZysZAgxgNzM2A0MmZMGmZ2WGgBMA"
+      },
+      {
+       "title": "Archon (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "بیشتر ابزارهای Crowd Control را برمی‌دارد تا در Delveهای تکی یا گروهی کمک‌کننده‌تر باشد.",
+       "code": "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAMmxsMmxMzYYmBLzMzMAAAAGmlZGzMzM2MmZMbLYmCAMziZysZAgxgNzM2A0wMMGMz2yAMgB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=priest&spec=holy",
+     "x": "مشاهده تمام تلنت‌های Holy Priest"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "شفای Holy Priest یک لیست اولویت است نه روتیشن ثابت: Holy Wordها را بساز و در بهترین لحظه خرج کن. اگر آسیب تک‌هدف قابل پیش‌بینی است، می‌توانی [[Holy Word: Serenity]] را کمی ذخیره کنی ولی هرگز دو استک از آن را نگه ندار."
+    },
+    {
+     "t": "p",
+     "x": "قبل از زدن [[Apotheosis]] یک شارژ [[Holy Word: Serenity]] آماده داشته باش تا از تخفیف مانا و شفای بیشترش بهره ببری. با بونس 4 تیکه ست، هر [[Prayer of Mending]] روی هدف یک [[Renew]] تضمین می‌کند؛ پس اولویت با هم‌تیمی‌های بدون Renew است."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت Raid با Oracle"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Holy Word: Serenity]] را برای شفای تک‌هدف روی کول‌داون بزن.",
+      "[[Prayer of Mending]] را روی کول‌داون نگه دار؛ اگر باید حرکت کنی یک شارژ ذخیره کن.",
+      "با [[Flash Heal]] اسپات‌هیل کن و بیشتر از 2 استک [[Benediction]] نگه ندار.",
+      "در زمان بیکاری [[Smite]] بزن تا پروک [[Surge of Light]] بگیری.",
+      "[[Divine Hymn]] را برای آسیب کل ریید خرج کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پخش [[Renew]] را جدی بگیر: [[Prayer of Mending]] را روی هم‌تیمی‌های بدون Renew بزن، [[Holy Word: Serenity]] را روی کسانی بفرست که Renewشان تازه تمام شده و جاهای خالی را با [[Flash Heal]] پر کن."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت Raid با Archon"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "با شروع آسیب گروهی [[Halo]] را بزن تا در کل پنجرهٔ دمیج در حال انبساط و انقباض باشد.",
+      "[[Apotheosis]] را فعال کن تا کول‌داون Holy Wordها ریست شود.",
+      "[[Holy Word: Serenity]] را روی کول‌داون برای تک‌هدف بزن.",
+      "پروک‌های [[Surge of Light]] را روی [[Prayer of Healing]] خرج کن؛ تا دو استک می‌توانی نگه داری.",
+      "[[Prayer of Mending]] را روی کول‌داون نگه دار.",
+      "با [[Flash Heal]] اسپات‌هیل کن و بیشتر از 2 استک [[Benediction]] نگه ندار.",
+      "در زمان بیکاری [[Smite]] بزن تا پروک [[Surge of Light]] بیاید.",
+      "[[Divine Hymn]] را برای آسیب کل ریید خرج کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت Mythic+"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Prayer of Mending]] را روی کول‌داون بزن؛ اولویت با کسانی است که شفای مستقیم لازم دارند یا استک ندارند.",
+      "[[Halo]] را مرتب بزن، ترجیحاً قبل از رسیدن آسیب، تا پروک [[Surge of Light]] ذخیره کنی؛ پروک‌ها قوی‌تر هیل می‌کنند.",
+      "[[Holy Word: Serenity]] را روی کول‌داون برای تک‌هدف بزن.",
+      "[[Apotheosis]] را مدام استفاده کن: هم مانا ذخیره می‌کند و هم کول‌داون Holy Wordها را برای پنجرهٔ برست بعدی ریست می‌کند.",
+      "با [[Flash Heal]] هیل بده و بیشتر از 2 استک [[Benediction]] نگه ندار.",
+      "Holy Wordها را برای مکانیک‌های قابل پیش‌بینی باس کمی نگه دار."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در بازی Archon، [[Prayer of Healing]] بیشتر خرج‌کنندهٔ مانا برای هیل اضافه است؛ اگر مانا اجازه می‌دهد در آسیب‌های گروهی بزنش. [[Holy Word: Sanctify]] ابزار AoE اصلی توست و [[Divine Hymn]] در دانجن‌ها شفای بیشتری می‌دهد."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Divine Hymn",
+       "x": "کول‌داون اصلی شفای ریید؛ حتی خارج از دید هم‌تیمی‌ها قابل کست است. در پچ 12.1 هنگام کانال خودش [[Guardian Spirit]] می‌دهد و در دانجن‌ها شفای بیشتری می‌زند."
+      },
+      {
+       "s": "Apotheosis",
+       "x": "در طول مدتش هر GCD باید کست یا کاهش کول‌داون یک Holy Word باشد؛ مانای Holy Wordها را 70% کم می‌کند. پروک‌های [[Surge of Light]] را جمع کن و با [[Flash Heal]] یا [[Prayer of Healing]] پیوسته Holy Word تازه بساز."
+      },
+      {
+       "s": "Guardian Spirit",
+       "x": "اکسترنال اصلی تانک و جلوگیری‌کنندهٔ مرگ: هدفی که آسیب کشنده بخورد به 40% سلامتی برمی‌گردد؛ روی تانک‌های خودشف‌خور مثل Blood DK ارزش ویژه دارد و در نیاز روی خودت هم می‌توانی بزنی."
+      },
+      {
+       "s": "Desperate Prayer",
+       "x": "دفاع شخصی؛ همراه [[Fade]] دو دفاع اصلی توست."
+      },
+      {
+       "s": "Protective Light",
+       "x": "با تلنت [[Binding Heals]]، کست [[Flash Heal]] روی هر هم‌تیمی‌ای 10% کاهش دمیج برای خودت می‌آورد."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "بازی Archon ساده است: [[Halo]] را زود بزن، با [[Apotheosis]] جفتش کن و برای پنجرهٔ شفای بیشتر، Holy Wordها را بدون کپ‌شدن ذخیره کن. بازی Oracle حول شارژ دوم [[Prayer of Mending]] می‌چرخد: برای حرکت‌ها ذخیره‌اش کن و با [[Prompt Prognosis]] اسپات‌هیل ارزان بده. [[Piety]] در Midnight پسیو شده و اوورهیل را به هم‌تیمی‌های نیازمند می‌فرستد؛ [[Unfolding Vision]] هم استک‌های Prayer of Mending را در Mythic+ زنده نگه می‌دارد. یادت باشد Prayer of Mending تا 14 استک می‌رود و هر کست 7 استک می‌گذارد."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در Raid برای درخت Archon اولویت استت Critical Strike > Versatility = Mastery > Haste است؛ با Oracle اول Haste را تا حدود 20% برای حس راحت بالا ببر و بعد سراغ Crit برو. در Mythic+ برای Archon اولویت با Versatility است چون دفاع شخصی ضعیف است و Mastery در دانجن آسیب نمی‌دهد. هیچ‌وقت Intellect را دست‌کم نگیر: جهش بزرگ Item Level تقریباً همیشه از استت بهینه بهتر است."
+    },
+    {
+     "t": "call",
+     "x": "اولویت ارتقا با Ascendant Venomstones: Weapon > Trinkets > Neck. با Mistcrests: اول Weapon، بعد اسلات‌های بودجه‌بالا مثل Chest و Legs و Helm و در پایان Trinketهای قوی."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 268263
+      },
+      {
+       "slot": "سر",
+       "id": 271874
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271553
+      },
+      {
+       "slot": "پشت",
+       "id": 251132
+      },
+      {
+       "slot": "سینه",
+       "id": 271558
+      },
+      {
+       "slot": "دستبند",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271556
+      },
+      {
+       "slot": "کمر",
+       "id": 239649
+      },
+      {
+       "slot": "پا",
+       "id": 271554
+      },
+      {
+       "slot": "کفش",
+       "id": 268218
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 251148
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270164
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270162
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271558
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270164,
+        270162
+       ],
+       "names": [
+        "Gebbo's Bottomless Bag",
+        "Soulcoiler Ritual Vessel"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Cosmic Penitent's Raiment: با 2 تیکه تا 6% Critical Strike می‌گیری اگر 3 تا [[Renew]] روی هم‌تیمی‌ها نگه داری (کست [[Prayer of Mending]] و تلنت [[Lasting Words]]). 4 تیکه شفای Renew و اعمالش را پسیو بالا می‌برد و کست [[Prayer of Mending]] روی هدف [[Renew]] تضمین می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "بهترین Embellishmentها: Arcanoweave Lining روی تیکه‌های BiS و Hunter's Ritual Stone روی Off-Hand در اوایل فصل. اولویت Bonus Roll با Nebulous Voidcores: Jan'thrazet, the Soul Fang > Venomkeeper's Horrific Cowl > Aqirbane Reliquary."
+    },
+    {
+     "t": "p",
+     "x": "برای Catalyst این چهار تیکه بهترین انتخاب‌اند: Poisoner's Pauldrons، Tidebound Sorcereress's Robes، Handwraps of Blasphemous Rites و Down-Lined Breeches. آیتم‌های Crafted فصل هم Martyr's Bindings و Martyr's Waistwrap هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Critical Strike",
+      "Versatility",
+      "Mastery",
+      "Haste"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی تو Intellect است: هم قدرت شفا و هم آسیب را بالا می‌برد؛ جهش‌های بزرگ Item Level را فدای استت بهینه نکن."
+    },
+    {
+     "t": "p",
+     "x": "برای Raid: بیلد Archon می‌خواهد Critical Strike > Versatility = Mastery > Haste و بیلد Oracle اول Haste را تا حدود 20% برای راحتی می‌خواهد. در Mythic+ بیلد Archon ترتیب Versatility > Critical Strike > Haste > Mastery را می‌خواهد و بیلد Oracle اول Haste را تا حدود 30% می‌برد و بعد Versatility و Crit."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Critical Strike شانس دوبرابر‌شدن شفا را می‌دهد و هیل پشت آن از [[Mastery: Echo of Light]] را هم بزرگ‌تر می‌کند.",
+      "Haste زمان کست و GCD را کم می‌کند، تیک‌های [[Renew]] را بیشتر می‌کند و کول‌داون [[Prayer of Mending]] را می‌کاهد.",
+      "[[Mastery: Echo of Light]] بعد از هر شفای مستقیم یک HoT روی هدف می‌گذارد.",
+      "Versatility شفای خروجی را خطی بالا می‌برد و دمیج دریافتی را کم می‌کند؛ با دفاع شخصی ضعیف تو ارزش ویژه‌ای در Mythic+ دارد."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نقطه‌های Diminishing Returns: Critical Strike بالای 1380 ریتینگ، Haste بالای 1320، Mastery بالای 1380 و Versatility بالای 1620؛ بعد از هر آستانه، ریتینگ اضافه 10% کمتر می‌ارزد. افکت‌های درصدی مثل Bloodlust حساب نمی‌شوند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Holy Priest در Midnight Season 2 حول شفای بیشتر و بقا در Mythic+ می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "فلاسک را قبل از هر پول در ریید و کلیدهای بالا فعال نگه دار؛ feast گروهی هم استت همهٔ اعضای رید را بالا می‌برد و معمولاً از غذای شخصی به‌صرفه‌تر است."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness یا Light's Potential",
+       "ids": [
+        241288,
+        241308
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Void-Shrouded Tincture برای اسکیپ‌های نامرئی",
+       "ids": [
+        241302
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را برای پنجره‌های پرریسک یا پول‌های سخت نگه دار؛ Void-Shrouded Tincture در دانجن‌های این فصل برای رد شدن از پک‌ها کاربرد ثابت دارد."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Nature's Fury",
+       "ids": [
+        243986
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونه‌ها را با اولویت استت فعلی‌ات هماهنگ کن؛ روی تیکه‌هایی که قرار است مدت طولانی بمانند سراغ بهترین گزینه برو و روی تیکه‌های موقت با نسخهٔ ارزان‌تر هم راضی باشی."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Versatile Garnet",
+       "ids": [
+        240909
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Augment Rune را در پول‌های ریید و کلیدهای بالا همیشه فعال کن؛ هزینه‌اش در برابر شفای اضافه ناچیز است و در پول‌های نزدیک به رکورد فرقی جدی می‌سازد."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Holy Priest در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "بیلد Archon در Mythic+ خروجی برست عالی با مدیریت خوب مانا می‌دهد؛ نقطهٔ ضعف اصلی دفاع شخصی است، پس Versatility بالا در کلیدهای سنگین حیاتی می‌شود. با این حال منبع Wowhead در این فصل بیلدهای Oracle را برای Mythic+ برچسب Best زده و هر دو درخت قابل بازی‌اند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Prayer of Mending]] را روی کول‌داون بزن؛ اولویت با کسانی است که شفای مستقیم لازم دارند یا استک ندارند.",
+      "[[Halo]] را مرتب و ترجیحاً قبل از رسیدن آسیب بزن تا پروک [[Surge of Light]] جمع کنی؛ پروک‌ها قوی‌تر هیل می‌کنند.",
+      "[[Apotheosis]] را مدام استفاده کن: هم مانا ذخیره می‌کند و هم کول‌داون Holy Wordها را برای پول بعدی ریست می‌کند.",
+      "Holy Wordها را برای مکانیک‌های قابل پیش‌بینی باس کمی نگه دار؛ بازی Holy در Mythic+ انعطاف زیادی دارد.",
+      "با تلنت [[Ultimate Serenity]] همچنان می‌توانی برای آسیب گروهی [[Prayer of Healing]] بزنی و [[Holy Word: Serenity]]های اضافه هم چند هم‌تیمی را همزمان هیل می‌کنند."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "دفاع شخصی ضعیف است: [[Desperate Prayer]] و [[Fade]] را برای لحظه‌های خطر نگه دار و با [[Protective Light]] کاهش دمیج 10% را همیشه فعال داشته باش."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Holy Priest (هولی) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل هولی (Holy Priest) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Holy Priest talent build midnight",
+   "Holy Priest guide midnight",
+   "Holy Priest guide 12.1.5",
+   "best Holy Priest talents",
+   "Holy Priest talent tree midnight",
+   "Holy Priest pve guide",
+   "Holy Priest rotation midnight",
+   "Holy Priest rotation and cooldowns",
+   "Holy Priest bis list midnight",
+   "Holy Priest best in slot",
+   "Holy Priest gear guide",
+   "Holy Priest food and potion",
+   "best food for Holy Priest",
+   "best flask for Holy Priest",
+   "best potion for Holy Priest",
+   "Holy Priest enchants and gems",
+   "best enchants for Holy Priest",
+   "best gems for Holy Priest",
+   "Holy Priest stat priority midnight",
+   "Holy Priest tier set midnight",
+   "Holy Priest tier set bonuses",
+   "Holy Priest mythic+ guide",
+   "Holy Priest m+ guide midnight",
+   "Holy Priest raid guide",
+   "Holy Priest hero talents",
+   "Holy Priest hero tree",
+   "best healer build Holy Priest midnight",
+   "Holy Priest cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای هولی",
+   "تلنت هولی",
+   "تلنت برای Holy Priest",
+   "تلنت Priest هولی",
+   "بیلد هولی",
+   "بیلد تلنت هولی میدنایت",
+   "روتیشن هولی",
+   "روتیشن و کول‌داون‌های هولی",
+   "غذا برای هولی",
+   "غذا برای Holy Priest",
+   "غذا و معجون هولی",
+   "بهترین غذای هولی",
+   "فلسک هولی",
+   "بهترین فلسک برای هولی",
+   "معجون هولی",
+   "انچنت هولی",
+   "انچنت و جم هولی",
+   "بهترین انچنت برای هولی",
+   "جم هولی",
+   "بست آیتم هولی",
+   "بهترین آیتم‌های هولی",
+   "گیر هولی",
+   "استت هولی",
+   "اولویت استت هولی",
+   "ست تیر هولی",
+   "مایتی پلاس هولی",
+   "ام پلاس هولی",
+   "راهنمای هولی",
+   "راهنمای Holy Priest",
+   "راهنمای پریست",
+   "هولی میدنایت",
+   "پریست میدنایت",
+   "هرو تیلنت هولی",
+   "بیلد هیلر هولی",
+   "بهترین هیلر میدنایت هولی"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Holy Priest (هولی) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Holy Priest به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای هولی چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Potion of Recklessness»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای هولی چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای هولی کدام‌اند؟",
+    "a": "ست تیر فعلی «Gebbo's Bottomless Bag» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Holy Priest در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

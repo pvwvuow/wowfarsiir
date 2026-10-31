@@ -1,0 +1,50 @@
+/* wowfarsi - extra layer (loads after fantasy.css): status page and small links */
+/* ---------- status page + small links ---------- */
+html body .progress-link { color: var(--gold-2); border-bottom: 1px solid rgba(240, 199, 94, 0.35); padding-bottom: 1px; transition: border-color 0.25s ease, color 0.25s ease; }
+html body .progress-link:hover { border-color: var(--gold-1); color: var(--gold-1); }
+html body .st-wrap { max-width: 52rem; margin: 0 auto; padding: 0 1rem; }
+html body .st-lead { text-align: center; font-size: 0.95rem; line-height: 2; color: var(--parch-dim); margin-bottom: 2.25rem; }
+html body .st-row { position: relative; padding: 0.9rem 0.25rem; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.18) 30%, rgba(240, 199, 94, 0.18) 70%, transparent) center bottom / 100% 1px no-repeat; }
+html body .st-head { display: flex; align-items: center; gap: 1rem; }
+html body .st-name { flex-shrink: 0; width: 8.5rem; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--parch); }
+html body .st-track { position: relative; flex: 1; height: 2px; background: linear-gradient(90deg, rgba(240, 199, 94, 0.04), rgba(240, 199, 94, 0.2), rgba(240, 199, 94, 0.04)); }
+html body .st-track i { position: absolute; top: 0; inset-inline-start: 0; height: 2px; background: linear-gradient(270deg, #f0c75e, transparent); box-shadow: 0 0 10px rgba(240, 199, 94, 0.5); transition: width 1s ease-out; }
+html body .st-track i::after { content: ""; position: absolute; inset-inline-end: -3px; top: 50%; width: 6px; height: 6px; background: #f0c75e; box-shadow: 0 0 8px #f0c75e; transform: translateY(-50%) rotate(45deg); }
+html body .st-pct { flex-shrink: 0; width: 3rem; text-align: left; font-size: 12px; font-weight: 800; color: var(--parch-dim); }
+html body .st-row details { margin-top: 0.6rem; }
+html body .st-row summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; gap: 0.5rem; padding-inline-start: 9.5rem; }
+html body .st-row summary::-webkit-details-marker { display: none; }
+html body .st-chip { position: relative; padding: 0.1rem 0.7rem; font-size: 11px; font-weight: 700; color: var(--mut); background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.07), transparent); border-block: 1px solid rgba(240, 199, 94, 0.22); transition: border-color 0.25s ease; }
+html body .st-row summary:hover .st-chip { border-color: rgba(240, 199, 94, 0.5); }
+html body .st-warn { color: #e8b27a; border-color: rgba(232, 178, 122, 0.4); }
+html body .st-ok { color: #8fd0a0; border-color: rgba(143, 208, 160, 0.4); }
+/* game chip: informational, not a warning — soft green */
+html body .st-game { color: #8fd4a4; border-color: rgba(143, 212, 164, 0.38); background: rgba(143, 212, 164, 0.08); }
+html body .st-detail { margin-top: 1rem; padding: 0.25rem 0 0.75rem; max-height: 24rem; overflow: auto; }
+html body .st-detail h4 { margin: 1rem 0 0.4rem; font-size: 12px; font-weight: 800; color: var(--gold-2); }
+html body .st-detail ul { list-style: none; margin: 0; padding: 0; }
+html body .st-detail li { display: grid; grid-template-columns: 11rem 4.5rem 1fr; gap: 0.75rem; padding: 0.35rem 0; font-size: 11.5px; line-height: 1.7; color: var(--parch-dim); border-bottom: 1px solid rgba(240, 199, 94, 0.07); }
+html body .st-detail li b { color: var(--parch); font-weight: 700; }
+html body .st-detail li i { font-style: normal; color: var(--mut); font-variant-numeric: tabular-nums; }
+html body .st-more { color: var(--mut); display: block !important; }
+html body .st-legend { margin-top: 3rem; display: grid; gap: 0.6rem; font-size: 12px; line-height: 1.9; color: var(--mut); }
+html body .st-legend b { color: var(--parch-dim); margin-inline-end: 0.4rem; }
+@media (max-width: 640px) {
+  html body .st-name { width: 6.5rem; }
+  html body .st-row summary { padding-inline-start: 0; }
+  html body .st-detail li { grid-template-columns: 1fr; gap: 0.1rem; }
+}
+
+/* ---------- quests page ---------- */
+html body .qs-h { margin: 3rem 0 1rem; text-align: center; font-size: 0.95rem; font-weight: 800; color: var(--gold-2); }
+html body .qs-note { margin-top: 1rem; font-size: 11.5px; line-height: 1.9; color: var(--mut); text-align: center; }
+html body .qs-steps { display: grid; gap: 1.1rem; max-width: 40rem; margin: 0 auto; }
+html body .qs-step { position: relative; padding-inline-start: 2rem; display: grid; gap: 0.25rem; }
+html body .qs-step i { position: absolute; inset-inline-start: 0.2rem; top: 0.55rem; width: 8px; height: 8px; border: 1px solid rgba(240, 199, 94, 0.5); transform: rotate(45deg); }
+html body .qs-step.qs-now i { background: #f0c75e; box-shadow: 0 0 10px rgba(240, 199, 94, 0.8); }
+html body .qs-step b { font-size: 0.95rem; color: var(--parch); }
+html body .qs-step span { font-size: 12.5px; line-height: 1.9; color: var(--parch-dim); }
+html body .st-wrap .st-row .st-pct { width: 3.5rem; }
+
+/* jump chips at the top of the merged status page (talents / quests) */
+html body .st-jump { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; margin: 0 0 1.6rem; }

@@ -1,0 +1,1018 @@
+{
+ "slug": "restoration-shaman",
+ "class": "shaman",
+ "class_en": "Shaman",
+ "spec_en": "Restoration",
+ "spec_no": 3,
+ "role": "healer",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Restoration Shaman",
+ "lead": "Restoration Shaman یک هیلی واکنشی با کیت یوتیلیتی عریض است: با [[Riptide]] HoT می‌گذاری، [[Healing Rain]] نگه می‌داری، با [[Chain Heal]] چند نفر را یکجا شفا می‌دهی و توتم‌هایی مثل [[Healing Stream Totem]] و [[Healing Tide Totem]] یا [[Tremor Totem]] و [[Poison Cleansing Totem]] برای هر موقعیت داری. دو مسیر Hero Tree داری: [[Totemic]] ساده و محکم با برچسب Best منبع، و [[Farseer]] با [[Call of the Ancestors]] که کست‌هایت را آینه می‌کند و مهارت بیشتری می‌خواهد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/shaman/restoration/overview-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/shaman/restoration/talent-builds-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/shaman/restoration/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/shaman/restoration/stat-priority-pve-healer",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/shaman/restoration/enchants-gems-pve-healer",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Riptide": {
+   "fa": "HoT اصلی تو که با [[Tidal Waves]] و افکت‌های Riptide‌ساز هم‌افزایی دارد؛ روی کول‌داون نگهش دار."
+  },
+  "Tidal Waves": {
+   "fa": "بافی که با کست [[Riptide]] ساخته می‌شود و فینیشرهایت را تقویت می‌کند؛ قبل از [[Ascendance]] دو استکش کن."
+  },
+  "Chain Heal": {
+   "fa": "شفای گروهی گران ولی قوی که از هدفی به هدف می‌پرد."
+  },
+  "Healing Wave": {
+   "fa": "شفای تک‌هدف ارزان برای پرکردن GCD و مدیریت مانا."
+  },
+  "Healing Rain": {
+   "fa": "شفای ناحیه‌ای که [[Deluge]] رویش فعال می‌شود؛ با ست 2 تیکه از فینیشرها هم می‌بارد."
+  },
+  "Deluge": {
+   "fa": "تلنتی که داخل [[Healing Rain]] ارزش [[Healing Wave]] و [[Chain Heal]] را بالا می‌برد."
+  },
+  "Healing Stream Totem": {
+   "fa": "توتم شفای ارزان و مداوم که باید روی کول‌داون باشد."
+  },
+  "Stormstream Totem": {
+   "fa": "نسخهٔ قوی‌تر [[Healing Stream Totem]] با پروک که منبع اصلی شفای توست."
+  },
+  "Healing Tide Totem": {
+   "fa": "کول‌داون شفای گروهی بزرگ."
+  },
+  "Tremor Totem": {
+   "fa": "توتم ضدترس؛ در دانجن‌ها پیش‌دستانه زده می‌شود."
+  },
+  "Poison Cleansing Totem": {
+   "fa": "توتم پاک‌کردن سم."
+  },
+  "Earthgrab Totem": {
+   "fa": "توتم ریشه‌کردن دشمنان."
+  },
+  "Capacitor Totem": {
+   "fa": "توتم گیج‌کنندهٔ ناحیه‌ای."
+  },
+  "Grounding Totem": {
+   "fa": "توتمی که یک اسپل کست‌شونده روی گروه را منحرف می‌کند."
+  },
+  "Spirit Link Totem": {
+   "fa": "توتم بالانس سلامتی که در فازهای خطرناک نجات‌بخش است."
+  },
+  "Downpour": {
+   "fa": "اسپلی که [[Healing Rain]]های فعال را منفجر می‌کند."
+  },
+  "Unleash Life": {
+   "fa": "باف شفای بعدی که در 12.1 دوبرابر شده است."
+  },
+  "Earthen Accord": {
+   "fa": "تلنتی که اثر [[Unleash Life]] را جمعی به 45% می‌رساند."
+  },
+  "Nature's Swiftness": {
+   "fa": "اسپل بعدی آنی؛ برای توتمیک منبع اصلی پروک [[Stormstream Totem]]."
+  },
+  "Ancestral Swiftness": {
+   "fa": "اسپل بعدی آنی برای فارسیر که یک [[Ancestors]] هم احضار می‌کند."
+  },
+  "Surging Totem": {
+   "fa": "کول‌داون توتمیک که کنترل [[Healing Rain]] را آزادتر می‌کند."
+  },
+  "Ascendance": {
+   "fa": "پنجرهٔ برست شفایی که با آماده‌سازی [[Tidal Waves]] و توتم‌ها به بیشترین ارزش می‌رسد."
+  },
+  "Mastery: Deep Healing": {
+   "fa": "مستری کلاس: شفای هدف‌های کم‌جان را بیشتر می‌کند."
+  },
+  "Undercurrent": {
+   "fa": "تلنتی که با تعداد [[Riptide]]های فعال تقویت می‌شود."
+  },
+  "Flow of the Tides": {
+   "fa": "تلنتی که با تعداد [[Riptide]]های فعال تقویت می‌شود."
+  },
+  "Tidewaters": {
+   "fa": "تلنتی که با تعداد [[Riptide]]های فعال تقویت می‌شود."
+  },
+  "Resurgence": {
+   "fa": "تلنتی که بر اساس حداکثر مانا مانا برمی‌گرداند."
+  },
+  "White Water": {
+   "fa": "تلنتی که با Critical Strike هم‌افزایی دارد."
+  },
+  "Ancestral Awakening": {
+   "fa": "پروک شفای آنی مرتبط با کریت."
+  },
+  "Current Control": {
+   "fa": "تلنتی که افکت [[Calm Waters]] حذف‌شده را هم دارد."
+  },
+  "Calm Waters": {
+   "fa": "تلنتی که در 12.1 حذف و به [[Current Control]] منتقل شد."
+  },
+  "Wavespeaker's Blessing": {
+   "fa": "تلنتی که در درخت جابه‌جا شد."
+  },
+  "Swelling Tides": {
+   "fa": "تلنت جدید 12.1."
+  },
+  "Primordial Capacity": {
+   "fa": "افکت افزایش مانا که با [[Resurgence]] در هم ضرب می‌شود."
+  },
+  "Call of the Ancestors": {
+   "fa": "هستهٔ فارسیر: اجداد از [[Unleash Life]] و [[Ancestral Swiftness]] احضار می‌شوند و کست‌ها را آینه می‌کنند."
+  },
+  "Ancestors": {
+   "fa": "پت‌های فارسیر که کست‌هایت را تکرار می‌کنند."
+  },
+  "Maelstrom Supremacy": {
+   "fa": "تلنت تقویت کست‌های فارسیر."
+  },
+  "Windspeaker": {
+   "fa": "تلنت تقویت کست‌های فارسیر."
+  },
+  "Offering from Beyond": {
+   "fa": "تلنتی که [[Riptide]] را برای فارسیر در دسترس‌تر می‌کند."
+  },
+  "Mystic Knowledge": {
+   "fa": "تلنتی که [[Riptide]] را برای فارسیر در دسترس‌تر می‌کند."
+  },
+  "Lively Totems": {
+   "fa": "تلنت توتمیک."
+  },
+  "Splitstream": {
+   "fa": "تلنت توتمیک."
+  },
+  "Pulse Capacitor": {
+   "fa": "تلنت توتمیک که در 12.1 از 25% به 10% کاهش یافت."
+  },
+  "Deeply Rooted Elements": {
+   "fa": "تلنت پروک‌محور که قدرت اسپک را کمی تصادفی می‌کند."
+  },
+  "Water Shield": {
+   "fa": "باف بازیابی مانا که همیشه فعال است."
+  },
+  "Earth Shield": {
+   "fa": "باف سپر شفای شمنی؛ یک نسخه روی خودت و نسخهٔ دوم روی هم‌تیمی."
+  },
+  "Earthliving Weapon": {
+   "fa": "باف سلاح شفای فصل."
+  },
+  "Instinctive Imbuements": {
+   "fa": "تلنتی که باف سلاح را با شیلدها خودکار می‌کند."
+  },
+  "Therazane's Resilience": {
+   "fa": "تلنتی که باف‌ها را ساعتی می‌کند."
+  },
+  "Skyfury": {
+   "fa": "باف گروهی شمن."
+  },
+  "Ghost Wolf": {
+   "fa": "تبدیل جابجایی شمن."
+  },
+  "Gust of Wind": {
+   "fa": "جابجایی شخصی شمن."
+  },
+  "Spirit Walk": {
+   "fa": "جابجایی شخصی شمن."
+  },
+  "Wind Rush Totem": {
+   "fa": "توتم جابجایی گروهی."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek."
+  },
+  "Venom-Slashed Scuteward": {
+   "fa": "سپر Off-Hand BiS فصل از The Lost Explorers."
+  },
+  "Ophidian Oracle's Prophecy": {
+   "fa": "ست تیر فصل شمن؛ 2 تیکه باران می‌سازد و 4 تیکه سپر می‌دهد."
+  },
+  "Serpent Crown of the Ophidian Oracle": {
+   "fa": "کلاه ست فصل از Raid/Vault."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Amani Summoning Shawl": {
+   "fa": "شنل BiS فصل از Nek'zali the Soulcoiler."
+  },
+  "Arc-Glass Bindings": {
+   "fa": "دستبند BiS فصل از Temple of Sethraliss."
+  },
+  "Cursed Reliquary Cincture": {
+   "fa": "کمربند BiS فصل از Nek'zali the Soulcoiler."
+  },
+  "Felsoaked Soles": {
+   "fa": "کفش BiS فصل از Murder Row."
+  },
+  "Soulcoiler Ritual Vessel": {
+   "fa": "ترینکت BiS فصل از Nek'zali the Soulcoiler."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت دوم BiS فصل از Kith'ix."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر BiS فصل از Sszorak."
+  },
+  "Pilfered Precious Band": {
+   "fa": "انگشتر دوم BiS فصل از Den of Nalorakk."
+  },
+  "Nalorakk's Nightmare": {
+   "fa": "گزینهٔ Catalyst سر از Den of Nalorakk."
+  },
+  "Soulslither Spaulders": {
+   "fa": "گزینهٔ Catalyst شانه از The Coiled Altar."
+  },
+  "Loa-Blessed Chestguard": {
+   "fa": "گزینهٔ Catalyst سینه از King's Rest."
+  },
+  "Pulverizing Pads": {
+   "fa": "گزینهٔ Catalyst دست از The Blinding Vale."
+  },
+  "Legguards of the Awakening": {
+   "fa": "گزینهٔ Catalyst پا."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک بهترین فصل."
+  },
+  "Lightfused Mana Potion": {
+   "fa": "پاتشن مانای فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزهٔ فصل وقتی کریت بالاترین استت است."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Silvermoon Parade": {
+   "fa": "feast فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Sanguithorn Tea": {
+   "fa": "غذای مانای فصل."
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "افزونهٔ سلاح فصل."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "افزونهٔ سر با Leech."
+  },
+  "Enchant Shoulders - Silvermoon's Mending": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Magister": {
+   "fa": "افزونهٔ سینه فصل برای Restoration."
+  },
+  "Arcanoweave Spellthread": {
+   "fa": "افزونهٔ شلوار فصل برای Restoration."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل (گزینهٔ اول)."
+  },
+  "Telluric Eversong Diamond": {
+   "fa": "جم الماس فصل (گزینهٔ دوم)."
+  },
+  "Flawless Versatile Garnet": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Peridot": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Lapis": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم فصل."
+  },
+  "Hex": {
+   "fa": "افسون تغییر شکل دشمن؛ یوتیلیتی کنترل."
+  },
+  "Purge": {
+   "fa": "حذف باف دشمن."
+  },
+  "Astral Shift": {
+   "fa": "دفاع شخصی شمن."
+  },
+  "Intellect": {
+   "fa": "استت اصلی هیلی‌ها که قدرت شفا و اندازهٔ مانا را بالا می‌برد."
+  },
+  "Farseer": {
+   "fa": "درخت قهرمانی با [[Call of the Ancestors]] و تقویت کست‌های هدف‌دار؛ مهارت بالاتری می‌خواهد."
+  },
+  "Totemic": {
+   "fa": "درخت قهرمانی حول قدرت توتم‌ها و [[Surging Totem]]؛ ساده‌تر اجرا می‌شود و برچسب Best منبع را دارد."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Restoration Shaman یک هیلی واکنشی با کیت یوتیلیتی عریض است: با [[Riptide]] HoT می‌گذاری، [[Healing Rain]] را نگه می‌داری، با [[Chain Heal]] چند نفر را یکجا شفا می‌دهی و توتم‌هایی مثل [[Healing Stream Totem]] و [[Healing Tide Totem]] یا [[Tremor Totem]] و [[Poison Cleansing Totem]] برای هر موقعیت داری. یادگیری‌اش آسان و بهینه‌کردنش پرمزه است."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Totemic]] که توتم‌ها را قوی‌تر و در دسترس‌تر می‌کند و [[Surging Totem]] کنترل [[Healing Rain]] را آزادتر می‌دهد؛ و [[Farseer]] با [[Call of the Ancestors]] که اجدادت را از [[Unleash Life]] و [[Ancestral Swiftness]] احضار می‌کند و کست‌هایت را آینه می‌کنند. هر دو نزدیک به هم‌اند ولی برچسب Best منبع روی توتمیک است: ساده‌تر اجرا می‌شود و فارسیر مدیریت سیل شارژهای Riptide را می‌خواهد."
+    },
+    {
+     "t": "p",
+     "x": "تغییرهای 12.1 تقریباً همه باف است: [[Riptide]] اینستنتش 25% و HoT آن 100% قوی‌تر شده، [[Unleash Life]] دوبرابر شده و [[Healing Rain]] 20% قوی‌تر با 6 هدف. در عوض توان توتمیک از [[Surging Totem]] و [[Pulse Capacitor]] کم شده است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "شفای تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "شفای گروهی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "یوتیلیتی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "جابجایی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بقا",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "کم",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "یادگیری خیلی آسان",
+       "یوتیلیتی عالی: [[Tremor Totem]]، [[Poison Cleansing Totem]]، [[Earthgrab Totem]]، [[Capacitor Totem]]، [[Purge]] و [[Hex]]",
+       "باف ریید عالی با [[Skyfury]]",
+       "تنها هیلی با اینتراپت",
+       "جابجایی شخصی و گروهی خوب: [[Ghost Wolf]]، [[Gust of Wind]]، [[Spirit Walk]] و [[Wind Rush Totem]]"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "تنها هیلی بدون دفاع خارجی",
+       "قدرتش کمی تصادفی است به‌خاطر پروک‌های [[Stormstream Totem]] و [[Deeply Rooted Elements]].",
+       "سادگی کیت برای دنبال‌کنندهٔ بازی عمیق‌تر نقطه‌ضعف است"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Totemic",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Raid و Mythic+ و Delves. حول قدرت و دسترسی توتم‌ها می‌چرخد و [[Surging Totem]] راه کنترل [[Healing Rain]] را خیلی محدودتر نمی‌کند؛ با تلنت‌هایی مثل [[Lively Totems]] و [[Splitstream]] بازی می‌کند و اجرایش ساده است ولی وقتی گروه خیلی پخش باشد عقب می‌ماند."
+      },
+      {
+       "title": "Farseer",
+       "tag": "مهارت بالاتر",
+       "x": "قدرت کست‌های هدف‌دار را با [[Maelstrom Supremacy]] و [[Windspeaker]] بالا می‌برد؛ هسته‌اش [[Call of the Ancestors]] است که از [[Unleash Life]] و [[Ancestral Swiftness]] اجداد می‌سازد و کست‌هایت را آینه می‌کند. [[Riptide]] از طریق [[Offering from Beyond]] و [[Mystic Knowledge]] در دسترس‌تر می‌شود ولی مدیریت سیل شارژها حواس‌جمعی دائم می‌خواهد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Restoration Shaman در پچ 12.1.5 دو درخت قهرمانی دارد: Totemic و Farseer؛ هر جدول سه ردیف کد دارد: Raid، Mythic+ و Delves. توتمیک برچسب Best هر سه مد را دارد ولی هر دو درخت از قدرت نزدیک برخوردارند و انتخاب به سلیقه و سطح مهارت بستگی دارد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Totemic (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید؛ اجرای ساده‌تر با [[Surging Totem]].",
+       "code": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNjZGjZGzMDjFYDmxmGbDIzAbmhZw2YMTz2yMzmZMLsYegZGzwsMAAAwMzgZGAYwM"
+      },
+      {
+       "title": "Totemic (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+.",
+       "code": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsstMzMzMjZGjZgFYDmxmGbDIzAbMzMY2mZMa2WmZ2MjZhFjZGDLzyAAAAzMDmZAgBzA"
+      },
+      {
+       "title": "Totemic (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves؛ کدش یک نود با Mythic+ فرق دارد.",
+       "code": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsstMzMzMjZGjZgFYDmxiGbDIzAbMzMY2mZMa2WmZ2MjZhFjZGDLzyAAAAzMDmZAgBzA"
+      },
+      {
+       "title": "Farseer (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "گزینهٔ رقابتی ریید با مهارت بالاتر: سیل شارژهای [[Riptide]] را مدیریت کن.",
+       "code": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNjZGjZGzMMWMzGMgJY2YCMWMDzgtxYmmtlZmNzYWYxMzMmhZZAAAgZmBAzMwgZA"
+      },
+      {
+       "title": "Farseer (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "گزینهٔ Mythic+ فارسیر با تمرکز بیشتر روی انتخاب هدف.",
+       "code": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNzMzMjZGjZMWMzCMgJYWYCMWwMDmtZGjmtlZmNzYWYxYmxwysMAAAwMzAgZGYwM"
+      },
+      {
+       "title": "Farseer (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNzMzMjZGjZMWMzCMgJYWYCMWwMDmtZGjmtlZmNzYWYxYmxwysMAAAwMzAgZGYwM"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=shaman&spec=restoration",
+     "x": "مشاهده تمام تلنت‌های Restoration Shaman"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "سه اصل بازی: اول، هدف‌ها را درست انتخاب کن؛ افکت‌هایی مثل [[Undercurrent]]، [[Deluge]]، [[Flow of the Tides]] و [[Tidewaters]] از تعداد [[Riptide]] فعال تغذیه می‌شوند و [[Mastery: Deep Healing]] هم شفای هدف‌های کم‌جان را بیشتر می‌کند. دوم، کول‌داون‌های کوتاه را روی کول‌داون بزن: [[Unleash Life]]، [[Healing Rain]]، [[Surging Totem]]، [[Downpour]]، [[Nature's Swiftness]]، [[Ancestral Swiftness]] و [[Healing Stream Totem]] با پروک‌هایش. سوم، مانا را مدیریت کن: [[Healing Wave]] ارزان و تک‌هدف است و [[Chain Heal]] گران ولی پخش‌شونده."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت ریید با Totemic"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همهٔ پروک‌های [[Stormstream Totem]] را استفاده کن.",
+      "[[Riptide]] را روی کول‌داون نگه دار.",
+      "[[Nature's Swiftness]] را استفاده کن.",
+      "[[Surging Totem]] را نگه دار.",
+      "[[Healing Stream Totem]] را روی کول‌داون بزن.",
+      "[[Chain Heal]] یا [[Healing Wave]] را کست کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت ریید با Farseer"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همهٔ پروک‌های [[Stormstream Totem]] را استفاده کن.",
+      "[[Riptide]] را روی کول‌داون نگه دار.",
+      "[[Ancestral Swiftness]] را استفاده کن.",
+      "[[Unleash Life]] را کست کن.",
+      "[[Healing Rain]] را نگه دار.",
+      "[[Healing Stream Totem]] را روی کول‌داون بزن.",
+      "[[Chain Heal]] یا [[Healing Wave]] را کست کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "استفاده از [[Stormstream Totem]]: منبع اصلی پروک‌ها [[Nature's Swiftness]] (توتمیک) یا [[Ancestral Swiftness]] (فارسیر) است؛ پروک از [[Riptide]] هم می‌آید ولی کم و غیرقابل اتکاست. بافِ آن 60 ثانیه می‌ماند و تا 2 استک می‌توانی نگه داری؛ ولی نگه‌داشتنش یعنی از دست دادن کست‌های [[Healing Stream Totem]] که توتمیک اصلاً نمی‌خواهد. پس هرچه زودتر خرجش کن."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت Mythic+"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همان اولویت ریید: پروک‌های [[Stormstream Totem]]، [[Riptide]] روی کول‌داون، [[Nature's Swiftness]] (توتمیک) یا [[Ancestral Swiftness]] و [[Unleash Life]] (فارسیر)، نگه‌داری [[Surging Totem]] یا [[Healing Rain]]، و [[Healing Stream Totem]] روی کول‌داون.",
+      "شفای نقطه‌ای مهم‌تر از ماناست: انتخاب [[Chain Heal]] یا [[Healing Wave]] را بر اساس «چه کسی بیشتر نیاز دارد» بکن نه منابع.",
+      "[[Healing Rain]] سخت‌تر جواب می‌دهد ولی برای [[Deluge]] همچنان می‌ارزد تا وقتی بیشتر گروه داخلش ایستاده‌اند."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "زنجیرهٔ Ascendance"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "قبل از زدن کول‌داون، با مصرف همهٔ [[Riptide]]ها دو استک [[Tidal Waves]] بساز.",
+      "درست قبل از فشار دادن [[Ascendance]]، [[Surging Totem]] را بزن.",
+      "داخل Ascendance همهٔ [[Healing Stream Totem]]ها و [[Stormstream Totem]]ها را استفاده کن: هر کدام یک [[Chain Heal]] آنی و رایگان می‌کارد.",
+      "[[Chain Heal]] و [[Healing Wave]] در این پنجره خیلی قوی‌ترند و باید مدام کست شوند."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: [[Water Shield]] و [[Earth Shield]] و [[Earthliving Weapon]] همیشه فعال باشند (با [[Instinctive Imbuements]] راحت‌تر است و [[Therazane's Resilience]] تمدیدشان را ساعتی می‌کند). [[Skyfury]] روی کل گروه بزن و مطمئن شو کسی [[Earth Shield]] دومت را دارد. مصرفی‌ها و آب برای برگشت مانا هم یادت نرود."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] است؛ در ثانویه‌ها تا جای ممکن Critical Strike بگیر، بعد Haste و Versatility که ارزش نزدیکی دارند و در پایان Mastery. کریت در همهٔ موقعیت‌ها قوی‌ترین استت ثانویه توست به‌لاطر [[Resurgence]]، [[White Water]] و [[Ancestral Awakening]]. مقدار Haste به مدیریت مانای تو بستگی دارد و با ست 2 تیکه هم‌افزایی دارد؛ Versatility افزایش منفعل و ثابت است و مانا را در فایت‌های بلند دوام می‌دهد."
+    },
+    {
+     "t": "call",
+     "x": "بهترین گیر تو شامل دو آیتم Crafted با Embellishment هم می‌شود که انتخاب دقیقشان در طول فصل عوض می‌شود. برای مقدار دقیق با Raidbots سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 268196
+      },
+      {
+       "slot": "سر",
+       "id": 271483
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271481
+      },
+      {
+       "slot": "پشت",
+       "id": 268248
+      },
+      {
+       "slot": "سینه",
+       "id": 271486
+      },
+      {
+       "slot": "دستبند",
+       "id": 159380
+      },
+      {
+       "slot": "دست",
+       "id": 271484
+      },
+      {
+       "slot": "کمر",
+       "id": 268216
+      },
+      {
+       "slot": "پا",
+       "id": 271482
+      },
+      {
+       "slot": "کفش",
+       "id": 251125
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "انگشت",
+       "id": 251148
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270162
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271483
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270162,
+        281215
+       ],
+       "names": [
+        "Soulcoiler Ritual Vessel",
+        "Twisted Horror's Tendril"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Ophidian Oracle's Prophecy: 2 تیکه [[Healing Wave]] و [[Chain Heal]] شانس دارند در محل هدف یک [[Healing Rain]] برای 8 ثانیه بسازند. 4 تیکه هر ثانیه یک هم‌تیمی داخل Healing Rain سپر آبی می‌گیرد که 10 ثانیه دمیج جذب می‌کند. باران‌های اضافه یعنی [[Downpour]] بیشتر؛ کسانی که داخل باران‌اند از [[Deluge]] هم بهره می‌برند و دائماً سپر می‌گیرند."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Nalorakk's Nightmare (سر)، Soulslither Spaulders (شانه)، Loa-Blessed Chestguard (سینه)، Pulverizing Pads (دست) و Legguards of the Awakening (پا)."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Critical Strike",
+      "Haste",
+      "Versatility",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] است و برای هر دو هرو یکسان: بعدش تا جای ممکن Critical Strike، بعد Haste و Versatility با ارزش نزدیک و در آخر Mastery."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Critical Strike با [[Resurgence]] و [[White Water]] و [[Ancestral Awakening]] هم‌افزایی دارد و در همهٔ موقعیت‌ها اول است.",
+      "Haste تنها استتی است که مانای بیشتری می‌سوزاند ولی به‌خاطر مقیاس خوب اسپل‌ها و ست 2 تیکه (باران‌های بیشتر و سریع‌تر) شفای زیادی می‌دهد.",
+      "Versatility افزایش منفعل و ثابت است و در فایت‌های بلند مانا را بهتر دوام می‌دهد.",
+      "[[Resurgence]] بر اساس حداکثر مانا کار می‌کند؛ افکت‌های افزایش‌دهندهٔ مانا مثل [[Primordial Capacity]] در هم ضرب می‌شوند."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Restoration Shaman در Midnight Season 2 حول Crit و مانا می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Silvermoon Parade",
+       "ids": [
+        255845
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast یا Sanguithorn Tea",
+       "ids": [
+        242275,
+        242299
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "[[Flask of the Shattered Sun]] بهترین فلاسک توست؛ غذای شخصی هم بین Royal Roast و [[Sanguithorn Tea]] بسته به نیاز مانا انتخاب می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Lightfused Mana Potion یا Potion of Recklessness (اگر کریت بالاترین استت ثانویه‌ات است)",
+       "ids": [
+        241300,
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای هییلر، انتخاب پاتشن به استت برتر تو بستگی دارد؛ اگر کریت بالاترین است، گزینهٔ اول همیشه همان است."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و باف سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "باف سلاح",
+       "v": "Earthliving Weapon"
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Magister",
+       "ids": [
+        244002
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Arcanoweave Spellthread",
+       "ids": [
+        240154
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ سینهٔ این اسپک [[Enchant Chest - Mark of the Magister]] است و شلوار [[Arcanoweave Spellthread]]؛ با اسپک‌های دیگر شمن فرق دارد."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond یا Telluric Eversong Diamond",
+       "ids": [
+        240982,
+        240968
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Versatile Garnet، Flawless Deadly Peridot، Flawless Deadly Lapis، Flawless Deadly Amethyst",
+       "ids": [
+        240909,
+        240889,
+        240913,
+        240897
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune (و Vantus Rune در ریید)",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "چون [[Resurgence]] با حداکثر مانا کار می‌کند، جم‌ها و افکت‌های مانا‌دهنده در هم ضرب می‌شوند و ارزش بیشتری پیدا می‌کنند."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Restoration Shaman در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "توتمیک برچسب Best منبع برای Mythic+ را دارد و اجرایش ساده‌تر است؛ فارسیر از نظر قدرت نزدیک است ولی مدیریت دائمی [[Riptide]] می‌خواهد. مانا معمولاً در دانجن مشکل نیست و شفای نقطه‌ای اولویت دارد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Chain Heal]] یا [[Healing Wave]] را بر اساس «چه کسی الان بیشتر نیاز دارد» انتخاب کن نه بر اساس مانا.",
+      "[[Riptide]] را روی کول‌داون بزن و سعی کن روی کسانی برود که از قبل آن را ندارند تا [[Undercurrent]] و [[Deluge]] و [[Flow of the Tides]] و [[Tidewaters]] تغذیه شوند.",
+      "پروک‌های [[Stormstream Totem]] را سریع خرج کن تا کست‌های [[Healing Stream Totem]] از دست نروند.",
+      "[[Healing Rain]] را برای [[Deluge]] نگه دار تا وقتی بیشتر گروه داخلش هستند.",
+      "یوتیلیتی توتم‌ها ([[Tremor Totem]]، [[Poison Cleansing Totem]]، [[Capacitor Totem]]) را برای مکانیک‌های دانجن پیش‌دستانه استفاده کن؛ اینتراپت هم مال توست."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "دفاع خارجی نداری: [[Astral Shift]] و [[Earth Shield]] را هوشمندانه خرج کن، [[Grounding Totem]] برای اسپل‌های مهم کست‌شونده آماده باشد و در فازهای خطرناک [[Spirit Link Totem]] نجات‌بخش است."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Restoration Shaman (رستوریشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل رستوریشن (Restoration Shaman) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Restoration Shaman talent build midnight",
+   "Restoration Shaman guide midnight",
+   "Restoration Shaman guide 12.1.5",
+   "best Restoration Shaman talents",
+   "Restoration Shaman talent tree midnight",
+   "Restoration Shaman pve guide",
+   "Restoration Shaman rotation midnight",
+   "Restoration Shaman rotation and cooldowns",
+   "Restoration Shaman bis list midnight",
+   "Restoration Shaman best in slot",
+   "Restoration Shaman gear guide",
+   "Restoration Shaman food and potion",
+   "best food for Restoration Shaman",
+   "best flask for Restoration Shaman",
+   "best potion for Restoration Shaman",
+   "Restoration Shaman enchants and gems",
+   "best enchants for Restoration Shaman",
+   "best gems for Restoration Shaman",
+   "Restoration Shaman stat priority midnight",
+   "Restoration Shaman tier set midnight",
+   "Restoration Shaman tier set bonuses",
+   "Restoration Shaman mythic+ guide",
+   "Restoration Shaman m+ guide midnight",
+   "Restoration Shaman raid guide",
+   "Restoration Shaman hero talents",
+   "Restoration Shaman hero tree",
+   "best healer build Restoration Shaman midnight",
+   "Restoration Shaman cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای رستوریشن",
+   "تلنت رستوریشن",
+   "تلنت برای Restoration Shaman",
+   "تلنت Shaman رستوریشن",
+   "بیلد رستوریشن",
+   "بیلد تلنت رستوریشن میدنایت",
+   "روتیشن رستوریشن",
+   "روتیشن و کول‌داون‌های رستوریشن",
+   "غذا برای رستوریشن",
+   "غذا برای Restoration Shaman",
+   "غذا و معجون رستوریشن",
+   "بهترین غذای رستوریشن",
+   "فلسک رستوریشن",
+   "بهترین فلسک برای رستوریشن",
+   "معجون رستوریشن",
+   "انچنت رستوریشن",
+   "انچنت و جم رستوریشن",
+   "بهترین انچنت برای رستوریشن",
+   "جم رستوریشن",
+   "بست آیتم رستوریشن",
+   "بهترین آیتم‌های رستوریشن",
+   "گیر رستوریشن",
+   "استت رستوریشن",
+   "اولویت استت رستوریشن",
+   "ست تیر رستوریشن",
+   "مایتی پلاس رستوریشن",
+   "ام پلاس رستوریشن",
+   "راهنمای رستوریشن",
+   "راهنمای Restoration Shaman",
+   "راهنمای شمن",
+   "رستوریشن میدنایت",
+   "شمن میدنایت",
+   "هرو تیلنت رستوریشن",
+   "بیلد هیلر رستوریشن",
+   "بهترین هیلر میدنایت رستوریشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Restoration Shaman (رستوریشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Restoration Shaman به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای رستوریشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Lightfused Mana Potion»، غذا «Silvermoon Parade» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای رستوریشن چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای رستوریشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Soulcoiler Ritual Vessel» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Restoration Shaman در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

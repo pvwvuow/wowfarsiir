@@ -1,0 +1,998 @@
+{
+ "slug": "shadow-priest",
+ "class": "priest",
+ "class_en": "Priest",
+ "spec_en": "Shadow",
+ "spec_no": 3,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Shadow Priest",
+ "lead": "Shadow Priest ترکیبی از دمیج مستقیم و DoT است که با منبع واحد [[Insanity]] کار می‌کند و خرج‌کنندهٔ اصلی‌اش [[Shadow Word: Madness]] است؛ اپتایم بالای این اسپل با [[Mastery: Shadow Weaving]] دمیجت را بالا می‌برد. دو مسیر Hero Tree داری: [[Archon]] که حول [[Halo]] می‌چرخد و در همهٔ محتواها به‌مراتب قوی‌تر است، و [[Voidweaver]] که با [[Void Torrent]] جان [[Mind Blast]] را به [[Void Blast]] تبدیل می‌کند. بازی اسپک حول پنجره‌های برست هر یک دقیقه با کول‌داون‌های روی‌هم‌چیده می‌سازد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/priest/shadow/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/priest/shadow/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/priest/shadow/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/priest/shadow/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/priest/shadow/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/priest/shadow/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Insanity": {
+   "fa": "منبع اصلی Shadow Priest که با اسپل‌های سایه پر می‌شود و برای [[Shadow Word: Madness]] خرج می‌شود؛ سقفش 100 و با تلنت [[Voidtouched]] 150 است."
+  },
+  "Shadow Word: Madness": {
+   "fa": "خرج‌کنندهٔ اصلی [[Insanity]]؛ اپتایم بالای آن دمیجت را با [[Mastery: Shadow Weaving]] بالا می‌برد."
+  },
+  "Mastery: Shadow Weaving": {
+   "fa": "مستری کلاس: روی اهدافی که یک یا چند DoT فعال دارند دمیج بیشتری می‌زنی."
+  },
+  "Void Volley": {
+   "fa": "اسپل [[Voidform]] که در Midnight Season 2 کول‌داون ندارد و چند شارژ می‌گیرد؛ بونس 4 تیکه ست یک استفادهٔ رایگان بیرون از [[Voidform]] هم می‌دهد."
+  },
+  "Tentacle Slam": {
+   "fa": "اسپل اینستنت سایه که [[Vampiric Touch]] و [[Shadow Word: Pain]] را همزمان می‌گذارد؛ ستون کِلیو و حرکت توست."
+  },
+  "Psychic Link": {
+   "fa": "تلنتی که دمیج اسپل‌های تک‌هدف را به اهداف دیگر هم می‌رساند؛ ستون کِلیو پراکنده."
+  },
+  "Voidform": {
+   "fa": "فرم برست اصلی؛ ارزشش دسترسی به [[Void Volley]] است و با تلنت‌های Archon تمدید می‌شود."
+  },
+  "Dark Ascension": {
+   "fa": "آلترناتیو [[Voidform]] در درخت کلاس که Archon با آن تعامل دارد."
+  },
+  "Void Blast": {
+   "fa": "نسخهٔ تبدیل‌شدهٔ [[Mind Blast]] زیر درخت Voidweaver با دمیج سنگین‌تر."
+  },
+  "Void Torrent": {
+   "fa": "کانال قدرتمندی که [[Entropic Rift]] را فعال می‌کند؛ سیگنچر Voidweaver است."
+  },
+  "Entropic Rift": {
+   "fa": "شیاری که با [[Void Torrent]] باز می‌شود و دمیج می‌دهد؛ در اولویت Voidweaver مدیریتش کلیدی است."
+  },
+  "Mind Devourer": {
+   "fa": "پروک اصلی که [[Mind Blast]] را اینستنت و ریست می‌کند؛ همان لحظه خرجش کن."
+  },
+  "Shadowy Insight": {
+   "fa": "پروکی که [[Mind Flay]] را اینستنت می‌کند و خرج‌کردنش کست آزاد است."
+  },
+  "Voidtouched": {
+   "fa": "تلنتی که سقف [[Insanity]] را به 150 می‌برد."
+  },
+  "Shadeburst": {
+   "fa": "تلنت جدید جایگزین [[Phantom Menace]] که باعث می‌شود اپاریشن‌ها دمیج کِلیو بزنند."
+  },
+  "Phantom Menace": {
+   "fa": "تلنت قدیمی که در Midnight Season 2 با [[Shadeburst]] جایگزین شده است."
+  },
+  "Void Apparitions": {
+   "fa": "اپاریشن‌های سایه که بیلد Archon ریید با بیشترین تعداد تلنت‌هایشان بازی می‌کند."
+  },
+  "Shadowy Apparitions": {
+   "fa": "اپاریشن‌های تقویت‌شده‌ای که در بیلد Archon ریید دمیج می‌دهند."
+  },
+  "Spectral Horrors": {
+   "fa": "تلنت برست ریید بیلد Archon؛ در فایت‌های ادد‌دار با [[Psychic Link]] جابه‌جا می‌شود."
+  },
+  "Misery": {
+   "fa": "تلنتی که [[Vampiric Touch]] و [[Shadow Word: Pain]] را با هم اعمال می‌کند؛ انتخاب دانجن‌های میانه با Archon."
+  },
+  "Invoked Nightmare": {
+   "fa": "تلنت بیلد Voidweaver برای کلیدهای +20 که جای [[Misery]] می‌نشیند."
+  },
+  "Manifested Power": {
+   "fa": "تلنت Archon که از [[Halo]] منبع و پروک می‌سازد."
+  },
+  "Sustained Potency": {
+   "fa": "تلنت Archon که [[Voidform]] را تمدید می‌کند و با [[Halo]] هم‌کنش دارد."
+  },
+  "Ancient Madness": {
+   "fa": "تلنت Archon که در Midnight Season 2 Haste هم می‌دهد و تمدید [[Voidform]] را خیلی بیشتر می‌کند."
+  },
+  "Improved Voidform": {
+   "fa": "تلنتی که تعداد شارژهای [[Void Volley]] داده‌شده از [[Voidform]] را بالا می‌برد."
+  },
+  "Power Surge": {
+   "fa": "تلنت Archon که رَمپ‌آپ [[Halo]] را طولانی‌تر می‌کند."
+  },
+  "Energy Conservation": {
+   "fa": "تلنت Archon در چرخهٔ [[Halo]]."
+  },
+  "Divine Halo": {
+   "fa": "تلنت Archon که اثر [[Halo]] را گسترده‌تر می‌کند."
+  },
+  "Twins of the Sun Priestess": {
+   "fa": "تلنتی که [[Power Infusion]] را روی هم‌تیمی‌ها هم قابل کست می‌کند."
+  },
+  "Mind Flay: Insanity": {
+   "fa": "نسخهٔ قوی [[Mind Flay]] وقتی [[Shadow Word: Madness]] فعال است."
+  },
+  "Shadowform": {
+   "fa": "فرم پایهٔ دمیج Shadow Priest که قبل از هر فایتی فعال می‌شود."
+  },
+  "Power Word: Fortitude": {
+   "fa": "باف استامینای پارتی که قبل از مبارزه می‌زنی."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek؛ اولویت اول ارتقا با Ascendant Venomstones."
+  },
+  "Spine of the Hissing Abyss": {
+   "fa": "Off-Hand BiS فصل از Entombed Sentinels."
+  },
+  "Cosmic Penitent's Truesight": {
+   "fa": "کلاه BiS و تیکهٔ ست فصل از Ula'tek."
+  },
+  "Cosmic Penitent's Raiment": {
+   "fa": "ست تیر فصل پریست؛ 2 تیکه [[Tentacle Slam]] را 100% قوی‌تر و 3 ثانیه سریع‌تر می‌کند و 4 تیکه [[Void Volley]] رایگان می‌دهد."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Mantle of Ceremonial Ascension": {
+   "fa": "شانهٔ BiS فصل از King's Rest."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Voidweaver's Leggings": {
+   "fa": "شلوار BiS فصل از Unbinding of Kith'Ix."
+  },
+  "Cackling Soultreads": {
+   "fa": "کفش BiS فصل از The Coiled Altar."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر BiS فصل از Unbinding of Kith'Ix."
+  },
+  "Vile Alchemist's Band": {
+   "fa": "انگشتر دوم BiS فصل از Vashnik the Malignant."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت BiS فصل از Unbinding of Kith'Ix."
+  },
+  "Freightrunner's Flask": {
+   "fa": "ترینکت دوم BiS فصل از Murder Row."
+  },
+  "Martyr's Bindings": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Martyr's Waistwrap": {
+   "fa": "کمربند Crafted فصل که در BiS هم هست."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسک BiS فصل."
+  },
+  "Blooming Feast": {
+   "fa": "feast گروهی فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزه برای ریید و Mythic+."
+  },
+  "Enchant Weapon - Arcane Mastery": {
+   "fa": "افزونهٔ سلاح فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل."
+  },
+  "Enchant Shoulders - Akil'zon's Swiftness": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم Mastery فصل."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم Critical Strike فصل."
+  },
+  "Flawless Quick Garnet": {
+   "fa": "جم Haste فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Gebbo's Bottomless Bag": {
+   "fa": "ترینکت جایگزین فصل که در اولویت ارتقا با Mistcrests می‌آید."
+  },
+  "Venomkeeper's Horrific Cowl": {
+   "fa": "کلاهی که اولویت اول Bonus Roll و دوم ارتقا است؛ گزینهٔ Catalyst هم هست."
+  },
+  "Primordial Robe of Rites": {
+   "fa": "گزینهٔ Catalyst سینه از Altar of Fangs."
+  },
+  "Grasps of the Eternal Shadow": {
+   "fa": "گزینهٔ Catalyst دست از The Coiled Altar."
+  },
+  "Intellect": {
+   "fa": "استت اصلی که قدرت شفا و دمیج اسپل‌ها را بالا می‌برد؛ روی پارچه می‌آید."
+  },
+  "Mind Flay": {
+   "fa": "کانال دمیج پایه با [[Insanity]] کم؛ پرکنندهٔ GCD وقتی چیز با اولویت بالاتری آزاد نیست."
+  },
+  "Shadow Word: Pain": {
+   "fa": "DoT پایهٔ تو که باید همیشه روی هدف فعال بماند."
+  },
+  "Vampiric Touch": {
+   "fa": "DoT مهم دوم با ارزش دمیج بالا؛ با [[Tentacle Slam]] یا کست مستقیم اعمال و نگه‌داری می‌شود."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Shadow Priest ترکیبی از دمیج مستقیم و DoT است و با منبع واحد [[Insanity]] اداره می‌شود؛ خرج‌کنندهٔ اصلی [[Shadow Word: Madness]] است و اپتایم بالای آن با [[Mastery: Shadow Weaving]] دمیجت را بالا می‌برد. بخش بزرگی از بقت هم از سلف‌هیل می‌آید، نه دفاع فعال."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Archon]] که حول [[Halo]] می‌چرخد و با [[Voidform]] و [[Dark Ascension]] تعامل دارد، و [[Voidweaver]] که با [[Void Torrent]] جان [[Mind Blast]] را به [[Void Blast]] تبدیل می‌کند. طبق منبع Wowhead، Archon در همهٔ محتواها به‌مراتب قوی‌تر عمل می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight Season 2 تغییرهای خوبی رسیده: [[Void Volley]] کول‌داون ندارد و به‌جایش چند شارژ می‌گیرد، [[Ancient Madness]] حالا Haste هم می‌دهد و [[Voidform]] را خیلی بیشتر تمدید می‌کند و تلنت جدید [[Shadeburst]] جای [[Phantom Menace]] را گرفته تا اپاریشن‌ها دمیج کِلیو بزنند."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "کِلیو پراکنده",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "برست",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "سلف‌هیل",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "جابجایی",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "زیاد",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "کِلیو پراکندهٔ فوق‌العاده قوی که در محتوای سطح بالا به کار می‌آید؛ بیشتر اسپک‌ها فقط اطراف هدف اصلی دمیج می‌زنند",
+       "تک‌هدف کارآمد و بهینه: برای زدن هدف‌های اضافه تقریباً چیزی از دست نمی‌دهی",
+       "سلف‌هیل قوی در برابر آسیب پیوسته و تیک‌خور",
+       "توانایی تقویت دمیج هم‌تیمی‌ها علاوه بر دمیج خودت"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "دمیج بیرون از کول‌داون‌ها، مخصوصاً در حالت کِلیو، ایستادن ثابت می‌خواهد",
+       "ابزار جابجایی و kite ضعیف",
+       "تک‌هدف فعلاً ضعیف است و برای دمیج معنادار به هدف‌های اضافه تکیه دارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Archon",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "در همهٔ محتواها به‌مراتب قوی‌تر است. [[Halo]] کیستون بازی است و با [[Manifested Power]] و [[Sustained Potency]] منبع و پروک می‌سازد؛ [[Voidform]] با [[Sustained Potency]] و [[Ancient Madness]] تمدید می‌شود."
+      },
+      {
+       "title": "Voidweaver",
+       "tag": "کلیدهای سنگین Mythic+",
+       "x": "[[Void Torrent]] جان [[Mind Blast]] را به [[Void Blast]] تبدیل می‌کند؛ در Mythic+ فقط به‌عنوان گزینهٔ کلیدهای +20 با [[Invoked Nightmare]] به‌جای Misery دیده می‌شود."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Shadow Priest در پچ 12.1.5 دو درخت قهرمانی دارد: Archon برای همهٔ محتواها و Voidweaver برای کلیدهای سنگین Mythic+. صفحهٔ منبع برای هر هرو چهار مد کد ارائه می‌دهد: Single Target، Raid Cleave، Mythic+ و Delves؛ ردیف Delves هر دو هرو همان کد Mythic+ را دارد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Archon (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "بازی با بیشترین تعداد تلنت‌های Idol، استفاده از [[Void Apparitions]] و [[Shadowy Apparitions]] و کیستون [[Halo]].",
+       "code": "CIQAAAAAAAAAAAAAAAAAAAAAAMMDzAAAAAAAAAAAAwMLmxMbzMGz2MGzw2MzYmZGbIzYxMNAzAMzmZY2MAkxYBAzMIjZmZMbMz2yAMTMA"
+      },
+      {
+       "title": "Archon (Raid Cleave)",
+       "tag": "فایت‌های کِلیو",
+       "x": "برای فایت‌هایی که ادد اسپاون می‌شوند یا دمیج کِلیو دارند؛ در صورت نیاز [[Spectral Horrors]] را با [[Psychic Link]] جابه‌جا کن.",
+       "code": "CIQAAAAAAAAAAAAAAAAAAAAAAMMDDAAAAAAAAAAAAmZxMmZbmxMz2MGzw2MzYmZGbIzYxMNAzAMzmZY2MAkxYBAzMIjZmZMbMz2yAMTMA"
+      },
+      {
+       "title": "Archon (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "با تلنت [[Misery]]؛ انتخاب پیشنهادی برای بیشتر بازیکنان در دانجن‌های میانه.",
+       "code": "CIQAAAAAAAAAAAAAAAAAAAAAAMMDDAAAAAAAAAAAAmZxMmZbmxMzyMGD2mZGzMzYDZGLbz0AMDwMbmhZzAQGjFAMzgMmZmxsxMbLDwMxA"
+      },
+      {
+       "title": "Archon (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "ابزارهای Crowd Control برای Delveهای تکی یا گروهی؛ کدش همان بیلد Mythic+ است.",
+       "code": "CIQAAAAAAAAAAAAAAAAAAAAAAMMDDAAAAAAAAAAAAmZxMmZbmxMzyMGD2mZGzMzYDZGLbz0AMDwMbmhZzAQGjFAMzgMmZmxsxMbLDwMxA"
+      },
+      {
+       "title": "Voidweaver (Raid)",
+       "tag": "آلترناتیو ریید",
+       "x": "گزینهٔ جایگزین ریید؛ بازی حول [[Void Torrent]] و [[Void Blast]] می‌چرخد.",
+       "code": "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAAegZxMmZbmBz2MzYG2mZGzMzYDZGLmpBYmZGAIAz2stAmNGAYkxMzMmtxMYmBzEDA"
+      },
+      {
+       "title": "Voidweaver (Mythic+)",
+       "tag": "کلیدهای +20",
+       "x": "مخصوص پوش کلیدهای خیلی بالا: [[Invoked Nightmare]] جای [[Misery]] می‌نشیند.",
+       "code": "CIQAAAAAAAAAAAAAAAAAAAAAAMMDDAAAAAAAAAAAAmZxMmZbmxMzyMzYG2mZGzMzYDZGLmpBYmZGAIAz2stAmNGAYkxMzMmNmBzMYmYA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=priest&spec=shadow",
+     "x": "مشاهده تمام تلنت‌های Shadow Priest"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Shadow Priest با منبع واحد [[Insanity]] و یک خرج‌کنندهٔ سنگین اداره می‌شود: اپتایم [[Shadow Word: Madness]] را بالا نگه دار و نگذار [[Insanity]] روی 100 کپ شود (با تلنت [[Voidtouched]] سقف 150 است)؛ اپتایم بیشتر یعنی دمیج بیشتر از [[Mastery: Shadow Weaving]]."
+    },
+    {
+     "t": "p",
+     "x": "قاعدهٔ کول‌داون‌ها ساده است: اولویت با اسپل‌های کول‌داون کوتاه تا در طول فایت هیچ استفاده‌ای هدر نرود. دو پروک اصلی [[Mind Devourer]] و [[Shadowy Insight]] را همزمان با ظاهرشدن خرج کن."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Archon"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Shadow Word: Pain]] را کست کن اگر فعال نیست.",
+      "[[Vampiric Touch]] را با [[Tentacle Slam]] یا کست مستقیم نگه دار.",
+      "[[Halo]] را بزن.",
+      "[[Voidform]] را فعال کن.",
+      "[[Power Infusion]] را بزن.",
+      "[[Insanity]] را روی [[Shadow Word: Madness]] خرج کن اگر فعال نیست، نزدیک تمام‌شدن است یا داری کپ می‌شوی.",
+      "[[Mind Blast]] را بزن.",
+      "[[Mind Flay: Insanity]] را وقتی [[Shadow Word: Madness]] فعال است بزن.",
+      "[[Shadow Word: Madness]] را در [[Voidform]] بزن.",
+      "[[Tentacle Slam]] را وقتی بزن که هدف اضافه‌ای برای DoT یا حرکت پیشِ رو نیست.",
+      "[[Shadow Word: Death]] را روی زیر 20% سلامتی بزن.",
+      "[[Void Volley]] را بزن.",
+      "[[Mind Flay]] را بزن و به‌محض آزادشدن چیزی با اولویت بالاتر قطعش کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Voidweaver"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Shadow Word: Pain]] را برای نگه‌داشتنش کست کن.",
+      "[[Vampiric Touch]] را با [[Tentacle Slam]] یا کست مستقیم نگه دار.",
+      "[[Voidform]] را فعال کن.",
+      "[[Power Infusion]] را بزن.",
+      "[[Shadow Word: Death]] را روی هدف سپردار بزن.",
+      "[[Void Blast]] را وقتی [[Shadow Word: Madness]] فعال است یا [[Entropic Rift]] نزدیک تمام‌شدن است بزن.",
+      "[[Insanity]] را روی [[Shadow Word: Madness]] خرج کن اگر فعال نیست، نزدیک تمام‌شدن است، داری کپ می‌شوی یا [[Entropic Rift]] فعال است.",
+      "[[Void Torrent]] را برای فعال‌کردن [[Entropic Rift]] بزن.",
+      "[[Mind Blast]] را بزن.",
+      "[[Shadow Word: Madness]] را بزن.",
+      "[[Tentacle Slam]] را وقتی بزن که هدف اضافه‌ای برای DoT یا حرکت پیشِ رو نیست.",
+      "[[Shadow Word: Death]] را روی زیر 20% سلامتی بزن.",
+      "[[Void Volley]] را بزن.",
+      "[[Mind Flay]] را بزن و به‌محض آزادشدن چیزی با اولویت بالاتر قطعش کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اولویت AoE تقریباً همان تک‌هدف است: DoTها را پخش کن و با [[Tentacle Slam]] و [[Psychic Link]] از روی یک هدف اولویت‌دار به بقیه کِلیو بزن. در حرکت هم [[Tentacle Slam]]، [[Shadow Word: Death]] یا [[Shadow Word: Pain]] برای تولید [[Insanity]] و دمیج در دسترس است."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر با Archon"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Mind Blast]] را بزن.",
+      "[[Tentacle Slam]] را بزن.",
+      "[[Shadow Word: Pain]] را کست کن.",
+      "[[Void Volley]] را بزن.",
+      "[[Halo]] را بزن.",
+      "[[Voidform]] را فعال کن.",
+      "[[Power Infusion]] + Potion of Recklessness + ترینکت‌های on-use را با هم استفاده کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر با Voidweaver"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Mind Blast]] را بزن.",
+      "[[Tentacle Slam]] را بزن.",
+      "[[Shadow Word: Pain]] را کست کن.",
+      "[[Void Volley]] را بزن.",
+      "[[Voidform]] را فعال کن.",
+      "[[Power Infusion]] + Potion of Recklessness + ترینکت‌های on-use را با هم استفاده کن.",
+      "[[Shadow Word: Madness]] را بزن.",
+      "[[Void Torrent]] را بزن.",
+      "[[Void Blast]] را بزن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از هر فایتی [[Shadowform]] فعال باشد و [[Power Word: Fortitude]] را به خودت و پارتی بزن؛ این دو چک پیش از شروع مبارزه در ریید، دانجن و حتی دنیای آزاد است."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Power Infusion",
+       "x": "با تلنت [[Twins of the Sun Priestess]] روی هم‌تیمی‌ها هم قابل کست است؛ هدفی را پیدا کن که هر 2 دقیقه از هِیس بیشترین ارزش را بگیرد ولی همیشه ارزش خودت را اولویت بده."
+      },
+      {
+       "s": "Voidform",
+       "x": "ارزش اصلی‌اش دسترسی به [[Void Volley]] در طول آن است؛ روی کول‌داون و منظم بزن تا با [[Power Infusion]]، [[Halo]] و [[Void Torrent]] هم‌زمان شود؛ با Archon از [[Sustained Potency]] و [[Ancient Madness]] تمدید می‌شود."
+      },
+      {
+       "s": "Halo",
+       "x": "کیستون Archon: هم دمیج AoE می‌دهد و هم با [[Manifested Power]] و [[Sustained Potency]] منبع و پروک می‌سازد؛ رَمپ‌آپ کندش یعنی در اوپنر و پنجره‌های کول‌داون زودتر بزنش."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "اولویت استت Haste > Mastery > Critical Strike > Versatility الان از ارزش Intellect هم جلوتر است؛ با این حال جهش Item Level معمولاً همچنان از تیکه‌های ایده‌آل بهتر می‌ارزد. برای ترینکت دنبال پروک پسیو استت + یک ترینکت on-use بگرد و برای شخصیت خودت Raidbots بزن."
+    },
+    {
+     "t": "call",
+     "x": "ارتقا با Mistcrests: Jan'thrazet, the Soul Fang > Venomkeeper's Horrific Cowl > Aqirbane Reliquary > ترینکت‌هایی مثل Gebbo's Bottomless Bag. Bonus Roll با Nebulous Voidcores: Venomkeeper's Horrific Cowl > Jan'thrazet, the Soul Fang > Aqirbane Reliquary. با Ascendant Venomstones: اول سلاح‌ها (مخصوصاً Jan'thrazet, the Soul Fang)، بعد ترینکت‌ها (Twisted Horror's Tendril و Freightrunner's Flask) و بعد گردن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 268197
+      },
+      {
+       "slot": "سر",
+       "id": 271555
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 158344
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271558
+      },
+      {
+       "slot": "دستبند",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271556
+      },
+      {
+       "slot": "کمر",
+       "id": 239649
+      },
+      {
+       "slot": "پا",
+       "id": 281235
+      },
+      {
+       "slot": "کفش",
+       "id": 268255
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 268249
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 250215
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271555
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        281215,
+        250215
+       ],
+       "names": [
+        "Twisted Horror's Tendril",
+        "Freightrunner's Flask"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Cosmic Penitent's Raiment برای Shadow: 2 تیکه دمیج [[Tentacle Slam]] را 100% بالا می‌برد و کول‌داونش را 3 ثانیه کم می‌کند. 4 تیکه به [[Tentacle Slam]] یک استفادهٔ رایگان [[Void Volley]] می‌دهد که به [[Voidform]] نیاز ندارد؛ یعنی کِلیو تو همیشه [[Void Volley]] اضافه می‌سازد."
+    },
+    {
+     "t": "p",
+     "x": "بهترین Embellishmentها: Hunter's Ritual Stone و Arcanoweave Lining. برای Catalyst این‌ها بهترین انتخاب‌اند: Venomkeeper's Horrific Cowl، Mantle of Ceremonial Ascension، Primordial Robe of Rites، Grasps of the Eternal Shadow و Voidweaver's Leggings."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Martyr's Bindings (دستبند) و Martyr's Waistwrap (کمربند) که هر دو در لیست BiS هم هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Mastery",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] است ولی اولویت ثانویه‌ها الان ارزشش را از آن جلوتر برده؛ با این حال جهش‌های بزرگ Item Level را فدای تیکه‌های ایده‌آل نکن."
+    },
+    {
+     "t": "p",
+     "x": "ترتیب Haste > Mastery > Critical Strike > Versatility برای هر دو درخت Archon و Voidweaver و در ریید و Mythic+ یکسان است؛ این اولویت‌ها جنریک‌اند و برای مقدار دقیق روی شخصیت خودت سیم بزن."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Haste زمان کست، GCD و کول‌داون بیشتر اسپل‌های روتیشن را کم می‌کند.",
+      "[[Mastery: Shadow Weaving]] دمیج اسپل‌هایت را روی اهدافی که یک یا چند DoT روشان فعال است بالا می‌برد.",
+      "Critical Strike شانس دوبل‌زدن دمیج را می‌دهد.",
+      "Versatility دمیج و شفا را بالا می‌برد و دمیج دریافتی را کم می‌کند."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نقطه‌های Diminishing Returns: Critical Strike بالای 1380 ریتینگ، Haste بالای 1320، Mastery بالای 1380 و Versatility بالای 1620؛ بعد از هر آستانه ریتینگ اضافه 10% کمتر می‌ارزد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Shadow Priest در Midnight Season 2 حول برست‌های هر دقیقه می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Blooming Feast",
+       "ids": [
+        242273
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "فلاسک را قبل از هر پول فعال نگه دار؛ در رییدها feast گروهی معمولاً از غذای شخصی به‌صرفه‌تر است."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness برای ریید و Mythic+",
+       "ids": [
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را دقیقاً در اوپنر یا پنجرهٔ برست کنار [[Power Infusion]] و ترینکت on-use بزن تا همه با هم بچسبند."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Arcane Mastery",
+       "ids": [
+        244030
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Akil'zon's Swiftness",
+       "ids": [
+        243962
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونه‌ها را با اولویت استت فعلی‌ات هماهنگ کن؛ روی تیکه‌های ماندگار سراغ بهترین گزینه برو و روی تیکه‌های موقت نسخهٔ ارزان‌تر کافی است."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Peridot، Flawless Deadly Amethyst، Flawless Quick Garnet",
+       "ids": [
+        240891,
+        240897,
+        240905
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Augment Rune را در پول‌های ریید و کلیدهای بالا همیشه فعال کن؛ در پنجره‌های برست فشرده مثل بازی Shadow فرق جدی می‌سازد."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Shadow Priest در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "برای بیشتر بازیکنان Archon با تلنت [[Misery]] انتخاب پیشنهادی دانجن‌های میانه است؛ برای پوش کلیدهای خیلی بالا (+20) بیلد Voidweaver با [[Invoked Nightmare]] ساخته شده. بازی AoE حول کِلیو زدن از روی یک هدف اولویت‌دار با [[Tentacle Slam]] و [[Psychic Link]] می‌چرخد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Shadow Word: Pain]] و [[Vampiric Touch]] را روی پک‌ها پخش کن؛ Misery یا کست مستقیم نگهشان می‌دارد.",
+      "به‌جای تعویض مدام هدف، از روی هدف اولویت‌دار با [[Tentacle Slam]] و [[Psychic Link]] کِلیو بزن.",
+      "[[Insanity]] را قبل از کپ‌شدن روی [[Shadow Word: Madness]] خرج کن تا استک‌های [[Mastery: Shadow Weaving]] بیفتد.",
+      "اول کول‌داون‌های کوتاه را بزن و بعد کول‌داون‌های بلند تا در طول دانجن هیچ استفاده‌ای هدر نرود.",
+      "پروک‌های [[Mind Devourer]] و [[Shadowy Insight]] را همان لحظه خرج کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "ایستادن ثابت شرط دمیج پایدار است: مسیرهای حرکت پک‌ها را پیش‌بینی کن و DoTها را قبل از جابه‌جایی تجدید کن؛ در حرکت هم [[Tentacle Slam]] و [[Shadow Word: Death]] دمیج و منبع می‌دهند."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Shadow Priest (شادو) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل شادو (Shadow Priest) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Shadow Priest talent build midnight",
+   "Shadow Priest guide midnight",
+   "Shadow Priest guide 12.1.5",
+   "best Shadow Priest talents",
+   "Shadow Priest talent tree midnight",
+   "Shadow Priest pve guide",
+   "Shadow Priest rotation midnight",
+   "Shadow Priest rotation and cooldowns",
+   "Shadow Priest bis list midnight",
+   "Shadow Priest best in slot",
+   "Shadow Priest gear guide",
+   "Shadow Priest food and potion",
+   "best food for Shadow Priest",
+   "best flask for Shadow Priest",
+   "best potion for Shadow Priest",
+   "Shadow Priest enchants and gems",
+   "best enchants for Shadow Priest",
+   "best gems for Shadow Priest",
+   "Shadow Priest stat priority midnight",
+   "Shadow Priest tier set midnight",
+   "Shadow Priest tier set bonuses",
+   "Shadow Priest mythic+ guide",
+   "Shadow Priest m+ guide midnight",
+   "Shadow Priest raid guide",
+   "Shadow Priest hero talents",
+   "Shadow Priest hero tree",
+   "best dps build Shadow Priest midnight",
+   "Shadow Priest cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای شادو",
+   "تلنت شادو",
+   "تلنت برای Shadow Priest",
+   "تلنت Priest شادو",
+   "بیلد شادو",
+   "بیلد تلنت شادو میدنایت",
+   "روتیشن شادو",
+   "روتیشن و کول‌داون‌های شادو",
+   "غذا برای شادو",
+   "غذا برای Shadow Priest",
+   "غذا و معجون شادو",
+   "بهترین غذای شادو",
+   "فلسک شادو",
+   "بهترین فلسک برای شادو",
+   "معجون شادو",
+   "انچنت شادو",
+   "انچنت و جم شادو",
+   "بهترین انچنت برای شادو",
+   "جم شادو",
+   "بست آیتم شادو",
+   "بهترین آیتم‌های شادو",
+   "گیر شادو",
+   "استت شادو",
+   "اولویت استت شادو",
+   "ست تیر شادو",
+   "مایتی پلاس شادو",
+   "ام پلاس شادو",
+   "راهنمای شادو",
+   "راهنمای Shadow Priest",
+   "راهنمای پریست",
+   "شادو میدنایت",
+   "پریست میدنایت",
+   "هرو تیلنت شادو",
+   "بیلد دی‌پی‌اس شادو",
+   "بهترین دی‌پی‌اس میدنایت شادو"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Shadow Priest (شادو) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Shadow Priest به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای شادو چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، معجون جنگی «Potion of Recklessness»، غذا «Blooming Feast» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای شادو چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای شادو کدام‌اند؟",
+    "a": "ست تیر فعلی «Twisted Horror's Tendril» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Shadow Priest در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

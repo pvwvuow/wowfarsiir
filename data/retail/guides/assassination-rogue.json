@@ -1,0 +1,1031 @@
+{
+ "slug": "assassination-rogue",
+ "class": "rogue",
+ "class_en": "Rogue",
+ "spec_en": "Assassination",
+ "spec_no": 1,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Assassination Rogue",
+ "lead": "بازی Assassination Rogue حول خونریزی و سم می‌چرخد: [[Garrote]] و [[Rupture]] روی هدف می‌مانند، سم‌های کشنده مثل [[Deadly Poison]] می‌نشینند و [[Envenom]] با کانبو پوینت‌ها همه را منفجر می‌کند. اسپک کول‌داون‌محور است: [[Deathmark]] و [[Kingsbane]] را با هم هم‌تراز کن و با [[Vanish]] و [[Improved Garrote]] اوجش را بگیر. دو مسیر Hero Tree داری: [[Deathstalker]] که روی کاغذ قوی‌تر ولی سخت‌تر است و [[Fatebound]] که ساده‌تر و بخشنده‌تر است و برچسب Best منبع را برای Raid و Mythic+ دارد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/rogue/assassination/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/rogue/assassination/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/rogue/assassination/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/rogue/assassination/bis-gear",
+   "updated": "2026-10-14"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/rogue/assassination/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/rogue/assassination/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Garrote": {
+   "fa": "خونریزی سیلنسی که هستهٔ باز شدن توست؛ از استلث ارزش [[Improved Garrote]] می‌گیرد."
+  },
+  "Rupture": {
+   "fa": "فینیشر خونریزی که با 5 کانبو پوینت یا بیشتر نگه‌داری می‌شود."
+  },
+  "Envenom": {
+   "fa": "فینیشر سمّی اصلی؛ بافش با تلنت‌هایی مثل [[Rapid Injection]] گره خورده و زنجیره می‌سازد."
+  },
+  "Mutilate": {
+   "fa": "جنراتور کانبو پوینت اصلی تک‌هدف."
+  },
+  "Deathmark": {
+   "fa": "کول‌داون 2 دقیقه‌ای که دمیج خونریزی‌ها و سم‌ها را بالا می‌برد و سم کشنده را دوبار اعمال می‌کند؛ مرکز برست تو."
+  },
+  "Kingsbane": {
+   "fa": "خنجر رَمپ‌شونده که بلافاصله بعد از [[Deathmark]] زده می‌شود."
+  },
+  "Vanish": {
+   "fa": "در بازی PvE فقط برای پروک [[Improved Garrote]] استفاده می‌شود."
+  },
+  "Improved Garrote": {
+   "fa": "نسخهٔ تقویت‌شدهٔ [[Garrote]] از استلث یا وانیش با پنجرهٔ 6 ثانیه‌ای."
+  },
+  "Shiv": {
+   "fa": "حملهٔ ارزان با کاربرد دفاعی/آفنسیو؛ در Deathstalker با [[Toxic Stiletto]] جنراتور کارآمد می‌شود."
+  },
+  "Darkest Night": {
+   "fa": "مکانیک [[Deathstalker's Mark]] که فینیش با حداکثر کانبو پوینت را پاداش می‌دهد (حدود 3% ارزش)."
+  },
+  "Deathstalker's Mark": {
+   "fa": "مکانیک اصلی درخت Deathstalker که با فینیشرها مصرف می‌شود."
+  },
+  "Hand of Fate": {
+   "fa": "مکانیک اصلی درخت Fatebound."
+  },
+  "Deal Fate": {
+   "fa": "تلنت Fatebound که با شانس 60% کانبو پوینت اضافه می‌دهد و ارزش جنراتورهای غیر-Shiv را بالا می‌برد."
+  },
+  "Toxic Stiletto": {
+   "fa": "تلنتی که هزینهٔ [[Shiv]] را کم می‌کند و آن را به کارآمدترین جنراتور تبدیل می‌کند."
+  },
+  "Fan of Knives": {
+   "fa": "جنراتور AoE که روی 2 هدف یا بیشتر می‌زنی."
+  },
+  "Crimson Tempest": {
+   "fa": "فینیشر AoE پخش‌کنندهٔ خونریزی؛ انرژی خیلی زیادی می‌خورد و برنامه‌ریزی می‌خواهد."
+  },
+  "Caustic Spatter": {
+   "fa": "تلنت کِلیو که بدون افت دمیج تک‌هدف کار می‌کند."
+  },
+  "Scent of Blood": {
+   "fa": "تلنت AoE با استک که در اوپنر AoE سقفش شرط توقف [[Crimson Tempest]] است."
+  },
+  "Rapid Injection": {
+   "fa": "تلنتی که حول کلیپ‌کردن [[Envenom]] می‌چرخد؛ در پچ 12.1 به 20%/40% رسیده."
+  },
+  "Finish the Job": {
+   "fa": "تلنتی که زیر کول‌داون‌ها قاعدهٔ پولینگ انرژی را می‌شکند."
+  },
+  "Lethal Dose": {
+   "fa": "تلنتی که با [[Deathmark]] هم‌کنش پسیو دارد."
+  },
+  "Deadly Poison": {
+   "fa": "سم کشندهٔ اصلی روی سلاح‌ها که با 4 تیکه ست دمیج خونریزی روی هدف را 10% بالا می‌برد."
+  },
+  "Amplifying Poison": {
+   "fa": "سم استک‌شونده که اتواک روی اهدافش با ست 3% به‌ازای هر استک قوی‌تر می‌شود."
+  },
+  "Wound Poison": {
+   "fa": "سم کاهش‌دهندهٔ هیل که با 4 تیکه ست بار دوم هم می‌زند."
+  },
+  "Atrophic Poison": {
+   "fa": "سم کاهش‌دهندهٔ دمیج دشمن (4% در پچ 12.1 با مدت 60 ثانیه)."
+  },
+  "Momentum of Despair": {
+   "fa": "تلنت Deathstalker که [[Fan of Knives]] را قوی‌تر می‌کند."
+  },
+  "Clear the Witnesses": {
+   "fa": "تلنت Deathstalker که [[Fan of Knives]] را قوی‌تر می‌کند."
+  },
+  "Singular Focus": {
+   "fa": "تلنت فانل Deathstalker که در کلیدهای سنگین سرعت بالا می‌آورد."
+  },
+  "Zoldyck Recipe": {
+   "fa": "منبع قدرت Execute فاز Assassination."
+  },
+  "Seal Fate": {
+   "fa": "تلنتی که کریت‌ها کانبو پوینت اضافه می‌دهند."
+  },
+  "Unstable Toxin": {
+   "fa": "تلنت جدید پچ 12.1: دمیج [[Envenom]] 18% بیشتر ولی مدتش 2 ثانیه کمتر."
+  },
+  "Implacable": {
+   "fa": "تلنت Apex: [[Envenom]] 10% قوی‌تر و 2 انرژی به‌ازای هر کانبو پوینت برمی‌گرداند."
+  },
+  "Internal Bleeding": {
+   "fa": "تلنتی که در پچ 12.1 از [[Kidney Shot]] و [[Rupture]] فعال می‌شود."
+  },
+  "Iron Wire": {
+   "fa": "تلنتی که گاروت‌های استلثی را در پچ 12.1 به سیلنس 5 ثانیه‌ای تبدیل می‌کند."
+  },
+  "Blindside": {
+   "fa": "پروک [[Mutilate]] رایگان که در پچ 12.1 به 10% (20% روی سلامتی کم) رسیده."
+  },
+  "Mastery: Potent Assassin": {
+   "fa": "مستری کلاس: بخش بزرگی از دمیجت را تقویت می‌کند."
+  },
+  "Zatha'tek, Breath of Corruption": {
+   "fa": "خنجر دست اصلی BiS فصل از Ula'tek."
+  },
+  "Sharpened Lightwood Slasher": {
+   "fa": "خنجر دست دوم BiS فصل از Altar of Fangs."
+  },
+  "Chosen Bloodslayer's Hexweave": {
+   "fa": "ست تیر فصل راگ؛ 2 تیکه [[Envenom]] را 10% و کل دمیج را 3% بالا می‌برد و 4 تیکه سم‌ها را قوی می‌کند."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Chestwrap of Palpable Terror": {
+   "fa": "سینهٔ BiS فصل از Kith'ix و گزینهٔ Catalyst."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت BiS فصل از Ula'tek."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت دوم BiS فصل از Kith'ix."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "یکی از سه فلاسک قابل قبول فصل."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "یکی از سه فلاسک قابل قبول فصل."
+  },
+  "Flask of the Magisters": {
+   "fa": "یکی از سه فلاسک قابل قبول فصل."
+  },
+  "Liquid Luster": {
+   "fa": "یکی از سه پاتشن مبارزهٔ قابل قبول فصل."
+  },
+  "Light's Potential": {
+   "fa": "یکی از سه پاتشن مبارزهٔ قابل قبول فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "یکی از سه پاتشن مبارزهٔ قابل قبول فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل؛ روی هر دو خنجر."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Silvermoon Parade": {
+   "fa": "feast Agility فصل."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "افزونهٔ قوی‌ترین سلاح فصل برای هر دو خنجر."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "افزونهٔ سر با Leech."
+  },
+  "Enchant Shoulders - Silvermoon's Mending": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم اصلی برای بقیهٔ سوکت‌ها."
+  },
+  "Gaze of the Coiled Watcher": {
+   "fa": "گزینهٔ Catalyst سر از Ula'tek."
+  },
+  "Somber Spaulders": {
+   "fa": "گزینهٔ Catalyst شانه از Voidscar Arena."
+  },
+  "Gauntlets of Fevered Defense": {
+   "fa": "گزینهٔ Catalyst دست از Murder Row."
+  },
+  "Coiled Hex Legguards": {
+   "fa": "گزینهٔ Catalyst پا از The Coiled Altar."
+  },
+  "Silvermoon Agent's Deflectors": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Silvermoon Agent's Sneakers": {
+   "fa": "کفش Crafted فصل که در BiS هم هست."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر BiS فصل از Kith'ix."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر دوم BiS فصل از Sszorak."
+  },
+  "Sash of the Forlorn Vessel": {
+   "fa": "کمربند BiS فصل از The Coiled Altar."
+  },
+  "Chosen Bloodslayer's Spirit Shroud": {
+   "fa": "کلاه ست فصل از Ula'tek."
+  },
+  "Chosen Bloodslayer's Voodoo Guards": {
+   "fa": "شانهٔ ست فصل از Voidscar Arena."
+  },
+  "Chosen Bloodslayer's Fanged Grips": {
+   "fa": "دستکش ست فصل از Entombed Sentinels."
+  },
+  "Chosen Bloodslayer's Reinforced Pants": {
+   "fa": "شلوار ست فصل از The Coiled Altar."
+  },
+  "Kidney Shot": {
+   "fa": "استان قفل‌کنندهٔ هدف که در پچ 12.1 با [[Internal Bleeding]] هم‌کنش دارد."
+  },
+  "Deathstalker": {
+   "fa": "درخت قهرمانی با [[Deathstalker's Mark]] و [[Darkest Night]]؛ روی کاغذ قوی‌تر، در عمل سخت‌تر و برای Delves بهترین."
+  },
+  "Fatebound": {
+   "fa": "درخت قهرمانی با [[Hand of Fate]] و [[Deal Fate]]؛ ساده‌تر و بخشنده‌تر با برچسب Best منبع برای Raid و Mythic+."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Assassination Rogue حول خونریزی و سم می‌چرخد: [[Garrote]] و [[Rupture]] روی هدف می‌مانند، سم‌های کشنده مثل [[Deadly Poison]] می‌نشینند و [[Envenom]] با کانبو پوینت‌ها همه را منفجر می‌کند. اسپک کندتر از Outlaw و Subtlety است ولی کندی به معنی ضعف نیست."
+    },
+    {
+     "t": "p",
+     "x": "هستهٔ برست تو کول‌داون‌های روی‌هم‌چیده است: [[Deathmark]] و [[Kingsbane]] را هم‌تراز کن، [[Vanish]] را برای [[Improved Garrote]] نگه دار و در فاز Execute با [[Zoldyck Recipe]] از قوی‌ترین دمیج‌دهنده‌های بازی هستی. دو مسیر Hero Tree داری: [[Deathstalker]] قوی‌تر روی کاغذ ولی سخت‌تر، و [[Fatebound]] ساده‌تر و بخشنده‌تر."
+    },
+    {
+     "t": "p",
+     "x": "در پچ 12.1 دمیج کل 20% بالا برده و تغییرهای زیادی روی اقتصاد انرژی و مسیر تلنت‌ها آمده: تلنت جدید [[Unstable Toxin]] دمیج [[Envenom]] را 18% بالا می‌برد و [[Implacable]] هر کانبو پوینت خرج‌شده 2 انرژی برمی‌گرداند. سمت منفی، [[Kingsbane]] 15% نرف شده و شانس [[Blindside]] کمتر شده است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "کِلیو نزدیک",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "برست",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "Execute",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "جابجایی و یوتیلیتی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "کم",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "دمیج تک‌هدف و کِلیو نزدیک خوب با تمرکز روی DoTها از خونریزی و سم",
+       "[[Caustic Spatter]] کِلیو قوی می‌دهد بدون اینکه از دمیج تک‌هدف کم کنی",
+       "ریتم کند و بازی‌کردنش ساده است: برای پروگرشن عالی و تمرکز روی مکانیک باس راحت‌تر",
+       "در فازهای Execute به‌لطف [[Zoldyck Recipe]] جزو قوی‌ترین‌هاست"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "بازی AoE در Mythic+ چیزهای زیادی برای مدیریت دارد و دانش می‌خواهد",
+       "اوپنر و رَمپ‌آپ کول‌داون‌ها بلند است: روی دشمن‌های کوتاه‌عمر برست کم می‌آورد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Fatebound",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Raid Single Target، Raid و Mythic+. حول [[Hand of Fate]] می‌چرخد، ساده‌تر و بخشنده‌تر است و بدون دکمه‌های اضافه بازی می‌شود؛ [[Deal Fate]] ارزش جنراتورهای غیر-Shiv را بالا می‌برد. برای اکثر بازیکنان عملاً بهتر جواب می‌دهد."
+      },
+      {
+       "title": "Deathstalker",
+       "tag": "Delves و کلیدهای سنگین",
+       "x": "روی کاغذ 2 تا 5% قوی‌تر در همهٔ محتواهاست ولی خیلی سخت‌تر: دکمه‌های اضافه در تک‌هدف و مدیریت دشوار [[Deathstalker's Mark]]. بازیکنان تراز بالا برای فانل [[Singular Focus]] و لایهٔ دفاعی اضافه سراغش می‌روند؛ برای Delves بهترین است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Assassination Rogue در پچ 12.1.5 دو درخت قهرمانی دارد: Fatebound و Deathstalker. صفحهٔ منبع برای هر هرو چهار ردیف کد ارائه می‌دهد: Raid Single Target، Raid (Cleave)، Mythic+ و Delves؛ ردیف Delves هر دو هرو همان کد Mythic+ را دارد. بیلدهای ریید معمولاً به دو دسته می‌رسند: بیلد عمومی با مجموعهٔ AoE یا بیلد تمام‌تک‌هدف؛ وسطِ این دو معمولاً فقط ضرر دارد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Fatebound (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید؛ ترکیب نمونهٔ Cleave و Single Target که برای بیشتر موقعیت‌ها کافی است؛ روی برخی فایت‌های Mythic تلنت‌هایی مثل [[Scent of Blood]] ترجیح می‌گیرند.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsNDGAAAAAYWGsNDAAAAAottZmZmZmxYZmZmtZWmZmZMjZMGzMGGADsAzY0Y2AZbAbGAMzMYA"
+      },
+      {
+       "title": "Fatebound (Raid Cleave)",
+       "tag": "بهترین برای Raid Cleave",
+       "x": "بیلد کِلیو ریید با همان درخت Fatebound؛ برای فایت‌هایی که دمیج پخش‌شده می‌خواهند.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMz8AjxMjxYmZmxAYgFYGjGzGIbDYzAgZmBD"
+      },
+      {
+       "title": "Fatebound (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ کیفیت بالاتر بازی در برابر دث‌استالکر معمولاً ارزشش را دارد.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmFDAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMz8AmxMjxMmZMGADsAzY0YWAZbAbGAMzMDfA"
+      },
+      {
+       "title": "Fatebound (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "بیلد Delves با Fatebound؛ برچسب Best این مد مال دث‌استالکر است.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmFDAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMz8AmxMjxMmZMGADsAzY0YWAZbAbGAMzMDfA"
+      },
+      {
+       "title": "Deathstalker (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد تک‌هدف ریید با Deathstalker: 2 تا 3% جلوتر ولی سخت‌گیرتر در مدیریت [[Deathstalker's Mark]].",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsNDGAAAAAYWGsNDAAAAAottZmZmZmxYZmZmtZWmZmZMjZMGzMGGgNzyADYJYZYCMsAmZAGjB"
+      },
+      {
+       "title": "Deathstalker (Raid Cleave)",
+       "tag": "آلترناتیو Raid Cleave",
+       "x": "بیلد کِلیو ریید با Deathstalker.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMz8AjxMjxYmZmxAsZWGYALBLDTghFwMDwYMA"
+      },
+      {
+       "title": "Deathstalker (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "برای بازیکنان تراز بالا در کلیدهای سنگین: فانل [[Singular Focus]] و لایهٔ دفاعی اضافه.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmFDAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMz8AmxMjxMmZMGgNzyADYJYZYCMsYwMDgZ8BA"
+      },
+      {
+       "title": "Deathstalker (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmFDAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMz8AmxMjxMmZMGgNzyADYJYZYCMsYwMDgZ8BA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=rogue&spec=assassination",
+     "x": "مشاهده تمام تلنت‌های Assassination Rogue"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "روتیشن Assassination یک build-and-spend ساده است ولی با downtime عمدی: به‌جای فشار‌دادن هر دکمه در اولین فرصت، حول شکاف‌های روتیشن بازی کن. اسپک به GCD قفل نیست، به انرژی قفل است؛ پس کارآمدترین دکمه را بزن نه الزاماً سریع‌ترین را."
+    },
+    {
+     "t": "p",
+     "x": "اپتایم [[Envenom]] را مدیریت کن: بافش با تلنت‌هایی مثل [[Rapid Injection]] گره خورده و زنجیرهٔ Envenom جای ابراز مهارت این اسپک است؛ در ثانیه‌های آخر باف انون بزن و زیر کول‌داون‌ها با [[Finish the Job]] همه‌قاعده را بشکن و انرژی را خالی کن."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Fatebound"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Garrote]] را نگه دار.",
+      "با [[Mutilate]] تا 5 کانبو پوینت یا بیشتر بساز.",
+      "[[Rupture]] را با 5 کانبو پوینت یا بیشتر نگه دار.",
+      "[[Vanish]] بزن و بلافاصله [[Garrote]] برای [[Improved Garrote]]؛ در بیشتر موقعیت‌ها با [[Deathmark]] هم‌ترازش کن.",
+      "[[Deathmark]] را روی کول‌داون بزن.",
+      "[[Kingsbane]] را روی کول‌داون و بلافاصله بعد از [[Deathmark]] بزن.",
+      "[[Envenom]] را با 5 کانبو پوینت یا بیشتر خرج کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Deathstalker"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Garrote]] را نگه دار.",
+      "[[Shiv]] را روی کول‌داون بزن.",
+      "با [[Mutilate]] تا 5 کانبو پوینت یا بیشتر بساز.",
+      "وقتی [[Darkest Night]] فعال است، [[Envenom]] را با حداکثر کانبو پوینت بزن.",
+      "[[Rupture]] را با 5 کانبو پوینت یا بیشتر نگه دار.",
+      "[[Vanish]] بزن و بلافاصله [[Garrote]] برای [[Improved Garrote]]؛ با [[Deathmark]] هم‌ترازش کن.",
+      "[[Deathmark]] را روی کول‌داون بزن.",
+      "[[Kingsbane]] را روی کول‌داون و بلافاصله بعد از [[Deathmark]] بزن.",
+      "[[Envenom]] را با 5 کانبو پوینت یا بیشتر خرج کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نکته‌های [[Darkest Night]] (حدود 3% ارزش): همیشه با حداکثر کانبو پوینت فینیش کن و بیرون از اوپنر هنگام آن [[Rupture]] نزن چون یک استک [[Deathstalker's Mark]] را می‌سوزاند؛ ریختن کامل Rupture هم اشکالی ندارد. با [[Toxic Stiletto]] هزینهٔ [[Shiv]] را کم کن و آن را روی کول‌داون ولی هرگز با ادد حاضر نزن چون [[Fan of Knives]] کارآمدتر می‌شود. در Fatebound شتاب‌زده، شیدون روی کول‌داون می‌تواند حدود 4.5% سود هم بچرخاند."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Garrote]] را روی هدف اصلی نگه دار.",
+      "[[Rupture]] را روی هدف اصلی با 5 کانبو پوینت یا بیشتر نگه دار.",
+      "با [[Crimson Tempest]] خونریزی‌ها را روی اهداف فرعی پخش کن تا 5 کانبو پوینت یا بیشتر.",
+      "روی 2 هدف یا بیشتر تا 5 کانبو پوینت [[Fan of Knives]] بزن.",
+      "[[Vanish]] و بلافاصله [[Garrote]] برای [[Improved Garrote]]؛ در Mythic+ معمولاً برای چین‌پول نگه می‌دارند وگرنه با [[Deathmark]] هم‌تراز کن.",
+      "[[Deathmark]] را روی کول‌داون بزن.",
+      "[[Kingsbane]] را روی کول‌داون و بلافاصله بعد از [[Deathmark]] بزن.",
+      "[[Envenom]] را با 5 کانبو پوینت یا بیشتر بزن تا انرژی و کانبو پوینت هدر نرود."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بازی AoE تو از سه تلنت می‌آید: [[Caustic Spatter]]، [[Scent of Blood]] و [[Crimson Tempest]]؛ آخریمی خیلی انرژی‌خور است، پس پنجره‌های AoE فایت را پیش‌بینی کن و با کول‌داون‌ها و خونریزی‌ها برنامه‌ریزی‌اش کن."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Garrote]] را کست کن.",
+      "با [[Mutilate]] تا 5 کانبو پوینت یا بیشتر بساز.",
+      "[[Rupture]] را بزن.",
+      "[[Garrote]] را برای تمدید [[Improved Garrote]] دوباره بزن.",
+      "با [[Mutilate]] دوباره تا 5 کانبو پوینت یا بیشتر بساز.",
+      "قبل از ورود به کول‌داون‌ها یک [[Envenom]] بزن.",
+      "ترینکت‌های on-use و راسیال‌ها و مصرفی‌های مبارزه را همین‌جا استفاده کن.",
+      "[[Deathmark]] را بزن.",
+      "[[Kingsbane]] را بزن.",
+      "با [[Envenom]] کانبو پوینت‌ها را خالی کن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اگر به استلث نرسیدی [[Vanish]] بزن.",
+      "[[Garrote]] را کست کن.",
+      "[[Garrote]] را برای تمدید [[Improved Garrote]] دوباره بزن.",
+      "برای کانبو پوینت [[Fan of Knives]] بزن.",
+      "[[Rupture]] را با 5 کانبو پوینت یا بیشتر بزن.",
+      "[[Crimson Tempest]] را تا 5 کانبو پوینت یا سقف استک‌های [[Scent of Blood]] ادامه بده.",
+      "[[Envenom]] را بزن.",
+      "ترینکت‌های on-use و راسیال‌ها و مصرفی‌ها را استفاده کن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "[[Vanish]] در اوپنر فقط برای پروک [[Improved Garrote]] است: تقریباً هم‌زمان با [[Deathmark]] بزنش و در پایان پنجرهٔ 6 ثانیه‌ای، [[Garrote]] را تازه کن."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Deathmark",
+       "x": "دیباف تک‌هدف با کول‌داون 2 دقیقه: خونریزی می‌گذارد، انرژی برمی‌گرداند و دمیج [[Garrote]]، [[Rupture]] و سم‌های کشنده مثل [[Deadly Poison]] و [[Amplifying Poison]] را بالا می‌برد؛ سم کشنده روی هدف دو بار اعمال می‌شود که با رَمپ [[Kingsbane]] عالی می‌نشیند. همهٔ کول‌داون‌ها را به آن بچسبان."
+      },
+      {
+       "s": "Kingsbane",
+       "x": "خنجر رَمپ‌شونده که در پنجرهٔ [[Deathmark]] به‌طرز چشمگیری بیشتر دمیج می‌زند؛ هر وقت شد بلافاصله بعد از دث‌مارک بزن."
+      },
+      {
+       "s": "Vanish",
+       "x": "فقط برای پروک [[Improved Garrote]]: هم‌زمان با [[Deathmark]] استفاده کن و در پایان پنجرهٔ 6 ثانیه‌ای [[Garrote]] را تازه کن."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "قاعدهٔ کلی استت Critical Strike > Haste > Mastery >> Versatility است و هیچ‌وقت ارزش Agility را دست‌کم نگیر: جهش بزرگ Item Level تقریباً همیشه از استت بهینه بهتر است. بیلدهای Mythic+ کمی Mastery بیشتر به‌جای Haste می‌خواهند ولی این با 2 یا 3 تا تعویض آیتم حل می‌شود، نه ست دوم. یک ترینکت on-use برای پُرکردن برست توصیه می‌شود و در نهایت شخصیت خودت را با Raidbots سیم بزن."
+    },
+    {
+     "t": "call",
+     "x": "اولویت ارتقا با Mistcrests: اول سلاح (فقط خنجر دست اصلی؛ دمیج ابیلیتی‌ها از دست اصلی حساب می‌شود و خنجر کرافتی وقتی خنجر بهتری آمد می‌رود دست دوم)، بعد آیتم‌های Bonus Roll خورده (Ula'tek پر از BiS است)، بعد ترینکت‌های باارزش و در پایان تیکه‌های کم‌آیتم‌لول بزرگ مثل Chest و Hands و Legs که بودجهٔ استت بیشتری دارند."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271093
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 275070
+      },
+      {
+       "slot": "سر",
+       "id": 271510
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271508
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 281236
+      },
+      {
+       "slot": "دستبند",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271511
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271509
+      },
+      {
+       "slot": "کفش",
+       "id": 244569
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271510
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270175,
+        281215
+       ],
+       "names": [
+        "Voracious Heart of Ula'tek",
+        "Twisted Horror's Tendril"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Chosen Bloodslayer's Hexweave: 2 تیکه دمیج [[Envenom]] را 10% بالا می‌برد و 3% به کل دمیجت اضافه می‌کند. 4 تیکه [[Deadly Poison]] دمیج خونریزی روی هدف را 10% زیاد می‌کند، اتواک روی اهداف [[Amplifying Poison]]‌دار 3% به‌ازای هر استک قوی‌تر می‌شود و [[Wound Poison]] بار دوم هم می‌زند. بازیِ خاصی پشت بونس ست نیست."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Gaze of the Coiled Watcher (سر)، Somber Spaulders (شانه)، Chestwrap of Palpable Terror (سینه)، Gauntlets of Fevered Defense (دست) و Coiled Hex Legguards (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Silvermoon Agent's Deflectors (دستبند) و Silvermoon Agent's Sneakers (کفش) که هر دو در BiS هستند؛ خنجر کرافتی هم بعد از آمدن خنجر بهتر به دست دوم منتقل می‌شود."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Critical Strike",
+      "Haste",
+      "Mastery",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی تو Agility است: روی چرم می‌آید و Attack Power و دمیج ابیلیتی‌ها را بالا می‌برد؛ جهش‌های بزرگ Item Level را فدای تیکه‌های ایده‌آل نکن."
+    },
+    {
+     "t": "p",
+     "x": "ترتیب Critical Strike > Haste > Mastery > Versatility برای هر دو درخت Fatebound و Deathstalker و در AoE هم تقریباً یکسان است؛ این جدول‌ها جنریک‌اند و برای مقدار دقیق با Raidbots سیم بزن. Mythic+ کمی Mastery بیشتر نسبت به Haste می‌خواهد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Critical Strike اثر حمله را دوبل می‌کند و با [[Seal Fate]] کانبو پوینت اضافه می‌سازد.",
+      "Haste سرعت حمله و کست را بالا می‌برد و تیک‌های DoTها را سریع‌تر می‌کند.",
+      "[[Mastery: Potent Assassin]] بخش بزرگی از دمیجت را تقویت می‌کند.",
+      "Versatility همهٔ دمیجت را بالا می‌برد و دمیج دریافتی را کم می‌کند."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Assassination Rogue در Midnight Season 2 حول Agility و برست می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights یا Flask of the Shattered Sun یا Flask of the Magisters",
+       "ids": [
+        241324,
+        241326,
+        241322
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Silvermoon Parade",
+       "ids": [
+        255845
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "غذای با Critical Strike و Haste رقابتی است"
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "هر سه فلاسک قابل قبول‌اند و بسته به گیر و تلنت‌ها بهترینشان عوض می‌شود؛ برای غذا هم دنبال Crit و Haste برو."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Liquid Luster یا Light's Potential یا Potion of Recklessness",
+       "ids": [
+        271886,
+        241308,
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در اوپنر، هم‌زمان با ترینکت on-use و کول‌داون‌ها بزن تا همه در یک پنجره بنشیند."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "هر دو سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil (روی هر دو خنجر)",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ سلاح [[Enchant Weapon - Rite of the Hash'ey]] عددی قوی‌ترین است ولی با گیر تو ممکن است کمی جابه‌جا شود؛ سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Peridot",
+       "ids": [
+        240891
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "دمیج اضافهٔ جم کریت معمولاً نمی‌ارزد؛ Peridot را روی همهٔ سوکت‌ها بچین و اگر استتی از حد گذشت، جم را با نسخهٔ Crit یا Mastery عوض کن."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Assassination Rogue در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "برای اکثر بازیکنان Fatebound انتخاب درست است: افت جزئی دمیج نادراً دلیل تایم‌نشدن کلید است و کیفیت بالاتر بازی بیشتر می‌ارزد. بازیکنان تراز بالا برای فانل [[Singular Focus]] و لایهٔ دفاعی اضافه سراغ Deathstalker می‌روند. بیلد Mythic+ کمی Mastery بیشتر به‌جای Haste می‌خواهد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Vanish]] با [[Improved Garrote]] را برای چین‌پول‌هایی که استلث نداری نگه دار؛ وگرنه با [[Deathmark]] هم‌ترازش کن.",
+      "خونریزی‌ها را با [[Crimson Tempest]] پخش کن و روی 2 هدف یا بیشتر [[Fan of Knives]] را رها نکن.",
+      "پنجره‌های [[Crimson Tempest]] را برای دمیج معلوم پول‌ها برنامه‌ریزی کن؛ دکمهٔ انرژی‌خوری است.",
+      "در AoE، دث‌استالکر [[Fan of Knives]] را با [[Momentum of Despair]] و [[Clear the Witnesses]] قوی‌تر می‌کند.",
+      "[[Caustic Spatter]] کِلیو قوی می‌دهد بدون قربانی‌کردن دمیج تک‌هدف."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در پک‌های کوچک و بوس‌های تک، اوپنر بلند تو ضعف است: با [[Garrote]] استلثی شروع کن، زنجیرهٔ [[Envenom]] را زود راه بینداز و [[Deathmark]] و [[Kingsbane]] را برای پک بعدی یا باس نگه دار."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Assassination Rogue (اساسینیشن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل اساسینیشن (Assassination Rogue) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Assassination Rogue talent build midnight",
+   "Assassination Rogue guide midnight",
+   "Assassination Rogue guide 12.1.5",
+   "best Assassination Rogue talents",
+   "Assassination Rogue talent tree midnight",
+   "Assassination Rogue pve guide",
+   "Assassination Rogue rotation midnight",
+   "Assassination Rogue rotation and cooldowns",
+   "Assassination Rogue bis list midnight",
+   "Assassination Rogue best in slot",
+   "Assassination Rogue gear guide",
+   "Assassination Rogue food and potion",
+   "best food for Assassination Rogue",
+   "best flask for Assassination Rogue",
+   "best potion for Assassination Rogue",
+   "Assassination Rogue enchants and gems",
+   "best enchants for Assassination Rogue",
+   "best gems for Assassination Rogue",
+   "Assassination Rogue stat priority midnight",
+   "Assassination Rogue tier set midnight",
+   "Assassination Rogue tier set bonuses",
+   "Assassination Rogue mythic+ guide",
+   "Assassination Rogue m+ guide midnight",
+   "Assassination Rogue raid guide",
+   "Assassination Rogue hero talents",
+   "Assassination Rogue hero tree",
+   "best dps build Assassination Rogue midnight",
+   "Assassination Rogue cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای اساسینیشن",
+   "تلنت اساسینیشن",
+   "تلنت برای Assassination Rogue",
+   "تلنت Rogue اساسینیشن",
+   "بیلد اساسینیشن",
+   "بیلد تلنت اساسینیشن میدنایت",
+   "روتیشن اساسینیشن",
+   "روتیشن و کول‌داون‌های اساسینیشن",
+   "غذا برای اساسینیشن",
+   "غذا برای Assassination Rogue",
+   "غذا و معجون اساسینیشن",
+   "بهترین غذای اساسینیشن",
+   "فلسک اساسینیشن",
+   "بهترین فلسک برای اساسینیشن",
+   "معجون اساسینیشن",
+   "انچنت اساسینیشن",
+   "انچنت و جم اساسینیشن",
+   "بهترین انچنت برای اساسینیشن",
+   "جم اساسینیشن",
+   "بست آیتم اساسینیشن",
+   "بهترین آیتم‌های اساسینیشن",
+   "گیر اساسینیشن",
+   "استت اساسینیشن",
+   "اولویت استت اساسینیشن",
+   "ست تیر اساسینیشن",
+   "مایتی پلاس اساسینیشن",
+   "ام پلاس اساسینیشن",
+   "راهنمای اساسینیشن",
+   "راهنمای Assassination Rogue",
+   "راهنمای روگ",
+   "اساسینیشن میدنایت",
+   "روگ میدنایت",
+   "هرو تیلنت اساسینیشن",
+   "بیلد دی‌پی‌اس اساسینیشن",
+   "بهترین دی‌پی‌اس میدنایت اساسینیشن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Assassination Rogue (اساسینیشن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Assassination Rogue به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای اساسینیشن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، معجون جنگی «Liquid Luster»، غذا «Silvermoon Parade» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای اساسینیشن چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای اساسینیشن کدام‌اند؟",
+    "a": "ست تیر فعلی «Voracious Heart of Ula'tek» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Assassination Rogue در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

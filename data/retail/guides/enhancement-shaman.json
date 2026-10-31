@@ -1,0 +1,956 @@
+{
+ "slug": "enhancement-shaman",
+ "class": "shaman",
+ "class_en": "Shaman",
+ "spec_en": "Enhancement",
+ "spec_no": 2,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Enhancement Shaman",
+ "lead": "بازی Enhancement یک battlemage تند است: با ضربه‌های افسون‌شده مثل [[Stormstrike]] و [[Lava Lash]] و [[Crash Lightning]] استک‌های [[Maelstrom Weapon]] را می‌سازی و در 9 استک یا بیشتر با اسپل‌های آنی مثل [[Lightning Bolt]] (تک‌هدف) یا [[Chain Lightning]] (AoE) خرج می‌کنی. دو مسیر Hero Tree داری: [[Stormbringer]] که با تنظیم Season 2 اسپک غالب است و برچسب Best منبع را دارد، و [[Totemic]] با [[Surging Totem]] و [[Doom Winds]].",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Maelstrom Weapon": {
+   "fa": "باف استک‌شوندهٔ Enhancement که اسپل‌های خاص را آنی می‌کند؛ در 9 استک یا بیشتر خرج می‌شود."
+  },
+  "Stormbringer": {
+   "fa": "درخت قهرمانی غالب Season 2 با تمرکز روی خرج‌کردن منبع برای [[Tempest]] و ضربهٔ اصلی [[Stormstrike]]."
+  },
+  "Totemic": {
+   "fa": "درخت قهرمانی جایگزین با [[Surging Totem]] و [[Doom Winds]] و بازی [[Hot Hand]]."
+  },
+  "Tempest": {
+   "fa": "اسپل قوی استورمبرینگر که با پروک و 10 استک منبع زده می‌شود."
+  },
+  "Thunder Capacitor": {
+   "fa": "پروک مخصوص استورمبرینگر که باید با [[Storm Unleashed]] قاطی نشود."
+  },
+  "Storm Unleashed": {
+   "fa": "تلنت پروک‌محور که هر دو هرو به آن واکنش نشان می‌دهند."
+  },
+  "Hot Hand": {
+   "fa": "پروک توتمیک که [[Lava Lash]] را سریع و قوی می‌کند."
+  },
+  "Totemic Momentum": {
+   "fa": "تلنتی که [[Doom Winds]] را با خرج‌کردن منابع تمدید می‌کند."
+  },
+  "Surging Totem": {
+   "fa": "کول‌داون 1 دقیقه‌ای توتمیک که با [[Doom Winds]] جفت می‌شود."
+  },
+  "Doom Winds": {
+   "fa": "کول‌داون 1 دقیقه‌ای بیرون‌از GCD که شانس و دمیج [[Windfury Weapon]] را بالا می‌برد و AoE بی‌سقف می‌دهد."
+  },
+  "Thorim's Invocation": {
+   "fa": "تلنتی که [[Doom Winds]] را به 10 ثانیه می‌رساند و خرج‌کردن منابع با [[Stormstrike]] و [[Crash Lightning]] را فعال می‌کند."
+  },
+  "Static Accumulation": {
+   "fa": "تلنتی که داخل [[Doom Winds]] هر ثانیه 1 تا 2 استک [[Maelstrom Weapon]] می‌دهد."
+  },
+  "Sundering": {
+   "fa": "برست میانی 30 ثانیه‌ای با دمیج Flamestrike در خط؛ پروک‌کنندهٔ باف سلاح."
+  },
+  "Whirling Elements": {
+   "fa": "تلنتی که [[Sundering]] را در بیلدهای توتمیک پایه می‌کند."
+  },
+  "Surging Elements": {
+   "fa": "تلنتی که [[Sundering]] را 15% Haste برای 12 ثانیه و 5 استک منبع می‌دهد."
+  },
+  "Windfury Weapon": {
+   "fa": "باف سلاحی که حملهٔ اضافه می‌دهد؛ قلب دمیج Enhancement."
+  },
+  "Windstrike": {
+   "fa": "نسخهٔ [[Stormstrike]] در طول [[Ascendance]]."
+  },
+  "Ascendance": {
+   "fa": "کول‌داون پیش‌فرض استورمبرینگر که در اوپنر زده می‌شود."
+  },
+  "Voltaic Blaze": {
+   "fa": "با ست 2 تیکه دکمهٔ اولویت‌دار روتیشن برای هر دو هرو؛ [[Burning Core]] می‌گذارد."
+  },
+  "Burning Core": {
+   "fa": "افکت ست 2 تیکه که هر 2 ثانیه [[Fire Nova]] می‌زند."
+  },
+  "Fire Nova": {
+   "fa": "انفجار آتشین ست که [[Crash Lightning]] را CDR می‌کند و [[Short Circuit]] می‌دهد."
+  },
+  "Short Circuit": {
+   "fa": "استک‌های ست 4 تیکه: 8% دمیج بیشتر برای [[Crash Lightning]] بعدی تا 5 استک."
+  },
+  "Crash Lightning": {
+   "fa": "ضربهٔ کِلیو که تقسیم دمیجش منبع می‌سازد و با ست موتور CDR است."
+  },
+  "Stormstrike": {
+   "fa": "ضربهٔ اصلی استورمبرینگر؛ داخل [[Doom Winds]] اولویت می‌گیرد."
+  },
+  "Lava Lash": {
+   "fa": "ضربهٔ اصلی توتمیک که در 12.1 35% قوی شده است."
+  },
+  "Overcharge": {
+   "fa": "مکانیکی که استورمبرینگر با کریت بیشینه می‌شود."
+  },
+  "Liquid Luster": {
+   "fa": "پاتشن پیش‌مصرف اوپنر."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزهٔ فصل؛ باید Crit یا Mastery پروک کند."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزه‌ای که در اوپنر همراه [[Stormstrike]] مصرف می‌شود."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "فلاسک پیش‌فایت توصیه‌شدهٔ منبع."
+  },
+  "Flask of the Magisters": {
+   "fa": "یکی از دو فلاسک قابل قبول فصل."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "یکی از دو فلاسک قابل قبول فصل."
+  },
+  "Silvermoon Parade": {
+   "fa": "feast فصل."
+  },
+  "Royal Roast": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Instinctive Imbuements": {
+   "fa": "تلنتی که [[Lightning Shield]] باف سلاح را اعمال می‌کند."
+  },
+  "Elemental Orbit": {
+   "fa": "تلنتی که [[Earth Shield]] را به [[Lightning Shield]] اضافه می‌کند."
+  },
+  "Earth Shield": {
+   "fa": "باف شفای شمنی که روی خودت هم می‌نشیند."
+  },
+  "Skyfury": {
+   "fa": "باف گروهی که Mastery و حملهٔ اضافه می‌دهد."
+  },
+  "Wind Rush Totem": {
+   "fa": "توتم جابجایی گروهی؛ یکی از قوی‌ترین یوتیلیتی‌های شمن."
+  },
+  "Miasmic Jewelbinder": {
+   "fa": "Embellishment توصیه‌شدهٔ فصل (سر، دستبند یا کمربند)."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "افزونهٔ هر دو سلاح فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Aman'muso, Warlord's Vengeance": {
+   "fa": "سلاح دست اصلی BiS فصل از The Coiled Altar."
+  },
+  "Farstrider's Chopper": {
+   "fa": "خنجر دست دوم Crafted فصل از Blacksmithing."
+  },
+  "Ophidian Oracle's Prophecy": {
+   "fa": "ست تیر فصل شمن؛ 2 تیکه [[Voltaic Blaze]] را به دکمهٔ اصلی و 4 تیکه [[Crash Lightning]] را به موتور CDR تبدیل می‌کند."
+  },
+  "Serpent Crown of the Ophidian Oracle": {
+   "fa": "کلاه ست فصل از Twin Fangs."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Serpentine Mixing Belt": {
+   "fa": "کمربند BiS فصل از Vashnik the Malignant."
+  },
+  "Boots of the Reckless Wayfarer": {
+   "fa": "کفش BiS فصل از The Lost Explorers."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت BiS فصل از Ula'tek."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت دوم BiS فصل از The Coiled Altar."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر BiS فصل از Kith'ix."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر دوم BiS فصل از Sszorak."
+  },
+  "Farstrider's Plated Bracers": {
+   "fa": "دستبند Crafted فصل از Leatherworking که در BiS هم هست."
+  },
+  "Hissing Mantle of the Ophidian Oracle": {
+   "fa": "شانهٔ ست فصل (Catalyst از The Coiled Altar)."
+  },
+  "Fanged Raiment of the Ophidian Oracle": {
+   "fa": "سینهٔ ست فصل (Catalyst از Ula'tek)."
+  },
+  "Hexing Grips of the Ophidian Oracle": {
+   "fa": "دستکش ست فصل (Catalyst از Kith'ix)."
+  },
+  "Leggings of the Ophidian Oracle": {
+   "fa": "شلوار ست فصل (Catalyst از The Coiled Altar)."
+  },
+  "Astral Shift": {
+   "fa": "دفاع شخصی شمن."
+  },
+  "Lightning Bolt": {
+   "fa": "خرج‌کنندهٔ تک‌هدف [[Maelstrom Weapon]]؛ در AoE نقشش را [[Chain Lightning]]] می‌گیرد."
+  },
+  "Lightning Shield": {
+   "fa": "باف شمنی که با [[Instinctive Imbuements]] باف سلاح و با [[Elemental Orbit]] [[Earth Shield]] را اعمال می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Enhancement یک battlemage تند است: با ضربه‌های افسون‌شده مثل [[Stormstrike]] و [[Lava Lash]] و [[Crash Lightning]] استک‌های [[Maelstrom Weapon]] را می‌سازی و در 9 استک یا بیشتر با اسپل‌های آنی مثل [[Lightning Bolt]] (تک‌هدف) یا [[Chain Lightning]] (AoE) خرج می‌کنی. مدیریت پروک‌ها و منابع لحظه‌به‌لحظه است و یادگیری‌اش سخت‌تر از میانگین اسپک‌ها."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Stormbringer]] که با تنظیم Season 2 اسپک غالب است و برچسب Best منبع را در تک‌هدف، کِلیو ریید و Mythic+/AoE دارد؛ و [[Totemic]] با [[Surging Totem]] و [[Doom Winds]] که هنوز برست یک‌دقیقه‌ای محکمی دارد. هر دو درخت کِلیو رایگان می‌دهند و برای انواع فایت مناسب‌اند."
+    },
+    {
+     "t": "p",
+     "x": "در 12.1 باف خالص بزرگی رسیده (دمیج کل 4% و [[Lava Lash]] 35%) و ست تیر [[Voltaic Blaze]] را از پرکننده به دکمهٔ اصلی روتیشن ارتقا داده؛ در عوض سقف دفاع فعال پایین است و استورمبرینگر به RNG وابسته است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "AoE و کِلیو",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "برست",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "یوتیلیتی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "بقا",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "زیاد",
+       "n": 4
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "کِلیو رایگان در هر دو درخت هرو برای انواع فایت",
+       "کول‌داون‌های برست قوی در تک‌هدف و AoE",
+       "کنترل جمعیت، اینتراپت رِنج با کول‌داون کم و دیسپل‌های متنوع",
+       "جابجایی قوی و [[Wind Rush Totem]] برای گروه؛ [[Skyfury]] هم Mastery و هم حملهٔ اضافه به هم‌تیمی‌ها می‌دهد"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "منحنی یادگیری سخت‌تر با مکانیک‌های هم‌زمان زیاد",
+       "اپتایم بالا و شناخت عمیق فایت‌ها لازم است",
+       "دفاع فعال کم؛ اگر دفاع پسیو کافی نباشد دردسر می‌شوی",
+       "[[Stormbringer]] به مکانیک‌های پر RNG وابسته است"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Stormbringer",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "اسپک غالب Season 2 و برچسب Best منبع برای همهٔ مدها: از نرف‌ها کمتر خورده و از باف‌های خرج‌کنندهٔ [[Maelstrom Weapon]] بیشتر بهره برده؛ برست [[Ascendance]] هنوز خیلی بالاست. تمرکزش روی خرج‌کردن منبع برای پروک‌های [[Tempest]] است با ضربهٔ اصلی [[Stormstrike]]."
+      },
+      {
+       "title": "Totemic",
+       "tag": "آلترناتیو",
+       "x": "[[Surging Totem]] یک کول‌داون 1 دقیقه‌ای است که با [[Doom Winds]] جفت می‌شود؛ بازی حول پنجره‌های [[Hot Hand]] برای [[Lava Lash]] و تمدید با [[Totemic Momentum]] می‌چرخد. توانش از [[Surging Totem]] و برست AoE دث‌وایندز کاسته شده و سخت پیش می‌رود."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Enhancement Shaman در پچ 12.1.5 دو درخت قهرمانی دارد: Stormbringer و Totemic؛ هر جدول چهار ردیف کد دارد: Single Target، Raid Cleave، Mythic+/AoE و Delves. توصیهٔ منبع: استورمبرینگر برای همهٔ ریید و Mythic+."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Stormbringer (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع؛ در Season 2 استورمبرینگر فقط یک لوداوت بازی می‌کند و سواپ بیلد ندارد.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAA2AsZGDLkFYGGawCAzyMmZGLLzAzMbsMzMzwwYGAgZYMzYmJwMDGMGA"
+      },
+      {
+       "title": "Stormbringer (Raid Cleave)",
+       "tag": "بهترین برای Raid Cleave",
+       "x": "برچسب Best منبع برای کِلیو ریید.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAA2AsZGDbkFYGGawCAzyMmZGLLzAzMbsMzMzwwYGAgZYMzYmJwMDGMGA"
+      },
+      {
+       "title": "Stormbringer (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+/AoE.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAA2AsZGDbkFYGGawCAzyMmxYZxYjZmtxyMzMzgFmBAYGGzMMTgZGMYMA"
+      },
+      {
+       "title": "Stormbringer (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "بیلد Delves استورمبرینگر.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAA2AsZGDbkNYGGawCAzyMmxYZZGYmxYxMzMjxCzAAMDjZGzMBmZwgxA"
+      },
+      {
+       "title": "Totemic (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد تک‌هدف توتمیک به‌عنوان درخت جایگزین.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzMzMzMzMzMzMzYGAAAAAAAAAsAbwMW0YbAMTwGAzyMmZGLLzAzMbsMzMzwwYGAADwYmJmZAgxA"
+      },
+      {
+       "title": "Totemic (Raid Cleave)",
+       "tag": "آلترناتیو Raid Cleave",
+       "x": "بیلد کِلیو توتمیک.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzMzMzMzMzMzMzYGAAAAAAAAAsAbwMW0YbAMTwGAzyMmZGLLzAzMbsMzMzwwYGAAgxYmJmZAgxA"
+      },
+      {
+       "title": "Totemic (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+/AoE توتمیک.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzMjZmZmZmZmZGzAAAAAAAAAgFYDmxiGbDgZC2AYWmxMGLLGbMzsNWm5BmZGsMmBAAYMmRMzAMYMA"
+      },
+      {
+       "title": "Totemic (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "بیلد Delves توتمیک.",
+       "code": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZGzAAAAAAAAAgFYDmxiGbDgZC2AYWmxMGLLzAzMGLmZmZMWYGAAgxYmJmZAGMGA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=shaman&spec=enhancement",
+     "x": "مشاهده تمام تلنت‌های Enhancement Shaman"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "پس از ساده‌سازی‌های Midnight، بازی Enhancement سه قاعده دارد: اول، [[Maelstrom Weapon]] را هدر نده؛ این باف اسپل‌های خاص را آنی می‌کند و در 9 استک یا بیشتر خرج می‌شود ([[Lightning Bolt]] تک‌هدف، [[Chain Lightning]] در AoE). دوم، ضربه‌ها روی کول‌داون: استورمبرینگر اولویتش [[Stormstrike]] است و توتمیک [[Lava Lash]]؛ پرکننده‌ها به ترتیب [[Voltaic Blaze]]، بعد [[Crash Lightning]]، بعد ضربهٔ اصلی. سوم، به پروک‌ها واکنش نشان بده ([[Storm Unleashed]] و Apex؛ استورمبرینگر با [[Tempest]] و [[Thunder Capacitor]] و توتمیک با [[Hot Hand]])."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Stormbringer"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Voltaic Blaze]] را بزن.",
+      "[[Crash Lightning]] را بزن.",
+      "[[Ascendance]] را بزن.",
+      "در طول [[Ascendance]] به‌جای Stormstrike از [[Windstrike]] استفاده کن.",
+      "داخل [[Doom Winds]] [[Stormstrike]] را بزن.",
+      "[[Tempest]] یا [[Lightning Bolt]] را با 10 استک [[Maelstrom Weapon]] بزن.",
+      "[[Stormstrike]] را بزن.",
+      "[[Lava Lash]] را بزن.",
+      "[[Lightning Bolt]] را با 5 استک یا بیشتر بزن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE با Stormbringer"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Voltaic Blaze]] را بزن.",
+      "[[Crash Lightning]] را بزن.",
+      "[[Ascendance]] را بزن.",
+      "در طول [[Ascendance]] [[Windstrike]] را بزن.",
+      "داخل [[Doom Winds]] [[Stormstrike]] را بزن.",
+      "[[Tempest]] را با پروک و 10 استک [[Maelstrom Weapon]] بزن.",
+      "در غیر این صورت [[Chain Lightning]] را با 9 استک یا بیشتر بزن.",
+      "[[Stormstrike]] را بزن.",
+      "[[Lava Lash]] را بزن.",
+      "[[Chain Lightning]] را با 5 استک یا بیشتر بزن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در AoE، تقسیم دمیج [[Crash Lightning]] تولید [[Maelstrom Weapon]] را بالا می‌برد و سرعت رسیدن [[Tempest]] را زیاد می‌کند؛ [[Stormstrike]] هم داخل [[Doom Winds]] کلیدی می‌ماند."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "12 ثانیه قبل از پول پاتشن [[Liquid Luster]] را مصرف کن (یا [[Potion of Recklessness]]).",
+      "1 ثانیه قبل از پول [[Crash Lightning]] را پریکست کن.",
+      "[[Voltaic Blaze]] را بزن.",
+      "یک بار [[Stormstrike]] را بزن و [[Light's Potential]] را مصرف کن.",
+      "[[Ascendance]] را بزن.",
+      "هر وقت [[Crash Lightning]] آزاد شد بزن.",
+      "در بقیهٔ GCDها [[Windstrike]] را بزن.",
+      "به‌محض پایان کول‌داون، [[Voltaic Blaze]] را دوباره بزن.",
+      "اولویت عادی را ادامه بده."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: [[Lightning Shield]] را فعال کن تا با [[Instinctive Imbuements]] سم‌های سلاح اعمال شود (و با [[Elemental Orbit]] [[Earth Shield]] هم). [[Skyfury]] را به گروه بزن. هرگز روغن سلاح یا Whetstone استفاده نکن: باف‌های سلاح تو را بازنویسی می‌کنند! فلاسک [[Flask of the Blood Knights]] و غذای Agility و Healthstone را هم آماده داشته باش."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Doom Winds",
+       "x": "کول‌داون 1 دقیقه‌ای با مدت 8 ثانیه (با [[Thorim's Invocation]] به 10 می‌رسد) و بیرون از GCD: شانس [[Windfury Weapon]] را 50% (ضربی) و دمیجش را 20% بالا می‌برد. داخلش ضربه‌های دست اصلی ارزش پیدا می‌کنند و هر هدفِ خورده‌شده با [[Crash Lightning]] یا [[Sundering]] یک پروک ویندفیوری می‌دهد: یعنی AoE واقعاً بی‌سقف. افکت [[Static Accumulation]] (1 تا 2 استک [[Maelstrom Weapon]] در ثانیه) و خرج‌کردن منابع با [[Thorim's Invocation]] هم داخلش فعال است."
+      },
+      {
+       "s": "Ascendance",
+       "x": "کول‌داون پیش‌فرض استورمبرینگر: در اوپنر زود بزن و در طولش [[Windstrike]] جای [[Stormstrike]] را می‌گیرد."
+      },
+      {
+       "s": "Sundering",
+       "x": "ابزار برست میانی با کول‌داون 30 ثانیه‌ای (دیگر گیج نمی‌کند) و دمیج مستقیم Flamestrike در خط مقابل تو؛ ضربه‌هایش باف سلاح از جمله [[Windfury Weapon]] را پروک می‌کنند. در همهٔ بیلدهای توتمیک به‌خاطر [[Whirling Elements]] پایه است. با [[Surging Elements]] هر کست 15% Haste برای 12 ثانیه و 5 استک [[Maelstrom Weapon]] فوری می‌دهد."
+      },
+      {
+       "s": "Surging Totem",
+       "x": "کول‌داون 1 دقیقه‌ای توتمیک که طبیعتاً با [[Doom Winds]] جفت می‌شود؛ پنجره‌اش برای هم‌پوشانی پروک‌های [[Hot Hand]] و خرج‌کردن انبوه منابع از طریق [[Thorim's Invocation]] و تمدید با [[Totemic Momentum]] است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "اولویت کلی Agility >> Critical Strike = Mastery = Haste >> Versatility است و هر دو هرو به اولویت مشابهی رسیده‌اند: بیشینه‌کردن Crit و Mastery برای [[Potion of Recklessness]] با مقدار سالمی Haste پشتیبان. استورمبرینگر به‌شدت به سمت Critical Strike رفته (با حذف Haste) و توتمیک Mastery = Haste را جلو می‌آورد؛ اولویت‌ها بین تک‌هدف و چندهدف تغییر نمی‌کنند پس یک ست گیر برای همه‌چیز کافی است."
+    },
+    {
+     "t": "call",
+     "x": "اولویت ارتقا با Mistcrests: اول سلاح دست اصلی (بزرگ‌ترین ضریب دمیج)، بعد ترینکت‌های قوی، بعد آیتم‌های افکت‌دار و در پایان تیکه‌های کم‌آیتم‌لول بزرگ. نکتهٔ 12.1.5: با تیکه‌های جدید Kith'ix، تیکه‌های ایده‌آل Catalyst عوض شده‌اند تا استت‌های ثانویه متعادل بماند و cantrip بیشتری استفاده شود. برای مقدار دقیق با Raidbots سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268209
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 237850
+      },
+      {
+       "slot": "سر",
+       "id": 271483
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271481
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271486
+      },
+      {
+       "slot": "دستبند",
+       "id": 244584
+      },
+      {
+       "slot": "دست",
+       "id": 271484
+      },
+      {
+       "slot": "کمر",
+       "id": 268254
+      },
+      {
+       "slot": "پا",
+       "id": 271482
+      },
+      {
+       "slot": "کفش",
+       "id": 268258
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271483
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270175,
+        270173
+       ],
+       "names": [
+        "Voracious Heart of Ula'tek",
+        "Zul'jin's Guillotine Technique"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Ophidian Oracle's Prophecy: 2 تیکه [[Voltaic Blaze]] روی هدف اصلی [[Burning Core]] می‌گذارد که هر 2 ثانیه یک [[Fire Nova]] می‌زند و 200% دمیج بیشتر از افکت فایر نوا می‌خورد. 4 تیکه هر [[Fire Nova]] کول‌داون [[Crash Lightning]] را 2 ثانیه کم می‌کند و یک استک [[Short Circuit]] می‌دهد (8% دمیج بیشتر برای کِرش بعدی، تا 5 استک). با 2 تیکه، [[Voltaic Blaze]] برای هر دو هرو دکمهٔ اولویت‌دار روتیشن می‌شود و [[Crash Lightning]] را روی کول‌داون نگه دار تا CDR هدر نرود."
+    },
+    {
+     "t": "p",
+     "x": "تیکه‌های ست از Catalyst می‌آیند: شانه از The Coiled Altar، سینه از Ula'tek، دست از Kith'ix و پا از The Coiled Altar؛ سر مستقیم از Twin Fangs افت می‌کند. Embellishment توصیه‌شده: Miasmic Jewelbinder روی سر، دستبند یا کمربند."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: خنجر دست دوم Farstrider's Chopper از Blacksmithing و دستبند Farstrider's Plated Bracers از Leatherworking که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی Agility است. استورمبرینگر: Agility > Critical Strike = Mastery > Haste > Versatility (به‌شدت به کریت رفته برای [[Overcharge]]) و توتمیک: Agility > Mastery = Haste > Critical Strike > Versatility."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "اولویت‌ها بین تک‌هدف و چندهدف فرق نمی‌کنند: یک ست گیر برای همهٔ محتوا کافی است.",
+      "[[Potion of Recklessness]] باید Crit یا Mastery پروک کند، هرگز Haste یا Versatility.",
+      "تغییرات Catalyst در Season 2 آزادی زیادی برای سفارشی‌سازی استت می‌دهد."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "این جدول‌ها جنریک‌اند و برای مقدار دقیق با Raidbots سیم بزن؛ به‌خصوص که ارزش استت‌ها با آیتم‌های جدید Kith'ix در 12.1.5 جابه‌جا شده است."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Enhancement Shaman در Midnight Season 2 حول Agility و [[Potion of Recklessness]] می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters یا Flask of the Shattered Sun",
+       "ids": [
+        241322,
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Silvermoon Parade",
+       "ids": [
+        255845
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Royal Roast",
+       "ids": [
+        242275
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "فلاسک‌ها در Midnight فرّار شده‌اند: کدام بهتر است بستگی به بقیهٔ استت‌هایت دارد و قاعدهٔ سرانگشتی ندارد؛ با سیم انتخاب کن."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در اوپنر می‌توانی 12 ثانیه قبل از پول [[Liquid Luster]] پیش‌مصرف کنی و [[Potion of Recklessness]] را داخل فایت کنار [[Ascendance]] بزنی؛ حواست باشد پروکش Crit یا Mastery باشد نه Haste."
+    },
+    {
+     "t": "h3",
+     "x": "باف سلاح و افزونه‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "باف سلاح",
+       "v": "فقط Weapon Imbues ([[Lightning Shield]] با [[Instinctive Imbuements]])؛ هرگز روغن یا Whetstone نه"
+      },
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey (هر دو دست)",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Embellishment پیشنهادی این فصل Miasmic Jewelbinder است که روی سر، دستبند یا کمربند می‌نشیند."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "با سیم انتخاب کن؛ هر جواهر یک سوکت دارد (حداقل 3 سوکت) و در Midnight Agility ارزشمند است"
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای جم‌ها پاسخ قطعی وجود ندارد و به گیر تو بستگی دارد؛ با Raidbots بهترین ترکیب را پیدا کن."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Enhancement Shaman در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "استورمبرینگر برچسب Best منبع برای Mythic+/AoE را دارد: تقسیم دمیج [[Crash Lightning]] تولید [[Maelstrom Weapon]] را بالا می‌برد و [[Tempest]] را سریع‌تر می‌سازد؛ [[Doom Winds]] هم چون هر هدف [[Crash Lightning]] و [[Sundering]] یک ضربهٔ دست اصلی حساب می‌شود، AoE واقعاً بی‌سقف می‌دهد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Crash Lightning]] را روی کول‌داون بزن: هم منبع می‌سازد هم با ست 4 تیکه موتور CDR می‌شود.",
+      "[[Chain Lightning]] را با 9 استک یا بیشتر بزن و [[Tempest]] را وقتی پروک و 10 استک داری اولویت بده.",
+      "[[Voltaic Blaze]] را روی کول‌داون بزن؛ ست 2 تیکه آن را به دکمهٔ اصلی روتیشن تبدیل کرده است.",
+      "[[Ascendance]] و [[Doom Winds]] و [[Potion of Recklessness]] را در پنجرهٔ پول روی هم بینداز.",
+      "بازیکنان توتمیک [[Surging Totem]] را با [[Doom Winds]] جفت کنند و مازاد منبع را داخلش با [[Thorim's Invocation]] خرج کنند."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "دفاع فعال کم است: [[Astral Shift]] و [[Earth Shield]] را برای دمیج‌های پیش‌بینی‌پذیر نگه دار و [[Wind Rush Totem]] را برای فرارهای گروهی خرج کن."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Enhancement Shaman (انچنمنت) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل انچنمنت (Enhancement Shaman) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Enhancement Shaman talent build midnight",
+   "Enhancement Shaman guide midnight",
+   "Enhancement Shaman guide 12.1.5",
+   "best Enhancement Shaman talents",
+   "Enhancement Shaman talent tree midnight",
+   "Enhancement Shaman pve guide",
+   "Enhancement Shaman rotation midnight",
+   "Enhancement Shaman rotation and cooldowns",
+   "Enhancement Shaman bis list midnight",
+   "Enhancement Shaman best in slot",
+   "Enhancement Shaman gear guide",
+   "Enhancement Shaman food and potion",
+   "best food for Enhancement Shaman",
+   "best flask for Enhancement Shaman",
+   "best potion for Enhancement Shaman",
+   "Enhancement Shaman enchants and gems",
+   "best enchants for Enhancement Shaman",
+   "best gems for Enhancement Shaman",
+   "Enhancement Shaman stat priority midnight",
+   "Enhancement Shaman tier set midnight",
+   "Enhancement Shaman tier set bonuses",
+   "Enhancement Shaman mythic+ guide",
+   "Enhancement Shaman m+ guide midnight",
+   "Enhancement Shaman raid guide",
+   "Enhancement Shaman hero talents",
+   "Enhancement Shaman hero tree",
+   "best dps build Enhancement Shaman midnight",
+   "Enhancement Shaman cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای انچنمنت",
+   "تلنت انچنمنت",
+   "تلنت برای Enhancement Shaman",
+   "تلنت Shaman انچنمنت",
+   "بیلد انچنمنت",
+   "بیلد تلنت انچنمنت میدنایت",
+   "روتیشن انچنمنت",
+   "روتیشن و کول‌داون‌های انچنمنت",
+   "غذا برای انچنمنت",
+   "غذا برای Enhancement Shaman",
+   "غذا و معجون انچنمنت",
+   "بهترین غذای انچنمنت",
+   "فلسک انچنمنت",
+   "بهترین فلسک برای انچنمنت",
+   "معجون انچنمنت",
+   "انچنت انچنمنت",
+   "انچنت و جم انچنمنت",
+   "بهترین انچنت برای انچنمنت",
+   "جم انچنمنت",
+   "بست آیتم انچنمنت",
+   "بهترین آیتم‌های انچنمنت",
+   "گیر انچنمنت",
+   "استت انچنمنت",
+   "اولویت استت انچنمنت",
+   "ست تیر انچنمنت",
+   "مایتی پلاس انچنمنت",
+   "ام پلاس انچنمنت",
+   "راهنمای انچنمنت",
+   "راهنمای Enhancement Shaman",
+   "راهنمای شمن",
+   "انچنمنت میدنایت",
+   "شمن میدنایت",
+   "هرو تیلنت انچنمنت",
+   "بیلد دی‌پی‌اس انچنمنت",
+   "بهترین دی‌پی‌اس میدنایت انچنمنت"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Enhancement Shaman (انچنمنت) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Enhancement Shaman به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای انچنمنت چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، معجون جنگی «Potion of Recklessness»، غذا «Silvermoon Parade» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای انچنمنت چیست؟",
+    "a": "انچنت سلاح و جم‌های پیشنهادی بر اساس اولویت استت این اسپک انتخاب می‌شوند. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای انچنمنت کدام‌اند؟",
+    "a": "ست تیر فعلی «Voracious Heart of Ula'tek» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Enhancement Shaman در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

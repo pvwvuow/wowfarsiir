@@ -1,0 +1,991 @@
+{
+ "slug": "arms-warrior",
+ "class": "warrior",
+ "class_en": "Warrior",
+ "spec_en": "Arms",
+ "spec_no": 1,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Arms Warrior",
+ "lead": "بازی Arms Warrior پرتنش است: خونریزی، پروک و اکسکیوت. روتیشن با ترکیب [[Mortal Strike]] و [[Overpower]] و [[Rend]] می‌چرخد، با [[Colossus Smash]] منفجر می‌شود و با [[Execute]]های سنگین تمام می‌کند؛ [[Rage]] سریع پر و خالی می‌شود و هنر تو خرج‌کردن درست آن است. دو مسیر Hero Tree داری: [[Slayer]] که [[Execute]] و [[Bladestorm]] را پرتکرارتر و قوی‌تر می‌کند و برچسب Best منبع را دارد، و [[Colossus]] با کانال [[Demolish]] و تقویت [[Cleave]] و [[Mortal Strike]].",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warrior/arms/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warrior/arms/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warrior/arms/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warrior/arms/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warrior/arms/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warrior/arms/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Rage": {
+   "fa": "منبع واریر که از اتواک و ابلیتی‌ها می‌آید؛ از صفر شروع می‌شود و بیرون فایت می‌پاشد."
+  },
+  "Mortal Strike": {
+   "fa": "ضربهٔ اصلی Arms با افکت کاهش شفا."
+  },
+  "Overpower": {
+   "fa": "ضربهٔ پروک‌محور که با ست 4 تیکه 15% قوی‌تر می‌شود."
+  },
+  "Rend": {
+   "fa": "خونریزی پایه که با [[Cleave]] اعمال و تازه می‌شود."
+  },
+  "Colossus Smash": {
+   "fa": "کول‌داون اصلی باف دمیج که آزادانه زده می‌شود و [[Warbreaker]] در آن ادغام شده است."
+  },
+  "Execute": {
+   "fa": "فینیشر زیر 20% سلامتی و قلب نیچ تو."
+  },
+  "Sudden Death": {
+   "fa": "پروکی که [[Execute]] رایگان می‌دهد؛ در 12.1 سلیر پروک خیلی بیشتری می‌گیرد."
+  },
+  "Imminent Demise": {
+   "fa": "استک‌هایی که پیش از [[Bladestorm]] خرج می‌شوند."
+  },
+  "Executioner's Precision": {
+   "fa": "استک‌های تقویت [[Mortal Strike]] در فاز Execute."
+  },
+  "Heroic Strike": {
+   "fa": "ضربهٔ مکمل روی کول‌داون."
+  },
+  "Slam": {
+   "fa": "پرکنندهٔ وقتی چیزی دیگر آزاد نیست."
+  },
+  "Cleave": {
+   "fa": "ضربهٔ چندهدف که [[Rend]] را هم اعمال می‌کند."
+  },
+  "Sweeping Strikes": {
+   "fa": "کول‌داونی که روتیشن تک‌هدف را روی هدف دوم کِلیو می‌کند."
+  },
+  "Colossal Might": {
+   "fa": "استک‌های تقویت [[Mortal Strike]] در بازی چندهدف کولاسوس."
+  },
+  "Demolish": {
+   "fa": "کانال سنگین کولاسوس با کول‌داون کوتاه."
+  },
+  "Bladestorm": {
+   "fa": "کانال برست سلیر که اینتراپت و استان هم‌زمان می‌دهد."
+  },
+  "Avatar": {
+   "fa": "کول‌داون برست هم‌تراز [[Colossus Smash]]."
+  },
+  "Ravager": {
+   "fa": "کول‌داون AoE که درست قبل از [[Colossus Smash]] زده می‌شود."
+  },
+  "Champion's Spear": {
+   "fa": "کول‌داون فهرست‌شدهٔ روتیشن."
+  },
+  "Crushing Combo": {
+   "fa": "تلنت کولاسوس که بعد از [[Colossus Smash]] [[Cleave]] را اسپمی می‌کند."
+  },
+  "Anger Management": {
+   "fa": "تلنتی که کول‌داون [[Colossus Smash]] را کم می‌کند."
+  },
+  "Storm Bolt": {
+   "fa": "استان تک‌هدف با ارزش دمیج ناچیز حین [[Bladestorm]]."
+  },
+  "Battle Shout": {
+   "fa": "باف گروهی که قبل از هر فایتی باید فعال باشد."
+  },
+  "Charge": {
+   "fa": "گپ‌کلوزر با باف رِیج."
+  },
+  "Heroic Leap": {
+   "fa": "پرش جابجایی برای صفرکردن downtime."
+  },
+  "Die by the Sword": {
+   "fa": "دفاع شخصی واریر."
+  },
+  "Slayer": {
+   "fa": "درخت قهرمانی با تقویت [[Execute]] و [[Bladestorm]]؛ برچسب Best تک‌هدف/مولتی‌تارگت/Mythic+."
+  },
+  "Colossus": {
+   "fa": "درخت قهرمانی با [[Demolish]] و تقویت [[Cleave]] و [[Mortal Strike]]."
+  },
+  "Skyfury": {
+   "fa": "باف شمن که تولید منبع تو را بالا می‌برد."
+  },
+  "Maze-roa, Warlord's Fury": {
+   "fa": "سلاح دو‌دستی BiS فصل از The Coiled Altar."
+  },
+  "Jade Warlord's Dominion": {
+   "fa": "ست تیر فصل واریر؛ 2 تیکه MS/Execute و Slam پخشی و 4 تیکه باف Slam انباشتی."
+  },
+  "Tempered Horns of the Jade Warlord": {
+   "fa": "کلاه ست فصل از Kithix."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Spellbreaker's Bracers": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Girdle of Toxic Regret": {
+   "fa": "کمربند BiS فصل از The Coiled Altar."
+  },
+  "Spellbreaker's March": {
+   "fa": "کفش Crafted فصل که در BiS هم هست."
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر BiS فصل از Kithix."
+  },
+  "Band of the Amani Warlord": {
+   "fa": "انگشتر دوم BiS فصل از Altar of Fangs."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت BiS فصل از The Coiled Altar."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت دوم BiS فصل از Ula'tek."
+  },
+  "Corroded Hulk's Skullcap": {
+   "fa": "گزینهٔ Catalyst سر از Kithix."
+  },
+  "Reckless Spirit Breastplate": {
+   "fa": "گزینهٔ Catalyst سینه از The Coiled Altar."
+  },
+  "Raging Pauldrons of the Jade Warlord": {
+   "fa": "شانهٔ ست فصل از Temple of Sethraliss."
+  },
+  "Cuirass of the Jade Warlord": {
+   "fa": "سینهٔ ست فصل از The Coiled Altar."
+  },
+  "Jeweled Gauntlets of the Jade Warlord": {
+   "fa": "دستکش ست فصل از Entombed Sentinels."
+  },
+  "Chausses of Unbound Rancor": {
+   "fa": "شلوار BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Fyr'alath the Dreamrender": {
+   "fa": "الهام‌بخش طراحی [[Demolish]]."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "فلاسک فصل (گزینهٔ اول)."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک فصل (گزینهٔ دوم)."
+  },
+  "Blooming Feast": {
+   "fa": "feast فصل."
+  },
+  "Champion's Bento": {
+   "fa": "غذای شخصی فصل."
+  },
+  "Potion of Recklessness": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Liquid Luster": {
+   "fa": "پاتشن مبارزهٔ جایگزین فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "افزونهٔ سلاح فصل (گزینهٔ اول)."
+  },
+  "Enchant Weapon - Berserker's Rage": {
+   "fa": "افزونهٔ سلاح فصل (جایگزین)."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "افزونهٔ سر با Leech."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Blood Knight's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر جایگزین فصل."
+  },
+  "Enchant Shoulders - Thalassian Recovery": {
+   "fa": "افزونهٔ شانه جایگزین فصل."
+  },
+  "Enchant Chest - Mark of Nalorakk": {
+   "fa": "افزونهٔ سینه جایگزین فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار جایگزین فصل."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "افزونهٔ کفش جایگزین فصل."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "افزونهٔ انگشتر جایگزین فصل."
+  },
+  "Skullsplitter": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Bitter Immunity": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Thunderous Roar": {
+   "fa": "آبیلیتی حذف‌شده در Midnight."
+  },
+  "Warbreaker": {
+   "fa": "آبیلیتی حذف‌شده که داخل [[Colossus Smash]] ادغام شد."
+  },
+  "Strength": {
+   "fa": "استت اصلی واریر که Attack Power را بالا می‌برد؛ جهش‌های Item Level معمولاً از استت بهینه بهترند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Arms Warrior پرتنش است: [[Mortal Strike]]] و [[Overpower]]] و [[Rend]]] ستون روتیشن‌اند، [[Colossus Smash]] پنجرهٔ انفجار را باز می‌کند و فایت با [[Execute]]های سنگین تمام می‌شود؛ [[Rage]] سریع پر و خالی می‌شود و هنر تو خرج‌کردن درست آن است: نه آن‌قدر بخور که کپ شود نه آن‌قدر خرج کنی که GCD خالی بماند."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Slayer]] که [[Execute]] و [[Bladestorm]] را پرتکرارتر و قوی‌تر می‌کند و می‌توانی در حین کانال اینتراپت و استان بزنی؛ و [[Colossus]] که [[Cleave]] و [[Mortal Strike]] را تقویت می‌کند و [[Demolish]] را به‌عنوان کانال سنگین با کول‌داون کوتاه اضافه می‌کند به‌اضافهٔ یک سلف‌هیل خودکار نزدیک مرگ. برچسب Best منبع مال سلیر است: تک‌هدف، مولتی‌تارگت ریید و Mythic+."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight تغییرهای بزرگی رسیده: [[Skullsplitter]] و [[Bitter Immunity]] و [[Thunderous Roar]] حذف شده‌اند و [[Warbreaker]] داخل [[Colossus Smash]] ادغام شده؛ در 12.1 هم سلیر پروک‌های [[Sudden Death]] خیلی بیشتری می‌گیرد. توکل: بیشتر [[Rage]] از اتواک می‌آید پس هر ثانیه دور از هدف یعنی ضرر."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "اکسکیوت",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "کِلیو دونفره",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "جابجایی",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "بقا",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "نیچ اکسکیوت و کِلیو قوی دونفره",
+       "کول‌داون‌های چندهدف برست‌محور",
+       "جابجایی برستی و گپ‌کلوزرهای قوی",
+       "دفاع شخصی خوب و یک کول‌داون دفاعی رییدگسترده"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "وابسته به باف [[Skyfury]] شمن برای بیشترین تولید منبع",
+       "بیلدهای تخصصی: تک‌هدف یا چندهدف، به‌ندرت هر دو",
+       "بدون اسپل رِنج یا تولید منبع پسیو، هر downtime یعنی ضرر سنگین",
+       "محدودیت برد حداقلی و کول‌داون‌ها جابجایی را محدود می‌کنند؛ ایمنی دمیج و سلف‌هیل نداری"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Slayer",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "برچسب Best منبع برای Single Target و Raid Multitarget و Mythic+ Dungeons. چیزی به کیت اضافه نمی‌کند ولی [[Execute]] و [[Bladestorm]] را خیلی پرتکرارتر و قوی‌تر می‌کند؛ بونس [[Charge]] و [[Heroic Leap]] و اینتراپت/استان حین کانال بلیدرم. دفاعش جالب نیست."
+      },
+      {
+       "title": "Colossus",
+       "tag": "آلترناتیو",
+       "x": "[[Cleave]] و [[Mortal Strike]] را تقویت می‌کند و [[Demolish]] را اضافه می‌کند: کانالی قدرتمند با کول‌داون کوتاه الهام‌گرفته از [[Fyr'alath the Dreamrender]]. قدشی بلندتر و یک سلف‌هیل خودکار نزدیک مرگ هم دارد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Arms Warrior در پچ 12.1.5 دو درخت قهرمانی دارد: Slayer و Colossus؛ هر جدول چهار ردیف کد دارد: Single Target، Raid Multitarget، Mythic+ Dungeons و Delves/Open World. سلیر برچسب Best سه مد اول را دارد و ردیف Delves هر دو هرو همان کد Mythic+ است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Slayer (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای تک‌هدف.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAAzMzsMzMmZGAAAghphxYmxyMzMzgxMDAAAAgZWmZAhxyyALgBMDTIzgNwMjtx2ALzsMAzMAYGGA"
+      },
+      {
+       "title": "Slayer (Raid Multitarget)",
+       "tag": "بهترین برای Raid Multitarget",
+       "x": "برچسب Best منبع برای مولتی‌تارگت ریید.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAAzMzsMzYmZGAAAghphxYmxyMzMzgxMDAAAAgZWmZgJMW2GYBMgZYCZGsBmZsN2GYZmtBYmBAzwA"
+      },
+      {
+       "title": "Slayer (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ کدش همان بیلد Delves است.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghphxYmZzMzMzYmxMDAAAAgxyMDMhxy2AbgBMDTIzgNwMDDDmlZ2GgZGAMDDA"
+      },
+      {
+       "title": "Slayer (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghphxYmZzMzMzYmxMDAAAAgxyMDMhxy2AbgBMDTIzgNwMDDDmlZ2GgZGAMDDA"
+      },
+      {
+       "title": "Colossus (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "بیلد تک‌هدف کولاسوس.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAAzMzsMzwMDAAAghphxYmxyMzMzgxMDAAAAgZ2mZABwmZMsBDMj2oxgFwMjtx2MzmlZWGMzAAMDDA"
+      },
+      {
+       "title": "Colossus (Raid Multitarget)",
+       "tag": "آلترناتیو Raid Multitarget",
+       "x": "بیلد مولتی‌تارگت کولاسوس.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghphxYmxyMzMzgxMDAAAAgxmZgJLAbmxwCMwMajGDWAzM2GbjxsZ2GMzAAMDDA"
+      },
+      {
+       "title": "Colossus (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "بیلد Mythic+ کولاسوس.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghphxYmZzMzMzYmxMDAAAAgxmZgJLAbmxwCMwMajGDWAzMMMGzmZbwMDAwMMA"
+      },
+      {
+       "title": "Colossus (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghphxYmZzMzMzYmxMDAAAAgxmZgJLAbmxwCMwMajGDWAzMMMGzmZbwMDAwMMA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=warrior&spec=arms",
+     "x": "مشاهده تمام تلنت‌های Arms Warrior"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "سه قاعدهٔ بازی: اول، downtime نداشته باش؛ [[Rage]] از اتواک می‌آید و هر فرار از هدف ضرر است؛ از [[Charge]] و [[Heroic Leap]] هوشمندانه استفاده کن. دوم، کول‌داون‌ها را روی کول‌داون بزن: هم‌ترازی کول‌داون‌های 15 و 30 و 45 و 90 ثانیه‌ای ([[Colossus Smash]]، [[Avatar]]، [[Bladestorm]]/[[Demolish]]) حیاتی است و تأخیر در یکی بقیه را بهم می‌ریزد. سوم، [[Rage]] را هدر نده: از صفر شروع می‌شود و بیرون فایت می‌پاشد."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف (Slayer)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Cleave]] را برای اعمال یا تازه‌کردن [[Rend]] بزن وقتی کمتر از 10 ثانیه باقی مانده و [[Colossus Smash]] روی کول‌داون است.",
+      "[[Avatar]] را روی کول‌داون بزن.",
+      "[[Colossus Smash]] را روی کول‌داون بزن.",
+      "[[Execute]] را با دو استک [[Sudden Death]] بزن.",
+      "درست قبل از [[Bladestorm]] [[Execute]] را بزن اگر کمتر از 3 استک [[Imminent Demise]] داری.",
+      "[[Bladestorm]] را داخل [[Colossus Smash]] بزن.",
+      "[[Heroic Strike]] را بزن.",
+      "[[Mortal Strike]] را بزن.",
+      "[[Execute]] را هنگام [[Sudden Death]] بزن.",
+      "[[Overpower]] را بزن.",
+      "با [[Cleave]] [[Rend]] را زیر 5 ثانیه تازه کن.",
+      "اگر چیزی آزاد نیست [[Slam]] را بزن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت فاز Execute"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Avatar]] را درست قبل یا همراه [[Colossus Smash]] بزن.",
+      "[[Colossus Smash]] را بزن.",
+      "[[Heroic Strike]] را بزن.",
+      "[[Bladestorm]] را داخل [[Colossus Smash]] بزن.",
+      "[[Mortal Strike]] را با دو استک [[Executioner's Precision]] بزن.",
+      "[[Execute]] را هنگام [[Sudden Death]] یا با بیش از 40 رِیج بزن.",
+      "[[Overpower]] را بزن.",
+      "[[Execute]] را بزن."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت چندهدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Sweeping Strikes]] را روی کول‌داون بزن.",
+      "[[Ravager]] را درست قبل از [[Colossus Smash]] بزن.",
+      "[[Avatar]] را درست قبل یا همراه [[Colossus Smash]] بزن.",
+      "[[Colossus Smash]] را روی کول‌داون بزن.",
+      "[[Cleave]] را بزن.",
+      "[[Mortal Strike]] را با کمتر از 10 استک [[Colossal Might]] بزن.",
+      "[[Demolish]] را بزن.",
+      "[[Overpower]] را بزن.",
+      "[[Mortal Strike]] را بزن.",
+      "[[Execute]] را هنگام [[Sudden Death]] بزن.",
+      "اگر چیزی آزاد نیست [[Slam]] را بزن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نکته‌های پیشرفته: سلیر [[Crushing Combo]] ندارد پس [[Cleave]] اسپم نمی‌شود؛ کولاسوس با آن پس از [[Colossus Smash]] کلو کلاوه می‌رود. تایمینگ [[Execute]] به پروک‌های [[Sudden Death]] بستگی دارد و با یک شارژ لازم نیست فوری خرج شود. [[Storm Bolt]] حین [[Bladestorm]] فقط افزایش دمیج بسیار ناچیز است و ارزش تلنت شدن ندارد. اولین [[Demolish]] می‌تواند برای باف بزرگ‌تر کمی عقب بیفتد."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همیشه با [[Charge]] باز کن تا یک باف کوچک رِیج بگیری؛ باقی اوپنر عملاً همان اولویت تک‌هدف است."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از هر فایتی [[Battle Shout]] روی خودت و همهٔ اعضای گروه فعال باشد؛ در محتوای سطح بالا هم یادت نرود."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Colossus Smash",
+       "x": "کول‌داون اصلی تو که آزادانه روی تک‌هدف و چندهدف زده می‌شود؛ با [[Anger Management]] کول‌داونش کم می‌شود و معمولاً با [[Avatar]] هم‌تراز می‌ماند. فعال‌نگه‌داشتنش مهم‌ترین بخش دمیج Arms است."
+      },
+      {
+       "s": "Avatar",
+       "x": "کول‌داون برست که با [[Colossus Smash]] هم‌تراز می‌شود."
+      },
+      {
+       "s": "Bladestorm",
+       "x": "کانال سلیر داخل [[Colossus Smash]]؛ می‌توانی هم‌زمان اینتراپت و استان هم بزنی."
+      },
+      {
+       "s": "Demolish",
+       "x": "کانال سنگین کولاسوس با کول‌داون کوتاه؛ نمونهٔ اول می‌تواند برای باف بزرگ‌تر کمی عقب بیفتد."
+      },
+      {
+       "s": "Champion's Spear",
+       "x": "از کول‌داون‌های اصلی فهرست‌شدهٔ روتیشن."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "هر دو هرو روی دمیج سلاح و Strength (از طریق Item Level) به‌اضافهٔ Critical Strike و Haste تأکید دارند: Strength > Crit > Haste > Mastery > Versatility. ارزش استت‌های ثانویه با گیر تو نوسان دارد چون استت‌های انباشته بعد از Diminishing Returns افت می‌کنند؛ رابطهٔ Crit و Haste پیچیده است: هر دو رِیج می‌سازند و Haste با تندکردن GCD اجازه می‌دهد ابیلیتی بیشتری داخل پنجرهٔ [[Colossus Smash]] جا شود؛ جای‌شان زیاد عوض می‌شود و عملاً هر دو را می‌خواهی."
+    },
+    {
+     "t": "call",
+     "x": "برای مقدار دقیق با Raidbots سیم بزن؛ جدول هر دو هرو یکسان است و این فهرست شامل آیتم‌های cantrip و آیتم‌های Mythic+ که فقط از Great Vault هفتگی با آیتم‌لول کامل می‌آیند هم هست."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268213
+      },
+      {
+       "slot": "سر",
+       "id": 271456
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271454
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271459
+      },
+      {
+       "slot": "دستبند",
+       "id": 237834
+      },
+      {
+       "slot": "دست",
+       "id": 271457
+      },
+      {
+       "slot": "کمر",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271878
+      },
+      {
+       "slot": "کفش",
+       "id": 237828
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 273792
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271456
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270173,
+        270175
+       ],
+       "names": [
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Ula'tek"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Jade Warlord's Dominion: 2 تیکه دمیج [[Mortal Strike]] و [[Execute]] را 10% بالا می‌برد و [[Slam]] به‌اضافهٔ دمیج معادل 100% Attack Power به دشمنانِ تا 8 یارد اطراف هدف می‌زند (کاهشی بعد از 5 هدف). 4 تیکه دمیج [[Overpower]] را 15% زیاد می‌کند و هر [[Mortal Strike]] و [[Overpower]] دمیج [[Slam]] بعدی را 20% (تا 5 استک) بالا می‌برد. لازم نیست این باف را دنبال کنی یا تا 5 استک نگه داری: مثل یک پسیو با آن رفتار کن."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Corroded Hulk's Skullcap (سر)، Raging Pauldrons of the Jade Warlord (شانه)، Reckless Spirit Breastplate (سینه) و Chausses of Unbound Rancor (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Spellbreaker's Bracers (دستبند) و Spellbreaker's March (کفش) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Strength",
+      "Critical Strike",
+      "Haste",
+      "Mastery",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Strength]] است و دمیج سلاح همیشه بزرگ‌ترین ضریب توست؛ بعدش Critical Strike و Haste که جای‌شان زیاد عوض می‌شود چون هر دو رِیج می‌سازند و هِیس با تندکردن GCD اجازه می‌دهد ابیلیتی بیشتری داخل پنجرهٔ [[Colossus Smash]] جا شود."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "استت‌های انباشته بعد از Diminishing Returns ارزششان می‌افتد؛ اولویت‌ها با گیر تو تغییر می‌کنند.",
+      "جدول هر دو هرو Colossus و Slayer یکسان است: Strength > Crit > Haste > Mastery > Versatility."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Arms Warrior در Midnight Season 2؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights یا Flask of the Shattered Sun",
+       "ids": [
+        241324,
+        241326
+       ]
+      },
+      {
+       "k": "غذای گروهی (Feast)",
+       "v": "Blooming Feast",
+       "ids": [
+        242273
+       ]
+      },
+      {
+       "k": "غذای شخصی",
+       "v": "Champion's Bento",
+       "ids": [
+        242274
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بهترین فلاسک بین این دو بسته به وزن استت‌هایت عوض می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness (جایگزین: Liquid Luster)",
+       "ids": [
+        241288
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در پنجرهٔ [[Colossus Smash]] و [[Avatar]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey (جایگزین: Enchant Weapon - Berserker's Rage)",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Blood Knight's Armor Kit",
+       "ids": [
+        244642
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای هر اسلات یک جایگزین هم در راهنمای منبع هست: سر Empowered Rune of Avoidance، شانه Thalassian Recovery، سینه Mark of Nalorakk، شلوار Forest Hunter's Armor Kit، کفش Shaladrassil's Roots و انگشتر Silvermoon's Alacrity."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Powerful Eversong Diamond]] انتخاب اول است."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Arms Warrior در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "سلیر برچسب Best منبع برای Mythic+ را دارد و پروک‌های بیشتر [[Sudden Death]] در 12.1 زنجیرهٔ [[Execute]] را روان‌تر کرده است؛ [[Bladestorm]] داخل پنجرهٔ [[Colossus Smash]] با اینتراپت و استان هم‌زمان ابزار پک‌گیری خوبی است. یادت باشد بیلدهای Arms تخصصی‌اند: برای پک‌ها و برای باس بیلدهای متفاوتی بازی می‌شود."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Sweeping Strikes]] را همیشه فعال نگه دار تا روتیشن تک‌هدف روی هدف دوم هم کِلیو شود.",
+      "برای پک‌های واقعی روی [[Cleave]] سرمایه‌گذاری کن و [[Rend]] را زودتر تازه کن.",
+      "[[Ravager]] و [[Avatar]] و [[Colossus Smash]] را هم‌تراز بزن؛ تأخیر در یکی بقیه را بهم می‌ریزد.",
+      "[[Charge]] و [[Heroic Leap]] را برای نزدیک‌ماندن به هدف خرج کن؛ هیچ راه تولید منبع پسیو نداری.",
+      "حضور [[Skyfury]] در ترکیب گروه برای رِیج تو مهم است."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "ایمنی دمیج و سلف‌هیل نداری: [[Die by the Sword]] و کول‌داون دفاعی رییدگسترده را برای لحظات خطر نگه دار و روی مرز برد حداقلی حواست به جاگیری باشد."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Arms Warrior (آرمز) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل آرمز (Arms Warrior) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Arms Warrior talent build midnight",
+   "Arms Warrior guide midnight",
+   "Arms Warrior guide 12.1.5",
+   "best Arms Warrior talents",
+   "Arms Warrior talent tree midnight",
+   "Arms Warrior pve guide",
+   "Arms Warrior rotation midnight",
+   "Arms Warrior rotation and cooldowns",
+   "Arms Warrior bis list midnight",
+   "Arms Warrior best in slot",
+   "Arms Warrior gear guide",
+   "Arms Warrior food and potion",
+   "best food for Arms Warrior",
+   "best flask for Arms Warrior",
+   "best potion for Arms Warrior",
+   "Arms Warrior enchants and gems",
+   "best enchants for Arms Warrior",
+   "best gems for Arms Warrior",
+   "Arms Warrior stat priority midnight",
+   "Arms Warrior tier set midnight",
+   "Arms Warrior tier set bonuses",
+   "Arms Warrior mythic+ guide",
+   "Arms Warrior m+ guide midnight",
+   "Arms Warrior raid guide",
+   "Arms Warrior hero talents",
+   "Arms Warrior hero tree",
+   "best dps build Arms Warrior midnight",
+   "Arms Warrior cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای آرمز",
+   "تلنت آرمز",
+   "تلنت برای Arms Warrior",
+   "تلنت Warrior آرمز",
+   "بیلد آرمز",
+   "بیلد تلنت آرمز میدنایت",
+   "روتیشن آرمز",
+   "روتیشن و کول‌داون‌های آرمز",
+   "غذا برای آرمز",
+   "غذا برای Arms Warrior",
+   "غذا و معجون آرمز",
+   "بهترین غذای آرمز",
+   "فلسک آرمز",
+   "بهترین فلسک برای آرمز",
+   "معجون آرمز",
+   "انچنت آرمز",
+   "انچنت و جم آرمز",
+   "بهترین انچنت برای آرمز",
+   "جم آرمز",
+   "بست آیتم آرمز",
+   "بهترین آیتم‌های آرمز",
+   "گیر آرمز",
+   "استت آرمز",
+   "اولویت استت آرمز",
+   "ست تیر آرمز",
+   "مایتی پلاس آرمز",
+   "ام پلاس آرمز",
+   "راهنمای آرمز",
+   "راهنمای Arms Warrior",
+   "راهنمای واریر",
+   "آرمز میدنایت",
+   "واریر میدنایت",
+   "هرو تیلنت آرمز",
+   "بیلد دی‌پی‌اس آرمز",
+   "بهترین دی‌پی‌اس میدنایت آرمز"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Arms Warrior (آرمز) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Arms Warrior به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای آرمز چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، معجون جنگی «Potion of Recklessness»، غذا «Blooming Feast» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای آرمز چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Powerful Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای آرمز کدام‌اند؟",
+    "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Arms Warrior در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

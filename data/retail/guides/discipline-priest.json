@@ -1,0 +1,987 @@
+{
+ "slug": "discipline-priest",
+ "class": "priest",
+ "class_en": "Priest",
+ "spec_en": "Discipline",
+ "spec_no": 1,
+ "role": "healer",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Discipline Priest",
+ "lead": "Discipline Priest با آسیب‌زدن شفا می‌دهد: [[Atonement]] شفای آسیب تو را به هیل روی اهداف تبدیل می‌کند و بازی حولِ «رَمپ‌گرفتن» قبل از دمیج‌های بزرگ می‌چرخد. دو مسیر Hero Tree داری: [[Voidweaver]] که با [[Mind Blast]] شکاف ([[Voidweaver Rift]]) می‌سازد و در Midnight برای ریید و Mythic+ قوی‌تر است، و [[Oracle]] با دو شارژ [[Penance]] و Twinsight برای شفای مطمئن‌تر.",
+ "sources": [
+  {
+   "name": "Wowhead",
+   "url": "https://www.wowhead.com/guide/classes/priest/discipline/overview-pve-healer"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/priest/discipline/talent-builds-pve-healer",
+   "updated": "2026-10-27"
+  },
+  {
+   "name": "Wowhead BiS",
+   "url": "https://www.wowhead.com/guide/classes/priest/discipline/bis-gear"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/priest/discipline/stat-priority-pve-healer"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/priest/discipline/enchants-gems-pve-healer"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Atonement": {
+   "fa": "مکانیک اصلی دیسپلین که با اسپل‌های مختلف به گروه اعطا شده و توسط [[Penance]] و دیگر اسپل‌ها فعال می‌شود."
+  },
+  "Voidweaver": {
+   "fa": "مسیر قهرمانی دیسپلین که با افزایش آسیب و درمان از طریق Voidform قدرت می‌گیرد."
+  },
+  "Oracle": {
+   "fa": "مسیر قهرمانی دیسپلین که بر افزایش پایداری و کارایی تمرکز دارد."
+  },
+  "Penance": {
+   "fa": "اسپل کلیدی دیسپلین که سریعاً چندین بار به دشمن حمله کرده و همزمان از طریق [[Atonement]] درمان می‌کند."
+  },
+  "Mind Blast": {
+   "fa": "یک اسپل دامنه‌ای که آسیب به روان وارد می‌کند و در ساختارهای تیرکست و تلنت‌های Discipline اهمیت دارد."
+  },
+  "Void Blast": {
+   "fa": "اسپل قدرتمند درخت Voidweaver که آسیب می‌زند و انرژی Voidform را افزایش می‌دهد."
+  },
+  "Twinsight": {
+   "fa": "تلنت که به Penance گل‌های اضافی می‌دهد و قدرت درمانی و آسیب‌رسانی آن را افزایش می‌دهد."
+  },
+  "Shadow Word: Pain": {
+   "fa": "اسپل دامنه (DoT) که به هدف آسیب می‌زند و آتونمنت را روی او فعال می‌کند."
+  },
+  "Smite": {
+   "fa": "اسپل ساده که آتونمنت را روی هدف فعال می‌کند."
+  },
+  "Void Shield": {
+   "fa": "اسپل محافظتی درخت Voidweaver که جذب ایجاد می‌کند."
+  },
+  "Power Word: Shield": {
+   "fa": "اسپل محافظتی که جذب ایجاد می‌کند و با تلنت Weal and Woe قوی‌تر می‌شود."
+  },
+  "Weal and Woe": {
+   "fa": "تلنت که با اسپل کردن Power Word: Shield روی اهدافی که آتونمنت دارند، جذب را افزایش می‌دهد."
+  },
+  "Surge of Light": {
+   "fa": "افکت تصادفی که اسپل‌های بعدی را ارزان‌تر یا فوری می‌کند."
+  },
+  "Flash Heal": {
+   "fa": "اسپل سریع که بهبود محدودی ایجاد می‌کند."
+  },
+  "Power Word: Radiance": {
+   "fa": "اسپل AOE که آتونمنت را روی اعضای گروه فعال می‌کند."
+  },
+  "Shadow Word: Death": {
+   "fa": "اسپل اکسیوت که به هدف‌های کم‌زندگی آسیب سنگین می‌زند."
+  },
+  "Evangelism": {
+   "fa": "تلنت که با استفاده از [[Penance]] و [[Smite]] ریمپ می‌شود و قدرت [[Penance]] و [[Atonement]] را افزایش می‌دهد."
+  },
+  "Archangel": {
+   "fa": "کول‌داون که جذب و بهبودی ایجاد می‌کند."
+  },
+  "Pain Suppression": {
+   "fa": "کول‌داون دفاعی که یک هدف را از آسیب‌های مهلک نجات می‌دهد."
+  },
+  "Power Word: Barrier": {
+   "fa": "کول‌داون دفاعی که گروه را در یک پوشش محافظ قرار می‌دهد و از آسیب جلوگیری می‌کند."
+  },
+  "Voidform": {
+   "fa": "ایستای قدرتمند دیسپلین که با افزایش آسیب و درمان همراه است و منبع اصلی قدرت در این مسیر است."
+  },
+  "Wavecaller's Seastone": {
+   "fa": "یک تیرکت عالی که به درمان‌دهی و قدرت اسپل‌ها کمک می‌کند."
+  },
+  "Hex Lord's Dooming Idol": {
+   "fa": "یک تیرکت قدرتمند که با ایجاد سپر، به زنده ماندن گروه کمک می‌کند."
+  },
+  "Sigil of the Impending Eclipse": {
+   "fa": "یک تیرکت که با فعال شدن، قدرت اسپل‌ها را به طور قابل توجهی افزایش می‌دهد."
+  },
+  "Gebbo's Bottomless Bag": {
+   "fa": "یک تیرکت که منابع را بهبود می‌بخشد و به بازیکن اجازه می‌دهد اسپل‌های بیشتری را اجرا کند."
+  },
+  "Soulcoiler Ritual Vessel": {
+   "fa": "یک تیرکت که با اجرای اسپل‌ها، یک سپر موقت ایجاد می‌کند."
+  },
+  "Cosmic Penitent's Raiment": {
+   "fa": "ست تیرکست Discipline Priest که با فعال شدن ۲ و ۴ تیکه، قدرت و کارایی اسپل‌های کلیدی را افزایش می‌دهد."
+  },
+  "Intellect": {
+   "fa": "استت اصلی که قدرت اسپل‌ها و درمان را افزایش می‌دهد"
+  },
+  "Haste": {
+   "fa": "استت که سرعت کست اسپل‌ها و سرعت بازیابی منابع را افزایش می‌دهد"
+  },
+  "Mastery": {
+   "fa": "استت که قدرت Atonement را افزایش می‌دهد"
+  },
+  "Critical Strike": {
+   "fa": "استت که شانس ایجاد آسیب یا درمان مضاعف را افزایش می‌دهد"
+  },
+  "Versatility": {
+   "fa": "استت که به صورت درصدی هم آسیب و هم درمان را افزایش می‌دهد"
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پات ترمیم سلامتی سریع که در مواقع ضروری برای نجات خود یا هم‌تیمی‌ها استفاده می‌شود."
+  },
+  "Potion of Recklessness": {
+   "fa": "پتشن که آسیب جادویی را به طور موقت افزایش می‌دهد و برای افزایش ترمیم در لحظات حساس مناسب است."
+  },
+  "Light's Potential": {
+   "fa": "پتشن جایگزین که ترمیم بیشتری ارائه می‌دهد و برای موقعیت‌های دفاعی بهتر است."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "جامی که به طور مداوم مزیت اصلی را افزایش می‌دهد و برای هیلی‌ها ضروری است."
+  },
+  "Flora Frenzy": {
+   "fa": "غذایی که مزیت اصلی را افزایش می‌دهد و برای Discipline Priest بهینه‌شده است."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روی سلاح که آسیب جادویی و ترمیم را افزایش می‌دهد و برای هیلی‌ها مناسب است."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "مخرب‌کننده که مزیت ثانویه را افزایش می‌دهد و برای بهبود عملکرد کلی ضروری است."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "نوشته روی کلاه که ترمیم را از طریق ضربات دشمن افزایش می‌دهد."
+  },
+  "Enchant Shoulders - Silvermoon's Mending": {
+   "fa": "نوشته روی دوش که ترمیم را افزایش می‌دهد و برای هیلی‌ها عالی است."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "نوشته روی سینه که مزیت اصلی را افزایش می‌دهد و برای ترمیم مفید است."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "نوشته روی کفش که هاست را افزایش می‌دهد و برای کاهش کول‌داون اسپل‌ها ضروری است."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "نوشته روی دست‌بندها که هاست را افزایش می‌دهد و برای ترمیم سریع‌تر مناسب است."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "نوشته روی شلوار که هاست و ترمیم را افزایش می‌دهد و برای هیلی‌ها بهینه است."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جواهری که مزیت اصلی را افزایش می‌دهد و برای Discipline Priest ضروری است."
+  },
+  "Flawless Deadly Peridot": {
+   "fa": "جواهری که مزیت ثانویه را افزایش می‌دهد و برای بهبود عملکرد کلی مناسب است."
+  },
+  "Void Rift": {
+   "fa": "تلنت درخت قهرمانی که با ایجاد یک دروازه در موقعیت هدف، آسیب و درمان قابل توجهی ایجاد می‌کند."
+  },
+  "Void Empowerment": {
+   "fa": "تلنت که با فعال‌سازی [[Voidform]]، قدرت [[Atonement]] را به طور قابل توجهی افزایش می‌دهد."
+  },
+  "Resonant Energy": {
+   "fa": "تلنت که با دریافت آسیب، [[Atonement]] را برای گروه تقویت می‌کند."
+  },
+  "Eternal Barrier": {
+   "fa": "تلنت که [[Power Word: Barrier]] را تقویت کرده و آن را به یک کول‌داون بسیار قوی تبدیل می‌کند."
+  },
+  "Tormented Spirits": {
+   "fa": "تلنت که با آسیب به دشمنان، روح‌هایی ایجاد می‌کند که به گروه درمان می‌دهند."
+  },
+  "Cosmic Ripple": {
+   "fa": "تلنت که [[Halo]] را تقویت کرده و درمان بیشتری ایجاد می‌کند."
+  },
+  "Void Torrent": {
+   "fa": "تلنت که با فعال‌سازی [[Voidform]]، یک جریان درمانی و آسیب‌زا ایجاد می‌کند."
+  },
+  "Benevolence": {
+   "fa": "تلنت که [[Penance]] را به یک اسپل دو بار شونده تبدیل می‌کند."
+  },
+  "Focused Power": {
+   "fa": "تلنت که [[Penance]] و [[Smite]] را تقویت می‌کند."
+  },
+  "Light's Promise": {
+   "fa": "تلنت که با استفاده از اسپل‌های درمانی، یک بار بزرگ ایجاد می‌کند."
+  },
+  "Divine Hymn": {
+   "fa": "اسپل درمانی گروهی که با تلنت‌های قهرمانی قدرت می‌گیرد."
+  },
+  "Twin Disciplines": {
+   "fa": "تلنت که دو بار در هر جنگ، یک اسپل رایگان به شما می‌دهد."
+  },
+  "Twin Sight": {
+   "fa": "تلنت که با استفاده از [[Penance]]، یک هدف اضافی را نیز هدف قرار می‌دهد."
+  },
+  "Light's Inspiration": {
+   "fa": "تلنت که با دریافت درمان، سرعت خود را موقتاً افزایش می‌دهد."
+  },
+  "Light's Resurgence": {
+   "fa": "تلنت که با استفاده از اسپل‌های درمانی، یک انفجار درمانی ایجاد می‌کند."
+  },
+  "Lightburst": {
+   "fa": "تلنت که با استفاده از [[Holy Nova]]، یک انفجار درمانی بزرگ ایجاد می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Discipline Priest با آسیب‌زدن شفا می‌دهد: [[Atonement]] شفای آسیب تو را به هیل روی اهداف تبدیل می‌کند و بازی حولِ «رَمپ‌گرفتن» قبل از دمیج‌های بزرگ می‌چرخد."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Voidweaver]] که با [[Mind Blast]] شکاف ([[Voidweaver Rift]]) می‌سازد و در Midnight برای ریید و Mythic+ قوی‌تر است، و [[Oracle]] با دو شارژ [[Penance]] و Twinsight برای شفای مطمئن‌تر."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "میث‌پلاس",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "ماب",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "حرکتی",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "کمک‌گیری",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "شفای برجسته برای آسیب‌های ناگهانی تیم",
+       "پاسخگویی سریع در شرایط اضطراری",
+       "جلوگیری از مرگ با کول‌داون‌های قوی",
+       "مشارکت فعال در آسیب‌زدن به باس‌ها"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "حرکت محدود در میدان نبرد",
+       "نیاز به نزدیکی دشمن برای شفای مؤثر",
+       "مدیریت مانا و زمان‌بندی کول‌داون‌ها چالش‌برانگیز است"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Voidweaver",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "اسپل Smite به Void Blast تبدیل می‌شود که آسیب چشمگیری دارد. Mind Blast نیز یک دره ایجاد می‌کند که با Atonement درمان قابل توجهی ارائه می‌دهد."
+      },
+      {
+       "title": "Oracle",
+       "tag": "گزینه جایگزین",
+       "x": "دو بار استفاده از Penance را ممکن می‌سازد که Twinsight گل‌های اضافی را اضافه می‌کند. سپرها قوی‌تر و مدت Atonement بیشتر می‌شود."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Discipline Priest برای پچ 12.1.5 شامل دو درخت اصلی و دو درخت قهرمانی Oracle و Voidweaver است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Oracle",
+       "tag": "Raid",
+       "x": "",
+       "code": "CAQAAAAAAAAAAAAAAAAAAAAAAADsMGWmZmBDmZbmtZmZmxMDAAAAAAAAAgZYZGMzMDmxMgpZamBYmNMEGzyAMGsAAAjxMjBzAMzMTwA"
+      },
+      {
+       "title": "Oracle",
+       "tag": "Mythic+",
+       "x": "",
+       "code": "CAQAAAAAAAAAAAAAAAAAAAAAAADsMDWmZMmBmZbmtZmZmxMDAAAAAAAAAgxYZGMzMjNjZGsZamYAmZDDhxsMAjBLAAwYmZGDmBYmZEMD"
+      },
+      {
+       "title": "Voidweaver",
+       "tag": "Raid | پیشنهاد منبع",
+       "x": "",
+       "code": "CAQAAAAAAAAAAAAAAAAAAAAAAADsMmxyYmBzgZbmtZmZmZmBAAAAAAAAAgZYZGMzMDzwMgpZamBzMAIAmtZbBM2MAAMGzMGmZwMDGBD"
+      },
+      {
+       "title": "Voidweaver",
+       "tag": "Mythic+ | پیشنهاد منبع",
+       "x": "",
+       "code": "CAQAAAAAAAAAAAAAAAAAAAAAAADsMzMWYMGzgZzsNzMzMzMDAAAAAAAAAgxYZGMzMjNjZGsZamYwMDACgZb2WAjNDAAjZmZMYGMzgRwM"
+      },
+      {
+       "title": "Voidweaver",
+       "tag": "Delves",
+       "x": "",
+       "code": "CAQAAAAAAAAAAAAAAAAAAAAAAADsMzMWYMGzgZzsNzMzMzMDAAAAAAAAAgxYZGMzMjNjZGsZamYwMDACgZb2WAjNDAAjZmZMYGMzgRwM"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=priest&spec=discipline",
+     "x": "مشاهده تمام بیلدهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در Discipline Priest، همیشه در حال اسپل‌کستینگ باشید: [[Shadow Word: Pain]] را روی دشمنان نگه دارید و زمان بیکاری را با [[Penance]]، [[Mind Blast]] و [[Smite]] پر کنید."
+    },
+    {
+     "t": "p",
+     "x": "قبل از رویدادهای آسیب‌زا با افزایش تعداد آتونمنت (Atonement) آماده شوید."
+    },
+    {
+     "t": "p",
+     "x": "کول‌داون‌هایی مثل [[Evangelism]] یا Rift درخت Voidweaver ستون فقرات هیپینگ در Mythic+ هستند."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت‌های تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "نگهداری [[Shadow Word: Pain]] روی دشمنان اگر کمتر از ۲۰ ثانیه باقی مانده باشد",
+      "اسپل کردن [[Mind Blast]] در هر فرصت",
+      "استفاده هجومی از [[Penance]] و هرگز بیش از حد شارژ آن را نگه نداشتن",
+      "اسپل کردن [[Void Blast]] تا جای ممکن",
+      "اسپل کردن [[Void Shield]] در هر فرصت",
+      "استفاده مکرر از [[Power Word: Shield]] وقتی مانا خوب است و استک‌های Weal and Woe بالا هستند (حدود ۶ یا بیشتر)",
+      "استفاده از [[Surge of Light]] برای Flash Heal برای ارزان‌تر آتونمنت کردن",
+      "اسپل کردن [[Power Word: Radiance]] در هر فرصت برای ریمپ‌های کوچک و نگه داشتن ۲ شارژ برای کول‌داون‌های بزرگ",
+      "اسپل کردن [[Shadow Word: Death]] در فاز ایکسیوت (زیر ۲۰٪)",
+      "اسپل کردن [[Smite]] در زمان بیکاری"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در هیپینگ گروهی، از ریمپ [[Power Word: Radiance]] به سمت Evangelism یا Rift Voidweaver استفاده کنید: ۲ شارژ Radiance برای پنجره‌های آسیب بزرگ نگه دارید و ریمپ را قبل از رویداد روی گروه اسپل کنید."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Ultimate Penitence",
+       "x": "به صورت جدا از Evangelism استفاده کنید، با Void Shield اسپل-کیو شده برای حداکثر خروجی."
+      },
+      {
+       "s": "Evangelism",
+       "x": "برای دوره‌های هیپینگ بزرگ استفاده کنید؛ اسپل‌های فوری [[Power Word: Radiance]] می‌دهد و زمان ریمپ را از حدود ۱۵ ثانیه به ۸ ثانیه کاهش می‌دهد."
+      },
+      {
+       "s": "Archangel",
+       "x": "برای هیل و افزایش جذب زمانی که دیگر کول‌داون‌ها استفاده شده‌اند."
+      },
+      {
+       "s": "Pain Suppression",
+       "x": "کاهش آسیب برای یک هدف زمانی که دیگر کول‌داون‌ها استفاده شده‌اند."
+      },
+      {
+       "s": "Power Word: Barrier",
+       "x": "کاهش آسیب گسترده برای کل رید؛ با بزرگترین رویدادهای آسیب رید هماهنگ کنید."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "با Evangelism پروفایل ریمپ سریع‌تر می‌شود: [[Power Word: Radiance]] می‌اندازد و دو اسپل بعدی را فوری می‌کند، زمان راه‌اندازی را از حدود ۱۵ ثانیه به ۸ ثانیه کاهش می‌دهد."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای Discipline Priest در پچ 12.1.5، اولویت گیرینگ به ترتیب زیر است: سپر اول، سپر دوم، گردن."
+    },
+    {
+     "t": "p",
+     "x": "اسلات اسلحه دارای بیشترین قدرت است: در آن اولویت اول را داشته باشید و بهتر است {{271092}} را ارتقا دهید."
+    },
+    {
+     "t": "p",
+     "x": "پس از اسلحه، آیتم‌های تریکنت به دلیل داشتن استت اولویت دوم را دارند."
+    },
+    {
+     "t": "p",
+     "x": "گردن (neck) در رتبهٔ سوم قرار می‌گیرد و {{268265}} گزینهٔ خوبی است."
+    },
+    {
+     "t": "call",
+     "x": "تیرکت‌ها در رتبه‌های مختلف: Wavecaller's Seastone و Hex Lord's Dooming Idol رتبه S، Sigil of the Impending Eclipse، Gebbo's Bottomless Bag و Soulcoiler Ritual Vessel رتبه A را دارند."
+    },
+    {
+     "t": "p",
+     "x": "استت‌های اصلی برای گیرینگ: اسپک، هیت و Mastery اولویت دارند."
+    },
+    {
+     "t": "p",
+     "x": "ست تیر کازمیک پنیتنت (Cosmic Penitent's Raiment) با ۲ تیکه افزایش قدرت [[Penance]] و کاهش کول‌داون [[Mind Blast]] می‌دهد و با ۴ تیکه هر [[Mind Blast]] سپر ایجاد می‌کند."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های ساختگی"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "سر",
+       "id": 271874
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271553
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271558
+      },
+      {
+       "slot": "دستبند",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271556
+      },
+      {
+       "slot": "کمر",
+       "id": 239649
+      },
+      {
+       "slot": "پا",
+       "id": 271554
+      },
+      {
+       "slot": "کفش",
+       "id": 268255
+      },
+      {
+       "slot": "انگشت",
+       "id": 268266
+      },
+      {
+       "slot": "انگشت",
+       "id": 252258
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270167
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270162
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271874
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "names": [
+        "Wavecaller's Seastone",
+        "Hex Lord's Dooming Idol"
+       ],
+       "ids": [
+        270167,
+        270169
+       ]
+      },
+      {
+       "r": "A",
+       "names": [
+        "Sigil of the Impending Eclipse",
+        "Gebbo's Bottomless Bag",
+        "Soulcoiler Ritual Vessel"
+       ],
+       "ids": [
+        280835,
+        270164,
+        270162
+       ]
+      },
+      {
+       "r": "B",
+       "names": [
+        "Glorious Crusader's Keepsake",
+        "Drum of Renewed Bonds",
+        "Astral Gladiator's Insignia of Alacrity",
+        "Lightspire Core"
+       ],
+       "ids": [
+        251792,
+        248583,
+        230639,
+        250214
+       ]
+      },
+      {
+       "r": "C",
+       "names": [
+        "Stormbound Emblem of Dazar",
+        "Vile Vial of Volatile Venom",
+        "Freightrunner's Flask",
+        "Unstable Felheart Crystal"
+       ],
+       "ids": [
+        273649,
+        273796,
+        250215,
+        250255
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای اسلات سر: آلن‌هارا لانترن (Aln'hara Lantern) گزینهٔ خوبی است."
+    },
+    {
+     "t": "p",
+     "x": "برای اسلات سینه: سامررز سیئرینگ شیفت (Summoner's Searing Shirt) انتخاب مناسبی محسوب می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "برای اسلات دست‌ها: گراسپس آو ایترنال شادو (Grasps of the Eternal Shadow) پیشنهاد می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "برای اسلات پاها: انولوپینگ لگراپس آو د کاسمیک پنیتنت (Enveloping Legwraps of the Cosmic Penitent) گزینهٔ عالی است."
+    },
+    {
+     "t": "p",
+     "x": "برای اسلات کمر: مارتیرز وایست‌راپ (Martyr's Waistwrap) و برای مچ دست: مارتیرز بایندینگز (Martyr's Bindings) گزینه‌های ساختگی خوبی هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Mastery",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اولویت اصلی استت‌ها برای Discipline Priest در پچ 12.1.۵، Intellect است که هم قدرت درمانی و هم آسیب را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "پس از آن Haste به دلیل امکان ایجاد و تمدید بیشتر Atonement در ریدز و افزایش آسیب در دونژن‌ها، دومین اولویت را دارد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در این راهنما به معرفی بهترین مواد مصرفی برای Discipline Priest در نقش healer در پچ 12.1.5 پرداخته‌ایم."
+    },
+    {
+     "t": "p",
+     "x": "استفاده از مواد مصرفی مناسب تأثیر چشمگیری بر عملکرد شما در رایدز و کشی باس‌ها دارد."
+    },
+    {
+     "t": "p",
+     "x": "این مواد مصرفی بر اساس آخرین تغییرات بازی و بهینه‌سازی‌های پچ 12.1.5 انتخاب شده‌اند."
+    },
+    {
+     "t": "h3",
+     "x": "پات‌ها و پتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پات",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون",
+       "v": "Potion of Recklessness or Light's Potential",
+       "ids": [
+        241288,
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پات Concentrated Silvermoon Health Potion برای مواقعی که نیاز به ترمیم سریجان سلامتی دارید مناسب است."
+    },
+    {
+     "t": "p",
+     "x": "پتشن‌ها را قبل از شروع مبارزه یا در حین استفاده از اسپل‌های کلیدی مثل [[Apotheosis]] یا [[Divine Hymn]] مصرف کنید."
+    },
+    {
+     "t": "h3",
+     "x": "غذا و جام‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Flora Frenzy",
+       "ids": [
+        255848
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Flask of the Blood Knights بهترین جام برای Discipline Priest در این پچ است و به‌طور مداوم به شما کمک می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "غذای Flora Frenzy مزیت اصلی را فراهم می‌کند که برای هیلی‌ها بسیار ارزشمند است."
+    },
+    {
+     "t": "p",
+     "x": "می‌توانید از Harandar Celebration به عنوان یک feast برای کل تیم استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات و جواهرات"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "روی سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "مخرب‌کننده",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "Thalassian Phoenix Oil برای افزایش آسیب جادویی و ترمیم شما عالی است."
+    },
+    {
+     "t": "p",
+     "x": "مخرب‌کننده Void-Touched Augment Rune مزیت ثانویه را افزایش می‌دهد که برای Discipline Priest ضروری است."
+    },
+    {
+     "t": "h3",
+     "x": "نوشته‌ها و جواهر"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "دوش",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پا",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "دست‌بندها",
+       "v": "Enchant Ring - Silvermoon's Alacrity",
+       "ids": [
+        244014
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "نوشته‌ها به خصوص روی سر و دوش به افزایش ترمیم شما کمک می‌کنند."
+    },
+    {
+     "t": "p",
+     "x": "Sunfire Silk Spellthread برای افزایش هاست و ترمیم بسیار مناسب است."
+    },
+    {
+     "t": "p",
+     "x": "از جواهر Indecipherable Eversong Diamond استفاده کنید که مزیت اصلی را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "Flawless Deadly Peridot یک گزینه خوب برای مزیت ثانویه است."
+    },
+    {
+     "t": "p",
+     "x": "این تجهیزات و جواهرات را با توجه به استت‌های خود تنظیم کنید."
+    },
+    {
+     "t": "p",
+     "x": "همیشه تجهیزات را با توجه به نیازهای تیم و موقعیت بازی انتخاب کنید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "مایتی پلاس"
+    },
+    {
+     "t": "p",
+     "x": "دیسپلین پرست در میثیک پلاس با [[Voidweaver]] نقش درمانگر قوی‌ای ایفا می‌کند. در شبیه‌ساز نیمه‌شب فصل ۲، [[Voidweaver]] گزینهٔ قوی‌تر است ولی [[Oracle]] با دو بار استفاده از [[Penance]] جایگزین مطمئن و پایداری محسوب می‌شود."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "دیسپلین با فعال‌سازی کول‌داون‌ها به اوج قدرت می‌رسد: ریمپ کردن [[Evangelism]] و استفاده از [[Void Rift]] در دوران‌های درمانی مهم.",
+      "باید برای دریافت درمان از [[Atonement]] در محدودهٔ دشمنان حضور داشته باشید: محل خود را در پول‌ها برنامه‌ریزی کنید.",
+      "ریمپ کردن مقدار زیادی مانا مصرف می‌کند: از هم‌پوشانی کول‌داون‌ها و ریمپ‌های بیهوده بپرهیزید.",
+      "[[Power Word: Barrier]] و [[Pain Suppression]] کول‌داون‌های دفاعی قوی برای پول‌های خطرناک هستند.",
+      "تحرک بسیار ضعیف است: قبل از مکانیک‌ها موقعیت خود را مشخص کنید نه اینکه واکنش نشان دهید."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های پیشنهادی"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "درخت اصلی",
+       "v": "Purge the Wicked, Evangelism, Power Infusion, Dark Evangelism, Voidform, Void Empowerment, Resonant Energy, Eternal Barrier, Void Rift, Tormented Spirits, Cosmic Ripple, Void Torrent"
+      },
+      {
+       "k": "درخت قهرمانی",
+       "v": "Oracle: Benevolence, Focused Power, Light's Promise, Divine Hymn, Oracle / Voidweaver, Twin Disciplines, Twin Sight, Light's Inspiration, Light's Resurgence, Lightburst"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Discipline Priest (دیسیپلین) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل دیسیپلین (Discipline Priest) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Discipline Priest talent build midnight",
+   "Discipline Priest guide midnight",
+   "Discipline Priest guide 12.1.5",
+   "best Discipline Priest talents",
+   "Discipline Priest talent tree midnight",
+   "Discipline Priest pve guide",
+   "Discipline Priest rotation midnight",
+   "Discipline Priest rotation and cooldowns",
+   "Discipline Priest bis list midnight",
+   "Discipline Priest best in slot",
+   "Discipline Priest gear guide",
+   "Discipline Priest food and potion",
+   "best food for Discipline Priest",
+   "best flask for Discipline Priest",
+   "best potion for Discipline Priest",
+   "Discipline Priest enchants and gems",
+   "best enchants for Discipline Priest",
+   "best gems for Discipline Priest",
+   "Discipline Priest stat priority midnight",
+   "Discipline Priest tier set midnight",
+   "Discipline Priest tier set bonuses",
+   "Discipline Priest mythic+ guide",
+   "Discipline Priest m+ guide midnight",
+   "Discipline Priest raid guide",
+   "Discipline Priest hero talents",
+   "Discipline Priest hero tree",
+   "best healer build Discipline Priest midnight",
+   "Discipline Priest cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای دیسیپلین",
+   "تلنت دیسیپلین",
+   "تلنت برای Discipline Priest",
+   "تلنت Priest دیسیپلین",
+   "بیلد دیسیپلین",
+   "بیلد تلنت دیسیپلین میدنایت",
+   "روتیشن دیسیپلین",
+   "روتیشن و کول‌داون‌های دیسیپلین",
+   "غذا برای دیسیپلین",
+   "غذا برای Discipline Priest",
+   "غذا و معجون دیسیپلین",
+   "بهترین غذای دیسیپلین",
+   "فلسک دیسیپلین",
+   "بهترین فلسک برای دیسیپلین",
+   "معجون دیسیپلین",
+   "انچنت دیسیپلین",
+   "انچنت و جم دیسیپلین",
+   "بهترین انچنت برای دیسیپلین",
+   "جم دیسیپلین",
+   "بست آیتم دیسیپلین",
+   "بهترین آیتم‌های دیسیپلین",
+   "گیر دیسیپلین",
+   "استت دیسیپلین",
+   "اولویت استت دیسیپلین",
+   "ست تیر دیسیپلین",
+   "مایتی پلاس دیسیپلین",
+   "ام پلاس دیسیپلین",
+   "راهنمای دیسیپلین",
+   "راهنمای Discipline Priest",
+   "راهنمای پریست",
+   "دیسیپلین میدنایت",
+   "پریست میدنایت",
+   "هرو تیلنت دیسیپلین",
+   "بیلد هیلر دیسیپلین",
+   "بهترین هیلر میدنایت دیسیپلین"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Discipline Priest (دیسیپلین) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Discipline Priest به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای دیسیپلین چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، غذا «Flora Frenzy» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای دیسیپلین چیست؟",
+    "a": "انچنت سلاح و جم‌های پیشنهادی بر اساس اولویت استت این اسپک انتخاب می‌شوند. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای دیسیپلین کدام‌اند؟",
+    "a": "ست تیر فعلی «Wavecaller's Seastone» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Discipline Priest در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

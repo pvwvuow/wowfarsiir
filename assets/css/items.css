@@ -1,0 +1,38 @@
+/* wowfarsi - item/decor cards: fantasy minimal, rarity coloured, big preview on the left */
+html body .ic-wrap { margin: 2.2rem 0 .6rem; }
+html body .ic-wrap .ic-title { display: flex; align-items: center; gap: .9rem; margin: 0 0 1.1rem; font-size: .98rem; font-weight: 800; line-height: 1.8; color: var(--gold-2, #f0c75e); }
+html body .ic-wrap .ic-title::before, html body .ic-wrap .ic-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, .55), transparent); }
+html body .ic { --q: #f0c75e; --qt: #f0c75e; --qg: 240, 199, 94; position: relative; display: flex; direction: ltr; align-items: stretch; margin: 0 0 1.2rem; border: 1px solid rgba(var(--qg), .3); border-radius: 14px; overflow: hidden; background: linear-gradient(165deg, rgba(20, 22, 38, .82), rgba(9, 12, 22, .9)); box-shadow: 0 10px 28px rgba(0, 0, 0, .35); transition: box-shadow .25s, border-color .25s; }
+html body .ic::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 1px; background: linear-gradient(90deg, transparent, var(--q), transparent); opacity: .95; }
+html body .ic:hover { border-color: rgba(var(--qg), .6); box-shadow: 0 12px 34px rgba(0, 0, 0, .5), 0 0 30px rgba(var(--qg), .14); }
+html body .ic-media { flex: 0 0 clamp(104px, 32%, 190px); display: flex; align-items: center; justify-content: center; padding: 1rem; background: radial-gradient(circle at 50% 50%, rgba(var(--qg), .24), transparent 70%); }
+html body .ic-media img { display: block; width: 100%; max-width: 172px; aspect-ratio: 1 / 1; height: auto; object-fit: contain; border: 0; border-radius: 0; background: none; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .6)) drop-shadow(0 0 16px rgba(var(--qg), .38)); }
+html body .ic-sigil { width: 62%; max-width: 110px; color: var(--q); opacity: .7; filter: drop-shadow(0 0 10px rgba(var(--qg), .5)); }
+html body .ic-body { flex: 1 1 auto; min-width: 0; direction: rtl; padding: 1rem 1.25rem 1.1rem; }
+html body .ic-head { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem .7rem; }
+html body .ic-name { margin: 0; font-size: 1.12rem; font-weight: 700; line-height: 1.5; color: var(--qt); text-shadow: 0 0 18px rgba(var(--qg), .4); }
+html body .ic-rar { font-size: 11px; line-height: 1.8; color: var(--qt); border: 1px solid rgba(var(--qg), .5); background: rgba(var(--qg), .08); border-radius: 99px; padding: 0 .65rem; }
+html body .ic-orn { position: relative; height: 1px; margin: .6rem 0 .7rem; background: linear-gradient(90deg, transparent, rgba(var(--qg), .7) 28%, rgba(var(--qg), .7) 72%, transparent); }
+html body .ic-orn::after { content: ""; position: absolute; left: 50%; top: -3px; width: 6px; height: 6px; transform: translateX(-50%) rotate(45deg); background: var(--q); box-shadow: 0 0 8px rgba(var(--qg), .8); }
+html body .ic-rows { display: grid; grid-template-columns: auto 1fr; gap: 0 1.1rem; margin: 0; font-size: .9rem; line-height: 1.9; }
+html body .ic-rows dt, html body .ic-rows dd { padding: .12rem 0; border-bottom: 1px dashed rgba(255, 255, 255, .07); }
+html body .ic-rows dt { color: var(--mut, #9b94aa); white-space: nowrap; }
+html body .ic-rows dt::before { content: "\25C6"; display: inline-block; margin-left: .45rem; font-size: .55rem; vertical-align: middle; color: var(--q); opacity: .75; }
+html body .ic-rows dd { margin: 0; color: var(--parch, #ece7f3); text-align: right; }
+html body .ic-rows .ltr, html body .ic-chip.ltr { direction: ltr; unicode-bidi: embed; }
+html body .ic-spec { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .8rem; }
+html body .ic-chip { display: inline-flex; align-items: center; gap: .3rem; font-size: 12.5px; line-height: 1.9; color: var(--parch, #f3e9c6); border: 1px solid rgba(var(--qg), .38); background: rgba(var(--qg), .09); border-radius: 99px; padding: 0 .75rem; }
+html body .ic-chip b { color: var(--qt); }
+html body .q-poor { --q: #9d9d9d; --qt: #b4b4b4; --qg: 157, 157, 157; }
+html body .q-common { --q: #ffffff; --qt: #ffffff; --qg: 255, 255, 255; }
+html body .q-uncommon { --q: #1eff00; --qt: #1eff00; --qg: 30, 255, 0; }
+html body .q-rare { --q: #0070dd; --qt: #3a9bff; --qg: 0, 112, 221; }
+html body .q-epic { --q: #a335ee; --qt: #c06cff; --qg: 163, 53, 238; }
+html body .q-legendary { --q: #ff8000; --qt: #ff8000; --qg: 255, 128, 0; }
+html body .q-artifact { --q: #e6cc80; --qt: #e6cc80; --qg: 230, 204, 128; }
+html body .q-heirloom, html body .q-token { --q: #00ccff; --qt: #00ccff; --qg: 0, 204, 255; }
+@media (max-width: 560px) {
+  html body .ic-media { flex-basis: 92px; padding: .6rem; }
+  html body .ic-body { padding: .85rem .9rem; }
+  html body .ic-rows { font-size: .85rem; }
+}

@@ -1,0 +1,964 @@
+{
+ "slug": "outlaw-rogue",
+ "class": "rogue",
+ "class_en": "Rogue",
+ "spec_en": "Outlaw",
+ "spec_no": 2,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Outlaw Rogue",
+ "lead": "Outlaw یک اسپک تند و پرکست (builder/spender) است: با انرژی جنراتور می‌زنی و کانبو پوینت‌ها را با فینیشرها خرج می‌کنی؛ همه‌چیز با CDR دائمی [[Restless Blades]] می‌چرخد. AoEات از [[Blade Flurry]] می‌آید که با همین روتیشن تک‌هدف کِلیو می‌زند و [[Roll the Bones]] ریسک و شانس به بازی‌ات اضافه می‌کند. دو مسیر Hero Tree داری: [[Trickster]] با [[Unseen Blade]] و [[Killing Spree]] که با تنظیم فعلی حدود 7% قوی‌تر است، و [[Fatebound]] با [[Hand of Fate]] و شیر یا خط‌هایش.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Blade Flurry": {
+   "fa": "AoE امضای Outlaw که دور خودت می‌زند و با 5 هدف کپ می‌شود (با تلنت تا 8)؛ بقیهٔ روتیشن دست‌نخورده می‌ماند."
+  },
+  "Restless Blades": {
+   "fa": "موتور CDR اسپک: هر فینیشر کول‌داون کول‌داون‌هایت را کم می‌کند؛ downtime یعنی CDR از دست رفته."
+  },
+  "Roll the Bones": {
+   "fa": "باف تصادفی 4 استیجی که هر استیج پاداش استیج‌های قبلی را هم می‌دهد."
+  },
+  "Loaded Dice": {
+   "fa": "بافی که آستانهٔ ریکست [[Roll the Bones]] را بالا می‌برد."
+  },
+  "Keep It Rolling": {
+   "fa": "کول‌داون بلندی که استیج فعلی [[Roll the Bones]] را قفل می‌کند؛ با [[Restless Blades]] عملاً ~1:15 می‌شود."
+  },
+  "Adrenaline Rush": {
+   "fa": "باف اصلی انرژی و GCD؛ با [[Alacrity]] آستانهٔ هِیسش 22% است."
+  },
+  "Alacrity": {
+   "fa": "تلنتی که آستانهٔ Haste لازم برای GCD پایین [[Adrenaline Rush]] را کم می‌کند."
+  },
+  "Preparation": {
+   "fa": "ریست ابزارها؛ با [[Restless Blades]] کار نمی‌کند و در فایت‌های کوتاه قابل برنامه‌ریزی است."
+  },
+  "Blade Rush": {
+   "fa": "کول‌داون حرکتی و دمیج که روی کول‌داون زده می‌شود."
+  },
+  "Between the Eyes": {
+   "fa": "فینیشر باف‌دار که با 6 کانبو پوینت یا بیشتر زده می‌شود."
+  },
+  "Opportunity": {
+   "fa": "پروک [[Pistol Shot]] اینستنت؛ استیج 1 [[Roll the Bones]] شانسش را بالا می‌برد."
+  },
+  "Ace Up Your Sleeve": {
+   "fa": "تلنتی که بعد از [[Between the Eyes]] کانبو پوینت می‌سازد."
+  },
+  "Sinister Strike": {
+   "fa": "جنراتور پایه؛ استیج 2 [[Roll the Bones]] کانبو پوینت اضافه می‌دهد."
+  },
+  "Pistol Shot": {
+   "fa": "جنراتور برد‌دار که با پروک [[Opportunity]] رایگان و قوی می‌شود."
+  },
+  "Dispatch": {
+   "fa": "فینیشر اصلی خرج کانبو پوینت؛ ست 4 تیکه نسخهٔ رایگان قوی می‌دهد."
+  },
+  "Slice and Dice": {
+   "fa": "باف سرعت attack که در اوپنر می‌زنی."
+  },
+  "Killing Spree": {
+   "fa": "کول‌داون Trickster با [[Disorienting Strikes]] و [[Flawless Form]]."
+  },
+  "Unseen Blade": {
+   "fa": "پروک Trickster که بعد از 4 بار [[Dispatch]] را به [[Coup de Grace]] ارتقا می‌دهد."
+  },
+  "Coup de Grace": {
+   "fa": "نسخهٔ ارتقایافتهٔ [[Dispatch]] با دمیج بیشتر در Trickster."
+  },
+  "Hand of Fate": {
+   "fa": "مکانیک Fatebound: هر فینیشر شیر یا خط می‌اندازد."
+  },
+  "Lucky Coin": {
+   "fa": "کیستون Fatebound بعد از 7 سکه که باف می‌دهد و پاداش وجه‌ها را بالا می‌برد."
+  },
+  "Disorienting Strikes": {
+   "fa": "تلنتی که کول‌داون [[Killing Spree]] را کم می‌کند."
+  },
+  "Flawless Form": {
+   "fa": "تلنتی که با [[Killing Spree]] باف دمیج انباشتی می‌دهد."
+  },
+  "Deadly Pursuit": {
+   "fa": "آبیلیتی جدید Midnight برای گیری و جابجایی."
+  },
+  "Fast Action": {
+   "fa": "آبیلیتی جدید Midnight."
+  },
+  "Deadly Poison": {
+   "fa": "سم کشندهٔ سلاح؛ قبل از هر فایتی اعمال می‌شود."
+  },
+  "Wound Poison": {
+   "fa": "سم کاهش‌دهندهٔ هیل روی سلاح‌ها."
+  },
+  "Mastery: Main Gauche": {
+   "fa": "مستری کلاس: حملهٔ اضافی با دمیج بیشتر."
+  },
+  "Aman'muso, Warlord's Vengeance": {
+   "fa": "سلاح دست اصلی BiS فصل از The Coiled Altar."
+  },
+  "Zatha'tek, Breath of Corruption": {
+   "fa": "خنجر دست دوم BiS فصل از Ula'tek."
+  },
+  "Chosen Bloodslayer's Hexweave": {
+   "fa": "ست تیر فصل راگ؛ برای Outlaw 2 تیکه [[Dispatch]] را 15% و 4 تیکه نسخهٔ رایگانِ پرکانبو می‌دهد."
+  },
+  "Gaze of the Coiled Watcher": {
+   "fa": "کلاه BiS فصل از Ula'tek و گزینهٔ Catalyst."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Amani Summoning Shawl": {
+   "fa": "شنل BiS فصل از Nek'zali the Soulcoiler."
+  },
+  "Restless Spirit Shackles": {
+   "fa": "دستبند BiS فصل از Nek'zali the Soulcoiler."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "ترینکت BiS فصل از The Coiled Altar."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "ترینکت دوم BiS فصل از Ula'tek."
+  },
+  "Alluring Bubbleband": {
+   "fa": "انگشتر BiS فصل از Nymrissa Wavecaller."
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر دوم BiS فصل از Sszorak."
+  },
+  "Sash of the Forlorn Vessel": {
+   "fa": "کمربند BiS اسپک‌های دیگر راگ از The Coiled Altar."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک پیش‌فرض وقتی به آستانهٔ هِیس نیاز نداری."
+  },
+  "Flask of the Blood Knights": {
+   "fa": "فلاسک هِیس‌دار برای رسیدن به آستانهٔ 21 تا 23%."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast فصل."
+  },
+  "Enchant Weapon - Jan'alai's Precision": {
+   "fa": "افزونهٔ سلاح فصل (گزینهٔ اول)."
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "افزونهٔ سلاح فصل (گزینهٔ دوم)."
+  },
+  "Enchant Helm - Empowered Hex of Leeching": {
+   "fa": "افزونهٔ سر با Leech."
+  },
+  "Enchant Shoulders - Silvermoon's Mending": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Shaladrassil's Roots": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل (گزینهٔ اول)."
+  },
+  "Enchant Ring - Silvermoon's Alacrity": {
+   "fa": "افزونهٔ انگشتر فصل (گزینهٔ دوم)."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "جم الماس فصل (گزینهٔ اول)."
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "جم الماس فصل برای بیشترین دمیج."
+  },
+  "Flawless Deadly Peridot": {
+   "fa": "جم Peridot فصل."
+  },
+  "Flawless Versatile Garnet": {
+   "fa": "جم پرکنندهٔ بقیهٔ سوکت‌ها."
+  },
+  "Chosen Bloodslayer's Spirit Shroud": {
+   "fa": "گزینهٔ Catalyst سر از Ula'tek."
+  },
+  "Chosen Bloodslayer's Voodoo Guards": {
+   "fa": "شانهٔ ست فصل (BiS) و گزینهٔ Catalyst."
+  },
+  "Chosen Bloodslayer's Banded Poncho": {
+   "fa": "سینهٔ ست فصل (BiS) و گزینهٔ Catalyst."
+  },
+  "Chosen Bloodslayer's Fanged Grips": {
+   "fa": "دستکش ست فصل (BiS) و گزینهٔ Catalyst."
+  },
+  "Chosen Bloodslayer's Reinforced Pants": {
+   "fa": "شلوار ست فصل (BiS) و گزینهٔ Catalyst."
+  },
+  "Silvermoon Agent's Utility Belt": {
+   "fa": "کمربند Crafted فصل که در BiS هم هست."
+  },
+  "Silvermoon Agent's Sneakers": {
+   "fa": "کفش Crafted فصل که در BiS هم هست."
+  },
+  "Ambush": {
+   "fa": "حملهٔ استلثی قوی که با ست 4 تیکه شانس [[Dispatch]] رایگان می‌سازد."
+  },
+  "Crackshot": {
+   "fa": "آبیلیتی که در Midnight از Outlaw حذف شده است."
+  },
+  "Underhanded Upper Hand": {
+   "fa": "آبیلیتی که در Midnight از Outlaw حذف شده است."
+  },
+  "Haste": {
+   "fa": "استت سرعت: زمان کست و GCD و بازیابی انرژی را کم می‌کند و تا آستانهٔ 23% اولویت دارد."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Outlaw یک چرخهٔ build-and-spend تند است: با انرژی جنراتور می‌زنی، کانبو پوینت جمع می‌کنی و با فینیشرها خرج می‌کنی؛ موتور اصلی اسپک CDR دائمی از [[Restless Blades]] است. AoEات از [[Blade Flurry]] می‌آید که با همان روتیشن تک‌هدف کِلیو می‌زند و [[Roll the Bones]] شانس و ریسک به بازی اضافه می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Trickster]] با [[Unseen Blade]] که بعد از 4 پروک [[Dispatch]] را به [[Coup de Grace]] ارتقا می‌دهد و [[Killing Spree]] با کول‌داون کوتاه‌تر؛ و [[Fatebound]] با [[Hand of Fate]] که هر فینیشر شیر یا خط می‌اندازد. با تنظیم فعلی تریکستر حدود 7% قوی‌تر است و برچسب Best منبع را در هر سه مد دارد."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight تغییرهایی دیده‌ای: آبیلیتی‌های [[Deadly Pursuit]] و [[Fast Action]] و [[Preparation]] آمده‌اند و [[Crackshot]] و [[Underhanded Upper Hand]] رفته‌اند. نکتهٔ مهم بازی: هر ثانیه دور از هدف یعنی CDR از دست رفته و اثر برفی می‌گیرد."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "AoE (تا 5 هدف)",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "برست",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "جابجایی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "بقا",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "AoE قوی روی تا 5 هدف در حالی که همان روتیشن تک‌هدف را ادامه می‌دهی؛ با تلنت تا 8 هدف",
+       "اسپک سریع و پرهیجان با دکمه‌های زیاد که حول CDR مداوم [[Restless Blades]] می‌چرخد",
+       "کییت جابجایی و یوتیلیتی خوب"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "وابستگی به CDR یعنی بیشتر از همه از downtime و نزدن هدف آسیب می‌بینی",
+       "رقابت سخت با اسپک‌های مطمئن‌تر راگ",
+       "تصادفی‌بودن [[Roll the Bones]] سلیقه‌ای است و برای همه خوشایند نیست"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Trickster",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "با تنظیم فعلی حدود 7% قوی‌تر از Fatebound در همهٔ موقعیت‌ها و برچسب Best منبع برای Raid و Mythic+ و Delves. [[Unseen Blade]] بعد از 4 پروک [[Dispatch]] را به [[Coup de Grace]] ارتقا می‌دهد؛ [[Killing Spree]] با [[Disorienting Strikes]] کول‌داون کوتاه‌تر و [[Flawless Form]] باف دمیج انباشتی دارد."
+      },
+      {
+       "title": "Fatebound",
+       "tag": "آلترناتیو",
+       "x": "هر فینیشر با [[Hand of Fate]] شیر یا خط می‌اندازد: خط دمیج می‌زند و شیر دمیجت را باف می‌کند؛ بعد از 7 سکه، [[Lucky Coin]] باف بزرگ می‌دهد و پاداش هر وجه را بالا می‌برد. روتیشن را خیلی تغییر نمی‌دهد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Outlaw Rogue در پچ 12.1.5 دو درخت قهرمانی دارد: Trickster و Fatebound؛ هر جدول سه ردیف کد دارد: Raid، Mythic+ و Delves و هر 6 کد متمایزند. تفاوت بیلد تک‌هدف و AoE اندک است: چون همهٔ دمیج گروهی از [[Blade Flurry]] می‌آید، بیلد AoE فقط تلنت‌های کم‌اثر تک‌هدف را با تقویت‌کننده‌های Blade Flurry عوض می‌کند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Trickster (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید؛ تفاوت بیلد تک‌هدف و AoE کم است چون همهٔ دمیج گروهی از [[Blade Flurry]] می‌آید.",
+       "code": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MMzMmZmtZmZmZMmF4BmZbaZw2MAAAAAAbbzMzwMzMziZmZbAAAAYmBAjZxwQGYWYhWYjBYmBDMA"
+      },
+      {
+       "title": "Trickster (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ با تنظیم فعلی حدود 7% جلوتر از Fatebound.",
+       "code": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MMzMjZmtZmZMzMzsAmZbaZw2MAAAAAAbbzMzwMzMziZmZbAAAAYmBAjZxwQGYWYhWYjBYmBDMA"
+      },
+      {
+       "title": "Trickster (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MMzMjZmtZmZMzMzsAmZbaZw2MAAAAAA2mZmhZmZmFzMz2AAAAwYAwYWMMkBmFWoF2YAmZwMYG"
+      },
+      {
+       "title": "Fatebound (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "گزینهٔ جایگزین ریید با شیر یا خط‌های [[Hand of Fate]].",
+       "code": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MMzMmZmtZmZmZMmF4BmZbaZw2MAAAAAAbbzMzwMzMziZmZbAAAAYmBMwGMjRjZDw2EWYAwMzAD"
+      },
+      {
+       "title": "Fatebound (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "گزینهٔ جایگزین Mythic+؛ روتیشن را زیاد تغییر نمی‌دهد.",
+       "code": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MMzMjZmtZmZMzMzsAmZbaZw2MAAAAAAbbzMzwMzMziZmZbAAAAYmBMwGMjRjZDw2EWYAgZGYA"
+      },
+      {
+       "title": "Fatebound (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "گزینهٔ جایگزین Delves.",
+       "code": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MMzMjZmtZmZMzMzsAmZbaZw2MAAAAAA2mZmhZmZmFzMz2AAAAwYADsBzY0Y2AsNhFGAMzMDmB"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=rogue&spec=outlaw",
+     "x": "مشاهده تمام تلنت‌های Outlaw Rogue"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "پشت APM بالا، Outlaw اسپک ساده‌ای است با سه قاعده: کول‌داون‌ها را روی کول‌داون بزن ([[Blade Rush]]، [[Adrenaline Rush]] و [[Between the Eyes]])، به پروک‌ها واکنش نشان بده ([[Opportunity]] و کانبو پوینت‌های [[Ace Up Your Sleeve]]) و نگذار کانبو پوینت کپ شود."
+    },
+    {
+     "t": "p",
+     "x": "جای‌گیری مهم‌تر از هر اسپک میله‌ای دیگری برای توست: هر لحظه دور از هدف، CDR [[Restless Blades]] را از دست می‌دهی و اثرش برفی می‌شود. کول‌داون‌ها را هم زود بزن تا Restless Blades چرخهٔ CDRشان را راه بیندازد."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Trickster"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Roll the Bones]] را روی کول‌داون بزن اگر در استیج 1 یا کمتر هستی؛ با [[Loaded Dice]] فعال تا استیج 2 یا کمتر ریکست کن.",
+      "[[Keep It Rolling]] را با استیج 3 یا بالاترِ فعالِ [[Roll the Bones]] بزن.",
+      "[[Preparation]] را هر وقت [[Between the Eyes]] و [[Adrenaline Rush]] و [[Killing Spree]] روی کول‌داون‌اند بزن.",
+      "[[Adrenaline Rush]] را روی کول‌داون با 2 کانبو پوینت یا کمتر بزن و بعدش [[Killing Spree]].",
+      "[[Blade Rush]] را روی کول‌داون بزن.",
+      "[[Between the Eyes]] را با 6 کانبو پوینت یا بیشتر بزن.",
+      "[[Dispatch]] را با باف ست 4 تیکه بزن.",
+      "[[Dispatch]] را با 6 کانبو پوینت یا بیشتر بزن.",
+      "[[Pistol Shot]] را اگر [[Opportunity]] 6 استک دارد، یا 3 استک دارد و 1 تا 3 کانبو پوینت داری بزن.",
+      "[[Sinister Strike]] را با 5 کانبو پوینت یا کمتر بزن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "طبق رندر صفحه با هرو Fatebound دو آستانه فرق می‌کند: [[Keep It Rolling]] از استیج 2 به بالا و [[Dispatch]] با 5 کانبو پوینت یا بیشتر؛ بر اساس منبع هیچ‌کدام از دو هرو روتیشن را جدی تغییر نمی‌دهند."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Blade Flurry]] را با 2 هدف یا بیشتر در برد بزن؛ با دقیقاً 2 هدف، آن را به‌عنوان جنراتور پراولویت در 5 کانبو پوینت یا کمتر استفاده کن.",
+      "[[Roll the Bones]] را روی کول‌داون بزن اگر در استیج 1 یا کمتر است؛ با [[Loaded Dice]] تا استیج 2 یا کمتر ریکست کن.",
+      "[[Keep It Rolling]] را با استیج 3 یا بالاتر بزن.",
+      "[[Preparation]] را هر وقت [[Between the Eyes]] و [[Adrenaline Rush]] و [[Killing Spree]] و [[Blade Rush]] روی کول‌داون‌اند بزن.",
+      "[[Adrenaline Rush]] را با 2 کانبو پوینت یا کمتر بزن و بعدش [[Killing Spree]].",
+      "[[Blade Rush]] را روی کول‌داون بزن.",
+      "[[Between the Eyes]] را با 6 کانبو پوینت یا بیشتر بزن.",
+      "[[Dispatch]] را با باف ست 4 تیکه بزن.",
+      "[[Dispatch]] را با 6 کانبو پوینت یا بیشتر بزن.",
+      "[[Pistol Shot]] را با پروک [[Opportunity]] طبق همان قاعده بزن.",
+      "[[Sinister Strike]] را با 5 کانبو پوینت یا کمتر بزن."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در AoE تنها تنظیم لازم، اضافه‌شدن [[Blade Flurry]] به اسپل‌های روی‌کول‌داون است؛ بقیهٔ اولویت همین می‌ماند. رادیوس Blade Flurry دور خودت است، پس جوری بایست که بیشترین تعداد هدف را بزند."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Adrenaline Rush]] را بزن.",
+      "[[Roll the Bones]] را بزن.",
+      "[[Slice and Dice]] را بزن.",
+      "اگر استیج 3 یا بالاتر است [[Keep It Rolling]] را بزن.",
+      "با [[Sinister Strike]] و [[Pistol Shot]] تا 6 کانبو پوینت یا بیشتر بساز.",
+      "[[Between the Eyes]] را بزن.",
+      "روتیشن عادی را ادامه بده."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت سم‌های سلاح ([[Deadly Poison]] و [[Wound Poison]]) را روی هر دو سلاح بزن؛ این چک پیش از مبارزه در ریید و دانجن و حتی دنیای آزاد است."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Adrenaline Rush",
+       "x": "رشد شدید بازیابی انرژی و GCD پایین‌تر که با Haste مقیاس می‌شود (0.8 ثانیه در 25% هِیس؛ به‌لاطر [[Alacrity]] فقط 22% خام لازم است). بازی خوب مستقیماً یعنی اپتایم بیشتر."
+      },
+      {
+       "s": "Roll the Bones",
+       "x": "استیج تصادفی از 4 نتیجه می‌دهد که هر استیج پاداشش را با استیج‌های قبلی جمع می‌کند: استیج 1 شانس [[Opportunity]] بیشتر، استیج 2 [[Sinister Strike]] یک کانبو پوینت اضافه، استیج 3 اثر [[Restless Blades]] بیشتر، استیج 4 شانس کریت بیشتر."
+      },
+      {
+       "s": "Keep It Rolling",
+       "x": "کول‌داون 6 دقیقه‌ای روی کاغذ ولی مؤثرش در فایت حدود 1:15 است؛ هر وقت [[Roll the Bones]] استیج 3 یا بالاتر دارد بزنش تا هدر نرود."
+      },
+      {
+       "s": "Preparation",
+       "x": "بیشتر جایی شرطش که برقرار است می‌زنی؛ با [[Restless Blades]] کار نمی‌کند پس در فایت‌های کوتاه (حدود 3 دقیقه) می‌توانی برای بهترین فاز برست نگهش داری."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "استت اصلی تو Agility است و Item Level تقریباً پادشاه است؛ تیکه‌های پرِ Haste بگیر تا به 23% هِیس برسی (برای هر دو هرو). بعدش Critical Strike و Versatility تقریباً هم‌ارزش‌اند و کریت کمی جلوتر است. وقتی استخر استت‌های Season 2 بزرگ می‌شود، کریت و هِیس کپ می‌شوند و به سمت Versatility هل داده می‌شوی؛ پروک ترینکت و افزونهٔ سلاح هم در ارزش‌گذاری استت‌ها نقش دارد."
+    },
+    {
+     "t": "call",
+     "x": "این فهرست جنریک است: برای مقدار دقیق روی گیر خودت با Raidbots سیم بزن و منابع خارجی استت را در قضاوت آیتم‌ها لحاظ کن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268209
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 271093
+      },
+      {
+       "slot": "سر",
+       "id": 271875
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271508
+      },
+      {
+       "slot": "پشت",
+       "id": 268248
+      },
+      {
+       "slot": "سینه",
+       "id": 271513
+      },
+      {
+       "slot": "دستبند",
+       "id": 268240
+      },
+      {
+       "slot": "دست",
+       "id": 271511
+      },
+      {
+       "slot": "کمر",
+       "id": 244573
+      },
+      {
+       "slot": "پا",
+       "id": 271509
+      },
+      {
+       "slot": "کفش",
+       "id": 244569
+      },
+      {
+       "slot": "انگشت",
+       "id": 268266
+      },
+      {
+       "slot": "انگشت",
+       "id": 268252
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271513
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        270173,
+        270175
+       ],
+       "names": [
+        "Zul'jin's Guillotine Technique",
+        "Voracious Heart of Ula'tek"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Chosen Bloodslayer's Hexweave برای Outlaw: 2 تیکه دمیج [[Dispatch]] را 15% بالا می‌برد. 4 تیکه به [[Sinister Strike]] و [[Ambush]] شانس 20% می‌دهد که [[Dispatch]] بعدی رایگان باشد و دمیجش مثل خرج‌کردن حداکثر کانبو پوینت باشد؛ یعنی هم انرژی اضافه و هم یک پروک دیگر برای دنبال‌کردن."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Chosen Bloodslayer's Spirit Shroud (سر)، Chosen Bloodslayer's Voodoo Guards (شانه)، Chosen Bloodslayer's Banded Poncho (سینه)، Chosen Bloodslayer's Fanged Grips (دست) و Chosen Bloodslayer's Reinforced Pants (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Silvermoon Agent's Utility Belt (کمربند) و Silvermoon Agent's Sneakers (کفش) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Haste",
+      "Critical Strike",
+      "Versatility",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی Agility است که Attack Power را بالا می‌برد و پایهٔ مقیاس‌گیری همهٔ دمیج توست؛ Item Level تقریباً پادشاه است."
+    },
+    {
+     "t": "p",
+     "x": "تا 23% Haste تیکه‌های پرِ هِیس بگیر (برای هر دو هرو)؛ بعد از آن Critical Strike و Versatility تقریباً هم‌ارزش‌اند و کریت کمی جلو می‌زند. در استخر بزرگ استت Season 2 هر دو کپ می‌شوند و Versatility برتری پیدا می‌کند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Critical Strike اثر حمله و شفا را دوبل می‌کند.",
+      "Haste سرعت حمله و بازیابی انرژی و اثر کاهش GCD در [[Adrenaline Rush]] را بالا می‌برد.",
+      "[[Mastery: Main Gauche]] دمیج حمله‌های اضافی‌ات را زیاد می‌کند.",
+      "Versatility دمیج و شفا را بالا و دمیج دریافتی را کم می‌کند."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "منابع خارجی استت مثل افزونهٔ سلاح و پروک ترینکت را در قضاوت آیتم‌ها لحاظ کن: مثلاً کریت زیاد از یک ترینکت on-use، ارزش استت کریت روی گیرت را کم می‌کند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Outlaw Rogue در Midnight Season 2 حول آستانهٔ 21 تا 23% هِیس می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun یا Flask of the Blood Knights",
+       "ids": [
+        241326,
+        241324
+       ]
+      },
+      {
+       "k": "غذا (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "اگر برای رسیدن به آستانهٔ 21 تا 23% هِیس به [[Haste]] نیاز داری [[Flask of the Blood Knights]] را بردار؛ وگرنه [[Flask of the Shattered Sun]] گزینهٔ درست است."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را در اوپنر کنار ترینکت on-use و [[Adrenaline Rush]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و روغن سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Jan'alai's Precision یا Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        243970,
+        244028
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Hex of Leeching",
+       "ids": [
+        243950
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle یا Enchant Ring - Silvermoon's Alacrity",
+       "ids": [
+        243956,
+        244014
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ سلاح بسته به گیر بین دو گزینه جابه‌جا می‌شود؛ با سیم شخصی‌ات نهایی‌اش کن."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond یا Powerful Eversong Diamond",
+       "ids": [
+        240982,
+        240966
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "حداقل 1 Peridot و 1 Lapis و 1 Garnet و 1 Amethyst، بعد Flawless Versatile Garnet در بقیهٔ سوکت‌ها"
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Powerful Eversong Diamond]] انتخاب اول است؛ انتخاب جم‌ها را هم با سیم نهایی کن."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Outlaw Rogue در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "تریکستر برچسب Best منبع برای Mythic+ را دارد و با تنظیم فعلی حدود 7% از Fatebound جلوتر است. کل AoEات از [[Blade Flurry]] می‌آید که دور خودت مرکز دارد، پس جای‌گیری قبل از هر پول حرف اول را می‌زند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Blade Flurry]] را با 2 هدف یا بیشتر در برد بزن و با دقیقاً 2 هدف، در 5 کانبو پوینت یا کمتر به‌عنوان جنراتور پراولویت استفاده‌اش کن.",
+      "Downtime بزرگ‌ترین دشمن توست: هر ثانیه دور از هدف یعنی کول‌داون‌های دیرتر از [[Restless Blades]].",
+      "کول‌داون‌ها را زود بزن تا چرخهٔ CDR زودتر شروع شود؛ مخصوصاً [[Adrenaline Rush]] با 2 کانبو پوینت یا کمتر.",
+      "به پروک‌های [[Opportunity]] و [[Ace Up Your Sleeve]] سرعتی واکنش نشان بده.",
+      "[[Keep It Rolling]] را با استیج 3 یا بالاترِ [[Roll the Bones]] بزن تا کول‌داون مؤثرش (~1:15) هدر نرود."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در چین‌پول‌های سنگین، [[Blade Rush]] و [[Killing Spree]] را داخل پنجرهٔ [[Adrenaline Rush]] نگه دار و از [[Preparation]] برای فازهای پرریسک استفاده کن."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Outlaw Rogue (آوتلا) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل آوتلا (Outlaw Rogue) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Outlaw Rogue talent build midnight",
+   "Outlaw Rogue guide midnight",
+   "Outlaw Rogue guide 12.1.5",
+   "best Outlaw Rogue talents",
+   "Outlaw Rogue talent tree midnight",
+   "Outlaw Rogue pve guide",
+   "Outlaw Rogue rotation midnight",
+   "Outlaw Rogue rotation and cooldowns",
+   "Outlaw Rogue bis list midnight",
+   "Outlaw Rogue best in slot",
+   "Outlaw Rogue gear guide",
+   "Outlaw Rogue food and potion",
+   "best food for Outlaw Rogue",
+   "best flask for Outlaw Rogue",
+   "best potion for Outlaw Rogue",
+   "Outlaw Rogue enchants and gems",
+   "best enchants for Outlaw Rogue",
+   "best gems for Outlaw Rogue",
+   "Outlaw Rogue stat priority midnight",
+   "Outlaw Rogue tier set midnight",
+   "Outlaw Rogue tier set bonuses",
+   "Outlaw Rogue mythic+ guide",
+   "Outlaw Rogue m+ guide midnight",
+   "Outlaw Rogue raid guide",
+   "Outlaw Rogue hero talents",
+   "Outlaw Rogue hero tree",
+   "best dps build Outlaw Rogue midnight",
+   "Outlaw Rogue cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای آوتلا",
+   "تلنت آوتلا",
+   "تلنت برای Outlaw Rogue",
+   "تلنت Rogue آوتلا",
+   "بیلد آوتلا",
+   "بیلد تلنت آوتلا میدنایت",
+   "روتیشن آوتلا",
+   "روتیشن و کول‌داون‌های آوتلا",
+   "غذا برای آوتلا",
+   "غذا برای Outlaw Rogue",
+   "غذا و معجون آوتلا",
+   "بهترین غذای آوتلا",
+   "فلسک آوتلا",
+   "بهترین فلسک برای آوتلا",
+   "معجون آوتلا",
+   "انچنت آوتلا",
+   "انچنت و جم آوتلا",
+   "بهترین انچنت برای آوتلا",
+   "جم آوتلا",
+   "بست آیتم آوتلا",
+   "بهترین آیتم‌های آوتلا",
+   "گیر آوتلا",
+   "استت آوتلا",
+   "اولویت استت آوتلا",
+   "ست تیر آوتلا",
+   "مایتی پلاس آوتلا",
+   "ام پلاس آوتلا",
+   "راهنمای آوتلا",
+   "راهنمای Outlaw Rogue",
+   "راهنمای روگ",
+   "آوتلا میدنایت",
+   "روگ میدنایت",
+   "هرو تیلنت آوتلا",
+   "بیلد دی‌پی‌اس آوتلا",
+   "بهترین دی‌پی‌اس میدنایت آوتلا"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Outlaw Rogue (آوتلا) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Outlaw Rogue به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای آوتلا چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Light's Potential»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای آوتلا چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای آوتلا کدام‌اند؟",
+    "a": "ست تیر فعلی «Zul'jin's Guillotine Technique» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Outlaw Rogue در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

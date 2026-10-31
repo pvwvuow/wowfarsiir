@@ -1,0 +1,966 @@
+{
+ "slug": "elemental-shaman",
+ "class": "shaman",
+ "class_en": "Shaman",
+ "spec_en": "Elemental",
+ "spec_no": 1,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Elemental Shaman",
+ "lead": "Elemental Shaman کست‌برِ ranged با سه مکتب Nature و Fire و Frost است که با [[Maelstrom]] کار می‌کند: اسپل‌هایت تقریباً همه قابلیت [[Mastery: Elemental Overload]] دارند و یک بار دیگر به‌طور خودکار کست می‌شوند. بازی حول یک لیست اولویت سخت می‌چرخد: هدر ندادن [[Maelstrom]] و همیشه در حال کست‌بودن. دو مسیر Hero Tree داری: [[Farseer]] با ارتش [[Ancestors]] که با تنظیم فعلی در همهٔ محتواها بهتر است، و [[Stormbringer]] با [[Tempest]] و آذرخش‌ها.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/shaman/elemental/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/shaman/elemental/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/shaman/elemental/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/shaman/elemental/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/shaman/elemental/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/shaman/elemental/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Maelstrom": {
+   "fa": "منبع اصلی Elemental که خرج‌کننده‌ها را می‌سازد؛ هدر دادنش یعنی دمیج از دست رفته."
+  },
+  "Mastery: Elemental Overload": {
+   "fa": "مستری کلاس: اسپل‌های قابلیت‌دار یک بار دیگر خودکار کست می‌شوند؛ بعد از 100% تقریباً بی‌ارزش است."
+  },
+  "Farseer": {
+   "fa": "درخت قهرمانی با ارتش [[Ancestors]] که اسپل‌هایت را آینه می‌کنند؛ انتخاب همهٔ محتواها."
+  },
+  "Stormbringer": {
+   "fa": "درخت قهرمانی با [[Tempest]] و تمرکز روی آذرخش؛ بعد از نرف‌های 12.1 عقب است."
+  },
+  "Ancestors": {
+   "fa": "پت‌های فارسیر که برای اسپل تک‌هدف [[Lava Burst]] و برای اسپل AoE [[Chain Lightning]] می‌فرستند."
+  },
+  "Tempest": {
+   "fa": "اسپل برست استورمبرینگر که هدف پروک‌های [[Lava Surge]] از [[Master of the Elements]] است."
+  },
+  "Ascendance": {
+   "fa": "برست اصلی: [[Flame Shock]] تا 6 هدف می‌گذارد و همهٔ اسپل‌های قابلیت‌دار را یک Overload اضافه می‌کند."
+  },
+  "Stormkeeper": {
+   "fa": "کول‌داون کوتاه اصلی که دو [[Lightning Bolt]] بعدی را 150% قوی می‌کند و Overload اضافه می‌دهد."
+  },
+  "Ancestral Swiftness": {
+   "fa": "کست آنی دادن اسپل بعدی که برای فارسیر یک [[Ancestors]] هم احضار می‌کند."
+  },
+  "Elemental Blast": {
+   "fa": "خرج‌کنندهٔ قوی با باف استت؛ در AoE روی 2 هدف و در تک‌هدف با ست و [[Master of the Elements]]."
+  },
+  "Earthquake": {
+   "fa": "خرج‌کنندهٔ AoE برای 3 هدف به بالا."
+  },
+  "Earth Shock": {
+   "fa": "خرج‌کنندهٔ تک‌هدف."
+  },
+  "Lava Burst": {
+   "fa": "اسپل شاخص آتشین که در 12.1 با شانس کریت هم مقیاس می‌گیرد."
+  },
+  "Lava Surge": {
+   "fa": "پروکی که [[Lava Burst]] را آنی می‌کند."
+  },
+  "Purging Flames": {
+   "fa": "تلنتی که با [[Lava Surge]] هم‌افزایی دارد."
+  },
+  "Master of the Elements": {
+   "fa": "بافی که خرج‌کنندهٔ بعدی را تقویت می‌کند و هدف پروک‌های [[Lava Surge]] است."
+  },
+  "Voltaic Blaze": {
+   "fa": "اسپل آتشین که [[Flame Shock]] را تازه می‌کند و در پنجرهٔ برست می‌آید."
+  },
+  "Flame Shock": {
+   "fa": "DoT آتشین که باید روی هدف زنده بماند؛ پنجرهٔ پاندمیکش 30% است."
+  },
+  "Spiritwalker's Grace": {
+   "fa": "کست در حین حرکت؛ برای رخدادهای حرکتی نگه داشته می‌شود."
+  },
+  "Nature's Swiftness": {
+   "fa": "اسپل بعدی آنی می‌شود؛ ابزار حرکت و اورژانس."
+  },
+  "Skyfury": {
+   "fa": "باف گروهی شمن که دمیج کریت هم‌تیمی‌ها را بالا می‌برد."
+  },
+  "Time Spiral": {
+   "fa": "جابجایی خارجی که از گروه می‌خواهی."
+  },
+  "Call of Fire": {
+   "fa": "تلنتی که با [[Ascendance]] یک [[Fire Elemental]] احضار می‌کند."
+  },
+  "Fire Elemental": {
+   "fa": "پت آتشینی که مدت و تیک‌خوردن [[Flame Shock]] را بالا می‌برد."
+  },
+  "Power of the Maelstrom": {
+   "fa": "تلنتی که در 12.1 بازطراحی شد: شانس باف [[Lava Burst]] از [[Lightning Bolt]] و [[Chain Lightning]]."
+  },
+  "Feedback Loop": {
+   "fa": "تلنت Apex که کریت و دمیج Overload را بالا می‌برد و در Midnight ضعیف‌تر شده."
+  },
+  "Supercharge": {
+   "fa": "تلنتی که در 12.1 بازطراحی شد: Overloadهای [[Lightning Bolt]] و [[Chain Lightning]] و [[Tempest]] 10% قوی‌تر."
+  },
+  "Fusion of Elements": {
+   "fa": "تلنتی که [[Elemental Blast]] با مدت باف 40% می‌دهد."
+  },
+  "Overcharge!": {
+   "fa": "باف ست تیر که اولویت [[Elemental Blast]] می‌دهد."
+  },
+  "Instinctive Imbuements": {
+   "fa": "تلنتی که [[Flametongue Weapon]] را هنگام [[Lightning Shield]] خودکار می‌زند."
+  },
+  "Elemental Blast: Mastery": {
+   "fa": "تلنتی که 14% Mastery می‌دهد و سقف عملی Mastery را روی 86% می‌گذارد."
+  },
+  "Root Warden's Regalia": {
+   "fa": "ست Embellishment توصیه‌شده که سقف عملی Mastery را تا حدود 76% پایین می‌آورد."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح BiS فصل از Ula'tek."
+  },
+  "Bubblefin Splash Guard": {
+   "fa": "Off-Hand BiS فصل از Nymrissa Wavecaller."
+  },
+  "Ophidian Oracle's Prophecy": {
+   "fa": "ست تیر فصل شمن؛ 2 تیکه خرج‌کننده‌ها را 25% قوی می‌کند و 4 تیکه خرج‌کنندهٔ رایگان می‌دهد."
+  },
+  "Serpent Crown of the Ophidian Oracle": {
+   "fa": "کلاه ست فصل."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن‌آویز BiS فصل از Ula'tek."
+  },
+  "Silken Voodoo Drape": {
+   "fa": "شنل BiS فصل از The Coiled Altar."
+  },
+  "Serpentine Mixing Belt": {
+   "fa": "کمربند BiS فصل از Vashnik the Malignant."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت BiS فصل از The Unbinding of Kith'ix."
+  },
+  "Vile Vial of Volatile Venom": {
+   "fa": "ترینکت دوم BiS فصل از Altar of Fangs."
+  },
+  "Vile Alchemist's Band": {
+   "fa": "انگشتر BiS فصل از Vashnik the Malignant."
+  },
+  "Sickening Signet of Atroxus": {
+   "fa": "انگشتر دوم BiS فصل از Voidscar Arena."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسک بهترین فصل (Mastery)."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسک جایگزین فصل."
+  },
+  "Light's Potential": {
+   "fa": "پاتشن مبارزهٔ فصل."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پاتشن سلامتی استاندارد فصل."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح فصل."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "Rune تقویتی استاندارد فصل."
+  },
+  "Harandar Celebration": {
+   "fa": "feast فصل."
+  },
+  "Enchant Weapon - Berserker's Rage": {
+   "fa": "افزونهٔ سلاح فصل (گزینهٔ اول)."
+  },
+  "Enchant Weapon - Jan'alai's Precision": {
+   "fa": "افزونهٔ سلاح فصل (گزینهٔ دوم)."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "افزونهٔ سر فصل."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "افزونهٔ شانه فصل."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "افزونهٔ سینه فصل."
+  },
+  "Sunfire Silk Spellthread": {
+   "fa": "افزونهٔ شلوار فصل."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "افزونهٔ کفش فصل."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "افزونهٔ انگشتر فصل."
+  },
+  "Powerful Eversong Diamond": {
+   "fa": "جم الماس فصل."
+  },
+  "Flawless Masterful Garnet": {
+   "fa": "جم فصل."
+  },
+  "Flawless Masterful Peridot": {
+   "fa": "جم فصل."
+  },
+  "Flawless Deadly Amethyst": {
+   "fa": "جم فصل."
+  },
+  "Flawless Masterful Lapis": {
+   "fa": "جم فصل."
+  },
+  "Voidscarred Crown": {
+   "fa": "گزینهٔ Catalyst سر از Voidscar Arena."
+  },
+  "Soulslither Spaulders": {
+   "fa": "گزینهٔ Catalyst شانه از The Coiled Altar."
+  },
+  "Awoken Dreadfang Cuirass": {
+   "fa": "گزینهٔ Catalyst سینه از Ula'tek."
+  },
+  "Aberrant Commander's Gauntlets": {
+   "fa": "گزینهٔ Catalyst دست از The Unbinding of Kith'ix."
+  },
+  "Cuisses of the Uncoiled Union": {
+   "fa": "گزینهٔ Catalyst پا از The Coiled Altar."
+  },
+  "Farstrider's Plated Bracers": {
+   "fa": "دستبند Crafted فصل که در BiS هم هست."
+  },
+  "Farstrider's Razor Talons": {
+   "fa": "کفش Crafted فصل که در BiS هم هست."
+  },
+  "Astral Shift": {
+   "fa": "دفاع شخصی شمن برای دمیج‌های پیش‌بینی‌پذیر."
+  },
+  "Earth Elemental": {
+   "fa": "پت تانکی شمن که در Mythic+ یوتیلیتی دفاعی می‌دهد."
+  },
+  "Intellect": {
+   "fa": "استت اصلی که قدرت شفا و دمیج اسپل‌ها را بالا می‌برد؛ جهش‌های Item Level معمولاً از استت بهینه بهترند."
+  },
+  "Lightning Bolt": {
+   "fa": "جنراتور و پرکنندهٔ اصلی تک‌هدف؛ خرج‌کنندهٔ [[Master of the Elements]] هم هست."
+  },
+  "Lightning Shield": {
+   "fa": "باف خودفعال‌ساز که با تلنت [[Instinctive Imbuements]] [[Flametongue Weapon]] را هم اعمال می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Elemental Shaman یک کست‌بری ranged با اسپل‌های Nature و Fire و Frost است که تقریباً همهٔ اسپل‌هایش قابلیت [[Mastery: Elemental Overload]] دارند: یعنی یک بار دیگر به‌طور خودکار کست می‌شوند. منبع بازی [[Maelstrom]] است که خرج‌کننده‌هایی مثل [[Earthquake]] و [[Earth Shock]] و [[Elemental Blast]] را می‌سازد."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Farseer]] که ارتشی از [[Ancestors]] احضار می‌کند که اسپل‌هایت را آینه می‌کنند، و [[Stormbringer]] که با [[Tempest]] و نیروی آذرخش بازی می‌کند. با نرف‌های سنگین Overload در پچ 12.1، فارسر با دمیج تخت اجدادش در همهٔ محتواها جلو زده است و برچسب Best منبع را در هر سه مد دارد."
+    },
+    {
+     "t": "p",
+     "x": "برست تو از [[Ascendance]] می‌آید که به‌خصوص در AoE انفجاری است. شمن به‌عنوان کلاس چاقوی سوئیس است: [[Skyfury]]، [[Spiritwalker's Grace]] و توتم‌ها یوتیلیتی فراوان می‌دهند؛ در عوض جابجایی و دفاع شخصی ضعیف است و کم‌حرکتی در ریید مهارت اصلی این اسپک است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "AoE",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "برست",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "یوتیلیتی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "جابجایی",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "دفاع شخصی",
+       "v": "ضعیف",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "برست باورنکردنی از [[Ascendance]] مخصوصاً در AoE",
+       "یوتیلیتی فراوان شمنی؛ به کلاس چاقوی سوئیس می‌گویند",
+       "گیم‌پلی ساده و لذت‌بخش با کف ورود آسان و جای ابراز مهارت در بهینه‌سازی",
+       "از بهترین افکت‌های بصری بازی"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "جابجایی کم در ریید؛ کمینه‌کردن حرکت بخش بزرگی از بازی خوب این اسپک است",
+       "دفاع شخصی کمتر از بقیه کلاس‌ها که در Mythic+ حسابی حس می‌شود"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Farseer",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "در همهٔ محتوای PvE بهتر است: بازی آسان‌تر، دفاع بهتر و خروجی پایدارتر. ارتشی از [[Ancestors]] احضار می‌کند که اسپل‌هایت را آینه می‌کنند: به‌ازای اسپل تک‌هدف [[Lava Burst]] می‌فرستند و برای اسپل AoE [[Chain Lightning]]؛ بعد از 12.1 زنجیرهٔ اجداد تا 5 هدف می‌خورد."
+      },
+      {
+       "title": "Stormbringer",
+       "tag": "آلترناتیو",
+       "x": "با نیروی طوفان بازی می‌کند و [[Tempest]] را بر سر دشمنان می‌کاهد؛ بعد از نرف‌های سنگین Overload در 12.1 سخت هم‌افزایی پیدا می‌کند و دمیج تخت اجداد فارسیر معمولاً بهتر جواب می‌دهد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "راهنمای تلنت Elemental Shaman در پچ 12.1.5 دو درخت قهرمانی دارد: Farseer و Stormbringer؛ هر جدول سه ردیف کد دارد: Raid، Mythic+ و Delves. نکتهٔ صفحهٔ منبع: ردیف Raid استورمبرینگر همان رشتهٔ ریید فارسیر را لینک کرده و ردیف Delves استورمبرینگر همان رشتهٔ Mythic+ را؛ ما هم عیناً همان را آورده‌ایم."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Farseer (Raid)",
+       "tag": "بهترین برای Raid",
+       "x": "برچسب Best منبع برای ریید.",
+       "code": "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMmZmZZbZMMjBAAAAsYmNYADY2YCZWAgZZmZGjtFTYmZZsMzMzYYZWmxiZGmZZAADAMzYYYA"
+      },
+      {
+       "title": "Farseer (Mythic+)",
+       "tag": "بهترین برای Mythic+",
+       "x": "برچسب Best منبع برای Mythic+؛ زنجیرهٔ 5 هدفهٔ اجداد در AoE حسابی کار می‌کند.",
+       "code": "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMGjZZZZMmhBAAAAsYmNYADY2YCZWAgZZmZGjtFTbMzYsMzMzYYZWMWmZGzMLAAzAgZGDDD"
+      },
+      {
+       "title": "Farseer (Delves)",
+       "tag": "بهترین برای Delves",
+       "x": "برچسب Best منبع برای Delves.",
+       "code": "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLLzMmZmZbZZMmxMDAAAAsZmNYADY2YCZWAgZZmZGjtFTYmxYZmZmZmxiFjFMmZWAAGAYmxwwA"
+      },
+      {
+       "title": "Stormbringer (Raid)",
+       "tag": "آلترناتیو Raid",
+       "x": "گزینهٔ جایگزین ریید؛ رشتهٔ ایمپورت آن روی صفحهٔ منبع همان کد ریید فارسیر است.",
+       "code": "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMmZmZZbZMMjBAAAAsYmNYADY2YCZWAgZZmZGjtFTYmZZsMzMzYYZWmxiZGmZZAADAMzYYYA"
+      },
+      {
+       "title": "Stormbringer (Mythic+)",
+       "tag": "آلترناتیو Mythic+",
+       "x": "گزینهٔ جایگزین Mythic+.",
+       "code": "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLLzMzMzMbbLDmxMDAAAAA2MjhNYBmRDN2AgZZmZGjtFTYmxYZmZmZmxiFjFjhZWAAGAzMwwwA"
+      },
+      {
+       "title": "Stormbringer (Delves)",
+       "tag": "آلترناتیو Delves",
+       "x": "کدش همان بیلد Mythic+ است.",
+       "code": "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLLzMzMzMbbLDmxMDAAAAA2MjhNYBmRDN2AgZZmZGjtFTYmxYZmZmZmxiFjFjhZWAAGAzMwwwA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=shaman&spec=elemental",
+     "x": "مشاهده تمام تلنت‌های Elemental Shaman"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "بازی Elemental یک لیست اولویت سخت است نه چرخهٔ منبع‌محور: در هر GCD از بالا به پایین برو و پرارزش‌ترین دکمه را بزن. سه قاعدهٔ طلایی: [[Maelstrom]] را هدر نده، همیشه در حال کست باش و به پروک‌ها واکنش نشان بده."
+    },
+    {
+     "t": "p",
+     "x": "برای جابجایی اجباری از [[Spiritwalker's Grace]] و [[Nature's Swiftness]] استفاده کن و از گروه خارجی بخواه ([[Time Spiral]])؛ اسپک ابزار حرکت خاموش ندارد و لغو کست یعنی دمیج از دست رفته. پروک‌های [[Lava Surge]] را از پنجرهٔ [[Master of the Elements]] روی پرمیزیان‌ترین اسپل‌هایت مثل [[Tempest]] خرج کن."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف با Farseer"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Spiritwalker's Grace]] و [[Nature's Swiftness]] را برای رخدادهای حرکتی یادت نرود.",
+      "[[Stormkeeper]] را روی کول‌داون بزن.",
+      "[[Ancestral Swiftness]] را روی کول‌داون بزن.",
+      "[[Ascendance]] را تقریباً روی کول‌داون بزن ولی همیشه بعد از [[Stormkeeper]].",
+      "اگر [[Overcharge!]] (ست تیر) داری [[Elemental Blast]] را بزن.",
+      "اگر تا سقف [[Maelstrom]] 15 امتیاز یا کمتر فاصله داری [[Elemental Blast]] را بزن.",
+      "اگر [[Master of the Elements]] فعال است [[Elemental Blast]] را بزن.",
+      "اگر [[Master of the Elements]] نداری [[Lava Burst]] را بزن.",
+      "[[Lightning Bolt]] را برای مصرف [[Master of the Elements]] بزن.",
+      "[[Flame Shock]] را با [[Voltaic Blaze]] داخل پنجرهٔ پاندمیک (30% از مدت فعلی‌اش) تازه کن وقتی [[Master of the Elements]] نداری.",
+      "[[Lightning Bolt]] به‌عنوان پرکننده."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت AoE"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Spiritwalker's Grace]] و [[Nature's Swiftness]] برای حرکت.",
+      "[[Stormkeeper]] روی کول‌داون.",
+      "[[Ancestral Swiftness]] تقریباً روی کول‌داون.",
+      "[[Ascendance]] تقریباً روی کول‌داون ولی همیشه بعد از [[Stormkeeper]].",
+      "[[Earthquake]] را مقابل 3 هدف یا بیشتر بزن.",
+      "[[Elemental Blast]] را مقابل 2 هدف بزن.",
+      "اگر [[Lava Surge]] و [[Purging Flames]] فعال‌اند [[Lava Burst]] را بزن (این جفت معمولاً خودش جفت می‌شود).",
+      "[[Voltaic Blaze]] روی کول‌داون.",
+      "[[Chain Lightning]] به‌عنوان پرکننده."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "همپوشانی تک‌هدف و AoE کم است: از همان 2 هدف [[Lightning Bolt]] با [[Chain Lightning]] جایگزین می‌شود؛ آستانهٔ خرج‌کننده‌ها هم به تلنت‌هایت بستگی دارد ([[Earthquake]] روی 3 هدف به بالا و [[Elemental Blast]] روی 2 هدف)."
+    },
+    {
+     "t": "h3",
+     "x": "اوپنر"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Stormkeeper]] را بزن.",
+      "[[Lava Burst]] را بزن.",
+      "[[Ascendance]] را بزن.",
+      "[[Ancestral Swiftness]] را بزن.",
+      "[[Lava Burst]] را بزن.",
+      "دو بار [[Lightning Bolt]] را بزن.",
+      "اولویت عادی را ادامه بده."
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قبل از فایت: اگر تلنت [[Flametongue Weapon]] را داری [[Flametongue Weapon]] را روی سلاح بزن (با [[Instinctive Imbuements]] هنگام [[Lightning Shield]] خودکار می‌شود) و [[Skyfury]] را به خودت و گروه بزن."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Stormkeeper",
+       "x": "کول‌داون کوتاه اصلی: دو [[Lightning Bolt]] بعدی 150% قوی‌تر می‌شوند و یک Overload اضافه می‌گیرند؛ برای [[Chain Lightning]] روی هر هدف یک Overload اضافه راه می‌اندازد. با [[Ascendance]] هم‌زمان کن؛ برای فارسیر یک [[Ancestors]] هم احضار می‌کند."
+      },
+      {
+       "s": "Ascendance",
+       "x": "روی تا 6 دشمن در برد [[Flame Shock]] می‌گذارد و همهٔ اسپل‌های قابلیت‌دار را یک Overload اضافه می‌کند (در 12.1 باف Overloadش به 30% رسیده). با [[Call of Fire]] یک [[Fire Elemental]] احضار می‌شود که مدت و تیک‌خوردن [[Flame Shock]] را بالا می‌برد؛ نزدیک پایانش یک [[Flame Shock]] دیگر بزن. قبلش از اسپل‌های Overloadساز مثل [[Stormkeeper]] استفاده کن."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "AoE فارسیر (خروجی گروهی فارسیر) از [[Ancestors]] می‌آید که کست‌هایت را آینه می‌کنند: برای اسپل تک‌هدف [[Lava Burst]] و برای اسپل AoE [[Chain Lightning]] می‌فرستند؛ Overloadها را نادیده می‌گیرند به‌جز اسپل‌هایی که [[Flame Shock]] اعمال می‌کنند. پنجرهٔ برست تو این‌ترتیبی است: [[Stormkeeper]] بعد [[Ancestral Swiftness]] بعد [[Voltaic Blaze]] و بعد [[Ascendance]]؛ ولتیک را بیرون از پنجرهٔ اسندنس بزن."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "قاعدهٔ کلی استت Mastery > Haste = Critical Strike >> Versatility است و هیچ‌وقت ارزش [[Intellect]] را دست‌کم نگیر: جهش بزرگ Item Level معمولاً از استت بهینه بهتر است. اول Mastery را به آستانهٔ 72% (حدود 1200 ریتینگ) برسان و بعد بقیه را بین Crit و Haste تقسیم کن؛ از Versatility تا جای ممکن فرار کن (روی تیکه‌های ست ناگزیر کمی می‌آید و اشکالی ندارد)."
+    },
+    {
+     "t": "call",
+     "x": "دو نکتهٔ مهم: Mastery بعد از 100% تقریباً بی‌ارزش می‌شود چون Overloadها سقف 100% دارند (با تلنت [[Elemental Blast: Mastery]] سقف عملی حدود 86% است و با ست Embellishment به نام Root Warden's Regalia حدود 76%)؛ در عوض Critical Strike در Midnight حسابی قوی شده (به‌لاطر [[Feedback Loop]] و مقیاس‌گرفتن [[Lava Burst]] از شانس کریت) و در تک‌هدف به Haste رسیده است. برای مقدار دقیق با Raidbots سیم بزن."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های فصل (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 271092
+      },
+      {
+       "slot": "Off-Hand",
+       "id": 268262
+      },
+      {
+       "slot": "سر",
+       "id": 271483
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271481
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271486
+      },
+      {
+       "slot": "دستبند",
+       "id": 244584
+      },
+      {
+       "slot": "دست",
+       "id": 271484
+      },
+      {
+       "slot": "کمر",
+       "id": 268254
+      },
+      {
+       "slot": "پا",
+       "id": 271482
+      },
+      {
+       "slot": "کفش",
+       "id": 244577
+      },
+      {
+       "slot": "انگشت",
+       "id": 268249
+      },
+      {
+       "slot": "انگشت",
+       "id": 252258
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      },
+      {
+       "slot": "ترینکت",
+       "id": 273796
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271483
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        281215,
+        273796
+       ],
+       "names": [
+        "Twisted Horror's Tendril",
+        "Vile Vial of Volatile Venom"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست Ophidian Oracle's Prophecy: 2 تیکه دمیج [[Earth Shock]] و [[Earthquake]] و [[Elemental Blast]] را 25% بالا می‌برد (باف تختِ خرج‌کننده‌ها بدون اثر روتیشنی). 4 تیکه وقتی [[Stormkeeper]] یا [[Ascendance]] تمام می‌شود، دو [[Lightning Bolt]] یا [[Chain Lightning]] یا [[Lava Burst]] بعدی 25% قوی‌ترند و خرج‌کنندهٔ بعدی‌ات ([[Earthquake]] یا [[Earth Shock]] یا [[Elemental Blast]]) 100% ارزان‌تر می‌شود؛ یعنی هم خرج‌کنندهٔ رایگان هم اجبار به چرخش بین جنراتور و خرج‌کننده."
+    },
+    {
+     "t": "p",
+     "x": "بهترین گزینه‌های Catalyst: Voidscarred Crown (سر)، Soulslither Spaulders (شانه)، Awoken Dreadfang Cuirass (سینه)، Aberrant Commander's Gauntlets (دست) و Cuisses of the Uncoiled Union (پا)."
+    },
+    {
+     "t": "p",
+     "x": "آیتم‌های Crafted فصل: Farstrider's Plated Bracers (دستبند) و Farstrider's Razor Talons (کفش) که هر دو در BiS هستند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Mastery",
+      "Haste",
+      "Critical Strike",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی [[Intellect]] است و بعدش Mastery تا آستانهٔ 72% (حدود 1200 ریتینگ)؛ بعد از آن بودجه را بین Haste و Critical Strike تقسیم کن و از Versatility تا جای ممکن دوری کن."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Mastery قلب اسپک است: هر Overload دوباره کست می‌شود ولی بعد از 100% تقریباً بی‌ارزش است.",
+      "Critical Strike در Midnight حسابی رشد کرده: با [[Feedback Loop]] و مقیاس [[Lava Burst]] از شانس کریت در تک‌هدف به Haste رسیده است.",
+      "کمی Versatility روی تیکه‌های ست اجتناب‌ناپذیر است؛ نگرانش نباش."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "جدول هر دو هرو یکسان است: Mastery تا 1200 ریتینگ، بعد Haste/Crit، بعد Versatility و در آخر Intellect در قالب آیتم‌لول؛ این جدول‌ها جنریک‌اند و برای مقدار دقیق با Raidbots سیم بزن."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مصرفی‌های Elemental Shaman در Midnight Season 2 حول Mastery می‌چرخد؛ این فهرست بر اساس راهنمای Wowhead است."
+    },
+    {
+     "t": "h3",
+     "x": "فلاسک و غذا"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters یا Flask of the Shattered Sun",
+       "ids": [
+        241322,
+        241326
+       ]
+      },
+      {
+       "k": "غذا (Feast)",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بهترین فلاسک [[Flask of the Magisters]] است چون Mastery بهترین استت توست؛ اگر از گیرت Mastery کپ شده باشی، فلاسک‌های Crit یا Haste ممکن است جلو بزنند."
+    },
+    {
+     "t": "h3",
+     "x": "پاتشن‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "پاتشن مبارزه را داخل پنجرهٔ برست با [[Stormkeeper]] و [[Ascendance]] بزن."
+    },
+    {
+     "t": "h3",
+     "x": "افزونه‌ها (Enchant) و باف سلاح"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Berserker's Rage یا Enchant Weapon - Jan'alai's Precision",
+       "ids": [
+        243972,
+        243970
+       ]
+      },
+      {
+       "k": "باف سلاح",
+       "v": "Flametongue Weapon یا Thalassian Phoenix Oil"
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "شلوار",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "کفش",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "افزونهٔ سلاح بین دو گزینه بسته به گیر جابه‌جا می‌شود؛ باف سلاح هم یا خود [[Flametongue Weapon]] است یا [[Thalassian Phoenix Oil]]."
+    },
+    {
+     "t": "h3",
+     "x": "جم‌ها و Rune"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Garnet، Flawless Masterful Peridot، Flawless Deadly Amethyst، Flawless Masterful Lapis",
+       "ids": [
+        240907,
+        240891,
+        240897,
+        240918
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بیشترین دمیج [[Powerful Eversong Diamond]] انتخاب اول است؛ بقیهٔ سوکت‌ها بین گارنت و پریدوت و آمتیست و لاپیس بر اساس نیاز استت‌ات پخش می‌شود."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "Elemental Shaman در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "فارسیر برچسب Best منبع برای Mythic+ را دارد: زنجیرهٔ 5 هدفهٔ [[Ancestors]] بعد از 12.1 دمیج تختشان را در AoE معنادار کرده در حالی که استورمبرینگر بعد از نرف‌های Overload سخت می‌جنگد. AoE از همان 2 هدف شروع می‌شود و [[Chain Lightning]] جای [[Lightning Bolt]] را می‌گیرد."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Earthquake]] را روی 3 هدف یا بیشتر و [[Elemental Blast]] را روی 2 هدف بزن.",
+      "پنجرهٔ برستت را با ترتیب [[Stormkeeper]]، [[Ancestral Swiftness]]، [[Voltaic Blaze]] و [[Ascendance]] بساز.",
+      "[[Flame Shock]] را با [[Voltaic Blaze]] داخل پنجرهٔ پاندمیک زنده نگه دار.",
+      "برای حرکت‌های اجباری [[Spiritwalker's Grace]] و [[Nature's Swiftness]] را نگه دار تا کستت قطع نشود.",
+      "پروک‌های [[Lava Surge]] را از پنجرهٔ [[Master of the Elements]] روی [[Tempest]] خرج کن."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "دفاع شخصی کم است: [[Astral Shift]] را برای دمیج‌های پیش‌بینی‌پذیر نگه دار و از یوتیلیتی شمنی ([[Earth Elemental]]، توتم‌ها و [[Skyfury]]) بیشترین بهره را ببر."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Elemental Shaman (المنتال) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل المنتال (Elemental Shaman) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Elemental Shaman talent build midnight",
+   "Elemental Shaman guide midnight",
+   "Elemental Shaman guide 12.1.5",
+   "best Elemental Shaman talents",
+   "Elemental Shaman talent tree midnight",
+   "Elemental Shaman pve guide",
+   "Elemental Shaman rotation midnight",
+   "Elemental Shaman rotation and cooldowns",
+   "Elemental Shaman bis list midnight",
+   "Elemental Shaman best in slot",
+   "Elemental Shaman gear guide",
+   "Elemental Shaman food and potion",
+   "best food for Elemental Shaman",
+   "best flask for Elemental Shaman",
+   "best potion for Elemental Shaman",
+   "Elemental Shaman enchants and gems",
+   "best enchants for Elemental Shaman",
+   "best gems for Elemental Shaman",
+   "Elemental Shaman stat priority midnight",
+   "Elemental Shaman tier set midnight",
+   "Elemental Shaman tier set bonuses",
+   "Elemental Shaman mythic+ guide",
+   "Elemental Shaman m+ guide midnight",
+   "Elemental Shaman raid guide",
+   "Elemental Shaman hero talents",
+   "Elemental Shaman hero tree",
+   "best dps build Elemental Shaman midnight",
+   "Elemental Shaman cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای المنتال",
+   "تلنت المنتال",
+   "تلنت برای Elemental Shaman",
+   "تلنت Shaman المنتال",
+   "بیلد المنتال",
+   "بیلد تلنت المنتال میدنایت",
+   "روتیشن المنتال",
+   "روتیشن و کول‌داون‌های المنتال",
+   "غذا برای المنتال",
+   "غذا برای Elemental Shaman",
+   "غذا و معجون المنتال",
+   "بهترین غذای المنتال",
+   "فلسک المنتال",
+   "بهترین فلسک برای المنتال",
+   "معجون المنتال",
+   "انچنت المنتال",
+   "انچنت و جم المنتال",
+   "بهترین انچنت برای المنتال",
+   "جم المنتال",
+   "بست آیتم المنتال",
+   "بهترین آیتم‌های المنتال",
+   "گیر المنتال",
+   "استت المنتال",
+   "اولویت استت المنتال",
+   "ست تیر المنتال",
+   "مایتی پلاس المنتال",
+   "ام پلاس المنتال",
+   "راهنمای المنتال",
+   "راهنمای Elemental Shaman",
+   "راهنمای شمن",
+   "المنتال میدنایت",
+   "شمن میدنایت",
+   "هرو تیلنت المنتال",
+   "بیلد دی‌پی‌اس المنتال",
+   "بهترین دی‌پی‌اس میدنایت المنتال"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Elemental Shaman (المنتال) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Elemental Shaman به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای المنتال چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، معجون جنگی «Light's Potential»، غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای المنتال چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Powerful Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای المنتال کدام‌اند؟",
+    "a": "ست تیر فعلی «Twisted Horror's Tendril» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Elemental Shaman در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

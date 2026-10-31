@@ -1,0 +1,646 @@
+{
+ "slug": "arcane-mage",
+ "class": "mage",
+ "class_en": "Mage",
+ "spec_en": "Arcane",
+ "spec_no": 1,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Arcane Mage",
+ "lead": "Arcane استاد زمان و فضا است: برست‌های ۹۰ ثانیه‌ای سنگین با [[Arcane Surge]] و چرخهٔ مدیریت Arcane Charge و Mana. دو مسیر Hero Tree داری: [[Spellslinger]] با تولید Arcane Splinter و [[Sunfury]] با Spellfire Sphere و ققنوس Arcane در پنجرهٔ Arcane Surge.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/mage/arcane/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/mage/arcane/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/mage/arcane/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/mage/arcane/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Arcane Surge": {
+   "fa": "افزایش قدرت Arcane Mage برای مدت کوتاه، افزایش آسیب و کاهش مصرف مانا"
+  },
+  "Spellslinger": {
+   "fa": "درخت قهرمانی که بر افزایش سرعت و آسیب اسپل‌های اصلی تمرکز دارد و برای تمام حالت‌های بازی مناسب است."
+  },
+  "Sunfury": {
+   "fa": "درخت قهرمانی که بر ترکیب عناصر مختلف تمرکز دارد و برای رایدهای طولانی‌مدت بهینه شده است."
+  },
+  "Refractive Images": {
+   "fa": "تلنت جدید در پچ ۱۲.۱ که تصاویر مجازی ایجاد می‌کند تا آسیب را دریافت کنند"
+  },
+  "Arcane Phoenix": {
+   "fa": "یک موجودیت قدرتمند که پس از استفاده از Arcane Surge ظاهر می‌شود و آسیب قابل توجهی وارد می‌کند."
+  },
+  "Spellfire Spheres": {
+   "fa": "تلنت که به شما اجازه می‌دهد تا کره‌های آتشین را به سمت دشمنان شلیک کنید که به طور مداوم آسیب وارد می‌کنند."
+  },
+  "Arcane Splinters": {
+   "fa": "ذرات Arcane که با استفاده از اسپل‌های مختلف تولید می‌شوند و می‌توانند برای تقویت اسپل‌های دیگر استفاده شوند."
+  },
+  "Arcane Missiles": {
+   "fa": "اسپل اصلی ماج Arcane که با هر موج، آسیب بیشتری وارد می‌کند."
+  },
+  "Arcane Echo": {
+   "fa": "تلنت که به اسپل‌های اصلی شما شانس تکرار را می‌دهد و منجر به آسیب پایدارتر می‌شود."
+  },
+  "Arcane Barrage": {
+   "fa": "اسپل اصلی آرکان ماج که هزینه کمتری نسبت به Arcane Blast دارد و برای مدیریت مانا استفاده می‌شود"
+  },
+  "Touch of the Magi": {
+   "fa": "اسپل DOT که با Arcane Surge ترکیب شده و آسیب قابل توجهی وارد می‌کند"
+  },
+  "Prismatic Bolt": {
+   "fa": "اسپل قدرتمند که با استفاده از مانای اضافه آسیب بالایی وارد می‌کند."
+  },
+  "Arcane Orb": {
+   "fa": "اسپل AoE که برای چند هدف و بازگرداندن Arcane Charges استفاده می‌شود"
+  },
+  "Arcane Pulse": {
+   "fa": "اسپل دایره‌ای که در نزدیکی دشمنان آسیب می‌زند."
+  },
+  "Clearcasting": {
+   "fa": "افکت پروک که به شما اجازه می‌دهد اسپل‌ها بدون هزینه اجرا کنید"
+  },
+  "Arcane Salvo": {
+   "fa": "استک دائمی که با Arcane Barrage جمع شده و قدرت اسپل‌ها را افزایش می‌دهد"
+  },
+  "Arcane Soul": {
+   "fa": "افکت تلنت که با Arcane Surge فعال شده و Arcane Barrage را قدرتمندتر می‌کند"
+  },
+  "Arcane Blast": {
+   "fa": "اسپل اصلی آسیب‌رسانی ماج Arcane که با استفاده از آن، مانا مصرف می‌شود."
+  },
+  "Resonance": {
+   "fa": "تلنت که آسیب تک‌هدف شما را بر اساس تعداد دشمنان در نزدیکی افزایش می‌دهد"
+  },
+  "Polymorph": {
+   "fa": "جادوی تبدیل دشمن به حیوان برای از بازی خارج کردن او"
+  },
+  "Remove Curse": {
+   "fa": "جادوی پاکسازی نفرین از شخصیت‌های دوست"
+  },
+  "Shimmer": {
+   "fa": "جادوی جابجایی کوتاه که باعث می‌شود از مکانیک‌های زمینی عبور کنید"
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Arcane استاد زمان و فضا است: برست‌های ۹۰ ثانیه‌ای سنگین با [[Arcane Surge]] و چرخهٔ مدیریت Arcane Charge و Mana. دو مسیر Hero Tree داری: [[Spellslinger]] با تولید Arcane Splinter و [[Sunfury]] با Spellfire Sphere و ققنوس Arcane در پنجرهٔ Arcane Surge."
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "برست تک‌هدف و چندهدفه قوی با Arcane Surge",
+       "قابلیت‌های گروهی خوب: Time Warp, Spellsteal, Polymorph, Remove Curse, Dragon's Breath",
+       "تخریب تک‌هدف با افزایش دشمنان به لطف Resonance",
+       "حرکت عالی در میدان نبرد: Blink, Alter Time, Shimmer/Time Walk"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "بسیار وابسته به پروک تصادفی Prismatic Bolt برای تخریب کافی",
+       "ترمیم ضعیف پس از ضربهٔ شدید؛ تقریباً تمام برست‌های دفاعی پیشگیرانه هستند"
+      ]
+     }
+    },
+    {
+     "t": "p",
+     "x": "در پچ ۱۲.۱، [[Refractive Images]] به درخت تلنت اضافه شد که برخی از نقاط ضعف دفاعی این کلاس را تغییر داد."
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Sunfury",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این درخت با Spellfire Spheres و یک Arcane Phoenix قوی در پنجرهٔ Arcane Surge مشخص می‌شود. تفاوت مکانیکی آن با تأثیرات پس‌زمینهٔ Arcane Soul و Ashes of Inspiration همراه است که یک پنجرهٔ کوتاه ولی قدرتمند پس از پایان Arcane Surge ایجاد می‌کند."
+      },
+      {
+       "title": "Spellslinger",
+       "tag": "گزینهٔ جایگزین",
+       "x": "این درخت حول تولید Arcane Splinters ساخته شده است و با زیباییشناسی صورتی/بنفش Arcane خود متمایز می‌شود. هر دو درخت تقریباً یکسان بازی میکنند؛ اسپک تفاوت کمی بین آنها دارد."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "تلنت‌های Arcane Mage برای پچ 12.1.5 بر اساس Midnight Season 2 بهینه‌سازی شده‌اند. درخت اصلی بر روی افزایش قدرت [[Arcane Missiles]] و مدیریت متمرکز انرژی تمرکز دارد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Spellslinger",
+       "tag": "انتخاب پیش‌فرض (Raid/Mythic+/Delves)",
+       "x": "این ساختار برای تمام حالت‌های بازی قدرتمند است. تمرکز بر بهینه‌سازی اسپل‌های اصلی و افزایش آسیب پذیری دشمنان دارد.",
+       "code": "C4DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMDamZGAAAGAwMz0sssMDAEbAAAmZG2sMjZWmxYmZmZYhZMzMDAwAAAMAzMgZAwwMzA"
+      },
+      {
+       "title": "Sunfury",
+       "tag": "گزینه جایگزین (Raid)",
+       "x": "این ساختار برای راید مناسب است و بر روی افزایش آسیب از اسپل‌های عناصر مختلف تمرکز دارد.",
+       "code": "C4DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMDamZGAAAGAAEwMzMLLzMxCAAwMzMjNLzMzsMjxYmZwCzYmZGAgBAAYmZBAMDAGmZG"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=mage",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "استراتیچ اصلی آرکان ماج در پچ 12.1.5 بر مدیریت مانا و استفاده بهینه از کول‌داون‌ها متمرکز است."
+    },
+    {
+     "t": "h3",
+     "x": "استارت اولیه (Opener)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "فعال کردن [[Arcane Surge]]",
+      "انجام [[Arcane Missiles]]",
+      "زیر گرفتن [[Arcane Barrage]] سپس [[Touch of the Magi]] در حین پرواز"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت‌های دائمی (Single Target)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "انجام [[Arcane Missiles]] در صورت داشتن پروک و کمتر از 12 Arcane Salvo",
+      "استفاده از [[Arcane Barrage]] اگر Arcane Soul فعال باشد",
+      "شلیک [[Prismatic Bolt]] (ترجیحا با 8+ استک از Cumulative Power از ست 4 تکه)",
+      "استفاده از [[Arcane Barrage]] با پروک و 12+ Arcane Salvo",
+      "زیر گرفتن [[Arcane Barrage]] در 25 استک Arcane Salvo",
+      "استفاده از [[Arcane Orb]] اگر کمتر از 3 Arcane Charge دارید",
+      "انجام [[Arcane Blast]] در صورت عدم وجود شرایط بهتر",
+      "استفاده از [[Arcane Barrage]] در صورت تمام شدن مانا"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "برای چند هدف: Arcane Barrage در 25+ استک یا Arcane Orb/Arcane Pulse در 5+ هدف بهتر عمل می‌کند"
+    },
+    {
+     "t": "p",
+     "x": "کول‌داون اصلی Arcane Surge تمام مانا را مصرف می‌کند و 15 ثانیه شما را با 35% قدرت بیشتر تقویت می‌کند. حتماً آن را با [[Touch of the Magi]] و برنامه‌ریزی برای [[Evocation]] هماهنگ کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5 و Midnight Season 2، ماج Arcane به سرعت و پایداری در تولید مانا وابسته است. گیرینگ ما بر پایهٔ اسپک و هاست است چون به قدرت این کلاس به‌شدت وابسته است."
+    },
+    {
+     "t": "call",
+     "x": "هیچ‌وقت از آیتم‌های با آی‌الویل پایین‌تر استفاده نکنید حتی اگر استات‌هایشان بهتر به نظر می‌رسند. آی‌الویل اولویت اصلی است."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت استات‌ها"
+    },
+    {
+     "t": "stat",
+     "items": [
+      "Haste",
+      "Intellect",
+      "Versatility",
+      "Critical Strike",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "هاست بهترین استات برای ماج Arcane است چون سرعت بازماندن اسپل‌ها را افزایش می‌دهد. این کلاس به شدت به هاست واکنش نشان می‌دهد و حتی مقدار کمی از آن نیز تفاوت بزرگی ایجاد می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "ورساتیلیتی، کریتیکال استریک و ماستری تقریباً ارزش یکسانی دارند اما از هاست کمتر اهمیت دارند. اگر آی‌الویل‌ها یکسان باشند، هاست را انتخاب کنید."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های بهترین در کلاس (BiS)"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 271092
+      },
+      {
+       "slot": "دست دوم",
+       "id": 245769
+      },
+      {
+       "slot": "سر",
+       "id": 271564
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271562
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271567
+      },
+      {
+       "slot": "مچ",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271565
+      },
+      {
+       "slot": "کمر",
+       "id": 268257
+      },
+      {
+       "slot": "پا",
+       "id": 271563
+      },
+      {
+       "slot": "پا",
+       "id": 268255
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "انگشتر",
+       "id": 251148
+      },
+      {
+       "slot": "دستکش",
+       "id": 250215
+      },
+      {
+       "slot": "دستکش",
+       "id": 281215
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "ست تیر"
+    },
+    {
+     "t": "set",
+     "id": 271564
+    },
+    {
+     "t": "p",
+     "x": "ست تیر Arcane در این پچ بسیار قدرتمند است. با داشتن ۴ تکه از این ست، هر موج از [[Arcane Missiles]] آسیب ۴۰٪ بیشتری به [[Arcane Blast]]، [[Arcane Pulse]] یا [[Prismatic Bolt]] می‌زند. این ست به خوبی با [[Prismatic Bolt]] هماهنگ می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های ساخته‌شده"
+    },
+    {
+     "t": "p",
+     "x": "دو آیتم ساخته‌شده در این لیست وجود دارد که می‌توانید از آن‌ها استفاده کنید: {{245769}} برای دست دوم و {{239648}} برای مچ دست. این آیتم‌ها به خصوص در اوایل بازی بسیار مفید هستند."
+    },
+    {
+     "t": "h3",
+     "x": "کالیست‌ها"
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Deathbringer",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این کالیست برای اوایل بازی و شرایطی که به دنبال حداکثر آسیب هستید، مناسب است."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Haste",
+      "Versatility",
+      "Critical Strike",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "شما به عنوان یک Arcane Mage باید در اولویت اصلی خود **Intellect** را قرار دهید که تمام اسپل‌ها را قدرتمندتر می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "پس از آن **Haste** بیشترین اولویت را دارد و سه استت دیگر تقریباً ارزش یکسانی دارند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "مصرف‌ها"
+    },
+    {
+     "t": "p",
+     "x": "در Midnight Season 2، Arcane Mage به مصرف‌های باکیفیت برای بهینه‌سازی عملکرد DPS نیاز دارد. انتخاب‌های مناسب می‌توانند تفاوت قابل توجهی در عملکرد شما ایجاد کنند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "افزونهٔ سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای غذا، Silvermoon Parade بهترین گزینه است که ویژگی‌های اصلی را تأمین می‌کند. در مورد جواهر، Powerful Eversong Diamond انتخاب اصلی است و جواهرهای دیگر مانند Flawless Quick Amethyst نیز گزینه‌های خوبی محسوب می‌شوند."
+    },
+    {
+     "t": "p",
+     "x": "برای جواهرهای دیگر، ترکیبی از Flawless Masterful Peridot، Flawless Masterful Garnet و Flawless Masterful Lapis (هر کدام یکی) و سپس Flawless Quick Amethyst پیشنهاد می‌شود."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه‌ها",
+       "v": "Enchant Shoulders - Silvermoon's Mending",
+       "ids": [
+        244020
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Arcanoweave Spellthread",
+       "ids": [
+        240154
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Enchant Boots - Shaladrassil's Roots",
+       "ids": [
+        243982
+       ]
+      },
+      {
+       "k": "انگشترها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در حال حاضر، درایوهای M+ برای Arcane Mage دو درخت قوی دارد: Spellslinger و Aegwynn's Technique. هر دو درخت در محیط‌های گروهی عملکرد مشابهی دارند و انتخاب بین آن‌ها بیشتر به سلیقه شخصی بستگی دارد."
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی M+"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Arcane Surge]] به طور کامل به ۵ هدف می‌زند (فراتر از آن ریشه دوم): موقعیت‌گیری طوری باشد که بزرگترین گروه‌ها در محدوده ۵ نفره اول قرار بگیرند.",
+      "تلنت [[Resonance]] باعث می‌شود آسیب تک‌هدف با اندازه گروه افزایش یابد؛ از [[Arcane Orb]] و [[Barrage]] برای کلیر کردن گروه‌ها استفاده کنید.",
+      "[[Polymorph]] و [[Remove Curse]] در کلیدهای واقعی ارزش زیادی دارند؛ [[Shimmer]] بیشتر مکانیک‌های حرکتی را مدیریت می‌کند."
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Arcane Mage (آرکن) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل آرکن (Arcane Mage) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Arcane Mage talent build midnight",
+   "Arcane Mage guide midnight",
+   "Arcane Mage guide 12.1.5",
+   "best Arcane Mage talents",
+   "Arcane Mage talent tree midnight",
+   "Arcane Mage pve guide",
+   "Arcane Mage rotation midnight",
+   "Arcane Mage rotation and cooldowns",
+   "Arcane Mage bis list midnight",
+   "Arcane Mage best in slot",
+   "Arcane Mage gear guide",
+   "Arcane Mage food and potion",
+   "best food for Arcane Mage",
+   "best flask for Arcane Mage",
+   "best potion for Arcane Mage",
+   "Arcane Mage enchants and gems",
+   "best enchants for Arcane Mage",
+   "best gems for Arcane Mage",
+   "Arcane Mage stat priority midnight",
+   "Arcane Mage tier set midnight",
+   "Arcane Mage tier set bonuses",
+   "Arcane Mage mythic+ guide",
+   "Arcane Mage m+ guide midnight",
+   "Arcane Mage raid guide",
+   "Arcane Mage hero talents",
+   "Arcane Mage hero tree",
+   "best dps build Arcane Mage midnight",
+   "Arcane Mage cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای آرکن",
+   "تلنت آرکن",
+   "تلنت برای Arcane Mage",
+   "تلنت Mage آرکن",
+   "بیلد آرکن",
+   "بیلد تلنت آرکن میدنایت",
+   "روتیشن آرکن",
+   "روتیشن و کول‌داون‌های آرکن",
+   "غذا برای آرکن",
+   "غذا برای Arcane Mage",
+   "غذا و معجون آرکن",
+   "بهترین غذای آرکن",
+   "فلسک آرکن",
+   "بهترین فلسک برای آرکن",
+   "معجون آرکن",
+   "انچنت آرکن",
+   "انچنت و جم آرکن",
+   "بهترین انچنت برای آرکن",
+   "جم آرکن",
+   "بست آیتم آرکن",
+   "بهترین آیتم‌های آرکن",
+   "گیر آرکن",
+   "استت آرکن",
+   "اولویت استت آرکن",
+   "ست تیر آرکن",
+   "مایتی پلاس آرکن",
+   "ام پلاس آرکن",
+   "راهنمای آرکن",
+   "راهنمای Arcane Mage",
+   "راهنمای مج",
+   "آرکن میدنایت",
+   "مج میدنایت",
+   "هرو تیلنت آرکن",
+   "بیلد آرکن",
+   "بهترین آرکن"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Arcane Mage (آرکن) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Arcane Mage به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای آرکن چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Enchant Helm - Empowered Rune of Avoidance»، معجون جنگی «Light's Potential»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای آرکن چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Rite of the Hash'ey» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای آرکن کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Arcane Mage در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

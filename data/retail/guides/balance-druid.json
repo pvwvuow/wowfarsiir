@@ -1,0 +1,722 @@
+{
+ "slug": "balance-druid",
+ "class": "druid",
+ "class_en": "Druid",
+ "spec_en": "Balance",
+ "spec_no": 1,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Balance Druid",
+ "lead": "Balance خورشید و ماه را کنترل می‌کند: با ورود به [[Moonkin Form]] و مدیریت [[Eclipse]] و [[Celestial Alignment]] پنجره‌های برست می‌سازی. دو مسیر Hero Tree داری: [[Keeper of the Grove]] با پنجرهٔ Treant های Force of Nature و [[Elune's Chosen]] با چرخهٔ [[Fury of Elune]].",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/druid/balance/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/druid/balance/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/druid/balance/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/druid/balance/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Moonkin Form": {
+   "fa": "شکل شگفت‌انگیز خرس ماه که به درانم قدرت جادویی می‌دهد"
+  },
+  "Eclipse": {
+   "fa": "حالت Eclipse شامل Solar Eclipse (با Wrath) و Lunar Eclipse (با Starfire) است که قدرت اسپل‌ها را افزایش می‌دهد"
+  },
+  "Celestial Alignment": {
+   "fa": "کول‌داون کلیدی که Astral Power را به سرعت افزایش می‌دهد و Eclipse را فعال می‌کند"
+  },
+  "Keeper of the Grove": {
+   "fa": "مسیر تلنت جایگزین که از Treants Force of Nature برای ایجاد پنجره‌های آسیب‌رسانی قوی و دریافت Harmony of the Grove استفاده می‌کند."
+  },
+  "Elune's Chosen": {
+   "fa": "مسیر تلنت اصلی برای درخت Balance Druid که بر ترکیب Lunar Eclipse با Celestial Alignment و استفاده بهینه از Fury of Elune تمرکز دارد."
+  },
+  "Fury of Elune": {
+   "fa": "اسپل قدرتمند که با Starfire اجرا می‌شود و آسیب قابل توجهی وارد می‌کند"
+  },
+  "Starfall": {
+   "fa": "طوفان ستاره‌ای که روی چند هدف آسیب می‌زند"
+  },
+  "Moonfire": {
+   "fa": "یک اسپل اولیه که آسیب جادویی به هدف وارد می‌کند و اثر DoT دارد."
+  },
+  "Sunfire": {
+   "fa": "اسپلی که به هدف اصلی و اطراف آن آسیب جادویی وارد می‌کند و اثر DoT ایجاد می‌کند."
+  },
+  "Starfire": {
+   "fa": "اسپل اصلی تک‌هدفه با زمان اجرای طولانی"
+  },
+  "Innervate": {
+   "fa": "یک اسپل که نوار منی یک هیبر را برای مدت کوتاه به طور قابل توجهی افزایش می‌دهد."
+  },
+  "Entangling Roots": {
+   "fa": "یک اسپل که دشمن را برای مدت کوتاه به زمین می‌بندد."
+  },
+  "Soothe": {
+   "fa": "یک اسپل که افکار منفی دشمن را پاک می‌کند و اثرات منفی را از بین می‌برد."
+  },
+  "Typhoon": {
+   "fa": "یک اسپل کنترلی که دشمنان اطراف شما را به عقب پرتاب می‌کند."
+  },
+  "Mass Entanglement": {
+   "fa": "یک اسپل که دشمنان اطراف را برای مدت کوتاه مهار می‌کند."
+  },
+  "Incapacitating Roar": {
+   "fa": "جیرجیرک کردن که دشمنان را فلج می‌کند"
+  },
+  "Starweaver|Rattle the Stars": {
+   "fa": "تلنت که [[Starsurge]] را به چند هدف گسترش می‌دهد"
+  },
+  "Incarnation: Chosen of Elune|Convoke the Spirits": {
+   "fa": "کول‌داون که تلنت‌های فعال را اجرا می‌کند"
+  },
+  "Force of Nature": {
+   "fa": "تلنت که چندین Treant را فراخوانی می‌کند که به طور خودکار Starsurge اجرا می‌کنند"
+  },
+  "Incarnation: Chosen of Elune": {
+   "fa": "فرم قدرتمند Balance Druid که قدرت اسپل‌ها را به شدت افزایش می‌دهد"
+  },
+  "Convoke the Spirits": {
+   "fa": "اسپل که به طور تصادفی چندین اسپل از درخت را اجرا می‌کند"
+  },
+  "Wild Mushroom": {
+   "fa": "تلنت که قارچ‌هایی را روی زمین قرار می‌دهد که با Detonate منفجر می‌شوند"
+  },
+  "Starweaver's Weft": {
+   "fa": "افزونه که Starsurge را تقویت می‌کند"
+  },
+  "Starweaver's Warp": {
+   "fa": "افزونه که Starfall را تقویت می‌کند"
+  },
+  "Ascendant Fires": {
+   "fa": "افزونه که در Incarnation فعال می‌شود و باید با Starfire مصرف شود"
+  },
+  "Touch the Cosmos": {
+   "fa": "تلنت که شانس پروک Starsurge را افزایش می‌دهد"
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "سلاح اصلی بالانس دروید با مزیت بالای هوش."
+  },
+  "Aln'hara Lantern": {
+   "fa": "دست دوم قوی که می‌تواند کالیست شود و مزایای خوبی دارد."
+  },
+  "Gaze of the Coiled Watcher": {
+   "fa": "سر ست تیرهای بالانس دروید با کالیست Ula'tek."
+  },
+  "Frothing Venom Spaulders": {
+   "fa": "شانه ست تیرهای بالانس دروید با کالیست Vashnik the Malignant."
+  },
+  "Chestwrap of Palpable Terror": {
+   "fa": "سینه ست تیرهای بالانس دروید با کالیست Kith'ix."
+  },
+  "Ruthless Slaughtergrips": {
+   "fa": "دست ست تیرهای بالانس دروید با کالیست Sszorak."
+  },
+  "Coiled Hex Legguards": {
+   "fa": "پا ست تیرهای بالانس دروید با کالیست The Coiled Altar."
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "یکی از بهترین تریک‌های بازی با افکت قوی on-use."
+  },
+  "Vile Vial of Volatile Venom": {
+   "fa": "تریک دیگر عالی برای بالانس دروید با افکت on-use."
+  },
+  "Light's Potential": {
+   "fa": "پوشن مبارزه که برای بالانس دراید بهترین انتخاب است و آسیب قابل توجهی را فراهم می‌کند."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسک قدرتی که برای بالانس دراید در شبک‌های پویا بسیار مؤثر است."
+  },
+  "Impossibly Royal Roast": {
+   "fa": "غذا با آستات‌های بالا که برای بالانس دراید انتخاب اصلی محسوب می‌شود."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Balance خورشید و ماه را کنترل می‌کند: با ورود به [[Moonkin Form]] و مدیریت [[Eclipse]] و [[Celestial Alignment]] پنجره‌های برست می‌سازی. دو مسیر Hero Tree داری: [[Keeper of the Grove]] با پنجرهٔ Treant های Force of Nature و [[Elune's Chosen]] با چرخهٔ [[Fury of Elune]]."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "چالش",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "بالا",
+       "n": 4
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "بالا",
+       "n": 5
+      },
+      {
+       "k": "دسترسی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "آسیب چندهدفهٔ پایدار از طریق [[Starfall]]، [[Moonfire]]، [[Sunfire]] و [[Starfire]]",
+       "ابزار کنترلی و کاربردی گسترده: [[Innervate]]، [[Entangling Roots]]، [[Soothe]]، [[Typhoon]]، و [[Mass Entanglement]] یا [[Incapacitating Roar]]",
+       "تنوع تلنت‌ها: [[Starweaver|Rattle the Stars]] و [[Incarnation: Chosen of Elune|Convoke the Spirits]] قابل جابجایی با هر دو درخت Hero"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "زمان‌بندی طولانی برای اِی او ای: پخش [[Moonfire]] روی تعداد زیادی هدف قبل از پنجره‌های آسیب",
+       "منحنی یادگیری تند: تعاملات تلنت‌ها به‌راحتی قابل درک نیستند",
+       "بهینه‌سازی [[Eclipse]] با پنجره‌های [[Celestial Alignment]] و [[Incarnation]] نیاز به تحقیق دارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Elune's Chosen",
+       "tag": "انتخاب پیش‌فرض برای راید و Mythic+",
+       "x": "این مسیر تلنت برای راید و Mythic+ بهترین عملکرد را دارد و تمرکز اصلی آن بر استفاده بهینه از Starfire در Lunar Eclipse برای کاهش کول‌داون Fury of Elune است."
+      },
+      {
+       "title": "Keeper of the Grove",
+       "tag": "گزینهٔ جایگزین کاربردی",
+       "x": "این مسیر نیز کاملاً قابل اجراست و بر پنجره‌های آسیب‌رسانی به Force of Nature Treants متمرکز است که هر کدام Harmony of the Grove را تقویت می‌کنند."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "درخت تلنت بالانس دراوایدها در پچ 12.1.5 بر روی بهینه‌سازی چرخه‌ی اکلیپس و مدیریت انرژی تمرکز دارد. دو انتخاب اصلی برای درخت قهرمان وجود دارد: Elune's Chosen که قدرت مون‌فایر و استارفایر را افزایش می‌دهد، و Keeper of the Grove که بر روی بهبود تلنت‌های درخت طبیعت و توانایی‌های دفاعی تمرکز دارد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Elune's Chosen (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای راید‌های بزرگ بهینه شده و قدرت اسپل‌های مون‌فایر و استارفایر را به حداکثر می‌رساند.",
+       "code": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNjxMDwsMzMzMYYGjZWmhxMWYZmlZGjZ2wAgx2yMDGz2IwEAAAgFzMzMD2MMGzAAYmBLDA"
+      },
+      {
+       "title": "Elune's Chosen (Mythic+)",
+       "tag": "بهینه برای Mythic+",
+       "x": "این ساختار برای دونفره‌های افسانه‌ای بهینه شده و بر روی افزایش سرعت و عملکرد در مبارزات کوتاه‌مدت تمرکز دارد.",
+       "code": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgZZmlZWYmxGLzsMGzM2wAgx22MDGz2IwEAAAgFmZmZwmxMGDAAzMYZA"
+      },
+      {
+       "title": "Keeper of the Grove (Raid)",
+       "tag": "گزینه جایگزین",
+       "x": "این ساختار بر روی بهبود تلنت‌های درخت طبیعت و توانایی‌های دفاعی تمرکز دارد و در شرایطی که به دوام بیشتری نیاز دارید مفید است.",
+       "code": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNjxMDMmlZmZmBMDWmZbGzYGLsMjZmZMzGGAMALbjFMNzsMCAAAwGzMzMYzAjZAMzAADA"
+      },
+      {
+       "title": "Keeper of the Grove (Mythic+)",
+       "tag": "گزینه جایگزین برای Mythic+",
+       "x": "این ساختار برای دونفره‌های افسانه‌ای با تمرکز بر دوام و توانایی‌های دفاعی طراحی شده است.",
+       "code": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMwDMbzsMWmxMWYZGjxMjFMAYAW2GLYamZZEAAAgNzMPwMD2MmxYGAzMAwA"
+      },
+      {
+       "title": "Keeper of the Grove (Delves)",
+       "tag": "بهینه برای Delves",
+       "x": "این ساختار برای دلوزهای پچ 12.1.5 بهینه شده و بر روی دوام و توانایی‌های دفاعی در محیط‌های کوچک‌تر تمرکز دارد.",
+       "code": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgZZmlx2MmxGLzYmZGmFMAYAW2GLYamZbEAAAgNmZmZwmxMGzAYmBAGA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=druid",
+     "x": "مشاهده تمام ساختارهای ممکن"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ بازی Balance Druid بر مدیریت درست انرژی و زمان‌بندی کول‌داون‌ها متمرکز است. با انتخاب درخت Keeper of the Grove یا Elune's Chosen، چرخه‌های متفاوتی خواهید داشت."
+    },
+    {
+     "t": "h3",
+     "x": "چرخه تک‌هدف Keeper of the Grove"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "استفاده از Eclipse وقتی دو بار دارید",
+      "اجرا کردن Sunfire اگر قبل از پایان پنجرهٔ Incarnation منقضی می‌شود",
+      "استفاده از Fury of Elune قبل از Force of Nature اگر در دسترس باشد",
+      "اجرای Force of Nature با足够的 Astral Power برای سه Starsurge و همراه با Celestial Alignment یا Eclipse",
+      "استفاده از تریک‌های On-Use همراه با Celestial Alignment",
+      "اجرای Celestial Alignment در GCD بعدی Force of Nature",
+      "استفاده از Eclipse در GCD بعدی Force of Nature"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخه تک‌هدف Elune's Chosen"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "استفاده از Lunar Eclipse وقتی دو بار دارید",
+      "تازه‌سازی Moonfire و Sunfire در حالت Pandemic اگر قبل از پنجرهٔ Celestial Alignment منقضی شوند",
+      "اجرای Fury of Elune با足够的 Astral Power برای دو Starsurge و همراه با CA یا Lunar Eclipse",
+      "استفاده از تریک‌های On-Use همراه با Celestial Alignment",
+      "اجرای Celestial Alignment در GCD بعدی Fury of Elune",
+      "استفاده از Lunar Eclipse در GCD بعدی Fury of Elune"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخه چندهدفه Keeper of the Grove"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "پخش Moonfire در حین جمع‌آوری اهداف",
+      "اجرا کردن Sunfire وقتی همه اهداف جمع شده‌اند",
+      "استفاده از Force of Nature اگر در Eclipse نیستید و بعداً Eclipse یا Incarnation می‌آید",
+      "ورود به Lunar Eclipse روی ۴+ هدف؛ ورود به Solar Eclipse تا ۳ هدف"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در چرخهٔ چندهدفه، حتماً Starfire را در Incarnation اجرا کنید تا Ascendant Fires مصرف شود."
+    },
+    {
+     "t": "h3",
+     "x": "نکات بازشدن بازی"
+    },
+    {
+     "t": "p",
+     "x": "حدود ۴ ثانیه قبل از شروع بافت، سه بار Wrath اجرا کنید تا انرژی رایگان و شانس پروک Touch the Cosmos افزایش یابد. ورود به Eclipse در ابتدای combate معمولاً بهینه است."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای بالانس دروید در پچ 12.1.5، اولویت اصلی استت‌ها به ترتیب هوش > Mastery > کریتیک = هیت > ورساتیلتی است. با ترکیب Keeper of the Grove و Convoke the Spirits، مقدار کمتری هیت و بیشتر کریتیک بگیرید چون Convoke با هیت اسکال نمی‌شود. برای Elune's Chosen، هیت ارزش بیشتری دارد و Mastery/هیت/کریتیک به صورت مساوی مهم هستند. Astral Smolder (Apex) ارزش کریتیک را به شدت افزایش داده. تریک‌های on-use بسیار قوی هستند. حتماً با Raidbots سیم کنید."
+    },
+    {
+     "t": "h3",
+     "x": "آیتم‌های برتر"
+    },
+    {
+     "t": "p",
+     "x": "در اسلات‌های مختلف، آیتم‌های زیر بهترین گزینه‌ها هستند:"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 271092
+      },
+      {
+       "slot": "دست دوم",
+       "id": 245769
+      },
+      {
+       "slot": "سر",
+       "id": 271875
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 268246
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 281236
+      },
+      {
+       "slot": "مچ",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 268234
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 159327
+      },
+      {
+       "slot": "انگشت",
+       "id": 281029
+      },
+      {
+       "slot": "انگشت",
+       "id": 268249
+      },
+      {
+       "slot": "تریک",
+       "id": 281215
+      },
+      {
+       "slot": "تریک",
+       "id": 273796
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "ست تیرهای {{271875}}، {{268246}}، {{281236}} و {{268234}} و {{268225}} با نام Bark of the Enigmatic Dreamwatcher بهترین ست در بازی هستند."
+    },
+    {
+     "t": "p",
+     "x": "با ۲ تیپ از این ست، Starsurge شما ۲۰% بیشتر آسیب می‌زند و Starfall هنگام اجرا مقداری آسیب Astral به دشمنان در محدوده وارد می‌کند. با ۴ تیپ، آسیب شما ۱۰% در هر اکلیپس افزایش می‌یابد و این бонус در وسط اکلیپس به ۲% و در انتهای آن به ۱۰% برمی‌گردد."
+    },
+    {
+     "t": "call",
+     "x": "نکتهٔ برجسته: در ابتدا و انتهای پنجره‌های اکلیپس، قدرت Astral Power خود را مصرف کنید مگر اینکه برای پنچر بزرگ‌تری (تریک‌های on-use + Celestial Alignment) آن را ذخیره کرده باشید."
+    },
+    {
+     "t": "p",
+     "x": "کالیست‌های قابل ساخت شامل {{244576}} و {{245769}} هستند. برای کالیست کردن آیتم‌ها، Ula'tek برای {{271875}}، Vashnik the Malignant برای {{268246}}، Kith'ix برای {{281236}}، Sszorak برای {{268234}} و The Coiled Altar برای {{268225}} را انتخاب کنید."
+    },
+    {
+     "t": "p",
+     "x": "اسلات‌های دیگر را با آیتم‌های افق نبرد یا نسخه‌های کالیست شده پر کنید. تمرکز اصلی روی هوش و استت‌های ثانویه باشد."
+    },
+    {
+     "t": "p",
+     "x": "همیشه سیم‌کرفت خود را با Raidbots انجام دهید تا بهترین ترکیب آیتم‌ها را برای具体情况 خود پیدا کنید."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Mastery",
+      "Critical Strike",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت‌ها در درجهٔ اولویت، هوش (Intellect) را دنبال کنید که از پایهٔ قدرت شما را افزایش می‌دهد."
+    },
+    {
+     "t": "p",
+     "x": "بین استت‌های ثانویه، تسلط (Mastery) معمولاً بهترین گزینه است، اما [[Astral Smolder]] ارزش کریتیکال استرایک (Critical Strike) را به شدت بالا برده است."
+    },
+    {
+     "t": "p",
+     "x": "با انتخاب [[Circle of the Wild]]، می‌توانید بین هاست و کریتیکال تعادل ایجاد کنید، اما در حالت عادی کریتیکال و هاست ارزش نزدیکی دارند."
+    },
+    {
+     "t": "p",
+     "x": "برای بدست آوردن نسبت دقیق استت‌ها، شخصیت خود را در سیمولاتورها شبیه‌سازی کنید تا بهترین ترکیب را پیدا کنید."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "افزونهٔ اسلحه",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Impossibly Royal Roast",
+       "ids": [
+        255847
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "انچنت‌ها",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای بالانس دراید، فلاسک‌های قدرتی مانند Flask of the Magisters انتخاب‌های عالی هستند و پوشن مبارزه Light's Potential بیشترین آسیب را فراهم می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "Thalassian Phoenix Oil بر فرآیند آسیب Smuggler's Enchanted Edge برتری دارد و به‌عنوان افزونهٔ اسلحه توصیه می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "در بخش غذا، Impossibly Royal Roast انتخاب اصلی است و Champion's Bento گزینهٔ جایگزین محسوب می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "بالانس دراید معمولاً به سمت جواهرات Mastery گرایش دارد و Prismatic Focusing Iris با تنوع رنگ جواهرات بهتر عمل می‌کند."
+    },
+    {
+     "t": "p",
+     "x": "انچنت‌های سر Empowered Rune of Avoidance، شانه‌ها Amirdrassil's Grace، سینه Mark of the Worldsoul، پاها Lynx's Dexterity و حلقه Eyes of the Eagle بهترین گزینه‌ها هستند."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "ul",
+     "items": [
+      "در حال حاضر، ساختار Elune's Chosen به عنوان بهترین گزینه برای Mythic+ شناخته شده است.",
+      "Keeper of the Grove نیز می‌تواند بسته به سلیقه بازیکن جایگزین شود.",
+      "در فصل Midnight Season 2، این ساختارها عملکرد بهتری را ارائه می‌دهند."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی برای Mythic+"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "شروع با Moonfire",
+       "v": "در حین جمع‌آوری گروه، Moonfire را پخش کنید تا به تدریج آسیب وارد شود."
+      },
+      {
+       "k": "انتقال به Sunfire",
+       "v": "وقتی گروه در جای خود مستقر شد، Sunfire را برای گروه‌ها استفاده کنید تا آسیب شما افزایش یابد."
+      },
+      {
+       "k": "ابزارهای کنترلی",
+       "v": "استفاده از Typhoon، Mass Entanglement، Entangling Roots و Soothe بخشی از ارزش شما به عنوان دروید است."
+      },
+      {
+       "k": "Innervate برای هیبرها",
+       "v": "در مبارزات طولانی‌تر، Innervate را روی یک هیبر استفاده کنید تا به بازی تیمی کمک کنید."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Balance Druid (بالنس) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل بالنس (Balance Druid) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Balance Druid talent build midnight",
+   "Balance Druid guide midnight",
+   "Balance Druid guide 12.1.5",
+   "best Balance Druid talents",
+   "Balance Druid talent tree midnight",
+   "Balance Druid pve guide",
+   "Balance Druid rotation midnight",
+   "Balance Druid rotation and cooldowns",
+   "Balance Druid bis list midnight",
+   "Balance Druid best in slot",
+   "Balance Druid gear guide",
+   "Balance Druid food and potion",
+   "best food for Balance Druid",
+   "best flask for Balance Druid",
+   "best potion for Balance Druid",
+   "Balance Druid enchants and gems",
+   "best enchants for Balance Druid",
+   "best gems for Balance Druid",
+   "Balance Druid stat priority midnight",
+   "Balance Druid tier set midnight",
+   "Balance Druid tier set bonuses",
+   "Balance Druid mythic+ guide",
+   "Balance Druid m+ guide midnight",
+   "Balance Druid raid guide",
+   "Balance Druid hero talents",
+   "Balance Druid hero tree",
+   "best dps build Balance Druid midnight",
+   "Balance Druid cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای بالنس",
+   "تلنت بالنس",
+   "تلنت برای Balance Druid",
+   "تلنت Druid بالنس",
+   "بیلد بالنس",
+   "بیلد تلنت بالنس میدنایت",
+   "روتیشن بالنس",
+   "روتیشن و کول‌داون‌های بالنس",
+   "غذا برای بالنس",
+   "غذا برای Balance Druid",
+   "غذا و معجون بالنس",
+   "بهترین غذای بالنس",
+   "فلسک بالنس",
+   "بهترین فلسک برای بالنس",
+   "معجون بالنس",
+   "انچنت بالنس",
+   "انچنت و جم بالنس",
+   "بهترین انچنت برای بالنس",
+   "جم بالنس",
+   "بست آیتم بالنس",
+   "بهترین آیتم‌های بالنس",
+   "گیر بالنس",
+   "استت بالنس",
+   "اولویت استت بالنس",
+   "ست تیر بالنس",
+   "مایتی پلاس بالنس",
+   "ام پلاس بالنس",
+   "راهنمای بالنس",
+   "راهنمای Balance Druid",
+   "راهنمای دروید",
+   "بالنس میدنایت",
+   "دروید میدنایت",
+   "هرو تیلنت بالنس",
+   "بیلد بالنس",
+   "بهترین بالنس"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Balance Druid (بالنس) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Balance Druid به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای بالنس چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، معجون جنگی «Light's Potential»، غذا «Impossibly Royal Roast»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای بالنس چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Rite of the Hash'ey»، جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای بالنس کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Balance Druid در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

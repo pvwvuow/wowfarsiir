@@ -1,0 +1,407 @@
+{
+ "slug": "destruction-warlock",
+ "spec_slug": "destruction",
+ "class": "warlock",
+ "class_en": "Warlock",
+ "spec_en": "Destruction",
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/warlock/destruction/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "lead_fa": "بازی Destruction Warlock ضربه‌های بزرگ [[Chaos Bolt]] و کِلیو قدرتمند [[Havoc]] است: شاردهای تو به 10 تکه تقسیم می‌شوند و خرجشان بین [[Chaos Bolt]] تک‌هدف و [[Rain of Fire]] AoE دست خودت است. امضای اسپک [[Summon Infernal]] است. دو مسیر Hero Tree داری: [[Hellcaller]] که [[Immolate]] را به [[Wither]] تبدیل می‌کند و برچسب Best منبع را در تک‌هدف و کِلیو و Council و Delves دارد، و [[Diabolist]] که با احضار شیطان‌ها در روتیشن عادی دمیج اضافه می‌دهد و برچسب Best آن در Mythic+/AoE است.",
+ "strengths_weaknesses": {
+  "raid_strengths": [
+   "Great cleave with Havoc/Mayhem",
+   "Good mobility when playing with Shadowburn",
+   "Decent defensives against burst damage with Unending Resolve and Dark Pact",
+   "Good utility: Create Soulwell, Demonic Gateway, Soulstone and Ritual of Summoning"
+  ],
+  "raid_weaknesses": [
+   "Mediocre single-target output",
+   "Weak defensives against rot damage"
+  ],
+  "mplus_strengths": [
+   "Great priority target swap damage for new adds",
+   "Great sustained AoE damage on big pulls where mobs live longer",
+   "No diminishing returns on AoE: equal power with each additional target, making it one of the most potent AoE sources in the game",
+   "Good utility: Create Soulwell, Demonic Gateway and Soulstone"
+  ],
+  "mplus_weaknesses": [
+   "Weaker on smaller pulls because of a longer ramp time than other specs",
+   "No burst AoE compared to specs like Demonology",
+   "Weak defensives against rot damage"
+  ]
+ },
+ "changes_12_1": {
+  "buffs": [
+   "New talents: Chaotic Inferno, Alythess's Ire, Destructive Rapidity, Xorothian Research, Practiced Chaos, Improved Havoc, Lake of Fire and the Apex talent Embers of Nihilam",
+   "Roaring Blaze redesigned: spreads Immolate on up to 3 targets when casting Conflagrate",
+   "Shadowburn redesigned: only usable below 20% HP, cooldown removed and shard cost reduced to 1",
+   "Blistering Atrophy now increases Shadowburn Critical Strike chance to 100%",
+   "Dimensional Rift is now a passive giving your single-target spenders a chance to summon a dimensional rift",
+   "Soul Fire is now a choice node with Dimensional Rift",
+   "Avatar of Destruction redesigned: a chance to summon an Overfiend instead of the Dimensional Rift portal, or whenever you cast Soul Fire",
+   "Conflagration of Chaos redesigned: allows Shadowburn regardless of the target's HP and guarantees a Critical Strike scaling with your crit chance"
+  ],
+  "nerfs": [
+   "Removed talents: Eradication, Decimation, Power Overwhelming, Burn to Ashes, Devastation, Dimension Ripper, Indiscriminate Flames, Master Ritualist, Ritual of Ruin, Rolling Havoc and Pyrogenics"
+  ],
+  "note": "Destruction has been stripped down quite a bit: you no longer maintain as many damage debuffs as before."
+ },
+ "hero": {
+  "recommendation": "Hellcaller carries the Best tags for Single Target, Raid Cleave, Raid Council and Delves while Diabolist carries the Best tag for Mythic+/AoE. Hellcaller changes Immolate into Wither and interacts with that DoT for extra damage and self-buffs, strong on spread cleave and heavy AoE where you can apply Wither with Cataclysm. Diabolist deals extra damage from passively summoning demons through the regular rotation whenever you spend Soul Shards. The playstyle does not change a lot between the two and the talent builds are quite similar.",
+  "hellcaller": "Changes Immolate into Wither and further interacts with this DoT to deal extra damage and buff your own character; strong on spread cleave and heavy AoE.",
+  "diabolist": "Deals extra damage from summoning demons passively through the regular rotation whenever you spend Soul Shards; carries the Best tag for Mythic+/AoE.",
+  "comparison_source_note": "Wowhead overview and talent page (updated 2026-10-13): Hellcaller Best for Single Target, Raid Cleave, Raid Council and Delves; Diabolist Best for Mythic+/AoE."
+ },
+ "builds": {
+  "codes_source": "Wowhead Best Destruction Warlock Talent Builds page (wowhead.com/guide/classes/warlock/destruction/talent-builds-pve-dps), export strings captured verbatim from the page's /talent-calc/blizzard/ links on 2026-10-27; do not modify. Each hero table has five rows: Single Target, Mythic+/AoE, Raid Cleave, Raid Council and Delves; the Hellcaller Delves row shares the Mythic+ string. Two additional Raid Council rows exist on the page and are documented here but not shipped as variants.",
+  "hero_ranking": {
+   "raid": [
+    "Hellcaller",
+    "Diabolist"
+   ],
+   "mplus": [
+    "Diabolist",
+    "Hellcaller"
+   ],
+   "delves": [
+    "Hellcaller",
+    "Diabolist"
+   ]
+  },
+  "variants": [
+   {
+    "hero": "Hellcaller",
+    "mode": "Raid",
+    "best": true,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGNLMzmZmZWmFzMzsYMWMDAAmZGzMziNYgZxoxMAmtYjBAAGDM2AAmZwYGzYDAAwMzMAAMGG"
+   },
+   {
+    "hero": "Hellcaller",
+    "mode": "Mythic+",
+    "best": false,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxiZGzysNzMzsYGLLjBAAzYMzMLWgBmFjGzAY2iNGAAYMYYDAYmBjZGzsBAAYmZmBAwYYA"
+   },
+   {
+    "hero": "Hellcaller",
+    "mode": "Raid Cleave",
+    "best": true,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGNLMzmZmZWmlZmZmFjZbxMAAYGjZmZxGMwsY0YGAzWsxAAAjBYDAYmBjZMjNAAAzMzAAwYYA"
+   },
+   {
+    "hero": "Hellcaller",
+    "mode": "Delves",
+    "best": true,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxiZGzysNzMzsYGLLjBAAzYMzMLWgBmFjGzAY2iNGAAYMYYDAYmBjZGzsBAAYmZmBAwYYA"
+   },
+   {
+    "hero": "Diabolist",
+    "mode": "Raid",
+    "best": false,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZjhZmZmlZzMzMLGjFzAAgZmxMzsAGzYYhMw2wGNWYAAgxAjNAMzAYmxYAAAYmZmBAwYYA"
+   },
+   {
+    "hero": "Diabolist",
+    "mode": "Mythic+",
+    "best": true,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMMzoZzMz2MzYWmtZGzsYGLLjBAAzYMzMLgxMGWIDsNsQjFGAAYMDDbAYmBYMjZmNAAAzMzAAwYYA"
+   },
+   {
+    "hero": "Diabolist",
+    "mode": "Raid Cleave",
+    "best": false,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZjhZmxsMbzMzMLGz2iZAAwMGzMzCYMjhFyAbDb0YhBAAGDwGAmZAmZGjZDAAwMzMAAMGG"
+   },
+   {
+    "hero": "Diabolist",
+    "mode": "Delves",
+    "best": false,
+    "code": "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzoZjhZmxsMbzMzMLGz2iZAAwMGzMzCYMjhFyAbDb0YhBAAGDwGAmZAmZGjZDAAwMzMAAMGG"
+   }
+  ],
+  "notes": "Hellcaller carries the Best tags for Single Target, Raid Cleave, Raid Council and Delves; Diabolist carries the Best tag for Mythic+/AoE. The page also lists a Raid Council row per hero (not shipped here): Hellcaller's Council build shares its own code and Diabolist's is separate. The playstyle does not change much between the heroes."
+ },
+ "priority": {
+  "concepts": [
+   "Soul Shard management: Destruction shards are split into 10 fragments each; do not overcap and make sure you have shards when you need them",
+   "Cooldown management: properly managing Havoc and Summon Infernal, with the correct shard counts before them and no lost uses, separates high DPS from low DPS",
+   "Movement: only a few ways to deal damage while moving; cast Conflagrate on the run and use Demonic Circle and Demonic Gateway to minimize lost casts"
+  ]
+ },
+ "rotation": {
+  "concepts": [
+   "A relatively simple spec that generates Soul Shards and spends them on big hits; the shard system with 10 fragments per shard plays differently from Affliction and Demonology"
+  ],
+  "st_priority": [
+   "Maintain Wither",
+   "Cast Shadowburn when available and if you are about to cap on soul shards",
+   "Cast Chaos Bolt to avoid capping soul shards",
+   "Cast Soul Fire when available and you have less than 4 soul shards",
+   "Cast Conflagrate to keep it below 2 stacks or when moving",
+   "Cast Conflagrate to generate soul shards and Backdraft stacks; use those on Chaos Bolt as much as possible",
+   "Cast Incinerate to generate soul shards"
+  ],
+  "diabolist_st_note": "As Diabolist the list plays Immolate instead of Wither; the rest of the priority is the same.",
+  "aoe_priority": [
+   "Maintain Wither on as many targets as possible (Hellcaller) or Immolate on your main target plus any target expected to live longer than 10 seconds (Diabolist)",
+   "Cast Malevolence when you have as many enemies affected by Wither as possible (Hellcaller)",
+   "Spend your soul shards to avoid overcapping: Chaos Bolt on single targets and Rain of Fire in AoE",
+   "Make sure you have no more than 2 soul shards before casting Infernal Bolt",
+   "Cast Conflagrate to generate soul shards and Backdraft stacks",
+   "Cast Incinerate to generate soul shards"
+  ],
+  "aoe_note": "Destruction has no diminishing returns on AoE: each additional target gives equal power, making it one of the most potent AoE sources in the game on big pulls.",
+  "cooldowns": {
+   "Summon Infernal": "Signature cooldown; pop it with potions, trinkets and racials in the opener and always cast it manually since the rotation assistant does not highlight it",
+   "Havoc": "Cleave engine that copies your single-target spells onto a second target; manage its cooldown together with Summon Infernal"
+  },
+  "hero_notes": "The playstyle does not change much between Hellcaller and Diabolist: Hellcaller plays Malevolence and Wither while Diabolist keeps Immolate; the rotation assistant losses are about 3.8% single target and 11% AoE (or 10.4%/14% single-button) when you still remember to cast Summon Infernal manually.",
+  "opener": [
+   "Precast Soul Fire",
+   "Pop Summon Infernal as well as any potions, trinkets and racials",
+   "Cast Malevolence to stack up your Wither (Hellcaller)",
+   "Cast Conflagrate to get it on cooldown and generate soul shards and Backdraft stacks",
+   "Generate and spend as many soul shards as possible during your cooldowns and dump all cooldown charges",
+   "Proceed onto the normal priority list"
+  ],
+  "pre_combat": [
+   "Get your food buff and oil applied",
+   "Summon your pet",
+   "Cast Create Soulwell so every party or raid member can grab a Healthstone",
+   "Place your portals as needed: personal Demonic Circle and group Demonic Gateway",
+   "Double check your talents for the boss ahead"
+  ]
+ },
+ "gear": {
+  "gearing_rules": "Destruction likes all stats fairly equally with some preference towards Haste and Critical Strike; stats are close enough that item level is effectively your best stat. Priority: Intellect > Haste > Mastery >= Critical Strike > Versatility for both heroes. Sim with Raidbots.",
+  "weapon": [
+   {
+    "name": "Jan'thrazet, the Soul Fang",
+    "id": 271092
+   }
+  ],
+  "offhand": [
+   {
+    "name": "Nocuous Focal Fang",
+    "id": 273779
+   }
+  ],
+  "head": [
+   {
+    "name": "Venomkeeper's Horrific Cowl",
+    "id": 271874
+   }
+  ],
+  "neck": [
+   {
+    "name": "Aqirbane Reliquary",
+    "id": 268265
+   }
+  ],
+  "shoulder": [
+   {
+    "name": "Spires of the Damned Necrolyte",
+    "id": 271544
+   }
+  ],
+  "back": [
+   {
+    "name": "Silken Voodoo Drape",
+    "id": 268253
+   }
+  ],
+  "chest": [
+   {
+    "name": "Damned Necrolyte's Rattling Robes",
+    "id": 271549
+   }
+  ],
+  "wrist": [
+   {
+    "name": "Martyr's Bindings",
+    "id": 239648
+   }
+  ],
+  "hands": [
+   {
+    "name": "Damned Necrolyte's Charred Grasps",
+    "id": 271547
+   }
+  ],
+  "waist": [
+   {
+    "name": "Martyr's Waistwrap",
+    "id": 239649
+   }
+  ],
+  "legs": [
+   {
+    "name": "Voidweaver's Leggings",
+    "id": 281235
+   }
+  ],
+  "feet": [
+   {
+    "name": "Cackling Soultreads",
+    "id": 268255
+   }
+  ],
+  "finger": [
+   {
+    "name": "Apex Brute's Claw Ring",
+    "id": 268252
+   },
+   {
+    "name": "Band of the Swarmcaller",
+    "id": 281029
+   }
+  ],
+  "trinket": [
+   {
+    "name": "Gebbo's Bottomless Bag",
+    "id": 270164
+   },
+   {
+    "name": "Twisted Horror's Tendril",
+    "id": 281215
+   }
+  ],
+  "trinket_ranking": [
+   {
+    "r": "S",
+    "names": [
+     "Gebbo's Bottomless Bag",
+     "Twisted Horror's Tendril"
+    ],
+    "ids": [
+     270164,
+     281215
+    ]
+   }
+  ],
+  "tier_set": {
+   "name": "Damned Necrolyte's Shattered Restraints",
+   "pieces": [
+    "Damned Necrolyte's Rattling Robes",
+    "Damned Necrolyte's Charred Grasps",
+    "Spires of the Damned Necrolyte",
+    "Voidweaver's Leggings"
+   ],
+   "note": "2pc: Incinerate damage increased by 25% and Incinerate has a 10% increased chance to evoke an Echo of Sargeras. 4pc: targets damaged by Echo of Sargeras take 6% increased damage from your spells and abilities for 6 seconds; most of the set's power sits behind the stacking 4-piece."
+  },
+  "catalyst": [
+   "Venomkeeper's Horrific Cowl",
+   "Brood Cleanser's Amice",
+   "Primordial Robe of Rites",
+   "Grasps of the Eternal Shadow",
+   "Voidweaver's Leggings"
+  ],
+  "crafted": [
+   "Aln'hara Lantern family offhands aside: Nocuous Focal Fang is a raid drop; Martyr's Bindings (wrist) and Martyr's Waistwrap (waist) are the crafted pieces"
+  ]
+ },
+ "stats": {
+  "priority": [
+   "Intellect",
+   "Haste",
+   "Mastery",
+   "Critical Strike",
+   "Versatility"
+  ],
+  "cheatsheet": "Intellect > Haste > Mastery >= Critical Strike > Versatility; identical for Hellcaller and Diabolist; stats are close enough that item level is effectively your best stat.",
+  "notes": [
+   "Intellect is your primary stat on cloth gear and increases spell power.",
+   "Mastery makes your spells deal additional damage by a set percentage plus a random extra amount up to an equal percentage.",
+   "Destruction likes all stats fairly equally with some preference towards Haste and Critical Strike."
+  ],
+  "per_hero_or_mode": "Identical priority tables for Hellcaller and Diabolist per the Wowhead stat page.",
+  "dr_breakpoints": ""
+ },
+ "consumables": {
+  "flasks": [
+   "Flask of the Shattered Sun"
+  ],
+  "food": {
+   "feast": "Harandar Celebration",
+   "personal": "Royal Roast"
+  },
+  "health_potion": "Concentrated Silvermoon Health Potion",
+  "combat_potion": "Light's Potential",
+  "weapon": "Enchant Weapon - Acuity of the Ren'dorei",
+  "weapon_buff": "Thalassian Phoenix Oil",
+  "augment_rune": "Void-Touched Augment Rune",
+  "enchants": {
+   "head": "Enchant Helm - Empowered Rune of Avoidance",
+   "shoulders": "Enchant Shoulders - Amirdrassil's Grace",
+   "chest": "Enchant Chest - Mark of the Worldsoul",
+   "legs": "Sunfire Silk Spellthread",
+   "feet": "Enchant Boots - Lynx's Dexterity",
+   "rings": [
+    "Enchant Ring - Eyes of the Eagle"
+   ]
+  },
+  "gems": {
+   "diamond": "Indecipherable Eversong Diamond",
+   "others": [
+    "Flawless Quick Garnet",
+    "Flawless Deadly Amethyst",
+    "Flawless Masterful Peridot"
+   ]
+  },
+  "source": "https://www.wowhead.com/guide/classes/warlock/destruction/enchants-gems-pve-dps"
+ },
+ "mplus": {
+  "hero_note": "Diabolist carries the Best tag for Mythic+/AoE this season while Hellcaller carries the rest; on big pulls Destruction has no diminishing returns on AoE and gains equal power per target, one of the most potent AoE sources in the game.",
+  "tips": [
+   "On big pulls spend shards on Rain of Fire without worrying about AoE caps",
+   "Weave Havoc onto priority targets for swap damage on new adds",
+   "Shadowburn below 20% HP funds extra shards (cost reduced to 1 with no cooldown)",
+   "Conflagrate keeps Backdraft stacks for Chaos Bolt while giving movement casts",
+   "Demonic Circle and Demonic Gateway minimize the movement DPS loss on longer travels"
+  ],
+  "season": "Midnight Season 2"
+ },
+ "section_titles": {
+  "overview": "معرفی",
+  "hero": "Hero Tree",
+  "talents": "تلنت‌ها",
+  "rotation": "روتیشن و کول‌داون‌ها",
+  "gear": "گیر و آیتم‌ها",
+  "stats": "اولویت استت",
+  "consumables": "انچنت، جم و مصرفی",
+  "mplus": "نکته‌های Mythic+"
+ }
+}

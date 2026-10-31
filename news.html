@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اخبار wowheadFA — wowfarsi</title>
+<meta name="description" content="تازه‌ترین اخبار World of Warcraft به فارسی؛ بازنویسی اورجینال مقالات Wowhead با ذکر منبع — پچ، هاتفیکس، تیونینگ کلاس‌ها و Midnight.">
+<meta name="keywords" content="wowheadFA, اخبار وارکرفت فارسی, WoW news فارسی, wowfarsi">
+<link rel="canonical" href="https://pvwvuow.github.io/wow/news.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="wowfarsi">
+<meta property="og:title" content="اخبار wowheadFA — wowfarsi">
+<meta property="og:description" content="اخبار World of Warcraft به فارسی — بازنویسی اورجینال با ذکر منبع Wowhead.">
+<meta property="og:url" content="https://pvwvuow.github.io/wow/news.html">
+<meta property="og:locale" content="fa_IR">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css?v=20261031b">
+<link rel="stylesheet" href="assets/css/index.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/fantasy.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/extra.css?v=20261025d">
+<link rel="stylesheet" href="assets/css/support.css?v=20261031a">
+<link rel="stylesheet" href="assets/css/news-body.css?v=20261104a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"اخبار wowheadFA",
+ "inLanguage":"fa","url":"https://pvwvuow.github.io/wow/news.html",
+ "isPartOf":{"@type":"WebSite","name":"wowfarsi","url":"https://pvwvuow.github.io/wow/"}}
+</script>
+<style>
+/* ---------- wowheadFA news page ---------- */
+.nw-toolbar{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center;margin:0 auto 1.6rem;max-width:52rem}
+.nw-toolbar .wf-input{flex:1 1 16rem;min-width:12rem}
+.nw-stats{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.2rem}
+.nw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.1rem;max-width:72rem;margin:0 auto}
+.nw-card{position:relative;background:linear-gradient(180deg,rgba(23,38,63,.55),rgba(7,10,18,.72));border:1px solid rgba(240,199,94,.22);border-radius:10px;padding:1.15rem 1.2rem 1rem;display:flex;flex-direction:column;gap:.55rem;transition:border-color .2s,transform .2s,box-shadow .2s}
+.nw-card:hover{border-color:rgba(246,224,163,.55);transform:translateY(-2px);box-shadow:0 14px 34px -18px rgba(0,0,0,.9)}
+.nw-card h3{margin:0;font-size:1.02rem;line-height:1.9;color:var(--gold-1)}
+.nw-card h3 a{color:inherit;text-decoration:none}
+.nw-card h3 a:hover{color:#fff}
+.nw-fig{display:block;margin:-1.15rem -1.2rem .2rem;overflow:hidden;border-radius:10px 10px 0 0;border-bottom:1px solid rgba(240,199,94,.16)}
+.nw-thumb{display:block;width:100%;aspect-ratio:16/7;object-fit:cover;transform:scale(1);transition:transform .25s,opacity .25s;opacity:.92}
+.nw-card:hover .nw-thumb{transform:scale(1.04);opacity:1}
+.nw-lead{margin:0;font-size:.85rem;line-height:2;color:var(--parch-dim);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nw-meta{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;font-size:.72rem;color:var(--mut)}
+.nw-meta .nw-src{color:var(--blue-1)}
+.nw-tag{background:rgba(240,199,94,.08);border:1px solid rgba(240,199,94,.25);border-radius:99px;padding:0 .55rem;font-size:.7rem;color:var(--gold-2)}
+.nw-actions{display:flex;gap:.5rem;margin-top:auto;padding-top:.55rem}
+.nw-empty{max-width:52rem;margin:0 auto;text-align:center;color:var(--parch-dim)}
+.nw-reg{max-width:44rem;margin:0 auto;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;background:rgba(11,15,26,.6);border:1px solid rgba(143,180,232,.16);border-radius:10px;padding:1rem 1.1rem}
+.nw-reg .wf-input{flex:1 1 16rem;min-width:12rem;direction:ltr;text-align:left}
+.nw-reg-hint{max-width:44rem;margin:.7rem auto 0;font-size:.78rem;color:var(--parch-dim);line-height:2;text-align:center}
+/* ---------- reader overlay ---------- */
+.nw-reader{position:fixed;inset:0;z-index:60;background:rgba(4,6,11,.82);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:2.2rem 1rem;overflow-y:auto}
+.nw-reader[hidden]{display:none}
+.nw-reader-in{width:min(46rem,100%);background:linear-gradient(180deg,#0b0f1a,#070a12);border:1px solid rgba(240,199,94,.35);border-radius:14px;padding:1.6rem 1.7rem 1.4rem;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.95)}
+.nw-close{position:absolute;top:.9rem;left:.9rem;width:2.1rem;height:2.1rem;border-radius:8px;border:1px solid rgba(240,199,94,.3);background:rgba(11,15,26,.8);color:var(--gold-1);font-size:1rem;cursor:pointer}
+.nw-close:hover{border-color:var(--gold-2);color:#fff}
+.nw-reader h2{margin:.2rem 0 .6rem;font-size:1.35rem;line-height:2;color:var(--gold-1)}
+.nw-reader .nw-r-lead{border-right:3px solid var(--gold-3);padding-right:.8rem;color:var(--parch);font-size:.95rem;line-height:2.1}
+.nw-reader .nw-r-body p{color:var(--parch);font-size:.92rem;line-height:2.2;margin:.9rem 0}
+.nw-srcbox{margin-top:1.3rem;background:rgba(23,38,63,.4);border:1px solid rgba(143,180,232,.25);border-radius:9px;padding:.75rem 1rem;font-size:.8rem;color:var(--parch-dim);line-height:2}
+.nw-srcbox a{color:var(--blue-1)}
+@media (max-width:560px){.nw-grid{grid-template-columns:1fr}.nw-reader{padding:.8rem .5rem}}
+</style>
+</head>
+<body>
+<div class="bg-layers" aria-hidden="true">
+  <div class="bg-photo"></div>
+  <div class="bg-veil"></div>
+  <div class="bg-grain"></div>
+</div>
+<div id="embers" aria-hidden="true" style="position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none"></div>
+
+<!-- ================= nav ================= -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-brand" aria-label="wowfarsi — خانه">
+      <span class="brand-logo"><img src="assets/img/logo.webp" alt="لوگوی wowfarsi"></span>
+      <b class="font-cinzel" dir="ltr">wowfarsi</b>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="retail.html">Midnight</a>
+      <a href="forever.html">Forever</a>
+      <a href="talents.html">Talent Tree</a>
+      <a href="news.html" class="is-active">wowheadFA</a>
+      <a href="addon.html">افزونه</a>
+      <a href="status.html">وضعیت ترجمه</a>
+      <a href="donate.html" class="dn-nav">حمایت</a>
+    </nav>
+  </div>
+  <div class="nav-rule"></div>
+</header>
+
+<main>
+<section class="section" style="padding-top:7.5rem" id="news">
+  <div class="bg-scrim" aria-hidden="true"></div>
+  <div class="sect-head reveal">
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>اخبار <span class="font-cinzel" dir="ltr">wowheadFA</span></h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-en font-cinzel" dir="ltr">WoW News in Persian</p>
+    <p class="st-lead">تازه‌ترین اخبار <span class="font-cinzel" dir="ltr">World of Warcraft</span>؛ متن کامل مقالهٔ <span class="font-cinzel" dir="ltr">Wowhead</span> سمت سرور خوانده می‌شود و پس از نوشتن اورجینال فارسی، بازبینی مستقل دومرحله‌ای و گیت‌های قطعی کیفیت، خودکار منتشر می‌گردد — نه ترجمهٔ تحت‌اللفظی، همیشه با ذکر منبع.</p>
+  </div>
+
+  <div class="nw-toolbar">
+    <input id="nw-search" class="wf-input" type="search" placeholder="جستجو در اخبار…" aria-label="جستجو">
+    <a href="news-translate.html" class="btn btn-medallion btn-sm">✍️ ثبت لینک خبر قدیمی</a>
+  </div>
+  <div id="nw-stats" class="nw-stats" aria-live="polite"></div>
+  <div id="nw-error" class="nw-empty" hidden>
+    <p>دریافت داده‌ها ناموفق بود؛ اتصال اینترنت را بررسی کنید.</p>
+    <p><button class="btn btn-stone btn-sm" onclick="location.reload()">تلاش دوباره</button></p>
+  </div>
+
+  <div id="nw-grid" class="nw-grid reveal"></div>
+
+  <div class="sect-head" style="margin-top:4rem">
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>ثبت لینک خبر قدیمی</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-hint">اخبار تازه خودکار پوشش داده می‌شوند؛ اگر خبری قدیمی‌تر از خوراک <span class="font-cinzel" dir="ltr">RSS</span> مدنظرت است، لینکش را ثبت کن.</p>
+  </div>
+  <div class="nw-reg reveal">
+    <input id="nw-reg-url" class="wf-input" type="url" placeholder="https://www.wowhead.com/news=123456" spellcheck="false">
+    <button class="btn btn-medallion btn-sm" id="nw-reg-go">ثبت و شروع فارسی‌سازی</button>
+  </div>
+  <p class="nw-reg-hint">صفحهٔ فارسی‌سازی باز می‌شود؛ خروجی نهایی با همان <span class="font-cinzel" dir="ltr">Issue 📰</span> همیشگی ثبت می‌گردد — برای همکاران انتشار خودکار، برای بقیه لیبل <span dir="ltr">needs-review</span> و بازبینی دستی.</p>
+  <div id="nw-reg-err" class="nw-empty" hidden><p>لینک معتبر نیست؛ باید به شکل <span dir="ltr">https://www.wowhead.com/news=…</span> باشد.</p></div>
+</section>
+</main>
+
+<!-- ================= reader overlay ================= -->
+<div id="nw-reader" class="nw-reader" hidden role="dialog" aria-modal="true">
+  <div class="nw-reader-in">
+    <button class="nw-close" id="nw-close" aria-label="بستن">✕</button>
+    <div id="nw-reader-body"></div>
+  </div>
+</div>
+
+<!-- ================= footer ================= -->
+<footer class="footer">
+  <div class="brand-logo"><img src="assets/img/logo.webp" alt="wowfarsi"></div>
+  <p class="footer-word font-cinzel" dir="ltr">wowfarsi</p>
+  <p class="footer-line">ساخته‌شده برای جامعهٔ ایرانیِ وارکرفت</p>
+  <div class="footer-links">
+    <a href="https://github.com/pvwvuow/wowheadFA" target="_blank" rel="noreferrer">wowheadFA</a>
+    <span>✦</span>
+    <a href="index.html">خانه</a>
+    <span>✦</span>
+    <span class="font-cinzel" dir="ltr">wowfarsi · Midnight 12.1.5</span>
+  </div>
+  <p class="footer-note">اخبار این صفحه بازنویسی اورجینال فارسیِ مقالات <span class="font-cinzel" dir="ltr">Wowhead</span> هستند و منبع هر خبر با لینک ذکر شده است. پروژه‌ای هواداری و غیرتجاری است؛ وابسته به Wowhead یا Blizzard Entertainment نیست.</p>
+  <p class="footer-note" dir="ltr">World of Warcraft is a trademark of Blizzard Entertainment, Inc. Wowhead is a trademark of its respective owner. This is a fan-made, non-commercial community site; source articles are credited in full.</p>
+</footer>
+
+<script src="assets/js/main.js?v=20261104a"></script>
+<script src="assets/js/support.js?v=20261031a"></script>
+<script src="assets/js/news-body.js?v=20261104a"></script>
+<script>
+(() => {
+"use strict";
+/* ============================================================
+   wowheadFA news feed - vanilla JS, no dependencies
+   data: https://pvwvuow.github.io/wowheadFA/news.json (CORS:*)
+   ============================================================ */
+const NEWS_SOURCES = [
+  "https://pvwvuow.github.io/wowheadFA/news.json",
+  "https://raw.githubusercontent.com/pvwvuow/wowheadFA/main/docs/news.json",
+];
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
+  (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const faDigits = (v) => String(v).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+const faDate = (iso) => {
+  try {
+    return faDigits(new Intl.DateTimeFormat("fa-IR",
+      {year:"numeric", month:"long", day:"numeric"}).format(new Date(iso)));
+  } catch { return esc(iso); }
+};
+let DATA = { published: [], queue: [] };
+
+async function loadNews() {
+  for (const url of NEWS_SOURCES) {
+    try {
+      const r = await fetch(url + "?t=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (Array.isArray(j.published) && Array.isArray(j.queue)) return j;
+    } catch { /* try next source */ }
+  }
+  throw new Error("no source reachable");
+}
+
+function cardHTML(a) {
+  const tags = (a.tags_fa || []).slice(0, 3)
+    .map((t) => `<span class="nw-tag">${esc(t)}</span>`).join(" ");
+  return `
+  <article class="nw-card" data-id="${esc(a.id)}">
+    ${a.thumb ? `<a class="nw-fig" href="#read-${esc(a.id)}" data-read="${esc(a.id)}"><img class="nw-thumb" src="${esc(a.thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>` : ""}
+    <h3><a href="#read-${esc(a.id)}" data-read="${esc(a.id)}">${esc(a.title_fa)}</a></h3>
+    <p class="nw-lead">${esc(a.lead_fa)}</p>
+    <div class="nw-meta">
+      <span>🗓 ${faDate(a.published_at)}</span>
+      <a class="nw-src" href="${esc(a.source_url)}" target="_blank" rel="noopener">منبع: Wowhead ↗</a>
+      ${tags}
+    </div>
+    <div class="nw-actions">
+      <a class="btn btn-stone btn-sm" href="#read-${esc(a.id)}" data-read="${esc(a.id)}">خواندن</a>
+      <a class="btn btn-stone btn-sm" href="${esc(a.page_url)}" target="_blank" rel="noopener">نسخهٔ wowheadFA</a>
+    </div>
+  </article>`;
+}
+
+function render() {
+  const grid = document.getElementById("nw-grid");
+  const stats = document.getElementById("nw-stats");
+  const q = (document.getElementById("nw-search").value || "").trim().toLowerCase();
+  const match = (txt) => !q || String(txt || "").toLowerCase().includes(q);
+
+  const pubs = DATA.published.filter((a) => match(a.title_fa) || match(a.lead_fa) || match(a.title_en));
+  grid.innerHTML = pubs.length
+    ? pubs.map(cardHTML).join("")
+    : `<div class="nw-empty" style="grid-column:1/-1"><p>چیزی پیدا نشد.</p></div>`;
+
+  const gen = DATA.generated ? faDate(DATA.generated) : "";
+  stats.innerHTML = `
+    <span class="wf-badge">منتشرشده: ${faDigits(DATA.published.length)}</span>
+    ${gen ? `<span class="wf-badge">به‌روزرسانی: ${gen}</span>` : ""}`;
+}
+
+function openReader(id) {
+  const a = DATA.published.find((x) => String(x.id) === String(id));
+  if (!a) return;
+  const render = () => {
+  const body = (window.NB && NB.renderBody)
+    ? NB.renderBody(a.body_fa || [])
+    : (a.body_fa || []).filter((p) => typeof p === "string").map((p) => `<p>${esc(p)}</p>`).join("");
+  const tags = (a.tags_fa || []).map((t) => `<span class="nw-tag">${esc(t)}</span>`).join(" ");
+  document.getElementById("nw-reader-body").innerHTML = `
+    <h2>${esc(a.title_fa)}</h2>
+    <div class="nw-meta"><span>🗓 ${faDate(a.published_at)}</span>${tags}
+      ${a.model ? `<span>${a.via === "auto-grok" ? `نگارش و بازبینی خودکار با ${esc(a.model)}` : `نگارش با دستیار هوشمند (${esc(a.model)}) + ویرایش انسانی`}</span>` : ""}</div>
+    <p class="nw-r-lead">${esc(a.lead_fa)}</p>
+    <div class="nw-r-body">${body}</div>
+    <div class="nw-srcbox">
+      منبع: <a href="${esc(a.source_url)}" target="_blank" rel="noopener">Wowhead — ${esc(a.title_en)}</a><br>
+      این متن بازنویسی اورجینال فارسی است، نه ترجمهٔ تحت‌اللفظی.
+      <a href="${esc(a.page_url)}" target="_blank" rel="noopener">نسخهٔ اختصاصی در wowheadFA ↗</a>
+    </div>`;
+  document.getElementById("nw-reader").hidden = false;
+  document.body.style.overflow = "hidden";
+  };
+  /* v2 item blocks need tips; load once, then render (never blocks long) */
+  if (window.NB && NB.loadTips) NB.loadTips("news/tips.json").then(render, render);
+  else render();
+}
+function closeReader() {
+  document.getElementById("nw-reader").hidden = true;
+  document.body.style.overflow = "";
+  if (location.hash.startsWith("#read-")) history.replaceState(null, "", location.pathname + location.search);
+}
+
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-read]");
+  if (t) { e.preventDefault(); openReader(t.dataset.read); }
+});
+document.getElementById("nw-close").addEventListener("click", closeReader);
+document.getElementById("nw-reader").addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) closeReader();
+});
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeReader(); });
+document.getElementById("nw-search").addEventListener("input", render);
+
+/* register an old-news link -> BYOK translator with ?url= prefill */
+function registerOld() {
+  const raw = (document.getElementById("nw-reg-url").value || "").trim();
+  const ok = /^https:\/\/(www\.)?wowhead\.com\/news(=|\/)/.test(raw);
+  document.getElementById("nw-reg-err").hidden = ok;
+  if (ok) location.href = "news-translate.html?url=" + encodeURIComponent(raw);
+}
+document.getElementById("nw-reg-go").addEventListener("click", registerOld);
+document.getElementById("nw-reg-url").addEventListener("keydown", (e) => { if (e.key === "Enter") registerOld(); });
+
+(async () => {
+  try {
+    DATA = await loadNews();
+    render();
+    const m = location.hash.match(/^#read-(\d+)$/);
+    if (m) openReader(m[1]);
+  } catch {
+    document.getElementById("nw-error").hidden = false;
+  }
+})();
+})();
+</script>
+<script src="assets/js/nav-menu.js?v=20261111j"></script>
+</body>
+</html>

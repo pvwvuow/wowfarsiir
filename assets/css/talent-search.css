@@ -1,0 +1,29 @@
+/* wowfarsi - Talent Tree search box + green halo */
+html body .tts { max-width: 46rem; margin: 1.2rem auto 0.4rem; padding: 0 1rem; position: relative; direction: rtl; }
+html body .tts-row { display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap; }
+html body .tts-input { flex: 1; min-width: 14rem; display: flex; align-items: center; gap: 0.55rem; padding: 0.55rem 0.8rem; color: var(--parch-dim); background: rgba(8, 10, 18, 0.82); border: 1px solid rgba(240, 199, 94, 0.3); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+html body .tts-input:focus-within { border-color: rgba(143, 212, 164, 0.7); box-shadow: 0 0 0 3px rgba(143, 212, 164, 0.12); }
+html body .tts-input input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: var(--parch); font: inherit; font-size: 14px; }
+html body .tts-input input::placeholder { color: var(--mut); }
+html body .tts-clear { background: transparent; border: 0; color: var(--mut); font-size: 20px; line-height: 1; cursor: pointer; padding: 0 0.2rem; }
+html body .tts-clear:hover { color: var(--parch); }
+html body .tts-clear[hidden] { display: none; }
+html body .tts-all { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 12px; color: var(--parch-dim); cursor: pointer; white-space: nowrap; }
+html body .tts-all input { accent-color: #8fd4a4; }
+html body .tts-count { margin: 0.55rem 0.2rem 0; min-height: 1.3em; font-size: 12px; color: #8fd4a4; }
+html body .tts-list { position: absolute; inset-inline: 1rem; top: 3.5rem; z-index: 40; margin: 0; padding: 0.3rem 0; list-style: none; max-height: 20rem; overflow: auto; background: rgba(8, 10, 18, 0.97); border: 1px solid rgba(240, 199, 94, 0.35); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6); }
+html body .tts-list[hidden] { display: none; }
+html body .tts-list li { display: flex; align-items: center; gap: 0.7rem; padding: 0.45rem 0.85rem; font-size: 13px; color: var(--parch); cursor: pointer; }
+html body .tts-list li:hover { background: rgba(143, 212, 164, 0.1); }
+html body .tts-meta { margin-inline-start: auto; font-size: 11px; color: var(--mut); }
+html body .tts-badge { font-size: 10px; padding: 0 0.4rem; color: #e8b27a; border: 1px solid rgba(232, 178, 122, 0.4); }
+
+/* halo on the matching nodes; everything else fades back while a search is active */
+html body .tt-canvas.tts-on .tt-node:not(.tt-hit) { opacity: 0.38; transition: opacity 0.2s ease; }
+.tts-halo { pointer-events: none; }
+.tts-halo-glow { fill: rgba(143, 212, 164, 0.6); }
+.tts-halo-ring { fill: none; stroke: #8fd4a4; stroke-width: 0.05; animation: tts-pulse 1.8s ease-in-out infinite; }
+.tts-halo-ring.tts-focus { stroke: #b8f0c8; stroke-width: 0.08; }
+@keyframes tts-pulse { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .tts-halo-ring { animation: none; } }
+@media (max-width: 640px) { html body .tts-list { top: 6.2rem; } }

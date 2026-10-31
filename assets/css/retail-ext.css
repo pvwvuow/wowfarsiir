@@ -1,0 +1,59 @@
+/* wowfarsi - Retail extras: rating cards, talent map, bidi islands */
+html body bdi.lt { unicode-bidi: isolate; direction: ltr; }
+
+/* rating card: one calm card, 3 x 2 tiles */
+html body .rt-ratecard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 1.2rem 0; padding: .4rem 0; border: 0; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, .5) 14%, rgba(240, 199, 94, .5) 86%, transparent) center top / 100% 1px no-repeat, linear-gradient(90deg, transparent, rgba(240, 199, 94, .5) 14%, rgba(240, 199, 94, .5) 86%, transparent) center bottom / 100% 1px no-repeat, linear-gradient(180deg, rgba(240, 199, 94, .05), rgba(11, 15, 26, .45)); }
+html body .rt-tile { --lv: #f0c75e; display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: 1rem .6rem; text-align: center; border-inline-start: 1px solid rgba(255, 255, 255, .07); border-bottom: 1px solid rgba(255, 255, 255, .07); }
+html body .rt-tile:nth-child(3n + 1) { border-inline-start: 0; }
+html body .rt-tile:nth-last-child(-n + 3) { border-bottom: 0; }
+html body .rt-tile b { font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--mut, #8e97ab); }
+html body .rt-tile strong { font-size: 1.12rem; font-weight: 900; color: var(--lv); text-shadow: 0 0 14px color-mix(in srgb, var(--lv) 45%, transparent); }
+html body .rt-bar { display: flex; gap: 4px; direction: ltr; }
+html body .rt-bar i { width: 18px; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, .12); }
+html body .rt-bar i.f { background: var(--lv); box-shadow: 0 0 8px color-mix(in srgb, var(--lv) 60%, transparent); }
+html body .rt-tile.l5 { --lv: #6fcf97; }
+html body .rt-tile.l4 { --lv: #a6d96b; }
+html body .rt-tile.l3 { --lv: #f0c75e; }
+html body .rt-tile.l2 { --lv: #f0994e; }
+html body .rt-tile.l1 { --lv: #e0605e; }
+@media (max-width: 560px) {
+  html body .rt-ratecard { grid-template-columns: repeat(2, 1fr); }
+  html body .rt-tile, html body .rt-tile:nth-child(3n + 1) { border-inline-start: 1px solid rgba(255, 255, 255, .07); border-bottom: 1px solid rgba(255, 255, 255, .07); }
+  html body .rt-tile:nth-child(2n + 1) { border-inline-start: 0; }
+  html body .rt-tile:nth-last-child(-n + 2) { border-bottom: 0; }
+}
+
+/* talent map */
+html body .rt-map { margin: 1.6rem 0 1rem; }
+html body .rt-map > h3 { margin-bottom: .4rem; }
+html body .rt-mtabs { display: flex; flex-wrap: wrap; gap: .5rem; margin: .8rem 0; }
+html body .rt-mtabs button { cursor: pointer; font: inherit; font-size: 12.5px; font-weight: 700; padding: .15rem 1.1rem; color: var(--parch-dim, #bdb7a6); background: transparent; border: 0; border-block: 1px solid rgba(240, 199, 94, .25); transition: color .25s, border-color .25s, background .25s; }
+html body .rt-mtabs button small { margin-inline-start: .4rem; font-size: 10.5px; font-weight: 500; color: var(--blue-1, #8fb4e8); }
+html body .rt-mtabs button:hover, html body .rt-mtabs button.on { color: var(--gold-1, #f6e0a3); border-block-color: rgba(240, 199, 94, .7); background: linear-gradient(90deg, transparent, rgba(240, 199, 94, .09), transparent); }
+html body .rt-mbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1rem; margin-bottom: 1rem; }
+html body .rt-mstat { font-size: 12.5px; color: var(--parch-dim, #bdb7a6); direction: ltr; }
+html body .rt-mstat b { color: var(--gold-2, #f0c75e); }
+html body .rt-mgrid { display: grid; grid-template-columns: 1.15fr .85fr 1.15fr; gap: 1rem; align-items: start; direction: ltr; }
+html body .rt-mp { padding: .6rem .4rem 1rem; background: linear-gradient(90deg, transparent, rgba(240, 199, 94, .3) 16%, rgba(240, 199, 94, .3) 84%, transparent) center top / 100% 1px no-repeat, linear-gradient(180deg, rgba(240, 199, 94, .035), rgba(11, 15, 26, .4)); }
+html body .rt-mp h4 { margin: 0 0 .3rem; text-align: center; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--gold-3, #c9a232); }
+html body .rt-mp svg { display: block; width: 100%; height: auto; }
+html body .rt-mp .e { stroke: rgba(143, 160, 190, .22); stroke-width: 4; }
+html body .rt-mp .e.on { stroke: #e0b954; stroke-width: 5; filter: drop-shadow(0 0 4px rgba(240, 199, 94, .55)); }
+html body .rt-mp g.sp { display: inline; padding: 0; border: 0; cursor: help; transition: opacity .2s; }
+html body .rt-mp g.sp:hover { background: none; }
+html body .rt-mp g.off { opacity: .34; filter: grayscale(1); }
+html body .rt-mp g.off:hover { opacity: .7; }
+html body .rt-mp .ring { fill: #0c1220; stroke: #5f6d85; stroke-width: 3.5; }
+html body .rt-mp g.on .ring { stroke: #f0c75e; stroke-width: 4; filter: drop-shadow(0 0 7px rgba(240, 199, 94, .75)); }
+html body .rt-mp g.on.hero .ring { stroke: #8fb4e8; filter: drop-shadow(0 0 7px rgba(143, 180, 232, .75)); }
+html body .rt-mp .bd { fill: #0c1220; stroke: #f0c75e; stroke-width: 2.5; }
+html body .rt-mp .bt { fill: #f6e0a3; font: 800 17px sans-serif; text-anchor: middle; dominant-baseline: central; }
+html body .rt-mp .ch { stroke: rgba(4, 6, 11, .9); stroke-width: 2; }
+html body .rt-map .note { margin: .8rem 0 0; font-size: 12.5px; color: var(--mut, #8e97ab); line-height: 2; }
+html body .rt-map .note i { display: inline-block; width: 10px; height: 10px; margin-inline: .25rem; border-radius: 50%; vertical-align: middle; }
+html body .rt-map .note i.on { background: #f0c75e; box-shadow: 0 0 8px rgba(240, 199, 94, .7); }
+html body .rt-map .note i.off { background: #5f6d85; opacity: .6; }
+@media (max-width: 860px) {
+  html body .rt-mgrid { grid-template-columns: 1fr; }
+  html body .rt-mp svg { max-width: 460px; margin: 0 auto; }
+}

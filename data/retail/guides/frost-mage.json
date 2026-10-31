@@ -1,0 +1,798 @@
+{
+ "slug": "frost-mage",
+ "class": "mage",
+ "class_en": "Mage",
+ "spec_en": "Frost",
+ "spec_no": 3,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Frost Mage",
+ "lead": "Frost بازی پروک-محور با کنترل میدان است: با [[Flurry]] و [[Ice Lance]] و Glacial Spike آسیب می‌زنی و با Frost Nova و Blizzard دشمنان را کند و ریشه‌کن می‌کنی. دو مسیر Hero Tree داری: [[Spellslinger]] با جریان Frost Splinter و [[Frostfire]] با Frostfire Bolt و Glacial Spike قوی‌تر؛ در حال حاضر متعادل‌اند.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/mage/frost/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/mage/frost/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/mage/frost/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/mage/frost/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Flurry": {
+   "fa": "اسپل اصلی پروک‌های سریع با تکرار"
+  },
+  "Ice Lance": {
+   "fa": "یک اسپل سریع که با تلنت [[Fingers of Frost]] بسیار قدرتمند می‌شود."
+  },
+  "Glacial Spike": {
+   "fa": "اسپلی قدرتمند که با استفاده از یخ‌های جمع شده گلشیال‌ها ایجاد می‌شود"
+  },
+  "Frost Nova": {
+   "fa": "اسپل که دشمنان اطراف را فریز و متوقف می‌کند."
+  },
+  "Blizzard": {
+   "fa": "اسپل منطقه‌ای برای از بین بردن گروهی دشمنان با فریزینگ رین."
+  },
+  "Spellslinger": {
+   "fa": "مسیر هرو تلنت که برای دنجون‌ها و دلوزها بهینه‌تر است و تگ‌های بهترین عملکرد را دارد."
+  },
+  "Frostfire": {
+   "fa": "مسیر هرو تلنت که در کلینگ‌های گروهی رید با تجمع اهداف عملکرد بهتری دارد."
+  },
+  "Ray of Frost": {
+   "fa": "کول‌داون اصلی برای آسیب‌زایی تک‌هدف"
+  },
+  "Splitting Ice": {
+   "fa": "تلنت برای افزایش آسیب به دو هدف هم‌جا"
+  },
+  "Fingers of Frost": {
+   "fa": "تلنت که به شما اجازه می‌دهد اسپل‌های یخ را با ۱۰۰% افزایش آسیب اجرا کنید."
+  },
+  "Brain Freeze": {
+   "fa": "تلنت که به شما امکان می‌دهد [[Frostfire Bolt]] را به صورت رایگان اجرا کنید."
+  },
+  "Blink": {
+   "fa": "اسپل موبیلیت اصلی برای جابجایی سریع"
+  },
+  "Alter Time": {
+   "fa": "اسپل که به شما اجازه می‌دهد زمان را به عقب برگردانید و موقعیت یا سلامتی را بازیابی کنید."
+  },
+  "Incantation of Swiftness": {
+   "fa": "اسپل Hero Tree برای افزایش سرعت حرکت"
+  },
+  "Freeze": {
+   "fa": "اثر ریشه‌کن از Frostbolt و Frozen Orb"
+  },
+  "Frost Splinters": {
+   "fa": "اسپل‌های یخین که از آیس لنس ایجاد می‌شوند و آسیب مداوم وارد می‌کنند"
+  },
+  "Reactive Barrier": {
+   "fa": "باریر دفاعی که با دریافت آسیب فعال شده و از شما محافظت می‌کند"
+  },
+  "Frostfire Bolt": {
+   "fa": "اسپل اصلی مگی فراست که ترکیبی از آسیب یخ و آتش است."
+  },
+  "Arcane Familiar": {
+   "fa": "یک حیوان خانگی که با [[Frostfire Bolt]] و [[Ice Lance]] آسیب می‌زند."
+  },
+  "Shifting Power": {
+   "fa": "یک اسپل که آسیب را به اهداف نزدیک وارد می‌کند."
+  },
+  "Comet Storm": {
+   "fa": "یک اسپل که چندین بمب یخ را روی اهداف نزدیک ایجاد می‌کند."
+  },
+  "Frozen Orb": {
+   "fa": "اسپل که یک کره یخین را شلیک می‌کند و در مسیر خود دشمنان را آسیب و فریز می‌کند."
+  },
+  "Jan'thrazet, the Soul Fang": {
+   "fa": "دست راست فراست میج با قابلیت افزایش شدت اسپل‌های یخ"
+  },
+  "Frostscale's Mystic Frond": {
+   "fa": "دست چپ با استت‌های مناسب برای فراست میج"
+  },
+  "Crown of the Primal Leywarden": {
+   "fa": "سر بخشی از ست کامل پریمر لی‌واردن"
+  },
+  "Aqirbane Reliquary": {
+   "fa": "گردن با استت‌های هاست و Mastery"
+  },
+  "Primal Leywarden's Manaflux": {
+   "fa": "شانه بخشی از ست کامل"
+  },
+  "Silken Voodoo Drape": {
+   "fa": "پشت با استت‌های مناسب"
+  },
+  "Crest of the Primal Leywarden": {
+   "fa": "سینه بخشی از ست کامل"
+  },
+  "Martyr's Bindings": {
+   "fa": "دست‌بند ساخته شده توسط صنعت‌گران"
+  },
+  "Primal Leywarden's Manashapers": {
+   "fa": "دست بخشی از ست کامل"
+  },
+  "Martyr's Waistwrap": {
+   "fa": "کمر ساخته شده توسط صنعت‌گران"
+  },
+  "Primal Leywarden's Tailored Legwraps": {
+   "fa": "پا بخشی از ست کامل"
+  },
+  "Cackling Soultreads": {
+   "fa": "پا با استت‌های مناسب"
+  },
+  "Band of the Swarmcaller": {
+   "fa": "انگشتر با استت‌های Mastery"
+  },
+  "Apex Brute's Claw Ring": {
+   "fa": "انگشتر با استت‌های هاست"
+  },
+  "Gebbo's Bottomless Bag": {
+   "fa": "ترینکت با قابلیت تولید مانا"
+  },
+  "Twisted Horror's Tendril": {
+   "fa": "ترینکت با قابلیت افزایش آسیب"
+  },
+  "Primal Leywarden's Attire": {
+   "fa": "ست کامل فراست با فواید قابل توجه برای گلشیال اسپایک"
+  },
+  "Light's Potential": {
+   "fa": "پتوشن جنگی قدرتمند که پس از استفاده بر اساس استات‌های شما مقدار اسپل پاور به دست می‌آید."
+  },
+  "Potion of Recklessness": {
+   "fa": "پتوشن جنگی که مقدار قابل توجهی از استات‌های اصلی را به‌طور موقت افزایش می‌دهد."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پتوشن درمانی که مقدار زیادی سلامت را بازیابی می‌کند و در مواقع ضروری بسیار کاربردی است."
+  },
+  "Flask of the Magisters": {
+   "fa": "پتوشن خوشه‌ای که استات‌های اصلی مِیج را به‌طور قابل توجهی افزایش می‌دهد."
+  },
+  "Harandar Celebration": {
+   "fa": "غذا که استات‌های اصلی را به‌طور دائمی افزایش می‌دهد و برای مابین کشیک‌ها ایده‌آل است."
+  },
+  "Champion's Bento": {
+   "fa": "غذا جایگزین که استات‌های اصلی را به‌طور دائمی افزایش می‌دهد و گزینه خوبی برای بازیکنان است."
+  },
+  "Argentleaf Tea": {
+   "fa": "چای که پس از استفاده مقدار قابل توجهی از استات‌های اصلی را به‌طور موقت افزایش می‌دهد."
+  },
+  "Sanguithorn Tea": {
+   "fa": "چای جایگزین که مشابه عملکرد چای اصلی دارد اما با نام متفاوت."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "رایحه سلاح که به سلاح شما قدرت جادویی می‌بخشد و در هر ضربه به دشمن آسیار وارد می‌کند."
+  },
+  "Enchant Weapon - Acuity of the Ren'dorei": {
+   "fa": "طلسم سلاح که به سلاح شما قدرت جادویی می‌بخشد و به‌طور تصادفی باعث افزایش خسارت می‌شود."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "رایحه تقویتی که استات‌های اصلی را به‌طور قابل توجهی افزایش می‌دهد و برای حداکثر کردن عملکرد ضروری است."
+  },
+  "Freezing Rain": {
+   "fa": "تلنت که به Blizzard اضافه می‌کند و دشمنان را کند و فریز می‌کند."
+  },
+  "Ice Block": {
+   "fa": "اسپل که کاراکتر را برای چند ثانیه در یک بلوک یخی ایمن می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Frost بازی پروک-محور با کنترل میدان است: با [[Flurry]] و [[Ice Lance]] و Glacial Spike آسیب می‌زنی و با Frost Nova و Blizzard دشمنان را کند و ریشه‌کن می‌کنی."
+    },
+    {
+     "t": "p",
+     "x": "دو مسیر Hero Tree داری: [[Spellslinger]] با جریان Frost Splinter و [[Frostfire]] با Frostfire Bolt و Glacial Spike قوی‌تر؛ در حال حاضر متعادل‌اند."
+    },
+    {
+     "t": "p",
+     "x": "پچ ۱۲.۱.۵ تغییرات کوچک تنظیمی دارد؛ بزرگترین تنظیم، ست جدید است که бонус قابل توجهی به Glacial Spike می‌دهد."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "موبیلیتی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "بقا",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "پیچیدگی",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "دویدن",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "پروفایل آسیب انعطاف‌پذیر با Ray of Frost به عنوان کول‌داون اصلی",
+       "موفق علیه دو هدف هم‌جا با Splitting Ice",
+       "موبیلیتی قوی: Blink/Shimmer، Alter Time، Incantation of Swiftnes، پروک‌های اینستنت",
+       "کنترل میدان: Frost Nova، Freeze، Blizzard، کند و ریشه‌کن کردن دشمنان"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "Ray of Frost را در برابر حرکت و اینتراپت آسیب‌پذیر می‌کند",
+       "کلی بدون پخش وقتی اهداف جدا هستند",
+       "هیلینگ خودکار محدود باعث خطر آسیب‌های اجتناب‌ناپذیر می‌شود"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Spellslinger",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "تمرکز بر آیس لنس و جریان مداوم اسپلترهای یخ؛ با ریاکتیو بریر برای دفاع"
+      },
+      {
+       "title": "Frostfire",
+       "tag": "گزینه جایگزین",
+       "x": "افزودن جادوی آتش با فروستفایر بولت، دوآلیتی، ایزوترمیک کور و ایمبورد واردینگ؛ وابستگی بیشتر به فروستفایر بولت و گلشیال اسپایک"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای مگی فراست در پچ ۱۲.۱.۵، دو درخت قهرمانی اصلی وجود دارد: اسپل‌سلینگر و فراست‌فایر. هر دو برای حالت‌های مختلف مناسب هستند."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Spellslinger (Raid ST)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این ساختار برای حالت تک‌هدف در رید بهینه شده است.",
+       "code": "CAEAAAAAAAAAAAAAAAAAAAAAAYGGLzMzsMmZmYmZGjZMziZmZmZMDAAAMzMzyyMTbAAAAAAwGAbLjZmZgtZMzMsAAAwMbAzEGwADD"
+      },
+      {
+       "title": "Spellslinger (Raid Spread Cleave)",
+       "tag": "انتخاب دوم",
+       "x": "این ساختار برای حالت کلین آپ در رید با پخش اهداف مناسب است.",
+       "code": "CAEAAAAAAAAAAAAAAAAAAAAAAYGGLzMzsMmZmYmZGzMzMziZmZMjZAAAgZmZWWmZaDAAAAAA2AYbZMzMDmthxMsAAAwMbAzEGwMYYA"
+      },
+      {
+       "title": "Spellslinger (Mythic+)",
+       "tag": "انتخاب سوم",
+       "x": "این ساختار برای حالت Mythic+ مناسب است.",
+       "code": "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmFMzEzMmZmZmZWMzMjZMDAAAMzMzyyMTbAAwCAAAYBgtlxMzMY2GGzwCAAAzsBMTGDYGMMA"
+      },
+      {
+       "title": "Frostfire (Raid Stacked Cleave)",
+       "tag": "انتخاب چهارم",
+       "x": "این ساختار برای حالت کلین آپ در رید با تجمع اهداف مناسب است.",
+       "code": "CAEAAAAAAAAAAAAAAAAAAAAAAYGGLzMzsMmZmYmxYmZmZWMzMzMzMzsMTzMbzCAAAaBAAAAAAAw2yYmZGMbzYmZstAAAAmZwMZMgBwA"
+      },
+      {
+       "title": "Frostfire (Mythic+)",
+       "tag": "انتخاب پنجم",
+       "x": "این ساختار برای حالت mithic+ مناسب است.",
+       "code": "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmFMzEzMmZmZmZWMzMzMzMzsMTzMbzCAAAaBAAWAAAAAYbZMzMDmtZMzM2WAAAAzMYmMGwAYA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=mage",
+     "x": "مشاهده همه ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ DPS"
+    },
+    {
+     "t": "p",
+     "x": "برای دستیابی به حداکثر خروجی آسیب، باید اسپل‌ها را با اولویت مناسب استفاده کنید. هر اسپل جایگاه مشخصی در چرخهٔ بازی دارد."
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "اگر [[Brain Freeze]] فعال است و [[Thermal Void]] فعال نیست، [[Flurry]] را بزن",
+      "اگر [[Fingers of Frost]] دو استک دارد، [[Ice Lance]] را بزن",
+      "اسپل [[Frozen Orb]] را استفاده کن",
+      "اسپل [[Glacial Spike]] را استفاده کن",
+      "اگر [[Fingers of Frost]] فعال است، [[Ice Lance]] را بزن",
+      "اگر استک‌های [[Freezing]] شش یا بیشتر است، [[Ice Lance]] را بزن",
+      "اگر آیسیکل‌ها سه یا کمتر هستند، [[Ray of Frost]] را بزن",
+      "اسپل [[Flurry]] را استفاده کن",
+      "اسپل [[Frostbolt]] را استفاده کن"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ چندهدفه"
+    },
+    {
+     "t": "p",
+     "x": "در حالت چندهدفه، چرخهٔ تک‌هدف را حفظ کنید اما با افزودن اسپل‌های اضافی برای بهینه‌سازی آسیب به چندین هدف."
+    },
+    {
+     "t": "steps",
+     "items": [
+      "همان چرخهٔ تک‌هدف",
+      "با سه هدف یا بیشتر، اسپل [[Blizzard]] را استفاده کنید",
+      "اطمینان حاصل کنید که [[Frozen Orb]] به تعداد بیشتری هدف برخورد می‌کند",
+      "اگر [[Freezing Rain]] فعال است، [[Blizzard]] را بزن",
+      "قبل از [[Frostbolt]]، از [[Blizzard]] به عنوان پرکننده استفاده کنید"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نکتهٔ برجسته: [[Ray of Frost]] آسیب قابل توجهی وارد می‌کند و تعداد زیادی استک [[Freezing]] تولید می‌کند؛ کلید اصلی این است که کانال کامل آن را به پایان برسانید: از قبل برنامه‌ریزی کنید و برای امن ماندن به جای لغو کردن، از [[Shimmer]] استفاده کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای میج فراست در پچ 12.1.5، تمرکز اصلی باید روی چهار قطعه ست کامل، ترینکت‌های قوی و آیتم‌های خاص کانتریپ از رید باشد؛ بقیه اسلات‌ها عمدتاً بر اساس سطح آیتم مهم هستند."
+    },
+    {
+     "t": "call",
+     "x": "حتماً با Raidbots سیم‌کیشن خود را انجام دهید تا بهترین گیرینگ شخصی‌سازی شده را پیدا کنید."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌های اسلات"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "دست راست",
+       "id": 271092
+      },
+      {
+       "slot": "دست چپ",
+       "id": 268263
+      },
+      {
+       "slot": "سر",
+       "id": 271564
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271562
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271567
+      },
+      {
+       "slot": "دست‌بند",
+       "id": 239648
+      },
+      {
+       "slot": "دست",
+       "id": 271565
+      },
+      {
+       "slot": "کمر",
+       "id": 239649
+      },
+      {
+       "slot": "پا",
+       "id": 271563
+      },
+      {
+       "slot": "پا",
+       "id": 268255
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268252
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270164
+      },
+      {
+       "slot": "ترینکت",
+       "id": 281215
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Intellect",
+      "Mastery",
+      "Critical Strike",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت‌های اصلی برای مگی فروست به ترتیب اهمیت عبارت‌اند از اینتلجت، مستری، کریتیکال استریک، هاست و ورساتیلتی."
+    },
+    {
+     "t": "p",
+     "x": "مستری امن‌ترین استت دومیه و برای تقسیم دقیق‌تر استت‌ها بهتره از sim استفاده بشه."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "استفاده از آیتم‌های مناسب به‌طور قابل توجهی بر عملکرد فراست مِیج تأثیر می‌گذارد. در این راهنما بهترین گزینه‌ها برای پچ 12.1.5 آورده شده‌اند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "معجون",
+       "v": "Light's Potential / Potion of Recklessness",
+       "ids": [
+        241308,
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "معجون",
+       "v": "Flask of the Magisters",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "غذاهای جایگزین",
+       "v": "Champion's Bento",
+       "ids": [
+        242274
+       ]
+      },
+      {
+       "k": "چای",
+       "v": "Argentleaf Tea / Sanguithorn Tea",
+       "ids": [
+        242298,
+        242299
+       ]
+      },
+      {
+       "k": "رایحه‌های سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "طلسم‌های سلاح",
+       "v": "Enchant Weapon - Acuity of the Ren'dorei",
+       "ids": [
+        244028
+       ]
+      },
+      {
+       "k": "رایحه‌های تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای اکثر اسلات‌ها، بهترین انتخاب‌ها عبارتند از:"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه‌ها",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Sunfire Silk Spellthread",
+       "ids": [
+        240094
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشترها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در مورد جواهرها، بهترین گزینه‌ها شامل:"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Powerful Eversong Diamond",
+       "ids": [
+        240966
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Deadly Amethyst, Flawless Masterful Garnet, Flawless Masterful Peridot, Flawless Masterful Lapis (one of each)",
+       "ids": [
+        240897,
+        240907,
+        240891,
+        240918
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "این آیتم‌ها بهترین عملکرد را برای فراست مِیج در حالت DPS ارائه می‌دهند و با استات‌های اصلی مِیج هماهنگ هستند."
+    },
+    {
+     "t": "p",
+     "x": "همیشه قبل از شروع کشیک، پتوشن و خوراکی‌ها را استفاده کنید تا از حداکثر پتانسیل کاراکترتان بهره‌مند شوید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در میدان‌های جنگ Midnight Season 2، اسپل‌سلینگر بهترین انتخاب برای دンジون‌ها و دلوزهاست، در حالی که فروست‌فایر برای کلینگ‌های گروهی رید بهتر عمل می‌کند."
+    },
+    {
+     "t": "h3",
+     "x": "نکات کلیدی برای پلاس"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Blizzard با فریزینگ رین بین فروزن اورب، ستون فقرات چرخهٔ شما برای پک‌هاست.",
+      "فروست نوا + فریز برای نگه داشتن پک‌ها توسط تانک؛ کند کردن فروست‌بولت، دوندگان را در محدوده نگه می‌دارد.",
+      "آیس‌بلوک و ترفندهای آلتر-تایم به شما اجازه می‌دهد تا برست‌های اجتناب‌ناپذیر دنجون را زنده بمانی."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "استفاده از [[Frozen Orb]] به‌عنوان ابزار اصلی برای مدیریت پک‌ها و ترکیب آن با تلنت‌های مناسب کلید موفقیت در میدان‌های جنگ است."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Frost Mage (فراست) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل فراست (Frost Mage) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Frost Mage talent build midnight",
+   "Frost Mage guide midnight",
+   "Frost Mage guide 12.1.5",
+   "best Frost Mage talents",
+   "Frost Mage talent tree midnight",
+   "Frost Mage pve guide",
+   "Frost Mage rotation midnight",
+   "Frost Mage rotation and cooldowns",
+   "Frost Mage bis list midnight",
+   "Frost Mage best in slot",
+   "Frost Mage gear guide",
+   "Frost Mage food and potion",
+   "best food for Frost Mage",
+   "best flask for Frost Mage",
+   "best potion for Frost Mage",
+   "Frost Mage enchants and gems",
+   "best enchants for Frost Mage",
+   "best gems for Frost Mage",
+   "Frost Mage stat priority midnight",
+   "Frost Mage tier set midnight",
+   "Frost Mage tier set bonuses",
+   "Frost Mage mythic+ guide",
+   "Frost Mage m+ guide midnight",
+   "Frost Mage raid guide",
+   "Frost Mage hero talents",
+   "Frost Mage hero tree",
+   "best dps build Frost Mage midnight",
+   "Frost Mage cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای فراست",
+   "تلنت فراست",
+   "تلنت برای Frost Mage",
+   "تلنت Mage فراست",
+   "بیلد فراست",
+   "بیلد تلنت فراست میدنایت",
+   "روتیشن فراست",
+   "روتیشن و کول‌داون‌های فراست",
+   "غذا برای فراست",
+   "غذا برای Frost Mage",
+   "غذا و معجون فراست",
+   "بهترین غذای فراست",
+   "فلسک فراست",
+   "بهترین فلسک برای فراست",
+   "معجون فراست",
+   "انچنت فراست",
+   "انچنت و جم فراست",
+   "بهترین انچنت برای فراست",
+   "جم فراست",
+   "بست آیتم فراست",
+   "بهترین آیتم‌های فراست",
+   "گیر فراست",
+   "استت فراست",
+   "اولویت استت فراست",
+   "ست تیر فراست",
+   "مایتی پلاس فراست",
+   "ام پلاس فراست",
+   "راهنمای فراست",
+   "راهنمای Frost Mage",
+   "راهنمای مج",
+   "فراست میدنایت",
+   "مج میدنایت",
+   "هرو تیلنت فراست",
+   "بیلد فراست",
+   "بهترین فراست"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Frost Mage (فراست) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Frost Mage به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای فراست چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: غذا «Harandar Celebration» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای فراست چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Powerful Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای فراست کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Frost Mage در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

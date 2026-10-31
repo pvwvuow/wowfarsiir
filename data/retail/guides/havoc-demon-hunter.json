@@ -1,0 +1,948 @@
+{
+ "slug": "havoc-demon-hunter",
+ "class": "demon-hunter",
+ "class_en": "Demon Hunter",
+ "spec_en": "Havoc",
+ "spec_no": 2,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Havoc Demon Hunter",
+ "lead": "Havoc یک اسپک DPS دو-دستهٔ چابک است که به‌جای کول‌داون‌های بلند، روی کول‌داون‌های کوتاه و غلتان بازی می‌کند و تقریباً همیشه دکمه‌ای برای فشردن دارد. دو مسیر Hero Tree داری: [[Aldrachi Reaver]] که در ریید و تک‌هدف جلوتر است و [[Fel-Scarred]] که در Mythic+ بهترین انتخاب است.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Aldrachi Reaver": {
+   "fa": "درخت هرو با تمرکز بر افزایش آسیب‌های وارد شده و پایداری."
+  },
+  "Fel-Scarred": {
+   "fa": "درخت هرو با تمرکز بر افزایش زنده‌مانی و انعطاف‌پذیری در برابر آسیب‌های وارد شده."
+  },
+  "Chaos Brand": {
+   "fa": "یک افکت منفی که توسط دیو هانترها به دشمنان اعمال می‌شود و آزار و اذیت جادویی آن‌ها را افزایش می‌دهد."
+  },
+  "Exergy": {
+   "fa": "یک تلنت که با کاهش آزار و اذیت جادویی، آسیب فیزیکی را افزایش می‌دهد اما شما را در معرض آسیب جادویی بیشتر قرار می‌دهد."
+  },
+  "Fiery Brand": {
+   "fa": "یک اسپل کلیدی که آسیب‌پذیری اهداف را افزایش می‌دهد و بخشی از چرخه اصلی دمون‌هانتر است."
+  },
+  "Eye Beam": {
+   "fa": "اسپل اصلی برای تولید ریソورس و آسیب‌های مداوم به دشمنان."
+  },
+  "Chaos Strike": {
+   "fa": "اسپل اصلی برای آسیب‌های بالا با مصرف ریسورس."
+  },
+  "Fel Devastation": {
+   "fa": "یک اسپل انفجاری قوی که آسیب قابل توجهی به دشمنان وارد می‌کند و برای پاک‌سازی گروه‌ها در M+ عالی است."
+  },
+  "Metamorphosis": {
+   "fa": "حالت اصلی دیمون‌هانتر که آسیب و زنده‌مانی را افزایش می‌دهد."
+  },
+  "Vengeful Retreat": {
+   "fa": "یک اسپل فرار سریع که شما را از موقعیت‌های خطرناک دور می‌کند و به دشمنان آسیب می‌زند."
+  },
+  "Blade Dance": {
+   "fa": "یک اسپل AoE که چندین ضربه سریع وارد می‌کند."
+  },
+  "The Hunt": {
+   "fa": "یک اسپل حرکتی و آسیب‌زا که به شما اجازه می‌دهد به سمت یک هدف پرتاب شوید و آسیب بالا وارد کنید."
+  },
+  "Reaver's Glaive": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد تبرهای خود را به دشمنان پرتاب کنید و آسیب در منطقه‌ای وارد کنید."
+  },
+  "Essence Break": {
+   "fa": "یک اسپل قدرتمند با cooldown طولانی که آسیب عالی می‌زند."
+  },
+  "Death Sweep": {
+   "fa": "نسخهٔ قدرتمندتر Blade Dance که در حالت Metamorphosis در دسترس است."
+  },
+  "Felblade": {
+   "fa": "اسپل حرکتی که ریسورس تولید می‌کند و سلامت بازیکن را بازمی‌گرداند."
+  },
+  "Immolation Aura": {
+   "fa": "یک AoE که روی دشمنان اطراف آسیب می‌زند و در سبک فل-اسکارد مهم است."
+  },
+  "Fel Rush": {
+   "fa": "یک حرکت سریع که به عنوان filler استفاده می‌شود."
+  },
+  "Throw Glaive": {
+   "fa": "یک حمله دوربرد که در سبک آلدراکی استفاده نمی‌شود."
+  },
+  "Demonsurge": {
+   "fa": "یک افکت که از Eye Beam به دست می‌آید و قدرت اسپل‌ها را افزایش می‌دهد."
+  },
+  "Rending Strike": {
+   "fa": "یک افکت که از Annihilation به دست می‌آید و برای Blade Dance ضروری است."
+  },
+  "Screaming Brutality": {
+   "fa": "یک تلنت که Throw Glaive را با هزینهٔ صفر استفاده می‌کند."
+  },
+  "Thrill of the Fight": {
+   "fa": "یک تلنت که uptime Reaver's Glaive را به 100% می‌رساند."
+  },
+  "Chaotic Transformation": {
+   "fa": "یک تلنت که cooldownهای Eye Beam و Death Sweep را در Metamorphosis ریست می‌کند."
+  },
+  "Flamebound": {
+   "fa": "یک تلنت که محدودهٔ Immolation Aura را افزایش می‌دهد."
+  },
+  "Wounded Quarry": {
+   "fa": "یک افکت که از Reaver's Mark به دست می‌آید و آسیب به هدف اصلی را افزایش می‌دهد."
+  },
+  "Aman'muso, Warlord's Vengeance": {
+   "fa": "دو دست افسانه‌ای برای دیوونتر هاوک؛ با افکت فعال‌کننده آسیب بالا و استت کریتیکال."
+  },
+  "Spellbreaker's Warglaive": {
+   "fa": "دست دوم افسانه‌ای با افکت ویژه که به هنگام استفاده از [[Chaos Strike]] آسیب را افزایش می‌دهد."
+  },
+  "Abyssal Doomhound's Pursuit": {
+   "fa": "ست چهار تکه با افکت‌های قدرتمند که برای استفاده از [[Essence Break]] طراحی شده است."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "تریک افسانه‌ای با افکت فعال‌کننده آسیب بالا که به‌طور تصادفی فعال می‌شود."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "تریک افسانه‌ای با افکت فعال‌کننده آسیب بالا که به‌طور مداوم فعال می‌شود."
+  },
+  "Potion of Recklessness": {
+   "fa": "پیش‌غذا قدرتمند که آسیب شما را به طور قابل توجهی افزایش می‌دهد و در نبردهای کوتاه مدت بسیار مؤثر است."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پیش‌غذا درمانی سریع که در مواقع ضروری برای نجات جان شما از مرگ ناگهانی کاربرد دارد."
+  },
+  "Imprison": {
+   "fa": "یک اسپل کنترلی که یک دشمن را برای مدت کوتاه مسدود می‌کند و از آسیب به شما جلوگیری می‌کند."
+  },
+  "Demonic": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد برای مدت کوتاه به شکل شیطانی درآیید و آسیب و دوام افزایش یابد."
+  },
+  "Soul Carver": {
+   "fa": "یک تلنت که به شما اجازه می‌دهد انرژی را به آسیب تبدیل کنید و در مبارزات طولانی‌مدت مفید است."
+  },
+  "Sigil of Silence": {
+   "fa": "یک سیگل که دشمنان اطراف را ساکت کرده و از استفاده از اسپل‌های جادویی جلوگیری می‌کند."
+  },
+  "Sigil of Misery": {
+   "fa": "یک سیگل که دشمنان اطراف را کند کرده و حرکت آن‌ها را محدود می‌کند."
+  },
+  "Shadowmeld": {
+   "fa": "یک قابلیت نایت elf که شما را نامرئی کرده و امکان فرار از تهدیدها یا لغو اسپل‌های دشمن را فراهم می‌کند."
+  },
+  "A Fire Inside": {
+   "fa": "افزایش آسیب‌های وارد شده توسط برست‌ها پس از استفاده از [[Eye Beam]]."
+  },
+  "Accelerated Blade": {
+   "fa": "کاهش زمان کول‌داون [[Felblade]] پس از استفاده از [[Chaos Strike]]."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Havoc یک اسپک DPS دو-دستهٔ چابک است که به‌جای کول‌داون‌های بلند، روی کول‌داون‌های کوتاه و غلتان بازی می‌کند و تقریباً همیشه دکمه‌ای برای فشردن دارد. دو مسیر Hero Tree داری: [[Aldrachi Reaver]] که در ریید و تک‌هدف جلوتر است و [[Fel-Scarred]] که در Mythic+ بهترین انتخاب است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "Mythic+",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "ریید",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "PvP",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "سهولت بازی",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "زندگی بالا با تراپ‌های قوی؛ کاهش منفعل آزار و اذیت جادویی عالی",
+       "آسیب AoE ثابت و قابلیت‌های عالی بازی انفرادی",
+       "چابکی در سطح برتر",
+       "آورندهٔ Chaos Brand، یک افکت منفی که آزار و اذیت جادویی دشمن را افزایش می‌دهد (منحصر به فرد برای دیو هانترها)"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "تولید تهدید بالا در AoE با وجود Scars of Suffering",
+       "تلنت‌هایی مانند Exergy را در موقعیت‌های پرخطر قرار می‌دهند",
+       "از دست دادن DPS قابل توجه در تعویض بین ساختار تک‌هدف و AoE",
+       "متنی (Melee)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Aldrachi Reaver",
+       "tag": "بهترین برای: ریدینگ و تک‌هدف",
+       "x": "این رویکرد بر تمرکز بر Reaver's Glaive است که با مصرف 6 Shattered Souls جایگزین Throw Glaive می‌شود. ترتیب چرخهٔ Blade Dance و Chaos Strike حول Reaver's Mark و Fury of the Aldrachi تغییر می‌کند. از Wounded Quarry برای تمرکز بر دامنه استفاده کنید."
+      }
+     ]
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Fel-Scarred",
+       "tag": "بهترین برای: Mythic+",
+       "x": "این رویکرد Metamorphosis را برای دامنهٔ آسیب بالا تقویت می‌کند؛ با Violent Transformation باید Immolation Aura را قبل از Metamorphosis روی کول‌داون بزنید. Demonsurge با Mastery مقیاس‌بندی می‌شود."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، دو درخت اصلی برای هایوک دمون هانتر وجود دارد: یکی برای بهینه‌سازی در حالت تک‌هدف و دیگری برای چندهدف. انتخاب درخت هرو بسته به محیط بازی مهم است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Aldrachi Reaver (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "بهترین گزینه برای حالت رید با تمرکز بر آسیب‌های بالا و پایداری در برابر آسیب‌های وارد شده.",
+       "code": "CEkAAAAAAAAAAAAAAAAAAAAAAYgZmZ2MmZmxMzkxMDAAAAAAYWegxsNDzMz2MzYZmxMWmZYmlZ2mBDjlNmkxMjhFAAAAAAAwMDwAAAAwA"
+      },
+      {
+       "title": "Fel-Scarred (Mythic+/Delves)",
+       "tag": "بهترین برای Mythic+ و Delves",
+       "x": "بهترین گزینه برای حالت Mythic+ و دلوز با تمرکز بر انعطاف‌پذیری و زنده‌مانی در شرایط پر از چالش.",
+       "code": "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmxYmMmZAAAAAAAzixsNDzMwMWmZmZYmBzyALzmZMMLaaMzMmxGAAAwAAAAYmBDAAAAD"
+      },
+      {
+       "title": "Mythic+",
+       "tag": "Aldrachi Reaver",
+       "code": "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmxYmMmZAAAAAAAzixsNDzMz2MzYZmxMWmZYsMz2MYYstxkMmZMjFAAAAAAAwMDwAAAAwA",
+       "x": "بیلد Mythic+ و Delves برای Aldrachi Reaver."
+      },
+      {
+       "title": "تک‌هدف / ریید",
+       "tag": "Fel-Scarred",
+       "code": "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMzmxMzMmZmMmZAAAAAAAzyDMmtZYmBzMWmZMDzMGzyALziZMMbaaMzMG2AAAAAAAAYmBDAAAAD",
+       "x": "بیلد ریید برای Fel-Scarred."
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=demon-hunter",
+     "x": "مشاهده تمام ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ اسپل‌ها"
+    },
+    {
+     "t": "p",
+     "x": "در این راهنما دو سبک اصلی بازی وجود دارد: آلدراکی و فل-اسکارد. هر دو سبک برای تک‌هدف و اهداف متعدد چرخه‌های متفاوتی دارند."
+    },
+    {
+     "t": "h3",
+     "x": "سبک آلدراکی (تک‌هدف)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "The Hunt (بدون Reaver's Glaive)",
+      "Metamorphosis",
+      "Vengeful Retreat (حداکثر 1 GCD قبل از Eye Beam)",
+      "Reaver's Glaive",
+      "Annihilation (با Rending Strike و پس از Glaive Flurry)",
+      "Eye Beam",
+      "Essence Break",
+      "Death Sweep",
+      "Annihilation",
+      "Blade Dance",
+      "Chaos Strike",
+      "Felblade",
+      "Immolation Aura",
+      "Fel Rush (هیچ اسپل دیگری موجود نیست)"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "Throw Glaive به دلیل تلنت Screaming Brutality استفاده نمی‌شود. Reaver's Glaive جایگزین آن می‌شود و با Thrill of the Fight همیشه 100% uptime دارد."
+    },
+    {
+     "t": "h3",
+     "x": "سبک آلدراکی (چندهدفه)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "The Hunt (بدون Reaver's Glaive)",
+      "Metamorphosis",
+      "Vengeful Retreat (حداکثر 1 GCD قبل از Eye Beam)",
+      "Reaver's Glaive",
+      "Annihilation یا Chaos Strike (با Rending Strike، حتماً قبل از Blade Dance)",
+      "Eye Beam",
+      "Essence Break",
+      "Death Sweep",
+      "Annihilation",
+      "Blade Dance",
+      "Chaos Strike",
+      "Immolation Aura",
+      "Felblade"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "در چندهدفه، همیشه از Reaver's Glaive ابتدا برای Chaos Strike و سپس Blade Dance استفاده کنید."
+    },
+    {
+     "t": "h3",
+     "x": "سبک فل-اسکارد (تک‌هدف)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "ساختن تمام charges Immolation Aura قبل از Metamorphosis",
+      "Metamorphosis (پس از استفاده از reset abilities)",
+      "The Hunt (وقتی Eye Beam کمتر از 10 ثانیه cooldown دارد)",
+      "Vengeful Retreat (حداکثر 1 GCD قبل از Eye Beam)",
+      "Immolation Aura (اگر charges پر باشد)",
+      "Death Sweep (اگر Demonsurge موجود باشد)",
+      "Annihilation (اگر Demonsurge موجود باشد)",
+      "Eye Beam",
+      "Essence Break",
+      "Death Sweep",
+      "Blade Dance",
+      "Immolation Aura (اگر Fury 100 یا کمتر باشد)",
+      "Annihilation",
+      "Felblade (اگر Fury 100 یا کمتر باشد)",
+      "Chaos Strike",
+      "Throw Glaive یا Fel Rush (هیچ اسپل دیگری موجود نیست)"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "هدف اصلی: Eye Beam را روی cooldown استفاده کنید تا Demonsurge stacks را حداکثر کنید. قبل از فشردن دکمه‌های بیشتر، Demonsurge را مصرف کنید."
+    },
+    {
+     "t": "h3",
+     "x": "شروع بازی (Opener)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Immolation Aura (2 ثانیه قبل از pull)",
+      "The Hunt",
+      "Potion of Recklessness و trinkets",
+      "Reaver's Glaive",
+      "Eye Beam",
+      "Essence Break",
+      "Death Sweep",
+      "Annihilation",
+      "Death Sweep",
+      "Vengeful Retreat و Metamorphosis",
+      "Eye Beam",
+      "Death Sweep",
+      "Death Sweep",
+      "ادامه با چرخهٔ عادی"
+     ]
+    },
+    {
+     "t": "call",
+     "x": "اگر Reaver's Glaive از پل قبلی دارید (Mythic+/Delves)، قبل از The Hunt استفاده کنید. شروع تک‌هدف و چندهدفه تقریباً یکسان است."
+    },
+    {
+     "t": "p",
+     "x": "با Chaotic Transformation، Metamorphosis cooldownهای Eye Beam و Death Sweep را ریست می‌کند، بنابراین بخش بزرگی از burst بلافاصله پس از فشردن آن اتفاق می‌افتد."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "دیوونتر هاوک برای رسیدن به حداکثر آسیب‌پذیری، به شدت روی Critical Strike تمرکز می‌کند؛ قطعات با استت کریتیکال یا آیتم‌های بی‌آی‌اس با افکت ویژه مانند Aman'muso, Warlord's Vengeance بهترین انتخاب هستند. تریک‌های فعال‌کننده آسیب، بزرگ‌ترین تقویت‌کننده استت‌ها را شکست می‌دهند، به‌ویژه که آلدراکی ریور بر پایه برست نیست. ارتقاء آیلیویل و آجیلیتی همیشه برنده است؛ با Raidbots سیم کنید."
+    },
+    {
+     "t": "call",
+     "x": "به‌طور کلی، تریک‌های فعال‌کننده آسیب نسبت به تریک‌های بزرگ، ترجیح داده می‌شوند."
+    },
+    {
+     "t": "h3",
+     "x": "بی‌آی‌اس"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "دو دست",
+       "id": 268209
+      },
+      {
+       "slot": "دست دوم",
+       "id": 237840
+      },
+      {
+       "slot": "سر",
+       "id": 271537
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271535
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 281236
+      },
+      {
+       "slot": "مچ",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 271538
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271536
+      },
+      {
+       "slot": "پا",
+       "id": 159327
+      },
+      {
+       "slot": "انگشتر",
+       "id": 251136
+      },
+      {
+       "slot": "انگشتر",
+       "id": 158366
+      },
+      {
+       "slot": "تریک",
+       "id": 270173
+      },
+      {
+       "slot": "تریک",
+       "id": 270175
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "استت‌های اولویت‌دار"
+    },
+    {
+     "t": "stat",
+     "items": [
+      "Critical Strike"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "ست‌ها"
+    },
+    {
+     "t": "set",
+     "id": 271537
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        271537,
+        271535,
+        271538,
+        271536
+       ],
+       "names": [
+        "Abyssal Doomhound's Relentless Stare",
+        "Abyssal Doomhound's Jaws",
+        "Abyssal Doomhound's Studded Gauntlets",
+        "Abyssal Doomhound's Legwraps"
+       ]
+      },
+      {
+       "r": "A",
+       "ids": [
+        270175
+       ],
+       "names": [
+        "Voracious Heart of Ula'tek"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "کاتالیست‌ها"
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Gaze of the Coiled Watcher",
+       "tag": "Ula'tek",
+       "x": "بهترین گزینه برای جایگزینی پشت‌بند؛ افکت فعال‌کننده آسیب بالا دارد."
+      },
+      {
+       "title": "Frothing Venom Spaulders",
+       "tag": "Vashnik the Malignant",
+       "x": "افکت فعال‌کننده آسیب با دامنه بالا برای جنگ‌های گروهی."
+      },
+      {
+       "title": "Vest of Reverent Adoration",
+       "tag": "King's Rest",
+       "x": "تقویت‌کننده قابل توجه برای [[Chaos Strike]] و [[Blade Dance]]."
+      },
+      {
+       "title": "Ruthless Slaughtergrips",
+       "tag": "Sszorak",
+       "x": "افکت فعال‌کننده آسیب با دامنه بالا برای جنگ‌های گروهی."
+      },
+      {
+       "title": "Coiled Hex Legguards",
+       "tag": "Ula'tek",
+       "x": "تقویت‌کننده قابل توجه برای [[Felblade]]."
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "ساختگی‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "مچ",
+       "v": "Silvermoon Agent's Deflectors with Arcanoweave Lining",
+       "ids": [
+        244576
+       ]
+      },
+      {
+       "k": "دست دوم",
+       "v": "Spellbreaker's Warglaive",
+       "ids": [
+        237840
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای ایزیشن‌های Aldrachi Reaver و Fel-Scarred، اولویت استت‌ها به ترتیب **Critical Strike**، **Mastery** و **Haste** است."
+    },
+    {
+     "t": "p",
+     "x": "هرگز از **Agility** غافل نشوید؛ افزایش قابل‌اندازه‌گیری در سطح آیتم معمولاً از استت‌های بهینه مهم‌تر است."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "مصرفی‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Shattered Sun",
+       "ids": [
+        241326
+       ]
+      },
+      {
+       "k": "فلاسک جایگزین",
+       "v": "Flask of the Magisters (اگر Mastery بیشتر از Crit می‌خواهی)",
+       "ids": [
+        241322
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Royal Roast / Hearty Royal Roast",
+       "ids": [
+        242275,
+        242747
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Garnet",
+       "ids": [
+        240907
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "انچنت‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پا (لگ)",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "چکمه",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشتر",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "Potion of Recklessness در بهترین گیر حجم عجیبی استت می‌دهد؛ در هر برست مهم استفاده‌اش کن. به‌عنوان اسپک Crit-محور، uptime انچنت سلاح برای تو بالاتر از بقیه است."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در حالت Mythic+ برای Havoc Demon Hunter، انتخاب‌های کلیدی برای بهینه‌سازی عملکرد شما وجود دارد. این راهنما برای پچ 12.1.5 و Midnight Season 2 تنظیم شده است."
+    },
+    {
+     "t": "h3",
+     "x": "راهنمای M+ برای Havoc Demon Hunter"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "در Mythic+، Fel-Scarred نسبت به Aldrachi Reaver در اکثر سناریوها برتری دارد.",
+      "اسپل‌های کلیدی مانند [[Fel Devastation]] و [[The Hunt]] برای کنترل گروه و آسیب بالا ضروری هستند.",
+      "از [[Vengeful Retreat]] برای دور شدن از خطرات و [[Imprison]] برای کنترل دشمنان استفاده کنید.",
+      "تلنت‌هایی مانند [[Demonic]] و [[Soul Carver]] برای مدیریت کول‌داون‌ها و افزایش آسیب ضروری هستند.",
+      "استفاده از [[Sigil of Silence]] برای کنترل گروه‌ها و [[Sigil of Misery]] برای کند کردن دشمنان توصیه می‌شود."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "نکتهٔ برجسته"
+    },
+    {
+     "t": "p",
+     "x": "در Mythic+، تلنت‌های کنترلی و انفجاری برای از بین بردن سریع گروه‌های دشمن و مدیریت کول‌داون‌ها بسیار مهم هستند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "نکات کلیدی M+",
+       "v": "1. نایت elf Shadowmeld برای کاهش تهدید یا لغو اسپل‌ها قوی است. 2. آیتم‌های با فعال‌سازی آسیب‌زا بهتر از آیتم‌های آمپل استاتیک هستند. 3. اگر Reaver's Glaive از پیشین باقی مانده، قبل از The Hunt در پشتی بعدی استفاده کنید."
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "انعطاف‌پذیری بالا در حرکت و کنترل",
+       "آسیب انفجاری بالا در برابر گروه‌ها",
+       "توانایی فرار سریع از موقعیت‌های خطرناک"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "وابستگی به کول‌داون‌ها برای آسیب بالا",
+       "حساسیت به کنترل‌های دشمن",
+       "نیاز به مدیریت دقیق منابع"
+      ]
+     }
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=demon-hunter&spec=havoc",
+     "x": "مشاهده درخت تلنت‌ها"
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Havoc Demon Hunter (هاوک) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل هاوک (Havoc Demon Hunter) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Havoc Demon Hunter talent build midnight",
+   "Havoc Demon Hunter guide midnight",
+   "Havoc Demon Hunter guide 12.1.5",
+   "best Havoc Demon Hunter talents",
+   "Havoc Demon Hunter talent tree midnight",
+   "Havoc Demon Hunter pve guide",
+   "Havoc Demon Hunter rotation midnight",
+   "Havoc Demon Hunter rotation and cooldowns",
+   "Havoc Demon Hunter bis list midnight",
+   "Havoc Demon Hunter best in slot",
+   "Havoc Demon Hunter gear guide",
+   "Havoc Demon Hunter food and potion",
+   "best food for Havoc Demon Hunter",
+   "best flask for Havoc Demon Hunter",
+   "best potion for Havoc Demon Hunter",
+   "Havoc Demon Hunter enchants and gems",
+   "best enchants for Havoc Demon Hunter",
+   "best gems for Havoc Demon Hunter",
+   "Havoc Demon Hunter stat priority midnight",
+   "Havoc Demon Hunter tier set midnight",
+   "Havoc Demon Hunter tier set bonuses",
+   "Havoc Demon Hunter mythic+ guide",
+   "Havoc Demon Hunter m+ guide midnight",
+   "Havoc Demon Hunter raid guide",
+   "Havoc Demon Hunter hero talents",
+   "Havoc Demon Hunter hero tree",
+   "best dps build Havoc Demon Hunter midnight",
+   "Havoc Demon Hunter cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای هاوک",
+   "تلنت هاوک",
+   "تلنت برای Havoc Demon Hunter",
+   "تلنت Demon Hunter هاوک",
+   "بیلد هاوک",
+   "بیلد تلنت هاوک میدنایت",
+   "روتیشن هاوک",
+   "روتیشن و کول‌داون‌های هاوک",
+   "غذا برای هاوک",
+   "غذا برای Havoc Demon Hunter",
+   "غذا و معجون هاوک",
+   "بهترین غذای هاوک",
+   "فلسک هاوک",
+   "بهترین فلسک برای هاوک",
+   "معجون هاوک",
+   "انچنت هاوک",
+   "انچنت و جم هاوک",
+   "بهترین انچنت برای هاوک",
+   "جم هاوک",
+   "بست آیتم هاوک",
+   "بهترین آیتم‌های هاوک",
+   "گیر هاوک",
+   "استت هاوک",
+   "اولویت استت هاوک",
+   "ست تیر هاوک",
+   "مایتی پلاس هاوک",
+   "ام پلاس هاوک",
+   "راهنمای هاوک",
+   "راهنمای Havoc Demon Hunter",
+   "راهنمای دی‌هاو",
+   "هاوک میدنایت",
+   "دی‌هاو میدنایت",
+   "هرو تیلنت هاوک",
+   "بیلد هاوک",
+   "بهترین هاوک"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Havoc Demon Hunter (هاوک) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Havoc Demon Hunter به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای هاوک چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Shattered Sun»، معجون جنگی «Potion of Recklessness»، غذا «Royal Roast» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای هاوک چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای هاوک کدام‌اند؟",
+    "a": "ست تیر فعلی «Abyssal Doomhound's Relentless Stare» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Havoc Demon Hunter در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

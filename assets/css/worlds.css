@@ -1,0 +1,25 @@
+/* wowfarsi - Worlds of Warcraft section
+   every card carries --wd = its expansion's brand colour; the hairline frame,
+   glow and chips are tinted from it (color-mix keeps the dark theme intact).
+   panels.css draws the actual hairline frame from --ln/--tint — both derive
+   from --wd there, so a card only needs to set --wd. */
+html body .wd-lead { max-width: 44rem; margin: 0 auto 1.8rem; padding: 0 1rem; text-align: center; color: var(--parch-dim); font-size: 14px; line-height: 2; }
+html body .wd-main { position: relative; max-width: 64rem; margin: 0 auto 1.1rem; padding: 1.6rem 1.4rem 1.4rem; text-align: center; background: rgba(8, 10, 18, 0.8); }
+html body .wd-main h3 { margin: 0.2rem 0 0.1rem; font-size: 26px; color: var(--parch); }
+html body .wd-year { font-size: 11px; color: var(--mut); letter-spacing: 0.06em; }
+html body .wd-state { display: inline-block; margin-top: 0.55rem; padding: 0.05rem 0.6rem; font-size: 11px; color: var(--mut); }
+html body .wd-main .wd-state { color: color-mix(in srgb, var(--wd, #C64FD9) 74%, #fff); }
+html body .wd-note { max-width: 40rem; margin: 0.9rem auto 0; color: var(--parch-dim); font-size: 13px; line-height: 2; }
+html body .wd-zones { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 1rem 0 0.2rem; }
+html body .wd-zone { padding: 0.12rem 0.7rem; font-size: 12px; color: var(--parch); }
+html body .wd-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-top: 1.1rem; }
+html body .wd-grid { max-width: 64rem; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); gap: 0.8rem; }
+html body .wd-card { padding: 0.95rem 0.8rem; text-align: center; background: rgba(8, 10, 18, 0.7); opacity: 0.66; }
+html body .wd-card h3 { margin: 0.25rem 0 0; font-size: 14px; color: var(--parch); }
+
+/* expansion logo above each card + version-tinted hairlines (beats panels.css --ln) */
+html body .wd-logo { display: block; height: 54px; width: auto; max-width: 92%; margin: 0 auto 0.55rem; object-fit: contain; filter: drop-shadow(0 3px 9px rgba(0, 0, 0, 0.6)); }
+html body .wd-main .wd-logo { height: 92px; margin-bottom: 0.7rem; }
+html body .wd-grid .wd-card { --ln: color-mix(in srgb, var(--wd, #f0c75e) 45%, transparent); }
+html body .wd-grid .wd-card:hover { --ln: color-mix(in srgb, var(--wd, #f0c75e) 85%, transparent); }
+html body .wd-card .wd-year { color: color-mix(in srgb, var(--wd, #f0c75e) 68%, #fff); }

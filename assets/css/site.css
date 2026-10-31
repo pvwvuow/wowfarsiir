@@ -1,0 +1,740 @@
+/* =========================================================
+   wowfarsi — "Midnight Codex" design system v8 (static)
+   Cinematic grade: ~80% deep cool dark, warm gold accents,
+   sparse deep-blue highlights. Fantasy-minimal geometry.
+   Every control speaks the logo flourish: a hairline that
+   fades out at its ends and is broken by a small ring + dot.
+   ========================================================= */
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-var.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cinzel";
+  src: url("../fonts/Cinzel-var.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@property --ln {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(240, 199, 94, 0.4);
+}
+
+:root {
+  --ink-0: #04060b;
+  --ink-1: #070a12;
+  --ink-2: #0b0f1a;
+  --gold-1: #f6e0a3;
+  --gold-2: #f0c75e;
+  --gold-3: #c9a232;
+  --gold-4: #8a6a2a;
+  --gold-dim: rgba(240, 199, 94, 0.32);
+  --blue-1: #8fb4e8;
+  --blue-2: #3d5f96;
+  --blue-3: #17263f;
+  --parch: #e8e3d6;
+  --parch-dim: #a8a294;
+  --mut: #857f6f;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink-0);
+  color: var(--parch);
+  font-family: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: inline-block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; background: none; border: 0; color: inherit; cursor: pointer; }
+
+.font-cinzel {
+  font-family: "Cinzel", "Times New Roman", serif;
+  letter-spacing: 0.06em;
+}
+
+::selection { background: rgba(240, 199, 94, 0.26); color: #fff8e7; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--ink-0); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2b3648, #1a2333 55%, #4a3d1e);
+  border-radius: 8px;
+  border: 2px solid var(--ink-0);
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #3d4c66, #24304a 55%, #6b5324); }
+
+/* ---------- gold gradient text ---------- */
+.text-gold-grad {
+  background: linear-gradient(160deg, #f9ecc0 0%, #f0c75e 35%, #c9a232 62%, #f0c75e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+/* ---------- page background: photo visible everywhere ---------- */
+.bg-layers { position: fixed; inset: 0; z-index: -10; }
+.bg-photo {
+  position: absolute; inset: 0;
+  background-image: url("../img/bg-dark.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (max-width: 640px) {
+  .bg-photo { background-image: url("../img/bg-dark-mobile.jpg"); background-position: center 22%; }
+}
+.bg-veil {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 130% 80% at 50% -12%, rgba(4, 6, 11, 0.12) 0%, rgba(4, 6, 11, 0.44) 55%, rgba(4, 6, 11, 0.62) 100%),
+    linear-gradient(180deg, rgba(4, 6, 11, 0.36) 0%, rgba(7, 10, 18, 0.42) 40%, rgba(4, 6, 11, 0.58) 100%);
+}
+.bg-grain {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+.bg-scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse 90% 100% at 50% 50%, rgba(4, 6, 11, 0.34) 0%, rgba(4, 6, 11, 0.12) 62%, transparent 100%);
+}
+
+/* =========================================================
+   Buttons — "sigil" style, straight from the logo flourish.
+   No box: four hairlines that fade out toward their ends,
+   and the bottom line is broken in the middle by a tiny
+   ring + dot with two satellites (─── ○●○ ───).
+   Hover wakes the ornament and lights the lines.
+   ========================================================= */
+.btn {
+  --ln: rgba(240, 199, 94, 0.42);
+  --gap: 19px;
+  --orn: 1;
+  --fill: linear-gradient(180deg, rgba(20, 26, 40, 0.5), rgba(8, 11, 20, 0.66));
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.9rem;
+  border: 0;
+  border-radius: 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--parch);
+  cursor: pointer;
+  user-select: none;
+  background:
+    linear-gradient(90deg, transparent, var(--ln)) left bottom / calc(50% - var(--gap)) 1px no-repeat,
+    linear-gradient(270deg, transparent, var(--ln)) right bottom / calc(50% - var(--gap)) 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 24%, var(--ln) 76%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(180deg, var(--ln), transparent 88%) left top / 1px 100% no-repeat,
+    linear-gradient(180deg, var(--ln), transparent 88%) right top / 1px 100% no-repeat,
+    var(--fill);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: --ln 0.3s ease, color 0.25s ease, filter 0.25s ease, transform 0.15s ease, box-shadow 0.3s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn svg { flex-shrink: 0; }
+.btn:focus-visible { outline: 1px dotted var(--gold-1); outline-offset: 5px; }
+
+/* the flourish: ring + center dot + two satellites */
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 44px; height: 13px;
+  transform: translate(-50%, 50%) scale(var(--orn));
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px);
+  filter: drop-shadow(0 0 3px rgba(240, 199, 94, 0.5));
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), filter 0.3s ease;
+  pointer-events: none;
+}
+/* a little diamond that wakes at the top center on hover */
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 0;
+  width: 5px; height: 5px;
+  background: var(--gold-2);
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.8);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.btn:hover { --ln: rgba(246, 224, 163, 0.95); color: var(--gold-1); }
+.btn:hover::after {
+  transform: translate(-50%, 50%) scale(calc(var(--orn) * 1.2));
+  filter: drop-shadow(0 0 6px rgba(240, 199, 94, 0.95));
+}
+.btn:hover::before { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+
+/* primary: blue glass lit from the bottom, like the logo disc */
+.btn-medallion {
+  --ln: rgba(240, 199, 94, 0.88);
+  --fill:
+    radial-gradient(ellipse 70% 130% at 50% 118%, rgba(240, 199, 94, 0.2), transparent 70%),
+    linear-gradient(180deg, rgba(34, 62, 112, 0.72), rgba(10, 22, 50, 0.86));
+  color: #d3e3fb;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 28px -14px rgba(61, 95, 150, 0.9);
+}
+.btn-medallion:hover { filter: brightness(1.12); box-shadow: 0 12px 32px -12px rgba(100, 150, 230, 0.8); }
+
+/* secondary: smoked glass */
+.btn-stone {
+  --ln: rgba(240, 199, 94, 0.4);
+}
+.btn-stone:hover { --fill: linear-gradient(180deg, rgba(240, 199, 94, 0.07), rgba(8, 11, 20, 0.66)); }
+
+/* addon CTA: gold-forged plate — warmer than medallion, with a slow shine sweep
+   and an ember glow that breathes (the site's flagship button) */
+.btn-addon {
+  --ln: rgba(240, 199, 94, 0.95);
+  --fill:
+    radial-gradient(ellipse 80% 140% at 50% 120%, rgba(240, 199, 94, 0.32), transparent 72%),
+    linear-gradient(180deg, rgba(84, 62, 20, 0.85), rgba(38, 26, 8, 0.92));
+  color: #ffe9b8;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+  box-shadow:
+    0 10px 30px -12px rgba(240, 173, 45, 0.55),
+    inset 0 1px 0 rgba(255, 233, 184, 0.35);
+  animation: addon-breathe 3.4s ease-in-out infinite;
+}
+.btn-addon::after { filter: drop-shadow(0 0 5px rgba(240, 199, 94, 0.9)); }
+/* the shine sweep: a slanted gold light crossing the plate, clipped to the plate */
+.btn-addon .addon-sheen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.btn-addon .addon-sheen i {
+  position: absolute;
+  top: -40%; bottom: -40%;
+  left: -34%;
+  width: 34%;
+  background: linear-gradient(105deg, transparent, rgba(255, 240, 200, 0.28), transparent);
+  transform: skewX(-18deg);
+  animation: addon-sheen 3.4s ease-in-out infinite;
+}
+@keyframes addon-sheen {
+  0%, 55% { left: -34%; }
+  85%, 100% { left: 118%; }
+}
+@keyframes addon-breathe {
+  0%, 100% { box-shadow: 0 10px 30px -12px rgba(240, 173, 45, 0.45), inset 0 1px 0 rgba(255, 233, 184, 0.35); }
+  50% { box-shadow: 0 12px 38px -10px rgba(240, 173, 45, 0.75), inset 0 1px 0 rgba(255, 233, 184, 0.5); }
+}
+.btn-addon:hover {
+  color: #fff3d6;
+  filter: brightness(1.16);
+  box-shadow: 0 14px 40px -10px rgba(240, 173, 45, 0.9), inset 0 1px 0 rgba(255, 233, 184, 0.55);
+}
+.btn-addon .addon-glyph { color: #f0c75e; filter: drop-shadow(0 0 5px rgba(240, 199, 94, 0.65)); }
+
+/* support CTA: ember red — warm crimson plate with a live heartbeat glow */
+.btn-ember {
+  --ln: rgba(255, 122, 132, 0.75);
+  --fill:
+    radial-gradient(ellipse 80% 140% at 50% 120%, rgba(255, 82, 98, 0.30), transparent 72%),
+    linear-gradient(180deg, rgba(112, 22, 34, 0.82), rgba(56, 8, 16, 0.92));
+  color: #ffd9dc;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+  box-shadow:
+    0 10px 30px -12px rgba(226, 54, 70, 0.6),
+    inset 0 1px 0 rgba(255, 190, 195, 0.3);
+  animation: ember-breathe 2.6s ease-in-out infinite;
+}
+.btn-ember:hover {
+  --ln: rgba(255, 158, 165, 0.95);
+  color: #fff0f0;
+  filter: brightness(1.15);
+  box-shadow: 0 14px 40px -10px rgba(255, 82, 98, 0.85), inset 0 1px 0 rgba(255, 190, 195, 0.5);
+}
+.btn-ember .ember-heart {
+  color: #ff6b7d;
+  filter: drop-shadow(0 0 6px rgba(255, 82, 98, 0.8));
+  display: inline-block;
+  animation: dn-beat 1.8s ease-in-out infinite;
+}
+@keyframes ember-breathe {
+  0%, 100% { box-shadow: 0 10px 30px -12px rgba(226, 54, 70, 0.5), inset 0 1px 0 rgba(255, 190, 195, 0.3); }
+  50% { box-shadow: 0 12px 38px -10px rgba(255, 82, 98, 0.8), inset 0 1px 0 rgba(255, 190, 195, 0.45); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-addon, .btn-addon .addon-sheen i, .btn-ember, .btn-ember .ember-heart { animation: none; }
+}
+
+.btn-sm { --gap: 16px; --orn: 0.78; padding: 0.5rem 1.15rem; font-size: 0.8rem; gap: 0.4rem; }
+
+/* ---------- badge: two fading rules capped by diamonds ---------- */
+.wf-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.9rem;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px 0;
+  border-color: rgba(240, 199, 94, 0.32);
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.1) 22%, rgba(240, 199, 94, 0.1) 78%, transparent);
+  color: var(--gold-2);
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+.wf-badge::before,
+.wf-badge::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 5px; height: 5px;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.85;
+}
+.wf-badge::before { left: 0.45rem; }
+.wf-badge::after { right: 0.45rem; }
+
+/* ---------- rounded gold frame (WoW panel) ---------- */
+.wf-frame {
+  position: relative;
+  padding: 1px;
+  border-radius: var(--radius);
+  background: linear-gradient(155deg, #9a7a35 0%, #3d4356 26%, #75592a 50%, #232c42 74%, #8a6a2a 100%);
+}
+.wf-frame-in {
+  border-radius: calc(var(--radius) - 1px);
+  background: linear-gradient(180deg, rgba(8, 11, 19, 0.72) 0%, rgba(5, 7, 12, 0.82) 100%);
+  backdrop-filter: blur(10px);
+}
+.wf-ticks::before,
+.wf-ticks::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+.wf-ticks::before {
+  top: 8px; left: 8px;
+  border-top: 1px solid var(--gold-dim);
+  border-left: 1px solid var(--gold-dim);
+  border-top-left-radius: 10px;
+}
+.wf-ticks::after {
+  bottom: 8px; right: 8px;
+  border-bottom: 1px solid var(--gold-dim);
+  border-right: 1px solid var(--gold-dim);
+  border-bottom-right-radius: 10px;
+}
+
+/* ---------- section heading ornament: ──● title ●── ---------- */
+.wf-sect-line {
+  height: 1px;
+  flex: 1 1 0;
+  background: linear-gradient(90deg, transparent, rgba(138, 106, 42, 0.7) 45%, var(--gold-3) 50%, rgba(138, 106, 42, 0.7) 55%, transparent);
+}
+.wf-sect-dot {
+  width: 5px; height: 5px;
+  border-radius: 9999px;
+  background: var(--gold-3);
+  box-shadow: 0 0 8px rgba(240, 199, 94, 0.5);
+}
+
+/* ---------- circular class crest ---------- */
+.wf-crest {
+  position: relative;
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 2px;
+  background: linear-gradient(160deg, #9a7a35, #2c3548 40%, #75592a 65%, #1d2740);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.wf-crest-in {
+  position: relative;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 38%, #141b29 0%, #0a0d15 62%, #05070c 100%);
+  display: grid;
+  place-items: center;
+}
+.wf-crest-in img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.wf-crest-ring {
+  position: absolute;
+  inset: -7px;
+  border: 1px dashed var(--gold-dim);
+  border-radius: 9999px;
+  animation: wf-spin 16s linear infinite;
+}
+@keyframes wf-spin { to { transform: rotate(360deg); } }
+
+/* ---------- ledger rows ---------- */
+.wf-ledger > * { border-bottom: 1px solid rgba(240, 199, 94, 0.09); border-radius: 2px; }
+.wf-ledger > *:hover {
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.045) 20%, rgba(240, 199, 94, 0.045) 80%, transparent);
+}
+.wf-ledger > *:last-child { border-bottom: none; }
+
+.wf-bar-ticks {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0, transparent calc(10% - 1px),
+    rgba(4, 6, 11, 0.85) calc(10% - 1px), rgba(4, 6, 11, 0.85) 10%
+  );
+}
+
+/* ---------- quest-log rail (round nodes) ---------- */
+.wf-quest-rail {
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 13px;
+  width: 0;
+  border-right: 1px dashed rgba(240, 199, 94, 0.22);
+}
+.wf-quest-node {
+  position: absolute;
+  right: 13px; top: 8px;
+  width: 11px; height: 11px;
+  transform: translateX(50%);
+  border-radius: 9999px;
+  border: 1px solid var(--gold-3);
+  background: var(--ink-1);
+  box-shadow: 0 0 0 3px rgba(4, 6, 11, 0.6);
+}
+.wf-quest-node-done {
+  background: linear-gradient(135deg, #f3d98b, #b8912f);
+  box-shadow: 0 0 12px rgba(240, 199, 94, 0.45);
+}
+
+/* ---------- embers ---------- */
+.wf-ember {
+  position: fixed;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #ffd97a 0%, rgba(240, 199, 94, 0.5) 45%, transparent 75%);
+  filter: blur(0.4px);
+  pointer-events: none;
+  animation: wf-ember-rise linear infinite;
+  opacity: 0;
+  z-index: 1;
+}
+@keyframes wf-ember-rise {
+  0% { transform: translateY(6vh) translateX(0) scale(1); opacity: 0; }
+  12% { opacity: var(--ember-op, 0.5); }
+  85% { opacity: calc(var(--ember-op, 0.5) * 0.5); }
+  100% { transform: translateY(-88vh) translateX(var(--ember-drift, 30px)) scale(0.55); opacity: 0; }
+}
+
+/* ---------- rune input: a single fading line ---------- */
+.wf-input {
+  --ln: rgba(240, 199, 94, 0.3);
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 18%, var(--ln) 82%, transparent) center bottom / 100% 1px no-repeat,
+    linear-gradient(180deg, transparent, rgba(240, 199, 94, 0.045));
+  border: 0;
+  border-radius: 0;
+  color: var(--parch);
+  font-family: inherit;
+  transition: --ln 0.3s ease, box-shadow 0.3s ease;
+}
+.wf-input:focus {
+  --ln: rgba(246, 224, 163, 0.95);
+  outline: none;
+  box-shadow: 0 14px 20px -16px rgba(240, 199, 94, 0.55);
+}
+.wf-input::placeholder { color: rgba(168, 162, 148, 0.6); }
+
+/* ---------- misc motion ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+@keyframes wowfa-pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+.animate-pulse-soft { animation: wowfa-pulse 2.4s ease-in-out infinite; }
+
+@keyframes wowfa-float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+.animate-float { animation: wowfa-float 7s ease-in-out infinite; }
+
+.wf-flow-dot {
+  position: absolute;
+  top: calc(50% - 3.5px);
+  width: 7px; height: 7px;
+  border-radius: 9999px;
+  background: #ffd97a;
+  box-shadow: 0 0 10px 2px rgba(240, 199, 94, 0.55);
+  animation: wf-flow 2.6s linear infinite;
+}
+@keyframes wf-flow {
+  from { inset-inline-start: 0; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  to { inset-inline-start: calc(100% - 7px); opacity: 0; }
+}
+
+/* =========================================================
+   Layout blocks (shared: nav / section head / footer)
+   ========================================================= */
+.nav {
+  position: fixed;
+  inset-inline: 0; top: 0;
+  z-index: 50;
+  background: linear-gradient(180deg, rgba(4, 6, 11, 0.9) 0%, rgba(4, 6, 11, 0.55) 55%, transparent 100%);
+}
+.nav-in {
+  margin: 0 auto;
+  height: 64px;
+  max-width: 72rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1.5rem;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.6rem; }
+.nav-brand img { width: 34px; height: auto; filter: drop-shadow(0 0 14px rgba(240, 199, 94, 0.28)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6)); }
+.nav-brand b { font-weight: 700; font-size: 15px; letter-spacing: 0.08em; color: var(--gold-2); }
+.nav-links { display: none; align-items: center; gap: 1.5rem; font-size: 13px; color: #c3bdb0; margin-inline: auto; }
+.nav-links a { position: relative; padding: 0.4rem 0.1rem; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.is-active { color: var(--gold-2); }
+@media (min-width: 768px) { .nav-links { display: flex; } }
+.nav-rule { height: 1px; background: linear-gradient(to left, transparent, rgba(240, 199, 94, 0.22), transparent); }
+
+.brand-logo { display: inline-block; }
+.brand-logo img {
+  width: var(--logo-size, 40px);
+  height: auto;
+  filter: drop-shadow(0 0 14px rgba(240, 199, 94, 0.28)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.section { position: relative; margin: 0 auto; max-width: 72rem; padding: 5rem 1rem; scroll-margin-top: 6rem; }
+@media (min-width: 768px) { .section { padding: 7rem 1.5rem; } }
+
+.sect-head { margin-bottom: 2.5rem; text-align: center; }
+@media (min-width: 768px) { .sect-head { margin-bottom: 3.5rem; } }
+.sect-head-row { display: flex; align-items: center; gap: 0.75rem; direction: rtl; margin-bottom: 0.75rem; }
+.sect-head-row h2 { font-size: 1.5rem; font-weight: 900; color: var(--gold-2); }
+@media (min-width: 768px) { .sect-head-row h2 { font-size: 1.875rem; } }
+.sect-en { font-size: 11px; text-transform: uppercase; letter-spacing: 0.42em; color: #8b93a6; }
+@media (min-width: 768px) { .sect-en { font-size: 12px; } }
+.sect-hint { margin-top: 0.75rem; font-size: 0.875rem; color: var(--parch-dim); }
+
+.footer {
+  position: relative;
+  border-top: 1px solid rgba(240, 199, 94, 0.12);
+  padding: 3.5rem 1rem;
+  text-align: center;
+}
+.footer .brand-logo img { width: 56px; }
+.footer-word { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.18em; color: #c3bdb0; }
+.footer-line { margin-top: 0.75rem; font-size: 0.875rem; font-weight: 800; color: #c3bdb0; }
+.footer-links {
+  margin-top: 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.75rem; color: var(--mut);
+}
+.footer-links a:hover { color: var(--gold-2); }
+.footer-note { margin: 1.5rem auto 0; max-width: 36rem; font-size: 10px; line-height: 1.7; color: #5d6577; }
+
+/* scroll reveal helper for JS-free content above the fold */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-float, .wf-ember, .wf-flow-dot { animation: none; }
+}
+
+/* =========================================================
+   Sigil language for everything else that acts like a button.
+   (Prefixed with "html body" so it wins over page stylesheets
+   that load later: index.css / talents.css.)
+   ========================================================= */
+
+/* short flourish underline: ── ● ── (nav links, class tabs, crests, links) */
+html body .nav-links a::after,
+html body .tt-class-tab::after,
+html body .crest-cell::after,
+html body .book-tree-link::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: -3px;
+  width: 54px; height: 7px;
+  transform: translateX(-50%) scaleX(0.25);
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 1.9px, transparent 2.5px),
+    linear-gradient(90deg, transparent, var(--gold-3)) left 50% / calc(50% - 6px) 1px no-repeat,
+    linear-gradient(270deg, transparent, var(--gold-3)) right 50% / calc(50% - 6px) 1px no-repeat;
+  filter: drop-shadow(0 0 3px rgba(240, 199, 94, 0.6));
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  pointer-events: none;
+}
+html body .nav-links a:hover::after,
+html body .nav-links a.is-active::after,
+html body .tt-class-tab:hover::after,
+html body .tt-class-tab[aria-pressed="true"]::after,
+html body .crest-cell:hover::after,
+html body .book-tree-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
+html body .nav-links a::after { bottom: -4px; width: 40px; }
+html body .tt-class-tab, html body .crest-cell { position: relative; }
+html body .tt-class-tab::after, html body .crest-cell::after { bottom: -12px; width: 60px; }
+html body .tt-class-tab:not([aria-pressed="true"]):hover::after, html body .crest-cell:hover::after { opacity: 0.7; }
+html body .book-tree-link { position: relative; padding-bottom: 0.7rem; }
+html body .book-tree-link::after { bottom: 0; }
+
+/* ---------- talent page: spec chips (same sigil as .btn, quieter) ---------- */
+html body .tt-chip {
+  --ln: rgba(240, 199, 94, 0.2);
+  --gap: 14px;
+  --orn: 0.7;
+  padding: 0.5rem 1.3rem;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, transparent, var(--ln)) left bottom / calc(50% - var(--gap)) 1px no-repeat,
+    linear-gradient(270deg, transparent, var(--ln)) right bottom / calc(50% - var(--gap)) 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 24%, var(--ln) 76%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(180deg, var(--ln), transparent 88%) left top / 1px 100% no-repeat,
+    linear-gradient(180deg, var(--ln), transparent 88%) right top / 1px 100% no-repeat,
+    rgba(6, 9, 16, 0.4);
+  transition: --ln 0.3s ease, color 0.25s ease;
+}
+html body .tt-chip::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 44px; height: 13px;
+  transform: translate(-50%, 50%) scale(var(--orn));
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px);
+  filter: drop-shadow(0 0 3px rgba(240, 199, 94, 0.5));
+  opacity: 0;
+  box-shadow: none;
+  border-radius: 0;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+html body .tt-chip:hover { --ln: rgba(240, 199, 94, 0.65); color: var(--gold-1); border: 0; }
+html body .tt-chip:hover::after { opacity: 0.6; }
+html body .tt-chip[data-active="true"] {
+  --ln: rgba(240, 199, 94, 0.9);
+  color: var(--gold-1);
+  border: 0;
+  background:
+    linear-gradient(90deg, transparent, var(--ln)) left bottom / calc(50% - var(--gap)) 1px no-repeat,
+    linear-gradient(270deg, transparent, var(--ln)) right bottom / calc(50% - var(--gap)) 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 24%, var(--ln) 76%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(180deg, var(--ln), transparent 88%) left top / 1px 100% no-repeat,
+    linear-gradient(180deg, var(--ln), transparent 88%) right top / 1px 100% no-repeat,
+    radial-gradient(ellipse 70% 130% at 50% 118%, rgba(240, 199, 94, 0.18), transparent 70%),
+    rgba(6, 9, 16, 0.4);
+}
+html body .tt-chip[data-active="true"]::after { opacity: 1; width: 44px; height: 13px; background:
+    radial-gradient(circle at 50% 50%, var(--gold-2) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, transparent 0 4.5px, var(--gold-3) 4.9px 5.8px, transparent 6.2px),
+    radial-gradient(circle at calc(50% - 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at calc(50% + 14px) 50%, var(--gold-3) 0 1.2px, transparent 1.7px); }
+
+/* ---------- talent page: zoom buttons ---------- */
+html body .tt-zoom-btn {
+  --ln: rgba(240, 199, 94, 0.4);
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, transparent, var(--ln) 25%, var(--ln) 75%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, var(--ln) 25%, var(--ln) 75%, transparent) center bottom / 100% 1px no-repeat,
+    rgba(5, 8, 14, 0.6);
+  transition: --ln 0.3s ease, color 0.2s ease;
+}
+html body .tt-zoom-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 3px; height: 3px;
+  background: var(--gold-2);
+  transform: translate(-50%, 50%) rotate(45deg) scale(0);
+  box-shadow: 0 0 6px rgba(240, 199, 94, 0.9);
+  transition: transform 0.25s ease;
+}
+html body .tt-zoom-btn:hover { --ln: rgba(246, 224, 163, 0.95); }
+html body .tt-zoom-btn:hover::after { transform: translate(-50%, 50%) rotate(45deg) scale(1.6); }
+
+/* ---------- state markers: quest chips + "done" pill ---------- */
+html body .quest-chip {
+  position: relative;
+  padding: 0.125rem 0.1rem;
+  padding-inline-start: 1rem;
+  border: 0;
+  background: none;
+}
+html body .quest-chip::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0.1rem; top: 50%;
+  width: 5px; height: 5px;
+  transform: translateY(-50%) rotate(45deg);
+  border: 1px solid currentColor;
+}
+html body .quest-chip-done::before { background: currentColor; box-shadow: 0 0 8px currentColor; }
+html body .quest-chip-active::before { background: currentColor; animation: wowfa-pulse 2s ease-in-out infinite; }
+
+html body .book-state-done {
+  position: relative;
+  border-style: solid;
+  border-width: 1px 0;
+  border-radius: 0;
+  padding: 0.5rem 1.7rem;
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.1) 22%, rgba(240, 199, 94, 0.1) 78%, transparent);
+}
+html body .book-state-done::before,
+html body .book-state-done::after {
+  content: "";
+  position: absolute; top: 50%;
+  width: 5px; height: 5px;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.85;
+}
+html body .book-state-done::before { left: 0.4rem; }
+html body .book-state-done::after { right: 0.4rem; }

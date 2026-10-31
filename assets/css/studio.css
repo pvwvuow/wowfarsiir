@@ -1,0 +1,125 @@
+/* studio.css — «اتاق کاستوم ترجمه» (translate.html)
+   Two-column room: the full tr.js panel as a permanent inline column +
+   live sample previews (item / quest / talent / guide / map).
+   Hovering a switch row in the panel blinks (.hl-red) every preview line
+   that switch controls. Keep tokens/markers in sync with retail.js. */
+
+.str-wrap{max-width:1440px;margin:0 auto;padding:9.6rem 1rem 3rem;position:relative;z-index:2}
+.str-head{margin:0 0 1.3rem}
+.str-head h1{margin:0 0 .45rem;font-size:1.7rem;color:#f6e0a3}
+.str-sub{margin:0;font-size:.9rem;line-height:2;color:#bdb7a6;max-width:62rem}
+.str-sub b{color:#f0c75e}
+
+.str-grid{display:grid;grid-template-columns:minmax(0,1fr) 27rem;gap:1.4rem;align-items:start}
+/* RTL grid: first track (1fr) sits on the RIGHT → پیش‌نمایش سمت راست، پنل ستون چپ */
+
+/* ---------- inline panel (overrides retail.css popup chrome) ---------- */
+html body .str-panel{position:sticky;top:5.6rem;max-height:calc(100vh - 7rem);overflow-y:auto;scrollbar-width:thin}
+html body .str-panel .tr-bar{display:block;margin:0;z-index:auto}
+html body .str-panel .tr-pop{position:static;transform:none;width:100%;max-height:none;overflow:visible;
+  border-radius:14px;box-shadow:0 14px 38px rgba(0,0,0,.4);padding:1rem 1.05rem .9rem}
+html body .str-panel .tr-btn{display:none}
+html body .str-panel .tr-studiolink{display:none}
+
+/* ---------- tabs + preview ---------- */
+.str-preview{min-width:0}
+.str-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 .9rem}
+.str-tab{font:inherit;cursor:pointer;padding:.4rem 1.05rem;border-radius:999px;font-size:.9rem;
+  border:1px solid rgba(240,199,94,.25);background:rgba(9,11,17,.72);color:#d8d4c8;
+  transition:color .2s,border-color .2s,background .2s}
+.str-tab:hover{color:#f6e0a3;border-color:rgba(246,224,163,.5)}
+.str-tab.on{color:#f0c75e;background:rgba(240,199,94,.12);border-color:rgba(240,199,94,.6)}
+
+.pv-hint{margin:0 0 .9rem;padding:.6rem .85rem;border:1px solid rgba(240,199,94,.2);
+  border-radius:10px;background:rgba(240,199,94,.05);font-size:.78rem;line-height:1.95;color:#bdb7a6}
+.pv-hint b{color:#f0c75e;font-weight:400}
+.pv-hl-demo{animation:wfHlRed .85s ease-in-out infinite;border-radius:4px;padding:0 .25rem}
+
+.str-card{background:linear-gradient(180deg,rgba(13,16,24,.94),rgba(9,11,17,.9));
+  border:1px solid rgba(240,199,94,.22);border-radius:14px;padding:1.15rem 1.25rem 1.2rem;
+  box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.str-note{font-size:.76rem;color:#97917f;line-height:1.95;margin:.8rem 0 0}
+.str-note .rt-en{font-size:.68rem}
+
+/* ---------- red hover highlight ---------- */
+@keyframes wfHlRed{0%,100%{background:rgba(255,40,40,.32);box-shadow:0 0 0 1px rgba(255,70,70,.85)}
+  50%{background:rgba(255,40,40,.06);box-shadow:0 0 0 1px rgba(255,70,70,.25)}}
+html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
+@media (prefers-reduced-motion: reduce){html body .hl-red,html body .pv-hl-demo{animation:none;background:rgba(255,40,40,.3)}}
+
+/* ---------- sample atoms ---------- */
+.pv-row{margin:.34rem 0;line-height:2;font-size:.92rem;color:#e8e2d2}
+.pv-row.rt-row-en{direction:ltr;text-align:left}
+.pv-sec{font-size:.72rem;letter-spacing:.14em;color:rgba(240,199,94,.75);margin:1.05rem 0 .35rem}
+.pv-head{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.pv-name{margin:0;font-size:1.3rem;font-weight:700;line-height:1.7}
+.pv-ensub{margin:0;font-size:.78rem;color:#97917f}
+.pv-chips{margin:.3rem 0 0;font-size:.8rem;color:#bdb7a6}
+.pv-hero{display:flex;gap:1rem;align-items:flex-start;margin:0 0 1rem}
+.pv-gem{width:50px;height:50px;flex:none;border-radius:11px;transform:rotate(45deg);margin:.55rem .7rem .2rem .2rem;
+  background:linear-gradient(135deg,#c06cff,#2b0a45);border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 0 20px rgba(192,108,255,.4)}
+.pv-q-title{color:#ffd100;font-weight:700;font-size:1.08rem}
+.pv-tal-name{color:#f0c75e;font-weight:700}
+.pv-counter{color:#97917f;font-size:.85rem}
+.pv-reward{color:#ffd100}
+.pv-body-txt{border-inline-start:2px solid rgba(240,199,94,.18);padding-inline-start:.85rem}
+.pv-map{border:1px solid rgba(240,199,94,.25);border-radius:12px;min-height:170px;flex-wrap:wrap;
+  background:radial-gradient(120% 140% at 30% 20%,rgba(37,28,14,.85),rgba(9,11,17,.95));
+  display:flex;align-items:center;justify-content:space-around;gap:1.2rem;padding:1.2rem;margin:0 0 .8rem}
+.pv-pin{text-align:center;font-size:.86rem;color:#e8e2d2}
+.pv-pin i{display:block;width:12px;height:12px;border-radius:50%;background:#f0c75e;
+  box-shadow:0 0 12px rgba(240,199,94,.85);margin:0 auto .45rem;animation:pvPulse 2.6s ease-in-out infinite}
+@keyframes pvPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
+@media (prefers-reduced-motion: reduce){.pv-pin i{animation:none}}
+
+/* token spans added by the marker family (hover anchors, one per switch) */
+.tok-sp,.tok-tm,.tok-ts,.tok-it,.tok-npc,.tok-zn,.tok-qs,.tok-ob,.tok-w{border-radius:4px}
+
+/* ---------- sample badges + chips ---------- */
+.pv-demo-badge{margin:0 0 .7rem;font-size:.72rem;color:#97917f;background:rgba(151,145,127,.1);
+  border:1px dashed rgba(151,145,127,.35);border-radius:999px;display:inline-block;padding:.15rem .8rem}
+.pv-demo-badge.real{color:#7fd0a0;border-color:rgba(127,208,160,.4);background:rgba(127,208,160,.08)}
+.pv-chip{display:inline-block;margin-inline-end:.6rem;color:#bdb7a6;font-size:.8rem}
+.pv-chip b{color:#f0c75e}
+
+/* ---------- mobile: jump-to-preview chip (shown while a highlight is pinned) ---------- */
+.pv-jump{display:none;position:fixed;bottom:1rem;inset-inline-start:1rem;z-index:60;font:inherit;cursor:pointer;
+  padding:.55rem 1.1rem;border-radius:999px;font-size:.85rem;color:#f0c75e;background:rgba(9,11,17,.92);
+  border:1px solid rgba(240,199,94,.5);box-shadow:0 8px 26px rgba(0,0,0,.5)}
+.pv-jump[hidden]{display:none}
+@media (max-width:960px){
+  .pv-jump{display:block}
+}
+@media (min-width:961px){
+  .pv-jump{display:none !important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .str-grid{grid-template-columns:1fr}
+  html body .str-panel{position:static;max-height:none;overflow:visible;order:2}
+  .str-preview{order:1}
+  .str-wrap{padding-top:6.4rem}
+}
+/* v3.1: glossary/marker hits get a subtle dotted hint only inside the studio
+   so the user can SEE which words each switch owns */
+.str-preview .tok-gm,.str-preview .tok-tm,.str-preview .tok-ts,.str-preview .tok-it,.str-preview .tok-npc,.str-preview .tok-zn,.str-preview .tok-qs,.str-preview .tok-ob{border-bottom:1px dashed rgba(230,204,128,.5);padding:0 .1rem;border-radius:3px}
+
+/* «واژه‌ها» tab — the agent-pack entity layer (data/forever/i18n/entities.json) */
+.ent-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 .7rem}
+.ent-chip{font:inherit;cursor:pointer;padding:.3rem .8rem;border-radius:999px;font-size:.78rem;
+  border:1px solid rgba(240,199,94,.22);background:rgba(9,11,17,.72);color:#d8d4c8;
+  transition:color .2s,border-color .2s,background .2s}
+.ent-chip:hover{color:#f6e0a3;border-color:rgba(246,224,163,.5)}
+.ent-chip.on{color:#f0c75e;background:rgba(240,199,94,.12);border-color:rgba(240,199,94,.6)}
+.ent-chip b{font-weight:400;color:#f0c75e}
+.ent-search{width:100%;font:inherit;font-size:.9rem;padding:.5rem .85rem;border-radius:10px;
+  border:1px solid rgba(240,199,94,.25);background:rgba(9,11,17,.72);color:#f0e6c8;outline:none;
+  margin:0 0 .7rem;box-sizing:border-box}
+.ent-search:focus{border-color:rgba(240,199,94,.55)}
+.ent-row{display:flex;justify-content:space-between;align-items:baseline;gap:1.1rem;
+  border-bottom:1px dashed rgba(240,199,94,.12);padding:.34rem 0;margin:0}
+.ent-en{color:#b7b1a2;direction:ltr;text-align:left;font-size:.82rem;flex:1 1 auto;word-break:break-word}
+.ent-fa{color:#f0e6c8;flex:0 1 auto;text-align:right}
+.ent-count{font-size:.76rem;color:#97917f;margin:.1rem 0 .5rem}

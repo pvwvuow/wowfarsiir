@@ -1,0 +1,1051 @@
+{
+ "slug": "windwalker-monk",
+ "class": "monk",
+ "class_en": "Monk",
+ "spec_en": "Windwalker",
+ "spec_no": 3,
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Windwalker Monk",
+ "lead": "Windwalker یک DPS میله‌ایِ پرتحرک است که هم‌زمان دو منبع Energy و Chi را مدیریت می‌کند و با [[Mastery: Combo Strikes]] پاداش تکرارنکردن اسپل‌ها را می‌گیرد؛ تعویض هدف تقریباً رایگان و موبیلتی تقریباً بی‌رقیب دارد. در Midnight دو مسیر Hero Tree پیش روی توست: [[Shado-Pan]] با آسیب یکنواخت و ساده برای همه‌جا، و [[Conduit of the Celestials]] با پنجره‌های برست متمرکز روی [[Celestial Conduit]].",
+ "sources": [
+  {
+   "name": "Wowhead",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/talent-builds-pve-dps",
+   "updated": "2026-10-27"
+  },
+  {
+   "name": "Wowhead BiS",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/enchants-gems-pve-dps"
+  },
+  {
+   "name": "Icy Veins",
+   "url": "https://www.icy-veins.com/wow/windwalker-monk-pve-dps-guide"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Mastery: Combo Strikes": {
+   "fa": "مستر که با تکرارنکردن اسپل‌ها، آسیب‌ها را تقویت می‌کند"
+  },
+  "Shado-Pan": {
+   "fa": "درخت هرو که آسیب را به طور یکنواخت در کل کیت پخش می‌کند و برای محیط‌های AoE مناسب است."
+  },
+  "Conduit of the Celestials": {
+   "fa": "درخت هرو پیشرفته که بر بُرست و کلین کم‌هدف تمرکز دارد و ارزش دفاعی بیشتری دارد."
+  },
+  "Zenith": {
+   "fa": "یک کول‌داون با دو بار استفاده که انعطاف‌پذیری بالایی در مایتیک پلاس دارد و با ترینکت‌ها و پوت‌ها هماهنگ می‌شود."
+  },
+  "Celestial Conduit": {
+   "fa": "یک کول‌داون که Heart of the Jade Serpent را اضافه می‌کند و آسیب Fists of Fury را افزایش می‌دهد."
+  },
+  "Heart of the Jade Serpent": {
+   "fa": "افزایش دهندهٔ آسیب Fists of Fury که از Whirling Dragon Punch و Strike of the Windlord به دست می‌آید."
+  },
+  "Fists of Fury": {
+   "fa": "یک اسپل کلیدی که با کانال زدن چندین بار به دشمن ضربه می‌زند و بخشی از انرژی شما را مصرف می‌کند."
+  },
+  "Tigereye Brew": {
+   "fa": "کول‌داون افزایش آسیب کلی که با تلنت‌های مختلف تقویت می‌شود."
+  },
+  "Jade Bond / Gift of the Celestials": {
+   "fa": "یک تلهنت کلیدی که به شما اجازه می‌دهد تا [[Jade Serpent Statue]] را فراخوانی کنید. این مجسمه به طور مداوم آسیب وارد می‌کند و [[Chi]] تولید می‌کند."
+  },
+  "Memory of the Monastery": {
+   "fa": "تلهنت قدرتمندی که به شما اجازه می‌دهد تا یک بار دیگر از [[Rising Sun Kick]] استفاده کنید. این اسپل آسیب بسیار بالایی دارد و پایه‌ای چرخه دمپسی شماست."
+  },
+  "Celestial Brew / Celestial Infusion": {
+   "fa": "یک اسپل درمانی که همزمان آسیب وارد می‌کند. این اسپل برای مایثیک+ و دلوز بسیار ارزشمند است زیرا هم زنده‌مانی و هم دمپسی را افزایش می‌دهد."
+  },
+  "Whirling Dragon Punch": {
+   "fa": "یک اسپل قدرتمند تک‌هدفه که از Rising Sun Kick فعال می‌شود."
+  },
+  "Strike of the Windlord": {
+   "fa": "یک اسپل قدرتمند که از Tiger Palm فعال می‌شود و Chi تولید می‌کند."
+  },
+  "Rising Sun Kick": {
+   "fa": "یک اسپل قدرتمند که با استفاده از برست (Chi) اجرا می‌شود و خسارت فیزیکی بالایی وارد می‌کند."
+  },
+  "Rushing Wind Kick": {
+   "fa": "یک اسپل پرتابی که از Tiger Palm فعال می‌شود."
+  },
+  "Spinning Crane Kick": {
+   "fa": "یک اسپل پهپوایی که به تمام دشمنان اطراف شما خسارت می‌زند و در ساختارهای AOE بسیار کاربردی است."
+  },
+  "Blackout Kick": {
+   "fa": "یک اسپل پرکننده که با Combo Breaker آسیب بیشتری می‌زند."
+  },
+  "Tiger Palm": {
+   "fa": "یک اسپل پایه که Chi تولید می‌کند و برای جلوگیری از کپ شدن انرژی استفاده می‌شود."
+  },
+  "Slicing Winds": {
+   "fa": "یک اسپل پرکننده که از Tiger Palm فعال می‌شود."
+  },
+  "Invoke Xuen, the White Tiger": {
+   "fa": "یک کول‌داون که یک حیوان همراه قدرتمند را فرماندهی می‌کند و Celestial Conduit را فعال می‌کند."
+  },
+  "Touch of Death": {
+   "fa": "یک کول‌داون کشنده که روی هدفی با سلامت پایین آسیب شدیدی وارد می‌کند."
+  },
+  "Touch of Karma": {
+   "fa": "یک اسپل دفاعی که مقداری آسیب وارد شده به شما را به دشمن بازمی‌گرداند و برای کاهش آسیب در مواجهه با ضربات سنگین استفاده می‌شود."
+  },
+  "Fortifying Brew": {
+   "fa": "یک اسپل دفاعی که سلامت شما را افزایش داده و آسیب دریافتی را کاهش می‌دهد و همچنین دپس Touch of Death را تقویت می‌کند."
+  },
+  "Dance of Chi-Ji": {
+   "fa": "یک تلنت که Spinning Crane Kick را تقویت می‌کند."
+  },
+  "Unbroken Rhythm": {
+   "fa": "یک افکت بافت ۴ تایی از ست Guile of the Monkey King که قدرت Rising Sun Kick یا Spinning Crane Kick را پس از هر ضربهٔ Fists of Fury افزایش می‌دهد."
+  },
+  "Combo Breaker": {
+   "fa": "یک تلنت که Blackout Kick را تقویت می‌کند."
+  },
+  "Obsidian Spiral": {
+   "fa": "یک تلنت که در Zenith به Blackout Kick Chi می‌دهد."
+  },
+  "Shado Over the Battlefield": {
+   "fa": "اسپلی که از طریق تالنت هرو Shado-Pan به دست می‌آید و ای‌اوئی مداوم را برای Windwalker Monk فراهم می‌کند."
+  },
+  "Aqirbane Reliquary": {
+   "fa": "آیتم گردن که برای ویند واکر بسیار ارزشمند است"
+  },
+  "Gaze of the Coiled Watcher": {
+   "fa": "سر که برای کاتالیز کردن مناسب است"
+  },
+  "Tassels of the Monkey King": {
+   "fa": "شانه که برای کاتالیز کردن مناسب است"
+  },
+  "Chestwrap of Palpable Terror": {
+   "fa": "سینه که برای کاتالیز کردن مناسب است"
+  },
+  "Gauntlets of Fevered Defense": {
+   "fa": "دست که برای کاتالیز کردن مناسب است"
+  },
+  "Coiled Hex Legguards": {
+   "fa": "پا که برای کاتالیز کردن مناسب است"
+  },
+  "Flask of the Blood Knights": {
+   "fa": "Flask قدرتمندی که استت‌های اصلی و ثانویه را افزایش می‌دهد برای واکر مونک ایده‌آل است."
+  },
+  "Potion of Recklessness": {
+   "fa": "پوتیون جنگی که برای حداکثر دی‌پی‌اس در ابتدای هر فایت ضروری است."
+  },
+  "Concentrated Silvermoon Health Potion": {
+   "fa": "پوتیون سلامتی سریع که در مواقع ضروری برای نجات جان شما استفاده می‌شود."
+  },
+  "Impossibly Royal Roast": {
+   "fa": "غذا با استت‌های اصلی که برای واکر مونک مناسب است."
+  },
+  "Harandar Celebration": {
+   "fa": "غذا فستیوال که چندین نفر را در یک نوبت تغذیه می‌کند."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح که به‌طور مداوم دی‌پی‌اس را افزایش می‌دهد."
+  },
+  "Enchant Weapon - Rite of the Hash'ey": {
+   "fa": "بهبود سلاح که باید با شبیه‌سازی شخصی شما تطابق داشته باشد."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "اسپل بهبود اضافی که استت‌های اصلی را افزایش می‌دهد."
+  },
+  "Enchant Helm - Empowered Rune of Avoidance": {
+   "fa": "بهبود سر برای افزایش استت‌های دفاعی و تهاجمی."
+  },
+  "Enchant Shoulders - Amirdrassil's Grace": {
+   "fa": "بهبود شانه‌ها برای افزایش استت‌های ثانویه."
+  },
+  "Enchant Chest - Mark of the Worldsoul": {
+   "fa": "بهبود سینه برای افزایش استت‌های اصلی."
+  },
+  "Enchant Boots - Lynx's Dexterity": {
+   "fa": "بهبود پاها برای افزایش اسپک و اسپل پاور."
+  },
+  "Enchant Ring - Eyes of the Eagle": {
+   "fa": "بهبود انگشترها برای افزایش استت‌های ثانویه."
+  },
+  "Forest Hunter's Armor Kit": {
+   "fa": "بهبود پا با جنس که برای واکر مونک مناسب است."
+  },
+  "Indecipherable Eversong Diamond": {
+   "fa": "الماس با استت‌های اصلی که برای واکر مونک ایده‌آل است."
+  },
+  "Flawless Deadly Peridot": {
+   "fa": "سنگ‌های سریع که با شبیه‌سازی شخصی شما باید انتخاب شوند."
+  },
+  "Flawless Quick Amethyst": {
+   "fa": "سنگ‌های سریع که با شبیه‌سازی شخصی شما باید انتخاب شوند."
+  },
+  "Flawless Quick Garnet": {
+   "fa": "سنگ‌های سریع که با شبیه‌سازی شخصی شما باید انتخاب شوند."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "تریک که با استفاده از اسپل‌ها، دمج را افزایش می‌دهد و پتانسیل بالایی برای دمج‌دهی مداوم دارد."
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "تریک که با استفاده از اسپل‌های کلیدی، پاور تای را به دست می‌آورد و آن را برای افزایش دمج مصرف می‌کند."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Windwalker یک DPS میله‌ایِ پرتحرک است که هم‌زمان دو منبع Energy و Chi را مدیریت می‌کند و با [[Mastery: Combo Strikes]] پاداش تکرارنکردن اسپل‌ها را می‌گیرد؛ تعویض هدف تقریباً رایگان و موبیلتی تقریباً بی‌رقیب دارد."
+    },
+    {
+     "t": "p",
+     "x": "در Midnight دو مسیر Hero Tree پیش روی توست: [[Shado-Pan]] با آسیب یکنواخت و ساده برای همه‌جا، و [[Conduit of the Celestials]] با پنجره‌های برست متمرکز روی [[Celestial Conduit]]."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "موبیلتی",
+       "v": "عالی",
+       "n": 5
+      },
+      {
+       "k": "دیفنس",
+       "v": "ضعیف",
+       "n": 2
+      },
+      {
+       "k": "آسیب‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "استقامت",
+       "v": "متوسط",
+       "n": 3
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "استایل بازی در The War Within باقی می‌ماند",
+       "تقریباً هیچ کاهش آسیب در تعویض هدف ندارد",
+       "موبیلتی تقریباً بی‌رقیب",
+       "تلنت‌ها می‌توانند زمان استراحت چرخش را تنظیم کنند",
+       "کول‌داون‌های انعطاف‌پذیر: تعویض بین پنجره‌های ۶۰، ۹۰ و ۲ دقیقه‌ای با [[Zenith]]"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "هیچ ایمنی یا یوتیلیتی منحصربه‌فرد نسبت به اسپک‌های DPS دیگر ندارد",
+       "دفاع بسیار ضعیف",
+       "مطلوبیت در گروه‌ها اغلب به قدرت Mistweaver و Brewmaster بستگی دارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "درخت هرو"
+    },
+    {
+     "t": "p",
+     "x": "در پچ ۱۲.۱.۵، دو انتخاب اصلی برای درخت هرو وجود دارد که هرکدام سبک بازی متفاوتی ارائه می‌دهند."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Shado-Pan",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "این انتخاب برای بازیکنان کمتر تجربه‌تر مناسب است؛ آسیب به طور یکنواخت در کل کیت پخش می‌شود و در محیط‌هایی که آسیب در یک پنجرهٔ کوچک متمرکز نیست برتری می‌یابد."
+      },
+      {
+       "title": "Conduit of the Celestials",
+       "tag": "انتخاب پیشرفته",
+       "x": "این انتخاب قدرتمندتر است؛ ارزش اصلی آن از زمان‌بندی دقیق Celestial Conduit در برابر پروک‌های Heart of the Jade Serpent به دست می‌آید و مقداری بیشتر از ارزش دفاعی دارد."
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت Shado-Pan",
+      "items": [
+       "پروفایل آسیب یکنواخت",
+       "آسیب AoE به طور طبیعی از طریق Shado Over the Battlefield پخش می‌شود",
+       "سازگار با محیط‌های AoE"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف Shado-Pan",
+      "items": [
+       "پیک آسیب پایین‌تر در مقایسه با Conduit of the Celestials",
+       "وابستگی به به‌روزرسانی مداوم تلنت‌ها"
+      ]
+     }
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت Conduit of the Celestials",
+      "items": [
+       "پروفایل بُرست قوی",
+       "مقدار بیشتری از ارزش دفاعی",
+       "پتانسیل آسیب بالا در پنجره‌های کوچک"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف Conduit of the Celestials",
+      "items": [
+       "نیاز به زمان‌بندی دقیق",
+       "وابستگی به Heart of the Jade Serpent",
+       "پیچیدگی در اجرای صحیح"
+      ]
+     }
+    },
+    {
+     "t": "p",
+     "x": "بر اساس Wowhead و Icy Veins، هر دو هرو به خوبی تنظیم شده‌اند؛ Shado-Pan = پروفایل یکنواخت و دوست‌دار AoE، Conduit of the Celestials = بُرست و کلین کم‌هدف با ارزش دفاعی بیشتر."
+    },
+    {
+     "t": "seq",
+     "items": [
+      "Fists of Fury",
+      "Rising Sun Kick",
+      "Whirling Dragon Punch",
+      "Strike of the Windlord",
+      "Celestial Conduit"
+     ]
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Celestial Conduit",
+       "x": "هستهٔ بُرست هرو Conduit of the Celestials؛ باید با پروک‌های Heart of the Jade Serpent هماهنگ شود."
+      },
+      {
+       "s": "Fists of Fury",
+       "x": "کول‌داون اصلی آسیب؛ در پنجره‌های Heart of the Jade Serpent قدرت بیشتری دارد."
+      },
+      {
+       "s": "Tigereye Brew",
+       "x": "افزایش آسیب کلی؛ با افزایش تیره‌ای که از تلنت‌ها دریافت می‌کنید استفاده کنید."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Windwalker مونک یکی از نقش‌های دپس سریع و متحرک در وارکرفت است که با ترکیب تکنیک‌های نبرد دست خالی و توانایی‌های روحی، آسیب‌های قابل توجهی وارد می‌کند. این کلاس به‌ویژه در مواجهه با تک‌هدف و در محیط‌های چندهدفه عملکرد خوبی دارد."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Shado-Pan",
+       "tag": "تک‌هدف ریید | پیشنهاد منبع",
+       "x": "انتخاب پیش‌فرض و توصیه‌شده برای ریید؛ آسیب یکنواخت روی کل کیت.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYw2MmhlZGbzAAAAAAAAAAAAsMMaGzwwAmxwMzMDz2wMMLzEAwiZ2mZYmZmBAwGAMLzSzMzsAgBmZAglBiB8B"
+      },
+      {
+       "title": "Shado-Pan",
+       "tag": "کلیو ریید | پیشنهاد منبع",
+       "x": "برای فایت‌های چندهدفهٔ ریید؛ همان سادگی با پخش آسیب بهتر.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYw2wMsNzYbGAAAAAAAAAAAglhRzYGGGwMGmZmZY2YmhZZmAAWMz2MzYMzMAA2AgZZWamZmFAMwMDAsMQMgB"
+      },
+      {
+       "title": "Shado-Pan",
+       "tag": "Mythic+ (کیزهای هفتگی) | پیشنهاد منبع",
+       "x": "بیلد توصیه‌شدهٔ Mythic+؛ ساده و با AoE پایدار از طریق Shado Over the Battlefield.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYAMGbzMz2MAAAAAAAAAAAALDzEmxywAmxwMzMDz2wMMLzEAwiZ2mZGzMzMAA2AgZZWamZmFAMwMDAswQMgB"
+      },
+      {
+       "title": "Shado-Pan",
+       "tag": "Delves",
+       "x": "همان بیلد Mythic+؛ برای Delves هم کار می‌کند.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYAMGbzMz2MAAAAAAAAAAAALDzEmxywAmxwMzMDz2wMMLzEAwiZ2mZGzMzMAA2AgZZWamZmFAMwMDAswQMgB"
+      },
+      {
+       "title": "Conduit of the Celestials",
+       "tag": "تک‌هدف ریید",
+       "x": "نسخهٔ پیشرفته برای بازیکنی که زمان‌بندی [[Celestial Conduit]] را مسلط است.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYM2GmhlZmZbGAAAAAAAAAAAglhRzYGGGwMGmZmZY2GmhZZmAAWMz2MzYmZmBAwiZWmlxEEAAGAzAwyAxMzs5BA"
+      },
+      {
+       "title": "Conduit of the Celestials",
+       "tag": "کلیو ریید",
+       "x": "برست متمرکز برای پنجره‌های کلیو کوتاه.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYM2GGjlZmZbGAAAAAAAAAAAglhRzYGGGwMGmZmZY2GmhZZmAAWMz2MzYMzMAAWMzysMmgAAMGAzAwyAxMzs5BA"
+      },
+      {
+       "title": "Conduit of the Celestials",
+       "tag": "Mythic+ (کیزهای بالا)",
+       "x": "برای کیزهای بالا اگر کول‌داون‌ها را دقیق مدیریت کنی.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMgxYZmx2MAAAAAAAAAAAALDzEmhhBMjhZmZGmthZYWmJAgFmtxMmZmZAAsYmlZZMBBAMjBwMAjlBiZmZzA"
+      },
+      {
+       "title": "Conduit of the Celestials",
+       "tag": "Delves | پیشنهاد منبع",
+       "x": "توصیه‌شدهٔ Delves؛ طبق منبع همان بیلد Mythic+ است.",
+       "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMgxYZmx2MAAAAAAAAAAAALDzEmhhBMjhZmZGmthZYWmJAgFmtxMmZmZAAsYmlZZMBBAMjBwMAjlBiZmZzA"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=monk&spec=windwalker",
+     "x": "مشاهده تمام تلنت‌ها در کالکولاتور"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ دامج"
+    },
+    {
+     "t": "p",
+     "x": "در Windwalker مونک، تکرار اسپل‌ها ممنوع است و باید آخرین اسپل کاست شده را ردیابی کنید."
+    },
+    {
+     "t": "p",
+     "x": "از بیش‌ازحد کپ کردن انرژی و چی خودداری کنید و از کول‌داون‌هایی مانند Rising Sun Kick و Fists of Fury به‌طور مداوم استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "استفاده از Zenith را با Bloodlust، ترینکت‌ها یا فازهای آسیب‌پذیر هماهنگ کنید؛ این اسپل دو چارج دارد و کول‌داون ۶۰/۷۰/۸۰/۹۰ ثانیه‌ای دارد."
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Whirling Dragon Punch",
+      "Fists of Fury",
+      "Rising Sun Kick",
+      "Rushing Wind Kick",
+      "Spinning Crane Kick با Dance of Chi-Ji و Unbroken Rhythm",
+      "Blackout Kick با Combo Breaker یا در Zenith با Obsidian Spiral",
+      "Tiger Palm برای جلوگیری از کپ شدن انرژی یا اگر چی کافی برای Fists of Fury نداشته باشید",
+      "Slicing Winds"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت چندهدفه"
+    },
+    {
+     "t": "p",
+     "x": "برای چندهدفه، اولویت‌ها از ۲ هدف به بالا تغییر می‌کند؛ در Shado-Pan، آسیب اضافی از Shado Over the Battlefield می‌آید و در Conduit of the Celestials، کاهش کول‌داون Fists of Fury از Heart of the Jade Serpent مهم است."
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Whirling Dragon Punch",
+      "Strike of the Windlord",
+      "Fists of Fury",
+      "Spinning Crane Kick با ۴ پیس فصل ۲ (Unbroken Rhythm)",
+      "Rising Sun Kick برای فعال‌سازی Whirling Dragon Punch",
+      "Blackout Kick با Obsidian Spiral، در Zenith، با Rising Sun Kick روی کول‌داون",
+      "Slicing Winds",
+      "Tiger Palm برای جلوگیری از کپ شدن انرژی خارج از Zenith"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "آغازگر"
+    },
+    {
+     "t": "p",
+     "x": "قبل از کشیدن، Spinning Crane Kick را پیش‌کست کنید تا با Combo Strikes شروع کنید؛ سپس Tiger Palm، سپس Zenith با پوتیشن‌ها و ترینکت‌ها و در نهایت Fists of Fury و Rising Sun Kick را بزنید."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Zenith",
+       "x": "کول‌داون اصلی که Rising Sun Kick را ریست می‌کند، ۲ چی می‌دهد و تمام اسپل‌های چی‌کاستر را ارزان‌تر می‌کند؛ دو چارج دارد و برای فازهای برتر نگه داشته شود."
+      },
+      {
+       "s": "Celestial Conduit",
+       "x": "ارزش اصلی آن اضافه کردن Heart of the Jade Serpent است؛ کانال را با GCD بعدی لغو کنید تا با اسپل‌های دیگر هماهنگ شود."
+      },
+      {
+       "s": "Invoke Xuen, the White Tiger",
+       "x": "بعد از آن Celestial Conduit را بزنید و برنامه‌ریزی کنید که GCDهای شما آسیب‌رسانی را به تأخیر نیندازد."
+      },
+      {
+       "s": "Touch of Death",
+       "x": "روی کول‌داون استفاده شود و اگر ممکن است روی هدفی زیر ۱۵٪ سلامت با مجموع سلامت کمتر از سلامت شما نگه داشته شود."
+      },
+      {
+       "s": "Fortifying Brew",
+       "x": "قبل از Touch of Death و Touch of Karma بزنید تا سلامت بیشتری داشته باشید و آسیب بیشتری وارد کنید."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای Windwalker مونک در پچ 12.1.5، تمرکز اصلی باید بر اسپید و کریتیکال استرایک باشد، ماسری هم ارزش خوبی دارد و ورساتیلتی در اولویت پایین‌تری قرار می‌گیرد. هرگز از آژیلیتی غافل نشوید چون پایهٔ تمام دمج شماست."
+    },
+    {
+     "t": "call",
+     "x": "یک افزایش قابل توجه در سطح آیتم‌ها معمولاً بهینه‌سازی استت‌های ثانویه را پوشش می‌دهد؛ برای پاسخ‌های دقیق‌تر از Raidbots استفاده کنید."
+    },
+    {
+     "t": "p",
+     "x": "اولویت ارتقا: اسلحه در اولویت است (همه چیز با DPS آن مقیاس می‌گیرد)، بعد از آن تریک‌های قوی و سپس قطعات با پایین‌ترین سطح آیتم."
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات پیش‌فرض"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "اسلحه",
+       "id": 268215
+      },
+      {
+       "slot": "سر",
+       "id": 271875
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271517
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 281236
+      },
+      {
+       "slot": "مچ",
+       "id": 244576
+      },
+      {
+       "slot": "دست",
+       "id": 251124
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 268225
+      },
+      {
+       "slot": "کفش",
+       "id": 244569
+      },
+      {
+       "slot": "انگشتر",
+       "id": 158366
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "تریک",
+       "id": 270175
+      },
+      {
+       "slot": "تریک",
+       "id": 270173
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271875
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "names": [
+        "Voracious Heart of Ula'tek",
+        "Zul'jin's Guillotine Technique"
+       ],
+       "ids": [
+        270175,
+        270173
+       ]
+      },
+      {
+       "r": "A",
+       "names": [
+        "Freightrunner's Flask",
+        "Vile Vial of Volatile Venom",
+        "Void Execution Mandate",
+        "Gebbo's Bottomless Bag",
+        "Keeper's Seething Core",
+        "Twisted Horror's Tendril"
+       ],
+       "ids": [
+        250215,
+        273796,
+        250225,
+        270164,
+        270165,
+        281215
+       ]
+      },
+      {
+       "r": "B",
+       "names": [
+        "Sapling of the Dawnroot",
+        "Font of Venomous Rage",
+        "Lustrous Golden Plumage"
+       ],
+       "ids": [
+        250259,
+        270168,
+        159617
+       ]
+      },
+      {
+       "r": "C",
+       "names": [
+        "Lightspire Core",
+        "Magister's Alchemist Stone",
+        "Tattered Amani War Banner",
+        "Vashnik's Sanguine Rancor"
+       ],
+       "ids": [
+        250214,
+        241340,
+        273797,
+        270166
+       ]
+      },
+      {
+       "r": "F",
+       "names": [
+        "Resonant Bellowstone",
+        "Ruby Whelp Shell",
+        "Tiny Electromental in a Jar"
+       ],
+       "ids": [
+        250228,
+        193757,
+        158374
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای تریک‌ها، Voracious Heart of Ula'tek و Zul'jin's Guillotine Technique رتبهٔ S دارند و گزینه‌های عالی برای اولویت‌بندی هستند."
+    },
+    {
+     "t": "p",
+     "x": "برای انگشت‌ها، Charged Sandstone Band و Band of the Swarmcaller انتخاب‌های خوبی هستند و Sickening Signet of Atroxus برای Mythic+ گزینهٔ جایگزین مناسبی محسوب می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "استت‌های مهم"
+    },
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Haste",
+      "Critical Strike",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای ساخت آیتم‌های سفارشی، با Arcanoweave Lining شروع کنید. اولین ساخت می‌تواند برای Silvermoon Agent's Deflectors باشد و بعد از آن Silvermoon Agent's Sneakers."
+    },
+    {
+     "t": "p",
+     "x": "برای حفظ بونوس ۴ تیکه‌ای، حداقل ۳ قطعه غیر از تیر سِت را کاتالیز کنید؛ هر قطعه‌ای مناسب است اما قطعات بدون ورساتیلتی ترجیح داده می‌شوند."
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Haste",
+      "Critical Strike",
+      "Mastery",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "آجیلیتی مهم‌ترین استت اصلی برای واکر مونک است که به تمام درجه‌بندی‌های آسیب‌پذیری شما اضافه می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "برای استت‌های ثانویه، هِیت برابر با کریتیکال استریک و Mastery است و ورساتیلتی در اولویت پایین‌تری قرار دارد."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "مهم‌ترین آیتم‌های مصرفی برای واکر مونک در نقش دی‌پی‌اس، Flasks، غذاها و پوتیشن‌ها هستند که به‌طور قابل توجهی عملکرد شما را بهبود می‌بخشند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      },
+      {
+       "k": "معجون جنگی",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      },
+      {
+       "k": "غذا",
+       "v": "Impossibly Royal Roast",
+       "ids": [
+        255847
+       ]
+      },
+      {
+       "k": "غذا فستیوال",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "اسپل بهبود سلاح",
+       "v": "Enchant Weapon - Rite of the Hash'ey",
+       "ids": [
+        273071
+       ]
+      },
+      {
+       "k": "اسپل بهبود اضافی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای اسلات‌های مختلف، بهترین انتخاب‌های اسپل بهبود شامل موارد زیر هستند که با توجه به استت‌های شما ممکن است متفاوت باشند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Rune of Avoidance",
+       "ids": [
+        244006
+       ]
+      },
+      {
+       "k": "شانه‌ها",
+       "v": "Enchant Shoulders - Amirdrassil's Grace",
+       "ids": [
+        243990
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "پاها",
+       "v": "Enchant Boots - Lynx's Dexterity",
+       "ids": [
+        243952
+       ]
+      },
+      {
+       "k": "انگشترها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      },
+      {
+       "k": "پا",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "جواهرهای مناسب برای واکر مونک شامل الماس‌ها و سنگ‌های دیگر با استت‌های ثانویه هستند که باید با شبیه‌سازی شخصی شما تطابق داشته باشند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      },
+      {
+       "k": "سنگ‌های دیگر",
+       "v": "Flawless Deadly Peridot, Flawless Quick Amethyst, Flawless Quick Garnet",
+       "ids": [
+        240889,
+        240899,
+        240905
+       ]
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "همیشه قبل از هر فایت، Flask، پوتیون جنگی و بهبودهای سلاح خود را فعال کنید تا حداکثر پتانسیل دی‌پی‌اس خود را داشته باشید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "راهنمای مایتیک پلاس Windwalker Monk برای پچ 12.1.5"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "هدف‌گیری سریع دشمنان برای مایتیک پلاس هیچ ضرر ندارند و این ویژگی برای مواجهه با گروه‌های دشمن و فاصله‌گیری بین مراحل عالی است.",
+      "حرکت سریع (با Transcendence و سرعت پایه بالا) به شما اجازه می‌دهد مکانیک‌های دونژن را با حداقل کاهش دپس مدیریت کنید.",
+      "Windwalker Monk هیچ ایمنی ندارد و دفاع‌های ضعیفی دارد: حتماً از Touch of Karma و Fortifying Brew قبل از مواجهه با گروه‌های خطرناک استفاده کنید؛ Fortifying Brew همچنین دپس Touch of Death را افزایش می‌دهد.",
+      "Zenith با دو بار استفاده و زمان کول‌داون انعطاف‌پذیر ۶۰/۹۰ ثانیه‌ای خود برای پک‌های ترش و پنجره‌های باس ایده‌آل است؛ ترینکت‌ها و پوت‌ها را با آن هماهنگ کنید.",
+      "یک ترینکت قدرتمند با قابلیت فعال کردن آن را برای هماهنگی با کول‌داون‌ها انتخاب کرده و یک ترینکت منفعل یا فعال‌شونده‌ی مکمل نیز داشته باشید."
+     ]
+    },
+    {
+     "t": "call",
+     "x": "تالنت هرو پیشنهادی برای مایتیک پلاس Shado-Pan است (استفاده ساده و ای‌اوئی مداوم از طریق Shado Over the Battlefield). Conduit of the Celestials می‌تواند اگر پنجره‌های کول‌داون آن را به صورت دقیق حداکثر کنید (برای کلیدهای هفتگی در مقابل کلیدهای بالا) برتری پیدا کند."
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فصل",
+       "v": "Midnight Season 2"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Windwalker Monk (ویندواکر) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل ویندواکر (Windwalker Monk) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Windwalker Monk talent build midnight",
+   "Windwalker Monk guide midnight",
+   "Windwalker Monk guide 12.1.5",
+   "best Windwalker Monk talents",
+   "Windwalker Monk talent tree midnight",
+   "Windwalker Monk pve guide",
+   "Windwalker Monk rotation midnight",
+   "Windwalker Monk rotation and cooldowns",
+   "Windwalker Monk bis list midnight",
+   "Windwalker Monk best in slot",
+   "Windwalker Monk gear guide",
+   "Windwalker Monk food and potion",
+   "best food for Windwalker Monk",
+   "best flask for Windwalker Monk",
+   "best potion for Windwalker Monk",
+   "Windwalker Monk enchants and gems",
+   "best enchants for Windwalker Monk",
+   "best gems for Windwalker Monk",
+   "Windwalker Monk stat priority midnight",
+   "Windwalker Monk tier set midnight",
+   "Windwalker Monk tier set bonuses",
+   "Windwalker Monk mythic+ guide",
+   "Windwalker Monk m+ guide midnight",
+   "Windwalker Monk raid guide",
+   "Windwalker Monk hero talents",
+   "Windwalker Monk hero tree",
+   "best dps build Windwalker Monk midnight",
+   "Windwalker Monk cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای ویندواکر",
+   "تلنت ویندواکر",
+   "تلنت برای Windwalker Monk",
+   "تلنت Monk ویندواکر",
+   "بیلد ویندواکر",
+   "بیلد تلنت ویندواکر میدنایت",
+   "روتیشن ویندواکر",
+   "روتیشن و کول‌داون‌های ویندواکر",
+   "غذا برای ویندواکر",
+   "غذا برای Windwalker Monk",
+   "غذا و معجون ویندواکر",
+   "بهترین غذای ویندواکر",
+   "فلسک ویندواکر",
+   "بهترین فلسک برای ویندواکر",
+   "معجون ویندواکر",
+   "انچنت ویندواکر",
+   "انچنت و جم ویندواکر",
+   "بهترین انچنت برای ویندواکر",
+   "جم ویندواکر",
+   "بست آیتم ویندواکر",
+   "بهترین آیتم‌های ویندواکر",
+   "گیر ویندواکر",
+   "استت ویندواکر",
+   "اولویت استت ویندواکر",
+   "ست تیر ویندواکر",
+   "مایتی پلاس ویندواکر",
+   "ام پلاس ویندواکر",
+   "راهنمای ویندواکر",
+   "راهنمای Windwalker Monk",
+   "راهنمای مانک",
+   "ویندواکر میدنایت",
+   "مانک میدنایت",
+   "هرو تیلنت ویندواکر",
+   "بیلد دی‌پی‌اس ویندواکر",
+   "بهترین دی‌پی‌اس میدنایت ویندواکر"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Windwalker Monk (ویندواکر) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Windwalker Monk به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای ویندواکر چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Blood Knights»، معجون جنگی «Potion of Recklessness»، غذا «Impossibly Royal Roast» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای ویندواکر چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای ویندواکر کدام‌اند؟",
+    "a": "ست تیر فعلی «Voracious Heart of Ula'tek» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Windwalker Monk در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

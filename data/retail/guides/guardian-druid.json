@@ -1,0 +1,771 @@
+{
+ "slug": "guardian-druid",
+ "class": "druid",
+ "class_en": "Druid",
+ "spec_en": "Guardian",
+ "spec_no": 3,
+ "role": "Tank",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Guardian Druid",
+ "lead": "Guardian یک تانک فرم‌عوض‌کن با کاهش آسیب پسیو قوی و Ironfur بدون کول‌داون است؛ چرخه‌اش از ساده‌ترین چرخه‌های کل بازی است. دو مسیر Hero Tree داری: [[Druid of the Claw]] با تمرکز روی خونریزی‌های بزرگ و کمی جلوتر در DPS تک‌هدف، و [[Elune's Chosen]] که [[Lunar Beam]] را به دکمهٔ تهاجمی-دفاعی اصلی تبدیل می‌کند.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/druid/guardian/overview-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/druid/guardian/talent-builds-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/druid/guardian/rotation-cooldowns-pve-tank",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/druid/guardian/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/druid/guardian/enchants-gems-pve-tank",
+   "updated": "2026-10-13"
+  }
+ ],
+ "glossary": {
+  "Mana": {
+   "fa": "منبع جادو که اسپیل‌ها مصرفش می‌کنند؛ با نوشیدن، روح (Spirit) و جادوی بازسازی پر می‌شود."
+  },
+  "Druid of the Claw": {
+   "fa": "تلنت جایگزین نزدیک به Elune's Chosen برای گاردین در M+."
+  },
+  "Elune's Chosen": {
+   "fa": "تلنت درخت اصلی که برای حالت M+ بهترین عملکرد را دارد."
+  },
+  "Lunar Beam": {
+   "fa": "یک کول‌داون دفاعی/درمانی."
+  },
+  "Ironfur": {
+   "fa": "اسپل کلیدی برای دفاع و مقابله با آسیب‌های ناگهانی."
+  },
+  "Frenzied Regeneration": {
+   "fa": "یک اسپل درمانی فعال‌شونده با سلامت پایین."
+  },
+  "Berserk": {
+   "fa": "کول‌داون اصلی درک کهف‌دار که قدرت‌ها را بهبود می‌بخشد."
+  },
+  "Incarnation: Guardian of Ursoc": {
+   "fa": "یک کول‌داون که قدرت‌های درک کهف‌دار را بهبود می‌بخشد."
+  },
+  "Ursol's Vortex": {
+   "fa": "یک اسپل کنترل جمعیت که دشمنان را به مدت کوتاهی در یک نقطه نگاه می‌دارد."
+  },
+  "Mighty Bash": {
+   "fa": "یک اسپل استان‌بند تک‌هدف که برای کنترل بوس‌ها بسیار مفید است."
+  },
+  "Skull Bash": {
+   "fa": "یک اسپل سد کردن سریع که از شما در برابر حملات خطرناک محافظت می‌کند."
+  },
+  "Thrash": {
+   "fa": "اسپل دام چندهدفه که برای تهدید گروهی ضروری است."
+  },
+  "Maul": {
+   "fa": "یک اسپل قدرتمند که با رِیج فعال می‌شود."
+  },
+  "Moonfire": {
+   "fa": "یک اسپل دامنهٔ کوچک که می‌تواند روی هدف اصلی حفظ شود."
+  },
+  "Red Moon": {
+   "fa": "یک تلنت که به [[Moonfire]] قدرت می‌بخشد و آن را در تمام اهداف دامنه پخش می‌کند."
+  },
+  "Mangle": {
+   "fa": "اسپل اصلی دامنهٔ تک‌هدف برای درک کهف‌داران."
+  },
+  "Galactic Guardian": {
+   "fa": "یک تلنت که به [[Moonfire]] شانس برخورد با پروک می‌دهد."
+  },
+  "Barkskin": {
+   "fa": "یک کول‌داون دفاعی که دریافت آسیب را کاهش می‌دهد."
+  },
+  "Swipe": {
+   "fa": "اسپل دام اضافی برای پر کردن تهدید پس از Thrash."
+  },
+  "Harnessed Rage": {
+   "fa": "یک تلنت که به شما امکان نگه داشتن مقدار بیشتری از رِیج را می‌دهد."
+  },
+  "Apex Predator's Craving": {
+   "fa": "یک تلنت که با اجرای [[Maul]] فعال شده و به شما قدرت می‌دهد."
+  },
+  "Heart of the Wild": {
+   "fa": "یک کول‌داون که قدرت‌ها را بهبود می‌بخشد."
+  },
+  "Survival Instincts": {
+   "fa": "یک کول‌داون دفاعی که سلامت شما را موقتاً افزایش می‌دهد."
+  },
+  "Raze": {
+   "fa": "یک نسخهٔ قدرتمندتر از [[Maul]] که در [[Incarnation: Guardian of Ursoc]] فعال می‌شود."
+  },
+  "Stampeding Roar": {
+   "fa": "اسپل گروهی برای افزایش سرعت و دور زدن موانع."
+  },
+  "Bristling Fur": {
+   "fa": "تلنت برای تولید رج اضافی در پنجره‌های خطرناک."
+  },
+  "Blood Frenzy": {
+   "fa": "تلنت جایگزین برای تولید رج اضافی در پنجره‌های خطرناک."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Guardian یک تانک فرم‌عوض‌کن با کاهش آسیب پسیو قوی و Ironfur بدون کول‌داون است؛ چرخه‌اش از ساده‌ترین چرخه‌های کل بازی است. دو مسیر Hero Tree داری: [[Druid of the Claw]] با تمرکز روی خونریزی‌های بزرگ و کمی جلوتر در DPS تک‌هدف، و [[Elune's Chosen]] که [[Lunar Beam]] را به دکمهٔ تهاجمی-دفاعی اصلی تبدیل می‌کند."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "چندهدف",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "آسیب‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "مولتی‌تسک",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "انعطاف‌پذیری",
+       "v": "متوسط",
+       "n": 3
+      },
+      {
+       "k": "سهولت استفاده",
+       "v": "آسان",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "کاهش آسیب پسیوی قوی، هم پایه و هم با تلنت‌ها",
+       "آسیب‌پذیری فیزیکی فعال قدرتمند از طریق Ironfur قابل استکینگ بدون کول‌داون",
+       "دفاعیه‌های با کول‌داون کوتاه باعث ثبات و پایداری در دریافت آسیب می‌شوند",
+       "گزینه‌های کاربردی در راید: Stampeding Roar، Convoke the Spirits، After the Wildfire، Dream of Cenarius",
+       "در مواجهات با آسیب فیزیک بالا، به‌ویژه آسیب‌های Ramped/spike، برتری دارد"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "گزینه‌های خوبی برای کنترل گروه در درخت تلنت وجود ندارد",
+       "گرفتن تهدید اولیه سخت است زیرا بخش زیادی از آسیب شما DoT-based است",
+       "هیچ جایگاه منحصربه‌فرد یا کاربردی تانکینگ خاصی ندارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "hero",
+   "title": "Hero Tree",
+   "blocks": [
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Elune's Chosen",
+       "tag": "انتخاب پیش‌فرض",
+       "x": "درخت ساده‌تر که Lunar Beam را به یک دکمهٔ دفاعی-تهاجمی قدرتمند تبدیل می‌کند و در حال حاضر برتری کمی دارد."
+      },
+      {
+       "title": "Druid of the Claw",
+       "tag": "گزینهٔ جایگزین",
+       "x": "تمرکز بر هماهنگی بین Guardian و Feral با افکت‌های خونریزی قوی و عملکرد بهتر در DPS تک‌هدفه."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "در پچ 12.1.5، درخت تلنت گاردین درایو شامل تغییرات جذابی در انتخاب‌های پیش‌روی ماست. این راهنما به شما کمک می‌کند تا بهترین ترکیب‌ها را برای نقش تانک در شبیه‌سازی‌های رید و مایثیک پلاس پیدا کنید."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "Elune's Chosen (Raid)",
+       "tag": "انتخاب پیش‌فرض",
+       "code": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsYGjZ2MLGMLLDMbwoJamZWmZmZGjZMDAAAAAYGLzAW2mZwY2GATBAAA2wMDwiZwA2ssNAzMAG"
+      },
+      {
+       "title": "Elune's Chosen (Mythic+)",
+       "tag": "انتخاب پیش‌فرض",
+       "code": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMjZWMLGmZZZgZzwoJamZWmZmZmlxMAAAAAAMjFDYbbmBjZZAMFAAAYDzMALmBDYxCAzMAG"
+      },
+      {
+       "title": "Elune's Chosen (Delves)",
+       "tag": "انتخاب پیش‌فرض",
+       "code": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMjZWMLGMWGY2MjRT0MzsYmZmxYGGAAAAAwwyMgltZGMmlBwUAAAgNMzDMgFzgBjNLbAmZAMA"
+      },
+      {
+       "title": "Druid of the Claw (Raid)",
+       "tag": "گزینه جایگزین",
+       "code": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMPwYMzmZZGMWGY2gRT0MzsMzMzMGzYGAAAAAwMWmBAAAgamlZZmZGAALYmBYxMYAbW2GAMzGMA"
+      },
+      {
+       "title": "Druid of the Claw (Mythic+/Delves)",
+       "tag": "گزینه جایگزین",
+       "code": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMmZMziZZGmZZZgZzwoJamZWmZmZmlxMMAAAAAgZsMDAAAA1MLzyMzMAAWwMPAwiZwA2sAAmZDG"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=druid&spec=guardian",
+     "x": "مشاهده همه ساختارهای تلنت"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "چرخهٔ اسپل‌ها"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "نگهداری [[Moonfire]] روی هدف اصلی",
+      "نگهداری ۳ تا ۵ لایه از [[Thrash]]",
+      "استفاده از [[Red Moon]] در هر فرصت",
+      "استفاده از [[Mangle]] در هر فرصت",
+      "استفاده از [[Thrash]] در هر فرصت",
+      "صرف رِیج روی [[Maul]] (تهاجمی) یا [[Ironfur]] (دفاعی)",
+      "استفاده از [[Frenzied Regeneration]] اگر سلامت شما کاهش یابد",
+      "استفاده از [[Moonfire]] با فعال بودن پروک [[Galactic Guardian]]",
+      "استفاده مکرر از [[Barkskin]] / [[Incarnation: Guardian of Ursoc]]",
+      "استفاده از [[Swipe]] اگر گزینهٔ دیگری برای فشردن وجود نداشته باشد"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "قانون مدیریت رِیج: با فعال بودن تلنت [[Harnessed Rage]]، همیشه بالای ۸۰ رِیج نگه دارید قبل از هر اجرای [[Maul]]. بدون این تلنت، بیشتر رِیج خود را روی [[Ironfur]] صرف کنید تا بتوانید پروک‌های [[Apex Predator's Craving]] را فعال کنید بدون اینکه تیک جی‌سی‌دی شما را بگیرد."
+    },
+    {
+     "t": "p",
+     "x": "در آغاز نبرد، اولویت‌ها مشابه چرخهٔ تک‌هدف است: [[Red Moon]]، [[Mangle]] و [[Thrash]] را در هر فرصت استفاده کنید، ۳ تا ۵ لایهٔ [[Thrash]] را حفظ کنید، رِیج را روی [[Maul]] صرف کنید (بعد از [[Incarnation]] برای فعال کردن پروک [[Apex Predator's Craving]]) یا روی [[Ironfur]] به صورت دفاعی، از [[Frenzied Regeneration]] در کاهش سلامت استفاده کنید، و [[Barkskin]]/[[Incarnation]] را به صورت مکرر اجرا کنید."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "p",
+     "x": "کول‌داون‌های دفاعی مانند [[Berserk]]/[[Incarnation: Guardian of Ursoc]]، [[Lunar Beam]]، [[Heart of the Wild]]، [[Survival Instincts]] و [[Barkskin]] را در زمان مناسب یا با هم استفاده کنید مگر اینکه باعث از دست دادن استفاده از آن‌ها شوید؛ در غیر این صورت، آن‌ها را در هر فرصت فشار دهید."
+    },
+    {
+     "t": "p",
+     "x": "هنگام فعال بودن [[Incarnation: Guardian of Ursoc]]، حداکثر تعداد اجرای [[Thrash]] و [[Mangle]] را افزایش دهید و رِیج خود را روی [[Maul]]/[[Raze]]/[[Ironfur]] صرف کنید تا از پر شدن آن جلوگیری کنید."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "برای گیرینگ در این پچ، هاست بر همه ثانویه‌ها اولویت دارد و بعد از آن ورساتیلتی، مسترای و کریتیک استرایک قرار می‌گیرند که این چهار ثانویه تقریباً با هم برابر هستند. همیشه آپگرید آی‌ال‌وی و آیجیلیتی برنده است."
+    },
+    {
+     "t": "call",
+     "x": "اولویت اصلی شما هاست است. یک اسلینگ زودرس و تکمیل کردن ست تیر همیشه در اولویت قرار دارند. با استفاده از Raidbots سیم‌کش خود را انجام دهید."
+    },
+    {
+     "t": "h3",
+     "x": "بهترین آیتم‌ها"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "دست راست",
+       "id": 268215
+      },
+      {
+       "slot": "سر",
+       "id": 271875
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271526
+      },
+      {
+       "slot": "پشت",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 281236
+      },
+      {
+       "slot": "مچ دست",
+       "id": 268240
+      },
+      {
+       "slot": "دست",
+       "id": 271529
+      },
+      {
+       "slot": "کمر",
+       "id": 268256
+      },
+      {
+       "slot": "پا",
+       "id": 271527
+      },
+      {
+       "slot": "پا",
+       "id": 268261
+      },
+      {
+       "slot": "انگشتر",
+       "id": 268252
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "آیتم افسانه‌ای",
+       "id": 270164
+      },
+      {
+       "slot": "آیتم افسانه‌ای",
+       "id": 270173
+      }
+     ]
+    },
+    {
+     "t": "set",
+     "id": 271526
+    },
+    {
+     "t": "tiers",
+     "items": [
+      {
+       "r": "S",
+       "ids": [
+        271526,
+        271529,
+        271527
+       ],
+       "names": [
+        "شانه",
+        "دست",
+        "پا"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "ست تیر قدرتمند و کاملاً پسیو است",
+       "با اجرای معمولی روتیشن خود به حداکثر قدرت می‌رسید"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "نیاز به حفظ تایمرهای آیتم‌ها دارد"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Agility",
+      "Haste",
+      "Versatility",
+      "Critical Strike",
+      "Mastery"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در درک وارلوک گاردین، آجیلیتی مهم‌ترین استت اصلی است و همیشه باید اولویت اول شما باشد."
+    },
+    {
+     "t": "p",
+     "x": "برای استت‌های فرعی، هِیست به خاطر حس روانی و عملکرد بهتر در گیم‌پلی، در اولویت قرار می‌گیرد، پس از آن ورساتیلتی، کریتیکال استرایک و مستری قرار دارند."
+    }
+   ]
+  },
+  {
+   "id": "consumables",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پیش‌غذا",
+       "v": "Flask of the Blood Knights",
+       "ids": [
+        241324
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پوشاننده جنگ",
+       "v": "Draught of Rampant Abandon or Light's Potential",
+       "ids": [
+        241292,
+        241308
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پوشاننده سلامتی",
+       "v": "Concentrated Silvermoon Health Potion",
+       "ids": [
+        271883
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "افزونه سلاح",
+       "v": "Enchant Weapon - Berserker's Rage",
+       "ids": [
+        243972
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "رون تقویتی",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "غذا",
+       "v": "Harandar Celebration",
+       "ids": [
+        255846
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "غذا جایگزین",
+       "v": "Blooming Feast",
+       "ids": [
+        242273
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond",
+       "ids": [
+        240982
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Versatile Peridot (in all sockets)",
+       "ids": [
+        240893
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "تاج",
+       "v": "Enchant Helm - Empowered Blessing of Speed",
+       "ids": [
+        243980
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Akil'zon's Swiftness",
+       "ids": [
+        243962
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "پا",
+       "v": "Enchant Boots - Farstrider's Hunt",
+       "ids": [
+        244008
+       ]
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "دست‌بندها",
+       "v": "Enchant Ring - Silvermoon's Alacrity",
+       "ids": [
+        244014
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "در حالت تانک، به‌ویژه در محتوای جدید Midnight Season 2، انتخاب درست آیتم‌های مصرفی تأثیر زیادی بر دوام و عملکرد شما دارد. این راهنما بهترین گزینه‌ها را برای محتوای فعلی پچ 12.1.5 نشان می‌دهد."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "راهنمای M+ برای گاردین در پچ 12.1.5"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "در حالت M+، Elune's Chosen بهترین انتخاب است و Druid of the Claw گزینهٔ جایگزین نزدیک محسوب می‌شود.",
+      "برای مدیریت تهدید گروهی، از Thrash با کول‌داون استفاده کنید و با Swipe پر کنید. تهدید چندهدفهٔ شما مبتنی بر دام (DoT) است، پس با اسپل‌های بورست پول‌ها را شروع کنید.",
+      "Stampeding Roar ابزار گروهی عالی برای دور زدن‌ها و هفته‌های اجباری حرکت است.",
+      "در پنجره‌های خطرناک، Bristling Fur/Blood Frenzy رج زیادی تولید می‌کنند. ذخیرهٔ استک‌های Ironfur برای این مواقع داشته باشید."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های پیشنهادی"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "درخت اصلی",
+       "v": "Elune's Chosen"
+      },
+      {
+       "k": "درخت قهرمانی",
+       "v": "Bestial Strength"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Guardian Druid (گاردین) — بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل گاردین (Guardian Druid) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم — همه با توضیح فارسی.",
+  "queries_en": [
+   "Guardian Druid talent build midnight",
+   "Guardian Druid guide midnight",
+   "Guardian Druid guide 12.1.5",
+   "best Guardian Druid talents",
+   "Guardian Druid talent tree midnight",
+   "Guardian Druid pve guide",
+   "Guardian Druid rotation midnight",
+   "Guardian Druid rotation and cooldowns",
+   "Guardian Druid bis list midnight",
+   "Guardian Druid best in slot",
+   "Guardian Druid gear guide",
+   "Guardian Druid food and potion",
+   "best food for Guardian Druid",
+   "best flask for Guardian Druid",
+   "best potion for Guardian Druid",
+   "Guardian Druid enchants and gems",
+   "best enchants for Guardian Druid",
+   "best gems for Guardian Druid",
+   "Guardian Druid stat priority midnight",
+   "Guardian Druid tier set midnight",
+   "Guardian Druid tier set bonuses",
+   "Guardian Druid mythic+ guide",
+   "Guardian Druid m+ guide midnight",
+   "Guardian Druid raid guide",
+   "Guardian Druid hero talents",
+   "Guardian Druid hero tree",
+   "best dps build Guardian Druid midnight",
+   "Guardian Druid cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای گاردین",
+   "تلنت گاردین",
+   "تلنت برای Guardian Druid",
+   "تلنت Druid گاردین",
+   "بیلد گاردین",
+   "بیلد تلنت گاردین میدنایت",
+   "روتیشن گاردین",
+   "روتیشن و کول‌داون‌های گاردین",
+   "غذا برای گاردین",
+   "غذا برای Guardian Druid",
+   "غذا و معجون گاردین",
+   "بهترین غذای گاردین",
+   "فلسک گاردین",
+   "بهترین فلسک برای گاردین",
+   "معجون گاردین",
+   "انچنت گاردین",
+   "انچنت و جم گاردین",
+   "بهترین انچنت برای گاردین",
+   "جم گاردین",
+   "بست آیتم گاردین",
+   "بهترین آیتم‌های گاردین",
+   "گیر گاردین",
+   "استت گاردین",
+   "اولویت استت گاردین",
+   "ست تیر گاردین",
+   "مایتی پلاس گاردین",
+   "ام پلاس گاردین",
+   "راهنمای گاردین",
+   "راهنمای Guardian Druid",
+   "راهنمای دروید",
+   "گاردین میدنایت",
+   "دروید میدنایت",
+   "هرو تیلنت گاردین",
+   "بیلد گاردین",
+   "بهترین گاردین"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Guardian Druid (گاردین) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Guardian Druid به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای گاردین چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: غذا «Flask of the Blood Knights»، رون تقویتی «Void-Touched Augment Rune» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای گاردین چیست؟",
+    "a": "بهترین انتخاب فعلی: انچنت سلاح «Enchant Weapon - Berserker's Rage»، جم «Indecipherable Eversong Diamond» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای گاردین کدام‌اند؟",
+    "a": "ست تیر فعلی «شانه» هستهٔ بیلد است. لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Guardian Druid در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل — شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر — در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
+}

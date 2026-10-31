@@ -1,0 +1,549 @@
+{
+ "slug": "windwalker-monk",
+ "spec_slug": "windwalker",
+ "class": "monk",
+ "class_en": "Monk",
+ "spec_en": "Windwalker",
+ "role": "dps",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "sources": [
+  {
+   "name": "Wowhead",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/overview-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/talent-builds-pve-dps",
+   "updated": "2026-10-27"
+  },
+  {
+   "name": "Wowhead BiS",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear"
+  },
+  {
+   "name": "Wowhead Stats",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/stat-priority-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/monk/windwalker/enchants-gems-pve-dps"
+  },
+  {
+   "name": "Icy Veins",
+   "url": "https://www.icy-veins.com/wow/windwalker-monk-pve-dps-guide"
+  }
+ ],
+ "lead_fa": "Windwalker یک DPS میله‌ایِ پرتحرک است که هم‌زمان دو منبع Energy و Chi را مدیریت می‌کند و با [[Mastery: Combo Strikes]] پاداش تکرارنکردن اسپل‌ها را می‌گیرد؛ تعویض هدف تقریباً رایگان و موبیلتی تقریباً بی‌رقیب دارد. در Midnight دو مسیر Hero Tree پیش روی توست: [[Shado-Pan]] با آسیب یکنواخت و ساده برای همه‌جا، و [[Conduit of the Celestials]] با پنجره‌های برست متمرکز روی [[Celestial Conduit]].",
+ "strengths_weaknesses": {
+  "strengths": [
+   "Playstyle stays close to The War Within, so habits carry over",
+   "Little to no damage loss when switching targets",
+   "Mobility is nearly unparalleled",
+   "Talent choices can adjust how much rotational downtime you enjoy",
+   "Flexible cooldowns: swap between 60-second, 90-second and 2-minute cooldown windows with Zenith"
+  ],
+  "weaknesses": [
+   "No immunity or unique utility compared to many DPS specs",
+   "Very weak defensively",
+   "Desirability in groups often depends as much on Mistweaver and Brewmaster strength as on Windwalker itself"
+  ]
+ },
+ "changes_12_1": {
+  "nerfs": [
+   "Zenith Stomp damage reduced by 30%",
+   "Weapon of Wind: 5% damage during Zenith (was 10%)",
+   "Tigereye Brew: 5%/10% Critical Strike damage (was 10%/20%)",
+   "Celestial Conduit damage reduced by 25%"
+  ],
+  "buffs": [
+   "Melee auto-attack damage increased by 30%",
+   "Blackout Kick damage increased by 50%",
+   "Tiger Palm damage increased by 200%",
+   "Dual Threat damage increased by 30%",
+   "Combat Wisdom grants 5% Stamina",
+   "Calming Presence: 7% damage reduction (was 3%)",
+   "Spinning Crane Kick buffed by 38%",
+   "Whirling Dragon Punch buffed by 30%",
+   "Jade Ignition buffed by 95%",
+   "Temple Training: 30% damage for Fists of Fury and Spinning Crane Kick (was 10%)",
+   "Vivify, Silent Sanctuary and Expel Harm healing increased by 25% to offset the 25% health/damage scaling"
+  ],
+  "note_12_1_5": "Patch 12.1.5 brings no gameplay changes for Windwalker; only new gear (Kith'ix drops and Venomcore ilvl boosts)."
+ },
+ "hero": {
+  "recommendation": "Shado-Pan is the general recommendation and the pick for less experienced players: its damage is spread evenly across the whole toolkit and it wins wherever damage is not packed into one small burst window. Conduit of the Celestials is the advanced pick: much of its value comes from strictly timing Celestial Conduit against Heart of the Jade Serpent procs, and it is slightly stronger defensively (Niuzao's Protection / Jade Sanctuary choice nodes vs Shado-Pan's mostly PvP-oriented Whirling Steel / Predictive Training).",
+  "shado_pan": "Consistent damage profile: stacks buffs on the base kit instead of focusing one spell; AoE damage arrives naturally through Shado Over the Battlefield splashing Nature damage around you; opener mirrors the priority (get Fists of Fury and Rising Sun Kick on cooldown early).",
+  "conduit_of_the_celestials": "Burst profile: centers on Celestial Conduit and the summoned Celestials; Heart of the Jade Serpent (from Whirling Dragon Punch, Strike of the Windlord, Celestial Conduit and Zenith) accelerates cooldowns and Fists of Fury channels, squeezing large damage into the window; requires strict sequencing of the Heart of the Jade Serpent sources.",
+  "comparison_source_note": "Wowhead and Icy Veins agree: both heroes are competitively tuned; Shado-Pan = consistent AoE-friendly profile, Conduit of the Celestials = burst and low-target cleave with more defensive value."
+ },
+ "builds": {
+  "codes_source": "Wowhead 'Best Windwalker Monk Talent Tree Builds' page (wowhead.com/guide/classes/monk/windwalker/talent-builds-pve-dps), export strings captured verbatim from the page's per-build Copy buttons and /talent-calc/blizzard/ links on 2026-10-27; do not modify. Shado-Pan Mythic+ and Delves share one build, and Conduit of the Celestials Mythic+ and Delves share one build (page states the Delve build is identical to the Mythic+ build).",
+  "hero_ranking": {
+   "raid": [
+    "Shado-Pan",
+    "Conduit of the Celestials"
+   ],
+   "mplus": [
+    "Shado-Pan",
+    "Conduit of the Celestials"
+   ],
+   "delves": [
+    "Conduit of the Celestials",
+    "Shado-Pan"
+   ]
+  },
+  "variants": [
+   {
+    "hero": "Shado-Pan",
+    "mode": "Raid Single Target",
+    "best": true,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYw2MmhlZGbzAAAAAAAAAAAAsMMaGzwwAmxwMzMDz2wMMLzEAwiZ2mZYmZmBAwGAMLzSzMzsAgBmZAglBiB8B"
+   },
+   {
+    "hero": "Shado-Pan",
+    "mode": "Raid Cleave",
+    "best": true,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYw2wMsNzYbGAAAAAAAAAAAglhRzYGGGwMGmZmZY2YmhZZmAAWMz2MzYMzMAA2AgZZWamZmFAMwMDAsMQMgB"
+   },
+   {
+    "hero": "Shado-Pan",
+    "mode": "Mythic+ (Weekly Keys)",
+    "best": true,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYAMGbzMz2MAAAAAAAAAAAALDzEmxywAmxwMzMDz2wMMLzEAwiZ2mZGzMzMAA2AgZZWamZmFAMwMDAswQMgB"
+   },
+   {
+    "hero": "Shado-Pan",
+    "mode": "Delves",
+    "best": false,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYAMGbzMz2MAAAAAAAAAAAALDzEmxywAmxwMzMDz2wMMLzEAwiZ2mZGzMzMAA2AgZZWamZmFAMwMDAswQMgB"
+   },
+   {
+    "hero": "Conduit of the Celestials",
+    "mode": "Raid Single Target",
+    "best": false,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYM2GmhlZmZbGAAAAAAAAAAAglhRzYGGGwMGmZmZY2GmhZZmAAWMz2MzYmZmBAwiZWmlxEEAAGAzAwyAxMzs5BA"
+   },
+   {
+    "hero": "Conduit of the Celestials",
+    "mode": "Raid Cleave",
+    "best": false,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYM2GGjlZmZbGAAAAAAAAAAAglhRzYGGGwMGmZmZY2GmhZZmAAWMz2MzYMzMAAWMzysMmgAAMGAzAwyAxMzs5BA"
+   },
+   {
+    "hero": "Conduit of the Celestials",
+    "mode": "Mythic+ (High Keys)",
+    "best": false,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMgxYZmx2MAAAAAAAAAAAALDzEmhhBMjhZmZGmthZYWmJAgFmtxMmZmZAAsYmlZZMBBAMjBwMAjlBiZmZzA"
+   },
+   {
+    "hero": "Conduit of the Celestials",
+    "mode": "Delves",
+    "best": true,
+    "code": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMgxYZmx2MAAAAAAAAAAAALDzEmhhBMjhZmZGmthZYWmJAgFmtxMmZmZAAsYmlZZMBBAMjBwMAjlBiZmZzA"
+   }
+  ]
+ },
+ "priority": {
+  "concepts": [
+   "Manage Energy and Chi: avoid capping either resource; keep enough Chi for spenders without overcapping; during major cooldowns overcapping is less punishing but still worth avoiding.",
+   "Keep abilities on cooldown: most Chi spenders have their own cooldowns (Rising Sun Kick, Fists of Fury); idle cooldown time is lost damage.",
+   "React to procs: Dance of Chi-Ji and Blackout Kick! can stack twice each; avoid overstacking them into waste, but do not be afraid to hold one briefly.",
+   "Do not repeat abilities: Mastery: Combo Strikes pays only when a cast differs from the previous one; Midnight added a last-cast tracking buff you can watch."
+  ]
+ },
+ "rotation": {
+  "concepts": [
+   "Do not repeat abilities: track the last-cast buff added in Midnight.",
+   "Avoid overcapping both Energy and Chi.",
+   "Use cooldown abilities like Rising Sun Kick and Fists of Fury as often as possible.",
+   "Plan Zenith usage: it is a 60/70/80/90-second cooldown with two charges; align it with Bloodlust, trinkets or high-damage phases."
+  ],
+  "st_shado_pan": [
+   "Whirling Dragon Punch",
+   "Strike of the Windlord if low on Chi or Zenith is almost over",
+   "Zenith Stomp if low on Chi or Zenith is almost over",
+   "Tiger Palm to avoid capping Energy outside cooldowns, or if not enough Chi for Fists of Fury",
+   "Fists of Fury",
+   "Rushing Wind Kick",
+   "Spinning Crane Kick with Dance of Chi-Ji AND Unbroken Rhythm active",
+   "Rising Sun Kick",
+   "Blackout Kick with Combo Breaker, or during Zenith when talented into Obsidian Spiral",
+   "Spinning Crane Kick during Zenith with more than 4 Chi or a Dance of Chi-Ji proc",
+   "Tiger Palm if less than 2 Chi",
+   "Spinning Crane Kick with Dance of Chi-Ji",
+   "Slicing Winds",
+   "Tiger Palm without overcapping Chi"
+  ],
+  "st_conduit": [
+   "Whirling Dragon Punch if the next Invoke Xuen, the White Tiger is at least 10 seconds away",
+   "Strike of the Windlord if the next Invoke Xuen, the White Tiger is at least 10 seconds away",
+   "Zenith Stomp if low on Chi, Zenith is almost over, or while channeling Celestial Conduit",
+   "Celestial Conduit if no active Heart of the Jade Serpent from Whirling Dragon Punch or Strike of the Windlord; cancel with the next GCD",
+   "Fists of Fury if Heart of the Jade Serpent has less than 1 second left",
+   "Tiger Palm to avoid capping Energy outside cooldowns, or if not enough Chi for Fists of Fury",
+   "Fists of Fury",
+   "Rushing Wind Kick",
+   "Spinning Crane Kick with Unbroken Rhythm active",
+   "Rising Sun Kick",
+   "Blackout Kick with Combo Breaker, or during Zenith when talented into Obsidian Spiral",
+   "Spinning Crane Kick during Zenith with more than 4 Chi or a Dance of Chi-Ji proc",
+   "Tiger Palm if less than 2 Chi",
+   "Spinning Crane Kick with Dance of Chi-Ji",
+   "Slicing Winds",
+   "Tiger Palm without overcapping Chi",
+   "Blackout Kick"
+  ],
+  "aoe_note": "Multi-target priority starts at 2 targets. Shado-Pan AoE barely changes: extra damage comes from Shado Over the Battlefield splashing. Conduit of the Celestials AoE also barely changes: extra Fists of Fury casts come from Heart of the Jade Serpent cooldown reduction.",
+  "aoe_shado_pan": [
+   "Whirling Dragon Punch",
+   "Strike of the Windlord",
+   "Zenith Stomp if low on Chi or Zenith is almost over",
+   "Tiger Palm if missing the Chi for Fists of Fury",
+   "Fists of Fury",
+   "Spinning Crane Kick with the Season 2 4-piece (Unbroken Rhythm)",
+   "Tiger Palm to avoid capping Energy outside Zenith",
+   "Rising Sun Kick to enable Whirling Dragon Punch",
+   "Rushing Wind Kick without the Season 2 4-piece",
+   "Spinning Crane Kick during Zenith with at least 5 targets",
+   "Rising Sun Kick with Bloodlust or Zenith when lacking the 4-piece",
+   "Blackout Kick with Obsidian Spiral, during Zenith, with Rising Sun Kick on cooldown",
+   "Spinning Crane Kick",
+   "Slicing Winds",
+   "Blackout Kick with Combo Breaker",
+   "Tiger Palm below 5 Chi and no Zenith",
+   "Blackout Kick with Shadowboxing Treads",
+   "Rising Sun Kick",
+   "Blackout Kick"
+  ],
+  "aoe_conduit": [
+   "Fists of Fury if Heart of the Jade Serpent is about to end",
+   "Whirling Dragon Punch if Invoke Xuen, the White Tiger cooldown is longer than 10 seconds",
+   "Strike of the Windlord if Invoke Xuen, the White Tiger cooldown is longer than 10 seconds",
+   "Zenith Stomp if low on Chi, Zenith is almost over, or while channeling Celestial Conduit",
+   "Celestial Conduit if no active Heart of the Jade Serpent from Whirling Dragon Punch or Strike of the Windlord; cancel with the next GCD",
+   "Tiger Palm if missing the Chi for Fists of Fury",
+   "Fists of Fury",
+   "Spinning Crane Kick with the Season 2 4-piece (Unbroken Rhythm)",
+   "Tiger Palm to avoid capping Energy outside Zenith",
+   "Rising Sun Kick to enable Whirling Dragon Punch",
+   "Rushing Wind Kick without the Season 2 4-piece",
+   "Rising Sun Kick with Heart of the Jade Serpent active when lacking the 4-piece",
+   "Spinning Crane Kick during Zenith with at least 5 targets",
+   "Rising Sun Kick with Bloodlust or Zenith when lacking the 4-piece",
+   "Blackout Kick with Obsidian Spiral, during Zenith, with Rising Sun Kick on cooldown",
+   "Spinning Crane Kick",
+   "Slicing Winds",
+   "Blackout Kick with Combo Breaker",
+   "Tiger Palm below 5 Chi and no Zenith",
+   "Blackout Kick with Shadowboxing Treads",
+   "Rising Sun Kick",
+   "Blackout Kick"
+  ],
+  "opener_shado_pan": [
+   "Pre-cast Spinning Crane Kick before the pull (so the Tiger Palm opener starts with Combo Strikes active)",
+   "Tiger Palm",
+   "Zenith together with potions, racials and trinkets; stat buffs go before Zenith",
+   "Fists of Fury",
+   "Rising Sun Kick",
+   "Fists of Fury if Rising Sun Kick reset its cooldown",
+   "Whirling Dragon Punch",
+   "Strike of the Windlord",
+   "Slicing Winds",
+   "Continue with normal priority; same opener for single target and AoE"
+  ],
+  "opener_conduit": [
+   "Pre-cast Slicing Winds before the pull (if talented)",
+   "Tiger Palm",
+   "Invoke Xuen, the White Tiger",
+   "Zenith together with potions, racials and trinkets; stat buffs go before Zenith",
+   "Strike of the Windlord",
+   "Fists of Fury",
+   "Rising Sun Kick",
+   "Fists of Fury if Rising Sun Kick reset its cooldown",
+   "Whirling Dragon Punch",
+   "Continue with normal priority; delay Celestial Conduit so its Heart of the Jade Serpent does not overlap the one from Strike of the Windlord or Whirling Dragon Punch"
+  ],
+  "cooldowns": {
+   "Zenith": "Resets Rising Sun Kick, grants 2 Chi, makes all Chi spenders cost 1 less and adds 1 second to Blackout Kick's cooldown reduction; during Zenith Blackout Kick is free and becomes the primary filler (with Obsidian Spiral it even generates Chi). Two charges: hold for Bloodlust, trinkets or burst phases instead of pressing instantly.",
+   "Celestial Conduit": "Its biggest value is adding Heart of the Jade Serpent. The Zenith instance of the buff stacks with everything, but the Celestial Conduit instance does not stack with the ones from Strike of the Windlord or Whirling Dragon Punch: stagger those sources for maximum uptime and cancel the channel with the next GCD.",
+   "Invoke Xuen, the White Tiger": "In Midnight it mainly exists to enable the Celestial Conduit channel right after; plan the GCDs so Xuen's summon does not delay your damage buttons.",
+   "Touch of Death": "Use on cooldown; Fatal Touch no longer grants a damage buff after use. You may hold it for a target below 15% health whose total health is below your maximum health, for 100% of your maximum health instead of 35%, but missing that tiny window is a loss.",
+   "Touch of Karma": "A defensive first: absorbs damage and redirects a share back. Offensively use it when you do not need the defensive value; stacking Fortifying Brew before it increases both the absorb and the redirect.",
+   "Fortifying Brew": "Raises maximum health, which raises Touch of Death damage and Touch of Karma absorb; both snapshot on use, so press Fortifying Brew first when combining them."
+  },
+  "pre_combat": [
+   "Check your last cast: openers start with Tiger Palm, so cast Spinning Crane Kick well before the pull to rebuild Chi.",
+   "Place Transcendence outside the boss arena as a free teleport back."
+  ]
+ },
+ "gear": {
+  "gearing_rules": [
+   "Rough guideline: Haste = Critical Strike = Mastery >>> Versatility; never neglect Agility.",
+   "A substantial item level increase generally outweighs secondary stat optimization; sim with Raidbots for real answers.",
+   "Upgrade priority: Weapon first (everything scales with Weapon DPS), then strong Trinkets, then lowest item level pieces (Helm, Chest, Legs first).",
+   "Ascendant Venomstone priority: Weapons, then Trinkets, then Neck (Aqirbane Reliquary).",
+   "Catalyze at least 3 non-tier pieces to keep the 4-piece bonus; any piece works, prefer ones without Versatility."
+  ],
+  "weapon": [
+   {
+    "name": "Abyssal Broodfiend's Bardiche",
+    "id": 268215
+   }
+  ],
+  "head": [
+   {
+    "name": "Gaze of the Coiled Watcher",
+    "id": 271875
+   }
+  ],
+  "neck": [
+   {
+    "name": "Aqirbane Reliquary",
+    "id": 268265
+   }
+  ],
+  "shoulder": [
+   {
+    "name": "Tassels of the Monkey King",
+    "id": 271517
+   }
+  ],
+  "back": [
+   {
+    "name": "Silken Voodoo Drape",
+    "id": 268253
+   }
+  ],
+  "chest": [
+   {
+    "name": "Chestwrap of Palpable Terror",
+    "id": 281236
+   }
+  ],
+  "wrist": [
+   {
+    "name": "Silvermoon Agent's Deflectors",
+    "id": 244576
+   }
+  ],
+  "hands": [
+   {
+    "name": "Gauntlets of Fevered Defense",
+    "id": 251124
+   }
+  ],
+  "waist": [
+   {
+    "name": "Sash of the Forlorn Vessel",
+    "id": 268256
+   }
+  ],
+  "legs": [
+   {
+    "name": "Coiled Hex Legguards",
+    "id": 268225
+   }
+  ],
+  "feet": [
+   {
+    "name": "Silvermoon Agent's Sneakers",
+    "id": 244569
+   }
+  ],
+  "finger": [
+   {
+    "name": "Charged Sandstone Band",
+    "id": 158366
+   },
+   {
+    "name": "Band of the Swarmcaller",
+    "id": 281029
+   },
+   {
+    "name": "Sickening Signet of Atroxus",
+    "note": "Mythic+ alternative",
+    "id": 252258
+   }
+  ],
+  "trinket": [
+   {
+    "name": "Voracious Heart of Ula'tek",
+    "id": 270175
+   },
+   {
+    "name": "Zul'jin's Guillotine Technique",
+    "id": 270173
+   }
+  ],
+  "trinket_ranking": [
+   {
+    "r": "S",
+    "names": [
+     "Voracious Heart of Ula'tek",
+     "Zul'jin's Guillotine Technique"
+    ],
+    "ids": [
+     270175,
+     270173
+    ]
+   },
+   {
+    "r": "A",
+    "names": [
+     "Freightrunner's Flask",
+     "Vile Vial of Volatile Venom",
+     "Void Execution Mandate",
+     "Gebbo's Bottomless Bag",
+     "Keeper's Seething Core",
+     "Twisted Horror's Tendril"
+    ],
+    "ids": [
+     250215,
+     273796,
+     250225,
+     270164,
+     270165,
+     281215
+    ]
+   },
+   {
+    "r": "B",
+    "names": [
+     "Sapling of the Dawnroot",
+     "Font of Venomous Rage",
+     "Lustrous Golden Plumage"
+    ],
+    "ids": [
+     250259,
+     270168,
+     159617
+    ]
+   },
+   {
+    "r": "C",
+    "names": [
+     "Lightspire Core",
+     "Magister's Alchemist Stone",
+     "Tattered Amani War Banner",
+     "Vashnik's Sanguine Rancor"
+    ],
+    "ids": [
+     250214,
+     241340,
+     273797,
+     270166
+    ]
+   },
+   {
+    "r": "F",
+    "names": [
+     "Resonant Bellowstone",
+     "Ruby Whelp Shell",
+     "Tiny Electromental in a Jar"
+    ],
+    "ids": [
+     250228,
+     193757,
+     158374
+    ]
+   }
+  ],
+  "tier_set": {
+   "name": "Guile of the Monkey King",
+   "set_item_id": 271875,
+   "note": "2pc: Fists of Fury strikes an additional time at the start of its channel at 50% effectiveness. 4pc (Unbroken Rhythm): each Fists of Fury strike increases the damage of your next Rising Sun Kick by 10% or Spinning Crane Kick by 20%, stacking up to 6; the rotation adjusts around choosing between the two. Use set_item_id (the catalyzed head piece) as the id for any set block."
+  },
+  "catalyst": [
+   "Gaze of the Coiled Watcher (head)",
+   "Tassels of the Monkey King (shoulder)",
+   "Chestwrap of Palpable Terror (chest)",
+   "Gauntlets of Fevered Defense (hands)",
+   "Coiled Hex Legguards (legs)"
+  ],
+  "crafted": [
+   "Silvermoon Agent's Deflectors with Arcanoweave Lining (first craft)",
+   "Silvermoon Agent's Sneakers with Arcanoweave Lining",
+   "Adherent's Silken Shroud with Arcanoweave Lining (early season, skip if killing Mythic Coiled Altar)"
+  ]
+ },
+ "stats": {
+  "priority": [
+   "Agility",
+   "Haste",
+   "Critical Strike",
+   "Mastery",
+   "Versatility"
+  ],
+  "cheatsheet": "Agility >> Haste = Critical Strike = Mastery >>> Versatility; identical for Shado-Pan and Conduit of the Celestials, and roughly the same in AoE.",
+  "notes": [
+   "Critical Strike became a significantly stronger secondary stat with the Midnight changes.",
+   "Haste increases Energy regeneration and lowers the cooldowns of Fists of Fury, Rising Sun Kick and Whirling Dragon Punch.",
+   "Mastery (Combo Strikes) increases damage of any cast that differs from the previous one.",
+   "Versatility is a good stat but sits behind the other three."
+  ],
+  "dr_breakpoints": "Diminishing returns start above: Critical Strike 1380, Haste 1320, Mastery 1380, Versatility 1620 rating (10% reduction per breakpoint, rating only; Bloodlust-style percentage buffs are unaffected)."
+ },
+ "consumables": {
+  "flasks": [
+   "Flask of the Blood Knights"
+  ],
+  "food": {
+   "secondary": "Harandar Celebration or Silvermoon Parade (feasts)",
+   "primary": "Impossibly Royal Roast or Royal Roast"
+  },
+  "health_potion": "Concentrated Silvermoon Health Potion",
+  "combat_potion": "Potion of Recklessness",
+  "weapon": "Thalassian Phoenix Oil",
+  "weapon_buff": "Enchant Weapon - Rite of the Hash'ey (best to sim per character)",
+  "augment_rune": "Void-Touched Augment Rune",
+  "enchants": {
+   "head": "Enchant Helm - Empowered Rune of Avoidance",
+   "shoulders": "Enchant Shoulders - Amirdrassil's Grace",
+   "chest": "Enchant Chest - Mark of the Worldsoul",
+   "legs": "Forest Hunter's Armor Kit",
+   "feet": "Enchant Boots - Lynx's Dexterity",
+   "rings": [
+    "Enchant Ring - Eyes of the Eagle"
+   ]
+  },
+  "gems": {
+   "diamond": "Indecipherable Eversong Diamond",
+   "others": [
+    "Flawless Deadly Peridot (best to sim)",
+    "Flawless Quick Amethyst",
+    "Flawless Quick Garnet"
+   ]
+  },
+  "source": "https://www.wowhead.com/guide/classes/monk/windwalker/enchants-gems-pve-dps"
+ },
+ "mplus": {
+  "hero_note": "Shado-Pan is the recommended Hero Talent for Mythic+ (simple play, consistent AoE through Shado Over the Battlefield); Conduit of the Celestials can pull ahead if you strictly maximize its cooldown windows (Weekly Keys vs High Keys builds).",
+  "tips": [
+   "Target swapping costs almost no damage, which is ideal for add-focused pulls and intermissions.",
+   "Mobility (Transcendence, high base movement) lets you handle dungeon mechanics with minimal DPS loss.",
+   "No immunity and weak defensives: plan Touch of Karma and Fortifying Brew before dangerous pulls; Fortifying Brew also boosts your Touch of Death burst.",
+   "Zenith's flexible 60/90-second cooldown with two charges adapts to trash packs and boss windows; align trinkets and potions with it.",
+   "Look for one powerful on-use trinket to pair with cooldowns plus a supplementary passive or proc trinket."
+  ],
+  "season": "Midnight Season 2"
+ },
+ "section_titles": {
+  "overview": "معرفی",
+  "hero": "Hero Tree",
+  "talents": "تلنت‌ها",
+  "rotation": "روتیشن و کول‌داون‌ها",
+  "gear": "گیر و آیتم‌ها",
+  "stats": "اولویت استت",
+  "consumables": "انچنت، جم و مصرفی",
+  "mplus": "نکته‌های Mythic+"
+ }
+}
