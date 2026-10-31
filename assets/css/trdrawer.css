@@ -1,4 +1,12 @@
-/* trdrawer.css — the global translation-settings FLOAT (tr.js v3.7)
+/* trdrawer.css — the global translation-settings FLOAT (tr.js v3.9)
+   v3.9 «همه‌جا یک‌شکل» — the user: the واژه‌نامه view was still a bare text
+   run with no buttons («نوشته ها دکمه ندارن اصن قاطیه همه چیز اشتباهه»).
+   Root cause: the switch-row BASE styles (flex layout, label column, count
+   chip, example line, the .tr-sw toggle itself) lived only in retail.css —
+   item/retail pages were fine, every other page collapsed. Fix: the full
+   base is now HERE, scoped to the drawer — self-contained on every page;
+   combo AND member rows both show (the drill-down view is the grouping,
+   same as the studio menu).
    v3.7 «روی هر صفحه‌ای خوانا» — the user: the menu was OK on item pages but
    broke on the spellbook and the rest («تو صفحه کتاب اسپل و دیگر صفحات
    درست کار نمیکنه … بزودی صفحات زیادی خواهیم داشت»). Root cause: the fully
@@ -264,24 +272,125 @@ html body .tr-bar-drawer .tr-sec.open .tr-secbtn .tr-chev {
 html body .tr-bar-drawer .tr-secbody { padding: 0.1rem 0 0.35rem; }
 html body .tr-bar-drawer .tr-secbody[hidden] { display: none; }
 
-/* switch rows — transparent, only the toggle is a control */
+/* ---------- v3.9: switch rows — the drawer is SELF-CONTAINED ----------
+   The base row + switch styles lived ONLY in retail.css, so the drawer
+   read fine on item/retail pages but collapsed into a bare text run with
+   invisible switches on every other page («نوشته ها دکمه ندارن اصن قاطیه
+   همه چیز اشتباهه»). The full base now lives here: same rows on every
+   page — item pages included (this file loads after retail.css there,
+   same values, no conflict). */
 html body .tr-bar-drawer .tr-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.34rem 0.25rem;
+  margin: 0;
   background: none;
   border: none;
   border-radius: 8px;
-  padding: 0.3rem 0.2rem;
-  margin: 0;
+  transition: background 0.2s ease;
 }
 html body .tr-bar-drawer .tr-row:hover { background: rgba(240, 199, 94, 0.07); }
-html body .tr-bar-drawer .tr-row .tr-ex { color: #938d7c; }
+html body .tr-bar-drawer .tr-row .tr-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(216, 212, 200, 0.25);
+  flex: none;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+html body .tr-bar-drawer .tr-row.on .tr-dot {
+  background: #f0c75e;
+  box-shadow: 0 0 6px rgba(240, 199, 94, 0.6);
+}
+html body .tr-bar-drawer .tr-row .tr-lbl {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #cfcabb;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+html body .tr-bar-drawer .tr-row .tr-t {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+html body .tr-bar-drawer .tr-row .tr-n {
+  font-style: normal;
+  font-size: 0.56rem;
+  color: #b9a15f;
+  background: rgba(240, 199, 94, 0.08);
+  border: 1px solid rgba(240, 199, 94, 0.18);
+  border-radius: 999px;
+  padding: 0 0.42rem;
+  line-height: 1.6;
+}
+html body .tr-bar-drawer .tr-row .tr-ex {
+  font-size: 0.62rem;
+  line-height: 1.7;
+  color: #938d7c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+}
+html body .tr-bar-drawer .tr-row.on .tr-lbl { color: #efe9d8; }
 html body .tr-bar-drawer .tr-row.on .tr-ex { color: #9a947f; }
-/* both the combo quick-toggle AND its members stay reachable: the section
-   IS the grouping, so no more simple/advanced hiding inside the float
-   (selector strength matches retail.css's .tr-bar:not(.tr-simple) rule and
-   loads later, so it always wins) */
-html body .tr-bar-drawer .tr-secbody .tr-combo { display: flex; }
-html body .tr-bar-drawer .tr-secbody .tr-incombo { display: flex; }
-html body .tr-bar-drawer .tr-secbody .tr-combo .tr-t { color: #f0c75e; }
+/* the combo quick-toggle AND its members both show: the drill-down view IS
+   the grouping — same as the studio menu. retail.css's .tr-bar.tr-simple
+   hiding must not leak into the drawer (equal specificity + later file =
+   this wins on item pages; other pages have no retail.css at all) */
+html body .tr-bar-drawer .tr-row.tr-combo,
+html body .tr-bar-drawer .tr-row.tr-incombo { display: flex; }
+html body .tr-bar-drawer .tr-row.tr-combo .tr-t { font-weight: 700; color: #f0c75e; }
+/* the switch — the one visible control at the row's content edge */
+html body .tr-bar-drawer .tr-sw {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  flex: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(216, 212, 200, 0.22);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+html body .tr-bar-drawer .tr-sw i {
+  position: absolute;
+  top: 2px;
+  inset-inline-start: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #b9b3a2;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+html body .tr-bar-drawer .tr-sw[aria-checked="true"] {
+  background: rgba(240, 199, 94, 0.25);
+  border-color: rgba(240, 199, 94, 0.55);
+}
+html body .tr-bar-drawer .tr-sw[aria-checked="true"] i {
+  transform: translateX(-14px);
+  background: #f0c75e;
+  box-shadow: 0 0 7px rgba(240, 199, 94, 0.55);
+}
+/* the tooltip-cats helper row at the bottom of خط‌های تولتیپ */
+html body .tr-bar-drawer .tr-catsrow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.2rem 0;
+}
+/* narrow phones: let the example wrap instead of ellipsizing mid-word */
+@media (max-width: 480px) {
+  html body .tr-bar-drawer .tr-row .tr-ex { white-space: normal; }
+}
 
 /* keep every inner divider invisible — float has no seams */
 html body .tr-bar-drawer .tr-sec-h,

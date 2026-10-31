@@ -1,5 +1,17 @@
-/* tr.js v3.8 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.9 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
+   v3.9 (the واژه‌نامه view is now a real menu everywhere — «نوشته ها دکمه
+   ندارن اصن قاطیه همه چیز اشتباهه»):
+     - the drill-down views reuse rowHtml() (.tr-row/.tr-sw/…), but those
+       BASE styles lived only in retail.css: item pages rendered fine while
+       the spellbook and every other page collapsed into a text run with
+       invisible switches (trdrawer.css only carried color overrides)
+     - fix lives in trdrawer.css v3.9: the full row+switch base is scoped
+       to .tr-bar-drawer — self-contained on every page; combo AND member
+       rows both show (retail.css's .tr-bar.tr-simple hiding no longer
+       leaks into the drawer; only the ensureCss URL below changed here)
+     - engine, share-code bits, popInnerHtml (legacy mount popup): untouched
+
    v3.8 (the drawer body = the studio menu — «منوی سبک ترجمه یک کشو رو ک
    باز میکنی به هم ریختس»):
      - the drawer column carried v3.5's accordion pile: 4 presets, two
@@ -1024,7 +1036,7 @@
     if (document.querySelector('link[href*="trdrawer.css"]')) return null;
     var l = document.createElement("link");
     l.rel = "stylesheet";
-    l.href = TR_BASE + "assets/css/trdrawer.css?v=20261114a";
+    l.href = TR_BASE + "assets/css/trdrawer.css?v=20261114b";
     (document.head || document.documentElement).appendChild(l);
     return l;
   }

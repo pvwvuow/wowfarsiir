@@ -30,7 +30,7 @@
    ========================================================= */
 "use strict";
 (function () {
-  var V = "20261114a";
+  var V = "20261114b";
   /* pages living in a sub-directory (news/<id>-<slug>.html, item/<id>-<slug>.html,
      guides/<spec>/index.html) need ../ prefixes; without this the injected CSS,
      the spec fetch and every panel link 404 there */
