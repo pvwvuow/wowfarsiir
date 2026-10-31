@@ -5,7 +5,7 @@
    ========================================================= */
 (function () {
   "use strict";
-  var DATA_V = "20261111a"; /* spells.json fetch bust — bump when the data changes */
+  var DATA_V = "20261115a"; /* spells.json fetch bust — bump when the data changes */
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var FA = "۰۱۲۳۴۵۶۷۸۹";

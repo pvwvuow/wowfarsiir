@@ -181,7 +181,14 @@ function formatDesc(raw, specNo) {
   return s.split(/\n+/)
     .map((l) => l.replace(/[ \t]+/g, " ").trim())
     .filter((l) => l && !/^[:\s·.\-]+$/.test(l))
-    .map((l) => esc(l).replace(new RegExp(PH, "g"), '<span class="tk" title="بسته به آمار شخصیتت توی بازی محاسبه می‌شود"></span>'));
+    .map((l) => {
+      /* v2: resolve build-time WFTR markers ({{sp:EN|FA}}, {{tm:EN|FA}}, …)
+         per the سبک ترجمه switches — same contract as spellbook.js /
+         talentcalc.js faHTML. Must run on the plain escaped line BEFORE
+         the PH replacement (faTokens expects text, not HTML). */
+      const safe = (window.WFTR && WFTR.faTokens) ? WFTR.faTokens(esc(l)) : esc(l);
+      return safe.replace(new RegExp(PH, "g"), '<span class="tk" title="بسته به آمار شخصیتت توی بازی محاسبه می‌شود"></span>');
+    });
 }
 
 /* ---------- geometry ---------- */
@@ -648,6 +655,24 @@ function initTooltip() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") { pinnedId = null; hoverNode = null; hide(); }
   });
+
+  /* سبک ترجمه switch flips re-render the open tooltip in place (content
+     only — position/pin stays); markers inside FA descriptions resolve
+     per the switches (same contract as spellbook / talentcalc). tr.js is
+     injected ASYNC by nav-menu.js, so poll for window.WFTR (cap ~7s). */
+  (function whenTr(tries) {
+    if (window.WFTR && WFTR.onChange) {
+      WFTR.onChange(() => {
+        if (tip.style.display !== "block" || !state.data) return;
+        const curId = pinnedId != null ? pinnedId : (hoverNode && hoverNode.id);
+        if (curId == null) return;
+        const cur = state.data.specs[state.specIdx].nodes.find((n) => n.id === curId);
+        if (cur) show(cur);
+      });
+    } else if (tries < 48) {
+      setTimeout(() => whenTr(tries + 1), 150);
+    }
+  })(0);
 
   return {
     hide,

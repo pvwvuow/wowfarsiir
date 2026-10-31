@@ -346,6 +346,15 @@
     eachNode(t, function (x, ti) { if (x.n === name && !found) found = { x: x, ti: ti }; });
     return found;
   }
+  /* FA text may carry build-time WFTR markers ({{sp:EN|FA}}, {{tm:EN|FA}}, …
+     written by tools/markerize_talents.py) — resolve them per the user's
+     switches so embedded ability names + glossary terms flip to EN when
+     their switch is OFF (same contract as spellbook.js faHTML). Without
+     this the سبک ترجمه switches had NO effect on talent descriptions. */
+  function faHTML(t) {
+    var html = esc(t);
+    return (window.WFTR && WFTR.faTokens) ? WFTR.faTokens(html) : html;
+  }
   function tipHTML(t, name) {
     var nd = nodeData(t, name);
     if (!nd) return "";
@@ -356,7 +365,7 @@
       (max > 1 ? '<span class="ttip-badge b-rank">رنک ' + faNum(have) + "/" + faNum(max) + "</span>" : "") +
       '<span class="ttip-badge">' + esc(treeLabel(DATA.trees[t])) + " · تیر " + faNum(nd.ti + 1) + "</span>" +
       '<span class="ttip-badge b-req">درگاه: ' + faNum(tierReq(nd.ti)) + " امتیاز</span></div>" +
-      (x.dFa ? '<div class="ttip-fa"><span class="fa-tag">فارسی</span><p dir="rtl">' + esc(x.dFa) + "</p></div>" : "") +
+      (x.dFa ? '<div class="ttip-fa"><span class="fa-tag">فارسی</span><p dir="rtl">' + faHTML(x.dFa) + "</p></div>" : "") +
       (x.d ? '<p class="ttip-desc" dir="ltr">' + esc(x.d) + "</p>" : "") +
       '<div class="ttip-act" dir="ltr">' +
       '<button type="button" class="ttip-btn" data-act="minus">−</button>' +
@@ -657,4 +666,20 @@
     if (m && INDEX.classes.some(function (c) { return c.slug === m[1]; })) state.cls = m[1];
     load(state.cls);
   });
+  /* سبک ترجمه switch flips re-render an open tooltip in place (content
+     only — position/pin state stays). tr.js is injected ASYNC by
+     nav-menu.js, so window.WFTR may not exist when this IIFE runs — poll
+     for it (cap ~7s), register the listener once it's there. */
+  (function whenTr(tries) {
+    if (window.WFTR && WFTR.onChange) {
+      WFTR.onChange(function () {
+        var tip = document.getElementById("fc-tip");
+        if (tip && tip.style.display === "block" && tip.getAttribute("data-key") && DATA) {
+          showTip(tip.getAttribute("data-key"), false);
+        }
+      });
+    } else if (tries < 48) {
+      setTimeout(function () { whenTr(tries + 1); }, 150);
+    }
+  })(0);
 })();
