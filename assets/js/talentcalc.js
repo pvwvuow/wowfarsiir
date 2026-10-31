@@ -58,8 +58,14 @@
   }
   function spentOn(t, name) { return state.pts[key(t, name)] || 0; }
   function treeLabel(tr) {
+    /* v4.1: spec/tree names answer the namesClass switch — OFF shows EN */
+    if (window.WFTR && !WFTR.on("namesClass") && tr.n) return tr.n;
     var m = String(tr.fa || "").match(/^(.*\S)\s+[A-Za-z]+$/);
     return m ? m[1] : tr.fa;
+  }
+  function classLabel(c) {
+    if (window.WFTR && !WFTR.on("namesClass") && c.name) return c.name;
+    return c.fa;
   }
 
   /* =========================================================
@@ -209,7 +215,7 @@
         '<img src="icons/large/' + esc(c.icon) + '.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" ' +
         'onerror="if(!this.dataset.f){this.dataset.f=1;this.src=\'' + ZAM + esc(c.icon) + '.jpg\'}else{this.style.display=\'none\'}">' +
         "</span></span></span>" +
-        '<span class="label" dir="rtl" style="' + (active ? "color:" + c.color : "") + '">' + esc(c.fa) + "</span>" +
+        '<span class="label" dir="rtl" style="' + (active ? "color:" + c.color : "") + '">' + esc(classLabel(c)) + "</span>" +
         "</button>";
     }).join("") + "</div>";
   }
@@ -677,6 +683,7 @@
         if (tip && tip.style.display === "block" && tip.getAttribute("data-key") && DATA) {
           showTip(tip.getAttribute("data-key"), false);
         }
+        if (DATA) render(); /* namesClass flips tree + class labels (v4.1) */
       });
     } else if (tries < 48) {
       setTimeout(function () { whenTr(tries + 1); }, 150);

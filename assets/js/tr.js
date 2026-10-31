@@ -1,5 +1,21 @@
-/* tr.js v3.9 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.10 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
+   v3.10 (namesClass — «اسم class ها و spec ها هم وارد بازی کن که درک کنیم
+   اینارو هم برای مارکر و وارد بخش سبک ترجمه بشه»):
+     - NEW marker family {{cls:EN|FA}} -> the namesClass switch («اسم کلاس‌ها
+       و شاخه‌ها»): class + spec names written by the build markerizer
+       (tools/markerize_fa.py load_classes — glossary-locked canon) flip with
+       their OWN switch, independent of namesSpell/terms/textReq
+     - the drawer row joins the واژه‌نامهٔ بازی group (29 locked names);
+       vocabAll (کل واژه‌نامه با یک کلید) now covers 8 families
+     - SHARE CODE v4.1: the frozen 14-bit order is UNTOUCHED — namesClass
+       rides bit 14 (appended AFTER the frozen 14), so every legacy WF4/WF3/
+       WF2 code still decodes; new codes emit 15 bits (the Lua addon can
+       ignore the extra bit until it adopts the key)
+     - faClasses (retail.js) now answers namesClass instead of textReq —
+       one switch owns class names everywhere
+     - engine bits (CATMAP/MK resolution/protect/TOKENS) untouched
+
    v3.9 (the واژه‌نامه view is now a real menu everywhere — «نوشته ها دکمه
    ندارن اصن قاطیه همه چیز اشتباهه»):
      - the drill-down views reuse rowHtml() (.tr-row/.tr-sw/…), but those
@@ -179,10 +195,13 @@
 
    SHARE CODE (offline config sharing, site + game addon)
    -------------------------------------------------------
-   WF4-<base36 bitmask>-<ccc>   bit i (LSB first) = KEYS[i], order FROZEN:
+   WF4-<base36 bitmask>-<ccc>   bit i (LSB first) = SHARE_KEYS[i]:
      namesItem, namesSpell, namesNpc, namesZone, namesQuest, namesObj,
      terms, textDesc, textStats, textReq, textBind, textDetail,
-     textFlavor, uiLabels        (14 bits)
+     textFlavor, uiLabels        (14 FROZEN bits — the addon spec)
+     + namesClass                (bit 14, v4.1 — appended, never re-ordered;
+       legacy 14-bit codes decode with namesClass off, the addon may ignore
+       bit 14 until it ships the key)
    ccc = 3 base36 chars of (h1*37 + h2), where over "WF4-"+payload:
      v_i = parseInt(char_i, 36)          (0..35 — '-' → 0)
      h1 = (Σ v_i·(i+1)) mod 37 ; h2 = (Σ v_i·(i+3)) mod 37
@@ -205,6 +224,7 @@
       desc: "اسم‌ها و اصطلاح‌های قفل‌شدهٔ داخل همهٔ متن‌ها — تولتیپ، ست، کوئست، استعداد، راهنما و نقشه.", rows: [
       { k: "namesItem",  lbl: "اسم آیتم‌ها و ست‌ها", en: "Item & set names", n: 666, ex: "تندرفوری، تیغهٔ مبارک بادبین" },
       { k: "namesSpell", lbl: "اسم اسپل‌ها و استعدادها", en: "Spell & talent names", n: 542, ex: "گردباد، تشنگی خون" },
+      { k: "namesClass", lbl: "اسم کلاس‌ها و شاخه‌ها", en: "Class & spec names", n: 29, ex: "واریر، کیفار، استادی حیوان" },
       { k: "namesNpc",   lbl: "اسم شخصیت‌ها و موجودها", en: "NPCs, creatures & factions", n: 486, ex: "هایلرد دمیتریان، اژدهای برونزی" },
       { k: "namesZone",  lbl: "اسم مناطق و دانجن‌ها", en: "Zones & dungeons", n: 163, ex: "تاناریس، سکولومنس" },
       { k: "namesQuest", lbl: "عنوان کوئست‌ها", en: "Quest titles", ex: "برخیز، تندرفوری!" },
@@ -223,10 +243,10 @@
       { k: "uiLabels", lbl: "برچسب‌های رابط سایت", en: "Site labels", ex: "سطح آیتم · حداکثر انبار" }
     ] }
   ];
-  var REC = { namesItem: 0, namesSpell: 0, namesNpc: 0, namesZone: 0, namesQuest: 1, namesObj: 0,
+  var REC = { namesItem: 0, namesSpell: 0, namesClass: 1, namesNpc: 0, namesZone: 0, namesQuest: 1, namesObj: 0,
     terms: 1, textDesc: 1, textStats: 1, textReq: 1, textBind: 1, textDetail: 1, textFlavor: 0, uiLabels: 1 };
   /* فقط آمار — the user's example: stat lines + requirements Persian, everything else English */
-  var STATSONLY = { namesItem: 0, namesSpell: 0, namesNpc: 0, namesZone: 0, namesQuest: 0, namesObj: 0,
+  var STATSONLY = { namesItem: 0, namesSpell: 0, namesClass: 0, namesNpc: 0, namesZone: 0, namesQuest: 0, namesObj: 0,
     terms: 0, textDesc: 0, textStats: 1, textReq: 1, textBind: 0, textDetail: 0, textFlavor: 0, uiLabels: 0 };
   var PRESETS = [
     ["recommended", "پیشنهادی", "اسمی انگلیسی می‌ماند؛ متن‌ها فارسی می‌شوند"],
@@ -245,6 +265,12 @@
     classes: "textReq", open: "textDesc" };
   var ALLKEYS = [], g, r;
   for (g = 0; g < GROUPS.length; g++) for (r = 0; r < GROUPS[g].rows.length; r++) ALLKEYS.push(GROUPS[g].rows[r].k);
+  /* share-code bit order (v4.1): the frozen 14 + namesClass APPENDED at bit
+     14. UI order (GROUPS) and code order are independent — legacy codes
+     never change meaning. */
+  var SHARE_KEYS = ["namesItem", "namesSpell", "namesNpc", "namesZone", "namesQuest", "namesObj",
+    "terms", "textDesc", "textStats", "textReq", "textBind", "textDetail",
+    "textFlavor", "uiLabels", "namesClass"];
   /* frozen v2 key order — legacy WF2 share codes decode through this */
   var KEYS_V2 = ["itemNames", "itemTips", "tipIlvl", "tipBind", "tipSlot", "tipStats", "tipDur",
     "tipReq", "tipSpell", "tipSpnm", "tipTerm", "tipFlavor", "tipSell", "tipSetb",
@@ -260,11 +286,11 @@
   /* ---------- SIMPLE / ADVANCED panel modes ----------
      Bits stay frozen per real switch; combos are a UI view only.
      v3.3: vocabAll = the user's «کل واژه‌نامه با یک انتخاب» — one switch
-     for the whole words-bank (7 families); tipDetails unchanged. */
+     for the whole words-bank (8 families since v3.10); tipDetails unchanged. */
   var COMBOS = [
     { k: "vocabAll", lbl: "کل واژه‌نامه با یک کلید", en: "All names & terms",
-      ex: "آیتم، اسپل، شخصیت، مکان، کوئست، آبجکت + اصطلاح‌های بازی",
-      keys: ["namesItem", "namesSpell", "namesNpc", "namesZone", "namesQuest", "namesObj", "terms"] },
+      ex: "آیتم، اسپل، کلاس و شاخه، شخصیت، مکان، کوئست، آبجکت + اصطلاح‌های بازی",
+      keys: ["namesItem", "namesSpell", "namesClass", "namesNpc", "namesZone", "namesQuest", "namesObj", "terms"] },
     { k: "tipDetails", lbl: "جزئیات تولتیپ با یک کلید", en: "Tooltip details — all",
       ex: "نیازمندی‌ها · اتصال و یکتایی · جزئیات آیتم",
       keys: ["textReq", "textBind", "textDetail"] }
@@ -279,7 +305,10 @@
      ONE map: marker code -> the global switch that owns it. The same pair
      is what tools/markerize_fa.py writes into fa-*.json at build time. */
   var MK = { sp: "namesSpell", tm: "terms", ts: "textStats", it: "namesItem", npc: "namesNpc",
-    zn: "namesZone", qs: "namesQuest", ob: "namesObj" };
+    zn: "namesZone", qs: "namesQuest", ob: "namesObj", cls: "namesClass" };
+  /* cls = class + spec names («واریر», «کیفار», «استادی حیوان»…), written by
+     the build markerizer from the glossary-locked bank — owned by namesClass,
+     NOT namesSpell/textReq, so the drawer flips them independently. */
   /* ts = glossary term INSIDE a stats/damage line (Damage/Agility/Armor…):
      owned by textStats, NOT terms — so the whole stat block flips with ONE
      switch («آمار، آسیب و اعداد»). terms stays for desc/flavor glossary. */
@@ -489,7 +518,7 @@
        each generated span is parked (\u0002) until after tokens() so the
        anchor pass inside tokens() cannot wrap its EN fallback text again
        into nested .tok-tm spans (round-2 review: 4 spans instead of 2) */
-    var mks = ["sp", "tm", "ts", "it", "npc", "zn", "qs", "ob"], i;
+    var mks = ["sp", "tm", "ts", "it", "npc", "zn", "qs", "ob", "cls"], i;
     for (i = 0; i < mks.length; i++) {
       (function (mk) {
         var sw = MK[mk];
@@ -548,7 +577,7 @@
   }
   function encodeCode(d) {
     var bits = 0, i;
-    for (i = 0; i < ALLKEYS.length; i++) if (d[ALLKEYS[i]]) bits |= (1 << i);
+    for (i = 0; i < SHARE_KEYS.length; i++) if (d[SHARE_KEYS[i]]) bits |= (1 << i);
     var pay = b36(bits);
     return CODE_PREFIX + pay + "-" + wf4check(CODE_PREFIX + pay);
   }
@@ -562,7 +591,7 @@
       var bits4 = parseInt(pay4, 36);
       if (!isFinite(bits4) || bits4 < 0) return null;
       var d4 = blank(), i4;
-      for (i4 = 0; i4 < ALLKEYS.length; i4++) d4[ALLKEYS[i4]] = (bits4 >> i4) & 1;
+      for (i4 = 0; i4 < SHARE_KEYS.length; i4++) d4[SHARE_KEYS[i4]] = (bits4 >> i4) & 1;
       return d4;
     }
     m = s.match(/WF4-([0-9a-z]+)-([0-9a-z]{2})/i); /* legacy 2-char WF4 */
@@ -572,7 +601,7 @@
       var bitsl = parseInt(payl, 36);
       if (!isFinite(bitsl) || bitsl < 0) return null;
       var dl = blank(), il;
-      for (il = 0; il < ALLKEYS.length; il++) dl[ALLKEYS[il]] = (bitsl >> il) & 1;
+      for (il = 0; il < SHARE_KEYS.length; il++) dl[SHARE_KEYS[il]] = (bitsl >> il) & 1;
       return dl;
     }
     m = s.match(/WF3-([0-9a-z]+)-([0-9a-z])/i);
@@ -582,7 +611,7 @@
       var bits = parseInt(pay, 36);
       if (!isFinite(bits) || bits < 0) return null;
       var d = blank(), i;
-      for (i = 0; i < ALLKEYS.length; i++) d[ALLKEYS[i]] = (bits >> i) & 1;
+      for (i = 0; i < SHARE_KEYS.length; i++) d[SHARE_KEYS[i]] = (bits >> i) & 1;
       return d;
     }
     m = s.match(/WF2-([0-9a-z]+)-([0-9a-z])/i); /* v2 legacy -> remap */

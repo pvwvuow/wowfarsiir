@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پچ‌نوت‌های WoW Forever — wowfarsi</title>
+<meta name="description" content="همهٔ تغییرات بتای WoW Forever — هات‌فیکس‌ها، بیلدها و تغییرات اسپل و تلنت هر کلاس، رده‌به‌رده از foreverchanges.pro؛ فیلتر کلاس و نوع، جست‌وجو.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="canonical" href="https://wowfarsi.ir/patch-notes.html">
+<meta property="og:title" content="پچ‌نوت‌های WoW Forever — wowfarsi">
+<meta property="og:description" content="هر تغییر بتای فورور، کلاس‌به‌کلاس و روزبه‌روز — همگام با foreverchanges.pro.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wowfarsi.ir/assets/img/logo.webp">
+<link rel="stylesheet" href="assets/css/site.css?v=20261031b">
+<link rel="stylesheet" href="assets/css/fantasy.css?v=20261111j">
+<link rel="stylesheet" href="assets/css/extra.css?v=20261111j">
+<link rel="stylesheet" href="assets/css/patchnotes.css?v=20261115b">
+<link rel="stylesheet" href="assets/css/trdrawer.css?v=20261114b">
+</head>
+<body>
+<div class="bg-layers" aria-hidden="true">
+  <div class="bg-photo"></div>
+  <div class="bg-veil"></div>
+  <div class="bg-grain"></div>
+</div>
+<div id="embers" aria-hidden="true" style="position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none"></div>
+
+<!-- ================= nav ================= -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-brand" aria-label="wowfarsi — خانه">
+      <span class="brand-logo"><img src="assets/img/logo.webp" alt="لوگوی wowfarsi"></span>
+      <b class="font-cinzel" dir="ltr">wowfarsi</b>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="retail.html">Midnight</a>
+      <a href="forever.html" class="is-active">Forever</a>
+      <a href="talents.html">Talent Tree</a>
+      <a href="news.html">wowheadFA</a>
+      <a href="addon.html">افزونه</a>
+      <a href="status.html">وضعیت ترجمه</a>
+      <a href="donate.html" class="dn-nav">حمایت</a>
+    </nav>
+  </div>
+  <div class="nav-rule"></div>
+</header>
+
+<main>
+<section class="section" style="padding-top:7.5rem" id="pn-root">
+  <div class="bg-scrim" aria-hidden="true"></div>
+
+  <div class="pn-head reveal">
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>پچ‌نوت‌های فورور</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-en font-cinzel" dir="ltr">Forever Patch Notes · synced from foreverchanges.pro</p>
+    <p class="pn-sub">هر تغییر بتای WoW Forever — هات‌فیکس‌ها، بیلدها و تغییرات اسپل و تلنت هر کلاس، رده‌به‌رده و روزبه‌روز. متن یادداشت‌ها همان متن رسمی منبع (انگلیسی) است؛ برچسب‌ها و رابط فارسی. ایجنت همگام‌ساز هر ۶ ساعت این صفحه را با منبع به‌روز می‌کند.</p>
+  </div>
+
+  <!-- toolbar -->
+  <div class="pn-toolbar reveal">
+    <div class="pn-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="pn-q" type="search" placeholder="جست‌وجو در تغییرات…" autocomplete="off" aria-label="جست‌وجو در پچ‌نوت‌ها">
+    </div>
+    <div class="pn-chips" id="pn-kinds" role="group" aria-label="فیلتر نوع"></div>
+    <select id="pn-cls" class="pn-select" aria-label="فیلتر کلاس"></select>
+  </div>
+  <p class="pn-meta reveal"><b id="pn-count"></b><span id="pn-updated"></span></p>
+
+  <!-- entries (no .reveal on the frame: it can be 10k+ px tall and would
+       never hit the 12% IntersectionObserver threshold) -->
+  <div class="pn-frame">
+    <div id="pn-list">
+      <div class="pn-empty"><p>در حال بارگذاری پچ‌نوت‌ها…</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= footer ================= -->
+<footer class="footer">
+  <div class="footer-rule" aria-hidden="true"><span></span><span>✦</span><span></span></div>
+  <div class="footer-brand font-cinzel" dir="ltr">wowfarsi</div>
+  <div class="footer-sep" aria-hidden="true"><span>✦</span><span class="font-cinzel" dir="ltr">Forever Patch Notes</span><span>✦</span></div>
+  <p class="footer-note">منبع یادداشت‌ها <a href="https://foreverchanges.pro/patch-notes" rel="noopener" target="_blank" style="color:#e8d9a0">foreverchanges.pro</a> است؛ خوانده‌شده از کلاینت بتای WoW Forever و یادداشت‌های رسمی. ترجمهٔ فارسی رده‌ها به‌مرور اضافه می‌شود.</p>
+  <p class="footer-note" dir="ltr">Fan-made Persian translation, not affiliated with or endorsed by Blizzard Entertainment.</p>
+</footer>
+
+<script src="assets/js/main.js?v=20261104a"></script>
+<script src="assets/js/tr.js?v=20261115b"></script>
+<script src="assets/js/patchnotes.js?v=20261115b"></script>
+<script src="assets/js/nav-menu.js?v=20261115b"></script>
+</body>
+</html>

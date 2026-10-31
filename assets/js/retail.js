@@ -1301,10 +1301,11 @@
     return out;
   }
   function trQrec(qid) { return (FFA && FFA.q && FFA.q[String(qid)]) || null; }
-  /* class names -> Persian (WFTR.CLASSES) when textReq is on; null = keep EN */
+  /* class names -> Persian (WFTR.CLASSES) when namesClass is on (v3.10 —
+     ONE switch owns class/spec names everywhere, was textReq); null = keep EN */
   function faClasses(list) {
     var M = window.WFTR && window.WFTR.CLASSES;
-    if (!M || !list || !list.length || !trOn("textReq")) return null;
+    if (!M || !list || !list.length || !trOn("namesClass")) return null;
     var out = [], i;
     for (i = 0; i < list.length; i++) { if (!M[list[i]]) return null; out.push(M[list[i]]); }
     return out.join("، ");

@@ -30,7 +30,7 @@
    ========================================================= */
 "use strict";
 (function () {
-  var V = "20261114b";
+  var V = "20261115b";
   /* pages living in a sub-directory (news/<id>-<slug>.html, item/<id>-<slug>.html,
      guides/<spec>/index.html) need ../ prefixes; without this the injected CSS,
      the spec fetch and every panel link 404 there */
@@ -85,7 +85,7 @@
   var M_MID = onPage("retail.html") || onPage("db.html") || onPage("guide.html") ||
               onPage("item.html") || /^\/item\//.test(path) || /^\/guides\//.test(path);
   var M_FVR = onPage("forever.html") || onPage("forever-talents.html") ||
-              onPage("spellbook.html") || onPage("items.html");
+              onPage("spellbook.html") || onPage("patch-notes.html") || onPage("items.html");
   var M_NEWS = onPage("news.html") || onPage("article.html") || onPage("news-translate.html") || /^\/news\//.test(path);
   var ON_INDEX = /\/(?:index\.html)?$/.test(path) && !M_MID && !M_FVR && !M_NEWS;
   var ACT = " is-active";
@@ -399,6 +399,10 @@
         '<i class="rtx-d" aria-hidden="true"></i>' +
         '<span class="rtx-bt"><b>کتاب اسپل‌ها</b><small dir="ltr">SPELLBOOK · 9 CLASSES</small></span>' +
       "</a>" +
+      '<a class="rtx-big" href="' + BASE + 'patch-notes.html">' +
+        '<i class="rtx-d" aria-hidden="true"></i>' +
+        '<span class="rtx-bt"><b>پچ‌نوت‌ها</b><small dir="ltr">PATCH NOTES · UPDATES</small></span>' +
+      "</a>" +
       '<a class="rtx-big" href="' + BASE + 'items.html">' +
         '<i class="rtx-d" aria-hidden="true"></i>' +
         '<span class="rtx-bt"><b>آیتم‌ها</b><small dir="ltr">ITEM DATABASE</small></span>' +
@@ -410,7 +414,7 @@
   /* ================================================ 5) keep it canonical
      support.js fixNav() may run after us (DOMContentLoaded) and re-add
      plain links that now live inside the dropdowns — remove them again. */
-  var DD_OWNED = /(?:^|[/])(?:retail|forever|spellbook|forever-talents)\.html(?:[?#].*)?$/;
+  var DD_OWNED = /(?:^|[/])(?:retail|forever|spellbook|forever-talents|patch-notes)\.html(?:[?#].*)?$/;
   function dropOwned() {
     Array.prototype.forEach.call(nav.querySelectorAll("a"), function (a) {
       var h = a.getAttribute("href") || "";

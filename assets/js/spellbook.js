@@ -38,6 +38,14 @@
   /* ---------- helpers ---------- */
   function cur() { for (var i = 0; i < DATA.classes.length; i++) if (DATA.classes[i].cls === CLS) return DATA.classes[i]; }
   function trOn(k) { return window.WFTR ? WFTR.on(k) : true; }
+  /* v3.10: class + spec names answer the namesClass switch («اسم کلاس‌ها و
+     شاخه‌ها» in the سبک ترجمه drawer) — ON: Persian, OFF: English */
+  function tabLabel(t) { return trOn("namesClass") && t.fa ? t.fa : t.en; }
+  function classLabel(c) {
+    if (trOn("namesClass") && c.fa) return c.fa;
+    var n = c.cls || "";
+    return n.charAt(0).toUpperCase() + n.slice(1);
+  }
   function spellName(s) {
     if (trOn("namesSpell") && s.fn) return s.fn;
     return s.n;
@@ -128,7 +136,7 @@
       b.className = "sb-cls" + (c.cls === CLS ? " on" : "");
       b.setAttribute("role", "tab");
       b.innerHTML = '<img src="icons/large/class_' + c.cls + '.jpg" onerror="this.src=\'icons/large/inv_misc_questionmark.jpg\';this.onerror=null" alt="">' +
-        "<b>" + esc(c.fa) + "</b>";
+        "<b>" + esc(classLabel(c)) + "</b>";
       b.onclick = function () { location.hash = c.cls; setClass(c.cls); };
       el.appendChild(b);
     });
@@ -155,7 +163,7 @@
     mk("all", "همهٔ شاخه‌ها", c.spells.length);
     c.tabs.forEach(function (t) {
       var n = c.spells.filter(function (s) { return s.t === t.en; }).length;
-      mk(t.en, t.fa, n);
+      mk(t.en, tabLabel(t), n);
     });
   }
   function renderChips() {
@@ -196,7 +204,7 @@
   }
   function tabFA(t) {
     var c = cur();
-    for (var i = 0; i < c.tabs.length; i++) if (c.tabs[i].en === t) return c.tabs[i].fa;
+    for (var i = 0; i < c.tabs.length; i++) if (c.tabs[i].en === t) return tabLabel(c.tabs[i]);
     return t;
   }
   function renderGrid() {
@@ -288,7 +296,7 @@
     $("sb-close").addEventListener("click", closeDetail);
     $("sb-backdrop").addEventListener("click", closeDetail);
     /* WFTR language flips re-render everything (incl. an open drawer) */
-    if (window.WFTR && WFTR.onChange) WFTR.onChange(function () { renderTabs(); renderChips(); renderGrid(); if (DETAIL && !$("sb-drawer").hidden) openDetail(DETAIL); });
+    if (window.WFTR && WFTR.onChange) WFTR.onChange(function () { renderClasses(); renderTabs(); renderChips(); renderGrid(); if (DETAIL && !$("sb-drawer").hidden) openDetail(DETAIL); });
     window.addEventListener("hashchange", function () {
       var h = location.hash.replace("#", "");
       if (h && h !== CLS && DATA.classes.some(function (c) { return c.cls === h; })) setClass(h);
