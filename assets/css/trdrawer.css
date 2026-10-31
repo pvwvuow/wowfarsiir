@@ -1,17 +1,24 @@
-/* trdrawer.css — the global translation-settings FLOAT (tr.js v3.5)
-   v3.5 «ساده مینیمال معلق» — the user killed the big sliding PANEL:
-   «نمیخام یک صفحه معلق کشویی باشه، هم جنس بک گراند باشه، متن‌ها و دکمه‌ها
-   روی صفحهٔ اصلی معلق باشن». So the left-edge button still opens a sliding
-   column that PUSHES the page right, but the column has NO chrome of its
-   own — no opaque card, no border, no shadow. Only floating text and
-   buttons on top of the site background (same material as the page).
+/* trdrawer.css — the global translation-settings FLOAT (tr.js v3.7)
+   v3.7 «روی هر صفحه‌ای خوانا» — the user: the menu was OK on item pages but
+   broke on the spellbook and the rest («تو صفحه کتاب اسپل و دیگر صفحات
+   درست کار نمیکنه … بزودی صفحات زیادی خواهیم داشت»). Root cause: the fully
+   transparent column let ANY page content (big headings, icon grids,
+   toolbars) bleed through the floating text. Fix: the column keeps its
+   minimal float design but now stands on the SITE'S OWN dark material —
+   near-opaque page-background gradient + backdrop blur + one gold hairline
+   on the content-facing edge. Same جنس as the background, readable over
+   any page, no inner chrome reintroduced.
      desktop (>960px): body padding-left shift = a real push (layout reflows)
-     mobile  (<=960px): overlay + light scrim, scrim click / Escape dismiss
+     mobile  (<=960px): overlay + scrim, scrim click / Escape dismiss
    Structure inside (v3.5): a simple column with just a few buttons —
      4 mode buttons (presets, plain text rows)
      واژه‌نامهٔ بازی / خط‌های تولتیپ   (two accordion buttons at the bottom;
         the رابط سایت group lives inside تولتیپ as one more row)
      اشتراک‌گذاری سبک ترجمهٔ من / سبک ترجمهٔ بقیه (share + import)
+   v3.7 future-proofing: tr.js injects this stylesheet itself when a page
+   loads it without the <link> (see tr.js ensureCss), and nav-menu.js
+   auto-loads tr.js on every page that forgot it — new pages get the
+   drawer for free.
    RTL site: physical left/right values are intentional. */
 
 /* ---------- the left-edge pill button (FAB) ---------- */
@@ -62,10 +69,10 @@ html body.wf-tr-open .trd-fab {
   html body.wf-tr-open .trd-fab { transform: translateX(-14px); }
 }
 
-/* ---------- the floating column (NO panel chrome) ----------
-   Same material as the page background: fully transparent, the site's
-   bg-photo/bg-veil shows through. Text carries a soft shadow instead of a
-   box so it stays readable over busy artwork. */
+/* ---------- the floating column (v3.7 material) ----------
+   The site's own dark material near-opaque: the page keeps breathing
+   behind it (blur), but headings/grids/toolbars no longer bleed through
+   the text. Text still carries its soft shadow for busy artwork. */
 html body .tr-bar-drawer {
   position: fixed;
   left: 0;
@@ -76,9 +83,14 @@ html body .tr-bar-drawer {
   z-index: 66;
   display: flex;
   flex-direction: column;
-  background: none;
+  /* v3.7: the site's own dark material, near-opaque + blur — page content
+     (headings, grids, toolbars) can no longer bleed through the text */
+  background: linear-gradient(180deg, rgba(11, 13, 20, 0.95), rgba(8, 10, 16, 0.92) 55%, rgba(11, 13, 20, 0.95));
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+  backdrop-filter: blur(18px) saturate(1.12);
   border: none;
-  box-shadow: none;
+  border-right: 1px solid rgba(240, 199, 94, 0.22);
+  box-shadow: 26px 0 52px rgba(0, 0, 0, 0.5);
   transform: translateX(-103%);
   visibility: hidden;
   transition: transform 0.32s cubic-bezier(0.33, 1, 0.68, 1), visibility 0.32s;
@@ -409,11 +421,9 @@ html body .trd-scrim {
   html body.wf-tr-open .trd-scrim { opacity: 1; pointer-events: auto; }
   /* the floating donate orb (z 70) would sit ON TOP of the overlay float */
   html body.wf-tr-open .dn-float { opacity: 0; pointer-events: none; }
-  /* a bare float needs a whisper of ground on mobile or busy art eats it */
-  html body .tr-bar-drawer {
-    background: linear-gradient(180deg, rgba(9, 11, 17, 0.72), rgba(9, 11, 17, 0.55));
-    box-shadow: 18px 0 44px rgba(0, 0, 0, 0.35);
-  }
+  /* v3.7: the column material is unified (readable everywhere); on mobile
+     it overlays instead of pushing, so the shadow faces the content edge */
+  html body .tr-bar-drawer { box-shadow: 18px 0 44px rgba(0, 0, 0, 0.5); }
 }
 
 @media (prefers-reduced-motion: reduce) {

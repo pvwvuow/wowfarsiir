@@ -1,5 +1,21 @@
-/* tr.js v3.6 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.7 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
+   v3.7 (the drawer works on EVERY page — «اینده نگری کن چون بزودی صفحات
+   زیادی خواهیم داشت و نباید مشکل داشته باشه»):
+     - the user: the سبک ترجمه menu was OK on item pages but broke on the
+       spellbook and other pages («تو صفحه کتاب اسپل و دیگر صفحات درست کار
+       نمیکنه»). Two root causes fixed:
+       1) tr.js was only loaded by 3 pages — every other page had NO سبک
+          ترجمه button at all. nav-menu.js now auto-loads tr.js on every
+          page (news/article templates included), so future pages inherit
+          it for free.
+       2) trdrawer.css was a per-page <link>; pages loading tr.js through
+          the loader had no drawer styles. tr.js now injects the stylesheet
+          itself (ensureCss, sub-directory aware via TR_BASE) and mounts
+          the drawer only after the CSS is applied — no unstyled FAB flash.
+     - the column material fix lives in trdrawer.css v3.7 (readable over
+       any page content); engine, share-code, studio bits: untouched
+
    v3.6 (اتاق کاستوم gets its OWN fixed menu — the drawer is for items only):
      - the user: «منو مثل بقیه منوهای سایت‌ها بچسبه به اون محتوا … کاربر کلیک
        کنه روی واژه نامه بازی یک منو بره داخل نه که کشویی باز بشه … اتاق
@@ -964,14 +980,50 @@
     refreshUI();
     return container;
   }
+  /* ---------- v3.7: stylesheet self-sufficiency ----------
+     Pages get tr.js without the trdrawer.css <link> (nav-menu.js auto-loads
+     tr.js everywhere). The drawer injects its own stylesheet then, and only
+     mounts once it is actually applied — or the FAB flashes unstyled.
+     Sub-directory pages (news/, item/, guides/) need the same ../ prefix
+     the rest of the site uses. */
+  var TR_BASE = (function () {
+    var m = location.pathname.match(/^\/(?:news|guides|item)\//);
+    var rest = m ? location.pathname.slice(m[0].length) : "";
+    return m ? "../".repeat(1 + (rest.match(/[/]/g) || []).length) : "";
+  })();
+  function ensureCss() {
+    if (document.querySelector('link[href*="trdrawer.css"]')) return null;
+    var l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = TR_BASE + "assets/css/trdrawer.css?v=20261113a";
+    (document.head || document.documentElement).appendChild(l);
+    return l;
+  }
+  function cssApplied(l) {
+    if (!l) return true; /* the page shipped its own <link> */
+    try {
+      var ss = document.styleSheets, i;
+      for (i = 0; i < ss.length; i++) if (ss[i] && ss[i].ownerNode === l) return true;
+    } catch (e) { /* same-origin only — unreachable */ }
+    return false;
+  }
   /* auto-mount: every page that loads tr.js gets the left-edge drawer,
      except the studio room (translate.html) which mounts its own FIXED
-     menu via mountStudio() — the drawer is for the item pages. */
+     menu via mountStudio(). v3.7: when tr.js had to inject the stylesheet,
+     mount AFTER it applies (load event, with an error/timeout escape so a
+     bad CSS fetch can never trap the drawer). */
   (function () {
     if (document.getElementById("pv-body") || document.getElementById("str-panel")) return;
+    var link = ensureCss();
     var go = function () { mountDrawer({}); };
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go);
-    else go();
+    var kick = function () {
+      if (cssApplied(link)) { go(); return; }
+      link.addEventListener("load", go);
+      link.addEventListener("error", go);
+      setTimeout(function () { if (!mounted) go(); }, 1500);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", kick);
+    else kick();
   })();
   function fallbackCopy(text) {
     var ta = document.createElement("textarea");

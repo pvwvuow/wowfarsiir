@@ -60,6 +60,20 @@
     document.head.appendChild(css);
   }
 
+  /* ---------- v3.7: the سبک ترجمه button on EVERY page ----------
+     tr.js (the global translation-style drawer) used to be included by 3
+     pages only, so the rest of the site had no سبک ترجمه button and every
+     new page needed its own <script> tag. nav-menu.js runs on every page
+     (static HTML, JS shells, news/item pages — future templates included),
+     so it is the natural loader: inject tr.js once if the page forgot it.
+     tr.js then injects its own stylesheet and mounts the left-edge drawer;
+     the studio room (translate.html) is skipped by tr.js's own guards. */
+  if (!document.querySelector('script[src*="tr.js"]')) {
+    var trLoader = document.createElement("script");
+    trLoader.src = BASE + "assets/js/tr.js?v=20261113a";
+    document.head.appendChild(trLoader);
+  }
+
   var nav = document.querySelector(".nav-links");
   var header = document.querySelector("header.nav");
   if (!nav || !header) return;
