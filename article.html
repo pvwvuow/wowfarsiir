@@ -70,7 +70,7 @@
 
 <script src="assets/js/main.js?v=20261104a"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
-<script src="assets/js/news-body.js?v=20261104a"></script>
+<script src="assets/js/news-body.js?v=20261031b"></script>
 <script>
 (function () {
   "use strict";
@@ -179,6 +179,7 @@
       : (a.body_fa || []).map(function (p) {
           return typeof p === "string" ? "<p>" + esc(p) + "</p>" : "";
         }).join("");
+    var leadFigs = (window.NB && NB.leadFigures) ? NB.leadFigures(a) : "";
     var canonical = location.origin + location.pathname.replace(/[^\/]*$/, "") + "article.html?id=" + encodeURIComponent(a.id);
     var others = list.filter(function (x, n) { return n !== idx; }).slice(0, 3);
     root.innerHTML =
@@ -189,6 +190,7 @@
       '<a href="' + esc(a.source_url) + '" target="_blank" rel="noopener">منبع: Wowhead</a></div>' +
       '<div class="ar-orn ar-rise d2"></div>' +
       '<p class="ar-lead ar-rise d2">' + esc(a.lead_fa) + "</p>" +
+      leadFigs +
       '<div class="ar-body ar-rise d3">' + body + "</div>" +
       '<div class="ar-orn"></div>' +
       '<aside class="ar-src ar-rise d3">این متن بازنویسی اورجینال فارسی است، نه ترجمهٔ تحت‌اللفظی. منبع: ' +

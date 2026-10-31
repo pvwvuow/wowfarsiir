@@ -254,9 +254,35 @@ function initTips() {
   }, { passive: true });
 }
 
+/* lead figures: the article's own thumbnail/images INSIDE the body
+   (owner request 2026-10-31: «تصاویر تامنیل توی خود خبر باشه»).
+   Empty when the writer already embedded an img block - no duplicates. */
+function leadFigures(a) {
+  a = a || {};
+  var body = a.body_fa || [];
+  for (var i = 0; i < body.length; i++) {
+    if (body[i] && typeof body[i] === "object" && body[i].t === "img") return "";
+  }
+  var seen = {}, figs = [];
+  var imgs = [];
+  if (a.thumb) imgs.push({ src: a.thumb, cap: "" });
+  (a.images || []).forEach(function (im) { imgs.push(im || {}); });
+  for (var j = 0; j < imgs.length; j++) {
+    var src = String(imgs[j].src || "").trim();
+    if (src.indexOf("https://") !== 0 || seen[src]) continue;
+    seen[src] = 1;
+    var cap = String(imgs[j].cap || "").trim();
+    figs.push('<figure class="ar-fig"><img src="' + esc(src.slice(0, 500)) +
+      '" alt="" loading="lazy" referrerpolicy="no-referrer">' +
+      (cap ? "<figcaption>" + esc(cap) + "</figcaption>" : "") + "</figure>");
+  }
+  return figs.join("");
+}
+
 window.NB = {
   esc: esc, faNum: faNum, TIPS: TIPS, mergeTips: mergeTips, loadTips: loadTips,
   resolveId: resolveId, linkText: linkText, renderBody: renderBody,
+  leadFigures: leadFigures,
   initTips: initTips, itemCard: itemCard,
 };
 /* static pages: tooltips are ready right after DOM is in */

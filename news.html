@@ -153,7 +153,7 @@
 
 <script src="assets/js/main.js?v=20261104a"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
-<script src="assets/js/news-body.js?v=20261104a"></script>
+<script src="assets/js/news-body.js?v=20261031b"></script>
 <script>
 (() => {
 "use strict";
@@ -232,12 +232,14 @@ function openReader(id) {
   const body = (window.NB && NB.renderBody)
     ? NB.renderBody(a.body_fa || [])
     : (a.body_fa || []).filter((p) => typeof p === "string").map((p) => `<p>${esc(p)}</p>`).join("");
+  const leadFigs = (window.NB && NB.leadFigures) ? NB.leadFigures(a) : "";
   const tags = (a.tags_fa || []).map((t) => `<span class="nw-tag">${esc(t)}</span>`).join(" ");
   document.getElementById("nw-reader-body").innerHTML = `
     <h2>${esc(a.title_fa)}</h2>
     <div class="nw-meta"><span>🗓 ${faDate(a.published_at)}</span>${tags}
       ${a.model ? `<span>${a.via === "auto-grok" ? `نگارش و بازبینی خودکار با ${esc(a.model)}` : `نگارش با دستیار هوشمند (${esc(a.model)}) + ویرایش انسانی`}</span>` : ""}</div>
     <p class="nw-r-lead">${esc(a.lead_fa)}</p>
+    ${leadFigs}
     <div class="nw-r-body">${body}</div>
     <div class="nw-srcbox">
       منبع: <a href="${esc(a.source_url)}" target="_blank" rel="noopener">Wowhead — ${esc(a.title_en)}</a><br>
