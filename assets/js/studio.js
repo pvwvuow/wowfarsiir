@@ -1,7 +1,8 @@
-/* studio.js — «اتاق کاستوم ترجمه» (translate.html) — tr.js v3.3 edition
+/* studio.js — «اتاق کاستوم ترجمه» (translate.html) — tr.js v3.4 edition
    Live preview room for the GLOBAL content-type engine:
-     - one column = the full settings panel (WFTR.mount(el, true) → inline pop)
-     - the other column = one sample per section:
+     - the settings live in the global left-edge DRAWER (WFTR.mountDrawer)
+       which PUSHES the preview column to the right while open
+     - the preview column = one sample per section:
          آیتم (REAL 19019 data — same shards the site serves)
          / کوئست / تلنت / راهنما / نقشه  (labeled «نمونهٔ نمایشی»)
    Review-round changes:
@@ -432,7 +433,10 @@
     var k;
     for (k in HL) HL[k] = HL[k].join(", ");
   })();
-  var panelEl = document.getElementById("str-panel");
+  /* v3.4: the settings column is the global DRAWER (assets/js/tr.js) —
+     mounted open on desktop (it pushes the preview to the right), closed on
+     mobile (overlay); the FAB on the left edge toggles it at any time */
+  var panelEl = WF.mountDrawer({ open: true, force: true });
   var jumpEl = document.getElementById("pv-jump");
   var curKey = null, pinned = false;
   function setJump(v) { if (jumpEl) jumpEl.hidden = !v; }
@@ -494,7 +498,6 @@
     var h = hashTab();
     if (h && h !== cur) { cur = h; renderTabBar(); render(); }
   });
-  WF.mount(panelEl, true); /* inline panel column */
   WF.onChange(render);
   renderTabBar();
   render();

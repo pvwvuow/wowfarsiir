@@ -1,4 +1,4 @@
-/* tr.js v3.3 — wowfarsi GLOBAL translation-style engine ( all sections )
+/* tr.js v3.4 — wowfarsi GLOBAL translation-style engine ( all sections )
    ------------------------------------------------------------------------
    v3.3 (settings-panel rework — «انگار کاربر اومده به تنظیمات»):
      - the panel is ORGANIZED, not a flat list: three sections with headers
@@ -561,11 +561,9 @@
     }
     return h;
   }
-  function barHtml() {
-    var h = '<div class="tr-bar">'
-      + '<button type="button" class="tr-btn" aria-expanded="false" aria-haspopup="true">'
-      + '<i class="tr-ic" aria-hidden="true"></i><span>سبک ترجمه:</span><b class="tr-cur">' + esc(PRESET_NAME[cfg.m]) + "</b><i class=\"tr-chv\" aria-hidden=\"true\"></i></button>"
-      + '<div class="tr-pop" hidden role="dialog" aria-label="سبک ترجمه">';
+  /* v3.4: the pop CONTENT is shared by the legacy popup and the new drawer */
+  function popInnerHtml() {
+    var h = "";
     h += '<p class="tr-pop-h"><span>سبک ترجمه</span><i aria-hidden="true"></i></p>';
     h += '<p class="tr-pop-sub">هر کلید یک <b>نوع محتوا</b> است — یک‌جا در آیتم، ست، کوئست، استعداد، راهنما و نقشه اعمال می‌شود.</p>';
     h += '<a class="tr-studiolink" href="translate.html">اتاق کاستوم ترجمه — پیش‌نمایش زندهٔ تنظیمات <i dir="ltr">&crarr;</i></a>';
@@ -591,8 +589,16 @@
       + '<p class="tr-shrnote">این کد فقط یک متن کوتاه است — کاملاً آفلاین؛ هم در سایت و هم در افزونهٔ بازی کار می‌کند. کدهای قدیمی WF2 و WF3 هم پذیرفته می‌شوند.</p>'
       + "</div>";
     h += '<p class="tr-note">روی هر خطِ تولتیپ کلیک کن تا سوییچ کنترل‌کننده‌اش را نشان بدهی. تنظیمات ذخیره می‌شود و در همهٔ صفحه‌ها و افزونهٔ بازی با همین ساختار اعمال می‌شود.</p>';
-    h += "</div></div>";
     return h;
+  }
+  /* legacy popup chrome (still exposed via mount(); the drawer is the default) */
+  function barHtml() {
+    return '<div class="tr-bar">'
+      + '<button type="button" class="tr-btn" aria-expanded="false" aria-haspopup="true">'
+      + '<i class="tr-ic" aria-hidden="true"></i><span>سبک ترجمه:</span><b class="tr-cur">' + esc(PRESET_NAME[cfg.m]) + "</b><i class=\"tr-chv\" aria-hidden=\"true\"></i></button>"
+      + '<div class="tr-pop" hidden role="dialog" aria-label="سبک ترجمه">'
+      + popInnerHtml()
+      + "</div></div>";
   }
   function refreshUI() {
     if (!mounted) return;
@@ -638,8 +644,45 @@
       if (cur) cur.hidden = true;
     }, 2600);
   }
-  /* mount(container, inline) — inline=true renders the pop as a permanent
-     open column (translate.html «اتاق کاستوم ترجمه») instead of a popup. */
+  /* mount(container, inline) — legacy API: inline=true renders the pop as a
+     permanent open column instead of a popup. The v3.4 drawer is the default. */
+  /* shared wiring for presets / switches / advanced / cats / share code —
+     used by BOTH the legacy popup and the v3.4 drawer */
+  function wirePanel(root) {
+    var presetEls = [].slice.call(root.querySelectorAll(".tr-preset"));
+    var domEls = [].slice.call(root.querySelectorAll(".tr-row"));
+    presetEls.forEach(function (el) {
+      el.addEventListener("click", function () { setMode(el.getAttribute("data-m")); });
+    });
+    domEls.forEach(function (row) {
+      row.querySelector(".tr-sw").addEventListener("click", function () { toggle(row.getAttribute("data-k")); });
+    });
+    var ab = root.querySelector(".tr-advbtn");
+    if (ab) ab.addEventListener("click", function () { adv = !adv; saveAdv(); refreshUI(); });
+    var cb = root.querySelector(".tr-catscb");
+    if (cb) cb.addEventListener("change", function () { catsOn = !!cb.checked; saveCats(); refreshUI(); });
+    var copyBtn = root.querySelector(".tr-shrcopy");
+    var applyBtn = root.querySelector(".tr-shrapply");
+    var inField = root.querySelector(".tr-shr-in");
+    if (copyBtn) copyBtn.addEventListener("click", function () {
+      var code = encodeCode(cfg.d);
+      var done = function () { shrMsg("کد کپی شد — برای دوستانت بفرست ✓", true); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, function () { fallbackCopy(code); done(); });
+      } else { fallbackCopy(code); done(); }
+    });
+    if (applyBtn && inField) applyBtn.addEventListener("click", function () {
+      if (!inField.value.trim()) { shrMsg("اول کدی که گرفتی را بچسبان…", false); return; }
+      if (applyCode(inField.value)) {
+        inField.value = "";
+        shrMsg("تنظیمات ترجمه اعمال شد ✓", true);
+      } else shrMsg("کد معتبر نیست ✗ — دوباره بررسی کن", false);
+    });
+    if (inField) inField.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" && applyBtn) applyBtn.click();
+    });
+    return { presetEls: presetEls, domEls: domEls };
+  }
   function mount(container, inline) {
     if (!container) return;
     if (mounted && mounted.bar.parentNode === container) { refreshUI(); return; }
@@ -647,8 +690,7 @@
     var bar = container.querySelector(".tr-bar");
     var pop = bar.querySelector(".tr-pop");
     var btn = bar.querySelector(".tr-btn");
-    var presetEls = [].slice.call(bar.querySelectorAll(".tr-preset"));
-    var domEls = [].slice.call(bar.querySelectorAll(".tr-row"));
+    var wired = wirePanel(bar);
     if (inline) {
       bar.classList.add("tr-inline");
       pop.hidden = false;
@@ -668,38 +710,8 @@
         });
       }
     }
-    presetEls.forEach(function (el) {
-      el.addEventListener("click", function () { setMode(el.getAttribute("data-m")); });
-    });
-    domEls.forEach(function (row) {
-      row.querySelector(".tr-sw").addEventListener("click", function () { toggle(row.getAttribute("data-k")); });
-    });
-    var ab = bar.querySelector(".tr-advbtn");
-    if (ab) ab.addEventListener("click", function () { adv = !adv; saveAdv(); refreshUI(); });
-    var cb = bar.querySelector(".tr-catscb");
-    if (cb) cb.addEventListener("change", function () { catsOn = !!cb.checked; saveCats(); refreshUI(); });
-    var copyBtn = bar.querySelector(".tr-shrcopy");
-    var applyBtn = bar.querySelector(".tr-shrapply");
-    var inField = bar.querySelector(".tr-shr-in");
-    if (copyBtn) copyBtn.addEventListener("click", function () {
-      var code = encodeCode(cfg.d);
-      var done = function () { shrMsg("کد کپی شد — برای دوستانت بفرست ✓", true); };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(code).then(done, function () { fallbackCopy(code); done(); });
-      } else { fallbackCopy(code); done(); }
-    });
-    if (applyBtn && inField) applyBtn.addEventListener("click", function () {
-      if (!inField.value.trim()) { shrMsg("اول کدی که گرفتی را بچسبان…", false); return; }
-      if (applyCode(inField.value)) {
-        inField.value = "";
-        shrMsg("تنظیمات ترجمه اعمال شد ✓", true);
-      } else shrMsg("کد معتبر نیست ✗ — دوباره بررسی کن", false);
-    });
-    if (inField) inField.addEventListener("keydown", function (ev) {
-      if (ev.key === "Enter" && applyBtn) applyBtn.click();
-    });
-    mounted = { bar: bar, pop: pop, btn: btn, presetEls: presetEls, domEls: domEls,
-      statsEl: bar.querySelector(".tr-stats") };
+    mounted = { bar: bar, pop: pop, btn: btn, presetEls: wired.presetEls, domEls: wired.domEls,
+      statsEl: bar.querySelector(".tr-stats"), kind: "pop" };
     refreshUI();
     if (msgState && Date.now() < msgState.until) {
       var mel = bar.querySelector(".tr-shrmsg");
@@ -710,6 +722,93 @@
       }
     }
   }
+  /* ---------- v3.4: the global settings DRAWER («دکمه سمت چپ» ----------
+     A fixed pill button on the LEFT edge opens a sliding column that PUSHES
+     the page content to the right: desktop shifts the body padding (a real
+     push, the layout reflows — exactly what was asked), mobile overlays with
+     a scrim because pushing a narrow screen is hostile. The column reuses
+     popInnerHtml() so presets/switches/share behave identically everywhere. */
+  var escWired = false;
+  var DRAWER_OPEN_KEY = "wf-tr-drawer-open";
+  function drawerOpen() { return document.body.classList.contains("wf-tr-open"); }
+  function openDrawer() {
+    if (!mounted || mounted.kind !== "drawer" || drawerOpen()) return;
+    document.body.classList.add("wf-tr-open");
+    if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "true");
+    try { localStorage.setItem(DRAWER_OPEN_KEY, "1"); } catch (e) {}
+  }
+  function closeDrawer() {
+    if (!mounted || mounted.kind !== "drawer" || !drawerOpen()) return;
+    document.body.classList.remove("wf-tr-open");
+    if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "false");
+    try { localStorage.setItem(DRAWER_OPEN_KEY, "0"); } catch (e) {}
+  }
+  function toggleDrawer() { if (drawerOpen()) closeDrawer(); else openDrawer(); }
+  function mountDrawer(opts) {
+    opts = opts || {};
+    if (mounted && mounted.kind === "drawer") { if (opts.open) openDrawer(); refreshUI(); return mounted.bar; }
+    if (mounted) return null; /* an inline/legacy panel already owns this page */
+    var fab = document.createElement("button");
+    fab.type = "button";
+    fab.className = "trd-fab";
+    fab.id = "wf-tr-fab";
+    fab.title = "تنظیمات سبک ترجمه";
+    fab.setAttribute("aria-expanded", "false");
+    fab.setAttribute("aria-controls", "wf-tr-drawer");
+    fab.setAttribute("aria-haspopup", "dialog");
+    fab.innerHTML = '<i class="tr-ic" aria-hidden="true"></i><span class="trd-fab-t">سبک ترجمه</span>';
+    var scrim = document.createElement("div");
+    scrim.className = "trd-scrim";
+    scrim.id = "wf-tr-scrim";
+    scrim.setAttribute("aria-hidden", "true");
+    var bar = document.createElement("aside");
+    bar.className = "tr-bar tr-bar-drawer";
+    bar.id = "wf-tr-drawer";
+    bar.setAttribute("role", "dialog");
+    bar.setAttribute("aria-label", "تنظیمات سبک ترجمه");
+    bar.innerHTML = '<div class="trd-head">'
+      + '<p class="trd-title"><i class="tr-ic" aria-hidden="true"></i><span>سبک ترجمه</span><b class="tr-cur">' + esc(PRESET_NAME[cfg.m]) + "</b></p>"
+      + '<button type="button" class="trd-close" aria-label="بستن تنظیمات"><i aria-hidden="true"></i></button>'
+      + "</div>"
+      + '<div class="tr-pop">' + popInnerHtml() + "</div>";
+    document.body.appendChild(scrim);
+    document.body.appendChild(bar);
+    document.body.appendChild(fab);
+    var wired = wirePanel(bar);
+    mounted = { bar: bar, pop: bar.querySelector(".tr-pop"), btn: fab, scrim: scrim,
+      presetEls: wired.presetEls, domEls: wired.domEls,
+      statsEl: bar.querySelector(".tr-stats"), kind: "drawer" };
+    fab.addEventListener("click", toggleDrawer);
+    scrim.addEventListener("click", closeDrawer);
+    bar.querySelector(".trd-close").addEventListener("click", closeDrawer);
+    document.body.classList.add("tr-body-anim");
+    if (!escWired) {
+      escWired = true;
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape" && drawerOpen()) closeDrawer();
+      });
+    }
+    /* restore the last open/closed state (desktop only — a narrow screen
+       must never load with an overlay covering the content); opts.force
+       skips the restore (the studio room always opens with its panel) */
+    var desktop = !(window.matchMedia && window.matchMedia("(max-width: 960px)").matches);
+    var st = null;
+    try { st = localStorage.getItem(DRAWER_OPEN_KEY); } catch (e) {}
+    if (!opts.force) {
+      if (st === "1") opts.open = true; else if (st === "0") opts.open = false;
+    }
+    if (opts.open && desktop) openDrawer();
+    refreshUI();
+    return bar;
+  }
+  /* auto-mount: every page that loads tr.js gets the left-edge drawer,
+     except the studio room (translate.html) which mounts it itself — open. */
+  (function () {
+    if (document.getElementById("pv-body") || document.getElementById("str-panel")) return;
+    var go = function () { mountDrawer({}); };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go);
+    else go();
+  })();
   function fallbackCopy(text) {
     var ta = document.createElement("textarea");
     ta.value = text;
@@ -721,7 +820,9 @@
   }
   function flash(k) {
     if (!mounted) return;
-    if (mounted.pop.hidden) {
+    if (mounted.kind === "drawer") {
+      if (!drawerOpen()) openDrawer();
+    } else if (mounted.pop.hidden) {
       mounted.pop.hidden = false;
       if (mounted.btn) mounted.btn.setAttribute("aria-expanded", "true");
     }
@@ -755,6 +856,10 @@
     toggle: toggle,
     onChange: function (cb) { listeners.push(cb); },
     mount: mount,
+    mountDrawer: mountDrawer,
+    openDrawer: openDrawer,
+    closeDrawer: closeDrawer,
+    toggleDrawer: toggleDrawer,
     flash: flash,
     setTipStats: setTipStats,
     /* the one text pipeline — every renderer (item/quest/talent/guide/map) uses these */

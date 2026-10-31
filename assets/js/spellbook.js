@@ -282,7 +282,8 @@
       renderGrid();
     });
     $("sb-tr").addEventListener("click", function () {
-      if (window.WFTR && WFTR.mount) WFTR.mount(this);
+      /* v3.4: the translation settings live in the global left-edge drawer */
+      if (window.WFTR && WFTR.toggleDrawer) WFTR.toggleDrawer();
     });
     $("sb-close").addEventListener("click", closeDetail);
     $("sb-backdrop").addEventListener("click", closeDetail);

@@ -1,28 +1,17 @@
-/* studio.css — «اتاق کاستوم ترجمه» (translate.html)
-   Two-column room: the full tr.js panel as a permanent inline column +
-   live sample previews (item / quest / talent / guide / map).
-   Hovering a switch row in the panel blinks (.hl-red) every preview line
-   that switch controls. Keep tokens/markers in sync with retail.js. */
+/* studio.css — «اتاق کاستوم ترجمه» (translate.html) — v3.4 edition
+   The room is now a single preview column; the settings live in the global
+   left-edge DRAWER (trdrawer.css) that PUSHES the whole page right while
+   open. Hovering a switch row in the drawer blinks (.hl-red) every preview
+   line that switch controls. Keep tokens/markers in sync with retail.js. */
 
-.str-wrap{max-width:1440px;margin:0 auto;padding:9.6rem 1rem 3rem;position:relative;z-index:2}
-.str-head{margin:0 0 1.3rem}
+.str-wrap{max-width:1180px;margin:0 auto;padding:9.6rem 1.2rem 3rem;position:relative;z-index:2}
+.str-head{margin:0 0 1.25rem}
 .str-head h1{margin:0 0 .45rem;font-size:1.7rem;color:#f6e0a3}
-.str-sub{margin:0;font-size:.9rem;line-height:2;color:#bdb7a6;max-width:62rem}
+.str-sub{margin:0;font-size:.88rem;line-height:2.05;color:#bdb7a6;max-width:70rem}
 .str-sub b{color:#f0c75e}
 
-.str-grid{display:grid;grid-template-columns:minmax(0,1fr) 27rem;gap:1.4rem;align-items:start}
-/* RTL grid: first track (1fr) sits on the RIGHT → پیش‌نمایش سمت راست، پنل ستون چپ */
-
-/* ---------- inline panel (overrides retail.css popup chrome) ---------- */
-html body .str-panel{position:sticky;top:5.6rem;max-height:calc(100vh - 7rem);overflow-y:auto;scrollbar-width:thin}
-html body .str-panel .tr-bar{display:block;margin:0;z-index:auto}
-html body .str-panel .tr-pop{position:static;transform:none;width:100%;max-height:none;overflow:visible;
-  border-radius:14px;box-shadow:0 14px 38px rgba(0,0,0,.4);padding:1rem 1.05rem .9rem}
-html body .str-panel .tr-btn{display:none}
-html body .str-panel .tr-studiolink{display:none}
-
-/* ---------- tabs + preview ---------- */
-.str-preview{min-width:0}
+/* the preview column takes the full width; the drawer push moves it right */
+.str-room{min-width:0}
 .str-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 .9rem}
 .str-tab{font:inherit;cursor:pointer;padding:.4rem 1.05rem;border-radius:999px;font-size:.9rem;
   border:1px solid rgba(240,199,94,.25);background:rgba(9,11,17,.72);color:#d8d4c8;
@@ -30,11 +19,7 @@ html body .str-panel .tr-studiolink{display:none}
 .str-tab:hover{color:#f6e0a3;border-color:rgba(246,224,163,.5)}
 .str-tab.on{color:#f0c75e;background:rgba(240,199,94,.12);border-color:rgba(240,199,94,.6)}
 
-.pv-hint{margin:0 0 .9rem;padding:.6rem .85rem;border:1px solid rgba(240,199,94,.2);
-  border-radius:10px;background:rgba(240,199,94,.05);font-size:.78rem;line-height:1.95;color:#bdb7a6}
-.pv-hint b{color:#f0c75e;font-weight:400}
-.pv-hl-demo{animation:wfHlRed .85s ease-in-out infinite;border-radius:4px;padding:0 .25rem}
-
+/* the red blink demo lives on the site hint (trdrawer head) — kept minimal */
 .str-card{background:linear-gradient(180deg,rgba(13,16,24,.94),rgba(9,11,17,.9));
   border:1px solid rgba(240,199,94,.22);border-radius:14px;padding:1.15rem 1.25rem 1.2rem;
   box-shadow:0 14px 40px rgba(0,0,0,.4)}
@@ -45,7 +30,7 @@ html body .str-panel .tr-studiolink{display:none}
 @keyframes wfHlRed{0%,100%{background:rgba(255,40,40,.32);box-shadow:0 0 0 1px rgba(255,70,70,.85)}
   50%{background:rgba(255,40,40,.06);box-shadow:0 0 0 1px rgba(255,70,70,.25)}}
 html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
-@media (prefers-reduced-motion: reduce){html body .hl-red,html body .pv-hl-demo{animation:none;background:rgba(255,40,40,.3)}}
+@media (prefers-reduced-motion: reduce){html body .hl-red{animation:none;background:rgba(255,40,40,.3)}}
 
 /* ---------- sample atoms ---------- */
 .pv-row{margin:.34rem 0;line-height:2;font-size:.92rem;color:#e8e2d2}
@@ -97,14 +82,11 @@ html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
-  .str-grid{grid-template-columns:1fr}
-  html body .str-panel{position:static;max-height:none;overflow:visible;order:2}
-  .str-preview{order:1}
   .str-wrap{padding-top:6.4rem}
 }
 /* v3.1: glossary/marker hits get a subtle dotted hint only inside the studio
    so the user can SEE which words each switch owns */
-.str-preview .tok-gm,.str-preview .tok-tm,.str-preview .tok-ts,.str-preview .tok-it,.str-preview .tok-npc,.str-preview .tok-zn,.str-preview .tok-qs,.str-preview .tok-ob{border-bottom:1px dashed rgba(230,204,128,.5);padding:0 .1rem;border-radius:3px}
+.str-room .tok-gm,.str-room .tok-tm,.str-room .tok-ts,.str-room .tok-it,.str-room .tok-npc,.str-room .tok-zn,.str-room .tok-qs,.str-room .tok-ob{border-bottom:1px dashed rgba(230,204,128,.5);padding:0 .1rem;border-radius:3px}
 
 /* «واژه‌ها» tab — the agent-pack entity layer (data/forever/i18n/entities.json) */
 .ent-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 .7rem}

@@ -1537,11 +1537,9 @@
         qlSecs +
         '<div class="fex-relgrid">' + rel + "</div></div>" : "";
       /* ---------- assemble ----------
-         review fix: preserve the mounted style panel across repaints so the
-         popover stays open — detach the bar before the wipe, re-append after */
-      var prevFex = root().querySelector(".fex");
-      var keepBar = prevFex && prevFex.querySelector(".tr-bar");
-      if (keepBar && keepBar.parentNode) keepBar.parentNode.removeChild(keepBar);
+         v3.4: the translation settings moved to the global left-edge drawer
+         (assets/js/tr.js mountDrawer) which lives OUTSIDE #rt-root — page
+         re-renders never touch it, so there is nothing to preserve here */
       root().innerHTML =
         '<nav class="rt-crumb"><a href="index.html">خانه</a><i></i><a href="items.html?ver=forever">بانک آیتم‌ها</a><i></i><span class="rt-en">' + esc(it.name) + "</span></nav>" +
         '<div class="fex">' + hero +
@@ -1552,11 +1550,9 @@
         '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="items.html?ver=forever">بازگشت به جست‌وجو</a>' +
         '<a class="btn btn-stone btn-sm" href="https://www.wowhead.com/classic/item=' + esc(it.id) + '" target="_blank" rel="noopener">Wowhead</a></div>' +
         "</div>";
-      /* translation-style bar (assets/js/tr.js) + live re-render on change */
+      /* translation settings live in the global drawer (assets/js/tr.js v3.4);
+         here we only feed the per-item line stats and re-render on change */
       if (window.WFTR) {
-        var fexEl = root().querySelector(".fex");
-        if (keepBar) fexEl.insertBefore(keepBar, fexEl.firstChild);
-        window.WFTR.mount(fexEl); /* re-append guard -> refreshUI only, popup state kept */
         window.WFTR.setTipStats(tFa, tAll);
         if (!TR_WIRED) {
           TR_WIRED = true;
