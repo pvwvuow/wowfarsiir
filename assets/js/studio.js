@@ -6,6 +6,7 @@
      - the preview column = one sample per section:
          آیتم (REAL 19019 data — same shards the site serves)
          / کوئست / تلنت / راهنما / نقشه  (labeled «نمونهٔ نمایشی»)
+         / واژه‌ها / کمک به ترجمه (studio-suggest.js)
    Review-round changes:
      - the item tab is fetched from data/forever/db/tip-11 + fa-11 (the REAL
        Thunderfury overlay, markers included); embedded FALLBACK below is the
@@ -18,11 +19,19 @@
      - pinned highlight: click a switch row (or focus it) to keep the red
        blink while you scroll the preview — mobile-friendly; a floating
        «نمایش اثر» chip jumps to the preview
-   v20261115d: textFlavor + namesClass now have visible samples (item tab gets a
-   flavor line, talent tab a class/spec row) and highlight targets; the item
-   fallback uses {{ts:}} markers for stat lines like the real data does.
+   v20261115d: textFlavor now has a visible sample (item tab gets a flavor
+   line) and a highlight target; the item fallback uses {{ts:}} markers for
+   stat lines like the real data does.
    The flavor sample is the REAL lore row of Weak Flux (2880) — tip-0 row
    ["flavor", "\"...\""] + fa-0 overlay; row shape and quotes match the data.
+   v20261116a:
+     - HOVER ALWAYS WINS: hovering a switch row blinks its lines even while
+       another row is pinned by a click; leaving the menu returns to the
+       pinned row (before, a click froze the blink until you clicked again)
+     - the «اسم کلاس‌ها و شاخه‌ها» row is no longer shown in the room
+       (the engine keeps its default; the tab + section are gone)
+     - new tab «کمک به ترجمه» (studio-suggest.js): search + suggest a fix
+     - every .str-card gets the glass ornaments (diamond + ring/dot/satellites)
    Every switch is a CONTENT TYPE that applies to ALL sections the same way.
    All settings persist via tr.js localStorage and apply site-wide. */
 (function () {
@@ -234,11 +243,6 @@
   function renderTalent() {
     var h = '<div class="str-card">';
     h += '<p class="pv-demo-badge">نمونهٔ نمایشی — تلنت واقعی با ایجنت‌های ترجمه وایر می‌شود</p>';
-    /* namesClass sample: class + spec names ride {{cls:EN|FA}} markers, so this
-       switch has its OWN visible effect (and highlight target) in the room */
-    h += pvRowTok("namesClass",
-      WF.faTokens(esc("کلاس: {{cls:Warrior|جنگاور}} · شاخه: {{cls:Fury|خشم}}")),
-      'Class: <span class="rt-en" dir="ltr">Warrior</span> · Spec: <span class="rt-en" dir="ltr">Fury</span>', "pv-tal-name");
     h += pvRow("uiLabels", "رتبهٔ ۵۰+", "Level 50+", "pv-counter");
     h += '<div class="pv-sec">استعداد اول</div>';
     h += pvRow("namesSpell", "تشنگی خون", "Bloodthirst", "pv-tal-name");
@@ -253,7 +257,7 @@
     h += pvRowTok("textDesc",
       WF.faTokens(esc("پس از ضربهٔ مرگبار، {{tm:attack speed|سرعت حمله}} شما برای ۳ ضربهٔ بعدیِ {{sp:Bloodthirst|تشنگی خون}} ۲۵٪ افزایش می‌یابد و ۶۰ {{tm:hit rating|رتبهٔ اصابت}} اضافه می‌کند.")),
       "After landing a critical strike, your attack speed increases by 25% for the next 3 swings of Bloodthirst and adds 60 hit rating.");
-    h += '<p class="str-note">اسم استعداد با «اسم اسپل‌ها و استعدادها»، متن با «توضیحات و افکت‌ها»، اصطلاح‌ها با «اصطلاح‌های بازی» و کلاس/شاخه با «اسم کلاس‌ها و شاخه‌ها» کنترل می‌شوند.</p>';
+    h += '<p class="str-note">اسم استعداد با «اسم اسپل‌ها و استعدادها»، متن با «توضیحات و افکت‌ها» و اصطلاح‌ها با «اصطلاح‌های بازی» کنترل می‌شوند.</p>';
     h += "</div>";
     return h;
   }
@@ -371,6 +375,12 @@
     });
   }
 
+  /* ---------- «کمک به ترجمه» tab: the body lives in studio-suggest.js ---------- */
+  function renderSuggest() {
+    return window.WFSuggest ? window.WFSuggest.html()
+      : '<div class="str-card"><p class="pv-demo-badge">در حال بارگیری…</p></div>';
+  }
+
   /* ---------- tabs + render loop ---------- */
   var TABS = [
     ["item", "آیتم", renderItem],
@@ -378,7 +388,8 @@
     ["talent", "تلنت", renderTalent],
     ["guide", "راهنما", renderGuide],
     ["map", "نقشه", renderMap],
-    ["words", "واژه‌ها", renderWords]
+    ["words", "واژه‌ها", renderWords],
+    ["suggest", "کمک به ترجمه", renderSuggest]
   ];
   var cur = "item";
   /* deep link: translate.html#words (یا هر تب دیگر) همان تب را باز می‌کند */
@@ -423,10 +434,15 @@
     var t = TABS[0], i;
     for (i = 0; i < TABS.length; i++) if (TABS[i][0] === cur) t = TABS[i];
     pvEl.innerHTML = t[2]();
+    /* glass ornaments: the diamond (wakes on hover) + ring/dot/satellites */
+    [].slice.call(pvEl.querySelectorAll(".str-card")).forEach(function (c) {
+      c.insertAdjacentHTML("beforeend", '<i class="gl-dia" aria-hidden="true"></i><i class="gl-orn" aria-hidden="true"><b></b></i>');
+    });
     if (cur === "words") wireWords();
+    if (cur === "suggest" && window.WFSuggest) window.WFSuggest.wire(pvEl);
     if (cur === "item") { var c = tipCounts(itemLines(REAL || ITEM)); WF.setTipStats(c[0], c[1]); }
     else WF.setTipStats(0, 0);
-    if (curKey) applyHl(curKey, true); /* re-anchor highlight after re-render */
+    paint(); /* re-anchor the highlight after re-render */
   }
 
   /* ---------- hover/pin highlight: panel switch -> preview lines ----------
@@ -462,46 +478,51 @@
      mountStudio) — mounted into aside#str-menu inside .str-room, glued to
      the preview, always visible; categories navigate INTO their views. */
   var panelEl = WF.mountStudio(document.getElementById("str-menu"));
+  /* v20261116a: class/spec names are not a user switch in the room any more */
+  (function () {
+    var r = panelEl && panelEl.querySelector('.tr-row[data-k="namesClass"]');
+    if (r && r.parentNode) r.parentNode.removeChild(r);
+  })();
   var jumpEl = document.getElementById("pv-jump");
-  var curKey = null, pinned = false;
+  /* two independent keys: hovKey (transient, follows the mouse) and pinKey
+     (sticky, set by a click/focus). Hover ALWAYS wins while it lasts; when the
+     mouse leaves the menu the pinned row (if any) is shown again. */
+  var pinKey = null, hovKey = null;
   function setJump(v) { if (jumpEl) jumpEl.hidden = !v; }
-  function clearHl() {
-    curKey = null; pinned = false; setJump(false);
+  function paint() {
+    var k = hovKey || pinKey, sel = k ? HL[k] : null;
     [].slice.call(pvEl.querySelectorAll(".hl-red")).forEach(function (el) { el.classList.remove("hl-red"); });
-  }
-  function applyHl(k, pin) {
-    [].slice.call(pvEl.querySelectorAll(".hl-red")).forEach(function (el) { el.classList.remove("hl-red"); });
-    curKey = k; pinned = !!pin; setJump(!!pin);
-    var sel = HL[k];
+    setJump(!!pinKey);
     if (!sel) return;
     [].slice.call(pvEl.querySelectorAll(sel)).forEach(function (el) { el.classList.add("hl-red"); });
   }
   function wireHover() {
     if (!panelEl) return;
+    function rowOf(t) { return t && t.closest ? t.closest(".tr-row[data-k]") : null; }
     panelEl.addEventListener("pointerover", function (ev) {
-      var row = ev.target && ev.target.closest ? ev.target.closest(".tr-row[data-k]") : null;
-      if (!row || pinned) return;
-      applyHl(row.getAttribute("data-k"), false);
+      var row = rowOf(ev.target);
+      if (!row) return;
+      hovKey = row.getAttribute("data-k");
+      paint();
     });
     panelEl.addEventListener("pointerout", function (ev) {
-      if (pinned) return;
-      var to = ev.relatedTarget;
-      if (to && to.closest && to.closest(".tr-row[data-k]")) return;
-      clearHl();
+      if (rowOf(ev.relatedTarget)) return; /* moving to another row: its pointerover takes over */
+      hovKey = null;
+      paint();
     });
-    /* review fix (mobile/keyboard): tap or focus a row -> the blink PINS
-       (stays while you scroll); tap the same row again to unpin */
+    /* tap or focus a row -> the blink PINS (stays while you scroll, mobile
+       friendly); tap the same row again to unpin. Hover still overrides. */
     panelEl.addEventListener("click", function (ev) {
-      var row = ev.target && ev.target.closest ? ev.target.closest(".tr-row[data-k]") : null;
+      var row = rowOf(ev.target), k;
       if (!row) return;
-      var k = row.getAttribute("data-k");
-      if (ev.target.closest(".tr-sw")) { applyHl(k, true); return; } /* toggle click: keep it visible */
-      if (pinned && curKey === k) clearHl();
-      else applyHl(k, true);
+      k = row.getAttribute("data-k");
+      if (ev.target.closest(".tr-sw")) pinKey = k; /* toggle click: keep it visible */
+      else pinKey = pinKey === k ? null : k;
+      paint();
     });
     panelEl.addEventListener("focusin", function (ev) {
-      var row = ev.target && ev.target.closest ? ev.target.closest(".tr-row[data-k]") : null;
-      if (row) applyHl(row.getAttribute("data-k"), true);
+      var row = rowOf(ev.target);
+      if (row) { pinKey = row.getAttribute("data-k"); paint(); }
     });
     /* reverse: click a preview line (or an inner tok-* anchor) -> flash its
        switch in the panel — inner markers now own their data-tk */

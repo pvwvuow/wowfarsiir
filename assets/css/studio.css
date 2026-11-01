@@ -1,13 +1,20 @@
-/* studio.css — «اتاق کاستوم ترجمه» (translate.html) — v3.6 edition
+/* studio.css — «اتاق کاستوم ترجمه» (translate.html) — v3.7 edition
    The room is a two-column grid: the preview (right) + the settings MENU
    column (left) — a permanent menu attached to the preview like any site
    menu, NEVER hidden (the left-edge drawer is for the item pages). Menu
    root view = a few buttons; a category click GOES INTO its own view and a
    back row returns. Hovering a row still blinks (.hl-red) every preview
-   line that switch controls. Keep tokens/markers in sync with retail.js. */
+   line that switch controls. Keep tokens/markers in sync with retail.js.
+   v20261116a: the room follows the site's «Midnight Codex» glass language
+   (same as the talents page): smoked-glass panels that FADE OUT at the sides,
+   fading gold hairlines, a diamond that wakes at the top on hover, the
+   ring + dot ornament (2 satellites) at the bottom centre — no rounded
+   boxes, no dashed pills. The settings menu (.stmenu) is left untouched. */
 
 .str-wrap{max-width:1180px;margin:0 auto;padding:9.6rem 1.2rem 3rem;position:relative;z-index:2}
-.str-head{margin:0 0 1.25rem}
+.str-head{margin:0 0 1.6rem;padding-bottom:1.1rem;position:relative}
+.str-head::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.4),transparent)}
 .str-head h1{margin:0 0 .45rem;font-size:1.7rem;color:#f6e0a3}
 .str-sub{margin:0;font-size:.88rem;line-height:2.05;color:#bdb7a6;max-width:70rem}
 .str-sub b{color:#f0c75e}
@@ -15,29 +22,50 @@
 /* the room: preview (RTL right) + fixed menu column (RTL left) */
 .str-room{display:grid;grid-template-columns:minmax(0,1fr) 18.5rem;gap:1.9rem;align-items:start}
 .str-main{min-width:0}
-.str-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 .9rem}
-.str-tab{font:inherit;cursor:pointer;padding:.4rem 1.05rem;border-radius:999px;font-size:.9rem;
-  border:1px solid rgba(240,199,94,.25);background:rgba(9,11,17,.72);color:#d8d4c8;
-  transition:color .2s,border-color .2s,background .2s}
-.str-tab:hover{color:#f6e0a3;border-color:rgba(246,224,163,.5)}
-.str-tab.on{color:#f0c75e;background:rgba(240,199,94,.12);border-color:rgba(240,199,94,.6)}
 
-/* the red blink demo lives on the site hint (trdrawer head) — kept minimal */
-/* v20261112: the preview card mirrors the FOREVER item card (.rt-item in
-   retail.css — the look the user pointed at: item.html?ver=forever&id).
-   Quality classes (q0..q7) come straight from retail.css's generic
-   `html body .qN { --q / --qt / --qg }` variable rules; the card theme,
-   top hairline and the gem glow all ride the same variables. */
+/* tabs: plain text on a fading rule; the diamond wakes on hover / active */
+.str-tabs{display:flex;flex-wrap:wrap;gap:.1rem;margin:0 0 1.3rem;position:relative;padding-bottom:.1rem}
+.str-tabs::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.28),transparent)}
+.str-tab{position:relative;font:inherit;cursor:pointer;padding:.62rem 1.05rem .7rem;border:0;border-radius:0;
+  background:none;font-size:.9rem;color:#bdb7a6;text-shadow:0 1px 7px rgba(0,0,0,.7);transition:color .25s ease}
+.str-tab::before{content:"";position:absolute;top:3px;left:50%;width:5px;height:5px;margin-left:-2.5px;
+  background:#f0c75e;box-shadow:0 0 8px rgba(240,199,94,.85);transform:rotate(45deg) scale(0);
+  transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.str-tab::after{content:"";position:absolute;left:10%;right:10%;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.9),transparent);
+  transform:scaleX(0);transition:transform .3s ease}
+.str-tab:hover,.str-tab.on{color:#f6e0a3}
+.str-tab:hover::before,.str-tab.on::before{transform:rotate(45deg) scale(1)}
+.str-tab:hover::after,.str-tab.on::after{transform:scaleX(1)}
+.str-tab[data-t="suggest"]{color:#e9c76a}
+
+/* ---------- the glass panel ----------
+   v20261112: quality classes (q0..q7) still come from retail.css's generic
+   `html body .qN { --q / --qt / --qg }` variable rules, so hairlines, the
+   diamond and the ornament pick up the item's quality colour. */
 .str-card{--q:#f0c75e;--qt:#f6e0a3;--qg:240,199,94;
-  position:relative;overflow:hidden;margin:0 0 1.4rem;padding:1.1rem 1.25rem 1.2rem;
-  border:1px solid rgba(var(--qg),.34);border-radius:14px;
-  background:linear-gradient(165deg,rgba(27,22,35,.94),rgba(11,11,17,.97));
-  box-shadow:0 10px 28px rgba(0,0,0,.38)}
-.str-card::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--q),transparent)}
+  position:relative;margin:0 0 1.7rem;padding:1.5rem 2.5rem 2.6rem;border:0;border-radius:0;overflow:visible;
+  background:linear-gradient(90deg,rgba(10,11,18,0),rgba(10,11,18,.62) 15%,rgba(10,11,18,.62) 85%,rgba(10,11,18,0));
+  -webkit-backdrop-filter:blur(12px) saturate(1.1);backdrop-filter:blur(12px) saturate(1.1);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);box-shadow:none}
+.str-card::before,.str-card::after{content:"";position:absolute;left:0;right:0;height:1px;pointer-events:none}
+.str-card::before{top:0;background:linear-gradient(90deg,transparent,rgba(var(--qg),.75),transparent)}
+.str-card::after{bottom:0;background:linear-gradient(90deg,transparent,rgba(var(--qg),.38),transparent)}
+.gl-dia{position:absolute;top:6px;left:50%;width:7px;height:7px;margin-left:-3.5px;pointer-events:none;
+  background:var(--q);box-shadow:0 0 10px rgba(var(--qg),.9);transform:rotate(45deg) scale(0);
+  transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.str-card:hover .gl-dia{transform:rotate(45deg) scale(1)}
+.gl-orn{position:absolute;bottom:.85rem;left:50%;width:12px;height:12px;margin-left:-6px;pointer-events:none;
+  border:1px solid rgba(var(--qg),.62);border-radius:50%;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.gl-orn::before{content:"";position:absolute;inset:3.5px;border-radius:50%;background:var(--q)}
+.gl-orn b{position:absolute;top:50%;left:50%;width:3px;height:3px;margin:-1.5px 0 0 -1.5px;border-radius:50%;
+  box-shadow:-21px 0 0 0 rgba(var(--qg),.7),21px 0 0 0 rgba(var(--qg),.7)}
+.str-card:hover .gl-orn{transform:scale(1.18);box-shadow:0 0 10px rgba(var(--qg),.55)}
 .str-card .pv-hero .pv-gem{background:radial-gradient(circle at 32% 28%,rgba(var(--qg),.75),rgba(var(--qg),.12) 70%);
   border:1px solid rgba(var(--qg),.6);box-shadow:0 0 24px rgba(var(--qg),.42)}
-.str-note{font-size:.76rem;color:#97917f;line-height:1.95;margin:.8rem 0 0}
+.str-note{font-size:.76rem;color:#97917f;line-height:1.95;margin:.9rem 0 0}
 .str-note .rt-en{font-size:.68rem}
 
 /* ---------- red hover highlight ---------- */
@@ -63,23 +91,27 @@ html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
 .pv-tal-name{color:#f0c75e;font-weight:700}
 .pv-counter{color:#97917f;font-size:.85rem}
 .pv-reward{color:#ffd100}
-.pv-body-txt{border-inline-start:2px solid rgba(240,199,94,.18);padding-inline-start:.85rem}
-.pv-map{border:1px solid rgba(240,199,94,.25);border-radius:12px;min-height:170px;flex-wrap:wrap;
-  background:radial-gradient(120% 140% at 30% 20%,rgba(37,28,14,.85),rgba(9,11,17,.95));
+.pv-body-txt{border-inline-start:0;padding-inline-start:.85rem;position:relative}
+.pv-body-txt::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(240,199,94,.35),transparent)}
+.pv-map{border:0;border-radius:0;min-height:170px;flex-wrap:wrap;
+  background:radial-gradient(120% 140% at 50% 30%,rgba(37,28,14,.55),rgba(9,11,17,0));
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
   display:flex;align-items:center;justify-content:space-around;gap:1.2rem;padding:1.2rem;margin:0 0 .8rem}
 .pv-pin{text-align:center;font-size:.86rem;color:#e8e2d2}
 .pv-pin i{display:block;width:12px;height:12px;border-radius:50%;background:#f0c75e;
   box-shadow:0 0 12px rgba(240,199,94,.85);margin:0 auto .45rem;animation:pvPulse 2.6s ease-in-out infinite}
 @keyframes pvPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
-@media (prefers-reduced-motion: reduce){.pv-pin i{animation:none}}
+@media (prefers-reduced-motion: reduce){.pv-pin i{animation:none}.gl-dia,.gl-orn,.str-tab::before,.str-tab::after{transition:none}}
 
 /* token spans added by the marker family (hover anchors, one per switch) */
 .tok-sp,.tok-tm,.tok-ts,.tok-it,.tok-npc,.tok-zn,.tok-qs,.tok-ob,.tok-cls,.tok-w{border-radius:4px}
 
-/* ---------- sample badges + chips ---------- */
-.pv-demo-badge{margin:0 0 .7rem;font-size:.72rem;color:#97917f;background:rgba(151,145,127,.1);
-  border:1px dashed rgba(151,145,127,.35);border-radius:999px;display:inline-block;padding:.15rem .8rem}
-.pv-demo-badge.real{color:#7fd0a0;border-color:rgba(127,208,160,.4);background:rgba(127,208,160,.08)}
+/* ---------- sample captions + chips (no boxes) ---------- */
+.pv-demo-badge{display:block;margin:0 0 .95rem;padding:0;border:0;border-radius:0;background:none;
+  font-size:.72rem;letter-spacing:.04em;color:#97917f;text-align:center}
+.pv-demo-badge.real{color:#8fd4aa;background:none;border:0}
 .pv-chip{display:inline-block;margin-inline-end:.6rem;color:#bdb7a6;font-size:.8rem}
 .pv-chip b{color:#f0c75e}
 
@@ -103,28 +135,65 @@ html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
   .stmenu{position:static;max-height:none;overflow:visible;order:-1;
     padding:.2rem .2rem .9rem;margin:0 0 .4rem;
     border-bottom:1px solid rgba(240,199,94,.14)}
+  .str-card{padding-inline:1.5rem}
 }
 /* v3.1: glossary/marker hits get a subtle dotted hint only inside the studio
    so the user can SEE which words each switch owns */
 .str-room .tok-gm,.str-room .tok-tm,.str-room .tok-ts,.str-room .tok-it,.str-room .tok-npc,.str-room .tok-zn,.str-room .tok-qs,.str-room .tok-ob,.str-room .tok-cls{border-bottom:1px dashed rgba(230,204,128,.5);padding:0 .1rem;border-radius:3px}
 
 /* «واژه‌ها» tab — the agent-pack entity layer (data/forever/i18n/entities.json) */
-.ent-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 .7rem}
-.ent-chip{font:inherit;cursor:pointer;padding:.3rem .8rem;border-radius:999px;font-size:.78rem;
-  border:1px solid rgba(240,199,94,.22);background:rgba(9,11,17,.72);color:#d8d4c8;
-  transition:color .2s,border-color .2s,background .2s}
-.ent-chip:hover{color:#f6e0a3;border-color:rgba(246,224,163,.5)}
-.ent-chip.on{color:#f0c75e;background:rgba(240,199,94,.12);border-color:rgba(240,199,94,.6)}
+.ent-chips{display:flex;flex-wrap:wrap;gap:.1rem;margin:.2rem 0 .8rem}
+.ent-chip{position:relative;font:inherit;cursor:pointer;padding:.32rem .8rem .4rem;border:0;border-radius:0;
+  background:none;font-size:.78rem;color:#bdb7a6;transition:color .25s ease}
+.ent-chip::after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.9),transparent);
+  transform:scaleX(0);transition:transform .3s ease}
+.ent-chip:hover,.ent-chip.on{color:#f6e0a3}
+.ent-chip:hover::after,.ent-chip.on::after{transform:scaleX(1)}
 .ent-chip b{font-weight:400;color:#f0c75e}
-.ent-search{width:100%;font:inherit;font-size:.9rem;padding:.5rem .85rem;border-radius:10px;
-  border:1px solid rgba(240,199,94,.25);background:rgba(9,11,17,.72);color:#f0e6c8;outline:none;
-  margin:0 0 .7rem;box-sizing:border-box}
-.ent-search:focus{border-color:rgba(240,199,94,.55)}
+.ent-search{width:100%;font:inherit;font-size:.92rem;padding:.55rem .25rem;border-radius:0;color:#f0e6c8;outline:none;
+  margin:0 0 .8rem;box-sizing:border-box;background:linear-gradient(90deg,transparent,rgba(9,11,17,.5),transparent);
+  border-width:0 0 1px;border-style:solid;border-image:linear-gradient(90deg,transparent,rgba(240,199,94,.45),transparent) 1}
+.ent-search:focus{border-image:linear-gradient(90deg,transparent,rgba(246,224,163,.95),transparent) 1}
 .ent-row{display:flex;justify-content:space-between;align-items:baseline;gap:1.1rem;
-  border-bottom:1px dashed rgba(240,199,94,.12);padding:.34rem 0;margin:0}
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.14),transparent) bottom/100% 1px no-repeat;
+  padding:.34rem 0;margin:0}
 .ent-en{color:#b7b1a2;direction:ltr;text-align:left;font-size:.82rem;flex:1 1 auto;word-break:break-word}
 .ent-fa{color:#f0e6c8;flex:0 1 auto;text-align:right}
 .ent-count{font-size:.76rem;color:#97917f;margin:.1rem 0 .5rem}
+
+/* ============================================================
+   v20261115d / v3.7 — «کمک به ترجمه» tab (studio-suggest.js)
+   search a word / name / sentence, see the current Persian, suggest a fix.
+   Same glass language: hairline rows, text buttons, underline inputs.
+   ============================================================ */
+.sg-hint{display:block;font-size:.8rem;color:#97917f;line-height:2;margin:.4rem 0}
+.sg-row{position:relative;padding:.75rem .15rem .85rem;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.16),transparent) bottom/100% 1px no-repeat}
+.sg-top{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
+.sg-type{font-size:.64rem;letter-spacing:.12em;color:rgba(240,199,94,.75)}
+.sg-en{direction:ltr;unicode-bidi:isolate;color:#e8e2d2;font-size:.9rem;word-break:break-word}
+.sg-fa{margin:.2rem 0 .4rem;color:#f0e6c8;font-size:.93rem;line-height:1.95}
+.sg-fa.none{color:#97917f;font-size:.82rem}
+.sg-btn{position:relative;font:inherit;font-size:.78rem;cursor:pointer;background:none;border:0;border-radius:0;
+  color:#cfcabb;padding:.28rem .1rem;transition:color .25s ease;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.sg-btn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.45),transparent);transition:background .25s ease}
+.sg-btn:hover{color:#f6e0a3}
+.sg-btn:hover::after{background:linear-gradient(90deg,transparent,rgba(246,224,163,.95),transparent)}
+.sg-btn.go{color:#f0c75e}
+.sg-btn[disabled]{opacity:.5;cursor:default}
+.sg-form{margin:.6rem 0 0}
+.sg-form label{display:block;font-size:.72rem;color:#b7b1a2;margin:.55rem 0 .15rem}
+.sg-ta,.sg-note{width:100%;box-sizing:border-box;font:inherit;font-size:.9rem;color:#f0e6c8;outline:none;border-radius:0;
+  padding:.45rem .3rem;resize:vertical;background:linear-gradient(90deg,transparent,rgba(9,11,17,.5),transparent);
+  border-width:0 0 1px;border-style:solid;border-image:linear-gradient(90deg,transparent,rgba(240,199,94,.45),transparent) 1}
+.sg-ta:focus,.sg-note:focus{border-image:linear-gradient(90deg,transparent,rgba(246,224,163,.95),transparent) 1}
+.sg-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.sg-act{display:flex;gap:1.1rem;margin:.7rem 0 0}
+.sg-msg{margin:.5rem 0 0;font-size:.8rem;min-height:1.2em}
+.sg-msg.ok{color:#8fd4aa}
+.sg-msg.err{color:#e08a8a}
 
 /* ============================================================
    v20261112b — the FIXED STUDIO MENU (.stmenu / .stmenu-view)
@@ -134,6 +203,7 @@ html body .hl-red{animation:wfHlRed .85s ease-in-out infinite;border-radius:5px}
    No drawer chrome here either — same material as the background, texts
    and buttons float (v3.5 aesthetic), but the column is permanent and
    navigation is drill-down (into a view / back), not accordions.
+   (UNCHANGED in v3.7 — the user likes this menu as it is.)
    ============================================================ */
 .stmenu{position:sticky;top:7rem;max-height:calc(100vh - 8.6rem);overflow-y:auto;
   scrollbar-width:thin;scrollbar-color:rgba(240,199,94,.35) transparent;
@@ -210,15 +280,15 @@ html body .stmenu .tr-shrow input{background:rgba(9,11,17,.62)}
 @media (max-width:960px){
   html body .stmenu{position:static;max-height:none;overflow:visible}
 }
-.str-tab:focus-visible,.ent-chip:focus-visible,.pv-jump:focus-visible,
+.str-tab:focus-visible,.ent-chip:focus-visible,.pv-jump:focus-visible,.sg-btn:focus-visible,
 .stmenu-nav:focus-visible,.stmenu-back:focus-visible,
 html body .stmenu .tr-preset:focus-visible,
 html body .stmenu .tr-sw:focus-visible,
 html body .stmenu .tr-shrbtn:focus-visible,
 html body .stmenu .tr-shrbtn2:focus-visible{
   outline:2px solid rgba(246,224,163,.85);outline-offset:2px;border-radius:8px}
-.ent-search:focus-visible,html body .stmenu .tr-shrow input:focus-visible{
+.ent-search:focus-visible,.sg-ta:focus-visible,.sg-note:focus-visible,html body .stmenu .tr-shrow input:focus-visible{
   outline:2px solid rgba(246,224,163,.7);outline-offset:1px}
 @media (prefers-reduced-motion:reduce){
-  .str-tab,.ent-chip,.stmenu-nav,.stmenu-back,html body .stmenu .tr-preset,html body .stmenu .tr-preset::before{transition:none}
+  .str-tab,.ent-chip,.sg-btn,.stmenu-nav,.stmenu-back,html body .stmenu .tr-preset,html body .stmenu .tr-preset::before{transition:none}
 }
