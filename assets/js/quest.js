@@ -1,24 +1,25 @@
-/* quest.js — quest database pages (Forever) — quest.html
-   quest.html?id=<questId>  -> one quest: texts, level, zone, who gives / completes it
-                               (with spawn map), chain, reward items
-   quest.html               -> searchable quest list (name / zone / level)
+/* quest.js — quest database, ONE quest — quest.html?id=<questId>
+   (the quest LIST is quest-list.js; quest.html renames #quest-root to #quest-list-root when there is no ?id=)
+   one quest: texts, level, zone / category, who gives / completes it (with spawn map), chain, reward items
    Data: quest-N (N = id % 24), quest-index, spawn-N, itemlite-N, quest-rw-N
    (reward items, built by tools/build_quest_aux.py from the item sources),
    i18n/quest-fa-N (Persian text, shown when it exists), i18n/quest-fa-titles.
+   Quest-index keys that start with "sort:" are categories (class / profession / seasonal quests), not zones:
+   the page labels them «کلاس» / «حرفه» / «دسته» instead of «منطقه» (quest-cats.js).
    Fields that the source data does not have (reward XP / money / reputation,
    race / class limits) are drawn ONLY when a quest record carries them:
    rewXp, rewMoney, rewItems [[id,n]], rewChoice [[id,n]], rewRep [[name,n]],
    reqRaces [name], reqClasses [name]. Nothing is invented. */
 (function () {
   'use strict';
-  var V = '20261201a', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261201b', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
   var WF = window.WFTR || null;
   var cache = {};
   var META = {}, ZBYNAME = {}, ZBYKEY = {}, DUNG = {}, ENT = {};
-  var IDX = null, FAT = null, S = null, LS = null, LANG = 'fa';
+  var IDX = null, FAT = null, S = null, LANG = 'fa';
   try { if (localStorage.getItem('wfq-lang') === 'en') LANG = 'en'; } catch (e) { /* ignore */ }
 
   /* ---------- helpers ---------- */
@@ -32,12 +33,13 @@
   function num(v) { return on('uiLabels') ? faNum(v) : String(v); }
   function lbl(fa, en) { return on('uiLabels') ? esc(fa) : '<span class="rt-en" dir="ltr">' + esc(en) + '</span>'; }
   function enSpan(t) { return '<span class="rt-en" dir="ltr">' + esc(t) + '</span>'; }
-  function nz(s) {
-    return String(s == null ? '' : s).replace(/\u064a/g, '\u06cc').replace(/\u0643/g, '\u06a9')
-      .replace(/[\u200c\u200e\u200f]/g, ' ').toLowerCase().trim();
-  }
   function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
-  function cap(s) { return String(s || '').replace(/-/g, ' ').replace(/\b[a-z]/g, function (c) { return c.toUpperCase(); }); }
+  function cap(s) { return String(s || '').replace(/-/g, ' ').replace(/(^| )[a-z]/g, function (c) { return c.toUpperCase(); }); }
+  var QC = window.WFQCAT || {
+    isCat: function (k) { return String(k == null ? '' : k).indexOf('sort:') === 0; },
+    name: function (k) { return cap(String(k).slice(5)); },
+    groupName: function () { return 'دسته'; }
+  };
   function getJSON(url) {
     if (!cache[url]) {
       cache[url] = fetch(url + (url.indexOf('?') < 0 ? '?' : '&') + 'v=' + V).then(function (r) {
@@ -78,13 +80,9 @@
   }
   function zoneByKey(key) {
     var z = ZBYKEY[key];
+    if (QC.isCat(key)) return esc(QC.name(key));
     if (z) return zoneOf(z);
-    return enSpan(cap(String(key || '').replace(/^sort:/, '')));
-  }
-  function zoneText(key) { /* plain text for <option> */
-    var z = ZBYKEY[key];
-    if (z) return on('namesZone') && z.fa ? z.fa : z.name;
-    return cap(String(key || '').replace(/^sort:/, ''));
+    return enSpan(cap(key));
   }
   function money(c) {
     var g = Math.floor(c / 10000), s = Math.floor((c % 10000) / 100), k = c % 100, p = [];
@@ -104,19 +102,19 @@
   /* game text -> safe html. Markers {{npc:EN|FA}}, colour codes, $N $B $g a:b; */
   /* source quirk: a $B paragraph break lost its '$', so every paragraph after the first starts with a stray 'B'
      ('BBring me...', 'BI shall...'). Same safe rule as tools/fa_missing.py: strip one 'B' only when a real word follows. */
-  var LEAD_B = /^B(?=[A-Z][a-z]|[AI]\b|<|\$|\{\{)/;
+  var LEAD_B = /^B(?=[A-Z][a-z]|[AI](?![A-Za-z0-9_])|<|[$]|[{][{])/;
   function junk(x) { return typeof x !== 'string' || !x.trim() || x.trim() === 'NULL' || /^[Bb]$/.test(x.trim()); }
   function fmt(t, isFa) {
     var s = esc(isFa ? t : String(t).replace(LEAD_B, ''));
-    s = s.replace(/\{\{(?:npc|zn|it|sp):([^|{}]*)\|([^|{}]*)\}\}/g, function (m, en, fa) { return isFa ? fa : en; });
-    s = s.replace(/\|c[0-9a-fA-F]{2}([0-9a-fA-F]{6})(.*?)\|r/g, '<span style="color:#$1">$2</span>');
-    s = s.replace(/\|r/g, '');
-    s = s.replace(/\$[Gg]([^;$:]*):([^;$]*);/g, function (m, a, b) { return a.trim() + ' / ' + b.trim(); });
-    s = s.replace(/\$[Nn]/g, isFa ? 'قهرمان' : '&lt;name&gt;');
-    s = s.replace(/\$[Cc]/g, isFa ? 'کلاس تو' : '&lt;class&gt;');
-    s = s.replace(/\$[Rr]/g, isFa ? 'نژاد تو' : '&lt;race&gt;');
-    s = s.replace(/\$[Bb]/g, '<br>');
-    s = s.replace(/\$[A-Za-z]/g, '');
+    s = s.replace(/[{][{](?:npc|zn|it|sp):([^|{}]*)[|]([^|{}]*)[}][}]/g, function (m, en, fa) { return isFa ? fa : en; });
+    s = s.replace(/[|]c[0-9a-fA-F]{2}([0-9a-fA-F]{6})(.*?)[|]r/g, '<span style="color:#$1">$2</span>');
+    s = s.replace(/[|]r/g, '');
+    s = s.replace(/[$][Gg]([^;$:]*):([^;$]*);/g, function (m, a, b) { return a.trim() + ' / ' + b.trim(); });
+    s = s.replace(/[$][Nn]/g, isFa ? 'قهرمان' : '&lt;name&gt;');
+    s = s.replace(/[$][Cc]/g, isFa ? 'کلاس تو' : '&lt;class&gt;');
+    s = s.replace(/[$][Rr]/g, isFa ? 'نژاد تو' : '&lt;race&gt;');
+    s = s.replace(/[$][Bb]/g, '<br>');
+    s = s.replace(/[$][A-Za-z]/g, '');
     return s;
   }
   function paras(en, fa) {
@@ -217,7 +215,7 @@
     var zs = [], dg = [];
     Object.keys(sp || {}).forEach(function (k) {
       var v = sp[k], n = 0;
-      if (/^\d+$/.test(k) && Array.isArray(v)) zs.push({ id: +k, pts: v });
+      if (/^[0-9]+$/.test(k) && Array.isArray(v)) zs.push({ id: +k, pts: v });
       else if (v && typeof v === 'object') {
         Object.keys(v).forEach(function (f) { n += (v[f] || []).length; });
         dg.push({ slug: k, n: n });
@@ -309,7 +307,9 @@
     var q = S.q, f = S.fa || {}, hasFa = !!(f.t || f.desc || f.obj || f.details || f.progress || f.completion);
     var fa = LANG === 'fa' && f.t ? f.t : '';
     var title = fa || q.name || ('#' + q.id), zoneHtml = q.zone ? zoneByName(q.zone) : (q.zoneKey ? zoneByKey(q.zoneKey) : '');
-    var hero, A = '', B = '', texts, ch = '', pre, i;
+    var isCat = !q.zone && q.zoneKey && QC.isCat(q.zoneKey);
+    var zl = isCat ? lbl(QC.groupName(q.zoneKey), 'Category') : lbl('منطقه', 'Zone');
+    var hero, A = '', B = '', texts, ch = '', pre;
 
     document.title = title + ' — ' + (on('uiLabels') ? 'کوئست' : 'Quest') + ' — wowfarsi';
     hero = '<header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>QUEST' + (q.repeatable ? ' · REPEATABLE' : '') + '<i></i></p>'
@@ -318,7 +318,7 @@
       + '<div class="fex-hchips">'
       + (q.questLevel ? chip(lbl('سطح کوئست', 'Quest level'), num(q.questLevel)) : '')
       + (q.requiredLevel ? chip(lbl('حداقل سطح', 'Required level'), num(q.requiredLevel)) : '')
-      + (zoneHtml ? chip(lbl('منطقه', 'Zone'), zoneHtml) : '')
+      + (zoneHtml ? chip(zl, zoneHtml) : '')
       + (q.repeatable ? chip(lbl('نوع', 'Type'), lbl('تکرارشدنی', 'Repeatable')) : '')
       + '</div></div></header>';
 
@@ -347,7 +347,7 @@
     B += panel(lbl('مشخصات', 'Details'),
       frow(lbl('سطح کوئست', 'Quest level'), q.questLevel ? num(q.questLevel) : '')
       + frow(lbl('حداقل سطح', 'Required level'), q.requiredLevel ? num(q.requiredLevel) : '')
-      + frow(lbl('منطقه', 'Zone'), zoneHtml)
+      + frow(zl, zoneHtml)
       + frow(lbl('نژاد', 'Races'), arr(q.reqRaces).length ? q.reqRaces.map(enSpan).join('، ') : '')
       + frow(lbl('کلاس', 'Classes'), arr(q.reqClasses).length ? q.reqClasses.map(enSpan).join('، ') : '')
       + frow(lbl('شناسه', 'ID'), '<span dir="ltr">' + esc(q.id) + '</span>'));
@@ -391,74 +391,6 @@
     }).catch(function () { fail('', id); });
   }
 
-  /* ---------- list page ---------- */
-  function listFilter() {
-    var q = nz(LS.q), lo = parseInt(LS.lmin, 10), hi = parseInt(LS.lmax, 10), out = [], hasFa = /[\u0600-\u06FF]/.test(q), isId = /^\d+$/.test(q);
-    LS.all.forEach(function (a) {
-      var t;
-      if (LS.zone && a[2] !== LS.zone) return;
-      if (!isNaN(lo) && (a[3] == null || a[3] < lo)) return;
-      if (!isNaN(hi) && (a[3] == null || a[3] > hi)) return;
-      if (q) {
-        if (isId) { if (String(a[0]).indexOf(q) !== 0) return; }
-        else if (hasFa) { t = FAT && FAT.t && FAT.t[a[0]]; if (!t || nz(t).indexOf(q) < 0) return; }
-        else if (a[1].toLowerCase().indexOf(q) < 0) return;
-      }
-      out.push(a);
-    });
-    return out;
-  }
-  function listRow(a) {
-    var t = ftitle(a[0], a[1]);
-    return '<a class="fex-npc" href="quest.html?id=' + esc(a[0]) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>'
-      + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</span>'
-      + (t.fa ? '<span class="fex-sub rt-en" dir="ltr">' + esc(a[1]) + '</span>' : '')
-      + (a[3] ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + num(a[3]) + '</span>' : '')
-      + (a[2] ? '<span class="fex-z">' + zoneByKey(a[2]) + '</span>' : '') + '</a>';
-  }
-  function listRows() {
-    var res = listFilter(), box = document.getElementById('npcl-res'), cnt = document.getElementById('npcl-cnt'), h = '', i;
-    if (!box) return;
-    for (i = 0; i < Math.min(LS.shown, res.length); i++) h += listRow(res[i]);
-    if (res.length > LS.shown) h += '<button type="button" class="npcl-more" data-more="list">' + lbl('نمایش بیشتر', 'Show more') + '</button>';
-    box.innerHTML = res.length ? h : '<p class="npc-none">' + lbl('چیزی پیدا نشد.', 'Nothing found.') + '</p>';
-    if (cnt) cnt.innerHTML = lbl('نتیجه', 'Results') + ' <b>' + num(res.length) + '</b> ' + lbl('از', 'of') + ' ' + num(LS.all.length);
-  }
-  function listPaint() {
-    var zopts = '<option value="">' + (on('uiLabels') ? 'همهٔ مناطق' : 'All zones') + '</option>' + LS.zones.map(function (z) {
-      return '<option value="' + esc(z) + '"' + (z === LS.zone ? ' selected' : '') + '>' + esc(zoneText(z)) + '</option>';
-    }).join('');
-    document.title = (on('uiLabels') ? 'کوئست‌ها' : 'Quests') + ' — wowfarsi';
-    root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><span>' + lbl('پایگاه کوئست', 'Quest database') + '</span></nav>'
-      + '<div class="fex"><header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>FOREVER · QUESTS<i></i></p>'
-      + '<h1>' + (on('uiLabels') ? 'پایگاه کوئست' : '<span class="rt-en" dir="ltr">Quest database</span>') + '</h1>'
-      + '<p class="fex-hsub">' + lbl('جست‌وجو بین کوئست‌های Forever؛ عنوان و متن فارسی هر کوئست که ترجمه شده باشد نمایش داده می‌شود.', 'Search Forever quests; Persian title and text are shown for every translated quest.') + '</p></div></header>'
-      + langBar(true)
-      + '<section class="fex-sec fFade"><div class="npcl-bar">'
-      + '<div class="npcl-f npcl-grow"><label for="npcl-q">' + lbl('نام یا شناسه', 'Name or ID') + '</label><input id="npcl-q" class="npcl-in" type="search" autocomplete="off" value="' + esc(LS.q) + '"></div>'
-      + '<div class="npcl-f"><label for="npcl-z">' + lbl('منطقه', 'Zone') + '</label><select id="npcl-z" class="npcl-in">' + zopts + '</select></div>'
-      + '<div class="npcl-f npcl-sm"><label for="npcl-lo">' + lbl('از سطح', 'Level from') + '</label><input id="npcl-lo" class="npcl-in" type="number" min="1" max="63" value="' + esc(LS.lmin) + '"></div>'
-      + '<div class="npcl-f npcl-sm"><label for="npcl-hi">' + lbl('تا سطح', 'to') + '</label><input id="npcl-hi" class="npcl-in" type="number" min="1" max="63" value="' + esc(LS.lmax) + '"></div>'
-      + '</div><p class="npcl-count" id="npcl-cnt"></p><div id="npcl-res" class="fex-secbd"></div></section></div>';
-    listRows();
-  }
-  function bootList() {
-    var m, arrs = [], zones = {};
-    LS = { q: '', zone: '', lmin: '', lmax: '', shown: 80, all: null, zones: [] };
-    if (!IDX || !IDX.quests) return fail('فهرست کوئست‌ها بارگذاری نشد.');
-    m = IDX.quests;
-    Object.keys(m).forEach(function (k) {
-      var e = m[k];
-      if (!e || !e[0]) return; /* untitled records are not listed */
-      arrs.push([+k, e[0], e[1], e[2]]);
-      if (e[1]) zones[e[1]] = 1;
-    });
-    arrs.sort(function (a, b) { return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : a[0] - b[0]; });
-    LS.all = arrs;
-    LS.zones = Object.keys(zones).sort(function (a, b) { return zoneText(a) < zoneText(b) ? -1 : 1; });
-    listPaint();
-  }
-
   /* ---------- events ---------- */
   root.addEventListener('error', function (ev) {
     var t = ev.target, m;
@@ -475,7 +407,7 @@
     if (b.parentNode && b.parentNode.classList.contains('q-lang')) {
       LANG = b.getAttribute('data-l') === 'en' ? 'en' : 'fa';
       try { localStorage.setItem('wfq-lang', LANG); } catch (e) { /* ignore */ }
-      if (S) paint(); else if (LS && LS.all) listPaint();
+      if (S) paint();
     } else if (b.classList.contains('fsrc-mchip') && S) {
       wrap = b.closest('.npc-map');
       if (!wrap) return;
@@ -483,27 +415,15 @@
       sp = S.sp[key];
       i = +b.getAttribute('data-i');
       if (sp) wrap.outerHTML = mapHtml(spawnSplit(sp.sp).zones, i, key);
-    } else if (b.getAttribute('data-more') === 'list' && LS) { LS.shown += 120; listRows(); }
-  });
-  root.addEventListener('input', function (ev) {
-    var t = ev.target;
-    if (!LS || !t) return;
-    if (t.id === 'npcl-q') LS.q = t.value;
-    else if (t.id === 'npcl-lo') LS.lmin = t.value;
-    else if (t.id === 'npcl-hi') LS.lmax = t.value;
-    else return;
-    LS.shown = 80; listRows();
-  });
-  root.addEventListener('change', function (ev) {
-    if (LS && ev.target && ev.target.id === 'npcl-z') { LS.zone = ev.target.value; LS.shown = 80; listRows(); }
+    }
   });
 
   /* ---------- boot ---------- */
   var qid = new URLSearchParams(location.search).get('id');
   loadCommon().then(function () {
-    if (qid == null || qid === '') return bootList();
-    if (!/^\d{1,9}$/.test(qid)) return fail('شناسهٔ کوئست معتبر نیست.');
+    if (qid == null || qid === '') return fail('شناسهٔ کوئست مشخص نیست.');
+    if (!/^[0-9]{1,9}$/.test(qid)) return fail('شناسهٔ کوئست معتبر نیست.');
     return boot(String(+qid));
   });
-  if (WF && WF.onChange) WF.onChange(function () { if (S) paint(); else if (LS && LS.all) listPaint(); });
+  if (WF && WF.onChange) WF.onChange(function () { if (S) paint(); });
 })();

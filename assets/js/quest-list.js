@@ -1,10 +1,12 @@
 /* quest-list.js: the quest database LIST (quest.html with no ?id=). quest.html renames #quest-root to
    #quest-list-root on the list view, so quest.js stays in charge of single quests only.
    Data: quest-index.json [name, zoneKey, level], quest-fa-titles.json, zones-meta.json.
-   URL state: ?q= name/id, z= zone, lo/hi = level, t= fa|en (translated / not), s= name|fa (sort). */
+   Index keys that start with "sort:" are CATEGORIES (class / profession / seasonal quests), not zones: they get their own
+   "category" filter (quest-cats.js) and stay out of the zone list.
+   URL state: ?q= name/id, z= zone, c= category (sort:hunter), lo/hi = level, t= fa|en (translated / not), s= name|fa (sort). */
 (function () {
   'use strict';
-  var V = '20261201f', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261201g', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var root = document.getElementById('quest-list-root');
   if (!root) return;
   var WF = window.WFTR || null;
@@ -42,6 +44,12 @@
   }
   function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function cap(s) { return String(s || '').replace(/-/g, ' ').replace(/(^| )[a-z]/g, function (c) { return c.toUpperCase(); }); }
+  var QC = window.WFQCAT || {
+    isCat: function (k) { return String(k == null ? '' : k).indexOf('sort:') === 0; },
+    name: function (k) { return cap(String(k).slice(5)); },
+    label: function (k) { return cap(String(k).slice(5)); },
+    order: function () { return 0; }
+  };
   function getJSON(url) {
     if (!cache[url]) {
       cache[url] = fetch(url + '?v=' + V).then(function (r) {
@@ -55,25 +63,29 @@
 
   function zoneText(key) {
     var z = ZBYKEY[key];
+    if (QC.isCat(key)) return QC.label(key);
     if (z) return on('namesZone') && z.fa ? z.fa : z.name;
-    return cap(String(key || '').replace(/^sort:/, ''));
+    return cap(key);
   }
   function zoneHtml(key) {
     var z = ZBYKEY[key];
+    if (QC.isCat(key)) return esc(QC.name(key));
     if (z) return on('namesZone') && z.fa ? esc(z.fa) : enSpan(z.name);
-    return enSpan(cap(String(key || '').replace(/^sort:/, '')));
+    return enSpan(cap(key));
   }
 
   /* ---------- state + url ---------- */
   function readUrl() {
-    var p = new URLSearchParams(location.search), t = p.get('t'), s = p.get('s');
-    return { q: p.get('q') || '', zone: p.get('z') || '', lo: p.get('lo') || '', hi: p.get('hi') || '',
+    var p = new URLSearchParams(location.search), t = p.get('t'), s = p.get('s'), z = p.get('z') || '', c = p.get('c') || '';
+    if (QC.isCat(z)) { c = z; z = ''; } /* old links ?z=sort:hunter */
+    return { q: p.get('q') || '', zone: z, cat: c, lo: p.get('lo') || '', hi: p.get('hi') || '',
       tr: t === 'fa' || t === 'en' ? t : 'all', sort: s === 'name' || s === 'fa' ? s : 'lvl', shown: 80 };
   }
   function writeUrl() {
     var p = new URLSearchParams(), qs;
     if (S.q) p.set('q', S.q);
     if (S.zone) p.set('z', S.zone);
+    if (S.cat) p.set('c', S.cat);
     if (S.lo) p.set('lo', S.lo);
     if (S.hi) p.set('hi', S.hi);
     if (S.tr !== 'all') p.set('t', S.tr);
@@ -96,6 +108,7 @@
     S.all.forEach(function (a) {
       var t;
       if (S.zone && a[2] !== S.zone) return;
+      if (S.cat && a[2] !== S.cat) return;
       if (!isNaN(lo) && (a[3] == null || a[3] < lo)) return;
       if (!isNaN(hi) && (a[3] == null || a[3] > hi)) return;
       if (S.tr === 'fa' && !a[4]) return;
@@ -125,7 +138,7 @@
     for (i = 0; i < Math.min(S.shown, res.length); i++) h += rowHtml(res[i]);
     if (res.length > S.shown) h += '<button type="button" class="npcl-more" data-more="1">' + lbl('نمایش بیشتر', 'Show more') + '</button>';
     box.innerHTML = res.length
-      ? '<div class="ql-head"><span></span><span>' + lbl('سطح', 'Lv') + '</span><span>' + lbl('کوئست', 'Quest') + '</span><span>' + lbl('منطقه', 'Zone') + '</span></div>' + h
+      ? '<div class="ql-head"><span></span><span>' + lbl('سطح', 'Lv') + '</span><span>' + lbl('کوئست', 'Quest') + '</span><span>' + lbl('منطقه یا دسته', 'Zone / category') + '</span></div>' + h
       : '<p class="npc-none">' + lbl('چیزی پیدا نشد؛ فیلترها را سبک‌تر کن.', 'Nothing found. Loosen the filters.') + '</p>';
     if (cnt) cnt.innerHTML = lbl('نتیجه', 'Results') + ' <b>' + num(res.length) + '</b> ' + lbl('از', 'of') + ' ' + num(S.all.length);
   }
@@ -147,6 +160,9 @@
     var zopts = '<option value="">' + (on('uiLabels') ? 'همهٔ مناطق' : 'All zones') + '</option>' + S.zones.map(function (z) {
       return '<option value="' + esc(z) + '"' + (z === S.zone ? ' selected' : '') + '>' + esc(zoneText(z)) + '</option>';
     }).join('');
+    var copts = '<option value="">' + (on('uiLabels') ? 'همهٔ دسته‌ها' : 'All categories') + '</option>' + S.cats.map(function (c) {
+      return '<option value="' + esc(c) + '"' + (c === S.cat ? ' selected' : '') + '>' + esc(QC.label(c)) + '</option>';
+    }).join('');
     var sopts = [['lvl', 'سطح (کم به زیاد)', 'Level'], ['fa', 'ترجمه‌شده‌ها اول', 'Translated first'], ['name', 'نام (A تا Z)', 'Name A-Z']].map(function (o) {
       return '<option value="' + o[0] + '"' + (o[0] === S.sort ? ' selected' : '') + '>' + (on('uiLabels') ? o[1] : o[2]) + '</option>';
     }).join('');
@@ -160,12 +176,14 @@
       + '<p class="fex-hsub">' + lbl('همهٔ کوئست‌های Forever با سطح و منطقه؛ عنوان و متن فارسی هر کوئستی که ترجمه شده باشد نمایش داده می‌شود.', 'Every Forever quest with level and zone; Persian title and text are shown wherever a translation exists.') + '</p>'
       + '<div class="fex-hchips"><span class="fex-chip">' + lbl('کوئست', 'Quests') + ' <b>' + big(S.all.length) + '</b></span>'
       + '<span class="fex-chip">' + lbl('ترجمه‌شده', 'Translated') + ' <b>' + big(S.nfa) + '</b></span>'
-      + '<span class="fex-chip">' + lbl('منطقه', 'Zones') + ' <b>' + big(S.zones.length) + '</b></span></div></div></header>'
+      + '<span class="fex-chip">' + lbl('منطقه', 'Zones') + ' <b>' + big(S.zones.length) + '</b></span>'
+      + '<span class="fex-chip">' + lbl('دسته', 'Categories') + ' <b>' + big(S.cats.length) + '</b></span></div></div></header>'
       + '<section class="fex-sec fFade ql-panel"><div class="ql-top">'
       + '<div class="q-lang ql-seg" role="group" aria-label="نمایش"><button type="button" data-t="all">' + lbl('همه', 'All') + '</button><button type="button" data-t="fa">' + lbl('ترجمه‌شده', 'Translated') + '</button><button type="button" data-t="en">' + lbl('ترجمه‌نشده', 'Untranslated') + '</button></div>'
       + '<div class="q-lang" role="group" aria-label="زبان عنوان"><button type="button" data-l="fa">فارسی</button><button type="button" data-l="en" dir="ltr">English</button></div></div>'
       + '<div class="ql-bar"><div class="npcl-f"><label for="ql-q">' + lbl('نام یا شناسه', 'Name or ID') + '</label><input id="ql-q" class="npcl-in" type="search" autocomplete="off" value="' + esc(S.q) + '"></div>'
       + '<div class="npcl-f"><label for="ql-z">' + lbl('منطقه', 'Zone') + '</label><select id="ql-z" class="npcl-in">' + zopts + '</select></div>'
+      + '<div class="npcl-f"><label for="ql-c">' + lbl('دسته (کلاس، حرفه …)', 'Category (class, profession …)') + '</label><select id="ql-c" class="npcl-in">' + copts + '</select></div>'
       + '<div class="npcl-f"><label for="ql-lo">' + lbl('از سطح', 'Level from') + '</label><input id="ql-lo" class="npcl-in" type="number" min="1" max="63" value="' + esc(S.lo) + '"></div>'
       + '<div class="npcl-f"><label for="ql-hi">' + lbl('تا سطح', 'to') + '</label><input id="ql-hi" class="npcl-in" type="number" min="1" max="63" value="' + esc(S.hi) + '"></div>'
       + '<div class="npcl-f"><label for="ql-s">' + lbl('مرتب‌سازی', 'Sort') + '</label><select id="ql-s" class="npcl-in">' + sopts + '</select></div></div>'
@@ -177,7 +195,7 @@
 
   /* ---------- boot ---------- */
   function boot() {
-    var m, arr = [], zones = {}, nfa = 0;
+    var m, arr = [], zones = {}, cats = {}, nfa = 0;
     if (!IDX || !IDX.quests) {
       root.innerHTML = '<p class="npc-loading">فهرست کوئست‌ها بارگذاری نشد.</p>';
       return;
@@ -189,12 +207,15 @@
       has = !!FT[k];
       if (has) nfa++;
       arr.push([+k, e[0], e[1], e[2], has]);
-      if (e[1]) zones[e[1]] = 1;
+      if (e[1]) { if (QC.isCat(e[1])) cats[e[1]] = 1; else zones[e[1]] = 1; }
     });
     S = readUrl();
     S.all = arr;
     S.nfa = nfa;
     S.zones = Object.keys(zones).sort(function (a, b) { return zoneText(a) < zoneText(b) ? -1 : 1; });
+    S.cats = Object.keys(cats).sort(function (a, b) {
+      return QC.order(a) - QC.order(b) || (QC.name(a) < QC.name(b) ? -1 : 1);
+    });
     paint();
   }
 
@@ -215,7 +236,7 @@
       document.getElementById('ql-hi').value = S.hi;
       update();
     } else if (b.getAttribute('data-act') === 'reset') {
-      S.q = ''; S.zone = ''; S.lo = ''; S.hi = ''; S.tr = 'all'; S.sort = 'lvl';
+      S.q = ''; S.zone = ''; S.cat = ''; S.lo = ''; S.hi = ''; S.tr = 'all'; S.sort = 'lvl';
       paint(); update();
     } else if (b.hasAttribute('data-more')) { S.shown += 120; rows(); }
   });
@@ -231,7 +252,8 @@
   root.addEventListener('change', function (ev) {
     var t = ev.target;
     if (!S || !t) return;
-    if (t.id === 'ql-z') { S.zone = t.value; update(); }
+    if (t.id === 'ql-z') { S.zone = t.value; if (S.zone && S.cat) { S.cat = ''; paint(); } update(); }
+    else if (t.id === 'ql-c') { S.cat = t.value; if (S.cat && S.zone) { S.zone = ''; paint(); } update(); }
     else if (t.id === 'ql-s') { S.sort = t.value; update(); }
   });
 

@@ -1,7 +1,7 @@
-/* ad-slot.js: one native ad slot (Yektanet position pos-article-text-card-123929) directly under the page title
+/* ad-slot.js: one native ad slot (Yektanet position pos-article-text-card-123929) directly ABOVE the page title
    (.fex-hero) on the quest / item / NPC / dungeon database pages.
-   The slot div ships in the static HTML (so the ad script finds it at load time) and this script MOVES it under the
-   hero as soon as the JS-rendered hero exists, and again after every re-render (language switch). The same node is
+   The slot div ships in the static HTML (so the ad script finds it at load time) and this script MOVES it right in front of
+   the hero as soon as the JS-rendered hero exists, and again after every re-render (language switch). The same node is
    reused, so an ad that has already loaded is not thrown away. */
 (function () {
   'use strict';
@@ -12,13 +12,13 @@
     wrap.className = 'wf-ad-title';
     wrap.innerHTML = '<div id="' + ID + '"></div>';
   }
-  wrap.style.cssText = 'position:relative;z-index:2;max-width:720px;margin:.6rem auto 1.4rem;min-height:1px';
+  wrap.style.cssText = 'position:relative;z-index:2;max-width:720px;margin:.4rem auto 1.2rem;min-height:1px';
 
   function place() {
     var hero = document.querySelector('.fex-hero');
     if (!hero || !hero.parentNode) return;
-    if (hero.nextSibling === wrap) return;
-    hero.parentNode.insertBefore(wrap, hero.nextSibling);
+    if (hero.previousSibling === wrap) return;
+    hero.parentNode.insertBefore(wrap, hero);
   }
 
   place();
