@@ -1,0 +1,324 @@
+/* dungeon.js: dungeon / raid / world boss database (Forever): dungeon.html
+   dungeon.html?d=<slug>  -> one instance: description, floor maps with boss pins, bosses with loot, chests, entrance
+   dungeon.html           -> filterable list (dungeon / raid / world boss)
+   Data: db/dungeons.json (list), db/dungeon/<slug>.json (detail), db/itemlite-N.json (loot item names),
+   i18n/dungeon-fa.json (OPTIONAL, written by the translation import: {d:{slug:{n,loc,desc}}, floors, chests, sub, boss}),
+   i18n/entities.json (npc names), db/zones-meta.json. Nothing is invented: an instance with no bosses / no
+   map says so. */
+(function () {
+  'use strict';
+  var V = '20261201a', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
+  var root = document.getElementById('dg-root');
+  if (!root) return;
+  var WF = window.WFTR || null;
+  var cache = {}, ZBYNAME = {}, ENT = {}, FA = null, LIST = null, S = null, LS = null, LANG = 'fa';
+  try { if (localStorage.getItem('wfq-lang') === 'en') LANG = 'en'; } catch (e) { /* ignore */ }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function faNum(v) { return String(v).replace(/[0-9]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.charAt(+d); }); }
+  function on(k) { try { return WF && WF.on ? !!WF.on(k) : true; } catch (e) { return true; } }
+  function num(v) { return on('uiLabels') ? faNum(v) : String(v); }
+  function lbl(fa, en) { return on('uiLabels') ? esc(fa) : '<span class="rt-en" dir="ltr">' + esc(en) + '</span>'; }
+  function enSpan(t) { return '<span class="rt-en" dir="ltr">' + esc(t) + '</span>'; }
+  function arr(v) { return Array.isArray(v) ? v : []; }
+  function nz(s) {
+    return String(s == null ? '' : s).replace(/ي/g, 'ی').replace(/ك/g, 'ک')
+      .replace(/[\u200c\u200e\u200f]/g, ' ').toLowerCase().trim();
+  }
+  function getJSON(url) {
+    if (!cache[url]) {
+      cache[url] = fetch(url + '?v=' + V).then(function (r) {
+        if (!r.ok) throw new Error(url + ' ' + r.status);
+        return r.json();
+      });
+    }
+    return cache[url];
+  }
+  function opt(url) { return getJSON(url).catch(function () { return null; }); }
+  function safeSrc(u) {
+    u = String(u || '');
+    return /^(\/?data\/|\/?dungeons\/|\/?wow-ui\/|https:\/\/wow\.zamimg\.com\/)[\w\-./%]+$/.test(u) ? u : '';
+  }
+  function pct(c) {
+    var s = String(Math.round(+c * 10) / 10);
+    return on('uiLabels') ? faNum(s).replace('.', '٫') + '٪' : s + '%';
+  }
+  var TYPE = { dungeon: ['دانجن', 'Dungeon'], raid: ['ریید', 'Raid'], worldboss: ['ورلد\u200cباس', 'World boss'] };
+  var RANK = { elite: ['الیت', 'Elite'], 'rare elite': ['الیت کمیاب', 'Rare elite'], rare: ['کمیاب', 'Rare'], boss: ['باس', 'Boss'] };
+  function typeLbl(t) { var x = TYPE[t]; return x ? lbl(x[0], x[1]) : esc(t || ''); }
+  function lvl(r) {
+    r = arr(r);
+    if (!r.length || !+r[0]) return '';
+    return r[0] === r[1] || r.length < 2 ? num(r[0]) : num(r[0]) + '–' + num(r[1]);
+  }
+
+  /* ---------- Persian lookups (all optional) ---------- */
+  function dFa(slug) { return FA && FA.d && FA.d[slug] ? FA.d[slug] : {}; }
+  function mapFa(group, en) {
+    var v = FA && FA[group] && FA[group][en];
+    return typeof v === 'string' && v.trim() ? v : '';
+  }
+  function entFa(en) {
+    var v = (ENT.npc && ENT.npc[en]) || (ENT.creature && ENT.creature[en]);
+    return typeof v === 'string' ? v : '';
+  }
+  function bossFa(en) { return on('namesNpc') ? (mapFa('boss', en) || entFa(en)) : ''; }
+  function zoneFa(name) {
+    var z = ZBYNAME[name];
+    return on('namesZone') && z && z.fa ? z.fa : '';
+  }
+  function zoneHtml(name) { var f = zoneFa(name); return f ? esc(f) : enSpan(name); }
+  function dTitle(d) {
+    var f = LANG === 'fa' && on('namesZone') ? dFa(d.slug).n : '';
+    return f ? { fa: true, t: f } : { fa: false, t: d.name };
+  }
+
+  /* ---------- builders ---------- */
+  function sec(title, count, body) {
+    if (!body) return '';
+    return '<section class="fex-sec fFade"><h3 class="fex-sh"><span>' + title + '</span>'
+      + (count != null ? '<b class="fex-n">' + num(count) + '</b>' : '') + '</h3><div class="fex-secbd">' + body + '</div></section>';
+  }
+  function panel(title, body) {
+    return body ? '<section class="fex-panel fFade"><h2 class="fex-ph"><span>' + title + '</span><i></i></h2>' + body + '</section>' : '';
+  }
+  function frow(l, v) { return v ? '<div class="fex-frow"><span>' + l + '</span><span>' + v + '</span></div>' : ''; }
+  function chip(l, v) { return '<span class="fex-chip">' + l + ' <b>' + v + '</b></span>'; }
+  function icon(ic) {
+    if (!ic || !/^[\w.-]+$/.test(String(ic))) return '<i class="fex-med" aria-hidden="true"></i>';
+    return '<img class="npc-ic" src="icons/large/' + esc(ic) + '.jpg" data-ic="' + esc(ic) + '" alt="" loading="lazy">';
+  }
+  function itemRow(id, it, extra) {
+    var q = it && it[2] != null ? it[2] : 1, nm = it && it[0] ? it[0] : '#' + id;
+    return '<a class="fex-npc q' + q + '" href="item.html?ver=forever&amp;id=' + esc(id) + '">' + icon(it && it[1])
+      + '<span class="fex-npc-nm npc-qn rt-en" dir="ltr">' + esc(nm) + '</span>' + (extra || '') + '</a>';
+  }
+  function langBar() {
+    return '<div class="q-lang" role="group" aria-label="زبان متن"><button type="button" data-l="fa" class="' + (LANG === 'fa' ? 'on' : '') + '">فارسی</button>'
+      + '<button type="button" data-l="en" dir="ltr" class="' + (LANG === 'en' ? 'on' : '') + '">English</button></div>';
+  }
+  function fail(msg) {
+    root.innerHTML = '<p class="npc-loading">' + esc(msg || 'بارگذاری نشد.') + ' <a href="dungeon.html">' + esc('همهٔ دانجن\u200cها') + '</a></p>';
+  }
+  function status(d) {
+    if (d.notOpen) return lbl('هنوز باز نشده', 'Not open yet');
+    if (!d.bossCount) return lbl('بدون دیتای باس', 'No boss data');
+    if (d.isNew) return lbl('جدید در Forever', 'New in Forever');
+    return '';
+  }
+
+  /* ---------- maps ---------- */
+  function mapImg(f) {
+    var c = [safeSrc(f.localSrc), safeSrc(f.src), safeSrc(f.siteSrc)].filter(Boolean);
+    return c.length ? '<img class="npc-mimg-img dg-mimg" src="' + esc(c[0]) + '" data-alt="' + esc(c.slice(1).join(' ')) + '" alt="" loading="lazy">' : '';
+  }
+  function floorHtml(fl, idx) {
+    var f = fl[idx], all = arr(f.pins), pins = all.filter(function (p) { return p && p.kind !== 'entrance'; }), n = 0, bn = 0, coords = '';
+    pins.forEach(function (p) { n++; coords += '<span class="fex-chip">' + num(n) + ' ' + esc(bossFa(p.label) || p.label) + '</span>'; });
+    var h = '<div class="fsrc-map npc-map dg-map" data-i="' + idx + '"><div class="fsrc-mimg">' + mapImg(f)
+      + all.slice(0, 80).map(function (p) {
+        var ent = p.kind === 'entrance';
+        if (!ent) bn++;
+        return '<i class="fsrc-pin' + (ent ? ' dg-ent' : '') + '" style="left:' + (+p.x || 0) + '%;top:' + (+p.y || 0) + '%" title="' + esc((ent ? '' : bn + ' ') + (p.label || '')) + '"></i>';
+      }).join('') + '</div>'
+      + '<div class="npc-nomap"><p>' + lbl('تصویر نقشهٔ این طبقه هنوز روی سایت نیست؛ محل باس\u200cها:', 'The map image for this floor is not on the site yet. Boss spots:') + '</p><div class="fex-hchips">' + coords + '</div></div>'
+      + '<div class="fsrc-mcap"><b>' + (f.name ? enSpan(f.name) : lbl('طبقه', 'Floor') + ' ' + num(idx + 1)) + '</b><span>' + num(pins.length) + ' ' + lbl('باس', 'bosses') + '</span></div>'
+      + (pins.length ? '<div class="dg-pinlist">' + coords + '</div>' : '');
+    if (fl.length > 1) {
+      h += '<div class="fsrc-mchips">' + fl.map(function (x, i) {
+        var nm = mapFa('floors', x.name) || x.name || (lbl('طبقه', 'Floor') + ' ' + (i + 1));
+        return '<button type="button" class="fsrc-mchip' + (i === idx ? ' on' : '') + '" data-i="' + i + '">' + esc(nm.replace(/<[^>]*>/g, '')) + '</button>';
+      }).join('') + '</div>';
+    }
+    return h + '</div>';
+  }
+  function entranceHtml(en) {
+    var zid = +en.zoneId;
+    if (!en || en.x == null || en.y == null || !zid) return '';
+    return '<div class="fsrc-map npc-map dg-map"><div class="fsrc-mimg"><img class="npc-mimg-img dg-mimg" src="data/forever/img/zones/' + zid + '.jpg" alt="" loading="lazy">'
+      + '<i class="fsrc-pin" style="left:' + (+en.x) + '%;top:' + (+en.y) + '%"></i></div>'
+      + '<div class="npc-nomap"><p>' + lbl('مختصات ورودی (٪ از نقشه):', 'Entrance coordinates (% of map):') + ' <b dir="ltr">' + num(en.x) + ' , ' + num(en.y) + '</b></p></div>'
+      + '<div class="fsrc-mcap"><b>' + zoneHtml(en.zoneName) + '</b><span>' + lbl('ورودی', 'Entrance') + '</span></div></div>';
+  }
+
+  /* ---------- detail page ---------- */
+  function bossHtml(b, items) {
+    var loot = arr(b.loot).slice().sort(function (a, c) { return c.chance - a.chance; });
+    var fa = bossFa(b.name), nm = fa ? esc(fa) + '<span class="fex-sub rt-en" dir="ltr">' + esc(b.name) + '</span>' : enSpan(b.name);
+    var sub = mapFa('sub', b.subName) || b.subName || '';
+    var rk = RANK[b.rank], lv = lvl(b.level);
+    var head = '<span class="dg-bn">' + nm + '</span>'
+      + (sub ? '<span class="dg-bsub">' + esc(sub) + '</span>' : '')
+      + (lv ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + lv + '</span>' : '')
+      + (rk ? '<span class="fex-z">' + lbl(rk[0], rk[1]) + '</span>' : '');
+    var link = +b.npcId > 0 ? '<a class="dg-blink" href="npc.html?id=' + esc(b.npcId) + '">' + lbl('صفحهٔ NPC', 'NPC page') + '</a>' : '';
+    var body = loot.length ? loot.map(function (l) {
+      return itemRow(l.item, items[l.item], '<span class="fex-ch">' + pct(l.chance) + '</span>');
+    }).join('') : '<p class="npc-none">' + lbl('لوت این باس در دیتا ثبت نشده.', 'No loot recorded for this boss.') + '</p>';
+    return '<details class="dg-boss"><summary>' + head + '<b class="dg-lc">' + num(loot.length) + '</b></summary>' + link + '<div class="dg-loot">' + body + '</div></details>';
+  }
+  function paint() {
+    var d = S.d, L = S.l, f = dFa(L.slug), t = dTitle(L), tx = TYPE[d.type] || [d.type, d.type];
+    var bosses = arr(d.bosses), floors = arr(d.mapFloors), A = '', B = '', desc = '', hero, st = status(L);
+    document.title = t.t + ' — ' + (on('uiLabels') ? tx[0] : tx[1]) + ' — wowfarsi';
+    hero = '<header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>' + esc(String(tx[1]).toUpperCase()) + (d.abbrev ? ' · ' + esc(d.abbrev) : '') + '<i></i></p>'
+      + '<h1' + (t.fa ? '>' : ' class="rt-en" dir="ltr">') + esc(t.t) + '</h1>'
+      + (t.fa ? '<p class="fx-ensub rt-en" dir="ltr">' + esc(L.name) + '</p>' : '')
+      + '<div class="fex-hchips">' + chip(lbl('نوع', 'Type'), typeLbl(d.type))
+      + (lvl(d.levelRange) ? chip(lbl('سطح', 'Level'), lvl(d.levelRange)) : '')
+      + (bosses.length ? chip(lbl('باس', 'Bosses'), num(bosses.length)) : '')
+      + (d.entrance && d.entrance.zoneName ? chip(lbl('منطقه', 'Zone'), zoneHtml(d.entrance.zoneName)) : '')
+      + (st ? '<span class="fex-chip dg-st">' + st + '</span>' : '') + '</div></div></header>';
+
+    var artSrc = d.images && safeSrc(d.images.art);
+    if (artSrc) A += '<img class="dg-art" src="' + esc(artSrc) + '" alt="" loading="lazy">';
+    if (LANG === 'fa' && f.desc) desc = '<p class="q-p">' + esc(f.desc) + '</p>';
+    else if (d.descriptionEn) desc = '<p class="q-p rt-en" dir="ltr">' + esc(d.descriptionEn) + '</p>';
+    if (desc) A += sec(lbl('درباره', 'About'), null,
+      (LANG === 'fa' && !f.desc ? '<p class="str-note npc-note">' + lbl('ترجمهٔ فارسی این توضیح هنوز آماده نیست؛ متن انگلیسی نشان داده می\u200cشود.', 'The Persian text is not ready yet; English is shown.') + '</p>' : '') + desc);
+    if (floors.length) A += sec(lbl('نقشه', 'Map'), floors.length, floorHtml(floors, 0));
+    A += sec(lbl('باس\u200cها و لوت', 'Bosses & loot'), bosses.length || null,
+      bosses.length ? bosses.map(function (b) { return bossHtml(b, S.items); }).join('')
+        : '<p class="npc-none">' + lbl('این مورد هنوز دیتای باس ندارد.', 'No boss data for this one yet.') + '</p>');
+
+    B += panel(lbl('مشخصات', 'Details'),
+      frow(lbl('نوع', 'Type'), typeLbl(d.type))
+      + frow(lbl('سطح', 'Level'), lvl(d.levelRange))
+      + frow(lbl('منطقه', 'Zone'), d.entrance && d.entrance.zoneName ? zoneHtml(d.entrance.zoneName) : '')
+      + frow(lbl('محل', 'Location'), (LANG === 'fa' && f.loc) ? esc(f.loc) : (d.location ? enSpan(d.location) : ''))
+      + frow(lbl('تعداد طبقه', 'Floors'), floors.length ? num(floors.length) : '')
+      + frow(lbl('مخفف', 'Abbr.'), d.abbrev ? enSpan(d.abbrev) : ''));
+    if (d.entrance) B += sec(lbl('ورودی', 'Entrance'), null, entranceHtml(d.entrance));
+    var ch = arr(d.chests).filter(function (c) { return c && c.name; });
+    if (ch.length) B += sec(lbl('صندوق\u200cها', 'Chests'), ch.length, ch.map(function (c) {
+      var its = arr(c.items).map(function (it) { var id = it && it.item != null ? it.item : it; return itemRow(id, S.items[id]); }).join('');
+      return '<p class="q-sub">' + esc(mapFa('chests', c.name) || c.name) + '</p>' + its;
+    }).join(''));
+
+    root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="dungeon.html">' + lbl('دانجن\u200cها', 'Dungeons') + '</a><i></i><span>' + esc(t.t) + '</span></nav>'
+      + '<div class="fex">' + hero + langBar() + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
+      + '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="dungeon.html">' + lbl('همهٔ دانجن\u200cها', 'All dungeons') + '</a></div></div>';
+  }
+  function loadItems(ids) {
+    var shards = {}, out = {};
+    ids.forEach(function (id) { shards[+id % 24] = 1; });
+    return Promise.all(Object.keys(shards).map(function (n) { return opt(DB + 'itemlite-' + n + '.json'); })).then(function (rs) {
+      rs.forEach(function (j) {
+        var m = j && (j.items || j);
+        if (m) Object.keys(m).forEach(function (k) { out[k] = m[k]; });
+      });
+      return out;
+    });
+  }
+  function boot(slug) {
+    var l = LIST.filter(function (x) { return x.slug === slug; })[0];
+    if (!l) return fail('این مورد در پایگاه پیدا نشد.');
+    root.innerHTML = '<p class="npc-loading">در حال بارگذاری…</p>';
+    return getJSON(DB + 'dungeon/' + slug + '.json').then(function (d) {
+      var ids = [];
+      arr(d.bosses).forEach(function (b) { arr(b.loot).forEach(function (x) { ids.push(x.item); }); });
+      arr(d.chests).forEach(function (c) { arr(c.items).forEach(function (x) { ids.push(x && x.item != null ? x.item : x); }); });
+      return loadItems(ids).then(function (items) { S = { d: d, l: l, items: items }; paint(); });
+    }).catch(function () { fail('بارگذاری نشد.'); });
+  }
+
+  /* ---------- list page ---------- */
+  var FILTERS = [['', 'همه', 'All'], ['dungeon', 'دانجن', 'Dungeons'], ['raid', 'ریید', 'Raids'], ['worldboss', 'ورلد\u200cباس', 'World bosses'], ['new', 'جدید در Forever', 'New in Forever']];
+  function listFilter() {
+    var q = nz(LS.q);
+    return LIST.filter(function (d) {
+      var nm;
+      if (LS.type === 'new') { if (!d.isNew) return false; }
+      else if (LS.type && d.type !== LS.type) return false;
+      if (q) {
+        nm = nz(d.name + ' ' + (dFa(d.slug).n || '') + ' ' + (d.location || ''));
+        if (nm.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+  }
+  function rowHtml(d) {
+    var t = dTitle(d), st = status(d);
+    return '<a class="fex-npc" href="dungeon.html?d=' + esc(d.slug) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>'
+      + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</span>'
+      + (t.fa ? '<span class="fex-sub rt-en" dir="ltr">' + esc(d.name) + '</span>' : '')
+      + '<span class="fex-z">' + typeLbl(d.type) + '</span>'
+      + (lvl(d.levelRange) ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + lvl(d.levelRange) + '</span>' : '')
+      + (d.bossCount ? '<span class="fex-lv">' + num(d.bossCount) + ' ' + lbl('باس', 'bosses') + '</span>' : '')
+      + (st ? '<span class="dg-st">' + st + '</span>' : '') + '</a>';
+  }
+  function listRows() {
+    var res = listFilter(), box = document.getElementById('dg-res'), cnt = document.getElementById('dg-cnt');
+    if (!box) return;
+    box.innerHTML = res.length ? res.map(rowHtml).join('') : '<p class="npc-none">' + lbl('چیزی پیدا نشد.', 'Nothing found.') + '</p>';
+    if (cnt) cnt.innerHTML = lbl('نتیجه', 'Results') + ' <b>' + num(res.length) + '</b> ' + lbl('از', 'of') + ' ' + num(LIST.length);
+  }
+  function listPaint() {
+    document.title = (on('uiLabels') ? 'دانجن\u200cها' : 'Dungeons') + ' — wowfarsi';
+    root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><span>' + lbl('دانجن\u200cها', 'Dungeons') + '</span></nav>'
+      + '<div class="fex"><header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>FOREVER · DUNGEONS<i></i></p>'
+      + '<h1>' + (on('uiLabels') ? 'دانجن\u200cها و رییدها' : '<span class="rt-en" dir="ltr">Dungeons &amp; raids</span>') + '</h1>'
+      + '<p class="fex-hsub">' + lbl('همهٔ دانجن\u200cها، رییدها و ورلد\u200cباس\u200cهای Forever با نقشه، باس\u200cها و لوت. موردهای ناقص با برچسب مشخص شده\u200cاند.', 'Every Forever dungeon, raid and world boss with maps, bosses and loot. Incomplete ones are labelled.') + '</p></div></header>'
+      + langBar()
+      + '<section class="fex-sec fFade"><div class="npcl-bar">'
+      + '<div class="npcl-f npcl-grow"><label for="dg-q">' + lbl('نام', 'Name') + '</label><input id="dg-q" class="npcl-in" type="search" autocomplete="off" value="' + esc(LS.q) + '"></div>'
+      + '<div class="npcl-f"><div class="q-lang dg-types" role="group">' + FILTERS.map(function (x) {
+        return '<button type="button" data-t="' + x[0] + '" class="' + (LS.type === x[0] ? 'on' : '') + '">' + lbl(x[1], x[2]) + '</button>';
+      }).join('') + '</div></div>'
+      + '</div><p class="npcl-count" id="dg-cnt"></p><div id="dg-res" class="fex-secbd"></div></section></div>';
+    listRows();
+  }
+
+  /* ---------- events ---------- */
+  root.addEventListener('error', function (ev) {
+    var t = ev.target, alt;
+    if (!t || t.tagName !== 'IMG') return;
+    if (t.classList.contains('npc-ic') && !t.getAttribute('data-fb')) {
+      t.setAttribute('data-fb', '1'); t.src = ZAM + t.getAttribute('data-ic') + '.jpg';
+    } else if (t.classList.contains('dg-mimg')) {
+      alt = (t.getAttribute('data-alt') || '').split(' ').filter(Boolean);
+      if (alt.length) { t.setAttribute('data-alt', alt.slice(1).join(' ')); t.src = alt[0]; }
+      else { var m = t.closest('.npc-map'); if (m) m.classList.add('nomap'); }
+    } else if (t.classList.contains('dg-art')) { t.style.display = 'none'; }
+  }, true);
+  root.addEventListener('click', function (ev) {
+    var b = ev.target && ev.target.closest ? ev.target.closest('button') : null, wrap, i;
+    if (!b) return;
+    if (b.parentNode && b.parentNode.classList.contains('dg-types')) {
+      LS.type = b.getAttribute('data-t') || '';
+      Array.prototype.forEach.call(b.parentNode.children, function (x) { x.classList.toggle('on', x === b); });
+      listRows();
+    } else if (b.parentNode && b.parentNode.classList.contains('q-lang')) {
+      LANG = b.getAttribute('data-l') === 'en' ? 'en' : 'fa';
+      try { localStorage.setItem('wfq-lang', LANG); } catch (e) { /* ignore */ }
+      if (S) paint(); else if (LS) listPaint();
+    } else if (b.classList.contains('fsrc-mchip') && S) {
+      wrap = b.closest('.dg-map');
+      i = +b.getAttribute('data-i');
+      if (wrap && arr(S.d.mapFloors)[i]) wrap.outerHTML = floorHtml(arr(S.d.mapFloors), i);
+    }
+  });
+  root.addEventListener('input', function (ev) {
+    if (LS && ev.target && ev.target.id === 'dg-q') { LS.q = ev.target.value; listRows(); }
+  });
+
+  /* ---------- boot ---------- */
+  var slug = new URLSearchParams(location.search).get('d');
+  Promise.all([opt(DB + 'zones-meta.json'), opt(I18N + 'entities.json'), opt(I18N + 'dungeon-fa.json'), getJSON(DB + 'dungeons.json').catch(function () { return null; })]).then(function (r) {
+    var zs = r[0] && r[0].zones;
+    if (zs) (Array.isArray(zs) ? zs : Object.keys(zs).map(function (k) { return zs[k]; })).forEach(function (z) { ZBYNAME[z.name] = z; });
+    ENT = (r[1] && r[1].types) || {};
+    FA = r[2] || null;
+    LIST = r[3] && r[3].dungeons ? r[3].dungeons : null;
+    if (!LIST) return fail('فهرست دانجن\u200cها بارگذاری نشد.');
+    if (slug == null || slug === '') { LS = { q: '', type: '' }; return listPaint(); }
+    if (!/^[a-z0-9-]{1,60}$/.test(slug)) return fail('شناسهٔ دانجن معتبر نیست.');
+    return boot(slug);
+  });
+  if (WF && WF.onChange) WF.onChange(function () { if (S) paint(); else if (LS && LIST) listPaint(); });
+})();
