@@ -117,14 +117,22 @@
     var c = [safeSrc(f.localSrc), safeSrc(f.src), safeSrc(f.siteSrc)].filter(Boolean);
     return c.length ? '<img class="npc-mimg-img dg-mimg" src="' + esc(c[0]) + '" data-alt="' + esc(c.slice(1).join(' ')) + '" alt="" loading="lazy">' : '';
   }
+  var GATE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V10a7 7 0 0 1 14 0v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>';
+  function pinHtml(p, n, ent) {
+    var pos = 'left:' + (+p.x || 0) + '%;top:' + (+p.y || 0) + '%';
+    if (ent) return '<i class="dg-pin dg-ent" style="' + pos + '" title="' + esc(p.label || 'Entrance') + '">' + GATE + '</i>';
+    var im = safeSrc(p.icon), nm = bossFa(p.label) || p.label || '';
+    return '<button type="button" class="dg-pin' + (im ? '' : ' noimg') + '" data-b="' + esc(p.label || '') + '" style="' + pos + '" title="' + esc(n + ' ' + nm) + '">'
+      + (im ? '<img src="' + esc(im) + '" alt="" loading="lazy">' : '') + '<b>' + num(n) + '</b></button>';
+  }
   function floorHtml(fl, idx) {
     var f = fl[idx], all = arr(f.pins), pins = all.filter(function (p) { return p && p.kind !== 'entrance'; }), n = 0, bn = 0, coords = '';
     pins.forEach(function (p) { n++; coords += '<span class="fex-chip">' + num(n) + ' ' + esc(bossFa(p.label) || p.label) + '</span>'; });
     var h = '<div class="fsrc-map npc-map dg-map" data-i="' + idx + '"><div class="fsrc-mimg">' + mapImg(f)
       + all.slice(0, 80).map(function (p) {
-        var ent = p.kind === 'entrance';
-        if (!ent) bn++;
-        return '<i class="fsrc-pin' + (ent ? ' dg-ent' : '') + '" style="left:' + (+p.x || 0) + '%;top:' + (+p.y || 0) + '%" title="' + esc((ent ? '' : bn + ' ') + (p.label || '')) + '"></i>';
+        if (p.kind === 'entrance') return pinHtml(p, 0, true);
+        bn++;
+        return pinHtml(p, bn, false);
       }).join('') + '</div>'
       + '<div class="npc-nomap"><p>' + lbl('تصویر نقشهٔ این طبقه هنوز روی سایت نیست؛ محل باس\u200cها:', 'The map image for this floor is not on the site yet. Boss spots:') + '</p><div class="fex-hchips">' + coords + '</div></div>'
       + '<div class="fsrc-mcap"><b>' + (f.name ? enSpan(f.name) : lbl('طبقه', 'Floor') + ' ' + num(idx + 1)) + '</b><span>' + num(pins.length) + ' ' + lbl('باس', 'bosses') + '</span></div>'
@@ -141,7 +149,7 @@
     var zid = +en.zoneId;
     if (!en || en.x == null || en.y == null || !zid) return '';
     return '<div class="fsrc-map npc-map dg-map"><div class="fsrc-mimg"><img class="npc-mimg-img dg-mimg" src="data/forever/img/zones/' + zid + '.jpg" alt="" loading="lazy">'
-      + '<i class="fsrc-pin" style="left:' + (+en.x) + '%;top:' + (+en.y) + '%"></i></div>'
+      + pinHtml({ x: en.x, y: en.y, label: 'Entrance' }, 0, true) + '</div>'
       + '<div class="npc-nomap"><p>' + lbl('مختصات ورودی (٪ از نقشه):', 'Entrance coordinates (% of map):') + ' <b dir="ltr">' + num(en.x) + ' , ' + num(en.y) + '</b></p></div>'
       + '<div class="fsrc-mcap"><b>' + zoneHtml(en.zoneName) + '</b><span>' + lbl('ورودی', 'Entrance') + '</span></div></div>';
   }
@@ -152,7 +160,9 @@
     var fa = bossFa(b.name), nm = fa ? esc(fa) + '<span class="fex-sub rt-en" dir="ltr">' + esc(b.name) + '</span>' : enSpan(b.name);
     var sub = mapFa('sub', b.subName) || b.subName || '';
     var rk = RANK[b.rank], lv = lvl(b.level);
-    var head = '<span class="dg-bn">' + nm + '</span>'
+    var ph = safeSrc(b.imageUrl) || safeSrc(b.icon);
+    var head = (ph ? '<img class="dg-bp" src="' + esc(ph) + '" alt="" loading="lazy">' : '<i class="dg-bp dg-bp0" aria-hidden="true"></i>')
+      + '<span class="dg-bn">' + nm + '</span>'
       + (sub ? '<span class="dg-bsub">' + esc(sub) + '</span>' : '')
       + (lv ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + lv + '</span>' : '')
       + (rk ? '<span class="fex-z">' + lbl(rk[0], rk[1]) + '</span>' : '');
@@ -160,7 +170,7 @@
     var body = loot.length ? loot.map(function (l) {
       return itemRow(l.item, items[l.item], '<span class="fex-ch">' + pct(l.chance) + '</span>');
     }).join('') : '<p class="npc-none">' + lbl('لوت این باس در دیتا ثبت نشده.', 'No loot recorded for this boss.') + '</p>';
-    return '<details class="dg-boss"><summary>' + head + '<b class="dg-lc">' + num(loot.length) + '</b></summary>' + link + '<div class="dg-loot">' + body + '</div></details>';
+    return '<details class="dg-boss" data-bn="' + esc(b.name) + '"><summary>' + head + '<b class="dg-lc">' + num(loot.length) + '</b></summary>' + link + '<div class="dg-loot">' + body + '</div></details>';
   }
   function paint() {
     var d = S.d, L = S.l, f = dFa(L.slug), t = dTitle(L), tx = TYPE[d.type] || [d.type, d.type];
@@ -242,20 +252,22 @@
       return true;
     });
   }
-  function rowHtml(d) {
-    var t = dTitle(d), st = status(d);
-    return '<a class="fex-npc" href="dungeon.html?d=' + esc(d.slug) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>'
-      + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</span>'
-      + (t.fa ? '<span class="fex-sub rt-en" dir="ltr">' + esc(d.name) + '</span>' : '')
-      + '<span class="fex-z">' + typeLbl(d.type) + '</span>'
-      + (lvl(d.levelRange) ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + lvl(d.levelRange) + '</span>' : '')
-      + (d.bossCount ? '<span class="fex-lv">' + num(d.bossCount) + ' ' + lbl('باس', 'bosses') + '</span>' : '')
-      + (st ? '<span class="dg-st">' + st + '</span>' : '') + '</a>';
+  function cardHtml(d) {
+    var t = dTitle(d), st = status(d), en = d.entrance || {}, meta = [];
+    if (lvl(d.levelRange)) meta.push(lbl('سطح', 'Lv') + ' ' + lvl(d.levelRange));
+    if (d.bossCount) meta.push(num(d.bossCount) + ' ' + lbl('باس', 'bosses'));
+    if (en.zoneName) meta.push(zoneHtml(en.zoneName));
+    return '<a class="dg-card dg-t-' + esc(d.type) + (d.notOpen ? ' off' : '') + '" href="dungeon.html?d=' + esc(d.slug) + '">'
+      + '<span class="dg-th"><img src="data/forever/img/dungeons/' + esc(d.slug) + '/art.webp" alt="" loading="lazy"><i class="dg-gl" aria-hidden="true"></i></span>'
+      + '<span class="dg-ct"><span class="dg-tp">' + typeLbl(d.type) + '</span>' + (st ? '<span class="dg-st">' + st + '</span>' : '') + '</span>'
+      + '<span class="dg-cb"><b class="dg-cn' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</b>'
+      + (t.fa ? '<small class="rt-en" dir="ltr">' + esc(d.name) + '</small>' : '')
+      + '<span class="dg-cm">' + meta.join('<i></i>') + '</span></span></a>';
   }
   function listRows() {
     var res = listFilter(), box = document.getElementById('dg-res'), cnt = document.getElementById('dg-cnt');
     if (!box) return;
-    box.innerHTML = res.length ? res.map(rowHtml).join('') : '<p class="npc-none">' + lbl('چیزی پیدا نشد.', 'Nothing found.') + '</p>';
+    box.innerHTML = res.length ? res.map(cardHtml).join('') : '<p class="npc-none">' + lbl('چیزی پیدا نشد.', 'Nothing found.') + '</p>';
     if (cnt) cnt.innerHTML = lbl('نتیجه', 'Results') + ' <b>' + num(res.length) + '</b> ' + lbl('از', 'of') + ' ' + num(LIST.length);
   }
   function listPaint() {
@@ -270,7 +282,7 @@
       + '<div class="npcl-f"><div class="q-lang dg-types" role="group">' + FILTERS.map(function (x) {
         return '<button type="button" data-t="' + x[0] + '" class="' + (LS.type === x[0] ? 'on' : '') + '">' + lbl(x[1], x[2]) + '</button>';
       }).join('') + '</div></div>'
-      + '</div><p class="npcl-count" id="dg-cnt"></p><div id="dg-res" class="fex-secbd"></div></section></div>';
+      + '</div><p class="npcl-count" id="dg-cnt"></p><div id="dg-res" class="dg-grid"></div></section></div>';
     listRows();
   }
 
@@ -285,10 +297,23 @@
       if (alt.length) { t.setAttribute('data-alt', alt.slice(1).join(' ')); t.src = alt[0]; }
       else { var m = t.closest('.npc-map'); if (m) m.classList.add('nomap'); }
     } else if (t.classList.contains('dg-art')) { t.style.display = 'none'; }
+    else if (t.parentNode && t.parentNode.classList.contains('dg-th')) { t.parentNode.classList.add('noimg'); }
+    else if (t.parentNode && t.parentNode.classList.contains('dg-pin')) { t.parentNode.classList.add('noimg'); t.style.display = 'none'; }
+    else if (t.classList.contains('dg-bp')) { t.style.visibility = 'hidden'; }
   }, true);
   root.addEventListener('click', function (ev) {
     var b = ev.target && ev.target.closest ? ev.target.closest('button') : null, wrap, i;
     if (!b) return;
+    if (b.classList.contains('dg-pin')) {
+      var want = b.getAttribute('data-b'), hit = null;
+      Array.prototype.forEach.call(root.querySelectorAll('.dg-boss'), function (x) { if (x.getAttribute('data-bn') === want) hit = x; });
+      if (hit) {
+        hit.open = true; hit.classList.add('flash');
+        hit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function () { hit.classList.remove('flash'); }, 1600);
+      }
+      return;
+    }
     if (b.parentNode && b.parentNode.classList.contains('dg-types')) {
       LS.type = b.getAttribute('data-t') || '';
       Array.prototype.forEach.call(b.parentNode.children, function (x) { x.classList.toggle('on', x === b); });
