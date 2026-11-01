@@ -1,11 +1,13 @@
 /* forever-hub.js: live parts of the Forever hub (forever.html).
-   1. dungeon / raid slideshow (art from data/forever/img/dungeons/<slug>/art.webp, crossfade, autoplay, dots)
+   1. dungeon / raid slideshow: every open instance that has art, filter tabs (all / raid / dungeon / world boss / new),
+      slow zoom, progress line, counter, lazy images. Art comes from data/forever/img/dungeons/<slug>/ (art.webp, art.jpg or
+      art-6.webp); boss counts come from the audited list (db/boss-audit.json)
    2. quest search with a few preview quests (quest-index + Persian titles), Enter opens the full database
    3. live counts on the panels (data/forever/db/index.json)
    Everything comes from the same JSON the database pages use; a failed fetch just leaves that block quiet. */
 (function () {
   'use strict';
-  var V = '20261201g', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261201h', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var Z = String.fromCharCode(0x200c);
   function zw(s) { return String(s).split('~').join(Z); }
   function $(id) { return document.getElementById(id); }
@@ -15,7 +17,6 @@
     });
   }
   function faNum(v) { return String(v).replace(/[0-9]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.charAt(+d); }); }
-  function big(n) { return faNum(String(n).replace(/(.)(?=(...)+$)/g, '$1٬')); }
   function nz(s) {
     var o = '', i, c;
     s = String(s == null ? '' : s);
@@ -57,89 +58,168 @@
   });
 
   /* ---------- 1. slideshow ---------- */
-  var ORDER = ['molten-core', 'blackwing-lair', 'naxxramas', 'onyxia-s-lair', 'zul-gurub', 'ahn-qiraj-temple', 'ruins-of-ahn-qiraj',
-    'blackrock-depths', 'stratholme', 'scholomance', 'blackrock-spire', 'deadmines', 'wailing-caverns', 'shadowfang-keep',
-    'uldaman', 'zul-farrak', 'sunken-temple', 'gnomeregan', 'city-of-dalaran', 'ruins-of-lordaeron'];
+  var CSS = '.fh-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.5rem;margin:0 0 1.3rem}'
+    + '.fh-tab{position:relative;padding:.4rem .15rem;font:inherit;font-size:13.5px;cursor:pointer;border:0;border-radius:0;background:none;color:var(--parch-dim,#bdb7a6);transition:color .25s ease}'
+    + '.fh-tab small{margin-inline-start:.4rem;font-size:11px;color:var(--mut,#8f8a7b)}'
+    + '.fh-tab::after{content:"";position:absolute;inset-inline:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(240,199,94,.95),transparent);transform:scaleX(0);transition:transform .35s ease}'
+    + '.fh-tab:hover,.fh-tab:focus-visible,.fh-tab.on{color:#f6e0a3;outline:none}'
+    + '.fh-tab.on::after,.fh-tab:hover::after{transform:scaleX(1)}'
+    + '.fh-cnt{position:absolute;z-index:3;top:1.1rem;inset-inline-start:1.7rem;font-size:11px;letter-spacing:.34em;color:var(--mut,#8f8a7b);pointer-events:none}'
+    + '.fh-cnt b{color:var(--gold-2,#d8bf80);font-weight:600}'
+    + '.fh-pg{position:absolute;z-index:3;left:9%;right:9%;bottom:0;height:1px;pointer-events:none;transform-origin:right center;transform:scaleX(0);'
+    + 'background:linear-gradient(90deg,transparent,#f0c75e 30%,#f0c75e 70%,transparent);animation:fhpg 6.5s linear forwards}'
+    + '.fh-show:hover .fh-pg,.fh-show:focus-within .fh-pg{animation-play-state:paused}'
+    + '@keyframes fhpg{to{transform:scaleX(1)}}'
+    + '.fh-newtag{color:#f0c75e}'
+    + '.fh-dots.many{display:none}'
+    + '.fh-slide.fh-bad>img{display:none}'
+    + '.fh-slide.fh-bad{background:radial-gradient(ellipse 60% 70% at 50% 35%,rgba(240,199,94,.1),transparent 70%)}'
+    + '@media (prefers-reduced-motion:reduce){.fh-pg{animation:none;transform:scaleX(0)}.fh-tab::after{transition:none}}';
+  var RAID_ORDER = ['molten-core', 'blackwing-lair', 'naxxramas', 'onyxia-s-lair', 'zul-gurub', 'ahn-qiraj-temple', 'ruins-of-ahn-qiraj'];
+  /* twin art (same picture as a sibling wing) and the blank placeholder are left out of the show */
+  var SKIP = { 'dire-maul-east': 1, 'dire-maul-west': 1, 'scarlet-monastery-graveyard': 1, 'scarlet-monastery-library': 1, 'molten-core': 1 };
+  var JPG = { 'ahn-qiraj-temple': 1, azuregos: 1, 'blackwing-lair': 1, emeriss: 1, lethon: 1, 'lord-kazzak': 1, naxxramas: 1, 'onyxia-s-lair': 1,
+    'ruins-of-ahn-qiraj': 1, taerar: 1, ysondre: 1, 'zul-gurub': 1 };
+  var ART6 = { 'the-drowned-city': 1, 'kroldok-stronghold': 1 };
   var KIND = { dungeon: ['دانجن', 'DUNGEON'], raid: ['ریید', 'RAID'], worldboss: [zw('ورلد~باس'), 'WORLD BOSS'] };
-  function loadImg(src) {
-    return new Promise(function (res) {
-      var im = new Image();
-      im.onload = function () { res(src); };
-      im.onerror = function () { res(null); };
-      im.src = src;
-    });
+  var TABS = [['', 'همه'], ['raid', 'ریید'], ['dungeon', 'دانجن'], ['worldboss', zw('ورلد~باس')], ['new', 'جدید در Forever']];
+  function artFor(s) { return 'data/forever/img/dungeons/' + s + '/' + (JPG[s] ? 'art.jpg' : ART6[s] ? 'art-6.webp' : 'art.webp'); }
+  function rank(d) {
+    var t = d.type === 'raid' ? 0 : d.type === 'dungeon' ? 1 : 2, r = RAID_ORDER.indexOf(d.slug);
+    if (t === 0) return [0, r < 0 ? 99 : r, 0];
+    return [t, 0, (d.levelRange && d.levelRange[0]) || 0];
   }
-  function initShow(list, fa) {
-    var box = $('fh-show'), by = {}, pick;
+  function cmp(a, b) {
+    var x = rank(a), y = rank(b);
+    return x[0] - y[0] || x[1] - y[1] || x[2] - y[2] || (a.name < b.name ? -1 : 1);
+  }
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  function initShow(list, fa, au) {
+    var box = $('fh-show'), wrap, tabsEl, open, cur = [], i = 0, timer = 0, hov = false, key = '', n = 0, pg = null, cnt = null, dots = null, st;
     if (!box || !list) return;
-    list.forEach(function (d) { by[d.slug] = d; });
-    pick = ORDER.map(function (s) { return by[s]; }).filter(function (d) { return d && !d.notOpen; });
-    Promise.all(pick.map(function (d) { return loadImg('data/forever/img/dungeons/' + d.slug + '/art.webp'); })).then(function (srcs) {
-      var slides = [], i = 0, timer = 0, paused = false, dots, n;
-      pick.forEach(function (d, k) { if (srcs[k]) slides.push({ d: d, src: srcs[k] }); });
-      if (!slides.length) { box.parentNode.hidden = true; return; }
-      n = slides.length;
-      box.innerHTML = slides.map(function (s, k) {
-        var d = s.d, f = fa && fa.d && fa.d[d.slug] && fa.d[d.slug].n, kd = KIND[d.type] || [d.type, String(d.type).toUpperCase()], lv = d.levelRange || [];
-        return '<div class="fh-slide' + (k === 0 ? ' on' : '') + '" data-k="' + k + '"><img src="' + esc(s.src) + '" alt="">'
-          + '<div class="fh-cap"><p class="fh-kind font-cinzel" dir="ltr">' + esc(kd[1]) + '</p>'
-          + '<h3 class="fh-st">' + esc(f || d.name) + '</h3>'
-          + (f ? '<p class="fh-sen font-cinzel" dir="ltr">' + esc(d.name) + '</p>' : '')
-          + '<p class="fh-sm">' + (lv[0] ? '<span class="fh-n">' + zw('سطح') + ' ' + faNum(lv[0] === lv[1] ? lv[0] : lv[0] + '–' + lv[1]) + '</span>' : '')
-          + (d.bossCount ? '<span class="fh-n">' + faNum(d.bossCount) + ' ' + zw('باس') + '</span>' : '') + '</p>'
-          + '<a class="btn btn-stone btn-sm" href="dungeon.html?d=' + esc(d.slug) + '" tabindex="' + (k === 0 ? '0' : '-1') + '">' + zw('ورود') + '</a></div></div>';
-      }).join('')
+    wrap = box.parentNode;
+    st = document.createElement('style');
+    st.textContent = CSS;
+    document.head.appendChild(st);
+    open = list.filter(function (d) { return !d.notOpen && !SKIP[d.slug]; });
+    open.sort(cmp);
+    if (!open.length) { wrap.hidden = true; return; }
+    function match(d) { return key === 'new' ? !!d.isNew : (!key || d.type === key); }
+    function bn(d) { var a = au && au.d && au.d[d.slug]; return a ? a.n : d.bossCount; }
+    tabsEl = document.createElement('div');
+    tabsEl.className = 'fh-tabs';
+    tabsEl.setAttribute('role', 'tablist');
+    tabsEl.innerHTML = TABS.map(function (t) {
+      var c, k = t[0];
+      c = open.filter(function (d) { return k === 'new' ? !!d.isNew : (!k || d.type === k); }).length;
+      if (!c) return '';
+      return '<button type="button" class="fh-tab' + (k === '' ? ' on' : '') + '" role="tab" data-t="' + k + '">' + esc(t[1]) + '<small>' + faNum(c) + '</small></button>';
+    }).join('');
+    wrap.insertBefore(tabsEl, box);
+
+    function slideHtml(d, k) {
+      var f = fa && fa.d && fa.d[d.slug] && fa.d[d.slug].n, kd = KIND[d.type] || [d.type, String(d.type).toUpperCase()], lv = d.levelRange || [], b = bn(d);
+      return '<div class="fh-slide' + (k === 0 ? ' on' : '') + '" data-k="' + k + '"><img ' + (k < 2 ? 'src' : 'data-src') + '="' + esc(artFor(d.slug)) + '" alt="">'
+        + '<div class="fh-cap"><p class="fh-kind font-cinzel" dir="ltr">' + esc(kd[1]) + (d.isNew ? ' · <span class="fh-newtag">NEW IN FOREVER</span>' : '') + '</p>'
+        + '<h3 class="fh-st">' + esc(f || d.name) + '</h3>'
+        + (f ? '<p class="fh-sen font-cinzel" dir="ltr">' + esc(d.name) + '</p>' : '')
+        + '<p class="fh-sm">' + (lv[0] ? '<span class="fh-n">' + zw('سطح') + ' ' + faNum(lv[0] === lv[1] ? lv[0] : lv[0] + '–' + lv[1]) + '</span>' : '')
+        + (b ? '<span class="fh-n">' + faNum(b) + ' ' + zw('باس') + '</span>' : '') + '</p>'
+        + '<a class="btn btn-stone btn-sm" href="dungeon.html?d=' + esc(d.slug) + '" tabindex="' + (k === 0 ? '0' : '-1') + '">' + zw('ورود') + '</a></div></div>';
+    }
+    function ensure(k) {
+      var el = box.querySelectorAll('.fh-slide')[(k + n) % n], im = el && el.querySelector('img');
+      if (im && !im.getAttribute('src') && im.getAttribute('data-src')) im.setAttribute('src', im.getAttribute('data-src'));
+    }
+    function restartPg() {
+      if (!pg) return;
+      pg.style.animation = 'none';
+      void pg.offsetWidth;
+      pg.style.animation = '';
+    }
+    function go(k) {
+      var els = box.querySelectorAll('.fh-slide');
+      i = (k + n) % n;
+      ensure(i);
+      ensure(i + 1);
+      Array.prototype.forEach.call(els, function (e, j) {
+        e.classList.toggle('on', j === i);
+        e.querySelector('a').setAttribute('tabindex', j === i ? '0' : '-1');
+      });
+      if (dots) Array.prototype.forEach.call(dots, function (e, j) { e.classList.toggle('on', j === i); });
+      if (cnt) cnt.innerHTML = '<b>' + pad(i + 1) + '</b> / ' + pad(n);
+    }
+    function arm() {
+      clearTimeout(timer);
+      restartPg();
+      if (reduce || n < 2 || hov) return;
+      timer = setTimeout(function () { go(i + 1); arm(); }, 6500);
+    }
+    function render() {
+      cur = open.filter(match);
+      n = cur.length;
+      i = 0;
+      if (!n) { box.innerHTML = ''; return; }
+      box.innerHTML = cur.map(slideHtml).join('')
         + '<button type="button" class="fh-ar fh-prev" aria-label="قبلی"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>'
         + '<button type="button" class="fh-ar fh-next" aria-label="بعدی"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>'
-        + '<div class="fh-dots" role="tablist">' + slides.map(function (s, k) {
+        + '<span class="fh-cnt font-cinzel" dir="ltr"></span>'
+        + '<div class="fh-dots' + (n > 12 ? ' many' : '') + '" role="tablist">' + cur.map(function (d, k) {
           return '<button type="button" role="tab" aria-label="' + (k + 1) + '" data-k="' + k + '"' + (k === 0 ? ' class="on"' : '') + '></button>';
-        }).join('') + '</div>';
+        }).join('') + '</div><i class="fh-pg"></i>';
       dots = box.querySelectorAll('.fh-dots button');
-      function go(k) {
-        var els = box.querySelectorAll('.fh-slide');
-        i = (k + n) % n;
-        Array.prototype.forEach.call(els, function (e, j) {
-          e.classList.toggle('on', j === i);
-          e.querySelector('a').setAttribute('tabindex', j === i ? '0' : '-1');
-        });
-        Array.prototype.forEach.call(dots, function (e, j) { e.classList.toggle('on', j === i); });
-      }
-      function arm() {
-        clearInterval(timer);
-        if (reduce || n < 2) return;
-        timer = setInterval(function () { if (!paused) go(i + 1); }, 6500);
-      }
-      box.addEventListener('click', function (ev) {
-        var b = ev.target && ev.target.closest ? ev.target.closest('button') : null;
-        if (!b) return;
-        if (b.classList.contains('fh-prev')) go(i - 1);
-        else if (b.classList.contains('fh-next')) go(i + 1);
-        else if (b.hasAttribute('data-k')) go(+b.getAttribute('data-k'));
-        else return;
-        arm();
-      });
-      box.addEventListener('mouseenter', function () { paused = true; });
-      box.addEventListener('mouseleave', function () { paused = false; });
-      box.addEventListener('focusin', function () { paused = true; });
-      box.addEventListener('focusout', function () { paused = false; });
-      box.addEventListener('keydown', function (ev) {
-        if (ev.key === 'ArrowLeft') { go(i + 1); arm(); }
-        else if (ev.key === 'ArrowRight') { go(i - 1); arm(); }
-      });
-      var sx = null;
-      box.addEventListener('touchstart', function (ev) { sx = ev.touches[0].clientX; }, { passive: true });
-      box.addEventListener('touchend', function (ev) {
-        var dx;
-        if (sx == null) return;
-        dx = ev.changedTouches[0].clientX - sx;
-        sx = null;
-        if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); arm(); }
-      }, { passive: true });
+      cnt = box.querySelector('.fh-cnt');
+      pg = box.querySelector('.fh-pg');
+      go(0);
+      arm();
+    }
+    tabsEl.addEventListener('click', function (ev) {
+      var b = ev.target && ev.target.closest ? ev.target.closest('.fh-tab') : null;
+      if (!b) return;
+      key = b.getAttribute('data-t') || '';
+      Array.prototype.forEach.call(tabsEl.children, function (x) { x.classList.toggle('on', x === b); });
+      render();
+    });
+    box.addEventListener('click', function (ev) {
+      var b = ev.target && ev.target.closest ? ev.target.closest('button') : null;
+      if (!b) return;
+      if (b.classList.contains('fh-prev')) go(i - 1);
+      else if (b.classList.contains('fh-next')) go(i + 1);
+      else if (b.hasAttribute('data-k')) go(+b.getAttribute('data-k'));
+      else return;
       arm();
     });
+    box.addEventListener('error', function (ev) {
+      var t = ev.target, sl;
+      if (!t || t.tagName !== 'IMG') return;
+      sl = t.parentNode;
+      if (sl && sl.classList) sl.classList.add('fh-bad');
+    }, true);
+    box.addEventListener('load', function (ev) {
+      var t = ev.target;
+      if (t && t.tagName === 'IMG' && t.naturalWidth && t.naturalWidth < 200 && t.parentNode) t.parentNode.classList.add('fh-bad');
+    }, true);
+    box.addEventListener('mouseenter', function () { hov = true; clearTimeout(timer); });
+    box.addEventListener('mouseleave', function () { hov = false; arm(); });
+    box.addEventListener('focusin', function () { hov = true; clearTimeout(timer); });
+    box.addEventListener('focusout', function () { hov = false; arm(); });
+    box.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowLeft') { go(i + 1); arm(); }
+      else if (ev.key === 'ArrowRight') { go(i - 1); arm(); }
+    });
+    var sx = null;
+    box.addEventListener('touchstart', function (ev) { sx = ev.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (ev) {
+      var dx;
+      if (sx == null) return;
+      dx = ev.changedTouches[0].clientX - sx;
+      sx = null;
+      if (Math.abs(dx) > 40) { go(dx < 0 ? i + 1 : i - 1); arm(); }
+    }, { passive: true });
+    render();
   }
-  Promise.all([opt(DB + 'dungeons.json'), opt(I18N + 'dungeon-fa.json')]).then(function (r) {
-    initShow(r[0] && r[0].dungeons, r[1]);
+  Promise.all([opt(DB + 'dungeons.json'), opt(I18N + 'dungeon-fa.json'), opt(DB + 'boss-audit.json')]).then(function (r) {
+    initShow(r[0] && r[0].dungeons, r[1], r[2]);
   });
 
   /* ---------- 2. quests ---------- */
