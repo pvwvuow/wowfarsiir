@@ -1,6 +1,8 @@
 /* wf-select.js: replaces native <select class="npcl-in"> (filter bars on the quest / NPC lists) with the site's own
    fantasy dropdown: fading hairline panel, soft fade-in, search for long lists, keyboard, outside click.
-   The native select stays in the DOM (hidden) and gets a bubbling 'change' event, so existing handlers keep working. */
+   The native select stays in the DOM (hidden) and gets a bubbling 'change' event, so existing handlers keep working.
+   The popup is mounted on <body> while open: the page sections animate with transform, which would otherwise
+   turn position:fixed into position relative to the section. */
 (function () {
   'use strict';
   var SEL = 'select.npcl-in', open = null, uid = 0;
@@ -34,19 +36,20 @@
     open = null;
   }
   function place(o) {
-    var r = o.btn.getBoundingClientRect(), pop = o.pop, vh = window.innerHeight, below = vh - r.bottom, w = Math.max(r.width, 220);
+    var r = o.btn.getBoundingClientRect(), pop = o.pop, vh = window.innerHeight, below = vh - r.bottom - 12, above = r.top - 76, w = Math.max(r.width, 220);
     pop.style.minWidth = w + 'px';
+    pop.style.zIndex = '1000';
     pop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + 'px';
-    if (below < 260 && r.top > below) {
+    if (below < 200 && above > below) {
       pop.classList.add('up');
       pop.style.top = 'auto';
       pop.style.bottom = (vh - r.top + 6) + 'px';
-      pop.style.maxHeight = Math.min(340, r.top - 16) + 'px';
+      pop.style.maxHeight = Math.max(140, Math.min(340, above)) + 'px';
     } else {
       pop.classList.remove('up');
       pop.style.bottom = 'auto';
       pop.style.top = (r.bottom + 6) + 'px';
-      pop.style.maxHeight = Math.min(340, below - 16) + 'px';
+      pop.style.maxHeight = Math.max(140, Math.min(340, below)) + 'px';
     }
   }
   function fill(o, q) {
@@ -87,6 +90,9 @@
   }
   function show(o) {
     if (open && open !== o) closeAll();
+    var br = o.btn.getBoundingClientRect();
+    if (br.top < 90 || br.bottom > window.innerHeight - 90) window.scrollBy(0, br.top - window.innerHeight * 0.3);
+    if (o.pop.parentNode !== document.body) document.body.appendChild(o.pop);
     o.pop.hidden = false;
     fill(o, '');
     if (o.search) o.search.value = '';
@@ -156,7 +162,7 @@
     Array.prototype.forEach.call((rootEl || document).querySelectorAll(SEL), function (s) { if (!s._wfs) build(s); });
   }
   document.addEventListener('mousedown', function (ev) {
-    if (open && !open.wrap.contains(ev.target)) closeAll();
+    if (open && !open.wrap.contains(ev.target) && !open.pop.contains(ev.target)) closeAll();
   });
   window.addEventListener('resize', function () { if (open) place(open); });
   window.addEventListener('scroll', function (ev) {
