@@ -102,8 +102,12 @@
   function arr(v) { return Array.isArray(v) ? v : []; }
 
   /* game text -> safe html. Markers {{npc:EN|FA}}, colour codes, $N $B $g a:b; */
+  /* source quirk: a $B paragraph break lost its '$', so every paragraph after the first starts with a stray 'B'
+     ('BBring me...', 'BI shall...'). Same safe rule as tools/fa_missing.py: strip one 'B' only when a real word follows. */
+  var LEAD_B = /^B(?=[A-Z][a-z]|[AI]\b|<|\$|\{\{)/;
+  function junk(x) { return typeof x !== 'string' || !x.trim() || x.trim() === 'NULL' || /^[Bb]$/.test(x.trim()); }
   function fmt(t, isFa) {
-    var s = esc(t);
+    var s = esc(isFa ? t : String(t).replace(LEAD_B, ''));
     s = s.replace(/\{\{(?:npc|zn|it|sp):([^|{}]*)\|([^|{}]*)\}\}/g, function (m, en, fa) { return isFa ? fa : en; });
     s = s.replace(/\|c[0-9a-fA-F]{2}([0-9a-fA-F]{6})(.*?)\|r/g, '<span style="color:#$1">$2</span>');
     s = s.replace(/\|r/g, '');
@@ -116,13 +120,13 @@
     return s;
   }
   function paras(en, fa) {
-    var a = arr(en).filter(function (x) { return typeof x === 'string' && x.trim() && x.trim() !== 'NULL'; });
+    var a = arr(en).filter(function (x) { return !junk(x); });
     var f = arr(fa), n = Math.max(arr(en).length, f.length), i, h = '', e, p;
     if (!a.length && !f.length) return '';
     for (i = 0; i < n; i++) {
       e = arr(en)[i];
       p = f[i];
-      if (typeof e === 'string' && (!e.trim() || e.trim() === 'NULL')) e = null;
+      if (junk(e)) e = null;
       if (LANG === 'fa' && typeof p === 'string' && p.trim()) h += '<p class="q-p">' + fmt(p, true) + '</p>';
       else if (typeof e === 'string') h += '<p class="q-p rt-en" dir="ltr">' + fmt(e, false) + '</p>';
     }
@@ -280,7 +284,7 @@
     ch = arr(q.rewChoice);
     it = arr(q.rewItems);
     if (it.length) {
-      h += '<p class="q-sub">' + lbl('پاداش قطعی', 'You will receive') + '</p>' + it.map(function (x) { return itemRow(x[0], S.items[x[0]], x[1] > 1 ? '<span class="fex-ch">×' + num(x[1]) + '</span>' : ''); }).join('');
+      h += '<p class="q-sub">' + (ch.length ? lbl('پاداش قطعی', 'You will receive') : lbl('آیتم‌های پاداش (قطعی یا انتخابی؛ منبع جدایشان نمی‌کند)', 'Reward items (fixed or choice; the source does not separate them)')) + '</p>' + it.map(function (x) { return itemRow(x[0], S.items[x[0]], x[1] > 1 ? '<span class="fex-ch">×' + num(x[1]) + '</span>' : ''); }).join('');
       hasAny = true;
     }
     if (ch.length) {
@@ -292,8 +296,12 @@
       hasAny = true;
     }
     if (!hasAny) return '<p class="npc-none">' + lbl('پاداش این کوئست هنوز در دیتا ثبت نشده.', 'No rewards recorded for this quest yet.') + '</p>';
-    if (!(typeof q.rewXp === 'number' && q.rewXp > 0)) {
-      h += '<p class="str-note npc-note">' + lbl('تجربه، پول و اعتبار در دیتای منبع نیست و خالی نمایش داده نمی‌شود.', 'XP, money and reputation are not in the source data yet.') + '</p>';
+    var mf = [], me = [];
+    if (!(typeof q.rewXp === 'number' && q.rewXp > 0)) { mf.push('تجربه'); me.push('XP'); }
+    if (!money2(q)) { mf.push('پول'); me.push('money'); }
+    if (!rep.length) { mf.push('اعتبار'); me.push('reputation'); }
+    if (mf.length) {
+      h += '<p class="str-note npc-note">' + lbl(mf.join('، ') + ' در دیتای منبع نیست و نمایش داده نمی‌شود.', me.join(', ') + ' not in the source data yet.') + '</p>';
     }
     return h;
   }
@@ -493,8 +501,9 @@
   /* ---------- boot ---------- */
   var qid = new URLSearchParams(location.search).get('id');
   loadCommon().then(function () {
-    if (qid && /^\d+$/.test(qid)) return boot(qid);
-    return bootList();
+    if (qid == null || qid === '') return bootList();
+    if (!/^\d{1,9}$/.test(qid)) return fail('شناسهٔ کوئست معتبر نیست.');
+    return boot(String(+qid));
   });
   if (WF && WF.onChange) WF.onChange(function () { if (S) paint(); else if (LS && LS.all) listPaint(); });
 })();

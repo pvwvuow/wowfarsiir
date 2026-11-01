@@ -19,7 +19,7 @@
   ];
   var QN = ['#9d9d9d', '#ffffff', '#1eff00', '#0070dd', '#a335ee', '#ff8000', '#e6cc80'];
   var ST = { sel: 0, min: '', q: '', shown: 100 };
-  var FAC = null, ITEMS = null, ZN = {}, loading = null, failed = false, last = [];
+  var FAC = null, ITEMS = null, ZN = {}, loading = null, failed = false, last = [], dbt = 0;
   var cache = {};
 
   function forever() {
@@ -109,7 +109,7 @@
   function panelHtml() {
     return '<div class="bf-h">منبع آیتم</div><div class="bf-chips">'
       + CHIPS.map(function (c) {
-        return '<button type="button" class="bf-chip' + (ST.sel & c[0] ? ' on' : '') + '" data-m="' + c[0] + '">' + c[1] + '</button>';
+        return '<button type="button" class="bf-chip' + (ST.sel & c[0] ? ' on' : '') + '" data-m="' + c[0] + '" aria-pressed="' + (ST.sel & c[0] ? 'true' : 'false') + '">' + c[1] + '</button>';
       }).join('') + '</div><div class="bf-row">'
       + '<label class="bf-f">حداقل شانس دراپ (٪)<input id="bf-min" class="bf-in" type="number" min="0" max="100" step="0.1" value="' + esc(ST.min) + '"></label>'
       + '<label class="bf-f">نام یا شناسه<input id="bf-q" class="bf-in bf-q" type="search" autocomplete="off" value="' + esc(ST.q) + '"></label>'
@@ -155,7 +155,8 @@
   }
   function row(it) {
     var f = FAC[it.id] || [0, null, null], q = it.q != null ? it.q : 1, ic = it.icon || it.ic;
-    return '<tr><td>' + (ic ? '<img class="bf-ic" src="icons/large/' + esc(ic) + '.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'https://wow.zamimg.com/images/wow/icons/large/' + esc(ic) + '.jpg\'">' : '')
+    if (!/^[\w.-]+$/.test(String(ic == null ? '' : ic))) ic = '';
+    return '<tr><td>' + (ic ? '<img class="bf-ic" src="icons/large/' + esc(ic) + '.jpg" data-ic="' + esc(ic) + '" alt="" loading="lazy">' : '')
       + '<a class="bf-nm" style="color:' + (QN[q] || QN[1]) + '" dir="ltr" href="item.html?ver=forever&amp;id=' + esc(it.id) + '">' + esc(it.name || it.n || ('#' + it.id)) + '</a></td>'
       + '<td>' + (it.ilvl ? faNum(it.ilvl) : '') + '</td><td>' + (it.rlvl ? faNum(it.rlvl) : '') + '</td>'
       + '<td>' + srcChips(f[0]) + '</td><td class="bf-ch">' + (f[1] != null ? faNum(Math.round(f[1] * 100) / 100) + '٪' : '') + '</td>'
@@ -167,13 +168,13 @@
     if (!active()) { res.hidden = true; res.innerHTML = ''; natives(true); return; }
     natives(false);
     res.hidden = false;
-    if (failed) { res.innerHTML = '<p class="bf-none">فهرست منبع‌ها بارگذاری نشد. صفحه را تازه کن.</p>'; return; }
+    if (failed) { res.innerHTML = '<p class="bf-none">فهرست منبع‌ها بارگذاری نشد. یکی از فیلترها را عوض کن تا دوباره امتحان شود.</p>'; return; }
     if (!FAC || !ITEMS) { res.innerHTML = '<p class="bf-none">در حال بارگذاری…</p>'; return; }
     last = filterItems(ITEMS, FAC, ST);
     h = '<p class="bf-cnt">' + faNum(last.length) + ' آیتم</p>';
     if (!last.length) h += '<p class="bf-none">آیتمی با این فیلترها پیدا نشد.</p>';
     else {
-      h += '<table class="bf-tbl"><thead><tr><th>نام</th><th>آیلول</th><th>سطح لازم</th><th>منبع</th><th>شانس</th><th>منطقه</th></tr></thead><tbody>'
+      h += '<table class="bf-tbl"><thead><tr><th scope="col">نام</th><th scope="col">آیتم‌لول</th><th scope="col">سطح لازم</th><th scope="col">منبع</th><th scope="col">شانس</th><th scope="col">منطقه</th></tr></thead><tbody>'
         + last.slice(0, ST.shown).map(row).join('') + '</tbody></table>';
       if (last.length > ST.shown) h += '<button type="button" class="bf-more" id="bf-more">نمایش بیشتر</button>';
     }
@@ -181,6 +182,7 @@
   }
   function load() {
     if (loading) return loading;
+    failed = false;
     loading = Promise.all([getJSON(DB + 'src-facets.json'), getJSON(DB + 'search-index.json'), opt(DB + 'zones-meta.json')]).then(function (r) {
       var zs = r[2] && r[2].zones;
       FAC = (r[0] && r[0].facets) || r[0] || {};
@@ -189,7 +191,7 @@
         ZN[slug(z.name)] = z;
         if (z.slug) ZN[z.slug] = z;
       });
-    }).catch(function () { failed = true; });
+    }).catch(function () { failed = true; loading = null; });
     return loading;
   }
   function refresh() {
@@ -212,6 +214,7 @@
     ST.sel ^= +b.getAttribute('data-m');
     ST.shown = 100;
     b.classList.toggle('on', !!(ST.sel & +b.getAttribute('data-m')));
+    b.setAttribute('aria-pressed', (ST.sel & +b.getAttribute('data-m')) ? 'true' : 'false');
     refresh();
   });
   document.addEventListener('input', function (ev) {
@@ -221,8 +224,16 @@
     else if (t.id === 'bf-q') ST.q = t.value;
     else return;
     ST.shown = 100;
-    refresh();
+    clearTimeout(dbt);
+    dbt = setTimeout(refresh, 150);
   });
+  /* icon fallback without inline handlers: first failure retries on the wow CDN, second failure gives up */
+  document.addEventListener('error', function (ev) {
+    var im = ev.target;
+    if (!im || im.tagName !== 'IMG' || !im.classList || !im.classList.contains('bf-ic') || im.getAttribute('data-fb')) return;
+    im.setAttribute('data-fb', '1');
+    im.src = 'https://wow.zamimg.com/images/wow/icons/large/' + im.getAttribute('data-ic') + '.jpg';
+  }, true);
 
   if (typeof module !== 'undefined' && module.exports) { module.exports = { filterItems: filterItems, toList: toList }; return; }
   if (!forever() || P.get('id')) return;
