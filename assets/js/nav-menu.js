@@ -4,17 +4,21 @@
    Every page (static HTML, JS shells, news/item/guides) ends up
    with the SAME nav, in the SAME order:
 
-     خانه · Midnight ▾ · Forever ▾ · wowheadFA · آیتم\u200cها
+     خانه · Midnight ▾ · Forever · wowheadFA · آیتم‌ها
            · افزونه · وضعیت ترجمه · حمایت
 
-   Two click-driven dropdowns (same "golden thread" choreography):
+   Midnight is a click-driven dropdown ("golden thread" choreography):
 
-     Midnight ▾                    Forever ▾
-       ├─ آیتم\u200cها  -> 8 categories   ├─ نقشهٔ جهان + کوئست\u200cها
-       ├─ کلاس\u200cها  -> 13 -> specs    ├─ تلنت\u200cهای فورور
-       │             ├─ راهنما       ├─ کتاب اسپل\u200cها
-       │             └─ تلنت\u200cها       ├─ آیتم\u200cها
-       └─ صفحهٔ Midnight / آیتم\u200cها    └─ پایگاه کوئست · NPC · دانجن\u200cها
+     Midnight ▾
+       ├─ آیتم‌ها  -> 8 categories
+       ├─ کلاس‌ها  -> 13 -> specs
+       │             ├─ راهنما
+       │             └─ تلنت‌ها
+       └─ صفحهٔ Midnight / آیتم‌ها
+
+   Forever is a PLAIN LINK to forever.html: that page is the hub (every
+   Forever section as grouped cards: map, dungeons, quests, NPCs, items,
+   talents, spellbook, patch notes ...). The old long dropdown is gone.
 
    How consistency is guaranteed:
      1. this script REWRITES .nav-links on every page (nav.dataset
@@ -101,11 +105,11 @@
   /* ------------------------------------------------ dropdown data */
   var CATS = [
     ["gear", "گیر و سلاح", "Gear & Weapons"],
-    ["gems", "سنگ\u200cها", "Gems"],
+    ["gems", "سنگ‌ها", "Gems"],
     ["materials", "مواد اولیه", "Materials"],
-    ["consumables", "مصرفی\u200cها", "Consumables"],
+    ["consumables", "مصرفی‌ها", "Consumables"],
     ["recipes", "دستورها", "Recipes"],
-    ["housing", "خانه\u200cداری", "Housing"],
+    ["housing", "خانه‌داری", "Housing"],
     ["quest", "کوئست", "Quest"],
     ["misc", "متفرقه", "Misc"]
   ];
@@ -142,9 +146,9 @@
   var html =
     '<a href="' + (ON_INDEX ? "#top" : BASE + "index.html") + '">خانه</a>' +
     '<span class="rtx-wrap" data-dd="midnight"></span>' +
-    '<span class="rtx-wrap" data-dd="forever"></span>' +
+    '<a href="' + BASE + 'forever.html"' + (M_FVR ? ' class="is-active"' : "") + '>Forever</a>' +
     '<a href="' + BASE + 'news.html"' + (M_NEWS ? ' class="is-active"' : "") + '>wowheadFA</a>' +
-    '<a href="' + BASE + 'item.html"' + (onPage("item.html") || onPage("db.html") ? ' class="is-active"' : "") + '>آیتم\u200cها</a>' +
+    '<a href="' + BASE + 'item.html"' + (onPage("item.html") || onPage("db.html") ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
     '<a href="' + BASE + 'addon.html"' + (onPage("addon.html") ? ' class="is-active"' : "") + '>افزونه</a>' +
     '<a href="' + BASE + 'status.html"' + (onPage("status.html") ? ' class="is-active"' : "") + '>وضعیت ترجمه</a>' +
     '<a href="' + BASE + 'donate.html" class="dn-nav' + (onPage("donate.html") ? " is-active" : "") + '">حمایت</a>';
@@ -313,7 +317,7 @@
           '<small class="rtx-role">' + esc(ROLE_FA[s.role] || s.role || "") + "</small></span>" +
           '<span class="rtx-acts">' +
           (s.ready ? '<a class="rtx-act rtx-act-d" href="' + gUrl + '">راهنما</a>' : "") +
-          '<a class="rtx-act" href="' + tUrl + '">تلنت\u200cها</a>' +
+          '<a class="rtx-act" href="' + tUrl + '">تلنت‌ها</a>' +
           "</span></div>";
       }).join("");
       specRendered = true;
@@ -349,20 +353,20 @@
     '<div class="rtx-lvl" data-lvl="root">' +
       '<button type="button" class="rtx-big" data-go="items">' +
         '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>آیتم\u200cها</b><small dir="ltr">ITEM DATABASE</small></span>' + CHEV_L +
+        '<span class="rtx-bt"><b>آیتم‌ها</b><small dir="ltr">ITEM DATABASE</small></span>' + CHEV_L +
       "</button>" +
       '<button type="button" class="rtx-big" data-go="classes">' +
         '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>کلاس\u200cها</b><small dir="ltr">CLASSES · SPECS</small></span>' + CHEV_L +
+        '<span class="rtx-bt"><b>کلاس‌ها</b><small dir="ltr">CLASSES · SPECS</small></span>' + CHEV_L +
       "</button>" +
       '<div class="rtx-sep" aria-hidden="true"></div>' +
       '<a class="rtx-mini" href="' + BASE + 'retail.html">صفحهٔ Midnight<small dir="ltr">MIDNIGHT 12.1.5</small></a>' +
-      '<a class="rtx-mini" href="' + BASE + 'item.html?ver=retail">بانک آیتم\u200cها<small dir="ltr">ITEM BANK</small></a>' +
+      '<a class="rtx-mini" href="' + BASE + 'item.html?ver=retail">بانک آیتم‌ها<small dir="ltr">ITEM BANK</small></a>' +
     "</div>" +
     '<div class="rtx-lvl" data-lvl="items">' +
       '<div class="rtx-hd">' +
         '<button type="button" class="rtx-back" data-go="root" data-back>' + CHEV_R + "بازگشت</button>" +
-        '<b class="rtx-ttl">آیتم\u200cها</b>' +
+        '<b class="rtx-ttl">آیتم‌ها</b>' +
         '<small class="rtx-cap" dir="ltr">CATEGORIES</small>' +
       "</div>" +
       '<div class="rtx-g2">' + CATS.map(function (c) {
@@ -374,7 +378,7 @@
     '<div class="rtx-lvl" data-lvl="classes">' +
       '<div class="rtx-hd">' +
         '<button type="button" class="rtx-back" data-go="root" data-back>' + CHEV_R + "بازگشت</button>" +
-        '<b class="rtx-ttl">کلاس\u200cها</b>' +
+        '<b class="rtx-ttl">کلاس‌ها</b>' +
         '<small class="rtx-cap" dir="ltr">CHOOSE A CLASS</small>' +
       "</div>" +
       '<div class="rtx-g3">' + CLASSES.map(function (c) {
@@ -385,46 +389,18 @@
     "</div>" +
     '<div class="rtx-lvl" data-lvl="specs">' +
       '<div class="rtx-hd">' +
-        '<button type="button" class="rtx-back" data-go="classes" data-back>' + CHEV_R + "کلاس\u200cها</button>" +
+        '<button type="button" class="rtx-back" data-go="classes" data-back>' + CHEV_R + "کلاس‌ها</button>" +
         '<b class="rtx-ttl rtx-ttl-cls" dir="ltr" id="rtx-spec-ttl"></b>' +
         '<small class="rtx-cap" dir="ltr">SPECS</small>' +
       "</div>" +
       '<div class="rtx-specs" id="rtx-spec-list"></div>' +
     "</div>");
 
-  /* ================================================ 4) Forever dropdown */
-  buildDropdown("forever", "Forever", M_FVR, { root: 312 },
-    '<div class="rtx-lvl" data-lvl="root">' +
-      '<a class="rtx-big" href="' + BASE + 'forever.html">' +
-        '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>نقشهٔ جهان و کوئست\u200cها</b><small dir="ltr">LIVE WORLD MAP</small></span>' +
-      "</a>" +
-      '<a class="rtx-big" href="' + BASE + 'forever-talents.html">' +
-        '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>تلنت\u200cهای فورور</b><small dir="ltr">TALENT CALCULATOR</small></span>' +
-      "</a>" +
-      '<a class="rtx-big" href="' + BASE + 'spellbook.html">' +
-        '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>کتاب اسپل\u200cها</b><small dir="ltr">SPELLBOOK · 9 CLASSES</small></span>' +
-      "</a>" +
-      '<a class="rtx-big" href="' + BASE + 'patch-notes.html">' +
-        '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>پچ\u200cنوت\u200cها</b><small dir="ltr">PATCH NOTES · UPDATES</small></span>' +
-      "</a>" +
-      '<a class="rtx-big" href="' + BASE + 'item.html?ver=forever">' +
-        '<i class="rtx-d" aria-hidden="true"></i>' +
-        '<span class="rtx-bt"><b>آیتم\u200cها</b><small dir="ltr">ITEM DATABASE</small></span>' +
-      "</a>" +
-      '<div class="rtx-sep" aria-hidden="true"></div>' +
-      '<a class="rtx-mini" href="' + BASE + 'quest.html">پایگاه کوئست<small dir="ltr">QUEST DATABASE</small></a>' +
-      '<a class="rtx-mini" href="' + BASE + 'npc.html">پایگاه NPC<small dir="ltr">NPC DATABASE</small></a>' +
-      '<a class="rtx-mini" href="' + BASE + 'dungeon.html">دانجن\u200cها و رییدها<small dir="ltr">DUNGEONS · RAIDS</small></a>' +
-    "</div>");
-
-  /* ================================================ 5) keep it canonical
+  /* ================================================ 4) keep it canonical
      support.js fixNav() may run after us (DOMContentLoaded) and re-add
-     plain links that now live inside the dropdowns — remove them again. */
-  var DD_OWNED = /(?:^|[/])(?:retail|forever|spellbook|forever-talents|patch-notes)\.html(?:[?#].*)?$/;
+     plain links that now live inside the Midnight dropdown — remove them again.
+     (forever.html is NOT in this list: the Forever nav item is a plain link on purpose.) */
+  var DD_OWNED = /(?:^|[/])(?:retail|spellbook|forever-talents|patch-notes)\.html(?:[?#].*)?$/;
   function dropOwned() {
     Array.prototype.forEach.call(nav.querySelectorAll("a"), function (a) {
       var h = a.getAttribute("href") || "";
