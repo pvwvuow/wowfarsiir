@@ -1,0 +1,52 @@
+{
+ "source": "open-forever-datasets (ForeverDB.net addon + QuestieDB data/Forever + DonData)",
+ "sources": {
+  "foreverdb-addon": {
+   "url": "https://foreverdb.net/downloads/addon-manifest.json",
+   "license": "GPL-3.0 + credit 'Data from ForeverDB.net'",
+   "data_version": "2026-10-31.6df63f9d"
+  },
+  "questiedb-forever": {
+   "url": "https://github.com/Questie/QuestieDB/blob/main/data/Forever/foreverQuestDB.lua",
+   "license": "GPL-3.0"
+  },
+  "dondata": {
+   "url": "https://github.com/WoW-Forever-Addons/dondata",
+   "license": "MIT (ATT file) / GPL-3.0 (CMaNGOS+ForeverDB)"
+  },
+  "site-db-indexes": {
+   "note": "quest-rw-N.json reward ids + spawn-N.json npc coords + npc/itemlite names already in pvwvuow/wow"
+  }
+ },
+ "method": "local parse of addon data files (no scraping); fills only fields listed in missing.json; race/class masks decoded with CMaNGOS classic constants (raw mask kept in racesMask/classesMask); rewItems/rewChoice entries are [id, count?, name?] — trailing elements omitted when unknown; rewRep faction is the reputation faction id (no offline name map); kill/collect counts from FDB qobj when the kind sequence aligns 1:1",
+ "date": "2026-11-02",
+ "records": 5151,
+ "ids_without_fill": 40,
+ "files": [
+  "data/forever/src/quest-hunt/open-datasets/part-001.jsonl"
+ ],
+ "field_counts": {
+  "endPoi": 3370,
+  "startPoi": 3323,
+  "faction": 3228,
+  "races": 2172,
+  "collectItems": 2131,
+  "killTargets": 1173,
+  "level": 1067,
+  "startedBy": 961,
+  "repeatable": 946,
+  "name": 925,
+  "prev": 723,
+  "zone": 663,
+  "xp": 600,
+  "finishedBy": 570,
+  "money": 404,
+  "rewChoice": 293,
+  "next": 257,
+  "objectives": 188,
+  "description": 173,
+  "rewItems": 39,
+  "minLevel": 37,
+  "exclusive": 7
+ }
+}
