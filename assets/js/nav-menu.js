@@ -14,7 +14,7 @@
        ├─ کلاس‌ها  -> 13 -> specs    ├─ تلنت‌های فورور
        │             ├─ راهنما       ├─ کتاب اسپل‌ها
        │             └─ تلنت‌ها      ├─ آیتم‌ها
-       └─ صفحهٔ Midnight / آیتم‌ها    └─ کوئست‌ها (وضعیت ترجمه)
+       └─ صفحهٔ Midnight / آیتم‌ها    └─ پایگاه کوئست · پایگاه NPC
 
    How consistency is guaranteed:
      1. this script REWRITES .nav-links on every page (nav.dataset
@@ -92,7 +92,8 @@
   var M_MID = onPage("retail.html") || onPage("db.html") || onPage("guide.html") ||
               onPage("item.html") || /^\/item\//.test(path) || /^\/guides\//.test(path);
   var M_FVR = onPage("forever.html") || onPage("forever-talents.html") ||
-              onPage("spellbook.html") || onPage("patch-notes.html") || onPage("items.html");
+              onPage("spellbook.html") || onPage("patch-notes.html") || onPage("items.html") ||
+              onPage("quest.html") || onPage("quests.html") || onPage("npc.html");
   var M_NEWS = onPage("news.html") || onPage("article.html") || onPage("news-translate.html") || /^\/news\//.test(path);
   var ON_INDEX = /\/(?:index\.html)?$/.test(path) && !M_MID && !M_FVR && !M_NEWS;
   var ACT = " is-active";
@@ -356,7 +357,7 @@
       "</button>" +
       '<div class="rtx-sep" aria-hidden="true"></div>' +
       '<a class="rtx-mini" href="' + BASE + 'retail.html">صفحهٔ Midnight<small dir="ltr">MIDNIGHT 12.1.5</small></a>' +
-      '<a class="rtx-mini" href="' + BASE + 'item.html">بانک آیتم‌ها<small dir="ltr">ITEM BANK</small></a>' +
+      '<a class="rtx-mini" href="' + BASE + 'item.html?ver=retail">بانک آیتم‌ها<small dir="ltr">ITEM BANK</small></a>' +
     "</div>" +
     '<div class="rtx-lvl" data-lvl="items">' +
       '<div class="rtx-hd">' +
@@ -365,7 +366,7 @@
         '<small class="rtx-cap" dir="ltr">CATEGORIES</small>' +
       "</div>" +
       '<div class="rtx-g2">' + CATS.map(function (c) {
-        return '<a class="rtx-cell" href="' + BASE + 'item.html?cat=' + c[0] + '">' +
+        return '<a class="rtx-cell" href="' + BASE + 'item.html?ver=retail&cat=' + c[0] + '">' +
           '<span class="rtx-l1"><i class="rtx-d" aria-hidden="true"></i><b>' + c[1] + "</b></span>" +
           '<small dir="ltr">' + esc(c[2]) + "</small></a>";
       }).join("") + "</div>" +
@@ -410,12 +411,13 @@
         '<i class="rtx-d" aria-hidden="true"></i>' +
         '<span class="rtx-bt"><b>پچ‌نوت‌ها</b><small dir="ltr">PATCH NOTES · UPDATES</small></span>' +
       "</a>" +
-      '<a class="rtx-big" href="' + BASE + 'items.html">' +
+      '<a class="rtx-big" href="' + BASE + 'item.html?ver=forever">' +
         '<i class="rtx-d" aria-hidden="true"></i>' +
         '<span class="rtx-bt"><b>آیتم‌ها</b><small dir="ltr">ITEM DATABASE</small></span>' +
       "</a>" +
       '<div class="rtx-sep" aria-hidden="true"></div>' +
-      '<a class="rtx-mini" href="' + BASE + 'status.html#quests">کوئست‌های فورور<small dir="ltr">QUESTS</small></a>' +
+      '<a class="rtx-mini" href="' + BASE + 'quest.html">پایگاه کوئست<small dir="ltr">QUEST DATABASE</small></a>' +
+      '<a class="rtx-mini" href="' + BASE + 'npc.html">پایگاه NPC<small dir="ltr">NPC DATABASE</small></a>' +
     "</div>");
 
   /* ================================================ 5) keep it canonical
