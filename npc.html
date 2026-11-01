@@ -71,7 +71,15 @@ document.documentElement.classList.add("itv-forever");
 </footer>
 <a class="dn-float" href="donate.html" aria-label="حمایت از پروژهٔ wowfarsi"><span class="dn-float-tag">حمایت از پروژه</span><span class="dn-float-orb"><img src="assets/img/logo.webp" alt=""><span class="dn-float-heart" aria-hidden="true">♥</span></span></a>
 <script src="assets/js/tr.js?v=20261115c"></script>
-<script src="assets/js/npc.js?v=20261116b"></script>
+<script>
+/* ?id=<npcId> -> detail page (npc.js); no id -> filterable list (npc-list.js) */
+(function () {
+  var q = new URLSearchParams(location.search).get("id");
+  var s = document.createElement("script");
+  s.src = q && /^\d+$/.test(q) ? "assets/js/npc.js?v=20261116b" : "assets/js/npc-list.js?v=20261201a";
+  document.body.appendChild(s);
+})();
+</script>
 <script src="assets/js/main.js?v=20261104b"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
 <script src="assets/js/nav-menu.js?v=20261115b"></script>
