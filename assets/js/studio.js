@@ -12,12 +12,17 @@
        same merged record so the room works offline / pre-fetch too
      - HL map is GENERATED from WFTR.CATMAP + the tok-* wrapper family (no
        hand-copied category groupings to drift)
-     - marker family ({{sp|tm|it|npc|zn|qs|ob}}) renders through the ONE
+     - marker family ({{sp|tm|ts|it|npc|zn|qs|ob|cls}}) renders through the ONE
        pipeline (WF.faTokens) and every wrapper carries data-tk, so clicking
        a spell name / term / set name flashes its OWN switch
      - pinned highlight: click a switch row (or focus it) to keep the red
        blink while you scroll the preview — mobile-friendly; a floating
        «نمایش اثر» chip jumps to the preview
+   v20261115d: textFlavor + namesClass now have visible samples (item tab gets a
+   flavor line, talent tab a class/spec row) and highlight targets; the item
+   fallback uses {{ts:}} markers for stat lines like the real data does.
+   The flavor sample is the REAL lore row of Weak Flux (2880) — tip-0 row
+   ["flavor", "\"...\""] + fa-0 overlay; row shape and quotes match the data.
    Every switch is a CONTENT TYPE that applies to ALL sections the same way.
    All settings persist via tr.js localStorage and apply site-wide. */
 (function () {
@@ -111,12 +116,12 @@
       ["", "هنگام برداشتن قید می‌شود", "bind", "Binds when picked up"],
       ["", "یکتا", "bind", "Unique"],
       ["q1", "یک‌دست\tشمشیر", "slot", "One-Hand\tSword"],
-      ["", "{{tm:Damage|آسیب}} ۸۲ تا ۱۵۳\tسرعت ۱٫۹۰", "stats", "82 - 153 Damage\tSpeed 1.90"],
-      ["", "(۶۱٫۸ {{tm:damage|آسیب}} در ثانیه)", "stats", "(61.8 damage per second)"],
-      ["", "+۵ {{tm:Agility|چابکی}}", "stats", "+5 Agility"],
-      ["", "+۸ {{tm:Stamina|استقامت}}", "stats", "+8 Stamina"],
-      ["", "+۸ {{tm:Fire Resistance|مقاومت در برابر آتش}}", "stats", "+8 Fire Resistance"],
-      ["", "+۹ {{tm:Nature Resistance|مقاومت در برابر طبیعت}}", "stats", "+9 Nature Resistance"],
+      ["", "{{ts:Damage|آسیب}} ۸۲ تا ۱۵۳\tسرعت ۱٫۹۰", "stats", "82 - 153 Damage\tSpeed 1.90"],
+      ["", "(۶۱٫۸ {{ts:damage|آسیب}} در ثانیه)", "stats", "(61.8 damage per second)"],
+      ["", "+۵ {{ts:Agility|چابکی}}", "stats", "+5 Agility"],
+      ["", "+۸ {{ts:Stamina|استقامت}}", "stats", "+8 Stamina"],
+      ["", "+۸ {{ts:Fire Resistance|مقاومت در برابر آتش}}", "stats", "+8 Fire Resistance"],
+      ["", "+۹ {{ts:Nature Resistance|مقاومت در برابر طبیعت}}", "stats", "+9 Nature Resistance"],
       ["", "سطح مورد نیاز ۶۰", "req", "Requires Level 60"],
       ["q2", "{{tm:Chance on Hit|شانس در ضربه}}: به دشمن با {{sp:the power of lightning|قدرت آذرخش}} حمله می‌کند و ۳۰۰ {{tm:Nature damage|آسیب طبیعت}} وارد می‌کند، سپس به دشمن نزدیکِ بعدی حمله می‌کند. هر پرش، {{tm:Nature Resistance|مقاومت طبیعت}} هدف را ۲۵ کاهش می‌دهد. به ۵ هدف حمله می‌کند. هدف شما همچنین در {{sp:Hurricane|گردباد}} فرو می‌رود و ۱۲ ثانیه {{tm:attack speed|سرعت حمله‌اش}} ۲۰٪ کاهش می‌یابد.", "spell", "Chance on Hit: Attacks an enemy with the power of lightning, dealing 300 Nature damage, then jumps to the next nearby enemy. Each jump reduces the target's Nature Resistance by 25. Affects 5 targets. Your target is also slowed by Hurricane and its attack speed is reduced by 20% for 12 sec."],
       ["sell", "قیمت فروش: {{g:25}} {{s:53}} {{c:55}}", "sell", "Sell Price: 25g 53s 55c"]
@@ -124,6 +129,18 @@
     real: true
   };
   var REAL = null; /* replaced by the fetched record when it arrives */
+
+  /* flavor sample: Thunderfury has no lore row of its own, so the room appends
+     the REAL flavor row of Weak Flux (item 2880): tip-0 row
+     ["flavor", "\"...\""] with the quotes INSIDE the string, and the fa-0
+     overlay with «guillemets». Same text, same row shape as the site data —
+     it is appended only when the shown record carries no flavor of its own. */
+  var FLAVOR_DEMO = ["flavor", "«آهنگر برای زدودن ناخالصی‌ها از سنگ معدن، از این استفاده می‌کرد.»", "flavor", "\"The blacksmith used this to remove impurities from the ore.\""];
+  function itemLines(it) {
+    var i;
+    for (i = 0; i < it.lines.length; i++) if (it.lines[i][2] === "flavor") return it.lines;
+    return it.lines.concat([["gap"], FLAVOR_DEMO]);
+  }
 
   function loadReal() {
     if (!window.fetch) return;
@@ -181,8 +198,8 @@
       + (nameFa ? '<p class="pv-ensub rt-en" dir="ltr">' + esc(it.name) + "</p>" : "")
       + itemChips(it)
       + "</div></div>";
-    h += tipHtml(it.lines);
-    h += '<p class="str-note">این نمونه از دیتابیس واقعی سایت می‌آید؛ روی هر خط کلیک کن تا سوییچ کنترل‌کننده‌اش در ستون فلش بزند.</p>';
+    h += tipHtml(itemLines(it));
+    h += '<p class="str-note">این نمونه از دیتابیس واقعی سایت می‌آید؛ روی هر خط کلیک کن تا سوییچ کنترل‌کننده‌اش در ستون فلش بزند. خط آخر (متن تزئینی) عیناً از آیتم Weak Flux (شناسهٔ ۲۸۸۰) برداشته شده، چون تندرفوری متن تزئینی ندارد.</p>';
     h += "</div>";
     return h;
   }
@@ -195,7 +212,7 @@
     h += pvRowTok("namesNpc", WF.faTokens(esc("دهندهٔ کوئست: {{npc:Highlord Demitrian|هایلرد دمیتریان}}")), 'Quest giver: <span class="rt-en" dir="ltr">Highlord Demitrian</span>', "pv-npcrow");
     h += '<div class="pv-sec">اهداف</div>';
     h += pvRowTok("textDesc",
-      WF.faTokens(esc("شمشیرِ بادبوسیدهٔ خفته را به {{npc:Highlord Demitrian|هایلرد دمیتریان}} ببر و {{sp:Hurricane|گردباد}} را بر آن فرا بخوان.")),
+      WF.faTokens(esc("شمشیرِ بادبوسیدهٔ خفته را به {{npc:Highlord Demitrian|هایلرد دمیتریان}} ببر و {{sp:Hurricane|گردباد}} را بر آن فرا خوان.")),
       'Bring the Dormant Wind-Kissed Blade to <span class="rt-en" dir="ltr">Highlord Demitrian</span> and invoke <span class="rt-en" dir="ltr">Hurricane</span> upon it.');
     h += pvRow("textDesc", "۰ از ۱ انجام شد", "0 / 1 completed", "pv-counter");
     h += '<div class="pv-sec">توضیحات</div>';
@@ -217,7 +234,12 @@
   function renderTalent() {
     var h = '<div class="str-card">';
     h += '<p class="pv-demo-badge">نمونهٔ نمایشی — تلنت واقعی با ایجنت‌های ترجمه وایر می‌شود</p>';
-    h += pvRow("uiLabels", "شاخهٔ خشم (جنگاور) · رتبهٔ ۵۰+", "Fury (Warrior) · Level 50+", "pv-counter");
+    /* namesClass sample: class + spec names ride {{cls:EN|FA}} markers, so this
+       switch has its OWN visible effect (and highlight target) in the room */
+    h += pvRowTok("namesClass",
+      WF.faTokens(esc("کلاس: {{cls:Warrior|جنگاور}} · شاخه: {{cls:Fury|خشم}}")),
+      'Class: <span class="rt-en" dir="ltr">Warrior</span> · Spec: <span class="rt-en" dir="ltr">Fury</span>', "pv-tal-name");
+    h += pvRow("uiLabels", "رتبهٔ ۵۰+", "Level 50+", "pv-counter");
     h += '<div class="pv-sec">استعداد اول</div>';
     h += pvRow("namesSpell", "تشنگی خون", "Bloodthirst", "pv-tal-name");
     h += pvRow("uiLabels", "رتبهٔ ۱ از ۱", "Rank 1/1", "pv-counter");
@@ -231,7 +253,7 @@
     h += pvRowTok("textDesc",
       WF.faTokens(esc("پس از ضربهٔ مرگبار، {{tm:attack speed|سرعت حمله}} شما برای ۳ ضربهٔ بعدیِ {{sp:Bloodthirst|تشنگی خون}} ۲۵٪ افزایش می‌یابد و ۶۰ {{tm:hit rating|رتبهٔ اصابت}} اضافه می‌کند.")),
       "After landing a critical strike, your attack speed increases by 25% for the next 3 swings of Bloodthirst and adds 60 hit rating.");
-    h += '<p class="str-note">اسم استعداد با «اسم اسپل‌ها و استعدادها»، متن با «توضیحات و افکت‌ها» و اصطلاح‌ها با «اصطلاح‌های بازی» کنترل می‌شوند.</p>';
+    h += '<p class="str-note">اسم استعداد با «اسم اسپل‌ها و استعدادها»، متن با «توضیحات و افکت‌ها»، اصطلاح‌ها با «اصطلاح‌های بازی» و کلاس/شاخه با «اسم کلاس‌ها و شاخه‌ها» کنترل می‌شوند.</p>';
     h += "</div>";
     return h;
   }
@@ -402,7 +424,7 @@
     for (i = 0; i < TABS.length; i++) if (TABS[i][0] === cur) t = TABS[i];
     pvEl.innerHTML = t[2]();
     if (cur === "words") wireWords();
-    if (cur === "item") { var c = tipCounts((REAL || ITEM).lines); WF.setTipStats(c[0], c[1]); }
+    if (cur === "item") { var c = tipCounts(itemLines(REAL || ITEM)); WF.setTipStats(c[0], c[1]); }
     else WF.setTipStats(0, 0);
     if (curKey) applyHl(curKey, true); /* re-anchor highlight after re-render */
   }
@@ -420,13 +442,14 @@
     function add(sw, sel) { (HL[sw] = HL[sw] || []).push(sel); }
     add("namesItem", '.tok-it, [data-tk="namesItem"]');
     add("namesSpell", '.tok-sp, [data-tk="namesSpell"]');
+    add("namesClass", '.tok-cls, [data-tk="namesClass"]');
     add("namesNpc", '.tok-npc, [data-tk="namesNpc"]');
     add("namesZone", '.tok-zn, [data-tk="namesZone"]');
     add("namesQuest", '.tok-qs, [data-tk="namesQuest"]');
     add("namesObj", '.tok-ob, [data-tk="namesObj"]');
     add("terms", '.tok-tm, .tok-gm, [data-tk="terms"]');
     add("textDesc", '[data-tk="textDesc"]');
-    add("textStats", '[data-tk="textStats"]');
+    add("textStats", '.tok-ts, [data-tk="textStats"]');
     add("textReq", '[data-tk="textReq"]');
     add("textBind", '[data-tk="textBind"]');
     add("textDetail", '[data-tk="textDetail"]');

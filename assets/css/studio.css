@@ -199,3 +199,26 @@ html body .stmenu .tr-shrmsg{font-size:.74rem;color:#7fd0a0;
   text-shadow:0 1px 6px rgba(0,0,0,.7)}
 html body .stmenu .tr-shrmsg.err{color:#e08a8a}
 html body .stmenu .tr-shrow input{background:rgba(9,11,17,.62)}
+
+/* ============================================================
+   v20261115d — room fixes
+   1) the mobile rule above lost to the base .stmenu (later in the file,
+      same specificity): on <=960px the menu stayed a sticky inner scroller.
+      Re-assert it here, last, with higher specificity.
+   2) keyboard focus: every interactive atom of the room gets a visible ring.
+   ============================================================ */
+@media (max-width:960px){
+  html body .stmenu{position:static;max-height:none;overflow:visible}
+}
+.str-tab:focus-visible,.ent-chip:focus-visible,.pv-jump:focus-visible,
+.stmenu-nav:focus-visible,.stmenu-back:focus-visible,
+html body .stmenu .tr-preset:focus-visible,
+html body .stmenu .tr-sw:focus-visible,
+html body .stmenu .tr-shrbtn:focus-visible,
+html body .stmenu .tr-shrbtn2:focus-visible{
+  outline:2px solid rgba(246,224,163,.85);outline-offset:2px;border-radius:8px}
+.ent-search:focus-visible,html body .stmenu .tr-shrow input:focus-visible{
+  outline:2px solid rgba(246,224,163,.7);outline-offset:1px}
+@media (prefers-reduced-motion:reduce){
+  .str-tab,.ent-chip,.stmenu-nav,.stmenu-back,html body .stmenu .tr-preset,html body .stmenu .tr-preset::before{transition:none}
+}
