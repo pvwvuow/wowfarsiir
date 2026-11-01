@@ -1,0 +1,60 @@
+/* npc.css — NPC database pages (npc.html). Only what the item page's
+   retail.css (fex-*, fsrc-*, rt-crumb, rt-tools, q0..q7) does not already
+   provide: the page wrapper, portrait, item icons, a map that keeps the
+   image's real aspect ratio (pins are % of the IMAGE, so it must never be
+   cropped), the list filters. Same glass language as the rest of the site. */
+.npc-wrap{max-width:1360px;margin:0 auto;padding:7.5rem 1rem 3rem;position:relative;z-index:2}
+html body .fex-colA{position:sticky;top:84px}
+@media (max-width:1080px){
+  html body .fex-grid{grid-template-columns:minmax(0,1fr)}
+  html body .fex-colA{position:static}
+}
+.npc-loading{margin:4rem 0;text-align:center;color:var(--parch-dim,#bdb7a6)}
+.npc-loading a{color:var(--gold-1,#f6e0a3);margin-inline-start:.6rem}
+.npc-none{margin:.3rem 0;font-size:12.5px;color:var(--mut,#8e97ab);line-height:2}
+.npc-note{margin:.5rem 0 0}
+.npc-kind{margin:0 0 .4rem;font-size:11.5px;color:var(--mut,#8e97ab)}
+.npc-flags{margin-top:.8rem}
+
+/* portrait + fallback gem in the hero */
+html body .fex-him img.npc-por{width:clamp(84px,10vw,112px);aspect-ratio:3/4;object-fit:cover;object-position:50% 18%}
+.npc-gem{display:block;width:54px;height:54px;margin:12px;transform:rotate(45deg);
+  border:1px solid color-mix(in srgb,var(--q,#f0c75e) 60%,transparent);
+  background:radial-gradient(circle at 32% 28%,color-mix(in srgb,var(--q,#f0c75e) 55%,transparent),transparent 72%);
+  box-shadow:0 0 22px rgba(var(--qg,240,199,94),.4)}
+
+/* item rows (vendor / loot) */
+html body .npc-ic{flex:0 0 auto;width:26px;height:26px;border-radius:5px;background:rgba(8,11,20,.7);
+  border:1px solid color-mix(in srgb,var(--q,#9aa2b1) 62%,transparent)}
+html body a.fex-npc .npc-qn{color:var(--qt,var(--parch,#ece7f3))}
+html body a.fex-npc:hover .npc-qn{filter:brightness(1.18)}
+html body .fex-ch{margin-inline-start:auto;font-size:11.5px;color:var(--gold-1,#f6e0a3)}
+
+/* spawn map: the image keeps its own aspect ratio so % pins stay exact */
+html body .npc-map .fsrc-mimg img{aspect-ratio:auto;object-fit:fill;height:auto;width:100%}
+html body .npc-map .npc-nomap{display:none;padding:1.2rem 1rem}
+html body .npc-map .npc-nomap p{margin:0 0 .7rem;font-size:12.5px;line-height:2;color:var(--parch-dim,#bdb7a6)}
+html body .npc-map.nomap .fsrc-mimg{display:none}
+html body .npc-map.nomap .npc-nomap{display:block}
+html body .npc-dg{margin-top:.2rem}
+
+/* list page */
+.npcl-bar{display:flex;flex-wrap:wrap;gap:.9rem 1.3rem;align-items:flex-end;margin:0 0 1rem}
+.npcl-f{display:flex;flex-direction:column;gap:.25rem;flex:1 1 11rem;min-width:9rem}
+.npcl-grow{flex:2 1 16rem}
+.npcl-sm{flex:0 1 7rem;min-width:6rem}
+.npcl-f label{font-size:11px;color:var(--mut,#8e97ab)}
+.npcl-in{width:100%;box-sizing:border-box;min-height:2.3rem;font:inherit;font-size:.92rem;padding:.5rem .35rem;border-radius:0;color:#f0e6c8;outline:none;
+  background:linear-gradient(90deg,transparent,rgba(9,11,17,.62),transparent);
+  border-width:0 0 1px;border-style:solid;border-image:linear-gradient(90deg,transparent,rgba(240,199,94,.6),transparent) 1}
+.npcl-in:focus{border-image:linear-gradient(90deg,transparent,rgba(246,224,163,.98),transparent) 1}
+select.npcl-in option{background:#0b0d14;color:#f0e6c8}
+.npcl-count{margin:.2rem 0 .6rem;font-size:12px;color:var(--mut,#8e97ab)}
+.npcl-count b{color:var(--gold-1,#f6e0a3)}
+.npcl-more{position:relative;margin:.8rem 0 0;font:inherit;font-size:.82rem;cursor:pointer;background:none;border:0;border-radius:0;
+  color:#cfcabb;padding:.3rem .2rem;transition:color .25s ease}
+.npcl-more::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(240,199,94,.5),transparent)}
+.npcl-more:hover{color:#f6e0a3}
+.npc-wrap :focus-visible{outline:2px solid rgba(246,224,163,.85);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.npcl-more{transition:none}}
