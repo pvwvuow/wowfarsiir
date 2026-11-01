@@ -63,6 +63,9 @@
     o.act = -1;
     return shown;
   }
+  function elTop(o, el) {
+    return el.getBoundingClientRect().top - o.list.getBoundingClientRect().top + o.list.scrollTop;
+  }
   function setAct(o, k) {
     var items = o.list.querySelectorAll('li[data-i]'), el;
     if (!items.length) return;
@@ -71,7 +74,9 @@
     el = items[k];
     el.classList.add('act');
     o.act = k;
-    el.scrollIntoView({ block: 'nearest' });
+    var top = elTop(o, el), bot = top + el.offsetHeight;
+    if (top < o.list.scrollTop) o.list.scrollTop = top;
+    else if (bot > o.list.scrollTop + o.list.clientHeight) o.list.scrollTop = bot - o.list.clientHeight;
   }
   function choose(o, i) {
     o.sel.selectedIndex = +i;
@@ -89,7 +94,7 @@
     requestAnimationFrame(function () {
       o.pop.classList.add('on');
       var cur = o.list.querySelector('li.sel');
-      if (cur) { cur.scrollIntoView({ block: 'center' }); }
+      if (cur) { o.list.scrollTop = Math.max(0, elTop(o, cur) - o.list.clientHeight / 2 + cur.offsetHeight / 2); }
       if (o.search) o.search.focus({ preventScroll: true });
     });
     o.btn.setAttribute('aria-expanded', 'true');
