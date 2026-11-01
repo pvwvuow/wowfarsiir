@@ -61,7 +61,7 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  var DATA_V = "20261115c";
+  var DATA_V = "20261102a";
   function getJSON(url) {
     if (!cache[url]) {
       var bust = url + (url.indexOf("?") < 0 ? "?" : "&") + "v=" + DATA_V;
@@ -1093,6 +1093,7 @@
     zone:   ["ناحیه", "Zone"],
     lvl:    ["سطح", "Level"],
     turnin: ["تحویل به", "Turn in to"],
+    qlpage: ["صفحهٔ کوئست", "Quest page"],
     chance: ["شانس دراپ", "Drop chance"],
     buy:    ["قیمت خرید از فروشنده", "Vendor buy price"],
     stack:  ["حداکثر انبار", "Max stack"],
@@ -1238,9 +1239,9 @@
         var lv = st[3] != null ? '<span class="fex-lv">' + fsr(FSR_LBL.lvl) + " " + fsrLv(st[3]) + "</span>" : "";
         var desc = st[4] && TLANG !== "en" && dOn ? '<span class="fex-qld">' + esc(st[4]) + "</span>" : "";
         var tag = isHl ? '<em class="fex-qltag">' + esc(fsr(kind === "s" ? FSR_LBL.qlS : FSR_LBL.qlR)) + "</em>" : "";
-        return '<span class="fex-qlstep' + (isHl ? " hl" : "") + '">' +
+        return '<a class="fex-qlstep' + (isHl ? " hl" : "") + '" href="quest.html?id=' + esc(st[0]) + '">' +
           '<span class="fex-qltop"><i class="fex-qldot" aria-hidden="true"></i>' + lv + "</span>" +
-          '<b class="fex-qlt">' + esc(nm) + "</b>" + en + desc + tag + "</span>";
+          '<b class="fex-qlt">' + esc(nm) + "</b>" + en + desc + tag + "</a>";
       }).join('<i class="fex-qlarr" aria-hidden="true"></i>');
       return '<div class="fex-qlchain">' + nodes + "</div>";
     }).join("");
@@ -1431,7 +1432,7 @@
               (r[6] ? "<span>" + esc(fsr(FSR_LBL.turnin)) + ': <b' + (qturn ? ">" : ' class="rt-en" dir="ltr">') + esc(qturn || r[6]) + "</b>" +
                 (qturn ? '<span class="fex-sub rt-en" dir="ltr">' + esc(r[6]) + "</span>" : "") + "</span>" : "") +
               (zd ? '<span class="fex-z' + (zfa ? "" : " rt-en") + '"' + (zfa ? "" : ' dir="ltr"') + ">" + esc(zfa || zd[0]) + "</span>" : "") + "</div>" +
-              (link ? '<a class="fex-w" href="https://www.wowhead.com/classic/quest=' + esc(r[0]) + '" target="_blank" rel="noopener">Wowhead</a>' : "") +
+              (link ? '<a class="fex-w" href="quest.html?id=' + esc(r[0]) + '">' + esc(fsr(FSR_LBL.qlpage)) + "</a>" : "") +
               "</div></div>";
           }).join("");
           secs += fsrSec(fsr(FSR_LBL.quests), S.q.length, qb, { delay: 200 });
@@ -1507,8 +1508,8 @@
           return '<div class="fex-quest">' +
             '<i class="fex-qm" aria-hidden="true">!</i>' +
             '<div class="fex-qb"><div class="fex-quest-h">' +
-            (link ? '<b>' + (sfa ? esc(sfa) + '<span class="fex-sub rt-en" dir="ltr">' + esc(r[1]) + "</span>"
-                  : '<a class="rt-en" dir="ltr" href="https://www.wowhead.com/classic/quest=' + esc(r[0]) + '" target="_blank" rel="noopener">' + esc(r[1]) + "</a>") + "</b>"
+            (link ? '<b><a href="quest.html?id=' + esc(r[0]) + '">' + (sfa ? esc(sfa) + '<span class="fex-sub rt-en" dir="ltr">' + esc(r[1]) + "</span>"
+                  : '<span class="rt-en" dir="ltr">' + esc(r[1]) + "</span>") + "</a></b>"
                   : '<b class="rt-en" dir="ltr">' + esc(r[1]) + "</b>") +
             (r[2] != null ? '<span class="fex-lv">' + fsr(FSR_LBL.lvl) + " " + fsrLv(r[2]) + "</span>" : "") + "</div>" +
             (r[3] ? '<div class="fex-quest-m"><span class="fex-z' + (trZone(r[3]) ? "" : " rt-en") + '"' + (trZone(r[3]) ? "" : ' dir="ltr"') + ">" + esc(trZone(r[3]) || r[3]) + "</span></div>" : "") +

@@ -26,7 +26,7 @@
     }
     if (x.samples && x.samples.length) {
       h += '<h4>صفحه‌هایی که همین الان انگلیسی‌اند (' + fa(x.samples.length) + ' نمونهٔ بدتر)</h4><ul>' + x.samples.map(function (m) {
-        return '<li><a href="' + esc(m.u) + '" target="_blank" rel="noopener"><b dir="ltr">' + esc(m.l) + '</b></a>' +
+        return '<li><a href="' + esc(m.u) + '"><b dir="ltr">' + esc(m.l) + '</b></a>' +
           (m.w ? ' <span dir="ltr" style="opacity:.75;font-size:12.5px">' + esc(m.w) + '</span>' : '') + '<i>' + fa(m.n) + ' مورد</i></li>';
       }).join('') + '</ul>';
     }
