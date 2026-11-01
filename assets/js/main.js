@@ -432,3 +432,26 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.appendChild(a);
   });
 })();
+
+/* ---------- ads: Yektanet native ads ----------
+   The block below is the vendor snippet EXACTLY as delivered by Yektanet (publisher JIWAxxfW,
+   native-49139). Their rules forbid any change to delivered code, so do not edit it here.
+   It only loads the loader; ads render in the position divs placed in the pages. */
+!function(e,t,n){
+e.yektanetAnalyticsObject=n,
+e[n]=e[n]||function(){e[n].q.push(arguments)},
+e[n].q=e[n].q||[];
+var a=t.getElementsByTagName("head")[0],
+r=new Date,
+c="https://cdn.yektanet.com/superscript-v2/JIWAxxfW/native-49139/yn_pub.js?v="
++r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
+s=t.createElement("link");
+s.rel="preload",
+s.as="script",
+s.href=c,
+a.appendChild(s);
+var l=t.createElement("script");
+l.async=!0,
+l.src=c,
+a.appendChild(l);
+}(window,document,"yektanet");
