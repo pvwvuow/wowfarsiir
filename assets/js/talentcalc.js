@@ -1,5 +1,5 @@
 /* =========================================================
-   wowfarsi — Forever talent calculator (fa) · v6
+   wowfarsi — Forever talent calculator (fa) · v7
    Same language as the retail Talent Tree page and the item
    card (site.css / fantasy.css): hairlines that fade out,
    ring + dot ornaments, little diamonds, no boxes.
@@ -40,6 +40,18 @@
   var view = null, vb = null, panningActive = false, phone = false;
   var pinnedKey = null;
   var GEO = null;
+  /* shared gradients for the glass zones (objectBoundingBox, so they fit any zone) */
+  var GOLD = function (o) { return '<stop offset="' + o[0] + '" stop-color="#f0c75e" stop-opacity="' + o[1] + '"/>'; };
+  var GLASS_DEFS =
+    '<linearGradient id="fc-g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18203a" stop-opacity=".5"/><stop offset="1" stop-color="#080b14" stop-opacity=".72"/></linearGradient>' +
+    '<linearGradient id="fc-g-sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe0ff" stop-opacity=".085"/><stop offset=".35" stop-color="#cfe0ff" stop-opacity=".02"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></linearGradient>' +
+    '<radialGradient id="fc-g-glow" cx=".5" cy="1.04" r=".82" fx=".5" fy="1.04"><stop offset="0" style="stop-color:var(--cc,#f0c75e);stop-opacity:.3"/><stop offset=".55" style="stop-color:var(--cc,#f0c75e);stop-opacity:.07"/><stop offset="1" style="stop-color:var(--cc,#f0c75e);stop-opacity:0"/></radialGradient>' +
+    '<linearGradient id="fc-g-fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".09" stop-color="#fff" stop-opacity="1"/><stop offset=".91" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+    '<mask id="fc-m-fade" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#fc-g-fade)"/></mask>' +
+    '<linearGradient id="fc-g-hh" x1="0" y1="0" x2="1" y2="0">' + [[0, 0], [.18, .7], [.82, .7], [1, 0]].map(GOLD).join("") + "</linearGradient>" +
+    '<linearGradient id="fc-g-hv" x1="0" y1="0" x2="0" y2="1">' + [[0, .6], [.88, 0], [1, 0]].map(GOLD).join("") + "</linearGradient>" +
+    '<linearGradient id="fc-g-hl" x1="0" y1="0" x2="1" y2="0">' + [[0, 0], [1, .75]].map(GOLD).join("") + "</linearGradient>" +
+    '<linearGradient id="fc-g-hr" x1="1" y1="0" x2="0" y2="0">' + [[0, 0], [1, .75]].map(GOLD).join("") + "</linearGradient>";
   var broken = new Set();
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -153,10 +165,35 @@
     return parts.join("");
   }
 
+  /* a tree zone wears the site's sigil language (.btn): smoked glass that
+     fades out at its sides, hairlines that fade toward their ends, a ring + dot
+     (with two satellites) breaking the bottom line, a diamond that wakes on top.
+     No rounded box. Hover / spent points light the lines. */
+  function zoneOpen(f, spent) {
+    var x = f.x, w = f.w, h = f.h, cx = x + w / 2, th = 0.016, gap = 0.26, p = [];
+    var rect = function (cls, rx, ry, rw, rh, fill, mask) {
+      return '<rect class="' + cls + '" x="' + f3(rx) + '" y="' + f3(ry) + '" width="' + f3(rw) + '" height="' + f3(rh) + '" fill="url(#' + fill + ')"' + (mask ? ' mask="url(#fc-m-fade)"' : "") + "/>";
+    };
+    p.push('<g class="fc-zg' + (spent > 0 ? " on" : "") + '">');
+    p.push(rect("fc-zone", x, 0, w, h, "fc-g-glass", true));
+    p.push(rect("fc-zone", x, 0, w, h, "fc-g-glow", true));
+    p.push(rect("fc-zone", x, 0, w, h * 0.5, "fc-g-sheen", true));
+    p.push(rect("fc-hl", x, 0, w, th, "fc-g-hh"));
+    p.push(rect("fc-hl", x, 0, th, h, "fc-g-hv"));
+    p.push(rect("fc-hl", x + w - th, 0, th, h, "fc-g-hv"));
+    p.push(rect("fc-hl", x, h - th, w / 2 - gap, th, "fc-g-hl"));
+    p.push(rect("fc-hl", cx + gap, h - th, w / 2 - gap, th, "fc-g-hr"));
+    p.push('<g transform="translate(' + f3(cx) + " " + f3(h - th / 2) + ')"><g class="fc-orn">' +
+      '<circle r="0.062" class="fc-orn-ring"/><circle r="0.027" class="fc-orn-dot"/>' +
+      '<circle cx="-0.19" r="0.016" class="fc-orn-sat"/><circle cx="0.19" r="0.016" class="fc-orn-sat"/></g></g>');
+    p.push('<g transform="translate(' + f3(cx) + ' 0.008)"><rect class="fc-dia" x="-0.036" y="-0.036" width="0.072" height="0.072"/></g>');
+    return p.join("");
+  }
+
   function frameSVG(f) {
     var t = f.t, tr = DATA.trees[t], spent = spentIn(t), parts = [];
     var x1 = f.x + 0.3, x2 = f.x + f.w - 0.3;
-    parts.push('<rect class="fc-zone" x="' + f3(f.x) + '" y="0" width="' + f3(f.w) + '" height="' + f3(f.h) + '" rx="0.24"/>');
+    parts.push(zoneOpen(f, spent));
     /* header (RTL): Persian name + small-caps EN on the right, points on the left */
     parts.push('<text class="fc-zone-head" x="' + f3(x2) + '" y="0.5" text-anchor="end">' + esc(treeLabel(tr)) + "</text>");
     parts.push('<text class="fc-zone-en" x="' + f3(x2) + '" y="0.78" text-anchor="end">' + esc(tr.n || "") + "</text>");
@@ -198,6 +235,7 @@
     eachNode(t, function (x, ti) { order.push({ x: x, ti: ti, p: GEO.pos[key(t, x.n)] }); });
     order.sort(function (a, c) { return (a.p.y - c.p.y) || (a.p.x - c.p.x); });
     order.forEach(function (o) { parts.push(nodeSVG(t, o.x, o.ti, o.p)); });
+    parts.push("</g>");
     return parts.join("");
   }
 
@@ -208,7 +246,7 @@
     if (!view) view = { k: 1, x: 0, y: 0 };
     var parts = ['<svg viewBox="' + f3(vb.x) + " " + f3(vb.y) + " " + f3(vb.w) + " " + f3(vb.h) + '" preserveAspectRatio="xMidYMid meet">'];
     parts.push('<defs><marker id="fc-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="rgba(160,170,190,.55)"/></marker>' +
-      '<marker id="fc-arrow-lit" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f0c75e"/></marker></defs>');
+      '<marker id="fc-arrow-lit" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f0c75e"/></marker>' + GLASS_DEFS + "</defs>");
     parts.push('<g id="fc-inner" transform="translate(' + f3(view.x) + " " + f3(view.y) + ") scale(" + view.k.toFixed(4) + ')">');
     parts.push('<g class="' + (enterAnim ? "fc-enter" : "") + '">');
     GEO.frames.forEach(function (f) { parts.push(frameSVG(f)); });

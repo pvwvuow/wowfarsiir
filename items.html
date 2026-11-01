@@ -9,7 +9,19 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/css/site.css?v=20261031b">
+<script>
+/* Forever pages get the skyborne background: mirror of retail.js itvVer() —
+   ?ver wins, then localStorage (itv-ver). switchVer() navigates, so this
+   load-time check is enough (and runs before retail.js paints .bg-layers). */
+(function () {
+  var v = new URLSearchParams(location.search).get("ver");
+  if (v !== "retail" && v !== "forever") {
+    try { v = localStorage.getItem("itv-ver") === "forever" ? "forever" : "retail"; } catch (e) { v = "retail"; }
+  }
+  if (v === "forever") document.documentElement.classList.add("itv-forever");
+})();
+</script>
+<link rel="stylesheet" href="assets/css/site.css?v=20261101c">
 <link rel="stylesheet" href="assets/css/index.css?v=20261114a">
 <link rel="stylesheet" href="assets/css/fantasy.css?v=20261025d">
 <link rel="stylesheet" href="assets/css/extra.css?v=20261025d">

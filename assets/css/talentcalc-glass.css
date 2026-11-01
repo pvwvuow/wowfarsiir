@@ -1,0 +1,17 @@
+/* =========================================================
+   wowfarsi — Forever talents · glass zones (v7)
+   Loaded after talentcalc.css. Each tree zone is smoked glass
+   with fading hairlines and the .btn sigil ornament, not a box.
+   ========================================================= */
+.fc-zone { stroke: none; }
+.fc-hl { opacity: 0.72; transition: opacity 0.3s ease; }
+.fc-zg:hover .fc-hl, .fc-zg.on .fc-hl { opacity: 1; }
+.fc-orn { transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 0.04px rgba(240, 199, 94, 0.55)); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), filter 0.3s ease; }
+.fc-orn-ring { fill: none; stroke: #c9a232; stroke-width: 0.014; }
+.fc-orn-dot { fill: #f0c75e; }
+.fc-orn-sat { fill: #c9a232; }
+.fc-zg:hover .fc-orn, .fc-zg.on .fc-orn { transform: scale(1.18); filter: drop-shadow(0 0 0.07px rgba(240, 199, 94, 0.95)); }
+.fc-dia { fill: #f0c75e; transform-box: fill-box; transform-origin: center; transform: rotate(45deg) scale(0); filter: drop-shadow(0 0 0.06px rgba(240, 199, 94, 0.9)); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+.fc-zg:hover .fc-dia, .fc-zg.on .fc-dia { transform: rotate(45deg) scale(1); }
+.fc-enter .fc-zg { animation: fc-fade 0.6s ease both; }
+@media (prefers-reduced-motion: reduce) { .fc-enter .fc-zg { animation: none; } }
