@@ -3,9 +3,11 @@
    Persian, and suggest a better one. A suggestion never touches the site
    directly: it goes to a review box; once a reviewer accepts it, it is fixed
    everywhere (same data files the site already serves).
-   Backend: data/forever/i18n/suggest.json {endpoint,key,table} = a Supabase
-   REST table with an insert-only anon key (see docs/TRANSLATION_SUGGEST.md).
-   Empty endpoint = suggestions stay on THIS device and the tab says so.
+   Review box = GitHub Issues (Supabase & co. are blocked in Iran): the send
+   button opens a PRE-FILLED new Issue on the public repo named in
+   data/forever/i18n/suggest.json {repo}; the visitor presses Submit there.
+   See docs/TRANSLATION_SUGGEST.md. Empty repo = suggestions stay on THIS
+   device and the tab says so.
    Data used (all already on the site):
      entities.json  (spells, NPCs, zones, terms, item refs ...)
      shared.json    (sentence patterns)
@@ -13,13 +15,13 @@
    studio.js calls WFSuggest.html() / WFSuggest.wire(root) for the tab. */
 (function () {
   'use strict';
-  var V = '20261116a', DB_V = '20261110o';
+  var V = '20261116b', DB_V = '20261110o';
   var HAS_FA = /[\u0600-\u06FF]/;
   var LS_SENT = 'wf-sugg-sent', LS_DAY = 'wf-sugg-day', DAY_MAX = 30, MAX_ROWS = 40;
   var TYPE_LB = { spell: 'اسپل', skill: 'مهارت', talent_tree: 'درخت تلنت', zone: 'منطقه', creature: 'موجود',
     creature_type: 'نوع موجود', npc: 'NPC', faction: 'فکشن', item_ref: 'آیتم / ست', term: 'اصطلاح',
     sentence: 'جمله', item: 'آیتم', text: 'متن دلخواه' };
-  var S = { q: '', pairs: null, loading: false, items: null, itemsSt: 0, cfg: {}, cfgP: null, res: [], root: null, t: 0 };
+  var S = { q: '', pairs: null, loading: false, items: null, itemsSt: 0, cfg: {}, cfgP: null, res: [], root: null, t: 0, url: '' };
   var shards = {};
 
   function esc(s) {
@@ -208,14 +210,28 @@
       });
     }
   }
+  /* pre-filled new Issue on the public suggestions repo (readable text + a
+     hidden machine-readable comment for tools/apply_suggestions.py) */
+  function issueUrl(rec, repo) {
+    var kl = TYPE_LB[rec.kind] || rec.kind, meta, body, title;
+    meta = JSON.stringify({ kind: rec.kind, key: rec.key, item_id: rec.item_id, current_fa: rec.current_fa,
+      suggested: rec.suggested, note: rec.note, page: location.pathname }).replace(/--/g, '-\\u002d');
+    title = '[ترجمه] ' + kl + ': ' + String(rec.key).replace(/\s+/g, ' ').slice(0, 70);
+    body = '**نوع:** ' + kl + '\n**متن اصلی (EN):** ' + rec.key + '\n'
+      + (rec.item_id != null ? '**شناسهٔ آیتم:** ' + rec.item_id + '\n' : '')
+      + '**ترجمهٔ فعلی:** ' + (rec.current_fa || '—') + '\n**ترجمهٔ پیشنهادی:** ' + rec.suggested + '\n'
+      + (rec.note ? '**توضیح:** ' + rec.note + '\n' : '')
+      + '\n<!-- wf-suggestion ' + meta + ' -->\n';
+    return 'https://github.com/' + repo + '/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+  }
+  /* must run synchronously inside the click so the popup is not blocked */
   function post(rec) {
-    var c = S.cfg || {};
-    if (!c.endpoint || !c.key) return Promise.resolve('local');
-    return fetch(String(c.endpoint).replace(/\/+$/, '') + '/rest/v1/' + (c.table || 'suggestions'), {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', apikey: c.key, Authorization: 'Bearer ' + c.key, Prefer: 'return=minimal' },
-      body: JSON.stringify(rec)
-    }).then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return 'sent'; });
+    var c = S.cfg || {}, w;
+    if (!c.repo || !/^[\w.-]+\/[\w.-]+$/.test(c.repo)) return 'local';
+    S.url = issueUrl(rec, c.repo);
+    w = window.open(S.url, '_blank');
+    if (w) { try { w.opener = null; } catch (e) { /* ignore */ } return 'github'; }
+    return 'github-blocked';
   }
   function remember(rec, st) {
     var list = lsGet(LS_SENT, []), day = lsGet(LS_DAY, {});
@@ -228,7 +244,7 @@
   }
   function send(row, r, slot) {
     var ta = slot.querySelector('.sg-ta'), nt = slot.querySelector('.sg-note'), hp = slot.querySelector('.sg-hp');
-    var msg = slot.querySelector('.sg-msg'), btn = slot.querySelector('[data-act="send"]'), val, day, rec;
+    var msg = slot.querySelector('.sg-msg'), btn = slot.querySelector('[data-act="send"]'), val, day, rec, mode;
     function say(t, bad) { msg.textContent = t; msg.className = 'sg-msg ' + (bad ? 'err' : 'ok'); }
     if (!ta || !msg) return;
     val = ta.value.trim();
@@ -240,15 +256,15 @@
     rec = { kind: r.t, key: String(r.k).slice(0, 400), item_id: isFinite(Number(r.id)) && r.id != null ? Number(r.id) : null,
       current_fa: String(r.fa || '').slice(0, 600), suggested: val.slice(0, 600), note: (nt && nt.value.trim().slice(0, 600)) || null };
     if (btn) btn.disabled = true;
-    post(rec).then(function (mode) {
-      remember(rec, mode);
-      slot.innerHTML = '<p class="sg-msg ok">' + (mode === 'sent'
-        ? '✓ برای بررسی ثبت شد؛ ممنون که کمک کردی.'
-        : '✓ ذخیره شد، ولی صندوق بررسی هنوز به سرور وصل نیست و پیشنهاد فعلاً فقط روی همین دستگاه مونده.') + '</p>';
-    }).catch(function () {
-      remember(rec, 'local');
-      slot.innerHTML = '<p class="sg-msg err">سرور در دسترس نبود؛ پیشنهاد روی همین دستگاه ذخیره شد.</p>';
-    });
+    mode = post(rec);
+    remember(rec, mode === 'local' ? 'local' : 'github');
+    if (mode === 'github') {
+      slot.innerHTML = '<p class="sg-msg ok">✓ صفحهٔ گیت‌هاب باز شد. اونجا دکمهٔ «Submit new issue» رو بزن تا پیشنهاد ثبت بشه (حساب گیت‌هاب لازمه).</p>';
+    } else if (mode === 'github-blocked') {
+      slot.innerHTML = '<p class="sg-msg ok">مرورگر صفحهٔ گیت‌هاب رو نذاشت باز شه. <a href="' + esc(S.url) + '" target="_blank" rel="noopener">باز کردن صفحهٔ گیت‌هاب</a> و اونجا «Submit new issue» رو بزن.</p>';
+    } else {
+      slot.innerHTML = '<p class="sg-msg ok">✓ ذخیره شد، ولی صندوق بررسی هنوز وصل نیست و پیشنهاد فعلاً فقط روی همین دستگاه مونده.</p>';
+    }
   }
   function copyQueue(b) {
     var list = lsGet(LS_SENT, []).filter(function (x) { return x.st === 'local'; }), txt = JSON.stringify(list, null, 1);
@@ -260,8 +276,9 @@
     if (!el) return;
     loc = sent.filter(function (x) { return x.st === 'local'; }).length;
     h = 'پیشنهادها اول می‌رن توی صندوق بررسی؛ اگه درست باشن، همه‌جای سایت اصلاح می‌شن.';
-    if (!(S.cfg && S.cfg.endpoint)) h += ' صندوق بررسی هنوز به سرور وصل نیست و پیشنهادها فعلاً روی همین دستگاه می‌مونن.';
-    if (sent.length) h += ' پیشنهادهای ثبت‌شدهٔ تو: ' + faNum(sent.length) + '.';
+    if (S.cfg && S.cfg.repo) h += ' صندوق بررسی یه ریپوی عمومی در گیت‌هابه و برای ثبت پیشنهاد حساب گیت‌هاب لازمه.';
+    else h += ' صندوق بررسی هنوز وصل نیست و پیشنهادها فعلاً روی همین دستگاه می‌مونن.';
+    if (sent.length) h += ' پیشنهادهای بازشده از طرف تو: ' + faNum(sent.length) + '.';
     el.textContent = h;
     if (loc) el.insertAdjacentHTML('beforeend', ' <button type="button" class="sg-btn" data-act="copy">کپی پیشنهادهای ذخیره‌شده</button>');
   }
