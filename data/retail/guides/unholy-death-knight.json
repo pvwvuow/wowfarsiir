@@ -1,1937 +1,1937 @@
 {
-  "slug": "unholy-death-knight",
-  "class": "death-knight",
-  "class_en": "Death Knight",
-  "spec_en": "Unholy",
-  "spec_no": 3,
-  "role": "DPS",
-  "patch": "12.1.5",
-  "season": "Midnight Season 2",
-  "updated": "2026-10-27",
-  "title": "راهنمای Unholy Death Knight",
-  "lead": "Unholy یک اسپک DPS دوهندی است که با بیماری‌ها و ارتش گول‌هایش بازی می‌کند؛ بیشتر آسیبش در پنجره‌های برست [[Army of the Dead]] و [[Dark Transformation]] می‌آید. در Midnight Season 2 دو مسیر Hero Tree داری: [[Rider of the Apocalypse]] با پنجره‌های ۹۰ ثانیه‌ای و ساده‌تر، و [[San'layn]] با چرخهٔ ۴۵ ثانیه‌ای که در Mythic+ سطح بالا ترجیح دارد.",
-  "sources": [
-    {
-      "name": "Wowhead Overview",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/overview-pve-dps",
-      "updated": "2026-10-13"
-    },
-    {
-      "name": "Wowhead Talent Builds",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/talent-builds-pve-dps",
-      "updated": "2026-10-13"
-    },
-    {
-      "name": "Wowhead Rotation",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/rotation-cooldowns-pve-dps",
-      "updated": "2026-10-13"
-    },
-    {
-      "name": "Wowhead BiS Gear",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/bis-gear",
-      "updated": "2026-10-13"
-    },
-    {
-      "name": "Wowhead Consumables",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/enchants-gems-pve-dps",
-      "updated": "2026-10-13"
-    },
-    {
-      "name": "Icy Veins: Unholy Guide (Overview)",
-      "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-guide",
-      "updated": "2026-10-12"
-    },
-    {
-      "name": "Icy Veins: Unholy Spec, Builds & Talents",
-      "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-spec-builds-talents",
-      "updated": "2026-10-12"
-    },
-    {
-      "name": "Icy Veins: Unholy Easy Mode",
-      "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-easy-mode",
-      "updated": "2026-10-12"
-    },
-    {
-      "name": "Icy Veins: Unholy Leveling (8-90)",
-      "url": "https://www.icy-veins.com/wow/unholy-death-knight-leveling-guide",
-      "updated": "2026-10-12"
-    },
-    {
-      "name": "Icy Veins: Unholy Stat Priority",
-      "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-stat-priority",
-      "updated": "2026-10-12"
-    },
-    {
-      "name": "Icy Veins: Unholy Gear & BiS",
-      "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-gear-best-in-slot",
-      "updated": "2026-10-12"
-    }
-  ],
-  "glossary": {
-    "Army of the Dead": {
-      "fa": "کول‌داون بزرگ برای فراخوانی زامبی‌ها که منبع دامنه و آسیب است."
-    },
-    "Dark Transformation": {
-      "fa": "کول‌داون کلیدی برای تبدیل گول‌های فرزند به گول‌های قدرتمند."
-    },
-    "Rider of the Apocalypse": {
-      "fa": "هیرو تری که بر قدرت تک‌هدف و حرکت تمرکز دارد"
-    },
-    "San'layn": {
-      "fa": "هیرو تری که بر AoE و پایداری تمرکز دارد"
-    },
-    "Death Order": {
-      "fa": "یک اثر که توسط گول‌های [[Army of the Dead]] فعال می‌شود"
-    },
-    "Epidemic Order": {
-      "fa": "یک اثر جایگزین برای Death Order که توسط گول‌ها فعال می‌شود"
-    },
-    "Lesser Ghoul": {
-      "fa": "گول‌های کوچکی که استک‌هایشان را [[Festering Strike]] می‌سازد و [[Scourge Strike]] احضارشان می‌کند؛ حملهٔ [[Sweeping Claws]]شان بخش بزرگی از آسیب AoE توست."
-    },
-    "Lord of the Dead": {
-      "fa": "تلنت کپ‌استون که یک لیک با ۳ گول فعال می‌کند"
-    },
-    "Magus of the Dead": {
-      "fa": "گول‌های ویژه که توسط Lord of the Dead فراخوانی می‌شوند"
-    },
-    "Apocalypse Now": {
-      "fa": "تلنت کلیدی Rider of the Apocalypse که پنجره‌ای ۹۰ ثانیه‌ای قدرت ایجاد می‌کند"
-    },
-    "Outbreak": {
-      "fa": "اسپل اولیه برای اعمال بیماری روی هدف."
-    },
-    "Festering Scythe": {
-      "fa": "بافی که [[Festering Strike]] می‌سازد و سرعت تیک بیماری‌ها را بالا می‌برد؛ پیش از اتمام با [[Festering Strike]] تازه‌اش کن."
-    },
-    "Scourge Strike": {
-      "fa": "اسپل مصرف‌کنندهٔ Rune که به ازای استک‌های [[Lesser Ghoul]] گول احضار می‌کند؛ با [[Clawing Shadows]] تا ۴ هدف کیولد می‌شود (با [[Scourging]] تا ۶)."
-    },
-    "Death Coil": {
-      "fa": "اسپل اصلی خرج Runic Power که با پروک Sudden Doom قوی‌تر می‌شود."
-    },
-    "Soul Reaper": {
-      "fa": "اسپل دامنه بالا که روی دشمنان با سلامت کمتر مؤثرتر است."
-    },
-    "Death and Decay": {
-      "fa": "اسپل اِی‌او‌ای که دامنه مداوم ایجاد می‌کند."
-    },
-    "Virulent Plague": {
-      "fa": "بیماری اصلی که توسط Outbreak و Scourge Strike اعمال می‌شود."
-    },
-    "Putrefy": {
-      "fa": "کول‌داون کوتاهی که حین [[Dark Transformation]] می‌زنی؛ انفجارش [[Blightburst]] می‌سازد و رتبه‌های [[Forbidden Knowledge]] با هر کست آن Mastery و استک [[Lesser Ghoul]] می‌دهند."
-    },
-    "Festering Strike": {
-      "fa": "اسپل اصلی برای ایجاد استک‌های Festering Wound."
-    },
-    "Sudden Doom": {
-      "fa": "پروک تصادفی که Death Coil را بدون نیاز به Runic Power فعال می‌کند."
-    },
-    "Blightfall": {
-      "fa": "تلنت فعال که مصرف بیماری‌ها را به برست بزرگ تبدیل می‌کند و خودش یک شارژ [[Putrefy]] می‌دهد؛ قاعدهٔ دو مرحله‌ای: پیش از اتمام باف [[Soul Reaper]] و پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]."
-    },
-    "Epidemic": {
-      "fa": "ورژن اِی‌او‌ای Death Coil که بیماری را به دشمنان دیگر منتقل می‌کند."
-    },
-    "Necrotic Coil": {
-      "fa": "نسخهٔ تقویت‌شدهٔ [[Death Coil]] در پنجرهٔ [[Forbidden Knowledge]] با آسیب AoE و تا ۵ هدف؛ از حدود ۳۰ Runic Power ارزش دارد و با پروک [[Sudden Doom]] از حدود ۱۵."
-    },
-    "Vampiric Strike": {
-      "fa": "توانایی مختص هیرو [[San'layn]]؛ پروک‌هایش باف [[Essence of the Blood Queen]] را می‌سازد (۷ استک برای پل زدن بین [[Dark Transformation]]ها). مراقب overcap شدن Runic Power باش که پروک‌ها را از دست ندهی."
-    },
-    "Commander of the Dead": {
-      "fa": "تلنت که Army of the Dead را تقویت و هماهنگ با Dark Transformation می‌کند."
-    },
-    "Voracious Heart of Ula'tek": {
-      "fa": "یک افزونه قوی برای برست که در فایت‌های طولانی ارزش بالایی دارد"
-    },
-    "Zul'jin's Guillotine Technique": {
-      "fa": "افزونه‌ای با قابلیت استفاده فعال که برای برست‌های دو‌دستی عالی است"
-    },
-    "Baleful Grave-Knight's Crucible": {
-      "fa": "ست تیر ۴ تکه که قدرت پت‌ها را افزایش می‌دهد"
-    },
-    "Corroded Hulk's Skullcap": {
-      "fa": "کریستالیزر سر از Kith'ix"
-    },
-    "Cinderfury Shoulderguards": {
-      "fa": "کریستالیزر شانه از Murder Row"
-    },
-    "Reckless Spirit Breastplate": {
-      "fa": "کریستالیزر سینه از The Coiled Altar"
-    },
-    "Chausses of Unbound Rancor": {
-      "fa": "کریستالیزر پا از Ula'tek"
-    },
-    "Gauntlets of the Avian Sentinel": {
-      "fa": "کریستالیزر دست از King's Rest"
-    },
-    "Blood Knight's Warblade": {
-      "fa": "ساخته شده با Darkmoon Sigil: Hunt"
-    },
-    "Spellbreaker's Bracers": {
-      "fa": "ساخته شده با Arcanoweave Lining"
-    },
-    "Spellbreaker's March": {
-      "fa": "ساخته شده بدون لاینینگ"
-    },
-    "Potion of Recklessness": {
-      "fa": "پتشن قدرتمند که با افزایش قابل توجه قدرت، خسارت وارد شده را افزایش می‌دهد."
-    },
-    "Flask of the Magisters": {
-      "fa": "فلاسکی که قدرت را به طور دائمی افزایش می‌دهد."
-    },
-    "Flask of the Shattered Sun": {
-      "fa": "فلاسکی که قدرت و استت‌های ثانویه را افزایش می‌دهد."
-    },
-    "Silvermoon Parade": {
-      "fa": "پخش غذا که برای گروه مناسب است و قدرت و استت‌ها را افزایش می‌دهد."
-    },
-    "Royal Roast": {
-      "fa": "غذا شخصی که قدرت و استت‌ها را افزایش می‌دهد."
-    },
-    "Rune of the Apocalypse": {
-      "fa": "رون‌فورج سلاح که خسارت اسپل‌های Unholy را افزایش می‌دهد."
-    },
-    "Thalassian Phoenix Oil": {
-      "fa": "روغن سلاح که خسارت وارد شده توسط اسپل‌ها را افزایش می‌دهد."
-    },
-    "Void-Touched Augment Rune": {
-      "fa": "افزونه‌ای که استت‌های اصلی را افزایش می‌دهد."
-    },
-    "Blinding Sleet": {
-      "fa": "کنترل دسته‌ای که دشمنان اطراف را Disorient می‌کند؛ برای قطع کست‌های بدون اینتراپت و مدیریت پک‌ها به‌کار می‌رود."
-    },
-    "Mind Freeze": {
-      "fa": "اینتراپت اصلی برای جلوگیری از کست دشمنان"
-    },
-    "Death Grip": {
-      "fa": "یک اسپل کشش که دشمن را به سمت شما می‌آورد"
-    },
-    "Wraith Walk": {
-      "fa": "یک اسپل حرکتی سریع که به شما اجازه می‌دهد از موانع عبور کنید"
-    },
-    "Death's Advance": {
-      "fa": "افزایش حرکت و مقاومت در برابر توقف حرکت"
-    },
-    "Anti-Magic Shell": {
-      "fa": "یک سپر که از جادو محافظت می‌کند و شفا را جذب می‌کند"
-    },
-    "Death Strike": {
-      "fa": "یک اسپل حیاتی که با آسیب دریافت شده شفا می‌دهد"
-    },
-    "Dread Plague": {
-      "fa": "بیماری جدید تک‌هدف Midnight که با Outbreak اعمال می‌شود و منبع پروک Sudden Doom است."
-    },
-    "Dark Succor": {
-      "fa": "بعد از کشتن دشمن، Death Strike بعدی‌ات رایگان است و شفا می‌دهد."
-    },
-    "Rune of the Fallen Crusader": {
-      "fa": "رون‌فورج سلاح DK که شانس برخورد به Strength اضافه می‌کند؛ انتخاب استاندارد لولینگ و PvE."
-    },
-    "Blood Beast": {
-      "fa": "مینیون درخت San'layn که رشد چندمربعی دارد و در پک‌ها آسیب زیادی می‌زند."
-    },
-    "Essence of the Blood Queen": {
-      "fa": "باف درخت San'layn که با پروک Vampiric Strike نگه داشته می‌شود."
-    },
-    "Unholy Aura": {
-      "fa": "باف فعال Unholy که با هر فراخوانی مینیون تازه می‌شود و آسیب مینیون‌ها را بالا می‌برد."
-    },
-    "Chains of Ice": {
-      "fa": "اسپل پایهٔ DK که هدف را اسلوم می‌کند؛ نسخهٔ Trollbane لحظهٔ کست برست می‌زند."
-    },
-    "Raise Dead": {
-      "fa": "احضار پت اصلی (Timmy)؛ طبق راهنما پیش از شروع هر مبارزه، حتی در محتوای اوپن‌ورلد، زده می‌شود."
-    },
-    "Raise Abomination": {
-      "fa": "از تلنت‌هایی که همراه Army of the Dead پت اضافه برایت احضار می‌کند."
-    },
-    "Ride or Die!": {
-      "fa": "از تلنت‌های هرو Rider of the Apocalypse که همراه Dark Transformation فعال می‌شود."
-    },
-    "Outnumber": {
-      "fa": "به غول‌های کوچک در طول Dark Transformation حملهٔ AoE (Claw) می‌دهد؛ Army of the Dead را به کول‌داون AoE قوی‌تری تبدیل می‌کند."
-    },
-    "Blightburst": {
-      "fa": "انفجار Putrefy طول بیماری‌ها را کش می‌دهد، بخشی از دمیج مدت آن‌ها را فوری می‌زند و بیماری‌ها را روی اهداف سالم هم می‌گذارد؛ تعداد Outbreakها را هم کم می‌کند."
-    },
-    "Sweeping Claws": {
-      "fa": "ضربهٔ AoE غول‌های کوچک در طول Dark Transformation؛ بخش بزرگی از پتانسیل دمیج AoE توست."
-    },
-    "Forbidden Knowledge": {
-      "fa": "تلنت Apex؛ با کست [[Army of the Dead]] یک باف ۳۰ ثانیه‌ای می‌گیری. رتبهٔ ۱: [[Death Coil]] به [[Necrotic Coil]] و [[Epidemic]] به [[Graveyard]] تبدیل می‌شود؛ رتبه‌های ۲ و ۳ با هر [[Putrefy]] Mastery و یک استک [[Lesser Ghoul]] می‌دهند؛ رتبهٔ ۴ به [[Dread Plague]] ۲۰٪ شانس تریگر [[Putrefy]] با اثر کامل می‌دهد. پت‌ها باید روی assist باشند."
-    },
-    "Graveyard": {
-      "fa": "نسخهٔ تقویت‌شدهٔ [[Epidemic]] در پنجرهٔ [[Forbidden Knowledge]] (رتبهٔ ۱)؛ در اولویت AoE آن پنجره بالای فیلرها می‌نشیند."
-    },
-    "Raise Ally": {
-      "fa": "کمبت‌ریز Death Knight؛ یک همراه مرده را وسط مبارزه برمی‌گرداند."
-    },
-    "Death Pact": {
-      "fa": "بافن و درمان بزرگ خودی که بخشی از جان فعلی‌ات را می‌دهد؛ برای نجات از دمیج‌های سنگین یا حذف سریع افکت‌های مرگ‌آور."
-    },
-    "Asphyxiate": {
-      "fa": "استان ۵ ثانیه‌ای تک‌هدف؛ پشتیبان [[Mind Freeze]] وقتی اینتراپت کافی نیست."
-    },
-    "Anti-Magic Zone": {
-      "fa": "حباب گروهی که آسیب جادویی داخلش را کم می‌کند؛ برای پک‌های کست‌محور."
-    },
-    "Control Undead": {
-      "fa": "یک موجود زنده‌مردهٔ دشمن را موقتاً تحت کنترل خودت درمی‌آوری؛ ابزار سرگرم‌کننده و کاربردی در برخی پک‌ها."
-    },
-    "Necrotic Bolt": {
-      "fa": "تیر Shadow دمیج‌پت‌ها؛ با ست ۲ تکهٔ فصل ۲، [[Magus of the Dead]] و [[Lord of the Dead]] به‌جای Frostbolt این را می‌اندازند."
-    },
-    "Withering Grasp": {
-      "fa": "تیر Shadow دمیج‌پت‌ها؛ با ست ۲ تکهٔ فصل ۲ به‌جای Shadow Bolt می‌آید و با ست ۴ تکه روی دشمن زیر ۳۵٪ جان تا ۱۳۰٪ قوی‌تر می‌شود."
-    }
+ "slug": "unholy-death-knight",
+ "class": "death-knight",
+ "class_en": "Death Knight",
+ "spec_en": "Unholy",
+ "spec_no": 3,
+ "role": "DPS",
+ "patch": "12.1.5",
+ "season": "Midnight Season 2",
+ "updated": "2026-10-27",
+ "title": "راهنمای Unholy Death Knight",
+ "lead": "Unholy یک اسپک DPS دوهندی است که با بیماری‌ها و ارتش گول‌هایش بازی می‌کند؛ بیشتر آسیبش در پنجره‌های برست [[Army of the Dead]] و [[Dark Transformation]] می‌آید. در Midnight Season 2 دو مسیر Hero Tree داری: [[Rider of the Apocalypse]] با پنجره‌های ۹۰ ثانیه‌ای و ساده‌تر، و [[San'layn]] با چرخهٔ ۴۵ ثانیه‌ای که در Mythic+ سطح بالا ترجیح دارد.",
+ "sources": [
+  {
+   "name": "Wowhead Overview",
+   "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/overview-pve-dps",
+   "updated": "2026-10-13"
   },
-  "sections": [
-    {
-      "id": "overview",
-      "title": "معرفی",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Unholy Death Knight با بیماری‌ها و ارتش مینیون‌های مرده بازی می‌کند و آسیب تک‌هدف بالایی تولید می‌کند. دامنهٔ آن به کیولد پت‌ها، آسیب دومربعی [[Epidemic]]، بیماری‌ها و کیولد [[Scourge Strike]] تکیه دارد. چرخهٔ اصلی یعنی نگه‌داشتن بیماری‌ها، فراخوانی حجم بالای مینیون‌مرده و ضربه‌های مستقیمی که از برد ۳۰ یارد هم مؤثرند: و در کنارش یکی از مقاوم‌ترین کلاس‌های بازی است."
-        },
-        {
-          "t": "ratings",
-          "items": [
-            {
-              "k": "تک‌هدف",
-              "v": "برست قوی و مؤثر از برد",
-              "n": 4
-            },
-            {
-              "k": "چندهدف (AoE)",
-              "v": "خوب",
-              "n": 4
-            },
-            {
-              "k": "Mythic+",
-              "v": "تک‌هدف و AoE خوب",
-              "n": 3
-            },
-            {
-              "k": "ابزار گروه",
-              "v": "کم",
-              "n": 2
-            },
-            {
-              "k": "بقا",
-              "v": "بالاترین سطح",
-              "n": 5
-            },
-            {
-              "k": "تحرک",
-              "v": "کند: با Rider بهتر",
-              "n": 2
-            }
-          ]
-        },
-        {
-          "t": "two",
-          "a": {
-            "cls": "good",
-            "title": "نقاط قوت",
-            "items": [
-              "پنجره‌های برست بزرگ هر ۹۰ ثانیه و برست کوچک‌تر هر ۴۵ ثانیه ([[Army of the Dead]] + [[Dark Transformation]])",
-              "از برد ۳۰ یارد هم بازی می‌شود و در تعویض هدف‌های دور کم نمی‌گذارد",
-              "اکسیکیوت قوی با [[Soul Reaper]]؛ در فایت‌هایی که Bloodlust زیر ۳۵٪ جان باس می‌آید می‌درخشد",
-              "به‌طور مشترک با Frost، مقاوم‌ترین اسپک بازی؛ رتبهٔ ۴ کمترین مرگ بین همهٔ DPS در ریید"
-            ]
-          },
-          "b": {
-            "cls": "bad",
-            "title": "نقاط ضعف",
-            "items": [
-              "ابزار گروهی محدود؛ جز [[Death Grip]] باف مهمی به گروه نمی‌دهد",
-              "تحرک تاریخی پایین: البته [[Rider of the Apocalypse]] با [[Death Charge]] خیلی از این مشکل را حل می‌کند",
-              "در Mythic+ بیشتر به آسیب متکی است تا ابزار؛ برای کلیدهای بالا باید آسیبت رقابتی باشد"
-            ]
-          }
-        },
-        {
-          "t": "h3",
-          "x": "Hero Tree: کدام مسیر؟"
-        },
-        {
-          "t": "cards",
-          "items": [
-            {
-              "title": "Rider of the Apocalypse",
-              "tag": "ساده‌تر با پنجرهٔ ۹۰ ثانیه‌ای",
-              "x": "پنجره‌های برست ۹۰ ثانیه‌ای قوی دارد و به آماده‌سازی و اجرای زیادی نیاز نیست؛ برای شروع learning curve راحت‌تری دارد. با [[Apocalypse Now]] حیوانات چهارگانهٔ چهار فصل را فرامی‌خواند و ابزارهای تحرک مثل [[Death Charge]] می‌دهد."
-            },
-            {
-              "title": "San'layn",
-              "tag": "انتخاب اول Mythic+ سطح بالا",
-              "x": "چرخهٔ برست ۴۵ ثانیه‌ای دارد که در Mythic+ با موج‌های منظم عالی جواب می‌دهد؛ ولی برای پتانسیل کامل، build-up و اجرای پیوسته می‌خواهد. خودبرستش تقریباً غیرقابل‌کش شدن است."
-            }
-          ]
-        },
-        {
-          "t": "p",
-          "x": "هیچ‌کدام از دو مسیر انتخاب اشتباه نیست؛ در ریید بسته به زمان‌بندی فایت بین پنجره‌های ۴۵ ثانیه‌ای [[San'layn]] و ۹۰ ثانیه‌ای [[Rider of the Apocalypse]] جابه‌جا شو. در کلیدهای بالای Mythic+ چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] برتری دارد و Rider برای بازی راحت‌تر و کم‌توقع‌تر انتخاب می‌شود. در دفاع، خودبرست قوی [[San'layn]] تقریباً غیرقابل‌کشتن می‌کند و Rider با [[Death Charge]] و [[March of Darkness]] تحرک می‌دهد."
-        },
-        {
-          "t": "h3",
-          "x": "Unholy در Midnight"
-        },
-        {
-          "t": "p",
-          "x": "Midnight یک بازسازی بزرگ برای Unholy بود: **Festering Wound** برای همیشه حذف شد و جای خود را به حلقهٔ فراخوانی مینیون داد: [[Festering Strike]] حالا روی خودت استک [[Lesser Ghoul]] می‌سازد (۲ تا ۳ استک، سقف ۸) و [[Scourge Strike]] آن‌ها را مصرف کرده و برای هر استک یک گول فرا می‌خواند. چون استک‌ها روی خودت هستند، تعویض هدف دیگر هزینه‌ای ندارد. بیماری جدید تک‌هدفِ [[Dread Plague]] از [[Outbreak]] اعمال می‌شود و منبع پروک [[Sudden Doom]] است، و ابزار تازهٔ [[Putrefy]] گول را پرت می‌کند و می‌ترکانَد."
-        },
-        {
-          "t": "p",
-          "x": "در AoE دیگر وابسته به [[Death and Decay]] نیستی: [[Clawing Shadows]] هر [[Scourge Strike]] را تا ۴ هدف اضافه کیولد می‌کند (با [[Scourging]] تا ۶) و این یعنی می‌توانی پشت تانک راه بیفتی و دامنه را از دست ندهی. اگر [[San'layn]] بازی کنی با تلنت [[Inevitable]] همان اول استک کامل داری. Unholy اکنون باف حیاتی [[Unholy Aura]] را هم دارد که با هر فراخوانی مینیون تازه می‌شود."
-        },
-        {
-          "t": "h4",
-          "x": "تلنت‌های Apex جدید (لول ۸۰ تا ۹۰)"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "[[Forbidden Knowledge]]: با [[Army of the Dead]] باف ۳۰ ثانیه‌ای می‌دهد. رتبهٔ ۱: [[Death Coil]] به [[Necrotic Coil]] و [[Epidemic]] به [[Graveyard]] تبدیل می‌شود ([[Necrotic Coil]] در AoE تا ۵ هدف). رتبه‌های ۲ و ۳: هر [[Putrefy]] Mastery و یک استک [[Lesser Ghoul]] می‌دهد. رتبهٔ ۴: [[Dread Plague]] با ۲۰٪ شانس [[Putrefy]] را با اثر کامل تریگر می‌کند. پت‌ها باید روی assist باشند",
-            "[[Unholy Devotion]]: گول دائمی‌ات هنگام [[Putrefy]] موقتاً قوی‌تر می‌شود (اپلیکیشن‌ها روی هم جمع می‌شوند)",
-            "[[Blightburst]]: انفجار [[Putrefy]] بیماری‌ها را تمدید و بخشی از دامنهٔ آینده‌شان را فوری می‌زند و روی هدف‌های بدون بیماری هم می‌پاشد؛ تعداد [[Outbreak]] ها را محسوس کاهش می‌دهد",
-            "[[Lord of the Dead]] (نام تازهٔ Reanimation): با ۳ گول [[Magus of the Dead]] آن‌ها را فدا کن تا یک لیک ۱۵ ثانیه‌ای با Frost Bolt زنجیره‌ای بیاید",
-            "[[Putrid Echoes]]: شارژ دوم [[Putrefy]] با دامنهٔ بیشتر؛ دو Magus حین [[Dark Transformation]] فرا می‌خوانی",
-            "[[Harbinger of Doom]]: هر فراخوان گول با [[Scourge Strike]] کول‌داون [[Putrefy]] را کم می‌کند",
-            "[[Soul Reaper]]: تا ۳ استک [[Lesser Ghoul]] را خودکار مصرف می‌کند و در فاز اکسیکیوت دیگر نیاز به [[Putrefy]] نیست",
-            "[[Blightfall]]: خودش یک شارژ [[Putrefy]] می‌دهد و مصرف بیماری‌ها را به برست بزرگ تبدیل می‌کند"
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "اصول بازی"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "**باف‌ها را نگه دار**: باف [[Festering Scythe]] را با زدن [[Festering Strike]] تازه نگه دار و هرگز [[Scourge Strike]] با صفر استک [[Lesser Ghoul]] نزن؛ بیلد کن و مصرف کن",
-            "**مدیریت منابع**: دو منبع داری: Rune و Runic Power. سه رون را همیشه در حال شارژ نگه دار و اجازهٔ اورکپ Runic Power را نده",
-            "**دايم بیماری**: بیماری‌ها به‌خصوص [[Dread Plague]] بخش بزرگی از دامنه‌ات هستند؛ هرگز روی هدف اصلی فعال نباشد"
-          ]
-        },
-        {
-          "t": "call",
-          "kind": "tip",
-          "x": "پچ ۱۲.۱.۵ تغییر گیم‌پلی برای Unholy نداشت؛ فقط منابع گیر جدید (ریید Kith'ix و مگادلو Labyrinth) و امکان ارتقای سلاح/ترینکت/گردن با Ascendant Venomstone اضافه شد."
-        }
-      ]
-    },
-    {
-      "id": "leveling",
-      "title": "لولینگ",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "Unholy برای لولینگ ۸ تا ۹۰ انتخاب سریعی است: با چندبیماری و برست، پک‌های کامل را می‌ترکاند، از لول ۷۱ با [[On a Paler Horse]] یکی از پرتحرک‌ترین کلاس‌ها می‌شود و با [[Dark Succor]] بعد از هر کیل یک [[Death Strike]] رایگان و پرشفا داری."
-        },
-        {
-          "t": "h3",
-          "x": "تلنت‌های کلیدی حین لولینگ"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "لول ۱۰ [[Death Strike]] · ۱۱ [[Outbreak]] · ۱۳ [[Scourge Strike]] · ۱۵ [[Sudden Doom]]",
-            "لول ۲۱ [[Dark Transformation]] · ۲۷ [[Army of the Dead]] · ۳۶ [[Wraith Walk]]",
-            "لول ۶۷ [[Soul Reaper]] · ۷۱ [[On a Paler Horse]] (پرش تحرک بزرگ) · ۷۴ [[Apocalypse Now]]",
-            "لول ۸۰ [[Unholy Armaments]] · لول‌های ۸۱/۸۴/۸۷/۹۰ چهار پوینت [[Forbidden Knowledge]] · لول ۹۰ هرو [[Rider of the Apocalypse]]"
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "چرخهٔ لولینگ"
-        },
-        {
-          "t": "steps",
-          "items": [
-            "[[Outbreak]] را روی چند دشمن بزن تا بیماری‌ها پخش شود",
-            "[[Festering Strike]] استک‌های [[Lesser Ghoul]] را می‌سازد",
-            "[[Scourge Strike]] را فقط با حداقل یک استک بزن",
-            "بین ۱ تا ۳ هدف [[Death Coil]] و روی ۴ هدف یا بیشتر [[Epidemic]]",
-            "[[Army of the Dead]] را روی پک‌های سخت یا الیت خالی کن",
-            "زیر ۳۵٪ جان یا همراه با پروک [[Dark Transformation]]، [[Soul Reaper]]",
-            "بعد از هر کیل، [[Dark Succor]] یک [[Death Strike]] رایگان می‌دهد: برای ادامهٔ پول، مصرفش کن"
-          ]
-        },
-        {
-          "t": "call",
-          "kind": "tip",
-          "x": "رون‌فورج [[Rune of the Fallen Crusader]] را بزن، همیشه بالاترین آی‌تم‌لول را بپوش (استت بعداً مهم می‌شود) و اگر شد غذا/گلایدر (Goblin Glider Kit) همراه داشته باش."
-        }
-      ]
-    },
-    {
-      "id": "easy-mode",
-      "title": "حالت ساده",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "این بخش نسخهٔ فشردهٔ راهنماست: دو بیلد آماده، یک اولویت تک‌هدف ساده، یک تغییر کوچک برای AoE و سه کول‌داون. همین برای شروع کافی است؛ جزئیات کامل در بخش‌های تلنت‌ها و روتیشن است."
-        },
-        {
-          "t": "builds",
-          "items": [
-            {
-              "title": "بیلد ریید",
-              "tag": "Rider of the Apocalypse",
-              "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMTjZmxYGDAAAAAAAAzDMMGAsMDzsZmxMzYgBmxiGLbA2GsBgZAMzMzMmBzMYmZMA",
-              "x": "بیلد استاندارد تک‌هدف ریید با [[Rider of the Apocalypse]]: رشتهٔ import را کپی کن و در بازی (Talents ← Import) بچسبان."
-            },
-            {
-              "title": "بیلد Mythic+ / Delves",
-              "tag": "San'layn",
-              "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAYmhZMzMDz2MzMTzmZGjZAAAAAAAAgZGzYAwyMmZ2MzYMjBGYGbassAYbwGGwMAMmZGzgZGMjxA",
-              "x": "بیلد استاندارد دامنه و میت‌پلاس با [[San'layn]]: رشتهٔ import را کپی کن و در بازی (Talents ← Import) بچسبان."
-            }
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "اولویت تک‌هدف"
-        },
-        {
-          "t": "steps",
-          "items": [
-            "[[Soul Reaper]] وقتی هدف زیر ۳۵٪ جان است یا از [[Dark Transformation]] استفادهٔ رایگان گرفتی",
-            "[[Outbreak]] برای نگه‌داشتن [[Virulent Plague]] و [[Dread Plague]] روی هدف",
-            "[[Festering Scythe]] برای نگه‌داشتن باف روی خودت",
-            "[[Putrefy]] حین باف [[Dark Transformation]]",
-            "[[Death Coil]] وقتی پروک [[Sudden Doom]] داری یا [[Forbidden Knowledge]] فعال است",
-            "[[Epidemic]] روی ۳ هدف یا بیشتر (با [[Forbidden Knowledge]] روی ۴+)",
-            "[[Festering Strike]] وقتی صفر استک [[Lesser Ghoul]] داری",
-            "[[Scourge Strike]] با هر تعداد استک [[Lesser Ghoul]]",
-            "[[Death Coil]] پرکنندهٔ Runic Power"
-          ]
-        },
-        {
-          "t": "call",
-          "kind": "info",
-          "x": "تنها تفاوت AoE با تک‌هدف: به‌جای [[Death Coil]] روی ۴ هدف یا بیشتر [[Epidemic]] بزن (در منبع عدد ۳+ هم آمده)؛ حین [[Forbidden Knowledge]] مرز به ۴+ تا ۶+ می‌رسد چون [[Epidemic]] به [[Graveyard]] تبدیل می‌شود."
-        },
-        {
-          "t": "h3",
-          "x": "کول‌داون‌ها"
-        },
-        {
-          "t": "cds",
-          "items": [
-            {
-              "s": "Army of the Dead",
-              "x": "در کول‌داون: معمولاً اولین کار بعد از رسیدن به باس؛ با [[Dark Transformation]] هر ۹۰ ثانیه هم‌زمان کن"
-            },
-            {
-              "s": "Dark Transformation",
-              "x": "در کول‌داون: با [[Army of the Dead]] هم‌راستا نگه دار"
-            },
-            {
-              "s": "Death and Decay",
-              "x": "فقط برای اسلوی [[Grip of the Dead]] یا اگر [[Cycle of Death]] داری (روی ۳+ هدف) بزن؛ غیر از این ارزش پرس ندارد"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "talents",
-      "title": "تلنت‌ها",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "دو مسیر اصلی داری: [[Rider of the Apocalypse]] برای ریید تک‌هدف و [[San'layn]] برای دامنه و میت‌پلاس. رشتهٔ import هر بیلد را کپی کن و داخل بازی (Talents ← Import) بچسبان؛ توضیح فارسی هر تلنت هم در صفحهٔ Talent Tree هست."
-        },
-        {
-          "t": "builds",
-          "items": [
-            {
-              "title": "تک‌هدف / ریید",
-              "tag": "Rider of the Apocalypse",
-              "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMTjZmxYGDAAAAAAAAzDMMGAsMDzsZmxMzYgBmxiGLbA2GsBgZAMzMzMmBzMYmZMA",
-              "x": "بیلد استاندارد ریید؛ فوکوس روی آسیب مینیون و پنجرهٔ ۹۰ ثانیه‌ای [[Army of the Dead]] + [[Dark Transformation]]."
-            },
-            {
-              "title": "Mythic+ / Delves",
-              "tag": "San'layn",
-              "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAYmhZMzMDz2MzMTzmZGjZAAAAAAAAgZGzYAwyMmZ2MzYMjBGYGbassAYbwGGwMAMmZGzgZGMjxA",
-              "x": "بیلد استاندارد میت‌پلاس با [[Blightfall]] و [[Cycle of Death]] برای کیولد روی پک‌ها."
-            }
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "انتخاب‌های کلیدی ریید (Rider)"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "[[Lord of the Dead]] و [[Grave Mastery]]: ستون آسیب مینیون‌محور این بیلد",
-            "[[Fury of the Horsemen]]: کمی بیشتر از [[A Feast of Souls]] آسیب می‌دهد",
-            "[[Death Charge]]: پرش سریع روی هدف؛ تحرک Unholy را عوض می‌کند",
-            "[[Death and Decay|Mograine's Death and Decay]]: ۵٪ آسیب وقتی داخلش می‌مانی",
-            "[[Chains of Ice|Trollbane's Chains of Ice]]: لحظهٔ کست برست می‌زند"
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "انتخاب‌های کلیدی Mythic+ (San'layn)"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "[[Menacing Magus]]: برست AoE بهتر روی پک‌ها",
-            "[[Cycle of Death]]: دامنهٔ کیولد قابل‌توجه اضافه می‌کند",
-            "[[Blightfall]]: AoE قوی بدون قربانی‌کردن تک‌هدف",
-            "[[Vampiric Strike]]: در پنجرهٔ [[Dark Transformation]] می‌زنی و [[Essence of the Blood Queen]] را نگه می‌داری",
-            "[[Blood Beast]]: جزء مقیاس‌گیری دومربعی بیلد"
-          ]
-        },
-        {
-          "t": "call",
-          "kind": "info",
-          "x": "در ریید بسته به فایت بین بیلدهای ۴۵ و ۹۰ ثانیه‌ای جابه‌جا شو؛ سقف کلیدهای Mythic+ معمولاً [[San'layn]] است و Open World هر دو کار می‌کنند."
-        },
-        {
-          "t": "link",
-          "x": "دیدن Talent Tree کامل Death Knight",
-          "href": "talents.html?class=death-knight"
-        }
-      ]
-    },
-    {
-      "id": "rotation",
-      "title": "روتیشن و کول‌داون‌ها",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "چرخهٔ Unholy Death Knight یک فهرست اولویت است، نه یک چرخهٔ ثابت: هر گلوبال کول‌داون از بالا به پایین اسکن می‌کنی و ارزشمندترین گزینهٔ موجود را می‌زنی. چون Unholy بر منابع و پروک‌ها اداره می‌شود، مدیریت Rune، Runic Power و استک‌های [[Lesser Ghoul]] تعیین‌کنندهٔ اصلی کیفیت دمیج توست."
-        },
-        {
-          "t": "cards",
-          "items": [
-            {
-              "title": "کول‌داون‌ها را روی کول‌داون نگه دار",
-              "x": "Unholy اسپکی بسیار انفجاری است و برای بیشینه‌کردن دمیج به استفادهٔ مکرر از کول‌داون‌ها وابسته است؛ به همین دلیل چیدن و اجرای درست پنجره‌های کول‌داون بالاترین اولویت توست."
-            },
-            {
-              "title": "پروک‌های مرگ ناگهانی را فوری خرج کن",
-              "x": "[[Sudden Doom]] تعامل‌های زیادی با تلنت‌های Unholy دارد و قوی‌ترین دکمهٔ غیرکول‌داونی در هر سناریوست؛ خرج‌کردن سریع آن با [[Death Coil]] یا [[Epidemic]] یکی از بهترین کارهایی است که می‌توانی انجام دهی."
-            },
-            {
-              "title": "مراقب استک‌های غول باش",
-              "x": "[[Lesser Ghoul]] ستون فقرات Unholy در Midnight است؛ همیشه با [[Festering Strike]] استک بساز تا [[Scourge Strike]] بتواند غول احضار کند و هیچ‌وقت با صفر استک [[Scourge Strike]] نزن."
-            }
-          ]
-        },
-        {
-          "t": "ul",
-          "items": [
-            "باف [[Festering Scythe]] را نگه دار: با [[Festering Strike]] بساز و [[Festering Scythe]] را پیش از اتمام تازه کن.",
-            "اول Runeها را خرج کن (همیشه سه Rune در حال شارژ بماند) و بعد مراقب اورکپ شدن Runic Power باش.",
-            "آپ‌تایم بیماری‌ها به‌خصوص [[Dread Plague]] حیاتی است؛ منبع مستقیم و غیرمستقیم بزرگی از دمیج توست."
-          ]
-        },
-        {
-          "t": "tabs",
-          "art": "assets/img/specs/unholy-death-knight.jpg",
-          "items": [
-            {
-              "id": "rider",
-              "en": "Rider of the Apocalypse",
-              "fa": "رایدر آخرالزمان",
-              "icon": "inv_ability_rideroftheapocalypsedeathknight_apocalypsenow",
-              "modes": [
-                {
-                  "id": "raid",
-                  "fa": "ریید"
-                },
-                {
-                  "id": "mplus",
-                  "fa": "Mythic+"
-                }
-              ],
-              "branches": [
-                {
-                  "id": "raid",
-                  "fa": "رید",
-                  "en": "Raid",
-                  "blocks": [
-                    {
-                      "t": "h4",
-                      "x": "تک‌هدف: فهرست اولویت در پنجرهٔ عادی"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Outbreak",
-                          "cond": "اگر [[Virulent Plague]] فعال نیست",
-                          "why": "نگه‌داشتن بیماری‌ها پیش‌شرط همهٔ آسیب‌ها و باف Festering Scythe است"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "قبل از [[Dark Transformation]] اگر ۳ استک [[Lesser Ghoul]] یا کمتر داری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "اگر جان هدف زیر ۳۵٪ است",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Blightfall",
-                          "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
-                          "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
-                        },
-                        {
-                          "s": "Army of the Dead",
-                          "cond": "در کول‌داون",
-                          "why": "بزرگ‌ترین کول‌داون و ماشهٔ چند تلنت پت‌محور"
-                        },
-                        {
-                          "s": "Dark Transformation",
-                          "cond": "در کول‌داون",
-                          "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
-                        },
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "حدود ۶ ثانیه بعد از [[Dark Transformation]]",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Putrefy",
-                          "cond": "اگر [[Dark Transformation]] فعال است",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Festering Scythe",
-                          "cond": "اگر باف آن رو به اتمام است",
-                          "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
-                        },
-                        {
-                          "s": "Death Coil",
-                          "cond": "اگر پروک [[Sudden Doom]] داری",
-                          "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        },
-                        {
-                          "s": "Death Coil",
-                          "cond": "",
-                          "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "تک‌هدف: حین [[Forbidden Knowledge]]"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "اگر جان هدف زیر ۳۵٪ است",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Blightfall",
-                          "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
-                          "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
-                        },
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "حدود ۶ ثانیه بعد از [[Dark Transformation]]",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Putrefy",
-                          "cond": "در کول‌داون",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Festering Scythe",
-                          "cond": "اگر باف آن رو به اتمام است",
-                          "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
-                        },
-                        {
-                          "s": "Necrotic Coil",
-                          "cond": "",
-                          "why": "نسخهٔ تقویت‌شدهٔ Death Coil در پنجرهٔ FK"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "اِی‌او‌ای: فهرست اولویت در پنجرهٔ عادی"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Outbreak",
-                          "cond": "اگر [[Virulent Plague]] فعال نیست",
-                          "why": "نگه‌داشتن بیماری‌ها پیش‌شرط همهٔ آسیب‌ها و باف Festering Scythe است"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "قبل از [[Dark Transformation]] اگر ۵ استک [[Lesser Ghoul]] یا کمتر داری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Blightfall",
-                          "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
-                          "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
-                        },
-                        {
-                          "s": "Army of the Dead",
-                          "cond": "در کول‌داون",
-                          "why": "بزرگ‌ترین کول‌داون و ماشهٔ چند تلنت پت‌محور"
-                        },
-                        {
-                          "s": "Dark Transformation",
-                          "cond": "در کول‌داون",
-                          "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
-                        },
-                        {
-                          "s": "Festering Scythe",
-                          "cond": "اگر باف آن رو به اتمام است",
-                          "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
-                        },
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "در کول‌داون",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Putrefy",
-                          "cond": "اگر [[Dark Transformation]] فعال است",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Death and Decay",
-                          "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
-                          "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
-                        },
-                        {
-                          "s": "Epidemic",
-                          "cond": "اگر پروک [[Sudden Doom]] داری",
-                          "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        },
-                        {
-                          "s": "Epidemic",
-                          "cond": "",
-                          "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "اِی‌او‌ای: حین [[Forbidden Knowledge]]"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Blightfall",
-                          "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
-                          "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
-                        },
-                        {
-                          "s": "Festering Scythe",
-                          "cond": "اگر باف آن رو به اتمام است",
-                          "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
-                        },
-                        {
-                          "s": "Putrefy",
-                          "cond": "در کول‌داون",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Death and Decay",
-                          "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
-                          "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
-                        },
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "در کول‌داون",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Graveyard",
-                          "cond": "",
-                          "why": "نسخهٔ تقویت‌شدهٔ Epidemic در پنجرهٔ FK"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "آغازگر (Opener)"
-                    },
-                    {
-                      "t": "steps",
-                      "items": [
-                        "[[Outbreak]]",
-                        "[[Festering Strike]]",
-                        "[[Festering Scythe]]",
-                        "[[Army of the Dead]]",
-                        "[[Dark Transformation]]",
-                        "استفاده از پتشن کمبت",
-                        "استفاده از تریک فعال (On-Use)",
-                        "[[Putrefy]]",
-                        "[[Necrotic Coil]]",
-                        "[[Necrotic Coil]]",
-                        "[[Necrotic Coil]] سه بار پشت‌سرهم",
-                        "[[Putrefy]]",
-                        "[[Soul Reaper]] حدود ۶ ثانیه بعد از [[Dark Transformation]]"
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "آغازگر چندهدف (AoE)"
-                    },
-                    {
-                      "t": "steps",
-                      "items": [
-                        "[[Outbreak]]",
-                        "[[Festering Strike]]",
-                        "[[Festering Scythe]]",
-                        "[[Army of the Dead]]",
-                        "[[Dark Transformation]]",
-                        "استفاده از پتشن کمبت",
-                        "استفاده از تریک فعال (On-Use)",
-                        "[[Soul Reaper]]",
-                        "[[Putrefy]]",
-                        "[[Death and Decay]]",
-                        "[[Epidemic]]"
-                      ]
-                    },
-                    {
-                      "t": "call",
-                      "kind": "info",
-                      "x": "در Mythic+ همین فهرست چندهدف پایهٔ چرخه است؛ زمان‌بندی [[Dark Transformation]] و کول‌داون‌ها با پک‌ها و اددها و انتخاب چرخهٔ قهرمانی (در کلیدهای بالا عمدتاً [[San'layn]] با باف ۴۵ ثانیه) طبق بخش «نکته‌های Mythic+» همین راهنما اعمال می‌شود."
-                    }
-                  ]
-                },
-                {
-                  "id": "mplus",
-                  "fa": "Mythic+",
-                  "en": "Mythic+",
-                  "blocks": [
-                    {
-                      "t": "p",
-                      "x": "در میت‌پلاس همان اسکلت اولویت شاخهٔ رید را می‌سازی؛ چیزی که عوض می‌شود مدیریت کول‌داون و آستانه‌های اسپند است. اسم بازی اینجا «کارایی کول‌داون» است: نگه‌داشتن کول‌داون‌ها برای «آن پک بزرگ بعدی» تقریباً همیشه یعنی هدر دادن ارزش؛ به‌ویژه [[Dark Transformation]] را حتی تنها بفرست: ساده‌ترین راه ارتقای دمیج در میت‌پلاس."
-                    },
-                    {
-                      "t": "h4",
-                      "x": "چندهدف در میت‌پلاس: پک‌ها و آستانه‌ها"
-                    },
-                    {
-                      "t": "ul",
-                      "items": [
-                        "[[Epidemic]] جای [[Death Coil]] را در ۴+ هدف می‌گیرد (۶+ هدف حین [[Forbidden Knowledge]])؛ زیر این آستانه [[Death Coil]] دمیج بیشتری می‌دهد",
-                        "[[Death and Decay]] را در نبرد با ۳+ دشمن استفاده کن تا بیشترین [[Putrefy]] ممکن داخل پنجرهٔ [[Dark Transformation]] بگنجد",
-                        "استک [[Lesser Ghoul]] در پک‌ها را بین ۴ تا ۶ نگه‌داشتن (در تک‌هدفِ رید ۲ تا ۴) تا هنگام بیرون‌شدن از برد انعطاف داشته باشی",
-                        "بیماری پک‌ها را با [[Outbreak]] می‌ساز؛ [[Putrefy]] با [[Blightburst]] هم ممکن است ولی Putrefy‌ها را برای دمیج کول‌داون ذخیره کن",
-                        "[[Festering Scythe]] را در پک‌ها با اولویت بالا تازه نگه دار؛ تیک بیماری‌ها منبع پروک [[Sudden Doom]] و [[Forbidden Knowledge]] است"
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "کول‌داون‌ها در میت‌پلاس"
-                    },
-                    {
-                      "t": "ul",
-                      "items": [
-                        "کول‌داون‌ها را در کول‌داون بفرست؛ هم‌ترازی کامل [[Army of the Dead]] و [[Dark Transformation]] در بوس‌های کوتاه ممکن نیست و اشکالی ندارد",
-                        "زمان‌بندی [[Dark Transformation]] روی اسپاون اددهای سنگین (دروازه‌ها و پک‌های چرب هر دانجن) ارزش بیشتری دارد",
-                        "ترینکت‌های اکتیو را داخل پنجرهٔ برست (هم‌زمان [[Dark Transformation]]) بزن"
-                      ]
-                    },
-                    {
-                      "t": "call",
-                      "kind": "info",
-                      "x": "منبع این شاخه: سیاست کول‌داون میت‌پلاس در صفحهٔ روتیشن Icy Veins (بررسشی ۲۰۲۶-۱۰-۲۸) و نکته‌های بخش Mythic+ همین راهنما؛ اسکلت اولویت همان شاخهٔ رید است."
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "sanlayn",
-              "en": "San'layn",
-              "fa": "San'layn",
-              "icon": "inv_ability_sanlayndeathknight_vampiricstrike",
-              "modes": [
-                {
-                  "id": "raid",
-                  "fa": "ریید",
-                  "v": "best"
-                },
-                {
-                  "id": "mplus",
-                  "fa": "Mythic+",
-                  "v": "best"
-                }
-              ],
-              "talents": {
-                "active": [
-                  "Blightfall",
-                  "Soul Reaper"
-                ],
-                "passive": [
-                  {
-                    "name": "Putrid Echoes"
-                  },
-                  {
-                    "name": "Reaping"
-                  },
-                  {
-                    "name": "Festering Scythe"
-                  },
-                  {
-                    "name": "Blightburst"
-                  },
-                  {
-                    "name": "Cycle of Death",
-                    "on": false
-                  }
-                ]
-              },
-              "branches": [
-                {
-                  "id": "raid",
-                  "fa": "رید",
-                  "en": "Raid",
-                  "blocks": [
-                    {
-                      "t": "h4",
-                      "x": "تک‌هدف: فهرست اولویت در پنجرهٔ عادی"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Outbreak",
-                          "cond": "اگر [[Virulent Plague]] فعال نیست",
-                          "why": "نگه‌داشتن بیماری‌ها پیش‌شرط همهٔ آسیب‌ها و باف Festering Scythe است"
-                        },
-                        {
-                          "s": "Dark Transformation",
-                          "cond": "در کول‌داون",
-                          "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
-                        },
-                        {
-                          "s": "Putrefy",
-                          "cond": "اگر [[Dark Transformation]] فعال است",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Soul Reaper",
-                          "cond": "اگر جان هدف زیر ۳۵٪ است",
-                          "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
-                        },
-                        {
-                          "s": "Festering Scythe",
-                          "cond": "اگر باف آن رو به اتمام است",
-                          "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
-                        },
-                        {
-                          "s": "Blightfall",
-                          "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
-                          "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
-                        },
-                        {
-                          "s": "Death Coil",
-                          "cond": "با بیش از ۵۰ Runic Power",
-                          "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
-                        },
-                        {
-                          "s": "Death Coil",
-                          "cond": "اگر پروک [[Sudden Doom]] داری",
-                          "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        },
-                        {
-                          "s": "Death Coil",
-                          "cond": "",
-                          "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "تک‌هدف: حین [[Forbidden Knowledge]]"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Putrefy",
-                          "cond": "در کول‌داون",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Necrotic Coil",
-                          "cond": "",
-                          "why": "نسخهٔ تقویت‌شدهٔ Death Coil در پنجرهٔ FK"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "اِی‌او‌ای: فهرست اولویت در پنجرهٔ عادی"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Dark Transformation",
-                          "cond": "در کول‌داون",
-                          "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
-                        },
-                        {
-                          "s": "Putrefy",
-                          "cond": "اگر [[Dark Transformation]] فعال است",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Death and Decay",
-                          "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
-                          "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
-                        },
-                        {
-                          "s": "Epidemic",
-                          "cond": "اگر پروک [[Sudden Doom]] داری",
-                          "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        },
-                        {
-                          "s": "Epidemic",
-                          "cond": "",
-                          "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "اِی‌او‌ای: حین [[Forbidden Knowledge]]"
-                    },
-                    {
-                      "t": "prio",
-                      "items": [
-                        {
-                          "s": "Putrefy",
-                          "cond": "در کول‌داون",
-                          "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
-                        },
-                        {
-                          "s": "Death and Decay",
-                          "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
-                          "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
-                        },
-                        {
-                          "s": "Graveyard",
-                          "cond": "",
-                          "why": "نسخهٔ تقویت‌شدهٔ Epidemic در پنجرهٔ FK"
-                        },
-                        {
-                          "s": "Festering Strike",
-                          "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
-                          "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
-                        },
-                        {
-                          "s": "Scourge Strike",
-                          "cond": "اگر استک [[Lesser Ghoul]] داری",
-                          "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
-                        }
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "آغازگر (Opener)"
-                    },
-                    {
-                      "t": "steps",
-                      "items": [
-                        "[[Outbreak]]",
-                        "[[Festering Strike]] ×۲",
-                        "[[Army of the Dead]] + [[Dark Transformation]] + تریک فعال (On-Use) + قابلیت نژادی + پتشن کمبت",
-                        "[[Putrefy]]",
-                        "[[Putrefy]]",
-                        "[[Soul Reaper]]",
-                        "[[Putrefy]]",
-                        "[[Putrefy]]",
-                        "[[Soul Reaper]] حدود ۵ ثانیه پیش از پایان [[Dark Transformation]]"
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "آغازگر چندهدف (AoE)"
-                    },
-                    {
-                      "t": "steps",
-                      "items": [
-                        "[[Outbreak]]",
-                        "[[Festering Strike]] ×۲",
-                        "[[Army of the Dead]] + [[Dark Transformation]] + تریک فعال (On-Use) + قابلیت نژادی + پتشن کمبت",
-                        "[[Soul Reaper]]",
-                        "[[Putrefy]]",
-                        "[[Putrefy]]"
-                      ]
-                    },
-                    {
-                      "t": "call",
-                      "kind": "info",
-                      "x": "در Mythic+ همین فهرست چندهدف پایهٔ چرخه است؛ زمان‌بندی [[Dark Transformation]] و کول‌داون‌ها با پک‌ها و اددها و انتخاب چرخهٔ قهرمانی (در کلیدهای بالا عمدتاً [[San'layn]] با باف ۴۵ ثانیه) طبق بخش «نکته‌های Mythic+» همین راهنما اعمال می‌شود."
-                    }
-                  ]
-                },
-                {
-                  "id": "mplus",
-                  "fa": "Mythic+",
-                  "en": "Mythic+",
-                  "blocks": [
-                    {
-                      "t": "p",
-                      "x": "در میت‌پلاس همان اسکلت اولویت شاخهٔ رید را می‌سازی؛ چیزی که عوض می‌شود مدیریت کول‌داون و آستانه‌های اسپند است. اسم بازی اینجا «کارایی کول‌داون» است: نگه‌داشتن کول‌داون‌ها برای «آن پک بزرگ بعدی» تقریباً همیشه یعنی هدر دادن ارزش؛ به‌ویژه [[Dark Transformation]] را حتی تنها بفرست: ساده‌ترین راه ارتقای دمیج در میت‌پلاس."
-                    },
-                    {
-                      "t": "h4",
-                      "x": "چندهدف در میت‌پلاس: پک‌ها و آستانه‌ها"
-                    },
-                    {
-                      "t": "ul",
-                      "items": [
-                        "[[Epidemic]] جای [[Death Coil]] را در ۴+ هدف می‌گیرد (۶+ هدف حین [[Forbidden Knowledge]])؛ زیر این آستانه [[Death Coil]] دمیج بیشتری می‌دهد",
-                        "[[Death and Decay]] را در نبرد با ۳+ دشمن استفاده کن تا بیشترین [[Putrefy]] ممکن داخل پنجرهٔ [[Dark Transformation]] بگنجد",
-                        "استک [[Lesser Ghoul]] در پک‌ها را بین ۴ تا ۶ نگه‌داشتن (در تک‌هدفِ رید ۲ تا ۴) تا هنگام بیرون‌شدن از برد انعطاف داشته باشی",
-                        "بیماری پک‌ها را با [[Outbreak]] می‌ساز؛ [[Putrefy]] با [[Blightburst]] هم ممکن است ولی Putrefy‌ها را برای دمیج کول‌داون ذخیره کن",
-                        "[[Festering Scythe]] را در پک‌ها با اولویت بالا تازه نگه دار؛ تیک بیماری‌ها منبع پروک [[Sudden Doom]] و [[Forbidden Knowledge]] است"
-                      ]
-                    },
-                    {
-                      "t": "h4",
-                      "x": "کول‌داون‌ها در میت‌پلاس"
-                    },
-                    {
-                      "t": "ul",
-                      "items": [
-                        "کول‌داون‌ها را در کول‌داون بفرست؛ هم‌ترازی کامل [[Army of the Dead]] و [[Dark Transformation]] در بوس‌های کوتاه ممکن نیست و اشکالی ندارد",
-                        "زمان‌بندی [[Dark Transformation]] روی اسپاون اددهای سنگین (دروازه‌ها و پک‌های چرب هر دانجن) ارزش بیشتری دارد",
-                        "ترینکت‌های اکتیو را داخل پنجرهٔ برست (هم‌زمان [[Dark Transformation]]) بزن",
-                        "چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] هم‌زمان‌سازی [[Dark Transformation]] با پک‌ها را ممکن می‌کند؛ با [[Outnumber]] DT را روی اسپاون اددها بگذار: [[Sweeping Claws]] گول‌های کوچک بخش بزرگی از آسیب AoE توست"
-                      ]
-                    },
-                    {
-                      "t": "call",
-                      "kind": "info",
-                      "x": "منبع این شاخه: سیاست کول‌داون میت‌پلاس در صفحهٔ روتیشن Icy Veins (بررسشی ۲۰۲۶-۱۰-۲۸) و نکته‌های بخش Mythic+ همین راهنما؛ اسکلت اولویت همان شاخهٔ رید است."
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "t": "call",
-          "x": "«حین [[Forbidden Knowledge]]» یعنی حین باف ۳۰ ثانیه‌ای تلنت Apex که با کست [[Army of the Dead]] فعال می‌شود. در این پنجره [[Death Coil]] به [[Necrotic Coil]] و [[Epidemic]] به [[Graveyard]] تبدیل می‌شود، اولویت‌ها اسپندمحورتر می‌شوند و [[Putrefy]] با کول‌داون آزادتر زده می‌شود.",
-          "kind": "info"
-        },
-        {
-          "t": "call",
-          "x": "تناقض منابع: ۱) زمان‌بندی [[Soul Reaper]] بعد از [[Dark Transformation]] را Icy حدود ۶ ثانیه و Wowhead حدود ۶ ثانیه می‌نویسد؛ عدد Icy مبنا گرفته شده است. ۲) Wowhead در واریانت Rider هم [[Vampiric Strike]] آورده است، اما این توانایی مختص [[San'layn]] است (در درخت Hero Rider وجود ندارد) و از اولویت و آغازگر Rider حذف شد. ۳) ترکیب فهرست [[San'layn]] مطابق Icy است؛ صفحهٔ rotation آن سایت هنگام بازنویسی در دسترس نبود و اسکلت ترتیب از Wowhead با عناصر Icy کامل شده است. ۴) مرز [[Epidemic]] و [[Death Coil]] در Icy دو عدد دارد (۳+ یا ۴+، و حین FK از ۴+ تا ۶+): عدد بخش AoE یعنی ۴+ مبنا گرفته شده است.",
-          "kind": "warn"
-        },
-        {
-          "t": "h3",
-          "x": "بررسی پیش از مبارزه"
-        },
-        {
-          "t": "p",
-          "x": "پیش از ورود به مبارزه (ریید، دانجن، Delves و حتی محتوای اوپن‌ورلد) با [[Raise Dead]] پت اصلی خودت را احضار کن؛ این کار بخشی از آماده‌سازی هر نوع محتواست."
-        },
-        {
-          "t": "h3",
-          "x": "کول‌داون‌های اصلی"
-        },
-        {
-          "t": "cds",
-          "items": [
-            {
-              "s": "Army of the Dead",
-              "tag": "بزرگ‌ترین کول‌داون",
-              "x": "بزرگ‌ترین کول‌داون توست و ماشهٔ چند تلنت دیگر است: [[Raise Abomination]]، [[Summon Gargoyle]] و [[Apocalypse Now]] همراه آن پت‌های بیشتری احضار می‌کنند. با [[Commander of the Dead]] هم‌گام‌ماندن آن با [[Dark Transformation]] حیاتی است: بین هر دو کست [[Army of the Dead]]، یک بار [[Dark Transformation]] را به‌محض آماده‌شدن بزن."
-            },
-            {
-              "s": "Dark Transformation",
-              "tag": "خارج از GCD",
-              "x": "همراه [[Commander of the Dead]]، [[Outnumber]] و [[Ride or Die!]] فعال می‌شود. چون خارج از گلوبال کول‌داون است می‌توانی آن را در ماکروی [[Army of the Dead]] بگذاری تا هر پنجرهٔ Army فقط یک دکمه داشته باشد. با [[Outnumber]] تلاش کن آن را با اسپان‌شدن اضافه‌ها هم‌زمان کنی؛ ضربه‌های [[Sweeping Claws]] غول‌ها بخش بزرگی از دمیج AoE توست."
-            },
-            {
-              "s": "Blightfall",
-              "tag": "تایمینگ",
-              "x": "دقیقاً قبل از اتمام افکت تریک، یا حدود ۱۵ ثانیه بعد از [[Dark Transformation]] بزن تا بیشترین مدت باقی‌ماندهٔ بیماری‌ها را مصرف کنی."
-            },
-            {
-              "s": "Soul Reaper",
-              "tag": "اِگزکیوت",
-              "x": "اگر جان هدف زیر ۳۵٪ است بزن؛ در فصل ۲ تا سه استک [[Lesser Ghoul]] را مصرف می‌کند و دیگر به [[Putrefy]] گره ندارد. حدود ۶ ثانیه بعد از [[Dark Transformation]] هم یک استفادهٔ برنامه‌ریزی‌شده دارد."
-            },
-            {
-              "s": "Death and Decay",
-              "tag": "شرطی",
-              "x": "فقط وقتی بزن که مطمئنی دشمنان داخل آن می‌مانند؛ در بقیهٔ حالت‌ها ارزش پرس ندارد و بیشتر نقش یوتیلیتی با [[Grip of the Dead]] را دارد."
-            }
-          ]
-        },
-        {
-          "t": "call",
-          "x": "با [[Commander of the Dead]] هماهنگی [[Army of the Dead]] و [[Dark Transformation]] مهم‌تر شده و تعویض هدف را در ریید زودتر برنامه‌ریزی کن: پت‌ها و بیماری‌ها زمان می‌برند به هدف جدید برسند. ۴) مرز [[Epidemic]] و [[Death Coil]] در Icy دو عدد دارد (۳+ یا ۴+، و حین FK از ۴+ تا ۶+): عدد بخش AoE یعنی ۴+ مبنا گرفته شده است.",
-          "kind": "warn"
-        },
-        {
-          "t": "call",
-          "kind": "info",
-          "x": "توالی‌های آغازگر San'layn اکنون توالی‌های رسمی Icy Veins هستند (اسنپ‌شات Wayback از صفحهٔ روتیشن، 2026-06-08، بازیابی 2026-10-28)؛ نسخهٔ پیشین این آغازگرها از Wowhead و فهرست اولویت ساخته شده بود و با نسخهٔ رسمی جایگزین شد (تفاوت‌ها در گزارش ممیزی ثبت است). آغازگرهای Rider همچنان از گام‌های نخست فهرست اولویت ساخته شده‌اند؛ Icy توالی آغازگر جداگانه‌ای برای Rider منتشر نکرده و در صورت دسترسی به صفحهٔ زندهٔ Icy دوباره بررسی می‌شود. نشان‌های Raid/Mythic+ و فهرست تلنت‌های اکتیو/پسیو هیرو از ویجت هیرو Icy Veins برداشته شده‌اند (بازدید 2026-10-28؛ San'layn برای هر دو حالت «بهترین انتخاب» است)."
-        },
-        {
-          "t": "call",
-          "kind": "info",
-          "x": "اهداف استک [[Lesser Ghoul]]: تک‌هدف بین ۲ تا ۴ استک نگه دار و در فاز اکسیکیوت دست‌کم ۳؛ در AoE بین ۴ تا ۶ استک و برگشت به ۳."
-        },
-        {
-          "t": "h3",
-          "x": "مفاهیم تکمیلی"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "روتیشن حین [[Forbidden Knowledge]]: [[Necrotic Coil]] از حدود ۳۰ Runic Power ارزش می‌گیرد و با پروک [[Sudden Doom]] از حدود ۱۵.",
-            "شکار [[Vampiric Strike]] (فقط [[San'layn]]): با مدیریت Runic Power پروک‌ها را بگیر تا ۷ استک [[Essence of the Blood Queen]] بین [[Dark Transformation]]ها پل بزند.",
-            "[[Death and Decay]] در تک‌هدف ارزش ندارد؛ فقط در AoE و اگر مطمئنی دشمنان داخلش می‌مانند."
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "مکانیک‌های منابع"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "**Rune**: هرگز هر سه Rune را هم‌زمان خرج نکن؛ یک Rune در حال بازیابی بماند تا رگنریشن متوقف نشود.",
-            "**Runic Power**: اورکپ نکن؛ با [[San'layn]] اورکپ یعنی سوزاندن پروک‌های [[Vampiric Strike]]، و با [[Forbidden Knowledge]] یعنی از دست دادن [[Necrotic Coil]] و [[Graveyard]].",
-            "رتبه‌های [[Forbidden Knowledge]] فقط با پت‌های روی assist درست کار می‌کنند؛ حالت دفاعی پت را عوض کن.",
-            "[[Outbreak]] دو بیماری می‌کارد: [[Virulent Plague]] و [[Dread Plague]]؛ هر دو باید روی هدف بمانند و باف [[Festering Scythe]] سرعت تیک‌شان را بالا می‌برد.",
-            "[[Anti-Magic Shell]] فقط دفاعی نیست: جذب دمیج جادویی Runic Power هم می‌سازد؛ روی کست‌های سنگین پیش‌دستی کن."
-          ]
-        },
-        {
-          "t": "call",
-          "kind": "tip",
-          "x": "پرسش: پروک Runic Corruption را نگه دارم؟ پاسخ: خیر؛ چرخه با Rune و Runic Power موجود می‌چرخد و پروک‌ها هم‌زمان مصرف می‌شوند. اثر دقیق این پروک در منابع این فاز تأیید نشد و پس از دسترسی به صفحهٔ rotation سایت Icy کامل می‌شود."
-        },
-        {
-          "t": "call",
-          "kind": "info",
-          "x": "ابزار Rotation Assist بازی: کول‌داون‌های اصلی و اسپندهای جابه‌جایی‌کننده را نمی‌زند و برای اسپکی برست‌محور مثل Unholy افت شدیدی دارد؛ جدول دقیق افت‌ها در Icy آمده و پس از دسترسی پایدار به صفحه اضافه می‌شود. زمان‌بندی کول‌داون‌ها (00:00 تا 03:45) هم به همین دلیل به چرخهٔ بعد موکول شد."
-        }
-      ]
-    },
-    {
-      "id": "gear",
-      "title": "گیر و آیتم‌ها",
-      "blocks": [
-        {
-          "t": "p",
-          "x": "این لیست، بهترین ست ممکن از همهٔ منابع است. هر آیتمی که اینجا نیست لزوماً بد نیست؛ ستاپ‌های دیگر هم در حاشیهٔ خطا کار می‌کنند. بهترین کار این است که با Raidbots برای کاراکتر خودت sim بگیری. روی اسم هر آیتم موس ببر تا خلاصه‌اش را ببینی و کلیک کن تا صفحهٔ کامل باز شود."
-        },
-        {
-          "t": "call",
-          "x": "ترینکت on-use در پنجره‌های برست Unholy ارزش زیادی دارد؛ اولویت اول گیر ترینکت و بعد بقیهٔ اسلات‌هاست. افزایش Item Level روی قطعات Strength معمولاً از استت بهینه مهم‌تر است."
-        },
-        {
-          "t": "h3",
-          "x": "Best in Slot"
-        },
-        {
-          "t": "bis",
-          "items": [
-            {
-              "slot": "سلاح",
-              "id": 268213
-            },
-            {
-              "slot": "سر",
-              "id": 271474
-            },
-            {
-              "slot": "گردن",
-              "id": 268265
-            },
-            {
-              "slot": "شانه",
-              "id": 271472
-            },
-            {
-              "slot": "شنل",
-              "id": 268253
-            },
-            {
-              "slot": "سینه",
-              "id": 271477
-            },
-            {
-              "slot": "مچ",
-              "id": 237834
-            },
-            {
-              "slot": "دست",
-              "id": 271475
-            },
-            {
-              "slot": "کمربند",
-              "id": 268259
-            },
-            {
-              "slot": "پا",
-              "id": 271878
-            },
-            {
-              "slot": "چکمه",
-              "id": 237828
-            },
-            {
-              "slot": "انگشتر",
-              "id": 281029
-            },
-            {
-              "slot": "انگشتر",
-              "id": 273792
-            },
-            {
-              "slot": "ترینکت",
-              "id": 270175
-            },
-            {
-              "slot": "ترینکت",
-              "id": 270173
-            }
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "ست تیر"
-        },
-        {
-          "t": "set",
-          "id": 271474
-        },
-        {
-          "t": "p",
-          "x": "ست فصل ۲ ([[Baleful Grave-Knight's Crucible]]) دو تکه: [[Magus of the Dead]] و [[Lord of the Dead]] به‌جای Frostbolt یک [[Necrotic Bolt]] قوی‌تر و به‌جای Shadow Bolt یک [[Withering Grasp]] می‌اندازند. چهار تکه: آسیب همین دو تیر روی دشمنی که زیر ۳۵٪ جان است تا ۱۳۰٪ بالا می‌رود؛ پس پنجرهٔ اکسیکیوت را با تایمینگ [[Dark Transformation]] هم‌پوشان کن."
-        },
-        {
-          "t": "h3",
-          "x": "قواعد گیرینگ"
-        },
-        {
-          "t": "ul",
-          "items": [
-            "اولویت استات‌ها: **Critical Strike >= Mastery >= Haste >> Versatility**",
-            "افزایش استرنگت و آی‌ال‌ویلو همیشه ارزشمند است",
-            "یک ترینکت با قابلیت استفاده فعال برای این اسپک که بر روی برست تمرکز دارد، بسیار مهم است"
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "سایر گزینه‌ها"
-        },
-        {
-          "t": "p",
-          "x": "این آیتم‌ها در شرایط خاص یا به عنوان جایگزین مناسب هستند:"
-        },
-        {
-          "t": "two",
-          "a": {
-            "cls": "good",
-            "title": "بهترین قطعات برای کاتالیزور ست",
-            "items": [
-              "[[Corroded Hulk's Skullcap]] (Kith'ix)",
-              "[[Cinderfury Shoulderguards]] (Murder Row)",
-              "[[Reckless Spirit Breastplate]] (The Coiled Altar)",
-              "[[Chausses of Unbound Rancor]] (Ula'tek)",
-              "[[Gauntlets of the Avian Sentinel]] (King's Rest)"
-            ]
-          },
-          "b": {
-            "cls": "bad",
-            "title": "ساخت حرفه‌ای‌ها",
-            "items": [
-              "[[Blood Knight's Warblade]] with Darkmoon Sigil: Hunt",
-              "[[Spellbreaker's Bracers]] with Arcanoweave Lining",
-              "[[Spellbreaker's March]]"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "stats",
-      "title": "اولویت استت",
-      "blocks": [
-        {
-          "t": "stat",
-          "items": [
-            "Strength",
-            "Critical Strike",
-            "Mastery",
-            "Haste",
-            "Versatility"
-          ]
-        },
-        {
-          "t": "p",
-          "x": "استت اصلی Strength است. به‌طور کلی ترتیب Crit >= Mastery >= Haste >> Versatility پیشنهاد می‌شود."
-        },
-        {
-          "t": "p",
-          "x": "هرگز Strength را نادیده نگیرید؛ افزایش سطح آیتم عموماً از بهینه‌سازی استت‌ها مهم‌تر است."
-        },
-        {
-          "t": "p",
-          "x": "یک آیتم با استت فعال‌کننده بسیار مهم است چون Unholy روی برست تمرکز دارد."
-        },
-        {
-          "t": "p",
-          "x": "برای مقادیر دقیق، کاراکتر خودت را در Raidbots sim بگیر."
-        }
-      ]
-    },
-    {
-      "id": "enchants",
-      "title": "انچنت، جم و مصرفی",
-      "blocks": [
-        {
-          "t": "h3",
-          "x": "مصرف‌های بهینه"
-        },
-        {
-          "t": "p",
-          "x": "در این بخش به مصرف‌های ضروری برای اوج‌گیری عملکرد Unholy Death Knight در پچ 12.1.5 می‌پردازیم."
-        },
-        {
-          "t": "h3",
-          "x": "پتشن‌ها و فلاسک‌ها"
-        },
-        {
-          "t": "kv",
-          "items": [
-            {
-              "k": "فلاسک",
-              "v": "Flask of the Magisters یا Flask of the Shattered Sun",
-              "ids": [
-                241322,
-                241326
-              ]
-            },
-            {
-              "k": "معجون",
-              "v": "Potion of Recklessness",
-              "ids": [
-                241288
-              ]
-            },
-            {
-              "k": "معجون",
-              "v": "Light's Potential",
-              "ids": [
-                241308
-              ]
-            },
-            {
-              "k": "معجون سلامتی",
-              "v": "Silvermoon Health Potion",
-              "ids": [
-                241304
-              ]
-            }
-          ]
-        },
-        {
-          "t": "call",
-          "x": "پتشن Recklessness را در لحظات حساس مانند برست‌های قدرتمند استفاده کنید. فلاسک Shattered Sun در اوایل بازی و Magisters در سطوح بالاتر مناسب‌تر است."
-        },
-        {
-          "t": "h3",
-          "x": "تجهیزات و جواهرات"
-        },
-        {
-          "t": "kv",
-          "items": [
-            {
-              "k": "جم‌ها",
-              "v": "Indecipherable Eversong Diamond (اگر Critical Strike پایین است) یا Powerful Eversong Diamond",
-              "ids": [
-                240982,
-                240966
-              ]
-            },
-            {
-              "k": "جم‌ها",
-              "v": "Flawless Masterful Garnet و Flawless Deadly Amethyst",
-              "ids": [
-                240907,
-                240897
-              ]
-            },
-            {
-              "k": "رون‌فورج",
-              "v": "[[Rune of the Apocalypse]]"
-            },
-            {
-              "k": "روغن سلاح",
-              "v": "Thalassian Phoenix Oil",
-              "ids": [
-                243733
-              ]
-            },
-            {
-              "k": "Augment Rune",
-              "v": "Void-Touched Augment Rune",
-              "ids": [
-                259085
-              ]
-            }
-          ]
-        },
-        {
-          "t": "p",
-          "x": "بین Masterful Garnet و Deadly Amethyst، آن را انتخاب کنید که استت ثانویه‌تان پایین‌تر باشد."
-        },
-        {
-          "t": "h3",
-          "x": "غذا و انچنت‌ها"
-        },
-        {
-          "t": "kv",
-          "items": [
-            {
-              "k": "غذا",
-              "v": "Silvermoon Parade (پخش جمعی) یا Royal Roast (شخصی)",
-              "ids": [
-                255845,
-                242275
-              ]
-            },
-            {
-              "k": "سر",
-              "v": "Enchant Helm - Empowered Blessing of Speed",
-              "ids": [
-                243980
-              ]
-            },
-            {
-              "k": "شانه",
-              "v": "Enchant Shoulders - Akil'zon's Swiftness",
-              "ids": [
-                243962
-              ]
-            },
-            {
-              "k": "سینه",
-              "v": "Enchant Chest - Mark of the Worldsoul",
-              "ids": [
-                243976
-              ]
-            },
-            {
-              "k": "چکمه",
-              "v": "Enchant Boots - Farstrider's Hunt",
-              "ids": [
-                244008
-              ]
-            },
-            {
-              "k": "ساق",
-              "v": "Forest Hunter's Armor Kit",
-              "ids": [
-                244640
-              ]
-            },
-            {
-              "k": "انگشترها",
-              "v": "Enchant Ring - Eyes of the Eagle",
-              "ids": [
-                243956
-              ]
-            }
-          ]
-        },
-        {
-          "t": "p",
-          "x": "برای شمشیرها و تبرها از Refulgent Whetstone و برای چکش‌ها از Refulgent Weightstone استفاده کنید."
-        }
-      ]
-    },
-    {
-      "id": "mplus",
-      "title": "نکته‌های Mythic+",
-      "blocks": [
-        {
-          "t": "h3",
-          "x": "میت‌پلاس با Unholy Death Knight"
-        },
-        {
-          "t": "p",
-          "x": "Unholy در میت‌پلاس با نقاط قوت و ضعف مشخصی همراه است. این کلاس ابزارهای گروهی محدودی دارد و برای بازی در سطح بالا نیاز به راه‌اندازی دقیق دارد."
-        },
-        {
-          "t": "two",
-          "a": {
-            "cls": "good",
-            "title": "نقاط قوت",
-            "items": [
-              "چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] برای درجه‌های بالای میت‌پلاس بسیار قدرتمند است",
-              "کول‌داون‌های قابل استفاده در موج‌ها و پک‌ها",
-              "آسیب برست بالا در موج‌های بزرگ"
-            ]
-          },
-          "b": {
-            "cls": "bad",
-            "title": "نقاط ضعف",
-            "items": [
-              "حرکت‌پذیری پایین",
-              "ابزارهای گروهی محدود",
-              "نیاز به راه‌اندازی چرخه‌ها برای حداکثر کارایی"
-            ]
-          }
-        },
-        {
-          "t": "call",
-          "x": "برای درجات بالای میت‌پلاس، چرخهٔ [[San'layn]] با ۴۵ ثانیه مدت زمان بهینه‌تر است. [[Rider of the Apocalypse]] ساده‌تر است اما نیاز به راه‌اندازی کمتری دارد."
-        },
-        {
-          "t": "p",
-          "x": "از ترینکت‌های با فعال‌سازی برای افزایش آسیب در پنجره‌های برست استفاده کنید. این ترینکت‌ها برای Unholy بسیار قوی عمل می‌کنند."
-        },
-        {
-          "t": "ul",
-          "items": [
-            "Night Elf Shadowmeld برای رد کردن پک‌ها و موج‌ها مفید است",
-            "Dwarf Stoneform یک افزایش دفاعی در مواقع ضروری است",
-            "حرکت‌پذیری پایین باعث می‌شود برنامه‌ریزی مسیرها در اولویت باشد"
-          ]
-        },
-        {
-          "t": "h3",
-          "x": "افیکس‌های فصل و ابزارهای Unholy"
-        },
-        {
-          "t": "kv",
-          "items": [
-            {
-              "k": "ابزارها",
-              "v": "[[Mind Freeze]] اینتراپت · [[Asphyxiate]] استان · [[Blinding Sleet]] stop دسته‌ای · [[Death Grip]] جمع‌کردن · [[Anti-Magic Zone]] کاهش دمیج جادویی گروه · [[Raise Ally]] کمبت‌ریز · [[Control Undead]] کنترل زنده‌مردهٔ دشمن"
-            },
-            {
-              "k": "Ascendant",
-              "v": "orbهای موج را با [[Blinding Sleet]] جمع کن و ولگردها را با [[Mind Freeze]] و [[Death Grip]] مدیریت کن؛ [[Asphyxiate]] استان پشتیبان است"
-            },
-            {
-              "k": "Voidbound",
-              "v": "روی Void Emissary سوییچ کن و کستش را با [[Mind Freeze]] قطع کن؛ [[Asphyxiate]] و [[Blinding Sleet]] را برای ظاهر شدنش نگه دار"
-            },
-            {
-              "k": "Pulsar",
-              "v": "orbهای بازیکن را در ۱۵ ثانیه soak کن، با [[Wraith Walk]] یا [[Death's Advance]]"
-            },
-            {
-              "k": "Devour",
-              "v": "برای ایمن‌کردن جذب شفا [[Anti-Magic Shell]] را از قبل بزن (بافش را از دست می‌دهی)؛ برای حذف سریع با [[Death Pact]] و مصرفی‌های سلامت کمک کن"
-            }
-          ]
-        },
-        {
-          "t": "link",
-          "href": "talents.html?class=death-knight",
-          "x": "مشاهده بیلدهای پیشنهادی"
-        },
-        {
-          "t": "h3",
-          "x": "کول‌داون‌ها در Mythic+"
-        },
-        {
-          "t": "p",
-          "x": "چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] هم‌زمان‌سازی [[Dark Transformation]] با پک‌ها را ممکن می‌کند. [[Army of the Dead]] را جایی بگذار که پت‌های اضافه‌اش ([[Raise Abomination]]، [[Summon Gargoyle]] با تلنت [[Apocalypse Now]]) روی پک‌های چرب بنشینند؛ اگر [[Commander of the Dead]] گرفتی این دو کول‌داون باید هم‌زمان بمانند."
-        },
-        {
-          "t": "p",
-          "x": "با [[Outnumber]] زمان‌بندی [[Dark Transformation]] روی اسپاون اددها مهم می‌شود: حملهٔ [[Sweeping Claws]] گول‌های کوچک بخش بزرگی از آسیب AoE توست."
-        }
-      ]
-    }
-  ],
-  "seo": {
-    "title_fa": "راهنمای Unholy Death Knight (آن‌هولی): بیلد تلنت، روتیشن، BiS و انچنت",
-    "description_fa": "راهنمای کامل آن‌هولی (Unholy Death Knight) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم: همه با توضیح فارسی.",
-    "queries_en": [
-      "Unholy Death Knight talent build midnight",
-      "Unholy Death Knight guide midnight",
-      "Unholy Death Knight guide 12.1.5",
-      "best Unholy Death Knight talents",
-      "Unholy Death Knight talent tree midnight",
-      "Unholy Death Knight pve guide",
-      "Unholy Death Knight rotation midnight",
-      "Unholy Death Knight rotation and cooldowns",
-      "Unholy Death Knight bis list midnight",
-      "Unholy Death Knight best in slot",
-      "Unholy Death Knight gear guide",
-      "Unholy Death Knight food and potion",
-      "best food for Unholy Death Knight",
-      "best flask for Unholy Death Knight",
-      "best potion for Unholy Death Knight",
-      "Unholy Death Knight enchants and gems",
-      "best enchants for Unholy Death Knight",
-      "best gems for Unholy Death Knight",
-      "Unholy Death Knight stat priority midnight",
-      "Unholy Death Knight tier set midnight",
-      "Unholy Death Knight tier set bonuses",
-      "Unholy Death Knight mythic+ guide",
-      "Unholy Death Knight m+ guide midnight",
-      "Unholy Death Knight raid guide",
-      "Unholy Death Knight hero talents",
-      "Unholy Death Knight hero tree",
-      "best dps build Unholy Death Knight midnight",
-      "Unholy Death Knight cheat sheet"
-    ],
-    "queries_fa": [
-      "تلنت برای آن‌هولی",
-      "تلنت آن‌هولی",
-      "تلنت برای Unholy Death Knight",
-      "تلنت Death Knight آن‌هولی",
-      "بیلد آن‌هولی",
-      "بیلد تلنت آن‌هولی میدنایت",
-      "روتیشن آن‌هولی",
-      "روتیشن و کول‌داون‌های آن‌هولی",
-      "غذا برای آن‌هولی",
-      "غذا برای Unholy Death Knight",
-      "غذا و معجون آن‌هولی",
-      "بهترین غذای آن‌هولی",
-      "فلسک آن‌هولی",
-      "بهترین فلسک برای آن‌هولی",
-      "معجون آن‌هولی",
-      "انچنت آن‌هولی",
-      "انچنت و جم آن‌هولی",
-      "بهترین انچنت برای آن‌هولی",
-      "جم آن‌هولی",
-      "بست آیتم آن‌هولی",
-      "بهترین آیتم‌های آن‌هولی",
-      "گیر آن‌هولی",
-      "استت آن‌هولی",
-      "اولویت استت آن‌هولی",
-      "ست تیر آن‌هولی",
-      "مایتی پلاس آن‌هولی",
-      "ام پلاس آن‌هولی",
-      "راهنمای آن‌هولی",
-      "راهنمای Unholy Death Knight",
-      "راهنمای دث‌نایت",
-      "آن‌هولی میدنایت",
-      "دث‌نایت میدنایت",
-      "هرو تیلنت آن‌هولی",
-      "بیلد آن‌هولی",
-      "بهترین آن‌هولی"
-    ],
-    "faq": [
-      {
-        "q": "بهترین بیلد تلنت برای Unholy Death Knight (آن‌هولی) در میدنایت چیست؟",
-        "a": "بیلد پیشنهادی پچ 12.1.5 برای Unholy Death Knight به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
-      },
-      {
-        "q": "برای آن‌هولی چه غذا، فلسک و معجونی استفاده کنم؟",
-        "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، غذا «Silvermoon Parade» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
-      },
-      {
-        "q": "بهترین انچنت و جم برای آن‌هولی چیست؟",
-        "a": "بهترین انتخاب فعلی: جم «Flawless Masterful Garnet» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
-      },
-      {
-        "q": "بهترین آیتم‌ها (BiS) برای آن‌هولی کدام‌اند؟",
-        "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
-      },
-      {
-        "q": "روتیشن Unholy Death Knight در پچ 12.1.5 چگونه است؟",
-        "a": "روتیشن کامل: شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر: در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
-      }
-    ]
+  {
+   "name": "Wowhead Talent Builds",
+   "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/talent-builds-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Rotation",
+   "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/rotation-cooldowns-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead BiS Gear",
+   "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/bis-gear",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Wowhead Consumables",
+   "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/enchants-gems-pve-dps",
+   "updated": "2026-10-13"
+  },
+  {
+   "name": "Icy Veins: Unholy Guide (Overview)",
+   "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-guide",
+   "updated": "2026-10-12"
+  },
+  {
+   "name": "Icy Veins: Unholy Spec, Builds & Talents",
+   "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-spec-builds-talents",
+   "updated": "2026-10-12"
+  },
+  {
+   "name": "Icy Veins: Unholy Easy Mode",
+   "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-easy-mode",
+   "updated": "2026-10-12"
+  },
+  {
+   "name": "Icy Veins: Unholy Leveling (8-90)",
+   "url": "https://www.icy-veins.com/wow/unholy-death-knight-leveling-guide",
+   "updated": "2026-10-12"
+  },
+  {
+   "name": "Icy Veins: Unholy Stat Priority",
+   "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-stat-priority",
+   "updated": "2026-10-12"
+  },
+  {
+   "name": "Icy Veins: Unholy Gear & BiS",
+   "url": "https://www.icy-veins.com/wow/unholy-death-knight-pve-dps-gear-best-in-slot",
+   "updated": "2026-10-12"
   }
+ ],
+ "glossary": {
+  "Army of the Dead": {
+   "fa": "کول‌داون بزرگ برای فراخوانی زامبی‌ها که منبع دامنه و آسیب است."
+  },
+  "Dark Transformation": {
+   "fa": "کول‌داون کلیدی برای تبدیل گول‌های فرزند به گول‌های قدرتمند."
+  },
+  "Rider of the Apocalypse": {
+   "fa": "هیرو تری که بر قدرت تک‌هدف و حرکت تمرکز دارد"
+  },
+  "San'layn": {
+   "fa": "هیرو تری که بر AoE و پایداری تمرکز دارد"
+  },
+  "Death Order": {
+   "fa": "یک اثر که توسط گول‌های [[Army of the Dead]] فعال می‌شود"
+  },
+  "Epidemic Order": {
+   "fa": "یک اثر جایگزین برای Death Order که توسط گول‌ها فعال می‌شود"
+  },
+  "Lesser Ghoul": {
+   "fa": "گول‌های کوچکی که استک‌هایشان را [[Festering Strike]] می‌سازد و [[Scourge Strike]] احضارشان می‌کند؛ حملهٔ [[Sweeping Claws]]شان بخش بزرگی از آسیب AoE توست."
+  },
+  "Lord of the Dead": {
+   "fa": "تلنت کپ‌استون که یک لیک با ۳ گول فعال می‌کند"
+  },
+  "Magus of the Dead": {
+   "fa": "گول‌های ویژه که توسط Lord of the Dead فراخوانی می‌شوند"
+  },
+  "Apocalypse Now": {
+   "fa": "تلنت کلیدی Rider of the Apocalypse که پنجره‌ای ۹۰ ثانیه‌ای قدرت ایجاد می‌کند"
+  },
+  "Outbreak": {
+   "fa": "اسپل اولیه برای اعمال بیماری روی هدف."
+  },
+  "Festering Scythe": {
+   "fa": "بافی که [[Festering Strike]] می‌سازد و سرعت تیک بیماری‌ها را بالا می‌برد؛ پیش از اتمام با [[Festering Strike]] تازه‌اش کن."
+  },
+  "Scourge Strike": {
+   "fa": "اسپل مصرف‌کنندهٔ Rune که به ازای استک‌های [[Lesser Ghoul]] گول احضار می‌کند؛ با [[Clawing Shadows]] تا ۴ هدف کیولد می‌شود (با [[Scourging]] تا ۶)."
+  },
+  "Death Coil": {
+   "fa": "اسپل اصلی خرج Runic Power که با پروک Sudden Doom قوی‌تر می‌شود."
+  },
+  "Soul Reaper": {
+   "fa": "اسپل دامنه بالا که روی دشمنان با سلامت کمتر مؤثرتر است."
+  },
+  "Death and Decay": {
+   "fa": "اسپل اِی‌او‌ای که دامنه مداوم ایجاد می‌کند."
+  },
+  "Virulent Plague": {
+   "fa": "بیماری اصلی که توسط Outbreak و Scourge Strike اعمال می‌شود."
+  },
+  "Putrefy": {
+   "fa": "کول‌داون کوتاهی که حین [[Dark Transformation]] می‌زنی؛ انفجارش [[Blightburst]] می‌سازد و رتبه‌های [[Forbidden Knowledge]] با هر کست آن Mastery و استک [[Lesser Ghoul]] می‌دهند."
+  },
+  "Festering Strike": {
+   "fa": "اسپل اصلی برای ایجاد استک‌های Festering Wound."
+  },
+  "Sudden Doom": {
+   "fa": "پروک تصادفی که Death Coil را بدون نیاز به Runic Power فعال می‌کند."
+  },
+  "Blightfall": {
+   "fa": "تلنت فعال که مصرف بیماری‌ها را به برست بزرگ تبدیل می‌کند و خودش یک شارژ [[Putrefy]] می‌دهد؛ قاعدهٔ دو مرحله‌ای: پیش از اتمام باف [[Soul Reaper]] و پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]."
+  },
+  "Epidemic": {
+   "fa": "ورژن اِی‌او‌ای Death Coil که بیماری را به دشمنان دیگر منتقل می‌کند."
+  },
+  "Necrotic Coil": {
+   "fa": "نسخهٔ تقویت‌شدهٔ [[Death Coil]] در پنجرهٔ [[Forbidden Knowledge]] با آسیب AoE و تا ۵ هدف؛ از حدود ۳۰ Runic Power ارزش دارد و با پروک [[Sudden Doom]] از حدود ۱۵."
+  },
+  "Vampiric Strike": {
+   "fa": "توانایی مختص هیرو [[San'layn]]؛ پروک‌هایش باف [[Essence of the Blood Queen]] را می‌سازد (۷ استک برای پل زدن بین [[Dark Transformation]]ها). مراقب overcap شدن Runic Power باش که پروک‌ها را از دست ندهی."
+  },
+  "Commander of the Dead": {
+   "fa": "تلنت که Army of the Dead را تقویت و هماهنگ با Dark Transformation می‌کند."
+  },
+  "Voracious Heart of Ula'tek": {
+   "fa": "یک افزونه قوی برای برست که در فایت‌های طولانی ارزش بالایی دارد"
+  },
+  "Zul'jin's Guillotine Technique": {
+   "fa": "افزونه‌ای با قابلیت استفاده فعال که برای برست‌های دو‌دستی عالی است"
+  },
+  "Baleful Grave-Knight's Crucible": {
+   "fa": "ست تیر ۴ تکه که قدرت پت‌ها را افزایش می‌دهد"
+  },
+  "Corroded Hulk's Skullcap": {
+   "fa": "کریستالیزر سر از Kith'ix"
+  },
+  "Cinderfury Shoulderguards": {
+   "fa": "کریستالیزر شانه از Murder Row"
+  },
+  "Reckless Spirit Breastplate": {
+   "fa": "کریستالیزر سینه از The Coiled Altar"
+  },
+  "Chausses of Unbound Rancor": {
+   "fa": "کریستالیزر پا از Ula'tek"
+  },
+  "Gauntlets of the Avian Sentinel": {
+   "fa": "کریستالیزر دست از King's Rest"
+  },
+  "Blood Knight's Warblade": {
+   "fa": "ساخته شده با Darkmoon Sigil: Hunt"
+  },
+  "Spellbreaker's Bracers": {
+   "fa": "ساخته شده با Arcanoweave Lining"
+  },
+  "Spellbreaker's March": {
+   "fa": "ساخته شده بدون لاینینگ"
+  },
+  "Potion of Recklessness": {
+   "fa": "پتشن قدرتمند که با افزایش قابل توجه قدرت، خسارت وارد شده را افزایش می‌دهد."
+  },
+  "Flask of the Magisters": {
+   "fa": "فلاسکی که قدرت را به طور دائمی افزایش می‌دهد."
+  },
+  "Flask of the Shattered Sun": {
+   "fa": "فلاسکی که قدرت و استت‌های ثانویه را افزایش می‌دهد."
+  },
+  "Silvermoon Parade": {
+   "fa": "پخش غذا که برای گروه مناسب است و قدرت و استت‌ها را افزایش می‌دهد."
+  },
+  "Royal Roast": {
+   "fa": "غذا شخصی که قدرت و استت‌ها را افزایش می‌دهد."
+  },
+  "Rune of the Apocalypse": {
+   "fa": "رون‌فورج سلاح که خسارت اسپل‌های Unholy را افزایش می‌دهد."
+  },
+  "Thalassian Phoenix Oil": {
+   "fa": "روغن سلاح که خسارت وارد شده توسط اسپل‌ها را افزایش می‌دهد."
+  },
+  "Void-Touched Augment Rune": {
+   "fa": "افزونه‌ای که استت‌های اصلی را افزایش می‌دهد."
+  },
+  "Blinding Sleet": {
+   "fa": "کنترل دسته‌ای که دشمنان اطراف را Disorient می‌کند؛ برای قطع کست‌های بدون اینتراپت و مدیریت پک‌ها به‌کار می‌رود."
+  },
+  "Mind Freeze": {
+   "fa": "اینتراپت اصلی برای جلوگیری از کست دشمنان"
+  },
+  "Death Grip": {
+   "fa": "یک اسپل کشش که دشمن را به سمت شما می‌آورد"
+  },
+  "Wraith Walk": {
+   "fa": "یک اسپل حرکتی سریع که به شما اجازه می‌دهد از موانع عبور کنید"
+  },
+  "Death's Advance": {
+   "fa": "افزایش حرکت و مقاومت در برابر توقف حرکت"
+  },
+  "Anti-Magic Shell": {
+   "fa": "یک سپر که از جادو محافظت می‌کند و شفا را جذب می‌کند"
+  },
+  "Death Strike": {
+   "fa": "یک اسپل حیاتی که با آسیب دریافت شده شفا می‌دهد"
+  },
+  "Dread Plague": {
+   "fa": "بیماری جدید تک‌هدف Midnight که با Outbreak اعمال می‌شود و منبع پروک Sudden Doom است."
+  },
+  "Dark Succor": {
+   "fa": "بعد از کشتن دشمن، Death Strike بعدی‌ات رایگان است و شفا می‌دهد."
+  },
+  "Rune of the Fallen Crusader": {
+   "fa": "رون‌فورج سلاح DK که شانس برخورد به Strength اضافه می‌کند؛ انتخاب استاندارد لولینگ و PvE."
+  },
+  "Blood Beast": {
+   "fa": "مینیون درخت San'layn که رشد چندمربعی دارد و در پک‌ها آسیب زیادی می‌زند."
+  },
+  "Essence of the Blood Queen": {
+   "fa": "باف درخت San'layn که با پروک Vampiric Strike نگه داشته می‌شود."
+  },
+  "Unholy Aura": {
+   "fa": "باف فعال Unholy که با هر فراخوانی مینیون تازه می‌شود و آسیب مینیون‌ها را بالا می‌برد."
+  },
+  "Chains of Ice": {
+   "fa": "اسپل پایهٔ DK که هدف را اسلوم می‌کند؛ نسخهٔ Trollbane لحظهٔ کست برست می‌زند."
+  },
+  "Raise Dead": {
+   "fa": "احضار پت اصلی (Timmy)؛ طبق راهنما پیش از شروع هر مبارزه، حتی در محتوای اوپن‌ورلد، زده می‌شود."
+  },
+  "Raise Abomination": {
+   "fa": "از تلنت‌هایی که همراه Army of the Dead پت اضافه برایت احضار می‌کند."
+  },
+  "Ride or Die!": {
+   "fa": "از تلنت‌های هرو Rider of the Apocalypse که همراه Dark Transformation فعال می‌شود."
+  },
+  "Outnumber": {
+   "fa": "به غول‌های کوچک در طول Dark Transformation حملهٔ AoE (Claw) می‌دهد؛ Army of the Dead را به کول‌داون AoE قوی‌تری تبدیل می‌کند."
+  },
+  "Blightburst": {
+   "fa": "انفجار Putrefy طول بیماری‌ها را کش می‌دهد، بخشی از دمیج مدت آن‌ها را فوری می‌زند و بیماری‌ها را روی اهداف سالم هم می‌گذارد؛ تعداد Outbreakها را هم کم می‌کند."
+  },
+  "Sweeping Claws": {
+   "fa": "ضربهٔ AoE غول‌های کوچک در طول Dark Transformation؛ بخش بزرگی از پتانسیل دمیج AoE توست."
+  },
+  "Forbidden Knowledge": {
+   "fa": "تلنت Apex؛ با کست [[Army of the Dead]] یک باف ۳۰ ثانیه‌ای می‌گیری. رتبهٔ ۱: [[Death Coil]] به [[Necrotic Coil]] و [[Epidemic]] به [[Graveyard]] تبدیل می‌شود؛ رتبه‌های ۲ و ۳ با هر [[Putrefy]] Mastery و یک استک [[Lesser Ghoul]] می‌دهند؛ رتبهٔ ۴ به [[Dread Plague]] ۲۰٪ شانس تریگر [[Putrefy]] با اثر کامل می‌دهد. پت‌ها باید روی assist باشند."
+  },
+  "Graveyard": {
+   "fa": "نسخهٔ تقویت‌شدهٔ [[Epidemic]] در پنجرهٔ [[Forbidden Knowledge]] (رتبهٔ ۱)؛ در اولویت AoE آن پنجره بالای فیلرها می‌نشیند."
+  },
+  "Raise Ally": {
+   "fa": "کمبت‌ریز Death Knight؛ یک همراه مرده را وسط مبارزه برمی‌گرداند."
+  },
+  "Death Pact": {
+   "fa": "بافن و درمان بزرگ خودی که بخشی از جان فعلی‌ات را می‌دهد؛ برای نجات از دمیج‌های سنگین یا حذف سریع افکت‌های مرگ‌آور."
+  },
+  "Asphyxiate": {
+   "fa": "استان ۵ ثانیه‌ای تک‌هدف؛ پشتیبان [[Mind Freeze]] وقتی اینتراپت کافی نیست."
+  },
+  "Anti-Magic Zone": {
+   "fa": "حباب گروهی که آسیب جادویی داخلش را کم می‌کند؛ برای پک‌های کست‌محور."
+  },
+  "Control Undead": {
+   "fa": "یک موجود زنده‌مردهٔ دشمن را موقتاً تحت کنترل خودت درمی‌آوری؛ ابزار سرگرم‌کننده و کاربردی در برخی پک‌ها."
+  },
+  "Necrotic Bolt": {
+   "fa": "تیر Shadow دمیج‌پت‌ها؛ با ست ۲ تکهٔ فصل ۲، [[Magus of the Dead]] و [[Lord of the Dead]] به‌جای Frostbolt این را می‌اندازند."
+  },
+  "Withering Grasp": {
+   "fa": "تیر Shadow دمیج‌پت‌ها؛ با ست ۲ تکهٔ فصل ۲ به‌جای Shadow Bolt می‌آید و با ست ۴ تکه روی دشمن زیر ۳۵٪ جان تا ۱۳۰٪ قوی‌تر می‌شود."
+  }
+ },
+ "sections": [
+  {
+   "id": "overview",
+   "title": "معرفی",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Unholy Death Knight با بیماری‌ها و ارتش مینیون‌های مرده بازی می‌کند و آسیب تک‌هدف بالایی تولید می‌کند. دامنهٔ آن به کیولد پت‌ها، آسیب دومربعی [[Epidemic]]، بیماری‌ها و کیولد [[Scourge Strike]] تکیه دارد. چرخهٔ اصلی یعنی نگه‌داشتن بیماری‌ها، فراخوانی حجم بالای مینیون‌مرده و ضربه‌های مستقیمی که از برد ۳۰ یارد هم مؤثرند: و در کنارش یکی از مقاوم‌ترین کلاس‌های بازی است."
+    },
+    {
+     "t": "ratings",
+     "items": [
+      {
+       "k": "تک‌هدف",
+       "v": "برست قوی و مؤثر از برد",
+       "n": 4
+      },
+      {
+       "k": "چندهدف (AoE)",
+       "v": "خوب",
+       "n": 4
+      },
+      {
+       "k": "Mythic+",
+       "v": "تک‌هدف و AoE خوب",
+       "n": 3
+      },
+      {
+       "k": "ابزار گروه",
+       "v": "کم",
+       "n": 2
+      },
+      {
+       "k": "بقا",
+       "v": "بالاترین سطح",
+       "n": 5
+      },
+      {
+       "k": "تحرک",
+       "v": "کند: با Rider بهتر",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "پنجره‌های برست بزرگ هر ۹۰ ثانیه و برست کوچک‌تر هر ۴۵ ثانیه ([[Army of the Dead]] + [[Dark Transformation]])",
+       "از برد ۳۰ یارد هم بازی می‌شود و در تعویض هدف‌های دور کم نمی‌گذارد",
+       "اکسیکیوت قوی با [[Soul Reaper]]؛ در فایت‌هایی که Bloodlust زیر ۳۵٪ جان باس می‌آید می‌درخشد",
+       "به‌طور مشترک با Frost، مقاوم‌ترین اسپک بازی؛ رتبهٔ ۴ کمترین مرگ بین همهٔ DPS در ریید"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "ابزار گروهی محدود؛ جز [[Death Grip]] باف مهمی به گروه نمی‌دهد",
+       "تحرک تاریخی پایین: البته [[Rider of the Apocalypse]] با [[Death Charge]] خیلی از این مشکل را حل می‌کند",
+       "در Mythic+ بیشتر به آسیب متکی است تا ابزار؛ برای کلیدهای بالا باید آسیبت رقابتی باشد"
+      ]
+     }
+    },
+    {
+     "t": "h3",
+     "x": "Hero Tree: کدام مسیر؟"
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "Rider of the Apocalypse",
+       "tag": "ساده‌تر با پنجرهٔ ۹۰ ثانیه‌ای",
+       "x": "پنجره‌های برست ۹۰ ثانیه‌ای قوی دارد و به آماده‌سازی و اجرای زیادی نیاز نیست؛ برای شروع learning curve راحت‌تری دارد. با [[Apocalypse Now]] حیوانات چهارگانهٔ چهار فصل را فرامی‌خواند و ابزارهای تحرک مثل [[Death Charge]] می‌دهد."
+      },
+      {
+       "title": "San'layn",
+       "tag": "انتخاب اول Mythic+ سطح بالا",
+       "x": "چرخهٔ برست ۴۵ ثانیه‌ای دارد که در Mythic+ با موج‌های منظم عالی جواب می‌دهد؛ ولی برای پتانسیل کامل، build-up و اجرای پیوسته می‌خواهد. خودبرستش تقریباً غیرقابل‌کش شدن است."
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "هیچ‌کدام از دو مسیر انتخاب اشتباه نیست؛ در ریید بسته به زمان‌بندی فایت بین پنجره‌های ۴۵ ثانیه‌ای [[San'layn]] و ۹۰ ثانیه‌ای [[Rider of the Apocalypse]] جابه‌جا شو. در کلیدهای بالای Mythic+ چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] برتری دارد و Rider برای بازی راحت‌تر و کم‌توقع‌تر انتخاب می‌شود. در دفاع، خودبرست قوی [[San'layn]] تقریباً غیرقابل‌کشتن می‌کند و Rider با [[Death Charge]] و [[March of Darkness]] تحرک می‌دهد."
+    },
+    {
+     "t": "h3",
+     "x": "Unholy در Midnight"
+    },
+    {
+     "t": "p",
+     "x": "Midnight یک بازسازی بزرگ برای Unholy بود: **Festering Wound** برای همیشه حذف شد و جای خود را به حلقهٔ فراخوانی مینیون داد: [[Festering Strike]] حالا روی خودت استک [[Lesser Ghoul]] می‌سازد (۲ تا ۳ استک، سقف ۸) و [[Scourge Strike]] آن‌ها را مصرف کرده و برای هر استک یک گول فرا می‌خواند. چون استک‌ها روی خودت هستند، تعویض هدف دیگر هزینه‌ای ندارد. بیماری جدید تک‌هدفِ [[Dread Plague]] از [[Outbreak]] اعمال می‌شود و منبع پروک [[Sudden Doom]] است، و ابزار تازهٔ [[Putrefy]] گول را پرت می‌کند و می‌ترکانَد."
+    },
+    {
+     "t": "p",
+     "x": "در AoE دیگر وابسته به [[Death and Decay]] نیستی: [[Clawing Shadows]] هر [[Scourge Strike]] را تا ۴ هدف اضافه کیولد می‌کند (با [[Scourging]] تا ۶) و این یعنی می‌توانی پشت تانک راه بیفتی و دامنه را از دست ندهی. اگر [[San'layn]] بازی کنی با تلنت [[Inevitable]] همان اول استک کامل داری. Unholy اکنون باف حیاتی [[Unholy Aura]] را هم دارد که با هر فراخوانی مینیون تازه می‌شود."
+    },
+    {
+     "t": "h4",
+     "x": "تلنت‌های Apex جدید (لول ۸۰ تا ۹۰)"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Forbidden Knowledge]]: با [[Army of the Dead]] باف ۳۰ ثانیه‌ای می‌دهد. رتبهٔ ۱: [[Death Coil]] به [[Necrotic Coil]] و [[Epidemic]] به [[Graveyard]] تبدیل می‌شود ([[Necrotic Coil]] در AoE تا ۵ هدف). رتبه‌های ۲ و ۳: هر [[Putrefy]] Mastery و یک استک [[Lesser Ghoul]] می‌دهد. رتبهٔ ۴: [[Dread Plague]] با ۲۰٪ شانس [[Putrefy]] را با اثر کامل تریگر می‌کند. پت‌ها باید روی assist باشند",
+      "[[Unholy Devotion]]: گول دائمی‌ات هنگام [[Putrefy]] موقتاً قوی‌تر می‌شود (اپلیکیشن‌ها روی هم جمع می‌شوند)",
+      "[[Blightburst]]: انفجار [[Putrefy]] بیماری‌ها را تمدید و بخشی از دامنهٔ آینده‌شان را فوری می‌زند و روی هدف‌های بدون بیماری هم می‌پاشد؛ تعداد [[Outbreak]] ها را محسوس کاهش می‌دهد",
+      "[[Lord of the Dead]] (نام تازهٔ Reanimation): با ۳ گول [[Magus of the Dead]] آن‌ها را فدا کن تا یک لیک ۱۵ ثانیه‌ای با Frost Bolt زنجیره‌ای بیاید",
+      "[[Putrid Echoes]]: شارژ دوم [[Putrefy]] با دامنهٔ بیشتر؛ دو Magus حین [[Dark Transformation]] فرا می‌خوانی",
+      "[[Harbinger of Doom]]: هر فراخوان گول با [[Scourge Strike]] کول‌داون [[Putrefy]] را کم می‌کند",
+      "[[Soul Reaper]]: تا ۳ استک [[Lesser Ghoul]] را خودکار مصرف می‌کند و در فاز اکسیکیوت دیگر نیاز به [[Putrefy]] نیست",
+      "[[Blightfall]]: خودش یک شارژ [[Putrefy]] می‌دهد و مصرف بیماری‌ها را به برست بزرگ تبدیل می‌کند"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اصول بازی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "**باف‌ها را نگه دار**: باف [[Festering Scythe]] را با زدن [[Festering Strike]] تازه نگه دار و هرگز [[Scourge Strike]] با صفر استک [[Lesser Ghoul]] نزن؛ بیلد کن و مصرف کن",
+      "**مدیریت منابع**: دو منبع داری: Rune و Runic Power. سه رون را همیشه در حال شارژ نگه دار و اجازهٔ اورکپ Runic Power را نده",
+      "**دايم بیماری**: بیماری‌ها به‌خصوص [[Dread Plague]] بخش بزرگی از دامنه‌ات هستند؛ هرگز روی هدف اصلی فعال نباشد"
+     ]
+    },
+    {
+     "t": "call",
+     "kind": "tip",
+     "x": "پچ ۱۲.۱.۵ تغییر گیم‌پلی برای Unholy نداشت؛ فقط منابع گیر جدید (ریید Kith'ix و مگادلو Labyrinth) و امکان ارتقای سلاح/ترینکت/گردن با Ascendant Venomstone اضافه شد."
+    }
+   ]
+  },
+  {
+   "id": "leveling",
+   "title": "لولینگ",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "Unholy برای لولینگ ۸ تا ۹۰ انتخاب سریعی است: با چندبیماری و برست، پک‌های کامل را می‌ترکاند، از لول ۷۱ با [[On a Paler Horse]] یکی از پرتحرک‌ترین کلاس‌ها می‌شود و با [[Dark Succor]] بعد از هر کیل یک [[Death Strike]] رایگان و پرشفا داری."
+    },
+    {
+     "t": "h3",
+     "x": "تلنت‌های کلیدی حین لولینگ"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "لول ۱۰ [[Death Strike]] · ۱۱ [[Outbreak]] · ۱۳ [[Scourge Strike]] · ۱۵ [[Sudden Doom]]",
+      "لول ۲۱ [[Dark Transformation]] · ۲۷ [[Army of the Dead]] · ۳۶ [[Wraith Walk]]",
+      "لول ۶۷ [[Soul Reaper]] · ۷۱ [[On a Paler Horse]] (پرش تحرک بزرگ) · ۷۴ [[Apocalypse Now]]",
+      "لول ۸۰ [[Unholy Armaments]] · لول‌های ۸۱/۸۴/۸۷/۹۰ چهار پوینت [[Forbidden Knowledge]] · لول ۹۰ هرو [[Rider of the Apocalypse]]"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "چرخهٔ لولینگ"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Outbreak]] را روی چند دشمن بزن تا بیماری‌ها پخش شود",
+      "[[Festering Strike]] استک‌های [[Lesser Ghoul]] را می‌سازد",
+      "[[Scourge Strike]] را فقط با حداقل یک استک بزن",
+      "بین ۱ تا ۳ هدف [[Death Coil]] و روی ۴ هدف یا بیشتر [[Epidemic]]",
+      "[[Army of the Dead]] را روی پک‌های سخت یا الیت خالی کن",
+      "زیر ۳۵٪ جان یا همراه با پروک [[Dark Transformation]]، [[Soul Reaper]]",
+      "بعد از هر کیل، [[Dark Succor]] یک [[Death Strike]] رایگان می‌دهد: برای ادامهٔ پول، مصرفش کن"
+     ]
+    },
+    {
+     "t": "call",
+     "kind": "tip",
+     "x": "رون‌فورج [[Rune of the Fallen Crusader]] را بزن، همیشه بالاترین آی‌تم‌لول را بپوش (استت بعداً مهم می‌شود) و اگر شد غذا/گلایدر (Goblin Glider Kit) همراه داشته باش."
+    }
+   ]
+  },
+  {
+   "id": "easy-mode",
+   "title": "حالت ساده",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "این بخش نسخهٔ فشردهٔ راهنماست: دو بیلد آماده، یک اولویت تک‌هدف ساده، یک تغییر کوچک برای AoE و سه کول‌داون. همین برای شروع کافی است؛ جزئیات کامل در بخش‌های تلنت‌ها و روتیشن است."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "بیلد ریید",
+       "tag": "Rider of the Apocalypse",
+       "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMTjZmxYGDAAAAAAAAzDMMGAsMDzsZmxMzYgBmxiGLbA2GsBgZAMzMzMmBzMYmZMA",
+       "x": "بیلد استاندارد تک‌هدف ریید با [[Rider of the Apocalypse]]: رشتهٔ import را کپی کن و در بازی (Talents ← Import) بچسبان."
+      },
+      {
+       "title": "بیلد Mythic+ / Delves",
+       "tag": "San'layn",
+       "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAYmhZMzMDz2MzMTzmZGjZAAAAAAAAgZGzYAwyMmZ2MzYMjBGYGbassAYbwGGwMAMmZGzgZGMjxA",
+       "x": "بیلد استاندارد دامنه و میت‌پلاس با [[San'layn]]: رشتهٔ import را کپی کن و در بازی (Talents ← Import) بچسبان."
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "اولویت تک‌هدف"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "[[Soul Reaper]] وقتی هدف زیر ۳۵٪ جان است یا از [[Dark Transformation]] استفادهٔ رایگان گرفتی",
+      "[[Outbreak]] برای نگه‌داشتن [[Virulent Plague]] و [[Dread Plague]] روی هدف",
+      "[[Festering Scythe]] برای نگه‌داشتن باف روی خودت",
+      "[[Putrefy]] حین باف [[Dark Transformation]]",
+      "[[Death Coil]] وقتی پروک [[Sudden Doom]] داری یا [[Forbidden Knowledge]] فعال است",
+      "[[Epidemic]] روی ۳ هدف یا بیشتر (با [[Forbidden Knowledge]] روی ۴+)",
+      "[[Festering Strike]] وقتی صفر استک [[Lesser Ghoul]] داری",
+      "[[Scourge Strike]] با هر تعداد استک [[Lesser Ghoul]]",
+      "[[Death Coil]] پرکنندهٔ Runic Power"
+     ]
+    },
+    {
+     "t": "call",
+     "kind": "info",
+     "x": "تنها تفاوت AoE با تک‌هدف: به‌جای [[Death Coil]] روی ۴ هدف یا بیشتر [[Epidemic]] بزن (در منبع عدد ۳+ هم آمده)؛ حین [[Forbidden Knowledge]] مرز به ۴+ تا ۶+ می‌رسد چون [[Epidemic]] به [[Graveyard]] تبدیل می‌شود."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Army of the Dead",
+       "x": "در کول‌داون: معمولاً اولین کار بعد از رسیدن به باس؛ با [[Dark Transformation]] هر ۹۰ ثانیه هم‌زمان کن"
+      },
+      {
+       "s": "Dark Transformation",
+       "x": "در کول‌داون: با [[Army of the Dead]] هم‌راستا نگه دار"
+      },
+      {
+       "s": "Death and Decay",
+       "x": "فقط برای اسلوی [[Grip of the Dead]] یا اگر [[Cycle of Death]] داری (روی ۳+ هدف) بزن؛ غیر از این ارزش پرس ندارد"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talents",
+   "title": "تلنت‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "دو مسیر اصلی داری: [[Rider of the Apocalypse]] برای ریید تک‌هدف و [[San'layn]] برای دامنه و میت‌پلاس. رشتهٔ import هر بیلد را کپی کن و داخل بازی (Talents ← Import) بچسبان؛ توضیح فارسی هر تلنت هم در صفحهٔ Talent Tree هست."
+    },
+    {
+     "t": "builds",
+     "items": [
+      {
+       "title": "تک‌هدف / ریید",
+       "tag": "Rider of the Apocalypse",
+       "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMTjZmxYGDAAAAAAAAzDMMGAsMDzsZmxMzYgBmxiGLbA2GsBgZAMzMzMmBzMYmZMA",
+       "x": "بیلد استاندارد ریید؛ فوکوس روی آسیب مینیون و پنجرهٔ ۹۰ ثانیه‌ای [[Army of the Dead]] + [[Dark Transformation]]."
+      },
+      {
+       "title": "Mythic+ / Delves",
+       "tag": "San'layn",
+       "code": "CwPAAAAAAAAAAAAAAAAAAAAAAAYmhZMzMDz2MzMTzmZGjZAAAAAAAAgZGzYAwyMmZ2MzYMjBGYGbassAYbwGGwMAMmZGzgZGMjxA",
+       "x": "بیلد استاندارد میت‌پلاس با [[Blightfall]] و [[Cycle of Death]] برای کیولد روی پک‌ها."
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "انتخاب‌های کلیدی ریید (Rider)"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Lord of the Dead]] و [[Grave Mastery]]: ستون آسیب مینیون‌محور این بیلد",
+      "[[Fury of the Horsemen]]: کمی بیشتر از [[A Feast of Souls]] آسیب می‌دهد",
+      "[[Death Charge]]: پرش سریع روی هدف؛ تحرک Unholy را عوض می‌کند",
+      "[[Death and Decay|Mograine's Death and Decay]]: ۵٪ آسیب وقتی داخلش می‌مانی",
+      "[[Chains of Ice|Trollbane's Chains of Ice]]: لحظهٔ کست برست می‌زند"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "انتخاب‌های کلیدی Mythic+ (San'layn)"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "[[Menacing Magus]]: برست AoE بهتر روی پک‌ها",
+      "[[Cycle of Death]]: دامنهٔ کیولد قابل‌توجه اضافه می‌کند",
+      "[[Blightfall]]: AoE قوی بدون قربانی‌کردن تک‌هدف",
+      "[[Vampiric Strike]]: در پنجرهٔ [[Dark Transformation]] می‌زنی و [[Essence of the Blood Queen]] را نگه می‌داری",
+      "[[Blood Beast]]: جزء مقیاس‌گیری دومربعی بیلد"
+     ]
+    },
+    {
+     "t": "call",
+     "kind": "info",
+     "x": "در ریید بسته به فایت بین بیلدهای ۴۵ و ۹۰ ثانیه‌ای جابه‌جا شو؛ سقف کلیدهای Mythic+ معمولاً [[San'layn]] است و Open World هر دو کار می‌کنند."
+    },
+    {
+     "t": "link",
+     "x": "دیدن Talent Tree کامل Death Knight",
+     "href": "talents.html?class=death-knight"
+    }
+   ]
+  },
+  {
+   "id": "rotation",
+   "title": "روتیشن و کول‌داون‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "چرخهٔ Unholy Death Knight یک فهرست اولویت است، نه یک چرخهٔ ثابت: هر گلوبال کول‌داون از بالا به پایین اسکن می‌کنی و ارزشمندترین گزینهٔ موجود را می‌زنی. چون Unholy بر منابع و پروک‌ها اداره می‌شود، مدیریت Rune، Runic Power و استک‌های [[Lesser Ghoul]] تعیین‌کنندهٔ اصلی کیفیت دمیج توست."
+    },
+    {
+     "t": "cards",
+     "items": [
+      {
+       "title": "کول‌داون‌ها را روی کول‌داون نگه دار",
+       "x": "Unholy اسپکی بسیار انفجاری است و برای بیشینه‌کردن دمیج به استفادهٔ مکرر از کول‌داون‌ها وابسته است؛ به همین دلیل چیدن و اجرای درست پنجره‌های کول‌داون بالاترین اولویت توست."
+      },
+      {
+       "title": "پروک‌های مرگ ناگهانی را فوری خرج کن",
+       "x": "[[Sudden Doom]] تعامل‌های زیادی با تلنت‌های Unholy دارد و قوی‌ترین دکمهٔ غیرکول‌داونی در هر سناریوست؛ خرج‌کردن سریع آن با [[Death Coil]] یا [[Epidemic]] یکی از بهترین کارهایی است که می‌توانی انجام دهی."
+      },
+      {
+       "title": "مراقب استک‌های غول باش",
+       "x": "[[Lesser Ghoul]] ستون فقرات Unholy در Midnight است؛ همیشه با [[Festering Strike]] استک بساز تا [[Scourge Strike]] بتواند غول احضار کند و هیچ‌وقت با صفر استک [[Scourge Strike]] نزن."
+      }
+     ]
+    },
+    {
+     "t": "ul",
+     "items": [
+      "باف [[Festering Scythe]] را نگه دار: با [[Festering Strike]] بساز و [[Festering Scythe]] را پیش از اتمام تازه کن.",
+      "اول Runeها را خرج کن (همیشه سه Rune در حال شارژ بماند) و بعد مراقب اورکپ شدن Runic Power باش.",
+      "آپ‌تایم بیماری‌ها به‌خصوص [[Dread Plague]] حیاتی است؛ منبع مستقیم و غیرمستقیم بزرگی از دمیج توست."
+     ]
+    },
+    {
+     "t": "tabs",
+     "art": "assets/img/specs/unholy-death-knight.jpg",
+     "items": [
+      {
+       "id": "rider",
+       "en": "Rider of the Apocalypse",
+       "fa": "رایدر آخرالزمان",
+       "icon": "inv_ability_rideroftheapocalypsedeathknight_apocalypsenow",
+       "modes": [
+        {
+         "id": "raid",
+         "fa": "ریید"
+        },
+        {
+         "id": "mplus",
+         "fa": "Mythic+"
+        }
+       ],
+       "branches": [
+        {
+         "id": "raid",
+         "fa": "رید",
+         "en": "Raid",
+         "blocks": [
+          {
+           "t": "h4",
+           "x": "تک‌هدف: فهرست اولویت در پنجرهٔ عادی"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Outbreak",
+             "cond": "اگر [[Virulent Plague]] فعال نیست",
+             "why": "نگه‌داشتن بیماری‌ها پیش‌شرط همهٔ آسیب‌ها و باف Festering Scythe است"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "قبل از [[Dark Transformation]] اگر ۳ استک [[Lesser Ghoul]] یا کمتر داری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Soul Reaper",
+             "cond": "اگر جان هدف زیر ۳۵٪ است",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Blightfall",
+             "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
+             "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
+            },
+            {
+             "s": "Army of the Dead",
+             "cond": "در کول‌داون",
+             "why": "بزرگ‌ترین کول‌داون و ماشهٔ چند تلنت پت‌محور"
+            },
+            {
+             "s": "Dark Transformation",
+             "cond": "در کول‌داون",
+             "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
+            },
+            {
+             "s": "Soul Reaper",
+             "cond": "حدود ۶ ثانیه بعد از [[Dark Transformation]]",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Putrefy",
+             "cond": "اگر [[Dark Transformation]] فعال است",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Festering Scythe",
+             "cond": "اگر باف آن رو به اتمام است",
+             "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
+            },
+            {
+             "s": "Death Coil",
+             "cond": "اگر پروک [[Sudden Doom]] داری",
+             "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            },
+            {
+             "s": "Death Coil",
+             "cond": "",
+             "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "تک‌هدف: حین [[Forbidden Knowledge]]"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Soul Reaper",
+             "cond": "اگر جان هدف زیر ۳۵٪ است",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Blightfall",
+             "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
+             "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
+            },
+            {
+             "s": "Soul Reaper",
+             "cond": "حدود ۶ ثانیه بعد از [[Dark Transformation]]",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Putrefy",
+             "cond": "در کول‌داون",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Festering Scythe",
+             "cond": "اگر باف آن رو به اتمام است",
+             "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
+            },
+            {
+             "s": "Necrotic Coil",
+             "cond": "",
+             "why": "نسخهٔ تقویت‌شدهٔ Death Coil در پنجرهٔ FK"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "اِی‌او‌ای: فهرست اولویت در پنجرهٔ عادی"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Outbreak",
+             "cond": "اگر [[Virulent Plague]] فعال نیست",
+             "why": "نگه‌داشتن بیماری‌ها پیش‌شرط همهٔ آسیب‌ها و باف Festering Scythe است"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "قبل از [[Dark Transformation]] اگر ۵ استک [[Lesser Ghoul]] یا کمتر داری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Blightfall",
+             "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
+             "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
+            },
+            {
+             "s": "Army of the Dead",
+             "cond": "در کول‌داون",
+             "why": "بزرگ‌ترین کول‌داون و ماشهٔ چند تلنت پت‌محور"
+            },
+            {
+             "s": "Dark Transformation",
+             "cond": "در کول‌داون",
+             "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
+            },
+            {
+             "s": "Festering Scythe",
+             "cond": "اگر باف آن رو به اتمام است",
+             "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
+            },
+            {
+             "s": "Soul Reaper",
+             "cond": "در کول‌داون",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Putrefy",
+             "cond": "اگر [[Dark Transformation]] فعال است",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Death and Decay",
+             "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
+             "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
+            },
+            {
+             "s": "Epidemic",
+             "cond": "اگر پروک [[Sudden Doom]] داری",
+             "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            },
+            {
+             "s": "Epidemic",
+             "cond": "",
+             "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "اِی‌او‌ای: حین [[Forbidden Knowledge]]"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Blightfall",
+             "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
+             "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
+            },
+            {
+             "s": "Festering Scythe",
+             "cond": "اگر باف آن رو به اتمام است",
+             "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
+            },
+            {
+             "s": "Putrefy",
+             "cond": "در کول‌داون",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Death and Decay",
+             "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
+             "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
+            },
+            {
+             "s": "Soul Reaper",
+             "cond": "در کول‌داون",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Graveyard",
+             "cond": "",
+             "why": "نسخهٔ تقویت‌شدهٔ Epidemic در پنجرهٔ FK"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "آغازگر (Opener)"
+          },
+          {
+           "t": "steps",
+           "items": [
+            "[[Outbreak]]",
+            "[[Festering Strike]]",
+            "[[Festering Scythe]]",
+            "[[Army of the Dead]]",
+            "[[Dark Transformation]]",
+            "استفاده از پتشن کمبت",
+            "استفاده از تریک فعال (On-Use)",
+            "[[Putrefy]]",
+            "[[Necrotic Coil]]",
+            "[[Necrotic Coil]]",
+            "[[Necrotic Coil]] سه بار پشت‌سرهم",
+            "[[Putrefy]]",
+            "[[Soul Reaper]] حدود ۶ ثانیه بعد از [[Dark Transformation]]"
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "آغازگر چندهدف (AoE)"
+          },
+          {
+           "t": "steps",
+           "items": [
+            "[[Outbreak]]",
+            "[[Festering Strike]]",
+            "[[Festering Scythe]]",
+            "[[Army of the Dead]]",
+            "[[Dark Transformation]]",
+            "استفاده از پتشن کمبت",
+            "استفاده از تریک فعال (On-Use)",
+            "[[Soul Reaper]]",
+            "[[Putrefy]]",
+            "[[Death and Decay]]",
+            "[[Epidemic]]"
+           ]
+          },
+          {
+           "t": "call",
+           "kind": "info",
+           "x": "در Mythic+ همین فهرست چندهدف پایهٔ چرخه است؛ زمان‌بندی [[Dark Transformation]] و کول‌داون‌ها با پک‌ها و اددها و انتخاب چرخهٔ قهرمانی (در کلیدهای بالا عمدتاً [[San'layn]] با باف ۴۵ ثانیه) طبق بخش «نکته‌های Mythic+» همین راهنما اعمال می‌شود."
+          }
+         ]
+        },
+        {
+         "id": "mplus",
+         "fa": "Mythic+",
+         "en": "Mythic+",
+         "blocks": [
+          {
+           "t": "p",
+           "x": "در میت‌پلاس همان اسکلت اولویت شاخهٔ رید را می‌سازی؛ چیزی که عوض می‌شود مدیریت کول‌داون و آستانه‌های اسپند است. اسم بازی اینجا «کارایی کول‌داون» است: نگه‌داشتن کول‌داون‌ها برای «آن پک بزرگ بعدی» تقریباً همیشه یعنی هدر دادن ارزش؛ به‌ویژه [[Dark Transformation]] را حتی تنها بفرست: ساده‌ترین راه ارتقای دمیج در میت‌پلاس."
+          },
+          {
+           "t": "h4",
+           "x": "چندهدف در میت‌پلاس: پک‌ها و آستانه‌ها"
+          },
+          {
+           "t": "ul",
+           "items": [
+            "[[Epidemic]] جای [[Death Coil]] را در ۴+ هدف می‌گیرد (۶+ هدف حین [[Forbidden Knowledge]])؛ زیر این آستانه [[Death Coil]] دمیج بیشتری می‌دهد",
+            "[[Death and Decay]] را در نبرد با ۳+ دشمن استفاده کن تا بیشترین [[Putrefy]] ممکن داخل پنجرهٔ [[Dark Transformation]] بگنجد",
+            "استک [[Lesser Ghoul]] در پک‌ها را بین ۴ تا ۶ نگه‌داشتن (در تک‌هدفِ رید ۲ تا ۴) تا هنگام بیرون‌شدن از برد انعطاف داشته باشی",
+            "بیماری پک‌ها را با [[Outbreak]] می‌ساز؛ [[Putrefy]] با [[Blightburst]] هم ممکن است ولی Putrefy‌ها را برای دمیج کول‌داون ذخیره کن",
+            "[[Festering Scythe]] را در پک‌ها با اولویت بالا تازه نگه دار؛ تیک بیماری‌ها منبع پروک [[Sudden Doom]] و [[Forbidden Knowledge]] است"
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "کول‌داون‌ها در میت‌پلاس"
+          },
+          {
+           "t": "ul",
+           "items": [
+            "کول‌داون‌ها را در کول‌داون بفرست؛ هم‌ترازی کامل [[Army of the Dead]] و [[Dark Transformation]] در بوس‌های کوتاه ممکن نیست و اشکالی ندارد",
+            "زمان‌بندی [[Dark Transformation]] روی اسپاون اددهای سنگین (دروازه‌ها و پک‌های چرب هر دانجن) ارزش بیشتری دارد",
+            "ترینکت‌های اکتیو را داخل پنجرهٔ برست (هم‌زمان [[Dark Transformation]]) بزن"
+           ]
+          },
+          {
+           "t": "call",
+           "kind": "info",
+           "x": "منبع این شاخه: سیاست کول‌داون میت‌پلاس در صفحهٔ روتیشن Icy Veins (بررسشی ۲۰۲۶-۱۰-۲۸) و نکته‌های بخش Mythic+ همین راهنما؛ اسکلت اولویت همان شاخهٔ رید است."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "sanlayn",
+       "en": "San'layn",
+       "fa": "San'layn",
+       "icon": "inv_ability_sanlayndeathknight_vampiricstrike",
+       "modes": [
+        {
+         "id": "raid",
+         "fa": "ریید",
+         "v": "best"
+        },
+        {
+         "id": "mplus",
+         "fa": "Mythic+",
+         "v": "best"
+        }
+       ],
+       "talents": {
+        "active": [
+         "Blightfall",
+         "Soul Reaper"
+        ],
+        "passive": [
+         {
+          "name": "Putrid Echoes"
+         },
+         {
+          "name": "Reaping"
+         },
+         {
+          "name": "Festering Scythe"
+         },
+         {
+          "name": "Blightburst"
+         },
+         {
+          "name": "Cycle of Death",
+          "on": false
+         }
+        ]
+       },
+       "branches": [
+        {
+         "id": "raid",
+         "fa": "رید",
+         "en": "Raid",
+         "blocks": [
+          {
+           "t": "h4",
+           "x": "تک‌هدف: فهرست اولویت در پنجرهٔ عادی"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Outbreak",
+             "cond": "اگر [[Virulent Plague]] فعال نیست",
+             "why": "نگه‌داشتن بیماری‌ها پیش‌شرط همهٔ آسیب‌ها و باف Festering Scythe است"
+            },
+            {
+             "s": "Dark Transformation",
+             "cond": "در کول‌داون",
+             "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
+            },
+            {
+             "s": "Putrefy",
+             "cond": "اگر [[Dark Transformation]] فعال است",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Soul Reaper",
+             "cond": "اگر جان هدف زیر ۳۵٪ است",
+             "why": "اِگزکیوت ۳۵٪ سنگین‌ترین ضربهٔ توست و بافش برای Blightfall مهم است"
+            },
+            {
+             "s": "Festering Scythe",
+             "cond": "اگر باف آن رو به اتمام است",
+             "why": "اُفت باف یعنی افت تیک بیماری‌ها؛ تازه‌کردنش ارزان است"
+            },
+            {
+             "s": "Blightfall",
+             "cond": "قاعدهٔ دو مرحله‌ای: یک‌بار پیش از اتمام باف [[Soul Reaper]] و یک‌بار پیش از اتمام [[Dark Transformation]]، هر بار همراه [[Putrefy]]",
+             "why": "مصرف بیماری‌ها در لحظهٔ درست، برست بزرگ می‌سازد"
+            },
+            {
+             "s": "Death Coil",
+             "cond": "با بیش از ۵۰ Runic Power",
+             "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
+            },
+            {
+             "s": "Death Coil",
+             "cond": "اگر پروک [[Sudden Doom]] داری",
+             "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            },
+            {
+             "s": "Death Coil",
+             "cond": "",
+             "why": "اسپند اصلی از برد؛ با Sudden Doom همیشه بهتر است"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "تک‌هدف: حین [[Forbidden Knowledge]]"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Putrefy",
+             "cond": "در کول‌داون",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Necrotic Coil",
+             "cond": "",
+             "why": "نسخهٔ تقویت‌شدهٔ Death Coil در پنجرهٔ FK"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "اِی‌او‌ای: فهرست اولویت در پنجرهٔ عادی"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Dark Transformation",
+             "cond": "در کول‌داون",
+             "why": "آپ‌گرید پت و ماشهٔ Putrefy و Outnumber"
+            },
+            {
+             "s": "Putrefy",
+             "cond": "اگر [[Dark Transformation]] فعال است",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Death and Decay",
+             "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
+             "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
+            },
+            {
+             "s": "Epidemic",
+             "cond": "اگر پروک [[Sudden Doom]] داری",
+             "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            },
+            {
+             "s": "Epidemic",
+             "cond": "",
+             "why": "نسخهٔ چندهدف Death Coil برای ۴ هدف یا بیشتر"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "اِی‌او‌ای: حین [[Forbidden Knowledge]]"
+          },
+          {
+           "t": "prio",
+           "items": [
+            {
+             "s": "Putrefy",
+             "cond": "در کول‌داون",
+             "why": "مصرف بیماری‌ها به برست تبدیل می‌شود و با FK رتبه‌های ۲ و ۳ Mastery می‌دهد"
+            },
+            {
+             "s": "Death and Decay",
+             "cond": "اگر مطمئنی دشمنان داخل آن می‌مانند",
+             "why": "فقط وقتی ارزش دارد که دشمنان داخلش بمانند"
+            },
+            {
+             "s": "Graveyard",
+             "cond": "",
+             "why": "نسخهٔ تقویت‌شدهٔ Epidemic در پنجرهٔ FK"
+            },
+            {
+             "s": "Festering Strike",
+             "cond": "اگر هیچ استک [[Lesser Ghoul]] نداری",
+             "why": "بدون استک گول، Scourge Strike چیزی برای احضار کردن ندارد"
+            },
+            {
+             "s": "Scourge Strike",
+             "cond": "اگر استک [[Lesser Ghoul]] داری",
+             "why": "با هر استک گول احضار می‌کند و ستون آسیب نزدیک است"
+            }
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "آغازگر (Opener)"
+          },
+          {
+           "t": "steps",
+           "items": [
+            "[[Outbreak]]",
+            "[[Festering Strike]] ×۲",
+            "[[Army of the Dead]] + [[Dark Transformation]] + تریک فعال (On-Use) + قابلیت نژادی + پتشن کمبت",
+            "[[Putrefy]]",
+            "[[Putrefy]]",
+            "[[Soul Reaper]]",
+            "[[Putrefy]]",
+            "[[Putrefy]]",
+            "[[Soul Reaper]] حدود ۵ ثانیه پیش از پایان [[Dark Transformation]]"
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "آغازگر چندهدف (AoE)"
+          },
+          {
+           "t": "steps",
+           "items": [
+            "[[Outbreak]]",
+            "[[Festering Strike]] ×۲",
+            "[[Army of the Dead]] + [[Dark Transformation]] + تریک فعال (On-Use) + قابلیت نژادی + پتشن کمبت",
+            "[[Soul Reaper]]",
+            "[[Putrefy]]",
+            "[[Putrefy]]"
+           ]
+          },
+          {
+           "t": "call",
+           "kind": "info",
+           "x": "در Mythic+ همین فهرست چندهدف پایهٔ چرخه است؛ زمان‌بندی [[Dark Transformation]] و کول‌داون‌ها با پک‌ها و اددها و انتخاب چرخهٔ قهرمانی (در کلیدهای بالا عمدتاً [[San'layn]] با باف ۴۵ ثانیه) طبق بخش «نکته‌های Mythic+» همین راهنما اعمال می‌شود."
+          }
+         ]
+        },
+        {
+         "id": "mplus",
+         "fa": "Mythic+",
+         "en": "Mythic+",
+         "blocks": [
+          {
+           "t": "p",
+           "x": "در میت‌پلاس همان اسکلت اولویت شاخهٔ رید را می‌سازی؛ چیزی که عوض می‌شود مدیریت کول‌داون و آستانه‌های اسپند است. اسم بازی اینجا «کارایی کول‌داون» است: نگه‌داشتن کول‌داون‌ها برای «آن پک بزرگ بعدی» تقریباً همیشه یعنی هدر دادن ارزش؛ به‌ویژه [[Dark Transformation]] را حتی تنها بفرست: ساده‌ترین راه ارتقای دمیج در میت‌پلاس."
+          },
+          {
+           "t": "h4",
+           "x": "چندهدف در میت‌پلاس: پک‌ها و آستانه‌ها"
+          },
+          {
+           "t": "ul",
+           "items": [
+            "[[Epidemic]] جای [[Death Coil]] را در ۴+ هدف می‌گیرد (۶+ هدف حین [[Forbidden Knowledge]])؛ زیر این آستانه [[Death Coil]] دمیج بیشتری می‌دهد",
+            "[[Death and Decay]] را در نبرد با ۳+ دشمن استفاده کن تا بیشترین [[Putrefy]] ممکن داخل پنجرهٔ [[Dark Transformation]] بگنجد",
+            "استک [[Lesser Ghoul]] در پک‌ها را بین ۴ تا ۶ نگه‌داشتن (در تک‌هدفِ رید ۲ تا ۴) تا هنگام بیرون‌شدن از برد انعطاف داشته باشی",
+            "بیماری پک‌ها را با [[Outbreak]] می‌ساز؛ [[Putrefy]] با [[Blightburst]] هم ممکن است ولی Putrefy‌ها را برای دمیج کول‌داون ذخیره کن",
+            "[[Festering Scythe]] را در پک‌ها با اولویت بالا تازه نگه دار؛ تیک بیماری‌ها منبع پروک [[Sudden Doom]] و [[Forbidden Knowledge]] است"
+           ]
+          },
+          {
+           "t": "h4",
+           "x": "کول‌داون‌ها در میت‌پلاس"
+          },
+          {
+           "t": "ul",
+           "items": [
+            "کول‌داون‌ها را در کول‌داون بفرست؛ هم‌ترازی کامل [[Army of the Dead]] و [[Dark Transformation]] در بوس‌های کوتاه ممکن نیست و اشکالی ندارد",
+            "زمان‌بندی [[Dark Transformation]] روی اسپاون اددهای سنگین (دروازه‌ها و پک‌های چرب هر دانجن) ارزش بیشتری دارد",
+            "ترینکت‌های اکتیو را داخل پنجرهٔ برست (هم‌زمان [[Dark Transformation]]) بزن",
+            "چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] هم‌زمان‌سازی [[Dark Transformation]] با پک‌ها را ممکن می‌کند؛ با [[Outnumber]] DT را روی اسپاون اددها بگذار: [[Sweeping Claws]] گول‌های کوچک بخش بزرگی از آسیب AoE توست"
+           ]
+          },
+          {
+           "t": "call",
+           "kind": "info",
+           "x": "منبع این شاخه: سیاست کول‌داون میت‌پلاس در صفحهٔ روتیشن Icy Veins (بررسشی ۲۰۲۶-۱۰-۲۸) و نکته‌های بخش Mythic+ همین راهنما؛ اسکلت اولویت همان شاخهٔ رید است."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "«حین [[Forbidden Knowledge]]» یعنی حین باف ۳۰ ثانیه‌ای تلنت Apex که با کست [[Army of the Dead]] فعال می‌شود. در این پنجره [[Death Coil]] به [[Necrotic Coil]] و [[Epidemic]] به [[Graveyard]] تبدیل می‌شود، اولویت‌ها اسپندمحورتر می‌شوند و [[Putrefy]] با کول‌داون آزادتر زده می‌شود.",
+     "kind": "info"
+    },
+    {
+     "t": "call",
+     "x": "تناقض منابع: ۱) زمان‌بندی [[Soul Reaper]] بعد از [[Dark Transformation]] را Icy حدود ۶ ثانیه و Wowhead حدود ۶ ثانیه می‌نویسد؛ عدد Icy مبنا گرفته شده است. ۲) Wowhead در واریانت Rider هم [[Vampiric Strike]] آورده است، اما این توانایی مختص [[San'layn]] است (در درخت Hero Rider وجود ندارد) و از اولویت و آغازگر Rider حذف شد. ۳) ترکیب فهرست [[San'layn]] مطابق Icy است؛ صفحهٔ rotation آن سایت هنگام بازنویسی در دسترس نبود و اسکلت ترتیب از Wowhead با عناصر Icy کامل شده است. ۴) مرز [[Epidemic]] و [[Death Coil]] در Icy دو عدد دارد (۳+ یا ۴+، و حین FK از ۴+ تا ۶+): عدد بخش AoE یعنی ۴+ مبنا گرفته شده است.",
+     "kind": "warn"
+    },
+    {
+     "t": "h3",
+     "x": "بررسی پیش از مبارزه"
+    },
+    {
+     "t": "p",
+     "x": "پیش از ورود به مبارزه (ریید، دانجن، Delves و حتی محتوای اوپن‌ورلد) با [[Raise Dead]] پت اصلی خودت را احضار کن؛ این کار بخشی از آماده‌سازی هر نوع محتواست."
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌های اصلی"
+    },
+    {
+     "t": "cds",
+     "items": [
+      {
+       "s": "Army of the Dead",
+       "tag": "بزرگ‌ترین کول‌داون",
+       "x": "بزرگ‌ترین کول‌داون توست و ماشهٔ چند تلنت دیگر است: [[Raise Abomination]]، [[Summon Gargoyle]] و [[Apocalypse Now]] همراه آن پت‌های بیشتری احضار می‌کنند. با [[Commander of the Dead]] هم‌گام‌ماندن آن با [[Dark Transformation]] حیاتی است: بین هر دو کست [[Army of the Dead]]، یک بار [[Dark Transformation]] را به‌محض آماده‌شدن بزن."
+      },
+      {
+       "s": "Dark Transformation",
+       "tag": "خارج از GCD",
+       "x": "همراه [[Commander of the Dead]]، [[Outnumber]] و [[Ride or Die!]] فعال می‌شود. چون خارج از گلوبال کول‌داون است می‌توانی آن را در ماکروی [[Army of the Dead]] بگذاری تا هر پنجرهٔ Army فقط یک دکمه داشته باشد. با [[Outnumber]] تلاش کن آن را با اسپان‌شدن اضافه‌ها هم‌زمان کنی؛ ضربه‌های [[Sweeping Claws]] غول‌ها بخش بزرگی از دمیج AoE توست."
+      },
+      {
+       "s": "Blightfall",
+       "tag": "تایمینگ",
+       "x": "دقیقاً قبل از اتمام افکت تریک، یا حدود ۱۵ ثانیه بعد از [[Dark Transformation]] بزن تا بیشترین مدت باقی‌ماندهٔ بیماری‌ها را مصرف کنی."
+      },
+      {
+       "s": "Soul Reaper",
+       "tag": "اِگزکیوت",
+       "x": "اگر جان هدف زیر ۳۵٪ است بزن؛ در فصل ۲ تا سه استک [[Lesser Ghoul]] را مصرف می‌کند و دیگر به [[Putrefy]] گره ندارد. حدود ۶ ثانیه بعد از [[Dark Transformation]] هم یک استفادهٔ برنامه‌ریزی‌شده دارد."
+      },
+      {
+       "s": "Death and Decay",
+       "tag": "شرطی",
+       "x": "فقط وقتی بزن که مطمئنی دشمنان داخل آن می‌مانند؛ در بقیهٔ حالت‌ها ارزش پرس ندارد و بیشتر نقش یوتیلیتی با [[Grip of the Dead]] را دارد."
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "با [[Commander of the Dead]] هماهنگی [[Army of the Dead]] و [[Dark Transformation]] مهم‌تر شده و تعویض هدف را در ریید زودتر برنامه‌ریزی کن: پت‌ها و بیماری‌ها زمان می‌برند به هدف جدید برسند. ۴) مرز [[Epidemic]] و [[Death Coil]] در Icy دو عدد دارد (۳+ یا ۴+، و حین FK از ۴+ تا ۶+): عدد بخش AoE یعنی ۴+ مبنا گرفته شده است.",
+     "kind": "warn"
+    },
+    {
+     "t": "call",
+     "kind": "info",
+     "x": "توالی‌های آغازگر San'layn اکنون توالی‌های رسمی Icy Veins هستند (اسنپ‌شات Wayback از صفحهٔ روتیشن، 2026-06-08، بازیابی 2026-10-28)؛ نسخهٔ پیشین این آغازگرها از Wowhead و فهرست اولویت ساخته شده بود و با نسخهٔ رسمی جایگزین شد (تفاوت‌ها در گزارش ممیزی ثبت است). آغازگرهای Rider همچنان از گام‌های نخست فهرست اولویت ساخته شده‌اند؛ Icy توالی آغازگر جداگانه‌ای برای Rider منتشر نکرده و در صورت دسترسی به صفحهٔ زندهٔ Icy دوباره بررسی می‌شود. نشان‌های Raid/Mythic+ و فهرست تلنت‌های اکتیو/پسیو هیرو از ویجت هیرو Icy Veins برداشته شده‌اند (بازدید 2026-10-28؛ San'layn برای هر دو حالت «بهترین انتخاب» است)."
+    },
+    {
+     "t": "call",
+     "kind": "info",
+     "x": "اهداف استک [[Lesser Ghoul]]: تک‌هدف بین ۲ تا ۴ استک نگه دار و در فاز اکسیکیوت دست‌کم ۳؛ در AoE بین ۴ تا ۶ استک و برگشت به ۳."
+    },
+    {
+     "t": "h3",
+     "x": "مفاهیم تکمیلی"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "روتیشن حین [[Forbidden Knowledge]]: [[Necrotic Coil]] از حدود ۳۰ Runic Power ارزش می‌گیرد و با پروک [[Sudden Doom]] از حدود ۱۵.",
+      "شکار [[Vampiric Strike]] (فقط [[San'layn]]): با مدیریت Runic Power پروک‌ها را بگیر تا ۷ استک [[Essence of the Blood Queen]] بین [[Dark Transformation]]ها پل بزند.",
+      "[[Death and Decay]] در تک‌هدف ارزش ندارد؛ فقط در AoE و اگر مطمئنی دشمنان داخلش می‌مانند."
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "مکانیک‌های منابع"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "**Rune**: هرگز هر سه Rune را هم‌زمان خرج نکن؛ یک Rune در حال بازیابی بماند تا رگنریشن متوقف نشود.",
+      "**Runic Power**: اورکپ نکن؛ با [[San'layn]] اورکپ یعنی سوزاندن پروک‌های [[Vampiric Strike]]، و با [[Forbidden Knowledge]] یعنی از دست دادن [[Necrotic Coil]] و [[Graveyard]].",
+      "رتبه‌های [[Forbidden Knowledge]] فقط با پت‌های روی assist درست کار می‌کنند؛ حالت دفاعی پت را عوض کن.",
+      "[[Outbreak]] دو بیماری می‌کارد: [[Virulent Plague]] و [[Dread Plague]]؛ هر دو باید روی هدف بمانند و باف [[Festering Scythe]] سرعت تیک‌شان را بالا می‌برد.",
+      "[[Anti-Magic Shell]] فقط دفاعی نیست: جذب دمیج جادویی Runic Power هم می‌سازد؛ روی کست‌های سنگین پیش‌دستی کن."
+     ]
+    },
+    {
+     "t": "call",
+     "kind": "tip",
+     "x": "پرسش: پروک Runic Corruption را نگه دارم؟ پاسخ: خیر؛ چرخه با Rune و Runic Power موجود می‌چرخد و پروک‌ها هم‌زمان مصرف می‌شوند. اثر دقیق این پروک در منابع این فاز تأیید نشد و پس از دسترسی به صفحهٔ rotation سایت Icy کامل می‌شود."
+    },
+    {
+     "t": "call",
+     "kind": "info",
+     "x": "ابزار Rotation Assist بازی: کول‌داون‌های اصلی و اسپندهای جابه‌جایی‌کننده را نمی‌زند و برای اسپکی برست‌محور مثل Unholy افت شدیدی دارد؛ جدول دقیق افت‌ها در Icy آمده و پس از دسترسی پایدار به صفحه اضافه می‌شود. زمان‌بندی کول‌داون‌ها (00:00 تا 03:45) هم به همین دلیل به چرخهٔ بعد موکول شد."
+    }
+   ]
+  },
+  {
+   "id": "gear",
+   "title": "گیر و آیتم‌ها",
+   "blocks": [
+    {
+     "t": "p",
+     "x": "این لیست، بهترین ست ممکن از همهٔ منابع است. هر آیتمی که اینجا نیست لزوماً بد نیست؛ ستاپ‌های دیگر هم در حاشیهٔ خطا کار می‌کنند. بهترین کار این است که با Raidbots برای کاراکتر خودت sim بگیری. روی اسم هر آیتم موس ببر تا خلاصه‌اش را ببینی و کلیک کن تا صفحهٔ کامل باز شود."
+    },
+    {
+     "t": "call",
+     "x": "ترینکت on-use در پنجره‌های برست Unholy ارزش زیادی دارد؛ اولویت اول گیر ترینکت و بعد بقیهٔ اسلات‌هاست. افزایش Item Level روی قطعات Strength معمولاً از استت بهینه مهم‌تر است."
+    },
+    {
+     "t": "h3",
+     "x": "Best in Slot"
+    },
+    {
+     "t": "bis",
+     "items": [
+      {
+       "slot": "سلاح",
+       "id": 268213
+      },
+      {
+       "slot": "سر",
+       "id": 271474
+      },
+      {
+       "slot": "گردن",
+       "id": 268265
+      },
+      {
+       "slot": "شانه",
+       "id": 271472
+      },
+      {
+       "slot": "شنل",
+       "id": 268253
+      },
+      {
+       "slot": "سینه",
+       "id": 271477
+      },
+      {
+       "slot": "مچ",
+       "id": 237834
+      },
+      {
+       "slot": "دست",
+       "id": 271475
+      },
+      {
+       "slot": "کمربند",
+       "id": 268259
+      },
+      {
+       "slot": "پا",
+       "id": 271878
+      },
+      {
+       "slot": "چکمه",
+       "id": 237828
+      },
+      {
+       "slot": "انگشتر",
+       "id": 281029
+      },
+      {
+       "slot": "انگشتر",
+       "id": 273792
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270175
+      },
+      {
+       "slot": "ترینکت",
+       "id": 270173
+      }
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "ست تیر"
+    },
+    {
+     "t": "set",
+     "id": 271474
+    },
+    {
+     "t": "p",
+     "x": "ست فصل ۲ ([[Baleful Grave-Knight's Crucible]]) دو تکه: [[Magus of the Dead]] و [[Lord of the Dead]] به‌جای Frostbolt یک [[Necrotic Bolt]] قوی‌تر و به‌جای Shadow Bolt یک [[Withering Grasp]] می‌اندازند. چهار تکه: آسیب همین دو تیر روی دشمنی که زیر ۳۵٪ جان است تا ۱۳۰٪ بالا می‌رود؛ پس پنجرهٔ اکسیکیوت را با تایمینگ [[Dark Transformation]] هم‌پوشان کن."
+    },
+    {
+     "t": "h3",
+     "x": "قواعد گیرینگ"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "اولویت استات‌ها: **Critical Strike >= Mastery >= Haste >> Versatility**",
+      "افزایش استرنگت و آی‌ال‌ویلو همیشه ارزشمند است",
+      "یک ترینکت با قابلیت استفاده فعال برای این اسپک که بر روی برست تمرکز دارد، بسیار مهم است"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "سایر گزینه‌ها"
+    },
+    {
+     "t": "p",
+     "x": "این آیتم‌ها در شرایط خاص یا به عنوان جایگزین مناسب هستند:"
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "بهترین قطعات برای کاتالیزور ست",
+      "items": [
+       "[[Corroded Hulk's Skullcap]] (Kith'ix)",
+       "[[Cinderfury Shoulderguards]] (Murder Row)",
+       "[[Reckless Spirit Breastplate]] (The Coiled Altar)",
+       "[[Chausses of Unbound Rancor]] (Ula'tek)",
+       "[[Gauntlets of the Avian Sentinel]] (King's Rest)"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "ساخت حرفه‌ای‌ها",
+      "items": [
+       "[[Blood Knight's Warblade]] with Darkmoon Sigil: Hunt",
+       "[[Spellbreaker's Bracers]] with Arcanoweave Lining",
+       "[[Spellbreaker's March]]"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "stats",
+   "title": "اولویت استت",
+   "blocks": [
+    {
+     "t": "stat",
+     "items": [
+      "Strength",
+      "Critical Strike",
+      "Mastery",
+      "Haste",
+      "Versatility"
+     ]
+    },
+    {
+     "t": "p",
+     "x": "استت اصلی Strength است. به‌طور کلی ترتیب Crit >= Mastery >= Haste >> Versatility پیشنهاد می‌شود."
+    },
+    {
+     "t": "p",
+     "x": "هرگز Strength را نادیده نگیرید؛ افزایش سطح آیتم عموماً از بهینه‌سازی استت‌ها مهم‌تر است."
+    },
+    {
+     "t": "p",
+     "x": "یک آیتم با استت فعال‌کننده بسیار مهم است چون Unholy روی برست تمرکز دارد."
+    },
+    {
+     "t": "p",
+     "x": "برای مقادیر دقیق، کاراکتر خودت را در Raidbots sim بگیر."
+    }
+   ]
+  },
+  {
+   "id": "enchants",
+   "title": "انچنت، جم و مصرفی",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "مصرف‌های بهینه"
+    },
+    {
+     "t": "p",
+     "x": "در این بخش به مصرف‌های ضروری برای اوج‌گیری عملکرد Unholy Death Knight در پچ 12.1.5 می‌پردازیم."
+    },
+    {
+     "t": "h3",
+     "x": "پتشن‌ها و فلاسک‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "فلاسک",
+       "v": "Flask of the Magisters یا Flask of the Shattered Sun",
+       "ids": [
+        241322,
+        241326
+       ]
+      },
+      {
+       "k": "معجون",
+       "v": "Potion of Recklessness",
+       "ids": [
+        241288
+       ]
+      },
+      {
+       "k": "معجون",
+       "v": "Light's Potential",
+       "ids": [
+        241308
+       ]
+      },
+      {
+       "k": "معجون سلامتی",
+       "v": "Silvermoon Health Potion",
+       "ids": [
+        241304
+       ]
+      }
+     ]
+    },
+    {
+     "t": "call",
+     "x": "پتشن Recklessness را در لحظات حساس مانند برست‌های قدرتمند استفاده کنید. فلاسک Shattered Sun در اوایل بازی و Magisters در سطوح بالاتر مناسب‌تر است."
+    },
+    {
+     "t": "h3",
+     "x": "تجهیزات و جواهرات"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "جم‌ها",
+       "v": "Indecipherable Eversong Diamond (اگر Critical Strike پایین است) یا Powerful Eversong Diamond",
+       "ids": [
+        240982,
+        240966
+       ]
+      },
+      {
+       "k": "جم‌ها",
+       "v": "Flawless Masterful Garnet و Flawless Deadly Amethyst",
+       "ids": [
+        240907,
+        240897
+       ]
+      },
+      {
+       "k": "رون‌فورج",
+       "v": "[[Rune of the Apocalypse]]"
+      },
+      {
+       "k": "روغن سلاح",
+       "v": "Thalassian Phoenix Oil",
+       "ids": [
+        243733
+       ]
+      },
+      {
+       "k": "Augment Rune",
+       "v": "Void-Touched Augment Rune",
+       "ids": [
+        259085
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "بین Masterful Garnet و Deadly Amethyst، آن را انتخاب کنید که استت ثانویه‌تان پایین‌تر باشد."
+    },
+    {
+     "t": "h3",
+     "x": "غذا و انچنت‌ها"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "غذا",
+       "v": "Silvermoon Parade (پخش جمعی) یا Royal Roast (شخصی)",
+       "ids": [
+        255845,
+        242275
+       ]
+      },
+      {
+       "k": "سر",
+       "v": "Enchant Helm - Empowered Blessing of Speed",
+       "ids": [
+        243980
+       ]
+      },
+      {
+       "k": "شانه",
+       "v": "Enchant Shoulders - Akil'zon's Swiftness",
+       "ids": [
+        243962
+       ]
+      },
+      {
+       "k": "سینه",
+       "v": "Enchant Chest - Mark of the Worldsoul",
+       "ids": [
+        243976
+       ]
+      },
+      {
+       "k": "چکمه",
+       "v": "Enchant Boots - Farstrider's Hunt",
+       "ids": [
+        244008
+       ]
+      },
+      {
+       "k": "ساق",
+       "v": "Forest Hunter's Armor Kit",
+       "ids": [
+        244640
+       ]
+      },
+      {
+       "k": "انگشترها",
+       "v": "Enchant Ring - Eyes of the Eagle",
+       "ids": [
+        243956
+       ]
+      }
+     ]
+    },
+    {
+     "t": "p",
+     "x": "برای شمشیرها و تبرها از Refulgent Whetstone و برای چکش‌ها از Refulgent Weightstone استفاده کنید."
+    }
+   ]
+  },
+  {
+   "id": "mplus",
+   "title": "نکته‌های Mythic+",
+   "blocks": [
+    {
+     "t": "h3",
+     "x": "میت‌پلاس با Unholy Death Knight"
+    },
+    {
+     "t": "p",
+     "x": "Unholy در میت‌پلاس با نقاط قوت و ضعف مشخصی همراه است. این کلاس ابزارهای گروهی محدودی دارد و برای بازی در سطح بالا نیاز به راه‌اندازی دقیق دارد."
+    },
+    {
+     "t": "two",
+     "a": {
+      "cls": "good",
+      "title": "نقاط قوت",
+      "items": [
+       "چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] برای درجه‌های بالای میت‌پلاس بسیار قدرتمند است",
+       "کول‌داون‌های قابل استفاده در موج‌ها و پک‌ها",
+       "آسیب برست بالا در موج‌های بزرگ"
+      ]
+     },
+     "b": {
+      "cls": "bad",
+      "title": "نقاط ضعف",
+      "items": [
+       "حرکت‌پذیری پایین",
+       "ابزارهای گروهی محدود",
+       "نیاز به راه‌اندازی چرخه‌ها برای حداکثر کارایی"
+      ]
+     }
+    },
+    {
+     "t": "call",
+     "x": "برای درجات بالای میت‌پلاس، چرخهٔ [[San'layn]] با ۴۵ ثانیه مدت زمان بهینه‌تر است. [[Rider of the Apocalypse]] ساده‌تر است اما نیاز به راه‌اندازی کمتری دارد."
+    },
+    {
+     "t": "p",
+     "x": "از ترینکت‌های با فعال‌سازی برای افزایش آسیب در پنجره‌های برست استفاده کنید. این ترینکت‌ها برای Unholy بسیار قوی عمل می‌کنند."
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Night Elf Shadowmeld برای رد کردن پک‌ها و موج‌ها مفید است",
+      "Dwarf Stoneform یک افزایش دفاعی در مواقع ضروری است",
+      "حرکت‌پذیری پایین باعث می‌شود برنامه‌ریزی مسیرها در اولویت باشد"
+     ]
+    },
+    {
+     "t": "h3",
+     "x": "افیکس‌های فصل و ابزارهای Unholy"
+    },
+    {
+     "t": "kv",
+     "items": [
+      {
+       "k": "ابزارها",
+       "v": "[[Mind Freeze]] اینتراپت · [[Asphyxiate]] استان · [[Blinding Sleet]] stop دسته‌ای · [[Death Grip]] جمع‌کردن · [[Anti-Magic Zone]] کاهش دمیج جادویی گروه · [[Raise Ally]] کمبت‌ریز · [[Control Undead]] کنترل زنده‌مردهٔ دشمن"
+      },
+      {
+       "k": "Ascendant",
+       "v": "orbهای موج را با [[Blinding Sleet]] جمع کن و ولگردها را با [[Mind Freeze]] و [[Death Grip]] مدیریت کن؛ [[Asphyxiate]] استان پشتیبان است"
+      },
+      {
+       "k": "Voidbound",
+       "v": "روی Void Emissary سوییچ کن و کستش را با [[Mind Freeze]] قطع کن؛ [[Asphyxiate]] و [[Blinding Sleet]] را برای ظاهر شدنش نگه دار"
+      },
+      {
+       "k": "Pulsar",
+       "v": "orbهای بازیکن را در ۱۵ ثانیه soak کن، با [[Wraith Walk]] یا [[Death's Advance]]"
+      },
+      {
+       "k": "Devour",
+       "v": "برای ایمن‌کردن جذب شفا [[Anti-Magic Shell]] را از قبل بزن (بافش را از دست می‌دهی)؛ برای حذف سریع با [[Death Pact]] و مصرفی‌های سلامت کمک کن"
+      }
+     ]
+    },
+    {
+     "t": "link",
+     "href": "talents.html?class=death-knight",
+     "x": "مشاهده بیلدهای پیشنهادی"
+    },
+    {
+     "t": "h3",
+     "x": "کول‌داون‌ها در Mythic+"
+    },
+    {
+     "t": "p",
+     "x": "چرخهٔ ۴۵ ثانیه‌ای [[San'layn]] هم‌زمان‌سازی [[Dark Transformation]] با پک‌ها را ممکن می‌کند. [[Army of the Dead]] را جایی بگذار که پت‌های اضافه‌اش ([[Raise Abomination]]، [[Summon Gargoyle]] با تلنت [[Apocalypse Now]]) روی پک‌های چرب بنشینند؛ اگر [[Commander of the Dead]] گرفتی این دو کول‌داون باید هم‌زمان بمانند."
+    },
+    {
+     "t": "p",
+     "x": "با [[Outnumber]] زمان‌بندی [[Dark Transformation]] روی اسپاون اددها مهم می‌شود: حملهٔ [[Sweeping Claws]] گول‌های کوچک بخش بزرگی از آسیب AoE توست."
+    }
+   ]
+  }
+ ],
+ "seo": {
+  "title_fa": "راهنمای Unholy Death Knight (آن‌هولی): بیلد تلنت، روتیشن، BiS و انچنت",
+  "description_fa": "راهنمای کامل آن‌هولی (Unholy Death Knight) در میدنایت ۱۲.۱.۵: بهترین بیلد تلنت، روتیشن و کول‌داون‌ها، آیتم‌های BiS، اولویت استت، غذا، فلسک، معجون، انچنت و جم: همه با توضیح فارسی.",
+  "queries_en": [
+   "Unholy Death Knight talent build midnight",
+   "Unholy Death Knight guide midnight",
+   "Unholy Death Knight guide 12.1.5",
+   "best Unholy Death Knight talents",
+   "Unholy Death Knight talent tree midnight",
+   "Unholy Death Knight pve guide",
+   "Unholy Death Knight rotation midnight",
+   "Unholy Death Knight rotation and cooldowns",
+   "Unholy Death Knight bis list midnight",
+   "Unholy Death Knight best in slot",
+   "Unholy Death Knight gear guide",
+   "Unholy Death Knight food and potion",
+   "best food for Unholy Death Knight",
+   "best flask for Unholy Death Knight",
+   "best potion for Unholy Death Knight",
+   "Unholy Death Knight enchants and gems",
+   "best enchants for Unholy Death Knight",
+   "best gems for Unholy Death Knight",
+   "Unholy Death Knight stat priority midnight",
+   "Unholy Death Knight tier set midnight",
+   "Unholy Death Knight tier set bonuses",
+   "Unholy Death Knight mythic+ guide",
+   "Unholy Death Knight m+ guide midnight",
+   "Unholy Death Knight raid guide",
+   "Unholy Death Knight hero talents",
+   "Unholy Death Knight hero tree",
+   "best dps build Unholy Death Knight midnight",
+   "Unholy Death Knight cheat sheet"
+  ],
+  "queries_fa": [
+   "تلنت برای آن‌هولی",
+   "تلنت آن‌هولی",
+   "تلنت برای Unholy Death Knight",
+   "تلنت Death Knight آن‌هولی",
+   "بیلد آن‌هولی",
+   "بیلد تلنت آن‌هولی میدنایت",
+   "روتیشن آن‌هولی",
+   "روتیشن و کول‌داون‌های آن‌هولی",
+   "غذا برای آن‌هولی",
+   "غذا برای Unholy Death Knight",
+   "غذا و معجون آن‌هولی",
+   "بهترین غذای آن‌هولی",
+   "فلسک آن‌هولی",
+   "بهترین فلسک برای آن‌هولی",
+   "معجون آن‌هولی",
+   "انچنت آن‌هولی",
+   "انچنت و جم آن‌هولی",
+   "بهترین انچنت برای آن‌هولی",
+   "جم آن‌هولی",
+   "بست آیتم آن‌هولی",
+   "بهترین آیتم‌های آن‌هولی",
+   "گیر آن‌هولی",
+   "استت آن‌هولی",
+   "اولویت استت آن‌هولی",
+   "ست تیر آن‌هولی",
+   "مایتی پلاس آن‌هولی",
+   "ام پلاس آن‌هولی",
+   "راهنمای آن‌هولی",
+   "راهنمای Unholy Death Knight",
+   "راهنمای شوالیهٔ مرگ",
+   "آن‌هولی میدنایت",
+   "شوالیهٔ مرگ میدنایت",
+   "هرو تیلنت آن‌هولی",
+   "بیلد آن‌هولی",
+   "بهترین آن‌هولی"
+  ],
+  "faq": [
+   {
+    "q": "بهترین بیلد تلنت برای Unholy Death Knight (آن‌هولی) در میدنایت چیست؟",
+    "a": "بیلد پیشنهادی پچ 12.1.5 برای Unholy Death Knight به‌همراه کدهای قابل‌کپی و هرو تیلنت‌ها در بخش «تلنت‌ها» همین راهنما آمده است؛ اولویت استت و ست تیر مناسب هم جداگانه توضیح داده شده است."
+   },
+   {
+    "q": "برای آن‌هولی چه غذا، فلسک و معجونی استفاده کنم؟",
+    "a": "انتخاب استاندارد فعلی: فلسک «Flask of the Magisters»، غذا «Silvermoon Parade» است. نسخه‌های جایگزین برای موقعیت‌های مختلف هم در همان بخش ذکر شده‌اند."
+   },
+   {
+    "q": "بهترین انچنت و جم برای آن‌هولی چیست؟",
+    "a": "بهترین انتخاب فعلی: جم «Flawless Masterful Garnet» است. فهرست کامل انچنت هر اسلات (سر، شانه، سینه، شنل، مچ، دست، پا، انگشتر و سلاح) و ترکیب جم‌ها را در بخش «انچنت، جم و مصرفی» ببینید."
+   },
+   {
+    "q": "بهترین آیتم‌ها (BiS) برای آن‌هولی کدام‌اند؟",
+    "a": "لیست کامل Best-in-Slot اسلات‌به‌اسلات (سلاح، سر، شانه، سینه و...) به‌همراه منبع هر آیتم (ریید/دانجن/کرفت) در بخش «گیر و آیتم‌ها» همین راهنما آمده است و با هر پچ به‌روز می‌شود."
+   },
+   {
+    "q": "روتیشن Unholy Death Knight در پچ 12.1.5 چگونه است؟",
+    "a": "روتیشن کامل: شامل اولویت اسپل‌های تک‌هدف و چندهدف، نحوهٔ استفاده از کول‌داون‌های اصلی و اوپنر: در بخش «روتیشن و کول‌داون‌ها» همین راهنما به فارسی توضیح داده شده است. هر اسپل با تولتیپ فارسی همراه است تا مکانیکش را کامل بفهمید."
+   }
+  ]
+ }
 }

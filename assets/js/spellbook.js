@@ -5,7 +5,7 @@
    ========================================================= */
 (function () {
   "use strict";
-  var DATA_V = "20261115a"; /* spells.json fetch bust — bump when the data changes */
+  var DATA_V = "20261115c"; /* spells.json fetch bust — bump when the data changes */
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var FA = "۰۱۲۳۴۵۶۷۸۹";
@@ -39,12 +39,17 @@
   function cur() { for (var i = 0; i < DATA.classes.length; i++) if (DATA.classes[i].cls === CLS) return DATA.classes[i]; }
   function trOn(k) { return window.WFTR ? WFTR.on(k) : true; }
   /* v3.10: class + spec names answer the namesClass switch («اسم کلاس‌ها و
-     شاخه‌ها» in the سبک ترجمه drawer) — ON: Persian, OFF: English */
-  function tabLabel(t) { return trOn("namesClass") && t.fa ? t.fa : t.en; }
+     شاخه‌ها» in the سبک ترجمه drawer) — ON: Persian, OFF: English.
+     v3.11: the Persian side comes from the ONE class-name table
+     (assets/js/clsnames.js, WFCLS: site canon + the user's own names from
+     the custom room); the data field is only the fallback */
+  function clsFa(en, f) { return window.WFCLS ? WFCLS.name(en, f) : f; }
+  function tabLabel(t) { return trOn("namesClass") && t.fa ? clsFa(t.en, t.fa) : t.en; }
   function classLabel(c) {
-    if (trOn("namesClass") && c.fa) return c.fa;
     var n = c.cls || "";
-    return n.charAt(0).toUpperCase() + n.slice(1);
+    var en = n.charAt(0).toUpperCase() + n.slice(1);
+    if (trOn("namesClass") && c.fa) return clsFa(en, c.fa);
+    return en;
   }
   function spellName(s) {
     if (trOn("namesSpell") && s.fn) return s.fn;

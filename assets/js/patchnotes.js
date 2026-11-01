@@ -13,8 +13,8 @@
   if (!root) return;
 
   var ST = { q: "", kind: "all", cls: "all", loaded: false, data: null };
-  var CLS_FA = { warrior: "واریر", hunter: "هانتر", mage: "مج", rogue: "رهزن",
-    priest: "کاهن", warlock: "وارلاک", paladin: "پالاتین", druid: "دروید",
+  var CLS_FA = { warrior: "جنگاور", hunter: "شکارچی", mage: "جادوگر", rogue: "راهزن",
+    priest: "روحانی", warlock: "احضارکننده", paladin: "پالادین", druid: "دروئید",
     shaman: "شمن" };
   var CLS_EN = { warrior: "Warrior", hunter: "Hunter", mage: "Mage", rogue: "Rogue",
     priest: "Priest", warlock: "Warlock", paladin: "Paladin", druid: "Druid",

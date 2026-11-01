@@ -224,7 +224,7 @@
       desc: "اسم‌ها و اصطلاح‌های قفل‌شدهٔ داخل همهٔ متن‌ها — تولتیپ، ست، کوئست، استعداد، راهنما و نقشه.", rows: [
       { k: "namesItem",  lbl: "اسم آیتم‌ها و ست‌ها", en: "Item & set names", n: 666, ex: "تندرفوری، تیغهٔ مبارک بادبین" },
       { k: "namesSpell", lbl: "اسم اسپل‌ها و استعدادها", en: "Spell & talent names", n: 542, ex: "گردباد، تشنگی خون" },
-      { k: "namesClass", lbl: "اسم کلاس‌ها و شاخه‌ها", en: "Class & spec names", n: 29, ex: "واریر، کیفار، استادی حیوان" },
+      { k: "namesClass", lbl: "اسم کلاس‌ها و شاخه‌ها", en: "Class & spec names", n: 29, ex: "جنگاور، کیفر، استادی حیوان" },
       { k: "namesNpc",   lbl: "اسم شخصیت‌ها و موجودها", en: "NPCs, creatures & factions", n: 486, ex: "هایلرد دمیتریان، اژدهای برونزی" },
       { k: "namesZone",  lbl: "اسم مناطق و دانجن‌ها", en: "Zones & dungeons", n: 163, ex: "تاناریس، سکولومنس" },
       { k: "namesQuest", lbl: "عنوان کوئست‌ها", en: "Quest titles", ex: "برخیز، تندرفوری!" },
@@ -306,7 +306,7 @@
      is what tools/markerize_fa.py writes into fa-*.json at build time. */
   var MK = { sp: "namesSpell", tm: "terms", ts: "textStats", it: "namesItem", npc: "namesNpc",
     zn: "namesZone", qs: "namesQuest", ob: "namesObj", cls: "namesClass" };
-  /* cls = class + spec names («واریر», «کیفار», «استادی حیوان»…), written by
+  /* cls = class + spec names («جنگاور», «کیفر», «استادی حیوان»…), written by
      the build markerizer from the glossary-locked bank — owned by namesClass,
      NOT namesSpell/textReq, so the drawer flips them independently. */
   /* ts = glossary term INSIDE a stats/damage line (Damage/Agility/Armor…):

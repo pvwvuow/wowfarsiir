@@ -73,6 +73,13 @@
     trLoader.src = BASE + "assets/js/tr.js"; /* versionless: tr.js bumps its own tags; Pages max-age=600 keeps staleness ≤10min */
     document.head.appendChild(trLoader);
   }
+  /* the ONE class/spec name table (assets/js/clsnames.js, WFCLS) rides along
+     with tr.js on every page; it patches WFTR whichever of the two loads first */
+  if (!document.querySelector('script[src*="clsnames.js"]')) {
+    var clsLoader = document.createElement("script");
+    clsLoader.src = BASE + "assets/js/clsnames.js";
+    document.head.appendChild(clsLoader);
+  }
 
   var nav = document.querySelector(".nav-links");
   var header = document.querySelector("header.nav");
