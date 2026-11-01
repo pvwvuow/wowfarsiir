@@ -5,14 +5,15 @@
    (reward items, built by tools/build_quest_aux.py from the item sources),
    i18n/quest-fa-N (Persian text, shown when it exists), i18n/quest-fa-titles.
    Quest-index keys that start with "sort:" are categories (class / profession / seasonal quests), not zones:
-   the page labels them «کلاس» / «حرفه» / «دسته» instead of «منطقه» (quest-cats.js).
+   the page labels them «کلاس» / «حرفه» / «دسته» instead of «منطقه» (quest-cats.js). The quest record itself only carries
+   the English word as `zone`, so the category is read from the quest INDEX entry.
    Fields that the source data does not have (reward XP / money / reputation,
    race / class limits) are drawn ONLY when a quest record carries them:
    rewXp, rewMoney, rewItems [[id,n]], rewChoice [[id,n]], rewRep [[name,n]],
    reqRaces [name], reqClasses [name]. Nothing is invented. */
 (function () {
   'use strict';
-  var V = '20261201b', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261201c', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
@@ -83,6 +84,13 @@
     if (QC.isCat(key)) return esc(QC.name(key));
     if (z) return zoneOf(z);
     return enSpan(cap(key));
+  }
+  /* the category key (sort:hunter) of a quest, from the index entry or the record */
+  function catKey(q) {
+    var e = IDX && IDX.quests && IDX.quests[q.id];
+    if (e && e[1] && QC.isCat(e[1])) return e[1];
+    if (q.zoneKey && QC.isCat(q.zoneKey)) return q.zoneKey;
+    return '';
   }
   function money(c) {
     var g = Math.floor(c / 10000), s = Math.floor((c % 10000) / 100), k = c % 100, p = [];
@@ -306,9 +314,10 @@
   function paint() {
     var q = S.q, f = S.fa || {}, hasFa = !!(f.t || f.desc || f.obj || f.details || f.progress || f.completion);
     var fa = LANG === 'fa' && f.t ? f.t : '';
-    var title = fa || q.name || ('#' + q.id), zoneHtml = q.zone ? zoneByName(q.zone) : (q.zoneKey ? zoneByKey(q.zoneKey) : '');
-    var isCat = !q.zone && q.zoneKey && QC.isCat(q.zoneKey);
-    var zl = isCat ? lbl(QC.groupName(q.zoneKey), 'Category') : lbl('منطقه', 'Zone');
+    var ck = catKey(q);
+    var title = fa || q.name || ('#' + q.id);
+    var zoneHtml = ck ? esc(QC.name(ck)) : (q.zone ? zoneByName(q.zone) : (q.zoneKey ? zoneByKey(q.zoneKey) : ''));
+    var zl = ck ? lbl(QC.groupName(ck), 'Category') : lbl('منطقه', 'Zone');
     var hero, A = '', B = '', texts, ch = '', pre;
 
     document.title = title + ' — ' + (on('uiLabels') ? 'کوئست' : 'Quest') + ' — wowfarsi';
