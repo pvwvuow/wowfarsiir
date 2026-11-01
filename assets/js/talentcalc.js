@@ -1,5 +1,5 @@
 /* =========================================================
-   wowfarsi — Forever talent calculator (fa) · v7
+   wowfarsi — Forever talent calculator (fa) · v8
    Same language as the retail Talent Tree page and the item
    card (site.css / fantasy.css): hairlines that fade out,
    ring + dot ornaments, little diamonds, no boxes.
@@ -14,6 +14,11 @@
    (optional node field `req` = talent name).
    Phone: one tree at a time (tree chips), no panning needed.
    Click = +1 · right-click = −1 · hold / shift+click = details.
+   Translation style (tr.js / WFTR, same contract as spellbook.js):
+   namesSpell -> talent names, textDesc -> description language,
+   uiLabels -> tooltip labels, markers in FA text via faTokens,
+   namesClass -> class/tree names; clicking a pinned-tooltip token
+   flashes its switch. Re-renders on every switch change.
    Data: data/forever/db/{class}.json + classes.json
    ========================================================= */
 "use strict";
@@ -53,6 +58,14 @@
     '<linearGradient id="fc-g-hl" x1="0" y1="0" x2="1" y2="0">' + [[0, 0], [1, .75]].map(GOLD).join("") + "</linearGradient>" +
     '<linearGradient id="fc-g-hr" x1="1" y1="0" x2="0" y2="0">' + [[0, 0], [1, .75]].map(GOLD).join("") + "</linearGradient>";
   var broken = new Set();
+
+  /* ---- translation style (WFTR) ---- */
+  function trOn(k) { return window.WFTR && WFTR.on ? WFTR.on(k) : true; }
+  function stripMk(h) { return String(h).replace(/\{\{\w+:([^|}]*)\|([^}]*)\}\}/g, "$2"); }
+  function lb(fa, en) { return trOn("uiLabels") ? fa : en; }
+  /* talent name per the namesSpell switch: Persian + EN alt, or EN + muted Persian */
+  function nm(x) { return trOn("namesSpell") && x.fa ? x.fa : x.n; }
+  var ST_EN = { same: "Same as Classic", changed: "Changed", new: "New in Forever", earlier: "Earlier than Classic", was_talent: "Was a talent", talent: "Comes with talent", moved: "Moved" };
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function getJSON(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
@@ -359,7 +372,7 @@
       var t = +k.split("|")[0], name = k.split("|")[1], nd = nodeData(t, name);
       seen[k] = (seen[k] || 0) + 1;
       var lv = idx < bonus ? "مزیت" : faNum(Math.min(60, 10 + idx - bonus));
-      return '<li><i>' + lv + "</i><span>" + esc(nd ? nd.x.fa : name) + "</span>" + ((nd && (nd.x.r || 1) > 1) ? '<small dir="ltr">' + seen[k] + "/" + nd.x.r + "</small>" : "") + "</li>";
+      return '<li><i>' + lv + "</i><span dir=\"auto\">" + esc(nd ? nm(nd.x) : name) + "</span>" + ((nd && (nd.x.r || 1) > 1) ? '<small dir="ltr">' + seen[k] + "/" + nd.x.r + "</small>" : "") + "</li>";
     });
     return '<div class="fc-block">' + head + '<ol class="fc-order wf-ledger">' + items.join("") + "</ol></div>";
   }
@@ -489,28 +502,38 @@
      ========================================================= */
   function faHTML(t) {
     var html = esc(t).replace(/\n/g, "<br>");
-    return (window.WFTR && WFTR.faTokens) ? WFTR.faTokens(html) : html;
+    return (window.WFTR && WFTR.faTokens) ? WFTR.faTokens(html) : stripMk(html);
   }
   function tipHTML(t, name) {
     var nd = nodeData(t, name);
     if (!nd) return "";
     var x = nd.x, have = spentOn(t, name), max = x.r || 1;
     var why = canAdd(t, name), need = tierReq(nd.ti) - pointsBelow(t, nd.ti);
-    var reqLine = why === "tier" ? '<p class="ttip-lock" dir="rtl">قفل: ' + faNum(need) + " امتیاز دیگر در " + esc(treeLabel(DATA.trees[t])) + " لازم است</p>"
-      : why === "req" ? '<p class="ttip-lock" dir="rtl">اول «' + esc((nodeData(t, x.req) || { x: { fa: x.req } }).x.fa) + "» را کامل کن</p>" : "";
-    return '<p class="ttip-name" dir="rtl">' + esc(x.fa) + ' <span class="ttip-en" dir="ltr">' + esc(x.n) + "</span></p>" +
-      '<div class="ttip-badges" dir="rtl">' +
-      '<span class="fs-chip ' + esc(x.st || "same") + '">' + esc(ST_FA[x.st] || x.st || "") + "</span>" +
-      '<span class="ttip-badge b-rank">رنک ' + faNum(have) + "/" + faNum(max) + "</span>" +
-      (isActive(x) ? '<span class="ttip-badge">توانایی فعال</span>' : "") +
-      '<span class="ttip-badge">ردیف ' + faNum(nd.ti + 1) + "</span></div>" +
-      reqLine +
-      (x.dFa ? '<div class="ttip-fa"><p dir="rtl">' + faHTML(x.dFa) + "</p></div>" : "") +
-      (x.d ? '<p class="ttip-desc" dir="ltr">' + esc(x.d).replace(/\n/g, "<br>") + "</p>" : "") +
+    var faName = trOn("namesSpell") && x.fa, ui = trOn("uiLabels"), dirU = ui ? "rtl" : "ltr";
+    var reqLine = why === "tier"
+      ? '<p class="ttip-lock" dir="' + dirU + '" data-tk="uiLabels">' + (ui ? "\u0642\u0641\u0644: " + faNum(need) + " \u0627\u0645\u062a\u06cc\u0627\u0632 \u062f\u06cc\u06af\u0631 \u062f\u0631 " + esc(treeLabel(DATA.trees[t])) + " \u0644\u0627\u0632\u0645 \u0627\u0633\u062a" : "Locked: " + need + " more points in " + esc(DATA.trees[t].n)) + "</p>"
+      : why === "req" ? '<p class="ttip-lock" dir="' + dirU + '" data-tk="uiLabels">' + (ui ? "\u0627\u0648\u0644 \u00ab" + esc((nodeData(t, x.req) || { x: { fa: x.req } }).x.fa) + "\u00bb \u0631\u0627 \u06a9\u0627\u0645\u0644 \u06a9\u0646" : "Complete " + esc(x.req) + " first") + "</p>" : "";
+    /* name (namesSpell): FA main + EN alt, or EN main + muted FA - same as spellbook.js */
+    var title = faName
+      ? '<p class="ttip-name" dir="rtl" data-tk="namesSpell">' + esc(x.fa) + ' <span class="ttip-en rt-en" dir="ltr">' + esc(x.n) + "</span></p>"
+      : '<p class="ttip-name" dir="ltr" data-tk="namesSpell"><span class="rt-en">' + esc(x.n) + "</span>" + (x.fa ? ' <span class="ttip-en" style="font-family:inherit;letter-spacing:0">' + esc(x.fa) + "</span>" : "") + "</p>";
+    /* description (textDesc): FA with markers resolved, or the EN text itself */
+    var useFa = trOn("textDesc") && x.dFa;
+    var enHtml = x.d ? esc(x.d).replace(/\n/g, "<br>") : "";
+    var desc = useFa
+      ? '<div class="ttip-fa" data-tk="textDesc"><p dir="rtl">' + faHTML(x.dFa) + "</p></div>" + (enHtml ? '<p class="ttip-desc rt-en" dir="ltr">' + enHtml + "</p>" : "")
+      : (enHtml ? '<div class="ttip-fa" data-tk="textDesc"><p class="rt-en" dir="ltr">' + enHtml + "</p></div>" : "");
+    return title +
+      '<div class="ttip-badges" dir="' + dirU + '">' +
+      '<span class="fs-chip ' + esc(x.st || "same") + '" data-tk="uiLabels">' + esc(ui ? (ST_FA[x.st] || x.st || "") : (ST_EN[x.st] || x.st || "")) + "</span>" +
+      '<span class="ttip-badge b-rank" data-tk="uiLabels">' + (ui ? "\u0631\u0646\u06a9 " + faNum(have) + "/" + faNum(max) : "Rank " + have + "/" + max) + "</span>" +
+      (isActive(x) ? '<span class="ttip-badge" data-tk="uiLabels">' + lb("\u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0641\u0639\u0627\u0644", "Active ability") + "</span>" : "") +
+      '<span class="ttip-badge" data-tk="uiLabels">' + (ui ? "\u0631\u062f\u06cc\u0641 " + faNum(nd.ti + 1) : "Row " + (nd.ti + 1)) + "</span></div>" +
+      reqLine + desc +
       (pinnedKey ? '<div class="ttip-act" dir="ltr">' +
-        '<button type="button" class="ttip-btn" data-act="minus">−</button>' +
-        '<button type="button" class="ttip-btn ttip-plus" data-act="plus">+۱</button>' +
-        '<button type="button" class="ttip-btn" data-act="close">بستن</button></div>' : "");
+        '<button type="button" class="ttip-btn" data-act="minus">\u2212</button>' +
+        '<button type="button" class="ttip-btn ttip-plus" data-act="plus">' + lb("+\u06f1", "+1") + '</button>' +
+        '<button type="button" class="ttip-btn" data-act="close">' + lb("\u0628\u0633\u062a\u0646", "Close") + "</button></div>" : "");
   }
   function showTip(k, atNode) {
     var tip = document.getElementById("fc-tip"), el = document.getElementById("fc-canvas");
@@ -702,6 +725,8 @@
       else if (k) refuse(+k.split("|")[0], k.split("|")[1], a === "plus" ? 1 : -1);
       return;
     }
+    var tkEl = tgt.closest && tgt.closest("#fc-tip [data-tk]");
+    if (tkEl && window.WFTR && WFTR.flash) { WFTR.flash(tkEl.getAttribute("data-tk")); return; }
     var cls = tgt.closest(".fc-cls");
     if (cls) { if (cls.getAttribute("data-c") !== state.cls) { state.cls = cls.getAttribute("data-c"); state.tree = 0; state.saves = false; reset(); load(state.cls); } return; }
     var chip = tgt.closest(".fc-tree-chip");
@@ -725,14 +750,14 @@
     if (id === "fc-text") {
       var lines = DATA.trees.map(function (t, i) {
         var picked = [];
-        eachNode(i, function (x) { if (spentOn(i, x.n) > 0) picked.push(x.fa + " " + spentOn(i, x.n) + "/" + (x.r || 1)); });
+        eachNode(i, function (x) { if (spentOn(i, x.n) > 0) picked.push(nm(x) + " " + spentOn(i, x.n) + "/" + (x.r || 1)); });
         return treeLabel(t) + " (" + state.spent[i] + "): " + (picked.join("، ") || "-");
       }).join("\n");
       copy(lines, "بیلد متنی کپی شد", "بیلد متنی:"); return;
     }
     if (id === "fc-save") {
-      var nm = prompt("نام بیلد:", "بیلد " + DATA.trees.map(function (_, i) { return state.spent[i]; }).join("/"));
-      if (nm != null) { saveBuild(nm); state.saves = true; render(true); flash("بیلد ذخیره شد"); }
+      var nm2 = prompt("نام بیلد:", "بیلد " + DATA.trees.map(function (_, i) { return state.spent[i]; }).join("/"));
+      if (nm2 != null) { saveBuild(nm2); state.saves = true; render(true); flash("بیلد ذخیره شد"); }
       return;
     }
     if (id === "fc-show-saves") { state.saves = !state.saves; render(true); return; }
@@ -812,10 +837,20 @@
     load(state.cls);
   }, function () { loading("بارگذاری فهرست کلاس‌ها ناموفق بود."); });
 
+  /* tr.js + clsnames.js are injected async by nav-menu.js: wire the switch
+     listener as soon as WFTR exists, and re-render once WFCLS (class names)
+     has landed too, so the first paint never ignores a saved style. */
   (function whenTr(tries) {
-    if (window.WFTR && WFTR.onChange) {
+    var wired = whenTr.w, synced = whenTr.s;
+    if (!wired && window.WFTR && WFTR.onChange) {
+      whenTr.w = wired = true;
       WFTR.onChange(function () { if (DATA) render(true); });
-    } else if (tries < 48) setTimeout(function () { whenTr(tries + 1); }, 150);
+    }
+    if (wired && !synced && (window.WFCLS || tries >= 20)) {
+      whenTr.s = synced = true;
+      if (DATA) render(true);
+    }
+    if (!(wired && synced) && tries < 48) setTimeout(function () { whenTr(tries + 1); }, 150);
   })(0);
   window.__fc = { state: state, spend: spend, canAdd: canAdd, canRemove: canRemove, buildStr: buildStr, parseStr: parseStr, applyPopular: applyPopular, render: render };
 })();
