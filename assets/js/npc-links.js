@@ -1,4 +1,4 @@
-/* npc-links.js — extras for the Forever item card (item.html?ver=forever&id=),
+/* npc-links.js - extras for the Forever item card (item.html?ver=forever&id=),
    kept OUT of retail.js. Runs again after every (re)paint of the card:
    1) NPC rows (retail.js fsrNpcRow) open our NPC page npc.html?id=<id>
       instead of Wowhead.
@@ -9,32 +9,35 @@
       section are sorted by chance (highest first).
    3) Rank filter: a section with 4+ ranked NPC rows gets chips
       All / Boss / Elite / Rare / Normal (counts from the row medals).
-      «باس» keeps rank-3 rows AND every row whose NPC is a boss of its
+      "Boss" keeps rank-3 rows AND every row whose NPC is a boss of its
       dungeon (data/forever/db/bosses.json, aggregated from dungeon/<slug>.json)
-      — the Forever API flags only 151 NPCs as Boss, so Deadmines-style
+      - the Forever API flags only 151 NPCs as Boss, so Deadmines-style
       dungeon bosses would otherwise be unreachable from the chip.
+   Robustness (1 Nov fix, issue #186): a failed drop-N fetch is retried and never
+   leaves an empty map behind; rows that have no chance yet are NOT stamped, so
+   late data or late-painted rows still get their percentage.
    Everything is idempotent (data-* marks) so the MutationObserver settles. */
 (function () {
   'use strict';
-  var V = '20261116d';
+  var V = '20261201a';
   var RE = /^https?:\/\/www\.wowhead\.com\/classic\/npc=(\d+)(?:[/?#].*)?$/;
   var P = new URLSearchParams(location.search);
   var ITEM = P.get('ver') === 'forever' && /^\d+$/.test(P.get('id') || '') ? P.get('id') : null;
-  var DROPS = null, asked = false;
+  var DROPS = null, asked = false, tries = 0;
   var BOSS = null, bossAsked = false;
   var GROUPS = [
-    { k: 'all', fa: 'همه', en: 'All', rk: null },
-    { k: 'boss', fa: 'باس', en: 'Boss', rk: [3] },
-    { k: 'elite', fa: 'ایلیت', en: 'Elite', rk: [1, 2] },
-    { k: 'rare', fa: 'کمیاب', en: 'Rare', rk: [2, 4] },
-    { k: 'normal', fa: 'عادی', en: 'Normal', rk: [0] }
+    { k: 'all', fa: '\u0647\u0645\u0647', en: 'All', rk: null },
+    { k: 'boss', fa: '\u0628\u0627\u0633', en: 'Boss', rk: [3] },
+    { k: 'elite', fa: '\u0627\u06cc\u0644\u06cc\u062a', en: 'Elite', rk: [1, 2] },
+    { k: 'rare', fa: '\u06a9\u0645\u06cc\u0627\u0628', en: 'Rare', rk: [2, 4] },
+    { k: 'normal', fa: '\u0639\u0627\u062f\u06cc', en: 'Normal', rk: [0] }
   ];
 
   function fa() { try { return !window.WFTR || !window.WFTR.on || window.WFTR.on('uiLabels'); } catch (e) { return true; } }
-  function faNum(v) { return String(v).replace(/[0-9]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.charAt(+d); }).replace('.', '٫'); }
+  function faNum(v) { return String(v).replace(/[0-9]/g, function (d) { return '\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'.charAt(+d); }).replace('.', '\u066b'); }
   function pct(c) {
     var s = String(c >= 10 ? Math.round(c * 10) / 10 : c >= 1 ? Math.round(c * 100) / 100 : Math.round(c * 1000) / 1000);
-    return fa() ? faNum(s) + '٪' : s + '%';
+    return fa() ? faNum(s) + '\u066a' : s + '%';
   }
   function rowId(a) {
     var h = a.getAttribute('href') || '', m = /npc\.html\?id=(\d+)/.exec(h);
@@ -60,7 +63,8 @@
     }
   }
 
-  /* 2) chances */
+  /* 2) chances. DROPS stays null until a real map arrived; a failed fetch is
+     retried (up to 4 times, growing delay) and never turns into an empty map. */
   function loadDrops(cb) {
     if (DROPS || asked || !ITEM) { if (DROPS) cb(); return; }
     asked = true;
@@ -72,7 +76,11 @@
       list.forEach(function (d) { if (d && d.n != null && d.c != null && (m[d.n] == null || d.c > m[d.n])) m[d.n] = d.c; });
       DROPS = m;
       cb();
-    }).catch(function () { DROPS = {}; });
+    }).catch(function () {
+      asked = false;
+      tries++;
+      if (tries < 5) setTimeout(function () { loadDrops(cb); }, 400 * tries * tries);
+    });
   }
   function loadBosses(cb) {
     if (BOSS || bossAsked || !ITEM) { if (BOSS) cb(); return; }
@@ -85,16 +93,19 @@
       cb();
     }).catch(function () { BOSS = new Set(); cb(); });
   }
-  function chances(root) {    var secs = root.querySelectorAll('.fex-secbd'), s, rows, i, a, id, c, ch, z, got, sorted;
+  function chances(root) {
+    var secs = root.querySelectorAll('.fex-secbd'), s, rows, i, a, id, c, ch, z, got, sorted, anchor, frag;
+    if (!DROPS) return;
     for (s = 0; s < secs.length; s++) {
       rows = secs[s].querySelectorAll(':scope > a.fex-npc');
       got = 0;
       for (i = 0; i < rows.length; i++) {
         a = rows[i];
-        if (a.getAttribute('data-ch')) { if (a.getAttribute('data-ch') !== '-') got++; continue; }
+        if (a.getAttribute('data-ch')) { got++; continue; }
         id = rowId(a);
-        c = id != null ? DROPS[id] : null;
-        if (c == null) { a.setAttribute('data-ch', '-'); continue; }
+        if (id == null) continue;
+        c = DROPS[id];
+        if (c == null) continue;
         a.setAttribute('data-ch', String(c));
         got++;
         if (!a.querySelector('.fex-ch')) {
@@ -105,13 +116,14 @@
           if (z) a.insertBefore(ch, z); else a.appendChild(ch);
         }
       }
-      if (got < 2 || secs[s].getAttribute('data-sorted')) continue;
+      if (got < 2 || secs[s].getAttribute('data-sorted') === String(got)) continue;
       sorted = Array.prototype.slice.call(rows).map(function (r, k) {
         var v = r.getAttribute('data-ch');
-        return { r: r, k: k, c: v && v !== '-' ? +v : -1 };
+        return { r: r, k: k, c: v ? +v : -1 };
       }).sort(function (x, y) { return y.c - x.c || x.k - y.k; });
-      secs[s].setAttribute('data-sorted', '1');
-      var anchor = rows[0].previousSibling, frag = document.createDocumentFragment();
+      secs[s].setAttribute('data-sorted', String(got));
+      anchor = rows[0].previousSibling;
+      frag = document.createDocumentFragment();
       sorted.forEach(function (o) { frag.appendChild(o.r); });
       secs[s].insertBefore(frag, anchor ? anchor.nextSibling : secs[s].firstChild);
     }
