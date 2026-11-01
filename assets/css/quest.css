@@ -1,4 +1,11 @@
 /* quest.css — quest.html (Forever quest database). Builds on npc.css / retail.css (fex-*). */
+/* Nastaliq for TITLES only (quest title, quest database heading, dungeon names). Body text stays Vazirmatn.
+   Font: Noto Nastaliq Urdu 500 (SIL OFL). First source = our own file assets/fonts/NotoNastaliqUrdu-arabic-500.woff2
+   (ops adds it, see wow-ops inbox), second = jsDelivr (fontsource). If neither loads the title falls back to Vazirmatn. */
+@font-face{font-family:"WFNastaliq";font-style:normal;font-weight:500;font-display:swap;
+  src:url("../fonts/NotoNastaliqUrdu-arabic-500.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/npm/@fontsource/noto-nastaliq-urdu/files/noto-nastaliq-urdu-arabic-500-normal.woff2") format("woff2");
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
 .quest-page .q-p{margin:.5rem 0;line-height:2.05;font-size:15px;color:#e8e1cd;overflow-wrap:anywhere}
 .quest-page .q-p.rt-en{line-height:1.8;color:#cfc8b4;text-align:left}
 .quest-page .q-sub{margin:.7rem 0 .25rem;font-size:12.5px;color:#d8bf80;letter-spacing:.02em}
@@ -11,3 +18,10 @@
 .quest-page .q-lang button:hover{color:#f6e0a3}
 .quest-page .q-lang button.on{color:#f6e0a3;background:rgba(240,199,94,.13);border-color:rgba(240,199,94,.5)}
 .quest-page .q-lang button[dir="ltr"]{font-family:"Cinzel","Times New Roman",serif;letter-spacing:.04em}
+
+/* ---- Nastaliq titles (Persian only: English titles keep the rt-en class and are untouched) ---- */
+html body.quest-page .fex-hero h1:not(.rt-en),
+html body .npc-dg .fex-npc-nm:not(.rt-en),
+html body .wf-nasta{font-family:"WFNastaliq","Vazirmatn",serif!important;font-weight:500;letter-spacing:0;word-spacing:.08em}
+/* Nastaliq glyphs are tall: give the line room so the title is not clipped or glued to the chips below */
+html body.quest-page .fex-hero h1:not(.rt-en){line-height:2.2;padding-block:.35em .15em}
