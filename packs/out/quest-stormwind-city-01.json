@@ -1,0 +1,823 @@
+{
+ "pack": "quest-stormwind-city-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stormwind-city-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Wine Ticket",
+   "fa": "کوپنِ شراب",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Cloth Request",
+   "fa": "درخواستِ پارچه",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E7": {
+   "en": "Package for Stormpike",
+   "fa": "بستهٔ استورم‌پایک",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Grimand Elmore",
+   "fa": "گریماند المور",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Gatehouse Shipment",
+   "fa": "محمولهٔ دروازه‌خانه",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Remote Detonator Kit",
+   "fa": "بستهٔ چاشنی انفجار از راه دور",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Letter to the City Architect",
+   "fa": "نامه به معمار شهر",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Revenge",
+   "fa": "انتقام",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Bazil Thredd",
+   "fa": "بازیل ترِد",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Blood-Stained Letter",
+   "fa": "نامهٔ خون‌لکه",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Spirit",
+   "fa": "روح",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Brother Paxton",
+   "fa": "برادر پکستون",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Northshire",
+   "fa": "نورث‌شایر",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Foreman",
+   "fa": "سرکارگر",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Iron Ore",
+   "fa": "سنگ معدنِ آهن",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Redridge Mountains",
+   "fa": "کوه‌های ردریج",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Rethban Ore",
+   "fa": "کانهٔ رث‌بن",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Orc",
+   "fa": "اورک",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E30": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Menethil Statuette",
+   "fa": "تندیس منتیل",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Lord Grayson Shadowbreaker",
+   "fa": "لرد گریسون شادوبرِیکر",
+   "kind": "qs"
+  },
+  "E34": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Stormwind City",
+   "fa": "شهر استورم‌ویند",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "interrupt",
+   "fa": "قطع",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Sealed Note to Elling",
+   "fa": "یادداشت مهرشده برای الینگ",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "block",
+   "fa": "بلوک",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Sealed Note to Watcher Backus",
+   "fa": "یادداشت مهرشده برای دیده‌بان باکوس",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Twisting Nether",
+   "fa": "خلأ پیچان",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "Sealed Description of Thredd's Visitor",
+   "fa": "شرحِ مهرشدهٔ مهمانِ ترِد",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Claw",
+   "fa": "پنجهٔ وحشی",
+   "kind": "sp"
+  },
+  "E45": {
+   "en": "Tear of Tilloa",
+   "fa": "اشک تیلوا",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Musquash Root",
+   "fa": "ریشهٔ موسکواش",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Black Claw Stout",
+   "fa": "آبجوی چنگالِ سیاه",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Stormwind": "استورم‌ویند",
+  "Wine Ticket": "کوپنِ شراب",
+  "Azeroth": "آزروت",
+  "Cloth Request": "درخواستِ پارچه",
+  "armor": "زره",
+  "Mage": "جادوگر",
+  "Package for Stormpike": "بستهٔ استورم‌پایک",
+  "Loch Modan": "لوک مودان",
+  "Ironforge": "آیرون‌فورج",
+  "Westfall": "وستفال",
+  "Grimand Elmore": "گریماند المور",
+  "Gatehouse Shipment": "محمولهٔ دروازه‌خانه",
+  "Remote Detonator Kit": "بستهٔ چاشنی انفجار از راه دور",
+  "Letter to the City Architect": "نامه به معمار شهر",
+  "Revenge": "انتقام",
+  "Bazil Thredd": "بازیل ترِد",
+  "Blood-Stained Letter": "نامهٔ خون‌لکه",
+  "Duskwood": "جنگل تاریک",
+  "Spirit": "روح",
+  "Brother Paxton": "برادر پکستون",
+  "Northshire": "نورث‌شایر",
+  "Foreman": "سرکارگر",
+  "Iron Ore": "سنگ معدنِ آهن",
+  "chance": "شانس",
+  "Redridge Mountains": "کوه‌های ردریج",
+  "damage": "آسیب",
+  "Rethban Ore": "کانهٔ رث‌بن",
+  "Orc": "اورک",
+  "Travel": "سفر",
+  "requires": "نیازمند",
+  "Darkshore": "کرانهٔ تاریک",
+  "Menethil Statuette": "تندیس منتیل",
+  "Lord Grayson Shadowbreaker": "لرد گریسون شادوبرِیکر",
+  "Alliance": "اتحاد",
+  "Stormwind City": "شهر استورم‌ویند",
+  "Theramore": "ترمور",
+  "interrupt": "قطع",
+  "Sealed Note to Elling": "یادداشت مهرشده برای الینگ",
+  "block": "بلوک",
+  "Sealed Note to Watcher Backus": "یادداشت مهرشده برای دیده‌بان باکوس",
+  "Twisting Nether": "خلأ پیچان",
+  "Head": "سر",
+  "Sealed Description of Thredd's Visitor": "شرحِ مهرشدهٔ مهمانِ ترِد",
+  "Claw": "پنجهٔ وحشی",
+  "Tear of Tilloa": "اشک تیلوا",
+  "Musquash Root": "ریشهٔ موسکواش",
+  "Wetlands": "تالاب‌ها",
+  "Black Claw Stout": "آبجوی چنگالِ سیاه"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$Gmaster:madam;",
+  "3": "$Gsir:ma'am;",
+  "4": "$C",
+  "5": "$N",
+  "6": "$C",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$c",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$g sir : madam;",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$C",
+  "26": "$n",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$N"
+ },
+ "rows": {
+  "quest:579:title": "⟦E1⟧ Library",
+  "quest:579:progress:0": "King Anduin has placed great importance on learning, and thus has provided funds for making copies of various tomes and writings available to the public. It's very simple. You bring me a library scrip, and I can give you a copy of one of the available books.",
+  "quest:579:completion:0": "Do any of these titles interest you, ⟦1⟧?",
+  "quest:332:obj:0": "Go to the Gallina Winery, and bring Suzetta Gallina the ⟦E2⟧ for a free bottle of wine.",
+  "quest:332:details:0": "If you talk to anyone about wine, then you know we Gallinas sell the best wine in ⟦E1⟧. And we're not far, still in the Trade District along the city's lovely canals.",
+  "quest:332:details:1": "Here, take this pamphlet. Bring it to my sister Suzetta at our shop for a complimentary bottle of our famous pinot noir. You won't regret it!",
+  "quest:332:progress:0": "Greetings and welcome, ⟦2⟧. Have you yet tried one of our fine wines?",
+  "quest:332:completion:0": "Ah, so you've seen Renato? Well here you are, ⟦3⟧. A bottle of our special pinot noir. You'll not find its equal in all of ⟦E3⟧!",
+  "quest:333:obj:0": "Go to the Canal Tailor Shop and bring Rema Schneider the ⟦E4⟧ from Harlan Bagley.",
+  "quest:333:details:0": "We've been doing a lot of business lately. It seems like everyone is buying ⟦E5⟧ and sturdy clothes. Almost like they expect a cold, harsh season ahead...",
+  "quest:333:details:1": "But those are future worries. My worry today is that I'm running out of knitted clothing to sell. I need another load from our supplier.",
+  "quest:333:details:2": "If you can take this request to Rema Schneider at the Canal Tailor and Fit Shop, I'd be most grateful.",
+  "quest:333:progress:0": "You bring word from Mr. Bagley?",
+  "quest:333:completion:0": "It says here that Harlan's business is booming. That's good news, but I wonder why people have need of all that ⟦E5⟧. I've heard nothing of open war... is there something the nobles aren't telling us?",
+  "quest:333:completion:1": "Well, thank you for bringing the request. Here's your payment, and I'll see to it that Harlan gets his supplies.",
+  "quest:334:obj:0": "Go to the Larson Clothiers in the ⟦E1⟧ ⟦E6⟧ Quarter, and give Thurman Schneider his Sewing Kit.",
+  "quest:334:details:0": "My son Thurman is an apprentice at the Larson Clothiers, in the ⟦E6⟧'s Quarter. He was in a hurry today and forgot his shears and needles. I know a great ⟦4⟧ like you must have important tasks at hand, but without his tools Thurman can't do his apprentice work!",
+  "quest:334:details:1": "Please, ⟦5⟧. Can you take my son's sewing kit to him? Larson Clothiers is one of two clothing shops in the ⟦E6⟧'s Quarter - it's the one deeper in, near the ⟦E6⟧'s Tower.",
+  "quest:334:progress:0": "Are you here to buy clothes?",
+  "quest:334:completion:0": "Oh, blast! I thought forgetting my kit would free me from work. Now I guess I'll have to help the Larsons with their sewing...",
+  "quest:334:completion:1": "Oh, well. Fun will come later I guess.",
+  "quest:353:obj:0": "Deliver the ⟦E7⟧ to Mountaineer Stormpike in ⟦E8⟧.",
+  "quest:353:details:0": "The Stormpikes are a respected dwarven clan, and are well known for their fine and discerning tastes. So it's no wonder that Gringer Stormpike, a Mountaineer of ⟦E9⟧, commissioned me to craft him a weapon.",
+  "quest:353:details:1": "The weapon is finished, but... Mountaineer Stormpike is far away, in distant ⟦E8⟧. If you plan on traveling to the north, can you deliver this package to him?",
+  "quest:353:details:2": "My last message from Mountaineer Stormpike said he's stationed at the northern guard tower in ⟦E8⟧.",
+  "quest:353:progress:0": "You come all the way from ⟦E1⟧? I hear it's getting dicey down there in the human lands, with brigands and orcs running about. A perfect place for a ⟦6⟧ to prove his worth!",
+  "quest:353:completion:0": "Aha! So Grimand finally finished my axe! I can't wait to try it against some troggs and kobolds!",
+  "quest:353:completion:1": "Many thanks, ⟦7⟧. It was a long distance to travel for this delivery. Here are some coins for your efforts.",
+  "quest:399:obj:0": "Go to Baros Alexston's house in ⟦E10⟧ and search for his compass, then return it to him in Cathedral Square of ⟦E1⟧.",
+  "quest:399:details:0": "It seems an eternity since I was a boy working the farm in ⟦E10⟧. They say you can never go back, and it's true. Doubly true in my case, my family's home has been burned down and taken over by thieves.",
+  "quest:399:details:1": "I have spoken with my father about the fate of some of my possessions, including my first compass. He was unable to save them. However, he also says that they should be hidden away on the farm.",
+  "quest:399:details:2": "You'll find the Alexston Farmstead west of Sentinel Hill. Perhaps you could go and retrieve it for me?",
+  "quest:399:progress:0": "⟦8⟧! Did you have any luck?",
+  "quest:399:completion:0": "Oh, thank you, ⟦9⟧! It's of no practical use to me, but the sentimental value... Needless to say, thank you for bringing this to me... at some cost to your own well-being, not to mention the time it took to go all the way down to ⟦E10⟧. You have my gratitude, and have this as a token of my thanks.",
+  "quest:1097:obj:0": "Speak with ⟦E11⟧.",
+  "quest:1097:details:0": "There's a dwarven weaponsmith in ⟦E1⟧, ⟦E11⟧, who sent word that he needs help with a delivery. I believe he wants a package sent to his homeland in the north.",
+  "quest:1097:details:1": "You have a sturdy pair on you! So if you're interested in some legwork then speak with Grimand. We could use you down here, but we must also keep our ties strong with the dwarves.",
+  "quest:1097:details:2": "You can find ⟦E11⟧ at the weapon shop in the Dwarven District of ⟦E1⟧, in the northeast section of town.",
+  "quest:1097:completion:0": "You're here to help with my delivery? Very good!",
+  "quest:97220:title": "Philmor's Favor",
+  "quest:97220:obj:0": "Bring the ⟦E12⟧ to the stockroom entrance located in Trias' Cheese shop in the Trade District.",
+  "quest:97220:obj:1": "*⟦E12⟧ (provided)",
+  "quest:97220:details:0": "Every day this week we've been short dockhands.",
+  "quest:97220:details:1": "Care to ease the stress on our cargo schedule?",
+  "quest:97220:details:2": "Take this package to the stockroom entrance of the Gatehouse. You'll find it inside Trias' Cheese shop on the second floor. The mistress, Elaine, will be quite familiar with the deliveries. The Gatehouse often has shipments arriving with more discretion to allow for ceremonial surprises on behalf of the guard's officers.",
+  "quest:97220:progress:0": "You looking to fill a crate with our finest aged wheels?",
+  "quest:97220:completion:0": "Oh, dear. You think we want to carry that up the stairs ourselves? Keeping the valuables intact is your responsibility up until the point you drop it off.",
+  "quest:92750:title": "Toxic Soil (part 7)",
+  "quest:92750:obj:0": "Talk to someone in ⟦E1⟧ Intelligence about acquiring a remote detonator.",
+  "quest:92750:details:0": "I assume you want a \"controlled\" explosion? Not as much fun, but a good choice if you want to keep all your limbs.",
+  "quest:92750:details:1": "I'm afraid I don't have a remote detonator - why don't you go check with the sneaky folks down at ⟦E1⟧ Intelligence? They should be able to find us something.",
+  "quest:92751:title": "Toxic Soil (part 8)",
+  "quest:92751:obj:0": "Bring the ⟦E13⟧ to Sprite Jumpsprocket in the Dwarven District of ⟦E1⟧.",
+  "quest:92751:obj:1": "*⟦E13⟧ (provided)",
+  "quest:92751:details:0": "You need something destroyed? Would this have anything to do with your activities in Moonbrook? Don't look surprised. SI:7 stays apprised of all that goes on in ⟦E1⟧'s lands.",
+  "quest:92751:details:1": "If you're planning to set off an explosion in the caves below ⟦E10⟧, you'll want to be well outside beforehand. Take this remote detonator - it's a recent prototype from our own engineers.",
+  "quest:92751:details:2": "Oh - and it would be best if you didn't mention my involvement to your elf friend.",
+  "quest:92751:progress:0": "...",
+  "quest:97914:title": "Expanding Horizons",
+  "quest:373:obj:0": "Deliver the ⟦E14⟧ to Baros Alexston in ⟦E1⟧.",
+  "quest:373:details:0": "Searching Edwin VanCleef's person, you discover, among other things, an unsent letter. It is addressed to Baros Alexston, the City Architect of ⟦E1⟧, City Hall, Cathedral Square.",
+  "quest:373:details:1": "It appears to be recently written and sealed.",
+  "quest:373:progress:0": "Yes? Is there something I can help you with?",
+  "quest:373:completion:0": "Edwin VanCleef, you say? I would as much expect a letter from my dead grandmother... So you've killed him then? Pardon me in saying, but I'm somewhat surprised. He was a peerless fighter in his younger years. Let's see what he finds the need to write to me about after so many years.",
+  "quest:373:completion:1": "B<Baros peruses the letter.>",
+  "quest:373:completion:2": "Edwin... I see the years haven't changed you a bit, an idealist as ever, and a romantic. He doesn't care who he hurts, ⟦10⟧. ⟦E15⟧ has consumed him. But then, I'm not sure I can blame him.",
+  "quest:389:obj:0": "Speak with Warden Thelwater in the Stockade.",
+  "quest:389:details:0": "VanCleef and I were members of the Stonemasons Guild. Our main project was to rebuild ⟦E1⟧ after the War.",
+  "quest:389:details:1": "When we had finished our duties, we were cheated. The nobles refused to pay us for our work. Some of the more senior of the Stonemasons were offered governmental jobs, but VanCleef refused it out of loyalty to all the Stonemasons. He led a riot and left the city, swearing revenge.",
+  "quest:389:details:2": "His lieutenant, ⟦E16⟧, might know more about VanCleef's plans. He's being held prisoner in the Stockade.",
+  "quest:389:completion:0": "What in the Light do you want? Can't you see we have a crisis here?",
+  "quest:389:completion:1": "⟦E16⟧?! Why would you want to speak with that bastard? How am I supposed to know you're not one of his cronies, come down to help with his bloody riot? If all the blasted cells weren't open, I might throw you in one for a while!",
+  "quest:95161:title": "Remember That I Love You",
+  "quest:95161:obj:0": "Deliver the ⟦E17⟧ to Avette Fellwood in ⟦E18⟧.",
+  "quest:95161:obj:1": "* ⟦E17⟧ (provided)",
+  "quest:95161:details:0": "If you're looking for Jeremy Heartweaver, your best bet is to talk to his newly adopted mother, Avette Fellwood out in ⟦E18⟧. Sweet woman. Likely needs another pair of hands for her work, but it beats staying in the orphanage.",
+  "quest:95161:details:1": "If you see little Jeremy, do be sure to tell him we're all thinking of him, won't you?",
+  "quest:95161:progress:0": "Yes? What do you need?",
+  "quest:343:obj:0": "Go to the Royal Library in ⟦E1⟧ Keep and speak with Milton Sheaf. He can find for you the book on metallurgy that Brother Kristoff needs for his speech.",
+  "quest:343:details:0": "I'm giving a speech on the Fortitude of the ⟦E19⟧, and I'd like to recite passages from a particular book on metallurgy - \"The Stresses of Iron.\" A copy of this book should be in the Royal Library, within ⟦E1⟧ Keep. Can you retrieve it for me? If so, then may the blessings of the Light be with you!",
+  "quest:343:details:1": "The Royal Library is very large, but the head librarian, Milton Sheaf, knows each shelf like it was his own son. Speak to him, he'll retrieve the book for you.",
+  "quest:343:completion:0": "Metallurgy? Ah yes, we have many books on the subject, and are happy to aid Brother Kristoff with his speech! Now...which particular book was it the good brother needed?",
+  "quest:344:obj:0": "Speak with ⟦E20⟧ in the ⟦E21⟧ Abbey.",
+  "quest:344:details:0": "The Stresses of Iron? Yes, I know the book. Quite a good one, written by the Dwarven miner Margulf Blaggon a few decades ago. He spent most his time deep in the mountains of Khaz Modan, digging ore. Smart fellow!",
+  "quest:344:details:1": "But where was I? Oh yes, the Stresses of Iron! I'm afraid the book was moved to the ⟦E21⟧ Abbey. The caretaker of the Abbey's library, ⟦E20⟧, wanted to make a copy of the book for his own shelves.",
+  "quest:344:details:2": "But that was months ago. I wonder why it's taking him so long...",
+  "quest:344:completion:0": "Mr. Sheaf is wondering where his book is? Well this is a tad embarrassing. I have the book, but I'm still making my copy and I'm not quite ready to give the original up!",
+  "quest:345:obj:0": "Speak with ⟦E22⟧ Oslow in Lakeshire and ask him for Rethban ⟦E23⟧.",
+  "quest:345:details:0": "I've been meaning to finish my copy of The Stresses of Iron, but...",
+  "quest:345:details:1": "Well you see, I make my own ink for books I copy. It's my own recipe; it doesn't run or smear, and it dries very quickly Unfortunately, it dries too quickly! My last batch dried up before I could finish the copying job, and I haven't had the ⟦E24⟧ to make more ink!",
+  "quest:345:details:2": "To make more I need Rethban ⟦E23⟧ from the ⟦E25⟧. ⟦E22⟧ Oslow in Lakeshire is my usual supplier.",
+  "quest:345:completion:0": "You need what?? Maybe you haven't noticed, but we're busy fortifying Lakeshire's defenses and repairing ⟦E26⟧ from recent orc attacks. If you need Rethban ⟦E23⟧, you'll have to get it yourself!",
+  "quest:346:obj:0": "Return to Brother Kristoff in the Cathedral Square. Give him the book The Stresses of Iron.",
+  "quest:346:details:0": "Now that I've finished copying the book, here's the original Stresses of Iron. Thank you for your patience, and if you see Milton please tell him I'm sorry for the long delay.",
+  "quest:346:progress:0": "Were you able to find the book?",
+  "quest:346:completion:0": "That's the one! Thank you, ⟦11⟧. May the Light shine brightly upon both your body and spirit!",
+  "quest:347:obj:0": "Gather 5 loads of ⟦E27⟧ and bring it to ⟦E20⟧ in the ⟦E21⟧ Library.",
+  "quest:347:details:0": "⟦E27⟧ is named after the man who first found it, Bart Rethban. When smelted it's not as strong as iron, but its ore has a dark, flat color that some scribes use in their dyes. It can be found in the Rethban Caverns, north of here.",
+  "quest:347:details:1": "We usually have some in stock, but we're too busy preparing for ⟦E28⟧ attacks to gather any. And besides...Redridge Gnolls are now living in the Rethban Caverns and their Drudgers are gathering the ore themselves.",
+  "quest:347:details:2": "So if you need some, you'll have to get it yourself.",
+  "quest:347:progress:0": "Do you have the ⟦E27⟧?",
+  "quest:347:completion:0": "Oh, splendid! I can use this ore to make my dye, and then can finish copying The Stresses of Iron.",
+  "quest:347:completion:1": "Thank you, ⟦12⟧!",
+  "quest:3765:obj:0": "⟦E29⟧ to Gershala Nightwhisper in Auberdine.",
+  "quest:3765:details:0": "⟦E1⟧ -- such a bustling hub of activity.",
+  "quest:3765:details:1": "I have traveled from afar to seek help. Often it is heard that brave adventurers roam these city streets.",
+  "quest:3765:details:2": "My brother, Gershala, ⟦E30⟧ assistance in ⟦E31⟧. He resides in the seaside town of Auberdine.",
+  "quest:3765:details:3": "The journey is a long and epic one. It is for this reason that I ask the help of a seasoned ⟦13⟧ such as yourself.",
+  "quest:3765:completion:0": "Ah, so my brother, Argos, sent you? I realize you must be weary from your travels. But we have much to talk about.",
+  "quest:98191:title": "A Friend of the Family",
+  "quest:98191:obj:0": "Bring the ⟦E32⟧ to ⟦E33⟧ in the Cathedral of Light.",
+  "quest:98191:obj:1": "*⟦E32⟧ (provided)",
+  "quest:98191:details:0": "King Terenas was a good man. A devout man. Beloved by his people, and truly the reason we have this ⟦E34⟧ at all.",
+  "quest:98191:details:1": "The irony is he was humble--he hated these sorts of memorials, and so precious few exist. And of those, few survived Lordaeron's fall.",
+  "quest:98191:details:2": "It seems the Light has coalesced in this statuette. It would be best kept in the Cathedral of the Light in Cathdral Square, in the center of the city. Bring it to ⟦E33⟧ for safekeeping.",
+  "quest:98191:progress:0": "...",
+  "quest:1241:obj:0": "Find Jorgen in ⟦E35⟧.",
+  "quest:1241:details:0": "Recently a diplomat was sent to ⟦E36⟧ to meet with Jaina Proudmoore. That diplomat never arrived.",
+  "quest:1241:details:1": "I believe the Defias are involved in this plot, but I'm not sure how. The diplomat's disappearance still eludes public attention, but it can't remain that way for long.",
+  "quest:1241:details:2": "Agents of the king are already scouring the city for clues, but I have my own contacts I would like involved.",
+  "quest:1241:details:3": "In the Valley of Heroes is an old friend of mine named Jorgen. Find him, give him this note, and follow his instructions.",
+  "quest:1241:progress:0": "Hmph, you better have good reason to ⟦E37⟧ a man and his fishin'. I don't take kindly to peddlers, let alone beggars.",
+  "quest:1241:completion:0": "Hmm... <Jorgen looks up at you through squinted eyes.>",
+  "quest:1241:completion:1": "All right. I'll help ya, but not because I want to, but because I'm obligated.",
+  "quest:1241:completion:2": "And let's get one thing straight: you're knowin' far more than you should to begin with. Let's keep this our little secret, and don't go blabbin' at any taverns about anything you find out. Understand?",
+  "quest:1242:obj:0": "Delivery Jorgen's ⟦E38⟧ Trias in ⟦E35⟧.",
+  "quest:1242:details:0": "Take this here note to Elling Trias. Don't say nothin' else to him. Just be polite and wait for him to respond. And don't worry, he will.",
+  "quest:1242:details:1": "I'm gonna only impress this on ya once more, ⟦14⟧: treat this matter seriously, and keep your yapper shut.",
+  "quest:1242:details:2": "Ya can find Trias at his cheese shop, Trias' Cheese, in the Trade District. Good luck.",
+  "quest:1242:progress:0": "Hello, ⟦15⟧. Is there something I can do for you? Perhaps you'd like to try some of our special Trias cheddar? Or a ⟦E39⟧ of Darnassian bleu?",
+  "quest:1242:completion:0": "I'm sorry, a letter for me? Well, I'll be... not often you get a delivery that's not a crate or barrel when all you do is work. Let's see what this is about.",
+  "quest:1242:completion:1": "B<Elling looks up at you while he opens the letter.>",
+  "quest:1242:completion:2": "You look a little tense, you okay, ⟦16⟧?",
+  "quest:1243:obj:0": "Give the ⟦E40⟧ in ⟦E18⟧.",
+  "quest:1243:details:0": "Jorgen, you ol' sonuva.... So, that's how it's going to be, huh?",
+  "quest:1243:details:1": "All right, I can deal with that. I hope he finds the ⟦E41⟧ that much sooner!",
+  "quest:1243:details:2": "Here's what's gonna happen, ⟦17⟧. I'll start using my contacts here, but you're doing most of the footwork so I save some coin.",
+  "quest:1243:details:3": "⟦E42⟧ to Darkshire in ⟦E18⟧ and find Watcher Backus--he usually patrols the north road right outside of town. Just tell him you're looking into any Defias activity for me and he'll help you out with any information he can.",
+  "quest:1243:progress:0": "Not too safe to be traveling about in the woods, ⟦18⟧. Be careful, and if you see anything suspicious or dangerous, contact the Watchers immediately. Don't try and take anything on yourself. We're not responsible for anything terrible that might happen to you.⟦19⟧⟦20⟧But we both know you're gonna ignore me and fight whatever comes out of the darkness anyway, don't we? Haha, yeah, you adventurer types... all the same.",
+  "quest:1243:completion:0": "Oh, Trias sent you, huh? That's a little different.",
+  "quest:1243:completion:1": "Feel free to fight whatever monstrosities come at you from the darkness. I'm sure you'll be able to handle it pretty easily if you're the type to be hanging around with the likes of him.",
+  "quest:1243:completion:2": "So, what does my friend need of me on such a gloomy day as this?",
+  "quest:1274:obj:0": "Find Bishop DeLavey in ⟦E1⟧ Keep.",
+  "quest:1274:details:0": "Excuse me, ⟦21⟧. Bishop DeLavey asked me to approach adventurers that might be able to help him with a delicate matter.",
+  "quest:1274:details:1": "If you could quietly head to ⟦E1⟧ Keep and speak to him at your earliest convenience, I'm sure he would appreciate your help. Again, please be discreet. It is a matter of some importance.",
+  "quest:1274:completion:0": "Hello, ⟦22⟧. I am Bishop DeLavey.",
+  "quest:1274:completion:1": "No doubt if you're asking me about my business here in the keep then young Thomas has succeeded in requisitioning you to help our kingdom. He has always been adept at following my requests.",
+  "quest:1274:completion:2": "I'm afraid I don't have time to elaborate much, so allow me to be blunt... and please, try to keep this from becoming common knowledge.",
+  "quest:392:obj:0": "Bring the ⟦E43⟧ to Baros Alexston in ⟦E1⟧.",
+  "quest:392:details:0": "During the first years of Thredd's imprisonment, he never had any visitors. I figured that he was no longer of use to the Brotherhood, so they abandoned him.",
+  "quest:392:details:1": "Anyway, a few months ago, that all changed; he started to get regular visits... once, maybe twice a week. It was a strange man--the quiet type. I had my suspicions, but all his papers checked out.",
+  "quest:392:details:2": "His documents claimed his name was Maelik; here's his description. I don't think he'll be coming to visit Thredd anymore.",
+  "quest:392:progress:0": "Yes, ⟦23⟧? What have you found?",
+  "quest:392:completion:0": "Hmm. Maelik? No, the name doesn't sound familiar and neither does this description. But it could be anybody! A former Stonemason, one of the Defias Brotherhood... Though if he is as well connected as Thelwater suggests, perhaps someone else might recognize him. Let me think.",
+  "quest:393:obj:0": "Bring the ⟦E43⟧ to Master Mathias Shaw in ⟦E1⟧.",
+  "quest:393:details:0": "I really haven't a clue, ⟦24⟧. There is someone else who might be able to help you, and it so happens that he owes me a favor for--well, let's not get into that. Master Mathias Shaw of SI:7 can be found in the barracks in Old Town. Shaw has his thumb on most of the shady, or underhanded dealings of the city.",
+  "quest:393:details:1": "If anyone knows, it'd be him.",
+  "quest:393:progress:0": "Greetings. Of what service can I be to you, ⟦25⟧?",
+  "quest:393:completion:0": "What? What's this? Yes, I think I do know who this man is, but his name is not Maelik. Assassins wear many names and many masks, discarding them as they lose their usefulness. Another alias known to be used by this man is Marzon; though even that is surely not his true name.",
+  "quest:393:completion:1": "Regardless, he is an assassin and I know a good deal about him.",
+  "quest:393:completion:2": "Marzon is currently under the employ of Lord Gregor Lescovar, a lord of shady reputation, even given the corruption of the nobility of ⟦E1⟧.",
+  "quest:335:obj:0": "Zardeth the Black ⟦E44⟧ wants you to bring him a ⟦E45⟧ from Darkshire and a ⟦E46⟧ from the ⟦E47⟧.",
+  "quest:335:details:0": "Lord Wishock is causing quite a stir amongst the House of Nobles. He was made aware of our little \"establishment\" down here and is lobbying for a full investigation. I have a plan to keep Wishock \"preoccupied\", but I'll need your help.",
+  "quest:335:details:1": "There is a flower growing in the Garden of Stalvan on the outskirts of Darkshire. This small white flower is known as the ⟦E45⟧. I will also need a ⟦E46⟧, found only at the very base of the falls far beneath the Stonewrought Dam in the ⟦E47⟧.",
+  "quest:335:progress:0": "Wishock will soon garner enough support to cause us much grief. Were you able to obtain the ⟦E45⟧ or ⟦E46⟧ yet?",
+  "quest:335:completion:0": "Most excellent! These are fine samples indeed!",
+  "quest:336:obj:0": "Take the ⟦E48⟧ to Lord Wishock in the Hall of Petitioners.",
+  "quest:336:details:0": "Lord Wishock, like all men, has his weaknesses. His happens to be a fondness for liquor. The hypocrisy is astounding. The trite fool spends his days trying to shut down our little \"tavern\" while his nights are spent upstairs, running up a bill he never pays. Well, let's see how Wishock likes this special brew I have prepared for him: Black ⟦E44⟧ stout. It's got quite a kick, ⟦26⟧.",
+  "quest:336:details:1": "Take it to him and see how he likes it. Most likely the old fool is milling about the Hall of Petitioners.",
+  "quest:336:progress:0": "Can you not see that I am busy? My words must be heard! I am very important to the future of this Kingdom!⟦27⟧⟦28⟧Oh... what have you there? Why it looks like a refreshing drink...",
+  "quest:336:completion:0": "Ah, thank you for bringing me this fine looking stout, servant. Here's a copper for you. Now, out of sight with you and let me enjoy my drink!",
+  "quest:397:obj:0": "Speak with Zggi, the servant of Zardeth the Blackclaw, to claim your reward.",
+  "quest:397:details:0": "I hear Lord Wishock enjoyed his beverage.",
+  "quest:397:details:1": "You have served us well, ⟦29⟧. The Warlocks of ⟦E1⟧ will be able to practice our ways without disturbance, thanks to you. For your efforts, I have prepared a special gift for you. Speak with my servant, Zggi, and claim your reward.",
+  "quest:397:completion:0": "Master says give gift to ⟦30⟧. Zggi wants to keep nice gift but Zggi knows better than to betray Master."
+ },
+ "context": {
+  "quest:579": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 1,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Donyal Tovald"
+  },
+  "quest:332": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 2,
+   "side": "alliance",
+   "giver": "Renato Gallina",
+   "turner": "Suzetta Gallina"
+  },
+  "quest:333": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 2,
+   "side": "alliance",
+   "giver": "Harlan Bagley",
+   "turner": "Rema Schneider"
+  },
+  "quest:334": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 2,
+   "side": "alliance",
+   "giver": "Rema Schneider",
+   "turner": "Thurman Schneider"
+  },
+  "quest:353": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Grimand Elmore («گریماند المور»)",
+   "turner": "Mountaineer Stormpike"
+  },
+  "quest:399": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Baros Alexston",
+   "turner": "Baros Alexston"
+  },
+  "quest:1097": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Smith Argus",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:97220": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 15,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92750": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 16,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92751": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 16,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:97914": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 17,
+   "side": "",
+   "giver": "Thundris Windweaver («تاندریس ویند‌ویور»)",
+   "turner": "Baros Alexston"
+  },
+  "quest:373": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 22,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Baros Alexston"
+  },
+  "quest:389": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Baros Alexston",
+   "turner": "Warden Thelwater"
+  },
+  "quest:95161": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Orphan Matron Nightingale",
+   "turner": ""
+  },
+  "quest:343": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Brother Kristoff",
+   "turner": "Milton Sheaf"
+  },
+  "quest:344": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Milton Sheaf",
+   "turner": "Brother Paxton («برادر پکستون»)"
+  },
+  "quest:345": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Brother Paxton («برادر پکستون»)",
+   "turner": "Foreman Oslow"
+  },
+  "quest:346": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Brother Paxton («برادر پکستون»)",
+   "turner": "Brother Kristoff"
+  },
+  "quest:347": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Foreman Oslow",
+   "turner": "Brother Paxton («برادر پکستون»)"
+  },
+  "quest:3765": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Argos Nightwhisper",
+   "turner": "Gershala Nightwhisper"
+  },
+  "quest:98191": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  },
+  "quest:1241": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Bishop DeLavey",
+   "turner": "Jorgen"
+  },
+  "quest:1242": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Jorgen",
+   "turner": "Elling Trias"
+  },
+  "quest:1243": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Elling Trias",
+   "turner": "Watcher Backus"
+  },
+  "quest:1274": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Thomas",
+   "turner": "Bishop DeLavey"
+  },
+  "quest:392": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Warden Thelwater",
+   "turner": "Baros Alexston"
+  },
+  "quest:393": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Baros Alexston",
+   "turner": "Master Mathias Shaw"
+  },
+  "quest:335": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Zardeth of the Black Claw",
+   "turner": "Zardeth of the Black Claw"
+  },
+  "quest:336": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Zardeth of the Black Claw",
+   "turner": "Lord Baurles K. Wishock"
+  },
+  "quest:397": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Zardeth of the Black Claw",
+   "turner": "Zggi"
+  }
+ },
+ "known": {
+  "quest:332": {
+   "title": "تبلیغ مغازهٔ شراب"
+  },
+  "quest:333": {
+   "title": "هارلن به شارژ مجدد نیاز دارد"
+  },
+  "quest:334": {
+   "title": "بسته‌ای برای ترمن"
+  },
+  "quest:353": {
+   "title": "مرسولهٔ استورم‌پایک"
+  },
+  "quest:399": {
+   "title": "شروع‌های فروتنانه"
+  },
+  "quest:1097": {
+   "title": "کار المور"
+  },
+  "quest:373": {
+   "title": "نامهٔ ارسال‌نشده"
+  },
+  "quest:389": {
+   "title": "بازیل ترِد"
+  },
+  "quest:343": {
+   "title": "در باب شجاعت"
+  },
+  "quest:344": {
+   "title": "برادر پکستون"
+  },
+  "quest:345": {
+   "title": "لوازم جوهر"
+  },
+  "quest:346": {
+   "title": "بازگشت به کریستوف"
+  },
+  "quest:347": {
+   "title": "کانهٔ رث‌بن"
+  },
+  "quest:3765": {
+   "title": "فساد در بیرون"
+  },
+  "quest:1241": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1242": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1243": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1274": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:392": {
+   "title": "بازدیدکنندهٔ کنجکاو"
+  },
+  "quest:393": {
+   "title": "سایهٔ گذشته"
+  },
+  "quest:335": {
+   "title": "دمنوشی نجیبانه"
+  },
+  "quest:336": {
+   "title": "دمنوشی نجیبانه"
+  },
+  "quest:397": {
+   "title": "به ما خوب خدمت کردی"
+  }
+ }
+}

@@ -1,0 +1,781 @@
+{
+ "pack": "quest-silithus-03",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-silithus-03.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Survival",
+   "fa": "بقا",
+   "kind": "cls"
+  },
+  "E2": {
+   "en": "Powerful Anti-Venom",
+   "fa": "پادزهر نیرومند",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Smoked Desert Dumplings",
+   "fa": "دامپلینگ‌های دودیِ کویر",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Logistics Task Briefing I",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات I",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Twilight Battle Orders",
+   "fa": "فرمانِ نبردِ گرگ‌ومیش",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Tactical Task Briefing X",
+   "fa": "توجیه‌نامهٔ تاکتیکی X",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E10": {
+   "en": "Target",
+   "fa": "هدف",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Combat Task Briefing XII",
+   "fa": "توجیه‌نامهٔ نبرد XII",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Combat Task Briefing III",
+   "fa": "توجیه‌نامهٔ نبرد III",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Unsigned Field Duty Papers",
+   "fa": "اسنادِ وظیفهٔ میدانیِ بی‌امضا",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Signed Field Duty Papers",
+   "fa": "مدارکِ امضاشدهٔ وظیفهٔ میدانی",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Anachronos",
+   "fa": "آناکرونوس",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Hive'Zora Scout Report",
+   "fa": "گزارش دیده‌بانِ کندوی زورا",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Tactical Task Briefing VI",
+   "fa": "توجیه‌نامهٔ تاکتیکی VI",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Bor Wildmane",
+   "fa": "بور وایلد‌مِین",
+   "kind": "qs"
+  },
+  "E23": {
+   "en": "Tactical Task Briefing IV",
+   "fa": "توجیه‌نامهٔ تاکتیکی IV",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Tactical Task Briefing III",
+   "fa": "توجیه‌نامهٔ تاکتیکی III",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Tactical Task Briefing II",
+   "fa": "توجیه‌نامهٔ تاکتیکی II",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Tactical Task Briefing V",
+   "fa": "توجیه‌نامهٔ تاکتیکی V",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Combat Task Briefing V",
+   "fa": "توجیه‌نامهٔ نبرد V",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Ornate Mithril Boots",
+   "fa": "چکمهٔ میتریلِ مزین",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Logistics Task Briefing II",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات II",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Logistics Task Briefing III",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات III",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Combat Task Briefing VII",
+   "fa": "توجیه‌نامهٔ نبرد VII",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Tactical Task Briefing I",
+   "fa": "توجیه‌نامهٔ تاکتیکی I",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Hive'Regal Scout Report",
+   "fa": "گزارش دیده‌بانِ کندوی رگال",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Tactical Task Briefing VII",
+   "fa": "توجیه‌نامهٔ تاکتیکی VII",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Hive'Ashi Scout Report",
+   "fa": "گزارش دیده‌بانِ کندوی آشی",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Tactical Task Briefing VIII",
+   "fa": "توجیه‌نامهٔ تاکتیکی VIII",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Tactical Task Briefing IX",
+   "fa": "توجیه‌نامهٔ تاکتیکی IX",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Combat Task Briefing I",
+   "fa": "توجیه‌نامهٔ نبرد I",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Combat Task Briefing II",
+   "fa": "توجیه‌نامهٔ نبرد II",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Combat Task Briefing VI",
+   "fa": "توجیه‌نامهٔ نبرد VI",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Combat Task Briefing IV",
+   "fa": "توجیه‌نامهٔ نبرد IV",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Combat Task Briefing VIII",
+   "fa": "توجیه‌نامهٔ نبرد VIII",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Combat Task Briefing IX",
+   "fa": "توجیه‌نامهٔ نبرد IX",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Combat Task Briefing X",
+   "fa": "توجیه‌نامهٔ نبرد X",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Survival": "بقا",
+  "Powerful Anti-Venom": "پادزهر نیرومند",
+  "Smoked Desert Dumplings": "دامپلینگ‌های دودیِ کویر",
+  "Silithus": "سیلیتوس",
+  "Logistics Task Briefing I": "توجیه‌نامهٔ مأموریتِ تدارکات I",
+  "Twilight Battle Orders": "فرمانِ نبردِ گرگ‌ومیش",
+  "Tactical Task Briefing X": "توجیه‌نامهٔ تاکتیکی X",
+  "enemy": "دشمن",
+  "Hammer": "چکش",
+  "Target": "هدف",
+  "Combat Task Briefing XII": "توجیه‌نامهٔ نبرد XII",
+  "Combat Task Briefing III": "توجیه‌نامهٔ نبرد III",
+  "damage": "آسیب",
+  "Ironforge": "آیرون‌فورج",
+  "Unsigned Field Duty Papers": "اسنادِ وظیفهٔ میدانیِ بی‌امضا",
+  "Signed Field Duty Papers": "مدارکِ امضاشدهٔ وظیفهٔ میدانی",
+  "Healing": "شفا",
+  "Anachronos": "آناکرونوس",
+  "Tanaris": "تاناریس",
+  "Hive'Zora Scout Report": "گزارش دیده‌بانِ کندوی زورا",
+  "Tactical Task Briefing VI": "توجیه‌نامهٔ تاکتیکی VI",
+  "Bor Wildmane": "بور وایلد‌مِین",
+  "Tactical Task Briefing IV": "توجیه‌نامهٔ تاکتیکی IV",
+  "Tactical Task Briefing III": "توجیه‌نامهٔ تاکتیکی III",
+  "Tactical Task Briefing II": "توجیه‌نامهٔ تاکتیکی II",
+  "Tactical Task Briefing V": "توجیه‌نامهٔ تاکتیکی V",
+  "enemies": "دشمنان",
+  "Combat Task Briefing V": "توجیه‌نامهٔ نبرد V",
+  "Ornate Mithril Boots": "چکمهٔ میتریلِ مزین",
+  "Logistics Task Briefing II": "توجیه‌نامهٔ مأموریتِ تدارکات II",
+  "Logistics Task Briefing III": "توجیه‌نامهٔ مأموریتِ تدارکات III",
+  "Combat Task Briefing VII": "توجیه‌نامهٔ نبرد VII",
+  "Orgrimmar": "اورگریمار",
+  "Tactical Task Briefing I": "توجیه‌نامهٔ تاکتیکی I",
+  "Hive'Regal Scout Report": "گزارش دیده‌بانِ کندوی رگال",
+  "Tactical Task Briefing VII": "توجیه‌نامهٔ تاکتیکی VII",
+  "Hive'Ashi Scout Report": "گزارش دیده‌بانِ کندوی آشی",
+  "Tactical Task Briefing VIII": "توجیه‌نامهٔ تاکتیکی VIII",
+  "Tactical Task Briefing IX": "توجیه‌نامهٔ تاکتیکی IX",
+  "Combat Task Briefing I": "توجیه‌نامهٔ نبرد I",
+  "Combat Task Briefing II": "توجیه‌نامهٔ نبرد II",
+  "Combat Task Briefing VI": "توجیه‌نامهٔ نبرد VI",
+  "Combat Task Briefing IV": "توجیه‌نامهٔ نبرد IV",
+  "Combat Task Briefing VIII": "توجیه‌نامهٔ نبرد VIII",
+  "Combat Task Briefing IX": "توجیه‌نامهٔ نبرد IX",
+  "Combat Task Briefing X": "توجیه‌نامهٔ نبرد X"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$C",
+  "5": "$N",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$Glad:lass;",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$C",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$c",
+  "30": "$N",
+  "31": "$N",
+  "32": "$B",
+  "33": "$B",
+  "34": "$N",
+  "35": "$c",
+  "36": "$B",
+  "37": "$B",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$C",
+  "51": "$N",
+  "52": "$C",
+  "53": "$N",
+  "54": "$C",
+  "55": "$N",
+  "56": "$C",
+  "57": "$N",
+  "58": "$N",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$N"
+ },
+ "rows": {
+  "quest:8497:title": "Desert ⟦E1⟧ Kits",
+  "quest:8497:desc:0": "Bring 4 Globes of Water, 4 ⟦E2⟧ and 4 ⟦E3⟧ to Calandrath at the inn in Cenarion Hold in ⟦E4⟧. You must also bring ⟦E5⟧ in order to complete this quest.",
+  "quest:8497:obj:0": "Bring 4 Globes of Water, 4 ⟦E2⟧ and 4 ⟦E3⟧ to Calandrath at the inn in Cenarion Hold in ⟦E4⟧. You must also bring ⟦E5⟧ in order to complete this quest.",
+  "quest:8497:details:0": "Bring 4 Globes of Water, 4 ⟦E2⟧ and 4 ⟦E3⟧ to Calandrath at the inn in Cenarion Hold in ⟦E4⟧. You must also bring ⟦E5⟧ in order to complete this quest.",
+  "quest:8497:progress:0": "You have something for me?",
+  "quest:8497:completion:0": "Excellent! We were in need of these, ⟦1⟧ . Thanks.",
+  "quest:8498:title": "⟦E6⟧",
+  "quest:8498:desc:0": "Obtain the ⟦E6⟧ and bring them Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E7⟧ in order to complete this quest.",
+  "quest:8498:obj:0": "Obtain the ⟦E6⟧ and bring them Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E7⟧ in order to complete this quest.",
+  "quest:8498:details:0": "Obtain the ⟦E6⟧ and bring them Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E7⟧ in order to complete this quest.",
+  "quest:8498:progress:0": "You've brought something for me? ",
+  "quest:8498:completion:0": "Excellent. It's important to stay ahead of the ⟦E8⟧'s next move. This information will allow us to anticipate the Twilight's ⟦E9⟧'s attacks. ",
+  "quest:8501:title": "⟦E10⟧: Hive'Ashi Stingers",
+  "quest:8501:desc:0": "Kill 30 Hive'Ashi Stingers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E11⟧ in order to complete this quest.",
+  "quest:8501:obj:0": "Kill 30 Hive'Ashi Stingers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E11⟧ in order to complete this quest.",
+  "quest:8501:details:0": "Kill 30 Hive'Ashi Stingers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E11⟧ in order to complete this quest.",
+  "quest:8501:progress:0": "You wish to tell me something, ⟦2⟧?",
+  "quest:8501:completion:0": "Excellent work, ⟦3⟧. Your part in the attack on Hive'Ashi has been noted.",
+  "quest:8502:title": "⟦E10⟧: Hive'Ashi Workers",
+  "quest:8502:desc:0": "Slay 30 Hive'Ashi Workers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E12⟧ in order to complete this quest.",
+  "quest:8502:obj:0": "Slay 30 Hive'Ashi Workers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E12⟧ in order to complete this quest.",
+  "quest:8502:details:0": "Slay 30 Hive'Ashi Workers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E12⟧ in order to complete this quest.",
+  "quest:8502:progress:0": "You have something to tell me, ⟦4⟧?",
+  "quest:8502:completion:0": "Excellent work, ⟦5⟧. Without their workers, the silithid will have a hard time repairing any ⟦E13⟧ inflicted to their hive's structure.",
+  "quest:8507:title": "Field Duty",
+  "quest:8507:desc:0": "Report for duty at the ⟦E14⟧ Brigade post near Hive'Zora. Prepare your ⟦E15⟧ and obtain ⟦E16⟧ from Captain Blackanvil and return to Windcaller Kaldon at Cenarion Hold in ⟦E4⟧.",
+  "quest:8507:desc:1": "Note: ⟦E17⟧ or casting beneficial spells on a member of the ⟦E14⟧ Brigade will flag you for PvP.",
+  "quest:8507:obj:0": "Report for duty at the ⟦E14⟧ Brigade post near Hive'Zora. Prepare your ⟦E15⟧ and obtain ⟦E16⟧ from Captain Blackanvil and return to Windcaller Kaldon at Cenarion Hold in ⟦E4⟧.",
+  "quest:8507:obj:1": "Note: ⟦E17⟧ or casting beneficial spells on a member of the ⟦E14⟧ Brigade will flag you for PvP.",
+  "quest:8507:details:0": "Report for duty at the ⟦E14⟧ Brigade post near Hive'Zora. Prepare your ⟦E15⟧ and obtain ⟦E16⟧ from Captain Blackanvil and return to Windcaller Kaldon at Cenarion Hold in ⟦E4⟧.",
+  "quest:8507:details:1": "Note: ⟦E17⟧ or casting beneficial spells on a member of the ⟦E14⟧ Brigade will flag you for PvP.",
+  "quest:8507:progress:0": "You'll find Captain Blackanvil's force stationed outside Hive'Zora.  Talk to his lieutenant, Janela Stouthammer, if you can't find him.",
+  "quest:8507:completion:0": "Very well, ⟦6⟧  I've prepared a set of tasks that should make optimal use of your skills.⟦7⟧⟦8⟧With the continued efforts of you and people like you, our ⟦E8⟧ will soon be vanquished once and for all!⟦9⟧⟦10⟧Should you require a new mission briefing, return to Captain Blackanvil.",
+  "quest:8508:title": "Field Duty Papers",
+  "quest:8508:progress:0": "I take it you want those papers signed, ⟦11⟧?",
+  "quest:8508:completion:0": "Aye, I suppose that little skirmish will pass as field duty nowadays. Take these back to Cenarion Hold, I'm sure they'll have a cushy job ready for you.⟦12⟧⟦13⟧Off you go!",
+  "quest:8519:obj:0": "Learn all that you can of the past, then speak with ⟦E18⟧ at the Caverns of Time in ⟦E19⟧.⟦14⟧",
+  "quest:8519:details:0": "As you regain your composure and focus your gaze, you notice that something stirs within the crystal. Upon closer inspection, you realize that you are looking into the past... a memory... long forgotten.",
+  "quest:8519:completion:0": "After Staghelm's betrayal, I gathered the shattered pieces of the Scepter of the Shifting Sands and returned here. I had every intention of protecting the scepter from those that would seek to use it to cause harm to our world - thus was born the charge of the Dragonflights.",
+  "quest:8519:completion:1": "BA scepter divided amongst the four mighty Aspects would prove to be nearly impossible to restore for those willfully seeking chaos... or so I thought. What a fool I was. Even now I am hunted by that cursed flight.",
+  "quest:8534:title": "⟦E20⟧",
+  "quest:8534:desc:0": "Contact Cenarion Scout Azenel inside Hive'Zora and return the ⟦E20⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E21⟧ in order to complete this quest.",
+  "quest:8534:obj:0": "Contact Cenarion Scout Azenel inside Hive'Zora and return the ⟦E20⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E21⟧ in order to complete this quest.",
+  "quest:8534:details:0": "Contact Cenarion Scout Azenel inside Hive'Zora and return the ⟦E20⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E21⟧ in order to complete this quest.",
+  "quest:8534:progress:0": "You'll find Scout Azenel inside Hive'Zora. Hurry, ⟦15⟧! Time is of the essence.",
+  "quest:8534:completion:0": "Your efforts are greatly appreciated, ⟦16⟧. I'll read these scouting reports right away, feel free to go over your next assignment.",
+  "quest:8535:title": "Hoary Templar",
+  "quest:8535:desc:0": "Summon and slay a Hoary Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8535:obj:0": "Summon and slay a Hoary Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8535:details:0": "Summon and slay a Hoary Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8535:progress:0": "Is your task done yet, ⟦17⟧?",
+  "quest:8535:completion:0": "Good job, ⟦18⟧. Here's your next assignment.",
+  "quest:8536:title": "Earthen Templar",
+  "quest:8536:desc:0": "Summon and slay an Earthen Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E24⟧ in order to complete this quest.",
+  "quest:8536:obj:0": "Summon and slay an Earthen Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E24⟧ in order to complete this quest.",
+  "quest:8536:details:0": "Summon and slay an Earthen Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E24⟧ in order to complete this quest.",
+  "quest:8536:progress:0": "Is your task done yet, ⟦19⟧?",
+  "quest:8536:completion:0": "Good job, ⟦20⟧.  Here's your next assignment.",
+  "quest:8537:title": "Crimson Templar",
+  "quest:8537:desc:0": "Summon and slay a Crimson Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8537:obj:0": "Summon and slay a Crimson Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8537:details:0": "Summon and slay a Crimson Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8537:progress:0": "Is your task done yet, ⟦21⟧?",
+  "quest:8537:completion:0": "Good job, ⟦22⟧. Here's your next assignment.",
+  "quest:8538:title": "The Four Dukes",
+  "quest:8538:desc:0": "Find a way to summon and slay the Duke of Cynders, the Duke of Fathoms, the Duke of Zephyrs and the Duke of Shards and report back to Commander Mar'alith in Cenarion Hold. You must also bring ⟦E26⟧ in order to complete this quest.",
+  "quest:8538:obj:0": "Find a way to summon and slay the Duke of Cynders, the Duke of Fathoms, the Duke of Zephyrs and the Duke of Shards and report back to Commander Mar'alith in Cenarion Hold. You must also bring ⟦E26⟧ in order to complete this quest.",
+  "quest:8538:details:0": "Find a way to summon and slay the Duke of Cynders, the Duke of Fathoms, the Duke of Zephyrs and the Duke of Shards and report back to Commander Mar'alith in Cenarion Hold. You must also bring ⟦E26⟧ in order to complete this quest.",
+  "quest:8538:progress:0": "Is your task done yet, ⟦23⟧?",
+  "quest:8538:completion:0": "You have achieved a great accomplishment for our cause today, ⟦24⟧. You've vanquished some of our most powerful ⟦E27⟧. For that I greatly commend you.",
+  "quest:8539:title": "⟦E10⟧: Hive'Zora Hive Sisters",
+  "quest:8539:desc:0": "Slay 30 Hive'Zora Hive Sisters and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E28⟧ in order to complete this quest.",
+  "quest:8539:obj:0": "Slay 30 Hive'Zora Hive Sisters and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E28⟧ in order to complete this quest.",
+  "quest:8539:details:0": "Slay 30 Hive'Zora Hive Sisters and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E28⟧ in order to complete this quest.",
+  "quest:8539:progress:0": "You have something to tell me, ⟦25⟧?",
+  "quest:8539:completion:0": "Excellent work, ⟦26⟧. You're a worthy ally.",
+  "quest:8540:title": "Boots for the Guard",
+  "quest:8540:desc:0": "Bring 3 ⟦E29⟧ to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E30⟧ in order to complete this quest.",
+  "quest:8540:obj:0": "Bring 3 ⟦E29⟧ to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E30⟧ in order to complete this quest.",
+  "quest:8540:details:0": "Bring 3 ⟦E29⟧ to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E30⟧ in order to complete this quest.",
+  "quest:8540:progress:0": "You have something for me?",
+  "quest:8540:completion:0": "Excellent. We were in need of these, ⟦27⟧ . Good work.",
+  "quest:8541:title": "Grinding Stones for the Guard",
+  "quest:8541:desc:0": "Bring 10 Dense Grinding Stones, 10 Solid Grinding Stones and 10 Heavy Grinding Stones to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E31⟧ in order to complete this quest.",
+  "quest:8541:obj:0": "Bring 10 Dense Grinding Stones, 10 Solid Grinding Stones and 10 Heavy Grinding Stones to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E31⟧ in order to complete this quest.",
+  "quest:8541:details:0": "Bring 10 Dense Grinding Stones, 10 Solid Grinding Stones and 10 Heavy Grinding Stones to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E31⟧ in order to complete this quest.",
+  "quest:8541:progress:0": "You have something for me?",
+  "quest:8541:completion:0": "Excellent. We were in need of these, ⟦28⟧ . Good work.",
+  "quest:8687:title": "⟦E10⟧: Hive'Zora Tunnelers",
+  "quest:8687:desc:0": "Slay 30 Hive'Zora Tunnelers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E32⟧ in order to complete this quest.",
+  "quest:8687:obj:0": "Slay 30 Hive'Zora Tunnelers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E32⟧ in order to complete this quest.",
+  "quest:8687:details:0": "Slay 30 Hive'Zora Tunnelers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E32⟧ in order to complete this quest.",
+  "quest:8687:progress:0": "You have something to tell me, ⟦29⟧?",
+  "quest:8687:completion:0": "Excellent work, ⟦30⟧ . Without their tunnelers, the silithid will have a hard time repairing any ⟦E13⟧ inflicted to their hive's structure. I assume you'll want a new task.",
+  "quest:8731:title": "Field Duty",
+  "quest:8731:desc:0": "Report to Krug Skullsplit at the ⟦E33⟧ Legion post in front of Hive'Regal. Prepare your ⟦E15⟧, obtain ⟦E16⟧ and bring them to Windcaller Kaldon in Cenarion Hold.",
+  "quest:8731:desc:1": "Note: ⟦E17⟧ or casting beneficial spells on a member of the ⟦E33⟧ Legion will flag you for PvP.",
+  "quest:8731:obj:0": "Report to Krug Skullsplit at the ⟦E33⟧ Legion post in front of Hive'Regal. Prepare your ⟦E15⟧, obtain ⟦E16⟧ and bring them to Windcaller Kaldon in Cenarion Hold.",
+  "quest:8731:obj:1": "Note: ⟦E17⟧ or casting beneficial spells on a member of the ⟦E33⟧ Legion will flag you for PvP.",
+  "quest:8731:details:0": "Report to Krug Skullsplit at the ⟦E33⟧ Legion post in front of Hive'Regal. Prepare your ⟦E15⟧, obtain ⟦E16⟧ and bring them to Windcaller Kaldon in Cenarion Hold.",
+  "quest:8731:details:1": "Note: ⟦E17⟧ or casting beneficial spells on a member of the ⟦E33⟧ Legion will flag you for PvP.",
+  "quest:8731:progress:0": "You've completed your field duty, ⟦31⟧?  Captain Skullsplit can be found outside of Hive'Regal.",
+  "quest:8731:completion:0": "I can tell that Krug has little use for paperwork. He signed this in silithid blood!⟦32⟧⟦33⟧Very well, ⟦34⟧. I've prepared a set of tasks that should make good use of your skills as a ⟦35⟧.⟦36⟧⟦37⟧With the continued efforts of you and people like you, our ⟦E8⟧ will soon be crushed!",
+  "quest:8737:title": "Azure Templar",
+  "quest:8737:desc:0": "Summon and slay an Azure Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E34⟧ in order to complete this quest.",
+  "quest:8737:obj:0": "Summon and slay an Azure Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E34⟧ in order to complete this quest.",
+  "quest:8737:details:0": "Summon and slay an Azure Templar and report back to ⟦E22⟧ in Cenarion Hold. You must also bring ⟦E34⟧ in order to complete this quest.",
+  "quest:8737:progress:0": "Is your task done yet, ⟦38⟧?",
+  "quest:8737:completion:0": "Good job, ⟦39⟧. Here's your next assignment.",
+  "quest:8738:title": "⟦E35⟧",
+  "quest:8738:desc:0": "Contact Cenarion Scout Landion inside Hive'Regal and return the ⟦E35⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E36⟧ in order to complete this quest.",
+  "quest:8738:obj:0": "Contact Cenarion Scout Landion inside Hive'Regal and return the ⟦E35⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E36⟧ in order to complete this quest.",
+  "quest:8738:details:0": "Contact Cenarion Scout Landion inside Hive'Regal and return the ⟦E35⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E36⟧ in order to complete this quest.",
+  "quest:8738:progress:0": "You'll find Scout Landion inside Hive'regal. Hurry, ⟦40⟧! Time is of the essence.",
+  "quest:8738:completion:0": "Your efforts are greatly appreciated, ⟦41⟧. I'll read these scouting reports right away, feel free to go over your next assignment.",
+  "quest:8739:title": "⟦E37⟧",
+  "quest:8739:desc:0": "Contact Cenarion Scout Jalia inside Hive'Ashi and return the ⟦E37⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E38⟧ in order to complete this quest.",
+  "quest:8739:obj:0": "Contact Cenarion Scout Jalia inside Hive'Ashi and return the ⟦E37⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E38⟧ in order to complete this quest.",
+  "quest:8739:details:0": "Contact Cenarion Scout Jalia inside Hive'Ashi and return the ⟦E37⟧ to Windcaller Proudhorn at Cenarion Hold. You must also bring ⟦E38⟧ in order to complete this quest.",
+  "quest:8739:progress:0": "You'll find Scout Jalia inside Hive'Ashi.  Hurry, ⟦42⟧!  Time is of the essence.",
+  "quest:8739:completion:0": "Your efforts are greatly appreciated, ⟦43⟧. I'll read these scouting reports right away, feel free to go over your next assignment.",
+  "quest:8740:title": "Twilight Marauders",
+  "quest:8740:desc:0": "Slay Twilight Marauder Morna and 5 Twilight Marauders. Report to Windcaller Proudhorn when your task is finished. You must also bring ⟦E39⟧ in order to complete this quest.",
+  "quest:8740:obj:0": "Slay Twilight Marauder Morna and 5 Twilight Marauders. Report to Windcaller Proudhorn when your task is finished. You must also bring ⟦E39⟧ in order to complete this quest.",
+  "quest:8740:details:0": "Slay Twilight Marauder Morna and 5 Twilight Marauders. Report to Windcaller Proudhorn when your task is finished. You must also bring ⟦E39⟧ in order to complete this quest.",
+  "quest:8740:progress:0": "Is your task done yet, ⟦44⟧?",
+  "quest:8740:completion:0": "Well done, ⟦45⟧. The twilight marauders were inflicting an unacceptable number of casualties on our patrols. Here's your next assignment.",
+  "quest:8743:obj:0": "{'type': 'item', 'id': 21175, 'target': 'The Scepter of the Shifting Sands', 'text': None}",
+  "quest:8743:progress:0": "The Scarab Gong looms ominously before you. Steel yourself, ⟦46⟧; for once the Scarab Gong is rung, the gates of Ahn'Qiraj will be opened.⟦47⟧⟦48⟧From the slackened maw of the beast can only come chaos and destruction. Defend your people!",
+  "quest:8743:completion:0": "From the ground near the gong springs a special crystal. Perhaps favor from the Brood.",
+  "quest:8745:completion:0": "Greetings, champion. I am Jonathan, keeper of the sacred gong and eternal watcher of the Bronze Flight. ⟦49⟧ I have been empowered by the Timeless One himself to grant you an item of your choosing from his timeless treasure trove. May it aid you in your battles against C'Thun.",
+  "quest:8770:title": "⟦E10⟧: Hive'Ashi Defenders",
+  "quest:8770:desc:0": "Slay 30 Hive'Ashi Defenders and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E40⟧ in order to complete this quest.",
+  "quest:8770:obj:0": "Slay 30 Hive'Ashi Defenders and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E40⟧ in order to complete this quest.",
+  "quest:8770:details:0": "Slay 30 Hive'Ashi Defenders and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E40⟧ in order to complete this quest.",
+  "quest:8770:progress:0": "You have something to tell me, ⟦50⟧?",
+  "quest:8770:completion:0": "Excellent work, ⟦51⟧. Your diligence is as noteworthy as always.",
+  "quest:8771:title": "⟦E10⟧: Hive'Ashi Sandstalkers",
+  "quest:8771:desc:0": "Slay 30 Hive'Ashi Sandstalkers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E41⟧ in order to complete this quest.",
+  "quest:8771:obj:0": "Slay 30 Hive'Ashi Sandstalkers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E41⟧ in order to complete this quest.",
+  "quest:8771:details:0": "Slay 30 Hive'Ashi Sandstalkers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E41⟧ in order to complete this quest.",
+  "quest:8771:progress:0": "You have something to tell me, ⟦52⟧?",
+  "quest:8771:completion:0": "Excellent work, ⟦53⟧. Your part in the attack on Hive'Ashi has been noted.",
+  "quest:8772:title": "⟦E10⟧: Hive'Zora Waywatchers",
+  "quest:8772:desc:0": "Slay 30 Hive'Zora Waywatchers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E42⟧ in order to complete this quest.",
+  "quest:8772:obj:0": "Slay 30 Hive'Zora Waywatchers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E42⟧ in order to complete this quest.",
+  "quest:8772:details:0": "Slay 30 Hive'Zora Waywatchers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E42⟧ in order to complete this quest.",
+  "quest:8772:progress:0": "You have something to tell me, ⟦54⟧?",
+  "quest:8772:completion:0": "Excellent work, ⟦55⟧. Your part in the attack on Hive'Zora has been noted.",
+  "quest:8773:title": "⟦E10⟧: Hive'Zora Reavers",
+  "quest:8773:desc:0": "Slay 30 Hive'Zora Reavers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E43⟧ in order to complete this quest.",
+  "quest:8773:obj:0": "Slay 30 Hive'Zora Reavers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E43⟧ in order to complete this quest.",
+  "quest:8773:details:0": "Slay 30 Hive'Zora Reavers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E43⟧ in order to complete this quest.",
+  "quest:8773:progress:0": "You have something to tell me, ⟦56⟧?",
+  "quest:8773:completion:0": "I've heard good things about your part in the Hive'Zora attack. Keep up the good work and victory will soon be ours.",
+  "quest:8774:title": "⟦E10⟧: Hive'Regal Ambushers",
+  "quest:8774:desc:0": "Kill 30 Hive'Regal Ambushers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E44⟧ in order to complete this quest.",
+  "quest:8774:obj:0": "Kill 30 Hive'Regal Ambushers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E44⟧ in order to complete this quest.",
+  "quest:8774:details:0": "Kill 30 Hive'Regal Ambushers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E44⟧ in order to complete this quest.",
+  "quest:8774:progress:0": "You wish to tell me something, ⟦57⟧?",
+  "quest:8774:completion:0": "Excellent work, ⟦58⟧. Your part in the attack on Hive'Regal has been noted.",
+  "quest:8775:title": "⟦E10⟧: Hive'Regal Spitfires",
+  "quest:8775:desc:0": "Kill 30 Hive'Regal Spitfires and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E45⟧ in order to complete this quest.",
+  "quest:8775:obj:0": "Kill 30 Hive'Regal Spitfires and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E45⟧ in order to complete this quest.",
+  "quest:8775:details:0": "Kill 30 Hive'Regal Spitfires and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E45⟧ in order to complete this quest.",
+  "quest:8775:progress:0": "You wish to tell me something, ⟦59⟧?",
+  "quest:8775:completion:0": "Excellent work, ⟦60⟧. Your part in the attack on Hive'Regal has been noted.",
+  "quest:8776:title": "⟦E10⟧: Hive'Regal Slavemakers",
+  "quest:8776:desc:0": "Kill 30 Hive'Regal Slavemakers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E46⟧ in order to complete this quest.",
+  "quest:8776:obj:0": "Kill 30 Hive'Regal Slavemakers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E46⟧ in order to complete this quest.",
+  "quest:8776:details:0": "Kill 30 Hive'Regal Slavemakers and report back to Commander Mar'alith at Cenarion Hold in ⟦E4⟧. You must also bring ⟦E46⟧ in order to complete this quest.",
+  "quest:8776:progress:0": "You wish to tell me something, ⟦61⟧?",
+  "quest:8776:completion:0": "Excellent work, ⟦62⟧. Your part in the attack on Hive'Regal has been noted."
+ },
+ "context": {
+  "quest:8497": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Calandrath"
+  },
+  "quest:8498": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8501": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8502": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8507": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Windcaller Kaldon"
+  },
+  "quest:8508": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Captain Blackanvil"
+  },
+  "quest:8519": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Crystalline Tear",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8534": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8535": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8536": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8537": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8538": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8539": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8540": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Vish Kozus"
+  },
+  "quest:8541": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Vish Kozus"
+  },
+  "quest:8687": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8731": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Windcaller Kaldon"
+  },
+  "quest:8737": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8738": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8739": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8740": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8743": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "The Scarab Gong",
+   "turner": "The Scarab Gong"
+  },
+  "quest:8745": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Jonathan the Revelator",
+   "turner": "Jonathan the Revelator"
+  },
+  "quest:8770": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8771": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8772": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8773": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8774": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8775": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8776": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  }
+ },
+ "known": {
+  "quest:8519": {
+   "title": "مهره‌ای بر صفحهٔ ابدی"
+  },
+  "quest:8743": {
+   "title": "بر ساز ضربه بزن!"
+  },
+  "quest:8745": {
+   "title": "گنج پدیدار زمان"
+  }
+ }
+}

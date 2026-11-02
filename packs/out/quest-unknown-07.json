@@ -1,0 +1,611 @@
+{
+ "pack": "quest-unknown-07",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-07.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Whirring Bronze Gizmo",
+   "fa": "گیزموی برنزیِ چرخان",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E5": {
+   "en": "Elwynn Forest",
+   "fa": "جنگل الزوین",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "pet",
+   "fa": "حیوان خانگی",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Innkeeper",
+   "fa": "مهمان‌دار",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Ironforge Mint",
+   "fa": "نعنای ایرون‌فورج",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Undercity Mint",
+   "fa": "نعنای شهر زیرین",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Gnomeregan Gumdrop",
+   "fa": "ژله‌دانهٔ گنومرگان",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Stormwind Nougat",
+   "fa": "نوقا استورم‌ویند",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Darnassus Marzipan",
+   "fa": "مارزیپان دارناسوس",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Darkspear Gumdrop",
+   "fa": "ژله‌دانهٔ دارک‌اسپیر",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Orgrimmar Nougat",
+   "fa": "نوقای اورگیمار",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Thunder Bluff Marzipan",
+   "fa": "مارزیپان تاندر بلوف",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "talent",
+   "fa": "تلنت",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "stealth",
+   "fa": "مخفی‌کاری",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Alchemy",
+   "fa": "کیمیاگری",
+   "kind": "sp"
+  },
+  "E24": {
+   "en": "Set",
+   "fa": "ست",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Silverleaf",
+   "fa": "برگ نقره",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Peacebloom",
+   "fa": "گلِ آرامش",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Empty Vial",
+   "fa": "شیشهٔ خالی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Murloc Eye",
+   "fa": "چشم مرلوک",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Skybreaker Bulwark",
+   "fa": "سنگر آسمان‌شکن",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Taming the Beast",
+   "fa": "رام‌کردن جانور",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Call of Fire",
+   "fa": "فراخوان آتش",
+   "kind": "qs"
+  },
+  "E32": {
+   "en": "Fire Sapta",
+   "fa": "سپتای آتش",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Whirring Bronze Gizmo": "گیزموی برنزیِ چرخان",
+  "Ashenvale": "اَشِن‌ویل",
+  "Azeroth": "آزروت",
+  "Travel": "سفر",
+  "Elwynn Forest": "جنگل الزوین",
+  "Westfall": "وستفال",
+  "Barrens": "بارنز",
+  "Mulgore": "مولگر",
+  "pet": "حیوان خانگی",
+  "Innkeeper": "مهمان‌دار",
+  "Ironforge Mint": "نعنای ایرون‌فورج",
+  "Undercity Mint": "نعنای شهر زیرین",
+  "Gnomeregan Gumdrop": "ژله‌دانهٔ گنومرگان",
+  "Stormwind Nougat": "نوقا استورم‌ویند",
+  "Darnassus Marzipan": "مارزیپان دارناسوس",
+  "Darkspear Gumdrop": "ژله‌دانهٔ دارک‌اسپیر",
+  "Orgrimmar Nougat": "نوقای اورگیمار",
+  "Thunder Bluff Marzipan": "مارزیپان تاندر بلوف",
+  "talent": "تلنت",
+  "Use": "استفاده",
+  "nearby": "نزدیک",
+  "stealth": "مخفی‌کاری",
+  "Alchemy": "کیمیاگری",
+  "Set": "ست",
+  "Silverleaf": "برگ نقره",
+  "Peacebloom": "گلِ آرامش",
+  "Empty Vial": "شیشهٔ خالی",
+  "Murloc Eye": "چشم مرلوک",
+  "Skybreaker Bulwark": "سنگر آسمان‌شکن",
+  "Taming the Beast": "رام‌کردن جانور",
+  "Call of Fire": "فراخوان آتش",
+  "Fire Sapta": "سپتای آتش"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$N",
+  "25": "$B",
+  "26": "$B",
+  "27": "$N",
+  "28": "$B",
+  "29": "$B",
+  "30": "$N",
+  "31": "$B",
+  "32": "$B",
+  "33": "$N",
+  "34": "$N",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$C"
+ },
+ "rows": {
+  "quest:7895:title": "⟦E1⟧",
+  "quest:7895:progress:0": "My new booth will be a sight to see, yes sir! A sight to see, and... for a lucky few, to touch!⟦1⟧⟦2⟧I can already hear the whirring bronze gizmos singing their song of mechanical rapture as patrons step to my booth and test their skill!⟦3⟧⟦4⟧Ah... now I need the gizmos themselves to bring my dream closer to fruition. Please, ⟦5⟧, bring me whirring bronze gizmos... and Darkmoon Faire tickets will be yours!",
+  "quest:7895:completion:0": "You brought the gizmos! Wonderful! Even now I can hear their buzzing, whirring chorus in my mind! Oh, when this booth is ready it will be the wonder of the world, mark me! ⟦6⟧⟦7⟧Here are your tickets, ⟦8⟧. And please enjoy your stay at the Faire!",
+  "quest:7900:title": "Torn Bear Pelts",
+  "quest:7900:progress:0": "Children love toys! And no matter what race, I've found that all children love furry, plushy toys made from torn bear pelts!⟦9⟧⟦10⟧You can get those pelts from the bears of ⟦E2⟧ or Hillsbrad. Bring me a heap of them and earn yourself a heap of Darkmoon Faire tickets!",
+  "quest:7900:completion:0": "Nice pelts, ⟦11⟧! I'll get someone to sew these into a bunch of plush toys. With a little stuffing and some paint, I think they'll be the envy of children across ⟦E3⟧!⟦12⟧⟦13⟧Tickets? Ah yes, your payment!⟦14⟧⟦15⟧Here they are!",
+  "quest:7937:title": "Your Fortune Awaits You...",
+  "quest:7937:desc:0": "⟦E4⟧ to the Eastvale Logging Camp in ⟦E5⟧ and seek out your fortune.",
+  "quest:7937:obj:0": "⟦E4⟧ to the Eastvale Logging Camp in ⟦E5⟧ and seek out your fortune.",
+  "quest:7937:details:0": "⟦E4⟧ to the Eastvale Logging Camp in ⟦E5⟧ and seek out your fortune.",
+  "quest:7937:progress:0": "This haystack looks like the one from your vision.",
+  "quest:7937:completion:0": "A quick search of the haystack reveals a lockbox from within it!  It would seem that you have found your fortune!",
+  "quest:7938:title": "Your Fortune Awaits You...",
+  "quest:7938:desc:0": "⟦E4⟧ to the Deadmines in ⟦E6⟧ and seek out your fortune.",
+  "quest:7938:obj:0": "⟦E4⟧ to the Deadmines in ⟦E6⟧ and seek out your fortune.",
+  "quest:7938:details:0": "⟦E4⟧ to the Deadmines in ⟦E6⟧ and seek out your fortune.",
+  "quest:7938:progress:0": "This chest looks like the one from your vision...",
+  "quest:7938:completion:0": "A quick search of the chest reveals a lockbox from within it!  It would seem that you have found your fortune!",
+  "quest:7944:title": "Your Fortune Awaits You...",
+  "quest:7944:desc:0": "⟦E4⟧ to the Wailing Caverns in the ⟦E7⟧ and seek out your fortune.",
+  "quest:7944:obj:0": "⟦E4⟧ to the Wailing Caverns in the ⟦E7⟧ and seek out your fortune.",
+  "quest:7944:details:0": "⟦E4⟧ to the Wailing Caverns in the ⟦E7⟧ and seek out your fortune.",
+  "quest:7944:progress:0": "This chest looks like the one from your vision...",
+  "quest:7944:completion:0": "A quick search of the chest reveals a lockbox from within it!  It would seem that you have found your fortune!",
+  "quest:7945:title": "Your Fortune Awaits You...",
+  "quest:7945:desc:0": "⟦E4⟧ to Palemane Rock in ⟦E8⟧ and seek out your fortune.",
+  "quest:7945:obj:0": "⟦E4⟧ to Palemane Rock in ⟦E8⟧ and seek out your fortune.",
+  "quest:7945:details:0": "⟦E4⟧ to Palemane Rock in ⟦E8⟧ and seek out your fortune.",
+  "quest:7945:progress:0": "This tree stump looks like the one from your vision.",
+  "quest:7945:completion:0": "A quick search of the tree stump reveals a lockbox from within it!  It would seem that you have found your fortune!",
+  "quest:7946:title": "Spawn of Jubjub",
+  "quest:7946:progress:0": "I'm so happy Jubjub is no longer lost. She loves Dark Iron ale so much that when I ran out... she ran away to find more!⟦16⟧⟦17⟧Now that Jubjub's back, I want as much ale as I can get! I won't want her to run away again!⟦18⟧⟦19⟧Do you have any Dark Iron Ale? If you do, then I'll trade you one of Jubjub's frog eggs for a mug...",
+  "quest:7946:completion:0": "Thank you, ⟦20⟧.  Here is your egg!  It won't be ready to hatch for a little while, but when it does you'll have a great ⟦E9⟧!",
+  "quest:8353:title": "Chicken Clucking for a Mint",
+  "quest:8353:desc:0": "Do a chicken emote at ⟦E10⟧ Firebrew, and in exchange you'll receive an ⟦E11⟧!",
+  "quest:8353:obj:0": "Do a chicken emote at ⟦E10⟧ Firebrew, and in exchange you'll receive an ⟦E11⟧!",
+  "quest:8353:details:0": "Do a chicken emote at ⟦E10⟧ Firebrew, and in exchange you'll receive an ⟦E11⟧!",
+  "quest:8353:progress:0": "I'm waiting...",
+  "quest:8353:completion:0": "Too funny!  Well done, ⟦21⟧! Here's your treat.⟦22⟧⟦23⟧Happy Hallow's End!",
+  "quest:8354:title": "Chicken Clucking for a Mint",
+  "quest:8354:desc:0": "Do a chicken emote at ⟦E10⟧ Norman, and in exchange you'll receive an ⟦E12⟧!",
+  "quest:8354:obj:0": "Do a chicken emote at ⟦E10⟧ Norman, and in exchange you'll receive an ⟦E12⟧!",
+  "quest:8354:details:0": "Do a chicken emote at ⟦E10⟧ Norman, and in exchange you'll receive an ⟦E12⟧!",
+  "quest:8354:progress:0": "I'm waiting...",
+  "quest:8354:completion:0": "Too funny!  Well done, ⟦24⟧! Here's your treat.⟦25⟧⟦26⟧Happy Hallow's End!",
+  "quest:8355:title": "Incoming Gumdrop",
+  "quest:8355:desc:0": "Do a train emote at Talvash del Kissel, and in exchange you'll receive a ⟦E13⟧!",
+  "quest:8355:obj:0": "Do a train emote at Talvash del Kissel, and in exchange you'll receive a ⟦E13⟧!",
+  "quest:8355:details:0": "Do a train emote at Talvash del Kissel, and in exchange you'll receive a ⟦E13⟧!",
+  "quest:8355:progress:0": "Well, go ahead now...",
+  "quest:8355:completion:0": "Too funny!  Well done, ⟦27⟧! Here's your treat.⟦28⟧⟦29⟧Happy Hallow's End!",
+  "quest:8356:title": "Flexing for Nougat",
+  "quest:8356:desc:0": "Do a flex emote at ⟦E10⟧ Allison, and in exchange you'll receive ⟦E14⟧!",
+  "quest:8356:obj:0": "Do a flex emote at ⟦E10⟧ Allison, and in exchange you'll receive ⟦E14⟧!",
+  "quest:8356:details:0": "Do a flex emote at ⟦E10⟧ Allison, and in exchange you'll receive ⟦E14⟧!",
+  "quest:8356:progress:0": "No candy until you flex for me, ⟦30⟧...",
+  "quest:8356:completion:0": "You are truly mighty, haha! Well done, and thanks for being such a good sport. Here's your candy.⟦31⟧⟦32⟧Happy Hallow's End, ⟦33⟧!",
+  "quest:8357:title": "Dancing for Marzipan",
+  "quest:8357:desc:0": "Do a dance emote at ⟦E10⟧ Saelienne, and in exchange you'll receive ⟦E15⟧!",
+  "quest:8357:obj:0": "Do a dance emote at ⟦E10⟧ Saelienne, and in exchange you'll receive ⟦E15⟧!",
+  "quest:8357:details:0": "Do a dance emote at ⟦E10⟧ Saelienne, and in exchange you'll receive ⟦E15⟧!",
+  "quest:8357:progress:0": "You know how to dance, don't you? Try by putting your right foot in... then your right foot out... your right foot in... shake it all about...",
+  "quest:8357:completion:0": "You're quite the dancing machine, ⟦34⟧!⟦35⟧⟦36⟧Here's your treat for being such a good sport. Happy Hallow's End, and give my best to your sick little friend! I hope they get better soon.",
+  "quest:8358:title": "Incoming Gumdrop",
+  "quest:8358:desc:0": "Do a train emote at Kali Remik, and in exchange you'll receive a ⟦E16⟧!",
+  "quest:8358:obj:0": "Do a train emote at Kali Remik, and in exchange you'll receive a ⟦E16⟧!",
+  "quest:8358:details:0": "Do a train emote at Kali Remik, and in exchange you'll receive a ⟦E16⟧!",
+  "quest:8358:progress:0": "Well, go ahead now...",
+  "quest:8358:completion:0": "Woo-woo! Well done, ⟦37⟧! Here's your treat.⟦38⟧⟦39⟧Happy Hallow's End!",
+  "quest:8359:title": "Flexing for Nougat",
+  "quest:8359:desc:0": "Do a flex emote at ⟦E10⟧ Gryshka, and in exchange you'll receive ⟦E17⟧!",
+  "quest:8359:obj:0": "Do a flex emote at ⟦E10⟧ Gryshka, and in exchange you'll receive ⟦E17⟧!",
+  "quest:8359:details:0": "Do a flex emote at ⟦E10⟧ Gryshka, and in exchange you'll receive ⟦E17⟧!",
+  "quest:8359:progress:0": "No candy until you flex for me, ⟦40⟧...",
+  "quest:8359:completion:0": "You are truly mighty, haha! Well done, and thanks for being such a good sport. Here's your candy.⟦41⟧⟦42⟧Happy Hallow's End, ⟦43⟧!",
+  "quest:8360:title": "Dancing for Marzipan",
+  "quest:8360:desc:0": "Do a dance emote at ⟦E10⟧ Pala, and in exchange you'll receive ⟦E18⟧!",
+  "quest:8360:obj:0": "Do a dance emote at ⟦E10⟧ Pala, and in exchange you'll receive ⟦E18⟧!",
+  "quest:8360:details:0": "Do a dance emote at ⟦E10⟧ Pala, and in exchange you'll receive ⟦E18⟧!",
+  "quest:8360:progress:0": "You know how to dance, don't you? Try by putting your right foot in... then your right foot out... your right foot in... shake it all about...",
+  "quest:8360:completion:0": "You're quite the dancing machine, ⟦44⟧!⟦45⟧⟦46⟧Here's your treat for being such a good sport. Happy Hallow's End, and give my best to your sick little friend! I hope they get better soon.",
+  "quest:76156:title": "Stalk With The Earthmother",
+  "quest:76156:details:0": "I sense in you a hidden ⟦E19⟧ for the subtle arts, shaman. ⟦E20⟧ this mask to infilrate the ⟦E21⟧ Venture Company mine and steal their supplies. It may not seem like a convincing disguise, but a skilled rogue can slip past any guard with naught but a winning smile and a cunning distraction. I believe this capability lies within you as well.",
+  "quest:76156:progress:0": "We'll need to work on your ⟦E22⟧ skills, ⟦47⟧ . I heard you approaching as soon as you set foot on the mesa.",
+  "quest:76156:completion:0": "Hmm... perhaps disguises are not your strength.",
+  "quest:92109:title": "My First ⟦E23⟧ ⟦E24⟧",
+  "quest:92109:obj:0": "Bring 5 Empty Vials, 5 ⟦E25⟧, and 5 ⟦E26⟧ to the young, aspiring alchemist inside the barn of Moonbrook in ⟦E6⟧.",
+  "quest:92109:obj:1": "* ⟦E27⟧ (5)",
+  "quest:92109:obj:2": "* ⟦E26⟧ (5)",
+  "quest:92109:obj:3": "* ⟦E25⟧ (5)",
+  "quest:92109:details:0": "Erm... 'Ello, . I'm not supposed to talk to strangers, but... Hey, what are those shiny bottles sticking out of your backpack for? Are you an alchemist? That's so cool!",
+  "quest:92109:details:1": "When I grow up, I want to be an alchemist too. Daddy won't let me play with any of his herbs; too dangerous, he says.",
+  "quest:92109:details:2": "Well, I want to start learning now. Could you maybe get some supplies for me, pretty please?",
+  "quest:92109:progress:0": "'Ello again! Did you bring back alchemy stuff?",
+  "quest:92110:title": "My First Real Potion",
+  "quest:92110:obj:0": "Gather 3 Murloc Eyes for the young, aspiring alchemist inside the barn of Moonbrook in ⟦E6⟧.",
+  "quest:92110:obj:1": "* ⟦E28⟧#Classic (3)",
+  "quest:92110:details:0": "Wow, my very first potion! Did you know that mixing those two herbs together would change the potion to a bright red color when you first started?",
+  "quest:92110:details:1": "That was fun, but mixing a few flowers doesn't seem like the kind of alchemy Daddy does. He uses other ingredients too.",
+  "quest:92110:details:2": "I don't know what else to use, so let's try the first thing that comes to mind! Let's see... maybe murloc eyes? That sounds so gross, but I bet something will happen.",
+  "quest:92110:progress:0": "Don't worry about me, I'm a big girl. I can take care of myself. Just don't tell anyone I am hiding here, it's our little secret.",
+  "quest:93791:title": "Speak with Belann",
+  "quest:93797:title": "Boughs in the Wind",
+  "quest:94003:title": "The ⟦E29⟧",
+  "quest:94007:title": "⟦E30⟧",
+  "quest:94449:title": "⟦E31⟧",
+  "quest:94465:title": "⟦E31⟧",
+  "quest:94466:title": "⟦E31⟧",
+  "quest:94467:title": "⟦E31⟧",
+  "quest:94473:title": "⟦E32⟧",
+  "quest:94773:title": "Divine Grace",
+  "quest:94774:title": "Divine Grace",
+  "quest:94792:title": "⟦E30⟧"
+ },
+ "context": {
+  "quest:7895": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Rinling"
+  },
+  "quest:7900": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Yebb Neblegear"
+  },
+  "quest:7937": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Mysterious Eastvale Haystack"
+  },
+  "quest:7938": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Mysterious Deadmines Chest"
+  },
+  "quest:7944": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Mysterious Wailing Caverns Chest"
+  },
+  "quest:7945": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Mysterious Tree Stump"
+  },
+  "quest:7946": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Morja"
+  },
+  "quest:8353": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Innkeeper Firebrew"
+  },
+  "quest:8354": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": "Innkeeper Norman"
+  },
+  "quest:8355": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Talvash del Kissel"
+  },
+  "quest:8356": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Innkeeper Allison"
+  },
+  "quest:8357": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Innkeeper Saelienne"
+  },
+  "quest:8358": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": "Kali Remik"
+  },
+  "quest:8359": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Innkeeper Gryshka",
+   "turner": "Innkeeper Gryshka"
+  },
+  "quest:8360": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": "Innkeeper Pala"
+  },
+  "quest:76156": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92109": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92110": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:93791": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:93797": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94003": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94007": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94449": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Eldrun Stormbreaker",
+   "turner": ""
+  },
+  "quest:94465": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Bruegs Kindleborn",
+   "turner": ""
+  },
+  "quest:94466": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94467": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94473": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94773": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:94774": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Priestess Josetta",
+   "turner": ""
+  },
+  "quest:94792": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  }
+ }
+}

@@ -1,0 +1,785 @@
+{
+ "pack": "quest-thousand-needles-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-thousand-needles-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Henrig Lonebrow's Journal",
+   "fa": "دفتر هنریگِ تک‌ابرو",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Martek the Exiled",
+   "fa": "مارتک تبعیدی",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Encrusted Tail Fins",
+   "fa": "بالاخره‌های پوشیده",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "party",
+   "fa": "گروه",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Silithid Heart",
+   "fa": "قلب سیلیتید",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Giants",
+   "fa": "غول‌ها",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Cliffwatcher Longhorn Report",
+   "fa": "گزارش گاومیشِ شاخ‌بلندِ پرتگاه‌بان",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Kravel's Parts Order",
+   "fa": "سفارشِ قطعات کراول",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Wharfmaster Dizzywig",
+   "fa": "لنگرگاه‌دار دیزی‌ویگ",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Parts for Kravel",
+   "fa": "قطعات برای کراول",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Kravel's Parts",
+   "fa": "قطعاتِ کراول",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Delicate Car Parts",
+   "fa": "قطعات ظریف خودرو",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Goblin Rumors",
+   "fa": "شایعات گابلین",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Fuel Regulator Blueprints",
+   "fa": "نقشه‌های تنظیم‌گر سوخت",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Indurium",
+   "fa": "ایندوریوم",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "resistance",
+   "fa": "مقاومت",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Seaforium Booster",
+   "fa": "تقویت‌کنندهٔ سیفوریوم",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Modified Seaforium Booster",
+   "fa": "تقویت‌کنندهٔ سیفوریوم اصلاح‌شده",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Sample of Indurium Ore",
+   "fa": "نمونهٔ کانهٔ ایندوریوم",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Kravel's Scheme",
+   "fa": "نقشهٔ کراول",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Fool's Stout",
+   "fa": "آبجوی نادان",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "effect",
+   "fa": "اثر",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Henrig Lonebrow's Journal": "دفتر هنریگِ تک‌ابرو",
+  "Martek the Exiled": "مارتک تبعیدی",
+  "Badlands": "بیابان",
+  "Azeroth": "آزروت",
+  "Encrusted Tail Fins": "بالاخره‌های پوشیده",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "hit": "اصابت",
+  "Thousand Needles": "هزار سوزن",
+  "threat": "تیت",
+  "party": "گروه",
+  "battle": "نبرد",
+  "Silithid Heart": "قلب سیلیتید",
+  "Horde": "هورد",
+  "Giants": "غول‌ها",
+  "Orgrimmar": "اورگریمار",
+  "Head": "سر",
+  "Cliffwatcher Longhorn Report": "گزارش گاومیشِ شاخ‌بلندِ پرتگاه‌بان",
+  "Desolace": "دزوله‌یس",
+  "Kravel's Parts Order": "سفارشِ قطعات کراول",
+  "Wharfmaster Dizzywig": "لنگرگاه‌دار دیزی‌ویگ",
+  "Parts for Kravel": "قطعات برای کراول",
+  "Kravel's Parts": "قطعاتِ کراول",
+  "Delicate Car Parts": "قطعات ظریف خودرو",
+  "miss": "خطا",
+  "Goblin Rumors": "شایعات گابلین",
+  "Back": "شنل",
+  "Fuel Regulator Blueprints": "نقشه‌های تنظیم‌گر سوخت",
+  "Indurium": "ایندوریوم",
+  "resistance": "مقاومت",
+  "Seaforium Booster": "تقویت‌کنندهٔ سیفوریوم",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Tanaris": "تاناریس",
+  "Modified Seaforium Booster": "تقویت‌کنندهٔ سیفوریوم اصلاح‌شده",
+  "Sample of Indurium Ore": "نمونهٔ کانهٔ ایندوریوم",
+  "Kravel's Scheme": "نقشهٔ کراول",
+  "requires": "نیازمند",
+  "Fool's Stout": "آبجوی نادان",
+  "effect": "اثر"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$c",
+  "12": "$C",
+  "13": "$C",
+  "14": "$C",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$n",
+  "21": "$N",
+  "22": "$N",
+  "23": "$R",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$n",
+  "29": "$N",
+  "30": "$c",
+  "31": "$N",
+  "32": "$R",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N"
+ },
+ "rows": {
+  "quest:1175:obj:0": "Kill 10 Saltstone Basilisks, 10 Saltstone Crystalhides and 6 Saltstone Gazers for Trackmaster Zherin on the Shimmering Flats.",
+  "quest:1175:details:0": "After the big crash with the goblins' Red Thunder racer and a basilisk, Kronkrider hired me on to take care of the track. I don't know what all the animals out on the flats are feeding on to grow so big, but we have to be careful to thin them out so they won't wander onto the track when a race is going on.",
+  "quest:1175:details:1": "Tell you what. If you want to go out and make a little profit, go out and remove the basilisks from the area.",
+  "quest:1175:progress:0": "It's bad enough having to clear out the wreckage of the racers without having to pick them out of burnt animal parts.",
+  "quest:1175:completion:0": "I hope you didn't kill any of the basilisks on the tracks themselves! It takes a long time for the carcasses to decay in the sun, and I'd rather not have to take a shovel out to clean up.",
+  "quest:1100:obj:0": "Read ⟦E1⟧.",
+  "quest:1100:details:0": "You slowly open the weathered journal of Henrig Lonebrow....",
+  "quest:1100:progress:0": "From your look of concern, I can tell that something is amiss....",
+  "quest:1100:completion:0": "You say you found this journal on a deceased dwarf? Give me but a moment to peruse the pages...",
+  "quest:1106:obj:0": "Bring Fizzle's Letter to ⟦E2⟧ in the ⟦E3⟧.",
+  "quest:1106:details:0": "I'm developing a new engine that'll make the car go so fast! Fast enough to fly, I know it! I just need to make pistons that can handle very very heavy stress. All my trials have failed because I can't make pistons hard enough!",
+  "quest:1106:details:1": "But there is someone who might know how.",
+  "quest:1106:details:2": "His name is ⟦E2⟧. He is a great smith and knows more about metal than anyone. Take him this letter, I know he can help!",
+  "quest:1106:details:3": "But he's far far away -- in ⟦E4⟧, in the ⟦E3⟧, in a camp, with a goblin!",
+  "quest:1106:details:4": "Find him!",
+  "quest:1106:progress:0": "Well, you found me. Good for you.⟦1⟧⟦2⟧Are you here about that axe I made for Gath'Ilzogg? Or are you here to reclaim Duchess Pamay's honor?⟦3⟧⟦4⟧Actually, I don't care which it is. If you're here to fight, then let's get it over with...",
+  "quest:1106:completion:0": "Fizzle sent you? Well that changes things! Of course I'll help you. Fizzle and his brother are two of the few people who don't want me dead!",
+  "quest:1106:completion:1": "So Fizzle wants to make pistons, eh? Pistons strong enough to take whatever stresses he has planned, and if I know Fizzle, then this new car of his is a volcano on wheels!",
+  "quest:1107:obj:0": "Bring 10 ⟦E5⟧ to Wizzle Brassbolts in the Shimmering Flats.",
+  "quest:1107:details:0": "Our rocket car is the fastest thing on the flats! So fast that ... I'm afraid friction is going to tear it apart!",
+  "quest:1107:details:1": "To prevent that I need to create a composite to coat the car's moving parts. It must be hard but not brittle, and must be resistant to salt corrosion, or time spent on the Shimmering Flats will eat it away.",
+  "quest:1107:details:2": "Have you heard of the Vile Reef, ⟦5⟧? It's off the coast of ⟦E6⟧. Saltscale murlocs live there, and their tail fins are a crucial ingredient of my composite.",
+  "quest:1107:progress:0": "Do you have the tail fins?  If I can't protect our car from its own speed, then it won't last long in these races.",
+  "quest:1107:completion:0": "Thank you, ⟦6⟧! After I grind these down and fuse them with a few other ingredients, the composite will be ready. And after that, the car will be safe from its own speed.",
+  "quest:1107:completion:1": "Safe, as long as it doesn't ⟦E7⟧ anything...",
+  "quest:1147:obj:0": "Kill 5 Silithid Searchers, 5 Silithid Hive Drones, and 5 Silithid Invaders and return to Moktar Krin in ⟦E8⟧.",
+  "quest:1147:details:0": "Hmm. Seems Belgrom thinks those monsters are a ⟦E9⟧. He wants them pushed back into whatever depths they crawled up out of.",
+  "quest:1147:details:1": "I guess killing the dwarves sent by the Explorers' League wasn't enough--now I have to send a half-dead war ⟦E10⟧ into another ⟦E11⟧. We won't be able to do it ourselves; not while we're in this condition. The dig site's to the south of here. There shouldn't be anymore dwarves to deal with. Feel up to wielding a blade or staff and doing your part to aid us?",
+  "quest:1147:progress:0": "With the amount of travelers heading out to the Flats for those races, I'm sure we can convince enough adventure seekers to help push back those insects. My ⟦E10⟧ and I won't be able to leave until we do.",
+  "quest:1147:completion:0": "Ha! That ichor you're covered in actually makes you prettier, ⟦7⟧! It certainly does make you reek at the same time though. Don't stand too close to the kodo; you'll either start a stampede or cause them to go into heat.",
+  "quest:1147:completion:1": "I think my companions would agree that your smell alone is proof you've done your part to help us against those insect creatures. Thank you, ⟦8⟧.",
+  "quest:1148:obj:0": "Bring 1 ⟦E12⟧, 5 Silithid Talons, and 3 Intact Silithid Carapaces, to Korran at the Crossroads.",
+  "quest:1148:details:0": "You inspect the carapace carefully. As you turn it over in your hands you realize that the chitinous plating is interlaced in such a way that makes it incredibly strong. It's unlike anything you've ever seen. You inspect the rest of the corpse further and realize that these creatures are very powerful and highly evolved.",
+  "quest:1148:details:1": "Looking down at the carapace again, you think that Korran would enjoy studying more of these creatures. It could help him figure out what these creatures are, and where they come from.",
+  "quest:1148:progress:0": "Ah, it been a long time since you've come to see me, ⟦9⟧. What can I do for you today? You be looking like you've seen the face of ⟦E11⟧ recently. Good... good for the ⟦E13⟧ and good for you. The more ⟦E11⟧ you've seen, the more helpful you'll be; stronger, too.",
+  "quest:1148:completion:0": "Ahh, you've seen Moktar recently? He always be lookin' out for me. I'm sorry to hear he spends his time watching over his little war band instead of seeing ⟦E11⟧, but I'm sure he be takin' great joy in killing members of the Explorers' League.",
+  "quest:1148:completion:1": "You be smart to bring me these specimens, ⟦10⟧. Along with the eggs we be findin' in the Field of ⟦E14⟧, these should give me a good start in figuring out what these insects are, and what they be wantin'.",
+  "quest:1184:obj:0": "Return to Belgrom Rockmaul in ⟦E15⟧.",
+  "quest:1184:details:0": "⟦E16⟧ back to Belgrom in ⟦E15⟧ and tell him Moktar be doing his bidding well out in the ⟦E8⟧. Tell him also, that me studies progress, and I hope to be havin' learned more soon. That should please him greatly.",
+  "quest:1184:completion:0": "I'm appreciative of your efforts, ⟦11⟧. The warchief will enjoy hearing how tenacious you have been in your duties.",
+  "quest:1184:completion:1": "Oh, of course I will mention your name to him. He speaks to me often and values my opinions greatly.",
+  "quest:1184:completion:2": "Go now, I have much to do. And if you speak to Korran soon, and he has news of these creatures, then return to me--I would think they are a ⟦E9⟧ that must be taken seriously.",
+  "quest:5361:obj:0": "Deliver ⟦E17⟧ to Nataka Longhorn at Ghost Walker Post in ⟦E18⟧.",
+  "quest:5361:details:0": "My brother Nataka is stationed at Ghost Walker Post over in ⟦E18⟧. I'd like to ask you... could you give this report to him for me? A year has passed since the last time I wrote, there has been unusual centaur activity since then and he should be informed.",
+  "quest:5361:details:1": "Journey to Stonetalon Mountain north of the Crossroads, and then head west into Charred Vale. From there, head south into ⟦E18⟧; there you will find a road going south to Ghost Walker Post.",
+  "quest:5361:progress:0": "What news have you, ⟦12⟧! Ah - a message from my brother you say? Well then, hand over the report!",
+  "quest:5361:completion:0": "I know not what connection you have with my brother but it would seem he has trust with you, ⟦13⟧.",
+  "quest:5361:completion:1": "I am Nataka Longhorn and would like to welcome you to Ghost Walker Post, we have many needs of a ⟦14⟧! Talk with others, perhaps there is need of you here.",
+  "quest:1111:obj:0": "Bring ⟦E19⟧ to ⟦E20⟧ in Ratchet.",
+  "quest:1111:details:0": "I make it my job to get people what they need, and the gnomes over there need a parts order filled. Their parts were shipped to Ratchet a week ago, but I haven't been able to make the trip.",
+  "quest:1111:details:1": "So, are you ready for some legwork? Go to Ratchet and give this parts order to ⟦E20⟧ -- he'll probably be at the docks.",
+  "quest:1111:details:2": "Do this for me, and I'll have more jobs for you.",
+  "quest:1111:details:3": "Jobs, my friend, with serious profit potential...",
+  "quest:1111:progress:0": "Speak up! Tell me, are you dropping off or picking up?",
+  "quest:1111:completion:0": "Oh yes. ⟦E21⟧. I'm glad you're here. These things have been sitting out here for days, and I was afraid they'd rust!",
+  "quest:1112:obj:0": "Bring ⟦E22⟧ to Kravel Koalbeard in the Shimmering Flats.",
+  "quest:1112:details:0": "Here's Kravel's package, ⟦15⟧. And when you deliver it, tell him... if he wants more special orders, then he'll have to pay his tab!",
+  "quest:1112:progress:0": "Did you make it to Ratchet and get those parts?",
+  "quest:1112:completion:0": "Great, you got them! Now we need to get them to the gnomes. But first...",
+  "quest:1112:completion:1": "Let's take out one small item...",
+  "quest:1114:obj:0": "Bring the ⟦E23⟧ to Fizzle Brassbolts in Shimmering Flats.",
+  "quest:1114:details:0": "Now that I have what I need, give these parts to Fizzle Brassbolts. He's been waiting a long time for them -- I'm sure he won't ⟦E24⟧ the little piece I removed from his order...",
+  "quest:1114:details:1": "And I wouldn't bother mentioning it to him. It was small and worthless.",
+  "quest:1114:details:2": "Trust me.",
+  "quest:1114:progress:0": "You have something for me? That's great! let's see it!",
+  "quest:1114:completion:0": "There they are! My hydro ratchets and repeater bolts! These will do just fine. Thank you!",
+  "quest:1115:obj:0": "Talk to Krazek in Booty Bay.",
+  "quest:1115:details:0": "Now that we've done a service for the gnomes, it's time to do the goblins a favor!",
+  "quest:1115:details:1": "I hear that the goblin racer pilot, Nazz Steamboil, didn't always use that name. I wonder why he changed it. I wonder if it's a secret, and... I wonder if he values that secret.",
+  "quest:1115:details:2": "If anyone knows the truth, then it's Krazek of Booty Bay, on the southern tip of Stranglethorn. Speak with Krazek and ask him about our goblin pilot.",
+  "quest:1115:details:3": "If you can get useful information from him, then we might just turn a profit from it.",
+  "quest:1115:completion:0": "You want to know about Nazz Steamboil? He's a racer pilot out in the Shimmering Flats, isn't he?",
+  "quest:1115:completion:1": "Yeah, I might be able to find something out about him... but it won't be easy. Or fast.",
+  "quest:1115:completion:2": "Or cheap.",
+  "quest:1117:obj:0": "Bring the ⟦E25⟧ to Kravel Koalbeard in the Shimmering Flats.",
+  "quest:1117:details:0": "I had to use some of my favors, and gave away a rare bottle of elven wine, and did some heavy deducing myself! But I found the information you seek.",
+  "quest:1117:details:1": "Here, I wrote a letter with some very interesting bits on our friend, Nazz Steamboil. Do with it what you will -- it's too dangerous for me to use.",
+  "quest:1117:details:2": "Just don't tell anyone where you got it!",
+  "quest:1117:progress:0": "Did you get anything on Nazz Steamboil? Anything he might want to keep a secret??",
+  "quest:1117:completion:0": "Well well! This is interesting... very interesting. Heh, perhaps I should bow to the goblin pilot the next time I see him.",
+  "quest:1117:completion:1": "This is worth plenty, ⟦16⟧. I'm sure Nazz will pay a small fortune to keep his secret... a secret.",
+  "quest:1394:obj:0": "Speak to Dorn Plainstalker in ⟦E8⟧.",
+  "quest:1394:details:0": "You have done well, ⟦17⟧. You have passed my test, and the tests before mine. Return to Dorn in ⟦E8⟧. He will sense the change within you, and see that your mind, body and spirit are strong enough that you should be rewarded for your efforts.",
+  "quest:1394:details:1": "Stay true to the balance you've shown throughout these trials, ⟦18⟧. Dorn will test you again in the future if you do.",
+  "quest:1394:completion:0": "Ah, ⟦19⟧. It has been a long time since you have last stepped into my home. It seems like many moons have passed since you took your first leap that set you upon your path.",
+  "quest:1394:completion:1": "And now you return to me stronger than you once were... more enlightened. This pleases me. And you should be justly rewarded for seeing my tests to the end.",
+  "quest:1178:obj:0": "Speak to Gazlowe in Ratchet.",
+  "quest:1178:details:0": "Our racing team is the pride of goblins everywhere. You'd be surprised at some of the people who contribute in one way or another to our team.",
+  "quest:1178:details:1": "You know Gazlowe? He tracks down parts from around the world for us. He even came down to work on one of our rigs once!",
+  "quest:1178:details:2": "BA few weeks ago, he said he'd send us a new prototype fuel regulator but it hasn't come yet. He's usually very prompt... Maybe you wouldn't mind going to Ratchet to ask him about it? I wouldn't be so pushy, but the gnomes are gaining on us!",
+  "quest:1178:completion:0": "Pozzik sent you, huh? You know, Pozzik was one of the most respected tinkerers in Undermine before he retired to start working on the racers.",
+  "quest:1178:completion:1": "The first thing he did when he joined the team was develop the two engine model racers. Could be that the businesses will suffer without him working with the Tinkers' Union, but who cares, right? There's nothing like the races!",
+  "quest:1180:obj:0": "Speak with Wharfmaster Lozgil in Booty Bay.",
+  "quest:1180:details:0": "⟦E26⟧ to what you came here about. I know I promised Pozzik that I'd deliver a new fuel regulator for him, but I still haven't received it yet. Revilgaz over in Booty Bay said he'd have it shipped over, but it might be it slipped through the cracks somehow.",
+  "quest:1180:details:1": "If that's true, there's not much we can do about it. We can at least find out if it was dispatched from Booty Bay.",
+  "quest:1180:details:2": "Check in with Wharfmaster Lozgil over there, he should be able to check the cargo records.",
+  "quest:1180:completion:0": "Shipments to Ratchet? Let me just check the logbooks...",
+  "quest:1180:completion:1": "No, the most recent shipment I have on record of going out to Ratchet were boots from Drizzlik. Hasn't been much else, other than building supplies and tools. Definitely no race parts.",
+  "quest:1181:obj:0": "Speak with Baron Revilgaz in Booty Bay.",
+  "quest:1181:details:0": "I'm afraid I can't be of much more help to you, ⟦20⟧. If you'd like to follow up on it more, I'd suggest you go ⟦E7⟧ up the Baron himself. If there's anyone who knows Revilgaz's business, it's Revilgaz.",
+  "quest:1181:details:1": "You'll find him at the tavern across the harbor, top floor.",
+  "quest:1181:completion:0": "Oh, sure of course I know what you're talking about. Nope, can't help you though. Some of my men were supposed to go track down the blueprints for the fuel regulator, but they came back empty-handed.",
+  "quest:1182:obj:0": "Bring the ⟦E27⟧ to Baron Revilgaz in Booty Bay.",
+  "quest:1182:details:0": "See, the Venture Company shredders out in Lake Nazferiti (in northern Stranglethorn) have been equipped with a new model fuel regulator. I was thinking that Pozzik would be able to take advantage of it, if he could get some details. Unfortunately, Cozzle, the foreman out there, appears to be a little more clever than I gave him credit for.",
+  "quest:1182:details:1": "You seem like you might have more luck finding the blueprints though. I know he keeps them in his house, but they're almost certainly under lock and key.",
+  "quest:1182:progress:0": "Much as I hate to admit it, that gnome team they have out there is pretty good. Our boys need every edge they can get.",
+  "quest:1182:completion:0": "Now, let me just get a copy of these blueprints for my own notes and you can bring these straight to Pozzik. Wouldn't want him to think that one of his sponsors was abandoning him.",
+  "quest:1183:obj:0": "Deliver the ⟦E27⟧ to Pozzik on the Shimmering Flats.",
+  "quest:1183:details:0": "You should be all set to go. Give Pozzik my regards and tell him that if he ever needs anything, not to hesitate to ask. I'll be waiting for the news that he breaks the track record soon!",
+  "quest:1183:progress:0": "⟦21⟧! Did you manage to track down the fuel regulator?",
+  "quest:1183:completion:0": "I was hoping that it would be already assembled, but this does present the unique opportunity to improve on the design from the ground up. Thanks, ⟦22⟧. I'll be able to sketch up some improved schematics, build the thing, and have it installed real soon.",
+  "quest:1186:obj:0": "Speak with Razzeric on the Shimmering Flats.",
+  "quest:1186:details:0": "I'm going to be busy with working on integrating this new fuel regulator to our racer designs, but if you'd like to help out the team some more, talk to Razzeric. He's our pilot--well, our eighteenth pilot, to be exact--and he likes to add his own little modifications to the racers.",
+  "quest:1186:details:1": "He's a little off his rocker, though, so try not to act too surprised.",
+  "quest:1186:completion:0": "You're the ⟦23⟧ that's been helping Pozzik out, right? I was like you once, running around the pit area, helping with whatever work the mechanics would let me do.",
+  "quest:1186:completion:1": "Now look at me! The goblin racing team's pilot extraordinaire!",
+  "quest:1137:obj:0": "Speak with Fizzle Brassbolts in the Shimmering Flats.",
+  "quest:1137:details:0": "⟦E28⟧ has an amazing ⟦E29⟧ to heat! I'm sure it will work for Fizzle's pistons. But he'll need true indurium ore, not just the flakes.",
+  "quest:1137:details:1": "To get the ore, it must be mined from deep within Uldaman, on the northern borders of the ⟦E3⟧. That is the true source of indurium.",
+  "quest:1137:details:2": "Send Fizzle Brassbolts my regards, and tell him what I told you.",
+  "quest:1137:details:3": "Safe travels, ⟦24⟧. And it won't surprise me if we meet again -- once Fizzle learns of indurium he'll probably send you to Uldaman to acquire it!",
+  "quest:1137:completion:0": "⟦25⟧, you're back! You found Martek? You spoke with him? What did he say? Can he help??",
+  "quest:1137:completion:1": "Tell me, tell me, tell me!!",
+  "quest:1108:obj:0": "Bring 10 ⟦E28⟧ Flakes to ⟦E2⟧ in the ⟦E3⟧.",
+  "quest:1108:details:0": "I'm not out here just to stay away from people. There is a wealth of metal in the ⟦E3⟧, ⟦26⟧, if you have the guts to get it.",
+  "quest:1108:details:1": "The metal's called indurium and as luck would have it, it is rumored to possess high ⟦E29⟧ to heat and stress. It might work for Fizzle's car.",
+  "quest:1108:details:2": "But let's make sure. Get me samples of indurium and I'll test its properties.",
+  "quest:1108:details:3": "True indurium ore lies deep in Uldaman, but the Stonevault troggs of the ⟦E3⟧ sometimes have flakes of it on them. Bring me those flakes.",
+  "quest:1108:progress:0": "Did you find any indurium flakes, ⟦27⟧. I have my forge heated up and ready to test them.",
+  "quest:1108:completion:0": "Ah yes, these will do fine. Now let's put them in some heat and see how they fare...",
+  "quest:79366:title": "Heed My Call",
+  "quest:1187:obj:0": "Retrieve the ⟦E30⟧ for Razzeric in the Shimmering Flats.",
+  "quest:1187:details:0": "Pozzik's a great mechanic, I know that, but he's afraid to just load on the firepower and grab on for the ride. Not me, though.",
+  "quest:1187:details:1": "After Pozzik finishes with a racer, I take a little time to put my own modifications on--you know, loosening up the controls, removing parts of the frame, and adding more juice!",
+  "quest:1187:details:2": "I ordered a seaforium booster from Shreev at the Gizmorium in Gadgetzan, but apparently the zeppelin it was being sent on crashed in ⟦E31⟧! I gotta have it, ⟦28⟧!",
+  "quest:1187:progress:0": "How'm I supposed to show my face around the track without a little extra kick to get me going? It's a travesty, I tell you.",
+  "quest:1187:completion:0": "Just take a look at this beauty! Fifteen pounds of solid seaforium power! Once I get this strapped on to the side of my racer, I'll be around the track so fast I'll beat the gnomes twice!",
+  "quest:1188:obj:0": "Bring the ⟦E30⟧ to Shreev in Gadgetzan.",
+  "quest:1188:details:0": "But wait, what's this? Shreev left the safety on. That will limit the amount of power I can draw from the booster at any time. I told him I wanted it off! This is no good.",
+  "quest:1188:details:1": "You have to take this to the Gadgetzan Gizmorium in the ⟦E32⟧ Desert and have Shreev remove this.",
+  "quest:1188:progress:0": "As I'm sure you know, the Gizmorium can service all of your tinkering needs! How can I help you?",
+  "quest:1188:completion:0": "Only Razzeric would take a look at this and say that I'd somehow put some sort of safety lock on it. This booster is almost completely seaforium explosives. I already modified it so that more of its payload would be delivered upon use, but Razzeric is never content unless he goes to eleven!",
+  "quest:1189:obj:0": "Return the ⟦E33⟧ to Razzeric on the Shimmering Flats.",
+  "quest:1189:details:0": "There, I did what Razzeric wanted. Just tell him to be careful when he sets this off. If he makes the slightest mistake, he won't be moving forward, he'll just be a burnt spot on the track.",
+  "quest:1189:details:1": "Would be a shame, too, if that happened. Who knows if our nineteenth driver would be any good?",
+  "quest:1189:progress:0": "Can you believe Pozzik put a bucket of sand on the racer? How am I supposed to ⟦E7⟧ my maximum speed with a bucket of sand under the seat?",
+  "quest:1189:completion:0": "Now that's more like it! I wish I could see the look on the gnomes' eyes when they see me set this baby off.",
+  "quest:1189:completion:1": "Too bad I'll be too busy pulling off a new course record!",
+  "quest:1190:obj:0": "Have Zamek create a diversion, then steal Rizzle's plans for Pozzik on the Shimmering Flats.",
+  "quest:1190:details:0": "The Brassbolts brothers have discovered a new building material, that's the only explanation that makes sense. Their cars have been operating faster than before, but their designs, and all the other data we've gathered from their runs is identical.",
+  "quest:1190:details:1": "What we do know, is that Rizzle Brassbolts has been focused on the plans for this new discovery almost constantly.",
+  "quest:1190:details:2": "Zamek can create a diversion for you, so that you can steal those plans from them.",
+  "quest:1190:completion:0": "Scribbled in a hasty, hurried hand, a scroll of notes and designs for the refinement of some raw material.",
+  "quest:1194:obj:0": "Bring the ⟦E34⟧ to Pozzik on the Shimmering Flats.",
+  "quest:1194:details:0": "Rizzle's schematics describe the process of the refinement of indurium ore. From his scrawls, it is apparent that indurium ore is being obtained from the dwarven excavation site of Uldaman in the ⟦E3⟧.",
+  "quest:1194:details:1": "Much of the other notes relate to the heat resistant properties.",
+  "quest:1194:details:2": "Used as a paperweight for the plans is a hunk of what appears to be unrefined indurium ore.",
+  "quest:1194:completion:0": "⟦E28⟧? Interesting... If it is capable of resisting heat to the degree that you say, it would explain the performance increase the gnomes have displayed of late.",
+  "quest:1194:completion:1": "This sample you've brought to me will be invaluable, also. I will be able to perform some tests on this, but I'll need more for this to actually be of any use to us.",
+  "quest:1118:obj:0": "Bring ⟦E35⟧ to Crank Fizzlebub in Booty Bay.",
+  "quest:1118:details:0": "⟦29⟧, you're a ⟦30⟧ I can trust, both to get the job done and to keep your mouth shut while doing it.",
+  "quest:1118:details:1": "I've been brewing up a new scheme. It's risky, but if it works then we could both make a bundle! And I think you're just the person to see it through.",
+  "quest:1118:details:2": "To start, you must go back to Booty Bay. I apologize, good ⟦31⟧. I know my last task took you there. But this time, speak with Crank Fizzlebub.",
+  "quest:1118:details:3": "Give him this letter. And if he ⟦E36⟧ aid, do your best to help him. It will be worth the effort.",
+  "quest:1118:progress:0": "Hello hello. And what brings a noble ⟦32⟧ such as you down to Booty Bay?",
+  "quest:1118:completion:0": "I see. Kravel has a big scheme planned. He has a sinister mind -- I like that about him.",
+  "quest:1118:completion:1": "So you'll need something to addle wits, eh? Something powerful...",
+  "quest:1118:completion:2": "I wonder if the mixture Zanzil feeds his zombies could be used...",
+  "quest:1119:obj:0": "Bring the ⟦E37⟧ back to Kravel in the Shimmering Flats.",
+  "quest:1119:details:0": "I figured out how to use Zanzil's mixture with stout to make a powerful libation. A ⟦E37⟧. I think it'll be just what Kravel needs, but try it out and let me know how it works.",
+  "quest:1119:details:1": "And ⟦33⟧, don't keep this stuff too long without using it. Zanzil's mixture has a weird ⟦E38⟧ on the stout's yeast, kicking it into high gear. So it won't stay fresh forever.",
+  "quest:1119:progress:0": "Hello, ⟦34⟧. Was Fizzlebub able to help us?",
+  "quest:1119:completion:0": "Wonderful! Fizzlebub came through! I'll remember that next time I see him.",
+  "quest:1119:completion:1": "And thank you, ⟦35⟧. You're doing a great job, and we both stand to make a lot of money from this..."
+ },
+ "context": {
+  "quest:1175": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 33,
+   "side": "",
+   "giver": "Trackmaster Zherin",
+   "turner": "Trackmaster Zherin"
+  },
+  "quest:1100": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 34,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Falfindel Waywarder"
+  },
+  "quest:1106": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 35,
+   "side": "",
+   "giver": "Fizzle Brassbolts",
+   "turner": "Martek the Exiled («مارتک تبعیدی»)"
+  },
+  "quest:1107": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 35,
+   "side": "",
+   "giver": "Wizzle Brassbolts",
+   "turner": "Wizzle Brassbolts"
+  },
+  "quest:1147": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 35,
+   "side": "horde",
+   "giver": "Moktar Krin",
+   "turner": "Moktar Krin"
+  },
+  "quest:1148": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 35,
+   "side": "horde",
+   "giver": "",
+   "turner": "Korran"
+  },
+  "quest:1184": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 35,
+   "side": "horde",
+   "giver": "Korran",
+   "turner": "Belgrom Rockmaul"
+  },
+  "quest:5361": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 35,
+   "side": "horde",
+   "giver": "Cliffwatcher Longhorn",
+   "turner": "Nataka Longhorn"
+  },
+  "quest:1111": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 36,
+   "side": "",
+   "giver": "Kravel Koalbeard",
+   "turner": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)"
+  },
+  "quest:1112": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 36,
+   "side": "",
+   "giver": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)",
+   "turner": "Kravel Koalbeard"
+  },
+  "quest:1114": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 36,
+   "side": "",
+   "giver": "Kravel Koalbeard",
+   "turner": "Fizzle Brassbolts"
+  },
+  "quest:1115": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 36,
+   "side": "",
+   "giver": "Kravel Koalbeard",
+   "turner": "Krazek"
+  },
+  "quest:1117": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 36,
+   "side": "",
+   "giver": "Krazek",
+   "turner": "Kravel Koalbeard"
+  },
+  "quest:1394": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 36,
+   "side": "horde",
+   "giver": "Parqual Fintallas",
+   "turner": "Dorn Plainstalker"
+  },
+  "quest:1178": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 37,
+   "side": "",
+   "giver": "Pozzik",
+   "turner": "Gazlowe"
+  },
+  "quest:1180": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 37,
+   "side": "",
+   "giver": "Gazlowe",
+   "turner": "Wharfmaster Lozgil"
+  },
+  "quest:1181": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 37,
+   "side": "",
+   "giver": "Wharfmaster Lozgil",
+   "turner": "Baron Revilgaz"
+  },
+  "quest:1182": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 37,
+   "side": "",
+   "giver": "Baron Revilgaz",
+   "turner": "Baron Revilgaz"
+  },
+  "quest:1183": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 37,
+   "side": "",
+   "giver": "Baron Revilgaz",
+   "turner": "Pozzik"
+  },
+  "quest:1186": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 37,
+   "side": "",
+   "giver": "Pozzik",
+   "turner": "Razzeric"
+  },
+  "quest:1137": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 38,
+   "side": "",
+   "giver": "Martek the Exiled («مارتک تبعیدی»)",
+   "turner": "Fizzle Brassbolts"
+  },
+  "quest:1108": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 39,
+   "side": "",
+   "giver": "Martek the Exiled («مارتک تبعیدی»)",
+   "turner": "Martek the Exiled («مارتک تبعیدی»)"
+  },
+  "quest:79366": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 40,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:1187": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 41,
+   "side": "",
+   "giver": "Razzeric",
+   "turner": "Razzeric"
+  },
+  "quest:1188": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 41,
+   "side": "",
+   "giver": "Razzeric",
+   "turner": "Shreev"
+  },
+  "quest:1189": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 41,
+   "side": "",
+   "giver": "Shreev",
+   "turner": "Razzeric"
+  },
+  "quest:1190": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 41,
+   "side": "",
+   "giver": "Pozzik",
+   "turner": "Rizzle's Unguarded Plans"
+  },
+  "quest:1194": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 41,
+   "side": "",
+   "giver": "Rizzle's Unguarded Plans",
+   "turner": "Pozzik"
+  },
+  "quest:1118": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 43,
+   "side": "",
+   "giver": "Kravel Koalbeard",
+   "turner": "Crank Fizzlebub"
+  },
+  "quest:1119": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 44,
+   "side": "",
+   "giver": "Crank Fizzlebub",
+   "turner": "Kravel Koalbeard"
+  }
+ },
+ "known": {
+  "quest:1175": {
+   "title": "برخوردی در جاده"
+  },
+  "quest:1100": {
+   "title": "دفترچهٔ لان‌برو"
+  },
+  "quest:1106": {
+   "title": "مارتک تبعیدی"
+  },
+  "quest:1107": {
+   "title": "بالاخره‌های پوشیده"
+  },
+  "quest:1147": {
+   "title": "توده بزرگ‌تر می‌شود"
+  },
+  "quest:1148": {
+   "title": "قطعات توده"
+  },
+  "quest:1184": {
+   "title": "قطعات توده"
+  },
+  "quest:5361": {
+   "title": "شجره‌نامه"
+  },
+  "quest:1111": {
+   "title": "لنگرگاه‌دار دیزی‌ویگ"
+  },
+  "quest:1112": {
+   "title": "قطعات برای کراول"
+  },
+  "quest:1114": {
+   "title": "تحویل به نوم‌ها"
+  },
+  "quest:1115": {
+   "title": "شایعه‌پراکن"
+  },
+  "quest:1117": {
+   "title": "شایعه‌ها برای کراول"
+  },
+  "quest:1394": {
+   "title": "گذر نهایی"
+  },
+  "quest:1178": {
+   "title": "حامی مالی گابلینی"
+  },
+  "quest:1180": {
+   "title": "حامی مالی گابلینی"
+  },
+  "quest:1181": {
+   "title": "حامی مالی گابلینی"
+  },
+  "quest:1182": {
+   "title": "حامی مالی گابلینی"
+  },
+  "quest:1183": {
+   "title": "حامی مالی گابلینی"
+  },
+  "quest:1186": {
+   "title": "خلبان هجدهم"
+  },
+  "quest:1137": {
+   "title": "خبری برای فیزل"
+  },
+  "quest:1108": {
+   "title": "ایندوریوم"
+  },
+  "quest:1187": {
+   "title": "تنظیمِ رزریک"
+  },
+  "quest:1188": {
+   "title": "اول ایمنی"
+  },
+  "quest:1189": {
+   "title": "اول ایمنی"
+  },
+  "quest:1190": {
+   "title": "حفظ سرعت"
+  },
+  "quest:1194": {
+   "title": "نقشه‌های ریزل"
+  },
+  "quest:1118": {
+   "title": "بازگشت به بوتی‌بی"
+  },
+  "quest:1119": {
+   "title": "معجون زنزیل و استوت احمق"
+  }
+ }
+}

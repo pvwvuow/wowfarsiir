@@ -1,0 +1,892 @@
+{
+ "pack": "quest-silithus-04",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-silithus-04.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Target",
+   "fa": "هدف",
+   "kind": "tm"
+  },
+  "E2": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Combat Task Briefing XI",
+   "fa": "توجیه‌نامهٔ نبرد XI",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Explosives",
+   "fa": "مواد منفجره",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Immolation",
+   "fa": "سوختن",
+   "kind": "sp"
+  },
+  "E7": {
+   "en": "Goblin Rocket Fuel",
+   "fa": "سوخت موشکی گابلین",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Dense Blasting Powder",
+   "fa": "گرد انفجاریِ متراکم",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Logistics Task Briefing IV",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات IV",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Materials",
+   "fa": "مواد",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Large Brilliant Shard",
+   "fa": "خرده‌بلور درخشان بزرگ",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Large Radiant Shard",
+   "fa": "تراشهٔ بزرگِ تابناک",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Huge Emerald",
+   "fa": "زمردِ بزرگ",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Logistics Task Briefing V",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات V",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Heavy Armor Kits",
+   "fa": "کیت‌های زره سنگین",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Logistics Task Briefing VII",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات VII",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Arms",
+   "fa": "سلاح‌ها",
+   "kind": "sp"
+  },
+  "E19": {
+   "en": "Logistics Task Briefing VI",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات VI",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Mooncloth",
+   "fa": "پارچهٔ ماه",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Ironweb Spider Silk",
+   "fa": "ابریشمِ عنکبوتِ تارآهنین",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Logistics Task Briefing VIII",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات VIII",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Enchanted Leather",
+   "fa": "چرم افسون‌شده",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Logistics Task Briefing IX",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات IX",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Powerful Mojo",
+   "fa": "موجوی پرقدرت",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Flasks",
+   "fa": "فلَسک‌ها",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E30": {
+   "en": "Axes",
+   "fa": "تبر",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Ornate Mithril Boots",
+   "fa": "چکمهٔ میتریلِ مزین",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Logistics Task Briefing II",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات II",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Logistics Task Briefing III",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات III",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Bandages",
+   "fa": "بانداژها",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Logistics Task Briefing X",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات X",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Skin of Shadow",
+   "fa": "پوست سایه",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Twilight Cultist Robe",
+   "fa": "ردای فرقه‌گرای گرگ‌ومیش",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Aurel Goldleaf",
+   "fa": "اورل گلدلیف",
+   "kind": "qs"
+  },
+  "E40": {
+   "en": "Logistics Task Briefing XI",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات XI",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Twilight Hammer",
+   "fa": "چکش گرگ‌ومیش",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "Survival",
+   "fa": "بقا",
+   "kind": "cls"
+  },
+  "E45": {
+   "en": "Powerful Anti-Venom",
+   "fa": "پادزهر نیرومند",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Baked Salmon",
+   "fa": "سالمون کبابی",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Colossus of Ashi's Husk",
+   "fa": "پوستهٔ تنومندِ آشی",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E49": {
+   "en": "Colossus of Regal's Husk",
+   "fa": "پوستهٔ تنومندِ ریگال",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Searing Gorge",
+   "fa": "تنگهٔ سوزان",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "Colossus of Zora's Husk",
+   "fa": "پوستهٔ تنومند زورا",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Lord Maxwell Tyrosus",
+   "fa": "لرد ماکسول تیروسوس",
+   "kind": "qs"
+  },
+  "E54": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E55": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E56": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Dirk",
+   "fa": "خنجر",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Thunderwood",
+   "fa": "چوب آذرخش",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "Venoxis's Venom Sac",
+   "fa": "کیسهٔ زهر ونوکسیس",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Kurinnaxx's Venom Sac",
+   "fa": "کیسهٔ زهر کوریناکس",
+   "kind": "it"
+  },
+  "E61": {
+   "en": "Abyssal Scepter",
+   "fa": "عصا درندهٔ اعماق",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Honored",
+   "fa": "محترم",
+   "kind": "tm"
+  },
+  "E63": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E64": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E65": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E66": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Target": "هدف",
+  "Silithus": "سیلیتوس",
+  "Combat Task Briefing XI": "توجیه‌نامهٔ نبرد XI",
+  "Ironforge": "آیرون‌فورج",
+  "Explosives": "مواد منفجره",
+  "Immolation": "سوختن",
+  "Goblin Rocket Fuel": "سوخت موشکی گابلین",
+  "Dense Blasting Powder": "گرد انفجاریِ متراکم",
+  "Logistics Task Briefing IV": "توجیه‌نامهٔ مأموریتِ تدارکات IV",
+  "Materials": "مواد",
+  "Large Brilliant Shard": "خرده‌بلور درخشان بزرگ",
+  "Large Radiant Shard": "تراشهٔ بزرگِ تابناک",
+  "Huge Emerald": "زمردِ بزرگ",
+  "Logistics Task Briefing V": "توجیه‌نامهٔ مأموریتِ تدارکات V",
+  "Armor": "زره",
+  "Heavy Armor Kits": "کیت‌های زره سنگین",
+  "Logistics Task Briefing VII": "توجیه‌نامهٔ مأموریتِ تدارکات VII",
+  "Arms": "سلاح‌ها",
+  "Logistics Task Briefing VI": "توجیه‌نامهٔ مأموریتِ تدارکات VI",
+  "Mooncloth": "پارچهٔ ماه",
+  "Runecloth": "پارچهٔ رونی",
+  "Ironweb Spider Silk": "ابریشمِ عنکبوتِ تارآهنین",
+  "Logistics Task Briefing VIII": "توجیه‌نامهٔ مأموریتِ تدارکات VIII",
+  "Enchanted Leather": "چرم افسون‌شده",
+  "Logistics Task Briefing IX": "توجیه‌نامهٔ مأموریتِ تدارکات IX",
+  "Orgrimmar": "اورگریمار",
+  "Powerful Mojo": "موجوی پرقدرت",
+  "Flasks": "فلَسک‌ها",
+  "Shadow": "سایه",
+  "Axes": "تبر",
+  "level": "لِوِل",
+  "Ornate Mithril Boots": "چکمهٔ میتریلِ مزین",
+  "Logistics Task Briefing II": "توجیه‌نامهٔ مأموریتِ تدارکات II",
+  "Logistics Task Briefing III": "توجیه‌نامهٔ مأموریتِ تدارکات III",
+  "Bandages": "بانداژها",
+  "Logistics Task Briefing X": "توجیه‌نامهٔ مأموریتِ تدارکات X",
+  "Skin of Shadow": "پوست سایه",
+  "Twilight Cultist Robe": "ردای فرقه‌گرای گرگ‌ومیش",
+  "Aurel Goldleaf": "اورل گلدلیف",
+  "Logistics Task Briefing XI": "توجیه‌نامهٔ مأموریتِ تدارکات XI",
+  "Twilight Hammer": "چکش گرگ‌ومیش",
+  "Elune": "الون",
+  "enemies": "دشمنان",
+  "Survival": "بقا",
+  "Powerful Anti-Venom": "پادزهر نیرومند",
+  "Baked Salmon": "سالمون کبابی",
+  "Colossus of Ashi's Husk": "پوستهٔ تنومندِ آشی",
+  "battle": "نبرد",
+  "Colossus of Regal's Husk": "پوستهٔ تنومندِ ریگال",
+  "Searing Gorge": "تنگهٔ سوزان",
+  "armor": "زره",
+  "Colossus of Zora's Husk": "پوستهٔ تنومند زورا",
+  "Lord Maxwell Tyrosus": "لرد ماکسول تیروسوس",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Hope": "امید",
+  "Dirk": "خنجر",
+  "Thunderwood": "چوب آذرخش",
+  "Venoxis's Venom Sac": "کیسهٔ زهر ونوکسیس",
+  "Kurinnaxx's Venom Sac": "کیسهٔ زهر کوریناکس",
+  "Abyssal Scepter": "عصا درندهٔ اعماق",
+  "Honored": "محترم",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Alliance": "اتحاد",
+  "Horde": "هورد",
+  "enemy": "دشمن"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$b",
+  "29": "$b",
+  "30": "$N",
+  "31": "$B",
+  "32": "$N",
+  "33": "$B",
+  "34": "$gboy:girl;",
+  "35": "$B",
+  "36": "$c",
+  "37": "$B",
+  "38": "$B",
+  "39": "$Glad:lass;",
+  "40": "$c",
+  "41": "$N",
+  "42": "$r",
+  "43": "$N",
+  "44": "$B",
+  "45": "$N",
+  "46": "$B",
+  "47": "$B",
+  "48": "$N",
+  "49": "$n",
+  "50": "$N"
+ },
+ "rows": {
+  "quest:8777:title": "⟦E1⟧: Hive'Regal Burrowers",
+  "quest:8777:desc:0": "Kill 30 Hive'Regal Burrowers and report back to Commander Mar'alith at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E3⟧ in order to complete this quest.",
+  "quest:8777:obj:0": "Kill 30 Hive'Regal Burrowers and report back to Commander Mar'alith at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E3⟧ in order to complete this quest.",
+  "quest:8777:details:0": "Kill 30 Hive'Regal Burrowers and report back to Commander Mar'alith at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E3⟧ in order to complete this quest.",
+  "quest:8777:progress:0": "You wish to tell me something, ⟦1⟧?",
+  "quest:8777:completion:0": "Excellent work, ⟦2⟧. Your part in the attack on Hive'Regal has been noted.",
+  "quest:8778:title": "The ⟦E4⟧ Brigade Needs ⟦E5⟧!",
+  "quest:8778:desc:0": "Bring 6 Oils of ⟦E6⟧, 5 ⟦E7⟧ and 10 ⟦E8⟧ to Arcanist Nozzlespring near Hive'Zora in ⟦E2⟧. You must also bring ⟦E9⟧ in order to complete this quest.",
+  "quest:8778:obj:0": "Bring 6 Oils of ⟦E6⟧, 5 ⟦E7⟧ and 10 ⟦E8⟧ to Arcanist Nozzlespring near Hive'Zora in ⟦E2⟧. You must also bring ⟦E9⟧ in order to complete this quest.",
+  "quest:8778:details:0": "Bring 6 Oils of ⟦E6⟧, 5 ⟦E7⟧ and 10 ⟦E8⟧ to Arcanist Nozzlespring near Hive'Zora in ⟦E2⟧. You must also bring ⟦E9⟧ in order to complete this quest.",
+  "quest:8778:progress:0": "You have something for me, ⟦3⟧?",
+  "quest:8778:completion:0": "Ah, yes!  These will come in handy! Much obliged, ⟦4⟧!",
+  "quest:8779:title": "Scrying ⟦E10⟧",
+  "quest:8779:desc:0": "Bring 1 ⟦E11⟧, 1 ⟦E12⟧ and 1 ⟦E13⟧ to Geologist Larksbane at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E14⟧ in order to complete this quest.",
+  "quest:8779:obj:0": "Bring 1 ⟦E11⟧, 1 ⟦E12⟧ and 1 ⟦E13⟧ to Geologist Larksbane at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E14⟧ in order to complete this quest.",
+  "quest:8779:details:0": "Bring 1 ⟦E11⟧, 1 ⟦E12⟧ and 1 ⟦E13⟧ to Geologist Larksbane at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E14⟧ in order to complete this quest.",
+  "quest:8779:progress:0": "You have something for me, ⟦5⟧ ?",
+  "quest:8779:completion:0": "Why, yes... these will be of tremendous aid! These materials are awfully hard to come by in the desert, ⟦6⟧ . Thank you.",
+  "quest:8780:title": "⟦E15⟧ Kits for the Field",
+  "quest:8780:desc:0": "Bring 8 Rugged ⟦E15⟧ Kits and 8 ⟦E16⟧ to Janela Stouthammer at the ⟦E4⟧ Brigade Outpost near Hive'Zora in ⟦E2⟧. You must also bring ⟦E17⟧ in order to complete this quest.",
+  "quest:8780:obj:0": "Bring 8 Rugged ⟦E15⟧ Kits and 8 ⟦E16⟧ to Janela Stouthammer at the ⟦E4⟧ Brigade Outpost near Hive'Zora in ⟦E2⟧. You must also bring ⟦E17⟧ in order to complete this quest.",
+  "quest:8780:details:0": "Bring 8 Rugged ⟦E15⟧ Kits and 8 ⟦E16⟧ to Janela Stouthammer at the ⟦E4⟧ Brigade Outpost near Hive'Zora in ⟦E2⟧. You must also bring ⟦E17⟧ in order to complete this quest.",
+  "quest:8780:progress:0": "You have something for me, ⟦7⟧ ?",
+  "quest:8780:completion:0": "Thanks, I'll hand these out to the lads.",
+  "quest:8781:title": "⟦E18⟧ for the Field",
+  "quest:8781:desc:0": "Bring 2 Moonsteel Broadswords to Janela Stouthammer at the ⟦E4⟧ Brigade Outpost outside of Hive'Zora. You must also bring ⟦E19⟧ in order to complete this quest.",
+  "quest:8781:obj:0": "Bring 2 Moonsteel Broadswords to Janela Stouthammer at the ⟦E4⟧ Brigade Outpost outside of Hive'Zora. You must also bring ⟦E19⟧ in order to complete this quest.",
+  "quest:8781:details:0": "Bring 2 Moonsteel Broadswords to Janela Stouthammer at the ⟦E4⟧ Brigade Outpost outside of Hive'Zora. You must also bring ⟦E19⟧ in order to complete this quest.",
+  "quest:8781:progress:0": "You have something for me, ⟦8⟧?",
+  "quest:8781:completion:0": "Oh, excellent! I won't have to hear complaints about dull blades anymore. Thank you, ⟦9⟧.",
+  "quest:8782:title": "Uniform Supplies",
+  "quest:8782:desc:0": "Bring 1 ⟦E20⟧, 2 Bolts of ⟦E21⟧ and 1 ⟦E22⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8782:obj:0": "Bring 1 ⟦E20⟧, 2 Bolts of ⟦E21⟧ and 1 ⟦E22⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8782:details:0": "Bring 1 ⟦E20⟧, 2 Bolts of ⟦E21⟧ and 1 ⟦E22⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8782:progress:0": "You have something for me, ⟦10⟧ ?",
+  "quest:8782:completion:0": "Ah, we were in need of these. Your work is appreciated, ⟦11⟧ .",
+  "quest:8783:title": "Extraordinary ⟦E10⟧",
+  "quest:8783:desc:0": "Bring 2 Enchanted Thorium Bars and 2 ⟦E24⟧ to Vargus at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8783:obj:0": "Bring 2 Enchanted Thorium Bars and 2 ⟦E24⟧ to Vargus at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8783:details:0": "Bring 2 Enchanted Thorium Bars and 2 ⟦E24⟧ to Vargus at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8783:progress:0": "You have something for me, ⟦12⟧ ?",
+  "quest:8783:completion:0": "Ah, yes. These materials are of excellent quality. Thank you, ⟦13⟧ .",
+  "quest:8785:title": "The ⟦E26⟧ Legion Needs Mojo!",
+  "quest:8785:desc:0": "Bring 6 ⟦E27⟧, 6 ⟦E28⟧ of Big Mojo and 8 Oils of ⟦E6⟧ to ⟦E29⟧ Priestess Shai near Hive'Regal in ⟦E2⟧. You must also bring ⟦E9⟧ in order to complete this quest.",
+  "quest:8785:obj:0": "Bring 6 ⟦E27⟧, 6 ⟦E28⟧ of Big Mojo and 8 Oils of ⟦E6⟧ to ⟦E29⟧ Priestess Shai near Hive'Regal in ⟦E2⟧. You must also bring ⟦E9⟧ in order to complete this quest.",
+  "quest:8785:details:0": "Bring 6 ⟦E27⟧, 6 ⟦E28⟧ of Big Mojo and 8 Oils of ⟦E6⟧ to ⟦E29⟧ Priestess Shai near Hive'Regal in ⟦E2⟧. You must also bring ⟦E9⟧ in order to complete this quest.",
+  "quest:8785:progress:0": "Do you have my materials, ⟦14⟧?",
+  "quest:8785:completion:0": "Ah, yes. Just what I needed! I'll make a special concoction with this. The silithid won't like it one bit!",
+  "quest:8786:title": "⟦E18⟧ for the Field",
+  "quest:8786:desc:0": "Bring 3 Massive Iron ⟦E30⟧ to Merok Longstride at the ⟦E26⟧ Legion camp outside of Hive'Regal. You must also bring ⟦E19⟧ in order to complete this quest.",
+  "quest:8786:obj:0": "Bring 3 Massive Iron ⟦E30⟧ to Merok Longstride at the ⟦E26⟧ Legion camp outside of Hive'Regal. You must also bring ⟦E19⟧ in order to complete this quest.",
+  "quest:8786:details:0": "Bring 3 Massive Iron ⟦E30⟧ to Merok Longstride at the ⟦E26⟧ Legion camp outside of Hive'Regal. You must also bring ⟦E19⟧ in order to complete this quest.",
+  "quest:8786:progress:0": "You have something for me, ⟦15⟧?",
+  "quest:8786:completion:0": "Excellent work. We were in short supply of these, ⟦16⟧.",
+  "quest:8787:title": "⟦E15⟧ Kits for the Field",
+  "quest:8787:desc:0": "Bring 8 Rugged ⟦E15⟧ Kits and 8 ⟦E16⟧ to Merok Longstride near Hive'Regal. You must also bring ⟦E17⟧ in order to complete this quest.",
+  "quest:8787:obj:0": "Bring 8 Rugged ⟦E15⟧ Kits and 8 ⟦E16⟧ to Merok Longstride near Hive'Regal. You must also bring ⟦E17⟧ in order to complete this quest.",
+  "quest:8787:details:0": "Bring 8 Rugged ⟦E15⟧ Kits and 8 ⟦E16⟧ to Merok Longstride near Hive'Regal. You must also bring ⟦E17⟧ in order to complete this quest.",
+  "quest:8787:progress:0": "You have something for me, ⟦17⟧?",
+  "quest:8787:completion:0": "Ah, yes... I will distribute these to the troops, ⟦18⟧. The ⟦E26⟧ Legion thanks you!",
+  "quest:8800:obj:0": "Talk to Vargus at Cenarion Hold in ⟦E2⟧.",
+  "quest:8800:details:0": "As you complete the tasks you're assigned in the war you'll want to talk to Vargus, the blacksmith. Show him any badges you've earned along the way. He'll provide you with gear to match your ⟦E31⟧ of commitment to our cause.",
+  "quest:8800:completion:0": "Kaldon sent you? Very well, let's see what we can do for you.",
+  "quest:8805:title": "Boots for the Guard",
+  "quest:8805:desc:0": "Bring 3 ⟦E32⟧ to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E33⟧ in order to complete this quest.",
+  "quest:8805:obj:0": "Bring 3 ⟦E32⟧ to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E33⟧ in order to complete this quest.",
+  "quest:8805:details:0": "Bring 3 ⟦E32⟧ to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E33⟧ in order to complete this quest.",
+  "quest:8805:progress:0": "You have something for me?",
+  "quest:8805:completion:0": "Excellent. We were in need of these, ⟦19⟧ . Good work.",
+  "quest:8806:title": "Grinding Stones for the Guard",
+  "quest:8806:desc:0": "Bring 10 Dense Grinding Stones, 10 Solid Grinding Stones and 10 Heavy Grinding Stones to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E34⟧ in order to complete this quest.",
+  "quest:8806:obj:0": "Bring 10 Dense Grinding Stones, 10 Solid Grinding Stones and 10 Heavy Grinding Stones to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E34⟧ in order to complete this quest.",
+  "quest:8806:details:0": "Bring 10 Dense Grinding Stones, 10 Solid Grinding Stones and 10 Heavy Grinding Stones to Vish Kozus, Captain of the Guard at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E34⟧ in order to complete this quest.",
+  "quest:8806:progress:0": "You have something for me?",
+  "quest:8806:completion:0": "Excellent. We were in need of these, ⟦20⟧ . Good work.",
+  "quest:8807:title": "Scrying ⟦E10⟧",
+  "quest:8807:desc:0": "Bring 1 ⟦E11⟧, 1 ⟦E12⟧ and 1 ⟦E13⟧ to Geologist Larksbane at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E14⟧ in order to complete this quest.",
+  "quest:8807:obj:0": "Bring 1 ⟦E11⟧, 1 ⟦E12⟧ and 1 ⟦E13⟧ to Geologist Larksbane at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E14⟧ in order to complete this quest.",
+  "quest:8807:details:0": "Bring 1 ⟦E11⟧, 1 ⟦E12⟧ and 1 ⟦E13⟧ to Geologist Larksbane at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E14⟧ in order to complete this quest.",
+  "quest:8807:progress:0": "You have something for me, ⟦21⟧ ?",
+  "quest:8807:completion:0": "Why yes... these will be of tremendous aid! These materials are awfully hard to come by in the desert, ⟦22⟧ . Thank you.",
+  "quest:8808:title": "Uniform Supplies",
+  "quest:8808:desc:0": "Bring 1 ⟦E20⟧, 2 Bolts of ⟦E21⟧ and 1 ⟦E22⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8808:obj:0": "Bring 1 ⟦E20⟧, 2 Bolts of ⟦E21⟧ and 1 ⟦E22⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8808:details:0": "Bring 1 ⟦E20⟧, 2 Bolts of ⟦E21⟧ and 1 ⟦E22⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E23⟧ in order to complete this quest.",
+  "quest:8808:progress:0": "You have something for me, ⟦23⟧ ?",
+  "quest:8808:completion:0": "Ah, we were in need of these. Your work is appreciated, ⟦24⟧ .",
+  "quest:8809:title": "Extraordinary ⟦E10⟧",
+  "quest:8809:desc:0": "Bring 2 Enchanted Thorium Bars and 2 ⟦E24⟧ to Vargus at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8809:obj:0": "Bring 2 Enchanted Thorium Bars and 2 ⟦E24⟧ to Vargus at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8809:details:0": "Bring 2 Enchanted Thorium Bars and 2 ⟦E24⟧ to Vargus at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E25⟧ in order to complete this quest.",
+  "quest:8809:progress:0": "You have something for me, ⟦25⟧ ?",
+  "quest:8809:completion:0": "Ah, yes. These materials are of excellent quality. Thank you, ⟦26⟧ .",
+  "quest:8810:title": "⟦E35⟧ for the Field",
+  "quest:8810:desc:0": "Bring 30 Heavy ⟦E21⟧ ⟦E35⟧, 30 Heavy Silk ⟦E35⟧ and 30 Heavy Mageweave ⟦E35⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E36⟧ in order to complete this quest.",
+  "quest:8810:obj:0": "Bring 30 Heavy ⟦E21⟧ ⟦E35⟧, 30 Heavy Silk ⟦E35⟧ and 30 Heavy Mageweave ⟦E35⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E36⟧ in order to complete this quest.",
+  "quest:8810:details:0": "Bring 30 Heavy ⟦E21⟧ ⟦E35⟧, 30 Heavy Silk ⟦E35⟧ and 30 Heavy Mageweave ⟦E35⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E36⟧ in order to complete this quest.",
+  "quest:8810:progress:0": "You have something for me, ⟦27⟧?⟦28⟧⟦29⟧",
+  "quest:8810:completion:0": "Just in time. These supplies will save lives, ⟦30⟧ . Your work is appreciated. Here's your next assignment.",
+  "quest:8829:title": "The Ultimate Deception",
+  "quest:8829:desc:0": "Bring a ⟦E37⟧, 3 Frayed Abomination Stitchings and 1 ⟦E38⟧ to ⟦E39⟧ at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E40⟧ in order to complete this quest.",
+  "quest:8829:obj:0": "Bring a ⟦E37⟧, 3 Frayed Abomination Stitchings and 1 ⟦E38⟧ to ⟦E39⟧ at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E40⟧ in order to complete this quest.",
+  "quest:8829:details:0": "Bring a ⟦E37⟧, 3 Frayed Abomination Stitchings and 1 ⟦E38⟧ to ⟦E39⟧ at Cenarion Hold in ⟦E2⟧. You must also bring ⟦E40⟧ in order to complete this quest.",
+  "quest:8829:progress:0": "You have something for me?",
+  "quest:8829:completion:0": "Yes, I believe these shall suffice. I shall craft these into the colors worn by the ⟦E41⟧'s emissaries. I pray to ⟦E42⟧ that my skills will be able to fool our ⟦E43⟧ once more. ⟦31⟧ But do not be concerned with that, you've done your part and for that you will be appropriately rewarded. You are a loyal and worthy ally, ⟦32⟧ .",
+  "quest:8856:title": "Desert ⟦E44⟧ Kits",
+  "quest:8856:desc:0": "Bring 4 Globes of Water, 4 ⟦E45⟧ and 4 ⟦E46⟧ to Calandrath at the inn in Cenarion Hold in ⟦E2⟧.",
+  "quest:8856:obj:0": "Bring 4 Globes of Water, 4 ⟦E45⟧ and 4 ⟦E46⟧ to Calandrath at the inn in Cenarion Hold in ⟦E2⟧.",
+  "quest:8856:details:0": "Bring 4 Globes of Water, 4 ⟦E45⟧ and 4 ⟦E46⟧ to Calandrath at the inn in Cenarion Hold in ⟦E2⟧.",
+  "quest:8857:obj:0": "Take the ⟦E47⟧ to Oglethorpe Obnoticus in Booty Bay.⟦33⟧",
+  "quest:8857:details:0": "I'm looking for ⟦E48⟧ hardened adventurers willing and able to get a fresh husk sample from the fallen Colossus of Ashi to Oglethorpe in Booty Bay. No, no, I wouldn't want you to go anywhere near that thing's corpse. Just take one of my samples and make it snappy. These things are no good to him rotten!",
+  "quest:8857:progress:0": "Yes? What have you got there?",
+  "quest:8857:completion:0": "Oh the chickens I will craft from this wondrous husk! Well done, my ⟦34⟧ !",
+  "quest:8858:obj:0": "Take the ⟦E49⟧ to Overseer Oilfist in ⟦E50⟧.⟦35⟧",
+  "quest:8858:details:0": "There ain't nothin' I'd like more than to stuff this bug husk down Oilfist's fat face... Cept, I'm stuck here collectin' samples from that overgrown cockroach. I'll be here 'till the wee mornin' hours given the size o' that thing.",
+  "quest:8858:details:1": "Take this here sample to Oilfist fer me and do it fast, ⟦36⟧. He's payin' BIG!",
+  "quest:8858:details:2": "Yar, Thorium Point - it be in the Searin' Gorge.",
+  "quest:8858:progress:0": "Hmmm...",
+  "quest:8858:completion:0": "Excellent. We could surely devise some incredibly powerful ⟦E51⟧ from this chitin. Here's the riches you were promised.",
+  "quest:8859:obj:0": "Take the ⟦E52⟧ to ⟦E53⟧ at ⟦E54⟧ in the ⟦E55⟧.⟦37⟧",
+  "quest:8859:details:0": "My servants were nearly killed in their efforts to recover this sample. You absolutely must hurry! ⟦E53⟧ eagerly awaits a fresh husk sample. He believes that the secrets of this Colossus could help us in the war against the Scourge!",
+  "quest:8859:details:1": "Why are you still here!? To Light's ⟦E56⟧! Yes, you will be rewarded handsomely for your efforts...⟦38⟧",
+  "quest:8859:progress:0": "You look a bit heavy in the boots, friend.",
+  "quest:8859:completion:0": "Excellent and timely! Well done, ⟦39⟧.",
+  "quest:9023:obj:0": "⟦E57⟧ ⟦E58⟧ at Cenarion Hold wants you to bring him ⟦E59⟧ and ⟦E60⟧.",
+  "quest:9023:details:0": "My brother and I run the poison operations out of the manor Ravenholdt.",
+  "quest:9023:details:1": "Lord Ravenholdt tasked me to track down a new and extremely effective poison compound that can be crafted from the venom sacs of the inhabitants of Zul'Gurub and the Ruins of Ahn'Qiraj.",
+  "quest:9023:details:2": "There are two particularly venomous beasts residing in those blasted ruins that possess what it is that we might be looking for, ⟦40⟧. Bring me a venom sac from the beasts Kurinnaxx and Venoxis and we would be eternally grateful.",
+  "quest:9023:progress:0": "This ain't no smash and grab job, ⟦41⟧. You're gonna need to bring friends.",
+  "quest:9023:completion:0": "Ravenholdt thanks you, hero! Take your pick!",
+  "quest:9248:obj:0": "⟦E39⟧ at Cenarion Hold in ⟦E2⟧ wants you to bring her 1 ⟦E61⟧. You must also be ⟦E62⟧ with the ⟦E63⟧.",
+  "quest:9248:details:0": "Ishnu-alah, ⟦42⟧. Show me proof of the demise of a Lord of the Abyssal Council and I shall reward you with an item that should aid you in your battles against the Qiraji.",
+  "quest:9248:progress:0": "Fandu-dath-belore? Oh, pardon me, ⟦43⟧. I did not recognize you. Have you the scepter?⟦44⟧",
+  "quest:9248:completion:0": "Ande'thoras-ethil. It means; 'May your troubles be diminished,' in my native tongue.",
+  "quest:9248:completion:1": "Wear the band proudly and in good health, ⟦45⟧.",
+  "quest:9338:title": "Allegiance to ⟦E63⟧",
+  "quest:9338:progress:0": "Even if you have no need for the material rewards we offer, these badges still mark our mutual trust and friendship.⟦46⟧⟦47⟧Bring them to me.  I'll make due note of your service should your performance go above and beyond the call of duty.",
+  "quest:9338:completion:0": "You honor us, ⟦48⟧. With your continued efforts we will overcome all obstacles.",
+  "quest:9415:obj:0": "Speak with Marshal Bluewall at the ⟦E64⟧ encampment near Hive'Zora.",
+  "quest:9415:details:0": "Are you Marshal Bluewall's new recruits? Of course you are.",
+  "quest:9415:details:1": "What are you waiting for? Good soldiers are dying in the desert. Aren't you excited to join them?",
+  "quest:9415:details:2": "Now, get going and don't dry out on the way.",
+  "quest:9415:completion:0": "The ⟦E64⟧ needs every able body they can get. The ⟦E65⟧ has been receiving a steady supply of reinforcements from the northern part of the continent, and it's been a struggle to keep up.",
+  "quest:9415:completion:1": "Let me explain the situation to you.",
+  "quest:9416:obj:0": "Speak with General Kirika at the ⟦E65⟧ encampment near Hive'Regal.",
+  "quest:9416:details:0": "You must be one of General Kirika's new recruits. It's about time you showed up. Bodies wear down quick in the desert.",
+  "quest:9416:details:1": "The dwarves have been getting reinforcements daily, and we can't afford to lose ground in our struggle for resources in ⟦E2⟧.",
+  "quest:9416:details:2": "Get your instructions from the General. It's not my job to train you, just find you.",
+  "quest:9416:completion:0": "It's good that you're here, but there's no time to waste making small talk. You need instructions, and then you need to get out there.",
+  "quest:9416:completion:1": "Listen up.",
+  "quest:9419:obj:0": "Find and deliver Silithyst to the Silithyst Extractor, then speak with Marshal Bluewall at the ⟦E64⟧ encampment near Hive'Zora.",
+  "quest:9419:details:0": "We recently found out that the ⟦E65⟧ has been scavenging the ⟦E2⟧ desert for resources, but paid them little mind. We thought it could not be worth it to station large numbers in this sweltering desert.",
+  "quest:9419:details:1": "However, it was discovered the importance of the resources, and now we are scrambling to catch up.",
+  "quest:9419:details:2": "If I have your assistance, you must go into the desert and recover the silithyst and return it here.",
+  "quest:9419:progress:0": "Be careful out there, but also be quick. We have no time to lose.",
+  "quest:9419:completion:0": "Thank the Light you were successful.",
+  "quest:9419:completion:1": "Now if we could only have started this sooner, our need would not be so desperate. We must keep the bounty of the desert from falling into the hands of the ⟦E65⟧.",
+  "quest:9422:obj:0": "Find and deliver Silithyst to the Silithyst Extractor then speak with General Kirika at the ⟦E65⟧ encampment near Hive'Regal.",
+  "quest:9422:details:0": "For some time now, we have been tapping the crystal resources of the ⟦E2⟧ desert. The only dangers we faced were from the creatures that made this place their home and the oppressive sand and dust and heat.",
+  "quest:9422:details:1": "But now the ⟦E64⟧ seems to have caught on to what we have found here. It is now a race between us to capture the natural resources, and keep them from the other.",
+  "quest:9422:details:2": "I need every set of hands that is available. I hope I have yours.",
+  "quest:9422:progress:0": "Be wary of the dangers of the desert, ⟦49⟧. With the ⟦E64⟧ lurking in the dunes, any step could be your last.",
+  "quest:9422:completion:0": "You've done well, ⟦50⟧. These resources will be added to our stockpiles, and every bit is to our gain and our ⟦E66⟧'s loss."
+ },
+ "context": {
+  "quest:8777": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8778": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arcanist Nozzlespring"
+  },
+  "quest:8779": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8780": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Janela Stouthammer"
+  },
+  "quest:8781": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Janela Stouthammer"
+  },
+  "quest:8782": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8783": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Vargus"
+  },
+  "quest:8785": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Shadow Priestess Shai"
+  },
+  "quest:8786": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Merok Longstride"
+  },
+  "quest:8787": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Merok Longstride"
+  },
+  "quest:8800": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Windcaller Kaldon",
+   "turner": "Vargus"
+  },
+  "quest:8805": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Vish Kozus"
+  },
+  "quest:8806": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Vish Kozus"
+  },
+  "quest:8807": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8808": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8809": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Vargus"
+  },
+  "quest:8810": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:8829": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Aurel Goldleaf («اورل گلدلیف»)"
+  },
+  "quest:8856": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8857": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Colossus Researcher Nestor",
+   "turner": "Oglethorpe Obnoticus"
+  },
+  "quest:8858": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Colossus Researcher Eazel",
+   "turner": "Overseer Oilfist"
+  },
+  "quest:8859": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Colossus Researcher Sophia",
+   "turner": "Lord Maxwell Tyrosus («لرد ماکسول تیروسوس»)"
+  },
+  "quest:9023": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Dirk Thunderwood",
+   "turner": "Dirk Thunderwood"
+  },
+  "quest:9248": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Aurel Goldleaf («اورل گلدلیف»)",
+   "turner": "Aurel Goldleaf («اورل گلدلیف»)"
+  },
+  "quest:9338": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Windcaller Kaldon"
+  },
+  "quest:9415": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Rifleman Torrig",
+   "turner": "Marshal Bluewall"
+  },
+  "quest:9416": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "Scout Bloodfist",
+   "turner": "General Kirika"
+  },
+  "quest:9419": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Marshal Bluewall",
+   "turner": "Marshal Bluewall"
+  },
+  "quest:9422": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "General Kirika",
+   "turner": "General Kirika"
+  }
+ },
+ "known": {
+  "quest:8800": {
+   "title": "جنگ‌افزار سِناریون"
+  },
+  "quest:8857": {
+   "title": "رازهای غول‌پیکر — اَشی"
+  },
+  "quest:8858": {
+   "title": "رازهای غول‌پیکر — ریگال"
+  },
+  "quest:8859": {
+   "title": "رازهای غول‌پیکر — زورا"
+  },
+  "quest:9023": {
+   "title": "زهر بی‌نقص"
+  },
+  "quest:9248": {
+   "title": "هدیه‌ای فروتنانه"
+  },
+  "quest:9415": {
+   "title": "گزارش به مارشال بلووال"
+  },
+  "quest:9416": {
+   "title": "گزارش به ژنرال کیری‌کا"
+  },
+  "quest:9419": {
+   "title": "جاروی کویر"
+  },
+  "quest:9422": {
+   "title": "جاروی کویر"
+  }
+ }
+}

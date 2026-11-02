@@ -1,0 +1,699 @@
+{
+ "pack": "quest-wetlands-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-wetlands-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Orcs",
+   "fa": "اورک",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "wounds",
+   "fa": "زخمی‌کردن",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Bundle of Crocolisk Skins",
+   "fa": "دستهٔ پوست‌های کروکولیسک",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Gobbler's Head",
+   "fa": "سر بلعنده",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Young Crocolisk Skins",
+   "fa": "پوست‌های کروکولیسک جوان",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Khaz Modan Timber",
+   "fa": "چوب خَز مودان",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Khaz Modan Iron",
+   "fa": "آهن خاز مودان",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Unruptured Stalker Gland",
+   "fa": "غدهٔ سالمِ تعقیب‌گر",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Blind",
+   "fa": "نابینایی",
+   "kind": "sp"
+  },
+  "E17": {
+   "en": "Menethil Statuette",
+   "fa": "تندیس منتیل",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Paladin",
+   "fa": "پالادین",
+   "kind": "cls"
+  },
+  "E20": {
+   "en": "Return the Statuette",
+   "fa": "بازگرداندن تندیسک",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "The Doomed Fleet",
+   "fa": "ناوگان محکوم به فنا",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Goaz Stone",
+   "fa": "سنگ گواز",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "War Banners",
+   "fa": "پرچم‌های جنگ",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Raptor",
+   "fa": "رپتور",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Thicket Raptor Hide",
+   "fa": "پوست رپتور بیشه",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Wetlands": "تالاب‌ها",
+  "Harbor": "بندر",
+  "Orcs": "اورک",
+  "Loch Modan": "لوک مودان",
+  "wounds": "زخمی‌کردن",
+  "heal": "شفا",
+  "Bundle of Crocolisk Skins": "دستهٔ پوست‌های کروکولیسک",
+  "Gobbler's Head": "سر بلعنده",
+  "nearby": "نزدیک",
+  "Young Crocolisk Skins": "پوست‌های کروکولیسک جوان",
+  "stack": "استک",
+  "Khaz Modan Timber": "چوب خَز مودان",
+  "Khaz Modan Iron": "آهن خاز مودان",
+  "Unruptured Stalker Gland": "غدهٔ سالمِ تعقیب‌گر",
+  "fear": "ترس",
+  "Blind": "نابینایی",
+  "Menethil Statuette": "تندیس منتیل",
+  "damage": "آسیب",
+  "Paladin": "پالادین",
+  "Return the Statuette": "بازگرداندن تندیسک",
+  "Stormwind": "استورم‌ویند",
+  "enemies": "دشمنان",
+  "The Doomed Fleet": "ناوگان محکوم به فنا",
+  "chance": "شانس",
+  "Goaz Stone": "سنگ گواز",
+  "War Banners": "پرچم‌های جنگ",
+  "threat": "تیت",
+  "Raptor": "رپتور",
+  "Thicket Raptor Hide": "پوست رپتور بیشه"
+ },
+ "tokens": {
+  "1": "$C",
+  "2": "$R",
+  "3": "$N",
+  "4": "$N",
+  "5": "$ghis:her;",
+  "6": "$C",
+  "7": "$C",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "<class>",
+  "17": "$B",
+  "18": "$B",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$R",
+  "27": "<class>"
+ },
+ "rows": {
+  "quest:276:obj:0": "Kill 15 Mosshide Gnolls and 10 Mosshide Mongrels, then return to Rethiel the Greenwarden in the ⟦E1⟧.",
+  "quest:276:details:0": "The Mosshide Gnolls have lived in the ⟦E1⟧ peacefully for many years, but now grow in numbers. Their feet stamp flat the fen's bushes and flowers, and their foul axes cut too much wood to fuel their fires.",
+  "quest:276:details:1": "They are no longer in balance with the land. For the ⟦E1⟧ to survive, the Gnolls must be reduced.",
+  "quest:276:details:2": "Kill 15 Mosshide Gnolls and 10 Mosshide Mongrels. Hunt them to the south, near the Dwarven gate of Algaz. After you do this, return to me.",
+  "quest:276:progress:0": "Your task is still at hand, young ⟦1⟧.",
+  "quest:276:completion:0": "By reducing the Gnolls' number, you have tended to the health of the ⟦E1⟧. Although my faith in your people has been taxed in the past, ⟦2⟧, it may yet be restored.",
+  "quest:455:obj:0": "Traverse Dun Algaz.",
+  "quest:455:obj:1": "Kill 8 Dragonmaw Scouts and 6 Dragonmaw Grunts.",
+  "quest:455:obj:2": "Report to Valstag Ironjaw in Menethil ⟦E2⟧.",
+  "quest:455:details:0": "⟦E3⟧ of the Dragonmaw clan have a haven in the ⟦E1⟧. And now they have expanded into Dun Algaz! We can't let them keep their foothold here or ⟦E4⟧ will be cut off from Menethil ⟦E2⟧, our port and stronghold in the ⟦E1⟧.",
+  "quest:455:details:1": "Break through Dun Algaz to the ⟦E1⟧ beyond, and kill some orcs for good measure! Report to Valstag Ironjaw in Menethil ⟦E2⟧.",
+  "quest:455:details:2": "Menethil is through Dun Algaz, then north along the road, then west at the fork.",
+  "quest:455:details:3": "We're counting on you, ⟦3⟧. Do not fail.",
+  "quest:455:progress:0": "You're coming from ⟦E4⟧? How is the orc situation at Algaz Gate?",
+  "quest:455:completion:0": "Your report is full of bad news!",
+  "quest:455:completion:1": "I see the Dragonmaws are making a strong move into Algaz. Normally the Dragonmaws just hide up in the hills. What made them surge into Algaz is still a mystery...",
+  "quest:455:completion:2": "Thank you, ⟦4⟧. And we'll probably want your help dealing with these orcs.",
+  "quest:463:obj:0": "Find the Greenwarden.",
+  "quest:463:details:0": "You've heard of the Greenwarden? You're not looking for him, are you? Well I say you're crazy if you are, but who am I to keep a fool from ⟦5⟧ death?",
+  "quest:463:details:1": "If you are seeking that beast, then I hear he is in the marsh, east of the road where it forks to Dun Modr. He's lurking there among the crocs...and worse!",
+  "quest:463:details:2": "And leave your money here. You won't need it where you're going...and you don't want to chip ol' Greenie's tooth on your gold when he bites you in half, do you?",
+  "quest:463:completion:0": "The roots and ferns speak well of you, small one. Although I have many names, I answer to only a few. But you may call me Rethiel.",
+  "quest:463:completion:1": "And you must harken...for these lands weep from festered ⟦E5⟧, and I would charge you to ⟦E6⟧ them.",
+  "quest:468:obj:0": "Speak with Mountaineer Rockgar.",
+  "quest:468:details:0": "Mountaineer Rockgar is looking for volunteers for a mission through Dun Algaz and into the ⟦E1⟧.",
+  "quest:468:details:1": "If you want to get your boots wet in that soggy county to the north, then speak with Rockgar at Dun Algaz. Dun Algaz is north up the road, beyond the guard tower.",
+  "quest:468:completion:0": "Hello, ⟦6⟧! You're here for the scouting mission, are you? Very good!",
+  "quest:468:completion:1": "I hope your gear is in good condition, because this \"scouting\" mission has changed into something more messy...",
+  "quest:469:obj:0": "Deliver the ⟦E7⟧ to James Halloran, the tanner, in Menethil ⟦E2⟧.",
+  "quest:469:details:0": "Greetings, traveler!",
+  "quest:469:details:1": "Don't suppose you might be heading in the direction of Menethil, would you? If you're not, I'd suggest you stop there, it's a good place to purchase goods and even have a pint and relax.",
+  "quest:469:details:2": "Now, if it just so happens that you're heading in that direction, I don't suppose you'd mind taking this bundle of crocolisk skins to James Halloran, the tanner?",
+  "quest:469:details:3": "I'd do it myself, but my wife's been in quite a mood lately, and I'd like to put off facing her as long as possible.",
+  "quest:469:progress:0": "Hello there, ⟦7⟧. Could I interest you in a pair of boots? Perhaps some newly cured skins?",
+  "quest:469:completion:0": "Hmm, this is from Einar, right? Hasn't delivered his skins to me in person for almost a week now. No doubt it's some differences with the wife!",
+  "quest:469:completion:1": "Maybe I'll have my wife go speak with Sida sometime...",
+  "quest:279:obj:0": "Kill 12 Bluegill Murlocs.",
+  "quest:279:obj:1": "Slay Gobbler and take his head.",
+  "quest:279:obj:2": "Bring ⟦E8⟧ to Karl Boran in Menethil ⟦E2⟧.",
+  "quest:279:details:0": "Murlocs are crawling out from the deep waters and building their villages on the coastline. They are harassing our fishers and merchants and must be stopped.",
+  "quest:279:details:1": "One of these murlocs, Gobbler, skulks with other bluegill murlocs and harries merchants along the road, always then retreating to the safety of the ⟦E9⟧ murloc hovels. Our merchants are in jeopardy, and we will pay to secure them.",
+  "quest:279:details:2": "Gobbler prowls the river inlet north of here. Find him, slay his kin, and bring me his head.",
+  "quest:279:progress:0": "Our merchants will not be safe until we are rid of Gobbler and those Murlocs.",
+  "quest:279:completion:0": "Ah, well done ⟦8⟧.",
+  "quest:279:completion:1": "Accept this as payment for fulfillment of your contract with the Merchant Marines.",
+  "quest:484:obj:0": "Obtain 4 ⟦E10⟧ for James Halloran in Menethil ⟦E2⟧.",
+  "quest:484:details:0": "I'm James Halloran, the tanner. My cured crocolisk skins are sought after all over, shipments leaving by boat to ports around the world.",
+  "quest:484:details:1": "Met Einar? He's one of the hunters that brings crocolisk skins in for me.",
+  "quest:484:details:2": "I'm a bit short on the softer skins that come off crocolisk young.",
+  "quest:484:details:3": "Being that I'm running low, I'll pay you top coin for a ⟦E11⟧ of the skins. You can find the young crocs in the marshes right outside of town.",
+  "quest:484:progress:0": "⟦9⟧, right? Do you have my skins?",
+  "quest:484:completion:0": "Nice work you've done here, ⟦10⟧. The quality of these skins is superb. I'll have to get them into the curing process as soon as possible. Oh, but before I get to that, there's some other work I need done that I think you might be able to take care of.",
+  "quest:98197:title": "Spoils of War",
+  "quest:98197:obj:0": "Recover 6 ⟦E12⟧ and 30 ⟦E13⟧ from Menethil ⟦E2⟧ for Valstag Ironjaw.",
+  "quest:98282:title": "Alchemical Hazards",
+  "quest:98282:obj:0": "Collect an ⟦E14⟧ from Thelgen Rock for Caitlin Grassman in Menethil ⟦E2⟧.",
+  "quest:277:obj:0": "Bring Rethiel the Greenwarden 9 Crude Flints.",
+  "quest:277:details:0": "The Mosshides are cutting the trees of the ⟦E1⟧, using the trees' flesh to warm themselves with fire. I will suffer this pain no longer!",
+  "quest:277:details:1": "Rid the Mosshides of their crude flints, the tools they use to make fire. The flints are borne by all Mosshides except the smaller Mosshide gnolls and Mosshide mongrels.",
+  "quest:277:progress:0": "Do you have the Gnolls' tools for fire?",
+  "quest:277:completion:0": "... thank you. I will smash these flints and cast them into the sea, so that they may never again be used to burn living wood.",
+  "quest:294:obj:0": "Ormer Ironbraid at the Whelgar Excavation Site wants you to kill 10 Mottled Screechers and 10 Mottled Raptors.",
+  "quest:294:details:0": "The situation is severe, that much is for sure. When we uncovered these bones it attracted the Raptors. These filthy beasts killed my brethren and trapped me, Merrin and the poor Prospector up here.",
+  "quest:294:details:1": "Help clear the ⟦E1⟧ of these Raptors, ⟦11⟧. Mottled Raptors and Mottled Screechers are just West of the bluff there. Kill 10 of each, if you can.",
+  "quest:294:details:2": "That will be a good start to the vengeance I have planned for them.",
+  "quest:294:progress:0": "Kill 10 Mottled Raptors and 10 Mottled Screechers, ⟦12⟧. My co-workers did not deserve the fate that was brought upon them. It's time to even the score.",
+  "quest:294:completion:0": "Killing is a dirty business, but you did your job well, ⟦13⟧. If I weren't obligated to stay with the Prospector and Merrin, I'd be down there shedding blood right along side you.",
+  "quest:305:obj:0": "Tarrel Rockweaver wants you to travel to the Excavation Site and contact Merrin Rockweaver.",
+  "quest:305:details:0": "Oh my, you must be the scout Longbraid said he would send! You cannot imagine how worried I have been.",
+  "quest:305:details:1": "My wife, Merrin, has been sending me letters each week for the past month. She is part of the Whelgar Excavation team. But it has been nearly two weeks since her last correspondence. Surely something is wrong!",
+  "quest:305:details:2": "Longbraid said that he would send a scout to check up on things if we did not hear from the team soon. I assume that scout is you, ⟦14⟧. Find Merrin at the excavation site to the east!",
+  "quest:305:completion:0": "Oh, thank the heavens you are here!",
+  "quest:306:obj:0": "Return to Tarrel Rockweaver with Merrin's note.",
+  "quest:306:details:0": "It was horrible! We were uncovering some rare artifacts and we began to discover these large bones.",
+  "quest:306:details:1": "Before we knew what was happening, these Mottled Raptors overwhelmed the dig site. Many lives were lost.",
+  "quest:306:details:2": "Ormer here -- so brave -- saved the Prospector and me. He defended us as we ran for shelter. Now we are trapped. And our hard work lies in ruin.",
+  "quest:306:details:3": "Here, take this note back to my sweet Tarrel. It will explain the situation to him.",
+  "quest:306:progress:0": "Were you able to find Merrin? Did she send word?",
+  "quest:306:completion:0": "Such horrible news! At least 3 of them survived. But when will the killing end? I long for the day when King Magni's subjects can live without ⟦E15⟧.",
+  "quest:470:obj:0": "One of the oozes at Ironbeard's Tomb has Sida's bag, retrieve it and bring it back to her in Menethil ⟦E2⟧.",
+  "quest:470:details:0": "On my weekly visit to Ironbeard's Tomb I was attacked by dreadful, dripping oozes! Naturally, I panicked.",
+  "quest:470:details:1": "I threw my bag at one, but it didn't do anything! The ooze just sucked it right up... Luckily, it did give me enough time to get away.",
+  "quest:470:details:2": "The bad news is that I really need to get the contents of my bag!",
+  "quest:470:details:3": "I don't know which ooze I threw my bag at; they all looked the same! Ironbeard's Tomb is northeast of here, near Dun Modr. Thank you so much!",
+  "quest:470:progress:0": "Did you find my bag?",
+  "quest:470:completion:0": "Oh, thank you, ⟦15⟧! I was afraid that it was lost for good!",
+  "quest:470:completion:1": "B<She quickly empties the contents of the ooze-covered bag onto the ground, before scooping them up.>",
+  "quest:470:completion:2": "Hm, I don't have much use for this anymore, but wash it off and I'm sure you could make use of it.",
+  "quest:281:obj:0": "Search the crates and barrels at the coastal Murloc camps.",
+  "quest:281:details:0": "Not long ago a merchant vessel, the ⟦E16⟧ Princess, was raided by Murlocs. Although the ship escaped intact, much of its cargo was dragged overboard by the creatures, including a very valuable statuette of Terenas Menethil. We want that statuette recovered.",
+  "quest:281:details:1": "Search the coastal Murloc hovels for crates, barrels and other evidence of lost cargo. Find the ⟦E17⟧ and return it to me.",
+  "quest:281:completion:0": "This crate is covered with clawed scratches, and the marks of water ⟦E18⟧. Prying it open reveals soggy and rotted straw, as if something of value was stored in the crate. You search through the straw...",
+  "quest:281:completion:1": "B...and find a an armload of red-colored bottles.",
+  "quest:284:obj:0": "Search for the ⟦E17⟧.",
+  "quest:284:details:0": "You thoroughly search this cluster of Murloc hovels, and find no trace of the ⟦E17⟧.",
+  "quest:284:details:1": "Perhaps one of the two ⟦E9⟧ hovels to the north and northeast will have more clues.",
+  "quest:284:completion:0": "This barrel is largely untouched. Prying it open...",
+  "quest:284:completion:1": "B...you are assaulted by the pungent odor of cheese. It's a little wet, but still tasty!",
+  "quest:285:obj:0": "Continue searching the Murloc hovels for the ⟦E17⟧.",
+  "quest:285:details:0": "This grouping of Murloc hovels, after a thorough inspection, reveals nothing.",
+  "quest:285:details:1": "B...but you're certain that the next clue you find will be fruitful.",
+  "quest:285:details:2": "One of the hovels to the north must have the ⟦E17⟧!",
+  "quest:285:completion:0": "This barrel is halfway buried amidst the mud and grass ...",
+  "quest:286:obj:0": "Bring Karl Boran the ⟦E17⟧.",
+  "quest:286:details:0": "After pulling the barrel free from the muck and opening it, a silvery figurine is found packed in fine straw. It depicts a young, long-haired ⟦E19⟧ with hammer upraised.",
+  "quest:286:details:1": "This must be the ⟦E17⟧! You must now return it to Karl Boran in Menethil ⟦E2⟧.",
+  "quest:286:progress:0": "Do you have the statuette?",
+  "quest:286:completion:0": "The captain of the ⟦E16⟧ Princess will be relieved to hear this precious cargo has been recovered. You have well earned this payment for services rendered.",
+  "quest:286:completion:1": "It is good to see dependable folk like you, especially in trying times such as these.",
+  "quest:98189:title": "⟦E20⟧",
+  "quest:98189:obj:0": "Bring the ⟦E17⟧ to Captain Stoutfist in Menethil Keep.",
+  "quest:98190:title": "A Friend of the Family",
+  "quest:98190:obj:0": "Bring the ⟦E17⟧ to Highlord Bolvar Fordragon in ⟦E21⟧ Keep.",
+  "quest:98190:obj:1": "*⟦E17⟧ (provided)",
+  "quest:98190:details:0": "You'll want to take this to ⟦E21⟧ right away. Proud as I am that this keep and harbor bears King Terenas Menethil II's name, we are a calm harbor in a very nasty storm of ⟦E22⟧. It's just not safe here.",
+  "quest:98190:details:1": "The Dragonmaw in particular would sacrifice much to loot something like this... and I shudder to think of what they'd do with it.",
+  "quest:98190:details:2": "Don't bother going up the chain of command on this one, . Go straight to Highlord Fordragon with this. He'll know where it will be best kept.",
+  "quest:98190:progress:0": "Let us speak, ⟦16⟧. I can feel you carry something of the Light.",
+  "quest:275:obj:0": "Kill 8 Fen Creepers, then return to Rethiel the Greenwarden in the ⟦E1⟧.",
+  "quest:275:details:0": "I do not know why, but a festering grows within the ⟦E1⟧. Fen Creepers have risen. They are diseased, fevered blisters on the land, and for the fever to break they must be dispatched and allowed to settle back into the marshes.",
+  "quest:275:details:1": "The Fen Creepers shamble amidst the waterways of the ⟦E1⟧.",
+  "quest:275:progress:0": "The ⟦E1⟧ still weep, and the Fen Creepers still rage. Return to me when your task is done.",
+  "quest:275:completion:0": "This land is soothed by your efforts, and for this I will grant you a boon.",
+  "quest:471:obj:0": "Collect 6 Giant Crocolisk Skins and bring them to James Halloran in Menethil ⟦E2⟧.",
+  "quest:471:details:0": "I sent my apprentice out into the marshes to skin some of our famous giant ⟦E1⟧ crocolisks. When he didn't return, I went out to look for him... Let's just say it wasn't a pretty sight.",
+  "quest:471:details:1": "Midwife says he might pull through, but in the meantime I still need my skins!",
+  "quest:471:details:2": "B...If you'd like to kill a few more of the brutes, I wouldn't be opposed, after what they did. You'll find the crocs north up the coast, beyond the murloc hovels.",
+  "quest:471:progress:0": "My apprentice is like a son to me. It's going to be hard for him to live his life with only one leg.⟦17⟧⟦18⟧Ah, ⟦19⟧, how goes it? Do you have my skins?",
+  "quest:471:completion:0": "Hmm... Don't suppose you'd be interested in becoming my apprentice, would you?",
+  "quest:471:completion:1": "Hah! No, I'm just kidding. You're much too old, for one thing. Besides - from the looks of you, it would seem that you have other ambitions in life. Nonetheless, these are some fine skins you've procured, and I'll be able to put them to good use.",
+  "quest:288:obj:0": "Buy First Mate Fitzsimmons a Flagon of Mead.",
+  "quest:288:details:0": "I was once First Mate on the Wave Mistress, ship-of-the-line in the Kul Tiras Third Fleet. ⟦E23⟧. Doomed, for on its last voyage the fleet was attacked by Red Dragons. Dragons controlled by ⟦E3⟧!",
+  "quest:288:details:1": "We didn't stand a ⟦E24⟧ against that dragonfire...and our fleet was burned and sunk off this here coast. I'm the sole survivor of those poor vessels...",
+  "quest:288:details:2": "B...Oh, my head hammers and pounds! I'll need a fresh drink if I'm to get a handle on this hangover and continue my tale.",
+  "quest:288:progress:0": "Oh, I'm so very thirsty! Won't you buy a drink for this poor, pathetic fool?",
+  "quest:288:completion:0": "Ah! That hits the spot, and loosens the tongue. Thanks, mate!",
+  "quest:295:obj:0": "Ormer Ironbraid wants you to kill 10 Mottled Scytheclaw raptors and 10 Mottled Razormaw raptors then return to him at the Whelgar Excavation Site.",
+  "quest:295:details:0": "Now it's time to really make those dreaded Raptors regret their blood-thirst. Just down below there are scores of Mottled Scytheclaws and Mottled Razormaws. Make those rotten creatures pay by slaying 10 of each!",
+  "quest:295:progress:0": "I want to make those Mottled Scytheclaws and Mottled Razormaws pay for what they did. Have you killed 10 of each yet?",
+  "quest:295:completion:0": "You did a bang-up job of clearing out those Raptors, ⟦20⟧!",
+  "quest:299:obj:0": "Prospector Whelgar wants you to scour the excavation site in search of the 4 missing tablet fragments: Ados, Modr, Golm and Neru.",
+  "quest:299:details:0": "Just before the invasion I uncovered a large tablet called the ⟦E25⟧. The translated text breaks off in 4 places. The text speaks of a \"divine plan\" and a \"doomed prophecy.\"",
+  "quest:299:details:1": "I ⟦E15⟧ we are running out of time. I am too old to go down and brave those beasts. But you are strong.",
+  "quest:299:details:2": "Scour the excavation site and uncover the 4 missing tablet fragments: Ados, Modr, Golm and Neru. Search for them in ancient artifacts or where the soil is loose. Bring them to me so I can begin unlocking the mystery!",
+  "quest:299:progress:0": "Have you uncovered the four fragments yet, ⟦21⟧?  Ados, Modr, Golm and Neru...",
+  "quest:299:completion:0": "Ah the ⟦E25⟧ is complete! Fine work, ⟦22⟧. Fine work indeed. Now I can continue with the delicate translation of this Titan script. I can make out new words already! Hmm. . .it says here, \"Old Gods. . .Chained Beneath the Land.\" This is the beginning of something epic.",
+  "quest:98072:title": "Crocs of the Sky",
+  "quest:98072:obj:0": "Collect 8 Pristine Crimson Scales and bring them to James Halloran in Menethil ⟦E2⟧.",
+  "quest:464:obj:0": "Bring 8 Dragonmaw ⟦E26⟧ to Captain Stoutfist.",
+  "quest:464:details:0": "The Dragonmaw orc clan was all but destroyed by the end of the Second War, after they lost control of their red dragon pets. The dragons were not very happy with their old masters, and fiercely hunted the Dragonmaws. What few remained fled from Grim Batol and into the Mountains east of Whelgar's Excavation.",
+  "quest:464:details:1": "Now they've gained strength, and have an encampment northeast of Menethil.",
+  "quest:464:details:2": "We want you to attack that encampment. Gather and bring me their war banners as proof.",
+  "quest:464:progress:0": "Have you attacked the Dragonmaw encampment?",
+  "quest:464:completion:0": "Well fought, ⟦23⟧. The Dragonmaws are not the same ⟦E27⟧ they were when they had dragons, but they're still fierce opponents.",
+  "quest:464:completion:1": "The Dragonmaws are led by Nek'rosh, son of Nekros, who was the former head of the Dragonmaws years ago. Nekros used powerful magic to tame the Red Dragons, but when that magic failed him...the dragons were not happy.",
+  "quest:464:completion:2": "Nekros was killed, and his son has vowed revenge against the dragons who slew his father.",
+  "quest:473:obj:0": "Speak with Captain Stoutfist.",
+  "quest:473:details:0": "⟦24⟧. The Dragonmaw orc clan is showing its strength in more than just Algaz. Captain Stoutfist has asked to speak with those willing to offer aid against these orcs. He is inside the keep, in the war room.",
+  "quest:473:completion:0": "⟦25⟧. Valstag briefed me on your past success with the Dragonmaw ⟦E3⟧ at Dun Algaz. You're a ⟦26⟧ of worth.",
+  "quest:473:completion:1": "And I have a task for you.",
+  "quest:98221:title": "From the Ashes",
+  "quest:98221:obj:0": "Captain Stoutfist in Menethil Keep wants you to destroy the 4 sets of Attack Plans in the Angerfang Encampment.",
+  "quest:98815:title": "Highland Hides",
+  "quest:98815:obj:0": "Return 4 Thicket ⟦E28⟧ Hides to James Halloran, the tanner, in Menethil ⟦E2⟧.",
+  "quest:98815:obj:1": "* ⟦E29⟧ (4)",
+  "quest:98815:details:0": "The Highlands are host to ruins of some sort, secrets now being explored by an expedition team. What I know is that they've got their own wildlife and beasts lurking in that mountain marshland. How about you take a foray in there with some well-equipped friends, and we work a trade?",
+  "quest:98815:details:1": "I don't care if they're hiding, I want their hides! Bring me the skins from four of the Thicket Raptors, I'll have a trade worked out for you to make it worth it.",
+  "quest:98815:progress:0": "Welcome back, ⟦27⟧. Need any leather oil for your equipment?"
+ },
+ "context": {
+  "quest:276": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Rethiel the Greenwarden",
+   "turner": "Rethiel the Greenwarden"
+  },
+  "quest:455": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Mountaineer Rockgar",
+   "turner": "Valstag Ironjaw"
+  },
+  "quest:463": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 21,
+   "side": "alliance",
+   "giver": "First Mate Fitzsimmons",
+   "turner": "Rethiel the Greenwarden"
+  },
+  "quest:468": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Mountaineer Kadrell",
+   "turner": "Mountaineer Rockgar"
+  },
+  "quest:469": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Einar Stonegrip",
+   "turner": "James Halloran"
+  },
+  "quest:279": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Karl Boran",
+   "turner": "Karl Boran"
+  },
+  "quest:484": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 22,
+   "side": "alliance",
+   "giver": "James Halloran",
+   "turner": "James Halloran"
+  },
+  "quest:98197": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Valstag Ironjaw",
+   "turner": "Valstag Ironjaw"
+  },
+  "quest:98282": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Caitlin Grassman",
+   "turner": "Caitlin Grassman"
+  },
+  "quest:277": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 23,
+   "side": "alliance",
+   "giver": "Rethiel the Greenwarden",
+   "turner": "Rethiel the Greenwarden"
+  },
+  "quest:294": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Ormer Ironbraid",
+   "turner": "Ormer Ironbraid"
+  },
+  "quest:305": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Tarrel Rockweaver",
+   "turner": "Merrin Rockweaver"
+  },
+  "quest:306": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Merrin Rockweaver",
+   "turner": "Tarrel Rockweaver"
+  },
+  "quest:470": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Sida",
+   "turner": "Sida"
+  },
+  "quest:281": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Karl Boran",
+   "turner": "Damaged Crate"
+  },
+  "quest:284": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Damaged Crate",
+   "turner": "Sealed Barrel"
+  },
+  "quest:285": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Sealed Barrel",
+   "turner": "Half-buried Barrel"
+  },
+  "quest:286": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Half-buried Barrel",
+   "turner": "Karl Boran"
+  },
+  "quest:98189": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Karl Boran",
+   "turner": "Captain Stoutfist"
+  },
+  "quest:98190": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Captain Stoutfist",
+   "turner": "Highlord Bolvar Fordragon"
+  },
+  "quest:275": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 26,
+   "side": "alliance",
+   "giver": "Rethiel the Greenwarden",
+   "turner": "Rethiel the Greenwarden"
+  },
+  "quest:471": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 26,
+   "side": "alliance",
+   "giver": "James Halloran",
+   "turner": "James Halloran"
+  },
+  "quest:288": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 27,
+   "side": "alliance",
+   "giver": "First Mate Fitzsimmons",
+   "turner": "First Mate Fitzsimmons"
+  },
+  "quest:295": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 27,
+   "side": "alliance",
+   "giver": "Ormer Ironbraid",
+   "turner": "Ormer Ironbraid"
+  },
+  "quest:299": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 27,
+   "side": "alliance",
+   "giver": "Prospector Whelgar",
+   "turner": "Prospector Whelgar"
+  },
+  "quest:98072": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 27,
+   "side": "alliance",
+   "giver": "James Halloran",
+   "turner": "James Halloran"
+  },
+  "quest:464": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Captain Stoutfist",
+   "turner": "Captain Stoutfist"
+  },
+  "quest:473": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Valstag Ironjaw",
+   "turner": "Captain Stoutfist"
+  },
+  "quest:98221": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Captain Stoutfist",
+   "turner": "Captain Stoutfist"
+  },
+  "quest:98815": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 28,
+   "side": "alliance",
+   "giver": "James Halloran",
+   "turner": ""
+  }
+ },
+ "known": {
+  "quest:276": {
+   "title": "پنجه‌های له‌کننده"
+  },
+  "quest:455": {
+   "title": "گذر آلگاز"
+  },
+  "quest:463": {
+   "title": "نگهبان سبز"
+  },
+  "quest:468": {
+   "title": "گزارش به کوه‌نورد راکگار"
+  },
+  "quest:469": {
+   "title": "تحویل روزانه"
+  },
+  "quest:279": {
+   "title": "چنگ‌های اعماق"
+  },
+  "quest:484": {
+   "title": "پوست‌های کروکولیسک جوان"
+  },
+  "quest:277": {
+   "title": "تابوی آتش"
+  },
+  "quest:294": {
+   "title": "انتقام اورمر"
+  },
+  "quest:305": {
+   "title": "در جستجوی تیم حفاری"
+  },
+  "quest:306": {
+   "title": "در جستجوی تیم حفاری"
+  },
+  "quest:470": {
+   "title": "گودبرداری در لجن"
+  },
+  "quest:281": {
+   "title": "پس‌گرفتن اموال"
+  },
+  "quest:284": {
+   "title": "جستجو ادامه دارد"
+  },
+  "quest:285": {
+   "title": "جستجوی کلبه‌های بیشتر"
+  },
+  "quest:286": {
+   "title": "بازگرداندن تندیسک"
+  },
+  "quest:275": {
+   "title": "تاول‌های روی زمین"
+  },
+  "quest:471": {
+   "title": "وظایف شاگرد"
+  },
+  "quest:288": {
+   "title": "ناوگان سوم"
+  },
+  "quest:295": {
+   "title": "انتقام اورمر"
+  },
+  "quest:299": {
+   "title": "آشکارسازی گذشته"
+  },
+  "quest:464": {
+   "title": "پرچم‌های جنگ"
+  },
+  "quest:473": {
+   "title": "گزارش به ناخدا مشت‌استوار"
+  }
+ }
+}

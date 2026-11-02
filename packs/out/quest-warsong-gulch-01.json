@@ -1,0 +1,585 @@
+{
+ "pack": "quest-warsong-gulch-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-warsong-gulch-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Warsong Gulch",
+   "fa": "درهٔ وار‑سونگ",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Fight for Warsong Gulch",
+   "fa": "جنگ برای درهٔ وار‑سونگ",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Battle of Warsong Gulch",
+   "fa": "نبرد درهٔ وار‑سونگ",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Warsong Gulch Mark of Honor",
+   "fa": "نشان افتخار درهٔ وارسونگ",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Orcs",
+   "fa": "اورک",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Silverwing Talisman of Merit",
+   "fa": "طلسمِ شایستگیِ سیلوروینگ",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Warsong Mark of Honor",
+   "fa": "نشانِ افتخارِ وارسونگ",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Ribbons of Sacrifice",
+   "fa": "نوارهای فداکاری",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Warsong Gulch": "درهٔ وار‑سونگ",
+  "Fight for Warsong Gulch": "جنگ برای درهٔ وار‑سونگ",
+  "Alliance": "اتحاد",
+  "Battle of Warsong Gulch": "نبرد درهٔ وار‑سونگ",
+  "Horde": "هورد",
+  "battle": "نبرد",
+  "Warsong Gulch Mark of Honor": "نشان افتخار درهٔ وارسونگ",
+  "Ashenvale": "اَشِن‌ویل",
+  "Kalimdor": "کالیمدور",
+  "Orcs": "اورک",
+  "Barrens": "بارنز",
+  "enemies": "دشمنان",
+  "Silverwing Talisman of Merit": "طلسمِ شایستگیِ سیلوروینگ",
+  "Warsong Mark of Honor": "نشانِ افتخارِ وارسونگ",
+  "allies": "متحدان",
+  "Ribbons of Sacrifice": "نوارهای فداکاری"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$c",
+  "7": "$N",
+  "8": "$r",
+  "9": "$N",
+  "10": "$N",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$N",
+  "22": "$c",
+  "23": "$N",
+  "24": "$r",
+  "25": "$N",
+  "26": "$B",
+  "27": "$R",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$B",
+  "34": "$B",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$c",
+  "42": "$N",
+  "43": "$r",
+  "44": "$N",
+  "45": "$B",
+  "46": "$R",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N",
+  "53": "$N",
+  "54": "$B",
+  "55": "$B",
+  "56": "$N"
+ },
+ "rows": {
+  "quest:8567:title": "Past Victories in ⟦E1⟧",
+  "quest:8567:details:0": "Ah, yes! Of course we wouldn't forget about your past accomplishments in ⟦E1⟧.",
+  "quest:8568:title": "Past Victories in ⟦E1⟧",
+  "quest:8568:details:0": "Ah, yes! Of course we wouldn't forget about your past accomplishments in ⟦E1⟧.",
+  "quest:8569:title": "Past Efforts in ⟦E1⟧",
+  "quest:8569:details:0": "Ah, yes! Of course we wouldn't forget about your past accomplishments in ⟦E1⟧.",
+  "quest:8570:title": "Past Efforts in ⟦E1⟧",
+  "quest:8570:details:0": "Ah, yes! Of course we wouldn't forget about your past accomplishments in ⟦E1⟧.",
+  "quest:8386:title": "⟦E2⟧",
+  "quest:8386:desc:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8386:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8386:details:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8386:progress:0": "You've come back with news from the front, ⟦1⟧?",
+  "quest:8386:completion:0": "Well done, ⟦2⟧! You've served the ⟦E3⟧ well.",
+  "quest:8389:title": "⟦E4⟧",
+  "quest:8389:desc:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8389:obj:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8389:details:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8389:progress:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.⟦3⟧⟦4⟧Do not let this happen, ⟦5⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8389:completion:0": "Excellent! You've shown your worth by defending our operations in ⟦E1⟧! May word of your honor spread far and wide across our lands.",
+  "quest:8289:title": "Talismans of Merit",
+  "quest:8290:obj:0": "Enter ⟦E1⟧ and defeat the ⟦E5⟧, obtain a ⟦E7⟧, and return to Sentinel Farsong at the Silverwing Grove.",
+  "quest:8290:details:0": "Beyond this tunnel you will find a field of strife and turmoil, young ⟦6⟧. The ⟦E5⟧ continue to decimate our sacred forest, cutting down the evergreen foliage to power their machines of war.",
+  "quest:8290:details:1": "Enter ⟦E1⟧ and defend Silverwing Hold. Push back the invading ⟦E5⟧ forces!",
+  "quest:8290:details:2": "Do this, and earn a talisman of merit. Bring me such a talisman, ⟦7⟧, and I shall reward you.",
+  "quest:8295:obj:0": "Enter ⟦E1⟧ and defeat the ⟦E3⟧, gain a ⟦E7⟧, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
+  "quest:8295:details:0": "The wilds of the ⟦E8⟧ forest will succumb to the might of the ⟦E5⟧, ⟦8⟧. Nothing the Silverwing say or do can stop our sovereign imperative. ⟦E9⟧ belongs to the ⟦E5⟧. How dare they attempt to prevent us from harvesting what is rightfully ours!",
+  "quest:8295:details:1": "Let the pride swell in your chest as you cut down their weak attempts at slowing our progress. Destroy the Silverwing Sentinels, and earn a Warsong mark of honor. Return to me with such a mark, ⟦9⟧, and you will be rewarded.",
+  "quest:8296:title": "Mark of Honor",
+  "quest:8368:obj:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8368:details:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.",
+  "quest:8368:details:1": "Do not let this happen, ⟦10⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8368:progress:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.⟦11⟧⟦12⟧Do not let this happen, ⟦13⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8368:completion:0": "Excellent! You've shown your worth by defending our operations in ⟦E1⟧! May word of your honor spread far and wide across our lands.",
+  "quest:8372:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8372:details:0": "The Silverwing Sentinels are at war with the Warsong Outriders due to the destruction the ⟦E10⟧ are causing to the forest. There are, however, more reasons to defend this particular forest than plain love for nature.",
+  "quest:8372:details:1": "The forest forms a strategic barrier that makes ⟦E8⟧ defendable against a large-scale attack. Without it, Astranaar would last a day or two before being annexed to the ⟦E11⟧.",
+  "quest:8372:details:2": "Do your part in fighting the Warsong Outriders, ⟦14⟧! For the ⟦E3⟧!",
+  "quest:8372:progress:0": "You've come back with news from the front, ⟦15⟧?",
+  "quest:8372:completion:0": "Well done, ⟦16⟧! You've served the ⟦E3⟧ well.",
+  "quest:8404:title": "⟦E2⟧",
+  "quest:8404:desc:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8404:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8404:details:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8404:progress:0": "You've come back with news from the front, ⟦17⟧?",
+  "quest:8404:completion:0": "Good work, ⟦18⟧. Thanks to you, our natural defenses in ⟦E8⟧ will remain intact for another day.",
+  "quest:8431:title": "⟦E4⟧",
+  "quest:8431:desc:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8431:obj:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8431:details:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8431:progress:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.⟦19⟧⟦20⟧Do not let this happen, ⟦21⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8431:completion:0": "Excellent! You've shown your worth by defending our operations in ⟦E1⟧! May word of your honor spread far and wide across our lands.",
+  "quest:7788:obj:0": "Enter ⟦E1⟧ and defeat the ⟦E5⟧, obtain a ⟦E7⟧, and return to Sentinel Farsong at the Silverwing Grove.",
+  "quest:7788:details:0": "Beyond this tunnel you will find a field of strife and turmoil, young ⟦22⟧. The ⟦E5⟧ continue to decimate our sacred forest, cutting down the evergreen foliage to power their machines of war.",
+  "quest:7788:details:1": "Enter ⟦E1⟧ and defend Silverwing Hold. Push back the invading ⟦E5⟧ forces!",
+  "quest:7788:details:2": "Do this, and earn a talisman of merit. Bring me such a talisman, ⟦23⟧, and I shall reward you.",
+  "quest:7789:obj:0": "Enter ⟦E1⟧ and defeat the ⟦E3⟧, gain a ⟦E7⟧, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
+  "quest:7789:details:0": "The wilds of the ⟦E8⟧ forest will succumb to the might of the ⟦E5⟧, ⟦24⟧. Nothing the Silverwing say or do can stop our sovereign imperative. ⟦E9⟧ belongs to the ⟦E5⟧. How dare they attempt to prevent us from harvesting what is rightfully ours!",
+  "quest:7789:details:1": "Let the pride swell in your chest as you cut down their weak attempts at slowing our progress. Destroy the Silverwing Sentinels, and earn a Warsong mark of honor. Return to me with such a mark, ⟦25⟧, and you will be rewarded.⟦26⟧",
+  "quest:7789:progress:0": "The blood of our ⟦E12⟧ is a mark of honor. Do you have such a mark?",
+  "quest:7789:completion:0": "<Captain Shatterskull roars in triumph.>",
+  "quest:7789:completion:1": "How much more can they withstand? How many more ⟦E3⟧ filth must perish at the hands of the ⟦E5⟧ for them to retreat? Only time will tell, ⟦27⟧...",
+  "quest:7921:title": "Talismans of Merit",
+  "quest:7921:desc:0": "You obtained a ⟦E13⟧ for your last task, talk to me again, and you gain your reward.",
+  "quest:7921:details:0": "You have proven your value to our efforts in ⟦E1⟧. Continue to aid the cause and bring me more talismans of merit. Do this, and you will earn even more of our trust.",
+  "quest:7921:completion:0": "Thank you, ⟦28⟧. Your exploits in ⟦E1⟧ ring throughout ⟦E8⟧ Forest.",
+  "quest:7925:title": "Mark of Honor",
+  "quest:7925:desc:0": "You obtained a ⟦E14⟧ for your last task, talk to me again, and you gain your reward.",
+  "quest:7925:details:0": "You have proven your value to our efforts in ⟦E1⟧. Continue to rage against the Silverwing Sentinels! Bring me more marks of honor!",
+  "quest:7925:completion:0": "The night elves and their ⟦E15⟧ must tremble at even the whisper of your name! For the ⟦E5⟧!",
+  "quest:8399:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8399:details:0": "The Silverwing Sentinels are at war with the Warsong Outriders due to the destruction the ⟦E10⟧ are causing to the forest. There are, however, more reasons to defend this particular forest than plain love for nature.",
+  "quest:8399:details:1": "The forest forms a strategic barrier that makes ⟦E8⟧ defendable against a large-scale attack. Without it, Astranaar would last a day or two before being annexed to the ⟦E11⟧.",
+  "quest:8399:details:2": "Do your part in fighting the Warsong Outriders, ⟦29⟧! For the ⟦E3⟧!",
+  "quest:8399:progress:0": "You've come back with news from the front, ⟦30⟧?",
+  "quest:8399:completion:0": "Good work, ⟦31⟧. Thanks to you, our natural defenses in ⟦E8⟧ will remain intact for another day.",
+  "quest:8426:obj:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8426:details:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.",
+  "quest:8426:details:1": "Do not let this happen, ⟦32⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8426:progress:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.⟦33⟧⟦34⟧Do not let this happen, ⟦35⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8426:completion:0": "Excellent! You've shown your worth by defending our operations in ⟦E1⟧! May word of your honor spread far and wide across our lands.",
+  "quest:8405:title": "⟦E2⟧",
+  "quest:8405:desc:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8405:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8405:details:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8405:progress:0": "You've come back with news from the front, ⟦36⟧?",
+  "quest:8405:completion:0": "Good work, ⟦37⟧. Thanks to you, our natural defenses in ⟦E8⟧ will remain intact for another day.",
+  "quest:8432:title": "⟦E4⟧",
+  "quest:8432:desc:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8432:obj:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8432:details:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8432:progress:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.⟦38⟧⟦39⟧Do not let this happen, ⟦40⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8432:completion:0": "Excellent! You've shown your worth by defending our operations in ⟦E1⟧! May word of your honor spread far and wide across our lands.",
+  "quest:7871:obj:0": "Enter ⟦E1⟧ and defeat the ⟦E5⟧, obtain a ⟦E7⟧, and return to Sentinel Farsong at the Silverwing Grove.",
+  "quest:7871:details:0": "Beyond this tunnel you will find a field of strife and turmoil, young ⟦41⟧. The ⟦E5⟧ continue to decimate our sacred forest, cutting down the evergreen foliage to power their machines of war.",
+  "quest:7871:details:1": "Enter ⟦E1⟧ and defend Silverwing Hold. Push back the invading ⟦E5⟧ forces!",
+  "quest:7871:details:2": "Do this, and earn a talisman of merit. Bring me such a talisman, ⟦42⟧, and I shall reward you.",
+  "quest:7874:obj:0": "Enter ⟦E1⟧ and defeat the ⟦E3⟧, gain a ⟦E7⟧, and bring it to Captain Shatterskull at the Mor'shan Base Camp.",
+  "quest:7874:details:0": "The wilds of the ⟦E8⟧ forest will succumb to the might of the ⟦E5⟧, ⟦43⟧. Nothing the Silverwing say or do can stop our sovereign imperative. ⟦E9⟧ belongs to the ⟦E5⟧. How dare they attempt to prevent us from harvesting what is rightfully ours!",
+  "quest:7874:details:1": "Let the pride swell in your chest as you cut down their weak attempts at slowing our progress. Destroy the Silverwing Sentinels, and earn a Warsong mark of honor. Return to me with such a mark, ⟦44⟧, and you will be rewarded.⟦45⟧",
+  "quest:7874:progress:0": "The blood of our ⟦E12⟧ is a mark of honor. Do you have such a mark?",
+  "quest:7874:completion:0": "<Captain Shatterskull roars in triumph.>",
+  "quest:7874:completion:1": "How much more can they withstand? How many more ⟦E3⟧ filth must perish at the hands of the ⟦E5⟧ for them to retreat? Only time will tell, ⟦46⟧.",
+  "quest:7887:title": "Talismans of Merit",
+  "quest:7887:desc:0": "You obtained a ⟦E13⟧ for your last task, talk to me again, and you gain your reward.",
+  "quest:7887:details:0": "You have proven your value to our efforts in ⟦E1⟧. Continue to aid the cause and bring me more talismans of merit. Do this, and you will earn even more of our trust.",
+  "quest:7887:completion:0": "Thank you, ⟦47⟧. Your exploits in ⟦E1⟧ ring throughout ⟦E8⟧ Forest.",
+  "quest:7924:title": "Mark of Honor",
+  "quest:7924:desc:0": "You obtained a ⟦E14⟧ for your last task, talk to me again, and you gain your reward.",
+  "quest:7924:details:0": "You have proven your value to our efforts in ⟦E1⟧. Continue to rage against the Silverwing Sentinels! Bring me more marks of honor!",
+  "quest:7924:completion:0": "The night elves and their ⟦E15⟧ must tremble at even the whisper of your name! For the ⟦E5⟧!",
+  "quest:8266:obj:0": "Bring the ⟦E16⟧ to Captain Shatterskull so that the Outriders may reward you for acting on our behalf.",
+  "quest:8266:details:0": "I understand that it can be difficult at times to come out on top in ⟦E1⟧. Still, your effort on our behalf - even when victory is not achieved - is important.",
+  "quest:8266:details:1": "Should you complete one of the trials inside ⟦E1⟧ and not achieve victory, you will still receive a ⟦E16⟧. Bring it to me so that the Outriders may reward you for acting on our behalf... even if you weren't able to win this time.",
+  "quest:8266:completion:0": "Well, you did not flee in the face of defeat. You stood your ground, ⟦48⟧, and when it comes right down to it, that is what makes for a true hero. No doubt you will win next time... but nonetheless we thank you for your effort.",
+  "quest:8268:obj:0": "Bring the ⟦E16⟧ to Sentinel Farsong so that the Sentinels may reward you for acting on our behalf.",
+  "quest:8268:details:0": "I understand that it can be difficult at times to come out on top in ⟦E1⟧. Still, your effort on our behalf - even when victory is not achieved - is important.",
+  "quest:8268:details:1": "Should you complete one of the trials inside ⟦E1⟧ and not achieve victory, you will still receive a ⟦E16⟧. Bring it to me so that the Sentinels may reward you for acting on our behalf... even if you weren't able to win this time.",
+  "quest:8268:completion:0": "Well, you did not flee in the face of defeat. You stood your ground, ⟦49⟧, and when it comes right down to it, that is what makes for a true hero. No doubt you will win next time... but nonetheless we thank you for your effort.",
+  "quest:8400:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E3⟧ Brigadier General outside the battlegrounds.",
+  "quest:8400:details:0": "The Silverwing Sentinels are at war with the Warsong Outriders due to the destruction the ⟦E10⟧ are causing to the forest. There are, however, more reasons to defend this particular forest than plain love for nature.",
+  "quest:8400:details:1": "The forest forms a strategic barrier that makes ⟦E8⟧ defendable against a large-scale attack. Without it, Astranaar would last a day or two before being annexed to the ⟦E11⟧.",
+  "quest:8400:details:2": "Do your part in fighting the Warsong Outriders, ⟦50⟧! For the ⟦E3⟧!",
+  "quest:8400:progress:0": "You've come back with news from the front, ⟦51⟧?",
+  "quest:8400:completion:0": "Good work, ⟦52⟧. Thanks to you, our natural defenses in ⟦E8⟧ will remain intact for another day.",
+  "quest:8427:obj:0": "Bring 3 Warsong Marks of Honor to a ⟦E5⟧ Warbringer outside the battlegrounds.",
+  "quest:8427:details:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.",
+  "quest:8427:details:1": "Do not let this happen, ⟦53⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8427:progress:0": "The ⟦E6⟧ in ⟦E1⟧ against the Silverwing Sentinels is of great importance. Under the guise of protecting a forest that doesn't belong to them, the ⟦E3⟧ seeks to deny the ⟦E5⟧ one of our largest sources for lumber.⟦54⟧⟦55⟧Do not let this happen, ⟦56⟧! Come back to me with proof of serving the ⟦E5⟧ in a worthy manner!",
+  "quest:8427:completion:0": "Excellent! You've shown your worth by defending our operations in ⟦E1⟧! May word of your honor spread far and wide across our lands."
+ },
+ "context": {
+  "quest:8567": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8568": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 1,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8569": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8570": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 1,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8386": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8389": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": "Horde Warbringer"
+  },
+  "quest:8289": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 15,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8290": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 15,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8295": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 15,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8296": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 15,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8368": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 19,
+   "side": "horde",
+   "giver": "Horde Warbringer",
+   "turner": "Horde Warbringer"
+  },
+  "quest:8372": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 19,
+   "side": "alliance",
+   "giver": "Alliance Brigadier General",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8404": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 20,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8431": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 20,
+   "side": "horde",
+   "giver": "",
+   "turner": "Horde Warbringer"
+  },
+  "quest:7788": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 25,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7789": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 25,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7921": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 25,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7925": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8399": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Alliance Brigadier General",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8426": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 29,
+   "side": "horde",
+   "giver": "Horde Warbringer",
+   "turner": "Horde Warbringer"
+  },
+  "quest:8405": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 30,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8432": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 30,
+   "side": "horde",
+   "giver": "",
+   "turner": "Horde Warbringer"
+  },
+  "quest:7871": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 35,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7874": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 35,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7887": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 35,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7924": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 35,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8266": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 39,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8268": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 39,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8400": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Alliance Brigadier General",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8427": {
+   "zone_en": "Warsong Gulch",
+   "zone_fa": "درهٔ وار‑سونگ",
+   "level": 39,
+   "side": "horde",
+   "giver": "Horde Warbringer",
+   "turner": "Horde Warbringer"
+  }
+ },
+ "known": {
+  "quest:8290": {
+   "title": "مهاجمان را در هم بکوبید"
+  },
+  "quest:8295": {
+   "title": "سرکوب غاصبان نقره‌بال"
+  },
+  "quest:8368": {
+   "title": "نبرد درهٔ وار‑سونگ"
+  },
+  "quest:8372": {
+   "title": "جنگ برای درهٔ وار‑سونگ"
+  },
+  "quest:7788": {
+   "title": "مهاجمان را در هم بکوبید!"
+  },
+  "quest:7789": {
+   "title": "سرکوب غاصبان نقره‌بال"
+  },
+  "quest:8399": {
+   "title": "جنگ برای درهٔ وار‑سونگ"
+  },
+  "quest:8426": {
+   "title": "نبرد درهٔ وار‑سونگ"
+  },
+  "quest:7871": {
+   "title": "مهاجمان را در هم بکوبید!"
+  },
+  "quest:7874": {
+   "title": "سرکوب غاصبان نقره‌بال"
+  },
+  "quest:8266": {
+   "title": "نوارهای فداکاری"
+  },
+  "quest:8268": {
+   "title": "نوارهای فداکاری"
+  },
+  "quest:8400": {
+   "title": "جنگ برای درهٔ وار‑سونگ"
+  },
+  "quest:8427": {
+   "title": "نبرد درهٔ وار‑سونگ"
+  }
+ }
+}

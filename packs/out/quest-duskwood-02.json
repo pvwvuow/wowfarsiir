@@ -1,0 +1,758 @@
+{
+ "pack": "quest-duskwood-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-duskwood-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Jitters",
+   "fa": "جیتِرز",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Raven Hill",
+   "fa": "تپهٔ کلاغ",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "The Night Watch",
+   "fa": "نگهبانان شب",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E8": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "A Torn Journal Page",
+   "fa": "برگه‌ای پاره از دفترچهٔ خاطرات",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Marshal Haggard",
+   "fa": "مارشال هگارد",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "Journal Page",
+   "fa": "صفحهٔ دفترچه",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Innkeeper",
+   "fa": "مهمان‌دار",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Bloodstained Journal",
+   "fa": "دفترچهٔ خون‌لکه",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E17": {
+   "en": "Sven",
+   "fa": "سوین",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Morbent Fel",
+   "fa": "موربنت فِل",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "in combat",
+   "fa": "درگیر نبرد",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Merrick's Bow",
+   "fa": "کمان مریک",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Jitters' Completed Journal",
+   "fa": "دفترچهٔ کامل‌شدهٔ جیترز",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Lightforge Iron",
+   "fa": "آهن لایت‌فورج",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Lightforge Ingot",
+   "fa": "شمش کورهٔ نور",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Crate of Lightforge Ingots",
+   "fa": "جعبهٔ شمش کورهٔ نور",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Grimand Elmore",
+   "fa": "گریماند المور",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Lightforge Ingots",
+   "fa": "شمش‌های لایت‌فورج",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Morbent's Bane",
+   "fa": "بلای موربنت",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Abercrombie's Crate",
+   "fa": "جعبهٔ آبرکرومبی",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Letter to Ello",
+   "fa": "نامه‌ای به الو",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Jitters": "جیتِرز",
+  "undead": "مرده‌متحرک",
+  "Raven Hill": "تپهٔ کلاغ",
+  "Duskwood": "جنگل تاریک",
+  "The Night Watch": "نگهبانان شب",
+  "fear": "ترس",
+  "Travel": "سفر",
+  "Stormwind": "استورم‌ویند",
+  "A Torn Journal Page": "برگه‌ای پاره از دفترچهٔ خاطرات",
+  "Marshal Haggard": "مارشال هگارد",
+  "Journal Page": "صفحهٔ دفترچه",
+  "Back": "شنل",
+  "Scarlet": "سرخ‌پوشان",
+  "Innkeeper": "مهمان‌دار",
+  "Bloodstained Journal": "دفترچهٔ خون‌لکه",
+  "Shadow": "سایه",
+  "Sven": "سوین",
+  "Morbent Fel": "موربنت فِل",
+  "Battle": "نبرد",
+  "in combat": "درگیر نبرد",
+  "Merrick's Bow": "کمان مریک",
+  "Jitters' Completed Journal": "دفترچهٔ کامل‌شدهٔ جیترز",
+  "Harbor": "بندر",
+  "Wetlands": "تالاب‌ها",
+  "Ironforge": "آیرون‌فورج",
+  "Lightforge Iron": "آهن لایت‌فورج",
+  "strike": "ضربه",
+  "Lightforge Ingot": "شمش کورهٔ نور",
+  "Crate of Lightforge Ingots": "جعبهٔ شمش کورهٔ نور",
+  "Grimand Elmore": "گریماند المور",
+  "battle": "نبرد",
+  "Lightforge Ingots": "شمش‌های لایت‌فورج",
+  "Morbent's Bane": "بلای موربنت",
+  "Abercrombie's Crate": "جعبهٔ آبرکرومبی",
+  "miss": "خطا",
+  "Letter to Ello": "نامه‌ای به الو"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$C",
+  "10": "$C",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$gbrother:sister;",
+  "23": "$gBrother:Sister;",
+  "24": "$C",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$B",
+  "30": "$B",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$B",
+  "35": "$B",
+  "36": "$N"
+ },
+ "rows": {
+  "quest:453:obj:0": "Find the Shadowy Figure. Your clues:",
+  "quest:453:obj:1": "He is not native to Darkshire.",
+  "quest:453:obj:2": "He is a nervous, jittery person.",
+  "quest:453:obj:3": "He left Darkshire and headed west.",
+  "quest:453:details:0": "Good luck, ⟦1⟧. I hope you find the chap, and I hope you find him alive.",
+  "quest:453:details:1": "If he's left the safety of Darkshire then he could be prey to the beasts of the wilds.",
+  "quest:453:progress:0": "Who are you?? Leave me be!",
+  "quest:453:completion:0": "<⟦E1⟧ sighs...>",
+  "quest:453:completion:1": "Yes, I'm the author of that book. You finally found me, eh?",
+  "quest:453:completion:2": "Well if you read that journal...then you only know the half of it!",
+  "quest:57:obj:0": "Commander Althea Ebonlocke of Darkshire wants you to kill 15 Skeletal Fiends and 15 Skeletal Horrors.",
+  "quest:57:details:0": "⟦2⟧, I'm getting reports of an ⟦E2⟧ infestation in the forest! If you're up to the job, journey to the ⟦E3⟧ graveyard and slay 15 of those vile Skeletal Fiends and 15 Skeletal Horrors. There are also reports of skeletons just south of Darkshire, in and around Tranquil Gardens Cemetery. The ⟦E2⟧ must be driven from ⟦E4⟧!",
+  "quest:57:progress:0": "Return to me once you have killed 15 Skeletal Fiends and 15 Skeletal Horrors, ⟦3⟧.",
+  "quest:57:completion:0": "The people of Darkshire thank you, ⟦4⟧. You have proven yourself to be a great ally of ⟦E5⟧.",
+  "quest:133:obj:0": "Gather 7 Ghoul Ribs and bring them to Abercrombie at his shack.",
+  "quest:133:details:0": "I live so far from the protection of town, it's a wonder the ghouls and the walking dead haven't eaten me! In fact, just yesterday a pack of Bone Chewers was pounding on the walls of my house!",
+  "quest:133:details:1": "I want to make an effigy - a kind of \"scarecrow\" for Ghouls. To do that I need some Ghoul Ribs. You can get them from Flesh Eaters, Bone Chewers, Brain Eaters, Rotted Ones and Plague Spreaders.",
+  "quest:133:details:2": "Get the ribs for me, and I will repay you with some coin.",
+  "quest:133:progress:0": "I think I hear a pack of Ghouls scurrying around the back of the house - I better put that effigy up quick! Did you get those Ghoul Ribs for me?",
+  "quest:133:completion:0": "Ah, thanks. These will do just the trick!",
+  "quest:66:obj:0": "Seek out the Clerk Daltry in the Darkshire Town Hall.",
+  "quest:66:details:0": "Last night a horrible disturbance rippled through my veins. I sensed that my granddaughter, Alyssa, was in great danger. I consulted the cards and Death stared up at me from the table.",
+  "quest:66:details:1": "After taking a long journey through a dark trance I was able to uncover a clue to this terrifying mystery. A name came to me, the name of Stalvan.",
+  "quest:66:details:2": "Seek out the Clerk in the Town Hall and see if you can find out more about this character. I ⟦E6⟧ for us all.",
+  "quest:66:completion:0": "Ah so Madame Eva sent you....",
+  "quest:67:obj:0": "⟦E7⟧ to the Moonbrook Schoolhouse and bring back any updated information about Stalvan to Clerk Daltry.",
+  "quest:67:details:0": "Stalvan, eh? Let me check the town registry.",
+  "quest:67:details:1": "Stalvan. . .Stalvan. . .let's see. Ah, here we go! I have a record of a Mr. Stalvan Mistmantle. The last recorded address is the Moonbrook Schoolhouse. My, talk about outdated!",
+  "quest:67:details:2": "Do me a favor will you, friend? If you happen to go out to Moonbrook, let me know if you get any update on this fellow. I like to keep the records clean.",
+  "quest:67:completion:0": "The old footlocker creaks open. . . .",
+  "quest:68:obj:0": "Take the Dusty Unsent Letter to Clerk Daltry.",
+  "quest:68:details:0": "You find a Dusty Unsent Letter in the old footlocker.",
+  "quest:68:progress:0": "Ah, I remember you. You're the one who was asking about that Stalvan fellow. Did you ever find what you were looking for?",
+  "quest:68:completion:0": "Interesting. So the chap did spend some time in Moonbrook after all. It is rather odd the letter never got delivered. Nonetheless, I shall update the registry.",
+  "quest:69:obj:0": "Go to The Lion's Pride Inn to see if anyone there has heard of the name Stalvan.",
+  "quest:69:details:0": "Oh my! Must have missed this the first time. In the registry, right beneath the first address for Stalvan there's another one listed, only partially scratched out. Looks like he was headed to The Lion's Pride Inn over in Goldshire. Might want to check there, ⟦5⟧.",
+  "quest:69:completion:0": "Stalvan? Sure sounds familiar.",
+  "quest:70:obj:0": "Retrieve Stalvan's Undelivered Letter from the chest and deliver it to the Canal District in ⟦E8⟧.",
+  "quest:70:details:0": "The name Stalvan rings a bell. I remember now.",
+  "quest:70:details:1": "Many years back, on a stormy night, a messenger came in, seeking refuge for the night. Near the stroke of midnight, the man ran down the stairs screaming, his face pale with ⟦E6⟧. Still wearing his bedclothes, he disappeared into the downpour.",
+  "quest:70:details:2": "In his haste he forgot his letters in the chest upstairs. He never returned for them. One remains from that Stalvan fellow, intended for the Canal District in ⟦E8⟧. Help yourself to it.",
+  "quest:70:progress:0": "What have ya got there? Let me take a look at that. . .",
+  "quest:70:completion:0": "You've got some nerve bringing this here.",
+  "quest:72:obj:0": "Search through the packed up possessions for a clue.",
+  "quest:72:details:0": "My father was the caretaker of the estate long before I was. He had to mop the blood up after the massacre. But that's neither here nor there.",
+  "quest:72:details:1": "The last funds of the Flintridge trust have dried up. Now the last of the family possessions are headed for auction. Blame the tax vultures. I guess if you're really itching to learn more you're free to look through this junk. Who knows what you might find.",
+  "quest:72:completion:0": "You slowly slide the lid of the crate off. . . .",
+  "quest:74:obj:0": "The Torn Journal page you discovered provides your next clue.",
+  "quest:74:details:0": "Inside the crate you find various objects: musty heirlooms, a family portrait, a few hunting trophies and some old books. Near the bottom, underneath a ceramic vase, you uncover ⟦E9⟧.",
+  "quest:74:progress:0": "What have you got there? I cannot see. My eyesight is very bad. Put it in my hands.",
+  "quest:74:completion:0": "I can barely make out those letters. But that writing style reminds me of something I once saw before my vision became so poor.",
+  "quest:75:obj:0": "⟦E10⟧ wants you to check the chest upstairs for the Faded ⟦E11⟧.",
+  "quest:75:details:0": "There was a bundle of parchments in the chest upstairs when I moved into this place. I looked at them once when I first arrived but I gave up once the fog hazed over my peepers.",
+  "quest:75:details:1": "Do an old, nearly-blind man a favor and check the chest upstairs for anything that might help you in your quest to discover more about this Stalvan character. I'm pretty sure there's a faded journal page that might be of interest to you. Bring it to me and I'll help in anyway I can.",
+  "quest:75:progress:0": "Did you find that page I mentioned, ⟦6⟧?",
+  "quest:75:completion:0": "You found it!",
+  "quest:78:obj:0": "Take the Faded ⟦E11⟧ to Tavernkeep Smitts.",
+  "quest:78:details:0": "I know of someone who might be able to assist you. ⟦E12⟧ when I was leading the ⟦E8⟧ Guard, we used to get drinks at the ⟦E13⟧ Raven Tavern in Darkshire. The ⟦E14⟧ there, Smitts, was quite an expert on the local lore. Show him this page and see what he has to say about it.",
+  "quest:78:progress:0": "⟦E10⟧ sent you? Why didn't you say so?⟦7⟧⟦8⟧Ah, good ol' Haggard. Poor chap is going to be completely blind before long. Anyway, let me see what you've got there.",
+  "quest:78:completion:0": "By the Light! You bet I recognize that handwriting.",
+  "quest:79:obj:0": "Take the muddy page to Commander Ebonlocke.",
+  "quest:79:details:0": "I followed the legend of that Stalvan character for years. When those visiting nobles were slaughtered a few years back I went with Haggard to investigate. I found these muddy pages but we were never able to link the handwriting to that crazy man in the woods. Your trail of evidence proves his guilt. Take this to Commander Ebonlocke immediately and fill her in on what you've discovered!",
+  "quest:79:progress:0": "This better be good, ⟦9⟧. Let me see what you have and tell me your tale. But by the Light, be quick about it. Darkshire's defense is my number one priority. I have not the time to squander on dead-end leads.",
+  "quest:79:completion:0": "My, you have proved yourself to be quite a detective, ⟦10⟧.",
+  "quest:80:obj:0": "Show Clerk Daltry the ⟦E15⟧ Page.",
+  "quest:80:details:0": "I have had my eye on that creep, Stalvan, for quite sometime. But if this page was written by the same hand it proves his guilt beyond a shadow of a doubt.",
+  "quest:80:details:1": "In all his days keeping the Town Registry, Clerk Daltry has become an expert at identifying handwriting. Show him this page and see if the writing matches that of the registry signature.",
+  "quest:80:progress:0": "⟦E12⟧ again, ⟦11⟧? What do you have this time?",
+  "quest:80:completion:0": "Why yes! The writing on this page does in fact match that of the registry signatures.",
+  "quest:97:obj:0": "Report the news to Commander Ebonlocke.",
+  "quest:97:details:0": "Let Commander Ebonlocke know immediately that the handwriting matched, ⟦12⟧! Her suspicions were correct!",
+  "quest:97:progress:0": "Yes, ⟦13⟧?",
+  "quest:97:completion:0": "I knew it! Fine work, ⟦14⟧.",
+  "quest:173:obj:0": "Kill 6 Nightbane ⟦E16⟧ Weaver worgen for Calor in Darkshire.",
+  "quest:173:details:0": "Darkness seems drawn inexorably to ⟦E4⟧. Master Carevin's quest is the expulsion of evil and heresy. Through our efforts are the people of Darkshire kept safe.",
+  "quest:173:details:1": "You believe yourself worthy to join us?",
+  "quest:173:details:2": "I once thought as you. Disillusioned by the complacency of the Watch, I joined Master Carevin. If you wish to prove yourself, it will not be through words.",
+  "quest:173:details:3": "Test your skills against the Nightbane ⟦E16⟧ Weaver worgen in Brightwood Grove--bright, hah!--and the Rotting Orchard.",
+  "quest:173:progress:0": "⟦15⟧, how fares the hunt?",
+  "quest:173:completion:0": "Impressive, ⟦16⟧. It would seem that you are capable enough to handle yourself. Perhaps a more suitable challenge could be found for one of your abilities.",
+  "quest:173:completion:1": "It is curious though... The worgen seemed to just appear out of thin air. But then, with all the other strange creatures that have moved across our borders, I suppose it's only one of many concerns.",
+  "quest:323:obj:0": "Kill 15 Skeletal Raiders, 3 Skeletal Healers and 3 Skeletal Warders, and then return to ⟦E17⟧.",
+  "quest:323:details:0": "⟦E18⟧ is a necromancer, and an ally to the dark riders. I would pit you against the power of ⟦E18⟧, but I will not send you against that vile fiend without first knowing your strength.",
+  "quest:323:details:1": "You have already proven your bravery to me, but if you truly wish to face the necromancer, then you must now prove your skill against his minions.",
+  "quest:323:progress:0": "⟦E19⟧ hard, ⟦17⟧. And do not despair, for despair is evil's greatest weapon.",
+  "quest:323:completion:0": "Your skill ⟦E20⟧, ⟦18⟧, can not be doubted. Your resolve may yet see us through to the end of ⟦E18⟧!",
+  "quest:96138:title": "⟦E21⟧",
+  "quest:96138:obj:0": "Defeat 8 Splint Fist Warriors and 4 Splint Fist Taskmasters then return to Sirra Von'Indi in Darkshire for more information.",
+  "quest:221:obj:0": "Kill 12 Nightbane Dark Runner worgen for Calor in Darkshire.",
+  "quest:221:details:0": "You might have noticed some larger worgen wandering around with the ⟦E16⟧ Weavers in the woods? From what we can tell, these Dark Runners make up the bulk of the worgen numbers.",
+  "quest:221:details:1": "On my rangings, I've also noticed that they have overrun the Rotting Orchard southwest of town. These worgen are a bit tougher than the last you faced.",
+  "quest:221:details:2": "Be on your guard.",
+  "quest:221:progress:0": "⟦E12⟧ so soon, ⟦19⟧? I hope you haven't come to tell me you've given up.",
+  "quest:221:completion:0": "You performed well against the Dark Runners, ⟦20⟧. But it seems as though their numbers are inexhaustible. Every time we make progress, more spring up to refill their ranks.",
+  "quest:221:completion:1": "What is the evil power that draws them here? Why have they come to disturb our unhappy realm...",
+  "quest:221:completion:2": "I will put my faith in Master Carevin. No doubt he will get to the bottom of the problem.",
+  "quest:269:obj:0": "Give ⟦E22⟧ to Bishop Farthing in ⟦E8⟧.",
+  "quest:269:details:0": "Go to the city of ⟦E8⟧ and speak with Bishop Farthing in the Cathedral of Light. Give him ⟦E1⟧' journal and tell him you mean to face ⟦E18⟧.",
+  "quest:269:details:1": "Although ⟦E8⟧ has forsaken Darkshire, Farthing is a kind soul and very wise. He may help you on your quest to save us.",
+  "quest:269:details:2": "Your mission is perilous, but hurry, ⟦21⟧. With each passing hour, the shadows of ⟦E4⟧ grow ever darker.",
+  "quest:269:progress:0": "Rest, ⟦22⟧. I can tell you have traveled far, and you bear a heavy burden. Can you tell me what casts that dark shadow over you?",
+  "quest:269:completion:0": "<After reading the journal and hearing your intent...>",
+  "quest:269:completion:1": "An evil taint has gained a foothold within the already beleaguered ⟦E4⟧. I thank the Light we have a hero such as you to face it.",
+  "quest:269:completion:2": "But you must first prepare yourself for the coming trial...for the Necromancer ⟦E18⟧ is immensely powerful, and has cast dark enchantments about himself to protect him from physical assaults. If you are to defeat him, you will need a weapon that is proof against these protections.",
+  "quest:270:obj:0": "Go to Menethil ⟦E23⟧ in the ⟦E24⟧, and speak with Glorin Steelbrow.",
+  "quest:270:details:0": "Years ago, the Third Fleet of Kul'Tiras sunk along the coasts of The ⟦E24⟧, an expanse of marsh north of the Dwarven kingdom of ⟦E25⟧. Aboard one ship was a load of ⟦E26⟧.",
+  "quest:270:details:1": "This metal is precious to us, for items crafted from it ⟦E27⟧ with holy truth. If you are to face ⟦E18⟧, then you will need such a weapon.",
+  "quest:270:details:2": "Go to Menethil ⟦E23⟧ and speak with my dwarven colleague Glorin Steelbrow. If that lost metal can be found, he'll know where to look.",
+  "quest:270:completion:0": "⟦E26⟧ is a precious metal, but it sounds like your quest is a dire one. You've come a long way, ⟦23⟧. With luck, you might just find what you seek!",
+  "quest:270:completion:1": "And if you do get the iron, I know who can fashion it into a weapon against this Necromancer you speak of in ⟦E4⟧.",
+  "quest:321:obj:0": "Search the wreckage of The Flying Osprey in the ⟦E24⟧.",
+  "quest:321:details:0": "The shipwrecks off the shore here are the doomed Third Fleet of Kul'Tiras, burned and sunk by Red Dragons during the last Great War.",
+  "quest:321:details:1": "The Fleet hailed from Lordaeron, but one ship, an Elvish Destroyer: Flying Osprey, was with it. It was shipping a load of ⟦E26⟧ and joined the Third Fleet for protection. Ironic that it sunk to the same dragons...",
+  "quest:321:details:2": "Enough history. The Flying Osprey is wrecked to the south of Menethil ⟦E23⟧. If you find the ⟦E26⟧ there, bring it to me.",
+  "quest:321:completion:0": "This chest is waterlogged, and its siding broken. Many claw marks mar both the inside and outside of the chest...as if Murlocs have searched through it and stolen its treasure.",
+  "quest:321:completion:1": "But tucked deep within the chest is a single ⟦E28⟧. Unfortunately, many more will be needed if enough metal to fashion a weapon is to be gained.",
+  "quest:322:obj:0": "Take the ⟦E29⟧ to ⟦E30⟧ in ⟦E8⟧.",
+  "quest:322:details:0": "There is a dwarven weaponsmith in the Dwarven District of ⟦E8⟧ who can craft with lightforge iron. His name is ⟦E30⟧.",
+  "quest:322:details:1": "I've packed the iron you found into a crate. Take it to Grimand and tell him your tale. I'm sure he'll oblige someone on a quest such as yours, and craft for you a weapon - a weapon to give even ⟦E18⟧ worry!",
+  "quest:322:progress:0": "How might I ply my craft for you, ⟦24⟧?",
+  "quest:322:completion:0": "That is quite a tale you have. And lightforge iron! Not for years have I worked with such a metal. It will be an honor to craft with it again. And you must return to me later with the story of your ⟦E31⟧ against the Necromancer.",
+  "quest:322:completion:1": "But we get ahead of ourselves. First, your weapon against ⟦E18⟧...",
+  "quest:324:obj:0": "Gather 5 ⟦E32⟧, then return to Glorin Steelbrow in the ⟦E24⟧.",
+  "quest:324:details:0": "Having grabbed the single lightforge ingot from the waterlogged chest, it is clear that murlocs have stolen the rest. Hunt the murloc raiders near the Flying Osprey wreckage for the lost lightforge iron.",
+  "quest:324:progress:0": "Did you find the lightforge iron you need?",
+  "quest:324:completion:0": "Ah, you found them! Now let's get this lightforge iron hammered into something useful, eh?",
+  "quest:325:obj:0": "Bring ⟦E33⟧ to ⟦E17⟧ in ⟦E4⟧.",
+  "quest:325:details:0": "Here is the weapon against the fiend of which you spoke. You're all ready, ⟦25⟧. Best of luck to you, and I look forward to your tale of glory!",
+  "quest:325:progress:0": "Hello, ⟦26⟧. You haven't been gone that long, but I see a fire in your eyes I did not see before.",
+  "quest:325:completion:0": "Ah, this will be proof against the fiend ⟦E18⟧! Well done!",
+  "quest:325:completion:1": "You are ready. ⟦E18⟧ will fall.",
+  "quest:526:obj:0": "Gather 5 lightforge ingots, then return to Glorin Steelbrow in the ⟦E24⟧.",
+  "quest:526:details:0": "You might have found one lightforge ingot in that chest, but that's not enough to craft anything decent!",
+  "quest:526:details:1": "You should go back there and look for more. Maybe the murlocs around that wrecked ship have lightforge ingots on them.",
+  "quest:526:progress:0": "Did you find the lightforge iron you need?",
+  "quest:526:completion:0": "Ah, you found them! Now let's get this lightforge iron hammered into something useful, eh?",
+  "quest:58:obj:0": "Commander Althea Ebonlocke of Darkshire wants you to kill 20 Plague Spreaders in the eastern ⟦E3⟧ mausoleum.",
+  "quest:58:details:0": "The situation in ⟦E3⟧ is still grim. The safety of Darkshire is in your hands, ⟦27⟧. I don't have enough Watchers to keep the town safe. We need you to dispatch for ⟦E3⟧ yet again and rid the eastern mausoleum of 20 Plague Spreaders!",
+  "quest:58:progress:0": "I need your assistance, ⟦28⟧. ⟦E7⟧ to the cemetery to the northwest and rid the eastern mausoleum of 20 Plague Spreaders.⟦29⟧⟦30⟧Return to me when your task is complete.",
+  "quest:58:completion:0": "On behalf of the people of Darkshire and as the Leader of the Night Watch, I thank you, ⟦31⟧, for your bravery and dedication. May the Light shine upon your ways.",
+  "quest:134:obj:0": "Return ⟦E34⟧ to Abercrombie.",
+  "quest:134:details:0": "A few weeks ago I was picking herbs far from my house, and a band of ogres attacked me! I ran, and I was forced to leave behind a crate of precious tools and herbs.",
+  "quest:134:details:1": "After they chased me off, the ogres swaggered back to the ogre mound in southern ⟦E4⟧. I'm sure my crate is somewhere near the mound.",
+  "quest:134:details:2": "Please, ⟦32⟧, retrieve this crate for me for I ⟦E35⟧ it sorely.",
+  "quest:134:progress:0": "Do you have my crate? If so, then please...give it to me quickly!",
+  "quest:134:completion:0": "Thank the Nec-...well, thank YOU, ⟦33⟧! You have more than earned your reward.",
+  "quest:134:completion:1": "Aha! Happy! Happy nights ahead!!",
+  "quest:160:obj:0": "Bring Abercrombie's ⟦E36⟧ Ebonlocke, Mayor of Darkshire.",
+  "quest:160:details:0": "Take this note to Ello Ebonlocke, the Mayor of Darkshire.",
+  "quest:160:details:1": "He and I are old friends...and when he reads it and discovers what you did for me...I'm sure he'll be just as happy as I am! Hahahaha!",
+  "quest:160:progress:0": "Abercrombie...? I don't know a person of that name. You say you have a letter for me from this Abercrombie fellow?⟦34⟧⟦35⟧Well let's have it then...",
+  "quest:160:completion:0": "<Ello looks at the letter...>",
+  "quest:160:completion:1": "What language is this? It looks ancient...I can't read it.",
+  "quest:181:obj:0": "Locate Zzarc'Vul in the southern ogre mound in ⟦E4⟧ and return his monocle to Viktori in Darkshire.",
+  "quest:181:details:0": "Now there is just one more item needed to complete this device. Cog's blueprint calls for a lens of some sort. The only lens I know of that would be large enough will be very difficult to acquire.",
+  "quest:181:details:1": "There is an ogre by the name of Zzarc'Vul who resides in the mound in southern ⟦E4⟧. If you can, bring to me his monocle and I will use that as our lens!",
+  "quest:181:progress:0": "Were you able to convince Zzarc'Vul to lend us his monocle for our experiment?",
+  "quest:181:completion:0": "At last! The stargazing device is complete! Thank you, ⟦36⟧. Now I can continue my research. . ."
+ },
+ "context": {
+  "quest:453": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Tavernkeep Smitts",
+   "turner": "Jitters («جیتِرز»)"
+  },
+  "quest:57": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 26,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke",
+   "turner": "Commander Althea Ebonlocke"
+  },
+  "quest:133": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 27,
+   "side": "alliance",
+   "giver": "Abercrombie",
+   "turner": "Abercrombie"
+  },
+  "quest:66": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Madame Eva",
+   "turner": "Clerk Daltry"
+  },
+  "quest:67": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Clerk Daltry",
+   "turner": "Old Footlocker"
+  },
+  "quest:68": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Old Footlocker",
+   "turner": "Clerk Daltry"
+  },
+  "quest:69": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Clerk Daltry",
+   "turner": "Innkeeper Farley"
+  },
+  "quest:70": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Innkeeper Farley",
+   "turner": "Caretaker Folsom"
+  },
+  "quest:72": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Caretaker Folsom",
+   "turner": "Sealed Crate («جعبهٔ مهرشده»)"
+  },
+  "quest:74": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Sealed Crate («جعبهٔ مهرشده»)",
+   "turner": "Marshal Haggard («مارشال هگارد»)"
+  },
+  "quest:75": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Marshal Haggard («مارشال هگارد»)",
+   "turner": "Marshal Haggard («مارشال هگارد»)"
+  },
+  "quest:78": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Marshal Haggard («مارشال هگارد»)",
+   "turner": "Tavernkeep Smitts"
+  },
+  "quest:79": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Tavernkeep Smitts",
+   "turner": "Commander Althea Ebonlocke"
+  },
+  "quest:80": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke",
+   "turner": "Clerk Daltry"
+  },
+  "quest:97": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Clerk Daltry",
+   "turner": "Commander Althea Ebonlocke"
+  },
+  "quest:173": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Calor",
+   "turner": "Calor"
+  },
+  "quest:323": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Sven Yorgen",
+   "turner": "Sven Yorgen"
+  },
+  "quest:96138": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 28,
+   "side": "",
+   "giver": "",
+   "turner": "Sirra Von'Indi"
+  },
+  "quest:221": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Calor",
+   "turner": "Calor"
+  },
+  "quest:269": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Sven Yorgen",
+   "turner": "Bishop Farthing"
+  },
+  "quest:270": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Bishop Farthing",
+   "turner": "Glorin Steelbrow"
+  },
+  "quest:321": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Glorin Steelbrow",
+   "turner": "Waterlogged Chest"
+  },
+  "quest:322": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Glorin Steelbrow",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:324": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Waterlogged Chest",
+   "turner": "Glorin Steelbrow"
+  },
+  "quest:325": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Grimand Elmore («گریماند المور»)",
+   "turner": "Sven Yorgen"
+  },
+  "quest:526": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Glorin Steelbrow",
+   "turner": "Glorin Steelbrow"
+  },
+  "quest:58": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke",
+   "turner": "Commander Althea Ebonlocke"
+  },
+  "quest:134": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Abercrombie",
+   "turner": "Abercrombie"
+  },
+  "quest:160": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Abercrombie",
+   "turner": "Lord Ello Ebonlocke"
+  },
+  "quest:181": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Viktori Prism'Antras",
+   "turner": "Viktori Prism'Antras"
+  }
+ },
+ "known": {
+  "quest:453": {
+   "title": "یافتن شبح پنهان‌کار"
+  },
+  "quest:57": {
+   "title": "نگهبانان شب"
+  },
+  "quest:133": {
+   "title": "مجسمهٔ غول‌آب‌ریز"
+  },
+  "quest:66": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:67": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:68": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:69": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:70": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:72": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:74": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:75": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:78": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:79": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:80": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:97": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:173": {
+   "title": "ورگ‌ها در جنگل"
+  },
+  "quest:323": {
+   "title": "اثبات شایستگی"
+  },
+  "quest:221": {
+   "title": "ورگ‌ها در جنگل"
+  },
+  "quest:269": {
+   "title": "طلب حکمت"
+  },
+  "quest:270": {
+   "title": "ناوگان محکوم به فنا"
+  },
+  "quest:321": {
+   "title": "آهن لایت‌فورج"
+  },
+  "quest:322": {
+   "title": "بازوی مبارک"
+  },
+  "quest:324": {
+   "title": "شمش‌های گمشده"
+  },
+  "quest:325": {
+   "title": "مسلح و آماده"
+  },
+  "quest:526": {
+   "title": "شمش‌های لایت‌فورج"
+  },
+  "quest:58": {
+   "title": "نگهبانان شب"
+  },
+  "quest:134": {
+   "title": "دزدان اُگر"
+  },
+  "quest:160": {
+   "title": "یادداشتی برای شهردار"
+  },
+  "quest:181": {
+   "title": "نگاه به ستارگان"
+  }
+ }
+}

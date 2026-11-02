@@ -1,0 +1,839 @@
+{
+ "pack": "quest-teldrassil-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-teldrassil-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Webwood Spider Silk",
+   "fa": "ابریشم عنکبوت تارستان",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Jade Phial",
+   "fa": "شیشهٔ یشم",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Mount Hyjal",
+   "fa": "کوه هایجال",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Rare Earth",
+   "fa": "خاکِ کمیاب",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Dolanaar Delivery",
+   "fa": "محمولهٔ دولانار",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Innkeeper",
+   "fa": "مهمان‌دار",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Shadowglen",
+   "fa": "سایه دره",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Ysera",
+   "fa": "یسرا",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "Ursal the Mauler",
+   "fa": "اورسال کوبنده",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "Fel Moss",
+   "fa": "خزهٔ فل",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Emerald Dreamcatcher",
+   "fa": "تله‌رؤیای زمردی",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Timberling Seeds",
+   "fa": "دانه‌های تیمبرلینگ",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Timberling Sprouts",
+   "fa": "جوانه‌های تیمبرلینگ",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Timberling Seed",
+   "fa": "دانهٔ تیمبرلینگ",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Rellian Greenspyre",
+   "fa": "رلیان سبزبرج",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Ferocitas the Dream Eater",
+   "fa": "فروسیتاس رؤیاخوار",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Shaman Voodoo Charm",
+   "fa": "تعویذ وودوی شمن",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "hibernation",
+   "fa": "خواب زمستانی",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Raven Claw Talisman",
+   "fa": "تعویذ چنگال کلاغ",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Black Feather Quill",
+   "fa": "قلم‌پر سیاه",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Sapphire of Sky",
+   "fa": "یاقوت آسمان",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Rune of Nesting",
+   "fa": "رون آشیانه",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Tumors",
+   "fa": "تومورها",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Tourmaline Phial",
+   "fa": "شیشهٔ تورمالین",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E35": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Gargantuan Tumor",
+   "fa": "تومور غول‌آسا",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Oakenscowl",
+   "fa": "اخم‌بلوط",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Shimmering Frond",
+   "fa": "برگِ نخلِ مرمرشون",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E41": {
+   "en": "Voodoo Charm",
+   "fa": "تعویذِ وودو",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Empty Vial",
+   "fa": "شیشهٔ خالی",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Refreshing Spring Water",
+   "fa": "آبِ چشمهٔ گوارا",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Amethyst Phial",
+   "fa": "شیشهٔ آمیتیست",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E46": {
+   "en": "Filled Vessel",
+   "fa": "ظرفِ پُرشده",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Webwood Spider Silk": "ابریشم عنکبوت تارستان",
+  "requires": "نیازمند",
+  "Jade Phial": "شیشهٔ یشم",
+  "Darnassus": "دارناسوس",
+  "Teldrassil": "تلدراسیل",
+  "Battle": "نبرد",
+  "Mount Hyjal": "کوه هایجال",
+  "Rare Earth": "خاکِ کمیاب",
+  "Dolanaar Delivery": "محمولهٔ دولانار",
+  "Innkeeper": "مهمان‌دار",
+  "Shadowglen": "سایه دره",
+  "Ysera": "یسرا",
+  "Travel": "سفر",
+  "Ursal the Mauler": "اورسال کوبنده",
+  "Fel Moss": "خزهٔ فل",
+  "Emerald Dreamcatcher": "تله‌رؤیای زمردی",
+  "enemy": "دشمن",
+  "Timberling Seeds": "دانه‌های تیمبرلینگ",
+  "Timberling Sprouts": "جوانه‌های تیمبرلینگ",
+  "Timberling Seed": "دانهٔ تیمبرلینگ",
+  "Rellian Greenspyre": "رلیان سبزبرج",
+  "nearby": "نزدیک",
+  "Ferocitas the Dream Eater": "فروسیتاس رؤیاخوار",
+  "Shaman Voodoo Charm": "تعویذ وودوی شمن",
+  "form": "شکل",
+  "aura": "هاله",
+  "hibernation": "خواب زمستانی",
+  "Raven Claw Talisman": "تعویذ چنگال کلاغ",
+  "Black Feather Quill": "قلم‌پر سیاه",
+  "Sapphire of Sky": "یاقوت آسمان",
+  "Rune of Nesting": "رون آشیانه",
+  "Tumors": "تومورها",
+  "Tourmaline Phial": "شیشهٔ تورمالین",
+  "Druid": "دروئید",
+  "Darkshore": "کرانهٔ تاریک",
+  "Gargantuan Tumor": "تومور غول‌آسا",
+  "Oakenscowl": "اخم‌بلوط",
+  "Azeroth": "آزروت",
+  "Shimmering Frond": "برگِ نخلِ مرمرشون",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Voodoo Charm": "تعویذِ وودو",
+  "Empty Vial": "شیشهٔ خالی",
+  "Refreshing Spring Water": "آبِ چشمهٔ گوارا",
+  "Amethyst Phial": "شیشهٔ آمیتیست",
+  "blessing": "برکت",
+  "Filled Vessel": "ظرفِ پُرشده"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$N",
+  "3": "$r",
+  "4": "$N",
+  "5": "$R",
+  "6": "$N",
+  "7": "$N",
+  "8": "$R",
+  "9": "$c",
+  "10": "$B",
+  "11": "$c",
+  "12": "$c",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$N",
+  "17": "$r",
+  "18": "$N",
+  "19": "$R",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$B",
+  "25": "$B",
+  "26": "$c",
+  "27": "$c",
+  "28": "$C",
+  "29": "$n",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$C",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$R",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$C",
+  "53": "$B",
+  "54": "$B"
+ },
+ "rows": {
+  "quest:488:obj:0": "Bring Zenn Foulhoof outside of Dolanaar 3 Nightsaber Fangs, 3 Strigid Owl Feathers and 3 swatches of ⟦E1⟧.",
+  "quest:488:details:0": "Eager for work, I see. Lucky for you a day never goes by that I don't wish I had a fledgling ⟦1⟧ to perform my bidding.",
+  "quest:488:details:1": "You see, ⟦2⟧, I can make you very happy and provide you with things you never dreamed of having. But in order for that to happen you must bring me certain items.",
+  "quest:488:details:2": "My business in the forest often ⟦E2⟧ certain. . .reagents. Fetch for me 3 Nightsaber Fangs, 3 Strigid Owl Feathers and 3 swatches of ⟦E1⟧.",
+  "quest:488:details:3": "Let's keep this our little secret, ⟦3⟧.",
+  "quest:488:progress:0": "Have you been a busy little bee, ⟦4⟧? I've been waiting for you to bring me what I need.",
+  "quest:488:completion:0": "Ha ha! Well, done indeed.",
+  "quest:488:completion:1": "Who would have ever guessed that I, Zenn Foulhoof, would have a ⟦5⟧ to do my bidding? Certainly not me! But so it goes... this beloved world of ours is full of surprises.",
+  "quest:488:completion:2": "Three cheers for the naive and gullible!",
+  "quest:929:obj:0": "Fill the ⟦E3⟧ and bring it back to Corithras Moonrage in Dolanaar.",
+  "quest:929:details:0": "First, let me tell you more of the task you must complete. The druids in ⟦E4⟧ use the water of the moonwells of ⟦E5⟧, and their moonwell must be replenished from time to time. Using these specially crafted phials, you can collect the water of the moonwells.",
+  "quest:929:details:1": "Take this vessel to the moonwell outside of Starbreeze Village to the east, and fill it with some of its waters, then return to me. When you have completed your task, I shall continue the story where Tenaron left off...",
+  "quest:929:progress:0": "Hello again, ⟦6⟧. Have you completed your task?",
+  "quest:929:completion:0": "After the ⟦E6⟧ of ⟦E7⟧, we were without direction. Nordrassil smoked from the fire it unleashed, and our immortality--the very essence of our beings!--was lost.",
+  "quest:929:completion:1": "It was in this trying time that the Betrayer was freed from his prison, and Shan'do Stormrage disappeared. A dark time for all.",
+  "quest:997:obj:0": "Bring the package of ⟦E8⟧ to Denalan at Lake Al'Ameth.",
+  "quest:997:details:0": "Are you heading to the south? To Lake Al'Ameth? If so, then I have a task I might ask of you...",
+  "quest:997:details:1": "My colleague Denalan has a camp along the eastern end of the lake, where he is studying and experimenting on the plant life of ⟦E5⟧. He requested a package of rare earths from ⟦E4⟧ and it was late, only recently arriving here in Dolanaar.",
+  "quest:997:details:2": "Can you take the package to him?",
+  "quest:997:progress:0": "You have something for me?",
+  "quest:997:completion:0": "Ah, it's here! I have waited for this rare earth for quite some time. I hope it's still fresh...",
+  "quest:997:completion:1": "Thank you for bringing it to me, ⟦7⟧. You are a ⟦8⟧ who is generous with his time.",
+  "quest:2159:obj:0": "Bring the ⟦E9⟧ to ⟦E10⟧ Keldamyr.",
+  "quest:2159:details:0": "Greetings, young ⟦9⟧. Can you offer me aid? I have a package of herbs that I must deliver to the town of Dolanaar. But I still have business with the druids of ⟦E11⟧ and cannot yet leave.",
+  "quest:2159:details:1": "Can you deliver this package for me? It must be sent to ⟦E10⟧ Keldamyr, at the Dolanaar inn. It lies along the road, to the south.",
+  "quest:2159:progress:0": "How might I be of service to you, young one? Are you here to rest in the inn? Do you require a hearthstone?",
+  "quest:2159:completion:0": "Ah yes, the delivery of herbs from ⟦E11⟧. It is a shame Porthannius could not bring it himself, for we have much to discuss, he and I. But I am glad to get the herbs nonetheless, and I am glad you came.",
+  "quest:2159:completion:1": "While you are here, please, rest yourself. Heroes must keep their strength and spirits high, and must find rest and solace whenever they may. For to neglect one's peace of body and mind is a sure path to failure.",
+  "quest:2159:completion:2": "So... rest.",
+  "quest:475:obj:0": "Seek out Gaerolas Talvethren in Starbreeze Village.⟦10⟧",
+  "quest:475:details:0": "A troubling breeze blows through the forest.",
+  "quest:475:details:1": "Gaerolas Talvethren serves as Great Warden to the hibernating Druids of the Talon in the Ban'ethil Barrow Den. His duty as the chosen protector of the Sleeping is to ensure their safety so that their pact with ⟦E12⟧ remains fulfilled.",
+  "quest:475:details:2": "But word from Gaerolas is now delayed and I grow nervous. ⟦E13⟧ east to Starbreeze Village and bring back a report from Gaerolas so that I can put my worries to rest, knowing my dreaming brethren slumber safely.",
+  "quest:475:completion:0": "Thank the forest spirits you are here! I knew Athridas would sense trouble and send help.",
+  "quest:476:obj:0": "Return to Athridas Bearmantle in Dolanaar.",
+  "quest:476:details:0": "The Gnarlpine tribe has been corrupted!",
+  "quest:476:details:1": "The once peaceful furbolgs have turned against the protectors of the forest. They ambushed me as I left for the Ban'ethil Barrow Den and proceeded to pillage Starbreeze Village. ⟦E14⟧, their chieftain, is using the evil powers of the ⟦E15⟧ to drive them mad.",
+  "quest:476:details:2": "I am too wounded to return to Athridas to bring him this grave news. The task is left to you, young ⟦11⟧. We can only hope that the deranged Gnarlpines have not made it to Ban'ethil yet!",
+  "quest:476:completion:0": "By the stars! This is quite disturbing indeed!",
+  "quest:2438:obj:0": "Bring the ⟦E16⟧ to Tallonkai Swiftroot in Dolanaar.",
+  "quest:2438:details:0": "I was once given an emerald dreamcatcher from Gaerolas Talvethen, the warden of the druids in the Ban'ethil Barrow Den. This powerful amulet is able to siphon energy from the Emerald Dream, bestowing luck upon those who carry it.",
+  "quest:2438:details:1": "Sadly, I have not been able to retrieve it from my dresser in Starbreeze Village... Although Starbreeze was once a tranquil place, it has now succumbed to the corruption of the furbolg that reside there.",
+  "quest:2438:details:2": "Perhaps you would be willing to recover my dreamcatcher, ⟦12⟧?",
+  "quest:2438:progress:0": "Please move swiftly. I can only hope that my emerald dreamcatcher has been unharmed by the furbolg.⟦13⟧⟦14⟧Have you recovered it yet, ⟦15⟧?",
+  "quest:2438:completion:0": "My emerald dreamcatcher is of great importance to me. It is a gift only given to few. Thank you for returning it, ⟦16⟧.",
+  "quest:489:obj:0": "Collect 3 Fel Cones and give them to Zenn Foulhoof outside of Dolanaar.",
+  "quest:489:details:0": "The Council of the Forest has news that you aided Zenn Foulhoof. The satyr is an ⟦E17⟧ of the forest. As a ⟦17⟧, you should know better than to defile the forest by killing Nature's creatures.",
+  "quest:489:details:1": "You must redeem yourself in the eyes of the Council if you wish to remain a friend of ⟦E5⟧.",
+  "quest:489:details:2": "Teach Foulhoof a lesson and you shall be redeemed. Fel Cones are corrupted seeds that fall from the trees. They billow with green smoke.",
+  "quest:489:details:3": "Give some to Foulhoof. He'll think you have brought him a harmless snack.",
+  "quest:489:progress:0": "What do you have for me, ⟦18⟧? A lovely snack I presume?",
+  "quest:489:completion:0": "Ah, what a sweet ⟦19⟧! I knew you would come in handy!",
+  "quest:918:obj:0": "Bring 8 ⟦E18⟧ to Denelan at Lake Al'Ameth.",
+  "quest:918:details:0": "The timberlings of ⟦E5⟧ are elementals of nature. In some ways they reflect the natural order of plants and animals on our great tree.",
+  "quest:918:details:1": "So it is disturbing to see how angry the timberlings have become.",
+  "quest:918:details:2": "I believe it has something to do with the soil. I have been working on different methods of nurturing plants and would like to try them on timberling seeds. Please, can you gather seeds from timberlings around Lake Al'Ameth and bring them to me?",
+  "quest:918:progress:0": "Do you have the seeds? I am eager to plant them.",
+  "quest:918:completion:0": "You got them. This is good!",
+  "quest:918:completion:1": "I will plant these seeds in special soil I have prepared. I believe the seeds will sprout into timberlings who are much more docile. Perhaps later you can see the results!",
+  "quest:919:obj:0": "Bring 12 ⟦E19⟧ to Denalan at Lake Al'Ameth.",
+  "quest:919:details:0": "Small timberlings are sprouting around the waters of Lake Al'Ameth. I'm afraid these sprouts are beyond help -- we should try to clear them from the land before they grow large enough to cause trouble.",
+  "quest:919:details:1": "When you're wandering the lake, if you see any timberling sprouts please take them. Help keep our land clean!",
+  "quest:919:progress:0": "Hello, ⟦20⟧. Have you found any sprouts near the waters?",
+  "quest:919:completion:0": "That's a lot! I'm afraid they're spreading at a dangerous rate. I hope I can solve the riddle of what is tainting them.",
+  "quest:919:completion:1": "Thank you for your help, ⟦21⟧. The land is a cleaner place from your efforts.",
+  "quest:922:obj:0": "Bring a ⟦E20⟧ to ⟦E21⟧ in ⟦E4⟧.",
+  "quest:922:details:0": "⟦22⟧, can you take one of the seeds you brought me to my friend, ⟦E21⟧? He is a druid in ⟦E4⟧, and when last we spoke he revealed his interest in my work with the Timberlings. He had some ideas himself, and he will appreciate a specimen seed to work with.",
+  "quest:922:details:1": "Thank you, ⟦23⟧. You have been a great help to me. I hope that, some day, you will see the fruit of my labors.",
+  "quest:922:details:2": "You will usually find Rellian walking the pathways of the Cenarion Enclave in ⟦E4⟧.",
+  "quest:922:progress:0": "Hello...⟦24⟧⟦25⟧And how may I help you?",
+  "quest:922:completion:0": "Ah, a timberling seed? I wanted to try growing one of these to help Denalan with his studies.",
+  "quest:922:completion:1": "But I'm afraid I've discovered that a corruption has grown in many of the timberlings, and seeds from such creatures carry their parent's taint. They are beyond my talents to repair.",
+  "quest:922:completion:2": "Denalan is very skilled with things that grow. He may find a cure for future timberlings. He may be their only hope.",
+  "quest:87288:title": "Soft Saber Pelts",
+  "quest:487:obj:0": "Slay 6 Gnarlpine Ambushers and return to Sentinel Amara Nightwalker outside of Dolanaar.",
+  "quest:487:details:0": "The road to ⟦E4⟧ must be kept safe. Travelers heading from Dolanaar to ⟦E4⟧ have been reporting ruthless attacks by corrupted furbolgs from the Gnarlpine tribe.",
+  "quest:487:details:1": "Important news and commerce travels to and from ⟦E4⟧ by way of this road daily. We cannot afford to have a rogue band of heathens terrorizing people.",
+  "quest:487:details:2": "Take up arms in the name of the sacred forest, ⟦26⟧. Their den lies somewhere below this vantage point. Slay 6 of these Gnarlpine ambushers and report back to me.",
+  "quest:487:progress:0": "The road is still not safe, ⟦27⟧. ⟦E13⟧ forth and slay 6 Gnarlpine Ambushers and return to me.",
+  "quest:487:completion:0": "You have served the good people of Dolanaar and ⟦E4⟧ well, brave ⟦28⟧. As a member of the Sentinel force of ⟦E5⟧ I salute your efforts.",
+  "quest:932:obj:0": "Kill Lord Melenas and bring his head to Tallonkai Swiftroot in Dolanaar.",
+  "quest:932:details:0": "I must warn you, ⟦29⟧, this matter must stay between us. The satyr are enough of an embarrassment to us already, and this one is much too close to home.",
+  "quest:932:details:1": "He is called Lord Melenas. He resides in the ⟦E22⟧ cave of Fel Rock where he has gathered a large group of grell warriors. His heart is black as night, and he plots something most foul.",
+  "quest:932:details:2": "You must find him within his ⟦E22⟧ cave just to the north of here, and bring me his head.",
+  "quest:932:progress:0": "Did you kill Lord Melenas yet? It is vital that he be taken care of quickly and quietly, ⟦30⟧. His continued existence is an embarrassment to us all.",
+  "quest:932:completion:0": "With Lord Melenas laid to rest I can finally move on to other matters. Thank you, ⟦31⟧.",
+  "quest:2459:obj:0": "Tallonkai Swiftroot in Dolanaar wants you to kill 7 Gnarlpine Mystics and find the Missing Jewel.",
+  "quest:2459:details:0": "The emerald... It is missing! My dreamcatcher has been damaged!",
+  "quest:2459:details:1": "There is a band of Gnarlpine mystics located to the north of Starbreeze. I have heard reports that their leader, ⟦E23⟧ has been wearing a necklace that glows green in the night. Now seeing my dreamcatcher, I am sure that he has stolen my emerald... He would never realize that its power is useless to him.",
+  "quest:2459:details:2": "Find this missing jewel, ⟦32⟧. And, while you're there, clear out some of the corrupted mystics as well.",
+  "quest:2459:progress:0": "Ferocitas and the Gnarlpine Mystics must return what is mine. Please retrieve the emerald so that I may repair my emerald dreamcatcher.",
+  "quest:2459:completion:0": "Now I can repair my dreamcatcher. Thank you, ⟦33⟧.",
+  "quest:2541:obj:0": "Bring a ⟦E24⟧ to Oben Rageclaw in the Ban'ethil Barrow Den.",
+  "quest:2541:details:0": "The Gnarlpine shaman that inhabit this place have discovered a way of separating a sleeping druid's spirit from the physical body. The furbolg have animated my physical ⟦E25⟧ and are using it to attack anyone that attempts to explore the Ban'ethil Barrow Den. I am now trapped in the Emerald Dream, powerless to stop this.",
+  "quest:2541:details:1": "You must help me. The Gnarlpine shaman carry a strange charm which is used to perform this ritual, and I'd like to examine it. Please, ⟦34⟧, bring one to me.",
+  "quest:2541:progress:0": "If I can examine the charm, I may be able to figure out how to break the enchantment. Have you found one?",
+  "quest:2541:completion:0": "Thank you, ⟦35⟧.",
+  "quest:2541:completion:1": "What an odd trinket this is... I can sense the vile ⟦E26⟧ emanating from it; this is a very powerful enchantment.",
+  "quest:483:obj:0": "Retrieve the Relics of Wakening and bring them to Athridas Bearmantle in Dolanaar.",
+  "quest:483:details:0": "Gnarlpine invaders were seen ravaging the Ban'ethil Barrow Den to the west.",
+  "quest:483:details:1": "The slumbering druids will be trapped in the Emerald Dream for eternity, unaware of their fate, unless we help. The delicate ⟦E27⟧ ritual cannot be broken without the Relics of Wakening.",
+  "quest:483:details:2": "Journey to the Den and retrieve the ⟦E28⟧, ⟦E29⟧, ⟦E30⟧, and ⟦E31⟧. The druids store them in sacred chests. Return them to me and I will prepare the awakening ritual.",
+  "quest:483:progress:0": "⟦36⟧, the kidnapped Druids of the Talon will be forever trapped in the Emerald Dream if we cannot retrieve the Relics of Wakening from the Ban'ethil Barrow Den to the west.⟦37⟧⟦38⟧For every minute we delay their fate comes one step closer to eternal doom.",
+  "quest:483:completion:0": "You have succeeded, young ⟦39⟧! Well done. And just in time I might add.",
+  "quest:923:obj:0": "Bring 5 Mossy ⟦E32⟧ to ⟦E21⟧ in ⟦E4⟧.",
+  "quest:923:details:0": "There is a malevolence growing in the timberlings. We are trying to find the source, but until we do...in order to keep ⟦E5⟧ safe we must cut down the timberlings who are beyond help. Those that wander Wellspring Lake in northern ⟦E5⟧ are the most tainted. They must be removed!",
+  "quest:923:details:1": "Destroy the Timberlings you find there, and gather the mossy tumors growing upon them. Bring the tumors to me so that they may be burned.",
+  "quest:923:progress:0": "Have you been to Wellspring Lake, ⟦40⟧? Have you been hunting the timberlings there?",
+  "quest:923:completion:0": "Well done! These tumors are the symptom of the timberling's disease. They are filled with a poison that we must cleanse from our new land.",
+  "quest:923:completion:1": "I will dispose of these tumors. Thank you, ⟦41⟧.",
+  "quest:933:obj:0": "Fill the ⟦E33⟧ and bring it back to Corithras Moonrage in Dolanaar.",
+  "quest:933:details:0": "There is another moonwell southeast of the entrance to ⟦E4⟧, on the shores of the Pools of Arlithrien. The Sentinels are having problems patrolling the area because of attacks and the growing ill-temperedness of the Gnarlpine furbolgs.",
+  "quest:933:details:1": "Be wary as you seek out the well, and keep your weapons close at hand.",
+  "quest:933:progress:0": "At first the reports of crazed furbolg attacks were dismissed. Who could have thought that the peace-loving bear-men would turn to mindless rage? Yet another of the problems that plagues us here in our new home.",
+  "quest:933:completion:0": "Shan'do Stormrage never returned, and the druids were in disarray, and to this day we still do not know what became of him. With Malfurion missing, Arch ⟦E34⟧ Fandral Staghelm took over the leadership of the druids, convincing the Circle of Ancients in ⟦E35⟧ that it was time for our people to rebuild, and that it was time for our people to regain their immortality.",
+  "quest:933:completion:1": "With the approval of the Circle, Staghelm and the most powerful druids grew ⟦E5⟧, the new World Tree.",
+  "quest:2498:obj:0": "⟦E21⟧ wants you to speak with Denalan at Lake Al'Ameth.",
+  "quest:2498:details:0": "I have just received word that Denalan at Lake Al'Ameth has discovered what may be the cause of the tumors that plague the timberlings. Please speak with him, and tell him I sent you.",
+  "quest:2498:details:1": "Make haste, ⟦42⟧; he needs our help.",
+  "quest:2498:completion:0": "Ah, so Rellian sent you to aid me. I am glad you arrived here so soon.",
+  "quest:2498:completion:1": "I have discovered something quite disturbing!",
+  "quest:2499:obj:0": "Denalan at Lake Al'Ameth wants you to collect the ⟦E36⟧ from ⟦E37⟧.",
+  "quest:2499:details:0": "In a cave along the southern bank of the lake, a timberling named ⟦E37⟧ is spreading corruption to all the creatures that make Lake Al'Ameth their home.",
+  "quest:2499:details:1": "I dared not get too close, but even from a distance, it is obvious: ⟦E37⟧ is being poisoned by the largest tumor I have ever seen... I would call it gargantuan, even.",
+  "quest:2499:details:2": "B⟦43⟧, you have already done much to aid my efforts, but I ask of you one more task. Hunt down ⟦E37⟧ and collect the tumor; remove this source of corruption from my home.",
+  "quest:2499:progress:0": "Have you located ⟦E37⟧ yet, ⟦44⟧?",
+  "quest:2499:completion:0": "I knew you were more than capable of ridding the lake of that horrible beast.",
+  "quest:2499:completion:1": "It is a distressing situation; ⟦E37⟧ was once a grand leader amongst his kind... but corruption does not discriminate between the lowly and the noble.",
+  "quest:2499:completion:2": "The size of this tumor is quite disturbing, but I must study it to learn more about the disease that upsets the timberling population.",
+  "quest:2499:completion:3": "Thank you, ⟦45⟧.",
+  "quest:99046:title": "The Lost Runner",
+  "quest:99047:title": "Not Dead Yet",
+  "quest:99047:obj:0": "Seek aid from Byancie in Dolanaar for Sentinel Eralya Leafshadow.",
+  "quest:930:obj:0": "Bring the glowing fruit to Denalan at Lake Al'Ameth.",
+  "quest:930:details:0": "Hanging from beneath its fronds of this glowing plant is a large, round fruit.",
+  "quest:930:details:1": "Denalan would want to study this fruit, you are certain.",
+  "quest:930:progress:0": "⟦46⟧, you look like you have something to tell me. Do you have news concerning the timberlings?",
+  "quest:930:completion:0": "You found this on ⟦E5⟧? Intriguing... this fruit is exotic. Perhaps its seeds were brought here from far off. Perhaps even as far as ⟦E38⟧! And there's something about this fruit... it seems to have reacted very strangely with the soil of ⟦E5⟧.",
+  "quest:930:completion:1": "Thank you, ⟦47⟧. Now if you'll excuse me, I must study this further...",
+  "quest:931:obj:0": "Bring a ⟦E39⟧ to Denalan at Lake Al'Ameth",
+  "quest:931:details:0": "The fronds on this plant shimmer in the forest light, giving it a twisting, pulsing ⟦E26⟧.",
+  "quest:931:details:1": "You believe that Denalan would want a specimen of this.",
+  "quest:931:progress:0": "You have something for me?",
+  "quest:931:completion:0": "Where did you get this? I haven't seen a plant like this since a sojourn I made to the ⟦E40⟧... decades ago! It's amazing that a specimen made its way to ⟦E5⟧. And it's grown to such a size!",
+  "quest:931:completion:1": "Thank you, ⟦48⟧. Forgive my shortness of words, but there is a test I would like to perform on this frond...",
+  "quest:2399:completion:0": "The fronds Denalan planted within his garden have sprouted and grown. They tremble, eager to be picked....",
+  "quest:2561:obj:0": "Oben Rageclaw wants you to kill his soulless body, and then use the ⟦E41⟧.",
+  "quest:2561:details:0": "After examining this charm, ⟦49⟧, I see now what must be done. Please take it, and do as I ask.",
+  "quest:2561:details:1": "You are to explore the deepest areas of the Ban'ethil Barrow Den. There, you will find my soulless body... Although I regret what I am about to tell you, I see no other way to free myself from the control of the Gnarlpine.",
+  "quest:2561:details:2": "In order for me to escape them, you must kill my physical ⟦E25⟧. Once that is done, use the voodoo charm on my fallen body. After you have completed this task, please return to me.",
+  "quest:2561:progress:0": "⟦50⟧, be wary when approaching my physical ⟦E25⟧; the enchantment it is under is quite powerful.",
+  "quest:2561:completion:0": "I am finally free of the control of the Gnarlpine. Thank you, ⟦51⟧.",
+  "quest:2561:completion:1": "My spirit may now rest peacefully forever in the Emerald Dream.",
+  "quest:2561:completion:2": "Perhaps one day we may meet again, young ⟦52⟧. But, for now, please accept this reward as a symbol of my gratitude.",
+  "quest:99050:title": "The Great Tree Provides",
+  "quest:99050:obj:0": "Collect 6 Dewy Lasher Fronds, an ⟦E42⟧, and a ⟦E43⟧ for Byancie in Dolanaar.",
+  "quest:934:obj:0": "Fill the ⟦E44⟧ and bring it back to Corithras Moonrage in Dolanaar.",
+  "quest:934:details:0": "All was not well with ⟦E5⟧, however. Staghelm's carefully made plans for the new World Tree had borne out as he had hoped, but there was one small problem, a problem to which many of the troubles on ⟦E5⟧ may be attributed.",
+  "quest:934:details:1": "However, I will not get into that yet. You must visit the last moonwell, to the northwest in the Oracle Glade. Under the boughs of the Oracle Tree lies the first and most powerful of our wells. Retrieve a phial of its water and return to me.",
+  "quest:934:progress:0": "Along with the druids, the Oracle Tree and the Arch ⟦E34⟧ have been carefully monitoring the growth of ⟦E5⟧. But though we have a new home, our immortal lives have not been restored.",
+  "quest:934:completion:0": "To be in the presence of the Oracle Tree... it is almost to feel wisdom take ⟦E25⟧. Let me continue the telling...",
+  "quest:934:completion:1": "With ⟦E5⟧ grown, the Arch ⟦E34⟧ approached the dragons for their blessings, as the dragons had placed upon Nordrassil in ancient times. But Nozdormu, Lord of Time, refused to give his ⟦E45⟧, chiding the druid for his arrogance. In agreement with Nozdormu, Alexstrasza also refused Staghelm, and without her ⟦E45⟧, ⟦E5⟧'s growth has been flawed and unpredictable...",
+  "quest:935:obj:0": "Bring the ⟦E46⟧ to Arch ⟦E34⟧ Fandral Staghelm in ⟦E4⟧.",
+  "quest:935:details:0": "Without the blessings of Alexstrasza the Life-Binder and Nozdormu the Timeless, ⟦E5⟧'s growth has not been without flaw. Strange beasts have been reported arising from the very ground of the tree, and crazed furbolgs attack passing travelers.",
+  "quest:935:details:1": "I can only hope that the solution the Arch ⟦E34⟧ is looking for will be found quickly. I will pour all the phials you brought into this vessel, for you to deliver to ⟦E4⟧.",
+  "quest:935:details:2": "Bring it to Fandral Staghelm, you will find him in the druid grove.",
+  "quest:935:progress:0": "I know that I did not summon you, so I cannot help but wonder why it is you have come to speak with me.⟦53⟧⟦54⟧Whatever it is, please make it quick.",
+  "quest:935:completion:0": "Ah yes, the water I had requested. Tenaron and Corithras certainly took their time in having it delivered... perhaps not choosing the most reliable of messengers... hmm.",
+  "quest:935:completion:1": "Nonetheless, I can finally get back to my work then. The weight of ⟦E5⟧'s problems fall upon my shoulders. A yoke I would wish to soon be rid of.",
+  "quest:935:completion:2": "Take this, you may find some use for it."
+ },
+ "context": {
+  "quest:488": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Zenn Foulhoof",
+   "turner": "Zenn Foulhoof"
+  },
+  "quest:929": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Corithras Moonrage",
+   "turner": "Corithras Moonrage"
+  },
+  "quest:997": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Syral Bladeleaf",
+   "turner": "Denalan"
+  },
+  "quest:2159": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Porthannius",
+   "turner": "Innkeeper Keldamyr"
+  },
+  "quest:475": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Athridas Bearmantle",
+   "turner": "Gaerolas Talvethren"
+  },
+  "quest:476": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Gaerolas Talvethren",
+   "turner": "Athridas Bearmantle"
+  },
+  "quest:2438": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Tallonkai Swiftroot",
+   "turner": "Tallonkai Swiftroot"
+  },
+  "quest:489": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Syral Bladeleaf",
+   "turner": "Zenn Foulhoof"
+  },
+  "quest:918": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Denalan",
+   "turner": "Denalan"
+  },
+  "quest:919": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Denalan",
+   "turner": "Denalan"
+  },
+  "quest:922": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Denalan",
+   "turner": "Rellian Greenspyre («رلیان سبزبرج»)"
+  },
+  "quest:87288": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Aldia",
+   "turner": "Aldia"
+  },
+  "quest:487": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Moon Priestess Amara",
+   "turner": "Moon Priestess Amara"
+  },
+  "quest:932": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Tallonkai Swiftroot",
+   "turner": "Tallonkai Swiftroot"
+  },
+  "quest:2459": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Tallonkai Swiftroot",
+   "turner": "Tallonkai Swiftroot"
+  },
+  "quest:2541": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Oben Rageclaw",
+   "turner": "Oben Rageclaw"
+  },
+  "quest:483": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Athridas Bearmantle",
+   "turner": "Athridas Bearmantle"
+  },
+  "quest:923": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Rellian Greenspyre («رلیان سبزبرج»)",
+   "turner": "Rellian Greenspyre («رلیان سبزبرج»)"
+  },
+  "quest:933": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Corithras Moonrage",
+   "turner": "Corithras Moonrage"
+  },
+  "quest:2498": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Rellian Greenspyre («رلیان سبزبرج»)",
+   "turner": "Denalan"
+  },
+  "quest:2499": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Denalan",
+   "turner": "Denalan"
+  },
+  "quest:99046": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Sentinel Eralya Leafshadow"
+  },
+  "quest:99047": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Sentinel Eralya Leafshadow",
+   "turner": "Byancie"
+  },
+  "quest:930": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Strange Fruited Plant",
+   "turner": "Denalan"
+  },
+  "quest:931": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Strange Fronded Plant",
+   "turner": "Denalan"
+  },
+  "quest:2399": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Sprouted Frond («برگِ جوانه‌زده»)",
+   "turner": "Sprouted Frond («برگِ جوانه‌زده»)"
+  },
+  "quest:2561": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Oben Rageclaw",
+   "turner": "Oben Rageclaw"
+  },
+  "quest:99050": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Byancie",
+   "turner": ""
+  },
+  "quest:934": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 11,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:935": {
+   "zone_en": "Teldrassil",
+   "zone_fa": "تلدراسیل",
+   "level": 11,
+   "side": "alliance",
+   "giver": "Corithras Moonrage",
+   "turner": "Arch Druid Fandral Staghelm"
+  }
+ },
+ "known": {
+  "quest:488": {
+   "title": "خواستهٔ زِن"
+  },
+  "quest:929": {
+   "title": "تاج زمین"
+  },
+  "quest:997": {
+   "title": "خاک دنالان"
+  },
+  "quest:2159": {
+   "title": "محمولهٔ دولانار"
+  },
+  "quest:475": {
+   "title": "نسیمی نگران‌کننده"
+  },
+  "quest:476": {
+   "title": "فساد کاج‌گره"
+  },
+  "quest:2438": {
+   "title": "تله‌رؤیای زمردی"
+  },
+  "quest:489": {
+   "title": "طلب بخشش کن!"
+  },
+  "quest:918": {
+   "title": "دانه‌های تیمبرلینگ"
+  },
+  "quest:919": {
+   "title": "جوانه‌های تیمبرلینگ"
+  },
+  "quest:922": {
+   "title": "رلیان سبزبرج"
+  },
+  "quest:487": {
+   "title": "راه دارناسوس"
+  },
+  "quest:932": {
+   "title": "کینهٔ تباه"
+  },
+  "quest:2459": {
+   "title": "فروسیتاس رؤیاخوار"
+  },
+  "quest:2541": {
+   "title": "دروئید خفته"
+  },
+  "quest:483": {
+   "title": "یادگارهای بیداری"
+  },
+  "quest:923": {
+   "title": "تومورها"
+  },
+  "quest:933": {
+   "title": "تاج زمین"
+  },
+  "quest:2498": {
+   "title": "بازگشت نزد دنالان"
+  },
+  "quest:2499": {
+   "title": "اخم‌بلوط"
+  },
+  "quest:930": {
+   "title": "میوهٔ درخشان"
+  },
+  "quest:931": {
+   "title": "برگ درخشان"
+  },
+  "quest:2399": {
+   "title": "برگ‌های جوانه‌زده"
+  },
+  "quest:2561": {
+   "title": "دروئید چنگال"
+  },
+  "quest:934": {
+   "title": "تاج زمین"
+  },
+  "quest:935": {
+   "title": "تاج زمین"
+  }
+ }
+}

@@ -1,0 +1,714 @@
+{
+ "pack": "quest-westfall-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-westfall-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Furlbrow's Deed",
+   "fa": "سند مالکیتِ فورلبرو",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Westfall Stew",
+   "fa": "خورشتِ وستفال",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Lewis' Note",
+   "fa": "یادداشتِ لوییس",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Osric's Crate",
+   "fa": "جعبهٔ اسریک",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Dungar Longdrink",
+   "fa": "دانگار لانگ‌درینک",
+   "kind": "qs"
+  },
+  "E10": {
+   "en": "trained",
+   "fa": "آموزش‌دیده",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "The People's Militia",
+   "fa": "میلشیای مردم",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Goretusk Liver Pie",
+   "fa": "پای جگرِ گورتاسک",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Well Water Sample Kit",
+   "fa": "بستهٔ نمونه‌برداری آب چاه",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Jansen Stead Water Sample",
+   "fa": "نمونهٔ آبِ مزرعهٔ یانسن",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Molsen Farm Water Sample",
+   "fa": "نمونهٔ آب مزرعهٔ مولسن",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Longshore Murloc Gill",
+   "fa": "آبششِ مورلاکِ ساحل‌دراز",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Stringy Vulture Meat",
+   "fa": "گوشت رشته‌رشتهٔ کرکس",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Okra",
+   "fa": "بامیه",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Poor Old Blanchy",
+   "fa": "بلانچی پیر بیچاره",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Hops",
+   "fa": "رازک",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Red Leather Bandanas",
+   "fa": "دستمال‌های چرمی قرمز",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Flasks",
+   "fa": "فلَسک‌ها",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Coarse Dynamite",
+   "fa": "دینامیتِ درشت",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Dagger",
+   "fa": "خنجر",
+   "kind": "sp"
+  },
+  "E27": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "The Defias Brotherhood",
+   "fa": "برادری دیفایاس",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E30": {
+   "en": "Redridge Mountains",
+   "fa": "کوه‌های ردریج",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Wiley's Note",
+   "fa": "یادداشتِ ویلی",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Furlbrow's Deed": "سند مالکیتِ فورلبرو",
+  "Westfall": "وستفال",
+  "Westfall Stew": "خورشتِ وستفال",
+  "miss": "خطا",
+  "Stormwind": "استورم‌ویند",
+  "Lewis' Note": "یادداشتِ لوییس",
+  "armor": "زره",
+  "Osric's Crate": "جعبهٔ اسریک",
+  "Dungar Longdrink": "دانگار لانگ‌درینک",
+  "trained": "آموزش‌دیده",
+  "The People's Militia": "میلشیای مردم",
+  "nearby": "نزدیک",
+  "Goretusk Liver Pie": "پای جگرِ گورتاسک",
+  "Use": "استفاده",
+  "Well Water Sample Kit": "بستهٔ نمونه‌برداری آب چاه",
+  "Jansen Stead Water Sample": "نمونهٔ آبِ مزرعهٔ یانسن",
+  "Molsen Farm Water Sample": "نمونهٔ آب مزرعهٔ مولسن",
+  "Longshore Murloc Gill": "آبششِ مورلاکِ ساحل‌دراز",
+  "Stringy Vulture Meat": "گوشت رشته‌رشتهٔ کرکس",
+  "Okra": "بامیه",
+  "Poor Old Blanchy": "بلانچی پیر بیچاره",
+  "Hops": "رازک",
+  "Red Leather Bandanas": "دستمال‌های چرمی قرمز",
+  "Flasks": "فلَسک‌ها",
+  "Coarse Dynamite": "دینامیتِ درشت",
+  "Dagger": "خنجر",
+  "battle": "نبرد",
+  "The Defias Brotherhood": "برادری دیفایاس",
+  "Travel": "سفر",
+  "Redridge Mountains": "کوه‌های ردریج",
+  "Wiley's Note": "یادداشتِ ویلی",
+  "chance": "شانس"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$C",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$N",
+  "23": "$n",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$R",
+  "34": "$N",
+  "35": "$C",
+  "36": "$N",
+  "37": "$N"
+ },
+ "rows": {
+  "quest:184:obj:0": "Bring ⟦E1⟧ to Farmer Furlbrow.",
+  "quest:184:details:0": "This is the deed to an expanse of farmlands within ⟦E2⟧. It is signed by a Theodore Furlbrow and cosigned by his wife, Verna. And on the back of the deed are hastily scrawled words:",
+  "quest:184:details:1": "B\"We leaned on Furlbrow and got his deed. Thought it might be handy if you wanted to forge one of these for your own place.",
+  "quest:184:details:2": "The Furlbrows won't give us trouble. Last I saw them they were on their way out of ⟦E2⟧, stuck with a broken wagon.\"",
+  "quest:184:details:3": "You think the Furlbrows might want their deed back...",
+  "quest:184:progress:0": "You have the deed to my farm?? That's good news! Some ruffians stole it days ago... I thought it was gone for good!⟦1⟧⟦2⟧Please, let me have it. We're on our way out of ⟦E2⟧ and ain't coming back any time soon, but if we do then we'll need those papers...",
+  "quest:184:completion:0": "Loads of thanks, ⟦3⟧! As I was saying, these parts aren't fit for honest folk anymore, but if things get better, then this deed will let us reclaim our land.",
+  "quest:184:completion:1": "I don't have much to offer you, but here -- take this.",
+  "quest:36:obj:0": "Verna Furlbrow wants you to deliver her recipe for ⟦E3⟧ to Salma Saldean.",
+  "quest:36:details:0": "I never thought the day would come when I'd leave the farm. But the fields are overrun with thieves and it's far too dangerous for us here now. As soon as Farmer Furlbrow gets the wagon fixed, we'll be on our way. ⟦4⟧ ⟦5⟧Maybe you could do me a favor? Let me scribble down my recipe for ⟦E2⟧ stew. Please take it to Salma Saldean over on the farm yonder. The Saldean's farm is just beyond the fork in the road.",
+  "quest:36:progress:0": "I'm going to ⟦E4⟧ that Verna Furlbrow so much. I don't suppose you happened to see her on your way here?",
+  "quest:36:completion:0": "That Verna was always such a sweet lass. We'll ⟦E4⟧ her here in ⟦E2⟧ but between you and me, she's a city girl at heart and ⟦E5⟧ will suit her just fine. But enough gossip! Now we can make ⟦E3⟧!",
+  "quest:6181:obj:0": "Bring ⟦E6⟧ to Thor the gryphon master.",
+  "quest:6181:details:0": "Although we don't get much aid from ⟦E5⟧ directly, I do have a contact in the city who helps supply us with ⟦E7⟧. His name is Osric Strang. His shop, Limited Immunity, is in the Old Town of ⟦E5⟧.",
+  "quest:6181:details:1": "Our supply of ⟦E7⟧ dwindles, and I must contact Osric for more. Can you take him this note?",
+  "quest:6181:details:2": "The fastest way to ⟦E5⟧ is through Thor, our gryphon master. He's just down the hill; bring him my note, and then take a gryphon to ⟦E5⟧.",
+  "quest:6181:progress:0": "You look like you're in a hurry. Well, then you came to the right place!",
+  "quest:6181:completion:0": "You have to get this note to ⟦E5⟧? That's not a problem, you can take one of my gryphons!",
+  "quest:6261:obj:0": "Bring ⟦E8⟧ to ⟦E9⟧ the gryphon master.",
+  "quest:6261:details:0": "⟦6⟧, I gathered into this crate everything Lewis asked for. Can you take it to him?",
+  "quest:6261:details:1": "If you've already spoken to Thor in ⟦E2⟧, then you can take a gryphon back to him. ⟦E9⟧ is our gryphon master, over in the trade district.",
+  "quest:6261:details:2": "Speak with Dungar, then get this crate to Lewis as fast as you can. We don't want our fighting men and women in ⟦E2⟧ to go without fresh equipment!",
+  "quest:6261:progress:0": "Is that sweat on your brow, lad? You've been running too much. Next time, take a gryphon!",
+  "quest:6261:completion:0": "A crate for ⟦E2⟧, eh? Have you been to Westall before? If so, then it's no problem, my friend. I have plenty of gryphons ⟦E10⟧ to fly that route!",
+  "quest:6281:obj:0": "Buy a gryphon ride from the gryphon master Thor, then bring ⟦E6⟧ to Osric Strang, in the shop Limited Immunity, in the Old Town of ⟦E5⟧.",
+  "quest:6281:details:0": "For a small fee, you can take a gryphon to ⟦E5⟧, so you can deliver Lewis' note to Osric. You won't get there faster any other way.",
+  "quest:6281:details:1": "If that sounds acceptable, then just speak to me again when you're ready for the ride. I'll charge you a little, but trust me; it'll be worth it!",
+  "quest:6281:progress:0": "You've been traveling, eh? Have you been anywhere interesting?",
+  "quest:6281:completion:0": "Ah, a note from Quartermaster Lewis? I'm not surprised he needs more gear. Sentinel Hill is far away, in a land ⟦E5⟧ has all but forgotten.",
+  "quest:6281:completion:1": "Well thank you, ⟦7⟧. Here's some money to cover your travel costs.",
+  "quest:6285:obj:0": "Buy a gryphon ride to Sentinel Hill from the gryphon master ⟦E9⟧, then take ⟦E8⟧ to Lewis at Sentinel Hill.",
+  "quest:6285:details:0": "The gryphon master in ⟦E2⟧ is Thor. If you've spoken to him before, then you can take one of my gryphons to him.",
+  "quest:6285:details:1": "That's a good lesson to know: gryphons are always ⟦E10⟧ to fly to their capital city, but they'll only take you to a remote gryphon master after you've already been there.",
+  "quest:6285:details:2": "You've already been to Thor, so just speak with me again when you're ready to take a gryphon to ⟦E2⟧. Once there, you can deliver ⟦E8⟧ to Quartermaster Lewis.",
+  "quest:6285:progress:0": "You're back from ⟦E5⟧? Did Osric send the ⟦E7⟧?",
+  "quest:6285:completion:0": "Great, you brought the ⟦E7⟧! We'll get this divvied to those who need it immediately.",
+  "quest:6285:completion:1": "Thank you, ⟦8⟧. Your efforts have been a great help to us. And now that you're no stranger to gryphons, I hope you'll come and lend your aid to Sentinel Hill often!",
+  "quest:12:obj:0": "Gryan Stoutmantle wants you to kill 15 Defias Trappers and 15 Defias Smugglers then return to him on Sentinel Hill.",
+  "quest:12:details:0": "⟦E11⟧ has but one goal: To defend the lands of ⟦E2⟧ and return peace to our surroundings. Unfortunately, the price of peace is often blood.",
+  "quest:12:details:1": "One of my scouts has brought word of a band of Defias Trappers wreaking havoc ⟦E12⟧. I have reports of Defias Trapper sightings near the Jangolode Mine to the Northwest as well as at the Molsen Farm and Furlbrow's Pumpkin Farm. If you seek to join our ranks, slay 15 Defias Trappers and 15 Defias Smugglers then return to me.",
+  "quest:12:progress:0": "Perhaps I did not make myself clear, pledge. In order to prove your worth as a servant to ⟦E11⟧ and to the Light you need to slay 15 Defias Trappers and 15 Defias Smugglers then return to me when the deed is done.",
+  "quest:12:completion:0": "Well done, ⟦9⟧. My scout witnessed your valiant acts. You are proving yourself quite well so far.",
+  "quest:22:obj:0": "Salma Saldean needs 8 Goretusk livers to make a ⟦E13⟧.",
+  "quest:22:details:0": "The onions are peeled. The garlic is minced. The rosemary is crushed. The crust has been baked. The dill weed is chopped. The gravy is simmering. Now all I need for my famous meat pie are 8 Goretusk Livers!",
+  "quest:22:progress:0": "All I need for my famous meat pie are 8 Goretusk Livers!",
+  "quest:22:completion:0": "These are just perfect, ⟦10⟧! Thank you so much. Farmer Saldean and I are going to feast tonight. And here is a little something for you, for the hard work. You didn't think I was going to let a ⟦11⟧ like you go hungry, did you?",
+  "quest:64:obj:0": "Farmer Furlbrow wants you to retrieve his pocket watch from the wardrobe in his farmhouse at the pumpkin farm to the West.",
+  "quest:64:details:0": "It was horrible! Verna woke me when she heard a ruckus in the fields. The fields were full of hooligans. We left in a rush and I forgot to pack my pocket watch. Verna's pa gave me that watch on our wedding day and I feel just sick knowing those thieves have it. I left the pocket watch in the wardrobe at the farmhouse. Look for the field of pumpkins to the West -- you can't ⟦E4⟧ it. If you bring it back to me, I'd sure be grateful!",
+  "quest:64:progress:0": "Don't suppose you were able to get my watch?",
+  "quest:64:completion:0": "My watch! Thank you so much, kind sir!",
+  "quest:64:completion:1": "We are but poor farmers and we have lost our land but please accept this reward as a token of our appreciation.",
+  "quest:92742:title": "Testing the Wells",
+  "quest:92742:obj:0": "⟦E14⟧ the ⟦E15⟧ to collect samples from the wells at the Jansen Stead and the Molsen Farm.",
+  "quest:92742:obj:1": "* ⟦E16⟧",
+  "quest:92742:obj:2": "* ⟦E17⟧",
+  "quest:92742:obj:3": "* ⟦E15⟧ (provided)",
+  "quest:92742:details:0": "We must determine the source and nature of the poison corrupting this land. Let us begin with the groundwater under the farms in the area.",
+  "quest:92742:details:1": "Go to the Jansen Stead and the Molsen Farm, and collect samples from the wells there.",
+  "quest:92742:progress:0": "...",
+  "quest:92744:title": "Murloc Gills",
+  "quest:92744:obj:0": "Alba Fairmoon wants you to collect 7 Longshore Murloc Gills along the shoreline of .",
+  "quest:92744:obj:1": "*⟦E18⟧ (7)",
+  "quest:92744:details:0": "The corruption affecting ⟦E2⟧'s crops may have seeped into the ocean as well. If the local fish are affected too, it could doom ⟦E5⟧ to famine.",
+  "quest:92744:details:1": "Collect gills from the murlocs along the shoreline and bring them to me. Murlocs are quite hardy, but their physiology is extremely sensitive to contaminants. Any toxins in the seawater will be readily apparent in the gills you find.",
+  "quest:92744:progress:0": "...",
+  "quest:38:obj:0": "Salma Saldean wants 3 ⟦E19⟧, 3 Goretusk Snouts, 3 Murloc Eyes, 3 ⟦E20⟧.",
+  "quest:38:details:0": "Help me make some ⟦E3⟧! Come back with the following ingredients: ⟦12⟧ ⟦13⟧ 3 ⟦E19⟧ ⟦14⟧ 3 Goretusk Snouts ⟦15⟧ 3 Murloc Eyes ⟦16⟧ 3 ⟦E20⟧",
+  "quest:38:progress:0": "Come back with the following ingredients: ⟦17⟧ ⟦18⟧ 3 ⟦E19⟧ ⟦19⟧ 3 Goretusk Snouts ⟦20⟧ 3 Murloc Eyes ⟦21⟧ 3 ⟦E20⟧",
+  "quest:38:completion:0": "That ⟦E20⟧ will thicken up this broth nicely! Now we just add the ⟦E19⟧, a few Murloc Eyes and those delicious Goretusk Snouts. And we're done! For all your help, ⟦22⟧, I want you to take today's first batch of ⟦E3⟧!",
+  "quest:13:obj:0": "Gryan Stoutmantle wants you to kill 15 Defias Pillagers and 15 Defias Looters and return to him on Sentinel Hill.",
+  "quest:13:details:0": "A band of vicious Defias Pillagers has been seen plundering the Gold Coast Quarry, Moonbrook and the Alexston Farmstead. ⟦E11⟧ will not stand for such behavior. Dispatch immediately, ⟦23⟧, and make the Light's presence known in ⟦E2⟧.",
+  "quest:13:details:1": "The Gold Coast Quarry is near the shore, to the West of the tower. As the next step of your training, I want you to kill 15 of those foul Defias Pillagers and 15 Defias Looters.",
+  "quest:13:progress:0": "We have not time to talk, ⟦24⟧. The Defias Pillagers are denying the people of ⟦E2⟧ the peace and prosperity they deserve. Make sure at least 15 Defias Pillagers and 15 Defias Looters have been killed. That will send a clear message that corruption is not welcome here.",
+  "quest:13:completion:0": "Your worth to ⟦E11⟧ has been validated by your brave acts thus far.",
+  "quest:102:obj:0": "Bring 8 Gnoll Paws to Captain Danuvin on Sentinel Hill.",
+  "quest:102:details:0": "⟦E5⟧ has abandoned us. A foul wind of depravity rustles through the plains of ⟦E2⟧. This was my homeland and I will not turn my back on the citizens who choose to remain here. We, the former farmers, shall make our stand.",
+  "quest:102:details:1": "Your task, should you choose to accept, is to patrol the grasslands of ⟦E2⟧. Track down and slay the vile Gnolls that seem to be working in conjunction with the Deadmines thieves. Bring me eight Gnoll Paws and I will reward your bravery.",
+  "quest:102:progress:0": "Have you collected 8 paws from those treacherous Gnolls yet?",
+  "quest:102:completion:0": "Well done, ⟦25⟧. With valiant adventurers such as yourself fighting alongside ⟦E11⟧, ⟦E2⟧ just might return to the prosperous breadbasket it once was. Please accept this in recognition of your tireless efforts.",
+  "quest:151:obj:0": "Verna Furlbrow in ⟦E2⟧ wants you to bring her 8 Handfuls of Oats.",
+  "quest:151:details:0": "⟦E21⟧! Such a tired beast after all the work we put her through. I fed her before we left the farm, but we weren't expecting the wagon to break on us. If you could bring her a few handfuls of oats from the fields, I'd be grateful.",
+  "quest:151:details:1": "I bet you could find some around all of the farms in ⟦E2⟧, if you can steer clear of those horrific machines that have taken over. There are several farms southwest of here.",
+  "quest:151:progress:0": "Old Blanchy is on her last leg. Did you happen to find any oats for her?",
+  "quest:151:completion:0": "Thank you so much, ⟦26⟧! ⟦E21⟧ will be so happy!",
+  "quest:9:obj:0": "Farmer Saldean wants you to kill 20 Harvest Watchers.",
+  "quest:9:details:0": "Look at what has happened to this place! These lands were once occupied by good farm folk. But the damned thieves have driven them all off. Not me, though! But it seems some Harvest Watchers have taken over the fields.",
+  "quest:9:details:1": "If you're up for the work, I'd like you to go out and kill twenty of them. Come back when you're done for your pay. If you finish up with the ones in my field, clear them from the neighboring fields as well.",
+  "quest:9:progress:0": "Ah, I see you're back! I hope you've been hard at work clearing those fields of those Harvest Watchers. Have you killed twenty yet?",
+  "quest:9:completion:0": "Good work, friend. You have earned your pay well. Who knows, perhaps ⟦E2⟧ will prosper once again.",
+  "quest:117:title": "Thunderbrew Lager",
+  "quest:117:desc:0": "Bring Grimbooze Thunderbrew 5 hops to complete his special brew.",
+  "quest:117:obj:0": "Bring Grimbooze Thunderbrew 5 hops to complete his special brew.",
+  "quest:117:details:0": "Bring Grimbooze Thunderbrew 5 hops to complete his special brew.",
+  "quest:117:progress:0": "Hurry, my friend, move with haste ⟦27⟧In order for our rich lager to taste ⟦28⟧More like beer and less like stew, ⟦29⟧⟦E22⟧ are needed to make the brew.",
+  "quest:117:completion:0": "⟦E22⟧ and Barley, yeast and malt ⟦30⟧The taste-buds feel a virtual assault, ⟦31⟧No need to plead, no need to beg ⟦32⟧For Thunderbrew Lager comes in a keg!",
+  "quest:153:obj:0": "Bring 15 ⟦E23⟧ to Scout Galiaan at Sentinel Hill.",
+  "quest:153:details:0": "The Defias Front is constantly shifting. I've been following their movements for quite some time now. On a side note, I've ascertained that many members of the gang can be tracked by the ⟦E23⟧ they wear.",
+  "quest:153:details:1": "Bring me 15 of these Bandanas and I'll see to it you are rewarded.",
+  "quest:153:progress:0": "Bring me 15 red leather bandanas and I'll pay you well.",
+  "quest:153:completion:0": "Nice work, ⟦33⟧. Please accept one of these items as payment for all your hard work.",
+  "quest:92909:title": "Harvesting the Harvesters",
+  "quest:103:obj:0": "Bring 5 ⟦E24⟧ of Oil to Captain Grayson at the ⟦E2⟧ Lighthouse.",
+  "quest:103:details:0": "The night the Lighthouse Keeper's family died was horrible. I watched, helpless, as Old Murk-Eye led the attack. But what's done is done and now my concern is for the lives of the sailors on The Great Sea whose ships come close to the perilous rocks of the coastline. With no one to keep watch on the flame the responsibility has fallen upon me.",
+  "quest:103:details:1": "Help me keep the torch lit by bringing me 5 flasks of oil from the Harvest Monsters.",
+  "quest:103:progress:0": "The flame will not burn for long without oil, ⟦34⟧.",
+  "quest:103:completion:0": "Praise you, brave ⟦35⟧. The rocks of the ⟦E2⟧ Coast shall be lit thanks to your hard work. Many lives will be spared so long as the torch is kept lit.",
+  "quest:103:completion:1": "I died needlessly on this very shore. My afterlife plight is to see that no others follow my destiny.",
+  "quest:136:obj:0": "Find Captain Sanders' footlocker and search it for the next clue.",
+  "quest:136:details:0": "If ye be readin' this, it means that Ol' Captain Sanders is in a watery grave. So my treasure is yours now, ye jest need to follow the clues.",
+  "quest:136:details:1": "First ye need to find me footlocker. It's probably half-buried in sand by now, along the Western Coast of ⟦E2⟧ near the shipwreck. There be lots of shipwrecks but only one rusty anchor on the coast. Find that anchor and you'll find me locker! Look in there for the next clue.",
+  "quest:136:completion:0": "The footlocker slowly creaks open. Sand and water seem to be its only contents. But wait! A small crab scurries out with a clue to the treasure in his claws!",
+  "quest:138:obj:0": "Find the old barrel near the ruined chimney and search it for your next clue.",
+  "quest:138:details:0": "The clue to the treasure reads: Good work, matey! Now ye need to head due east. East up the bluffs, east to the road. Look for the ol' chimney ruins near the side of the road. There you'll find an old barrel with your next clue.",
+  "quest:138:completion:0": "Good work, treasure hunter!",
+  "quest:139:obj:0": "Search the empty jug next to the windmill for the next clue.",
+  "quest:139:details:0": "Searching through the barrel you discover another piece of parchment. This one reads: Now from this here barrel, face ye North. Straight as the crow flies, keep ye walkin' till you see the empty jug next to the lone windmill on the sea bluffs. If ye poke around that jug, ye just might find what you're lookin' for.",
+  "quest:139:completion:0": "You're on your way to the jackpot, treasure seeker!",
+  "quest:140:obj:0": "Locate Captain Sanders' chest and open it for your reward.",
+  "quest:140:details:0": "Sure enough, deep within the Old Jug there is another clue to Sander's treasure. The ink has run in some places and the paper smells like whiskey but you can make out some of the text: Now that ye found me ol' whiskey jug, you're almost to the treasure! Just face West from the bottle and walk down to the shore. Once ye get to the water, keep going! Swim straight west till you find the island with me treasure chest!",
+  "quest:140:completion:0": "The hinges on the old chest are rusty but they still work. You force the chest open and take the booty.",
+  "quest:140:completion:1": "Congratulations!",
+  "quest:92749:title": "A Dynamite Plan",
+  "quest:92749:obj:0": "Obtain 10 ⟦E25⟧ from crafting, trading, or the auction house, then return to Sprite Jumpsprocket in the Dwarven District of ⟦E5⟧.",
+  "quest:92749:obj:1": "*⟦E25⟧ (10)",
+  "quest:92749:details:0": "Industrial sabotage? You've got my attention!",
+  "quest:92749:details:1": "We'll start with some dynamite...",
+  "quest:92749:progress:0": "...",
+  "quest:14:obj:0": "Gryan Stoutmantle wants you to kill 15 Defias Highwaymen, 5 Defias Pathstalkers and 5 Defias Knuckledusters then return to him on Sentinel Hill.",
+  "quest:14:details:0": "Some Defias have eluded us. My most trusted scout reports that these Defias have been looting and pillaging the countryside, all the way into Southern ⟦E2⟧. We believe they are hiding out in the ⟦E26⟧ Hills, plotting their next move. Slay the wretches in the name of ⟦E11⟧.",
+  "quest:14:progress:0": "⟦36⟧, now is no time for idle chatter. If you still wish to prove yourself to ⟦E11⟧ you need to slay the Defias I notified you about earlier. Return to me when you have completed your duty.",
+  "quest:14:completion:0": "When I left the tainted lands of Lordaeron I returned to a grim state of affairs here in my homeland. But there is hope for ⟦E2⟧ yet. As proven by your valor in ⟦E27⟧, it is obvious to me that you serve our cause with honor. It is with great pride that I induct thee into ⟦E11⟧. May the Light shine upon you.",
+  "quest:65:obj:0": "Gryan Stoutmantle wants you to talk to Wiley in Lakeshire.",
+  "quest:65:details:0": "The band of wretches responsible for driving the good people of ⟦E2⟧ from the land call themselves ⟦E28⟧. I need you to infiltrate this clan of thugs. We need to know who heads up the cartel and where they are hiding out. In Lakeshire, in the inn, there is a rogue by the name of Wiley who owes me a favor.",
+  "quest:65:details:1": "⟦E29⟧ to Lakeshire in the ⟦E30⟧, east of Elwynn, and find out what you can.",
+  "quest:65:completion:0": "So, Stoutmantle sent you? Well, I owe him.",
+  "quest:132:obj:0": "Take ⟦E31⟧ to Gryan Stoutmantle in ⟦E2⟧.",
+  "quest:132:details:0": "What I am about to tell you could cost me my life. The Defias gang is up to something big. Last I heard they were working in conjunction with various gnolls, kobolds and even goblins.",
+  "quest:132:details:1": "Take this note to Stoutmantle. It explains as much as I know on the subject.",
+  "quest:132:progress:0": "Good to see you back, ⟦37⟧. What did Wiley have to say for himself?",
+  "quest:132:completion:0": "Bah! I should have let that scoundrel rot when I had the ⟦E32⟧. But this information is crucial. Good work.",
+  "quest:135:obj:0": "Take ⟦E31⟧ to Mathias Shaw in ⟦E5⟧.",
+  "quest:135:details:0": "I wonder what Wiley meant when he mentioned the Stonemasons. Perhaps that was a slip of tongue. Could the Defias gang be related to the Stonemasons? Only one man would know for sure: Mathias Shaw, head of SI:7. Show him ⟦E31⟧ and see if he has anything to add to this growing mystery. If you have trouble finding Shaw, check the Barracks in Old Town.",
+  "quest:135:progress:0": "What business do you have with me? I am a very busy man. . .",
+  "quest:135:completion:0": "This matter might be more complex than Stoutmantle realizes.",
+  "quest:141:obj:0": "Take Shaw's report to Gryan Stoutmantle in ⟦E2⟧.",
+  "quest:141:details:0": "The Stonemasons' Guild was run by a man named Edwin VanCleef. VanCleef was responsible for rebuilding ⟦E5⟧ after the orcs razed it in the First War. Apparently, VanCleef and his men were unhappy with their treatment by the King after the reconstruction was complete. That just might explain a thing or two.",
+  "quest:141:details:1": "I have written a more detailed account for your Master in ⟦E2⟧. Take this to him at once!",
+  "quest:141:progress:0": "Did Master Shaw shed any light on things?",
+  "quest:141:completion:0": "Edwin VanCleef. . .I know the name well. To think that a man so industrious and talented could turn into such a scoundrel unnerves me. I'll need further proof before I believe this."
+ },
+ "context": {
+  "quest:184": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Farmer Furlbrow"
+  },
+  "quest:36": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Verna Furlbrow",
+   "turner": "Salma Saldean"
+  },
+  "quest:6181": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Quartermaster Lewis",
+   "turner": "Thor"
+  },
+  "quest:6261": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Osric Strang",
+   "turner": "Dungar Longdrink («دانگار لانگ‌درینک»)"
+  },
+  "quest:6281": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Thor",
+   "turner": "Osric Strang"
+  },
+  "quest:6285": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Dungar Longdrink («دانگار لانگ‌درینک»)",
+   "turner": "Quartermaster Lewis"
+  },
+  "quest:12": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Gryan Stoutmantle",
+   "turner": "Gryan Stoutmantle"
+  },
+  "quest:22": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Salma Saldean",
+   "turner": "Salma Saldean"
+  },
+  "quest:64": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Farmer Furlbrow",
+   "turner": "Farmer Furlbrow"
+  },
+  "quest:92742": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 12,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92744": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 12,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:38": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Salma Saldean",
+   "turner": "Salma Saldean"
+  },
+  "quest:13": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Gryan Stoutmantle",
+   "turner": "Gryan Stoutmantle"
+  },
+  "quest:102": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Captain Danuvin",
+   "turner": "Captain Danuvin"
+  },
+  "quest:151": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Verna Furlbrow",
+   "turner": "Verna Furlbrow"
+  },
+  "quest:9": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Farmer Saldean",
+   "turner": "Farmer Saldean"
+  },
+  "quest:117": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 15,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Grimbooze Thunderbrew"
+  },
+  "quest:153": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Scout Galiaan",
+   "turner": "Scout Galiaan"
+  },
+  "quest:92909": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 15,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:103": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 16,
+   "side": "",
+   "giver": "Captain Grayson",
+   "turner": "Captain Grayson"
+  },
+  "quest:136": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 16,
+   "side": "",
+   "giver": "",
+   "turner": "Captain's Footlocker"
+  },
+  "quest:138": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 16,
+   "side": "",
+   "giver": "Captain's Footlocker",
+   "turner": "Broken Barrel"
+  },
+  "quest:139": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 16,
+   "side": "",
+   "giver": "Broken Barrel",
+   "turner": "Old Jug"
+  },
+  "quest:140": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 16,
+   "side": "",
+   "giver": "Old Jug",
+   "turner": "Locked Chest"
+  },
+  "quest:92749": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 16,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:14": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Gryan Stoutmantle",
+   "turner": "Gryan Stoutmantle"
+  },
+  "quest:65": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Gryan Stoutmantle",
+   "turner": "Wiley the Black"
+  },
+  "quest:132": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Wiley the Black",
+   "turner": "Gryan Stoutmantle"
+  },
+  "quest:135": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Gryan Stoutmantle",
+   "turner": "Master Mathias Shaw"
+  },
+  "quest:141": {
+   "zone_en": "Westfall",
+   "zone_fa": "وستفال",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw",
+   "turner": "Gryan Stoutmantle"
+  }
+ },
+ "known": {
+  "quest:184": {
+   "title": "سند مالکیت فورلبرو"
+  },
+  "quest:36": {
+   "title": "خورشت وستفال"
+  },
+  "quest:6181": {
+   "title": "پیامی سریع"
+  },
+  "quest:6261": {
+   "title": "دانگار لانگ‌درینک"
+  },
+  "quest:6281": {
+   "title": "ادامه به استورم‌ویند"
+  },
+  "quest:6285": {
+   "title": "بازگشت نزد لوئیس"
+  },
+  "quest:12": {
+   "title": "میلشیای مردم"
+  },
+  "quest:22": {
+   "title": "پای جگر گورتاسک"
+  },
+  "quest:64": {
+   "title": "میراث فراموش‌شده"
+  },
+  "quest:38": {
+   "title": "خورشت وستفال"
+  },
+  "quest:13": {
+   "title": "میلشیای مردم"
+  },
+  "quest:102": {
+   "title": "گشت‌زنی در وستفال"
+  },
+  "quest:151": {
+   "title": "بلانچی پیر بیچاره"
+  },
+  "quest:9": {
+   "title": "میدان‌های کشتار"
+  },
+  "quest:153": {
+   "title": "دستمال‌های چرمی قرمز"
+  },
+  "quest:103": {
+   "title": "پاسدار شعله"
+  },
+  "quest:136": {
+   "title": "گنج پنهان ناخدا سندرز"
+  },
+  "quest:138": {
+   "title": "گنج پنهان ناخدا سندرز"
+  },
+  "quest:139": {
+   "title": "گنج پنهان ناخدا سندرز"
+  },
+  "quest:140": {
+   "title": "گنج پنهان ناخدا سندرز"
+  },
+  "quest:14": {
+   "title": "میلشیای مردم"
+  },
+  "quest:65": {
+   "title": "برادری دیفایاس"
+  },
+  "quest:132": {
+   "title": "برادری دیفایاس"
+  },
+  "quest:135": {
+   "title": "برادری دیفایاس"
+  },
+  "quest:141": {
+   "title": "برادری دیفایاس"
+  }
+ }
+}

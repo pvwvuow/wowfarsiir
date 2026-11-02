@@ -1,0 +1,796 @@
+{
+ "pack": "quest-silverpine-forest-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-silverpine-forest-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Shadowfang",
+   "fa": "نیش سایه",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Silverpine Forest",
+   "fa": "جنگل سیلورپاین",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "combat",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Podrig's Order",
+   "fa": "حکم پودریگ",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Gordon's Crate",
+   "fa": "صندوق گوردون",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Michael Garrett",
+   "fa": "مایکل گرت",
+   "kind": "qs"
+  },
+  "E10": {
+   "en": "Remedy of Arugal",
+   "fa": "شفای آروگال",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Ivar the Foul",
+   "fa": "آیوار پلید",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Deathstalker Report",
+   "fa": "گزارش مرگ‌خزها",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "wounds",
+   "fa": "زخمی‌کردن",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Murloc Eye",
+   "fa": "چشم مرلوک",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "swarm",
+   "fa": "ازدحام",
+   "kind": "sp"
+  },
+  "E23": {
+   "en": "Return to Quinn",
+   "fa": "بازگشت به کوین",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Quinn's Potion",
+   "fa": "معجونِ کوین",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Ivar's Head",
+   "fa": "سر آیوار",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Skittering Blood",
+   "fa": "خون خزنده",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Arthas",
+   "fa": "آرتاس",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Human",
+   "fa": "انسان",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E30": {
+   "en": "Essence of Nightlash",
+   "fa": "گوهر شب‌شلاق",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "raid",
+   "fa": "رید",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E33": {
+   "en": "Priest",
+   "fa": "روحانی",
+   "kind": "cls"
+  },
+  "E34": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Berard's Journal",
+   "fa": "دفترچهٔ برارد",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Deliah's Ring",
+   "fa": "انگشتر دلیا",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Brill",
+   "fa": "بریل",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Dalaran": "دالاران",
+  "Shadowfang": "نیش سایه",
+  "Silverpine Forest": "جنگل سیلورپاین",
+  "combat": "نبرد",
+  "curse": "نفرین",
+  "Podrig's Order": "حکم پودریگ",
+  "Undercity": "آندر‌سیتی",
+  "Gordon's Crate": "صندوق گوردون",
+  "Michael Garrett": "مایکل گرت",
+  "Remedy of Arugal": "شفای آروگال",
+  "Tor": "تور",
+  "spell": "اسپیل",
+  "Forsaken": "مطرودان",
+  "Ivar the Foul": "آیوار پلید",
+  "heal": "شفا",
+  "healing": "شفا",
+  "chance": "شانس",
+  "Deathstalker Report": "گزارش مرگ‌خزها",
+  "wounds": "زخمی‌کردن",
+  "level": "لِوِل",
+  "Murloc Eye": "چشم مرلوک",
+  "swarm": "ازدحام",
+  "Return to Quinn": "بازگشت به کوین",
+  "Quinn's Potion": "معجونِ کوین",
+  "Ivar's Head": "سر آیوار",
+  "Skittering Blood": "خون خزنده",
+  "Arthas": "آرتاس",
+  "Human": "انسان",
+  "Travel": "سفر",
+  "Essence of Nightlash": "گوهر شب‌شلاق",
+  "raid": "رید",
+  "Shadow": "سایه",
+  "Priest": "روحانی",
+  "Azeroth": "آزروت",
+  "Berard's Journal": "دفترچهٔ برارد",
+  "undead": "مرده‌متحرک",
+  "Deliah's Ring": "انگشتر دلیا",
+  "nearby": "نزدیک",
+  "Brill": "بریل"
+ },
+ "tokens": {
+  "1": "$C",
+  "2": "$N",
+  "3": "$N",
+  "4": "$C",
+  "5": "$C",
+  "6": "$c",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$C",
+  "12": "$N",
+  "13": "$C",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$C",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N"
+ },
+ "rows": {
+  "quest:421:obj:0": "Dalar Dawnweaver at the Sepulcher wants you to kill 5 Moonrage Whitescalps.",
+  "quest:421:details:0": "Lady Sylvanas has charged Varimathras with the conquering of the human and dwarven lands to the south.",
+  "quest:421:details:1": "But that fool, Arugal -- charlatan of ⟦E1⟧ and now cursed beast of ⟦E2⟧ Keep -- let his reckless magic wreak havoc with the strategic stronghold of ⟦E3⟧.",
+  "quest:421:details:2": "I need someone skilled in the ways of ⟦E4⟧ to help clean up Arugal's mess. Prove yourself to me by killing 5 Moonrage Whitescalps. The wretched beasts can often be found just off the road, down the hill below.",
+  "quest:421:progress:0": "If you wish to prove yourself to me, you must kill 5 Moonrage Whitescalps.  Accomplish that task, and I will see to it your skill is put to more worthy assignments.",
+  "quest:421:completion:0": "You have served me well, ⟦1⟧. It is obvious to me that you will be a worthy aide to me as I prepare to rid ⟦E3⟧ of Arugal's ⟦E5⟧.",
+  "quest:6321:obj:0": "Bring ⟦E6⟧ to Karos Razok.",
+  "quest:6321:details:0": "Executor Hadrec asked me to take stock of our equipment at the Sepulcher. With the Scourge, and worse, lurking in the woods, he doesn't want the Deathguards to lack gear they might need.",
+  "quest:6321:details:1": "I found that we are, in general, well stocked, but we do need more weapons to replace those lost in the field.",
+  "quest:6321:details:2": "Here is a requisition order of what is needed, for the weapon dealer Gordon Wendham in the ⟦E7⟧. Take the order to our bat master, Karos Razok, and speak with him about transport to the ⟦E7⟧.",
+  "quest:6321:progress:0": "You appear to be on official business...",
+  "quest:6321:completion:0": "Ah, an order for supplies. You will want to take this to the ⟦E7⟧, no doubt. And quickly, for the Sepulcher must not be left under stocked.",
+  "quest:6322:obj:0": "Bring ⟦E8⟧ to ⟦E9⟧.",
+  "quest:6322:details:0": "I have placed the Sepulcher's supplies into this crate. If you have already visited the Sepulcher and spoken with their bat master, then you may ride a bat back to him.",
+  "quest:6322:details:1": "Speak with the ⟦E7⟧'s bat master, ⟦E9⟧. He can provide you with a bat to the Sepulcher.",
+  "quest:6322:progress:0": "If you must travel a long distance, then a bat is your best option.",
+  "quest:6322:completion:0": "This crate must reach the Sepulcher in Silverpine? That is easily done; our bats fly there daily.",
+  "quest:6323:obj:0": "Buy a bat ride to the ⟦E7⟧ from the bat master Karos Razok, then take ⟦E6⟧ to Gordon Wendham in the ⟦E7⟧.",
+  "quest:6323:details:0": "One of my bats can take you to the ⟦E7⟧, for a small fee. Speak with me again when you are ready so that we may arrange your transport.",
+  "quest:6323:details:1": "You will find Gordon Wendham in the Trade Quarter of the ⟦E7⟧. That is the same quarter where my bat will land.",
+  "quest:6323:progress:0": "I keep my weapons in top condition. They are cleaned and ready for use.",
+  "quest:6323:completion:0": "An order from the Sepulcher? Very well. It is an honor to serve those who serve our Dark Lady.",
+  "quest:6324:obj:0": "Buy a bat ride to the Sepulcher from the bat master ⟦E9⟧, then bring ⟦E8⟧ to Deathguard Podrig in the Sepulcher.",
+  "quest:6324:details:0": "The bat master in the Sepulcher is Karos Razok. If you have already met him, then I can give you a bat to fly back to him.",
+  "quest:6324:details:1": "Our bats will always fly to the ⟦E7⟧, but to travel to more remote locales their rider must first visit the area and speak with its bat master.",
+  "quest:6324:details:2": "You have met Karos in the Sepulcher, so you may now fly bats there. Speak with me again when you are ready.",
+  "quest:6324:progress:0": "⟦2⟧, you return. Do you have our supplies from the ⟦E7⟧?",
+  "quest:6324:completion:0": "Good work, ⟦3⟧. These weapons will ensure our Deathguards don't get caught unprepared.",
+  "quest:6324:completion:1": "You have done a valuable service for our Dark Lady.",
+  "quest:422:obj:0": "Retrieve the ⟦E10⟧ for Dalar Dawnweaver at the Sepulcher.",
+  "quest:422:details:0": "How Arugal gained acceptance within the Kirin ⟦E11⟧ is beyond me. His ⟦E12⟧-casting knowledge seemed as transparent as a blown glass bauble.",
+  "quest:422:details:1": "What's important now is learning exactly what magic Arugal used so that I can turn it against him and secure ⟦E3⟧ for the Dark Lady.",
+  "quest:422:details:2": "Arugal first stayed at the wheat farm just north of the bridge. One of the Deathstalkers reported seeing some spellbooks but could not secure them. Retrieve for me the ⟦E12⟧ labeled ⟦E10⟧ from those books.",
+  "quest:422:progress:0": "Before I know what we are dealing with here, ⟦4⟧, I need to study the ⟦E12⟧ known as ⟦E10⟧. Bring it to me now or I shall be forced to find myself a worthy servant.",
+  "quest:422:completion:0": "This is precisely the ⟦E12⟧ I was in search of, ⟦5⟧. If your dedication to The Dark Lady's cause remains infallible you will find you have quite a future amongst The ⟦E13⟧.",
+  "quest:429:obj:0": "Gather 6 discolored worg hearts and bring them to Apothecary Renferrel at the Sepulcher.",
+  "quest:429:details:0": "My brother Quinn was badly hurt by the ghoul, ⟦E14⟧, and I don't know if he will ⟦E15⟧ properly without magical aid. Although I am not an apothecary, I do know that our apothecaries can make ⟦E16⟧ potions from the discolored hearts of worgs.",
+  "quest:429:details:1": "Gather such hearts and take them to Apothecary Renferrel at the Sepulcher to the south. Then return here with the potion.",
+  "quest:429:details:2": "You can find plenty of worgs between here and Malden's Orchard to the east.",
+  "quest:429:progress:0": "My time is short, ⟦6⟧, for the Dark Lady has charged me with a grave task.",
+  "quest:429:completion:0": "<Renferrel takes the hearts>",
+  "quest:429:completion:1": "It is troubling to hear our Deathstalkers have failed their mission.",
+  "quest:429:completion:2": "Let us hope that these failures are rare.",
+  "quest:429:completion:3": "I'll give you the potion in a moment, but here is its recipe - if those Deathstalkers find themselves in need of future aid, then perhaps you can give it yourself.",
+  "quest:430:obj:0": "Bring Quinn's potion to Quinn Yorick at the Ivar Patch, north of the Sepulcher.",
+  "quest:430:details:0": "Here is the potion to aid in Quinn Yorick's recovery.",
+  "quest:430:details:1": "Now if you will excuse me, I have very important work to continue...",
+  "quest:430:progress:0": "My sister told me you were here to aid us. Is that true?",
+  "quest:430:completion:0": "<Quinn takes the potion and drinks it>",
+  "quest:430:completion:1": "Yes, I can feel it working. I will soon be able to travel.",
+  "quest:430:completion:2": "You have done me a great favor, ⟦7⟧.",
+  "quest:435:obj:0": "Escort Erland through the wolves, to Rane Yorick.",
+  "quest:435:details:0": "The wolves outside won't leave, and they eye me evilly every time I step foot out that door. They must be incredibly hungry to think I'm worth eating.",
+  "quest:435:details:1": "I have to report to my teammate, the Deathstalker Rane Yorick. And to get to Rane, I'll need help against those wolves.",
+  "quest:435:details:2": "Please escort me! And there are a lot of wolves out there, so we'll have a better ⟦E17⟧ if you have friends who can help...",
+  "quest:435:progress:0": "Please be brief.  There is much danger about and we cannot stand idle in conversation.",
+  "quest:435:completion:0": "Thank you for the aid, ⟦8⟧. I had feared Erland was overcome by the dangers of Silverpine. With your help, I see that he has not.",
+  "quest:449:obj:0": "Bring the ⟦E18⟧ to High Executor Hadrec at the Sepulcher.",
+  "quest:449:details:0": "Although Quinn's ⟦E19⟧ are mending, I want to get our report to High Executor Hadrec as quickly as possible. It has information that is vital to the ⟦E13⟧'s occupation of Silverpine.",
+  "quest:449:progress:0": "Did you discover the fate of the Deathstalkers?",
+  "quest:449:completion:0": "I hadn't accounted for the ⟦E20⟧ of Scourge presence we've seen in ⟦E3⟧, nor for the troubles our Deathstalkers have had in their scouting efforts.",
+  "quest:449:completion:1": "Your aid to our Deathstalkers was invaluable, ⟦9⟧. And you will be commended.",
+  "quest:91920:title": "Wild Eyes",
+  "quest:91920:obj:0": "Gather 3 murloc eyes and bring them to Apothecary Renferrel at the Sepulcher.",
+  "quest:91920:obj:1": "*⟦E21⟧#Classic (3)",
+  "quest:91920:details:0": "I wouldn't dare to question the effectiveness of Apothecary Renferrel's formulae, however I would be lying if I said that the potion made any noticeable difference.",
+  "quest:91920:details:1": "Along the shore of Lake Lordamere are a ⟦E22⟧ of murlocs, and of note, murlocs have eyes. I suspect the apothecary's willingness to try new things is suppressed by his recent obsession with hearts. Bring him a few.",
+  "quest:91920:details:2": "If my choice is to inevitably die a second death or have Renferrel kill me for questioning his methods, I choose the latter.",
+  "quest:91920:progress:0": "Oh. You're back?",
+  "quest:91921:title": "⟦E23⟧ (Again)",
+  "quest:91921:obj:0": "Bring Quinn's potion to Quinn Yorick at the Ivar Patch, north of the Sepulcher.",
+  "quest:91921:obj:1": "*⟦E24⟧ (provided)",
+  "quest:91921:details:0": "Here is the new potion to aid in Quinn's recovery, made with love extracted from six whole hearts.",
+  "quest:91921:details:1": "Now, please excuse me before your presence necessitates more paperwork.",
+  "quest:91921:progress:0": "You return! I was beginning to come to terms with devolving into a ghoul.",
+  "quest:425:obj:0": "Kill ⟦E14⟧, and bring ⟦E25⟧ to Rane Yorick at the Ivar Patch.",
+  "quest:425:details:0": "My brother Quinn and I were tasked to recon ⟦E3⟧ and report to High Executor Hadrec. But we didn't get far -- when moving through this farm we were attacked by the ghoul ⟦E14⟧.",
+  "quest:425:details:1": "We escaped from Ivar, but he seriously mauled Quinn. He's ⟦E16⟧ from the potion you gave him, but Ivar may return before Quinn recovers.",
+  "quest:425:details:2": "Kill Ivar so Quinn will have time to ⟦E15⟧. Ivar is usually in the barn yonder, waiting for my guard to drop.",
+  "quest:425:progress:0": "Have you killed ⟦E14⟧? If you won't do it for me and my brother, then do it for the ⟦E13⟧.",
+  "quest:425:completion:0": "Ah, thank you. You have my gratitude, ⟦10⟧.",
+  "quest:425:completion:1": "And I will include you in the report I make to my superiors.",
+  "quest:428:obj:0": "Find the Deathstalkers Quinn and Rane Yorick.",
+  "quest:428:details:0": "A couple weeks ago two of our Deathstalkers, Rane and Quinn Yorick, were sent on a reconnaissance mission through northern Silverpine. We have not heard from them.",
+  "quest:428:details:1": "They may have become victim to the Scourge, though if that is true then I want it confirmed. Find these Deathstalkers.",
+  "quest:428:details:2": "Their first objective was to scout the farms in northern Silverpine. You should begin your search there.",
+  "quest:428:completion:0": "You found us! And not a moment too soon...",
+  "quest:447:obj:0": "Collect 6 Grizzled Bear Hearts and 6 samples of ⟦E26⟧ and deliver them to Master Apothecary Faranell in the ⟦E7⟧.",
+  "quest:447:details:0": "⟦E27⟧'s numbers are overwhelming. But with a New Plague we could eradicate both the Scourge Army and the ⟦E28⟧ infestation once and for all.",
+  "quest:447:details:1": "My studies have proven that spider blood combined with a toxin derived from a grizzled bear heart results in a deadly elixir. Collect samples from the spiders in the Skittering Dark to the northwest and from the bears wandering throughout ⟦E3⟧. Deliver the reagents to Master Apothecary Faranell of the Royal Apothecary Society in the ⟦E7⟧.",
+  "quest:447:progress:0": "Hail, ⟦11⟧. What business do you have with the Royal Apothecary Society?",
+  "quest:447:completion:0": "How good of Apothecary Renferrel to send you to me, ⟦12⟧. These samples will indeed prove useful to the cause. I will begin studying their toxic and contaminable properties at once.",
+  "quest:3221:obj:0": "Speak with Apothecary Renferrel at the Sepulcher.",
+  "quest:3221:details:0": "While you were out helping our deathstalkers, Apothecary Renferrel sent you a summons. He did not give me details, but he wanted to speak with you about the wolf hearts you had given him.",
+  "quest:3221:completion:0": "Ah, very good. There is a matter regarding the wolf hearts you brought to me earlier that demands our attention.",
+  "quest:423:obj:0": "Bring 6 Glutton Shackles and 3 Darksoul Shackles to Dalar Dawnweaver at the Sepulcher.",
+  "quest:423:details:0": "After examining Arugal's work my worst suspicions were confirmed. The old hack was not qualified to clean chamber pots in ⟦E1⟧ let alone represent the Kirin ⟦E11⟧ in its most dire hour. Fools!",
+  "quest:423:details:1": "Arugal used enchanted items to reinforce his weak magic. I need to examine these items first hand. ⟦E29⟧ forth and slay Moonrage Gluttons and Moonrage Darksouls until you have collected enough of their enchanted shackles for my research. The foul creatures have been seen to the north and east.",
+  "quest:423:progress:0": "I will need 6 Glutton Shackles and 3 Darksoul Shackles before I can assess the situation and devise a final solution for Arugal. Now heed your bidding and slay Moonrage Gluttons and Moonrage Darksouls until you have what I need.",
+  "quest:423:completion:0": "I hope I can acquire enough energy from such a limited sample. Perhaps I should have had you get more shackles.",
+  "quest:423:completion:1": "Nonetheless, you showed great skill in collecting these, ⟦13⟧.",
+  "quest:437:obj:0": "Kill rot hide gnolls at the Dead Fields.",
+  "quest:437:obj:1": "When Nightlash appears, kill her.",
+  "quest:437:obj:2": "Bring the ⟦E30⟧ to High Executor Hadrec at the Sepulcher.",
+  "quest:437:details:0": "Our initial scouting reports of Silverpine show the rot hides have a base at an old farm to the north, the Dead Fields. We have sent small assaults against them, but each time they are reinforced by the banshee Nightlash, who uses her magic to rout our forces.",
+  "quest:437:details:1": "We want Nightlash destroyed.",
+  "quest:437:details:2": "Go to the Dead Fields and assault the rot hides. If you don't see Nightlash then kill the rot hides until she appears, then defeat her.",
+  "quest:437:details:3": "Her essence will turn to dust. Bring me that dust as proof.",
+  "quest:437:progress:0": "Have you defeated Nightlash, ⟦14⟧?  Our success against the rot hides depends on her destruction!",
+  "quest:437:completion:0": "I heard of your successful ⟦E31⟧ against the rot hides, ⟦15⟧, and this essence is proof of Nightlash's death.",
+  "quest:437:completion:1": "The Scourge have lost ground this day. Your value to the ⟦E13⟧ grows.",
+  "quest:477:obj:0": "Retrieve the contents of one of the ⟦E1⟧ wizards' crates. You will find Pyrewood Village to the south.",
+  "quest:477:details:0": "As you may know, the town of Ambermill remains a source of human opposition, mainly through the support they receive from the wizards of ⟦E1⟧.",
+  "quest:477:details:1": "I don't know what their plan is, but for them to show interest in a backwater village like Ambermill indicates that it must have some greater importance.",
+  "quest:477:details:2": "They've been shipping crates by the wagon from Hillsbrad. Many of those supplies end up at a small camp north of Pyrewood Village. Retrieve the contents of a crate and return them to me.",
+  "quest:477:completion:0": "<Prying open the lid of the crate, you find an assortment of carefully-packed objects. On the top of the crate lies a bundle of maps, yellowing with age, that appear to depict ⟦E3⟧ and other parts of western Lordaeron.",
+  "quest:477:completion:1": "Underneath the maps is a mysterious-looking magical pendant.>",
+  "quest:478:obj:0": "Bring the strange pendant to ⟦E32⟧ ⟦E33⟧ Allister at the Sepulcher.",
+  "quest:478:details:0": "<You quickly remove the pendant from the crate and replace the lid.>",
+  "quest:478:progress:0": "Have you learned anything useful, ⟦16⟧?",
+  "quest:478:completion:0": "Maps and this... pendant, hm? Interesting.",
+  "quest:478:completion:1": "It is obvious that the ⟦E1⟧ wizards are interested in Ambermill for some purpose, but still, their aim is hidden to me.",
+  "quest:478:completion:2": "Perhaps Dalar will know something of their use.",
+  "quest:481:obj:0": "Take the rune-inscribed pendant to Dalar Dawnweaver at the Sepulcher.",
+  "quest:481:details:0": "Take the pendant to Dalar Dawnweaver, perhaps he can shed some light on the wizards' plans.",
+  "quest:481:progress:0": "Yes, ⟦17⟧? What is it?",
+  "quest:481:completion:0": "Interesting, more machinations of the Kirin ⟦E11⟧, it would seem. This is a powerful artifact. It was used frequently by powerful wizards of the Kirin ⟦E11⟧ to channel magical energies.",
+  "quest:481:completion:1": "That they are delivering so many to Ambermill indicates that they must be undergoing a project of some magnitude.",
+  "quest:481:completion:2": "I will see if I can pierce their shields and ascertain their intent.",
+  "quest:482:obj:0": "Speak with ⟦E32⟧ ⟦E33⟧ Allister at the Sepulcher.",
+  "quest:482:details:0": "Of course! How could I have forgotten?",
+  "quest:482:details:1": "Ambermill was one of the sites earmarked by the Kirin ⟦E11⟧, noted because it houses a dormant ley energy node. The wizards must be planning to reactivate the node and use its energies for some greater purpose.",
+  "quest:482:details:2": "We cannot allow this to happen...",
+  "quest:482:details:3": "It will take a great amount of power to activate the area's ley energies, we can stall them by taking the pendants away from the wizards.",
+  "quest:482:details:4": "Relay this information to Allister, he will decide a course of action.",
+  "quest:482:completion:0": "Ill news you bring, ⟦18⟧. If Dalar is correct--and I've no reason to believe he isn't--we must move quickly.",
+  "quest:482:completion:1": "I must confer with him on our plan of attack. But in the meanwhile we will have to delay their progress.",
+  "quest:99:obj:0": "Bring 6 Pyrewood Shackles to Dalar Dawnweaver at the Sepulcher.",
+  "quest:99:details:0": "As my understanding of Arugal's magic grows so does my disdain for the hapless fool. I am close to completing my research on his so called remedy.",
+  "quest:99:details:1": "My knowledge will be complete when I learn what enchantment is causing the strange behavior going on in Pyrewood Village. By day, the peasants appear to be ⟦E28⟧. But when the sun goes down the townsfolk turn into Moonrage Worgen.",
+  "quest:99:details:2": "I need to draw energy from the enchanted shackles Arugal cast on them. Bring to me six enchanted Pyrewood Shackles, ⟦19⟧.",
+  "quest:99:progress:0": "Have you secured the Pyrewood Shackles yet, ⟦20⟧?",
+  "quest:99:completion:0": "Your persistence is commendable. With the knowledge you helped me gather, Arugal will fall and his reckless magic shall be undone. Cheers to you, ⟦21⟧.",
+  "quest:424:obj:0": "Kill Grimson the Pale and bring his head to Dalar Dawnweaver at the Sepulcher.",
+  "quest:424:details:0": "It will indeed take me longer than I had thought to uncover the dark secrets behind the enchantments Arugal was using.",
+  "quest:424:details:1": "But in the meantime I need you to take care of a slight problem our Darkstalkers have discovered. It seems that Arugal let his magic spread to the Deep Elem Mine in the hills to the southeast.",
+  "quest:424:details:2": "The mine would prove to be quite a resource for Varimathras's advance.",
+  "quest:424:details:3": "I want you to behead the tainted foreman of the mine, Grimson the Pale. With his death, the mine shall be ours.",
+  "quest:424:progress:0": "Has Grimson the Pale been slain? Varimathras will not be pleased if we ignore his bidding.",
+  "quest:424:completion:0": "Most excellent. The mine will provide superb resources for our forces as we spread throughout Silverpine and into ⟦E34⟧.",
+  "quest:450:obj:0": "Retrieve Apothecary Berard's journal from Pyrewood Village and take it to Apothecary Renferrel at the Sepulcher.",
+  "quest:450:details:0": "You can be of further service to the Royal Apothecary Society, ⟦22⟧.",
+  "quest:450:details:1": "When Arugal cast his wretched magic on the forest, he cursed one of our most promising members, Apothecary Berard. Now a mindless servant of Arugal, Berard is useless to us. But his findings might prove to be of worth. He was studying an ancient plague that killed off all the aquatic life in Lake Lordamere ages ago.",
+  "quest:450:details:2": "Retrieve ⟦E35⟧ from his study in the Pyrewood Village Inn and take it to Apothecary Renferrel.",
+  "quest:450:progress:0": "I see you are back, ⟦23⟧.",
+  "quest:450:completion:0": "Apothecary Berard's journal! Why you are quite brave, ⟦24⟧. Now let's see what Berard was up to before he went mad. . .",
+  "quest:452:obj:0": "Help Deathstalker Faerleia kill the Pyrewood Council.",
+  "quest:452:details:0": "You got here just in the nick of time, ⟦25⟧!",
+  "quest:452:details:1": "The Pyrewood Council will be returning any moment. Arugal has other matters to tend to in the keep. He uses the Council as mere puppets to keep the mindless minions of Pyrewood under his control. But I believe that without the guidance of the Pyrewood Council, the sons of Arugal will turn against their master.",
+  "quest:452:details:2": "I cannot handle them all by myself. I need you to help me. Together we can lay waste to the Council for Lady Sylvanas.",
+  "quest:452:completion:0": "You fought like a true disciple of the Dark Lady, ⟦26⟧. With the council dead, perhaps we can gain control of this town once and for all and drive Arugal from ⟦E2⟧ Keep. I salute you!",
+  "quest:438:obj:0": "Go to the Decrepit Ferry.",
+  "quest:438:obj:1": "Search for the reason the Scourge are there.",
+  "quest:438:details:0": "⟦27⟧, we've discovered a new hive for the Scourge: the Decrepit Ferry. The ferry lies east of the Sepulcher, and is heavily patrolled by rot hides and other ⟦E36⟧.",
+  "quest:438:details:1": "There must be a reason for the Scourge's occupation of the area. Go to the Decrepit Ferry and find out why the Scourge are there.",
+  "quest:438:completion:0": "Heaped within this boat is a pile of wrapped corpses. And looking east across Lordamere Lake, an opposing dock on Fenris Isle can be seen.",
+  "quest:438:completion:1": "The fate of the corpses must lie on Fenris Isle.",
+  "quest:439:obj:0": "Bring ⟦E37⟧ to High Executor Hadrec at the Sepulcher.",
+  "quest:439:details:0": "Among the corpses a hand protrudes, unwrapped. It is the hand of a woman, pockmarked from the plague but relatively fresh.",
+  "quest:439:details:1": "On the hand is a ring. Removing the ring and inspecting it reveals an engraving:",
+  "quest:439:details:2": "B\"For Deliah\"",
+  "quest:439:progress:0": "⟦28⟧. You return, so I assume your investigations bore fruit?",
+  "quest:439:completion:0": "You say that this ring was worn by a woman, recently killed?",
+  "quest:439:completion:1": "The only ⟦E38⟧ source of such a body would be the mass graves in Tirisfal. The Rot Hide Gnolls must be taking those corpses to Fenris Isle!",
+  "quest:440:obj:0": "Bring ⟦E37⟧ to Magistrate Sevren in ⟦E39⟧.",
+  "quest:440:details:0": "If you want to find the husband or beloved who gave Deliah her ring... then speak with Magistrate Sevren in ⟦E39⟧. He should have records of recent deaths and, with luck, can discover who Deliah is.",
+  "quest:440:details:1": "But I wouldn't hope. Whoever gave her the ring is probably dead. Or if he's ⟦E36⟧ he probably no longer cares about Deliah.",
+  "quest:440:progress:0": "Hello, ⟦29⟧. What brings you back to ⟦E39⟧?",
+  "quest:440:completion:0": "A Deliah did live in ⟦E39⟧ not long ago. She was buried in the mass grave but if what you say is true, then the Rot Hide Gnolls must have stolen her body and taken it to Silverpine.",
+  "quest:440:completion:1": "The Rot Hides, like all the Scourge, must be destroyed. I trust you are taking steps to make that happen.",
+  "quest:441:obj:0": "Bring ⟦E37⟧ to Raleigh.",
+  "quest:441:details:0": "Deliah had a husband, Raleigh, who now dwells in the ⟦E7⟧. If the Deliah who lived in ⟦E39⟧ is the one who owned this ring, then Raleigh will know.",
+  "quest:441:details:1": "Raleigh is in the Trade Quarter of the ⟦E7⟧.",
+  "quest:441:progress:0": "Do I know you?",
+  "quest:441:completion:0": "Yes, this ring was my wife's. Her fate was the fate of all who fail to endure these harsh times. I feel nothing for her death, nor for the story you tell of her body's abduction.",
+  "quest:441:completion:1": "Such feelings have long since grown cold within me. But desire does still burn in my dead heart, ⟦30⟧.",
+  "quest:441:completion:2": "Desire for revenge."
+ },
+ "context": {
+  "quest:421": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 10,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": "Dalar Dawnweaver"
+  },
+  "quest:6321": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 10,
+   "side": "horde",
+   "giver": "Deathguard Podrig",
+   "turner": "Karos Razok"
+  },
+  "quest:6322": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 10,
+   "side": "horde",
+   "giver": "Gordon Wendham",
+   "turner": "Michael Garrett («مایکل گرت»)"
+  },
+  "quest:6323": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 10,
+   "side": "horde",
+   "giver": "Karos Razok",
+   "turner": "Gordon Wendham"
+  },
+  "quest:6324": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 10,
+   "side": "horde",
+   "giver": "Michael Garrett («مایکل گرت»)",
+   "turner": "Deathguard Podrig"
+  },
+  "quest:422": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": "Dalar Dawnweaver"
+  },
+  "quest:429": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Rane Yorick",
+   "turner": "Apothecary Renferrel"
+  },
+  "quest:430": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "Quinn Yorick"
+  },
+  "quest:435": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Deathstalker Erland",
+   "turner": "Rane Yorick"
+  },
+  "quest:449": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Rane Yorick",
+   "turner": "High Executor Hadrec"
+  },
+  "quest:91920": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Quinn Yorick",
+   "turner": "Apothecary Renferrel"
+  },
+  "quest:91921": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 11,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "Quinn Yorick"
+  },
+  "quest:425": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 12,
+   "side": "horde",
+   "giver": "Rane Yorick",
+   "turner": "Rane Yorick"
+  },
+  "quest:428": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 12,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "Rane Yorick"
+  },
+  "quest:447": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 12,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "Master Apothecary Faranell"
+  },
+  "quest:3221": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 12,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "Apothecary Renferrel"
+  },
+  "quest:423": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 14,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": "Dalar Dawnweaver"
+  },
+  "quest:437": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 14,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "High Executor Hadrec"
+  },
+  "quest:477": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 14,
+   "side": "horde",
+   "giver": "Shadow Priest Allister",
+   "turner": "Dalaran Crate"
+  },
+  "quest:478": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 14,
+   "side": "horde",
+   "giver": "Dalaran Crate",
+   "turner": "Shadow Priest Allister"
+  },
+  "quest:481": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 14,
+   "side": "horde",
+   "giver": "Shadow Priest Allister",
+   "turner": "Dalar Dawnweaver"
+  },
+  "quest:482": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 14,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": "Shadow Priest Allister"
+  },
+  "quest:99": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 15,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": "Dalar Dawnweaver"
+  },
+  "quest:424": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 15,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": "Dalar Dawnweaver"
+  },
+  "quest:450": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 15,
+   "side": "horde",
+   "giver": "Master Apothecary Faranell",
+   "turner": "Apothecary Renferrel"
+  },
+  "quest:452": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 15,
+   "side": "horde",
+   "giver": "Deathstalker Faerleia",
+   "turner": "Deathstalker Faerleia"
+  },
+  "quest:438": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "Corpse Laden Boat"
+  },
+  "quest:439": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "Corpse Laden Boat",
+   "turner": "High Executor Hadrec"
+  },
+  "quest:440": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "Magistrate Sevren"
+  },
+  "quest:441": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "Magistrate Sevren",
+   "turner": "Raleigh Andrean"
+  }
+ },
+ "known": {
+  "quest:421": {
+   "title": "اثبات شایستگی"
+  },
+  "quest:6321": {
+   "title": "تدارک سپولکر"
+  },
+  "quest:6322": {
+   "title": "مایکل گرت"
+  },
+  "quest:6323": {
+   "title": "سفر به شهر زیرین"
+  },
+  "quest:6324": {
+   "title": "بازگشت به پودریگ"
+  },
+  "quest:422": {
+   "title": "حماقت آروگال"
+  },
+  "quest:429": {
+   "title": "قلب‌های وحشی"
+  },
+  "quest:430": {
+   "title": "بازگشت به کوین"
+  },
+  "quest:435": {
+   "title": "همراهی ارلاند"
+  },
+  "quest:449": {
+   "title": "گزارش مرگ‌خزها"
+  },
+  "quest:425": {
+   "title": "آیوار پلید"
+  },
+  "quest:428": {
+   "title": "مرگ‌خزهای گم‌شده"
+  },
+  "quest:447": {
+   "title": "روشی برای مرگ"
+  },
+  "quest:3221": {
+   "title": "گفتگو با رنفرل"
+  },
+  "quest:423": {
+   "title": "حماقت آروگال"
+  },
+  "quest:437": {
+   "title": "مزارع مرده"
+  },
+  "quest:477": {
+   "title": "گذرگاه‌های مرزی"
+  },
+  "quest:478": {
+   "title": "نقشه‌ها و رون‌ها"
+  },
+  "quest:481": {
+   "title": "تحلیل دالار"
+  },
+  "quest:482": {
+   "title": "نیت دالاران"
+  },
+  "quest:99": {
+   "title": "حماقت آروگال"
+  },
+  "quest:424": {
+   "title": "حماقت آروگال"
+  },
+  "quest:450": {
+   "title": "روشی برای مرگ"
+  },
+  "quest:452": {
+   "title": "کمین پایروود"
+  },
+  "quest:438": {
+   "title": "اسکلهٔ فرسوده"
+  },
+  "quest:439": {
+   "title": "سرنخ‌های پوست‌پوسیده"
+  },
+  "quest:440": {
+   "title": "انگشتر حکاکی‌شده"
+  },
+  "quest:441": {
+   "title": "رالی و شهر زیرین"
+  }
+ }
+}

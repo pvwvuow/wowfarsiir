@@ -1,0 +1,702 @@
+{
+ "pack": "quest-alterac-valley-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-alterac-valley-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Irondeep Supplies",
+   "fa": "آذوقهٔ آیروندیپ",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Coldtooth Supplies",
+   "fa": "آذوقهٔ سردندان",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Frostwolf",
+   "fa": "گرگ یخی",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Armor Scraps",
+   "fa": "خرده‌زره",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Call of Air",
+   "fa": "فراخوان هوا",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Guse",
+   "fa": "گوس",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "consumes",
+   "fa": "مصرف می‌کند",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Vipore",
+   "fa": "وایپور",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "raid",
+   "fa": "رید",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Alterac Valley",
+   "fa": "درهٔ آلتراک",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Frostwolf Muzzle",
+   "fa": "پوزه‌بند فراست‌ولف",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Stormpike Training Collar",
+   "fa": "قلادهٔ تمرینِ استورم‌پایک",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E25": {
+   "en": "Master Ryson's All Seeing Eye",
+   "fa": "چشم بینای ارباب رایسون",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Ryson",
+   "fa": "رایسون",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Syndicate",
+   "fa": "سندیکا",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Zinfizzlex's Portable Shredder Unit",
+   "fa": "واحدِ خردکنِ قابل‌حملِ زین‌فیزلکس",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "combat",
+   "fa": "نبرد",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Irondeep Supplies": "آذوقهٔ آیروندیپ",
+  "Alliance": "اتحاد",
+  "Coldtooth Supplies": "آذوقهٔ سردندان",
+  "Horde": "هورد",
+  "Frostwolf": "گرگ یخی",
+  "armor": "زره",
+  "Armor Scraps": "خرده‌زره",
+  "level": "لِوِل",
+  "Thunder Bluff": "تاندر بلاف",
+  "strike": "ضربه",
+  "enemies": "دشمنان",
+  "Call of Air": "فراخوان هوا",
+  "Guse": "گوس",
+  "consumes": "مصرف می‌کند",
+  "enemy": "دشمن",
+  "damage": "آسیب",
+  "Vipore": "وایپور",
+  "raid": "رید",
+  "Alterac Valley": "درهٔ آلتراک",
+  "Use": "استفاده",
+  "Frostwolf Muzzle": "پوزه‌بند فراست‌ولف",
+  "battle": "نبرد",
+  "Stormpike Training Collar": "قلادهٔ تمرینِ استورم‌پایک",
+  "Blood": "خون",
+  "Master Ryson's All Seeing Eye": "چشم بینای ارباب رایسون",
+  "Ryson": "رایسون",
+  "curse": "نفرین",
+  "Syndicate": "سندیکا",
+  "Zinfizzlex's Portable Shredder Unit": "واحدِ خردکنِ قابل‌حملِ زین‌فیزلکس",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "combat": "نبرد"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$B",
+  "6": "$B",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$B",
+  "13": "$B",
+  "14": "$r",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$r",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$B",
+  "24": "$n",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$B",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$B",
+  "34": "$B",
+  "35": "$N",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$n",
+  "41": "$N",
+  "42": "$B",
+  "43": "$B",
+  "44": "$B",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$N",
+  "49": "$N",
+  "50": "$B",
+  "51": "$B",
+  "52": "$N",
+  "53": "$N",
+  "54": "$N",
+  "55": "$N",
+  "56": "$B",
+  "57": "$B",
+  "58": "$B",
+  "59": "$B",
+  "60": "$B",
+  "61": "$B",
+  "62": "$N",
+  "63": "$b",
+  "64": "$b",
+  "65": "$N",
+  "66": "$N",
+  "67": "$c",
+  "68": "$B",
+  "69": "$B",
+  "70": "$B",
+  "71": "$B",
+  "72": "$B",
+  "73": "$B",
+  "74": "$B",
+  "75": "$B",
+  "76": "$c",
+  "77": "$B",
+  "78": "$B",
+  "79": "$B",
+  "80": "$B",
+  "81": "$B",
+  "82": "$B",
+  "83": "$B",
+  "84": "$B",
+  "85": "$r",
+  "86": "$B",
+  "87": "$B",
+  "88": "$B",
+  "89": "$B",
+  "90": "$B",
+  "91": "$B",
+  "92": "$r",
+  "93": "$B",
+  "94": "$B",
+  "95": "$B",
+  "96": "$B",
+  "97": "$B",
+  "98": "$B",
+  "99": "$N",
+  "100": "$N",
+  "101": "$N",
+  "102": "$N",
+  "103": "$N",
+  "104": "$N",
+  "105": "$N",
+  "106": "$N"
+ },
+ "rows": {
+  "quest:5892:title": "⟦E1⟧",
+  "quest:5892:desc:0": "Bring 10 ⟦E1⟧ to the ⟦E2⟧ Quartermaster in Dun Baldar.",
+  "quest:5892:obj:0": "Bring 10 ⟦E1⟧ to the ⟦E2⟧ Quartermaster in Dun Baldar.",
+  "quest:5892:details:0": "Bring 10 ⟦E1⟧ to the ⟦E2⟧ Quartermaster in Dun Baldar.",
+  "quest:5892:progress:0": "Do you have the supplies, ⟦1⟧? We can never have enough!",
+  "quest:5892:completion:0": "Well done! I'll put these supplies to good use! Thanks, ⟦2⟧!",
+  "quest:5893:title": "⟦E3⟧",
+  "quest:5893:desc:0": "Bring 10 ⟦E3⟧ to the ⟦E4⟧ Quatermaster in ⟦E5⟧ Keep.",
+  "quest:5893:obj:0": "Bring 10 ⟦E3⟧ to the ⟦E4⟧ Quatermaster in ⟦E5⟧ Keep.",
+  "quest:5893:details:0": "Bring 10 ⟦E3⟧ to the ⟦E4⟧ Quatermaster in ⟦E5⟧ Keep.",
+  "quest:5893:progress:0": "Have you been to the Coldtooth mine, ⟦3⟧? Do you have the supplies I asked for?",
+  "quest:5893:completion:0": "Ah, you got them. Good work, ⟦4⟧! These supplies are a little musty from sitting in that dark mine for so long, but we'll make use of them nonetheless.⟦5⟧⟦6⟧Thank you, ⟦7⟧. Your deeds are vital to the maintenance of our fighting forces.",
+  "quest:6741:title": "More Booty!",
+  "quest:6741:progress:0": "I need more ⟦E6⟧ scraps, ⟦8⟧! Do you have any?",
+  "quest:6741:completion:0": "Thanks again, ⟦9⟧. You do the ⟦E4⟧ proud...",
+  "quest:6781:title": "More ⟦E7⟧",
+  "quest:6781:progress:0": "⟦10⟧, we need more ⟦E6⟧ scraps to supply our troops!",
+  "quest:6781:completion:0": "These are some good pieces, ⟦11⟧. I can use them to fashion new equipment for our troops.⟦12⟧⟦13⟧If my supply ⟦E8⟧ gets high enough, then maybe our seasoned fighting units will enter the field!",
+  "quest:6801:title": "Lokholar the Ice Lord",
+  "quest:6801:progress:0": "I come from ⟦E9⟧, ⟦14⟧. Cairne himself has seen to it that I assist the ⟦E5⟧ Clan in these dire times.⟦15⟧⟦16⟧But let us not waste any more time. You must ⟦E10⟧ down our ⟦E11⟧ and bring to me their blood. Once enough blood has been gathered, the ritual of summoning may begin.⟦17⟧⟦18⟧Victory will be assured when the elemental lord is loosed upon the Stormpike army.",
+  "quest:6801:completion:0": "The blood of our ⟦E11⟧ has been shed. I shall mix this blood with the rest that has been gathered. Once the offering is complete, the Ice Lord shall show these Stormpike dogs the full wrath of the ⟦E5⟧ Clan!",
+  "quest:6825:title": "⟦E12⟧ - ⟦E13⟧'s Fleet",
+  "quest:6825:progress:0": "We must prepare the new fleet of War Riders, ⟦19⟧! My riders are set to make a ⟦E10⟧ on the central battlefield; but first, I must wet their appetites - preparing them for the assault.⟦20⟧⟦21⟧I need enough Stormpike Soldier Flesh to feed a fleet! Hundreds of pounds! Surely you can handle that, yes? Get going!",
+  "quest:6825:completion:0": "The fleet feeds on their flesh. It ⟦E14⟧ the ⟦E15⟧.⟦22⟧⟦23⟧Flight is imminent!",
+  "quest:6826:title": "⟦E12⟧ - Jeztor's Fleet",
+  "quest:6826:progress:0": "You've worked hard, ⟦24⟧, but we have only just begun!⟦25⟧⟦26⟧My War Riders must taste in the flesh of their targets. This will ensure a surgical ⟦E10⟧ against our ⟦E11⟧!⟦27⟧⟦28⟧My fleet is the second most powerful in our air command. Thusly, they will ⟦E10⟧ at the more powerful of our adversaries. For this, then, they need the flesh of the Stormpike Lieutenants.⟦29⟧⟦30⟧Make haste, soldier!",
+  "quest:6826:completion:0": "More! More! Bring more for they are soon to be ready!",
+  "quest:6827:title": "⟦E12⟧ - Mulverick's Fleet",
+  "quest:6827:progress:0": "I was locked up in a dwarven hellhole for days. You better believe I want revenge!⟦31⟧⟦32⟧We must plan carefully.⟦33⟧⟦34⟧First, my war riders need targets to gun for - high priority targets. I'm going to need to feed them the flesh of Stormpike Commanders. Unfortunately, those little buggers are entrenched deep behind ⟦E15⟧ lines! You've definitely got your work cut out for you.",
+  "quest:6827:completion:0": "Not enough! I would expect this ⟦E8⟧ of work from an initiate, but you, ⟦35⟧? Come on, soldier! HUSTLE! More flesh is needed!",
+  "quest:6881:title": "Ivus the Forest Lord",
+  "quest:6881:progress:0": "The ⟦E5⟧ Clan is protected by a taint of elemental energy. Their shaman meddle in powers that will surely destroy us all if left unchecked.⟦36⟧⟦37⟧The ⟦E16⟧ has grown too great for the Circle to control! Ivus must be called to our aid.⟦38⟧⟦39⟧The ⟦E5⟧ soldiers carry elemental charms called storm crystals. We can use the charms to conjure Ivus. Venture forth and claim the crystals, ⟦40⟧!",
+  "quest:6881:completion:0": "Well done, ⟦41⟧. I will use the power of this charm to augment the magic that has already been gathered. When enough power has been amassed, I shall focus the collected energies and call upon the Forest Lord to aid our cause.",
+  "quest:6941:title": "⟦E12⟧ - ⟦E17⟧'s Fleet",
+  "quest:6941:progress:0": "The elite ⟦E5⟧ units that guard the lines must be dealt with, soldier! I'm tasking you with thinning out that herd of savages. Return to me with medals from their lieutenants and legionnaires. When I feel that enough of the riff-raff has been dealt with, I'll deploy the air ⟦E10⟧.",
+  "quest:6941:completion:0": "The flight will be ready soon. Continue your efforts!",
+  "quest:6942:title": "⟦E12⟧ - Slidore's Fleet",
+  "quest:6942:progress:0": "My gryphons are poised to ⟦E10⟧ at the front lines but cannot make the attack until the lines are thinned out.⟦42⟧⟦43⟧The ⟦E5⟧ warriors charged with holding the front lines wear medals of service proudly upon their chests. Rip those medals off their rotten corpses and bring them back here.⟦44⟧⟦45⟧Once the front line is sufficiently thinned out, I will make the call to air! Death from above!",
+  "quest:6942:completion:0": "Keep em coming, soldier! The Aerie gryphons will be ready to ⟦E10⟧ in no time at all!",
+  "quest:6943:title": "⟦E12⟧ - Ichman's Fleet",
+  "quest:6943:progress:0": "Their spirits are low, soldier. After our last failed air ⟦E10⟧ against the ⟦E4⟧, they refuse to fly! It is up to you to bolster their morale.⟦46⟧⟦47⟧Return to the battlefield and ⟦E10⟧ at the heart of the ⟦E5⟧'s command. Take down their commanders and guardians. Return to me with as many of their medals as you can stuff in your pack! I promise you, when my gryphons see the bounty and smell the blood of our ⟦E11⟧, they will fly again! Go now!",
+  "quest:6943:completion:0": "Can you see it? Look at them, soldier! They're coming around... Soon, Ichman's flight will once again ⟦E10⟧ at the heart of the valley! Stormpike will rule the skies!",
+  "quest:6982:title": "⟦E3⟧",
+  "quest:6982:desc:0": "Bring 10 ⟦E3⟧ to the ⟦E2⟧ Quartermaster in Dun Baldar.",
+  "quest:6982:obj:0": "Bring 10 ⟦E3⟧ to the ⟦E2⟧ Quartermaster in Dun Baldar.",
+  "quest:6982:details:0": "Bring 10 ⟦E3⟧ to the ⟦E2⟧ Quartermaster in Dun Baldar.",
+  "quest:6982:progress:0": "Have you been to the Coldtooth mine, ⟦48⟧? Do you have the supplies I asked for?",
+  "quest:6982:completion:0": "Ah, you got them. Good work, ⟦49⟧! These supplies are a little musty from sitting in that dark mine for so long, but we'll make use of them nonetheless.⟦50⟧⟦51⟧Thank you, ⟦52⟧. Your deeds are vital to the maintenance of our fighting forces.",
+  "quest:6985:title": "⟦E1⟧",
+  "quest:6985:desc:0": "Bring 10 ⟦E1⟧ to the ⟦E4⟧ Quartermaster in ⟦E5⟧ Keep.",
+  "quest:6985:obj:0": "Bring 10 ⟦E1⟧ to the ⟦E4⟧ Quartermaster in ⟦E5⟧ Keep.",
+  "quest:6985:details:0": "Bring 10 ⟦E1⟧ to the ⟦E4⟧ Quartermaster in ⟦E5⟧ Keep.",
+  "quest:6985:progress:0": "Did you enter the Irondeep mine, ⟦53⟧? Did you ⟦E18⟧ its supplies?",
+  "quest:6985:completion:0": "You got them! Nicely done, ⟦54⟧! And I hope you saw a few dwarves during your ⟦E18⟧, and shed their blood for the Frostwolves!",
+  "quest:7001:title": "Empty Stables",
+  "quest:7001:desc:0": "Locate a ⟦E5⟧ in ⟦E19⟧. ⟦E20⟧ the ⟦E21⟧ when you are near the ⟦E5⟧ to 'tame' the beast. Once tamed, the ⟦E5⟧ will follow you back to the ⟦E5⟧ Stable Master. Speak with the ⟦E5⟧ Stable Master to earn credit for the capture.",
+  "quest:7001:obj:0": "Locate a ⟦E5⟧ in ⟦E19⟧. ⟦E20⟧ the ⟦E21⟧ when you are near the ⟦E5⟧ to 'tame' the beast. Once tamed, the ⟦E5⟧ will follow you back to the ⟦E5⟧ Stable Master. Speak with the ⟦E5⟧ Stable Master to earn credit for the capture.",
+  "quest:7001:details:0": "Locate a ⟦E5⟧ in ⟦E19⟧. ⟦E20⟧ the ⟦E21⟧ when you are near the ⟦E5⟧ to 'tame' the beast. Once tamed, the ⟦E5⟧ will follow you back to the ⟦E5⟧ Stable Master. Speak with the ⟦E5⟧ Stable Master to earn credit for the capture.",
+  "quest:7001:progress:0": "Without your help, the ⟦E5⟧ Wolf Riders would not have mounts to ride into ⟦E22⟧. You do us a great service!",
+  "quest:7001:completion:0": "I can only hope that those charged with collecting ram hides are as determined as you, ⟦55⟧.⟦56⟧⟦57⟧At this rate, we will have the stables full in a matter of hours!",
+  "quest:7002:title": "Ram Hide Harnesses",
+  "quest:7002:desc:0": "null",
+  "quest:7002:obj:0": "null",
+  "quest:7002:details:0": "null",
+  "quest:7002:progress:0": "Slay them and return to me with their hides. The same rams that the Stormpike cavalry uses as mounts!",
+  "quest:7002:completion:0": "Well done, soldier. I will notify you when I have stockpiled enough of the hides.⟦58⟧⟦59⟧Carry on!",
+  "quest:7026:title": "Ram Riding Harnesses",
+  "quest:7026:desc:0": "null",
+  "quest:7026:obj:0": "null",
+  "quest:7026:details:0": "null",
+  "quest:7026:progress:0": "Slaying the frostwolves they use as mounts and return their hides to me.",
+  "quest:7026:completion:0": "Well done, soldier. I will notify you when I have stockpiled enough of the hides.⟦60⟧⟦61⟧Carry on!",
+  "quest:7027:title": "Empty Stables",
+  "quest:7027:desc:0": "Locate an Alterac Ram in ⟦E19⟧. ⟦E20⟧ the ⟦E23⟧ when you are near the Alterac Ram to 'tame' the beast. Once tamed, the Alterac Ram will follow you back to the Stable Master. Speak with the Stable Master to earn credit for the capture.",
+  "quest:7027:obj:0": "Locate an Alterac Ram in ⟦E19⟧. ⟦E20⟧ the ⟦E23⟧ when you are near the Alterac Ram to 'tame' the beast. Once tamed, the Alterac Ram will follow you back to the Stable Master. Speak with the Stable Master to earn credit for the capture.",
+  "quest:7027:details:0": "Locate an Alterac Ram in ⟦E19⟧. ⟦E20⟧ the ⟦E23⟧ when you are near the Alterac Ram to 'tame' the beast. Once tamed, the Alterac Ram will follow you back to the Stable Master. Speak with the Stable Master to earn credit for the capture.",
+  "quest:7027:progress:0": "Without your help, the Stormpike Ram Riders would not have mounts to ride into ⟦E22⟧. You do us a great service!",
+  "quest:7027:completion:0": "The stables will be full in no time at all. Keep up the good work!",
+  "quest:7385:title": "A Gallon of ⟦E24⟧",
+  "quest:7385:desc:0": "null",
+  "quest:7385:obj:0": "null",
+  "quest:7385:details:0": "null",
+  "quest:7385:progress:0": "You have the option of offering larger quantities of the blood taken from our ⟦E11⟧. I will be glad to accept gallon sized offerings, ⟦62⟧.",
+  "quest:7385:completion:0": "The blood of our ⟦E11⟧ has been shed. I shall mix this blood with the rest that has been gathered. Once the offering is complete, the Ice Lord shall show these Stormpike dogs the full wrath of the ⟦E5⟧ Clan!",
+  "quest:7386:title": "Crystal Cluster",
+  "quest:7386:desc:0": "null",
+  "quest:7386:obj:0": "null",
+  "quest:7386:details:0": "null",
+  "quest:7386:progress:0": "There are times which you may be entrenched in ⟦E22⟧ for days or weeks on end. During those longer periods of activity you may end up collecting large clusters of the ⟦E5⟧'s storm crystals.⟦63⟧⟦64⟧The Circle accepts such offerings, ⟦65⟧.",
+  "quest:7386:completion:0": "Well done, ⟦66⟧. I will use the power of these charms to augment the magic that has already been gathered. When enough power has been amassed, I shall focus the collected energies and call upon the Forest Lord to aid our cause.",
+  "quest:6846:title": "Begin the Attack!",
+  "quest:6846:progress:0": "My troops are supplied and ready to assault.  We just need orders from Noreg Stormpike and I'll send them into the fray!",
+  "quest:6846:completion:0": "Ah, the orders! They say I'm to assault at will, and my will says... now!",
+  "quest:6847:title": "⟦E25⟧",
+  "quest:6847:desc:0": "Recover ⟦E25⟧ from the Winterax caves and return it to Master ⟦E26⟧.",
+  "quest:6847:desc:1": "Be warned, it is said that ⟦E25⟧ carries with it a terrible ⟦E27⟧!",
+  "quest:6847:details:0": "Your war in the heart of Alterac means nothing to the ⟦E28⟧, ⟦67⟧. We will do as we have always done: Wait until a clear victor rises from the ashes and rubble of this madness and then ⟦E10⟧.⟦68⟧⟦69⟧That, however, is not why we are here now. The All Seeing Eye has been lost - taken by the Winterax trolls of the region.⟦70⟧⟦71⟧Recover the Eye and our services shall be yours - for whatever time remains for your side.⟦72⟧⟦73⟧Return to me once you acquire the eye so that I may examine you.⟦74⟧⟦75⟧<Master ⟦E26⟧ grins.>",
+  "quest:6848:title": "⟦E25⟧",
+  "quest:6848:desc:0": "Recover ⟦E25⟧ from the Winterax caves and return it to Master ⟦E26⟧.",
+  "quest:6848:desc:1": "Be warned, it is said that ⟦E25⟧ carries with it a terrible ⟦E27⟧!",
+  "quest:6848:details:0": "Your war in the heart of Alterac means nothing to the ⟦E28⟧, ⟦76⟧. We will do as we have always done: Wait until a clear victor rises from the ashes and rubble of this madness and then ⟦E10⟧.⟦77⟧⟦78⟧That, however, is not why we are here now. The All Seeing Eye has been lost - taken by the Winterax trolls of the region.⟦79⟧⟦80⟧Recover the Eye and our services shall be yours - for whatever time remains for your side.⟦81⟧⟦82⟧Return to me once you acquire the eye so that I may examine you.⟦83⟧⟦84⟧<Master ⟦E26⟧ grins.>",
+  "quest:6861:title": "⟦E29⟧",
+  "quest:6861:desc:0": "null",
+  "quest:6861:details:0": "null",
+  "quest:6861:progress:0": "I'm as anxious as you are to try out my portable shredder unit, ⟦85⟧, but before I can make the kit, I'm going to need materials - lots of materials! ⟦86⟧⟦87⟧To be exact, I'm going to need a mountain of thorium, mithril, and iron. I will also need one steamsaw per unit. You'll have to get those at the lumber mill. ⟦88⟧⟦89⟧When I was nosing around in here (before my capture) I noticed a pile of steamsaws at the Stormpike lumber camp. ⟦90⟧⟦91⟧Master Engineer Zinfizzlex wants you to bring him the following:",
+  "quest:6862:title": "⟦E29⟧",
+  "quest:6862:desc:0": "null",
+  "quest:6862:details:0": "null",
+  "quest:6862:progress:0": "I'm as anxious as you are to try out my portable shredder unit, ⟦92⟧, but before I can make the kit, I'm going to need materials - lots of materials! ⟦93⟧⟦94⟧To be exact, I'm going to need a mountain of thorium, mithril, and iron. I will also need one steamsaw per unit. You'll have to get those at the lumber mill. ⟦95⟧⟦96⟧When I was nosing around in here (before my capture) I noticed a pile of steamsaws at the Stormpike lumber camp. ⟦97⟧⟦98⟧Master Engineer Zinfizzlex wants you to bring him the following:",
+  "quest:6901:title": "Launch the Attack!",
+  "quest:6901:completion:0": "It's about time! Now we can show the ⟦E2⟧ their folly in coming to ⟦E19⟧!",
+  "quest:7081:obj:0": "Assault a graveyard, then return to Sergeant Durgen Stormpike in the ⟦E30⟧.",
+  "quest:7081:details:0": "The graveyards in ⟦E19⟧ are prized territories. Both the ⟦E4⟧ and the ⟦E2⟧ fight savagely for these sacred grounds. Are you, ⟦99⟧, ready to join that fight?",
+  "quest:7081:details:1": "I want you to assault an ⟦E15⟧ graveyard. Find a graveyard with a ⟦E4⟧ banner in its midst, and pull it from the ground! Do that, and your task will be complete....",
+  "quest:7081:details:2": "But if you can also hold the graveyard for a few minutes, then our troops will soon come to relieve you.",
+  "quest:7081:progress:0": "⟦100⟧, you have not yet assaulted a graveyard. Return to me when this task is complete!",
+  "quest:7081:completion:0": "Well done! Graveyards are vital to our control of ⟦E19⟧. When you capture one, you help ensure the ⟦E2⟧'s sovereignty here.",
+  "quest:7081:completion:1": "Go now, ⟦101⟧. Reenter the ⟦E22⟧, and if you see a graveyard under the ⟦E4⟧'s control... you know what to do!",
+  "quest:7082:obj:0": "Assault a graveyard, then return to Corporal Teeka Bloodsnarl in the ⟦E30⟧.",
+  "quest:7082:details:0": "The ⟦E22⟧ lines of ⟦E19⟧ are ever shifting. Territories swing back and forth as we meet our opponents in deadly ⟦E31⟧. And graveyards, ⟦102⟧, are where battles rage most fierce.",
+  "quest:7082:details:1": "I want you to attack an ⟦E2⟧ held graveyard! Find a graveyard with an ⟦E2⟧ banner in its midst and pull it from the ground.",
+  "quest:7082:details:2": "Do that and your task for me will be complete, but... if you hold the graveyard for a few minutes, then it will be ours and troops will come and relieve you.",
+  "quest:7082:progress:0": "Attack a graveyard held by the ⟦E2⟧!",
+  "quest:7082:completion:0": "Well done, ⟦103⟧! With each graveyard under our control, the spirits of our ⟦E11⟧ will wander more lost and aimless.",
+  "quest:7101:obj:0": "Capture an ⟦E15⟧ tower, then return to Corporal Teeka Bloodsnarl in the ⟦E30⟧.",
+  "quest:7101:details:0": "Towers and bunkers are important positions, and we must capture and hold them all! So to that end, I want you to attack a bunker that is controlled by the ⟦E15⟧.",
+  "quest:7101:details:1": "To do that, enter one with an ⟦E2⟧ banner. You will see another banner inside. Pull out that banner, and a white ⟦E4⟧ banner will appear in its place. Well done!",
+  "quest:7101:details:2": "At that point your task for me will be complete, but if you hold the place long enough, and if the ⟦E2⟧ doesn't take it back, then it will be destroyed!",
+  "quest:7101:progress:0": "You haven't yet assaulted a bunker, ⟦104⟧! Are you waiting for others to claim your glory?",
+  "quest:7101:completion:0": "I heard of your mission's success! That pleases me...",
+  "quest:7101:completion:1": "Our troops can now charge forward with impunity, and show the ⟦E2⟧ that ⟦E19⟧ is no place for them!",
+  "quest:7102:obj:0": "Destroy the banner at an ⟦E15⟧ tower or bunker, then return to Sergeant Durgen Stormpike in the ⟦E30⟧.",
+  "quest:7102:details:0": "Towers and bunkers are key defensive positions, and so we must hold as many as possible! I want you to attack a tower or a bunker in ⟦E19⟧.",
+  "quest:7102:details:1": "To do that, enter a tower with a ⟦E4⟧ banner atop it. You will see another ⟦E15⟧ banner inside. Pull out that banner, and a white ⟦E2⟧ banner will appear in its place. Well done!",
+  "quest:7102:details:2": "At that point your mission for me will be complete, but hold the area long enough, and if the ⟦E4⟧ doesn't take it back, then it will be destroyed!",
+  "quest:7102:progress:0": "You haven't yet assaulted a tower, ⟦105⟧! What are you waiting for?",
+  "quest:7102:completion:0": "I received a field report stating you helped secure an ⟦E15⟧ banner. Well done, ⟦106⟧! With their ranged troops out of position we can move the line of ⟦E22⟧ forward!"
+ },
+ "context": {
+  "quest:5892": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Stormpike Quartermaster"
+  },
+  "quest:5893": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Frostwolf Quartermaster"
+  },
+  "quest:6741": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Smith Regzar"
+  },
+  "quest:6781": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Murgot Deepforge"
+  },
+  "quest:6801": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Primalist Thurloga"
+  },
+  "quest:6825": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Wing Commander Guse"
+  },
+  "quest:6826": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Wing Commander Jeztor"
+  },
+  "quest:6827": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Wing Commander Mulverick"
+  },
+  "quest:6881": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arch Druid Renferal"
+  },
+  "quest:6941": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Wing Commander Vipore"
+  },
+  "quest:6942": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Wing Commander Slidore"
+  },
+  "quest:6943": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Wing Commander Ichman"
+  },
+  "quest:6982": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Stormpike Quartermaster"
+  },
+  "quest:6985": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Frostwolf Quartermaster"
+  },
+  "quest:7001": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Frostwolf Stable Master"
+  },
+  "quest:7002": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Frostwolf Wolf Rider Commander"
+  },
+  "quest:7026": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Stormpike Ram Rider Commander"
+  },
+  "quest:7027": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Stormpike Stable Master"
+  },
+  "quest:7385": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Primalist Thurloga"
+  },
+  "quest:7386": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arch Druid Renferal"
+  },
+  "quest:6846": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Field Marshal Teravaine",
+   "turner": "Field Marshal Teravaine"
+  },
+  "quest:6847": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Syndicate Master Ryson",
+   "turner": "Syndicate Master Ryson"
+  },
+  "quest:6848": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Syndicate Master Ryson",
+   "turner": "Syndicate Master Ryson"
+  },
+  "quest:6861": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Master Engineer Zinfizzlex",
+   "turner": "Master Engineer Zinfizzlex"
+  },
+  "quest:6862": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Master Engineer Zinfizzlex",
+   "turner": "Master Engineer Zinfizzlex"
+  },
+  "quest:6901": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Garrick",
+   "turner": "Warmaster Garrick"
+  },
+  "quest:7081": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sergeant Durgen Stormpike",
+   "turner": "Sergeant Durgen Stormpike"
+  },
+  "quest:7082": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Corporal Teeka Bloodsnarl",
+   "turner": "Corporal Teeka Bloodsnarl"
+  },
+  "quest:7101": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Corporal Teeka Bloodsnarl",
+   "turner": "Corporal Teeka Bloodsnarl"
+  },
+  "quest:7102": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sergeant Durgen Stormpike",
+   "turner": "Sergeant Durgen Stormpike"
+  }
+ },
+ "known": {
+  "quest:7081": {
+   "title": "گورستان‌های درهٔ آلتراک"
+  },
+  "quest:7082": {
+   "title": "گورستان‌های آلتراک"
+  },
+  "quest:7101": {
+   "title": "برج‌ها و سنگرها"
+  },
+  "quest:7102": {
+   "title": "برج‌ها و سنگرها"
+  }
+ }
+}

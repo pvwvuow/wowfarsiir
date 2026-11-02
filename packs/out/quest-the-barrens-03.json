@@ -1,0 +1,888 @@
+{
+ "pack": "quest-the-barrens-03",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-the-barrens-03.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Broken and Battered Samophlange",
+   "fa": "ساموفلنگ شکسته و کتک‌خورده",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Rilli Greasygob",
+   "fa": "ریلی گریزی‌گاب",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Savannah Lion Hide",
+   "fa": "پوست شیر ساوانا",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "The Hermit",
+   "fa": "گوشه‌نشین",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Bundle of Hides",
+   "fa": "بستهٔ چرم‌ها",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Trapped Game",
+   "fa": "شکار گرفتار",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "Benedict's Orders",
+   "fa": "فرمانِ بندیکت",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Hezrul's Head",
+   "fa": "سر هزرول",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Regthar Deathgate",
+   "fa": "رگ‌ثار دِث‌گیت",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Hezrul Bloodmark",
+   "fa": "هزرول بلادمارک",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Ishamuhale's Fang",
+   "fa": "نیش ایشاموهل",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Ishamuhale",
+   "fa": "ایشاموهال",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Samophlange Manual",
+   "fa": "راهنمای ساموفلنگ",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Samophlange",
+   "fa": "سموفلانگ",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Report to Kadrak",
+   "fa": "گزارش به کادراک",
+   "kind": "qs"
+  },
+  "E23": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Bundle of Reports",
+   "fa": "بستهٔ گزارش‌ها",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Serena Bloodfeather",
+   "fa": "سرنا بلادفیدر",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "paranoia",
+   "fa": "بدگمانی",
+   "kind": "sp"
+  },
+  "E29": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Jorn Skyseer",
+   "fa": "یورن اسکای‌سیر",
+   "kind": "qs"
+  },
+  "E32": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Wharfmaster Dizzywig",
+   "fa": "لنگرگاه‌دار دیزی‌ویگ",
+   "kind": "qs"
+  },
+  "E34": {
+   "en": "Piece of Krom'zar's Banner",
+   "fa": "تکهٔ پرچم کروم‌زار",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "wounds",
+   "fa": "زخمی‌کردن",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Bruuz's Dorsal Fin",
+   "fa": "بالهٔ پشتیِ بروز",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Olgra's Adornments",
+   "fa": "زیورهای اُلگرا",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "causes",
+   "fa": "ایجاد می‌کند",
+   "kind": "tm"
+  },
+  "E42": {
+   "en": "Ziz Fizziks",
+   "fa": "زیز فیزیکس",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Gerenzo Wrenchwhistle",
+   "fa": "گرنزو رنچ‌ویسل",
+   "kind": "qs"
+  },
+  "E44": {
+   "en": "Blood Shard",
+   "fa": "خرده‌سنگ خون",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E46": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E47": {
+   "en": "Digging Claw",
+   "fa": "چنگال کَندن",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Giants",
+   "fa": "غول‌ها",
+   "kind": "tm"
+  },
+  "E49": {
+   "en": "Hoof of Lakota'mani",
+   "fa": "سمِ لاکوتامانی",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Lakota'mani",
+   "fa": "لاکوتامانی",
+   "kind": "qs"
+  },
+  "E51": {
+   "en": "Earthshaker",
+   "fa": "زمین‌لرز",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Khazgorm's Journal",
+   "fa": "دفتر خازگورم",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Broken and Battered Samophlange": "ساموفلنگ شکسته و کتک‌خورده",
+  "Rilli Greasygob": "ریلی گریزی‌گاب",
+  "Orgrimmar": "اورگریمار",
+  "Barrens": "بارنز",
+  "Savannah Lion Hide": "پوست شیر ساوانا",
+  "heal": "شفا",
+  "The Hermit": "گوشه‌نشین",
+  "Bundle of Hides": "بستهٔ چرم‌ها",
+  "threat": "تیت",
+  "Trapped Game": "شکار گرفتار",
+  "Theramore": "ترمور",
+  "Durotar": "دوروتار",
+  "Travel": "سفر",
+  "Benedict's Orders": "فرمانِ بندیکت",
+  "Hezrul's Head": "سر هزرول",
+  "Regthar Deathgate": "رگ‌ثار دِث‌گیت",
+  "Hezrul Bloodmark": "هزرول بلادمارک",
+  "Ishamuhale's Fang": "نیش ایشاموهل",
+  "Ishamuhale": "ایشاموهال",
+  "Samophlange Manual": "راهنمای ساموفلنگ",
+  "Samophlange": "سموفلانگ",
+  "Report to Kadrak": "گزارش به کادراک",
+  "Ashenvale": "اَشِن‌ویل",
+  "Bundle of Reports": "بستهٔ گزارش‌ها",
+  "Azshara": "آزشارا",
+  "Serena Bloodfeather": "سرنا بلادفیدر",
+  "Horde": "هورد",
+  "paranoia": "بدگمانی",
+  "Alliance": "اتحاد",
+  "enemy": "دشمن",
+  "Jorn Skyseer": "یورن اسکای‌سیر",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Wharfmaster Dizzywig": "لنگرگاه‌دار دیزی‌ویگ",
+  "Piece of Krom'zar's Banner": "تکهٔ پرچم کروم‌زار",
+  "Desolace": "دزوله‌یس",
+  "enemies": "دشمنان",
+  "wounds": "زخمی‌کردن",
+  "Bruuz's Dorsal Fin": "بالهٔ پشتیِ بروز",
+  "Olgra's Adornments": "زیورهای اُلگرا",
+  "strike": "ضربه",
+  "causes": "ایجاد می‌کند",
+  "Ziz Fizziks": "زیز فیزیکس",
+  "Gerenzo Wrenchwhistle": "گرنزو رنچ‌ویسل",
+  "Blood Shard": "خرده‌سنگ خون",
+  "Blood": "خون",
+  "battle": "نبرد",
+  "Digging Claw": "چنگال کَندن",
+  "Giants": "غول‌ها",
+  "Hoof of Lakota'mani": "سمِ لاکوتامانی",
+  "Lakota'mani": "لاکوتامانی",
+  "Earthshaker": "زمین‌لرز",
+  "Khazgorm's Journal": "دفتر خازگورم"
+ },
+ "tokens": {
+  "1": "<class>",
+  "2": "<class>",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$c",
+  "13": "$c",
+  "14": "$N",
+  "15": "$C",
+  "16": "$N",
+  "17": "$N",
+  "18": "$n",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$c",
+  "24": "$C",
+  "25": "$c",
+  "26": "$N",
+  "27": "$C",
+  "28": "<snort>",
+  "29": "<snort>",
+  "30": "<snort>",
+  "31": "<snort>",
+  "32": "$R",
+  "33": "<snort>",
+  "34": "<snort>",
+  "35": "$R",
+  "36": "<snort>",
+  "37": "<snort>",
+  "38": "<snort>",
+  "39": "<snort>",
+  "40": "<snort>",
+  "41": "<snort>",
+  "42": "<snort>",
+  "43": "<snort>",
+  "44": "<snort>",
+  "45": "$B",
+  "46": "$B",
+  "47": "<snort>",
+  "48": "<snort>",
+  "49": "$R",
+  "50": "<snort>",
+  "51": "$R",
+  "52": "<snort>",
+  "53": "$N",
+  "54": "$N",
+  "55": "$N",
+  "56": "$N",
+  "57": "$N"
+ },
+ "rows": {
+  "quest:3923:obj:0": "Bring the ⟦E1⟧ to ⟦E2⟧ in ⟦E3⟧.",
+  "quest:3923:details:0": "Well, that didn't work. I put some extra gauges on the samophlange to measure its structural integrity, and they read the integrity at an all-time low. I could add some more dials and maybe a lever or two to try and fix it, but... I think that might make things even worse.",
+  "quest:3923:details:1": "You should take the samophlange to ⟦E2⟧. He used to work for the Venture Company -- if anyone knows how to fix it, it's Rilli.",
+  "quest:3923:details:2": "You can find him at Nogg's Machine Shop in ⟦E3⟧, in the Valley of Honor.",
+  "quest:3923:progress:0": "Mind your head! I don't want it to get in the way of my work!",
+  "quest:3923:completion:0": "What's this? Why, it's a samophlange! Where did you get this thing? Have you been poking around the Venture Company holdings in the ⟦E4⟧?",
+  "quest:3923:completion:1": "You must be very brave, or very stupid.",
+  "quest:95494:title": "Bruised Pride and Lion Hides",
+  "quest:95494:obj:0": "Collect 6 Savannah Lion Hides from the Savannah Matriarchs and Savannah Patriarchs in the .",
+  "quest:95494:obj:1": "* ⟦E5⟧ (6)",
+  "quest:95494:details:0": "I need someone with a strong sword arm and some extra time on their hands to help me gather some lion hides. It stings my pride to ask a stranger for this aid, but I took an injury to my leg recently. Until I ⟦E6⟧, I'm in no shape to go hunting myself but I have obligations to keep.",
+  "quest:95494:details:1": "The big ones in this area generally have the best hides, so start with those first.",
+  "quest:95494:progress:0": "How goes the hunt?",
+  "quest:95495:title": "⟦E7⟧ Tanner",
+  "quest:95495:obj:0": "Bring the ⟦E8⟧ to the hermit on the ridge overlooking the Dry Hills in the .",
+  "quest:95495:obj:1": "* ⟦E8⟧ (⟦E4⟧) (provided)",
+  "quest:95495:details:0": "These hides are bound for a tanner who I often trade with. He is something of a hermit and he lives alone on the top of the ridge behind me. Climbing up a steep hillside isn't something I can manage easily right now so I'd be in your debt if you could make this delivery for me.",
+  "quest:95495:details:1": "Oh, and about this tanner's... appearance. You need not be alarmed. In spite of his looks, he is no ⟦E9⟧. I swear this is true.",
+  "quest:95495:progress:0": "Greetings, ⟦1⟧. What brings you up to my property today?",
+  "quest:95507:title": "Vrang's Game",
+  "quest:95507:obj:0": "Collect 8 ⟦E10⟧ from traps found in Sprung Traps in the .",
+  "quest:95507:obj:1": "* ⟦E10⟧ (8)",
+  "quest:95507:details:0": "While you are out there, it would be of great help to me if you could check on my traps for me. I've got them strewn all over the valley.",
+  "quest:95507:details:1": "Bring back any small game that I've caught. Keep your eye out for the other wildlife, though. This area can be dangerous if you aren't paying attention.",
+  "quest:95507:progress:0": "<Vrang grunts at you as you approach.>",
+  "quest:95507:completion:0": "Thank you for your aid, ⟦2⟧. I was starting to wonder if I'd have to go to bed hungry tonight because this cursed wound on my leg.",
+  "quest:95508:title": "Unwelcome Guests",
+  "quest:95508:obj:0": "Help Walton survive the encounter with Terry Longdrink and the Kul Tiras marines.",
+  "quest:95508:obj:1": "* Assist Walton",
+  "quest:95508:details:0": "Yes, I used to be a member of the Kul Tiras navy. After Lord Admiral took ⟦E11⟧ and started his campaign in ⟦E12⟧, I had... \"objections\" to his methods. Particularly the methods involving executing civilians.",
+  "quest:95508:details:1": "There's more to the story but... wait... what's that?",
+  "quest:95508:details:2": "There's a group of men coming up the ridge!",
+  "quest:95621:title": "Trouble in the Valley",
+  "quest:95621:obj:0": "⟦E13⟧ to the wrecked caravan and learn more about why the Kul Tirans are here.",
+  "quest:95621:obj:1": "* ⟦E14⟧",
+  "quest:95621:details:0": "This morning I spotted a group of humans searching for something in the valley below. I managed to use my rifle's scope for a better look, and it was clear that they were soldiers sporting the livery of Kul Tiras.",
+  "quest:95621:details:1": "If you'd be willing to take work from me, travel to where these soldiers made camp near the wrecked caravan to the south. Kill any you find and try to learn why they are here.",
+  "quest:95621:progress:0": "The remnants of Daelin Proudmoore's fleet who still fly his banner are just as rotten and barbaric as the admiral himself was before he died.",
+  "quest:95621:progress:1": "I don't know why they are so far from Tiragarde, but it can't be good.",
+  "quest:852:obj:0": "Bring ⟦E15⟧ to ⟦E16⟧, west of the Crossroads.",
+  "quest:852:details:0": "⟦E17⟧ is the leader of the Kolkar centaurs in the ⟦E4⟧. He is fierce, brutal and cunning. Defeating him would disrupt and fracture the Kolkars, greatly reducing their ⟦E9⟧ to us.",
+  "quest:852:details:1": "So kill him. As with Barak and Verog, bring me ⟦E15⟧.",
+  "quest:852:details:2": "He leads his people from the Lushwater Oasis, to the south.",
+  "quest:852:progress:0": "Is Hezrul defeated, ⟦3⟧?",
+  "quest:852:completion:0": "I commend you, ⟦4⟧. These centaur are undisciplined and cannot focus their rage as the orcs can, but they are fierce nonetheless. In defeating them, your valor is proven.",
+  "quest:882:obj:0": "Bring ⟦E18⟧ to Jorn at Camp Taurajo.",
+  "quest:882:details:0": "⟦E19⟧, Speartooth, is the fiercest sunscale raptor of the ⟦E4⟧. He does not hunt for sport, nor for food. He hunts because hunting is his passion. He kills because it is his nature to kill.",
+  "quest:882:details:1": "And you will learn of his nature, ⟦5⟧, for your path now follows the taloned tracks of ⟦E19⟧.",
+  "quest:882:details:2": "Begin the hunt. Slay his favorite prey, a zhevra, then bring its carcass to the dead tree northwest of Ratchet. ⟦E19⟧ will smell the carcass and be drawn to it.",
+  "quest:882:details:3": "Be ready when he comes.",
+  "quest:882:progress:0": "⟦6⟧, have you bested ⟦E19⟧?",
+  "quest:882:completion:0": "This fang is merely a token, but what it represents is profound.",
+  "quest:882:completion:1": "⟦E19⟧'s strength is in you, ⟦7⟧. May you use it with temperance. That is your burden.",
+  "quest:882:completion:2": "That is your honor.",
+  "quest:3924:obj:0": "Bring the ⟦E20⟧ to ⟦E2⟧ in ⟦E3⟧.",
+  "quest:3924:details:0": "I think I can fix the samophlange, but I'm going to need the user's manual first. When I was in the Venture Company I had a rival, Boss Copperplug, who hoarded the secrets of the samophlange, giving out small bits of knowledge on the device to those he trusted. I wasn't one of the trusted few...",
+  "quest:3924:details:1": "Boss Copperplug used to stay at the Boulder Lode Mine in northeastern ⟦E4⟧. Get the manual from him, and if he's given pages from it to anyone, you'll have to collect them too.",
+  "quest:3924:progress:0": "Do you have the manual?",
+  "quest:3924:completion:0": "You got the manual! I can't wait to read it and find out how to fix the ⟦E21⟧! I spoke with Sputtervalve in Ratchet--he wanted to thank you for your help, and wanted to reward your efforts.",
+  "quest:3924:completion:1": "I want to thank you too, and if I ever get this thing fixed I'll let you know...",
+  "quest:6541:obj:0": "⟦E22⟧ at the watch tower in northern ⟦E4⟧.",
+  "quest:6541:details:0": "Have you ever been to ⟦E23⟧, to the north? The horde has recently set up an outpost on the Zoram Strand there, and we can always use some new recruits to help defend our new fronts.",
+  "quest:6541:details:1": "If you think you are up to it, see Kadrak in the northern ⟦E4⟧, at the watch tower. He is heading up the ⟦E23⟧ campaign and can give you further orders.",
+  "quest:6541:completion:0": "⟦E23⟧ is a divided land, but our most recent efforts have been very successful. We not only have an outpost at the Zoram Strand, but another just north of here called Splintertree.",
+  "quest:6543:obj:0": "Open the ⟦E24⟧. Take the Warsong Reports to the Warsong Scout, Warsong Runner, and Warsong Outrider. Bring back the updates they give you to Kadrak at the northern watch tower in the barrens.",
+  "quest:6543:details:0": "I recently deployed a few scouts into ⟦E23⟧ and I need a runner to take them their orders, and bring me back a report of what they have observed.",
+  "quest:6543:details:1": "Your first stop should be the Zoram'gar Outpost, along the coast to the west, at the Zoram Strand, to locate the first runner. You also need to stop at Splintertree Post, to the north, and along the road to the east, near ⟦E25⟧. You will find a scout and an outrider there.",
+  "quest:6543:details:2": "Give them each a report, and from them, get an update on their findings.",
+  "quest:6543:progress:0": "Hurry, ⟦8⟧. They must receive their reports; it is urgent.",
+  "quest:6543:completion:0": "I can see that you are one that can be counted on. These updates are crucial to our plans to further our presence in ⟦E23⟧. We can now plan our next move.",
+  "quest:876:obj:0": "Slay ⟦E26⟧ and return her head to Darsok Swiftdagger at the Crossroads.",
+  "quest:876:details:0": "You did so well with the lieutenants and underlings that I'd like you to do one last thing for me.",
+  "quest:876:details:1": "⟦E26⟧ is the sister of a harpy named Bloodfeather who was slain by Rexxar quite a while ago. Apparently, these attacks on the ⟦E27⟧ caravans are revenge for her sister's death.",
+  "quest:876:details:2": "I need you to slit her throat and bring me back her head. I want to place it on the next caravan we send out... Give those harpies something to think about.",
+  "quest:876:progress:0": "You're not getting anything until I see Serena's head.",
+  "quest:876:completion:0": "HA! Well done, ⟦9⟧! Very well done... I wasn't sure you were up to the task, but you've proved yourself quite the cut-throat. Thank you again for helping us suppress the Harpy epidemic. Here is your reward, use it well.",
+  "quest:891:obj:0": "Captain Thalo'thas Brightsun of Ratchet wants you to collect 10 ⟦E11⟧ Medals and slay Captain Fairmount, Cannoneer Whessan and Cannoneer Smythe.",
+  "quest:891:details:0": "Yet another ship from my fleet has been lost to those overzealous humans at Northwatch Hold!",
+  "quest:891:details:1": "Those bastards must be dealt with. Their ⟦E28⟧ has them in a state of frenzy. Trigger happy, reckless louts are shooting at anything in their sights.",
+  "quest:891:details:2": "⟦E13⟧ south along the Merchant Coast to the Hold and lay siege to their forces. Bring me the medals of their soldiers as proof. And for the love of my fleet, slay Captain Fairmount and her overzealous cannoneers!",
+  "quest:891:progress:0": "My fleet is in peril with Captain Fairmount and her damned cannoneers blasting away from Northwatch Hold. I want her soldiers to pay as well. Fill my hand with medals from their dead and I will know that vengeance has been given to my fallen privateers.",
+  "quest:891:completion:0": "Alas, the righteous ⟦E29⟧ guns have been silenced. You shall be rewarded for your aid, ⟦10⟧.",
+  "quest:891:completion:1": "Now to tend to the grim task of recovering the bodies of the dead....",
+  "quest:898:obj:0": "Safely escort Gilthares Firebough back to Captain Brightsun in Ratchet.",
+  "quest:898:details:0": "Finally! Someone to rescue me!",
+  "quest:898:details:1": "I can't believe you got past the guards. These zealots from ⟦E11⟧ are out of their minds. They sank our ship and imprisoned me, the only survivor. I was called an ⟦E30⟧ and ⟦E9⟧ to the ⟦E29⟧.",
+  "quest:898:details:2": "Me! A ⟦E9⟧ to their great sham of an ⟦E29⟧? I was a deckhand on a moonshine transport between Ratchet and Booty Bay.",
+  "quest:898:details:3": "Enough talk. Help me get back to Ratchet will you? Let me know when you're ready and we'll make our break.",
+  "quest:898:progress:0": "Yes?",
+  "quest:898:completion:0": "And to think, we thought Firebough was long dead!",
+  "quest:898:completion:1": "Your heroics have earned you a place of honor with the Thalo'dan Privateers, ⟦11⟧.",
+  "quest:899:obj:0": "Bring 60 Bristleback Quilboar Tusks to Mankrik at the Crossroads.",
+  "quest:899:details:0": "Perhaps you know the pain of uncertainty, perhaps not, ⟦12⟧. But know this: I stand here every day, from the sun's rising till its decline, scouring the horizon for more of those monsters. I've killed every pig man I've come across since, but my thirst for their blood is far from quenched. Perhaps instead of heading north to the Crossroads I should have headed to Taurajo.",
+  "quest:899:details:1": "You, ⟦13⟧--you could help me.",
+  "quest:899:details:2": "Kill them. Kill as many as you can. Bring me their tusks, and we will celebrate their deaths together.",
+  "quest:899:progress:0": "The quilboar will pay for this, ⟦14⟧. I swear it.",
+  "quest:899:completion:0": "⟦15⟧, you take my task seriously, and for that I thank you.",
+  "quest:899:completion:1": "Although my desire for revenge remains, I can at least smile seeing that the quilboars have felt pain themselves.",
+  "quest:913:obj:0": "Find and slay a Thunderhawk, return its wings to ⟦E31⟧ at Camp Taurajo.",
+  "quest:913:details:0": "The thunderhawk, ⟦16⟧, is a fierce beast. It is time for you to face them. You must find where it roams, and bring me its wings as proof of your successful hunt.",
+  "quest:913:details:1": "Do this, and your time with me will near its end.",
+  "quest:913:progress:0": "Is it done? Have you slain the thunderhawk?",
+  "quest:913:completion:0": "You, like the thunderhawk, should be proud. You have bested every foe we set you before, and have done so with strength, courage and honor.",
+  "quest:913:completion:1": "But your path, ⟦17⟧, continues. In fact, you will find that true hunters forever strive, forever walk their path with the same pride you have shown me.",
+  "quest:913:completion:2": "Now, it is time to move on.",
+  "quest:1060:obj:0": "Deliver Darsok's letter to Jin'Zil within his cave in Malaka'Jin, in Stonetalon.",
+  "quest:1060:details:0": "You've done so well for me, ⟦18⟧. You're a regular lucky rabbit's foot and there's something I want you to see.",
+  "quest:1060:details:1": "The harpies are not from around the ⟦E4⟧. They come from a place called Stonetalon, far to the northwest of here. Though it is probably a dangerous place for you, I need this letter delivered to an old friend of mine who lives there, a witch doctor by the name of Jin'Zil.",
+  "quest:1060:details:2": "He'll be happy to know that ⟦E26⟧ is dead, and I think you'll find Stonetalon an interesting place.",
+  "quest:1060:progress:0": "You seem a shady character. You have something for me to see?",
+  "quest:1060:completion:0": "Ahh, a letter from Darsok. I have not heard from him in many years.",
+  "quest:1060:completion:1": "So the last of the Bloodfeathers are dead, eh? That is good news, I can remember when my friend Rokhan went with that crazy mok'nathal to kill her older sister. Ah, to be young again, like you.",
+  "quest:1069:obj:0": "Bring 15 Deepmoss Eggs to Mebok Mizzyrix in Ratchet.",
+  "quest:1069:details:0": "Spider egg omelettes are a new fad in Booty Bay! The problem is... Booty Bay's got no eggs.",
+  "quest:1069:details:1": "I smell an opportunity!",
+  "quest:1069:details:2": "In Windshear Crag and Sishir Canyon, in the ⟦E32⟧ to the northwest, lives the deepmoss spider. Bring me its eggs and I'll pay a bundle!",
+  "quest:1069:details:3": "In Windshear Crag, the eggs will be clustered under what trees remain.",
+  "quest:1069:details:4": "In Sishir Canyon... well, if you have a weak stomach then maybe you should just collect the eggs at Windshear Crag...",
+  "quest:1069:progress:0": "Did you get the eggs, ⟦19⟧? I already made a shipping deal with ⟦E33⟧!",
+  "quest:1069:completion:0": "You got them! Thank you!",
+  "quest:1069:completion:1": "I'll have these sent to Dizzywig and get them shipped to Booty Bay. I can already taste the profits!",
+  "quest:1069:completion:2": "Here is your cut, ⟦20⟧. I couldn't have made this deal without you.",
+  "quest:4021:obj:0": "Bring a ⟦E34⟧ to ⟦E16⟧, west of the Crossroads.",
+  "quest:4021:details:0": "The ⟦E27⟧ commends your successes against the Kolkar, but the Kolkar themselves are maddened. I have reports that a contingent of Kolkar has traveled to the ⟦E4⟧ from their home in ⟦E35⟧, to seek vengeance. My latest report was that, even now, they move against these bunkers, from the west!",
+  "quest:4021:details:1": "Face the Kolkar invaders, and end their ⟦E9⟧ in the ⟦E4⟧. Kill them until their leader, Warlord Krom'zar, appears. Defeat him and bring me a piece of his banner as proof.",
+  "quest:4021:details:2": "We're counting on you, ⟦21⟧.",
+  "quest:4021:progress:0": "Do you have the banner?",
+  "quest:4021:completion:0": "You have done it! You have defeated the Kolkar!",
+  "quest:4021:completion:1": "I will be sure Thrall receives word of your actions here, ⟦22⟧.",
+  "quest:4021:completion:2": "Stand tall. You do yourself, and the ⟦E27⟧, proud.",
+  "quest:4921:obj:0": "Find Mankrik's wife and then return to him in the Crossroads.",
+  "quest:4921:details:0": "We battled in a small tauren camp when we were separated--she held three of the Bristlebacks off by herself. But the odds began to overwhelm us. I led some away only to see her overwhelmed by newcomers. In my rage, I turned to face my ⟦E36⟧, but they brought me down easily with their vast numbers.",
+  "quest:4921:details:1": "I awoke to a tauren druid tending my ⟦E37⟧--he had come across me on the Gold Road as I fell.",
+  "quest:4921:details:2": "Please, ⟦23⟧, find some sign of my wife.",
+  "quest:4921:progress:0": "Have you found any sign of her at all? The pain in my chest tells me that the worst has happened, but I have hope you will find her safe and sound.",
+  "quest:4921:completion:0": "I understand. Thank you, ⟦24⟧.",
+  "quest:6382:obj:0": "Speak with Senani Thunderheart at Splintertree Post, ⟦E23⟧.",
+  "quest:6382:details:0": "Your strength impresses me, ⟦25⟧. Your willingness to embrace the hunt gives me confidence that you could move on to bigger game... and bigger challenges.",
+  "quest:6382:details:1": "The forests of ⟦E23⟧ represent a vast untamed wild that the ⟦E27⟧ seeks to impose its own will upon, both politically and spiritually. If you seek to prove yourself in an unproven land, seek the guidance of Senani Thunderheart in Splintertree Post. The outpost is due north of the path leading from the ⟦E4⟧.",
+  "quest:6382:completion:0": "Welcome to the new frontier, ⟦26⟧. ⟦E23⟧ is a land of opportunity, one where a young ⟦27⟧ like yourself is able to find boundless chances to prove their mettle. Look around the outpost here, and be sure to travel out to the Zoram Strand, as the ⟦E27⟧ has another outpost there as well.",
+  "quest:6382:completion:1": "Your presence here tells me that you've come to learn more about the hunt. Listen close, and I will gladly share with you what you need to know.",
+  "quest:92706:title": "WANTED: Bruuz",
+  "quest:92706:obj:0": "Bring ⟦E38⟧ to Gazlowe in Ratchet.",
+  "quest:95774:title": "Her Name Is Olgra",
+  "quest:95774:obj:0": "Slay quilboars and collect 4 of ⟦E39⟧ for Mankrik's memorial.",
+  "quest:878:obj:0": "Kill 6 Bristleback Water Seekers, 12 Bristleback Thornweavers and 12 Bristleback Geomancers and return to Mangletooth at Camp Taurajo in the ⟦E4⟧.",
+  "quest:878:details:0": "You must ⟦E40⟧ my ⟦E36⟧. ⟦28⟧ You must help Mangletooth and the Razormane by weakening the Bristlebacks. Both tribes are very spiritual--tied to the earth and its power. ⟦29⟧ It gives us strength in all things... especially war.",
+  "quest:878:details:1": "If you want to find out who really ⟦E41⟧ Thork ⟦30⟧ and the ⟦E27⟧ such anguish, then help Mangletooth! You attack the spiritual leaders of the Bristlebacks to the north; weaken them so the Razormanes can defeat them and rule the ⟦E4⟧.",
+  "quest:878:progress:0": "More information ⟦31⟧ for the ⟦E27⟧ when you've killed the Bristleback's wise ones, ⟦32⟧. ⟦33⟧ Not a moment earlier! Mangletooth is no fool.",
+  "quest:878:completion:0": "Yes, yes... filled with joy because finally ⟦34⟧ the Bristleback know my tribe's pain, ⟦35⟧. That is how I should feel, but that ⟦36⟧ is not the case.",
+  "quest:878:completion:1": "You aid your people and they honor you. Mangletooth aids his people, and what do they do? They turn their backs on him. They forget him and leave him to rot in cage!",
+  "quest:878:completion:2": "I aid them even from locked behind bars and they send no one to save me!",
+  "quest:1483:obj:0": "Speak with ⟦E42⟧ in Windshear Crag.",
+  "quest:1483:details:0": "The Venture Company stole many of the best goblin minds, but from time to time, we get the opportunity to steal some back.",
+  "quest:1483:details:1": "BA while ago, the Venture Company outfit in the ⟦E32⟧ hired ⟦E43⟧--a gnome! Their other engineer, ⟦E42⟧, was so taken aback by this, he pleaded with me to find him new employment with the Tinkers' Union. I set him on a few tasks, but he might need help.",
+  "quest:1483:details:2": "Maybe you could look in on him for me? He's stationed at the western edge of Windshear Crag.",
+  "quest:1483:completion:0": "I thought those Venture Company higher-ups were slave drivers, but then I met Sputtervalve, the cruelest of them all!",
+  "quest:1483:completion:1": "Ha! Though it's better than being out of a job, I suppose... Or worse, working with that Gerenzo. If you're here to help, I've got something for you to do.",
+  "quest:5052:obj:0": "Bring a ⟦E44⟧ to Mangletooth in Camp Taurajo in the ⟦E4⟧.",
+  "quest:5052:obj:1": "Collect more ⟦E45⟧ Shards if you want him to bless you with Agamaggan's power.",
+  "quest:5052:details:0": "Along with the thorns, the blood affected ⟦37⟧ other aspects of the earth: blood red stones mixed in with other minerals. The Bristleback dig up these shards and carry them as totems ⟦38⟧ for strength in ⟦E46⟧ and as totems for their magics. ⟦39⟧",
+  "quest:5052:details:1": "I know the secrets of that magic.",
+  "quest:5052:details:2": "Bring Mangletooth one of these blood shards to show you understand. Bring Mangletooth many of the shards, and he will bless you with quilboar magic--the magic of Agamaggan! ⟦40⟧",
+  "quest:5052:progress:0": "Our tribes flock to the thorny areas throughout the ⟦E4⟧ ⟦41⟧ because they are holy places, but none as holy as Razorfen. Agamaggan's body makes up the entirety of the Razorfen, ⟦42⟧ but the Downs are especially protected because the entrance is made from his great maw! ⟦43⟧ It will swallow whole those not loyal to him, and spit out their bodies after he's chewed them up! ⟦44⟧⟦45⟧⟦46⟧Agamaggan has left his body behind to protect us, and he gives of his spirit so we may protect him. ⟦47⟧",
+  "quest:5052:completion:0": "Ah, you do understand. ⟦48⟧ My words were not lost on your ears, ⟦49⟧. Mangletooth may be caged, but no cage can stop Agamaggan's power! ⟦50⟧",
+  "quest:5052:completion:1": "The touch of the shard, the feel of it... it has been a long time, ⟦51⟧.",
+  "quest:5052:completion:2": "Do you know what it is like? To have your power severed from you?",
+  "quest:5052:completion:3": "But, that is a tale for another time. I promised you information. I promised you Agamaggan's power. My people turned their backs on Mangletooth. Now, I lose you upon them. ⟦52⟧",
+  "quest:97003:title": "Chol'aruk the Ravener",
+  "quest:97003:obj:0": "Bring the head of Chol'aruk to Gur'ak in the ⟦E4⟧.",
+  "quest:868:obj:0": "Bring 12 Silithid Eggs and the ⟦E47⟧ to Korran at the Crossroads.",
+  "quest:868:details:0": "Hey, ⟦53⟧. I been sent to the Crossroads to watch over the land and take note of its happenings for my masters in ⟦E3⟧.",
+  "quest:868:details:1": "One object of my studies are the insect-like creatures found to the south in the Field of ⟦E48⟧. We know little of the creatures, so I be makin' it a point to discover more. They seem to have intelligence to them, more so than any normal animal.",
+  "quest:868:details:2": "Take this digging claw and collect some of the creatures' eggs from their mounds, but be careful: if alerted, they will attack you.",
+  "quest:868:progress:0": "Be careful with the eggs you find, ⟦54⟧. If they break, they be no good to me.",
+  "quest:868:completion:0": "You please me, ⟦55⟧. The eggs and the tool. Well done.",
+  "quest:868:completion:1": "And for your reward...",
+  "quest:883:obj:0": "Bring the ⟦E49⟧ to Jorn at Camp Taurajo.",
+  "quest:883:details:0": "The ⟦E49⟧ is a symbol of the strength of the great kodo.",
+  "quest:883:progress:0": "⟦56⟧, when you approached I saw a new power in your stride. Tell me -- has your spirit met with the great ⟦E50⟧?",
+  "quest:883:completion:0": "⟦E50⟧ is called ⟦E51⟧ in our language, and his steps are like gathered thunder. He is with you now, and his courage mingles with yours. Together there is no conflict you cannot face.",
+  "quest:883:completion:1": "Walk tall, ⟦57⟧. Walk tall, ⟦E51⟧.",
+  "quest:843:obj:0": "Gann Stonespire wants you to kill 15 Bael'dun Excavators and 5 Bael'dun Foremen.",
+  "quest:843:obj:1": "Bring ⟦E52⟧ to Gann Stonespire.",
+  "quest:843:details:0": "In solitude I wander these roads.",
+  "quest:843:details:1": "The dwarves of Bael Modan show no respect for my land. Horrendous blasts drive holes deep into the ground as noisy machines rip apart the hills. Lands which once served as home and provider to my tribe are now riddled with destructive dwarves.",
+  "quest:843:details:2": "Attempts at reaching a diplomatic resolution have failed. Now is the time for decisive action.",
+  "quest:843:details:3": "Drive the dwarves from the Bael Modan excavation by force and bring to me the journal of their leader, Prospector Khazgorm.",
+  "quest:843:progress:0": "Many innocent tauren lost their lives or were forced off their ancestral birthplace when the dwarves of Bael Modan arrived. My land must be reclaimed!",
+  "quest:843:completion:0": "Khazgorm met the fate he earned. I feel no remorse for the fool. He was an infidel on these lands.",
+  "quest:843:completion:1": "May his death serve as a warning to all those who threaten to disrupt our way of life.",
+  "quest:843:completion:2": "Now let me take a moment to study the dwarf's journal...."
+ },
+ "context": {
+  "quest:3923": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Wenikee Boltbucket («ونیکِی بولت‌باکت»)",
+   "turner": "Rilli Greasygob («ریلی گریزی‌گاب»)"
+  },
+  "quest:95494": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Vrang Wildgore",
+   "turner": "Vrang Wildgore"
+  },
+  "quest:95495": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Vrang Wildgore",
+   "turner": "Walton"
+  },
+  "quest:95507": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Vrang Wildgore",
+   "turner": "Vrang Wildgore"
+  },
+  "quest:95508": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Walton",
+   "turner": "Walton"
+  },
+  "quest:95621": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Walton",
+   "turner": "Walton"
+  },
+  "quest:852": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 19,
+   "side": "horde",
+   "giver": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)",
+   "turner": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)"
+  },
+  "quest:882": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 19,
+   "side": "horde",
+   "giver": "Jorn Skyseer («یورن اسکای‌سیر»)",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:3924": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 19,
+   "side": "horde",
+   "giver": "Rilli Greasygob («ریلی گریزی‌گاب»)",
+   "turner": "Rilli Greasygob («ریلی گریزی‌گاب»)"
+  },
+  "quest:6541": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 19,
+   "side": "horde",
+   "giver": "Thork",
+   "turner": "Kadrak"
+  },
+  "quest:6543": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 19,
+   "side": "horde",
+   "giver": "Kadrak",
+   "turner": "Kadrak"
+  },
+  "quest:876": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Darsok Swiftdagger",
+   "turner": "Darsok Swiftdagger"
+  },
+  "quest:891": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Captain Thalo'thas Brightsun",
+   "turner": "Captain Thalo'thas Brightsun"
+  },
+  "quest:898": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Gilthares Firebough",
+   "turner": "Captain Thalo'thas Brightsun"
+  },
+  "quest:899": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Mankrik",
+   "turner": "Mankrik"
+  },
+  "quest:913": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Jorn Skyseer («یورن اسکای‌سیر»)",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:1060": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Darsok Swiftdagger",
+   "turner": "Witch Doctor Jin'Zil"
+  },
+  "quest:1069": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "",
+   "giver": "Mebok Mizzyrix",
+   "turner": "Mebok Mizzyrix"
+  },
+  "quest:4021": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)",
+   "turner": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)"
+  },
+  "quest:4921": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Mankrik",
+   "turner": "Mankrik"
+  },
+  "quest:6382": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Jorn Skyseer («یورن اسکای‌سیر»)",
+   "turner": "Senani Thunderheart"
+  },
+  "quest:92706": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "",
+   "giver": "",
+   "turner": "Gazlowe"
+  },
+  "quest:95774": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 20,
+   "side": "horde",
+   "giver": "Mankrik",
+   "turner": "Mankrik"
+  },
+  "quest:878": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 21,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Mangletooth"
+  },
+  "quest:1483": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 21,
+   "side": "",
+   "giver": "Sputtervalve",
+   "turner": "Ziz Fizziks («زیز فیزیکس»)"
+  },
+  "quest:5052": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 21,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Mangletooth"
+  },
+  "quest:97003": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 21,
+   "side": "horde",
+   "giver": "Gur'ak",
+   "turner": "Gur'ak"
+  },
+  "quest:868": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 22,
+   "side": "horde",
+   "giver": "Korran",
+   "turner": "Korran"
+  },
+  "quest:883": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 22,
+   "side": "horde",
+   "giver": "",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:843": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 23,
+   "side": "horde",
+   "giver": "Gann Stonespire",
+   "turner": "Gann Stonespire"
+  }
+ },
+ "known": {
+  "quest:3923": {
+   "title": "ریلی گریزی‌گاب"
+  },
+  "quest:852": {
+   "title": "هزرول بلادمارک"
+  },
+  "quest:882": {
+   "title": "ایشاموهال"
+  },
+  "quest:3924": {
+   "title": "راهنمای سموفلانگ"
+  },
+  "quest:6541": {
+   "title": "گزارش به کادراک"
+  },
+  "quest:6543": {
+   "title": "گزارش‌های وار‑سونگ"
+  },
+  "quest:876": {
+   "title": "سرنا بلادفیدر"
+  },
+  "quest:891": {
+   "title": "توپ‌های نورت‌واچ"
+  },
+  "quest:898": {
+   "title": "آزاد از زندان"
+  },
+  "quest:899": {
+   "title": "بلعیده در کینه"
+  },
+  "quest:913": {
+   "title": "فریاد تاندرهاوک"
+  },
+  "quest:1060": {
+   "title": "نامه‌ای برای جین‌زیل"
+  },
+  "quest:1069": {
+   "title": "تخم‌های عنکبوت دیپ‌موس"
+  },
+  "quest:4021": {
+   "title": "پاسخ ضربه!"
+  },
+  "quest:4921": {
+   "title": "گم‌شده در نبرد"
+  },
+  "quest:6382": {
+   "title": "شکار اشن‌وِیل"
+  },
+  "quest:878": {
+   "title": "قبایل در جنگ"
+  },
+  "quest:1483": {
+   "title": "زیز فیزیکس"
+  },
+  "quest:5052": {
+   "title": "خرده‌سنگ‌های خون آگامگان"
+  },
+  "quest:868": {
+   "title": "جست‌وجوی تخم"
+  },
+  "quest:883": {
+   "title": "لاکوتامانی"
+  },
+  "quest:843": {
+   "title": "بازپس‌گیری گن"
+  }
+ }
+}

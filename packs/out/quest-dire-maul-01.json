@@ -1,0 +1,743 @@
+{
+ "pack": "quest-dire-maul-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-dire-maul-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Feathermoon Stronghold",
+   "fa": "سنگر فیدرمون",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Maul",
+   "fa": "کوبش خرس",
+   "kind": "sp"
+  },
+  "E4": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Lethtendris's Web",
+   "fa": "تار لتندریس",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Camp Mojache",
+   "fa": "اردوگاه موجاچه",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Tauren",
+   "fa": "تورن",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E13": {
+   "en": "Book of Incantations",
+   "fa": "کتاب ورد",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Gauntlet of Gordok Might",
+   "fa": "دستکش توانمندی گوردوک",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Rugged Leather",
+   "fa": "چرمِ بادوام",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Ogre Tannin",
+   "fa": "دباغ اُگر",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Shackle Key",
+   "fa": "کلید زنجیر",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Gordok Shackle Key",
+   "fa": "کلید زنجیر گوردوک",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Hydrospawn Essence",
+   "fa": "گوهر زادهٔ آب",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Foror's Compendium",
+   "fa": "مرجع فورور",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Banner of Provocation",
+   "fa": "پرچمِ تحریک",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Ogre Warbeads",
+   "fa": "مهره‌های جنگی اُگر",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Omokk",
+   "fa": "اوموک",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Jeering Spectre's Essence",
+   "fa": "گوهر روح ریشخندگر",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Feathermoon Stronghold": "سنگر فیدرمون",
+  "Feralas": "فرالاس",
+  "Maul": "کوبش خرس",
+  "fear": "ترس",
+  "damage": "آسیب",
+  "Lethtendris's Web": "تار لتندریس",
+  "Camp Mojache": "اردوگاه موجاچه",
+  "enemies": "دشمنان",
+  "Tauren": "تورن",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Travel": "سفر",
+  "Book of Incantations": "کتاب ورد",
+  "demon": "اهریمن",
+  "curse": "نفرین",
+  "Gauntlet of Gordok Might": "دستکش توانمندی گوردوک",
+  "Runecloth": "پارچهٔ رونی",
+  "Rugged Leather": "چرمِ بادوام",
+  "Ogre Tannin": "دباغ اُگر",
+  "Shackle Key": "کلید زنجیر",
+  "Gordok Shackle Key": "کلید زنجیر گوردوک",
+  "chance": "شانس",
+  "Hydrospawn Essence": "گوهر زادهٔ آب",
+  "Burning Steppes": "استپ‌های سوزان",
+  "allies": "متحدان",
+  "Foror's Compendium": "مرجع فورور",
+  "seal": "مهر",
+  "Banner of Provocation": "پرچمِ تحریک",
+  "Ogre Warbeads": "مهره‌های جنگی اُگر",
+  "Omokk": "اوموک",
+  "Jeering Spectre's Essence": "گوهر روح ریشخندگر",
+  "Scholomance": "شولومانس"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$C",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$g man:woman;",
+  "18": "$r",
+  "19": "$C",
+  "20": "$R",
+  "21": "$R",
+  "22": "$R",
+  "23": "$R",
+  "24": "$R",
+  "25": "$R",
+  "26": "$R",
+  "27": "$R",
+  "28": "$R",
+  "29": "$N",
+  "30": "$gking:queen;",
+  "31": "$gking:queen;",
+  "32": "$c",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N"
+ },
+ "rows": {
+  "quest:7488:obj:0": "Bring Lethtendris' Web to Latronicus Moonspear at the ⟦E1⟧ in ⟦E2⟧.",
+  "quest:7488:details:0": "The mage Lethtendris, a vicious blood elf whose brutality is matched only by her twisted addiction to magic, has fled into Dire ⟦E3⟧. She has created a device, a web to ensnare the magical energies of that place and we ⟦E4⟧ that, if left unchecked, she will cause irreparable ⟦E5⟧ to our world!",
+  "quest:7488:details:1": "Stop her, ⟦1⟧. Find her and retrieve her web. She is likely near the satyrs in Warpwood Quarter of Dire ⟦E3⟧. Bring the web to me so that its power may be released safely back into the wilds...",
+  "quest:7488:progress:0": "Do you have the web, ⟦2⟧?  Its concentrated magical energy must be dissipated!",
+  "quest:7488:completion:0": "You retrieved the web! Well done, ⟦3⟧! Lethtendris, like many elves of her ilk, are blind to the dangers the abuse of magic can cause to our world. They believe they are masters of magic; they do not realize that they are slaves to their own addiction. Her death saddens me, but it was necessary.",
+  "quest:7488:completion:1": "Thank you, ⟦4⟧. I will have the energies within the web released safely over a wide area, and then I'll destroy it to prevent future magical exploits.",
+  "quest:7489:obj:0": "Bring ⟦E6⟧ to Talo Thornhoof at ⟦E7⟧ in ⟦E2⟧.",
+  "quest:7489:details:0": "The blood elf Lethtendris has overstepped her bounds. So eager was she to gather magical power that she defied her brethren and created a device of insidious design, a web meant to siphon the tainted magical energies of Dire ⟦E3⟧. Even now she gathers those energies and plans to release them against her ⟦E8⟧.",
+  "quest:7489:details:1": "Lethtendris must be stopped. Find her within the Warpwood Quarter of Dire ⟦E3⟧, defeat her and bring her web to me so that it might be returned to more clear-headed blood elves for study.",
+  "quest:7489:progress:0": "⟦5⟧, do you have ⟦E6⟧?",
+  "quest:7489:completion:0": "You have done well, ⟦6⟧. This web holds within it vast stores of the magic of Dire ⟦E3⟧, and I ⟦E4⟧ what ⟦E5⟧ may be unleashed if those energies were harnessed by one so irresponsible as Lethtendris. I am saddened by her death, but I know that she could never part with her web while alive.",
+  "quest:7489:completion:1": "Thank you, ⟦7⟧. I will send the web to students of magic more responsible than Lethtendris. They will be the new wardens of its power.",
+  "quest:7492:obj:0": "Speak with Talo Thornhoof at ⟦E7⟧ in ⟦E2⟧.",
+  "quest:7492:details:0": "Talo Thornhoof, a ⟦E9⟧ elder in ⟦E2⟧, sends a request for aid. He offered few details, but he did say that he needs agents for a matter both delicate... and dire.",
+  "quest:7492:details:1": "Serve the ⟦E10⟧, ⟦8⟧. Go to ⟦E7⟧ in ⟦E2⟧ and speak with Talo.",
+  "quest:7492:completion:0": "Ah, it is good to see a ⟦9⟧ heed my summons. I have need of your services, ⟦10⟧, and ⟦E4⟧ they will take you down a dangerous path...",
+  "quest:7492:completion:1": "BA path into Dire ⟦E3⟧.",
+  "quest:7494:obj:0": "Speak with Latronicus Moonspear at the ⟦E1⟧ in ⟦E2⟧.",
+  "quest:7494:details:0": "⟦11⟧! Your aid is needed in ⟦E2⟧!",
+  "quest:7494:details:1": "An outlaw mage, Lethtendris, has fled to the ancient elven ruins Eldre'thalas, now called Dire ⟦E3⟧. It is believed she has an item of dangerous magical energy which must be recovered.",
+  "quest:7494:details:2": "Latronicus Moonspear requests agents to enter Dire ⟦E3⟧ and retrieve the item from Lethtendris.",
+  "quest:7494:details:3": "Serve the ⟦E11⟧! Seek out Latronicus at the ⟦E1⟧ in ⟦E2⟧.",
+  "quest:7494:completion:0": "Hail, ⟦12⟧. I am pleased to see you, but regret that our meeting is not under more pleasant conditions.",
+  "quest:7494:completion:1": "Listen close, for I have a vital task for you...",
+  "quest:7441:obj:0": "⟦E12⟧ to Dire ⟦E3⟧ and locate the Imp, Pusillin. Convince Pusillin to give you Azj'Tordin's ⟦E13⟧ through any means necessary.",
+  "quest:7441:obj:1": "Return to Azj'Tordin at the Lariss Pavilion in ⟦E2⟧ should you recover the ⟦E13⟧.",
+  "quest:7441:details:0": "I had let my guard down for only one moment, stranger. In my haste to escape the grip of the fallen Prince, I was robbed. A most foul ⟦E14⟧, the imp Pusillin, pilfered my book of incantations and the key to the once great halls of Eldre'Thalas.",
+  "quest:7441:details:1": "I no longer hold interest in the key, as I have exchanged my immortality for freedom, but I desperately need my book of incantations.",
+  "quest:7441:details:2": "Find the imp, Pusillin, and recover my book.",
+  "quest:7441:details:3": "Search the Warpwood Quarter of Dire ⟦E3⟧ for Pusillin.",
+  "quest:7441:progress:0": "I regret nothing, stranger. The Queen has long since passed. The works of the Shen'Dralar have been marred by the madness of Prince Tortheldrin. I seek only freedom... Escape...",
+  "quest:7441:completion:0": "You have found it! A ⟦E15⟧ upon that miserable imp. Alas, my material possessions are meager at best. You may choose from what I have to offer.",
+  "quest:1318:obj:0": "Find the ⟦E16⟧ and return it to Captain Kromcrush in Dire ⟦E3⟧.",
+  "quest:1318:obj:1": "According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.",
+  "quest:1318:details:0": "Now you da king, so maybe you get prized Gordok artifact back from creepy elf who calls himself Prince! Da king before you failed, just like all da other kings since Tortheldrin - da creepy elf - stole it from old timey Gordok king!",
+  "quest:1318:details:1": "Artifact is called da ⟦E16⟧. Old timey stories say only da one true king da Gordok can get it back. Old timey story also say creepy elf is still around here - you find it and it will become mighty gauntlet you wear forever! Yar, I show you!",
+  "quest:5518:obj:0": "Bring 4 Bolts of ⟦E17⟧, 8 ⟦E18⟧, 2 Rune Threads, and ⟦E19⟧ to Knot Thimblejack. He is currently chained inside the Gordok wing of Dire ⟦E3⟧.",
+  "quest:5518:details:0": "If you're going to fight the king of this dump - and I think that's what you're bound to do - then you're going to need to get by Captain Kromcrush. Now, you can get by him by killing him, sure. You might actually want to leave him alive.",
+  "quest:5518:details:1": "How, you ask? Since I've been here, I think I know how to make an ogre suit that will last just long enough to fool these bozos. The only problem is stability - ten minutes tops. Bring me what I need, and I'll make you one. I'm not going anywhere...",
+  "quest:5518:progress:0": "The ⟦E19⟧ is probably the toughest thing to find for what I need to make the suit - I think they have some upstairs?  It's hard to tell, since this ball and chain doesn't make movement that easy to do...⟦13⟧⟦14⟧Anyway, bring me the things I need, and I'll whip you up an ogre suit that will fool Captain Kromcrush into thinking you're one of his men.",
+  "quest:5518:completion:0": "Yeah, this will do the trick. Just a slip here, and tuck here... heh - this is going to work out just fine! <A broad smile beams from the chained goblin's face.>",
+  "quest:5518:completion:1": "Here you go, you're all set. Remember- this isn't the most securely fashioned item in the world. You'll have ten minutes of use before it falls apart, and then you're not going to fool anybody! Try using it just before you approach him, and remember... it only will make him think that YOU are an ally - not your group mates!",
+  "quest:5525:obj:0": "{'type': 'item', 'id': 18250, 'target': 'Gordok ⟦E20⟧', 'text': None}",
+  "quest:5525:progress:0": "It's called the ⟦E21⟧ - well, that's what these \"tons o' fun\" keep calling it. I think any of the ogres might have it, but I'm not sure if any specific ones do. Maybe the guards have a better ⟦E22⟧ of having one...⟦15⟧⟦16⟧What am I talking about - you have it already, don't you?! Is that it there??!",
+  "quest:5525:completion:0": "Oh, thank you for freeing me! You - ranked number one. Everyone else - ranked number two or lower.",
+  "quest:5525:completion:1": "I knew my life was destined for more than just being an appetizer to some ogre!",
+  "quest:5528:completion:0": "You da big boss now, so you get free sample of my better brews! These drinks boost you up AND give you good buzz! These are da good ones, chief... you try and tell Kreeg yourself!",
+  "quest:7461:obj:0": "You must destroy the guardians surrounding the 5 Pylons that power the Prison of Immol'thar. Once the Pylons have powered down, the force field surrounding Immol'thar will have dissipated.",
+  "quest:7461:obj:1": "Enter the Prison of Immol'thar and eradicate the foul ⟦E14⟧ that stands at its heart. Finally, confront Prince Tortheldrin in Athenaeum.",
+  "quest:7461:obj:2": "Return to the Shen'dralar Ancient in the courtyard should you complete this quest.",
+  "quest:7461:details:0": "Have you heard enough? Are you a ⟦17⟧ of action?",
+  "quest:7461:details:1": "This madness must come to an end. The age of the immortals has long since passed. Destroy the guardians surrounding the pylons to lower the force field. When this is done, destroy Immol'thar. With the Prince's power greatly reduced, attack and end him. Lay the spirits of this city to rest, adventurer.",
+  "quest:7461:progress:0": "Be wary, adventurer. The Prince is... persuasive.",
+  "quest:7461:completion:0": "We thank you, hero.",
+  "quest:7462:obj:0": "Return to the Athenaeum and find the Treasure of the Shen'dralar. Claim your reward!",
+  "quest:7462:details:0": "In the library, Athenaeum, you will find an ancient chest hidden beneath the stairway. Take from it that which you desire.",
+  "quest:7462:completion:0": "You open the chest to find...",
+  "quest:7463:obj:0": "⟦E12⟧ to the Warpwood Quarter of Dire ⟦E3⟧ and slay the water elemental, Hydrospawn. Return to Lorekeeper Lydros in the Athenaeum with the ⟦E23⟧.",
+  "quest:7463:details:0": "A ⟦18⟧ mage! How wonderous. I have not seen one of your kind for... oh what is it going on now? 500 years!",
+  "quest:7463:details:1": "I have something that will quench your thirst, but first you must do a task for me.",
+  "quest:7463:details:2": "B<Lydros snickers.>",
+  "quest:7463:details:3": "There is an anomaly in Eldre'Thalas. A water elemental has taken residence in the east wing. His presence must be catalogued!",
+  "quest:7463:details:4": "Venture to the Warpwood Quarter and extract a portion of the elemental essence of the Hydrospawn. Return it to me and I shall teach you a useful cantrip.",
+  "quest:7463:progress:0": "Yes? Do I know you?",
+  "quest:7463:completion:0": "Wonderful! Who are you again? Oh it matters not. What was I supposed to give you? Hrm... well you are a ⟦19⟧, perhaps you will find this useful.",
+  "quest:7481:obj:0": "Search Dire ⟦E3⟧ for Kariel Winthalus. Report back to Sage Korolusk at ⟦E7⟧ with whatever information that you may find.",
+  "quest:7481:details:0": "Several years ago, a lone elven master named Kariel Winthalus fled the devastation of his homeland with several ancient elven artifacts in tow.",
+  "quest:7481:details:1": "Our search for this lost master lead us from the ruins of Quel'Thalas, through the ⟦E24⟧, across the great expanses of the sea, to ⟦E2⟧.",
+  "quest:7481:details:2": "We suspect that the elf sought sanctuary in the halls of Eldre'Thalas (what is now known as Dire ⟦E3⟧).",
+  "quest:7481:details:3": "You must find him, adventurer. Whether alive or dead, the knowledge he carried must be recovered!",
+  "quest:7481:progress:0": "My associate, the night elf scholar, Runethorn, is recruiting her ⟦E25⟧ for this task.",
+  "quest:7481:completion:0": "A shame... a tragedy. The items are lost you say? No trace of him, eh?",
+  "quest:7482:obj:0": "Search Dire ⟦E3⟧ for Kariel Winthalus. Report back to Scholar Runethorn at Feathermoon with whatever information that you may find.",
+  "quest:7482:details:0": "Several years ago, a lone elven master named Kariel Winthalus fled the devastation of his homeland with several ancient elven artifacts in tow.",
+  "quest:7482:details:1": "Our search for this lost master lead us from the ruins of Quel'Thalas, through the ⟦E24⟧, across the great expanses of the sea, to ⟦E2⟧.",
+  "quest:7482:details:2": "We suspect that the elf sought sanctuary in the halls of Eldre'Thalas (what is now known as Dire ⟦E3⟧).",
+  "quest:7482:details:3": "You must find him, adventurer. Whether alive or dead, the knowledge he carried must be recovered!",
+  "quest:7482:progress:0": "My associate, the night elf scholar, Runethorn, is recruiting her ⟦E25⟧ for this task.",
+  "quest:7482:completion:0": "A shame... a tragedy. The items are lost you say? No trace of him, eh?",
+  "quest:7498:obj:0": "Return the book to its rightful owners.",
+  "quest:7498:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7498:progress:0": "You have recovered a tome!",
+  "quest:7498:completion:0": "Excellent work, ⟦20⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7498:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7499:obj:0": "Return the book to its rightful owners.",
+  "quest:7499:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7499:progress:0": "You have recovered a tome!",
+  "quest:7499:completion:0": "Excellent work, ⟦21⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7499:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7500:obj:0": "Return the book to its rightful owners.",
+  "quest:7500:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7500:progress:0": "You have recovered a tome!",
+  "quest:7500:completion:0": "Excellent work, ⟦22⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7500:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7501:obj:0": "Return the book to its rightful owners.",
+  "quest:7501:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7501:progress:0": "You have recovered a tome!",
+  "quest:7501:completion:0": "Excellent work, ⟦23⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7501:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7502:obj:0": "Return the book to its rightful owners.",
+  "quest:7502:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7502:progress:0": "You have recovered a tome!",
+  "quest:7502:completion:0": "Excellent work, ⟦24⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7502:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7503:obj:0": "Return the book to its rightful owners.",
+  "quest:7503:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7503:progress:0": "You have recovered a tome!",
+  "quest:7503:completion:0": "Excellent work, ⟦25⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7503:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7504:obj:0": "Return the book to its rightful owners.",
+  "quest:7504:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7504:progress:0": "You have recovered a tome!",
+  "quest:7504:completion:0": "Excellent work, ⟦26⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7504:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7505:obj:0": "Return the book to its rightful owners.",
+  "quest:7505:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7505:progress:0": "You have recovered a tome!",
+  "quest:7505:completion:0": "Excellent work, ⟦27⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7505:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7506:obj:0": "Return the book to its rightful owners.",
+  "quest:7506:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7506:progress:0": "You have recovered a tome!",
+  "quest:7506:completion:0": "Excellent work, ⟦28⟧. Should you find any more tomes, do not hesitate to return them to us.",
+  "quest:7506:completion:1": "As time passes, we tend to change around and even add new rewards for the return of missing tomes.",
+  "quest:7507:obj:0": "Return ⟦E26⟧ of Dragon Slaying to the Athenaeum.",
+  "quest:7507:details:0": "You have uncovered something of great importance. This book is unlike any that you have seen.",
+  "quest:7507:details:1": "It would appear as if someone or something has managed to shatter the ⟦E27⟧ of Athenaeum. The text within is garbled and barely legible.",
+  "quest:7507:progress:0": "Ah, one of our greatest compilations. This one has been missing for ages.",
+  "quest:7507:completion:0": "You could have gotten quite a lot of gold for this book on the black market, ⟦29⟧. Especially since the protective ⟦E27⟧ has been broken, leaving the secrets of dragon slaying viewable to any with the requisite intellect to consume the knowledge held within the sacred pages.",
+  "quest:7507:completion:1": "Perhaps a grand reward is in order... Well, a reward that will require enormous effort to obtain.",
+  "quest:7507:completion:2": "B<Lydros grins.>",
+  "quest:7508:obj:0": "Give the Dull and Flat Elven Blade to Lorekeeper Lydros.",
+  "quest:7508:details:0": "If you wish to take on this task, present Lydros with the dull blade.",
+  "quest:7508:progress:0": "Excellent, let us begin...",
+  "quest:7508:completion:0": "If you manage to enter the lair of the dragon, heat the blade under her fiery breath, and ultimately temper it in her blood, I shall bind the blade for your use.",
+  "quest:7703:obj:0": "Find the ⟦E16⟧ and return it to Captain Kromcrush in Dire ⟦E3⟧.",
+  "quest:7703:obj:1": "According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.",
+  "quest:7703:details:0": "Now you da king, so maybe you get prized Gordok artifact back from creepy elf who calls himself Prince! Da king before you failed, just like all da other kings since Tortheldrin - da creepy elf - stole it from old timey Gordok king!",
+  "quest:7703:details:1": "Artifact is called da ⟦E16⟧. Old timey stories say only da one true king da Gordok can get it back. Old timey story also say creepy elf is still around here - you find it and it will become mighty gauntlet you wear forever! Yar, I show you!",
+  "quest:7703:progress:0": "Hah, you no find it, do you boss? Maybe old timey story a bad story... hard to believe that creepy elf can steal from Gordok king!",
+  "quest:7703:completion:0": "Wow... you ARE da true ⟦30⟧! I never think I see this gauntlet in my life! It look like it got no mojo left anymore... maybe that creepy elf try and ruin gauntlet. Well, I say HAR HAR to him!",
+  "quest:7703:completion:1": "Look - this mark on da gauntlet an old old OLD timey magic mark, older than da Gordok they say. Well, as Captain of da Gordok, we all learn one thing over and over - how to make mark come to life and give power back to gauntlet!",
+  "quest:7703:completion:2": "I do it for you, ⟦31⟧! Here, take da gauntlet and rule FOREVER!",
+  "quest:7877:obj:0": "Return to the Athenaeum and find the Treasure of the Shen'dralar. Claim your reward!",
+  "quest:7877:details:0": "In the library, Athenaeum, you will find an ancient chest hidden beneath the stairway. Take from it that which you desire.",
+  "quest:7877:completion:0": "You open the chest to find...",
+  "quest:8948:obj:0": "Take the incomplete ⟦E28⟧ to Falrin Treeshaper at the library in Dire ⟦E3⟧.",
+  "quest:8948:details:0": "Theldren is not one to willingly participate in a fair fight. I've shaped this banner to display his family colors.",
+  "quest:8948:details:1": "With some additional sorcery, this banner shall provoke him in a way he won't be able to resist.",
+  "quest:8948:details:2": "An old acquaintance of mine named Falrin knows the exact procedure required. He has a particular way of... aggravating people. You shall find him at the library in Dire ⟦E3⟧.",
+  "quest:8948:progress:0": "Speak up stranger, can't you see I'm busy?",
+  "quest:8948:completion:0": "Anthion sent you, you say? I thought he was dead. I guess I've heard stranger things in my life.",
+  "quest:8948:completion:1": "Very well, then. What is it you want me to do with this banner?",
+  "quest:8949:obj:0": "Collect 25 ⟦E29⟧ from Ogres inside Dire ⟦E3⟧ or Blackrock Spire and return to Falrin Treeshaper inside the Athenaeum in Dire ⟦E3⟧.",
+  "quest:8949:details:0": "Yes, it is true that I am familiar with this enchantment you require, ⟦32⟧. Yet I'm not one to give out favors freely, even if you were sent here by an old friend.",
+  "quest:8949:details:1": "I hold nothing but hatred and contempt for our brutish ogre neighbors. And not only them, I hate the followers of ⟦E30⟧ just as much as I hate those that follow King Gordok.",
+  "quest:8949:details:2": "I want you to kill them. Kill lots of them! Bring me the beads they carry around their neck as proof of your work. Do this and we shall talk about your request.",
+  "quest:8949:progress:0": "Have you performed the favor I asked of you, ⟦33⟧?",
+  "quest:8949:completion:0": "Hmmm... strangely enough I don't feel any better about my brother's death at the hands of those brutes.",
+  "quest:8949:completion:1": "Well, you held your end of the bargain. Let's see what I can do for you.",
+  "quest:8950:obj:0": "Bring the following to Falrin Treeshaper inside Dire ⟦E3⟧: 1 ⟦E31⟧, 4 Dark Runes and 8 Large Brilliant Shards.",
+  "quest:8950:details:0": "I can place the enchantment you require on the banner quite easily, ⟦34⟧. Unfortunately I don't have the materials I need as it is very rarely that someone asks for this sort of charm.",
+  "quest:8950:details:1": "I will require the essence of one of the Eldreth ghosts that haunt these halls, a handful of ⟦E32⟧ dark runes and some large brilliant shards. Bring me these reagents and I shall perform this task for you.",
+  "quest:8950:progress:0": "Have you gathered the materials I require, ⟦35⟧?",
+  "quest:8950:completion:0": "Yes, these will do just fine. After I'm done, no force in the world will be able to stop your victim from accepting your challenge."
+ },
+ "context": {
+  "quest:7488": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Latronicus Moonspear",
+   "turner": "Latronicus Moonspear"
+  },
+  "quest:7489": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 57,
+   "side": "horde",
+   "giver": "Talo Thornhoof",
+   "turner": "Talo Thornhoof"
+  },
+  "quest:7492": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 57,
+   "side": "horde",
+   "giver": "Warcaller Gorlach",
+   "turner": "Talo Thornhoof"
+  },
+  "quest:7494": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Crier Goodman، Courier Hammerfall",
+   "turner": "Latronicus Moonspear"
+  },
+  "quest:7441": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 58,
+   "side": "",
+   "giver": "Azj'Tordin",
+   "turner": "Azj'Tordin"
+  },
+  "quest:1318": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:5518": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Knot Thimblejack",
+   "turner": "Knot Thimblejack"
+  },
+  "quest:5525": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Knot Thimblejack",
+   "turner": "Knot Thimblejack"
+  },
+  "quest:5528": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Stomper Kreeg",
+   "turner": "Stomper Kreeg"
+  },
+  "quest:7461": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Shen'dralar Ancient",
+   "turner": "Shen'dralar Ancient"
+  },
+  "quest:7462": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Shen'dralar Ancient",
+   "turner": "Treasure of the Shen'dralar"
+  },
+  "quest:7463": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lorekeeper Lydros",
+   "turner": "Lorekeeper Lydros"
+  },
+  "quest:7481": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Sage Korolusk",
+   "turner": "Sage Korolusk"
+  },
+  "quest:7482": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Scholar Runethorn",
+   "turner": "Scholar Runethorn"
+  },
+  "quest:7498": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Kildrath"
+  },
+  "quest:7499": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Kildrath"
+  },
+  "quest:7500": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Kildrath"
+  },
+  "quest:7501": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Mykos"
+  },
+  "quest:7502": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Mykos"
+  },
+  "quest:7503": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Mykos"
+  },
+  "quest:7504": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Javon"
+  },
+  "quest:7505": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Javon"
+  },
+  "quest:7506": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Javon"
+  },
+  "quest:7507": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Lydros"
+  },
+  "quest:7508": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Lydros"
+  },
+  "quest:7703": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Captain Kromcrush",
+   "turner": "Captain Kromcrush"
+  },
+  "quest:7877": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Shen'dralar Ancient",
+   "turner": "Treasure of the Shen'dralar"
+  },
+  "quest:8948": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Anthion Harmon",
+   "turner": "Falrin Treeshaper"
+  },
+  "quest:8949": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Falrin Treeshaper",
+   "turner": "Falrin Treeshaper"
+  },
+  "quest:8950": {
+   "zone_en": "Dire Maul",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Falrin Treeshaper",
+   "turner": "Falrin Treeshaper"
+  }
+ },
+ "known": {
+  "quest:7488": {
+   "title": "تار لتندریس"
+  },
+  "quest:7489": {
+   "title": "تار لتندریس"
+  },
+  "quest:7492": {
+   "title": "اردوگاه موجاچه"
+  },
+  "quest:7494": {
+   "title": "سنگر فیدرمون"
+  },
+  "quest:7441": {
+   "title": "پوسیلین و اژتوردین پیر"
+  },
+  "quest:1318": {
+   "title": "کار ناتمام گوردوکی"
+  },
+  "quest:5518": {
+   "title": "لباس اُگر گوردوک"
+  },
+  "quest:5525": {
+   "title": "نات را آزاد کن!"
+  },
+  "quest:5528": {
+   "title": "آزمون چشایی گوردوک"
+  },
+  "quest:7461": {
+   "title": "دیوانگی درون"
+  },
+  "quest:7462": {
+   "title": "گنج شن‌درالار"
+  },
+  "quest:7463": {
+   "title": "پذیرایی جادویی"
+  },
+  "quest:7481": {
+   "title": "افسانه‌های الفی"
+  },
+  "quest:7482": {
+   "title": "افسانه‌های الفی"
+  },
+  "quest:7498": {
+   "title": "گارونا: پژوهشی در پنهان‌کاری و خیانت"
+  },
+  "quest:7499": {
+   "title": "دستنامهٔ دفاع"
+  },
+  "quest:7500": {
+   "title": "کتاب آشپزی جادوان"
+  },
+  "quest:7501": {
+   "title": "نور و نحوهٔ به‌کاربستنش"
+  },
+  "quest:7502": {
+   "title": "مهار سایه‌ها"
+  },
+  "quest:7503": {
+   "title": "بزرگ‌ترین نژاد شکارچیان"
+  },
+  "quest:7504": {
+   "title": "بولونی مقدس: آنچه نور نمی‌گوید"
+  },
+  "quest:7505": {
+   "title": "شاک سرما و تو"
+  },
+  "quest:7506": {
+   "title": "رؤیای زمرد..."
+  },
+  "quest:7507": {
+   "title": "مرجع فورور"
+  },
+  "quest:7508": {
+   "title": "آهنگری کوئل‌سرار"
+  },
+  "quest:7703": {
+   "title": "کار ناتمام گوردوکی"
+  },
+  "quest:7877": {
+   "title": "گنج شن‌درالار"
+  },
+  "quest:8948": {
+   "title": "دوست قدیمی آنتیون"
+  },
+  "quest:8949": {
+   "title": "انتقام فالرین"
+  },
+  "quest:8950": {
+   "title": "افسون تحریک‌گر"
+  }
+ }
+}

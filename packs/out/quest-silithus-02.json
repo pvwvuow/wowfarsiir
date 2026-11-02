@@ -1,0 +1,756 @@
+{
+ "pack": "quest-silithus-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-silithus-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "points",
+   "fa": "واحد",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Geologist's Transcription Kit",
+   "fa": "جعبه‌ابزارِ رونویسیِ زمین‌شناس",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Hive'Zora Silithid Brain",
+   "fa": "مغز سیلیتید کندوی زورا",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Hive'Ashi Silithid Brain",
+   "fa": "مغز سیلیتید کندوی آشی",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Hive'Regal Silithid Brain",
+   "fa": "مغز سیلیتید کندوی رگال",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Glyphed Crystal Prism",
+   "fa": "منشورِ بلوریِ حروف‌نگارش‌شده",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Crystal Unlocking Mechanism",
+   "fa": "سازوکار بازگشایندهٔ بلور",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Glyphs of Calling",
+   "fa": "حروف‌نگاره‌های فراخوان",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Bor Wildmane",
+   "fa": "بور وایلد‌مِین",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E17": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Twilight Geolords",
+   "fa": "خاک‌سالاران گرگ‌وسازان",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Vyral's Signet Ring",
+   "fa": "انگشتر مُهر ویرال",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Vyral the Vile",
+   "fa": "ویرال پلید",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Twilight Hammer",
+   "fa": "چکش گرگ‌ومیش",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Aurel Goldleaf",
+   "fa": "اورل گلدلیف",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Large Brilliant Shard",
+   "fa": "خرده‌بلور درخشان بزرگ",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Abyssal Signet",
+   "fa": "مُهر درندهٔ اعماق",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Abyssal Scepter",
+   "fa": "عصا درندهٔ اعماق",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Abyssal Crest",
+   "fa": "نشان درندهٔ اعماق",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Bandages",
+   "fa": "بانداژها",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Logistics Task Briefing X",
+   "fa": "توجیه‌نامهٔ مأموریتِ تدارکات X",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Silithus": "سیلیتوس",
+  "points": "واحد",
+  "battle": "نبرد",
+  "Use": "استفاده",
+  "Geologist's Transcription Kit": "جعبه‌ابزارِ رونویسیِ زمین‌شناس",
+  "hit": "اصابت",
+  "Hive'Zora Silithid Brain": "مغز سیلیتید کندوی زورا",
+  "Hive'Ashi Silithid Brain": "مغز سیلیتید کندوی آشی",
+  "Hive'Regal Silithid Brain": "مغز سیلیتید کندوی رگال",
+  "Glyphed Crystal Prism": "منشورِ بلوریِ حروف‌نگارش‌شده",
+  "Crystal Unlocking Mechanism": "سازوکار بازگشایندهٔ بلور",
+  "Glyphs of Calling": "حروف‌نگاره‌های فراخوان",
+  "Strike": "ضربه",
+  "strike": "ضربه",
+  "Bor Wildmane": "بور وایلد‌مِین",
+  "Hammer": "چکش",
+  "stack": "استک",
+  "Twilight Geolords": "خاک‌سالاران گرگ‌وسازان",
+  "threat": "تیت",
+  "Vyral's Signet Ring": "انگشتر مُهر ویرال",
+  "Vyral the Vile": "ویرال پلید",
+  "Twilight Hammer": "چکش گرگ‌ومیش",
+  "Aurel Goldleaf": "اورل گلدلیف",
+  "Large Brilliant Shard": "خرده‌بلور درخشان بزرگ",
+  "requires": "نیازمند",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Abyssal Signet": "مُهر درندهٔ اعماق",
+  "Abyssal Scepter": "عصا درندهٔ اعماق",
+  "Abyssal Crest": "نشان درندهٔ اعماق",
+  "Hope": "امید",
+  "Bandages": "بانداژها",
+  "Runecloth": "پارچهٔ رونی",
+  "Logistics Task Briefing X": "توجیه‌نامهٔ مأموریتِ تدارکات X"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$B",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$B",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$c",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$C",
+  "29": "$N",
+  "30": "$C",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$b",
+  "47": "$b",
+  "48": "$N"
+ },
+ "rows": {
+  "quest:8304:obj:0": "Commander Mar'alith at Cenarion Hold in ⟦E1⟧ wants you to question the inhabitants of Bronzebeard's Encampment. You will find Bronzebeard's Encampment south of Cenarion Hold.",
+  "quest:8304:obj:1": "Once you have gathered the requested information, return to Commander Mar'alith.",
+  "quest:8304:details:0": "My dear Natalia has gone missing.",
+  "quest:8304:details:1": "Truth be told, she had been acting strangely for weeks leading up to her disappearance. I had caught her talking to herself when no one was around on more than one occasion. She was adamant that everything was ok and that she must be allowed to continue her research.",
+  "quest:8304:details:2": "She was last seen heading to Bronzebeard's camp to the south.",
+  "quest:8304:details:3": "My soldiers are spread too thin, ⟦1⟧. I need you to go to Bronzebeard's camp and question those dwarves.",
+  "quest:8304:progress:0": "Waste no time, ⟦2⟧!",
+  "quest:8304:completion:0": "<Commander Mar'alith lowers his head in contemplation.>",
+  "quest:8304:completion:1": "Whether she is alive or dead, I must do what is right. She must be found. Alas, I am bound by duty to this outpost. Will you help me once more, ⟦3⟧?",
+  "quest:8305:obj:0": "Locate the Crystalline Tear in ⟦E1⟧ and gaze into its depths.",
+  "quest:8305:details:0": "In the southern desert of ⟦E1⟧, near the sacred barrier, exists a single crystalline tear. This tear serves as a symbol of the great losses beset upon us during the War of the Shifting Sands. Locate this tear and gaze into its depths to gain enlightenment.⟦4⟧",
+  "quest:8305:completion:0": "You can feel a great sorrow revolving around this crystal. The force is so powerful that you feel as if you might collapse and die of sadness.",
+  "quest:8306:obj:0": "Commander Mar'alith at Cenarion Hold in ⟦E1⟧ wants you to find his beloved Natalia. The information that you gathered ⟦E2⟧ to Hive'Regal in the south as being the area in which you may find Mistress Natalia Mar'alith.",
+  "quest:8306:obj:1": "Do not forget to visit the dwarves at Bronzebeard's camp before venturing into the hive. They might have some additional work and advice for you.",
+  "quest:8306:obj:2": "And ⟦5⟧, remember the Commander's words: \"Do what you must...\"",
+  "quest:8306:details:0": "I need you to venture into Hive'Regal and find what became of my dearest Natalia, ⟦6⟧. This will be no easy task for you. Before you dive headlong into the maw of madness, make sure that you go back and speak with those dwarves. They might be able to give you some tips on dealing with the silithid that inhabit that hive.",
+  "quest:8306:details:1": "And ⟦7⟧, if she truly is as mad as they say... do what you must.",
+  "quest:8306:details:2": "B<Commander Mar'alith turns away from you.>⟦8⟧",
+  "quest:8306:progress:0": "Natalia?",
+  "quest:8306:completion:0": "<Commander Mar'alith clutches at his chest.>",
+  "quest:8306:completion:1": "BC'Thun? WHAT is the meaning of all this? What is C'Thun? How could this fiend have turned my sweet Natalia into the monster that you described?",
+  "quest:8308:obj:0": "Take Brann Bronzebeard's Letter to Bronzebeard's Encampment in southern ⟦E1⟧.",
+  "quest:8308:details:0": "To Whom It May Concern:",
+  "quest:8308:details:1": "If you're reading this, I'm either dead or soon to be dead. It's hard to say. Most of the crew is dead anyhow.",
+  "quest:8308:details:2": "Found information about a Titan. Great ⟦E3⟧ between him and an Old God. Yes, a bona fide Old God. Found ancient tunnel leading to Ahn'Qiraj. Taking it.",
+  "quest:8308:details:3": "Take this letter to my old camp. Make sure my monkey is getting adequate food, water, and hugs.",
+  "quest:8308:details:4": "B-Brann Bronzebeard, Explorer Extreme",
+  "quest:8308:details:5": "BP.S. Watch out for crazy Old God worshipping night elf.",
+  "quest:8308:progress:0": "Oh dear.",
+  "quest:8308:completion:0": "Well this explains a lot. If you ever find a way into Ahn'Qiraj, keep an eye out for ol' Brann. I'm afraid that he'll be powerless without his monkey.",
+  "quest:8309:obj:0": "Rutgar Glyphshaper at Bronzebeard's Encampment in ⟦E1⟧ wants you to venture to Hive'Ashi, Hive'Zora, and Hive'Regal and recover Glyphed Rubbings from the Glyphed Crystals of each hive.",
+  "quest:8309:obj:1": "⟦E4⟧ the ⟦E5⟧ to make a reasonable facsimile of the ancient glyphs. Return to Rutgar Glyphshaper when you complete this task.",
+  "quest:8309:details:0": "After our initial foray into the hives and Mistress Mar'alith's subsequent madness the three hives have been spewing out bugs! The increased activity might be tied into the glyphs covering those strange crystals.",
+  "quest:8309:details:1": "We must get a rubbing from crystals in all three hives. If we can get those rubbings, we might be able to make sense of this madness.",
+  "quest:8309:details:2": "Take this transcription set and ⟦E6⟧ those hives, ⟦9⟧. Don't come back until you've gotten copies from each hive.",
+  "quest:8309:progress:0": "If you find some crazy night elf lass in one of the hives, be sure to give her a kick in the duff for us.",
+  "quest:8309:completion:0": "I can't make heads or tails of these glyphs. I've never seen anything like it! I hope Frankal's research can shed some light on this mess.",
+  "quest:8310:obj:0": "Frankal Stonebridge at Bronzebeard's Encampment in ⟦E1⟧ wants you to recover a ⟦E7⟧, ⟦E8⟧, and a ⟦E9⟧. Return to Frankal when you have completed this task.",
+  "quest:8310:details:0": "I think I can formulate an elixir that will allow us to more readily decipher the glyphs and language of the silithid and Qiraji! What do I need? Glad you asked! I need brains! More specifically, a brain from each silithid type that inhabit the hives. Bring me brains and Rutgar's work might not be for naught.",
+  "quest:8310:progress:0": "Go play with the monkey, kid. I don't have time for this.",
+  "quest:8310:completion:0": "Outstanding! Don't wander off too far, kid. We might need you to take on another task or two.",
+  "quest:8314:obj:0": "Rutgar Glyphshaper at Bronzebeard's Encampment wants you to deliver the ⟦E10⟧ to Geologist Larksbane at the Cenarion Hold in ⟦E1⟧.",
+  "quest:8314:details:0": "We're on the verge of a breakthrough, ⟦10⟧! The rubbings you recovered have allowed us to recreate the glyphs on this crystalline prism. They are apparently a means for the Qiraji and other unknown entities to communicate various messages to the silithid.",
+  "quest:8314:details:1": "Unfortunately, that is all we could get out of the glyphs. We need to find a way to unlock the messages hidden within the crystals.",
+  "quest:8314:details:2": "Take the glyphed crystal prism to Geologist Larksbane at Cenarion Hold. She might be able to help.",
+  "quest:8314:progress:0": "Oh my! What do you have there, ⟦11⟧?",
+  "quest:8314:completion:0": "The reason the dwarves could not decipher the glyphs is because there is nothing to decipher. The shifting outer layer of the prism must properly align with the inner crystal's markings in order for the message to be transmitted. Clever...",
+  "quest:8314:completion:1": "While we should be able to translate this data, we must first unlock the code. There is only one clue on the surface of the prism - assuming the rubbings were transferred correctly - and it looks grim.",
+  "quest:8315:obj:0": "Geologist Larksbane at Cenarion Hold in ⟦E1⟧ wants you to recover the ⟦E11⟧ from the Qiraji Emissary.",
+  "quest:8315:obj:1": "You have been instructed to take the ⟦E12⟧ to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the ⟦E11⟧. Return to Geologist Larksbane if you succeed.",
+  "quest:8315:obj:2": "Assemble an army for this task, ⟦12⟧!",
+  "quest:8315:details:0": "The glyphs illustrate an emissary of the Qiraji meeting with three silithid at the bones of a large dragon. Above the glyphs is what I can only assume to be a code of some sort. This code might very well be the key to summoning the emissary.",
+  "quest:8315:details:1": "I will create a copy of the glyph code that you must use in the sand at the Bones of Grakkarond. If I am right, the Overlords will come thinking that new data is ready for transmission. ⟦E13⟧ them down and confront the emissary. He holds the key to the crystals...",
+  "quest:8315:progress:0": "You must take the opportunity as it presents itself and ⟦E14⟧!",
+  "quest:8315:completion:0": "I hold 20,000 years of history in my hands, ⟦13⟧!",
+  "quest:8316:completion:0": "War comes, ⟦14⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8316:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8316:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8316:completion:3": "The future of us all could be at an end.",
+  "quest:8316:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8318:obj:0": "Bring 10 Encrypted Twilight Texts to ⟦E15⟧ in Cenarion Hold.",
+  "quest:8318:details:0": "Some of the Twilight's ⟦E16⟧ cultists carry around little papers with gibberish written on them. I want you to bring me a ⟦E17⟧ of them, ⟦15⟧.",
+  "quest:8318:details:1": "I can't figure out what the gibberish means, but that's not the point! These papers are how their different groups communicate secretly. The more texts we take out of circulation, the less they can communicate!",
+  "quest:8318:progress:0": "Did you bring me some texts?",
+  "quest:8318:completion:0": "Excellent! I'll stash these away, maybe they'll be useful later.",
+  "quest:8320:obj:0": "Kill 10 ⟦E18⟧, then return to Huum Wildmane in Cenarion Hold.",
+  "quest:8320:details:0": "The Twilight's ⟦E16⟧, an insane cult bent on destruction, set up camps in ⟦E1⟧ and perform rituals day and night. We do not yet know their plans, but we do think they are somehow linked to the pulsing red crystals spread across the desert.",
+  "quest:8320:details:1": "Although their mystery may one day be solved, we must first deal with their immediate ⟦E19⟧. Go to their camps to the west and seek out Twilight geolords. They are the heads of these serpents; that is where we must ⟦E14⟧!",
+  "quest:8320:progress:0": "Enter the desert and find the Twilight geolords, ⟦16⟧. Return to me after they are slain.",
+  "quest:8320:completion:0": "That was a task well performed, ⟦17⟧. Your slaying of the Twilight geolords must have dealt a grievous blow to the cult. Let us hope their plans are slowed...",
+  "quest:8321:obj:0": "Bring ⟦E20⟧ to Huum Wildmane in Cenarion Hold.",
+  "quest:8321:details:0": "We have discovered another base of operations for the Twilight's ⟦E16⟧. It is called Twilight's Run; it is a cave tucked in the northeast corner of ⟦E1⟧. The local leader of the cult, ⟦E21⟧, haunts that cave - it is he who you must next defeat. When you have done this, bring me his signet ring.",
+  "quest:8321:details:1": "Fortune to you, ⟦18⟧. The horrors of Twilight's Run are formidable indeed.",
+  "quest:8321:progress:0": "⟦19⟧, have you yet defeated ⟦E21⟧?  Do you have his signet ring?",
+  "quest:8321:completion:0": "You've done it! Vyral is killed! This can only mean doom for the ⟦E22⟧'s operations in ⟦E1⟧. There may be more of them scurrying about, but the blow you dealt to the cult today is one from which they will not easily recover.",
+  "quest:8331:obj:0": "Speak with ⟦E23⟧ in Cenarion Hold.",
+  "quest:8331:details:0": "⟦20⟧, although we had hoped the Twilight's ⟦E16⟧'s operations in ⟦E1⟧ were slowing... we were, regrettably, mistaken. Through continued forays against the cult, we have learned that an even darker power, the Abyssal Council, controls the ⟦E16⟧ through the arcane wind stones dotted amongst the cult's camps. Your next action, ⟦21⟧, will be against the Abyssal Council.",
+  "quest:8331:details:1": "Speak with the craftsman ⟦E23⟧, in the eastern section of Cenarion Hold. Her skill will be needed for this next gambit.",
+  "quest:8331:completion:0": "⟦22⟧, good day. I was told you will pit yourself against the Abyssal Council? If that is so, then listen closely to my next words...",
+  "quest:8332:obj:0": "Bring 1 ⟦E24⟧ and 3 Abyssal Crests to ⟦E23⟧ in Cenarion Hold.",
+  "quest:8332:details:0": "We think it is possible to use a wind stone to ambush a duke of the Abyssal Council. To do this, however, one must commune through the wind stone, and convince the council you are a middle ranked leader of the Twilight's ⟦E16⟧.",
+  "quest:8332:details:1": "Such a gambit ⟦E25⟧ a replica of the cult's medallion of station. I can create the medallion, but I will need a large brilliant shard, and crests worn by the Abyssal Templar.",
+  "quest:8332:details:2": "Bring these to me and I will do the rest.",
+  "quest:8332:progress:0": "Do you have the shard and the crests, ⟦23⟧? I will need them to make the twilight cultist's medallion of station.",
+  "quest:8332:completion:0": "Ah, very good. I've been working on the medallion - now with these last ingredients, I'll be done in just a few moments...",
+  "quest:8332:completion:1": "There we are. Here is the medallion, ⟦24⟧.",
+  "quest:8332:completion:2": "You'll need to wear this when you activate one of the Twilight's ⟦E16⟧'s wind stones. Put this on, along with the rest of the twilight trappings, and the Abyssal Council will see you as one of their cultist underlings.",
+  "quest:8341:obj:0": "Bring 5 Large Brilliant Shards and 3 Abyssal Signets to ⟦E23⟧ in Cenarion Hold.",
+  "quest:8341:details:0": "Lords of the Abyssal Council can only be summoned through the greater wind stones, and only the top ranking members of the Twilight's Council may speak to them. But... I have found a way to upgrade your disguise and fool the Abyssal Lords!",
+  "quest:8341:details:1": "The disguise calls for a ring of lordship, worn only by the highest members of the cult. I will craft one for you if you can bring me large brilliant shards and abyssal signets.",
+  "quest:8341:progress:0": "Do you have the shards and the signets, ⟦25⟧? I will need them to create the ring of lordship. ",
+  "quest:8341:completion:0": "Thanks. Just one moment and I'll have that ring ready for you...",
+  "quest:8341:completion:1": "There it is. Now you're ready.",
+  "quest:8341:completion:2": "Be sure to wear this ring, along with a medallion of station and the rest of the twilight trappings, when you activate a greater wind stone. Do that, and the Abyssal Council will think you one of their servants. Then, perhaps you can lure one into an ambush!",
+  "quest:8343:obj:0": "Speak with ⟦E23⟧ in Cenarion Hold.",
+  "quest:8343:details:0": "⟦26⟧, ⟦E23⟧ thinks she's found a way to summon and defeat a ruling member of the Abyssal Council! Such a task will be dangerous, but you have earned great respect amongst the ⟦E26⟧. We know that if anyone can do it, you can.",
+  "quest:8343:details:1": "May fortune go with you, ⟦27⟧. Speak with Aurel when you are ready.",
+  "quest:8343:completion:0": "What Huum says is true. I believe I know how to summon a lord of the Abyssal Council! Listen on, and I will explain...",
+  "quest:8348:obj:0": "Bring the ⟦E27⟧ to ⟦E15⟧ in Cenarion Hold.",
+  "quest:8348:details:0": "Huum tells me you've figured out how to summon the Abyssal Dukes! That's quite an accomplishment.",
+  "quest:8348:details:1": "You know what else would be quite the accomplishment? Smashing up one of those things really good. That'll cause an impression on their underlings, if you know what I mean. Bring back its signet as proof of the deed.",
+  "quest:8348:progress:0": "How did it go with the Abyssal Duke? Did it ⟦E6⟧ hard?",
+  "quest:8348:completion:0": "I knew you were a tough ⟦28⟧ the minute I saw you walk into Cenarion Hold. Keep it up!",
+  "quest:8349:obj:0": "Speak with ⟦E15⟧ in Cenarion Hold.",
+  "quest:8349:details:0": "Now that you have a medallion and can summon an Abyssal Duke, speak with ⟦E15⟧. He will set you on a task against the Abyssal Council.",
+  "quest:8349:details:1": "Good luck, ⟦29⟧. And if you ever need more medallions, return to me.",
+  "quest:8349:completion:0": "Good to see you again, ⟦30⟧! So you had a medallion made? Good -- you'll need that for your next quest...",
+  "quest:8351:obj:0": "Speak with ⟦E15⟧ in Cenarion Hold.",
+  "quest:8351:details:0": "Now that you can disguise yourself as a ruling member of the Twilight Council, I am certain ⟦E15⟧ will want to speak with you. Go see him, and prepare yourself for a very difficult mission...",
+  "quest:8351:completion:0": "Yes, that's right, ⟦31⟧. I have a very tough task ahead...",
+  "quest:8352:obj:0": "Bring an ⟦E28⟧ to ⟦E15⟧ in Cenarion Hold.",
+  "quest:8352:details:0": "Huum and I were just talking about you. He tells me you're just about ready to try your hand at fighting an Abyssal Lord!",
+  "quest:8352:details:1": "I must tell you this is a very dangerous endeavor. You'd better bring backup. And I don't mean one or two of your friends, I'm talking about a top-notch, ⟦E3⟧-ready fighting force. If your friends are as good as you, you might even defeat it!",
+  "quest:8352:details:2": "If you do - and I'll want evidence, as always - I'll give you a truly great reward.",
+  "quest:8352:progress:0": "Well, how did it go? I'd do anything to leave my post and wrestle one of those things myself!",
+  "quest:8352:completion:0": "You... you did it! You did it, ⟦32⟧! Here! Take this. It's the biggest chest we had lying around and I filled it with some of the best stuff we found.",
+  "quest:8361:obj:0": "⟦E15⟧ at Cenarion Hold in ⟦E1⟧ wants you to destroy an Abyssal Templar and bring him an ⟦E29⟧ as proof of the deed.",
+  "quest:8361:details:0": "We've seen the Twilight's ⟦E16⟧ cultists performing rituals to summon powerful elemental nobles. We don't know if these are the beings the cultists worship or if they act as intermediaries to even more powerful forces. One thing is for sure: they are receiving orders from these elementals.",
+  "quest:8361:details:1": "I want you to find a way to contact an Abyssal Templar and give it a proper beating! Nothing throws the troops in disarray like taking out the chain of command. Bring back proof while you're at it.",
+  "quest:8361:progress:0": "Did you finish the job?",
+  "quest:8361:completion:0": "Hah! You did it, ⟦33⟧! The Twilight's ⟦E16⟧ will soon be crushed!",
+  "quest:8362:title": "Abyssal Crests",
+  "quest:8362:progress:0": "You've proved you can handle yourself in a fight, ⟦34⟧. Let's keep the pressure up on the Twilight's ⟦E16⟧. Go fight some more Abyssal Templars, I'll reward you with some of the stuff Huum and I have found in ⟦E3⟧.",
+  "quest:8362:completion:0": "You've done well! That's less Templars for me to worry about.⟦35⟧⟦36⟧Here you go, ⟦37⟧. ⟦E30⟧ there's something useful in there for you.",
+  "quest:8376:completion:0": "War comes, ⟦38⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8376:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8376:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8376:completion:3": "The future of us all could be at an end.",
+  "quest:8376:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8377:completion:0": "War comes, ⟦39⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8377:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8377:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8377:completion:3": "The future of us all could be at an end.",
+  "quest:8377:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8378:completion:0": "War comes, ⟦40⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8378:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8378:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8378:completion:3": "The future of us all could be at an end.",
+  "quest:8378:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8379:completion:0": "War comes, ⟦41⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8379:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8379:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8379:completion:3": "The future of us all could be at an end.",
+  "quest:8379:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8380:completion:0": "War comes, ⟦42⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8380:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8380:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8380:completion:3": "The future of us all could be at an end.",
+  "quest:8380:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8381:completion:0": "War comes, ⟦43⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8381:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8381:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8381:completion:3": "The future of us all could be at an end.",
+  "quest:8381:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8382:completion:0": "War comes, ⟦44⟧, and with it comes untold horrors. You have done all that could be asked of you and for that you should be rewarded.",
+  "quest:8382:completion:1": "Should this... this prophecy ever come to pass...",
+  "quest:8382:completion:2": "B<Geologist Larksbane turns pale.>",
+  "quest:8382:completion:3": "The future of us all could be at an end.",
+  "quest:8382:completion:4": "These armaments will prove invaluable to your campaign in this desert.",
+  "quest:8496:title": "⟦E31⟧ for the Field",
+  "quest:8496:desc:0": "Bring 30 Heavy ⟦E32⟧ ⟦E31⟧, 30 Heavy Silk ⟦E31⟧ and 30 Heavy Mageweave ⟦E31⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E1⟧. You must also bring ⟦E33⟧ in order to complete this quest.",
+  "quest:8496:obj:0": "Bring 30 Heavy ⟦E32⟧ ⟦E31⟧, 30 Heavy Silk ⟦E31⟧ and 30 Heavy Mageweave ⟦E31⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E1⟧. You must also bring ⟦E33⟧ in order to complete this quest.",
+  "quest:8496:details:0": "Bring 30 Heavy ⟦E32⟧ ⟦E31⟧, 30 Heavy Silk ⟦E31⟧ and 30 Heavy Mageweave ⟦E31⟧ to Windcaller Proudhorn at Cenarion Hold in ⟦E1⟧. You must also bring ⟦E33⟧ in order to complete this quest.",
+  "quest:8496:progress:0": "You have something for me, ⟦45⟧?⟦46⟧⟦47⟧",
+  "quest:8496:completion:0": "Just in time. These supplies will save lives, ⟦48⟧ . Your work is appreciated. Here's your next assignment."
+ },
+ "context": {
+  "quest:8304": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Mar'alith",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8305": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Crystalline Tear"
+  },
+  "quest:8306": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Mar'alith",
+   "turner": "Commander Mar'alith"
+  },
+  "quest:8308": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Rutgar Glyphshaper"
+  },
+  "quest:8309": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Rutgar Glyphshaper",
+   "turner": "Rutgar Glyphshaper"
+  },
+  "quest:8310": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Frankal Stonebridge",
+   "turner": "Frankal Stonebridge"
+  },
+  "quest:8314": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Rutgar Glyphshaper",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8315": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8316": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8318": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Bor Wildmane («بور وایلد‌مِین»)",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8320": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Huum Wildmane",
+   "turner": "Huum Wildmane"
+  },
+  "quest:8321": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Huum Wildmane",
+   "turner": "Huum Wildmane"
+  },
+  "quest:8331": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Huum Wildmane",
+   "turner": "Aurel Goldleaf («اورل گلدلیف»)"
+  },
+  "quest:8332": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Aurel Goldleaf («اورل گلدلیف»)",
+   "turner": "Aurel Goldleaf («اورل گلدلیف»)"
+  },
+  "quest:8341": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Aurel Goldleaf («اورل گلدلیف»)",
+   "turner": "Aurel Goldleaf («اورل گلدلیف»)"
+  },
+  "quest:8343": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Huum Wildmane",
+   "turner": "Aurel Goldleaf («اورل گلدلیف»)"
+  },
+  "quest:8348": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Bor Wildmane («بور وایلد‌مِین»)",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8349": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Aurel Goldleaf («اورل گلدلیف»)",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8351": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Aurel Goldleaf («اورل گلدلیف»)",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8352": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Bor Wildmane («بور وایلد‌مِین»)",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8361": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Bor Wildmane («بور وایلد‌مِین»)",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8362": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Bor Wildmane («بور وایلد‌مِین»)"
+  },
+  "quest:8376": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8377": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8378": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8379": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8380": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "horde",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8381": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8382": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "",
+   "giver": "Geologist Larksbane",
+   "turner": "Geologist Larksbane"
+  },
+  "quest:8496": {
+   "zone_en": "Silithus",
+   "zone_fa": "سیلیتوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Windcaller Proudhorn"
+  }
+ },
+ "known": {
+  "quest:8304": {
+   "title": "عزیزترین ناتالیا"
+  },
+  "quest:8305": {
+   "title": "خاطرات به‌جامانده"
+  },
+  "quest:8306": {
+   "title": "به درون دهانهٔ دیوانگی"
+  },
+  "quest:8308": {
+   "title": "نامهٔ گم‌شدهٔ بران برنزبیرد"
+  },
+  "quest:8309": {
+   "title": "تعقیب رون‌ها"
+  },
+  "quest:8310": {
+   "title": "شکستن رمز"
+  },
+  "quest:8314": {
+   "title": "گشودن معما"
+  },
+  "quest:8315": {
+   "title": "فراخوان"
+  },
+  "quest:8316": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8318": {
+   "title": "ارتباط سری"
+  },
+  "quest:8320": {
+   "title": "خاک‌سالاران گرگ‌وسازان"
+  },
+  "quest:8321": {
+   "title": "ویرال پلید"
+  },
+  "quest:8331": {
+   "title": "اورل گلدلیف"
+  },
+  "quest:8332": {
+   "title": "دوک‌های شورا"
+  },
+  "quest:8341": {
+   "title": "لردهای شورا"
+  },
+  "quest:8343": {
+   "title": "کشف گلدلیف"
+  },
+  "quest:8348": {
+   "title": "مُهر دوک‌ها"
+  },
+  "quest:8349": {
+   "title": "بور وایلد‌مِین"
+  },
+  "quest:8351": {
+   "title": "بور می‌خواهد صحبت کند"
+  },
+  "quest:8352": {
+   "title": "عصای شورا"
+  },
+  "quest:8361": {
+   "title": "تماس‌های درندهٔ اعماق"
+  },
+  "quest:8376": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8377": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8378": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8379": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8380": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8381": {
+   "title": "جنگ‌افزارهای جنگ"
+  },
+  "quest:8382": {
+   "title": "جنگ‌افزارهای جنگ"
+  }
+ }
+}

@@ -1,0 +1,852 @@
+{
+ "pack": "quest-unknown-23",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-23.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Dreadnaught Breastplate",
+   "fa": "سینه‌پوشِ دردناوت",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Desecrated Breastplate",
+   "fa": "سینه‌پوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Plate",
+   "fa": "زره صفحه‌ای",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Arcanite",
+   "fa": "آرکانیت",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Naxxramas",
+   "fa": "ناکس‌راماس",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Dreadnaught Legplates",
+   "fa": "صفحه‌پای دردناوت",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Desecrated Legplates",
+   "fa": "صفحه‌پای بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Dreadnaught Helmet",
+   "fa": "کلاه‌خودِ دردناوت",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Desecrated Helmet",
+   "fa": "کلاه‌خودِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Nexus Crystal",
+   "fa": "بلور نکسوس",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Dreadnaught Pauldrons",
+   "fa": "شانه‌فولادِ دردناوت",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Desecrated Pauldrons",
+   "fa": "شانه‌فولادِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Dreadnaught Sabatons",
+   "fa": "صندوقهٔ دردناوت",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Desecrated Sabatons",
+   "fa": "صندوقهٔ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Dreadnaught Gauntlets",
+   "fa": "دستکش زرهیِ دردناوت",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Desecrated Gauntlets",
+   "fa": "دستکش زرهیِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Arcanite Bar",
+   "fa": "شمش آرکانیت",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Dreadnaught Waistguard",
+   "fa": "میان‌بندِ دردناوت",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Desecrated Waistguard",
+   "fa": "میان‌بندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Dreadnaught Bracers",
+   "fa": "ساعدبندِ دردناوت",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Desecrated Bracers",
+   "fa": "ساعدبندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Redemption Tunic",
+   "fa": "پیراهنِ نجات",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Desecrated Tunic",
+   "fa": "پیراهنِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Redemption Legguards",
+   "fa": "ساق‌بندِ نجات",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Desecrated Legguards",
+   "fa": "پاافزارِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Redemption Headpiece",
+   "fa": "سرپوشِ نجات",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Desecrated Headpiece",
+   "fa": "سرپوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "points",
+   "fa": "واحد",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Redemption Spaulders",
+   "fa": "شانه‌بندِ نجات",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Desecrated Spaulders",
+   "fa": "شانه‌بندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Redemption Boots",
+   "fa": "چکمهٔ نجات",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Desecrated Boots",
+   "fa": "چکمهٔ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Redemption Handguards",
+   "fa": "دست‌پیچِ نجات",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Desecrated Handguards",
+   "fa": "دست‌پیچِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Redemption Girdle",
+   "fa": "کمربندِ نجات",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Desecrated Girdle",
+   "fa": "کمربندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Redemption Wristguards",
+   "fa": "ساعدبندِ نجات",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Desecrated Wristguards",
+   "fa": "مچ‌بندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Cryptstalker Tunic",
+   "fa": "پیراهنِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Cryptstalker Legguards",
+   "fa": "پاافزارِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Cryptstalker Headpiece",
+   "fa": "سرپوشِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Cryptstalker Spaulders",
+   "fa": "شانه‌بندِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Cryptstalker Boots",
+   "fa": "چکمهٔ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Cryptstalker Handguards",
+   "fa": "دست‌پیچِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Cryptstalker Girdle",
+   "fa": "کمربندِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Cryptstalker Wristguards",
+   "fa": "ساعدبندِ کشتگاه‌خز",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Earthshatter Tunic",
+   "fa": "پیراهنِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "Earthshatter Legguards",
+   "fa": "پاافزارِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Earthshatter Headpiece",
+   "fa": "سرپوشِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Earthshatter Spaulders",
+   "fa": "شانه‌بندِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Mooncloth",
+   "fa": "پارچهٔ ماه",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Earthshatter Boots",
+   "fa": "چکمهٔ زمین‌شکن",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Dreadnaught Breastplate": "سینه‌پوشِ دردناوت",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Desecrated Breastplate": "سینه‌پوشِ بی‌حرمت‌شده",
+  "Plate": "زره صفحه‌ای",
+  "Arcanite": "آرکانیت",
+  "Naxxramas": "ناکس‌راماس",
+  "armor": "زره",
+  "Dreadnaught Legplates": "صفحه‌پای دردناوت",
+  "Desecrated Legplates": "صفحه‌پای بی‌حرمت‌شده",
+  "Dreadnaught Helmet": "کلاه‌خودِ دردناوت",
+  "Desecrated Helmet": "کلاه‌خودِ بی‌حرمت‌شده",
+  "Nexus Crystal": "بلور نکسوس",
+  "Dreadnaught Pauldrons": "شانه‌فولادِ دردناوت",
+  "Desecrated Pauldrons": "شانه‌فولادِ بی‌حرمت‌شده",
+  "Dreadnaught Sabatons": "صندوقهٔ دردناوت",
+  "Desecrated Sabatons": "صندوقهٔ بی‌حرمت‌شده",
+  "Dreadnaught Gauntlets": "دستکش زرهیِ دردناوت",
+  "Desecrated Gauntlets": "دستکش زرهیِ بی‌حرمت‌شده",
+  "Arcanite Bar": "شمش آرکانیت",
+  "Dreadnaught Waistguard": "میان‌بندِ دردناوت",
+  "Desecrated Waistguard": "میان‌بندِ بی‌حرمت‌شده",
+  "Dreadnaught Bracers": "ساعدبندِ دردناوت",
+  "Desecrated Bracers": "ساعدبندِ بی‌حرمت‌شده",
+  "Redemption Tunic": "پیراهنِ نجات",
+  "Desecrated Tunic": "پیراهنِ بی‌حرمت‌شده",
+  "Redemption Legguards": "ساق‌بندِ نجات",
+  "Desecrated Legguards": "پاافزارِ بی‌حرمت‌شده",
+  "Redemption Headpiece": "سرپوشِ نجات",
+  "Desecrated Headpiece": "سرپوشِ بی‌حرمت‌شده",
+  "points": "واحد",
+  "Redemption Spaulders": "شانه‌بندِ نجات",
+  "Desecrated Spaulders": "شانه‌بندِ بی‌حرمت‌شده",
+  "Redemption Boots": "چکمهٔ نجات",
+  "Desecrated Boots": "چکمهٔ بی‌حرمت‌شده",
+  "Redemption Handguards": "دست‌پیچِ نجات",
+  "Desecrated Handguards": "دست‌پیچِ بی‌حرمت‌شده",
+  "Redemption Girdle": "کمربندِ نجات",
+  "Desecrated Girdle": "کمربندِ بی‌حرمت‌شده",
+  "Redemption Wristguards": "ساعدبندِ نجات",
+  "Desecrated Wristguards": "مچ‌بندِ بی‌حرمت‌شده",
+  "Cryptstalker Tunic": "پیراهنِ کشتگاه‌خز",
+  "Cryptstalker Legguards": "پاافزارِ کشتگاه‌خز",
+  "Cryptstalker Headpiece": "سرپوشِ کشتگاه‌خز",
+  "Cryptstalker Spaulders": "شانه‌بندِ کشتگاه‌خز",
+  "Cryptstalker Boots": "چکمهٔ کشتگاه‌خز",
+  "Cryptstalker Handguards": "دست‌پیچِ کشتگاه‌خز",
+  "Cryptstalker Girdle": "کمربندِ کشتگاه‌خز",
+  "Cryptstalker Wristguards": "ساعدبندِ کشتگاه‌خز",
+  "Earthshatter Tunic": "پیراهنِ زمین‌شکن",
+  "battle": "نبرد",
+  "Earthshatter Legguards": "پاافزارِ زمین‌شکن",
+  "Earthshatter Headpiece": "سرپوشِ زمین‌شکن",
+  "Earthshatter Spaulders": "شانه‌بندِ زمین‌شکن",
+  "Mooncloth": "پارچهٔ ماه",
+  "Earthshatter Boots": "چکمهٔ زمین‌شکن"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$B",
+  "7": "$N",
+  "8": "$B",
+  "9": "$N",
+  "10": "$B",
+  "11": "$N",
+  "12": "$B",
+  "13": "$N",
+  "14": "$B",
+  "15": "$N",
+  "16": "$B",
+  "17": "$N",
+  "18": "$B",
+  "19": "$N",
+  "20": "$B",
+  "21": "$N",
+  "22": "$B",
+  "23": "$N",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$C",
+  "28": "$N",
+  "29": "$B",
+  "30": "$N",
+  "31": "$B",
+  "32": "$N",
+  "33": "$B",
+  "34": "$N",
+  "35": "$B",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$B",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$N",
+  "49": "$B",
+  "50": "$B",
+  "51": "$B",
+  "52": "$N",
+  "53": "$B",
+  "54": "$B",
+  "55": "$B",
+  "56": "$N",
+  "57": "$B",
+  "58": "$B",
+  "59": "$B",
+  "60": "$N",
+  "61": "$B",
+  "62": "$B",
+  "63": "$B",
+  "64": "$N",
+  "65": "$B",
+  "66": "$B",
+  "67": "$B",
+  "68": "$N",
+  "69": "$B",
+  "70": "$B",
+  "71": "$B",
+  "72": "$B",
+  "73": "$B",
+  "74": "$B",
+  "75": "$B",
+  "76": "$N",
+  "77": "$B",
+  "78": "$B",
+  "79": "$B",
+  "80": "$B",
+  "81": "$B",
+  "82": "$B",
+  "83": "$B",
+  "84": "$N",
+  "85": "$B",
+  "86": "$B",
+  "87": "$B",
+  "88": "$B",
+  "89": "$B",
+  "90": "$B",
+  "91": "$B",
+  "92": "$N",
+  "93": "$B",
+  "94": "$B",
+  "95": "$B",
+  "96": "$B",
+  "97": "$B",
+  "98": "$B",
+  "99": "$B",
+  "100": "$N",
+  "101": "$B",
+  "102": "$B",
+  "103": "$B",
+  "104": "$B",
+  "105": "$B",
+  "106": "$B",
+  "107": "$B",
+  "108": "$N",
+  "109": "$B"
+ },
+ "rows": {
+  "quest:8993:title": "Gift Giving",
+  "quest:8993:progress:0": "Have you come to deliver a present of love and adoration to your favorite leader?",
+  "quest:8993:completion:0": "Wonderful! Wonderful! I will add this to the pile of other gifts.⟦1⟧⟦2⟧I didn't expect so many! You must truly love your leaders.⟦3⟧⟦4⟧Now, let me just add one more to the count...",
+  "quest:9034:title": "⟦E1⟧",
+  "quest:9034:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E1⟧ if you bring him the following items: 1 ⟦E4⟧, 25 Wartorn ⟦E5⟧ Scraps, 4 ⟦E6⟧ Bars and 2 Nexus Crystals.",
+  "quest:9034:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9034:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9034:completion:0": "Exellent ⟦5⟧ !⟦6⟧ , you got everything just as i asked and now i can make a ⟦E1⟧.",
+  "quest:9036:title": "⟦E9⟧",
+  "quest:9036:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E9⟧ if you bring him the following items: 1 ⟦E10⟧, 20 Wartorn ⟦E5⟧ Scraps, 4 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9036:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9036:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9036:completion:0": "Exellent ⟦7⟧ !⟦8⟧ , you got everything just as i asked and now i can make a ⟦E9⟧.",
+  "quest:9037:title": "⟦E11⟧",
+  "quest:9037:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E11⟧ if you bring him the following items: 1 ⟦E12⟧, 15 Wartorn ⟦E5⟧ Scraps, 5 ⟦E6⟧ Bars and 1 ⟦E13⟧.",
+  "quest:9037:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9037:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9037:completion:0": "Exellent ⟦9⟧ !⟦10⟧ , you got everything just as i asked and now i can make a ⟦E11⟧.",
+  "quest:9038:title": "⟦E14⟧",
+  "quest:9038:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E14⟧ if you bring him the following items: 1 ⟦E15⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9038:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9038:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9038:completion:0": "Exellent ⟦11⟧ !⟦12⟧ , you got everything just as i asked and now i can make a ⟦E14⟧.",
+  "quest:9039:title": "⟦E16⟧",
+  "quest:9039:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E16⟧ if you bring him the following items: 1 ⟦E17⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9039:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9039:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9039:completion:0": "Exellent ⟦13⟧ !⟦14⟧ , you got everything just as i asked and now i can make a ⟦E16⟧.",
+  "quest:9040:title": "⟦E18⟧",
+  "quest:9040:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E18⟧ if you bring him the following items: 1 ⟦E19⟧, 8 Wartorn ⟦E5⟧ Scraps, 1 ⟦E20⟧ and 5 Cured Rugged Hides.",
+  "quest:9040:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9040:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9040:completion:0": "Exellent ⟦15⟧ !⟦16⟧ , you got everything just as i asked and now i can make a ⟦E18⟧.",
+  "quest:9041:title": "⟦E21⟧",
+  "quest:9041:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E21⟧ if you bring him the following items: 1 ⟦E22⟧, 8 Wartorn ⟦E5⟧ Scraps, 1 ⟦E20⟧ and 5 Cured Rugged Hides.",
+  "quest:9041:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9041:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9041:completion:0": "Exellent ⟦17⟧ !⟦18⟧ , you got everything just as i asked and now i can make a ⟦E21⟧.",
+  "quest:9042:title": "⟦E23⟧",
+  "quest:9042:desc:0": "Korfax at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E23⟧ if you bring him the following items: 1 ⟦E24⟧, 6 Wartorn ⟦E5⟧ Scraps, 1 ⟦E20⟧ and 1 ⟦E13⟧.",
+  "quest:9042:details:0": "During your battles with the Scourge in ⟦E7⟧, should you come across desecrated battlements and wartorn plate scraps, return them to me and I shall craft for you a piece of ⟦E8⟧ worn by heroes.",
+  "quest:9042:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9042:completion:0": "Exellent ⟦19⟧ !⟦20⟧ , you got everything just as i asked and now i can make a ⟦E23⟧.",
+  "quest:9043:title": "⟦E25⟧",
+  "quest:9043:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E25⟧ if you bring him the following: 1 ⟦E26⟧, 25 Wartorn ⟦E5⟧ Scraps, 4 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9043:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9043:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9043:completion:0": "Exellent ⟦21⟧ !⟦22⟧ , you got everything just as i asked and now i can make a ⟦E25⟧.",
+  "quest:9044:title": "⟦E27⟧",
+  "quest:9044:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make a pair of ⟦E27⟧ if you bring him the following: 1 ⟦E28⟧, 20 Wartorn ⟦E5⟧ Scraps, 4 ⟦E6⟧ Bars and 2 Nexus Crystals.",
+  "quest:9044:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9044:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9044:completion:0": "Exellent ⟦23⟧ !⟦24⟧ , you got everything just as i asked and now i can make a ⟦E27⟧.",
+  "quest:9045:title": "⟦E29⟧",
+  "quest:9045:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E29⟧ if you bring him the following: 1 ⟦E30⟧, 15 Wartorn ⟦E5⟧ Scraps, 5 ⟦E6⟧ Bars and 2 Cured Rugged Hides.",
+  "quest:9045:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9045:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9045:completion:0": "<Eligor ⟦E31⟧ to his head.>⟦25⟧⟦26⟧Keep it covered, ⟦27⟧.",
+  "quest:9046:title": "⟦E32⟧",
+  "quest:9046:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make a pair of ⟦E32⟧ if you bring him the following: 1 ⟦E33⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ Bars and 2 Nexus Crystals.",
+  "quest:9046:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9046:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9046:completion:0": "Exellent ⟦28⟧ !⟦29⟧ , you got everything just as i asked and now i can make a ⟦E32⟧.",
+  "quest:9047:title": "⟦E34⟧",
+  "quest:9047:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E34⟧ if you bring him the following: 1 ⟦E35⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9047:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9047:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9047:completion:0": "Exellent ⟦30⟧ !⟦31⟧ , you got everything just as i asked and now i can make a ⟦E34⟧.",
+  "quest:9048:title": "⟦E36⟧",
+  "quest:9048:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E36⟧ if you bring him the following: 1 ⟦E37⟧, 8 Wartorn ⟦E5⟧ Scraps, 1 ⟦E20⟧ and 5 Cured Rugged Hides.",
+  "quest:9048:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9048:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9048:completion:0": "Exellent ⟦32⟧ !⟦33⟧ , you got everything just as i asked and now i can make a ⟦E36⟧.",
+  "quest:9049:title": "⟦E38⟧",
+  "quest:9049:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E38⟧ if you bring him the following: 1 ⟦E39⟧, 8 Wartorn ⟦E5⟧ Scraps, 1 ⟦E20⟧ and 3 Nexus Crystals.",
+  "quest:9049:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9049:progress:0": "You got some missing parts for the quest please go and get them all! ",
+  "quest:9049:completion:0": "Exellent ⟦34⟧ !⟦35⟧ , you got everything just as i asked and now i can make a ⟦E38⟧.",
+  "quest:9050:title": "⟦E40⟧",
+  "quest:9050:desc:0": "Commander Eligor Dawnbringer at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E40⟧ if you bring him the following: 1 ⟦E41⟧, 6 Wartorn ⟦E5⟧ Scraps, 1 ⟦E20⟧ and 2 Cured Rugged Hides.",
+  "quest:9050:details:0": "You will find the remnants of our fallen heroes on the corpses of the Lords of ⟦E7⟧. Bring those desecrated keepsakes to me along with wartorn plate scraps and crafting materials capable of revitalizing the cursed ⟦E8⟧ and I shall craft a fine piece of ⟦E8⟧ for you.",
+  "quest:9050:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9050:completion:0": "Exellent ⟦36⟧ !⟦37⟧ , you got everything just as i asked and now i can make a ⟦E40⟧.",
+  "quest:9054:title": "⟦E42⟧",
+  "quest:9054:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E42⟧ if you bring him the following: 1 ⟦E26⟧, 25 Wartorn Chain Scraps, 4 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9054:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦38⟧⟦39⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9054:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9054:completion:0": "Exellent ⟦40⟧ !⟦41⟧ , you got everything just as i asked and now i can make a ⟦E42⟧.",
+  "quest:9055:title": "⟦E43⟧",
+  "quest:9055:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E43⟧ if you bring him the following: 1 ⟦E28⟧, 20 Wartorn Chain Scraps, 3 ⟦E6⟧ Bars and 5 Cured Rugged Hides.",
+  "quest:9055:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦42⟧⟦43⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9055:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9055:completion:0": "Exellent ⟦44⟧ !⟦45⟧ , you got everything just as i asked and now i can make a ⟦E43⟧.",
+  "quest:9056:title": "⟦E44⟧",
+  "quest:9056:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E44⟧ if you bring him the following: 1 ⟦E30⟧, 15 Wartorn Chain Scraps, 4 ⟦E6⟧ Bars and 2 Nexus Crystals.",
+  "quest:9056:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦46⟧⟦47⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9056:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9056:completion:0": "Exellent ⟦48⟧ !⟦49⟧ , you got everything just as i asked and now i can make a ⟦E44⟧.",
+  "quest:9057:title": "⟦E45⟧",
+  "quest:9057:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E45⟧ if you bring him the following: 1 ⟦E33⟧, 12 Wartorn Chain Scraps, 2 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9057:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦50⟧⟦51⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9057:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9057:completion:0": "Exellent ⟦52⟧ !⟦53⟧ , you got everything just as i asked and now i can make a ⟦E45⟧.",
+  "quest:9058:title": "⟦E46⟧",
+  "quest:9058:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E46⟧ if you bring him the following: 1 ⟦E35⟧, 12 Wartorn Chain Scraps, 1 ⟦E20⟧ and 3 Nexus Crystals.",
+  "quest:9058:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦54⟧⟦55⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9058:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9058:completion:0": "Exellent ⟦56⟧ !⟦57⟧ , you got everything just as i asked and now i can make a ⟦E46⟧.",
+  "quest:9059:title": "⟦E47⟧",
+  "quest:9059:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E47⟧ if you bring him the following: 1 ⟦E37⟧, 8 Wartorn Chain Scraps, 1 ⟦E20⟧ and 5 Cured Rugged Hides.",
+  "quest:9059:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦58⟧⟦59⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9059:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9059:completion:0": "Exellent ⟦60⟧ !⟦61⟧ , you got everything just as i asked and now i can make a ⟦E47⟧.",
+  "quest:9060:title": "⟦E48⟧",
+  "quest:9060:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E48⟧ if you bring him the following: 1 ⟦E39⟧, 8 Wartorn Chain Scraps, 1 ⟦E20⟧ and 3 Nexus Crystals.",
+  "quest:9060:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦62⟧⟦63⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9060:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9060:completion:0": "Exellent ⟦64⟧ !⟦65⟧ , you got everything just as i asked and now i can make a ⟦E48⟧.",
+  "quest:9061:title": "⟦E49⟧",
+  "quest:9061:desc:0": "Huntsman Leopold at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E49⟧ if you bring him the following: 1 ⟦E41⟧, 6 Wartorn Chain Scraps, 1 ⟦E20⟧ and 2 Cured Rugged Hides.",
+  "quest:9061:details:0": "I have discovered a use for the carapace of the crypt fiend. I am able to fashion an extremely light and very deadly set of ⟦E8⟧ by combining the fragments with some of the desecrated magical armors lost in ⟦E7⟧.⟦66⟧⟦67⟧Bring me the items I require and I shall fashion for you a suit of ⟦E8⟧ the likes of which has never before been seen in our world!",
+  "quest:9061:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9061:completion:0": "Exellent ⟦68⟧ !⟦69⟧ , you got everything just as i asked and now i can make a ⟦E49⟧.",
+  "quest:9068:title": "⟦E50⟧",
+  "quest:9068:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make an ⟦E50⟧ if you bring him the following: 1 ⟦E26⟧, 25 Wartorn Chain Scraps, 4 ⟦E6⟧ Bars and 3 Cured Rugged Hides.",
+  "quest:9068:details:0": "Would you honor me by returning the ⟦E8⟧ of those that fell in the defense of these lands?⟦70⟧⟦71⟧The ⟦E8⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E8⟧ scraps, the desecrated ⟦E8⟧ can be renewed and worn for ⟦E51⟧ once more.⟦72⟧⟦73⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦74⟧⟦75⟧Search ⟦E7⟧.",
+  "quest:9068:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9068:completion:0": "Exellent ⟦76⟧ !⟦77⟧ , you got everything just as i asked and now i can make a ⟦E50⟧.",
+  "quest:9069:title": "⟦E52⟧",
+  "quest:9069:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E52⟧ if you bring him the following: 1 ⟦E28⟧, 20 Wartorn Chain Scraps, 3 ⟦E6⟧ Bars and 5 Cured Rugged Hides.",
+  "quest:9069:details:0": "Would you honor me by returning the ⟦E8⟧ of those that fell in the defense of these lands?⟦78⟧⟦79⟧The ⟦E8⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E8⟧ scraps, the desecrated ⟦E8⟧ can be renewed and worn for ⟦E51⟧ once more.⟦80⟧⟦81⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦82⟧⟦83⟧Search ⟦E7⟧.",
+  "quest:9069:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9069:completion:0": "Exellent ⟦84⟧ !⟦85⟧ , you got everything just as i asked and now i can make a ⟦E52⟧.",
+  "quest:9070:title": "⟦E53⟧",
+  "quest:9070:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make an ⟦E53⟧ if you bring him the following: 1 ⟦E30⟧, 15 Wartorn Chain Scraps, 4 ⟦E6⟧ Bars and 2 Nexus Crystals.",
+  "quest:9070:details:0": "Would you honor me by returning the ⟦E8⟧ of those that fell in the defense of these lands?⟦86⟧⟦87⟧The ⟦E8⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E8⟧ scraps, the desecrated ⟦E8⟧ can be renewed and worn for ⟦E51⟧ once more.⟦88⟧⟦89⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦90⟧⟦91⟧Search ⟦E7⟧.",
+  "quest:9070:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9070:completion:0": "Exellent ⟦92⟧ !⟦93⟧ , you got everything just as i asked and now i can make a ⟦E53⟧.",
+  "quest:9071:title": "⟦E54⟧",
+  "quest:9071:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E54⟧ if you bring him the following: 1 ⟦E33⟧, 12 Wartorn Chain Scraps, 2 ⟦E6⟧ Bars and 2 ⟦E55⟧.",
+  "quest:9071:details:0": "Would you honor me by returning the ⟦E8⟧ of those that fell in the defense of these lands?⟦94⟧⟦95⟧The ⟦E8⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E8⟧ scraps, the desecrated ⟦E8⟧ can be renewed and worn for ⟦E51⟧ once more.⟦96⟧⟦97⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦98⟧⟦99⟧Search ⟦E7⟧.",
+  "quest:9071:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9071:completion:0": "Exellent ⟦100⟧ !⟦101⟧ , you got everything just as i asked and now i can make a ⟦E54⟧.",
+  "quest:9072:title": "⟦E56⟧",
+  "quest:9072:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E56⟧ if you bring him the following: 1 ⟦E35⟧, 12 Wartorn Chain Scraps, 1 ⟦E20⟧ and 3 Nexus Crystals.",
+  "quest:9072:details:0": "Would you honor me by returning the ⟦E8⟧ of those that fell in the defense of these lands?⟦102⟧⟦103⟧The ⟦E8⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E8⟧ scraps, the desecrated ⟦E8⟧ can be renewed and worn for ⟦E51⟧ once more.⟦104⟧⟦105⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦106⟧⟦107⟧Search ⟦E7⟧.",
+  "quest:9072:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9072:completion:0": "Exellent ⟦108⟧ !⟦109⟧ , you got everything just as i asked and now i can make a ⟦E56⟧."
+ },
+ "context": {
+  "quest:8993": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Kwee Q. Peddlefeet"
+  },
+  "quest:9034": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9036": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9037": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9038": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9039": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9040": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9041": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9042": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Korfax, Champion of the Light",
+   "turner": "Korfax, Champion of the Light"
+  },
+  "quest:9043": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9044": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9045": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9046": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9047": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9048": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9049": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9050": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Commander Eligor Dawnbringer",
+   "turner": "Commander Eligor Dawnbringer"
+  },
+  "quest:9054": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9055": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9056": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9057": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9058": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9059": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9060": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9061": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntsman Leopold",
+   "turner": "Huntsman Leopold"
+  },
+  "quest:9068": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9069": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9070": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9071": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9072": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  }
+ }
+}

@@ -1,0 +1,919 @@
+{
+ "pack": "quest-the-barrens-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-the-barrens-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E2": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Spirit",
+   "fa": "روح",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Parts",
+   "fa": "قطعات",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Chen's Empty Keg",
+   "fa": "چلیکِ خالیِ چِن",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Stormstout",
+   "fa": "آبجوی استورم‌استاوت",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Thunder Lizard Horn",
+   "fa": "شاخ سوسمار تندر",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Brewmaster",
+   "fa": "استاد دم‌نوش",
+   "kind": "cls"
+  },
+  "E11": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Fungal Spores",
+   "fa": "هاگ‌های قارچی",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Rendered Spores",
+   "fa": "هاگ‌های آب‌کرده",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Apothecary Zamah",
+   "fa": "عصارساز زاما",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Cut",
+   "fa": "برش",
+   "kind": "sp"
+  },
+  "E19": {
+   "en": "Kreenig Snarlsnout's Tusk",
+   "fa": "نیش کرینیگ اسنارل‌اسنوت",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "Prowler Claws",
+   "fa": "چنگال‌های پلنگ",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Sergra Darkthorn",
+   "fa": "سرگرا دارک‌تورن",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Mura Runetotem",
+   "fa": "مورا رون‌توتِم",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Nugget Slugs",
+   "fa": "ساچمه‌های ناگت",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Wenikee Boltbucket",
+   "fa": "ونیکِی بولت‌باکت",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Samophlange",
+   "fa": "سموفلانگ",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Regthar Deathgate",
+   "fa": "رگ‌ثار دِث‌گیت",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Tauren",
+   "fa": "تورن",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Echeyakee's Hide",
+   "fa": "پوست اچه‌یاک",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Echeyakee",
+   "fa": "اِچی‌اَکِی",
+   "kind": "qs"
+  },
+  "E39": {
+   "en": "stealth",
+   "fa": "مخفی‌کاری",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Shipment of Boots",
+   "fa": "مرسولهٔ چکمه‌ها",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Telescopic Lens",
+   "fa": "عدسی تلسکوپی",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Southsea Freebooters",
+   "fa": "راهزنان ساوت‌سی",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "charges",
+   "fa": "شارژ",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "Verog's Head",
+   "fa": "سر وروگ",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Verog the Dervish",
+   "fa": "وروگ دریوزده",
+   "kind": "qs"
+  },
+  "E47": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E48": {
+   "en": "Ignition Key",
+   "fa": "کلید استارت",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Raptor Horns",
+   "fa": "شاخ‌های رپتور",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Cats Eye Emerald",
+   "fa": "زمرد چشم‌گربه",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Wharfmaster Dizzywig",
+   "fa": "لنگرگاه‌دار دیزی‌ویگ",
+   "kind": "qs"
+  },
+  "E53": {
+   "en": "Thunder Lizard Blood",
+   "fa": "خون سوسمار تندر",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Jorn Skyseer",
+   "fa": "یورن اسکای‌سیر",
+   "kind": "qs"
+  },
+  "E55": {
+   "en": "Stolen Silver",
+   "fa": "نقرهٔ دزدیده‌شده",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Raptor",
+   "fa": "رپتور",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "battle": "نبرد",
+  "blessing": "برکت",
+  "enemies": "دشمنان",
+  "fear": "ترس",
+  "Spirit": "روح",
+  "Parts": "قطعات",
+  "Chen's Empty Keg": "چلیکِ خالیِ چِن",
+  "Stormstout": "آبجوی استورم‌استاوت",
+  "Thunder Lizard Horn": "شاخ سوسمار تندر",
+  "Brewmaster": "استاد دم‌نوش",
+  "Barrens": "بارنز",
+  "Fungal Spores": "هاگ‌های قارچی",
+  "Thunder Bluff": "تاندر بلاف",
+  "requires": "نیازمند",
+  "Forsaken": "مطرودان",
+  "Rendered Spores": "هاگ‌های آب‌کرده",
+  "Apothecary Zamah": "عصارساز زاما",
+  "Cut": "برش",
+  "Kreenig Snarlsnout's Tusk": "نیش کرینیگ اسنارل‌اسنوت",
+  "Durotar": "دوروتار",
+  "threat": "تیت",
+  "Prowler Claws": "چنگال‌های پلنگ",
+  "Sergra Darkthorn": "سرگرا دارک‌تورن",
+  "Mura Runetotem": "مورا رون‌توتِم",
+  "undead": "مرده‌متحرک",
+  "allies": "متحدان",
+  "heal": "شفا",
+  "Nugget Slugs": "ساچمه‌های ناگت",
+  "Wenikee Boltbucket": "ونیکِی بولت‌باکت",
+  "Samophlange": "سموفلانگ",
+  "Head": "سر",
+  "Regthar Deathgate": "رگ‌ثار دِث‌گیت",
+  "Tauren": "تورن",
+  "Back": "شنل",
+  "strike": "ضربه",
+  "Horde": "هورد",
+  "Echeyakee's Hide": "پوست اچه‌یاک",
+  "Echeyakee": "اِچی‌اَکِی",
+  "stealth": "مخفی‌کاری",
+  "Shipment of Boots": "مرسولهٔ چکمه‌ها",
+  "Telescopic Lens": "عدسی تلسکوپی",
+  "Southsea Freebooters": "راهزنان ساوت‌سی",
+  "charges": "شارژ",
+  "Use": "استفاده",
+  "Verog's Head": "سر وروگ",
+  "Verog the Dervish": "وروگ دریوزده",
+  "Travel": "سفر",
+  "Ignition Key": "کلید استارت",
+  "Raptor Horns": "شاخ‌های رپتور",
+  "Ashenvale": "اَشِن‌ویل",
+  "Cats Eye Emerald": "زمرد چشم‌گربه",
+  "Wharfmaster Dizzywig": "لنگرگاه‌دار دیزی‌ویگ",
+  "Thunder Lizard Blood": "خون سوسمار تندر",
+  "Jorn Skyseer": "یورن اسکای‌سیر",
+  "Stolen Silver": "نقرهٔ دزدیده‌شده",
+  "Raptor": "رپتور"
+ },
+ "tokens": {
+  "1": "<snort>",
+  "2": "$r",
+  "3": "$B",
+  "4": "$B",
+  "5": "<snort>",
+  "6": "$R",
+  "7": "<snort>",
+  "8": "$B",
+  "9": "$B",
+  "10": "<snort>",
+  "11": "<snort>",
+  "12": "<snort>",
+  "13": "<snort>",
+  "14": "$B",
+  "15": "$B",
+  "16": "<snort>",
+  "17": "<snort>",
+  "18": "$R",
+  "19": "$B",
+  "20": "$B",
+  "21": "<snort>",
+  "22": "<snort>",
+  "23": "<snort>",
+  "24": "<snort>",
+  "25": "$B",
+  "26": "$B",
+  "27": "<snort>",
+  "28": "$R",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$C",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$N",
+  "40": "$n",
+  "41": "$N",
+  "42": "$C",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$n",
+  "48": "$n",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$C",
+  "53": "$N",
+  "54": "$N",
+  "55": "$R",
+  "56": "$N",
+  "57": "$N",
+  "58": "$N",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$N",
+  "63": "$N",
+  "64": "$N",
+  "65": "$N",
+  "66": "$N",
+  "67": "$N"
+ },
+ "rows": {
+  "quest:5044:title": "Wisdom of Agamaggan",
+  "quest:5044:progress:0": "The shaman and geomancers of the quilboar tribes ⟦1⟧ call upon the strength of Agamaggan to help them in ⟦E1⟧ and in their rituals, ⟦2⟧.⟦3⟧⟦4⟧If you too wish the added power of Agamaggan's ⟦E2⟧ with your spells, then bring me 4 blood shards and Mangletooth will aid you. ⟦5⟧",
+  "quest:5044:completion:0": "Your ⟦E3⟧ should ⟦E4⟧ you even more, ⟦6⟧. ⟦7⟧⟦8⟧⟦9⟧Tell Mangletooth tales of your cunning in ⟦E1⟧ when next we meet--be it in this life, or the next. ⟦10⟧",
+  "quest:5045:title": "Rising ⟦E5⟧",
+  "quest:5045:progress:0": "Warriors of all types ⟦11⟧ have need of a strong spirit. It drives you to greater feats when all hope has been lost. This is not unknown to the ⟦12⟧ Razormane. We are a spiritual tribe--we are more proud of our connection to Agamaggan than our prowess ⟦13⟧ in ⟦E1⟧.⟦14⟧⟦15⟧Bring me 4 blood shards and I will bless your spirit for ⟦E1⟧. ⟦16⟧",
+  "quest:5045:completion:0": "Our greatest warriors, and our greatest ⟦17⟧ shamans would envy your will, ⟦18⟧.⟦19⟧⟦20⟧Defeat more of the Bristlebacks knowing that they cannot stop you! ⟦21⟧",
+  "quest:5046:title": "Razorhide",
+  "quest:5046:progress:0": "All those who ⟦22⟧ enter ⟦E1⟧ have need of protection. Their bones must be strong. Their skin tough. ⟦23⟧ My tribe knows this as well, and to add to the natural protection our quills and hide give us, ⟦24⟧ we often call upon Agamaggan to protect us from harm before we go to war.⟦25⟧⟦26⟧Bring me 4 blood shards ⟦27⟧ and I will grant you the same protection.",
+  "quest:5046:completion:0": "Go to war, ⟦28⟧.",
+  "quest:97253:title": "⟦E6⟧ and Pieces",
+  "quest:97253:obj:0": "Collect 5 Handfuls of Complicated ⟦E6⟧ from the upper pirate camp south of Ratchet, then return to Wrenix the Wretched in Ratchet.",
+  "quest:819:obj:0": "Find someone who knows about ⟦E7⟧.",
+  "quest:819:details:0": "A small placard on one of the ends of the keg says,",
+  "quest:819:details:1": "B\"Chen ⟦E8⟧-",
+  "quest:819:details:2": "May your spirit be raised and always raise your spirits.\"",
+  "quest:819:progress:0": "Yes?",
+  "quest:819:completion:0": "Well, I'll be...",
+  "quest:819:completion:1": "This was one of Chen ⟦E8⟧'s kegs. He traveled with Rexxar a long time ago. I haven't seen or heard about him in a kodo's age. I appreciate you bringing this to me, ⟦29⟧.",
+  "quest:821:obj:0": "Bring 5 Savannah Lion Tusks, 5 Plainstrider Kidneys, and 1 ⟦E9⟧ to ⟦E10⟧ Drohn in Ratchet.",
+  "quest:821:details:0": "Would you like a taste of Chen's namesake? Ahh, the stormstout is a mighty brew. Chen taught the recipe to my mentor, and my mentor passed it on to me. I'll need you to get me a few things, but I can tell you this: the kick is worth it.",
+  "quest:821:details:1": "Bring me 5 savannah lion tusks from any savannah lion, 5 plainstrider kidneys from any plainstrider, and 1 thunder lizard horn from any species of thunder lizard. That should do the trick nicely.",
+  "quest:821:details:2": "You can find these ingredients throughout the ⟦E11⟧.",
+  "quest:821:progress:0": "How's the search going?",
+  "quest:821:completion:0": "Haha... I never thought I'd make more of this stuff ever again.",
+  "quest:821:completion:1": "You've stirred in me a great sense of nostalgia, ⟦30⟧. Kind of reminds me of the last time I blacked out from too much trogg ale. Thank you. The memories warm my stomach.",
+  "quest:848:obj:0": "Bring 4 ⟦E12⟧ to Apothecary Helbrim at the Crossroads.",
+  "quest:848:details:0": "The oases of the ⟦E11⟧ hide a mystery. Life energy flows from their waters, invigorating the plants and beasts that drink it.",
+  "quest:848:details:1": "Invigorating, and altering.",
+  "quest:848:details:2": "There is a mushroom that grows near these oases. Its spores hold properties that we, the apothecaries of Lordaeron, find useful.",
+  "quest:848:details:3": "Bring me these spores and you will earn our gratitude.",
+  "quest:848:progress:0": "Do you have the spores, ⟦31⟧? There is a concoction I must send to my associate in ⟦E13⟧, which ⟦E14⟧ the spores...",
+  "quest:848:completion:0": "Ah, yes. These are good specimens. Potent.",
+  "quest:848:completion:1": "I am ⟦E15⟧, and we honor our contracts. Here is your reward, ⟦32⟧.",
+  "quest:853:obj:0": "Bring the ⟦E16⟧ to ⟦E17⟧ in ⟦E13⟧, before the time limit is up.",
+  "quest:853:details:0": "I have rendered the spores you gave me into an emulsion. I must now send it to my associate, ⟦E17⟧. If you were to carry this to her, she can offer you something from our stores of alchemical goods.",
+  "quest:853:details:1": "She is in the Pools of Vision, a cave beneath the shamans of ⟦E13⟧. The path to this cave is well hidden, but you may find it on the ⟦E5⟧ Rise bluff.",
+  "quest:853:details:2": "Do hurry. This emulsion will maintain its potency for only a short time, and must be resealed and processed before then.",
+  "quest:853:progress:0": "You have something from Apothecary Helbrim?",
+  "quest:853:completion:0": "Ah, the spores from the ⟦E11⟧ that Helbrim was gathering. He garnered your aid in delivering them? Good.",
+  "quest:853:completion:1": "And the emulsion is still potent, so you must have wasted no time in the delivery. Well done, ⟦33⟧.",
+  "quest:867:obj:0": "Collect 8 Witchwing talons.",
+  "quest:867:obj:1": "Return them to Darsok Swiftdagger at the Crossroads.",
+  "quest:867:details:0": "The blasted harpies have been ravaging our caravan supplies for too long. It's time we slit a few of their throats and diminished their numbers.",
+  "quest:867:details:1": "I've been snooping around their nests and figured out who leads who. The most devastating attack will destroy a good section of their lower chain of command and then we can work our way to the top.",
+  "quest:867:details:2": "I'll start you off slow, take out Witchwing Harpies and Witchwing Roguefeathers in the Northwest and bring me 8 Witchwing talons. That should be a good start...",
+  "quest:867:progress:0": "⟦E18⟧ up enough of them yet? Keep slicing and taking trophies. I want 8 Witchwing talons.",
+  "quest:867:completion:0": "Oh, these are nice. Real nice... Good job, ⟦34⟧. I look forward to seeing more of your work in the future.",
+  "quest:872:obj:0": "Kill 8 Razormane Geomancers, 8 Razormane Defenders, and Kreenig Snarlsnout.",
+  "quest:872:obj:1": "Then bring ⟦E19⟧ to Thork at the Crossroads.",
+  "quest:872:details:0": "One of my scouts witnessed an attack on a caravan from ⟦E20⟧, ⟦35⟧. The culprits are indeed the Razormane tribe of quilboars. One of the quilboars in particular is leading the raids: Kreenig Snarlsnout. He was seen northeast of here, just south of the road from ⟦E20⟧. If the ⟦E21⟧ is to be ended, then Kreenig must die.",
+  "quest:872:details:1": "To be sure the attacks cease, though, I say we add insult to their injury. Kill Kreenig along with more of their tribe, and return to me when you have his tusk.",
+  "quest:872:progress:0": "⟦E18⟧ off the head of their leader, and chaos ensues, ⟦36⟧. Learn this lesson well. It will aid you in the future.⟦37⟧⟦38⟧The boars will flounder without direction, and we will be able to take back the ⟦E11⟧.",
+  "quest:872:completion:0": "Well done, ⟦39⟧. With Kreenig's death, there will be a definite decline in the attacks on our caravans.",
+  "quest:872:completion:1": "Your people should be proud to count you among them.",
+  "quest:903:obj:0": "Collect 7 ⟦E22⟧ from Savannah Prowlers for ⟦E23⟧ in the Crossroads.",
+  "quest:903:details:0": "Now it's time to go after something that really bites. The prowlers of the ⟦E11⟧ are a tough breed. Tough, resourceful, sly... and deadly. You'll find them among the tall grasses. You'll find many to the southwest of the Crossroads.",
+  "quest:903:details:1": "Be wary as you hunt them, ⟦40⟧, or you may find yourself no longer the predator, but instead the prey.",
+  "quest:903:progress:0": "How goes your hunt, ⟦41⟧? Have you found the prowlers?",
+  "quest:903:completion:0": "Ah, I see you've been busy, lurking in the grasses and hunting prowlers. Do you think, then, it is time to face a champion among them?",
+  "quest:3301:obj:0": "Speak with ⟦E24⟧ in the Sepulcher.",
+  "quest:3301:details:0": "My clanmate, ⟦E24⟧, traveled to Silverpine so that she might aid our ⟦E25⟧ ⟦E26⟧. Silverpine is an ailing forest, a dying forest, and it was Mura's hope to bring it new life. Perhaps the strange life found here in the ⟦E11⟧ can help her work in Silverpine.",
+  "quest:3301:details:1": "Take a sample of the shells you gathered, and bring it to Mura in Silverpine. She is staying at the Sepulcher. With luck, studying the shell will give her the insight she needs to ⟦E27⟧ that dying place.",
+  "quest:3301:progress:0": "I can smell the dust of the ⟦E11⟧ on you, ⟦42⟧. You have traveled far.",
+  "quest:3301:completion:0": "Ah, what is this? This shell has an inner glow, as if it still pulses with life. Amazing! I must study it further.",
+  "quest:3301:completion:1": "Thank you, ⟦43⟧. With luck, this shell will hold a secret I can use to aid the poor land of Silverpine.",
+  "quest:3922:obj:0": "Bring 15 ⟦E28⟧ to ⟦E29⟧ in the ⟦E11⟧.",
+  "quest:3922:details:0": "I want to fix this samophlange, but to do that I'm going to need some supplies. I ran out of seventeen-point-five gauge nugget slugs and I'm going to need a bunch of those for the work ahead.",
+  "quest:3922:details:1": "The closest place to get them is the Sludge Fen to the east. The Venture Company usually keeps them in their tool buckets. Go to the Sludge Fen and look in the tool buckets you find there, then return to me when you've gathered enough nugget slugs.",
+  "quest:3922:progress:0": "Do you have the nugget slugs, ⟦44⟧? I've been eyeing this ⟦E30⟧ and I can't wait to tinker with it.",
+  "quest:3922:completion:0": "Great, you got them! Now I can get to work...",
+  "quest:850:obj:0": "Bring Barak's ⟦E31⟧ to ⟦E32⟧, west of the Crossroads.",
+  "quest:850:details:0": "The centaurs have plagued the ⟦E33⟧ for years. And recently, the Kolkar centaurs of the ⟦E11⟧ have grown into a real ⟦E21⟧. Normally they were disorganized in these lands, but new leaders have risen among them. Rallying them.",
+  "quest:850:details:1": "To preserve our holdings here, these centaur leaders must be destroyed.",
+  "quest:850:details:2": "Bring me the head of Barak Kodobane. He camps near the Forgotten Pools to the north.",
+  "quest:850:details:3": "Defeat him, then return to me.",
+  "quest:850:progress:0": "Hello, ⟦45⟧. Do you have Barak's ⟦E31⟧ for me?",
+  "quest:850:completion:0": "Well done, ⟦46⟧. The centaur are low, brutish creatures, but a few have the wit and vision to lead. And those are the most dangerous.",
+  "quest:850:completion:1": "Barak was such a centaur. It is good that he is dead.",
+  "quest:875:obj:0": "Collect 6 Harpy Lieutenant Rings from Witchwing Slayers and return them to Darsok Swiftdagger at the Crossroads.",
+  "quest:875:details:0": "Hahaha, ⟦47⟧. ⟦E34⟧ for more? Good, I like to hear that.",
+  "quest:875:details:1": "This time I want you to assassinate some of the harpy lieutenants in the Dry Hills. Only Witchwing Slayers can be lieutenants, and you can tell them apart by the rings they carry. They are a nasty bunch, but they lead some of the underlings in that area. Taking out 6 of them will be a decisive ⟦E35⟧ against their matriarchy.",
+  "quest:875:details:2": "Make sure they die painfully, ⟦48⟧. We want those harpy wenches to know the idiocy of picking fights with the ⟦E36⟧.",
+  "quest:875:progress:0": "Do you have 6 Harpy Lieutenant Rings yet? Justice must be dealt to them for their vicious attacks on the ⟦E36⟧.",
+  "quest:875:completion:0": "Excellent work my friend. I think you'll go far within the ⟦E36⟧.",
+  "quest:877:obj:0": "Return to Tonga at The Crossroads, after investigating the Stagnant Oasis.",
+  "quest:877:details:0": "Like the one you found at the Forgotten Pools, there may be fissures at the other oases in the ⟦E11⟧. If so, then perhaps the fissures are the oases' source of life.",
+  "quest:877:details:1": "We must test this.",
+  "quest:877:details:2": "Here, take these seeds. They are dead and infertile, but take them to the Stagnant Oasis to the southeast. If there is a fissure there, then place the seeds within it...and observe.",
+  "quest:877:progress:0": "Have you been to the Stagnant Oasis? Was there a fissure beneath its waters?",
+  "quest:877:completion:0": "Your findings are amazing! The seeds I gave you were dried, and dead. Whatever rests under these oases can create life from nothing!",
+  "quest:877:completion:1": "We must study this more...",
+  "quest:880:obj:0": "Bring 8 Altered Snapjaw Shells to Tonga Runetotem at the Crossroads.",
+  "quest:880:details:0": "Your findings are incredible, ⟦49⟧. These oases hold properties that must come from an outside source. Or perhaps an inside one.",
+  "quest:880:details:1": "I want to know how these fissures are affecting the beasts who drink from the oases' water.",
+  "quest:880:details:2": "Hunt oasis snapjaws at the Lushwater and Stagnant Oases. Bring me their shells so I may examine them.",
+  "quest:880:progress:0": "How goes your collection? Did you get the shells?",
+  "quest:880:completion:0": "Thank you, ⟦50⟧. Studying the beasts of an area can tell much about the area itself. We shall see what tale these shells tell.",
+  "quest:880:completion:1": "Please accept my gratitude for your aid ... and perhaps you can use these coins. I find that I do not need them.",
+  "quest:881:obj:0": "Bring ⟦E37⟧ to ⟦E23⟧ at the Crossroads.",
+  "quest:881:details:0": "Whitemist, ⟦E38⟧ in the ⟦E33⟧ tongue, is the king of the savannah cats. He hunts with such ⟦E39⟧, they say he's like a thin, white mist on the earth. And he kills so fast his prey have no time for ⟦E4⟧, or pain.",
+  "quest:881:details:1": "The ⟦E33⟧ say he is both mercy and death.",
+  "quest:881:details:2": "You will learn if that's true, for I now set you on the path to hunt ⟦E38⟧. His lair is northeast of the Crossroads, among the bones of giant Kodo",
+  "quest:881:details:3": "Go. Blow this horn when you reach his lair. Blow the horn, and he will come.",
+  "quest:881:progress:0": "The great cat calls to you, ⟦51⟧.",
+  "quest:881:completion:0": "You've beaten ⟦E38⟧, and though his days of hunting are over... his spirit is with you. He will show you the strength found in subtlety, and the honor in mercy.",
+  "quest:881:completion:1": "Your path is still long, ⟦52⟧. Let's hope you stride it well.",
+  "quest:888:obj:0": "Retrieve the ⟦E40⟧ and ⟦E41⟧ for Gazlowe in Ratchet.",
+  "quest:888:details:0": "While I'd like to recover all my goods, I'm sure that's not possible. Still, there's a few things that I absolutely must have!",
+  "quest:888:details:1": "As you see, my observatory is ready to go, but it needs the smaller of the two lenses. The first arrived by caravan from ⟦E20⟧, but the second was bound by ship, and never arrived. Also, I never got my boot shipment from Drizzlik in Booty Bay!",
+  "quest:888:details:2": "⟦E31⟧ down to the pirate camp and see if you can find them.",
+  "quest:888:progress:0": "Did you find my things, ⟦53⟧?",
+  "quest:888:completion:0": "It's a relief to get all this stuff back, so thanks for your help, ⟦54⟧. You know, I could use a ⟦55⟧ like you to help out with my operation here. If you're ever looking for work, don't forget about how well Gazlowe pays for service!",
+  "quest:895:obj:0": "Bring the head of Baron Longshore to Gazlowe in Ratchet.",
+  "quest:895:details:0": "WANTED!",
+  "quest:895:details:1": "Baron Longshore, Captain of the Heedless",
+  "quest:895:details:2": "Captain Longshore of Gilneas leads vessels of the ⟦E42⟧, and is wanted on ⟦E43⟧ of piracy. Remains must be in identifiable condition!",
+  "quest:895:details:3": "B-- Gazlowe",
+  "quest:895:progress:0": "What's happening? Something I can help you with? Goods to ship, perhaps an engineering job?",
+  "quest:895:completion:0": "Ahhhh! That sort of business. You know, I saw the Heedless once on the open seas. Fearsome ship, or was that boat... those sailors are so particular!",
+  "quest:895:completion:1": "Anyways, watching her glide across the water was quite a sight to see. I'm glad her infamous captain will trouble my ships no longer.",
+  "quest:902:obj:0": "Return the ⟦E30⟧ to Sputtervalve in Ratchet.",
+  "quest:902:details:0": "Pulling open the face of the control console reveals a dense jumble of wires, tubing and other strange mechanical objects--most of which seem to serve no practical purpose. Pushing them aside and digging deeper into the console, you find the samophlange. A tug removes it from its housing.",
+  "quest:902:progress:0": "Oh, you're back, ⟦56⟧! Do you have the samophlange?",
+  "quest:902:completion:0": "This is... er... interesting... yes. I'll have it sent along to the Tinkers' Union headquarters in Undermine. I'm sure after some careful dissection and research, they'll be able to make some sense of it.",
+  "quest:902:completion:1": "But, perhaps I'll have a little look myself first...",
+  "quest:905:obj:0": "Kill Sunscale raptors and collect their feathers. ⟦E44⟧ the feathers on the 3 Scytheclaw nests. Return to ⟦E23⟧ in the Crossroads.",
+  "quest:905:details:0": "Now, ⟦57⟧, the hunt deepens. Now you must defeat your prey, and then find your way to its lair.",
+  "quest:905:details:1": "Hunt the sunscale raptors to the south. Slay them and remove the feathers they wear. Place the feathers on the scytheclaw nests southwest of the Stagnant Oasis. Show their brethren you do not ⟦E4⟧ them!",
+  "quest:905:progress:0": "Have you been to the nests, ⟦58⟧?",
+  "quest:905:completion:0": "Is your task finished? Ponder the life of the Scytheclaw as you do it. There are important lessons within every creature's lifespawn.",
+  "quest:905:completion:1": "Some of the others believe I have been too heavy handed in my lesson. I know that you are simply following my orders, but I want you to consider the life of the creatures you are slaughtering.",
+  "quest:905:completion:2": "Though they are at times a nuisance, they only become threatening when we seek their slaughter. This days defilement will cause us more trouble than it will solve problems...",
+  "quest:851:obj:0": "Bring ⟦E45⟧ to ⟦E32⟧, west of the Crossroads.",
+  "quest:851:details:0": "The centaur ⟦E46⟧ wanders the ⟦E11⟧, and will be difficult to find. But he is based at the centaur command tent at the Stagnant Oasis to the southeast. It may be possible to draw him to you.",
+  "quest:851:details:1": "⟦E47⟧ to the Stagnant Oasis to the southeast and attack centaur near the command tent. It will be dangerous, but if you can kill enough centaur then they should raise an alarm. And Verog will come.",
+  "quest:851:details:2": "Bring me his head and I will place it with Barak Kodobane's.",
+  "quest:851:progress:0": "Did you find Verog, ⟦59⟧?",
+  "quest:851:completion:0": "Very good. You must have really stirred up those centaur -- our guards spotted activity down near the Stagnant Oasis, which was probably you.",
+  "quest:851:completion:1": "You should be proud of your deed, ⟦60⟧. There is much bravery in you.",
+  "quest:858:obj:0": "Get the ⟦E48⟧ and bring it to Wizzlecrank.",
+  "quest:858:details:0": "I don't suppose Sputtervalve sent you? I'm in a bind here. I hopped in without realizing that I need a key to unlock the shredder's movement column. One of the other shredder operators asked me if everything was okay, and I panicked! Instead of telling him that I was missing my key, I told him there was some sort of mechanical problem.",
+  "quest:858:details:1": "We need to get out of here on the double! Go up to the control room at the top of the derrick, the supervisor should have a key for this shredder.",
+  "quest:858:details:2": "Help me out here!",
+  "quest:858:progress:0": "Quick, we need to get out of here before someone gets suspicious!",
+  "quest:858:completion:0": "Yep, this looks like the right key. Let me just make sure I know how to work this thing...",
+  "quest:858:completion:1": "Hmm... rotation control... This regulates speed and stability... fine arm movement control. Just look at this! I can't believe the Venture Company could design something this much better than ours. I've got to get this back to Ratchet!",
+  "quest:863:obj:0": "Protect Wizzlecrank and the stolen goblin shredder on the way to Sputtervalve in Ratchet.",
+  "quest:863:details:0": "I suppose I'll learn as we go... Couldn't be too hard. Just some buttons here, and a lever or two... Well, are you ready to go?",
+  "quest:863:progress:0": "Can I help you?",
+  "quest:863:completion:0": "Hopefully we'll be able to get something of value from the wrecked shredder prototype... my time's running out! I'll dispatch a salvage team to Wizzlecrank's location on the double.",
+  "quest:863:completion:1": "Oh, let me give you something for your trouble, too.",
+  "quest:865:obj:0": "Gather 5 Intact ⟦E49⟧ from Sunscale Scytheclaws, and bring them to Mebok Mizzyrix in Ratchet.",
+  "quest:865:details:0": "The raptors of the ⟦E11⟧ are smarter than raptors in other lands. And I think all that smarts is hiding in their horns! If so, then I could grind their horns into powder and use it to make \"smart drinks.\" I could sell them for a fortune!!!",
+  "quest:865:details:1": "And you can help me. Find me intact raptor horns from sunscale scytheclaws. They roam in the southern ⟦E11⟧, and in the northern ⟦E11⟧ near the border of ⟦E50⟧ Forest.",
+  "quest:865:progress:0": "Did you get the horns, ⟦61⟧? Those things are going to make me a fortune!",
+  "quest:865:completion:0": "Great, you got them! Now I just need to ground them down and mix them with some wine, and...",
+  "quest:896:obj:0": "Retrieve the ⟦E51⟧ from one of the Venture Co. Overseers or Enforcers for ⟦E52⟧ at Ratchet.",
+  "quest:896:details:0": "Being Wharfmaster of a busy port like Ratchet, I keep my finger on the pulse of information. I know all about the exchange of goods and money between here and Booty Bay.",
+  "quest:896:details:1": "The latest bit of news I've heard is about the Venture Company's Boulder Lode mine northeast of the Sludge Fen. One of the miners discovered an emerald the size of your fist. I know a few buyers who'd be interested in getting their hands on something like that, and I'd be willing to go half and half on its sale.",
+  "quest:896:progress:0": "If only we knew which one of the miners had found the emerald, it'd be a walk in the park...",
+  "quest:896:completion:0": "Look at the size of that thing, ⟦62⟧! We're going to be rich! Let's see, according to the rates I've seen on gems going into Undermine, I should be able to figure out your cut--fifty percent, don't worry!",
+  "quest:896:completion:1": "Now let's see... I think this should do about right. Pleasure doing business with you, ⟦63⟧.",
+  "quest:907:obj:0": "Bring 3 ⟦E53⟧ to ⟦E54⟧ at Camp Taurajo.",
+  "quest:907:details:0": "Now, ⟦64⟧, you must face the great thunder lizards. So large are the beasts, the ground rumbles as they stomp across the plains. Take care as you fight them, for one false step and you may find yourself beneath their feet.",
+  "quest:907:details:1": "You will find the thunder lizards in the southern ⟦E11⟧. They are known as Stormsnouts, Stormhides and Thunderheads. Return to me after you have bested them.",
+  "quest:907:progress:0": "Are the thunder lizards defeated, ⟦65⟧?",
+  "quest:907:completion:0": "It is good to see you return with proof of victory. And it is good to know you have done so with your bones unbroken.",
+  "quest:3261:obj:0": "Speak with ⟦E54⟧ at Camp Taurajo.",
+  "quest:3261:details:0": "Your time with me is over, ⟦66⟧. To learn more, you must go to Camp Taurajo to the south and speak with ⟦E54⟧. He will continue your guidance.",
+  "quest:3261:completion:0": "Greetings, young one. You are here to walk the hunter's path?",
+  "quest:3261:completion:1": "Very good. Let us begin.",
+  "quest:3281:obj:0": "Bring the ⟦E55⟧ to Gazrog in the Crossroads.",
+  "quest:3281:details:0": "You may have killed the raptors, but the silver they stole must be recovered! I have reports that the raptors have a large grouping of nests south of Ratchet, known as the ⟦E56⟧ Grounds. It is likely that they brought our stolen silver there.",
+  "quest:3281:details:1": "Go to this raptor haven and search for the stolen silver. When you find it, return it to me.",
+  "quest:3281:progress:0": "Do you have the silver?",
+  "quest:3281:completion:0": "Aha! So the raptors did hide the silver at their lair. It's hard to believe these beasts would have the desire for silver. Perhaps the stories of their intelligence are not as far from the mark as I thought!",
+  "quest:3281:completion:1": "Thank you, ⟦67⟧. Take this as a reward for your service to us, and know that the guards of the crossroads owe their next month's pay to you."
+ },
+ "context": {
+  "quest:5044": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Mangletooth"
+  },
+  "quest:5045": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Mangletooth"
+  },
+  "quest:5046": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Mangletooth"
+  },
+  "quest:97253": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Wrenix the Wretched",
+   "turner": "Wrenix the Wretched"
+  },
+  "quest:819": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "",
+   "turner": "Brewmaster Drohn"
+  },
+  "quest:821": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Brewmaster Drohn",
+   "turner": "Brewmaster Drohn"
+  },
+  "quest:848": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Apothecary Helbrim",
+   "turner": "Apothecary Helbrim"
+  },
+  "quest:853": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Apothecary Helbrim",
+   "turner": "Apothecary Zamah («عصارساز زاما»)"
+  },
+  "quest:867": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Darsok Swiftdagger",
+   "turner": "Darsok Swiftdagger"
+  },
+  "quest:872": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Thork",
+   "turner": "Thork"
+  },
+  "quest:903": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Sergra Darkthorn («سرگرا دارک‌تورن»)",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:3301": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Tonga Runetotem",
+   "turner": "Mura Runetotem («مورا رون‌توتِم»)"
+  },
+  "quest:3922": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 15,
+   "side": "horde",
+   "giver": "Wenikee Boltbucket («ونیکِی بولت‌باکت»)",
+   "turner": "Wenikee Boltbucket («ونیکِی بولت‌باکت»)"
+  },
+  "quest:850": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "horde",
+   "giver": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)",
+   "turner": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)"
+  },
+  "quest:875": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "horde",
+   "giver": "Darsok Swiftdagger",
+   "turner": "Darsok Swiftdagger"
+  },
+  "quest:877": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "horde",
+   "giver": "Tonga Runetotem",
+   "turner": "Tonga Runetotem"
+  },
+  "quest:880": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "horde",
+   "giver": "Tonga Runetotem",
+   "turner": "Tonga Runetotem"
+  },
+  "quest:881": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "horde",
+   "giver": "Sergra Darkthorn («سرگرا دارک‌تورن»)",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:888": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "",
+   "giver": "Gazlowe",
+   "turner": "Gazlowe"
+  },
+  "quest:895": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "",
+   "giver": "WANTED",
+   "turner": "Gazlowe"
+  },
+  "quest:902": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 16,
+   "side": "",
+   "giver": "Control Console",
+   "turner": "Sputtervalve"
+  },
+  "quest:905": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 17,
+   "side": "horde",
+   "giver": "Sergra Darkthorn («سرگرا دارک‌تورن»)",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:851": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)",
+   "turner": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)"
+  },
+  "quest:858": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "",
+   "giver": "Wizzlecrank's Shredder",
+   "turner": "Wizzlecrank's Shredder"
+  },
+  "quest:863": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "",
+   "giver": "Wizzlecrank's Shredder",
+   "turner": "Sputtervalve"
+  },
+  "quest:865": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "",
+   "giver": "Mebok Mizzyrix",
+   "turner": "Mebok Mizzyrix"
+  },
+  "quest:896": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "",
+   "giver": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)",
+   "turner": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)"
+  },
+  "quest:907": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Jorn Skyseer («یورن اسکای‌سیر»)",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:3261": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Sergra Darkthorn («سرگرا دارک‌تورن»)",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:3281": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 18,
+   "side": "horde",
+   "giver": "Gazrog",
+   "turner": "Gazrog"
+  }
+ },
+ "known": {
+  "quest:819": {
+   "title": "بشکهٔ خالی چن"
+  },
+  "quest:821": {
+   "title": "بشکهٔ خالی چن"
+  },
+  "quest:848": {
+   "title": "هاگ‌های قارچی"
+  },
+  "quest:853": {
+   "title": "عصارساز زاما"
+  },
+  "quest:867": {
+   "title": "راهزنان هارپی"
+  },
+  "quest:872": {
+   "title": "پایان اختلال"
+  },
+  "quest:903": {
+   "title": "پلنگان دشت‌های بایر"
+  },
+  "quest:3301": {
+   "title": "مورا رون‌توتِم"
+  },
+  "quest:3922": {
+   "title": "ساچمه‌های ناگت"
+  },
+  "quest:850": {
+   "title": "سران کولکار"
+  },
+  "quest:875": {
+   "title": "سروان‌های هارپی"
+  },
+  "quest:877": {
+   "title": "آبگیر راکد"
+  },
+  "quest:880": {
+   "title": "موجودات دگرگون"
+  },
+  "quest:881": {
+   "title": "اِچی‌اَکِی"
+  },
+  "quest:888": {
+   "title": "غنیمت دزدیده‌شده"
+  },
+  "quest:895": {
+   "title": "مطلوب: بارون لانگ‌شور"
+  },
+  "quest:902": {
+   "title": "سموفلانگ"
+  },
+  "quest:905": {
+   "title": "داس‌پنجه‌های خشمگین"
+  },
+  "quest:851": {
+   "title": "وروگ دریوزده"
+  },
+  "quest:858": {
+   "title": "روشن‌سازی"
+  },
+  "quest:863": {
+   "title": "فرار"
+  },
+  "quest:865": {
+   "title": "شاخ‌های رپتور"
+  },
+  "quest:896": {
+   "title": "ثروت معدنچی"
+  },
+  "quest:907": {
+   "title": "سوسمارهای تندرِ خشمگین"
+  },
+  "quest:3261": {
+   "title": "یورن اسکای‌سیر"
+  },
+  "quest:3281": {
+   "title": "نقرهٔ دزدیده‌شده"
+  }
+ }
+}

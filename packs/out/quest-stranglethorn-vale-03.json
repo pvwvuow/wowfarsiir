@@ -1,0 +1,910 @@
+{
+ "pack": "quest-stranglethorn-vale-03",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stranglethorn-vale-03.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Aged Gorilla Sinew",
+   "fa": "زردپی گوریل کهنه",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Jungle Stalker",
+   "fa": "شکارگر جنگل",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Gan'zulah's Head",
+   "fa": "سر گان‌زولا",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Nezzliok's Head",
+   "fa": "سر نزلیوک",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Darkspear",
+   "fa": "نیزه‌تیره",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Snuff",
+   "fa": "تنباکوی بو",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Mistvale Giblets",
+   "fa": "ران مرغ میست‌ویل",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Shaky's Payment",
+   "fa": "پرداختِ شِیکی",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Skullsplitter Tusks",
+   "fa": "نیش‌های اسکال‌اسپلیتر",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "Skullsplitter",
+   "fa": "اسکال‌اسپلیتر",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Hemet Nesingwary",
+   "fa": "همت نسینگ‌وری",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Bag",
+   "fa": "کیف",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "honored",
+   "fa": "محترم",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "party",
+   "fa": "گروه",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Bloodsail Charts",
+   "fa": "نقشه‌های بلادسیل",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Bloodsail Orders",
+   "fa": "فرمان‌های بلادسیل",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Shore",
+   "fa": "شور",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Raid",
+   "fa": "رید",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Akiris Reed",
+   "fa": "نی اَکیریس",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Groy",
+   "fa": "گروی",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Bundle of Akiris Reeds",
+   "fa": "بستهٔ نیهای آکیریس",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Holy Spring Water",
+   "fa": "آب چشمهٔ مقدس",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Holy",
+   "fa": "مقدس",
+   "kind": "cls"
+  },
+  "E35": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Maury's Clubbed Foot",
+   "fa": "پای چوب‌زدهٔ موری",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Jon-Jon's Golden Spyglass",
+   "fa": "تلسکوپ طلایی جون-جون",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Chucky's Huge Ring",
+   "fa": "انگشتر بزرگ چاکی",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Club",
+   "fa": "چماق",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Maury's Key",
+   "fa": "کلید موری",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Zanzil's Mixture",
+   "fa": "معجون زانزیل",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Fool's Stout",
+   "fa": "آبجوی نادان",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Heart of Mokk",
+   "fa": "قلب موک",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Stranglethorn Fever",
+   "fa": "تب استرنگل‌تورن",
+   "kind": "qs"
+  },
+  "E45": {
+   "en": "Twisting Nether",
+   "fa": "خلأ پیچان",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E47": {
+   "en": "salvation",
+   "fa": "رستگاری",
+   "kind": "sp"
+  },
+  "E48": {
+   "en": "Mind's Eye",
+   "fa": "چشم ذهن",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "The Bloodsail Buccaneers",
+   "fa": "دزدان دریایی بلادسیل",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Aged Gorilla Sinew": "زردپی گوریل کهنه",
+  "Jungle Stalker": "شکارگر جنگل",
+  "Horde": "هورد",
+  "Gan'zulah's Head": "سر گان‌زولا",
+  "Nezzliok's Head": "سر نزلیوک",
+  "fear": "ترس",
+  "enemies": "دشمنان",
+  "Darkspear": "نیزه‌تیره",
+  "Snuff": "تنباکوی بو",
+  "Back": "شنل",
+  "Mistvale Giblets": "ران مرغ میست‌ویل",
+  "Shaky's Payment": "پرداختِ شِیکی",
+  "Skullsplitter Tusks": "نیش‌های اسکال‌اسپلیتر",
+  "Skullsplitter": "اسکال‌اسپلیتر",
+  "battle": "نبرد",
+  "curse": "نفرین",
+  "Hemet Nesingwary": "همت نسینگ‌وری",
+  "Bag": "کیف",
+  "honored": "محترم",
+  "party": "گروه",
+  "Bloodsail Charts": "نقشه‌های بلادسیل",
+  "Bloodsail Orders": "فرمان‌های بلادسیل",
+  "Shore": "شور",
+  "Raid": "رید",
+  "Akiris Reed": "نی اَکیریس",
+  "Groy": "گروی",
+  "Bundle of Akiris Reeds": "بستهٔ نیهای آکیریس",
+  "Theramore": "ترمور",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Kalimdor": "کالیمدور",
+  "Barrens": "بارنز",
+  "Holy Spring Water": "آب چشمهٔ مقدس",
+  "Holy": "مقدس",
+  "Azeroth": "آزروت",
+  "Maury's Clubbed Foot": "پای چوب‌زدهٔ موری",
+  "Jon-Jon's Golden Spyglass": "تلسکوپ طلایی جون-جون",
+  "Chucky's Huge Ring": "انگشتر بزرگ چاکی",
+  "Club": "چماق",
+  "Maury's Key": "کلید موری",
+  "Zanzil's Mixture": "معجون زانزیل",
+  "Fool's Stout": "آبجوی نادان",
+  "Heart of Mokk": "قلب موک",
+  "Stranglethorn Fever": "تب استرنگل‌تورن",
+  "Twisting Nether": "خلأ پیچان",
+  "allies": "متحدان",
+  "salvation": "رستگاری",
+  "Mind's Eye": "چشم ذهن",
+  "The Bloodsail Buccaneers": "دزدان دریایی بلادسیل",
+  "hit": "اصابت"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$c",
+  "4": "$N",
+  "5": "$r",
+  "6": "$c",
+  "7": "$C",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$C",
+  "29": "$C",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$B",
+  "34": "$B",
+  "35": "$B",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$N",
+  "48": "$B",
+  "49": "$B",
+  "50": "$B",
+  "51": "$B",
+  "52": "$B",
+  "53": "$B",
+  "54": "$c",
+  "55": "$N",
+  "56": "$N",
+  "57": "$n",
+  "58": "$N",
+  "59": "$N"
+ },
+ "rows": {
+  "quest:571:obj:0": "Bring an ⟦E1⟧ to Far Seer Mok'thardin in Grom'gol.",
+  "quest:571:details:0": "What I need from you now will be very difficult to obtain.",
+  "quest:571:details:1": "To hold all these feathers, claws and the pristine fang in place I require a magical tether. Only an aged gorilla sinew will work.",
+  "quest:571:details:2": "You will only be able to find one on an Elder Mistvale Gorilla. They are known to forage to the east of Booty Bay.",
+  "quest:571:details:3": "The sinew must be perfect. It might take quite a few kills for you to find exactly what I need but it will be well worth the hunt.",
+  "quest:571:progress:0": "Has fortune been on your side, ⟦1⟧? Were you able to obtain an aged gorilla sinew?",
+  "quest:571:completion:0": "A most ideal sinew, ⟦2⟧. Your efforts will pay off soon.",
+  "quest:572:obj:0": "Bring 10 ⟦E2⟧ Feathers to Far Seer Mok'thardin at the Grom'gol base camp.",
+  "quest:572:details:0": "The items you gathered from the feline beasts of the Vale are only the first requirement for a powerful enchanted item. These jungle trinkets combined with my shamanistic ritual will provide you with a very useful tool in assisting the ⟦E3⟧ and the Warchief.",
+  "quest:572:details:1": "But now you must gather for me some ⟦E2⟧ Feathers. The feathers are traditionally worn by the beasts on their armbands. You will find a tribe of the raptors directly south of Grom'gol, not far from the great arena.",
+  "quest:572:progress:0": "Did your gathering efforts prove fruitful?",
+  "quest:572:completion:0": "Most excellent. I will prepare these at once.",
+  "quest:584:obj:0": "Bring ⟦E4⟧ and ⟦E5⟧ to the bubbling cauldron at the Grom'gol Base Camp.",
+  "quest:584:details:0": "Yenniku was not among the heads, and I thank the Great Serpent for it. But we are no closer to finding him.",
+  "quest:584:details:1": "We must know the truth, and I ⟦E6⟧ that only the Bloodscalp chief and his witchdoctor know it. They are the ⟦E7⟧ of the ⟦E8⟧ tribe and will not speak freely, so we must force the truth from their dead lips!",
+  "quest:584:details:2": "Bring me the heads of Gan'zulah and Nezzliok the Dire and place them within this cauldron.",
+  "quest:584:details:3": "They are deep within Zul'Kunda. Bring their heads...we will then make them talk.",
+  "quest:584:progress:0": "The greenish broth within the cauldron bubbles.",
+  "quest:584:completion:0": "You place the heads of Gan'zulah and Nezzliok within the cauldron...",
+  "quest:587:obj:0": "Deeg in Booty Bay wants you to bring him 15 shares of ⟦E9⟧.",
+  "quest:587:details:0": "Ah, the sea life. I ain't gonna say it's the good life, but it's my life.",
+  "quest:587:details:1": "When I get into port I like to find me a good bottle of grog and some high quality snuff. Nasty habits but what's a pirate without his vices, right?",
+  "quest:587:details:2": "So you can imagine how heartbroken I was to find out the herbalist here in town has gone and sold out of the stuff. Says his shipment got hijacked by those damned Bloodsail Raiders.",
+  "quest:587:details:3": "I bet a fearless ⟦3⟧ like you could convince 'em to share the goods, eh?",
+  "quest:587:progress:0": "Any luck finding the goods, matey?",
+  "quest:587:completion:0": "Good show, ⟦4⟧! And just before I need to ship out too! Can't thank you enough, old friend.",
+  "quest:595:obj:0": "First Mate Crazz wants you to check the cove north of Booty Bay.",
+  "quest:595:details:0": "You sure seem eager to work, matey. Not sure why some land-loving ⟦5⟧ ⟦6⟧ is offering help to the Blackwater Raiders, but I'm not going to turn you away.",
+  "quest:595:details:1": "Our ship just docked here in Booty Bay and word has it that our rivals--those damned, dirty Bloodsail Buccaneers--have been spotted all over southern Stranglethorn.",
+  "quest:595:details:2": "All the boys are too busy hitting the grog and looking for ladies! What I need is a scout.",
+  "quest:595:details:3": "Check the cove just north of Booty Bay along the Savage Coast and see what you find.",
+  "quest:595:completion:0": "Inside the skiff, you discover a map with some hastily written text on it along with some coins.",
+  "quest:597:obj:0": "Report your findings to First Mate Crazz in Booty Bay.",
+  "quest:597:details:0": "The map shows Booty Bay with a red \"X\" drawn precisely at the spot at which you are standing.",
+  "quest:597:details:1": "The scribbled text reads:",
+  "quest:597:details:2": "B\"You men are to secure a camp at this location and keep quiet. Wait for the signal from the southern command post before attacking. If anyone approaches you, kill them.\"",
+  "quest:597:completion:0": "Sure, I remember you, ⟦7⟧. ⟦E10⟧ from scouting I see....",
+  "quest:599:obj:0": "Report the planned Bloodsail attack to Fleet Master Seahorn.",
+  "quest:599:details:0": "Shiver me timbers! So the Bloodsail Buccaneers are planning some sort of attack on Booty Bay? Why, the nerve of those scoundrels. Booty Bay will always be run by the Blackwater Raiders!",
+  "quest:599:details:1": "This is bigger than I thought. Report what you have learned to Fleet Master Seahorn at once! The ol' sea dog is around town somewhere....",
+  "quest:599:completion:0": "Bloodsail Buccaneers attacking Booty Bay? They might as well throw themselves off the Overlook Cliffs. Nonetheless, by bringing me this information you have done my fleet of swashbucklers a great service. The Blackwater Raiders thank you.",
+  "quest:600:obj:0": "Bring 10 Singing Blue Crystals to Crank Fizzlebub in Booty Bay.",
+  "quest:600:details:0": "The Venture Company has a string of operations through Stranglethorn which keeps hard-working goblins, like me, from making honest gold! Please, you must help me!",
+  "quest:600:details:1": "The Venture Company is mining near the Crystalvein Mine to the north. They can't get into the mine because of all the basilisks, but they're still able to dig up Singing Crystals from the surrounding hills.",
+  "quest:600:details:2": "Take their crystals from them, and show them they don't have the run of the jungle.",
+  "quest:600:details:3": "And... um... bring me those crystals as proof!",
+  "quest:600:progress:0": "Do you have those crystals?? I need them!!⟦8⟧⟦9⟧I mean...I need to know the evil Venture Company is losing ground in Stranglethorn. Because, you know, we honest folk have to make a living!",
+  "quest:600:completion:0": "Great! Wonderful! I can get a bundle for these!!",
+  "quest:600:completion:1": "That Venture Company sure picked the wrong jungle to mine in, didn't they? We'd all be in better shape if they moved out of here.",
+  "quest:600:completion:2": "Thank you, ⟦10⟧. You've done a good deed this day.",
+  "quest:606:obj:0": "Bring 5 ⟦E11⟧ to \"Shaky\" Phillipe in Booty Bay.",
+  "quest:606:details:0": "If there's one thing I can't stand, it's people who don't pay their gambling debts! And there are a lot of people who owe me. Think you can help me collect?",
+  "quest:606:details:1": "First, there's \"Shaky\" Phillipe down by the docks. He owes me plenty after last week's game and I want my due! But to get it, we'll have to scare him.",
+  "quest:606:details:2": "Go out of town and hunt Elder Mistvale Gorillas. Find a nice selection of giblets, then take them to Shaky. Don't let on that they're from an animal; let him think the worst.",
+  "quest:606:progress:0": "Hey! I don't like the look you're giving me, mister.",
+  "quest:606:completion:0": "Ack! Where'd you get these? No, don't tell me. I don't want to know!",
+  "quest:606:completion:1": "Who sent you? Sea Wolf?",
+  "quest:607:obj:0": "Bring ⟦E12⟧ to \"Sea Wolf\" MacKinley.",
+  "quest:607:details:0": "Here, take this pouch and give it to Sea Wolf. And tell him I meant to pay him back! I swear!!",
+  "quest:607:details:1": "I just got a little drunk and lost my way, and...you know how things are. He'll understand - you don't have to get rough!",
+  "quest:607:progress:0": "Here here, ⟦11⟧. Did you get Shaky's payment?",
+  "quest:607:completion:0": "Heh heh, well done! And when you showed Shaky those giblets, how hard did he shake?",
+  "quest:607:completion:1": "Hah! He's so easy to read, when I play cards with him I can't help but win!",
+  "quest:607:completion:2": "Thanks for your help, ⟦12⟧. Now it's your turn to get paid...",
+  "quest:209:obj:0": "Acquire 18 ⟦E13⟧ and return them to Kebok.",
+  "quest:209:details:0": "It's expensive and hard to kill enough tigers to support the export of tiger fangs to the islands in the South Seas. Luckily, we've developed a technique that allows us to take mundane horn-like objects and turn them into undetectable forgeries.",
+  "quest:209:details:1": "The closest match we've found, amazingly, are the tusks of the ⟦E14⟧ trolls.",
+  "quest:209:details:2": "Hey, before you say anything, what the buyer doesn't know doesn't hurt them, am I right? Bring me a large number of them so we can get to work on the monthly shipment!",
+  "quest:209:progress:0": "Tough buggers, aren't they? Well, have you had any luck? Sorry to seem impatient, but this has been a huge thorn in my side! Well?",
+  "quest:209:completion:0": "Ah, good work, good work! Ugh, though you could have done a better job cleaning off the-- Well, no matter, no matter! My thanks to you, ⟦13⟧, our operation will no doubt see increased output and productivity thanks to your help! Good good, now, onto other matters...",
+  "quest:576:obj:0": "Dizzy One-Eye in Booty Bay wants you to retrieve his eye from the Bloodsail Buccaneers.",
+  "quest:576:details:0": "Avast! Who goes there?",
+  "quest:576:details:1": "Argh, I am but useless without me special enchanted eye. Bad enough to have lost me eyes in ⟦E15⟧ in the first place! But by some stroke o' luck we docked in Menethil and a traveling wizard enchanted a special glass eye that let me see again.",
+  "quest:576:details:2": "Last night I ended up gettin' jumped by some Bloodsail Buccaneers on me way out. Took me eye, they did! Seems those blokes have found their way to Booty Bay.",
+  "quest:576:details:3": "Help an old sea dog out by gettin' me eye back?",
+  "quest:576:progress:0": "Ahoy, me bucko! Might not be able to see but I can smell ye from halfway across port.⟦14⟧⟦15⟧Could really use me eye back. Captain's going to keelhaul me when he finds out me peeper is in the hands of them dirty Bloodsail Buccaneers.⟦16⟧⟦17⟧What good is a lookout who can't see? The crow's nest used to be me home...without me deadlights I'd be lucky to scrub the bilge.",
+  "quest:576:completion:0": "Shiver me timbers and timber me shivers! Ye found me beautiful eye! Let's see if she still fits.",
+  "quest:576:completion:1": "Shavas ho! Blimey, I can see!!",
+  "quest:598:obj:0": "Bring 25 Split Bone Necklaces to Kin'weelay at the Grom'gol Base camp.",
+  "quest:598:details:0": "Now that you have gathered Bloodscalp trophies, I have another task for you. The ⟦E14⟧ tribe of trolls live to the southeast, and for years we have warred with them. Although the Darkspears no longer dwell in Stranglethorn, we are bound to our conflict with the Skullsplitters.",
+  "quest:598:details:1": "So, hunt them. Gather their Split Bone Necklaces and return to me. Aid us in our war, and you will earn the friendship of the Darkspears.",
+  "quest:598:progress:0": "The Skullsplitters will ⟦E16⟧ the day they brought us to war! Is your task complete?",
+  "quest:598:completion:0": "Your strength is great to have gained these necklaces, ⟦18⟧. The Skullsplitters fall to you like young saplings stomped to earth by a Basilisk!",
+  "quest:598:completion:1": "Your deeds are a boon to us.",
+  "quest:197:obj:0": "⟦E17⟧ wants you to kill Tethis, an elusive, dangerous raptor in Stranglethorn.",
+  "quest:197:details:0": "Because you proved yourself to be such a go-getter in the jungle, let me tell you about a ferocious raptor that even I have failed to kill. Ajeck here calls this wily raptor Tethis.",
+  "quest:197:details:1": "If you want to prove yourself a true master, kill Tethis and bring me his talon. It would be a feat that no other big game hunter has accomplished.",
+  "quest:197:progress:0": "How goes the hunt for Tethis? Tracked her all the way back to camp, did you?",
+  "quest:197:completion:0": "Master ⟦19⟧, the raptor slayer!",
+  "quest:197:completion:1": "Has a nice ring to it, eh?",
+  "quest:208:obj:0": "⟦E17⟧ wants you to bring him the head of King Bangalash, the great white tiger.",
+  "quest:208:details:0": "⟦20⟧, you are a hunter worthy of our company. From the battlefields of Lordaeron to the deepest jungle, I have rarely witnessed such prowess with weaponry as you have demonstrated.",
+  "quest:208:details:1": "You have killed the ferocious Sin'Dall, the elusive ⟦E18⟧'thera and the treacherous Tethis. But the true prize is the head of King Bangalash. That white tiger is the reason I am here. I've had my sights on him for quite some time now. Kill King Bangalash and your hunting prowess is proven to be second to none.",
+  "quest:208:progress:0": "I see you're back, old bloke. King Bangalash has caused me to come crawling back to camp many times. Hang in there.",
+  "quest:208:completion:0": "Bloody well done! Right-o! Congratulations, ⟦21⟧, for succeeding where others have failed.",
+  "quest:208:completion:1": "I am ⟦E19⟧ to count you as a comrade of our great hunting ⟦E20⟧ here. No one will ever doubt your expertise in hunting and tracking!",
+  "quest:208:completion:2": "Cheers to you, I say! Cheers!",
+  "quest:604:obj:0": "Fleet Master Seahorn in Booty Bay wants you to kill 10 Bloodsail Swashbucklers and bring back the ⟦E21⟧ and the ⟦E22⟧.",
+  "quest:604:details:0": "Crazz speaks highly of your dedication to the Blackwater Raiders. I am going to trust you with a mission of extreme importance to the fleet.",
+  "quest:604:details:1": "Infiltrate the so-called southern command post the Bloodsail Buccaneers have established on the Wild ⟦E23⟧. ⟦E24⟧ the encampment. Bring me their charts along with their written orders. We shall see exactly what those scum are up to.",
+  "quest:604:progress:0": "Ahoy, ⟦22⟧. What word do you bring of the Bloodsail encampment to the south?",
+  "quest:604:completion:0": "Perfect, ⟦23⟧. Now that we know their plan, it's just a matter of time.",
+  "quest:604:completion:1": "And to think the fools have dropped anchor just off the cape....",
+  "quest:617:obj:0": "Bring 10 Bundles of ⟦E25⟧ to Privateer Bloads in Booty Bay.",
+  "quest:617:details:0": "You looking fer work, ⟦24⟧? I might have some if you're up for a little challenge.",
+  "quest:617:details:1": "I got a friend named ⟦E26⟧ who makes a killing selling what the naga call akiris reed: it's some kind of valuable ocean reed. Not too sure what it's for, but he pays well for bundles of the stuff.",
+  "quest:617:details:2": "Ya bring me ten stalks of the stuff, and we'll have business to do. The naga were last seen along the beach to the north of here.",
+  "quest:617:progress:0": "If ya got no business with me, then move along, ⟦25⟧.",
+  "quest:617:completion:0": "Well done, ⟦26⟧. 10 stalks of akiris reed wasn't too much a challenge after all, huh? No offense to the naga, but hey, everybody's gotta make a living.",
+  "quest:623:obj:0": "Bring a ⟦E27⟧ to Privateer ⟦E26⟧ in ⟦E28⟧.",
+  "quest:623:details:0": "⟦27⟧, since I have you here, I got a message from ⟦E26⟧ while you were gone. He mentioned bein' satisfied with the last shipment that arrived and has a client that wants some more of the stuff right away.",
+  "quest:623:details:1": "I won't be headin' to ⟦E28⟧ for a week, but if you're willin' to make the journey, there's no reason you can't take the stuff for me.",
+  "quest:623:details:2": "Feeling adventurous? You do know where ⟦E29⟧ is, doncha? I'd be careful though, ⟦E28⟧ can be dangerous if you're the wrong kind of crowd.",
+  "quest:623:progress:0": "Yeah?",
+  "quest:623:completion:0": "What?! I got a lot better things to do then talk to the likes of you, ⟦28⟧. Make it worth my while or get outta my face.",
+  "quest:623:completion:1": "Huh? Bloads sent ya, huh? Well, whaddaya got for me?",
+  "quest:623:completion:2": "B<Privateer ⟦E26⟧ looks over the bundle carefully.>",
+  "quest:623:completion:3": "Not bad, not bad at all. Another bundle will make my client quite happy.",
+  "quest:623:completion:4": "I suppose yer next question's gonna be about money, huh, ⟦29⟧? Of course it is!",
+  "quest:623:completion:5": "Here, take this coin and some advice: get off my docks.",
+  "quest:624:obj:0": "Solve the riddle!",
+  "quest:624:details:0": "There is an ornate, well-traveled bridge⟦30⟧East of Deadwind and south of Redridge⟦31⟧Underneath there waits something for you⟦32⟧Some call it a hint, others a clue⟦33⟧There it will lie for endless tomorrows⟦34⟧Biding its time in the ⟦E30⟧",
+  "quest:624:completion:0": "The soggy parchment contains the next clue....",
+  "quest:625:obj:0": "Solve the riddle!",
+  "quest:625:details:0": "A far off land in ⟦E31⟧ awaits⟦35⟧Where peril has dashed hopes and fates⟦36⟧East of ⟦E32⟧ the weather is harsh⟦37⟧Gloom and danger pock ⟦E29⟧⟦38⟧But there lies a clue for those up to the test⟦39⟧Waiting to be found in a cave in the southwest",
+  "quest:625:completion:0": "You find a musty scroll.",
+  "quest:573:obj:0": "Far Seer Mok'thardin of Grom'gol needs ⟦E33⟧. He also wants you to kill 10 Naga Explorers.",
+  "quest:573:details:0": "There is but one final reagent needed to complete the enchantment.",
+  "quest:573:details:1": "In the south, towards the western coast, high above the bluffs, lies a ⟦E34⟧ Spring. This spring is the subject of great conflict amongst religious and mystical scholars. Every race in ⟦E35⟧ claims that the spring waters were made divine for their people.",
+  "quest:573:details:2": "My final request of you: bring to me ⟦E33⟧. Be warned. An expedition of naga explorers have advanced upon the spring. They will need to be dealt with as well.",
+  "quest:573:progress:0": "I am almost ready to complete the enchantment. Have you performed my bidding?",
+  "quest:573:completion:0": "With this ⟦E33⟧ the ceremonial choker is ready for enchantment.",
+  "quest:573:completion:1": "Wear this with pride, ⟦40⟧, in the name of the Warchief and in defense of the mighty ⟦E3⟧.",
+  "quest:609:obj:0": "Bring ⟦E36⟧, ⟦E37⟧, and ⟦E38⟧ to \"Sea Wolf\" MacKinley in Booty Bay.",
+  "quest:609:details:0": "My list is shortening, but there are still people who owe me.",
+  "quest:609:details:1": "Next, we have Maury \"⟦E39⟧ Foot\" Wilkins, Jon-Jon the Crow, and Chucky \"Ten Thumbs.\"",
+  "quest:609:details:2": "These scurvy dogs' debts are months outstanding and I thought they skipped town to avoid paying up! Later, I heard they're cursed and bewitched and now wander the jungle ruins. But I don't care what their fate is - I want what's mine!",
+  "quest:609:details:3": "They're at the Ruins of Aboraz and the Ruins of Jubuwal, northeast of here. Find them, and collect.",
+  "quest:609:progress:0": "⟦41⟧, did you find those three dogs? Did you collect their valuables?",
+  "quest:609:completion:0": "Great! I can get a good price for these, especially for what's inside Maury's foot! Thanks much, ⟦42⟧!",
+  "quest:609:completion:1": "I hope those three learned their lesson: don't bet something you can't afford to lose.",
+  "quest:609:completion:2": "And maybe it's too late for them, but...they should be careful of who they gamble with.",
+  "quest:613:obj:0": "Bring ⟦E40⟧ to \"Sea Wolf\" Mackinley in Booty Bay.",
+  "quest:613:details:0": "Curses! That swab Maury put a lock on his foot, and I can't open it! His loot's inside the foot, and that's what he owes me!",
+  "quest:613:details:1": "We need to find the key to open the lock. Maury was known to gamble with the Mosh'Ogg ogres, at their mound to the northeast. And he told me, when he was still alive, that the last time he went to the mound he was chased off after winning too much. Maybe the Ogres there have his key.",
+  "quest:613:details:2": "But if they do, you might have to kill a load of them to find the right one...",
+  "quest:613:progress:0": "Ahoy, ⟦43⟧! Have you yet found ⟦E40⟧?",
+  "quest:613:completion:0": "You found it! Thanks a million, ⟦44⟧. You've been a big help to me!",
+  "quest:613:completion:1": "Here you go - you earned this!",
+  "quest:621:obj:0": "Bring 12 samples of ⟦E41⟧ to Crank Fizzlebub in Booty Bay.",
+  "quest:621:details:0": "Zanzil the Outcast dwells with his followers in the Jubuwal and Aboraz Ruins, northeast of Booty Bay. He is exiled from his tribe. Why? Well...",
+  "quest:621:details:1": "Zanzil has methods of bending the minds of others, and his leaders ⟦E6⟧ him. He uses a mixture of jungle plants on his followers to suppress their will and strengthen their bodies.",
+  "quest:621:details:2": "His mixture would be worth much to those who wish to control others.",
+  "quest:621:details:3": "Bring me samples of his mixture, and I will find a use for them.",
+  "quest:621:progress:0": "Do you have the samples of ⟦E41⟧??",
+  "quest:621:completion:0": "Ah, very good! Here is your pay.",
+  "quest:621:completion:1": "And here is a little something extra... for your discretion.",
+  "quest:1127:title": "⟦E42⟧",
+  "quest:1127:desc:0": "Bring 12 of ⟦E41⟧ to Crank Fizzlebub in Booty Bay.",
+  "quest:1127:details:0": "So you want some ⟦E42⟧, eh?  Thinking of heading back to the races...?⟦45⟧⟦46⟧All right, bring me more of Zanzil's mixture and I'll make some more stout for you.",
+  "quest:1127:progress:0": "Do you have those Zanzil mixtures yet, ⟦47⟧?",
+  "quest:1127:completion:0": "Ah, very good! Here is your pay.⟦48⟧⟦49⟧And here is a little something extra... for your discretion.",
+  "quest:348:obj:0": "Seek out Witch Doctor Unbagwa and have him summon Mokk the Savage. Bring the ⟦E43⟧ to Fin Fizracket.",
+  "quest:348:details:0": "Sick...so...very s-s-sick....",
+  "quest:348:details:1": "B...have contracted ⟦E44⟧...deadly v-v-virus...",
+  "quest:348:details:2": "B...only cure...is...is...to eat the heart of M-m-m-m-mokk the Savage...elusive white beast...",
+  "quest:348:details:3": "B...Witch doctor Unbagwa...only one who can s-s-summon....",
+  "quest:348:details:4": "B...seek Unbagwa in hidden cave on southern cape...",
+  "quest:348:details:5": "B...hurry...dying...dying....",
+  "quest:348:progress:0": "....mother?⟦50⟧⟦51⟧...so cold...⟦52⟧⟦53⟧...heading into the ⟦E45⟧...h-h-h-hold me mother....",
+  "quest:348:completion:0": "...feel strength returning....",
+  "quest:348:completion:1": "Where might be? Booty Bay? Oh my! I had the strangest dream...",
+  "quest:348:completion:2": "B...the weakness has not completely left me....",
+  "quest:588:obj:0": "Speak with Kin'weelay.",
+  "quest:588:details:0": "<Nezzliok speaks.>",
+  "quest:588:details:1": "You have appeased myself and my chief, so I will tell you that which you seek to discover...",
+  "quest:588:details:2": "Young Yenniku is lost to his clan.",
+  "quest:588:details:3": "He was taken by the witchdoctor Zanzil the Outcast. Now Zanzil controls him, body and soul, and only the most potent magic could set him free.",
+  "quest:588:details:4": "BA magic that you do not have, ⟦54⟧.",
+  "quest:588:details:5": "Perhaps your ⟦E8⟧ ⟦E46⟧ can offer a hope of Yenniku's ⟦E47⟧. But that, I doubt.",
+  "quest:588:completion:0": "Zanzil the Outcast??",
+  "quest:588:completion:1": "If Yenniku is held by that troll, a vile and powerful witchdoctor, then I ⟦E6⟧ that only a faint hope remains. Faint. And tiny as the smallest insect.",
+  "quest:588:completion:2": "But still, it is hope.",
+  "quest:589:obj:0": "Bring 3 Pulsing Blue Shards to Kin'weelay at the Grom'gol Base Camp.",
+  "quest:589:details:0": "Legends tell of a jewel, hidden deep in the heart of Stranglethorn. We call it the ⟦E48⟧, and it has great powers. If you gain this Eye then, perhaps, we can use it to bring lost Yenniku back from the darkness.",
+  "quest:589:details:1": "I will consult with the spirits of the jungle to find the ⟦E48⟧. While I do this, you enter the Crystalvein Mine, southeast of here, and gather Pulsing Blue Shards from Ironjaw Basilisks. The shards are rare, but we will need their magic to bend the ⟦E48⟧ to our will.",
+  "quest:589:progress:0": "Do you have the shards, ⟦55⟧? They are needed for my final ritual, after we have the ⟦E48⟧.",
+  "quest:589:completion:0": "You have done well, ⟦56⟧. These shards are well formed. Already I hear them sing to me.",
+  "quest:589:completion:1": "And while you were gone, I spoke with the spirits of the jungle. I know where the ⟦E48⟧ rests...",
+  "quest:589:completion:2": "B...And who guards it.",
+  "quest:594:obj:0": "Find the author of the message in a bottle.",
+  "quest:594:details:0": "The note reads, in fairly good handwriting:",
+  "quest:594:details:1": "To any that can aid me-",
+  "quest:594:details:2": "Please, my need for help is dire. A great Skymane holds me captive on an island in the South Seas.",
+  "quest:594:details:3": "The stars at night are foreign to me and obscured by the jungle trees, but on the clearest days I see Wild ⟦E23⟧ to the northwest, and what seem to be large sailing ships to the southwest.",
+  "quest:594:details:4": "I beg of you, my would-be savior, please help me.",
+  "quest:594:completion:0": "Have you come to free me?",
+  "quest:608:obj:0": "Fleet-Master Seahorn in Booty Bay wants you to kill Captain Stillwater, Captain Keelhaul and Fleet Master Firallon.",
+  "quest:608:details:0": "Blast the nerve of Firallon! He couldn't sail a skiff through Crystal Lake let alone lead an entire fleet against us.",
+  "quest:608:details:1": "⟦E49⟧ will pay for their carelessness. Now that we know their plan of attack, we can counter before they know what ⟦E50⟧ them.",
+  "quest:608:details:2": "But why send the entire fleet to do the work of one brave adventuring ⟦E20⟧? ⟦57⟧, take some of your most skilled comrades out to Firallon's landing spot and assassinate the Bloodsail leadership. Their fleet will sink soon after....",
+  "quest:608:progress:0": "What's the problem, ⟦58⟧? We need to attack before the Bloodsail Buccaneers do!",
+  "quest:608:completion:0": "Ah, what a great day for the Blackwater Raiders! Three cheers to you, ⟦59⟧!"
+ },
+ "context": {
+  "quest:571": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "horde",
+   "giver": "Far Seer Mok'thardin",
+   "turner": "Far Seer Mok'thardin"
+  },
+  "quest:572": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "horde",
+   "giver": "Far Seer Mok'thardin",
+   "turner": "Far Seer Mok'thardin"
+  },
+  "quest:584": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "horde",
+   "giver": "Nimboya («نیمبویا»)",
+   "turner": "Bubbling Cauldron"
+  },
+  "quest:587": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "Deeg",
+   "turner": "Deeg"
+  },
+  "quest:595": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "First Mate Crazz",
+   "turner": "Bloodsail Correspondence"
+  },
+  "quest:597": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "Bloodsail Correspondence",
+   "turner": "First Mate Crazz"
+  },
+  "quest:599": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "First Mate Crazz",
+   "turner": "Fleet Master Seahorn"
+  },
+  "quest:600": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "Crank Fizzlebub",
+   "turner": "Crank Fizzlebub"
+  },
+  "quest:606": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "\"Sea Wolf\" MacKinley",
+   "turner": "\"Shaky\" Phillipe"
+  },
+  "quest:607": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "\"Shaky\" Phillipe",
+   "turner": "\"Sea Wolf\" MacKinley"
+  },
+  "quest:209": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 42,
+   "side": "",
+   "giver": "Kebok",
+   "turner": "Kebok"
+  },
+  "quest:576": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 42,
+   "side": "",
+   "giver": "Dizzy One-Eye",
+   "turner": "Dizzy One-Eye"
+  },
+  "quest:598": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 42,
+   "side": "horde",
+   "giver": "Kin'weelay",
+   "turner": "Kin'weelay"
+  },
+  "quest:197": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "",
+   "giver": "Hemet Nesingwary («همت نسینگ‌وری»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  },
+  "quest:208": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "",
+   "giver": "Hemet Nesingwary («همت نسینگ‌وری»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  },
+  "quest:604": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "",
+   "giver": "Fleet Master Seahorn",
+   "turner": "Fleet Master Seahorn"
+  },
+  "quest:617": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "",
+   "giver": "Privateer Bloads",
+   "turner": "Privateer Bloads"
+  },
+  "quest:623": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Privateer Bloads",
+   "turner": "Privateer Groy"
+  },
+  "quest:624": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "",
+   "giver": "",
+   "turner": "A Soggy Scroll"
+  },
+  "quest:625": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 43,
+   "side": "",
+   "giver": "A Soggy Scroll",
+   "turner": "Musty Scroll («طومار کپک‌زده»)"
+  },
+  "quest:573": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 44,
+   "side": "horde",
+   "giver": "Far Seer Mok'thardin",
+   "turner": "Far Seer Mok'thardin"
+  },
+  "quest:609": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 44,
+   "side": "",
+   "giver": "\"Sea Wolf\" MacKinley",
+   "turner": "\"Sea Wolf\" MacKinley"
+  },
+  "quest:613": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 44,
+   "side": "",
+   "giver": "\"Sea Wolf\" MacKinley",
+   "turner": "\"Sea Wolf\" MacKinley"
+  },
+  "quest:621": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 44,
+   "side": "",
+   "giver": "Crank Fizzlebub",
+   "turner": "Crank Fizzlebub"
+  },
+  "quest:1127": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 44,
+   "side": "",
+   "giver": "Crank Fizzlebub",
+   "turner": "Crank Fizzlebub"
+  },
+  "quest:348": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 45,
+   "side": "",
+   "giver": "Fin Fizracket",
+   "turner": "Fin Fizracket"
+  },
+  "quest:588": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 45,
+   "side": "horde",
+   "giver": "Bubbling Cauldron",
+   "turner": "Kin'weelay"
+  },
+  "quest:589": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 45,
+   "side": "horde",
+   "giver": "Kin'weelay",
+   "turner": "Kin'weelay"
+  },
+  "quest:594": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Princess Poobah"
+  },
+  "quest:608": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 45,
+   "side": "",
+   "giver": "Fleet Master Seahorn",
+   "turner": "Fleet Master Seahorn"
+  }
+ },
+ "known": {
+  "quest:571": {
+   "title": "افسون مُکتاردین"
+  },
+  "quest:572": {
+   "title": "افسون مُکتاردین"
+  },
+  "quest:584": {
+   "title": "سران قبیلهٔ بلاداسکالپ"
+  },
+  "quest:587": {
+   "title": "به اندازهٔ کافی تنباکو"
+  },
+  "quest:595": {
+   "title": "دزدان دریایی بلادسیل"
+  },
+  "quest:597": {
+   "title": "دزدان دریایی بلادسیل"
+  },
+  "quest:599": {
+   "title": "دزدان دریایی بلادسیل"
+  },
+  "quest:600": {
+   "title": "معدن‌کاری شرکت ونچر"
+  },
+  "quest:606": {
+   "title": "ترساندن شِیکی"
+  },
+  "quest:607": {
+   "title": "بازگشت به مک‌کینلی"
+  },
+  "quest:209": {
+   "title": "نیش‌های اسکال‌اسپلیتر"
+  },
+  "quest:576": {
+   "title": "مراقب باش"
+  },
+  "quest:598": {
+   "title": "گردنبند استخوان شکسته"
+  },
+  "quest:197": {
+   "title": "تسلط بر رپتورها"
+  },
+  "quest:208": {
+   "title": "شکارچی شکارهای بزرگ"
+  },
+  "quest:604": {
+   "title": "دزدان دریایی بلادسیل"
+  },
+  "quest:617": {
+   "title": "اَکیریس به‌صورت دسته‌ای"
+  },
+  "quest:623": {
+   "title": "اَکیریس به‌صورت دسته‌ای"
+  },
+  "quest:624": {
+   "title": "معمای کورتلو"
+  },
+  "quest:625": {
+   "title": "معمای کورتلو"
+  },
+  "quest:573": {
+   "title": "افسون مُکتاردین"
+  },
+  "quest:609": {
+   "title": "بدهی‌های وودو"
+  },
+  "quest:613": {
+   "title": "شکستن پای موری"
+  },
+  "quest:621": {
+   "title": "راز زنزیل"
+  },
+  "quest:348": {
+   "title": "تب استرنگل‌تورن"
+  },
+  "quest:588": {
+   "title": "سرنوشت ینیکو"
+  },
+  "quest:589": {
+   "title": "بلورهای آوازخوان"
+  },
+  "quest:594": {
+   "title": "پیام در بطری"
+  },
+  "quest:608": {
+   "title": "دزدان دریایی بلادسیل"
+  }
+ }
+}

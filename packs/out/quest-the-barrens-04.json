@@ -1,0 +1,703 @@
+{
+ "pack": "quest-the-barrens-04",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-the-barrens-04.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Owatanka's Tailspike",
+   "fa": "خارِ دم اواوانکا",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Owatanka",
+   "fa": "اواوانکا",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "Razormane Backstabber",
+   "fa": "خنجر زدوپشت تیغ‌پشت",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Charred Razormane Wand",
+   "fa": "عصای سوختهٔ تیغ‌پشت",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Razormane War Shield",
+   "fa": "سپر نبرد تیغ‌یال",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Giants",
+   "fa": "غول‌ها",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "wand",
+   "fa": "واند",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Harvester's Head",
+   "fa": "سرِ خرمن‌گر",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Jorn Skyseer",
+   "fa": "یورن اسکای‌سیر",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Washte Pawne's Feather",
+   "fa": "پرِ واشته پاون",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Washte Pawne",
+   "fa": "واشته پاون",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Spirit",
+   "fa": "روح",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "Lok's Skull",
+   "fa": "جمجمهٔ لاک",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Nightmare Shard",
+   "fa": "تراشهٔ کابوس",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Hamuul Runetotem",
+   "fa": "هامول رون‌توتوم",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Runed Scroll",
+   "fa": "طومارِ رون‌نشان",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Nitroglycerin",
+   "fa": "نیتروگلیسیرین",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Wood Pulp",
+   "fa": "خمیر چوب",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Sodium Nitrate",
+   "fa": "نیترات سدیم",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "revered",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Heart of Isha Awak",
+   "fa": "قلب ایشا آواک",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Mahren Skyseer",
+   "fa": "مارِن اسکای‌سیر",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Isha Awak",
+   "fa": "ایشا آواک",
+   "kind": "qs"
+  },
+  "E39": {
+   "en": "Fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Unrefined Ore Sample",
+   "fa": "نمونهٔ کانهٔ تصفیه‌نشده",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "Tear of the Moons",
+   "fa": "اشک ماه‌ها",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "Korran's Sealed Note",
+   "fa": "یادداشتِ مُهرشدهٔ کوران",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Alliance": "اتحاد",
+  "Barrens": "بارنز",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Owatanka's Tailspike": "خارِ دم اواوانکا",
+  "Owatanka": "اواوانکا",
+  "Razormane Backstabber": "خنجر زدوپشت تیغ‌پشت",
+  "Charred Razormane Wand": "عصای سوختهٔ تیغ‌پشت",
+  "Razormane War Shield": "سپر نبرد تیغ‌یال",
+  "Giants": "غول‌ها",
+  "Horde": "هورد",
+  "wand": "واند",
+  "level": "لِوِل",
+  "enemy": "دشمن",
+  "Harvester's Head": "سرِ خرمن‌گر",
+  "Jorn Skyseer": "یورن اسکای‌سیر",
+  "fear": "ترس",
+  "spell": "اسپیل",
+  "enemies": "دشمنان",
+  "Washte Pawne's Feather": "پرِ واشته پاون",
+  "Washte Pawne": "واشته پاون",
+  "Spirit": "روح",
+  "Lok's Skull": "جمجمهٔ لاک",
+  "Nightmare Shard": "تراشهٔ کابوس",
+  "Hamuul Runetotem": "هامول رون‌توتوم",
+  "Head": "سر",
+  "Thunder Bluff": "تاندر بلاف",
+  "Darnassus": "دارناسوس",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Runed Scroll": "طومارِ رون‌نشان",
+  "Ashenvale": "اَشِن‌ویل",
+  "Nitroglycerin": "نیتروگلیسیرین",
+  "Wood Pulp": "خمیر چوب",
+  "Sodium Nitrate": "نیترات سدیم",
+  "threat": "تیت",
+  "revered": "ارجمند",
+  "Heart of Isha Awak": "قلب ایشا آواک",
+  "Mahren Skyseer": "مارِن اسکای‌سیر",
+  "Isha Awak": "ایشا آواک",
+  "Fear": "ترس",
+  "Unrefined Ore Sample": "نمونهٔ کانهٔ تصفیه‌نشده",
+  "Thousand Needles": "هزار سوزن",
+  "battle": "نبرد",
+  "Tear of the Moons": "اشک ماه‌ها",
+  "Back": "شنل",
+  "Korran's Sealed Note": "یادداشتِ مُهرشدهٔ کوران",
+  "Orgrimmar": "اورگریمار"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$C",
+  "6": "$N",
+  "7": "$r",
+  "8": "<snort>",
+  "9": "<snort>",
+  "10": "<snort>",
+  "11": "<snort>",
+  "12": "$r",
+  "13": "$R",
+  "14": "<snort>",
+  "15": "$B",
+  "16": "$B",
+  "17": "<snort>",
+  "18": "$B",
+  "19": "$B",
+  "20": "<snort>",
+  "21": "<snort>",
+  "22": "<snort>",
+  "23": "<snort>",
+  "24": "$R",
+  "25": "$N",
+  "26": "$B",
+  "27": "$B",
+  "28": "$N",
+  "29": "$r",
+  "30": "<snort>",
+  "31": "<snort>",
+  "32": "<snort>",
+  "33": "$r",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$B",
+  "44": "$B",
+  "45": "$B",
+  "46": "$B",
+  "47": "$C",
+  "48": "$n",
+  "49": "$N",
+  "50": "$R",
+  "51": "$N",
+  "52": "$ghim:her;",
+  "53": "$C",
+  "54": "$B",
+  "55": "$B",
+  "56": "$N",
+  "57": "$C",
+  "58": "$N",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$C",
+  "63": "$B",
+  "64": "$B"
+ },
+ "rows": {
+  "quest:97250:title": "Wrongly Blamed, Justly Corrected",
+  "quest:97250:obj:0": "Slay ⟦E1⟧ soldiers encroaching into the ⟦E2⟧ at the border to ⟦E3⟧, then return to Grunt Logmar at Camp Taurajo.",
+  "quest:98093:title": "Field to Clear",
+  "quest:98093:obj:0": "Sulhasa in southern ⟦E2⟧ wants you to clear out 7 Stormhide lizards and 7 Hecklefang Stalkers in the area so she can leave the tree safely.",
+  "quest:884:obj:0": "Bring ⟦E4⟧ to Jorn at Camp Taurajo.",
+  "quest:884:details:0": "When touched, sparks fly from the tailspike of ⟦E5⟧.",
+  "quest:884:progress:0": "⟦1⟧, there is a new power behind your eyes! You have met with the mighty ⟦E5⟧, have you not?",
+  "quest:884:completion:0": "The thunder lizard ⟦E5⟧ is called Bluebolt by the tauren, for within him resides a speed that belies his size. It is said that lightning struck Bluebolt long ago and, fed from the sky's rage, the great beast's energy is without limit.",
+  "quest:884:completion:1": "May his energy flow through you, ⟦2⟧. For you now keep pace with ⟦E5⟧.",
+  "quest:893:obj:0": "Bring a ⟦E6⟧, a ⟦E7⟧ and a ⟦E8⟧ to Tatternack Steelforge at Camp Taurajo in the ⟦E2⟧.",
+  "quest:893:details:0": "The Razormane quilboars to the south, beyond the Field of ⟦E9⟧, have no skilled blacksmiths from what I am told, but they've apparently started to develop sturdier weapons. I'd like to get my hands on a few different types to learn their techniques if possible.",
+  "quest:893:details:1": "If you wish to help bring honor to the ⟦E10⟧, then bring me examples of their weapons. Find me a dagger from their stalkers, a ⟦E11⟧ from their seers, and a shield from their warfrenzy. That should do nicely!",
+  "quest:893:progress:0": "I, too, have doubts that the pathetic quilboars could attain any ⟦E12⟧ of skill in the area of smithing, but I do as the Warchief commands, and I shall learn what I can about the Razormane tribe.⟦3⟧⟦4⟧I have had more menial tasks, and I do so willingly if it aids the orc people.",
+  "quest:893:completion:0": "Excellent, excellent specimens indeed.",
+  "quest:893:completion:1": "The quilboar are further along than I had expected.",
+  "quest:893:completion:2": "Here, ⟦5⟧, take this and get out of my way. I'd better take a closer look at these weapons. We may have underestimated our ⟦E13⟧, and that's the kind of mistake we can't afford to make.",
+  "quest:897:obj:0": "Bring the ⟦E14⟧ to ⟦E15⟧.",
+  "quest:897:details:0": "This strange, insect-like creature looks outside of the natural order, as though it does not belong in the ⟦E2⟧.",
+  "quest:897:progress:0": "You seemed troubled, ⟦6⟧. How go your lessons in the ⟦E2⟧? Did you find something that disturbs you?",
+  "quest:897:completion:0": "I can tell nothing of the nature of this beast, for its spirit has fled. But as you guessed, it does not belong in the ⟦E2⟧. I ⟦E16⟧ it may herald a grim future for our people...",
+  "quest:897:completion:1": "But for now, prepare yourself, and let us hope that time unravels the mystery of this creature.",
+  "quest:879:obj:0": "Kill Nak, Kuz, and Lok Orcbane and bring their skulls to Mangletooth at Camp Taurajo in the ⟦E2⟧.",
+  "quest:879:details:0": "Three of my tribe came out of the Kraul to lead the raids against the ⟦E10⟧, ⟦7⟧. ⟦8⟧ They are ruthless and cunning, and if you defeat them, then your Crossroads and even most of the ⟦E2⟧ will learn peace... ⟦9⟧ at least from the Razormane tribe. ⟦10⟧",
+  "quest:879:details:1": "Nak, Kuz, and Lok Orcbane are the ones you seek. They are far to the south of the ⟦E2⟧. One is a ⟦E17⟧ caster, another a tracker, and their leader, the one called Orcbane, ⟦11⟧ a warrior. Kill them, ⟦12⟧, like they have killed me.",
+  "quest:879:progress:0": "How goes your hunt, ⟦13⟧? ⟦14⟧⟦15⟧⟦16⟧Thork thinks he knows the truth about who leads the raids against his people, ⟦17⟧ but he shall learn how wrong he is if you are successful.⟦18⟧⟦19⟧My death is inescapable, but you have caused great pain to my ⟦E18⟧, so Mangletooth regrets nothing. ⟦20⟧",
+  "quest:879:completion:0": "It is done then. Better it ends this way, says Mangletooth. ⟦21⟧ They should have ⟦22⟧ made sure I was dead when they turned their backs on me instead of leaving ⟦23⟧ me here in this forsaken cage.",
+  "quest:879:completion:1": "There is but one task left for you to finish, ⟦24⟧.",
+  "quest:885:obj:0": "Bring ⟦E19⟧ to ⟦E15⟧ at Camp Taurajo.",
+  "quest:885:details:0": "The feather of ⟦E20⟧ is painful to the touch.",
+  "quest:885:progress:0": "There is new resolve within you, ⟦25⟧. A resolve born from pain...⟦26⟧⟦27⟧Are you burdened with the death of ⟦E20⟧?",
+  "quest:885:completion:0": "The thunderhawk is a rare beast of the ⟦E2⟧, and its death can portend great fortune, or great doom.",
+  "quest:885:completion:1": "But ⟦E20⟧, called ⟦E21⟧ Biter in Taurahe, can bring neither... or both.",
+  "quest:885:completion:2": "The pain you felt from hunting ⟦E21⟧ Biter is the pang all feel who make great gains at great costs. The sting you felt is the pain of regret.",
+  "quest:885:completion:3": "But I can see you have conquered this. You have learned that regret turns to wisdom, and that through pain one gains strength.",
+  "quest:885:completion:4": "You have learned much, ⟦28⟧.",
+  "quest:906:obj:0": "Bring ⟦E22⟧ to Thork at the Crossroads in the ⟦E2⟧.",
+  "quest:906:details:0": "Take Lok's head to Thork in the Crossroads, ⟦29⟧. ⟦30⟧ He should know what has happened to my tribe without any words--ha, not that he would believe Mangletooth helped in ⟦31⟧ such things. But I am sure he'll reward you for carrying out such a great deed. ⟦32⟧",
+  "quest:906:details:1": "I will continue to bless you with Agamaggan's power for as long as I remain in this cage, ⟦33⟧. Until then, farewell.",
+  "quest:906:progress:0": "Yes, what is it?",
+  "quest:906:completion:0": "You found the Razormane leader and killed him yourself, ⟦34⟧? Amazing.",
+  "quest:906:completion:1": "I am without words, but that does not mean I am without thanks. The people of the Crossroads would do well to respect your strength.",
+  "quest:906:completion:2": "I must admit, I thought the leader of these raids on our supply lines was another quilboar. Thank you again, ⟦35⟧.",
+  "quest:3369:obj:0": "Bring the ⟦E23⟧ to ⟦E24⟧ on Elder Rise.",
+  "quest:3369:details:0": "This shard holds great secrets; it is the pure essence of the Emerald Dream. However, what I see in this shard is not a dream; one would call this sort of a vision a nightmare.",
+  "quest:3369:details:1": "I do not wish to alarm you, ⟦36⟧, but I think it is best if you deliver this shard into the hands of a wise druid as soon as you can.",
+  "quest:3369:details:2": "⟦E24⟧ on Elder Rise is who you need to find. ⟦E25⟧ to ⟦E26⟧. I cannot say more.",
+  "quest:3369:progress:0": "May I help you with something?",
+  "quest:3369:completion:0": "Falla sent you to me? Well now, let's see that shard that you say she was so hesitant to talk about...",
+  "quest:3369:completion:1": "B<Hamuul peers into the shard>",
+  "quest:3369:completion:2": "Oh... I didn't... Well.",
+  "quest:3369:completion:3": "B⟦37⟧, thank you for delivering this to me. It isn't wise to speak of things such as this, though, I advise you. These are matters that you should not concern yourself with.",
+  "quest:3369:completion:4": "Let's just say that things in the Emerald Dream are not as we thought...",
+  "quest:3369:completion:5": "Perhaps in the future, our paths may cross again.",
+  "quest:3369:completion:6": "B",
+  "quest:3370:obj:0": "Bring the ⟦E23⟧ to Mathrengyl Bearwalker in ⟦E27⟧.",
+  "quest:3370:details:0": "This shard holds great secrets; it is the pure essence of the Emerald Dream. However, what I see in this shard is not a dream; one would call this sort of a vision a nightmare.",
+  "quest:3370:details:1": "I do not wish to alarm you, ⟦38⟧, but I think it is best if you deliver this shard into the hands of a wise druid as soon as you can...",
+  "quest:3370:details:2": "Mathrengyl Bearwalker in the ⟦E28⟧ is who you need to find. ⟦E25⟧ to ⟦E27⟧. I cannot say more.",
+  "quest:3370:progress:0": "May I help you with something?",
+  "quest:3370:completion:0": "Falla sent you to me? Well now, let's see that shard that you say she was so hesitant to talk about...",
+  "quest:3370:completion:1": "B<Mathrengyl peers into the shard>",
+  "quest:3370:completion:2": "Oh... I didn't... Well.",
+  "quest:3370:completion:3": "B⟦39⟧, thank you for delivering this to me. It isn't wise to speak of things such as this, though, I advise you. These are matters that the Cenarion druids alone must attend to.",
+  "quest:3370:completion:4": "Let's just say that things in the Emerald Dream are not as we thought...",
+  "quest:3370:completion:5": "Perhaps in the future, our paths may cross again.",
+  "quest:3513:obj:0": "Take the ⟦E29⟧ to the northern guard tower in the ⟦E2⟧.",
+  "quest:3513:details:0": "The official-looking scroll is wrapped tightly with a silvery ribbon. You're sure someone would be interested in seeing this, but who?",
+  "quest:3513:details:1": "There is an outpost close to the ⟦E30⟧ border to the north, and if the information on this scroll involves the night elves, this would be the place to take it.",
+  "quest:3513:progress:0": "Whaddya got?",
+  "quest:3513:completion:0": "Well now... Where did you find this?",
+  "quest:98094:title": "Scout Support",
+  "quest:846:obj:0": "Gann Stonespire wants you to bring him 6 vials of ⟦E31⟧, 6 bundles of ⟦E32⟧, and 6 samples of ⟦E33⟧.",
+  "quest:846:details:0": "It is clear the prospector depended on explosives and those noisy vehicles to rip the ground apart. We can expect a new foreman to take over soon.",
+  "quest:846:details:1": "I want to give the dwarves a taste of their own medicine. According to these plans if we combine nitroglycerin with wood pulp and sodium nitrate we can create an explosive charge. The rifleman, soldiers and officers in the Keep are known to have the supplies.",
+  "quest:846:details:2": "Collect these items and bring them to me. I will fashion a charge that the dwarves won't forget!",
+  "quest:846:progress:0": "I see you are back, ⟦40⟧.⟦41⟧⟦42⟧While Khazgorm's death might delay the digging in my ancestral lands some, it will by no means bring a total end to the destruction.⟦43⟧⟦44⟧The Keep at Bael Modan is an increasing military ⟦E34⟧. Built to defend the dig site, it is now poised for offensive force as well.⟦45⟧⟦46⟧If you have the ingredients I requested, I can fashion a charge that will make the hasty dwarves reconsider their actions here in the ⟦E2⟧.",
+  "quest:846:completion:0": "I see you are quite industrious, ⟦47⟧.",
+  "quest:846:completion:1": "No doubt we shall soon have a fitting surprise for those dwarves.",
+  "quest:849:obj:0": "Destroy the flying machine at Bael Modan and return to Gann Stonespire.",
+  "quest:849:details:0": "Following Khazgorm's plans it should be no problem to fashion an explosive charge",
+  "quest:849:details:1": "Ah, there we go.",
+  "quest:849:details:2": "Now, ⟦48⟧, I am going to entrust you with a special task. Take this explosive stick and use it to blow up the flying machine at Bael Modan.",
+  "quest:849:details:3": "Not only is the flying machine a key part of the site's infrastructure it also serves as a weapon of war. More importantly it is an icon of power and an insult to the memory of my tribe.",
+  "quest:849:details:4": "Make me proud by completing this heroic task and you shall be rewarded.",
+  "quest:849:progress:0": "Once the dwarven flying machine has been destroyed I will feel the sweet satisfaction of revenge.",
+  "quest:849:completion:0": "You have done well, ⟦49⟧! May you be ⟦E35⟧ in ⟦E26⟧ as a defender of sacred tauren lands and a champion of the lost tribe.",
+  "quest:873:obj:0": "Bring the ⟦E36⟧ to ⟦E37⟧.",
+  "quest:873:details:0": "The grand ⟦E38⟧ is lord of these waters. Great is his strength, and solemn his pride. The humans on the coast ⟦E16⟧ him, for he has consumed many of their number.",
+  "quest:873:details:1": "But I do not ⟦E16⟧ him. I am grateful he is here. He is a worthy challenge, and honorable prey.",
+  "quest:873:details:2": "If you are ready, then swim out and search for ⟦E38⟧, the Deep Doom.",
+  "quest:873:details:3": "His spirit dwells in his heart, and to hear its beat is to know your fate.",
+  "quest:873:progress:0": "⟦E39⟧ not the waters, ⟦50⟧.",
+  "quest:873:completion:0": "You now are one with ⟦E38⟧, ⟦51⟧. His spirit is with you. He lurks in your eyes...",
+  "quest:873:completion:1": "Eyes that, one day, will learn to see.",
+  "quest:874:obj:0": "Speak with ⟦E37⟧.",
+  "quest:874:details:0": "You have hunted the beasts of the ⟦E2⟧. Your spirit is strong. But a hunter must always be prepared. A true hunter can stalk prey down any path. Mountains and swamps will not sway ⟦52⟧.",
+  "quest:874:details:1": "Not even the sea.",
+  "quest:874:details:2": "Find my sister, Mahren. She hunts the great water beasts along the coast. She will be your teacher in their ways.",
+  "quest:874:details:3": "But be wary in your search for her, for the ⟦E2⟧' coast is held by humans.",
+  "quest:874:completion:0": "My brother sent you, did he? Then you must have proven yourself to him. If you have earned the respect of Jorn, then you have my respect as well.",
+  "quest:874:completion:1": "Are you ready to tread farther down the hunter's path?",
+  "quest:1153:obj:0": "Find an ⟦E40⟧ on a Gravelsnout Digger or Surveyor and bring it to Tatternack Steelforge at Camp Taurajo in the ⟦E2⟧.",
+  "quest:1153:details:0": "⟦53⟧, you have done well in helping me in the past. The warchief is pleased thus far with what I've accomplished, and asks me to continue with renewed determination. My honor dictates that I give you proper recognition to the warchief for all you have done, but first I would ask you for your help again.",
+  "quest:1153:details:1": "Travelers recently came from the south from a place called ⟦E41⟧. There they killed a kobold who had an unusual ore sample, but they would not sell it. I want a sample of that ore to examine.",
+  "quest:1153:progress:0": "I saw the travelers again - the ones that would not sell me a sample of the ore. I spit at them for not helping the warchief.⟦54⟧⟦55⟧May they die in ⟦E42⟧ like cowards and not like warriors as should be the right of all people who ally themselves with the ⟦E10⟧.",
+  "quest:1153:completion:0": "A good sample, ⟦56⟧. A good sample indeed.",
+  "quest:1153:completion:1": "Those travelers can no longer lord over me the ore they found, now that you have been successful.",
+  "quest:1153:completion:2": "I shall get to work on it immediately. If it proves strong enough, I will send a weapon crafted from the material back to the warchief to show him our success.",
+  "quest:1153:completion:3": "I shall not forget your help, ⟦57⟧.",
+  "quest:3514:obj:0": "Kill the leader of the Talon Den, Rynthariel the Keymaster.",
+  "quest:3514:details:0": "This scroll is from that scheming dryad Rynthariel, Keymaster of the Talon Den on Stonetalon Peak.",
+  "quest:3514:details:1": "She'll not be making any more contact with the messenger you looted this from, heh, but we must stand our ground here. The ⟦E10⟧ will not tolerate her outrunners here.",
+  "quest:3514:details:2": "B⟦58⟧, travel to the Talon Den. Kill Rynthariel, and then put up a symbol for all to see. Take this ⟦E10⟧ flag, ⟦59⟧. Put it up in the Talon Den so that they will not be so rash as to send another messenger through our territory again.",
+  "quest:3514:progress:0": "We cannot allow the ⟦E1⟧ on our land, ⟦60⟧. Make this known.",
+  "quest:3514:completion:0": "You're a tough one! Ridding the Den of Rynthariel is a major step, ⟦61⟧. They will be slow to regroup, and so we can count on less ⟦E1⟧ runners in the ⟦E2⟧. They will think again before sending another this way.",
+  "quest:3514:completion:1": "Thank you.",
+  "quest:857:obj:0": "Feegly the Exiled wants you to retrieve for him the ⟦E43⟧.",
+  "quest:857:details:0": "The power was mine! In my very hands! And I want it back! ⟦E44⟧ I say!",
+  "quest:857:details:1": "Those dirty excavators uncovered it... so beautiful it was. Deemed the ⟦E43⟧, it was the first great discovery we made at Bael Modan.",
+  "quest:857:details:2": "It should have been mine! Mine I say!",
+  "quest:857:details:3": "General Twinbraid grew jealous of the power it gave me. He locked it away in the Keep. Called it cursed, he did! The fool!",
+  "quest:857:details:4": "Others wanted it and they had to be stopped! That bastard Twinbraid drove me off.",
+  "quest:857:details:5": "Now I want it back. ⟦E44⟧ I say!",
+  "quest:857:progress:0": "Where is the ⟦E43⟧? I need it now! Need I say!",
+  "quest:857:completion:0": "At last, the power is mine again! Mine I say!",
+  "quest:1145:obj:0": "Deliver ⟦E45⟧ to Belgrom Rockmaul in ⟦E46⟧.",
+  "quest:1145:details:0": "Many travelers who've come through the Crossroads helped me gather eggs from the Field of ⟦E9⟧, and many of them have tales of how deadly the creatures are. I've heard enough to consider them insects a much larger ⟦E34⟧ than my masters first thought.",
+  "quest:1145:details:1": "I need a courier to travel to ⟦E46⟧ to meet Belgrom Rockmaul. It be no simple matter, and someone who would take the task seriously should go.",
+  "quest:1145:details:2": "Belgrom usually be found outside the warriors' guild house.",
+  "quest:1145:progress:0": "I envy you, ⟦62⟧. You have the look of someone who's been outside the walls of ⟦E46⟧ for a while.⟦63⟧⟦64⟧I myself would travel in the name of the Warchief if Thrall didn't have need of my skills here in the city. But he leads us well, and I trust his judgement - I remain here for as long as he needs me.",
+  "quest:1145:completion:0": "Ah, a note from Korran. He has been a loyal servant for some time now. I was wondering how his duties were going in the Crossroads."
+ },
+ "context": {
+  "quest:97250": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 23,
+   "side": "horde",
+   "giver": "Grunt Logmar",
+   "turner": "Grunt Logmar"
+  },
+  "quest:98093": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 23,
+   "side": "horde",
+   "giver": "Sulhasa",
+   "turner": "Sulhasa"
+  },
+  "quest:884": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 24,
+   "side": "horde",
+   "giver": "",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:893": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 24,
+   "side": "horde",
+   "giver": "Tatternack Steelforge",
+   "turner": "Tatternack Steelforge"
+  },
+  "quest:897": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 24,
+   "side": "horde",
+   "giver": "",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:879": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Mangletooth"
+  },
+  "quest:885": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": "Jorn Skyseer («یورن اسکای‌سیر»)"
+  },
+  "quest:906": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "horde",
+   "giver": "Mangletooth",
+   "turner": "Thork"
+  },
+  "quest:3369": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "horde",
+   "giver": "Falla Sagewind",
+   "turner": "Arch Druid Hamuul Runetotem"
+  },
+  "quest:3370": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Falla Sagewind",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:3513": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": "Kadrak"
+  },
+  "quest:98094": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 25,
+   "side": "horde",
+   "giver": "High Executor Darthalia",
+   "turner": ""
+  },
+  "quest:846": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 26,
+   "side": "horde",
+   "giver": "Gann Stonespire",
+   "turner": "Gann Stonespire"
+  },
+  "quest:849": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 26,
+   "side": "horde",
+   "giver": "Gann Stonespire",
+   "turner": "Gann Stonespire"
+  },
+  "quest:873": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 27,
+   "side": "horde",
+   "giver": "Mahren Skyseer («مارِن اسکای‌سیر»)",
+   "turner": "Mahren Skyseer («مارِن اسکای‌سیر»)"
+  },
+  "quest:874": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 27,
+   "side": "horde",
+   "giver": "Jorn Skyseer («یورن اسکای‌سیر»)",
+   "turner": "Mahren Skyseer («مارِن اسکای‌سیر»)"
+  },
+  "quest:1153": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 29,
+   "side": "horde",
+   "giver": "Tatternack Steelforge",
+   "turner": "Tatternack Steelforge"
+  },
+  "quest:3514": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 29,
+   "side": "horde",
+   "giver": "Kadrak",
+   "turner": "Kadrak"
+  },
+  "quest:857": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 30,
+   "side": "horde",
+   "giver": "Feegly the Exiled",
+   "turner": "Feegly the Exiled"
+  },
+  "quest:1145": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 33,
+   "side": "horde",
+   "giver": "Korran",
+   "turner": "Belgrom Rockmaul"
+  }
+ },
+ "known": {
+  "quest:884": {
+   "title": "اواوانکا"
+  },
+  "quest:893": {
+   "title": "سلاح‌های انتخابی"
+  },
+  "quest:897": {
+   "title": "برداشت‌کننده"
+  },
+  "quest:879": {
+   "title": "خیانت از درون"
+  },
+  "quest:885": {
+   "title": "واشته پاون"
+  },
+  "quest:906": {
+   "title": "خیانت از درون"
+  },
+  "quest:3369": {
+   "title": "در کابوس‌ها"
+  },
+  "quest:3370": {
+   "title": "در کابوس‌ها"
+  },
+  "quest:3513": {
+   "title": "طومار رونی‌شده"
+  },
+  "quest:846": {
+   "title": "انتقام گن"
+  },
+  "quest:849": {
+   "title": "انتقام گن"
+  },
+  "quest:873": {
+   "title": "ایشا آواک"
+  },
+  "quest:874": {
+   "title": "مارِن اسکای‌سیر"
+  },
+  "quest:1153": {
+   "title": "نمونهٔ کانهٔ تازه"
+  },
+  "quest:3514": {
+   "title": "حضور اردو"
+  },
+  "quest:857": {
+   "title": "اشک ماه‌ها"
+  },
+  "quest:1145": {
+   "title": "توده بزرگ‌تر می‌شود"
+  }
+ }
+}

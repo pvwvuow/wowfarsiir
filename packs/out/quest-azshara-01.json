@@ -1,0 +1,933 @@
+{
+ "pack": "quest-azshara-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-azshara-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Tablet of Beth'Amara",
+   "fa": "لوح بث‌آمارا",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Tablet of Jin'yael",
+   "fa": "لوح جین‌یائل",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Tablet of Markri",
+   "fa": "لوح مارکری",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Tablet of Sael'hai",
+   "fa": "لوح سائل‌های",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Magatha's Note",
+   "fa": "یادداشتِ ماگاتا",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Jes'rimon's Note",
+   "fa": "یادداشتِ جس‌رایمون",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Andron's Note",
+   "fa": "یادداشتِ آندرون",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Xylem's Note",
+   "fa": "یادداشتِ زایلم",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E22": {
+   "en": "Some Rune",
+   "fa": "رونی ناشناس",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Aspect of Neptulon",
+   "fa": "جلوهٔ نپتولون",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Discordant Bracers",
+   "fa": "ساعدبند ناساز",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Loramus",
+   "fa": "لوراموس",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "interrupt",
+   "fa": "قطع",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Hetaera's Bloodied Head",
+   "fa": "سرِ خونین هترا",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Hetaera's Beaten Head",
+   "fa": "سرِ ضوردیدهٔ هترا",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Hetaera's Bruised Head",
+   "fa": "سرِ کبود هترا",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "points",
+   "fa": "واحد",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Crystallized Azsharite",
+   "fa": "آزشارایت بلوری‌شده",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "giants",
+   "fa": "غول‌ها",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Azsharite",
+   "fa": "آزشارایت",
+   "kind": "qs"
+  },
+  "E42": {
+   "en": "Shipment to Galvan",
+   "fa": "محموله برای گالوان",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "Eye of the Emberseer",
+   "fa": "چشم اخگربین",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E47": {
+   "en": "Fire",
+   "fa": "آتش",
+   "kind": "sp"
+  },
+  "E48": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E49": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E50": {
+   "en": "Honored",
+   "fa": "محترم",
+   "kind": "tm"
+  },
+  "E51": {
+   "en": "Hydraxian Waterlords",
+   "fa": "اربابان آبی هیدراکس",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E53": {
+   "en": "Hands",
+   "fa": "دستان",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Azshara": "آزشارا",
+  "Azeroth": "آزروت",
+  "Burning Legion": "لژیون سوزان",
+  "Ashenvale": "اَشِن‌ویل",
+  "battle": "نبرد",
+  "Tablet of Beth'Amara": "لوح بث‌آمارا",
+  "Tablet of Jin'yael": "لوح جین‌یائل",
+  "Tablet of Markri": "لوح مارکری",
+  "Tablet of Sael'hai": "لوح سائل‌های",
+  "Thunder Bluff": "تاندر بلاف",
+  "Forsaken": "مطرودان",
+  "Orgrimmar": "اورگریمار",
+  "Kalimdor": "کالیمدور",
+  "Undercity": "آندر‌سیتی",
+  "armor": "زره",
+  "Magatha's Note": "یادداشتِ ماگاتا",
+  "Jes'rimon's Note": "یادداشتِ جس‌رایمون",
+  "Andron's Note": "یادداشتِ آندرون",
+  "Xylem's Note": "یادداشتِ زایلم",
+  "spell": "اسپیل",
+  "Blood": "خون",
+  "Some Rune": "رونی ناشناس",
+  "hit": "اصابت",
+  "Use": "استفاده",
+  "Aspect of Neptulon": "جلوهٔ نپتولون",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Discordant Bracers": "ساعدبند ناساز",
+  "Loramus": "لوراموس",
+  "interrupt": "قطع",
+  "Silithus": "سیلیتوس",
+  "enemies": "دشمنان",
+  "chance": "شانس",
+  "demon": "اهریمن",
+  "Hetaera's Bloodied Head": "سرِ خونین هترا",
+  "Hetaera's Beaten Head": "سرِ ضوردیدهٔ هترا",
+  "Hetaera's Bruised Head": "سرِ کبود هترا",
+  "points": "واحد",
+  "requires": "نیازمند",
+  "Crystallized Azsharite": "آزشارایت بلوری‌شده",
+  "giants": "غول‌ها",
+  "Azsharite": "آزشارایت",
+  "Shipment to Galvan": "محموله برای گالوان",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "ability": "توانایی",
+  "Eye of the Emberseer": "چشم اخگربین",
+  "enemy": "دشمن",
+  "Fire": "آتش",
+  "allies": "متحدان",
+  "strike": "ضربه",
+  "Honored": "محترم",
+  "Hydraxian Waterlords": "اربابان آبی هیدراکس",
+  "form": "شکل",
+  "Hands": "دستان"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$c",
+  "8": "$B",
+  "9": "$B",
+  "10": "$C",
+  "11": "$c",
+  "12": "$B",
+  "13": "$B",
+  "14": "$C",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$B",
+  "22": "$B",
+  "23": "<hic>",
+  "24": "<hic>",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$B",
+  "34": "<hic>",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$C",
+  "42": "$r",
+  "43": "$N",
+  "44": "$c",
+  "45": "$N",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$R",
+  "51": "$B",
+  "52": "$B",
+  "53": "$B",
+  "54": "$C",
+  "55": "$N",
+  "56": "$n",
+  "57": "$N",
+  "58": "$N",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$N",
+  "63": "$N",
+  "64": "$N",
+  "65": "$N",
+  "66": "$N",
+  "67": "$N"
+ },
+ "rows": {
+  "quest:3421:title": "Return Trip",
+  "quest:3421:completion:0": "I will return you to Sanath's camp now.⟦1⟧⟦2⟧Do not mind his bad manners--he is rude to everyone save for the master. Perhaps he shall learn his lesson one day.",
+  "quest:3503:title": "Meeting with the Master",
+  "quest:3503:completion:0": "There was a time when I could ask whatever I wished from those who sought out my master.  But now, you need only ask and I will send you to him.⟦3⟧⟦4⟧It is upsetting to me, but I do not question his orders.  I can only take enjoyment in making fun of the ridiculous clothes you wear or the pathetic look on your face.  Even that bores me...⟦5⟧⟦6⟧Even this rambling bores me!  Do you wish to see my master or not?",
+  "quest:5535:obj:0": "Destroy 6 Highborne Apparitions and 6 Highborne Lichlings before returning to Loh'atu in ⟦E1⟧.",
+  "quest:5535:details:0": "Long ago, the Highborne were some of the most powerful students of the arcane the night elves ever produced. The corruption that comes along with such studies caused much harm to night elf society and greatly affected all of ⟦E2⟧... as I'm sure you well know.",
+  "quest:5535:details:1": "I promised the Sentinels that I would release the spirits from their mortal bonds as I find them. If you would do the same, then I am sure I can reward you some.",
+  "quest:5535:details:2": "The spirits haunt the Shadowsong Shrine to the northeast of here.",
+  "quest:5535:progress:0": "How goes your search for the Highborne spirits, ⟦7⟧?⟦8⟧⟦9⟧Many events have caused all the races of ⟦E2⟧ great suffering, but for some reason, these spirits seem to be a plague for all people. Perhaps it is there continued desire for any arcane magic--such desire is a harbinger of the ⟦E3⟧, and we know what that can lead to.",
+  "quest:5535:completion:0": "Well done, ⟦10⟧. Thank you for your help. The spirits are at peace, and the threats that their desire for the arcane draw have been lessened.",
+  "quest:5535:completion:1": "I am sure that both sides of the conflict that ravishes ⟦E2⟧ will see you are above such things.",
+  "quest:5536:obj:0": "Kill 6 Haldarr Satyr, 2 Haldarr Tricksters, 2 Haldarr Felsworn and then return to Loh'atu on the border of ⟦E4⟧.",
+  "quest:5536:details:0": "The satyr, a disfigured, evil aspect of the night elves, now infect the sacred lands once traveled by Cenarius. I cannot speak for the night elves when it comes to all the atrocities those demonic creatures have committed, but I have sworn an oath to the Earthmother to aid the elves in ridding the land of such a nuisance.",
+  "quest:5536:details:1": "I am sure you would prove yourself if you aided me in purging them.",
+  "quest:5536:details:2": "Northeast of here, you can find the Haldarr clan. Return to me after you've tested yourself against their power.",
+  "quest:5536:progress:0": "How goes your ⟦E5⟧ against the satyr, ⟦11⟧?⟦12⟧⟦13⟧Are they as strong as you thought? Stronger? Or perhaps they were nothing to your own might.",
+  "quest:5536:completion:0": "Well done, ⟦14⟧. I see you're not only skilled but cunning. To defeat such creatures is a testament to your loyalty to the tenants of the Earthmother, even if you do not recognize her as your own deity. She is in all things on this planet and beyond. Her eyes, one dark and one light, travel across the skies always gazing down upon us.",
+  "quest:5536:completion:1": "Please, take this small amount of coin in appreciation for what you have done.",
+  "quest:3517:obj:0": "Find the ⟦E6⟧, the ⟦E7⟧, the ⟦E8⟧, and the ⟦E9⟧ before returning to Jediga in ⟦E1⟧.",
+  "quest:3517:details:0": "I admit, ⟦15⟧, I've made the most of my situation in ⟦E1⟧. Belgrom's punishment has had its share of benefits.",
+  "quest:3517:details:1": "Before I left, I did some research and you would be surprised how many valuable items are lying around.",
+  "quest:3517:details:2": "I'll tell you more about my deals, and even give you a cut of the profits, if you help me gather some of them.",
+  "quest:3517:details:3": "There are tablets throughout the Ruins of Eldarath to the east that I need. All four are named after Highborne wizards. Get them for me and we'll talk some more.",
+  "quest:3517:progress:0": "The tablets I'm having you gather should bring in a pretty copper or two to the right parties. I'll tell you who we need to deliver them to after you've found them. But I'm no fool... you'll get your share after I have proof that they've been delivered.⟦16⟧⟦17⟧So get to it--we don't have all day. I might have to find someone else to help me.",
+  "quest:3517:completion:0": "Perfect, ⟦18⟧, and in good condition also. These should get us a good price from all the parties concerned.",
+  "quest:3517:completion:1": "Let's not dawdle around here any longer than we have to. We have some money to make.",
+  "quest:3518:obj:0": "Bring the ⟦E6⟧ to Magatha in ⟦E10⟧.",
+  "quest:3518:details:0": "The first tablet goes to a tauren female... one called Magatha. She is among the elders in ⟦E10⟧, and is one of the proponents of the alliance between the tauren and the ⟦E11⟧. She, more than anyone among the elders, feels the tauren and their ways can help the ⟦E11⟧ find a path back to being human.",
+  "quest:3518:details:1": "Bring her the ⟦E6⟧. The tablet may be the link she needs in finding a way to help the ⟦E11⟧... or so she claims.",
+  "quest:3518:progress:0": "Yes, ⟦19⟧. What can I do for you? I have many matters I must attend to, so please, be quick.",
+  "quest:3518:completion:0": "Ah, at long last, the ⟦E6⟧. I was wondering if my partnership with Jediga had failed or if the poor orc had found her death in ⟦E1⟧. I am glad she was successful.",
+  "quest:3518:completion:1": "Beth'Amara was one of the Highborne's most influential alchemists. The wizard alone was said to have mastered transmuting metals among other things.",
+  "quest:3541:obj:0": "Bring the ⟦E7⟧ to Jes'rimon in ⟦E12⟧.",
+  "quest:3541:details:0": "I have a fence in ⟦E12⟧. He resides in The Drag. He's difficult to nail down if you don't know where to look, but if you go looking in one of the highest buildings there you should have no problem finding him.",
+  "quest:3541:details:1": "Do me a favor though, don't go shouting to all of ⟦E13⟧ that he's there and what his business is--it'd be bad for both of us.",
+  "quest:3541:details:2": "He'll give us more than a fair price for the ⟦E7⟧. I'm not sure why, but you should have seen how excited he was to hear about its whereabouts.",
+  "quest:3541:progress:0": "Yes, what you be needin', mon? I got many tings to be takin' care of today, and you not be on me agenda as one of them. Pester me, and I make sure that changes.",
+  "quest:3541:completion:0": "Ahhh, Jediga be sendin' her package all the way from ⟦E1⟧. Good. I be waitin' on this.",
+  "quest:3541:completion:1": "Jediga, now that be a fine woman... deadly too. What could be better?",
+  "quest:3541:completion:2": "Look at this... the tablet be in perfect condition. You make a good messenger, ⟦20⟧.",
+  "quest:3542:obj:0": "Bring the ⟦E8⟧ to Andron Gant in ⟦E14⟧.",
+  "quest:3542:details:0": "Andron Gant is my next contact. He usually holds himself up in the ⟦E14⟧... right near the Apothecarium.",
+  "quest:3542:details:1": "He was a little more loose-lipped when it came to speaking about what he wanted the Tablet for. Apparently some of the mages of ⟦E14⟧ are looking to study some of the arcane spells the highborne used. They think this tablet will help them. Markri was adept at summoning creatures; especially elementals.",
+  "quest:3542:details:2": "Take the ⟦E8⟧ and return to me for your part of the reward.",
+  "quest:3542:progress:0": "Well... ... isn't this a surprise? An adventurererere... !⟦21⟧⟦22⟧What c'n I do for you... ?",
+  "quest:3542:completion:0": "Here, take some coin... get yerself... ⟦23⟧... some new ⟦E15⟧ or something....",
+  "quest:3542:completion:1": "This'll bring a shiny gold or two to the right... ⟦24⟧ people.",
+  "quest:3561:obj:0": "Bring the ⟦E9⟧ to Archmage Xylem in ⟦E1⟧.",
+  "quest:3561:details:0": "This final tablet goes to someone very dangerous, ⟦25⟧. Heed me when I tell you that I trust this person far less than anyone else I've asked you to meet with.",
+  "quest:3561:details:1": "Archmage Xylem has a tower up in the hills overlooking ⟦E1⟧. He's human, but he acts like no human I've met... or killed. He exudes power, and I dare not ask him what he plans on doing with the tablet.",
+  "quest:3561:details:2": "He came to me, but told me that his bodyguard Sanath would help me get to the tower when I was ready to meet him. Look north for Sanath.",
+  "quest:3561:progress:0": "What can help you with, ⟦26⟧?",
+  "quest:3561:completion:0": "Ah, the ⟦E9⟧... how long I've longed to study it.",
+  "quest:3561:completion:1": "Thank you, ⟦27⟧. You may tell Jediga that she has done well. This will definitely be worth the payment she asked for.",
+  "quest:3562:obj:0": "Deliver ⟦E16⟧ to Jediga in ⟦E1⟧.",
+  "quest:3562:details:0": "Take this note to Jediga. Tell her the payment will be here for her when she returns. And tell her I am pleased with her work.",
+  "quest:3562:details:1": "Go swiftly, ⟦28⟧. Tell your master I will be awaiting her here.",
+  "quest:3562:progress:0": "Well, what did Magatha say? The old crone... I bet she was less than polite.",
+  "quest:3562:completion:0": "Ah, good. She was much more reasonable than I expected... at least towards you. I half expected her to have you punished for my insolence in sending someone in my place. She must really want that tablet. Interesting.",
+  "quest:3562:completion:1": "Something to ponder another time.",
+  "quest:3563:obj:0": "Deliver ⟦E17⟧ to Jediga in ⟦E1⟧.",
+  "quest:3563:details:0": "Take this letter to Jediga. Let her know that our deal has been beneficial and I be pleased with her work.",
+  "quest:3563:details:1": "You tell her she come back to ⟦E12⟧ fast and Jes'rimon make sure he take good care of her.",
+  "quest:3563:details:2": "Tell her that, and maybe in the future I have need of your services again, ⟦29⟧.",
+  "quest:3563:progress:0": "Have you spoken to Jes'rimon yet?⟦30⟧⟦31⟧He's a boar among trolls, but his information is usually accurate and his jobs well paying.⟦32⟧⟦33⟧If you can stand his attitude then you stand to make some good coin from his business endeavors.",
+  "quest:3563:completion:0": "I can see he was more than pleased by the looks of his note.... a little too pleased.",
+  "quest:3563:completion:1": "Perhaps some day I'll take time to make sure he knows how much I appreciate his advances also. Well, at least there's one reason to look forward to spending more time in ⟦E1⟧.",
+  "quest:3563:completion:2": "Here's your share of our payment.",
+  "quest:3564:obj:0": "Deliver ⟦E18⟧ to Jediga in ⟦E1⟧.",
+  "quest:3564:details:0": "Here... take... ⟦34⟧ this to Jediga. Good luck to ya!",
+  "quest:3564:progress:0": "Have you met with Andron yet? He rarely leaves ⟦E14⟧, so I don't think it'd be too hard to find him.",
+  "quest:3564:completion:0": "Perfect... wait a minute.",
+  "quest:3564:completion:1": "Haha! What'd you tell him when you delivered the tablet, ⟦35⟧? He overpaid us way too much! Not that I'm complaining. Did you tell him the deal changed? Or was he drunk again?",
+  "quest:3564:completion:2": "Doesn't matter... here, take an extra share also.",
+  "quest:3565:obj:0": "Deliver ⟦E19⟧ to Jediga in ⟦E1⟧.",
+  "quest:3565:details:0": "What is it? Oh yes, your payment. Of course.",
+  "quest:3565:details:1": "Take this and be off with you. I'm sure Jediga is awaiting oh so patiently for your return.",
+  "quest:3565:progress:0": "Well, what did Xylem have to say? He didn't do anything to you, did he? Cast a ⟦E20⟧ on you? Con you into doing work for him?",
+  "quest:3565:completion:0": "No problems? None at all? Well, that's something to be said... I expected him to show some sort of reluctance or to at least betray our deal. Hmm, maybe he can be trusted after all.",
+  "quest:3565:completion:1": "Well, no need to dwell on it that much. Here's your share. Thank you for your help.",
+  "quest:3601:obj:0": "Search the Thalassian Base Camp for Kim'jael's Compass, Scope, Stuffed Chicken and Wizzlegoober, then return them to him in ⟦E1⟧.",
+  "quest:3601:details:0": "Kim'jael indeed!! Do you know what Kim'jael means to the ⟦E21⟧ elves, ⟦36⟧? Little rat... or something like that. The big bullies!",
+  "quest:3601:details:1": "They hired me to help them scout the area looking for some sort of lost treasures. Of course I jumped aboard the moment they said \"treasure\" and the amount they were willing to pay, but of course, they turned on me and tried to kill me... ME!",
+  "quest:3601:details:2": "Goes to show you, you can't trust a ⟦E21⟧ elf.",
+  "quest:3601:details:3": "The problem is, they still have my equipment and I can't get it back. Help me out?",
+  "quest:3601:progress:0": "Those stinkin' ⟦E21⟧ elves. I tell ya, if I was as strong as you are, I'd go down there and teach them a thing or two myself! But I'll have to settle with payin' you to take care of 'em for me.",
+  "quest:3601:completion:0": "Haha! You got them good, didn't you?!",
+  "quest:3601:completion:1": "This is great! That'll teach those ⟦E21⟧ elves to betray their partners... especially someone as loyal as a goblin merchant! Bah, ⟦E21⟧ elves...!",
+  "quest:3601:completion:2": "Well, the least I can do for you is pay you for your time... just like I said I would.",
+  "quest:3601:completion:3": "Here you go... those should be useful.",
+  "quest:5534:obj:0": "Find ⟦E22⟧ that the naga have in their possession in the Ruins of Eldarath and return it to Kim'jael in ⟦E1⟧.",
+  "quest:5534:details:0": "What?! What?!",
+  "quest:5534:details:1": "That wasn't good enough for you? You know how expensive those explosives are? They sell for... oh, nevermind. Fine, you want to make some real money? Cause that's how business is done: you prove you're a valuable employee and then you're rewarded adequately after you stick it out some.",
+  "quest:5534:details:2": "If you're a \"valuable\" employee, then ⟦E23⟧ the Ruins of Eldarath and find me some rune that them ⟦E21⟧ elves were lookin' for. The naga apparently have it in their possession.",
+  "quest:5534:progress:0": "Well, ⟦37⟧? Where is the rune? You are a good employee, right? You're here to help?⟦38⟧⟦39⟧Don't make me think twice about paying you what we agreed upon. What? Oh, we didn't agree on anything? Oh, great... then take your time--just know that it'll be a lot less if you take a long time.",
+  "quest:5534:completion:0": "Haha! Wonderful!",
+  "quest:5534:completion:1": "I'll be sure to find out what this is for and why Magus Rimtori--she's the cow that hired me--wanted it. Hah! I got you now, stinkin' ⟦E21⟧ elves! Kim'jael! Ha! I'll teach them who the rats are!",
+  "quest:5534:completion:2": "Ya did good, ⟦40⟧. Thanks a bundle. Here, take this coin and be off with ya--I've got some things to figure out.",
+  "quest:6804:obj:0": "⟦E24⟧ the ⟦E25⟧ on poisoned elementals of ⟦E26⟧. Bring 12 ⟦E27⟧ and the ⟦E25⟧ to Duke Hydraxis in ⟦E1⟧.",
+  "quest:6804:details:0": "A force of elemental scouts was sent to the eastern plaguelands of Lordaeron, and the disease of that place twisted and infected them. The Waterlords cannot allow this affront to our purity!",
+  "quest:6804:details:1": "Take this vial. In it is a quantity of one aspect of Neptulon. If used on the plagued elementals it will fight the poison within their bodies and cure them! But their inner conflict will drive them into a surging madness.",
+  "quest:6804:details:2": "Defeat the discordant surges and bring me their bracers of binding.",
+  "quest:6804:progress:0": "Do you have the bracers?",
+  "quest:6804:completion:0": "You have done well, ⟦41⟧. The corrupted elementals you cured were an outrage to all bodies of water. Our strength lies in our purity and if we are to win our war with the others, we must remain strong.",
+  "quest:3141:obj:0": "Listen to ⟦E28⟧ Thalipedes tell his story.",
+  "quest:3141:details:0": "So you wish to ⟦E5⟧ demons? You would do well to listen to my tale.",
+  "quest:3141:progress:0": "Do not ⟦E29⟧ me, ⟦42⟧.",
+  "quest:3141:completion:0": "So be it...",
+  "quest:3382:obj:0": "Defend Captain Vanessa Beltis, her crew and the Horizon Scout's passengers against the naga attack. Captain Vanessa Beltis must survive.",
+  "quest:3382:details:0": "We were just off the coast looking for a safe haven to make anchor. The sun hadn't been down for more than an hour when they attacked... those damned naga!",
+  "quest:3382:details:1": "I'm not sure what they were looking for, but it's clear they didn't find it--they've already come back once. A couple of my scouts are on watch at the entrance of the valley to give us fair warning when the next attack comes.",
+  "quest:3382:details:2": "I'm sorry you've come along now, ⟦43⟧, but it's out of my hands.",
+  "quest:3382:details:3": "Are you ready for the fight of your life?",
+  "quest:3382:completion:0": "You've done it! Thank you! Surely this was one of the most brutal battles I've ever taken part in. I can't thank you enough.",
+  "quest:3382:completion:1": "I only wish more of my crew could have lived through this trial.",
+  "quest:3382:completion:2": "I would ask you to speak to any surviving passengers from the Horizon Scout. Some of them had business in the area, and may have a request or two of you if you're willing. Again, thank you for all your help.",
+  "quest:6805:obj:0": "Kill 15 Dust Stormers and 15 Desert Rumblers and then return to Duke Hydraxis in ⟦E1⟧.",
+  "quest:6805:details:0": "We, the elementals of water, wage war with those beings of the lesser elements. If you are truly our ally in this conflict, then show me your conviction!",
+  "quest:6805:details:1": "Far to the south, in the desert land of ⟦E30⟧, the servants of air and earth scurry in a corner of rock named the Crystal Vale. They protect items of power from smaller beings, mortals, and although I do not know why they do this, I wish to foil their efforts.",
+  "quest:6805:details:2": "Go to the Crystal Vale in ⟦E30⟧ and defeat our ⟦E31⟧, then return to me.",
+  "quest:6805:progress:0": "Cowardice is not a thing we hold in regard, ⟦44⟧.  Go to ⟦E30⟧ and prove your bravery.",
+  "quest:6805:completion:0": "Your bravery is proven, as is your worth to us. Perhaps I may have future tasks for you, tasks more befitting a valued ally of the Waterlords.",
+  "quest:3508:obj:0": "Wait for ⟦E28⟧ to complete the enlightenment ⟦E20⟧.",
+  "quest:3508:details:0": "You are foolhardy, ⟦45⟧. It is an admirable quality of your kind - to blindly enter ⟦E5⟧ when you have little to no ⟦E32⟧ of success. I will assist you, if only to see just one of Razelikh's minions fall.",
+  "quest:3508:details:1": "To break the ward placed over Razelikh's subordinates will take time and require the acquisition of rare artifacts.",
+  "quest:3508:details:2": "Be still, I must first perform the enlightenment ritual. The information I gather will assist me in forging weapons of great power.",
+  "quest:3508:completion:0": "The name of the beast must be found.",
+  "quest:3509:obj:0": "Speak with Lord Arkkoroc in ⟦E1⟧. Begin your search at the waters edge to find the Temple of Arkkoran.",
+  "quest:3509:details:0": "There is only one way to harm the ⟦E33⟧ lord and his minions. A weapon of power must be forged bearing his true name.",
+  "quest:3509:details:1": "When such a weapon is forged, the ⟦E33⟧ and all under his command are vulnerable.",
+  "quest:3509:details:2": "BA lesser deity resides in ⟦E1⟧: Lord Arkkoroc. You must seek him out but be warned, his minions will stop at nothing to destroy you if you are discovered.",
+  "quest:3509:details:3": "Undoubtedly, you will have to pay a price for such information.",
+  "quest:3509:completion:0": "A ⟦E33⟧ lord?",
+  "quest:3509:completion:1": "B<Lord Arkkoroc laughs.>",
+  "quest:3509:completion:2": "Perhaps the one can assist you with this information; but first, you must assist the one.",
+  "quest:3509:completion:3": "B",
+  "quest:3510:obj:0": "Slay Hetaera and bring back ⟦E34⟧, ⟦E35⟧, and ⟦E36⟧ to Lord Arkkoroc.",
+  "quest:3510:details:0": "She kills my children, mortal. She that calls herself the ruler of these oceans. A false god, nothing more. Crush her and bring back all of her heads.",
+  "quest:3510:details:1": "For that, you will be given the name that you seek and something else of equal importance.",
+  "quest:3510:details:2": "She roams the clutch... Hetaera she is called.",
+  "quest:3510:details:3": "B<Lord Arkkoroc ⟦E37⟧ to the southwest.>",
+  "quest:3510:details:4": "Go!⟦46⟧",
+  "quest:3510:progress:0": "<Lord Arkkoroc bends down to inspect you.>⟦47⟧⟦48⟧Where are they?",
+  "quest:3510:completion:0": "Finally, one worthy of the wisdom of Arkkoroc!",
+  "quest:3510:completion:1": "B",
+  "quest:3511:obj:0": "Take the temper back to ⟦E28⟧ Thalipedes.⟦49⟧",
+  "quest:3511:details:0": "As promised, I will reveal the name of the ⟦E33⟧ lord, Razelikh the Defiler. First, however, I must prepare something of utmost importance for your journey.",
+  "quest:3511:details:1": "The weapon you seek to create ⟦E38⟧ a temper. Give me a moment to drain the blood from these heads.",
+  "quest:3511:details:2": "B<Lord Arkkoroc squeezes the heads in between his gigantic fists, draining them of their blood.>",
+  "quest:3511:details:3": "Take the temper back to ⟦E28⟧ along with the name of the beast: Rakh'likh.",
+  "quest:3511:progress:0": "You return! Astounding, ⟦50⟧. Did you discover the true name?⟦51⟧⟦52⟧",
+  "quest:3511:completion:0": "The temper will add the necessary vitriol we require for the forging of the weapons. There is but one more step in their creation.",
+  "quest:3511:completion:1": "B",
+  "quest:3602:obj:0": "Recover twenty ⟦E39⟧ from southern ⟦E1⟧. You may use the Felhound to assist you in 'sniffing' out the location of cleverly hidden deposits.",
+  "quest:3602:obj:1": "Return to ⟦E28⟧ when the task is complete.⟦53⟧",
+  "quest:3602:details:0": "The ancient cliff ⟦E40⟧ of the southern region of ⟦E1⟧ consume the rock and buildings of the land for sustenance. The excrement from their consumption is a highly malleable and extremely strong crystal known as ⟦E41⟧.",
+  "quest:3602:details:1": "The formations litter the southern arc, but few are ever recovered due to the extremely violent nature of the ⟦E40⟧.",
+  "quest:3602:details:2": "You are to venture south and recover enough of the ⟦E41⟧ for the creation of the weapon's body. My felhounds will aid in the recovery of the crystal.",
+  "quest:3602:progress:0": "Evil does not sleep, fool. You will have time for rest when you are finally dead. Now, bring me those crystals.",
+  "quest:3602:completion:0": "Your tasks in ⟦E1⟧ are complete, mortal. I must now forge the necessary components for the next step in your adventure.",
+  "quest:3621:obj:0": "Take the ⟦E42⟧ the Ancient in ⟦E43⟧.",
+  "quest:3621:details:0": "The weapons are ready to be forged. You must take the tempered azsharite to one with the ⟦E44⟧ to harness fel energy.",
+  "quest:3621:details:1": "In ⟦E43⟧ such a blacksmith exists. Galvan the Ancient, leader of the Mithril Order, will craft the weapons to your specifications. You will find his encampment between Zul'Gurub and the Mosh'Ogg ogre mound.",
+  "quest:3621:details:2": "May your determination and faith carry you through this ordeal. Should you fail, know that your God smiles down upon you, mortal.",
+  "quest:3621:progress:0": "⟦E28⟧, eh? It has been many years since I have heard that name.",
+  "quest:3621:completion:0": "My goodness, I can only imagine what you went through to get these materials. Few venture into ⟦E1⟧ and return alive, let alone those that face demi-gods and ⟦E40⟧!",
+  "quest:3621:completion:1": "B",
+  "quest:6821:obj:0": "Bring the ⟦E45⟧ to Duke Hydraxis in ⟦E1⟧.",
+  "quest:6821:details:0": "You have shown me that you can defeat our ⟦E31⟧ and perform missions to further the cause of the Waterlords. But until now you have only faced lesser foes... if pitted against a powerful ⟦E46⟧, can you prevail?",
+  "quest:6821:details:1": "That is your new task.",
+  "quest:6821:details:2": "High up in Blackrock Spire the orcs have captured a servant of fire, the Pyroguard Emberseer. Find his place of imprisonment, slay his captors, and then slay the emberseer. Bring me his eye and it will show me your worth.",
+  "quest:6821:progress:0": "Do you have the Eye, ⟦54⟧?  Do you have the strength to enter Blackrock Spire?",
+  "quest:6821:completion:0": "Ah, so you do have the strength. And you have the cunning as well, for Blackrock Spire is more than a match for brute strength alone.",
+  "quest:6821:completion:1": "Indeed ⟦55⟧, you may yet prove a valued ally to us...",
+  "quest:6822:obj:0": "Kill 1 ⟦E47⟧ Lord, 1 Molten Giant, 1 Ancient Core Hound and 1 Lava Surger, then return to Duke Hydraxis in ⟦E1⟧.",
+  "quest:6822:details:0": "⟦56⟧, perhaps it is time to give you a real test. Are you ready?",
+  "quest:6822:details:1": "At the bottom of Blackrock Depths is a passage to the Molten Core. This is a stronghold of our ⟦E46⟧, held by the most powerful servants of fire on this world.",
+  "quest:6822:details:2": "Go to the Molten Core, ⟦57⟧. Show me you have the strength and the will to defeat what you find there.",
+  "quest:6822:details:3": "And if you have ⟦E48⟧ among your people, then rally them. Nothing short of an army can hope to enter the Molten Core and live.",
+  "quest:6822:progress:0": "Your success in the Molten Core awaits, ⟦58⟧.",
+  "quest:6822:completion:0": "You have done what most of your kind would think impossible. You have faced the beings of the Molten Core, and triumphed!",
+  "quest:6822:completion:1": "For so small a creature, you have displayed great resource.",
+  "quest:6822:completion:2": "Some day, perhaps we might ⟦E49⟧ a true allegiance between your kind and the Waterlords.",
+  "quest:6823:obj:0": "Earn an ⟦E50⟧ faction with the ⟦E51⟧, then talk to Duke Hydraxis in ⟦E1⟧.",
+  "quest:6823:details:0": "If you truly wish an allegiance with us, then I invite you to wage war on our foes, the servants of air and earth and fire. Each defeat you heap upon them will weaken their foothold here, and further prove your adherence to our cause.",
+  "quest:6823:details:1": "The campaign will be long, but if you persevere then your glory and honor will be great.",
+  "quest:6823:completion:0": "Your exploits against our ⟦E31⟧ ring through the chambers of the Waterlords, ⟦59⟧. It was thought by some that your ⟦E52⟧ is too small and fragile to fight in our war, but you have made great gains. You have earned respect among us, an unbelievable feat.",
+  "quest:6824:obj:0": "Bring the ⟦E53⟧ of Lucifron, Sulfuron, Gehennas and Shazzrah to Duke Hydraxis in ⟦E1⟧.",
+  "quest:6824:details:0": "⟦60⟧, your service is of great value to us, so we are reluctant to send you on this last mission for we do not want to lose such a useful agent.",
+  "quest:6824:details:1": "But its success would further our war efforts tremendously and... it was deemed worth risking you.",
+  "quest:6824:details:2": "We want these captains in the Molten Core destroyed: Lucifron, Sulfuron, Gehennas and Shazzrah. Kill them and bring me their hands!",
+  "quest:6824:details:3": "This task will take every resource you possess, ⟦61⟧, but if you can do it then the Firelords will be dealt a terrible blow.",
+  "quest:6824:progress:0": "Have you defeated Lucifron and the others, ⟦62⟧?  Do you have the hands of the ⟦E46⟧?",
+  "quest:6824:completion:0": "You have the hands! You defeated the fire captains! I would not have thought it possible, had I not known you and what you are capable of.",
+  "quest:6824:completion:1": "B⟦63⟧, your exploits are without number, but word of this last feat will send waves among the Waterlords. Your name may one day be legend to us.",
+  "quest:6824:completion:2": "Speak with me again, ⟦64⟧. I may have yet another task...",
+  "quest:7486:obj:0": "Claim your reward from Hydraxis' Coffer.",
+  "quest:7486:details:0": "⟦65⟧, your services to the Warlords surpassed all we could expect from the denizens of this world.",
+  "quest:7486:details:1": "We do not understand your people's notions of gratitude, or rewarding good works, but in this case... perhaps a reward is warranted.",
+  "quest:7486:details:2": "Under the surf at the southern base of this island, you will find a coffer. In it you will find your... reward.",
+  "quest:7486:details:3": "Go, ⟦66⟧. Claim your reward.",
+  "quest:7486:completion:0": "Hydraxis' voice descends from the waters' surface...",
+  "quest:7486:completion:1": "B\"Choose that which best suits you, ⟦67⟧. May it protect you against the foes of the Waterlords.\""
+ },
+ "context": {
+  "quest:3421": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Nyrill"
+  },
+  "quest:3503": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Sanath Lim-yo"
+  },
+  "quest:5535": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 47,
+   "side": "",
+   "giver": "Loh'atu",
+   "turner": "Loh'atu"
+  },
+  "quest:5536": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 47,
+   "side": "",
+   "giver": "Loh'atu",
+   "turner": "Loh'atu"
+  },
+  "quest:3517": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jediga",
+   "turner": "Jediga"
+  },
+  "quest:3518": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jediga",
+   "turner": "Magatha Grimtotem"
+  },
+  "quest:3541": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jediga",
+   "turner": "Jes'rimon"
+  },
+  "quest:3542": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jediga",
+   "turner": "Andron Gant"
+  },
+  "quest:3561": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jediga",
+   "turner": "Archmage Xylem"
+  },
+  "quest:3562": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Magatha Grimtotem",
+   "turner": "Jediga"
+  },
+  "quest:3563": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jes'rimon",
+   "turner": "Jediga"
+  },
+  "quest:3564": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Andron Gant",
+   "turner": "Jediga"
+  },
+  "quest:3565": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 52,
+   "side": "horde",
+   "giver": "Archmage Xylem",
+   "turner": "Jediga"
+  },
+  "quest:3601": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 53,
+   "side": "",
+   "giver": "Kim'jael",
+   "turner": "Kim'jael"
+  },
+  "quest:5534": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 53,
+   "side": "",
+   "giver": "Kim'jael",
+   "turner": "Kim'jael"
+  },
+  "quest:6804": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 56,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Duke Hydraxis"
+  },
+  "quest:3141": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 57,
+   "side": "",
+   "giver": "Loramus Thalipedes",
+   "turner": "Loramus Thalipedes"
+  },
+  "quest:3382": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 57,
+   "side": "",
+   "giver": "Captain Vanessa Beltis",
+   "turner": "Captain Vanessa Beltis"
+  },
+  "quest:6805": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 57,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Duke Hydraxis"
+  },
+  "quest:3508": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 58,
+   "side": "",
+   "giver": "Loramus Thalipedes",
+   "turner": "Loramus Thalipedes"
+  },
+  "quest:3509": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 58,
+   "side": "",
+   "giver": "Loramus Thalipedes",
+   "turner": "Lord Arkkoroc"
+  },
+  "quest:3510": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 58,
+   "side": "",
+   "giver": "Lord Arkkoroc",
+   "turner": "Lord Arkkoroc"
+  },
+  "quest:3511": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 58,
+   "side": "",
+   "giver": "Lord Arkkoroc",
+   "turner": "Loramus Thalipedes"
+  },
+  "quest:3602": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 58,
+   "side": "",
+   "giver": "Loramus Thalipedes",
+   "turner": "Loramus Thalipedes"
+  },
+  "quest:3621": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 58,
+   "side": "",
+   "giver": "Loramus Thalipedes",
+   "turner": "Galvan the Ancient"
+  },
+  "quest:6821": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 60,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Duke Hydraxis"
+  },
+  "quest:6822": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 60,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Duke Hydraxis"
+  },
+  "quest:6823": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 60,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Duke Hydraxis"
+  },
+  "quest:6824": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 60,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Duke Hydraxis"
+  },
+  "quest:7486": {
+   "zone_en": "Azshara",
+   "zone_fa": "آزشارا",
+   "level": 60,
+   "side": "",
+   "giver": "Duke Hydraxis",
+   "turner": "Hydraxis' Coffer"
+  }
+ },
+ "known": {
+  "quest:5535": {
+   "title": "بی‌قراری ارواح"
+  },
+  "quest:5536": {
+   "title": "سرزمینی پر از نفرت"
+  },
+  "quest:3517": {
+   "title": "دزدیدن دانش"
+  },
+  "quest:3518": {
+   "title": "تحویل به ماگاتا"
+  },
+  "quest:3541": {
+   "title": "تحویل به جس‌ریمون"
+  },
+  "quest:3542": {
+   "title": "تحویل به آندرون گانت"
+  },
+  "quest:3561": {
+   "title": "تحویل به کاهن اعظم زایلم"
+  },
+  "quest:3562": {
+   "title": "پاداش ماگاتا برای جدیگا"
+  },
+  "quest:3563": {
+   "title": "پاداش جس‌ریمون برای جدیگا"
+  },
+  "quest:3564": {
+   "title": "پاداش آندرون برای جدیگا"
+  },
+  "quest:3565": {
+   "title": "پاداش زایلم برای جدیگا"
+  },
+  "quest:3601": {
+   "title": "کیم‌جائل واقعاً!"
+  },
+  "quest:5534": {
+   "title": "تجهیزات «گمشدهٔ» کیم‌جائل"
+  },
+  "quest:6804": {
+   "title": "آب مسموم"
+  },
+  "quest:3141": {
+   "title": "لوراموس"
+  },
+  "quest:3382": {
+   "title": "خدمه‌ای زیر آتش"
+  },
+  "quest:6805": {
+   "title": "توفان‌زن‌ها و غرش‌زن‌ها"
+  },
+  "quest:3508": {
+   "title": "شکستن نگه‌بند"
+  },
+  "quest:3509": {
+   "title": "نام دیو"
+  },
+  "quest:3510": {
+   "title": "نام دیو"
+  },
+  "quest:3511": {
+   "title": "نام دیو"
+  },
+  "quest:3602": {
+   "title": "آزشارایت"
+  },
+  "quest:3621": {
+   "title": "پدیدآمدن فِل‌کش"
+  },
+  "quest:6821": {
+   "title": "چشم اخگربین"
+  },
+  "quest:6822": {
+   "title": "هم‌کور گداخته"
+  },
+  "quest:6823": {
+   "title": "مأمور هایدراکسیس"
+  },
+  "quest:6824": {
+   "title": "دست‌های دشمن"
+  },
+  "quest:7486": {
+   "title": "پاداش قهرمان"
+  }
+ }
+}

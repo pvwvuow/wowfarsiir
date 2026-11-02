@@ -1,0 +1,573 @@
+{
+ "pack": "quest-dun-morogh-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-dun-morogh-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Frost Ram",
+   "fa": "قوچ یخی",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Black Ram",
+   "fa": "قوچ سیاه",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Blue Mechanostrider",
+   "fa": "استرایدرِ مکانیکیِ آبی",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Hallowed Memorandum",
+   "fa": "یادداشت مقدس",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Thunder Ale",
+   "fa": "آبجوی رعد",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Steelgrill's Tools",
+   "fa": "ابزارِ فولادپز",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Crate of Inn Supplies",
+   "fa": "جعبهٔ لوازم مهمان‌خانه",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Hands",
+   "fa": "دستان",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Barrel of Barleybrew Scalder",
+   "fa": "بشکهٔ جوشانِ آبجوی جو",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Meat",
+   "fa": "گوشت",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Rumbleshot's Ammo",
+   "fa": "مهمات رامبل‌شات",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Supply Bundle",
+   "fa": "بستهٔ تدارکات",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Cooking",
+   "fa": "آشپزی",
+   "kind": "sp"
+  },
+  "E15": {
+   "en": "Gozwin's Mechanic's Log",
+   "fa": "دفترِ مکانیکِ گوزوین",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Evershine",
+   "fa": "اورشاین",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Ragnar Thunderbrew",
+   "fa": "راگنار تاندربرو",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Boar Ribs",
+   "fa": "دندهٔ خوک وحشی",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Rhapsody Malt",
+   "fa": "مالت راپسودی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Beer Basted Boar Ribs",
+   "fa": "دندهٔ خوک‌وحشیِ خواب‌آبجو",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Flintfire's Shipment",
+   "fa": "محمولهٔ فلینت‌فایر",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Claw",
+   "fa": "پنجهٔ وحشی",
+   "kind": "sp"
+  },
+  "E24": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Mountaineer Gretchen's Report",
+   "fa": "گزارش کوه‌نورد گرتچن",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Wrath",
+   "fa": "غضب طبیعت",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "Frost Ram": "قوچ یخی",
+  "Black Ram": "قوچ سیاه",
+  "Blue Mechanostrider": "استرایدرِ مکانیکیِ آبی",
+  "Hallowed Memorandum": "یادداشت مقدس",
+  "Thunder Ale": "آبجوی رعد",
+  "Steelgrill's Tools": "ابزارِ فولادپز",
+  "Crate of Inn Supplies": "جعبهٔ لوازم مهمان‌خانه",
+  "Hands": "دستان",
+  "Barrel of Barleybrew Scalder": "بشکهٔ جوشانِ آبجوی جو",
+  "Meat": "گوشت",
+  "Rumbleshot's Ammo": "مهمات رامبل‌شات",
+  "Dun Morogh": "دون موروغ",
+  "Supply Bundle": "بستهٔ تدارکات",
+  "Cooking": "آشپزی",
+  "Gozwin's Mechanic's Log": "دفترِ مکانیکِ گوزوین",
+  "Evershine": "اورشاین",
+  "Ragnar Thunderbrew": "راگنار تاندربرو",
+  "Boar Ribs": "دندهٔ خوک وحشی",
+  "Rhapsody Malt": "مالت راپسودی",
+  "Beer Basted Boar Ribs": "دندهٔ خوک‌وحشیِ خواب‌آبجو",
+  "Alliance": "اتحاد",
+  "Flintfire's Shipment": "محمولهٔ فلینت‌فایر",
+  "Claw": "پنجهٔ وحشی",
+  "nearby": "نزدیک",
+  "Mountaineer Gretchen's Report": "گزارش کوه‌نورد گرتچن",
+  "Wrath": "غضب طبیعت"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$C",
+  "14": "$N",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$N"
+ },
+ "rows": {
+  "quest:7673:title": "⟦E1⟧ Exchange",
+  "quest:7673:progress:0": "[PH] Ye bring me yer old ram, I will trade it in for one from the new pack!  The new ram will be just as fast as yer old one, but with a new look to him.   You can look at the swift rams here to see what ye will have to choose from.",
+  "quest:7674:title": "⟦E2⟧ Exchange",
+  "quest:7674:progress:0": "[PH] Ye bring me yer old ram, I will trade it in for one from the new pack!  The new ram will be just as fast as yer old one, but with a new look to him.   You can look at the swift rams here to see what ye will have to choose from.",
+  "quest:7675:title": "Icy ⟦E3⟧ Replacement",
+  "quest:7675:progress:0": "[PH] If you bring me your old fast mechanostrider, I will trade it in for one from the new pack.   The new mechanostrider will be just as fast as your old one, but have a different look to it.   You can look at the swift mechanostriders we already have around the yard here to see what it will look like.",
+  "quest:7676:title": "White Mechanostrider Replacement",
+  "quest:7676:progress:0": "[PH] If you bring me your old fast mechanostrider, I will trade it in for one from the new pack.   The new mechanostrider will be just as fast as your old one, but have a different look to it.   You can look at the swift mechanostriders we already have around the yard here to see what it will look like.",
+  "quest:98574:title": "⟦E4⟧",
+  "quest:98574:obj:0": "Read the ⟦E4⟧ and speak to Branstock Khalder in Anvilmar.",
+  "quest:308:title": "Distracting Jarven",
+  "quest:308:progress:0": "Hmph! There is all this booze down here. but I have strict orders not to touch it. If only I could get a taste of some of our ⟦E5⟧...that would sharpen my wits, no lying!",
+  "quest:308:completion:0": "For me? You're a true hero, ⟦1⟧!",
+  "quest:403:title": "Guarded Thunderbrew Barrel",
+  "quest:403:completion:0": "This barrel of ale is guarded by Jarven Thunderbrew.  As long as he's in the basement, no barrels may be disturbed.",
+  "quest:400:obj:0": "Deliver ⟦E6⟧ to Beldin Steelgrill.",
+  "quest:400:details:0": "Beldin Steelgrill owns the local mechanic shop, and he's the best siege engine tech there is! But he's not forgiving to his tools. I swear he almost breaks more arclight spanners than we can supply him with!",
+  "quest:400:details:1": "We just filled his last order for tools. If you deliver it to him I'm sure he'll make it worth the effort.",
+  "quest:400:details:2": "His shop, Steelgrill's Depot, is just northeast of Kharanos. And it's a local haunt for veteran siege engine pilots, so keep your ears open for opportunities while you're there.",
+  "quest:400:progress:0": "Hm?  You look a little young to be a siege engine pilot.  But no matter...do you need something fixed?⟦2⟧⟦3⟧Well take a number and get comfortable.  I'm working on a couple engines right now and won't have time for another job for at least a few days.⟦4⟧⟦5⟧Or, were you here for something else...?",
+  "quest:400:completion:0": "You have my tools? Well done, lad, well done! I just broke my last fang-ratchet an hour ago and I need one of those to finish repairs on Pilot Stonegear's siege engine. You did a good thing by lugging those tools here, ⟦6⟧.",
+  "quest:400:completion:1": "Here, take these coins for your help.",
+  "quest:2160:obj:0": "Deliver the ⟦E7⟧ to Tannok Frosthammer in Kharanos.",
+  "quest:2160:details:0": "Hey! You look like a hearty adventurer. If you're planning on braving the pass, do you suppose you could bring a package to the inn in Kharanos?",
+  "quest:2160:details:1": "You were planning on stopping at the inn, right? If you make it through the pass, you'll definitely want to take a breather there.",
+  "quest:2160:details:2": "Anyways, bring this to Tannok Frosthammer, the innkeeper's assistant. I can't get through the pass myself, and it'll be days until a Mountaineer escort comes through!",
+  "quest:2160:progress:0": "Hi there! Come in, take a seat by the fire and warm yourself with a flagon of ale.",
+  "quest:2160:completion:0": "Ah, at last, the supplies from ⟦E8⟧! I was beginning to worry, we've had scarce word from Anvilmar ever since the troggs overran the pass.",
+  "quest:2160:completion:1": "Thanks for bring this to me, ⟦7⟧. And please, make yourself comfortable. You must be tired after your journey.",
+  "quest:310:obj:0": "In the basement of the Thunderbrew Distillery in Kharanos, replace a barrel of ⟦E5⟧ with a ⟦E9⟧.",
+  "quest:310:details:0": "I have to admit, those Thunderbrews make some good drinks. But they need to learn that theirs isn't the only decent brew! Maybe you can help me teach them that lesson...",
+  "quest:310:details:1": "Here, take this barrel of Barleybrew Scalder. Sneak into the basement of the Thunderbrew Distillery in Kharanos and switch it with one of their barrels of ⟦E5⟧. Then we'll see how their patrons like my brew over theirs!",
+  "quest:310:details:2": "And if the barrels are guarded, then you might have to distract the guard ...",
+  "quest:310:progress:0": "The date on this barrel shows that it'll soon be tapped.",
+  "quest:310:completion:0": "You quickly place Marleth's barrel of Barleybrew Scalder among the Thunderbrew barrels.",
+  "quest:317:obj:0": "Gather 4 Chunks of Boar ⟦E10⟧ and 2 Thick Bear Furs, and deliver them to Pilot Bellowfiz at Steelgrill's Depot.",
+  "quest:317:details:0": "I'm preparing to start a mission for the Siege Brigade. It's a long one, and I need to stock Jetsteam with a month's worth of supplies. So while Steelgrill is working on my tank, can you do some hunting for me?",
+  "quest:317:details:1": "I'll need some fur for bedding, and boar meat for food. You can get meat from boars and fur from the bears... you can find them both in the snow fields south of the Grizzled Den.",
+  "quest:317:progress:0": "Preparations are going well. How goes your hunting?",
+  "quest:317:completion:0": "By Magni's beard, you sure did a lot of hunting!! Thank you, ⟦8⟧.",
+  "quest:5541:obj:0": "Bring ⟦E11⟧ to Hegnar Rumbleshot in ⟦E12⟧.",
+  "quest:5541:details:0": "Hegnar Rumbleshot sells guns off the road to Anvilmar. Riflemen and mortar teams spend a lot of time practicing out near his shop, and he's always needing fresh ammunition.",
+  "quest:5541:details:1": "But... the last crate of ammo I sent him got lost along the way. My courier said he was camped near the Grizzled Den when wendigo chased him away... and the fool left Rumbleshot's ammo behind!",
+  "quest:5541:details:2": "B⟦9⟧, can you get that ammo and take it to Rumbleshot? He's been waiting on it and I'm sure he's running low.",
+  "quest:5541:progress:0": "I hope you're not here for ammo, because I'm almost out!",
+  "quest:5541:completion:0": "Great, more ammo! Old Loslor's shipment finally came through! The ammo might be late, but just like my grand daddy used to tell me: late's better than never!",
+  "quest:5541:completion:1": "Thank you much, ⟦10⟧. I already have buyers eager for this stuff!",
+  "quest:96608:title": "The Great Outdoors",
+  "quest:96608:obj:0": "Sit near Eric's Basic Campfire and wait until you receive the Boosted Rest buff.",
+  "quest:96628:title": "The Adventurer",
+  "quest:96628:obj:0": "Deliver the ⟦E13⟧ to Eric Brighthammer near Kharanos.",
+  "quest:96628:obj:1": "*⟦E13⟧ (provided)",
+  "quest:96628:details:0": "Wait, . I have another ask of you, before you brave that tunnel.",
+  "quest:96628:details:1": "My mountaineers have reported an adventurer that's shown up just outside of Kharanos. Could you deliver these supplies to him?",
+  "quest:96628:progress:0": "...",
+  "quest:96629:title": "Camping 101: ⟦E14⟧",
+  "quest:96629:obj:0": "Speak with Gremlock Pilsnor in Kharanos to learn to become a cook.",
+  "quest:97277:title": "Grund and Gozwin",
+  "quest:97277:obj:0": "Find Grund and Gozwin's camp in the hills to the northwest. Recover ⟦E15⟧ and kill the Snow Leopard Prowler.",
+  "quest:311:obj:0": "Bring the barrel of ⟦E5⟧ to Marleth Barleybrew at the Brewnall Village.",
+  "quest:311:details:0": "Having inserted a barrel of Marleth's Scalder in the Kharanos Distillery's cellar, you grab a barrel of ⟦E5⟧ as proof of the deed...",
+  "quest:311:progress:0": "Did you make the switch?",
+  "quest:311:completion:0": "Not bad, ⟦11⟧! Did you have a hard time getting past their guard?",
+  "quest:311:completion:1": "No matter - many thanks, and if you're ever in need of stout with a kick, don't forget the Barleybrews!",
+  "quest:313:obj:0": "Gather 8 Wendigo Manes and bring them to Pilot Stonegear.",
+  "quest:313:details:0": "Driving a Siege Engine isn't for everyone. It takes an iron grip and nerves of steel...lucky I have both! How about you? How's your mettle? Want to prove it to me?",
+  "quest:313:details:1": "Well...I'm looking to make my engine, Trollplow, a little more cozy. How about you get me a heap of Wendigo Manes from the Grizzled Den, west of Kharanos. Those manes would make a great rug for Trollplow's inside deck!",
+  "quest:313:progress:0": "Hey, ⟦12⟧. Been to the Grizzled Den yet? Those Wendigos can be fierce.",
+  "quest:313:completion:0": "Ah yes, these manes will work great! You show a lot of grit, ⟦13⟧ - I wager we'll see great things from you.",
+  "quest:318:obj:0": "Get a cask of ⟦E16⟧ from Rejold Barleybrew in Brewnall Village.",
+  "quest:318:details:0": "Rejold Barleybrew experiments with his brews. Some of them taste good, some bad, and some...well, some will lay all but the stoutest dwarf flat.",
+  "quest:318:details:1": "He lives at Brewnall Village, west of Kharanos, and one of his drinks, ⟦E16⟧, is what I want. It'll help keep me warm while I'm on the cold road.",
+  "quest:318:details:2": "And...the blessed stuff burns so hot I can throw it in Jetsteam's furnace for a burst of power! That little tactic has gotten me out of more than one tight spot.",
+  "quest:318:completion:0": "Bellowfiz needs some of my ⟦E16⟧? Hm...all right.",
+  "quest:384:obj:0": "⟦E17⟧ in Kharanos wants 6 Crag ⟦E18⟧ and a mug of ⟦E19⟧.",
+  "quest:384:details:0": "Nothing my tavern patrons enjoy more than some ⟦E20⟧! Only problem is, the local trapper who used to bring me supplies enlisted in the King's Army to help with the war on the ⟦E21⟧ front.",
+  "quest:384:details:1": "Maybe you can help me out? If you bring me six crag boar ribs and a ⟦E19⟧ from the tavern here, I'll give you the family recipe for my famous ⟦E20⟧, not to mention a free sample! The secret's in the Malt!",
+  "quest:384:progress:0": "I'm going to need six crag boar ribs and a mug of ⟦E19⟧, ⟦14⟧.",
+  "quest:384:completion:0": "The Malt is brewed, the Boars are dead⟦15⟧And before all is done and anything said⟦16⟧We will have to fight for first dibs⟦17⟧On these savory ⟦E20⟧!",
+  "quest:98321:title": "⟦E22⟧",
+  "quest:98321:obj:0": "Collect 8 Flintfire Shipments from the Grizzled Den for Tongus Flintfire in Kharanos.",
+  "quest:319:obj:0": "Kill 6 Ice ⟦E23⟧ Bears, 8 Elder Crag Boars, and 8 Snow Leopards, and then return to Rejold Barleybrew in Brewnall Village.",
+  "quest:319:details:0": "I have a cask of ⟦E16⟧ handy, but...can you do me a favor? Brewnall village could use a hand against the wild animals that wander the ⟦E24⟧ snows. Sometimes they wander close.",
+  "quest:319:details:1": "We're not afraid of these bears and cats and boars - no self respecting dwarf would be - but if you can take care of those animals for us, then we'd have more time for our crafting and brewing.",
+  "quest:319:progress:0": "Have you taken care of those wild animals?",
+  "quest:319:completion:0": "Thank you, ⟦18⟧. It'll be nice to work our crafts without hearing so many growls and snorts outside the village.",
+  "quest:320:obj:0": "Give the cask of ⟦E16⟧ to Pilot Bellowfiz at Steelgrill's Depot.",
+  "quest:320:details:0": "Here's your cask of ⟦E16⟧, ⟦19⟧. And again, thank you for the hunting earlier.",
+  "quest:320:progress:0": "Did you get that ⟦E16⟧?",
+  "quest:320:completion:0": "Yes, this will do just fine. I think I'll open a bottle right now and have a taste...",
+  "quest:98319:title": "Secure the Mountain",
+  "quest:98319:obj:0": "Find Mountaineer Cornelius in the Grizzled Den for Mountaineer Gretchen.",
+  "quest:98322:title": "Secure the Mountain",
+  "quest:98322:obj:0": "Check in on Mountaineer Gretchen west of Kharanos.",
+  "quest:98323:title": "Secure the Mountain",
+  "quest:98323:obj:0": "Deliver ⟦E25⟧ back to Senir Whitebeard in Kharanos.",
+  "quest:99158:title": "Dawn in the Mountains",
+  "quest:99158:obj:0": "Bring the crate of candles to Father Gavin at Misty Pine Refuge.",
+  "quest:99159:title": "Finding Warmth",
+  "quest:99159:obj:0": "Collect 14 pieces of firewood.",
+  "quest:99160:title": "Rime's ⟦E26⟧",
+  "quest:99160:obj:0": "Destroy 10 minor ice elementals.",
+  "quest:99161:title": "Rime's ⟦E26⟧",
+  "quest:99161:obj:0": "Kill Avala and retrieve its core."
+ },
+ "context": {
+  "quest:7673": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Veron Amberstill",
+   "turner": "Veron Amberstill"
+  },
+  "quest:7674": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Veron Amberstill",
+   "turner": "Veron Amberstill"
+  },
+  "quest:7675": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Milli Featherwhistle",
+   "turner": "Milli Featherwhistle"
+  },
+  "quest:7676": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Milli Featherwhistle",
+   "turner": "Milli Featherwhistle"
+  },
+  "quest:98574": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm",
+   "turner": ""
+  },
+  "quest:308": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 2,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Jarven Thunderbrew"
+  },
+  "quest:403": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 2,
+   "side": "alliance",
+   "giver": "Guarded Thunder Ale Barrel",
+   "turner": "Guarded Thunder Ale Barrel"
+  },
+  "quest:400": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Tharek Blackstone",
+   "turner": "Beldin Steelgrill"
+  },
+  "quest:2160": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Hands Springsprocket",
+   "turner": "Tannok Frosthammer"
+  },
+  "quest:310": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Marleth Barleybrew",
+   "turner": "Unguarded Thunder Ale Barrel"
+  },
+  "quest:317": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Pilot Bellowfiz",
+   "turner": "Pilot Bellowfiz"
+  },
+  "quest:5541": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Loslor Rudge",
+   "turner": "Hegnar Rumbleshot"
+  },
+  "quest:96608": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Eric Brighthammer",
+   "turner": "Eric Brighthammer"
+  },
+  "quest:96628": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Mountaineer Thalos",
+   "turner": "Eric Brighthammer"
+  },
+  "quest:96629": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Eric Brighthammer",
+   "turner": "Gremlock Pilsnor"
+  },
+  "quest:97277": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Grund Drokda",
+   "turner": "Grund Drokda"
+  },
+  "quest:311": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Unguarded Thunder Ale Barrel",
+   "turner": "Marleth Barleybrew"
+  },
+  "quest:313": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Pilot Stonegear",
+   "turner": "Pilot Stonegear"
+  },
+  "quest:318": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Pilot Bellowfiz",
+   "turner": "Rejold Barleybrew"
+  },
+  "quest:384": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Ragnar Thunderbrew («راگنار تاندربرو»)",
+   "turner": "Ragnar Thunderbrew («راگنار تاندربرو»)"
+  },
+  "quest:98321": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Tognus Flintfire",
+   "turner": "Tognus Flintfire"
+  },
+  "quest:319": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Rejold Barleybrew",
+   "turner": "Rejold Barleybrew"
+  },
+  "quest:320": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Rejold Barleybrew",
+   "turner": "Pilot Bellowfiz"
+  },
+  "quest:98319": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Mountaineer Gretchen",
+   "turner": "Mountaineer Gretchen"
+  },
+  "quest:98322": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Senir Whitebeard",
+   "turner": "Mountaineer Gretchen"
+  },
+  "quest:98323": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Mountaineer Gretchen",
+   "turner": "Senir Whitebeard"
+  },
+  "quest:99158": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Maxan Anvol",
+   "turner": "Father Gavin"
+  },
+  "quest:99159": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Father Gavin",
+   "turner": "Father Gavin"
+  },
+  "quest:99160": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Father Gavin",
+   "turner": "Father Gavin"
+  },
+  "quest:99161": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Father Gavin",
+   "turner": "Father Gavin"
+  }
+ },
+ "known": {
+  "quest:400": {
+   "title": "ابزار برای استیل‌گریل"
+  },
+  "quest:2160": {
+   "title": "آذوقه برای تانوک"
+  },
+  "quest:310": {
+   "title": "رقبای تلخ"
+  },
+  "quest:317": {
+   "title": "تأمین جت‌استریم"
+  },
+  "quest:5541": {
+   "title": "مهمات برای رامبل‌شات"
+  },
+  "quest:311": {
+   "title": "بازگشت به مارلت"
+  },
+  "quest:313": {
+   "title": "لانهٔ خاکستری"
+  },
+  "quest:318": {
+   "title": "اورشاین"
+  },
+  "quest:384": {
+   "title": "دنده‌های گراز سس‌آبجویی"
+  },
+  "quest:319": {
+   "title": "لطفی برای اورشاین"
+  },
+  "quest:320": {
+   "title": "بازگشت به بلوفیز"
+  }
+ }
+}

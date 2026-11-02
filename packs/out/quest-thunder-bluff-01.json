@@ -1,0 +1,878 @@
+{
+ "pack": "quest-thunder-bluff-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-thunder-bluff-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Light Leather",
+   "fa": "چرمِ سبک",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Coarse Thread",
+   "fa": "نخ درشت",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Kodo Hide Bag",
+   "fa": "کیفِ پوستِ کودو",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Clarice's Pendant",
+   "fa": "آویز گردنِ کلاریس",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Apothecary Zamah",
+   "fa": "عصارساز زاما",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Spirit",
+   "fa": "روح",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Zamah's Note",
+   "fa": "یادداشتِ زاما",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E23": {
+   "en": "bleed",
+   "fa": "خونریزی",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Syndicate",
+   "fa": "سندیکا",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E26": {
+   "en": "Lydon's Toxin",
+   "fa": "زهرِ لایدون",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "effect",
+   "fa": "اثر",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Toxic Fogger",
+   "fa": "دستگاهِ دودِ زهرآلود",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Filled Etched Phial",
+   "fa": "شیشهٔ حکاکی‌شدهٔ پُر",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Mirkweed Pods",
+   "fa": "غلاف‌های علف مردابی",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Cloven Hoof",
+   "fa": "سم شکافته",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Hunter",
+   "fa": "شکارچی",
+   "kind": "cls"
+  },
+  "E35": {
+   "en": "Steelsnap's Rib",
+   "fa": "دندهٔ پولادآرواره",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Steelsnap",
+   "fa": "پولادآرواره",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Titan Relic",
+   "fa": "یادگار تایتان",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Earthen Ring",
+   "fa": "حلقهٔ زمین",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Frostmaw's Mane",
+   "fa": "یال سرمادهن",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Frostmaw",
+   "fa": "سرمادهن",
+   "kind": "qs"
+  },
+  "E42": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E43": {
+   "en": "trainer",
+   "fa": "مربی",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "Morrowgrain",
+   "fa": "موروگرین",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E47": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E48": {
+   "en": "Un'Goro Crater",
+   "fa": "دهانهٔ اون‌گورو",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Nara Wildmane",
+   "fa": "نارا وحشی‌یال",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Un'Goro Soil",
+   "fa": "خاک اون‌گورو",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Herbalism",
+   "fa": "گیاه‌شناسی",
+   "kind": "sp"
+  },
+  "E53": {
+   "en": "Hamuul Runetotem",
+   "fa": "هامول رون‌توتوم",
+   "kind": "qs"
+  },
+  "E54": {
+   "en": "Seed Voucher",
+   "fa": "سندِ بذر",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Evergreen Pouch",
+   "fa": "کیسهٔ همیشه‌سبز",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Light Leather": "چرمِ سبک",
+  "Thunder Bluff": "تاندر بلاف",
+  "armor": "زره",
+  "Coarse Thread": "نخ درشت",
+  "Mulgore": "مولگر",
+  "Kodo Hide Bag": "کیفِ پوستِ کودو",
+  "requires": "نیازمند",
+  "Clarice's Pendant": "آویز گردنِ کلاریس",
+  "undead": "مرده‌متحرک",
+  "Apothecary Zamah": "عصارساز زاما",
+  "fear": "ترس",
+  "heal": "شفا",
+  "Forsaken": "مطرودان",
+  "Spirit": "روح",
+  "Zamah's Note": "یادداشتِ زاما",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Undercity": "آندر‌سیتی",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Ashenvale": "اَشِن‌ویل",
+  "Horde": "هورد",
+  "Barrens": "بارنز",
+  "Blood": "خون",
+  "bleed": "خونریزی",
+  "Syndicate": "سندیکا",
+  "Shadow": "سایه",
+  "Lydon's Toxin": "زهرِ لایدون",
+  "effect": "اثر",
+  "Toxic Fogger": "دستگاهِ دودِ زهرآلود",
+  "allies": "متحدان",
+  "Filled Etched Phial": "شیشهٔ حکاکی‌شدهٔ پُر",
+  "Thousand Needles": "هزار سوزن",
+  "Mirkweed Pods": "غلاف‌های علف مردابی",
+  "Cloven Hoof": "سم شکافته",
+  "Hunter": "شکارچی",
+  "Steelsnap's Rib": "دندهٔ پولادآرواره",
+  "blessing": "برکت",
+  "Steelsnap": "پولادآرواره",
+  "Titan Relic": "یادگار تایتان",
+  "Earthen Ring": "حلقهٔ زمین",
+  "Frostmaw's Mane": "یال سرمادهن",
+  "Frostmaw": "سرمادهن",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "trainer": "مربی",
+  "healing": "شفا",
+  "Morrowgrain": "موروگرین",
+  "Druid": "دروئید",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Un'Goro Crater": "دهانهٔ اون‌گورو",
+  "Nara Wildmane": "نارا وحشی‌یال",
+  "Tanaris": "تاناریس",
+  "Un'Goro Soil": "خاک اون‌گورو",
+  "Herbalism": "گیاه‌شناسی",
+  "Hamuul Runetotem": "هامول رون‌توتوم",
+  "Seed Voucher": "سندِ بذر",
+  "Evergreen Pouch": "کیسهٔ همیشه‌سبز"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$N",
+  "11": "$C",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$C",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$C",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$N",
+  "33": "$n",
+  "34": "$N",
+  "35": "$N",
+  "36": "$n",
+  "37": "$n",
+  "38": "$N",
+  "39": "$N",
+  "40": "$c",
+  "41": "$C"
+ },
+ "rows": {
+  "quest:7662:title": "New Kodo - Teal",
+  "quest:7662:progress:0": "If you bring me your aging kodo, I will trade it in for one from the new herd.   The new kodo will be just as fast as your old one, but have a different look to it.   You can look at the great kodos we already have around the yard here to see what you will have to choose from.",
+  "quest:7663:title": "New Kodo - Green",
+  "quest:7663:progress:0": "If you bring me your aging kodo, I will trade it in for one from the new herd.   The new kodo will be just as fast as your old one, but have a different look to it.   You can look at the great kodos we already have around the yard here to see what you will have to choose from.",
+  "quest:768:obj:0": "Bring 12 pieces of ⟦E1⟧ to Veren Tallstrider in ⟦E2⟧.",
+  "quest:768:details:0": "Greetings, young one. You have a gleam in your eye; I can tell you are eager to venture back to the plains for the hunt. May you bring honor to your clan!",
+  "quest:768:details:1": "I work with the skins of beasts, fashioning them into clothes and ⟦E3⟧ for the people of ⟦E2⟧.",
+  "quest:768:details:2": "If you hunt beasts and bring me their skins, then I will fashion something for you.",
+  "quest:768:progress:0": "Hello again. Have you been hunting? Do you have skins for me?",
+  "quest:768:completion:0": "Ah, these are very nice pieces. They'll make fine leather goods.",
+  "quest:768:completion:1": "Here, ⟦1⟧. Take this in trade...",
+  "quest:769:obj:0": "Bring 4 ⟦E1⟧ and 4 ⟦E4⟧ to Veren Tallstrider in ⟦E2⟧.",
+  "quest:769:details:0": "The kodo beasts of ⟦E5⟧ are strong and sturdy -- traits much respected among us. If you are skilled in leatherworking and wish the knowledge to make a ⟦E6⟧, then bring me supplies for my trade.",
+  "quest:769:details:1": "Do this, and I will share my knowledge with you.",
+  "quest:769:progress:0": "Do you have my supplies, ⟦2⟧?",
+  "quest:769:completion:0": "Ah, good. Thank you, ⟦3⟧. My heart swells with pride to see youths interested in the craft of leatherworking.",
+  "quest:97485:title": "Traditions of the Bluff",
+  "quest:744:obj:0": "Collect 6 Azure Feathers and 6 Bronze Feathers, and bring them to Eyahn Eagletalon in ⟦E2⟧.",
+  "quest:744:details:0": "⟦4⟧, my brother soon stands before Chief Bloodhoof, and it is my honor to make his headdress for him.",
+  "quest:744:details:1": "I want to ask a favor of you while I finish tanning these leather straps. There is not time for me to find enough feathers, and I was wondering, would you gather more for me?",
+  "quest:744:details:2": "You can find feathers of the correct size from the harpies residing far to the north and northwest of ⟦E2⟧. I need only 6 azure and 6 bronze feathers to complete the design.",
+  "quest:744:progress:0": "This headdress will certainly be a wonderful gift for my brother.",
+  "quest:744:completion:0": "Thank you for your help, ⟦5⟧.",
+  "quest:744:completion:1": "My part in my brother's ceremony is almost complete. Giving him his headdress and witnessing the ceremony are all my duty ⟦E7⟧ of me.",
+  "quest:264:obj:0": "Place ⟦E8⟧ on Yuriv's Tomb in Silverpine.",
+  "quest:264:details:0": "Filthy scum! Leaves me for his damn crusade. Because \"the Light is the most important thing we have against the threats the ⟦E9⟧ pose.\"",
+  "quest:264:details:1": "Well, what about his children?! What about ME?! Night after night I sat patiently waiting for him... always second to his blasted duty!",
+  "quest:264:details:2": "Well, witness what \"justice\" brings you, ⟦6⟧! He's dead and I'm bearing the very thing he was trying to stop!",
+  "quest:264:details:3": "Take this piece of junk and put it on his tomb at the Sepulcher. I want nothing to do with it anymore... or him!",
+  "quest:264:progress:0": "The stone is cold to the touch, but has obviously been abused. Trash litters the area; nicks and gashes decorate the relief atop the coffin; and the foliage around the grave has started to grow over the site.⟦7⟧⟦8⟧No one cares for whoever is buried here, especially not any victims of the plague.",
+  "quest:264:completion:0": "You place the worthless pendant on the grave, and the gemstone within the setting seems to dull noticeably.",
+  "quest:264:completion:1": "As you stand to leave, you look down at the pendant; it lies lifelessly over the hands of the relief sculpted into the top of the coffin. Your thoughts are interrupted by a stiff, cool breeze passing over the Sepulcher. For a moment everything around you is silent.",
+  "quest:1064:obj:0": "Speak with ⟦E10⟧ in the Pools of Vision in ⟦E2⟧.",
+  "quest:1064:details:0": "The tauren have a bond with the land, and it pains me to hear of Stonetalon's plight. But I ⟦E11⟧ that to ⟦E12⟧ the land, we must first remove the disease upon it.",
+  "quest:1064:details:1": "Is it not fortunate, then, that the ⟦E13⟧ are allied with us? They know much of disease. I believe they can aid us, and by doing so they will strengthen the trust between our people.",
+  "quest:1064:details:2": "Speak with ⟦E10⟧. She is a scholar and an emissary of the ⟦E13⟧. You will find her in the Pools of Vision below the ⟦E14⟧ Rise.",
+  "quest:1064:completion:0": "Magatha sent word of your coming, ⟦9⟧. Although my heart beats no longer, I still feel sorrow for the spirits of Stonetalon.",
+  "quest:1064:completion:1": "The ⟦E13⟧ are eager to offer what help we can.",
+  "quest:1065:obj:0": "Bring ⟦E15⟧ to Apothecary Lydon in Tarren Mill.",
+  "quest:1065:details:0": "To rid Stonetalon of the Venture Company, we must take extreme measures. Extreme, but without bloodshed.",
+  "quest:1065:details:1": "BA colleague of mine may have just the tool we need. His name is Lydon; he dwells in the town of Tarren Mill in the ⟦E16⟧, in the distant land of Lordaeron.",
+  "quest:1065:details:2": "To reach Hillsbrad, travel by zeppelin to our capital, the ⟦E17⟧. Then go north to ⟦E18⟧, southwest to Silverpine, and south to Hillsbrad.",
+  "quest:1065:details:3": "Seek Lydon and bring him this note. It details our needs to him.",
+  "quest:1065:progress:0": "Ah, are you here with my new test subjects?",
+  "quest:1065:completion:0": "A note from Zamah? Her needs must be great to send word from so far. Let us see what she says...",
+  "quest:1065:completion:1": "Ah, splendid! I know exactly what to do!",
+  "quest:742:obj:0": "Speak with Senani Thunderheart at Splintertree Post, ⟦E19⟧.",
+  "quest:742:details:0": "Attention, young adventurers! The wilds of ⟦E19⟧ await you!",
+  "quest:742:details:1": "The ⟦E20⟧ has established a strong presence in the lands north of the ⟦E21⟧. Our two outposts - Splintertree Post and the Zoram Strand Outpost - strive to bring glory to the ⟦E20⟧! Those who would prove themselves should seek out guidance there. Of note: Senani Thunderheart in Splintertree Post, directly north of the ⟦E21⟧, seeks adventurers willing to take part in a great hunt of ⟦E19⟧!",
+  "quest:742:completion:0": "Welcome to the new frontier, ⟦10⟧. ⟦E19⟧ is a land of opportunity, one where a young ⟦11⟧ like yourself is able to find boundless chances to prove their mettle. Look around the outpost here, and be sure to travel out to the Zoram Strand, as the ⟦E20⟧ has another outpost there as well.",
+  "quest:742:completion:1": "Your presence here tells me that you've come to learn more about the hunt. Listen close, and I will gladly share with you what you need to know.",
+  "quest:1066:obj:0": "Bring 5 Vials of Innocent ⟦E22⟧ to Apothecary Lydon in Tarren Mill.",
+  "quest:1066:details:0": "I will create a toxin to ⟦E23⟧ the violence from the Venture Company, rendering them weak and docile. That should fix the ⟦E20⟧'s problem in Stonetalon, yes?",
+  "quest:1066:details:1": "But to create the toxin, I will need the blood of innocents, a difficult ingredient to obtain.",
+  "quest:1066:details:2": "Fortunately the ⟦E24⟧, a group of human brigands in this area, employ shadow mages... and those mages collect innocent blood for their own, unsavory purposes.",
+  "quest:1066:details:3": "You can find the ⟦E24⟧ shadow mages in Durnholde Keep to the southeast.",
+  "quest:1066:progress:0": "Did you find the ⟦E24⟧ ⟦E25⟧ Mages, and collect from them the blood?",
+  "quest:1066:completion:0": "Very good! I trust the ⟦E24⟧ gave you little trouble?",
+  "quest:1066:completion:1": "As I mentioned, the blood of innocents is not an easy thing to obtain. We are lucky the ⟦E24⟧ shadow mages did the difficult work for us.",
+  "quest:1066:completion:2": "Now hold a moment while I create my concoction...",
+  "quest:1067:obj:0": "Bring ⟦E26⟧ to ⟦E10⟧ in ⟦E2⟧.",
+  "quest:1067:details:0": "Here is the toxin. If you use it against the Venture Company it should produce favorable, perhaps even contagious, results. I must say, it is quite exciting to see my work applied in the field!",
+  "quest:1067:details:1": "But before using it, take it to ⟦E10⟧. She must create a delivery method for the toxin to maximize its ⟦E27⟧.",
+  "quest:1067:progress:0": "You have returned, ⟦12⟧. Do you bring aid from Apothecary Lydon?",
+  "quest:1067:completion:0": "A toxin from Apothecary Lydon? Very good. If I know Lydon, then this toxin will be quite effective against the Venture Company...",
+  "quest:1086:obj:0": "Bring the ⟦E28⟧ to the Venture Co. sky port, then return to ⟦E10⟧.",
+  "quest:1086:details:0": "The toxin is ready. All that remains is its delivery. You, ⟦13⟧, must make that delivery.",
+  "quest:1086:details:1": "The Venture Company must have a means of sending messages and light cargo between its headquarters and its operations in Stonetalon. It is likely a small sky port -- not big enough for a zeppelin, but perhaps for a flying machine. You must search the areas in Stonetalon under control of the Venture Company and find this sky port, if it exists. If you find it, then place the toxin there.",
+  "quest:1086:details:2": "Place it, and run.",
+  "quest:1086:progress:0": "You must find the Venture Company airport if it exists, ⟦14⟧.",
+  "quest:1086:completion:0": "You found the port? Well done, ⟦15⟧! I am sure the goblins were quite surprised from your delivery! Let us hope that toxin finds its way to their headquarters.",
+  "quest:1086:completion:1": "You have served your people well, and I advise you to ignore any guilt you might harbor for poisoning the Venture Company. They are deserving of far worse.",
+  "quest:1086:completion:2": "And if there is one mote of wisdom the ⟦E13⟧ might teach its ⟦E29⟧, it is this:",
+  "quest:1086:completion:3": "Do not shy from dark paths... if those paths lead to victory.",
+  "quest:1195:obj:0": "Return a ⟦E30⟧ to Zangen Stonehoof in ⟦E2⟧.",
+  "quest:1195:details:0": "The Galak centaur in the ⟦E31⟧ are protecting an artifact from the time of the centaurs' creation.",
+  "quest:1195:details:1": "We would like to retrieve it, but we require a phial of water from one of the night elves' moonwells.",
+  "quest:1195:details:2": "To collect the water, you will first need to obtain one of the phials carried by the dryads near the Raynewood Retreat in the heart of ⟦E19⟧ Forest. There is a moonwell near the western bank of the Falfarren River, south of the main road, where you can fill the phial.",
+  "quest:1195:progress:0": "Once we have the filled phial, we can send it along to my associate, Rau, in the ⟦E31⟧. He was the one who requested the phial of water, so he'll better know how we can make use of it.",
+  "quest:1195:completion:0": "Very good. This should fill Rau's request just fine. Could you deliver this to him? You might enjoy spending some time out in the Needles.",
+  "quest:97538:title": "Pigments for Paints",
+  "quest:97538:obj:0": "Tah Winterhoof in ⟦E2⟧ wants 30 ⟦E32⟧ from Mirkfallon Lake.",
+  "quest:1196:obj:0": "Deliver the ⟦E30⟧ to Rau Cliffrunner at the Freewind Post.",
+  "quest:1196:details:0": "Bring the filled phial to Rau Cliffrunner at the Freewind Post in southeastern ⟦E31⟧. You can get to the ⟦E31⟧ by taking the Great Lift at the southern edge of the ⟦E21⟧.",
+  "quest:1196:details:1": "I wouldn't be surprised if you can help us out further.",
+  "quest:1196:progress:0": "I don't suppose you've been sent by Zangen, hm?",
+  "quest:1196:completion:0": "Hm, yes, this phial of water will serve our purposes perfectly. Because of the shared ancestry of the dryads and the centaurs, the water of the moonwells will enable us to breach the protection of the eternal flame surrounding the centaur relic.",
+  "quest:1197:obj:0": "Retrieve the ⟦E33⟧ for Rau Cliffrunner at the Freewind Post.",
+  "quest:1197:details:0": "Using the water you brought, you will be able to temporarily douse the flame that holds the centaur relic. It will not work permanently, however, so you will have to be quick about it.",
+  "quest:1197:details:1": "You will find Splithoof Crag, the centaurs' stronghold, to the north of here. The flame is kept in Splithoof Hold, a heavily guarded part of the crag.",
+  "quest:1197:details:2": "Be careful, though, the Galak centaur have great numbers here, and will be rather reluctant to surrender something so dear to them.",
+  "quest:1197:progress:0": "I am eager to put my hands upon the ⟦E33⟧. Have you taken it yet?",
+  "quest:1197:completion:0": "I sense a strange energy emanating from the Hoof... I have no doubt that we will discover surprising new information about the centaur from its study.",
+  "quest:1197:completion:1": "My thanks, ⟦16⟧. Now I must begin to decipher the mysteries you have brought to me.",
+  "quest:1130:obj:0": "Speak with Melor Stonehoof in ⟦E2⟧.",
+  "quest:1130:details:0": "⟦17⟧, Melor Stonehoof has heard of your deeds, and has set a path before you.",
+  "quest:1130:details:1": "If you wish to take it, then go to ⟦E2⟧ and speak with Melor. You will find him on ⟦E34⟧'s Rise.",
+  "quest:1130:completion:0": "So, ⟦18⟧, you have come. Now, are you prepared to journey through distant lands?",
+  "quest:1130:completion:1": "If so, young ⟦19⟧, then listen on...",
+  "quest:1131:obj:0": "Bring ⟦E35⟧ to Melor Stonehoof in ⟦E2⟧.",
+  "quest:1131:details:0": "At times we hunt for food. At times we hunt for honor. And at times we hunt to earn the Earthmother's teachings.",
+  "quest:1131:details:1": "But the hunt I now set upon you is none of these things. It is to slay a creature outside the Earthmother's ⟦E36⟧.",
+  "quest:1131:details:2": "The hyena ⟦E37⟧ roams the ⟦E31⟧, south of the ⟦E21⟧. He is a tyrant, attracting other hyenas to him and spreading ⟦E11⟧ and bloodshed among more peaceful beasts.",
+  "quest:1131:details:3": "Find ⟦E37⟧, ⟦20⟧. Find him, and defeat him.",
+  "quest:1131:progress:0": "Have you defeated the foul ⟦E37⟧, ⟦21⟧?",
+  "quest:1131:completion:0": "In defeating the creature ⟦E37⟧, you have cleansed the ⟦E31⟧ of a horrible taint.",
+  "quest:1131:completion:1": "And that, ⟦22⟧, is your lesson this day.",
+  "quest:98823:title": "Earthen Echo",
+  "quest:98823:obj:0": "Bring the ⟦E38⟧ to Muln Earthfury at the Skywatcher Plateau in northwest ⟦E5⟧.",
+  "quest:98823:obj:1": "* ⟦E38⟧ (Forever) (Provided)",
+  "quest:98823:details:0": "Truly, this is a fascinating object.",
+  "quest:98823:details:1": "It shows indications of being much more than a mere carving or sculpture.",
+  "quest:98823:details:2": "While our elders may be interested in observing this artifact, the ⟦E39⟧ are who would carry the most wisdom for our buried ruins and forgotten lands. Seek out Muln Earthfury, a direct approach is fitting for the gravity of what you carry.",
+  "quest:98823:details:3": "You can find him and other elders of the ⟦E39⟧ council at the Skywatcher Plateau in northwest ⟦E5⟧.",
+  "quest:98823:progress:0": "Come. Seek and receive.",
+  "quest:1136:obj:0": "Bring ⟦E40⟧ to Melor Stonehoof in ⟦E2⟧.",
+  "quest:1136:details:0": "⟦23⟧, it is now time for you to travel to far-off lands. You are ready.",
+  "quest:1136:details:1": "You now hunt ⟦E41⟧, a yeti in the ⟦E42⟧. He is elusive, his white coat blending into the snows of his mountain home. He rarely shows himself.",
+  "quest:1136:details:2": "But I will show you how to entice a creature such as he. Here, take this scroll. On it I have written how ⟦E41⟧ may be lured.",
+  "quest:1136:details:3": "Now go, ⟦24⟧. Your journey is long and many challenges lay waiting. When you return with ⟦E41⟧'s mane, only then is your task complete.",
+  "quest:1136:progress:0": "Have you been to the ⟦E42⟧, ⟦25⟧? Did you face the elusive ⟦E41⟧?",
+  "quest:1136:completion:0": "Both strength and cunning were needed to find and defeat ⟦E41⟧, ⟦26⟧. You have both.",
+  "quest:1136:completion:1": "Your path has taken you to the valleys of ⟦E31⟧ and to the high mountains of Alterac. It will one day lead you through all the Earthmother's lands, for such is the way of the hunter.",
+  "quest:2440:obj:0": "Take the reward voucher to Bena Winterhoof in ⟦E2⟧.",
+  "quest:2440:details:0": "I shall focus my energies on these discs; they will reveal their true workings to me in due time.",
+  "quest:2440:details:1": "As for you ⟦27⟧, I will now reward you for your diligence in bringing this to my attention. Take this voucher to Bena Winterhoof, the alchemy ⟦E43⟧ for ⟦E2⟧. She will give you a special item I believe you will find appealing, and she will supply you with a choice of potions from my personal stock.",
+  "quest:2440:details:2": "Return to me soon, as I sense there is much more at hand for us to do regarding this find.",
+  "quest:2440:progress:0": "Greetings, ⟦28⟧! Are you here for alchemy training, or perhaps something else?",
+  "quest:2440:completion:0": "Well ⟦29⟧, you must have pleased Sage Truthseeker greatly for him to give you this item. You are also to be granted a gift from his cache of potions; you may choose between 5 superior ⟦E44⟧ potions or 5 greater mana potions as your reward.",
+  "quest:3804:title": "⟦E45⟧ to ⟦E2⟧",
+  "quest:3804:progress:0": "The Arch ⟦E46⟧ is always looking for more morrowgrain for the ⟦E47⟧'s research project on ⟦E48⟧. We take them in increments of ten, and award you with a cache of goods you should find useful. When you have ten, let me know and I will award you accordingly.",
+  "quest:3804:completion:0": "Excellent - this morrowgrain will no doubt help when the time comes.  We know that the night elves are conducting similar research into these herbs, though it isn't clear to what end they will use them for if they discover anything.  The Arch ⟦E46⟧ thinks that the need for morrowgrain will remain until we've figured out the mysteries behind this herb.⟦30⟧⟦31⟧This is for you, ⟦32⟧.  The ⟦E47⟧ thanks you for your continued support.",
+  "quest:2965:obj:0": "Speak with ⟦E49⟧ on the Elder Rise in ⟦E2⟧.",
+  "quest:2965:details:0": "Ah, ⟦33⟧, it is fortuitous that you have come to me again. Your revelations at the Uldaman dig site have certainly given us sages much discuss. I was doing just that with one of the druids, ⟦E49⟧, when it dawned on me that her past adventuring experiences may have some great importance as to the next step we need to take.",
+  "quest:2965:details:1": "I would like for you to speak with her concerning her travels to the Valley of the Watchers in the ⟦E50⟧ desert. She waits for you on the Elder Rise.",
+  "quest:2965:completion:0": "There is a place deep in the ⟦E50⟧ desert called the Valley of the Watchers. The discs that you recovered... their translated glyphs make mention of a place called Uldum. Most think this place to be a myth.",
+  "quest:2965:completion:1": "I know this to be false; Uldum exists. I've been there. Well... outside, at any rate.",
+  "quest:2965:completion:2": "The crux is this, ⟦34⟧: we think there is a connection between the discs and Uldum, and we want you to go there.",
+  "quest:2966:obj:0": "Bring the miniature platinum discs to the gates of Uldum in ⟦E50⟧ and look for clues as to the connection between the two.",
+  "quest:2966:details:0": "Sage Truthseeker and I would like you to take the miniature discs you found to the sealed gates of Uldum. We... we aren't sure what will happen when you do this.",
+  "quest:2966:details:1": "This sounds risky, sure, we acknowledge that. It might, however, do nothing. You might need to use the discs on something. Perhaps the doors unlock when you have the discs in your possession. Be open to try anything, and be ready for anything to happen.",
+  "quest:2966:details:2": "Learn what you can, then return to me. We will have much to discuss.",
+  "quest:2966:progress:0": "This familiar looking pedestal sticks out of the hot sand.  Perhaps there is something to its presence here...",
+  "quest:2966:completion:0": "As you touch the pedestal, the miniature discs from Uldaman hum and glow in your backpack. A familiar feeling tingle washes over your hands, as the image of another Stone Watcher springs to life in front of the gates of Uldum.",
+  "quest:2966:completion:1": "B\"Salutations. I am a guardian of entry. The discs that have been used for access are missing the correct entry discs, the Plates of Uldum. Please incorporate these plates with the disc structure and repeat your access sequencing. Thank you.\"",
+  "quest:2967:obj:0": "Speak with ⟦E49⟧ in ⟦E2⟧.",
+  "quest:2967:details:0": "You access the pedestal again; the platinum discs suddenly appear once more in your backpack.",
+  "quest:2967:details:1": "With the knowledge of the stone watcher learned and the discs returned to your possession, the time has come to return to ⟦E2⟧ and inform the ⟦E49⟧ of your discovery.",
+  "quest:2967:progress:0": "Welcome back ⟦35⟧.  Were you able to use the discs to your advantage, or was it for naught?",
+  "quest:2967:completion:0": "You were missing some discs? Interestingly enough, it seems that the discs of Norgannon are only parts of the complete set - like keys on a key ring, if you will.",
+  "quest:2967:completion:1": "If we can find the Plates of Uldum, then we could actually access the Uldum complex itself. I don't know whether to be excited by that prospect, or be terrified.",
+  "quest:2967:completion:2": "We may need to risk everything to ensure that those secrets the earth keeps which would destroy us all remain just that - secrets.",
+  "quest:2968:obj:0": "Speak with Sage Truthseeker in ⟦E2⟧.",
+  "quest:2968:details:0": "Well ⟦36⟧... we seem to be at an unfortunate impasse. We know what we need - the Plates of Uldum - but we have no idea where they might be. We will research this, and then devise a solid plan of attack. I have a couple ideas where to start looking; I have high hopes that soon, we'll be asking you to rejoin our efforts to discover the truth.",
+  "quest:2968:details:1": "Sage Truthseeker needs to be informed on this, ⟦37⟧; no doubt, he also wants to thank you personally for once again heeding the call.",
+  "quest:2968:completion:0": "We're all in agreement then - the best course of action is to wait until we can narrow down the areas where these plates might lie hidden. You've brought us this far ⟦38⟧, and I hope you will be the one to head back in to the field to confront the secrets of Uldum.",
+  "quest:2968:completion:1": "Allow me to give you this honorarium in the meantime; this should cover any expenses you've encountered in assisting us, and a little something extra. Be sure to check back with us soon... Uldum beckons us all, young one.",
+  "quest:3761:obj:0": "Bring 20 ⟦E51⟧ samples to Ghede on the Elder Rise of ⟦E2⟧.",
+  "quest:3761:details:0": "The soil of ⟦E48⟧ is reportedly enriched with potent magical qualities. The ⟦E47⟧ wants to study this soil in large quantities; go into the wilds of Un'Goro and acquire enough of it for our continued research.",
+  "quest:3761:details:1": "The rich soil will stick out in piles from time to time, and some of the beasts might have usable samples on their being. Take them all outside to Ghede; just look for the piles of dirt and the tauren barking orders. He means well, just don't get him riled up though!",
+  "quest:3761:progress:0": "At ease, Private. If you're here to unload soil from Un'Goro - outstanding then! Otherwise, disappear.",
+  "quest:3761:completion:0": "Oh that's right Private ⟦39⟧, don't make any effort to help me unload this soil up on to the piles! If the Great Spirits had wanted it done they would have miracled it up there, now wouldn't they?!",
+  "quest:3761:completion:1": "Arch ⟦E46⟧ Runetotem wants to speak with you again, but for his next task you find that a journeyman's understanding of ⟦E52⟧ would be helpful. If you don't know it though, he'll still find a use for you.",
+  "quest:3762:obj:0": "Speak with Arch ⟦E46⟧ ⟦E53⟧ in ⟦E2⟧.",
+  "quest:3762:details:0": "Excuse me ⟦40⟧, but I'd like just a moment of your time if possible.",
+  "quest:3762:details:1": "The ⟦E47⟧ in ⟦E2⟧ is most interested in seasoned adventurers such as yourself to lend them aid in a vital research project. While I do not know the specifics, I can inform you that none other than ⟦E53⟧ is spearheading this research.",
+  "quest:3762:details:2": "Please - if you are interested, speak with him directly on the Elder Rise within ⟦E2⟧ proper.",
+  "quest:3762:completion:0": "Greetings, ⟦41⟧; I am glad you are interested in assisting our research. There is much to do, and I would be doing you a disservice if I informed you that the work this entails is not dangerous. Hopefully this will not scare you off... but from the looks of you, I take it that danger is something that you have dealt with before.",
+  "quest:3782:obj:0": "Take the ⟦E54⟧ to Bashana Runetotem in ⟦E2⟧.",
+  "quest:3782:details:0": "With what we call an ⟦E55⟧, we have cultivated Tharlendris seeds in the soil from ⟦E48⟧. These seeds have blossomed into an array of random, potent herbs. One result is morrowgrain, a mysterious herb we know little about; I very much hope to unravel this mystery for the Circle.",
+  "quest:3782:details:1": "Take this voucher over to my daughter Bashana, and she will give you some seeds so you may assist us. If you run out, you will need to purchase more from her.",
+  "quest:3782:progress:0": "Peace and serenity be yours, friend. You are here on business from the Arch ⟦E46⟧ himself, yes?",
+  "quest:3782:completion:0": "Yes, this voucher is good for twenty packets of seeds. If you run out, we have more that can be provided. Unfortunately though, Tharlendris seeds are quite costly to produce in significant numbers. This is why the ⟦E47⟧ asks that those who are assisting us help out by offsetting some of the cost.",
+  "quest:3782:completion:1": "Those who return with morrowgrain find that the reward the Arch ⟦E46⟧ offers far makes up for the cost."
+ },
+ "context": {
+  "quest:7662": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 1,
+   "side": "horde",
+   "giver": "Harb Clawhoof",
+   "turner": "Harb Clawhoof"
+  },
+  "quest:7663": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 1,
+   "side": "horde",
+   "giver": "Harb Clawhoof",
+   "turner": "Harb Clawhoof"
+  },
+  "quest:768": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 8,
+   "side": "horde",
+   "giver": "Veren Tallstrider",
+   "turner": "Veren Tallstrider"
+  },
+  "quest:769": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 10,
+   "side": "horde",
+   "giver": "Veren Tallstrider",
+   "turner": "Veren Tallstrider"
+  },
+  "quest:97485": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:744": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 11,
+   "side": "horde",
+   "giver": "Eyahn Eagletalon",
+   "turner": "Eyahn Eagletalon"
+  },
+  "quest:264": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 15,
+   "side": "horde",
+   "giver": "Clarice Foster",
+   "turner": "Yuriv's Tombstone"
+  },
+  "quest:1064": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 18,
+   "side": "horde",
+   "giver": "Magatha Grimtotem",
+   "turner": "Apothecary Zamah («عصارساز زاما»)"
+  },
+  "quest:1065": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 18,
+   "side": "horde",
+   "giver": "Apothecary Zamah («عصارساز زاما»)",
+   "turner": "Apothecary Lydon"
+  },
+  "quest:742": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 20,
+   "side": "horde",
+   "giver": "Bluff Runner Windstrider",
+   "turner": "Senani Thunderheart"
+  },
+  "quest:1066": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 23,
+   "side": "horde",
+   "giver": "Apothecary Lydon",
+   "turner": "Apothecary Lydon"
+  },
+  "quest:1067": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 23,
+   "side": "horde",
+   "giver": "Apothecary Lydon",
+   "turner": "Apothecary Zamah («عصارساز زاما»)"
+  },
+  "quest:1086": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 23,
+   "side": "horde",
+   "giver": "Apothecary Zamah («عصارساز زاما»)",
+   "turner": "Apothecary Zamah («عصارساز زاما»)"
+  },
+  "quest:1195": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 25,
+   "side": "horde",
+   "giver": "Zangen Stonehoof",
+   "turner": "Zangen Stonehoof"
+  },
+  "quest:97538": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 26,
+   "side": "horde",
+   "giver": "Tah Winterhoof",
+   "turner": ""
+  },
+  "quest:1196": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 29,
+   "side": "horde",
+   "giver": "Zangen Stonehoof",
+   "turner": "Rau Cliffrunner"
+  },
+  "quest:1197": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 29,
+   "side": "horde",
+   "giver": "Rau Cliffrunner",
+   "turner": "Rau Cliffrunner"
+  },
+  "quest:1130": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 30,
+   "side": "horde",
+   "giver": "Jorn Skyseer («یورن اسکای‌سیر»)",
+   "turner": "Melor Stonehoof"
+  },
+  "quest:1131": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 30,
+   "side": "horde",
+   "giver": "Melor Stonehoof",
+   "turner": "Melor Stonehoof"
+  },
+  "quest:98823": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 31,
+   "side": "horde",
+   "giver": "Bashana Runetotem",
+   "turner": ""
+  },
+  "quest:1136": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 37,
+   "side": "horde",
+   "giver": "Melor Stonehoof",
+   "turner": "Melor Stonehoof"
+  },
+  "quest:2440": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 47,
+   "side": "horde",
+   "giver": "Sage Truthseeker",
+   "turner": "Bena Winterhoof"
+  },
+  "quest:3804": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 47,
+   "side": "horde",
+   "giver": "Bashana Runetotem",
+   "turner": "Bashana Runetotem"
+  },
+  "quest:2965": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Sage Truthseeker",
+   "turner": "Nara Wildmane («نارا وحشی‌یال»)"
+  },
+  "quest:2966": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Nara Wildmane («نارا وحشی‌یال»)",
+   "turner": "Uldum Pedestal"
+  },
+  "quest:2967": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Uldum Pedestal",
+   "turner": "Nara Wildmane («نارا وحشی‌یال»)"
+  },
+  "quest:2968": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Nara Wildmane («نارا وحشی‌یال»)",
+   "turner": "Sage Truthseeker"
+  },
+  "quest:3761": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Arch Druid Hamuul Runetotem",
+   "turner": "Ghede"
+  },
+  "quest:3762": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Innkeeper Pala",
+   "turner": "Arch Druid Hamuul Runetotem"
+  },
+  "quest:3782": {
+   "zone_en": "Thunder Bluff",
+   "zone_fa": "تاندر بلوف",
+   "level": 50,
+   "side": "horde",
+   "giver": "Arch Druid Hamuul Runetotem",
+   "turner": "Bashana Runetotem"
+  }
+ },
+ "known": {
+  "quest:768": {
+   "title": "جمع‌آوری چرم"
+  },
+  "quest:769": {
+   "title": "کیف پوست کودو"
+  },
+  "quest:744": {
+   "title": "آماده‌سازی برای مراسم"
+  },
+  "quest:264": {
+   "title": "تا مرگ ما را جدا کند"
+  },
+  "quest:1064": {
+   "title": "کمک فورساکن"
+  },
+  "quest:1065": {
+   "title": "سفری به تارن میل"
+  },
+  "quest:742": {
+   "title": "شکار آشن‌وِیل"
+  },
+  "quest:1066": {
+   "title": "خون بی‌گناهان"
+  },
+  "quest:1067": {
+   "title": "بازگشت به تاندر بلوف"
+  },
+  "quest:1086": {
+   "title": "فرودگاه ماشین پرنده"
+  },
+  "quest:1195": {
+   "title": "شعلهٔ مقدس"
+  },
+  "quest:1196": {
+   "title": "شعلهٔ مقدس"
+  },
+  "quest:1197": {
+   "title": "شعلهٔ مقدس"
+  },
+  "quest:1130": {
+   "title": "پیامی از ملور"
+  },
+  "quest:1131": {
+   "title": "پولادآرواره"
+  },
+  "quest:1136": {
+   "title": "سرمادهن"
+  },
+  "quest:2440": {
+   "title": "دیسک‌های پلاتینی"
+  },
+  "quest:2965": {
+   "title": "نشانه‌های اولدوم"
+  },
+  "quest:2966": {
+   "title": "ببینیم چه می‌شود"
+  },
+  "quest:2967": {
+   "title": "بازگشت به تاندر بلوف"
+  },
+  "quest:2968": {
+   "title": "وظیفه‌ای در آینده"
+  },
+  "quest:3761": {
+   "title": "خاک اون‌گورو"
+  },
+  "quest:3762": {
+   "title": "کمک به دروئید اعظم رون‌توتوم"
+  },
+  "quest:3782": {
+   "title": "پژوهش موروگرین"
+  }
+ }
+}

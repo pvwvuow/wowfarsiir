@@ -1,0 +1,857 @@
+{
+ "pack": "quest-ironforge-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-ironforge-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E6": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Searing Gorge",
+   "fa": "تنگهٔ سوزان",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Cloth",
+   "fa": "پارچه",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "wool",
+   "fa": "پشم",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Free Ticket Voucher",
+   "fa": "کوپنِ بلیتِ رایگان",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "The Darkmoon Faire",
+   "fa": "نمایشگاه دارک‌مون",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Elwynn Forest",
+   "fa": "جنگل الزوین",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Alterac Valley Mark of Honor",
+   "fa": "نشان افتخار درهٔ آلتراک",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Arathi Basin Mark of Honor",
+   "fa": "نشان افتخار حوضهٔ آراتی",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Warsong Gulch Mark of Honor",
+   "fa": "نشان افتخار درهٔ وارسونگ",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "opponent",
+   "fa": "حریف",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E31": {
+   "en": "Wildheart Bracers",
+   "fa": "مچ‌بندهای قلب وحشی",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Beaststalker's Bindings",
+   "fa": "مچ‌بند شکارچی جانوران",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Magister's Bindings",
+   "fa": "مچ‌بند مجستر",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Lightforge Bracers",
+   "fa": "مچ‌بند نورآهنگر",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Devout Bracers",
+   "fa": "بازوبند زاهدانه",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Shadowcraft Bracers",
+   "fa": "مچ‌بندهای سایه‌ساخت",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Dreadmist Bracers",
+   "fa": "بازوبند مه هراس",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Bracers of Valor",
+   "fa": "بازوبند شجاعت",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Wildheart Belt",
+   "fa": "کمربند قلب وحشی",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Wildheart Gloves",
+   "fa": "دستکش دل وحشی",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Beaststalker's Belt",
+   "fa": "کمربند غول‌شکار",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Beaststalker's Gloves",
+   "fa": "دستکش‌های غول‌شکار",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Magister's Belt",
+   "fa": "کمربند مجستر",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Magister's Gloves",
+   "fa": "دستکش‌های جادوگر اعظم",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Lightforge Belt",
+   "fa": "کمربند آهنگری نور",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Lightforge Gauntlets",
+   "fa": "دستکش زرهی نورآهنگر",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Devout Belt",
+   "fa": "کمربند پارسا",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Devout Gloves",
+   "fa": "دستکش‌های پارسا",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Burning Steppes": "استپ‌های سوزان",
+  "Ironforge": "آیرون‌فورج",
+  "Felwood": "فل‌وود",
+  "Azeroth": "آزروت",
+  "Druid": "دروئید",
+  "Darnassus": "دارناسوس",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Kalimdor": "کالیمدور",
+  "Tanaris": "تاناریس",
+  "Teldrassil": "تلدراسیل",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Searing Gorge": "تنگهٔ سوزان",
+  "Silithus": "سیلیتوس",
+  "Alliance": "اتحاد",
+  "Cloth": "پارچه",
+  "wool": "پشم",
+  "silk": "ابریشم",
+  "form": "شکل",
+  "Free Ticket Voucher": "کوپنِ بلیتِ رایگان",
+  "The Darkmoon Faire": "نمایشگاه دارک‌مون",
+  "Elwynn Forest": "جنگل الزوین",
+  "miss": "خطا",
+  "Alterac Valley Mark of Honor": "نشان افتخار درهٔ آلتراک",
+  "Arathi Basin Mark of Honor": "نشان افتخار حوضهٔ آراتی",
+  "Warsong Gulch Mark of Honor": "نشان افتخار درهٔ وارسونگ",
+  "Horde": "هورد",
+  "battle": "نبرد",
+  "opponent": "حریف",
+  "Winterspring": "وینتراسپرینگ",
+  "Blood": "خون",
+  "Wildheart Bracers": "مچ‌بندهای قلب وحشی",
+  "armor": "زره",
+  "Beaststalker's Bindings": "مچ‌بند شکارچی جانوران",
+  "Magister's Bindings": "مچ‌بند مجستر",
+  "Lightforge Bracers": "مچ‌بند نورآهنگر",
+  "Devout Bracers": "بازوبند زاهدانه",
+  "Shadowcraft Bracers": "مچ‌بندهای سایه‌ساخت",
+  "Dreadmist Bracers": "بازوبند مه هراس",
+  "Bracers of Valor": "بازوبند شجاعت",
+  "Wildheart Belt": "کمربند قلب وحشی",
+  "Wildheart Gloves": "دستکش دل وحشی",
+  "Beaststalker's Belt": "کمربند غول‌شکار",
+  "Beaststalker's Gloves": "دستکش‌های غول‌شکار",
+  "Magister's Belt": "کمربند مجستر",
+  "Magister's Gloves": "دستکش‌های جادوگر اعظم",
+  "Lightforge Belt": "کمربند آهنگری نور",
+  "Lightforge Gauntlets": "دستکش زرهی نورآهنگر",
+  "Devout Belt": "کمربند پارسا",
+  "Devout Gloves": "دستکش‌های پارسا"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$C",
+  "8": "$N",
+  "9": "$C",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$n",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$B",
+  "24": "$N",
+  "25": "$B",
+  "26": "$B",
+  "27": "$N",
+  "28": "$B",
+  "29": "$B",
+  "30": "$N",
+  "31": "$n",
+  "32": "$B",
+  "33": "$B",
+  "34": "$g lad:lass;",
+  "35": "$N",
+  "36": "$N",
+  "37": "$C",
+  "38": "$c",
+  "39": "$N",
+  "40": "$c",
+  "41": "$N",
+  "42": "$c",
+  "43": "$N",
+  "44": "$c",
+  "45": "$N",
+  "46": "$c",
+  "47": "$N",
+  "48": "$B",
+  "49": "$c",
+  "50": "$N",
+  "51": "$B",
+  "52": "$c",
+  "53": "$N",
+  "54": "$c",
+  "55": "$B",
+  "56": "$N",
+  "57": "$B",
+  "58": "$B"
+ },
+ "rows": {
+  "quest:7342:title": "Arrows Are For Sissies",
+  "quest:7342:progress:0": "Can you believe this rubbish?! The last shipment of ammunition from Kharanos was botched! All we have for ammo now are these flimsy, good for nothing arrows! What in the world am I going to do with 500,000 thorium headed arrows?⟦1⟧⟦2⟧I'll tell you what, kid. If you can bring me thorium shells, I'll trade you thorium headed arrows - straight up! Deal?",
+  "quest:7342:completion:0": "A done deal if I ever saw one! The arrows are yours.",
+  "quest:3701:obj:0": "Venture to the Ruins of Thaurissan in the ⟦E1⟧ and recover information from the Thaurissan Relics. Return to Royal Historian Archesonus when you have recovered the information.",
+  "quest:3701:details:0": "Venture to the smoldering ruins of Thaurissan in the ⟦E1⟧ and gather as much information as possible.",
+  "quest:3701:details:1": "It is said that mysterious relics litter the ruins. Perhaps you should start your search there, ⟦3⟧. Beware the Thaurissan guardians: Assassins that guard the ruins, keeping whatever secrets may still be buried there protected.",
+  "quest:3701:progress:0": "Do you bring new information?",
+  "quest:3701:completion:0": "Oh my! This information explains quite a lot about Thaurissan.",
+  "quest:3701:completion:1": "There is much more to learn!",
+  "quest:3702:obj:0": "Listen to Royal Historian Archesonus recant the history of Thaurissan.",
+  "quest:3702:details:0": "Would you like to hear a brief history of the Dark Iron dwarves?",
+  "quest:3702:progress:0": "Allow me to finish telling you the story of Thaurissan.",
+  "quest:3702:completion:0": "Shall we proceed?",
+  "quest:4513:obj:0": "Bring 10 Filled Pure Sample Jars to Laris Geardawdle in ⟦E2⟧.",
+  "quest:4513:obj:1": "If you have trouble finding them, perhaps try to get more clues from Laris.",
+  "quest:4513:details:0": "I'm going to need more samples, ⟦4⟧. But--and I don't know how to put this--they have to be pure samples. I know, I know. \"What does 'pure' mean, Laris?\" I'm not sure. I do know that these are corrupt... just like ⟦E3⟧. Which is what makes my realization so important. The oozes seem to adapt... to take on the aspects of the area they're in. I'll need to find samples that haven't been polluted. But where? Where?!",
+  "quest:4513:details:1": "Bah! ⟦5⟧, take these containers just in case you find any on your own.",
+  "quest:4513:progress:0": "So many things to consider. But what does it mean? And how does it affect the lives of the people of ⟦E4⟧?",
+  "quest:4513:completion:0": "You've found it? ⟦6⟧, you are a treasure unto yourself. Your dedication and aid has been magnificent and I could not possibly thank you enough.",
+  "quest:4513:completion:1": "Please, take this for your troubles. I have some work to do, but I'm sure, if you come back at a later time, I'll have need of your services again.",
+  "quest:4513:completion:2": "Thank you. Thank you so much.",
+  "quest:1019:obj:0": "Speak with Arch ⟦E5⟧ Fandral Staghelm at the Cenarion Enclave of ⟦E6⟧ about the ⟦E7⟧'s call to explore the frontiers of ⟦E8⟧.",
+  "quest:1019:details:0": "Attention, heroes!",
+  "quest:1019:details:1": "The ⟦E7⟧ seeks able bodied individuals to assist them in exploring the vast new frontiers of ⟦E8⟧! A forbidden wasteland of unimaginable dangers lies far to the west of ⟦E9⟧ and Gadgetzan, and the Circle needs willing and honorable proxies to act in their stead.",
+  "quest:1019:details:2": "All interested individuals should seek audience with the ⟦E7⟧. Speak with the Arch ⟦E5⟧ in ⟦E6⟧, Fandral Staghelm, for more information!",
+  "quest:1019:completion:0": "What makes you think I wish to be pestered by the likes of you, ⟦7⟧? Wait - let me stop the important duties I attend to on a daily basis so I can help you locate a doodad somewhere. By all means, the welfare of ⟦E6⟧ - nay, all of ⟦E10⟧ - should come second to the acquisition of a bauble for your collection.",
+  "quest:1019:completion:1": "The fools in ⟦E11⟧ waste my time with their call for assistance, and now I must endure this?",
+  "quest:3371:obj:0": "Return to the ⟦E12⟧ and find Dorius's archaeology unit.",
+  "quest:3371:details:0": "There is an empty, vacuous hole, where my heart used to be, ⟦8⟧. The loss of Dorius is not one that I will soon recover from. I must see his final wish through - the perpetrators of this cold blooded murder must be brought to justice.",
+  "quest:3371:details:1": "Return to the ⟦E12⟧ and fulfill his last request: Free his men. The Dark Iron dwarves force their slaves to work in a sweltering mine called the Slag Pits. Search there for Dorius' men.",
+  "quest:3371:completion:0": "Forget about me, help the others.",
+  "quest:8275:obj:0": "Talk to Windcaller Proudhorn at Cenarion Hold in ⟦E13⟧.",
+  "quest:8275:details:0": "Attention, heroes of the ⟦E14⟧! The silithid menace has been left unchecked for too long. Unfettered by any real opposition, they've been preparing all this time for a large-scale expansion.",
+  "quest:8275:details:1": "⟦E7⟧ forces are gathering in ⟦E13⟧ to take the fight to these wretched creatures and all able-bodied adventurers are hereby called to join us!",
+  "quest:8275:details:2": "Don't wait until it's too late! Aid us in the defense of ⟦E4⟧! Report to Windcaller Proudhorn at Cenarion Hold for specific instructions!",
+  "quest:8275:completion:0": "Excellent, a new recruit answering the call to arms against the silithid. Welcome to Cenarion Hold, ⟦9⟧. I am pleased to see the words of our emissaries are reaching heroes of your caliber. You will find no shortage of opportunities to help us in our efforts here and I expect you'll quickly prove to be a valuable ally to our cause.",
+  "quest:7802:obj:0": "{'type': 'item', 'id': 2592, 'target': 'Wool ⟦E15⟧', 'text': None}",
+  "quest:7802:progress:0": "We are currently accepting donations for ⟦E16⟧ cloth. A donation of sixty pieces of ⟦E16⟧ cloth will net you full recognition by ⟦E2⟧ for your generous actions. Our stores are such on ⟦E16⟧ that we would only need sixty pieces from you total; we should be able to acquire enough from others in the realm to support our drive.⟦10⟧⟦11⟧If you have the sixty pieces of ⟦E16⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7802:completion:0": "Wonderful! We thank you for your generous donation, ⟦12⟧!",
+  "quest:7803:obj:0": "{'type': 'item', 'id': 4306, 'target': 'Silk ⟦E15⟧', 'text': None}",
+  "quest:7803:progress:0": "As with most other fabrics, our stocks of ⟦E17⟧ are at an all-time low. Our stores are such that we'd only need sixty pieces of ⟦E17⟧ from you total; we should be able to reach our goal with the support of others.⟦13⟧⟦14⟧A benevolent gift such as ⟦E17⟧, might I add, would certainly increase your local standing in the community! If you have the sixty pieces of ⟦E17⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7803:completion:0": "Wonderful! We thank you for your generous donation, ⟦15⟧!",
+  "quest:7804:obj:0": "{'type': 'item', 'id': 4338, 'target': 'Mageweave ⟦E15⟧', 'text': None}",
+  "quest:7804:progress:0": "Mageweave is running low, and we could use your help to replenish our stocks! By counting on the community as a whole, we would only need a donation of 60 pieces of mageweave cloth from you to enable us to reach our goal. Such generosity would not go unnoticed by ⟦E2⟧, I assure you!⟦16⟧⟦17⟧If you have the sixty pieces of mageweave cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7804:completion:0": "Wonderful! We thank you for your generous donation, ⟦18⟧!",
+  "quest:7805:obj:0": "{'type': 'item', 'id': 14047, 'target': 'Runecloth', 'text': None}",
+  "quest:7805:progress:0": "⟦19⟧, you've been a tremendous contributor to our cloth drive. As we work hard to replenish our reserves, one ⟦E18⟧ of cloth remains critically low - runecloth. We are in absolutely dire need of runecloth, and we hope that you will be able to help us as you have in the past.⟦20⟧⟦21⟧If you are willing, please bring me what runecloth you can spare. We'll initially accept a single donation of sixty, and then we'll go from there.",
+  "quest:7805:completion:0": "Fantastic - these will go right to use, I assure you. Thank you again for your assistance! We'd certainly be lost without you.",
+  "quest:7805:completion:1": "With all the donations you've made, I would certainly process any additional runecloth donations you care to make in the future. Just be sure to check in with me, and I'll personally make sure that your good deeds won't go unrecognized!",
+  "quest:7807:obj:0": "{'type': 'item', 'id': 2592, 'target': 'Wool ⟦E15⟧', 'text': None}",
+  "quest:7807:progress:0": "We are currently accepting donations for ⟦E16⟧ cloth. A donation of sixty pieces of ⟦E16⟧ cloth will net you full recognition by Gnomeregan Exiles for your generous actions. Our stores are such on ⟦E16⟧ that we would only need sixty pieces from you total; we should be able to acquire enough from others in the realm to support our drive.⟦22⟧⟦23⟧If you have the sixty pieces of ⟦E16⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7807:completion:0": "Wonderful! We thank you for your generous donation, ⟦24⟧!",
+  "quest:7808:obj:0": "{'type': 'item', 'id': 4306, 'target': 'Silk ⟦E15⟧', 'text': None}",
+  "quest:7808:progress:0": "As with most other fabrics, our stocks of ⟦E17⟧ are at an all-time low. Our stores are such that we'd only need sixty pieces of ⟦E17⟧ from you total; we should be able to reach our goal with the support of others.⟦25⟧⟦26⟧A benevolent gift such as ⟦E17⟧, might I add, would certainly increase your local standing in the community! If you have the sixty pieces of ⟦E17⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7808:completion:0": "Wonderful! We thank you for your generous donation, ⟦27⟧!",
+  "quest:7809:obj:0": "{'type': 'item', 'id': 4338, 'target': 'Mageweave ⟦E15⟧', 'text': None}",
+  "quest:7809:progress:0": "Mageweave is running low, and we could use your help to replenish our stocks! By counting on the community as a whole, we would only need a donation of 60 pieces of mageweave cloth from you to enable us to reach our goal. Such generosity would not go unnoticed by the Gnomeregan Exiles, I assure you!⟦28⟧⟦29⟧If you have the sixty pieces of mageweave cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7809:completion:0": "Wonderful! We thank you for your generous donation, ⟦30⟧!",
+  "quest:7811:obj:0": "{'type': 'item', 'id': 14047, 'target': 'Runecloth', 'text': None}",
+  "quest:7811:progress:0": "⟦31⟧, you've been a tremendous contributor to our cloth drive. As we work hard to replenish our reserves, one ⟦E18⟧ of cloth remains critically low - runecloth. We are in absolutely dire need of runecloth, and we hope that you will be able to help us as you have in the past.⟦32⟧⟦33⟧If you are willing, please bring me what runecloth you can spare. We'll initially accept a single donation of sixty, and then we'll go from there.",
+  "quest:7811:completion:0": "Fantastic - these will go right to use, I assure you. Thank you again for your assistance! We'd certainly be lost without you.",
+  "quest:7811:completion:1": "With all the donations you've made, I would certainly process any additional runecloth donations you care to make in the future. Just be sure to check in with me, and I'll personally make sure that your good deeds won't go unrecognized!",
+  "quest:7905:obj:0": "Deliver the ⟦E19⟧ to Gelvas Grimgate, located inside the Darkmoon Faire carnival.",
+  "quest:7905:details:0": "⟦E20⟧ is coming! Be sure to experience all the wonders and excitement of it when it comes to town!",
+  "quest:7905:details:1": "If you act right now, you can redeem this voucher for free prize tickets! Just hand your voucher to Gelvas Grimgate located inside the carnival.",
+  "quest:7905:details:2": "Right now, the Faire is outside Goldshire, in the ⟦E21⟧. Don't ⟦E22⟧ out! Go today!",
+  "quest:7905:progress:0": "Yes friend, may I help you? Do you have a voucher that needs redeeming?",
+  "quest:7905:completion:0": "Welcome to the Darkmoon Faire! This voucher is good for FIVE, yes, FIVE prize tickets!",
+  "quest:7905:completion:1": "When you accumulate prize tickets, you'll want to speak to me about redeeming them for valuable prizes. The more tickets you get, the more prizes you can win. Huzzah!",
+  "quest:8371:obj:0": "Bring 3 ⟦E23⟧, 3 ⟦E24⟧ and 3 ⟦E25⟧ to an ⟦E14⟧ Brigadier General outside the battlegrounds.",
+  "quest:8371:details:0": "We're not fighting isolated battles against the ⟦E26⟧ anymore, ⟦34⟧.",
+  "quest:8371:details:1": "Victory in one front means denying the ⟦E26⟧ resources they'd use against us in a different ⟦E27⟧. By the same token, losing any given ⟦E27⟧ could give the advantage to our ⟦E28⟧ somewhere else around the world.",
+  "quest:8371:details:2": "The ⟦E14⟧ is in need of more combatants with this sort of worldly understanding... truly seasoned veterans! ⟦35⟧, come back to me after you've served against the ⟦E26⟧ at all of our active battlegrounds.",
+  "quest:8371:progress:0": "How are yer travels faring laddie?",
+  "quest:8371:completion:0": "You're not one to disappoint, ⟦36⟧! What you've learned goes beyond petty medals and commendations. What you've learned is what can only come with experience and the hardening of one's temper in the field of ⟦E27⟧.",
+  "quest:8371:completion:1": "You've done well, ⟦37⟧. You're a true hero of the ⟦E14⟧!",
+  "quest:8905:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E31⟧ to Deliana in ⟦E2⟧.",
+  "quest:8905:details:0": "Well met, ⟦38⟧. I've something that might interest you.",
+  "quest:8905:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8905:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8905:progress:0": "Have you brought me what I requested of you, ⟦39⟧?",
+  "quest:8905:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8905:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8906:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E33⟧ to Deliana in ⟦E2⟧.",
+  "quest:8906:details:0": "Well met, ⟦40⟧. I've something that might interest you.",
+  "quest:8906:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8906:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8906:progress:0": "Have you brought me what I requested of you, ⟦41⟧?",
+  "quest:8906:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8906:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8907:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E34⟧ to Deliana in ⟦E2⟧.",
+  "quest:8907:details:0": "Well met, ⟦42⟧. I've something that might interest you.",
+  "quest:8907:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8907:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8907:progress:0": "Have you brought me what I requested of you, ⟦43⟧?",
+  "quest:8907:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8907:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8908:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E35⟧ to Deliana in ⟦E2⟧.",
+  "quest:8908:details:0": "Well met, ⟦44⟧. I've something that might interest you.",
+  "quest:8908:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8908:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8908:progress:0": "Have you brought me what I requested of you, ⟦45⟧?",
+  "quest:8908:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8908:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8909:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with 1 set of ⟦E36⟧ to Deliana in ⟦E2⟧.",
+  "quest:8909:details:0": "Well met, ⟦46⟧. I've something that might interest you.",
+  "quest:8909:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8909:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8909:progress:0": "Have you brought me what I requested of you, ⟦47⟧?",
+  "quest:8909:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8909:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8910:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E37⟧ to Deliana in ⟦E2⟧.⟦48⟧",
+  "quest:8910:details:0": "Well met, ⟦49⟧. I've something that might interest you.",
+  "quest:8910:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8910:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8910:progress:0": "Have you brought me what I requested of you, ⟦50⟧?",
+  "quest:8910:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8910:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8911:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E38⟧ to Deliana in ⟦E2⟧.⟦51⟧",
+  "quest:8911:details:0": "Well met, ⟦52⟧. I've something that might interest you.",
+  "quest:8911:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8911:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.",
+  "quest:8911:progress:0": "Have you brought me what I requested of you, ⟦53⟧?",
+  "quest:8911:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8911:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8912:obj:0": "Acquire 15 ⟦E29⟧ ⟦E30⟧ Samples and 20 gold and bring them along with a set of ⟦E39⟧ to Deliana in ⟦E2⟧.",
+  "quest:8912:details:0": "Well met, ⟦54⟧. I've something that might interest you.",
+  "quest:8912:details:1": "I have in my possession a set of ⟦E32⟧ much like the one worn by those of your profession, but of much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange for a small favor.",
+  "quest:8912:details:2": "The blood of the frostsabers and bears that inhabit ⟦E29⟧ has properties I'm in need of at the moment. Bring me a sizeable sample of it along with the bracers and a small amount of gold. You shall find the effort worth your while.⟦55⟧",
+  "quest:8912:progress:0": "Have you brought me what I requested of you, ⟦56⟧?",
+  "quest:8912:completion:0": "Excellent! Let's perform the trade then. It's hard to part with this excellent ⟦E32⟧, but I'm afraid I won't be needing it any time soon.",
+  "quest:8912:completion:1": "If you're interested in performing more work for me, I might be willing to give up the rest of the pieces.",
+  "quest:8926:obj:0": "Bring a ⟦E40⟧ and a set of ⟦E41⟧ Deliana in ⟦E2⟧.",
+  "quest:8926:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me the belt and set of gloves that you wish to upgrade. I promise the ones I give you in return will be far superior.",
+  "quest:8926:progress:0": "You're ready to perform the trade?",
+  "quest:8926:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8926:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8931:obj:0": "Bring a ⟦E42⟧ and a set of ⟦E43⟧ to Deliana in ⟦E2⟧.",
+  "quest:8931:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me an ordinary belt and a set of gloves that you wish to upgrade.",
+  "quest:8931:progress:0": "You're ready to perform the trade?",
+  "quest:8931:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8931:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8932:obj:0": "Bring a ⟦E44⟧ and a set of ⟦E45⟧ to Deliana in ⟦E2⟧.⟦57⟧",
+  "quest:8932:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me an ordinary belt and a set of gloves that you wish to upgrade.",
+  "quest:8932:progress:0": "You're ready to perform the trade?",
+  "quest:8932:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8932:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8933:obj:0": "Bring a ⟦E46⟧ and a set of ⟦E47⟧ to Deliana in ⟦E2⟧.⟦58⟧",
+  "quest:8933:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me the belt and set of gauntlets that you wish to upgrade. I promise the ones I give you in return will be far superior.",
+  "quest:8933:progress:0": "You're ready to perform the trade?",
+  "quest:8933:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8933:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8934:obj:0": "Bring a ⟦E48⟧ and a set of ⟦E49⟧ to Deliana in ⟦E2⟧.",
+  "quest:8934:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me the belt and set of gloves that you wish to upgrade. I promise the ones I give you in return will be far superior.",
+  "quest:8934:progress:0": "You're ready to perform the trade?",
+  "quest:8934:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8934:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished."
+ },
+ "context": {
+  "quest:7342": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Artilleryman Sheldonore"
+  },
+  "quest:3701": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Royal Historian Archesonus",
+   "turner": "Royal Historian Archesonus"
+  },
+  "quest:3702": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Royal Historian Archesonus",
+   "turner": "Royal Historian Archesonus"
+  },
+  "quest:4513": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Laris Geardawdle",
+   "turner": "Laris Geardawdle"
+  },
+  "quest:1019": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Courier Hammerfall",
+   "turner": "Arch Druid Fandral Staghelm"
+  },
+  "quest:3371": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Curator Thorius",
+   "turner": "Dying Archaeologist"
+  },
+  "quest:8275": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Cenarion Emissary Jademoon",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:7802": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Mistina Steelshield",
+   "turner": "Mistina Steelshield"
+  },
+  "quest:7803": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Mistina Steelshield",
+   "turner": "Mistina Steelshield"
+  },
+  "quest:7804": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Mistina Steelshield",
+   "turner": "Mistina Steelshield"
+  },
+  "quest:7805": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Mistina Steelshield",
+   "turner": "Mistina Steelshield"
+  },
+  "quest:7807": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Bubulo Acerbus",
+   "turner": "Bubulo Acerbus"
+  },
+  "quest:7808": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Bubulo Acerbus",
+   "turner": "Bubulo Acerbus"
+  },
+  "quest:7809": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Bubulo Acerbus",
+   "turner": "Bubulo Acerbus"
+  },
+  "quest:7811": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Bubulo Acerbus",
+   "turner": "Bubulo Acerbus"
+  },
+  "quest:7905": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Melnan Darkstone",
+   "turner": "Gelvas Grimegate"
+  },
+  "quest:8371": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Alliance Brigadier General",
+   "turner": "Alliance Brigadier General"
+  },
+  "quest:8905": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8906": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8907": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8908": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8909": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8910": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8911": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8912": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8926": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8931": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8932": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8933": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  },
+  "quest:8934": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana",
+   "turner": "Deliana"
+  }
+ },
+ "known": {
+  "quest:3701": {
+   "title": "خرابه‌های دودمان ثوریسان"
+  },
+  "quest:3702": {
+   "title": "خرابه‌های دودمان ثوریسان"
+  },
+  "quest:4513": {
+   "title": "کمی لجن، خیلی فایده"
+  },
+  "quest:1019": {
+   "title": "مرزهای تازه"
+  },
+  "quest:3371": {
+   "title": "عدالت دورف‌ها"
+  },
+  "quest:8275": {
+   "title": "پس‌گرفتن سیلیتوس"
+  },
+  "quest:7802": {
+   "title": "اهدای پشم"
+  },
+  "quest:7803": {
+   "title": "اهدای ابریشم"
+  },
+  "quest:7804": {
+   "title": "اهدای مگ‌ویو"
+  },
+  "quest:7805": {
+   "title": "اهدای رون‌کلاث"
+  },
+  "quest:7807": {
+   "title": "اهدای پشم"
+  },
+  "quest:7808": {
+   "title": "اهدای ابریشم"
+  },
+  "quest:7809": {
+   "title": "اهدای مگ‌ویو"
+  },
+  "quest:7811": {
+   "title": "اهدای رون‌کلاث"
+  },
+  "quest:7905": {
+   "title": "نمایشگاه دارک‌مون"
+  },
+  "quest:8371": {
+   "title": "تلاش‌های هماهنگ"
+  },
+  "quest:8905": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8906": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8907": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8908": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8909": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8910": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8911": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8912": {
+   "title": "پیشنهادی صادقانه"
+  },
+  "quest:8926": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8931": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8932": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8933": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8934": {
+   "title": "جبران عادلانه"
+  }
+ }
+}

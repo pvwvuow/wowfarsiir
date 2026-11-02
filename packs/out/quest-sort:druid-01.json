@@ -1,0 +1,856 @@
+{
+ "pack": "quest-sort:druid-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:druid-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Verdant Note",
+   "fa": "یادداشتِ سبز",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Camp Narache",
+   "fa": "اردوگاه ناراچ",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "trainer",
+   "fa": "مربی",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "grants",
+   "fa": "می‌بخشد",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Verdant Sigil",
+   "fa": "مُهرِ سبز",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Shadowglen",
+   "fa": "سایه دره",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E13": {
+   "en": "Claw",
+   "fa": "پنجهٔ وحشی",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "charges",
+   "fa": "شارژ",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Great Bear Spirit",
+   "fa": "روح خرس بزرگ",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Return to Thunder Bluff",
+   "fa": "بازگشت به تاندر بلوف",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Cenarion Moondust",
+   "fa": "غبارِ ماهِ سِناریون",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Druid of the Claw",
+   "fa": "دروئید چنگال",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Cenarion Lunardust",
+   "fa": "غبارِ قمریِ سِناریون",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E27": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Empty Cliffspring Falls Sampler",
+   "fa": "نمونه‌گیرِ خالیِ آبشارِ چشمهٔ پرتگاه",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Filled Cliffspring Falls Sampler",
+   "fa": "نمونه‌گیرِ پُرِ آبشارِ چشمهٔ پرتگاه",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Cliffspring Falls",
+   "fa": "آبشار چشمه‌صخره",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Earthroot",
+   "fa": "ریشهٔ خاک",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Curative Animal Salve",
+   "fa": "مرهم شفابخش حیوانی",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Empty Dreadmist Peak Sampler",
+   "fa": "نمونه‌گیرِ خالیِ قلهٔ مهِ شوم",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Filled Dreadmist Peak Sampler",
+   "fa": "نمونه‌گیرِ پُرِ قلهٔ مهِ شوم",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Dreadmist Peak",
+   "fa": "قلهٔ مه هراس",
+   "kind": "zn"
+  },
+  "E41": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E42": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "Shrine Bauble",
+   "fa": "آویزِ مقدس‌گاه",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Trial of the Lake",
+   "fa": "آزمون دریاچه",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Verdant Note": "یادداشتِ سبز",
+  "Camp Narache": "اردوگاه ناراچ",
+  "trainer": "مربی",
+  "Mulgore": "مولگر",
+  "grants": "می‌بخشد",
+  "Verdant Sigil": "مُهرِ سبز",
+  "Shadowglen": "سایه دره",
+  "Use": "استفاده",
+  "spell": "اسپیل",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Druid": "دروئید",
+  "Claw": "پنجهٔ وحشی",
+  "aura": "هاله",
+  "Darnassus": "دارناسوس",
+  "Teldrassil": "تلدراسیل",
+  "charges": "شارژ",
+  "Thunder Bluff": "تاندر بلاف",
+  "Great Bear Spirit": "روح خرس بزرگ",
+  "Azeroth": "آزروت",
+  "Return to Thunder Bluff": "بازگشت به تاندر بلوف",
+  "Cenarion Moondust": "غبارِ ماهِ سِناریون",
+  "Druid of the Claw": "دروئید چنگال",
+  "Cenarion Lunardust": "غبارِ قمریِ سِناریون",
+  "Barrens": "بارنز",
+  "Travel": "سفر",
+  "ability": "توانایی",
+  "Empty Cliffspring Falls Sampler": "نمونه‌گیرِ خالیِ آبشارِ چشمهٔ پرتگاه",
+  "Filled Cliffspring Falls Sampler": "نمونه‌گیرِ پُرِ آبشارِ چشمهٔ پرتگاه",
+  "Darkshore": "کرانهٔ تاریک",
+  "Cliffspring Falls": "آبشار چشمه‌صخره",
+  "Elune": "الون",
+  "Earthroot": "ریشهٔ خاک",
+  "requires": "نیازمند",
+  "Curative Animal Salve": "مرهم شفابخش حیوانی",
+  "Ashenvale": "اَشِن‌ویل",
+  "threat": "تیت",
+  "Empty Dreadmist Peak Sampler": "نمونه‌گیرِ خالیِ قلهٔ مهِ شوم",
+  "Filled Dreadmist Peak Sampler": "نمونه‌گیرِ پُرِ قلهٔ مهِ شوم",
+  "Dreadmist Peak": "قلهٔ مه هراس",
+  "demon": "اهریمن",
+  "form": "شکل",
+  "blessing": "برکت",
+  "Shrine Bauble": "آویزِ مقدس‌گاه",
+  "Trial of the Lake": "آزمون دریاچه"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$N",
+  "4": "$C",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$C",
+  "10": "$C",
+  "11": "$C",
+  "12": "$C",
+  "13": "$C",
+  "14": "$C",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$C",
+  "23": "$B",
+  "24": "$B",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$g him : her;",
+  "30": "$N",
+  "31": "$N",
+  "32": "$B",
+  "33": "$B",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$R",
+  "38": "$N",
+  "39": "$N",
+  "40": "$g him : her;",
+  "41": "$N",
+  "42": "$N",
+  "43": "$C",
+  "44": "$N",
+  "45": "$C",
+  "46": "$N",
+  "47": "$r",
+  "48": "$N",
+  "49": "$r"
+ },
+ "rows": {
+  "quest:3094:obj:0": "Read the ⟦E1⟧ and speak to Gart Mistrunner in ⟦E2⟧.",
+  "quest:3094:details:0": "Just a moment ago a messenger was looking for you, ⟦1⟧. I believe she was sent by the druid ⟦E3⟧ Gart. If this note is from Gart, I wouldn't take long in reading its contents.⟦2⟧",
+  "quest:3094:progress:0": "You have arrived. This is good. Our ancestors' spirits have become restless throughout ⟦E4⟧ and beyond, but I cannot tell why. It will forever be your duty to learn to listen to nature's spirits, and act as their avatar. Be mindful of that.",
+  "quest:3094:completion:0": "Though we share a common bond, do not expect much welcome from the night elves. Their pride still limits their sight, but that is none of our concern. The teachings of the Earthmother are all you must concern yourself with, and I will teach you what I know as you grow in wisdom.",
+  "quest:3094:completion:1": "Return to me often, ⟦3⟧. You will find that the Earthmother ⟦E5⟧ incredible abilities to those who are most dedicated.",
+  "quest:3120:obj:0": "Read the ⟦E6⟧ and speak to Mardant Strongoak, in the tree Aldrassil in ⟦E7⟧.",
+  "quest:3120:details:0": "This sigil was given to me by a messenger from our druid ⟦E3⟧, Mardant. It seems Mardant would have words with you when you have a moment. Read it and bring it to him afterwards.",
+  "quest:3120:progress:0": "Ah, young ⟦4⟧. I see you're eager to continue your studies. Good.⟦5⟧⟦6⟧I wonder, have you spent much time in the Emerald Dream already? Perhaps you're not prepared for that yet... In time, I'm sure.⟦7⟧⟦8⟧But until then, we should discuss other matters.",
+  "quest:3120:completion:0": "I will be your mentor and guide for now. It is my duty to teach you how to interpret not only what the spirits communicate to us, but also the complexities and secrets of the Emerald Dream.",
+  "quest:3120:completion:1": "As you learn and grow in power, you will learn more of our sleeping trance. But until then, return to me as often as you like and I will teach you what I can in the ways of our kind.",
+  "quest:5921:obj:0": "⟦E8⟧ the ⟦E9⟧ \"Teleport: ⟦E10⟧\" to travel to ⟦E10⟧. When you arrive, speak with Dendrite Starblaze in the village of Nighthaven.",
+  "quest:5921:details:0": "All druids are welcome in the sacred lands of ⟦E10⟧, regardless of the current tensions in the ⟦E11⟧ between Arch ⟦E12⟧ Staghelm and Keeper Remulos - ⟦E10⟧'s guardian. Now that you're learning the ways of the ⟦E13⟧, I'll teach you the ⟦E9⟧ that lets you transport yourself there. Cast it whenever you seek ⟦E10⟧'s knowledge or solace.",
+  "quest:5921:details:1": "As for your first lesson, travel to ⟦E10⟧ and speak with Dendrite Starblaze in Nighthaven about the path you're now on. Good luck, young druid.",
+  "quest:5921:completion:0": "\"And so it begins. Father Cenarius. And so it begins.\"",
+  "quest:5921:completion:1": "Dendrite makes a quick, invisible gesture in the air above him. A slight ⟦E14⟧ of power falls over him.",
+  "quest:5921:completion:2": "B\"The first perspective of nature you must adapt to is that of the bear. I will put you on the path to understanding this aspect of druidic life, but it is you that must embrace it and propagate it - now and forever!\"",
+  "quest:5922:obj:0": "⟦E8⟧ the ⟦E9⟧ \"Teleport: ⟦E10⟧\" to travel to ⟦E10⟧. When you arrive, speak with Dendrite Starblaze in the village of Nighthaven.",
+  "quest:5922:details:0": "All druids are welcomed to the sacred lands of ⟦E10⟧, tauren and night elf alike. Keeper Remulos - ⟦E10⟧'s guardian - keeps watch over all druids who hibernate there. Now that you're learning the ways of the ⟦E13⟧, I'll teach you the ⟦E9⟧ that lets you transport yourself there. Cast it whenever you seek ⟦E10⟧'s knowledge or solace.",
+  "quest:5922:details:1": "As for your first lesson, travel to ⟦E10⟧ and speak with Dendrite Starblaze in Nighthaven about the path you're now on. Good luck, young druid.",
+  "quest:5922:completion:0": "\"And so it begins. Father Cenarius. And so it begins.\"",
+  "quest:5922:completion:1": "Dendrite makes a quick, invisible gesture in the air above him. A slight ⟦E14⟧ of power falls over him.",
+  "quest:5922:completion:2": "B\"The first perspective of nature you must adapt to is that of the bear. I will put you on the path to understanding this aspect of druidic life, but it is you that must embrace it and propagate it - now and forever!\"",
+  "quest:5923:obj:0": "Speak with Mathrengyl Bearwalker in the Cenarion Enclave, ⟦E15⟧.",
+  "quest:5923:details:0": "Excuse me, friend...",
+  "quest:5923:details:1": "It has come to my attention that Mathrengyl Bearwalker has put out word that he wishes to speak with you. It seems that your training as a druid is about to take on a new life, and he will be training you personally. Mathrengyl is the direct assistant to the Arch ⟦E12⟧ himself, and is one of the most sage and august druids you'll find in ⟦E16⟧.",
+  "quest:5923:details:2": "He is located in the Cenarion Enclave of ⟦E15⟧, on the second floor of Fandral Staghelm's tree.",
+  "quest:5923:completion:0": "I am glad you found your way here today. young ⟦9⟧. The time has come for you to take a large step into a much larger world.",
+  "quest:5923:completion:1": "Inside each of Cenarius' children is the call to serve nature. Animals and plants are our friends as well as our ⟦E17⟧. We choose to devote our lives as preservers of balance for their sakes as well as our own. Your first step into this world will be to learn of the ways of the bear, and to learn strength of body and heart.",
+  "quest:5923:completion:2": "Ready yourself!",
+  "quest:5924:obj:0": "Speak with Mathrengyl Bearwalker in the Cenarion Enclave, ⟦E15⟧.",
+  "quest:5924:details:0": "Excuse me, friend...",
+  "quest:5924:details:1": "It has come to my attention that Mathrengyl Bearwalker has put out word that he wishes to speak with you. It seems that your training as a druid is about to take on a new life, and he will be training you personally. Mathrengyl is the direct assistant to the Arch ⟦E12⟧ himself, and is one of the most sage and august druids you'll find in ⟦E16⟧.",
+  "quest:5924:details:2": "He is located in the Cenarion Enclave of ⟦E15⟧, on the second floor of Fandral Staghelm's tree.",
+  "quest:5924:completion:0": "I am glad you found your way here today. young ⟦10⟧. The time has come for you to take a large step into a much larger world.",
+  "quest:5924:completion:1": "Inside each of Cenarius' children is the call to serve nature. Animals and plants are our friends as well as our ⟦E17⟧. We choose to devote our lives as preservers of balance for their sakes as well as our own. Your first step into this world will be to learn of the ways of the bear, and to learn strength of body and heart.",
+  "quest:5924:completion:2": "Ready yourself!",
+  "quest:5925:obj:0": "Speak with Mathrengyl Bearwalker in the Cenarion Enclave, ⟦E15⟧.",
+  "quest:5925:details:0": "Excuse me, friend...",
+  "quest:5925:details:1": "It has come to my attention that Mathrengyl Bearwalker has put out word that he wishes to speak with you. It seems that your training as a druid is about to take on a new life, and he will be training you personally. Mathrengyl is the direct assistant to the Arch ⟦E12⟧ himself, and is one of the most sage and august druids you'll find in ⟦E16⟧.",
+  "quest:5925:details:2": "He is located in the Cenarion Enclave of ⟦E15⟧, on the second floor of Fandral Staghelm's tree.",
+  "quest:5925:completion:0": "I am glad you found your way here today. young ⟦11⟧. The time has come for you to take a large step into a much larger world.",
+  "quest:5925:completion:1": "Inside each of Cenarius' children is the call to serve nature. Animals and plants are our friends as well as our ⟦E17⟧. We choose to devote our lives as preservers of balance for their sakes as well as our own. Your first step into this world will be to learn of the ways of the bear, and to learn strength of body and heart.",
+  "quest:5925:completion:2": "Ready yourself!",
+  "quest:5926:obj:0": "Speak with Turak Runetotem on the Elder Rise of ⟦E18⟧.",
+  "quest:5926:details:0": "Excuse me, friend...",
+  "quest:5926:details:1": "It has come to my attention that Turak Runetotem has put out word that he wishes to speak with you. It seems that your training as a druid is about to take on a new life, and he will be training you personally. Turak is one of the Arch ⟦E12⟧'s assistants; he is known as a wise and patient druid, and he should teach you well.",
+  "quest:5926:details:2": "He is located in ⟦E18⟧, inside the ⟦E11⟧'s main tent on the Elder Rise.",
+  "quest:5926:completion:0": "I am glad you found your way here today. young ⟦12⟧. The time has come for you to take a large step into a much larger world.",
+  "quest:5926:completion:1": "Inside each of Cenarius' children is the call to serve nature. Animals and plants are our friends as well as our ⟦E17⟧. We choose to devote our lives as preservers of balance for their sakes as well as our own. Your first step into this world will be to learn of the ways of the bear, and to learn strength of body and heart.",
+  "quest:5926:completion:2": "Ready yourself!",
+  "quest:5927:obj:0": "Speak with Turak Runetotem on the Elder Rise of ⟦E18⟧.",
+  "quest:5927:details:0": "Excuse me, friend...",
+  "quest:5927:details:1": "It has come to my attention that Turak Runetotem has put out word that he wishes to speak with you. It seems that your training as a druid is about to take on a new life, and he will be training you personally. Turak is one of the Arch ⟦E12⟧'s assistants; he is known as a wise and patient druid, and he should teach you well.",
+  "quest:5927:details:2": "He is located in ⟦E18⟧, inside the ⟦E11⟧'s main tent on the Elder Rise.",
+  "quest:5927:completion:0": "I am glad you found your way here today. young ⟦13⟧. The time has come for you to take a large step into a much larger world.",
+  "quest:5927:completion:1": "Inside each of Cenarius' children is the call to serve nature. Animals and plants are our friends as well as our ⟦E17⟧. We choose to devote our lives as preservers of balance for their sakes as well as our own. Your first step into this world will be to learn of the ways of the bear, and to learn strength of body and heart.",
+  "quest:5927:completion:2": "Ready yourself!",
+  "quest:5928:obj:0": "Speak with Turak Runetotem on the Elder Rise of ⟦E18⟧.",
+  "quest:5928:details:0": "Excuse me, friend...",
+  "quest:5928:details:1": "It has come to my attention that Turak Runetotem has put out word that he wishes to speak with you. It seems that your training as a druid is about to take on a new life, and he will be training you personally. Turak is one of the Arch ⟦E12⟧'s assistants; he is known as a wise and patient druid, and he should teach you well.",
+  "quest:5928:details:2": "He is located in ⟦E18⟧, inside the ⟦E11⟧'s main tent on the Elder Rise.",
+  "quest:5928:completion:0": "I am glad you found your way here today. young ⟦14⟧. The time has come for you to take a large step into a much larger world.",
+  "quest:5928:completion:1": "Inside each of Cenarius' children is the call to serve nature. Animals and plants are our friends as well as our ⟦E17⟧. We choose to devote our lives as preservers of balance for their sakes as well as our own. Your first step into this world will be to learn of the ways of the bear, and to learn strength of body and heart.",
+  "quest:5928:completion:2": "Ready yourself!",
+  "quest:5929:obj:0": "Seek out the ⟦E19⟧ in northwestern ⟦E10⟧ and learn what it has to share with you about the nature of the bear. When finished, return to Dendrite Starblaze in Nighthaven, ⟦E10⟧.",
+  "quest:5929:details:0": "In the northwest part of ⟦E10⟧ resides the home of a wise and noble being we call the ⟦E19⟧. For all druids, it has served as a tutor and mentor into the first true natural understanding of the bear. All druids at one point seek the spirit's wisdom, and you shall be no exception.",
+  "quest:5929:details:1": "Go to the ⟦E19⟧ now and learn what it will teach. When it is satisfied with you, return to me here in Nighthaven. We will then see if you have truly taken account of the lessons it teaches.",
+  "quest:5929:completion:0": "Dendrite makes another invisible gesture in the air above him as you approach. Another ⟦E14⟧ of power comes over him. and he smiles ever so slightly.",
+  "quest:5929:completion:1": "B\"I sense wisdom in you, young one, that was not present when we first met. You gaze upon me with strength and knowing intent, though this intent is yet not focused. You will now learn to focus your strength and adopt the nature of the bear into your work.\"",
+  "quest:5930:obj:0": "Seek out the ⟦E19⟧ in northwestern ⟦E10⟧ and learn what it has to share with you about the nature of the bear. When finished, return to Dendrite Starblaze in Nighthaven, ⟦E10⟧.",
+  "quest:5930:details:0": "In the northwest part of ⟦E10⟧ resides the home of a wise and noble being we call the ⟦E19⟧. For all druids, it has served as a tutor and mentor into the first true natural understanding of the bear. All druids at one point seek the spirit's wisdom, and you shall be no exception.",
+  "quest:5930:details:1": "Go to the ⟦E19⟧ now and learn what it will teach. When it is satisfied with you, return to me here in Nighthaven. We will then see if you have truly taken account of the lessons it teaches.",
+  "quest:5930:completion:0": "Dendrite makes another invisible gesture in the air above him as you approach. Another ⟦E14⟧ of power comes over him. and he smiles ever so slightly.",
+  "quest:5930:completion:1": "B\"I sense wisdom in you, young one, that was not present when we first met. You gaze upon me with strength and knowing intent, though this intent is yet not focused. You will now learn to focus your strength and adopt the nature of the bear into your work.\"",
+  "quest:5931:obj:0": "Return to ⟦E15⟧ and speak with Mathrengyl Bearwalker in the Cenarion Enclave.",
+  "quest:5931:details:0": "The time has come for us to part ways, young one, as the application of your lessons takes you back to whom that sent you to me. Mathrengyl Bearwalker walks truly in balance with nature, even as he dwells precariously close to where the balance has faltered. Listen to his instructions, and you will soon complete your first lessons into your role as a protector of balance.",
+  "quest:5931:details:1": "Go now, young one. We shall meet again.",
+  "quest:5931:completion:0": "Welcome back, ⟦15⟧. I sense that your first meeting with the ⟦E19⟧ is the same as it is with all druids when they first start down the path of the ⟦E13⟧... a little bewildering, but very intense. I know it was that way with me.",
+  "quest:5931:completion:1": "The ⟦E19⟧ has been a part of ⟦E20⟧ as long as ⟦E20⟧ has existed in the heavens. We have come to rely on its wisdom and its power to fuel our purpose. Now, the time has now come for your first test of this purpose. Listen closely...",
+  "quest:5932:obj:0": "⟦E21⟧ and speak with Turak Runetotem on the Elder Rise.",
+  "quest:5932:details:0": "The time has come for us to part ways, young one, as the application of your lessons takes you back to whom that sent you to me. Though the tauren are thought to be young in the ways of Cenarius, Turak Runetotem walks with much balance in the presence of nature. Listen to his instructions, and you will soon complete your first lessons into your role as a protector of balance.",
+  "quest:5932:details:1": "Go now, young one. We shall meet again.",
+  "quest:5932:completion:0": "Welcome back, ⟦16⟧. I sense that your first meeting with the ⟦E19⟧ is the same as it is with all druids when they first start down the path of the ⟦E13⟧... a little bewildering, but very intense. I know it was that way with me.",
+  "quest:5932:completion:1": "The ⟦E19⟧ has been a part of ⟦E20⟧ as long as ⟦E20⟧ has existed in the heavens. We tauren listen closely to such spirits, and we all prosper from its purpose. Now, the time has now come for your first test of this purpose. Listen closely...",
+  "quest:6001:obj:0": "⟦E8⟧ the ⟦E22⟧ on the Moonkin Stone of Auberdine to bring forth Lunaclaw. From there, you must face Lunaclaw and earn the strength of body and heart it possesses.",
+  "quest:6001:obj:1": "Speak with Mathrengyl Bearwalker in ⟦E15⟧ when you are done.",
+  "quest:6001:details:0": "Directly east of Auberdine lay many moonkin caves. The one closest to Auberdine has a Moonkin Stone inside it. Lunaclaw, the defender of the stone, will face you only when ⟦E22⟧ is applied to it. Lunaclaw possesses within it a strength that you must use as one of the ⟦E13⟧.",
+  "quest:6001:details:1": "You've earned the right to use this ⟦E22⟧, ⟦17⟧... now show me that you've earned the right to possess the strength of body and the strength of heart needed as a druid!",
+  "quest:6001:completion:0": "You have finally taken your large step into a much larger world, ⟦18⟧. I sense the teaching of the ⟦E19⟧ within you, and I sense that you have received the strength that Lunaclaw possessed.",
+  "quest:6001:completion:1": "There are no further obstacles in your way... let me now teach you what it means to be a ⟦E23⟧!",
+  "quest:6002:obj:0": "⟦E8⟧ the ⟦E24⟧ on the Moonkin Stone between ⟦E4⟧ and the ⟦E25⟧ to bring forth Lunaclaw. From there, you must face Lunaclaw and earn the strength of body and heart it possesses.",
+  "quest:6002:obj:1": "Speak with Turak Runetotem in ⟦E18⟧ when you are done.",
+  "quest:6002:details:0": "On land west of Taurajo in the ⟦E25⟧ - just before it turns into ⟦E4⟧ - lies a Moonkin Stone. The moonkin are special beasts, not native to these parts. Lunaclaw, the stone's defender, will face you when ⟦E24⟧ is applied to it. Lunaclaw possesses within it a strength that you must use as one of the ⟦E13⟧.",
+  "quest:6002:details:1": "You've earned the right to use this ⟦E24⟧, ⟦19⟧... now show me that you've earned the right to possess the strength of body and the strength of heart needed as a druid!",
+  "quest:6002:completion:0": "You have finally taken your large step into a much larger world, ⟦20⟧. I sense the teaching of the ⟦E19⟧ within you, and I sense that you have received the strength that Lunaclaw possessed.",
+  "quest:6002:completion:1": "There are no further obstacles in your way... let me now teach you what it means to be a ⟦E23⟧!",
+  "quest:6121:obj:0": "⟦E26⟧ to ⟦E10⟧ and speak with Dendrite Starblaze in the village of Nighthaven.",
+  "quest:6121:details:0": "You're now ready to learn about poison and the power we as druids have over it, ⟦21⟧. Cenarius has blessed us with the ⟦E27⟧ to purge even the most foul of poisons with but a mere incantation. This gift is not to be taken lightly... and to ensure you learn this lesson, you'll work to address the effects of poisonings as a layman would.",
+  "quest:6121:details:1": "⟦E26⟧ to ⟦E10⟧ and speak with Dendrite Starblaze; he awaits your arrival to begin your lesson.",
+  "quest:6121:completion:0": "Greetings young ⟦22⟧, I'm glad to see you ready and eager to learn about the curing of poisons.",
+  "quest:6121:completion:1": "While most druids in the past were put through pre-planned trials, your work will involve no such thing. There has been a rash of animal poisonings in Auberdine, and the village there has been unable to cure it. To that end, a representative there has asked ⟦E10⟧ for aid and we are sending you there to aid them. This is no exercise - the work you'll do is quite real. Bear this in mind.",
+  "quest:6122:obj:0": "⟦E8⟧ the ⟦E28⟧ to draw a sample of water from the mouth of the cave by the falls.",
+  "quest:6122:obj:1": "Deliver the ⟦E29⟧ to Alanndarian Nightsong in Auberdine, ⟦E30⟧.",
+  "quest:6122:details:0": "The ⟦E31⟧ in ⟦E30⟧ serves as the principal source of drinking water for the region, and now I suspect it is the principal source of the poison that is harming the local fauna - deer specifically. ⟦E8⟧ this sampler to draw some water from the mouth of the cave; be careful, as dangerous naga now reside in a cave by the falls.",
+  "quest:6122:details:1": "Once filled, deliver it to Alanndarian Nightsong in Auberdine. She is the one that requested our aid, and you will work with her to address this malady.",
+  "quest:6122:progress:0": "You're the one that the ⟦E11⟧ in ⟦E10⟧ sent? That's wonderful! We've quite the crisis our hands here regarding the poor deer, and we're happy for all the help we can get.⟦23⟧⟦24⟧Do you have the sample of water that Dendrite Starblaze said you'd have? He notified me that you'd draw one so we could work on a cure together...",
+  "quest:6122:completion:0": "By ⟦E32⟧, this water is disgusting! No wonder the deer are sick.",
+  "quest:6122:completion:1": "Something is polluting the water, and in turn corrupting ⟦E30⟧'s entire water table. Sick deer have been seen all over area, and not just by the river. While this water is most likely a primary source of the sickness spreading, there's something else at work here.",
+  "quest:6122:completion:2": "This water, believe it or not, will help us formulate a cure. While I research this water, I have need of some items to formulate a cure...",
+  "quest:6123:obj:0": "Bring 5 ⟦E33⟧ and 12 Lunar Funguses to Alanndarian Nightsong in Auberdine so she may make a curative salve.",
+  "quest:6123:details:0": "The water will serve as the base of the curative salve I'll make for the deer. For curative properties, I need some earthroot. Herbalists know how to find it, so if we're unlucky and you aren't one then you'll need to find one to help us out.",
+  "quest:6123:details:1": "Finally for potency, I need some lunar fungus. Finding lunar fungal blooms is easy enough; they're all over the place in caves just to the east of here. Moonkin reside in the caves and they're irritable as of late, so be careful.",
+  "quest:6123:progress:0": "Have you got the reagents I need to make the salve? The deer aren't getting any better on their own, so we better hurry to help them out!",
+  "quest:6123:completion:0": "This is good, ⟦25⟧, so much so that it should be enough to make some ample doses of the salve - at least enough to start to make a difference.",
+  "quest:6123:completion:1": "Making a cure for poisons can be quite difficult at times because each one often ⟦E34⟧ a very specific antidote to counteract it. Imagine being able to cure a poison at will without having to worry about the exact ingredients of what the antidote must be!",
+  "quest:6123:completion:2": "Now, let me get to work on this!",
+  "quest:6124:obj:0": "⟦E8⟧ the ⟦E35⟧ on 10 Sickly Deer that are located throughout ⟦E30⟧; doing so should cure them. Sickly Deer have been reported starting south of the Cliffspring River to the north of Auberdine and extending all the way into southern ⟦E30⟧ where the edge of ⟦E36⟧ begins.",
+  "quest:6124:details:0": "The amount of salve made out of the reagents you brought me is good enough for ten doses, ⟦26⟧. While I work with the village to try and make some more salve, I'd like for you to help us get a head start. All around ⟦E30⟧ are sickly deer; use the salve on them and cure their malaise.",
+  "quest:6124:details:1": "Dendrite Starblaze in ⟦E10⟧ will want to talk to you when you're done, I'm sure. Please extend Auberdine's thanks to the ⟦E11⟧ there... and let me say thanks to you directly for the help you've given!",
+  "quest:6124:progress:0": "Have you completed what was asked of you by Alanndarian Nightsong of Auberdine? Your work is not complete unless it is.",
+  "quest:6124:completion:0": "You have done well in tending to the sickly deer of ⟦E30⟧; they are unwitting victims of a greater taint and corruption that is spreading all throughout the land. There are those in ⟦E15⟧ who choose to recognize this ⟦E37⟧... and there are those who ignore the growing signs. I hope you will not be one to put blinders on about what facts stare you in the face, ⟦27⟧.",
+  "quest:6124:completion:1": "Regardless, you've proven your worth as a friend of nature and the Circle - take this as a symbol of such.",
+  "quest:6125:obj:0": "Return to Mathrengyl Bearwalker in the Cenarion Enclave, ⟦E15⟧.",
+  "quest:6125:details:0": "You've learned what it means to cure poison without the benefit of spiritual aid. Remember what others must endure in fighting poisonous afflictions as you soon embrace your newfound power over poison.",
+  "quest:6125:details:1": "You should now return to Mathrengyl Bearwalker in ⟦E15⟧, ⟦28⟧. He, no doubt, has a very important ⟦E9⟧ to teach you now that the student understands the lesson given unto ⟦29⟧.",
+  "quest:6125:details:2": "Farewell, young druid. We shall speak again.",
+  "quest:6125:completion:0": "Welcome back - I've been following your progress on this lesson since you left, and I must admit I was surprised to learn about the situation in Auberdine. This does bear some further investigation, as the introduction of such poisons into the environment is most upsetting to the balance.",
+  "quest:6125:completion:1": "You handled yourself with grace under pressure. For that, I can find no better way to reward you than with permanent power over poison. ⟦E8⟧ it well, ⟦30⟧... use it well.",
+  "quest:6126:obj:0": "⟦E26⟧ to ⟦E10⟧ and speak with Dendrite Starblaze in the village of Nighthaven.",
+  "quest:6126:details:0": "You're now ready to learn about poison and the power we as druids have over it, ⟦31⟧. Cenarius has blessed us with the ⟦E27⟧ to purge even the most foul of poisons with but a mere incantation. This gift is not to be taken lightly... and to ensure you learn this lesson, you'll work to address the effects of poisonings as a layman would.",
+  "quest:6126:details:1": "⟦E26⟧ to ⟦E10⟧ and speak with Dendrite Starblaze; he awaits your arrival to begin your lesson.",
+  "quest:6126:completion:0": "Greetings young druid, I'm glad to see you ready and eager to learn about the curing of poisons.",
+  "quest:6126:completion:1": "While most druids in the past were put through pre-planned trials, your work will involve no such thing. There has been a rash of animal poisonings at the Crossroads in the ⟦E25⟧, and they're unable to bring it under control. Someone there has requested ⟦E10⟧ for aid, so we are sending you there to aid them. This is no exercise - the work you'll do is quite real. Bear this in mind.",
+  "quest:6127:obj:0": "⟦E8⟧ the ⟦E38⟧ to draw a sample of water from a pool at the top of the peak.",
+  "quest:6127:obj:1": "Deliver the ⟦E39⟧ to Tonga Runetotem at the Crossroads, ⟦E25⟧.",
+  "quest:6127:details:0": "⟦E40⟧ to the northwest of the Crossroads is most likely a primary candidate as to the source of the spread of the poison. Its airy peaks have pools of water that influence the weather patterns. I suspect the water is now tainted by the ⟦E41⟧-worshipping Burning Blade.",
+  "quest:6127:details:1": "⟦E8⟧ this sampler to draw water from the pool at the very top of the peak. Once filled, deliver it to Tonga Runetotem at the Crossroads. He is the one that requested our aid, and you will work with him to address this malady.",
+  "quest:6127:progress:0": "You are the one that the ⟦E11⟧ in ⟦E10⟧ sent, yes? This is most fortuitous for us! We are stymied in our effort to bring balance to the sickly gazelles that wander the northern ⟦E25⟧; we're happy for all the help we can get.⟦32⟧⟦33⟧Do you have the sample of water that Dendrite Starblaze said you'd have? He notified me that you'd draw one so we could work on a cure together...",
+  "quest:6127:completion:0": "By my ancestors, this water is disgusting! No wonder the gazelles are sick.",
+  "quest:6127:completion:1": "Something is polluting the water, and in turn beginning to wreck the northern ⟦E25⟧ ecosystem. Sick gazelles have been sighted all north of the east-west road here. While this water is most likely a primary source of the sickness spreading, there's something else at work here.",
+  "quest:6127:completion:2": "This water, believe it or not, will help us formulate a cure. While I research this water, I have need of some items to formulate a cure...",
+  "quest:6128:obj:0": "Bring 5 ⟦E33⟧ and 5 Kodo Horns to Tonga Runetotem at the Crossroads so he may make a curative salve.",
+  "quest:6128:details:0": "The water will serve as the base of the curative salve I shall make for the gazelles. For curative properties, I need some earthroot. Herbalists know how to find it, so if you are not familiar with this skill you'll need to find one to help us out.",
+  "quest:6128:details:1": "Finally for potency, I need kodo horns - mere chips and fragments will not suffice. Kodos you can handle wander the northern part of the ⟦E25⟧; bring some down for the greater good of the balance ⟦34⟧, and fetch the horns for me.",
+  "quest:6128:progress:0": "Have you got the reagents I need to make the salve? The gazelle aren't getting any better on their own, so we better not tarry in our effort to save them!",
+  "quest:6128:completion:0": "This is good, ⟦35⟧, so much so that it should be enough to make some ample doses of the salve - at least enough to start to make a difference.",
+  "quest:6128:completion:1": "Making a cure for poisons can be quite difficult at times because each one often ⟦E34⟧ a very specific antidote to counteract it. Imagine being able to cure a poison at will without having to worry about the exact ingredients of what the antidote must be!",
+  "quest:6128:completion:2": "Now, let me get to work on this!",
+  "quest:6129:obj:0": "⟦E8⟧ the ⟦E35⟧ on 10 Sickly Gazelles that are located throughout the northern part of the ⟦E25⟧; doing so should cure them. Sickly Gazelles have been reported north of the east-west road that runs through the Crossroads.",
+  "quest:6129:details:0": "I was able to make enough salve for ten doses of curing, ⟦36⟧. While I work with local authorities to try and make some more salve, I'd like for you to help us get a head start. All around the northern ⟦E25⟧ are sickly gazelles; use the salve on them and cure their malaise.",
+  "quest:6129:details:1": "Dendrite Starblaze in ⟦E10⟧ will want to talk to you when you're done, I'm sure. Please extend our thanks to the ⟦E11⟧ there... and let me say thanks to you directly for the help you've given!",
+  "quest:6129:progress:0": "Have you completed what was asked of you by Tonga Runetotem at the Crossroads? Your work is not complete unless it is.",
+  "quest:6129:completion:0": "You have done well in tending to the sickly gazelles of the ⟦E25⟧; they are unwitting victims of a greater taint and corruption that is spreading all throughout the land. You ⟦37⟧ are most eager to understand the ways of Cenarius; you, like your elders in ⟦E18⟧, are proving that the need for balance transcends artificial racial barriers.",
+  "quest:6129:completion:1": "B⟦38⟧, you've proven your worth as an friend of nature and the Circle - take this as a symbol of such.",
+  "quest:6130:obj:0": "Return to Turak Runetotem on the Elder Rise, ⟦E18⟧.",
+  "quest:6130:details:0": "You've learned what it means to cure poison without the benefit of spiritual aid. Remember what others must endure in fighting poisonous afflictions as you soon embrace your newfound power over poison.",
+  "quest:6130:details:1": "You should now return to Turak Runetotem in ⟦E18⟧, ⟦39⟧. He, no doubt, has a very important ⟦E9⟧ to teach you now that the student understands the lesson given unto ⟦40⟧.",
+  "quest:6130:details:2": "Farewell, young druid. We shall speak again.",
+  "quest:6130:completion:0": "Welcome back - I've been following your progress on this lesson since you left, and I must admit I was surprised to learn about the situation at the Crossroads. This does bear some further investigation, as the introduction of such poisons into the environment is most upsetting to the balance.",
+  "quest:6130:completion:1": "You handled yourself with grace under pressure. For that, I can find no better way to reward you with permanent power over poison. ⟦E8⟧ it well, ⟦41⟧... use it well.",
+  "quest:26:obj:0": "Speak with Dendrite Starblaze in the village of Nighthaven, ⟦E10⟧.",
+  "quest:26:details:0": "⟦42⟧, I have been following your progress with much delight. You are most assuredly developing yourself into a valued protector of nature.",
+  "quest:26:details:1": "The time has come for you to learn more about one of the various animal aspects that Cenarius has blessed us with the ⟦E27⟧ to change into - one that affords you command and mastery of the water. For this, you must travel to the village of Nighthaven in ⟦E10⟧ and speak with Dendrite Starblaze of the ⟦E11⟧ there. He will guide you further.",
+  "quest:26:completion:0": "Salutations, young ⟦43⟧; the time has come for you to know our aquatic ⟦E42⟧. It is one that lets you move freely and indefinitely through water. You will find this aspect a useful tool and a ⟦E43⟧... but it is one that must be earned before it is mastered.",
+  "quest:26:completion:1": "You will face two trials to overcome. The first will test your ⟦E27⟧ to work in water under pressure. The second will test your resolve to understand the aspects of the ⟦E42⟧ itself.",
+  "quest:26:completion:2": "Stand ready, as the time of testing is now upon us.",
+  "quest:27:obj:0": "Speak with Dendrite Starblaze in the village of Nighthaven, ⟦E10⟧.",
+  "quest:27:details:0": "⟦44⟧, I have been following your progress with much delight. You are most assuredly developing yourself into a valued protector of nature.",
+  "quest:27:details:1": "The time has come for you to learn more about one of the various animal aspects that Cenarius has blessed us with the ⟦E27⟧ to change into - one that affords you command and mastery of the water. For this, you must travel to the village of Nighthaven in ⟦E10⟧ and speak with Dendrite Starblaze of the ⟦E11⟧ there. He will guide you further.",
+  "quest:27:completion:0": "Salutations, young ⟦45⟧; the time has come for you to know our aquatic ⟦E42⟧. It is one that lets you move freely and indefinitely through water. You will find this aspect a useful tool and a ⟦E43⟧... but it is one that must be earned before it is mastered.",
+  "quest:27:completion:1": "You will face two trials to overcome. The first will test your ⟦E27⟧ to work in water under pressure. The second will test your resolve to understand the aspects of the ⟦E42⟧ itself.",
+  "quest:27:completion:2": "Stand ready, as the time of testing is now upon us.",
+  "quest:28:obj:0": "Find a ⟦E44⟧ in Lake ⟦E32⟧'ara, and take it to the Shrine of Remulos in northwestern ⟦E10⟧. Once there, use the ⟦E44⟧.",
+  "quest:28:obj:1": "You must speak with Tajarri at the shrine afterwards in order to complete the trial.",
+  "quest:28:details:0": "For your first trial, search the depths of Lake ⟦E32⟧'ara to locate a ⟦E44⟧. It decays rapidly, so proceed with it to the Shrine of Remulos post haste. ⟦E8⟧ the bauble at the shrine, and then speak with Tajarri there; she is one of ⟦E10⟧'s most trusted wardens.",
+  "quest:28:details:1": "You only have a set amount of time to complete the task, and you may be competing against other druids searching for baubles themselves. Mental and physical dexterity will be critical to your success.",
+  "quest:28:details:2": "Good luck, ⟦46⟧.",
+  "quest:28:completion:0": "Well now. It looks like yet another ⟦47⟧ has successfully completed the ⟦E45⟧! Well done, my young friend - well done.",
+  "quest:28:completion:1": "As I've said, my name is Tajarri. It is my duty and my privilege to serve as a warden for ⟦E10⟧, and specifically this shrine. Keeper Remulos guides the ⟦E11⟧ in preservation of nature and balance, and his shrine serves as a lasting tribute to such. By using the bauble here, it serves as a nod to the importance of this place within the Circle.",
+  "quest:29:obj:0": "Find a ⟦E44⟧ in Lake ⟦E32⟧'ara, and take it to the Shrine of Remulos in northwestern ⟦E10⟧. Once there, use the ⟦E44⟧.",
+  "quest:29:obj:1": "You must speak with Tajarri at the shrine afterwards in order to complete the trial.",
+  "quest:29:details:0": "For your first trial, search the depths of Lake ⟦E32⟧'ara to locate a ⟦E44⟧. It decays rapidly, so proceed with it to the Shrine of Remulos post haste. ⟦E8⟧ the bauble at the shrine, and then speak with Tajarri there; she is one of ⟦E10⟧'s most trusted wardens.",
+  "quest:29:details:1": "You only have a set amount of time to complete the task, and you may be competing against other druids searching for baubles themselves. Mental and physical dexterity will be critical to your success.",
+  "quest:29:details:2": "Good luck, ⟦48⟧.",
+  "quest:29:completion:0": "Well now. It looks like yet another ⟦49⟧ has successfully completed the ⟦E45⟧! Well done, my young friend - well done.",
+  "quest:29:completion:1": "As I've said, my name is Tajarri. It is my duty and my privilege to serve as a warden for ⟦E10⟧, and specifically this shrine. Keeper Remulos guides the ⟦E11⟧ in preservation of nature and balance, and his shrine serves as a lasting tribute to such. By using the bauble here, it serves as a nod to the importance of this place within the Circle."
+ },
+ "context": {
+  "quest:3094": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Grull Hawkwind",
+   "turner": "Gart Mistrunner"
+  },
+  "quest:3120": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Conservator Ilthalaine",
+   "turner": "Mardant Strongoak"
+  },
+  "quest:5921": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Mathrengyl Bearwalker",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:5922": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Turak Runetotem",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:5923": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Kal",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:5924": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Fylerian Nightwing، Theridran",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:5925": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Denatharion",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:5926": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Gennia Runetotem",
+   "turner": "Turak Runetotem"
+  },
+  "quest:5927": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Gart Mistrunner",
+   "turner": "Turak Runetotem"
+  },
+  "quest:5928": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Innkeeper Pala",
+   "turner": "Turak Runetotem"
+  },
+  "quest:5929": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Dendrite Starblaze",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:5930": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Dendrite Starblaze",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:5931": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Dendrite Starblaze",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:5932": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Dendrite Starblaze",
+   "turner": "Turak Runetotem"
+  },
+  "quest:6001": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Mathrengyl Bearwalker",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:6002": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Turak Runetotem",
+   "turner": "Turak Runetotem"
+  },
+  "quest:6121": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Mathrengyl Bearwalker",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:6122": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Dendrite Starblaze",
+   "turner": "Alanndarian Nightsong"
+  },
+  "quest:6123": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Alanndarian Nightsong",
+   "turner": "Alanndarian Nightsong"
+  },
+  "quest:6124": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Alanndarian Nightsong",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:6125": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Dendrite Starblaze",
+   "turner": "Mathrengyl Bearwalker"
+  },
+  "quest:6126": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "horde",
+   "giver": "Turak Runetotem",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:6127": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "horde",
+   "giver": "Dendrite Starblaze",
+   "turner": "Tonga Runetotem"
+  },
+  "quest:6128": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "horde",
+   "giver": "Tonga Runetotem",
+   "turner": "Tonga Runetotem"
+  },
+  "quest:6129": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "horde",
+   "giver": "Tonga Runetotem",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:6130": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 14,
+   "side": "horde",
+   "giver": "Dendrite Starblaze",
+   "turner": "Turak Runetotem"
+  },
+  "quest:26": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Turak Runetotem",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:27": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Mathrengyl Bearwalker",
+   "turner": "Dendrite Starblaze"
+  },
+  "quest:28": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Dendrite Starblaze",
+   "turner": "Tajarri"
+  },
+  "quest:29": {
+   "zone_en": "Druid",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Dendrite Starblaze",
+   "turner": "Tajarri"
+  }
+ },
+ "known": {
+  "quest:3094": {
+   "title": "یادداشتِ سرسبز"
+  },
+  "quest:3120": {
+   "title": "مُهرِ سرسبز"
+  },
+  "quest:5921": {
+   "title": "مون‌گلید"
+  },
+  "quest:5922": {
+   "title": "مون‌گلید"
+  },
+  "quest:5923": {
+   "title": "پاسخ به فراخوان"
+  },
+  "quest:5924": {
+   "title": "پاسخ به فراخوان"
+  },
+  "quest:5925": {
+   "title": "پاسخ به فراخوان"
+  },
+  "quest:5926": {
+   "title": "پاسخ به فراخوان"
+  },
+  "quest:5927": {
+   "title": "پاسخ به فراخوان"
+  },
+  "quest:5928": {
+   "title": "پاسخ به فراخوان"
+  },
+  "quest:5929": {
+   "title": "روح خرس بزرگ"
+  },
+  "quest:5930": {
+   "title": "روح خرس بزرگ"
+  },
+  "quest:5931": {
+   "title": "بازگشت به دارناسوس"
+  },
+  "quest:5932": {
+   "title": "بازگشت به تاندر بلوف"
+  },
+  "quest:6001": {
+   "title": "تن و قلب"
+  },
+  "quest:6002": {
+   "title": "تن و قلب"
+  },
+  "quest:6121": {
+   "title": "درس‌هایی از نو"
+  },
+  "quest:6122": {
+   "title": "سرچشمهٔ اصلی"
+  },
+  "quest:6123": {
+   "title": "جمع‌آوری درمان"
+  },
+  "quest:6124": {
+   "title": "درمان بیماران"
+  },
+  "quest:6125": {
+   "title": "تسلط بر سم"
+  },
+  "quest:6126": {
+   "title": "درس‌هایی از نو"
+  },
+  "quest:6127": {
+   "title": "سرچشمهٔ اصلی"
+  },
+  "quest:6128": {
+   "title": "جمع‌آوری درمان"
+  },
+  "quest:6129": {
+   "title": "درمان بیماران"
+  },
+  "quest:6130": {
+   "title": "تسلط بر سم"
+  },
+  "quest:26": {
+   "title": "درسی برای آموختن"
+  },
+  "quest:27": {
+   "title": "درسی برای آموختن"
+  },
+  "quest:28": {
+   "title": "آزمون دریاچه"
+  },
+  "quest:29": {
+   "title": "آزمون دریاچه"
+  }
+ }
+}

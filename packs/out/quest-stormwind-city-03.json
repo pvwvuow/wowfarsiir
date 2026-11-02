@@ -1,0 +1,756 @@
+{
+ "pack": "quest-stormwind-city-03",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stormwind-city-03.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Khadgar's Essays on Dimensional Convergence",
+   "fa": "جستارهای خادگار دربارهٔ هم‌گرایی بُعدی",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E5": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "The Temple of Atal'Hakkar",
+   "fa": "معبد آتال‌هاکار",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Pool of Tears",
+   "fa": "برکهٔ اشک",
+   "kind": "qs"
+  },
+  "E9": {
+   "en": "The Hinterlands",
+   "fa": "هینترلندز",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Feathermoon Stronghold",
+   "fa": "سنگر فیدرمون",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "target",
+   "fa": "هدف",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Nathanos",
+   "fa": "ناتانوس",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "Stormwind City",
+   "fa": "شهر استورم‌ویند",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Marshal Windsor",
+   "fa": "مارشال ویندزر",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Onyxia",
+   "fa": "اونیکسیا",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Deathwing",
+   "fa": "بال مرگ",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Nefarian",
+   "fa": "نفاریان",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Fragment of the Dragon's Eye",
+   "fa": "خردهٔ چشمِ اژدها",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Head of Onyxia",
+   "fa": "سرِ اونکسیا",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E42": {
+   "en": "Head of Nefarian",
+   "fa": "سرِ نفاریان",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "Cloth",
+   "fa": "پارچه",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "wool",
+   "fa": "پشم",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Khadgar's Essays on Dimensional Convergence": "جستارهای خادگار دربارهٔ هم‌گرایی بُعدی",
+  "Blasted Lands": "اراضی ویران",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Arcane": "اسرار",
+  "Stormwind": "استورم‌ویند",
+  "The Temple of Atal'Hakkar": "معبد آتال‌هاکار",
+  "Azeroth": "آزروت",
+  "Pool of Tears": "برکهٔ اشک",
+  "The Hinterlands": "هینترلندز",
+  "Feathermoon Stronghold": "سنگر فیدرمون",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Feralas": "فرالاس",
+  "Druid": "دروئید",
+  "Darnassus": "دارناسوس",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "threat": "تیت",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Plaguelands": "طاعون‌زار",
+  "Runecloth": "پارچهٔ رونی",
+  "stack": "استک",
+  "target": "هدف",
+  "Kalimdor": "کالیمدور",
+  "Tanaris": "تاناریس",
+  "Teldrassil": "تلدراسیل",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Nathanos": "ناتانوس",
+  "Forsaken": "مطرودان",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Alliance": "اتحاد",
+  "Travel": "سفر",
+  "Stormwind City": "شهر استورم‌ویند",
+  "Marshal Windsor": "مارشال ویندزر",
+  "Onyxia": "اونیکسیا",
+  "Deathwing": "بال مرگ",
+  "Nefarian": "نفاریان",
+  "spell": "اسپیل",
+  "Fragment of the Dragon's Eye": "خردهٔ چشمِ اژدها",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "aura": "هاله",
+  "Head of Onyxia": "سرِ اونکسیا",
+  "allies": "متحدان",
+  "Head of Nefarian": "سرِ نفاریان",
+  "battle": "نبرد",
+  "Cloth": "پارچه",
+  "wool": "پشم",
+  "silk": "ابریشم",
+  "form": "شکل"
+ },
+ "tokens": {
+  "1": "$R",
+  "2": "$c",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$C",
+  "10": "$B",
+  "11": "$B",
+  "12": "$C",
+  "13": "$gladdy:missy;",
+  "14": "$R",
+  "15": "$b",
+  "16": "$b",
+  "17": "$N",
+  "18": "$c",
+  "19": "$C",
+  "20": "$N",
+  "21": "$B",
+  "22": "$B",
+  "23": "$N",
+  "24": "$C",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$B",
+  "29": "$R",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$B",
+  "34": "$B",
+  "35": "$N",
+  "36": "$B",
+  "37": "$B",
+  "38": "$N",
+  "39": "$B",
+  "40": "$B",
+  "41": "$N",
+  "42": "$n",
+  "43": "$B",
+  "44": "$B"
+ },
+ "rows": {
+  "quest:1364:obj:0": "Retrieve ⟦E1⟧ and deliver them to Watcher Mahar Ba in Nethergarde Keep.",
+  "quest:1364:details:0": "Master Mazen's directions were quite clear: Deliver a very important essay to Watcher Mahar Ba in Nethergarde Keep.",
+  "quest:1364:details:1": "But I had never been to the ⟦E2⟧ before! The journey was frightening!",
+  "quest:1364:details:2": "When I got to the ⟦E3⟧, I made a wrong turn and ended up surrounded by horrible plant-like swamp creatures. They lurched as if to attack me so I ran. But in my haste I dropped the essay. One of the beasts took it I am sure.",
+  "quest:1364:details:3": "Could you please try to retrieve it and deliver it to Mahar Ba?",
+  "quest:1364:progress:0": "What brings you to Nethergarde Keep, ⟦1⟧?",
+  "quest:1364:completion:0": "Ah, most splendid!",
+  "quest:1364:completion:1": "For some time I had feared my request for ⟦E1⟧ had been overlooked by Master Mazen of the Academy of ⟦E4⟧ Arts and Sciences.",
+  "quest:1364:completion:2": "He must be bogged down with requests considering the many strange happenings going on.",
+  "quest:1364:completion:3": "Now, if you'll excuse me, I need to begin my research at once. To finally glimpse the insight of one as great as Khadgar excites me to no end.",
+  "quest:1448:obj:0": "Brohann Caskbelly in ⟦E5⟧ wants you to search for the Temple of Atal'Hakkar.",
+  "quest:1448:details:0": "There was a time when I was young and full of vigor like you, ⟦2⟧.",
+  "quest:1448:details:1": "But now I'm old and unable to explore the world like I once did. Ah, the things I saw!",
+  "quest:1448:details:2": "But there was one mystery that eluded me. For my final quest, the Explorers' League sent me in search of ⟦E6⟧. It was rumored to be located in the ⟦E3⟧.",
+  "quest:1448:details:3": "Because of my frail state, I traveled the skies by gryphon in search of it but never found it.",
+  "quest:1448:details:4": "Help an old dwarf out? Perhaps you will have better luck on foot.",
+  "quest:1448:progress:0": "I have traveled the world from the jungles of ⟦E7⟧ to the snowy peaks of Khaz Modan.⟦3⟧⟦4⟧Never before have I asked for help in my adventures. But my old bones are tired.⟦5⟧⟦6⟧Nothing would leave me feeling more satisfied than knowing that I completed my final quest for the Explorers' League⟦7⟧⟦8⟧If you'd be so kind as to help me search for the Temple of Atal'Hakkar, ⟦9⟧, I'd greatly appreciate it.⟦10⟧⟦11⟧Scour the ⟦E3⟧ and report back with your findings!",
+  "quest:1448:completion:0": "⟦E6⟧ has been sunk beneath the ⟦E8⟧? And surrounded by the green dragonflight?",
+  "quest:1448:completion:1": "An amazing discovery, ⟦12⟧. But obviously something has gone terribly wrong.",
+  "quest:1449:obj:0": "Speak with High Thane Falstad Wildhammer at Aerie Peak in the Hinterlands.",
+  "quest:1449:details:0": "As I mentioned earlier, I attempted to scout the temple on my own from the air. Well, I wasn't exactly alone.",
+  "quest:1449:details:1": "I traveled to the renowned gryphon aviary at Aerie Peak in ⟦E9⟧. There I enlisted the aid of one of their finest pilots. The pilot fell off his mount, down into the swamp...",
+  "quest:1449:details:2": "In my old age the poor fellow's name eludes me. The master of the aviary would remember, no doubt.",
+  "quest:1449:details:3": "Journey there and seek out Falstad Wildhammer.",
+  "quest:1449:details:4": "We need to find out what happened to that pilot.",
+  "quest:1449:completion:0": "What do you want, ⟦13⟧? Can't you see I've got problems to take care of here? Who has time to stand around yapping with some ⟦14⟧ chatterbox?⟦15⟧⟦16⟧There are trolls coming out of the woodwork! Make it snappy.",
+  "quest:1477:obj:0": "Speak with Watchmaster Sorigal.",
+  "quest:1477:details:0": "Our mages are conducting research at Nethergarde Keep in the ⟦E2⟧, research vital to our understanding of the Dark Portals. They require nearly constant supplies, but our supply line to Nethergarde is tenuous.",
+  "quest:1477:details:1": "You must help ensure the supplies make it to Nethergard. Report to Watchmaster Sorigal in Darkshire, and do as he asks. This task will take you into hostile lands, ⟦17⟧. Prepare yourself.",
+  "quest:1477:completion:0": "Andromath sent you? Very good. I have an important task for you...",
+  "quest:3787:obj:0": "Speak with Quintis Jonespyre in ⟦E10⟧.",
+  "quest:3787:details:0": "Excuse me, friend...",
+  "quest:3787:details:1": "BA colleague of mine would like to speak with you about the research you are doing in conjunction with the ⟦E11⟧. He is a druid by the name of Quintis Jonespyre, and he resides in ⟦E10⟧, ⟦E12⟧. He would like to confer with you about morrowgrain... and he very much would like for you to keep our discussion from the ears of the Arch ⟦E13⟧.",
+  "quest:3787:details:2": "If you're interested, speak with him; no doubt, all will be revealed once you do.",
+  "quest:3787:completion:0": "I thank you for coming, weary traveler! Allow me to introduce myself - I am Quintis Jonespyre, druid and humble servant of Malfurion and the ⟦E11⟧. My colleagues (General Shandris Feathermoon and the Protectorate - mayhap you've heard of us) and I wanted to talk with you about the work you are doing for Fandral Staghelm in ⟦E14⟧.",
+  "quest:3787:completion:1": "Before we get much further, I'd like to ask that our discussion stay between just us. If you have no problem with this, then we may proceed.",
+  "quest:3789:obj:0": "Speak with Arch ⟦E13⟧ Fandral Staghelm in ⟦E14⟧.",
+  "quest:3789:details:0": "Excuse me ⟦18⟧, but I'd like just a moment of your time if possible.",
+  "quest:3789:details:1": "The ⟦E11⟧ in ⟦E14⟧ is looking for seasoned adventurers such as yourself to lend them aid in a vital research project. While I do not know the specifics, I can inform you that none other than Arch ⟦E13⟧ Fandral Staghelm is spearheading this research.",
+  "quest:3789:details:2": "Please - if you are interested, speak with him directly in the Cenarion Enclave within ⟦E14⟧ proper.",
+  "quest:3789:completion:0": "Well now, ⟦19⟧... since you were informed that I was leading this research myself, you obviously came as quickly as you could.",
+  "quest:3789:completion:1": "Now that you are here, be sure to pay attention the first time I tell you the details; I have no desire to repeat myself.",
+  "quest:5066:obj:0": "Seek out Commander Ashlam Valorfist. His base camp is located at Chillwind Camp, north of the ⟦E15⟧.",
+  "quest:5066:details:0": "Hear ye, hear ye! All heroes are called upon to heed these words!",
+  "quest:5066:details:1": "BA call to arms has been issued by the Kingdom of ⟦E5⟧! All able bodied individuals are entreated to take up arms against the dark ⟦E16⟧ of the Scourge in the northern lands of the ⟦E17⟧! Rumors fly of new threats rising from the ruins of the ⟦E18⟧!",
+  "quest:5066:details:2": "Heroes of the realm - seek out Commander Ashlam Valorfist who has set up his base camp in Chillwind Camp, north of the ⟦E15⟧!",
+  "quest:5066:completion:0": "Welcome to the ⟦E18⟧, hero. This is one of most dangerous frontiers in ⟦E7⟧, especially with the looming ⟦E16⟧ of the Scourge to our north and northeast. I am glad to hear that the clarion call of duty and service to the greater good did not fall on deaf ears with you!",
+  "quest:5066:completion:1": "If you are ready to get your hands dirty, then there is plenty for willing and able heroes to do here on the edge of the ⟦E18⟧.",
+  "quest:7796:title": "Additional ⟦E19⟧",
+  "quest:7796:progress:0": "Greetings once again, ⟦20⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional ⟦E20⟧ of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of ⟦E5⟧.⟦21⟧⟦22⟧Whenever you are ready to hand in the ⟦E20⟧ of runecloth, I'll accept it.",
+  "quest:7796:completion:0": "⟦23⟧ - without heroes like you working on behalf of ⟦E5⟧, we'd surely suffer. Thank you for your continued efforts!",
+  "quest:5048:obj:0": "Find Ol' Emma in ⟦E5⟧ and see if she is in fact Emma Felstone. If she is, then perhaps she'd like the package Janice Felstone made for her.",
+  "quest:5048:details:0": "She's a tad ornery, and quite possibly out of her gourd... but the records indicate that Ol' Emma does fit the framework of who Emma Felstone might be.",
+  "quest:5048:details:1": "Perhaps you've seen Ol' Emma wander the city - she talks to herself, most often in nonsensical jibber-jabber. Still, she doesn't hurt anything or anyone, so folks pretty much leave her be.",
+  "quest:5048:details:2": "All things considered, I would say that Ol' Emma is in fact Emma Felstone. You might try asking if her last name is indeed Felstone.",
+  "quest:5048:progress:0": "I would tell you to get off my lawn, but as you can see I don't have one.",
+  "quest:5048:completion:0": "My name is indeed Emma Felstone - you're the first person in years to call me that. Who... who are you?",
+  "quest:5048:completion:1": "You say you knew... my sister?! Is she still alive? Who am I kidding, of course she isn't. When the plague broke out in Lordaeron, I had come to expect the worst. So many of my family died... or worse. Here I am now, crazy Ol' Emma, all alone. What are you, a grave-robber or something? Looking for your next ⟦E21⟧?",
+  "quest:5048:completion:2": "What... you have a package for me from my sister?",
+  "quest:1015:obj:0": "Speak with Arch ⟦E13⟧ Fandral Staghelm at the Cenarion Enclave of ⟦E14⟧ about the ⟦E11⟧'s call to explore the frontiers of ⟦E22⟧.",
+  "quest:1015:details:0": "Attention, heroes!",
+  "quest:1015:details:1": "The ⟦E11⟧ seeks able bodied individuals to assist them in exploring the vast new frontiers of ⟦E22⟧! A forbidden wasteland of unimaginable dangers lies far to the west of ⟦E23⟧ and Gadgetzan, and the Circle needs willing and honorable proxies to act in their stead.",
+  "quest:1015:details:2": "All interested individuals should seek audience with the ⟦E11⟧. Speak with the Arch ⟦E13⟧ in ⟦E14⟧, Fandral Staghelm, for more information!",
+  "quest:1015:completion:0": "What makes you think I wish to be pestered by the likes of you, ⟦24⟧? Wait - let me stop the important duties I attend to on a daily basis so I can help you locate a doodad somewhere. By all means, the welfare of ⟦E14⟧ - nay, all of ⟦E24⟧ - should come second to the acquisition of a bauble for your collection.",
+  "quest:1015:completion:1": "The fools in ⟦E25⟧ waste my time with their call for assistance, and now I must endure this?",
+  "quest:6182:obj:0": "Speak with Mathias Shaw in Old Town ⟦E5⟧. He resides in the Barracks.",
+  "quest:6182:details:0": "⟦E26⟧ Marris was the first and last of the human ranger lords. A disciple of Sylvanas Windrunner, now the Banshee Queen of the ⟦E27⟧.",
+  "quest:6182:details:1": "We had thought that ⟦E26⟧ had been killed in action in the defense of Lordaeron five years ago. Although his corpse was never recovered, it was assumed that he did not make it out of the ⟦E28⟧.",
+  "quest:6182:details:2": "Mathias Shaw has been investigating the disappearance and may have some new information. Report to him at once. He resides in Old Town, at the Barracks.",
+  "quest:6182:completion:0": "After some reports of unusual ⟦E27⟧ activity in the ⟦E28⟧, SI:7 agents were dispatched to investigate. The results of that investigation are unsettling.",
+  "quest:6183:obj:0": "Speak with Mathias Shaw again if you wish to accept his task.",
+  "quest:6183:details:0": "Five of my best field agents were assigned the Marris case. One returned, only to end up dead in his sleep three days later.",
+  "quest:6183:details:1": "What little information we did manage to get out of him was incoherent gibberish. We made out two words: \"⟦E26⟧\", and \"Blightcaller.\"",
+  "quest:6183:details:2": "I do not have the available manpower to continue this investigation and Ravenholdt will not assist us. We must get to the bottom of this; if only to provide closure to the families of the deceased. Will you help?",
+  "quest:6183:completion:0": "<Mathias nods.>",
+  "quest:6183:completion:1": "I had faith that Bolvar would send me men and women of honor - the most dedicated soldiers of the ⟦E29⟧.",
+  "quest:6186:obj:0": "Return to ⟦E5⟧ and inform Highlord Bolvar Fordragon of the fate of ⟦E26⟧ Marris.",
+  "quest:6186:details:0": "<The blood appears to have completely drained from Flint's face.>",
+  "quest:6186:details:1": "Na... ⟦E26⟧ did this? ⟦E26⟧ is the Blightcaller?",
+  "quest:6186:details:2": "Why? He was... was so noble - a ranger lord respected by all. The only human ever allowed to train under the high elves. Now a ruthless agent of the ⟦E27⟧?",
+  "quest:6186:details:3": "I... I am sorry to ask this of you, ⟦25⟧, but Highlord Fordragon must be informed of this turn of events at once. Please, return to ⟦E5⟧ and deliver the news.",
+  "quest:6186:completion:0": "No. It... NO! How? An agent of the ⟦E27⟧? The CHAMPION of the Banshee Queen???",
+  "quest:6186:completion:1": "B<Highlord Bolvar Fordragon slumps in defeat.>",
+  "quest:6402:obj:0": "⟦E30⟧ to ⟦E31⟧ and venture to the city gates. Speak with Squire Rowe so that he may let ⟦E32⟧ know that you have arrived.",
+  "quest:6402:details:0": "You are to meet with Windsor at the gates of ⟦E5⟧.",
+  "quest:6402:details:1": "What Windsor is about to unveil will shake the very foundation of the kingdom!",
+  "quest:6402:details:2": "Do not attempt to venture there alone, ⟦26⟧. You must amass an army! Gather your compatriots. To arms!",
+  "quest:6402:details:3": "B",
+  "quest:6402:completion:0": "Before we begin, I ask that you first gather an army. We face a dragon, after all!",
+  "quest:6403:obj:0": "Follow Reginald Windsor through ⟦E5⟧. Protect him from harm!",
+  "quest:6403:details:0": "It has been quite the adventure, friend. I owe you a great debt of gratitude. Perhaps, when all is said and done...",
+  "quest:6403:details:1": "As you have no doubt ascertained by now, Lady Prestor is ⟦E33⟧: Brood of ⟦E34⟧, twin to the tyrant of the Spire, ⟦E35⟧.",
+  "quest:6403:details:2": "For too long she has held our kingdom in her captivating gaze. Even the Highlord is controlled by her trickery - a puppet. It all ends today... The ⟦E36⟧ will be broken.",
+  "quest:6403:details:3": "Worry not, for together, we shall be victorious!",
+  "quest:6403:details:4": "Are you ready?",
+  "quest:6403:progress:0": "I... I... I was powerless.",
+  "quest:6403:completion:0": "<Bolvar holds the shattered medallion.>",
+  "quest:6403:completion:1": "The magic held within must be reignited. The dragon's eye must be attuned.",
+  "quest:6403:completion:2": "Windsor's sacrifice has freed our Kingdom, but the ⟦E16⟧ of ⟦E33⟧ and her kin is ever looming.",
+  "quest:6403:completion:3": "This medallion is what held my mind and body captive. It is also what gave me access to ⟦E33⟧'s own mind - to her secrets. Albeit the visions are muddled now, some things I do remember.",
+  "quest:6501:obj:0": "You must search the world for a being capable of restoring the power to the ⟦E37⟧. The only information you possess about such a being is that they exist.",
+  "quest:6501:details:0": "A fragment of the shattered medallion is all that I can offer.",
+  "quest:6501:details:1": "You must find another of dragon blood willing to assist you in forging a new key. Once you secure this key, you must travel to the Wyrmbog in ⟦E38⟧. It is there that you will find her lair, ⟦27⟧.",
+  "quest:6501:details:2": "Where to find other flights willing to help? Sadly, I do not know... They are said to exist. Some may even work and live among us, disguised as one of the humanoid races. I wish you luck.⟦28⟧",
+  "quest:6501:progress:0": "I sense an ⟦E39⟧ of evil radiating from you, ⟦29⟧. What could you hold that emits such an ⟦E39⟧?",
+  "quest:6501:completion:0": "I should have known - a piece of the black dragon brood mother, ⟦E33⟧. How revolting...",
+  "quest:7495:obj:0": "Take the ⟦E40⟧ to Highlord Bolvar Fordragon in ⟦E5⟧.",
+  "quest:7495:details:0": "You have accomplished the impossible. The brood mother of the Black Dragonflight lies dead at your feet. Take her head and present it to the Highlord.",
+  "quest:7495:progress:0": "By Uther's beard!",
+  "quest:7495:completion:0": "For so many years I was held under her captivating gaze. Finally, to see justice meted and the honor of ⟦E5⟧ restored! Today, we celebrate this glorious victory!",
+  "quest:7496:obj:0": "Seek out Major Mattingly in the Valley of Heroes.",
+  "quest:7496:details:0": "Seek out Major Mattingly in the Valley of Heroes, ⟦30⟧. He will be expecting you...",
+  "quest:7496:completion:0": "Few are graced with such ceremony, ⟦31⟧. Please, choose your reward so that we may begin the celebration.",
+  "quest:7497:completion:0": "A dragon slayer and a seasoned leatherworker? You do not cease to astonish, hero. I am humbled.",
+  "quest:7497:completion:1": "Please accept what I am about to teach you. This knowledge will prove to be invaluable if you are to destroy what remains of the Black Dragonflight.",
+  "quest:7497:completion:2": "Create the cloak from the scales of the brood mother. It will protect you and your ⟦E41⟧ against the incendiary breath of the Lord of Blackrock... ⟦E35⟧.",
+  "quest:7781:obj:0": "Return the ⟦E42⟧ to Highlord Bolvar Fordragon in ⟦E5⟧.",
+  "quest:7781:details:0": "The old feeling returns. The welcome pangs of victory reverberate throughout your being. Before you lies the monolithic, ⟦E43⟧ scarred head of ⟦E35⟧. Return it to your Highlord, champion.",
+  "quest:7781:progress:0": "Inconceivable!",
+  "quest:7781:completion:0": "You need not be told the meaning of what you have done, ⟦32⟧. This day will be recorded in the annals of history. A victory the likes of which has not been known to the ⟦E29⟧ for years - if ever!",
+  "quest:7782:obj:0": "Venture to the Valley of Heroes in ⟦E31⟧ and speak with Field Marshal Afrasiabi.",
+  "quest:7782:details:0": "Go to the Valley of Heroes and speak with Field Marshal Afrasiabi.",
+  "quest:7782:completion:0": "<Field Marshal Afrasiabi bows.>",
+  "quest:7782:completion:1": "Choose your reward, let the celebration begin!",
+  "quest:7791:obj:0": "{'type': 'item', 'id': 2592, 'target': 'Wool ⟦E44⟧', 'text': None}",
+  "quest:7791:progress:0": "We are currently accepting donations for ⟦E45⟧ cloth. A donation of sixty pieces of ⟦E45⟧ cloth will net you full recognition by ⟦E5⟧ for your generous actions. Our stores are such on ⟦E45⟧ that we would only need sixty pieces from you total; we should be able to acquire enough from others in the realm to support our drive.⟦33⟧⟦34⟧If you have the sixty pieces of ⟦E45⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7791:completion:0": "Wonderful! We thank you for your generous donation, ⟦35⟧!",
+  "quest:7793:obj:0": "{'type': 'item', 'id': 4306, 'target': 'Silk ⟦E44⟧', 'text': None}",
+  "quest:7793:progress:0": "As with most other fabrics, our stocks of ⟦E46⟧ are at an all-time low. Our stores are such that we'd only need sixty pieces of ⟦E46⟧ from you total; we should be able to reach our goal with the support of others.⟦36⟧⟦37⟧A benevolent gift such as ⟦E46⟧, might I add, would certainly increase your local standing in the community! If you have the sixty pieces of ⟦E46⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7793:completion:0": "Wonderful! We thank you for your generous donation, ⟦38⟧!",
+  "quest:7794:obj:0": "{'type': 'item', 'id': 4338, 'target': 'Mageweave ⟦E44⟧', 'text': None}",
+  "quest:7794:progress:0": "Mageweave is running low, and we could use your help to replenish our stocks! By counting on the community as a whole, we would only need a donation of 60 pieces of mageweave cloth from you to enable us to reach our goal. Such generosity would not go unnoticed by ⟦E5⟧, I assure you!⟦39⟧⟦40⟧If you have the sixty pieces of mageweave cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7794:completion:0": "Wonderful! We thank you for your generous donation, ⟦41⟧!",
+  "quest:7795:obj:0": "{'type': 'item', 'id': 14047, 'target': 'Runecloth', 'text': None}",
+  "quest:7795:progress:0": "⟦42⟧, you've been a tremendous contributor to our cloth drive. As we work hard to replenish our reserves, one ⟦E47⟧ of cloth remains critically low - runecloth. We are in absolutely dire need of runecloth, and we hope that you will be able to help us as you have in the past.⟦43⟧⟦44⟧If you are willing, please bring me what runecloth you can spare. We'll initially accept a single donation of sixty, and then we'll go from there.",
+  "quest:7795:completion:0": "Fantastic - these will go right to use, I assure you. Thank you again for your assistance! We'd certainly be lost without you.",
+  "quest:7795:completion:1": "With all the donations you've made, I would certainly process any additional runecloth donations you care to make in the future. Just be sure to check in with me, and I'll personally make sure that your good deeds won't go unrecognized!"
+ },
+ "context": {
+  "quest:1364": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 41,
+   "side": "alliance",
+   "giver": "Acolyte Dellis",
+   "turner": "Watcher Mahar Ba"
+  },
+  "quest:1448": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Brohann Caskbelly",
+   "turner": "Brohann Caskbelly"
+  },
+  "quest:1449": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Brohann Caskbelly",
+   "turner": "Falstad Wildhammer"
+  },
+  "quest:1477": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 45,
+   "side": "alliance",
+   "giver": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)",
+   "turner": "Watchmaster Sorigal"
+  },
+  "quest:3787": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Tannysa",
+   "turner": "Quintis Jonespyre"
+  },
+  "quest:3789": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Innkeeper Allison",
+   "turner": "Arch Druid Fandral Staghelm"
+  },
+  "quest:5066": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Crier Goodman",
+   "turner": "Commander Ashlam Valorfist"
+  },
+  "quest:7796": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 50,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Clavicus Knavingham"
+  },
+  "quest:5048": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Royal Factor Bathrilor",
+   "turner": "Ol' Emma"
+  },
+  "quest:1015": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Crier Goodman",
+   "turner": "Arch Druid Fandral Staghelm"
+  },
+  "quest:6182": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": "Master Mathias Shaw"
+  },
+  "quest:6183": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw",
+   "turner": "Master Mathias Shaw"
+  },
+  "quest:6186": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Flint Shadowmore («فینت شادومور»)",
+   "turner": "Highlord Bolvar Fordragon"
+  },
+  "quest:6402": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Marshal Maxwell",
+   "turner": "Reginald Windsor"
+  },
+  "quest:6403": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Reginald Windsor",
+   "turner": "Highlord Bolvar Fordragon"
+  },
+  "quest:6501": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": "Haleh"
+  },
+  "quest:7495": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Highlord Bolvar Fordragon"
+  },
+  "quest:7496": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": "Major Mattingly"
+  },
+  "quest:7497": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Major Mattingly",
+   "turner": "Major Mattingly"
+  },
+  "quest:7781": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Highlord Bolvar Fordragon"
+  },
+  "quest:7782": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": "Field Marshal Afrasiabi"
+  },
+  "quest:7791": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Clavicus Knavingham",
+   "turner": "Clavicus Knavingham"
+  },
+  "quest:7793": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Clavicus Knavingham",
+   "turner": "Clavicus Knavingham"
+  },
+  "quest:7794": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Clavicus Knavingham",
+   "turner": "Clavicus Knavingham"
+  },
+  "quest:7795": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Clavicus Knavingham",
+   "turner": "Clavicus Knavingham"
+  }
+ },
+ "known": {
+  "quest:1364": {
+   "title": "به فرمان مِیزن"
+  },
+  "quest:1448": {
+   "title": "در جست‌وجوی معبد"
+  },
+  "quest:1449": {
+   "title": "به هینترلندز"
+  },
+  "quest:1477": {
+   "title": "لوازم حیاتی"
+  },
+  "quest:3787": {
+   "title": "درخواست جونزپایر"
+  },
+  "quest:3789": {
+   "title": "همیاری با دروئید اعظم استَگهِلم"
+  },
+  "quest:5066": {
+   "title": "فراخوان به سلاح: اراضی طاعون‌زده!"
+  },
+  "quest:5048": {
+   "title": "اِمای خوش‌طبیعت"
+  },
+  "quest:1015": {
+   "title": "مرزهای تازه"
+  },
+  "quest:6182": {
+   "title": "اولین و آخرین"
+  },
+  "quest:6183": {
+   "title": "احترام به مردگان"
+  },
+  "quest:6186": {
+   "title": "نفرین‌خوان می‌آید"
+  },
+  "quest:6402": {
+   "title": "قرار در استورم‌ویند"
+  },
+  "quest:6403": {
+   "title": "نمایش بزرگ ماسک"
+  },
+  "quest:6501": {
+   "title": "چشم اژدها"
+  },
+  "quest:7495": {
+   "title": "پیروزی برای اتحاد"
+  },
+  "quest:7496": {
+   "title": "جشن روزهای خوب"
+  },
+  "quest:7497": {
+   "title": "سفر تازه آغاز شده است"
+  },
+  "quest:7781": {
+   "title": "سرور بلک‌راک"
+  },
+  "quest:7782": {
+   "title": "سرور بلک‌راک"
+  },
+  "quest:7791": {
+   "title": "اهدای پشم"
+  },
+  "quest:7793": {
+   "title": "اهدای ابریشم"
+  },
+  "quest:7794": {
+   "title": "اهدای مگ‌ویو"
+  },
+  "quest:7795": {
+   "title": "اهدای رون‌کلاث"
+  }
+ }
+}

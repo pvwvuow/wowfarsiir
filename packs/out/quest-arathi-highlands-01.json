@@ -1,0 +1,891 @@
+{
+ "pack": "quest-arathi-highlands-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-arathi-highlands-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Syndicate",
+   "fa": "سندیکا",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Mercenaries",
+   "fa": "مزدورها",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Northfold Manor",
+   "fa": "عمارت نورت‌فولد",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "Axe",
+   "fa": "تبر",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Hammerfall",
+   "fa": "هامرفال",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Raptor",
+   "fa": "رپتور",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Raptor Talon Amulet",
+   "fa": "طلسمِ چنگالِ رپتور",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Myzrael",
+   "fa": "مایزرائل",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Arathi Highlands",
+   "fa": "ارتفاعات آراتی",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Spirit",
+   "fa": "روح",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Shadow Hunter Knife",
+   "fa": "چاقو شکارچی سایه",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Sigil of Strom",
+   "fa": "مُهر استروم",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Trollbane",
+   "fa": "ترالبِین",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Trol'kalar",
+   "fa": "ترول‌کالار",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "giants",
+   "fa": "غول‌ها",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Stromgarde Badges",
+   "fa": "نشان‌های استرومگارد",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Stromgarde Badge",
+   "fa": "نشان استرومگارد",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Tor'gan's Orb",
+   "fa": "گویِ تورگان",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Burning Key",
+   "fa": "کلید سوزان",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Cresting Key",
+   "fa": "کلید موج‌خیز",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Thundering Key",
+   "fa": "کلید تندر",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Stones of Binding",
+   "fa": "سنگ‌های پیوند",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "banish",
+   "fa": "تبعید",
+   "kind": "sp"
+  },
+  "E36": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Warlock",
+   "fa": "احضارکننده",
+   "kind": "cls"
+  },
+  "E38": {
+   "en": "Trelane's Wand of Invocation",
+   "fa": "عصای احضار ترلین",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "wand",
+   "fa": "واند",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Azure Agate",
+   "fa": "عقیق آسمانی",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E42": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "Trelane's Phylactery",
+   "fa": "فیلاکتری تِرلین",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Trelane's Orb",
+   "fa": "گوی تِرلین",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Trelane's Ember Agate",
+   "fa": "عقیق اخگر تِرلین",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Sealed Letter to Archmage Malin",
+   "fa": "نامهٔ مهرشده برای کاهنِ اعظم مالین",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E48": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E49": {
+   "en": "Sigil of Thoradin",
+   "fa": "مُهرِ تورادین",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E51": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Syndicate": "سندیکا",
+  "Mercenaries": "مزدورها",
+  "enemy": "دشمن",
+  "Southshore": "ساحل جنوبی",
+  "Northfold Manor": "عمارت نورت‌فولد",
+  "Axe": "تبر",
+  "Hammerfall": "هامرفال",
+  "Tor": "تور",
+  "strike": "ضربه",
+  "Raptor": "رپتور",
+  "Orgrimmar": "اورگریمار",
+  "Kalimdor": "کالیمدور",
+  "armor": "زره",
+  "Raptor Talon Amulet": "طلسمِ چنگالِ رپتور",
+  "Horde": "هورد",
+  "battle": "نبرد",
+  "Myzrael": "مایزرائل",
+  "Arathi Highlands": "ارتفاعات آراتی",
+  "Spirit": "روح",
+  "Shadow Hunter Knife": "چاقو شکارچی سایه",
+  "Stormwind": "استورم‌ویند",
+  "Sigil of Strom": "مُهر استروم",
+  "Trollbane": "ترالبِین",
+  "Trol'kalar": "ترول‌کالار",
+  "giants": "غول‌ها",
+  "Allies": "متحدان",
+  "Stromgarde Badges": "نشان‌های استرومگارد",
+  "Stromgarde Badge": "نشان استرومگارد",
+  "spell": "اسپیل",
+  "Tor'gan's Orb": "گویِ تورگان",
+  "Burning Key": "کلید سوزان",
+  "Cresting Key": "کلید موج‌خیز",
+  "Thundering Key": "کلید تندر",
+  "Stones of Binding": "سنگ‌های پیوند",
+  "banish": "تبعید",
+  "level": "لِوِل",
+  "Warlock": "احضارکننده",
+  "Trelane's Wand of Invocation": "عصای احضار ترلین",
+  "wand": "واند",
+  "Azure Agate": "عقیق آسمانی",
+  "chance": "شانس",
+  "Use": "استفاده",
+  "Trelane's Phylactery": "فیلاکتری تِرلین",
+  "Trelane's Orb": "گوی تِرلین",
+  "Trelane's Ember Agate": "عقیق اخگر تِرلین",
+  "Sealed Letter to Archmage Malin": "نامهٔ مهرشده برای کاهنِ اعظم مالین",
+  "Mage": "جادوگر",
+  "Travel": "سفر",
+  "Sigil of Thoradin": "مُهرِ تورادین",
+  "seal": "مهر",
+  "Ironforge": "آیرون‌فورج"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$ghe:she;",
+  "5": "$r",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$C",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$C",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$c",
+  "32": "$N",
+  "33": "$N",
+  "34": "$C",
+  "35": "$n",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N"
+ },
+ "rows": {
+  "quest:681:obj:0": "Kill 10 ⟦E1⟧ Highwaymen and 6 ⟦E1⟧ ⟦E2⟧.",
+  "quest:681:obj:1": "Return to Captain Nials at Refuge Pointe.",
+  "quest:681:details:0": "We are fighting a war for Stromgarde, and we are losing. The ogres, the ⟦E1⟧ and we have divided our once great city, and each faction battles the other into a bloody stalemate.",
+  "quest:681:details:1": "But our forces dwindle while our ⟦E3⟧ grows.",
+  "quest:681:details:2": "We need help from the town of ⟦E4⟧, but supplies are difficult to receive while the ⟦E1⟧ holds territory between us.",
+  "quest:681:details:3": "Go to the ⟦E1⟧ base in ⟦E5⟧ and slay them. Then, perhaps, pressure on our supply trains will lessen and more will get through.",
+  "quest:681:progress:0": "⟦1⟧, with each passing hour our hold on Stromgarde grows more tenuous. You must make haste or our city will surely fall.",
+  "quest:681:completion:0": "Very good, ⟦2⟧. With the deaths of those ⟦E1⟧ members we should have an easier time receiving supplies from ⟦E4⟧.",
+  "quest:681:completion:1": "Perhaps our cause yet has hope.",
+  "quest:677:obj:0": "Slay 10 Witherbark ⟦E6⟧ Throwers, 10 Headhunters and 8 Witch Doctors, and return to Drum Fel in the ⟦E7⟧ outpost.",
+  "quest:677:details:0": "The Witherbark trolls and Boulderfist ogres of Arathi are working together to rid us from this land, but we shall not meet our fates at their, or anyone else's, hand. We will slay them and show them that we, too, have a home here.",
+  "quest:677:details:1": "The trolls turned their backs to us; the ogres would use us for food and bedding if we allowed them to--these things shall not be.",
+  "quest:677:details:2": "We start our attack on the Witherbark trolls to the south of here. Slay them in droves, and only return when their camps run thick with blood.",
+  "quest:677:progress:0": "If you have not yet completed my task, then perhaps you are a coward in heart as well as a tyro in war.",
+  "quest:677:completion:0": "The signs of war are upon your garments, and sweat drips from your brow. Good, very good indeed.",
+  "quest:671:obj:0": "Get 10 Bloodstone Amulets for ⟦E8⟧'gan in ⟦E7⟧.",
+  "quest:671:details:0": "I have felt a strangeness in the air... a feeling that simmers in my blood. I had my suspicions. I set off to find the source of my unease and discovered to the west, at ⟦E5⟧, the residual traces of demonic summoning. As I got close, my blood began to boil and the rage within me grew.",
+  "quest:671:details:1": "On the ground I spied an amulet of bloodstone, used to assist in demonic summoning. The one I found was depleted, however. I'll need another to examine, but I dare not return to the manor. Can you bring me some?",
+  "quest:671:progress:0": "Once-cursed blood still runs through my veins, ⟦3⟧. If someone... something is summoning demons, it must be stopped.",
+  "quest:671:completion:0": "It will take some time for me to ascertain the true intentions of the ⟦E1⟧, but their obvious association with dark, demonic magic troubles me. I will tell you when I know more.",
+  "quest:655:obj:0": "Speak with ⟦E8⟧'gan in ⟦E7⟧.",
+  "quest:655:details:0": "It is still clear to me, like yesterday... So many years without hope, with wood and steel to bind me to this terrible place. Then finally, finally! There was the Warchief. Doomhammer in his midnight plate, his warhammer held high.",
+  "quest:655:details:1": "It was... too terrible... That the blow of a coward would ⟦E9⟧ down our greatest hero. From behind he charged on his horse, and then his lance ran him through... I fell to my knees. What hope was there? What hope is there...",
+  "quest:655:completion:0": "Ah, Gor'mul you speak of. Yes, from what he says, it seems he has never recovered from the death of Doomhammer.",
+  "quest:655:completion:1": "Gor'mul was a captive here when Thrall and Orgrim fought to free the camp, but as the earth shook and our brethren escaped, he was left behind. He wandered alone and lost for years without direction or hope, until we returned to establish ourselves here in ⟦E7⟧.",
+  "quest:672:obj:0": "Acquire 10 Highland ⟦E10⟧ Eyes from Highland Striders and Highland Thrashers for ⟦E8⟧'gan in ⟦E7⟧.",
+  "quest:672:details:0": "We tried to settle him in, cheer him up, telling him stories of our mighty city at ⟦E11⟧ in ⟦E12⟧, but nothing would move him.",
+  "quest:672:details:1": "Tales of our young Warchief, Thrall, who bears the ⟦E13⟧ and hammer of Orgrim... but, perhaps... Perhaps! A demonstration of our newly found shamanistic magic would give him new hope. It is worth a try!",
+  "quest:672:details:2": "BA small object we could make for him, yes... Bring me some raptor eyes, and I will see what I can do.",
+  "quest:672:progress:0": "I will create an amulet that will give Gor'mul some of the strength of the raptors. Perhaps that will awaken some flame within him...",
+  "quest:672:completion:0": "Excellent. The spirits of the raptors that gave these eyes will lend strength to the bearer of this amulet.",
+  "quest:674:obj:0": "Give the ⟦E14⟧ to Gor'mul.",
+  "quest:674:details:0": "Here, take this amulet to Gor'mul, and see if the raptors' strength can awaken the flame of the warrior that once burned through his veins.",
+  "quest:674:progress:0": "What hope is there when the hand of a coward can slay the mightiest of the mightiest? What hope, I ask you!",
+  "quest:674:completion:0": "What is this? Polished bone. What use have I for polished bone? Will a trinket restore the ⟦E15⟧ to its glory?",
+  "quest:675:obj:0": "Speak with ⟦E8⟧'gan.",
+  "quest:675:details:0": "<Gor'mul tosses the amulet into the ground.>",
+  "quest:675:details:1": "⟦E8⟧'gan sent you, didn't he? Pah! Why he feels some mercy towards me I would not understand. Mercy was denied me when I was not allowed to die with my Warchief in ⟦E16⟧. A cruel blow fate has dealt me...",
+  "quest:675:completion:0": "It did not work, I see. Nonetheless, I feel that showing him the power of the shamans will eventually return Gor'mul to his once proud self. The amulet's power was not great enough to show him our newfound power.",
+  "quest:635:obj:0": "Find the crystal from your vision.",
+  "quest:635:details:0": "This shard pulses as you hold it...",
+  "quest:635:details:1": "You feel a sense of pleading coming from the shard, as if someone is trying to communicate, someone who desperately needs your help.",
+  "quest:635:details:2": "BA vision appears in your mind - of the northern mountains of Arathi, and of a brilliant crystal jutting from the earth there.",
+  "quest:635:details:3": "You feel drawn to that place.",
+  "quest:635:completion:0": "This crystal pulses, as if a living force is trapped within it.",
+  "quest:636:obj:0": "Find the Shards of ⟦E17⟧.",
+  "quest:636:details:0": "This book tells the tale of an elemental princess, ⟦E17⟧, and of her imprisonment deep underneath the ⟦E18⟧.",
+  "quest:636:details:1": "It also tells of a secret outcropping of crystals in the highlands. These crystals, the Shards of ⟦E17⟧, are a window to the princess' prison.",
+  "quest:636:details:2": "If a brave soul found the Shards of ⟦E17⟧, the perhaps ⟦4⟧ could speak with her...",
+  "quest:663:obj:0": "Talk to Captain O'Breen in Faldir's Cove.",
+  "quest:663:details:0": "Lolo sees a tiny ⟦5⟧! Always on the lookout, Lolo is!",
+  "quest:663:details:1": "Welcome to Faldir's Cove. Captain O'Breen said we'd only be here for a few hours. Just long enough to gather the treasure and get back to Booty Bay.",
+  "quest:663:details:2": "But Lolo thinks we're going to be here a lot longer than that. We lost the other two ships from our formation. Poor ⟦E19⟧ of Silverpine and Maiden's Folly. On the bottom of the sea they rest now!",
+  "quest:663:details:3": "Lolo suggests you talk to Captain O'Breen if you plan on sticking around here.",
+  "quest:663:completion:0": "Ahoy, matey.",
+  "quest:663:completion:1": "B'Twas a horrible mess. Seahorn will have my ship if he finds out what went down.",
+  "quest:663:completion:2": "One of the Professor's contraptions indicated the lost treasure was near this cove. I brought the Harbinger in to dock and signaled for the ⟦E19⟧ of Silverpine and Maiden's Folly to follow suit.",
+  "quest:663:completion:3": "Then the sea rumbled. The tides lowered and the two ships crashed into the reef.",
+  "quest:663:completion:4": "It's not just a reef. Something's down there....",
+  "quest:663:completion:5": "Help my crew out and you'll be rewarded handsomely.",
+  "quest:691:obj:0": "Find 10 Witherbark Tusks, 4 Witherbark Medicine Pouches and a ⟦E20⟧ for Apprentice Kryten at Refuge Pointe.",
+  "quest:691:details:0": "Archmage Malin sent Skuerto and I here to collect reagents for him. I was at a loss as to how I was going to collect the items, but now that you're here, I think my problem's solved.",
+  "quest:691:details:1": "I need the following: Witherbark tusks, Witherbark medicine pouches and a shadow hunter knife.",
+  "quest:691:details:2": "Could you find those for me? The Witherbark live to the southeast of Arathi.",
+  "quest:691:progress:0": "Have you had any luck so far, ⟦6⟧?⟦7⟧⟦8⟧<Kryten makes some notes in his journal as he reads.>⟦9⟧⟦10⟧If my research is correct, the tusks should come from any Witherbark troll. The medicine pouches come from the Witherbark witch doctors, and the strongest of the Witherbark shadow hunters should carry the special knife given to them after they've completed their rites of passage. There's no way to tell which shadow hunters will have the knife until you do ⟦E16⟧.",
+  "quest:691:completion:0": "Incredible! I can see why Malin asked you to come join us - very well done indeed!",
+  "quest:691:completion:1": "At this rate, Skuerto and I will be headed back to ⟦E21⟧ in no time at all.",
+  "quest:691:completion:2": "I believe my dwarven companion is back from scouting Boulderfist Hall; go speak to him when you're ready.",
+  "quest:691:completion:3": "It looked as though he might have had a bit of a scuffle with the ogres. Don't mention that to him, though; he's very sensitive about criticisms to his skills at scouting.",
+  "quest:639:obj:0": "Get the ⟦E22⟧ for Zengu in ⟦E7⟧.",
+  "quest:639:details:0": "In ancient times, trolls fought against the Arathorian Empire and our most capable adversary, Lord Ignaeus of Strom, named ⟦E23⟧. He rode into ⟦E16⟧ wielding ⟦E24⟧--troll slayer, in their ancient tongue.",
+  "quest:639:details:1": "But now the sons of ⟦E23⟧ are weakened, their stronghold brought to ruin.",
+  "quest:639:details:2": "The sword is protected by several sigils that were divided among the survivors of Stromgarde, and we must retrieve them.",
+  "quest:639:details:3": "The first was taken by the ⟦E1⟧, one of their men in Stromgarde should have it.",
+  "quest:639:progress:0": "Have you located the first sigil yet? It is most likely carried on the person of one of the ⟦E1⟧ agents in Stromgarde.",
+  "quest:639:completion:0": "Excellent, mon. That's a good start to collecting the sigils we'll need to remove ⟦E24⟧ from ⟦E23⟧'s tomb.",
+  "quest:642:obj:0": "Gather 12 Motes of ⟦E17⟧, then bring them to the Iridescent Shards in Drywhisker Gorge.",
+  "quest:642:details:0": "My name is ⟦E17⟧. I am a princess of the earth, and my captors, the ⟦E25⟧, have trapped me deep beneath the ⟦E18⟧. These crystal shards are the only way I can speak with the surface world.",
+  "quest:642:details:1": "Please help me. ⟦E26⟧ of the ⟦E25⟧, the Drywhisker Kobolds, have a shard like this one in their Drywhisker Gorge, to the east. To power the cluster, you must gather Motes of ⟦E17⟧ from the kobolds and apply them to it.",
+  "quest:642:details:2": "I beg you, ⟦11⟧, aid me!",
+  "quest:642:progress:0": "This cluster of shards looks much like the Shards of ⟦E17⟧.  But the same feeling of security does not pulse through them.",
+  "quest:642:completion:0": "Ah! You activated these shards. Already I feel more myself!",
+  "quest:642:completion:1": "But alas, I am still far from free...",
+  "quest:682:obj:0": "Bring 7 ⟦E27⟧ to Captain Nials at Refuge Pointe.",
+  "quest:682:details:0": "The ⟦E1⟧ in Stromgarde do ⟦E16⟧ with our contingent of militia there. In order to urge the rabble to fight our more disciplined troops, the ⟦E1⟧ leaders have placed a bounty on our soldiers, awarding gold for each ⟦E28⟧ gathered off killed militiamen.",
+  "quest:682:details:1": "We want those badges retrieved - we cannot allow the cutthroats to take trophies from our brave fallen!",
+  "quest:682:details:2": "Enter the ⟦E1⟧-controlled area of Stromgarde and hunt them for our badges.",
+  "quest:682:progress:0": "Have you retrieved any ⟦E27⟧, ⟦12⟧? The ⟦E1⟧ must learn they cannot profit from our dead.",
+  "quest:682:completion:0": "Thank you, ⟦13⟧. We will inform the families of these fallen soldiers that they were killed in ⟦E16⟧.",
+  "quest:682:completion:1": "It will be grim news to bear, but it is better than the uncertainty of a missing loved one.",
+  "quest:701:obj:0": "Acquire 12 ⟦E10⟧ Hearts from Highland Fleshstalkers for ⟦E8⟧'gan.",
+  "quest:701:details:0": "With some additional objects, I will be able to create an item that will imbue Gor'mul with the guile of the raptor! With the power of the raptor flowing through him, Gor'mul will know our new power and rediscover the warrior that lies dormant!",
+  "quest:701:details:1": "I will require raptor hearts to fashion the item and ⟦E29⟧.",
+  "quest:701:progress:0": "My preparations are made, all I require are the raptor hearts.",
+  "quest:701:completion:0": "Yes, these will work perfectly. I will transfer their power and the spirit of the raptors into this orb. This orb will imbue Gor'mul with the fiery strength and intelligence of the raptor.",
+  "quest:702:obj:0": "Give ⟦E30⟧ to Gor'mul.",
+  "quest:702:details:0": "Take this orb and use its energy to give Gor'mul the essence of the raptor. Surely this will invigorate his spirit and give him new purpose in life. With him returned to normal, we can explain to him the current state of the ⟦E15⟧, and we will have a great warrior's assistance in our unceasing battles.",
+  "quest:702:progress:0": "Returned again have you? Indeed there is nothing more I could wish for now than more of ⟦E8⟧'gan's pity.⟦14⟧⟦15⟧What have you for me this time? Perhaps a piece of brightly colored string? Or a length of rope to end this misery of mine...",
+  "quest:702:completion:0": "At least it is something interesting you bring to me this time. A strange power it emits...",
+  "quest:847:obj:0": "Speak with ⟦E8⟧'gan.",
+  "quest:847:details:0": "This... this power.... Is this the power of the shamans that ⟦E8⟧'gan tried to show me? I must say, it is interesting. Tell ⟦E8⟧'gan that he has convinced me... for the time being. I will listen to what he has to say.",
+  "quest:847:completion:0": "When the enchantment wears off, I will speak with Gor'mul. My thanks to you for your help in returning Gor'mul to the land of the living. I have no doubt he thanks you greatly as well.",
+  "quest:651:obj:0": "Gather the ⟦E31⟧, the ⟦E32⟧ and the ⟦E33⟧ from the Stone of West Binding, the Stone of East Binding and the Stone of Outer Binding.",
+  "quest:651:obj:1": "Bring them to the Stone of Inner Binding.",
+  "quest:651:details:0": "Four ⟦E34⟧ are scattered throughout Arathi. These stones keep me pinned beneath the earth.",
+  "quest:651:details:1": "To unlock them you must unlock the strongest: the Stone of Inner Binding. And to do that, you must gather keys from the other three.",
+  "quest:651:details:2": "These stones are watched by guardians, but if you are clever, or lucky, you may find ways to ⟦E35⟧ them.",
+  "quest:651:progress:0": "This is the Stone of Inner Binding. It is the strongest of the binding stones and must be unlocked for the others to open.",
+  "quest:651:completion:0": "<⟦E17⟧ speaks through the stone.>",
+  "quest:651:completion:1": "You have done it! You opened the ⟦E34⟧! I can feel the shackles about me loosen, and freedom draws ever closer.",
+  "quest:651:completion:2": "You are a noble ⟦16⟧, ⟦17⟧. My rescuer!",
+  "quest:678:obj:0": "Kill 10 Boulderfist Brutes and 4 Boulderfist Magi, and return to Drum Fel in the ⟦E7⟧ outpost.",
+  "quest:678:details:0": "Your strength is evident, ⟦18⟧. Now to see how you fare against a real ⟦E3⟧.",
+  "quest:678:details:1": "The Boulderfists have a lair to the southwest of here towards the dwarven bridge, and, if I'm not mistaken, the maulers and magi there shall present to you a greater challenge--they have done so to us thus far.",
+  "quest:678:details:2": "Slay as many as you can and come to me in body when you are successful, or come to me in spirit when you fail. I shall give praise to your tenacity in ⟦E16⟧ either way.",
+  "quest:678:progress:0": "You hesitate. Why? You have shown great strength thus far, ⟦19⟧. Do not fail me now.",
+  "quest:678:completion:0": "You are as strong as a kodo, and your lust for ⟦E16⟧ does your people proud.",
+  "quest:684:obj:0": "Bring Marez's head to Captain Nials at Refuge Pointe.",
+  "quest:684:details:0": "A bounty has been placed on the head of Marez Cowl, a high-⟦E36⟧ advisor and operative of the ⟦E1⟧. She was last seen within the ⟦E1⟧ controlled territory of Stromgarde.",
+  "quest:684:details:1": "Bounty may be collected from Captain Nials.",
+  "quest:684:details:2": "Be warned: Marez is a skilled and cunning ⟦E37⟧, known for her trafficking with demons. Extreme caution is advised when hunting her.",
+  "quest:684:progress:0": "Greetings, ⟦20⟧. You have a report to make?",
+  "quest:684:completion:0": "You took down Marez Cowl? Well done, ⟦21⟧. Well done indeed!",
+  "quest:684:completion:1": "Marez menaced our Stromgarde defenders, and it is rumored she was an emissary between the ⟦E1⟧ and some other, darker power. We are glad to see she'll longer ply her powers against us.",
+  "quest:693:obj:0": "Find ⟦E38⟧ and return it to Skuerto at Refuge Pointe.",
+  "quest:693:details:0": "Hey, ⟦22⟧. Sorry to be so short with ye earlier... and no, that ain't a pun.",
+  "quest:693:details:1": "I figured out where Trelane's first item ended up: Kor'gresh has it in Boulderfist Hall. An' by the way he was throwing down blasts of ice at his kin to keep them in line, he must be close to figurin' out how to use all of its powers.",
+  "quest:693:details:2": "Boulderfist Hall's south of here an' then east of Thandol Span. Find the ogre an' get back that ⟦E39⟧.",
+  "quest:693:details:3": "While you're gone, I'll figure out what we're gonna do about Stromgarde.",
+  "quest:693:progress:0": "Our goal is the ⟦E39⟧, ⟦23⟧. Focus on that for now.",
+  "quest:693:completion:0": "Brilliant, ⟦24⟧. One item down an' three more to go, based on my list. The other three items are all in Stromgarde.",
+  "quest:693:completion:1": "Take a rest an' get your strength back--the next phase of my plan'll require a little more time an' effort. Come back to me after you've gotten a warm meal an' some rest.",
+  "quest:694:obj:0": "Find an ⟦E40⟧ and bring it to Apprentice Kryten at Refuge Pointe.",
+  "quest:694:details:0": "All rested?",
+  "quest:694:details:1": "Here's our next step: there're ogres all around the Tower of Arathor in Stromgarde. We're gonna need to activate the tower's defenses if you're gonna stand a ⟦E41⟧ against 'em an' still make it to the items alive. To do that, we're gonna need some gems the Boulderfist shaman have taken a liking to. They took 'em from the tower, but they're not gonna stay in their possession for long.",
+  "quest:694:details:2": "Get one of them gems an' bring 'em to Kryten--he knows the ⟦E29⟧ to enchant 'em so they'll work as a key.",
+  "quest:694:progress:0": "⟦25⟧, hello again. Have you found an azure agate yet?",
+  "quest:694:completion:0": "You amaze me, ⟦26⟧. Well done again.",
+  "quest:694:completion:1": "Give me a moment to cast the proper ⟦E29⟧ to enchant the gem, an' you'll be ready.",
+  "quest:695:obj:0": "Speak to Skuerto.",
+  "quest:695:details:0": "Here you are, ⟦27⟧. The gem only needs to be pressed against one of the pedestals near the base of the tower to activate its defenses. ⟦E42⟧ it when you're ready to enter the tower and find Trelane's remaining items.",
+  "quest:695:details:1": "Good luck to you. I'll be awaiting your return here at the camp. Oh, and speak to Skuerto before you leave. He'll give you the rest of the details you'll need.",
+  "quest:695:completion:0": "Good, good.",
+  "quest:695:completion:1": "If there are no other delays, how about we get started?",
+  "quest:696:obj:0": "Find ⟦E43⟧, ⟦E44⟧, and ⟦E45⟧, and return them to Skuerto at Refuge Pointe.",
+  "quest:696:details:0": "Here's what your lookin' for: Trelane's phylactery, Trelane's orb, an' Trelane's ember agate.",
+  "quest:696:details:1": "All three should be in chests within the tower an' you shouldn't have a problem opening the chests on your own; you just have to be careful of the ogres.",
+  "quest:696:details:2": "The tower's defenses won't take care of 'em on their own; you'll need to have your weapons at the ready. Those ogres find out you're there and stealing from 'em, an' they'll be sure to put the hurt on you.",
+  "quest:696:details:3": "Be careful, an' good luck.",
+  "quest:696:progress:0": "You do this, an' I'm sure Malin'll be more than pleased with you.",
+  "quest:696:completion:0": "Malin couldn't've asked a worthier person to come here an' aid us, ⟦28⟧. You've done a grand job!",
+  "quest:696:completion:1": "He'll be pleased to see what an overwhelming success our mission's been.",
+  "quest:697:obj:0": "Take the ⟦E46⟧ in the ⟦E47⟧ Quarter of ⟦E21⟧.",
+  "quest:697:details:0": "Take this letter back to ⟦E21⟧ and let Malin know that Kryten an' I'll be home soon. He'll reward you well for helping us here, ⟦29⟧, of that I've no doubt.",
+  "quest:697:details:1": "⟦E48⟧ safely.",
+  "quest:697:progress:0": "Yes? You look vaguely familiar. I do apologize, but have we met? I get so busy I lose track.",
+  "quest:697:completion:0": "<Archmage Malin opens the letter, and his eyes grow wide.>",
+  "quest:697:completion:1": "By the Light, you've done it. How wonderful. Trelane will be so pleased. I'm sure Kryten and Skuerto are just as excited as I am to have them on their way back to ⟦E21⟧.",
+  "quest:697:completion:2": "Thank you, ⟦30⟧. Please, take this to help you in your journeys.",
+  "quest:640:obj:0": "Retrieve the 5 Sigil Fragments from the defenders in Stromgarde, and bring them to ⟦E8⟧'gan in ⟦E7⟧.",
+  "quest:640:details:0": "Thoras ⟦E23⟧'s tomb is protected by three sigils--the first of which you retrieved from the ⟦E1⟧. The other two will be harder to get, as they're held by the firmly entrenched Stromgarde militia.",
+  "quest:640:details:1": "The sigil of Thoradin was divided into five pieces by Thoras' son, Galen, and dispersed among the Stromgarde defenders. Retrieve the pieces and bring them to ⟦E8⟧'gan, the troll shaman, he will be able to bind them into the complete sigil.",
+  "quest:640:progress:0": "Throm'ka, ⟦31⟧. Zengu informed me that you required my assistance?",
+  "quest:640:completion:0": "Ah, you need me to reconstruct this sigil? It shouldn't be too difficult... all the pieces seem to be here and the magical structure will be easy to reform.",
+  "quest:640:completion:1": "You might want to close your eyes.",
+  "quest:641:obj:0": "Bring the restored ⟦E49⟧ to Zengu in ⟦E7⟧.",
+  "quest:641:details:0": "The reconstruction worked flawlessly. The sigil can now be used to unlock the ⟦E50⟧ on ⟦E23⟧'s tomb. Return it to Zengu, no doubt he has additional tasks for you to complete.",
+  "quest:641:progress:0": "⟦32⟧! Do you have the second sigil?",
+  "quest:641:completion:0": "We're halfway to being able to remove ⟦E24⟧ from ⟦E23⟧'s tomb. We are not exactly sure where the third sigil is, as its holders seem to move around Arathi quite a bit, but I have faith that you'll be able to find it.",
+  "quest:653:obj:0": "Speak with Gerrig Bonegrip in the Forlorn Cavern of ⟦E51⟧.",
+  "quest:653:details:0": "<⟦E17⟧ speaks.>",
+  "quest:653:details:1": "Free! I AM FREE! I am free to gather strength, hidden from my captors. For if they faced me now they would surely overpower and again imprison me.",
+  "quest:653:details:2": "But in time I will confront the ⟦E25⟧, and they will regret their wardship of me!",
+  "quest:653:details:3": "You are a noble ally, ⟦33⟧. I will need your help again in time. When I am ready, I will need you to summon me to the surface.",
+  "quest:653:details:4": "Speak with Gerrig Bonegrip. He is in ⟦E51⟧, in a shop of the Forlorn Cavern. He knows how I can be summoned.",
+  "quest:653:completion:0": "The Lady told me of your coming, ⟦34⟧. You are welcome in my abode for you, like I, serve a higher cause.",
+  "quest:662:obj:0": "First Mate Nilzlix wants you to retrieve the Charts and Logs from the Maiden's Folly and the ⟦E19⟧ of Silverpine.",
+  "quest:662:details:0": "O'Breen led the ships into the cove. We were certain this is where the treasure could be found. The Harbinger docked safely but as the Maiden's Folly and ⟦E19⟧ of Silverpine approached the tides began to lower. Strangest thing I've ever seen!",
+  "quest:662:details:1": "Those two ships ran aground into something... some sort of temple in the reef. They sank so quickly, was quite a tragedy.",
+  "quest:662:details:2": "We need to retrieve their Logs as well as their Charts before we leave. We can't leave that information behind for prying eyes!",
+  "quest:662:progress:0": "How goes the search and recovery mission, ⟦35⟧?  We really need to get those Logs and Charts back from the Maiden's Folly and ⟦E19⟧ of Silverpine.⟦36⟧⟦37⟧If the information from those sources were to fall into ⟦E3⟧ hands, Fleet Master Seahorn would force us down the plank.⟦38⟧⟦39⟧That is if we ever get out of this mess...",
+  "quest:662:completion:0": "Knowing this information is secure will bring some ease to the command in Booty Bay. Well done, ⟦40⟧.",
+  "quest:664:obj:0": "Captain Steelgut in Faldir's Cove wants you to kill 10 Daggerspine Raiders and 3 Daggerspine Sorceresses.",
+  "quest:664:details:0": "Argh, 'tis a horrible life. I should be in a watery grave right now, not sittin' here by the fire, breathin' fresh air.",
+  "quest:664:details:1": "The crew tried so hard to save my beautiful Maiden's Folly. Bless the boys, bless their hearts.",
+  "quest:664:details:2": "BO'Breen made it to shore safely but we weren't so lucky. The seas just sank on us, I swear.",
+  "quest:664:details:3": "One second we're afloat and the next water is rushin' in. And those beasts! Killed all the survivors. Horrible naga scum. I went black and ended up here, saved.",
+  "quest:664:details:4": "I want those beasts dead.",
+  "quest:664:progress:0": "Bah, maybe I should go kill those naga scum myself. It's obvious you're not goin' to do it.⟦41⟧⟦42⟧Maybe I can find some knitting needles so you can keep yourself busy.",
+  "quest:664:completion:0": "Nice work out there, ⟦43⟧.",
+  "quest:664:completion:1": "Those scum deserved what they got. While nothin' will ever bring me ship or me crew back, the death of those naga gives me some solace."
+ },
+ "context": {
+  "quest:681": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Captain Nials",
+   "turner": "Captain Nials"
+  },
+  "quest:677": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 32,
+   "side": "horde",
+   "giver": "Drum Fel",
+   "turner": "Drum Fel"
+  },
+  "quest:671": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 33,
+   "side": "horde",
+   "giver": "Tor'gan",
+   "turner": "Tor'gan"
+  },
+  "quest:655": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 34,
+   "side": "horde",
+   "giver": "Gor'mul",
+   "turner": "Tor'gan"
+  },
+  "quest:672": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 34,
+   "side": "horde",
+   "giver": "Tor'gan",
+   "turner": "Tor'gan"
+  },
+  "quest:674": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 34,
+   "side": "horde",
+   "giver": "Tor'gan",
+   "turner": "Gor'mul"
+  },
+  "quest:675": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 34,
+   "side": "horde",
+   "giver": "Gor'mul",
+   "turner": "Tor'gan"
+  },
+  "quest:635": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 35,
+   "side": "",
+   "giver": "",
+   "turner": "Shards of Myzrael"
+  },
+  "quest:636": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 35,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:663": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 35,
+   "side": "",
+   "giver": "Lolo the Lookout",
+   "turner": "Shakes O'Breen"
+  },
+  "quest:691": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 36,
+   "side": "alliance",
+   "giver": "Apprentice Kryten",
+   "turner": "Apprentice Kryten"
+  },
+  "quest:639": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 37,
+   "side": "horde",
+   "giver": "Zengu",
+   "turner": "Zengu"
+  },
+  "quest:642": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 37,
+   "side": "",
+   "giver": "Shards of Myzrael",
+   "turner": "Iridescent Shards"
+  },
+  "quest:682": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Captain Nials",
+   "turner": "Captain Nials"
+  },
+  "quest:701": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 37,
+   "side": "horde",
+   "giver": "Tor'gan",
+   "turner": "Tor'gan"
+  },
+  "quest:702": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 37,
+   "side": "horde",
+   "giver": "Tor'gan",
+   "turner": "Gor'mul"
+  },
+  "quest:847": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 37,
+   "side": "horde",
+   "giver": "Gor'mul",
+   "turner": "Tor'gan"
+  },
+  "quest:651": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 38,
+   "side": "",
+   "giver": "Iridescent Shards",
+   "turner": "Stone of Inner Binding"
+  },
+  "quest:678": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 38,
+   "side": "horde",
+   "giver": "Drum Fel",
+   "turner": "Drum Fel"
+  },
+  "quest:684": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Wanted Board",
+   "turner": "Captain Nials"
+  },
+  "quest:693": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Skuerto",
+   "turner": "Skuerto"
+  },
+  "quest:694": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Skuerto",
+   "turner": "Apprentice Kryten"
+  },
+  "quest:695": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Apprentice Kryten",
+   "turner": "Skuerto"
+  },
+  "quest:696": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Skuerto",
+   "turner": "Skuerto"
+  },
+  "quest:697": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Skuerto",
+   "turner": "Archmage Malin"
+  },
+  "quest:640": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 40,
+   "side": "horde",
+   "giver": "Zengu",
+   "turner": "Tor'gan"
+  },
+  "quest:641": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 40,
+   "side": "horde",
+   "giver": "Tor'gan",
+   "turner": "Zengu"
+  },
+  "quest:653": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Keystone",
+   "turner": "Gerrig Bonegrip"
+  },
+  "quest:662": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 40,
+   "side": "",
+   "giver": "First Mate Nilzlix",
+   "turner": "First Mate Nilzlix"
+  },
+  "quest:664": {
+   "zone_en": "Arathi Highlands",
+   "zone_fa": "ارتفاعات آراتی",
+   "level": 40,
+   "side": "",
+   "giver": "Captain Steelgut",
+   "turner": "Captain Steelgut"
+  }
+ },
+ "known": {
+  "quest:681": {
+   "title": "عمارت نورت‌فولد"
+  },
+  "quest:677": {
+   "title": "فراخوان به سلاح"
+  },
+  "quest:671": {
+   "title": "جادوهای پلید"
+  },
+  "quest:655": {
+   "title": "هامرفال"
+  },
+  "quest:672": {
+   "title": "برانگیختن ارواح"
+  },
+  "quest:674": {
+   "title": "برانگیختن ارواح"
+  },
+  "quest:675": {
+   "title": "برانگیختن ارواح"
+  },
+  "quest:635": {
+   "title": "بلور در کوه‌ها"
+  },
+  "quest:636": {
+   "title": "افسانه‌های زمین"
+  },
+  "quest:663": {
+   "title": "خشکی! خشکی!"
+  },
+  "quest:691": {
+   "title": "ارزش طلا را دارد"
+  },
+  "quest:639": {
+   "title": "مُهر استروم"
+  },
+  "quest:642": {
+   "title": "شاهزاده در بند"
+  },
+  "quest:682": {
+   "title": "نشان‌های استرومگارد"
+  },
+  "quest:701": {
+   "title": "حیلهٔ رپتور"
+  },
+  "quest:702": {
+   "title": "حیلهٔ رپتور"
+  },
+  "quest:847": {
+   "title": "حیلهٔ رپتور"
+  },
+  "quest:651": {
+   "title": "سنگ‌های پیوند"
+  },
+  "quest:678": {
+   "title": "فراخوان به سلاح"
+  },
+  "quest:684": {
+   "title": "مطلوب! مارز کول"
+  },
+  "quest:693": {
+   "title": "عصا بر مشت"
+  },
+  "quest:694": {
+   "title": "دفاع‌های تِرلین"
+  },
+  "quest:695": {
+   "title": "افسون شاگرد"
+  },
+  "quest:696": {
+   "title": "حمله به برج"
+  },
+  "quest:697": {
+   "title": "درخواست مالین"
+  },
+  "quest:640": {
+   "title": "مُهر شکسته"
+  },
+  "quest:641": {
+   "title": "مُهر تورادین"
+  },
+  "quest:653": {
+   "title": "همپیمانان میزرائل"
+  },
+  "quest:662": {
+   "title": "نجات دریایی عمیق"
+  },
+  "quest:664": {
+   "title": "اندوه غرق‌شدگان"
+  }
+ }
+}

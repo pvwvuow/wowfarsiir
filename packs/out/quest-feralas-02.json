@@ -1,0 +1,913 @@
+{
+ "pack": "quest-feralas-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-feralas-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Shrunken Head",
+   "fa": "سر کوچک‌شده",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Neeru Fireblade",
+   "fa": "نیرو آتش‌تیغ",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E5": {
+   "en": "Neeru's Herb Pouch",
+   "fa": "کیسهٔ گیاهانِ نیرو",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Zapped Giants",
+   "fa": "غول‌های برق‌زده",
+   "kind": "qs"
+  },
+  "E10": {
+   "en": "Zorbin's Ultra-Shrinker",
+   "fa": "کوچک‌کنندهٔ فراِ زوربین",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "giants",
+   "fa": "غول‌ها",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Water Elemental",
+   "fa": "عنصر آب",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "Camp Mojache",
+   "fa": "اردوگاه موجاچه",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Feathermoon Stronghold",
+   "fa": "سنگر فیدرمون",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Feral",
+   "fa": "وحشی",
+   "kind": "cls"
+  },
+  "E19": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Gordunni Orb",
+   "fa": "گوی گوردونی",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Raschal's Report",
+   "fa": "گزارشِ راشال",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Feralas: A History",
+   "fa": "فرالاس: تاریخچه‌ای",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Bamboo Cage Key",
+   "fa": "کلیدِ قفسِ بامبو",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Jer'kai's Signet Ring",
+   "fa": "انگشترِ مُهریِ جرکای",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E36": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "pet",
+   "fa": "حیوان خانگی",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Fragile Sprite Darter Egg",
+   "fa": "تخمِ شکنندهٔ شیرین‌گوو پرچین‌دار",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "The Videre Elixir",
+   "fa": "معجون ویدیر",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Evoroot",
+   "fa": "ریشهٔ اِوو",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Videre Elixir",
+   "fa": "معجون ویدیر",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Stinglasher",
+   "fa": "استینگ‌لشر",
+   "kind": "qs"
+  },
+  "E46": {
+   "en": "aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E47": {
+   "en": "Cut",
+   "fa": "برش",
+   "kind": "sp"
+  },
+  "E48": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Super Snapper FX",
+   "fa": "دوربینِ گازگیرِ برترِ اف‌ایکس",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "target",
+   "fa": "هدف",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Shrunken Head": "سر کوچک‌شده",
+  "Neeru Fireblade": "نیرو آتش‌تیغ",
+  "Orgrimmar": "اورگریمار",
+  "Shadow": "سایه",
+  "Neeru's Herb Pouch": "کیسهٔ گیاهانِ نیرو",
+  "Feralas": "فرالاس",
+  "Use": "استفاده",
+  "allies": "متحدان",
+  "Zapped Giants": "غول‌های برق‌زده",
+  "Zorbin's Ultra-Shrinker": "کوچک‌کنندهٔ فراِ زوربین",
+  "form": "شکل",
+  "giants": "غول‌ها",
+  "Water Elemental": "عنصر آب",
+  "Camp Mojache": "اردوگاه موجاچه",
+  "threat": "تیت",
+  "Feathermoon Stronghold": "سنگر فیدرمون",
+  "Dun Morogh": "دون موروغ",
+  "Feral": "وحشی",
+  "stack": "استک",
+  "level": "لِوِل",
+  "Gordunni Orb": "گوی گوردونی",
+  "Elune": "الون",
+  "Raschal's Report": "گزارشِ راشال",
+  "Darnassus": "دارناسوس",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Feralas: A History": "فرالاس: تاریخچه‌ای",
+  "Bamboo Cage Key": "کلیدِ قفسِ بامبو",
+  "blessing": "برکت",
+  "damage": "آسیب",
+  "Azeroth": "آزروت",
+  "Jer'kai's Signet Ring": "انگشترِ مُهریِ جرکای",
+  "Teldrassil": "تلدراسیل",
+  "enemy": "دشمن",
+  "Travel": "سفر",
+  "ability": "توانایی",
+  "Thousand Needles": "هزار سوزن",
+  "pet": "حیوان خانگی",
+  "nearby": "نزدیک",
+  "spell": "اسپیل",
+  "Fragile Sprite Darter Egg": "تخمِ شکنندهٔ شیرین‌گوو پرچین‌دار",
+  "The Videre Elixir": "معجون ویدیر",
+  "Evoroot": "ریشهٔ اِوو",
+  "Videre Elixir": "معجون ویدیر",
+  "Stinglasher": "استینگ‌لشر",
+  "aura": "هاله",
+  "Cut": "برش",
+  "Tanaris": "تاناریس",
+  "Super Snapper FX": "دوربینِ گازگیرِ برترِ اف‌ایکس",
+  "target": "هدف"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$C",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$n",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "<mutters>",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$N",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N",
+  "44": "$N",
+  "45": "$R",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$B",
+  "50": "$B",
+  "51": "$N",
+  "52": "$N",
+  "53": "$N",
+  "54": "$Gfather:mother;",
+  "55": "$C",
+  "56": "$B",
+  "57": "$B",
+  "58": "$B",
+  "59": "$B",
+  "60": "$B",
+  "61": "$B",
+  "62": "$N",
+  "63": "$B",
+  "64": "$B",
+  "65": "$B",
+  "66": "$B",
+  "67": "$N",
+  "68": "$N",
+  "69": "$N",
+  "70": "$B",
+  "71": "$B",
+  "72": "$N",
+  "73": "$B",
+  "74": "$B",
+  "75": "$N",
+  "76": "$gfather:mother;",
+  "77": "$C",
+  "78": "$N",
+  "79": "$N",
+  "80": "$N",
+  "81": "$N",
+  "82": "$N",
+  "83": "$N",
+  "84": "$N"
+ },
+ "rows": {
+  "quest:3121:obj:0": "Take the ⟦E1⟧ to ⟦E2⟧ in ⟦E3⟧.",
+  "quest:3121:details:0": "⟦E2⟧ in ⟦E3⟧ has what I need to get started here! He has mixed up a concoction that I need for my... well, you'll see.",
+  "quest:3121:details:1": "Off with you now -- to ⟦E3⟧. Here, take this with you. It's a shrunken head that I promised Neeru in exchange for the herbs. It's the head of some poor dwarf I ventured across in the forest. I'm sure Neeru will be pleased.",
+  "quest:3121:details:2": "You'll find Neeru in the Cleft of ⟦E4⟧.",
+  "quest:3121:progress:0": "Yes?",
+  "quest:3121:completion:0": "I have been waiting for Uzer'i to deliver this...",
+  "quest:3121:completion:1": "Let me give you the herb mixture I prepared for his... well, experiments...",
+  "quest:3122:obj:0": "Deliver ⟦E5⟧ to Witch Doctor Uzer'i in ⟦E6⟧.",
+  "quest:3122:details:0": "Here are the herbs, ⟦1⟧. Take them to Witch Doctor Uzer'i.",
+  "quest:3122:details:1": "Please let him know that I am satisfied with the shrunken head.",
+  "quest:3122:progress:0": "Have you spoken to Neeru?",
+  "quest:3122:completion:0": "This is just what I need to prepare the muisek vessel, ⟦2⟧. Soon we will see if my latest incantations prove to be as powerful as I had hoped.",
+  "quest:3122:completion:1": "Please, a moment. I must perform the ritual and apply the herbs.",
+  "quest:3125:obj:0": "Kill 8 Sprite Darters or Sprite Dragons. ⟦E7⟧ the Muisek Vessel to shrink and capture the fallen Faerie Dragons.",
+  "quest:3125:details:0": "⟦3⟧, next I must have you capture a creature that in appearance, may look quite fragile, yet its powerful spirit is what we are truly after. The faerie dragons that I speak of have served the night elves as their ⟦E8⟧. We must capture one so that the horde may benefit from this strength of spirit as well.",
+  "quest:3125:details:1": "Here is the muisek, ⟦4⟧. Kill 8 sprite darters or sprite dragons, and capture their muisek. They may be found to the west of here.",
+  "quest:3125:progress:0": "Were you able to capture the muisek of the faerie dragons?",
+  "quest:3125:completion:0": "Thank you, ⟦5⟧. Now the spiritual powers of the faerie dragon will be available to us.",
+  "quest:3125:completion:1": "I hope you willing to perform another task for me.",
+  "quest:7725:title": "Again With the ⟦E9⟧",
+  "quest:7725:desc:0": "⟦E7⟧ ⟦E10⟧ to zap any kind of giant found in ⟦E6⟧ into a more manageable ⟦E11⟧. Bring 10 Miniaturization Residues found on the zapped versions of these ⟦E12⟧ to Zorbin Fandazzle at the docks of the Forgotten Coast, ⟦E6⟧.",
+  "quest:7725:obj:0": "⟦E7⟧ ⟦E10⟧ to zap any kind of giant found in ⟦E6⟧ into a more manageable ⟦E11⟧. Bring 10 Miniaturization Residues found on the zapped versions of these ⟦E12⟧ to Zorbin Fandazzle at the docks of the Forgotten Coast, ⟦E6⟧.",
+  "quest:7725:details:0": "⟦E7⟧ ⟦E10⟧ to zap any kind of giant found in ⟦E6⟧ into a more manageable ⟦E11⟧. Bring 10 Miniaturization Residues found on the zapped versions of these ⟦E12⟧ to Zorbin Fandazzle at the docks of the Forgotten Coast, ⟦E6⟧.",
+  "quest:7725:progress:0": "Ah, the fruits of research and utilization in the ⟦E11⟧ of sweet, sweet residue.  Well, that is to say, I don't taste it or anything when I study it.⟦6⟧⟦7⟧Much.",
+  "quest:7725:completion:0": "Inconceivably fantastical, ⟦8⟧!  You've come through for me again, and for that I thank you.⟦9⟧⟦10⟧Thank you!⟦11⟧⟦12⟧While you may find this coin to be a little less than you're accustomed to, rest assured your great deeds on the field of goblindom are echoing through the halls of power in the Steamwheedle Cartel.  Should you need something else to do, then by all means talk to me!",
+  "quest:7726:title": "Refuel for the Zapping",
+  "quest:7726:desc:0": "Collect 6 ⟦E13⟧ Cores from the Sea Elementals and Sea Sprays along the Forgotten Coast of ⟦E6⟧, and bring them back to Zorbin Fandazzle who is near the dock there.",
+  "quest:7726:obj:0": "Collect 6 ⟦E13⟧ Cores from the Sea Elementals and Sea Sprays along the Forgotten Coast of ⟦E6⟧, and bring them back to Zorbin Fandazzle who is near the dock there.",
+  "quest:7726:details:0": "Collect 6 ⟦E13⟧ Cores from the Sea Elementals and Sea Sprays along the Forgotten Coast of ⟦E6⟧, and bring them back to Zorbin Fandazzle who is near the dock there.",
+  "quest:7726:progress:0": "Have you managed to find the elemental cores I need?",
+  "quest:7726:completion:0": "Top notch, ⟦13⟧, top notch!  While the coin I give you might not be the most you'll ever receive for such work, rest assured my comrades in the Steamwheedle Cartel will hear about your efforts!⟦14⟧⟦15⟧If you are looking for anything else to do, then let me know.  I can always use more elemental cores and such.",
+  "quest:7730:obj:0": "Bring 20 Zukk'ash Carapaces to Hadoken Swiftstrider at ⟦E14⟧, ⟦E6⟧.",
+  "quest:7730:details:0": "From what scouting we have managed to muster, we believe that the foe south of the gnolls is an insect-like race. Frankly, it is irrelevant whether or not if they're sentient. If they are driving the gnolls to frenzy against us, then they are as big of a ⟦E15⟧ - if not more - than the gnolls.",
+  "quest:7730:details:1": "Drive deep into where these Zukk'ash insects dwell; it is known as the Writhing Deep. Thin their numbers and report back to me what you find, bringing back their carapaces as evidence of your handiwork.",
+  "quest:7730:progress:0": "How goes the hunt, ⟦16⟧?  Are you here to report your success?",
+  "quest:7730:completion:0": "Well done, ⟦17⟧. Though the extensiveness of the Zukk'ash presence will not be thwarted with anything less than a full-scale invasion, you have bought us some time so we can devise a proper strategy.",
+  "quest:7730:completion:1": "I will be sure to have these carapaces analyzed; we'll need to learn everything about them before we deal with what has unfortunately turned into a much larger issue than we had anticipated.",
+  "quest:2821:obj:0": "Bring 10 Thick Yeti Hides to Pratt McGrubben in ⟦E16⟧.",
+  "quest:2821:details:0": "My philosophy on leatherworking is that the work must be the best quality possible - no compromises. Anyone who says that quality doesn't matter is trying to sell you ocean-front property in ⟦E17⟧!",
+  "quest:2821:details:1": "In my latest pursuit of high-quality materials, I have run across thick yeti hides. The Yeti are native to ⟦E6⟧, with many found in ⟦E18⟧ Scar Vale. I want some, and I'll give you a choice of one of my leather goods for a ⟦E19⟧ of ten. If that sounds fair to you, then we're in business.",
+  "quest:2821:progress:0": "A ⟦E19⟧ of ten thick yeti hides will net you a choice of one of my crafted items.  Because I care about quality, I am able to ensure you'll get a good item!⟦18⟧⟦19⟧If you can't seem to find yetis, I know where some might be.  Try looking just inland of the Forgotten Coast, around ⟦E18⟧ Scar Vale.",
+  "quest:2821:completion:0": "Did you stop and examine the texture of these hides? Properly treated, these hides could very well be stronger than iron. Not many people know about these hides, and that in combination with the vast treating solutions I know will allow me to potentially make items with a true mark of quality... thanks to you, of course!",
+  "quest:2821:completion:1": "And now, please choose from what I am able to offer you for your service!",
+  "quest:2822:obj:0": "Bring 10 Thick Yeti Hides to Jangdor Swiftstrider in ⟦E14⟧.",
+  "quest:2822:details:0": "I take pride in my leather work, and I feel it shows; quality should never be compromised. Anyone who says that quality doesn't matter would also have you believe that the earth does not keep secrets!",
+  "quest:2822:details:1": "In my latest pursuit of high-quality materials, I have discovered thick yeti hides. Yetis are native to ⟦E6⟧, often found west of here in ⟦E18⟧ Scar Vale. I'll give you a choice of one of my leather goods for a ⟦E19⟧ of ten. If that is agreeable to you, then we are set!",
+  "quest:2822:progress:0": "Were you able to get a ⟦E19⟧ of ten thick yeti hides? My leather goods are second to none, and I'll share a sampling with you should you have the hides.⟦20⟧⟦21⟧If you can't seem to find yetis, I know where some might be. Try looking west of here, just inland of the Forgotten Coast around the ⟦E18⟧ Scar Vale.",
+  "quest:2822:completion:0": "Ah, excellent! These hides, when given a special treatment, are as resilient as iron I tell you! It will take many tries in order to get the right mix down for the tanning, but I am confident they will bring my mark of quality to the next ⟦E20⟧.",
+  "quest:2822:completion:1": "As for you, ⟦22⟧... your assistance has proven invaluable to me. Please take your choice from these items I have crafted.",
+  "quest:2979:obj:0": "Rok Orhan in ⟦E14⟧ wants you to find a ⟦E21⟧.",
+  "quest:2979:details:0": "These seem to be plans for some sort of dark ceremony, ⟦23⟧. From what I can make out, this ritual is conducted by the Gordunni mage-lords.",
+  "quest:2979:details:1": "Find one of these mage-lords, and from him, gather an orb.",
+  "quest:2979:details:2": "The orb of a mage contains great power, and will help us discover more about this ceremony and the magic that the Gordunni wield.",
+  "quest:2979:progress:0": "We must discover more about why the Gordunni are here, ⟦24⟧.",
+  "quest:2979:completion:0": "This orb will provide us with more information about the Gordunni... which we will then use in planning their downfall, ⟦25⟧.",
+  "quest:4135:obj:0": "Now that Raschal's last known whereabouts have been discovered, continue your search for him or his remains in the Writhing Deep. According to the note, it is located to the south of the Woodpaw gnoll camps.",
+  "quest:4135:details:0": "Inside the backpacks are two items: the first is a parcel of goods that was bound for Thalanaar, and the second is a note hastily penned to an unknown reader.",
+  "quest:4135:details:1": "The note tells of discovering insidious bug-like creatures south of the gnoll camps in a place called the Writhing Deep. The author felt the need to investigate it personally, as though it was a serious ⟦E15⟧ to all of ⟦E6⟧. The note is signed, \"Raschal of Feathermoon\".",
+  "quest:4135:details:2": "It would seem that you have located where Raschal ultimately went.",
+  "quest:4135:completion:0": "You have discovered a large pod of an alien nature. The texture of the pod appears mucous, though hardened protrusions stick out from random parts of it. The pod itself has the height and width to easily encompass a humanoid inside of it... and from the faint humanoid shape visible through the skin of the pod, you surmise that this is what it indeed encapsulates.",
+  "quest:4265:obj:0": "Free Raschal from the Zukk'ash hive.",
+  "quest:4265:obj:1": "Return to Ginro Hearthkindle in ⟦E16⟧ and let him know that Raschal is alive and well.",
+  "quest:4265:details:0": "The pod splits opens some when you touch it, revealing a night elven male who is surprisingly still alive. He seems to be in good health, though deeply stunned. As you help him down from the pod, he stirs to life.",
+  "quest:4265:details:1": "B\"Thank ⟦E22⟧ - you've saved me, friend! I... I'm Raschal, and I awoke paralyzed inside this pod after these bugs overwhelmed me. Were you sent by the Stronghold?\"",
+  "quest:4265:details:2": "It would seem that you've found the missing courier!",
+  "quest:4265:progress:0": "You have something to report, ⟦26⟧?",
+  "quest:4265:completion:0": "Welcome home, ⟦27⟧. Raschal checked in just a little while ago and told me what happened.",
+  "quest:4265:completion:1": "I... no, the entire Stronghold can't even begin to thank you for your great deed; Raschal would have been dead without your timely aid, and your assistance came to us without even so much as the whisper of a mercenary's fee. You bear the mark of a true hero. Know that you will always have a friend in Ginro Hearthkindle.",
+  "quest:4266:obj:0": "Speak with Shandris Feathermoon in ⟦E16⟧.",
+  "quest:4266:details:0": "⟦28⟧, General Shandris Feathermoon would like to speak with you personally. No doubt she wants to thank you for your service to the Stronghold, but I do know that she also wants to talk to you about the insect creatures that you and Raschal faced in southern ⟦E6⟧. The reports of those Zukk'ash insects are... frightening, to say the least.",
+  "quest:4266:details:1": "General Feathermoon is waiting for you in the main compound.",
+  "quest:4266:completion:0": "⟦29⟧, I give you my warmest thanks for the aid you've given us. Your bravery in the face of overwhelming odds has warranted a reward worth a thousand times greater. Nevertheless, I hope you accept this on behalf of the entire Stronghold.",
+  "quest:4266:completion:1": "Now, if I may... I'd like to ask for your aid one more time. In light of the discovery of the Zukk'ash hive here in ⟦E6⟧, I think you're the best choice for this mission.",
+  "quest:4267:obj:0": "Bring ⟦E23⟧ to Gracina Spiritmight in ⟦E24⟧.",
+  "quest:4267:details:0": "I am entrusting you with a copy of the report Raschal made on the infestation of southeastern ⟦E6⟧. While the main report is being filed in ⟦E24⟧, I want you to give this copy to an associate of the Protectorate. Her name is Gracina Spiritmight; she is a priestess who dwells in the Temple of the Moon in ⟦E24⟧. She has broad knowledge on these kinds of creatures, and her receiving this report would benefit us all.",
+  "quest:4267:details:1": "You're dismissed - good luck, ⟦30⟧; may ⟦E22⟧ watch over us all.",
+  "quest:4267:progress:0": "Welcome to this blessed temple, friend.  Your arrival here from ⟦E16⟧ has been foretold to me.  Do you have the report Shandris Feathermoon asked you to bring?",
+  "quest:4267:completion:0": "We night elves know of the terror outlined in this report. Shandris was wise to send this, and you, to me.",
+  "quest:4267:completion:1": "These creatures will consume ⟦E6⟧ rapidly; they are nothing short of one of the greatest menaces we all will ever face. The insects you and the courier encountered are known as the silithid. They are mere tools of one of the greatest threats that both the ⟦E25⟧ and ⟦E26⟧ will ever face.",
+  "quest:4267:completion:2": "I pray we will have the resolve to defeat them before they destroy us.",
+  "quest:2939:obj:0": "Talk to Daryn Lightwind in Rut'theran Village.",
+  "quest:2939:details:0": "While the ruins of ⟦E6⟧ can be quite dangerous, they have much to tell of what has happened here.",
+  "quest:2939:details:1": "Searching through the rubble to the south a few days ago, I discovered what appears to be a normal stave. However, I just can't shake the feeling that there is something more to it. Angelas and I have been poring over our books here, but we can't find a thing about it.",
+  "quest:2939:details:2": "I have a colleague in ⟦E24⟧ that may be able to tell us what this is, ⟦31⟧. Why don't you go talk to her and see if she can help us?",
+  "quest:2939:completion:0": "Oh, so Troyas Moonbreeze sent you?",
+  "quest:2939:completion:1": "B⟦32⟧...always bothering me with his wild notions that he found something important...",
+  "quest:2939:completion:2": "Look, ⟦33⟧, I'll be blunt. Troyas always thinks he has found something important in those ruins. The truth is, anything that was truly valuable was probably hoarded away long ago by the ogres or the harpies that now reside there.",
+  "quest:2939:completion:3": "You're welcome to take a look around, but I don't know if you'll find any books here that will help you.",
+  "quest:2940:obj:0": "Ask Daryn Lightwind if you may borrow her book.",
+  "quest:2940:details:0": "This book looks as if no one has opened it for quite a long time. Its covers are quite worn, and its pages yellowed, but after examining it, you notice that it might be just what Troyas is looking for.",
+  "quest:2940:details:1": "You pick it up, but realize you should probably ask before borrowing it.",
+  "quest:2940:completion:0": "So, you'd like to borrow ⟦E27⟧?",
+  "quest:2940:completion:1": "Let me think...",
+  "quest:2940:completion:2": "I will allow you to borrow this book, ⟦34⟧, but only if you do something for me first.",
+  "quest:2969:obj:0": "Using the ⟦E28⟧, free the Sprite Darters from the pen in the Grimtotem camp. At least 6 Sprite Darters and Kindal Moonweaver must survive.",
+  "quest:2969:obj:1": "You have 6 minutes before Kindal decides it is time to retreat and you fail the quest.",
+  "quest:2969:details:0": "The filthy Grimtotem clan are capturing faerie dragons, ⟦35⟧. Jer'kai and I have no idea what they plan on doing with them, but they're obviously up to no good.",
+  "quest:2969:details:1": "We're not powerful enough to fight our way into the camp and free the captured dragons, but perhaps with your help...",
+  "quest:2969:details:2": "If you're willing, and you have some strong friends, release the creatures from their cage with this key and make sure they escape with their lives. I'll be by your side the entire time. Jer'kai will remain here.",
+  "quest:2969:completion:0": "Thank ⟦E22⟧, ⟦36⟧! You are a great ⟦E29⟧ to us and to the darters you saved. Jer'kai and I would never have been able to help the dragons ourselves--your intervention in the Grimtotem's affairs will be remembered.",
+  "quest:2969:completion:1": "Speak to Jer'kai now... I have to prepare for our retribution. Just because the faerie dragons are free, it doesn't mean they will remain so. Jer'kai and I will now go on the offensive.",
+  "quest:2970:obj:0": "Kill 12 Grimtotem Naturalists, 10 Grimtotem Raiders, and 6 Grimtotem Shamans before returning to Jer'kai Moonweaver in ⟦E6⟧.",
+  "quest:2970:details:0": "As she's already told you, Kindal and I will now take the fight to the Grimtotem. Together, we should still be able to pick off some of the tauren without much ⟦E15⟧ to ourselves, but we'd love some help if you're willing and able.",
+  "quest:2970:details:1": "You've seen the camp below us, but there are more to the east. Using your own tactics, deal as much ⟦E30⟧ to the tauren as you can. We can all meet back here after they've felt the sting of Kindal's arrows and your own weapons.",
+  "quest:2970:progress:0": "Kindal needs time to prepare, but our kills already number in the dozens. The Grimtotem clan is more than aware of our presence in the area, and they seek us out like vipers.⟦37⟧⟦38⟧They'll do everything in their power to take our heads from our bodies. You should be alert... they'll be coming for you too now that you've interfered.",
+  "quest:2970:completion:0": "Kindal was right about you, ⟦39⟧--you do have a knack for this. You are a more seasoned adventurer than the both of us, and for that we thank you.",
+  "quest:2970:completion:1": "The Grimtotem clan is much more hostile than most tauren... I wonder if their own kind frowns upon their actions. I wouldn't be surprised. As you are probably aware, many races on ⟦E31⟧ have ties to less kindly counterparts.",
+  "quest:2970:completion:2": "But that is a discussion for another day.",
+  "quest:2972:obj:0": "Take ⟦E32⟧ to High Priestess Tyrande Whisperwind in ⟦E24⟧.",
+  "quest:2972:details:0": "Out here in the wilderness, Kindal and I have meager means to reward your help, but we don't want you to feel unappreciated. Take my signet ring. If you ever find yourself in the boughs of ⟦E33⟧, go to the Temple of the Moon in the heart of ⟦E24⟧. There you will find my High Priestess Tyrande Whisperwind. The ring will let her know that we are well and give credit to your story.",
+  "quest:2972:details:1": "We both thank you, ⟦40⟧.",
+  "quest:2972:progress:0": "Hello, child. It pleases us to have more powerful adventurers here in the temple. If you have the time, will you share a tale or two with the younger adventurers? I know many of them would benefit from your wisdom.⟦41⟧⟦42⟧I'm sorry, look how rude of me. You've come to the Temple seeking our aid, and I impose on you. Please, forgive me. Tell me what the servants of the Light can do for you.",
+  "quest:2972:completion:0": "That's an amazing story, ⟦43⟧. It pleases us that you've not only helped dragonkind, but also one of our own priestess. Jer'kai was right to send you to me. I will make sure she has her ring returned to her--I have scouts heading the direction of ⟦E6⟧ soon. This will be one more thing for them to investigate while on their mission.",
+  "quest:2972:completion:1": "Thank you again, and please, make yourself at home while you're here.",
+  "quest:3002:obj:0": "Bring the ⟦E21⟧ to Uthel'nay in the Darkbriar Lodge in ⟦E3⟧.",
+  "quest:3002:details:0": "Although I know my ⟦E34⟧ well, I am a warrior, ⟦44⟧. I cannot begin to tell you what this orb is capable of.",
+  "quest:3002:details:1": "I know of a mage in ⟦E3⟧ that will be able to tell us more about the orb. Take it to him.",
+  "quest:3002:progress:0": "What have you brought me, ⟦45⟧?",
+  "quest:3002:completion:0": "Fascinating, ⟦46⟧...",
+  "quest:3002:completion:1": "This orb is very powerful, but also very dangerous.",
+  "quest:3123:obj:0": "⟦E35⟧ to the Hinterlands, and locate the Wildkin. Kill 10, and use the Muisek Vessel to shrink and capture the fallen Wildkin.",
+  "quest:3123:obj:1": "Bring 10 Wildkin Muiseks and the Muisek Vessel to Witch Doctor Uzer'i in ⟦E6⟧.",
+  "quest:3123:details:0": "This will be a test; both of the ritual I performed, and of your abilities. Take this vessel, ⟦47⟧. With it, you will have the power to shrink and capture a creature inside of it.",
+  "quest:3123:details:1": "⟦E35⟧ to the Hinterlands and look for creatures known as Wildkin that were once pets of the night elf goddess ⟦E22⟧. The vicious, primitive, or savage owlbeasts are your targets, ⟦48⟧. Kill 10, and use the muisek vessel to shrink and capture them before their spirits can escape.",
+  "quest:3123:progress:0": "Were you able to capture the wildkin?⟦49⟧⟦50⟧If you succeed, we will be ready to shrink and capture the muisek of creatures of ⟦E6⟧.",
+  "quest:3123:completion:0": "Upon a violent death, the muisek of a creature may escape and seek revenge. Shrinking the creatures, as you did, ⟦51⟧, prevents the muisek from escaping. Now we may use it as we please!",
+  "quest:3124:obj:0": "Kill 10 Frayfeather Hippogryphs of any type, then use the Muisek Vessel to shrink and capture them.",
+  "quest:3124:details:0": "Since you have proven that you are both trustworthy and gifted with the ⟦E36⟧ to use the muisek vessel, I now wish you to capture another creature.",
+  "quest:3124:details:1": "Hippogryphs have been loyal companions to the night elves for many years; their spirits are loyal and steadfast.",
+  "quest:3124:details:2": "Your task is to kill 10 frayfeather hippogryphs, and quickly, shrink and capture them with the vessel, so that their muisek may be preserved. You will find the hippogryphs in the High Wilderness, to the south of here.",
+  "quest:3124:progress:0": "Were you able to capture the hippogryphs?",
+  "quest:3124:completion:0": "After killing an animal, if we allowed the muisek to escape, it may take the ⟦E11⟧ of an even greater creature. We would never be safe from its vengeance.",
+  "quest:3124:completion:1": "This is a dangerous job I have given you, ⟦52⟧. Again, you have completed it well.",
+  "quest:3841:obj:0": "Speak to Quentin in ⟦E37⟧.",
+  "quest:3841:details:0": "Oh, hello, ⟦53⟧. I'm so glad to see you again. How was your trip to ⟦E24⟧?",
+  "quest:3841:details:1": "Well, you'll be happy to know that we've made quite a bit of progress while you've been gone. We even saved a nest full of eggs. Unfortunately, the mother died before we got to her.",
+  "quest:3841:details:2": "Say, would you want one for a ⟦E38⟧? They look to hatch soon, so they'll need a good ⟦54⟧. What do you say?",
+  "quest:3841:details:3": "If you're really interested, take one of the eggs to Quentin at the race tracks in Shimmering Flats. He'll tell you more.",
+  "quest:3841:progress:0": "Why hello, ⟦55⟧.⟦56⟧⟦57⟧Don't let my location fool you, I'm really not here for the races... as entertaining as they may be.⟦58⟧⟦59⟧I'm actually here in ⟦E37⟧ investigating all I can to find out how salvageable the land is. It has become my crusade of sorts to revitalize and replenish the area with new, fertile soil. Perhaps I'll find there's a water source ⟦E39⟧.⟦60⟧⟦61⟧Tell me you haven't noticed how odd the transition between ⟦E6⟧ and ⟦E37⟧ is. Strange magic was afoot when that happened.",
+  "quest:3841:completion:0": "Ah, a sprite darter egg, and one near maturation, if I'm not mistaken. Remarkable you've found one, let alone in this good a condition. They're rarely seen in ⟦E6⟧ these days. I understand there were various poachers in the area trying to capture and kill them for many reasons. Too bad really... such beautiful creatures when they reach adulthood.",
+  "quest:3841:completion:1": "How did you come across such a find?",
+  "quest:3842:obj:0": "Bring 2 Elixir of Fortitudes to Quentin in ⟦E37⟧.",
+  "quest:3842:details:0": "The Moonweavers, huh? Most intriguing. I wish the sprite darters could truly appreciate what it means to have those two look after them. They are both quite capable.",
+  "quest:3842:details:1": "So, they gave you the egg as a gift. Well, then you should be responsible for it for as long as you desire. It appears it's almost ready to hatch, but we should ensure it's healthy and no ⟦E30⟧ has been done to it.",
+  "quest:3842:details:2": "I only need two elixirs of fortitude for a small ⟦E40⟧ to protect the egg. I have the rest of the components here with me.",
+  "quest:3842:progress:0": "The longer I stay here, the more tempted I am to partake in these races, ⟦62⟧. Truly boggling...⟦63⟧⟦64⟧Have you found the elixirs yet? Once I can tell if the egg is going to be healthy or not, I'll return it to you to hold onto until it's prepared to hatch.⟦65⟧⟦66⟧Let me know.",
+  "quest:3842:completion:0": "Wonderful. These will do nicely. Give me a moment to mix together my components and we shall see how well this egg is going to do.",
+  "quest:3843:obj:0": "Take your ⟦E41⟧ to the Hinterlands and speak to Agnar Beastamer, but hurry, you only have 1 hour to find him before the hatchling within the egg dies.",
+  "quest:3843:details:0": "A magnificent specimen, ⟦67⟧. If this creature survives gestation, then it'll be a healthy ⟦E38⟧ indeed!",
+  "quest:3843:details:1": "There is one last thing I would suggest doing if you plan on following through with this--head to Aerie Peak in the Hinterlands. Speak to a dwarf there named Agnar Beastamer, he's a master animal handler and should be able to guide you in the final steps of incubation.",
+  "quest:3843:details:2": "But hurry, ⟦68⟧, this egg is fragile and will not last long without proper care.",
+  "quest:3843:progress:0": "Greetin's, ⟦69⟧. How can I be of service to ya?",
+  "quest:3843:completion:0": "Well, well, well... I haven't seen one of these in a dragon's age. Faerie dragon, if I'm not mistaken... looks to be of the sprite darter variety. Excellent, excellent indeed.",
+  "quest:3843:completion:1": "Well, if this little fella's gonna hatch and live to be strong and healthy, then we should get some food for it. Good ya got it to me in time.",
+  "quest:4041:title": "⟦E42⟧",
+  "quest:4041:progress:0": "Bring me an ⟦E43⟧, and sure, I can make ya that ⟦E44⟧.⟦70⟧⟦71⟧I know all kinds of things about herbs and alchemy... Why, let me tell you the story about the time I transmuted gold from the cheese I was going to eat for lunch... hey... Where are you going?",
+  "quest:4041:completion:0": "So, you pulled a fast one on ol' Miblon, eh?",
+  "quest:4297:obj:0": "Bring 5 Silvermane Stalker Flanks to Agnar Beastamer in Hinterlands.",
+  "quest:4297:details:0": "Sprite darters are omnivores--that means they eat both meat and vegetation. If your egg here's gonna hatch, we best be prepared. Some good eats for these little guys are flanks of meat, raw and juicy, believe it or not. I was never able to find out why, but it has somethin' to do with ⟦E22⟧'s plan for the elves... maybe they were to be protectors or somethin', I don't know.",
+  "quest:4297:details:1": "I'll take care of the egg for now, why don't you get me some good Silvermane stalker flanks for 'em to eat when he's hatched.",
+  "quest:4297:progress:0": "Find that meat yet, ⟦72⟧? Your little egg here's just about ready to hatch. If he don't have a good enough first meal, then he might not make it past his first week, and I'd hate for that to happen.⟦73⟧⟦74⟧Can't much lie to ya, ⟦75⟧. I'm jealous of you gettin' this egg to begin with. Don't make me regret helpin' ya out like this.",
+  "quest:4297:completion:0": "These'll do nicely, and if I'm not mistaken, your little egg's just about ready to hatch. How does it feel? You know, you about to be a ⟦76⟧? Haha, didn't think ya'd have to deal with such responsibility, now did ya?",
+  "quest:7731:obj:0": "Defeat ⟦E45⟧ in the Writhing Deep, bringing its glands back to Hadoken Swiftstrider at ⟦E14⟧, ⟦E6⟧.",
+  "quest:7731:details:0": "In surveying the Writhing Deep, one of our scouts reported seeing a giant insect - much larger than the other insects spotted - wandering about the twisted terrain. Not only is it larger, it also seems to secrete some sort of ⟦E46⟧ that the other insects don't. We've given it a name - ⟦E45⟧.",
+  "quest:7731:details:1": "The innards of this beast would be invaluable to study as we figure out the best way to deal with this new ⟦E15⟧. ⟦E47⟧ out its secretion glands and bring it back to me immediately!",
+  "quest:7731:progress:0": "Have you managed to bring down ⟦E45⟧ yet?",
+  "quest:7731:completion:0": "Impressive, ⟦77⟧... most impressive! If ⟦E45⟧ is indeed one of their strongest creatures, the study of the beast will prove to be quite valuable in time. It's now my charge to make sure we defend ourselves long enough to take advantage of it.",
+  "quest:7731:completion:1": "Please accept this coin bounty as a token of the entire camp's thanks, ⟦78⟧. Well done.",
+  "quest:2941:obj:0": "Take the letter to Curgle Cranklehop in ⟦E48⟧.",
+  "quest:2941:details:0": "I have studied many subjects in my time, and my latest fascination is with the snapjaw that occupy the beach in the Hinterlands. There's one in particular I'd like to see, a giant snapjaw named Gammerita. I'd like to go myself, but my research keeps me here. I think a picture of her would be the next best thing.",
+  "quest:2941:details:1": "Take this letter to Curgle Cranklehop in ⟦E48⟧. She has created an invention for me that can capture a picture. She called it a \"snapshot\", I think...",
+  "quest:2941:progress:0": "A letter -- for me?",
+  "quest:2941:completion:0": "Are you another one of Daryn's interns? She's quite a knowledgeable historian, ⟦79⟧. You should be grateful to be studying under her leadership.",
+  "quest:2941:completion:1": "Now, let me get the ⟦E49⟧. You're gonna love it!",
+  "quest:2943:obj:0": "Deliver the book to Troyas Moonbreeze in ⟦E16⟧.",
+  "quest:2943:details:0": "Here it is, ⟦80⟧. Please, take care of my book.",
+  "quest:2943:details:1": "Now, hurry along. I'm sure Troyas is eager for your return.",
+  "quest:2943:progress:0": "Hello, ⟦81⟧. Have you been to ⟦E24⟧?",
+  "quest:2943:completion:0": "You have brought a book along. Excellent!",
+  "quest:2944:obj:0": "⟦E7⟧ the ⟦E49⟧ to take a snapshot of Gammerita, then return to Daryn Lightwind in Rut'theran Village.",
+  "quest:2944:details:0": "Have the first look at my new invention, ⟦82⟧. All you need to do is ⟦E50⟧ whatever it is you'd like to take a picture of, and push the button.",
+  "quest:2944:details:1": "What was that creature from the Hinterlands that you mentioned? Gammerita? Well, good luck finding her. I'm sure Daryn will be quite pleased with the snapshot you return to her.",
+  "quest:2944:details:2": "In any case, here's the Super Snapper. Have fun!",
+  "quest:2944:progress:0": "So, you have finally returned, ⟦83⟧. And you've brought the contraption that Curgle built for me -- perfect.",
+  "quest:2944:completion:0": "Well! Curgle's invention lived up to its expectations.",
+  "quest:2944:completion:1": "Don't get too excited, but do know that I am pleased with your work, ⟦84⟧.",
+  "quest:2944:completion:2": "Now, where did I leave that book..."
+ },
+ "context": {
+  "quest:3121": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 45,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i",
+   "turner": "Neeru Fireblade («نیرو آتش‌تیغ»)"
+  },
+  "quest:3122": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 45,
+   "side": "horde",
+   "giver": "Neeru Fireblade («نیرو آتش‌تیغ»)",
+   "turner": "Witch Doctor Uzer'i"
+  },
+  "quest:3125": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 45,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i",
+   "turner": "Witch Doctor Uzer'i"
+  },
+  "quest:7725": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Zorbin Fandazzle"
+  },
+  "quest:7726": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Zorbin Fandazzle"
+  },
+  "quest:7730": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 45,
+   "side": "horde",
+   "giver": "Hadoken Swiftstrider",
+   "turner": "Hadoken Swiftstrider"
+  },
+  "quest:2821": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2822": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:2979": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "horde",
+   "giver": "Rok Orhan",
+   "turner": "Rok Orhan"
+  },
+  "quest:4135": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "alliance",
+   "giver": "Large Leather Backpacks",
+   "turner": "Zukk'ash Pod"
+  },
+  "quest:4265": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "alliance",
+   "giver": "Zukk'ash Pod",
+   "turner": "Ginro Hearthkindle"
+  },
+  "quest:4266": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "alliance",
+   "giver": "Ginro Hearthkindle",
+   "turner": "Shandris Feathermoon"
+  },
+  "quest:4267": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 46,
+   "side": "alliance",
+   "giver": "Shandris Feathermoon",
+   "turner": "Gracina Spiritmight"
+  },
+  "quest:2939": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Troyas Moonbreeze",
+   "turner": "Daryn Lightwind"
+  },
+  "quest:2940": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Feralas: A History («فرالاس: تاریخچه‌ای»)",
+   "turner": "Daryn Lightwind"
+  },
+  "quest:2969": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Kindal Moonweaver",
+   "turner": "Kindal Moonweaver"
+  },
+  "quest:2970": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Jer'kai Moonweaver",
+   "turner": "Jer'kai Moonweaver"
+  },
+  "quest:2972": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Jer'kai Moonweaver",
+   "turner": "Tyrande Whisperwind"
+  },
+  "quest:3002": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "horde",
+   "giver": "Rok Orhan",
+   "turner": "Uthel'nay"
+  },
+  "quest:3123": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i",
+   "turner": "Witch Doctor Uzer'i"
+  },
+  "quest:3124": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i",
+   "turner": "Witch Doctor Uzer'i"
+  },
+  "quest:3841": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Kindal Moonweaver",
+   "turner": "Quentin"
+  },
+  "quest:3842": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Quentin",
+   "turner": "Quentin"
+  },
+  "quest:3843": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Quentin",
+   "turner": "Agnar Beastamer"
+  },
+  "quest:4041": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "",
+   "giver": "",
+   "turner": "Gregan Brewspewer"
+  },
+  "quest:4297": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Agnar Beastamer",
+   "turner": "Agnar Beastamer"
+  },
+  "quest:7731": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 47,
+   "side": "horde",
+   "giver": "Hadoken Swiftstrider",
+   "turner": "Hadoken Swiftstrider"
+  },
+  "quest:2941": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Daryn Lightwind",
+   "turner": "Curgle Cranklehop"
+  },
+  "quest:2943": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Daryn Lightwind",
+   "turner": "Troyas Moonbreeze"
+  },
+  "quest:2944": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Curgle Cranklehop",
+   "turner": "Daryn Lightwind"
+  }
+ },
+ "known": {
+  "quest:3121": {
+   "title": "درخواستی عجیب"
+  },
+  "quest:3122": {
+   "title": "بازگشت به ویچ داکتور اوزِری"
+  },
+  "quest:3125": {
+   "title": "موسیک اژدهای پری"
+  },
+  "quest:7730": {
+   "title": "آلودگی زوک‌آش"
+  },
+  "quest:2821": {
+   "title": "نشانهٔ کیفیت"
+  },
+  "quest:2822": {
+   "title": "نشانهٔ کیفیت"
+  },
+  "quest:2979": {
+   "title": "آیین تاریک"
+  },
+  "quest:4135": {
+   "title": "عمق پیچان"
+  },
+  "quest:4265": {
+   "title": "آزاد از کندو"
+  },
+  "quest:4266": {
+   "title": "استقبال از قهرمان"
+  },
+  "quest:4267": {
+   "title": "برخاستن سیلیتیدها"
+  },
+  "quest:2939": {
+   "title": "در جست‌وجوی دانش"
+  },
+  "quest:2940": {
+   "title": "فرالاس: تاریخچه‌ای"
+  },
+  "quest:2969": {
+   "title": "آزادی برای همهٔ موجودات"
+  },
+  "quest:2970": {
+   "title": "اجرای عدالت"
+  },
+  "quest:2972": {
+   "title": "اجرای عدالت"
+  },
+  "quest:3002": {
+   "title": "گوی گوردونی"
+  },
+  "quest:3123": {
+   "title": "آزمودن ظرف"
+  },
+  "quest:3124": {
+   "title": "موسیک هیپوگریف"
+  },
+  "quest:3841": {
+   "title": "یتیمی در جست‌وجوی خانه"
+  },
+  "quest:3842": {
+   "title": "انکوباسیونی کوتاه"
+  },
+  "quest:3843": {
+   "title": "جدیدترین عضو خانواده"
+  },
+  "quest:4297": {
+   "title": "غذای بچه"
+  },
+  "quest:7731": {
+   "title": "استینگ‌لشر"
+  },
+  "quest:2941": {
+   "title": "قرض‌گیرنده"
+  },
+  "quest:2943": {
+   "title": "بازگشت به ترویاس"
+  },
+  "quest:2944": {
+   "title": "سوپر اسنپر اف‌ایکس"
+  }
+ }
+}

@@ -1,0 +1,592 @@
+{
+ "pack": "quest-unknown-06",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-06.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Brill",
+   "fa": "بریل",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Bottle of Whispering Elixir",
+   "fa": "بطریِ اکسیرِ زمزمه",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E7": {
+   "en": "Whispering Horror Residue",
+   "fa": "باقی‌ماندهٔ وحشت نجواگر",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Earthen Ring",
+   "fa": "حلقهٔ زمین",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Sturdy Lumber",
+   "fa": "چوب‌بریدهٔ مقاوم",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "root",
+   "fa": "محبوس‌شدن در جا",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Engineering",
+   "fa": "مهندسی",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Rudolph Gelhardt's Head",
+   "fa": "سر رودولف گلهارت",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Suspicious Industrial Supplies",
+   "fa": "تدارکات صنعتی مشکوک",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Extra-Destructive Explosives",
+   "fa": "مواد منفجرهٔ بسیار ویرانگر",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Explosives",
+   "fa": "مواد منفجره",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Gatehouse Shipment",
+   "fa": "محمولهٔ دروازه‌خانه",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Arugal's Folly",
+   "fa": "حماقت آروگال",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Treaty of Understanding",
+   "fa": "پیمان درک",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Fire Sapta",
+   "fa": "سپتای آتش",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Desperate Prayer",
+   "fa": "دعای مأجورانه",
+   "kind": "qs"
+  },
+  "E32": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Heavy Grinding Stone",
+   "fa": "سنگِ سابِ سنگین",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Alliance": "اتحاد",
+  "Dalaran": "دالاران",
+  "Azeroth": "آزروت",
+  "Brill": "بریل",
+  "Bottle of Whispering Elixir": "بطریِ اکسیرِ زمزمه",
+  "Travel": "سفر",
+  "Whispering Horror Residue": "باقی‌ماندهٔ وحشت نجواگر",
+  "Earthen Ring": "حلقهٔ زمین",
+  "form": "شکل",
+  "miss": "خطا",
+  "threat": "تیت",
+  "Sturdy Lumber": "چوب‌بریدهٔ مقاوم",
+  "Undercity": "آندر‌سیتی",
+  "root": "محبوس‌شدن در جا",
+  "Engineering": "مهندسی",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Rudolph Gelhardt's Head": "سر رودولف گلهارت",
+  "Forsaken": "مطرودان",
+  "Suspicious Industrial Supplies": "تدارکات صنعتی مشکوک",
+  "Stormwind": "استورم‌ویند",
+  "Extra-Destructive Explosives": "مواد منفجرهٔ بسیار ویرانگر",
+  "nearby": "نزدیک",
+  "Explosives": "مواد منفجره",
+  "heal": "شفا",
+  "Use": "استفاده",
+  "Gatehouse Shipment": "محمولهٔ دروازه‌خانه",
+  "Arugal's Folly": "حماقت آروگال",
+  "Treaty of Understanding": "پیمان درک",
+  "Ironforge": "آیرون‌فورج",
+  "Fire Sapta": "سپتای آتش",
+  "Desperate Prayer": "دعای مأجورانه",
+  "Elune": "الون",
+  "Darnassus": "دارناسوس",
+  "armor": "زره",
+  "Heavy Grinding Stone": "سنگِ سابِ سنگین"
+ },
+ "tokens": {
+  "1": "<class>",
+  "2": "<class>",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$C"
+ },
+ "rows": {
+  "quest:93963:title": "Exploring the ⟦E1⟧",
+  "quest:94369:title": "The Fate of Zephras",
+  "quest:94946:title": "The Magical City of ⟦E2⟧",
+  "quest:94947:title": "Welcome to ⟦E3⟧",
+  "quest:95065:title": "Fishin' Time",
+  "quest:95217:title": "The Quarry's Smith",
+  "quest:95314:title": "That Shadowvale Green Elixir",
+  "quest:95314:obj:0": "Collect 8 Bottles of Whispering Elixir from Shadowvale, then return to Carolai Anise in ⟦E4⟧.",
+  "quest:95314:obj:1": "*⟦E5⟧ (8)",
+  "quest:95314:details:0": "Before the Scourge invasion, the reclusive village of Shadowvale was known for its Whispering Elixir. Distilled from herbs found only in Tyr's Fall, the elixir was sought by apothecaries, mystics, and poisoners alike even after being banned in the city.",
+  "quest:95314:details:1": "I've had requests from a number of buyers eager to get their hands on some elixir. ⟦E6⟧ to the ruins of Shadowvale deep in the Whispering Forest to the west. I'm prepared to offer significant compensation if you can recover some bottles for me.",
+  "quest:95314:progress:0": "I trust you did not get lost?",
+  "quest:95328:title": "⟦E7⟧",
+  "quest:95349:title": "The ⟦E8⟧",
+  "quest:98021:title": "Journey to Sentinel Hill",
+  "quest:91282:title": "A Second Home",
+  "quest:91282:obj:0": "Find the fortress of Bandarion Keep and report to Breton Samuels there.",
+  "quest:91282:details:0": "It is encouraging to see my newly risen brothers and sisters thrive as you have. It is only through community and shared faith that we can truly realize our full potential however, and to that end we've begun to ⟦E9⟧ a new paladin order right here in Tirisfal.",
+  "quest:91282:details:1": "If you wish to learn more, you should visit our monastery at Northface Rock. It is called Bandarion Keep. It's on the bluffs just northwest of the Solliden Farmstead, and should be hard to ⟦E10⟧.",
+  "quest:91294:title": "Touring the Grounds",
+  "quest:91294:obj:0": "Speak to the residents of Bandarion Keep.",
+  "quest:91294:obj:1": "* Speak with Hilda the Breaker",
+  "quest:91294:obj:2": "* Speak with Jorin Croge",
+  "quest:91294:obj:3": "* Speak with Ander Solliden",
+  "quest:91294:obj:4": "* Speak with Danitha Morr",
+  "quest:91294:details:0": "Now that the immediate ⟦E11⟧ of the murloc attacks is under control, I'd encourage you to show yourself around our stronghold. It isn't much yet, but it's home.",
+  "quest:91294:details:1": "When you are done exploring, seek out Danitha Morr, our leader. She can help you get settled in.",
+  "quest:91294:details:2": "I'm very glad to have met you, . May the light be your guide.",
+  "quest:91294:progress:0": "Welcome to Bandarion Keep, ⟦1⟧. It's always good to see a new face.",
+  "quest:91316:title": "Making Repairs",
+  "quest:91316:obj:0": "Collect 12 pieces of ⟦E12⟧ from Shadowvale in .",
+  "quest:91316:obj:1": "* ⟦E12⟧ (12)",
+  "quest:91316:details:0": "This far from the ⟦E13⟧, logistics are challenging and we have a dire shortage of building materials needed to help restore this fortress. I'd like your help with that.",
+  "quest:91316:details:1": "The ruined village of Shadowvale can be found in the Whispering Forest, just southwest of here. One of the buildings has an old ⟦E14⟧ cellar used to store all sorts of things. There are likely to be usable materials down there. Scavenge what you can and return to us.",
+  "quest:91316:progress:0": "They say location is everything. While this fortress may look imposing perched upon these bluffs, its turning out to be quite the challenge to stay supplied this far from proper civilization. An unfortunate oversight on our part.",
+  "quest:92910:title": "Harvesting the Harvesters (⟦E15⟧ 1/2)",
+  "quest:92911:title": "Harvesting the Harvesters (⟦E15⟧ 2/2)",
+  "quest:93459:title": "More Al'Aketh Ears",
+  "quest:91317:title": "The Tarnished",
+  "quest:91317:obj:0": "Slay 8 Tarnished Drudges, 6 Tarnished Zealots, and collect the head of Commander Rudolph Gelhardt in ⟦E16⟧.",
+  "quest:91317:obj:1": "* ⟦E17⟧",
+  "quest:91317:obj:2": "* Tarnished Drudge slain (8)",
+  "quest:91317:obj:3": "* Tarnished Zealot slain (6)",
+  "quest:91317:details:0": "Not all risen paladins have acclimated well to our new existence, as you may have seen yourself already. Some have carried forward their prejudices from life, and continue to visit violence upon their fellow ⟦E18⟧.",
+  "quest:91317:details:1": "As it stands we are mistrusted by our people who remember well the persecution inflicted by the living in the name of the light, and these attacks do not help. A number of these tarnished have taken up residence at Shadowvale to the southwest. End them and bring me their leader's head.",
+  "quest:91317:progress:0": "The Tarnished threaten what little goodwill we have with the other ⟦E18⟧. As much as it pains me to cross blades with our former brothers and sisters, they must be stopped if our fledgling order is to survive.",
+  "quest:92747:title": "Toxic Soil (part 4)",
+  "quest:92747:obj:0": "Collect 8 ⟦E19⟧ from Moonbrook.",
+  "quest:92747:obj:1": "*⟦E19⟧ (8)",
+  "quest:92747:details:0": "Strange - the poison does not seem to originate from the mines you investigated.",
+  "quest:92747:details:1": "I am told the Deadmines under the town of Moonbrook are the largest, deepest mines of , but they have been abandoned since the First War. Could the Deadmines be active again?",
+  "quest:92747:details:2": "Please travel to Moonbrook, , and look for evidence of mining or industrial activity. This is the last lead we have!",
+  "quest:92747:progress:0": "...",
+  "quest:92748:title": "Toxic Soil (part 5)",
+  "quest:92748:obj:0": "⟦E6⟧ to the Dwarven District in ⟦E20⟧ and find an engineer who can help.",
+  "quest:92748:details:0": "The supplies you found point to a massive industrial operation somewhere in the Deadmines. There's no question that this is the source of the toxins plaguing the farmland of . We need to stop it, quickly.",
+  "quest:92748:details:1": "Whatever's down there will be difficult to destroy. Go to the Dwarven District of ⟦E20⟧, and find an engineer who can supply us with some explosives.",
+  "quest:92752:title": "Toxic Soil (part 9)",
+  "quest:92752:obj:0": "Return to Alba Fairmoon in .",
+  "quest:92752:obj:1": "*⟦E21⟧ (provided)",
+  "quest:92752:details:0": "That's it - the bomb's ready to go! Careful with that detonator, now.",
+  "quest:92752:progress:0": "...",
+  "quest:92753:title": "Toxic Soil (part 10)",
+  "quest:92753:obj:0": "Find the forge hidden in the Deadmines, and plant the ⟦E21⟧ ⟦E22⟧. Then, meet up with Alba Fairmoon at the Deadmines exit.",
+  "quest:92753:obj:1": "*⟦E23⟧ placed",
+  "quest:92753:obj:2": "*⟦E21⟧ (provided)",
+  "quest:92753:details:0": "The source of the poison is likely a large metallurgical forge of some kind. Find a way into the Deadmines and locate the forge, then place the explosives.",
+  "quest:92753:details:1": "I will wait for you in the hills behind Moonbrook. Once you return, we can detonate the explosives. Hopefully with the forge gone, the land can begin to ⟦E24⟧.",
+  "quest:92753:progress:0": "...",
+  "quest:92819:title": "Toxic Soil (part 11)",
+  "quest:92819:obj:0": "⟦E25⟧ the detonator.",
+  "quest:92819:obj:1": "* Detonator used",
+  "quest:92819:details:0": "We are almost finished. ⟦E25⟧ the detonator, and end this.",
+  "quest:92819:progress:0": "...",
+  "quest:95803:title": "A Token of Good Faith",
+  "quest:95803:obj:0": "Bring the head of Rudolph Gelhardt to Sylvanas Windrunner in the ⟦E13⟧.",
+  "quest:95803:obj:1": "* ⟦E17⟧ (provided)",
+  "quest:95803:details:0": "Now that we've claimed the head of the tarnished commander, I need you to deliver it to the ⟦E13⟧. Sylvanas Windrunner mistrusts us greatly, and all but openly disparages us.",
+  "quest:95803:details:1": "Deliver Rudolph Gelhardt's head to the Dark Lady. Show her that we tend to our own house and are devoted to the prosperity of the forsaken.",
+  "quest:95803:progress:0": "Why are you addressing me, paladin?",
+  "quest:97222:title": "Gatehouse Goods",
+  "quest:97222:obj:0": "Carry the ⟦E26⟧ up the stairs in Trias' shop and leave it outside the door.",
+  "quest:98298:title": "⟦E27⟧",
+  "quest:98423:title": "The ⟦E28⟧",
+  "quest:98423:obj:0": "Deliver the ⟦E28⟧ to Magni Bronzebeard in ⟦E29⟧.",
+  "quest:98423:obj:1": "*⟦E28⟧ (provided)",
+  "quest:98423:details:0": "Inside of the vault you find a tablet detailing the terms of a peace treaty between the Bronzebeard and Wildhammer dwarf clans. It appears to date back to time period just after the War of the Three Hammers, and is very likely a notable piece of dwarven history. The king of ⟦E29⟧ would no doubt be interested in this artifact.",
+  "quest:98423:progress:0": "What have you brought from the depths, ⟦2⟧.",
+  "quest:1464:title": "⟦E30⟧",
+  "quest:1464:desc:0": "Speak to Telf Joolam for another ⟦E30⟧.",
+  "quest:1464:obj:0": "Speak to Telf Joolam for another ⟦E30⟧.",
+  "quest:1464:details:0": "Speak to Telf Joolam for another ⟦E30⟧.",
+  "quest:1464:completion:0": "May fire burn within your heart, ⟦3⟧.⟦4⟧⟦5⟧The elements await you.",
+  "quest:5640:title": "⟦E31⟧",
+  "quest:5640:details:0": "Praise be to ⟦E32⟧, and to your Light, ⟦6⟧ . ⟦7⟧ About this time, many of our order learn abilities reflecting their faith in ⟦E32⟧. If knowledge serves me, I believe the same holds true for your order also. ⟦8⟧ When your business in ⟦E33⟧ is complete, I would seek out one of your High Priestesses for further training.",
+  "quest:5640:completion:0": "I'm glad you've arrived, ⟦9⟧ . There are many things we will have to discuss, but more importantly is your training in the ways of the Light. ⟦10⟧ There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:7882:title": "Carnival Jerkins",
+  "quest:7882:progress:0": "Our Faire workers do more than sweep trash and hammer spikes! They also help guard the carnival as it travels, and to that end they are always needing good sturdy ⟦E34⟧ jerkins.⟦11⟧⟦12⟧If you make some tough leather ⟦E34⟧ and bring it to me, then I'll make sure it gets to the right people. I'll also get you some Darkmoon Faire tickets as trade.",
+  "quest:7882:completion:0": "Ah, you brought the jerkins.  Splendid.  What animal's skin did you use to make these, may I ask?  The stitch-work is very well done, and the texture of the leather has a rugged style to it.  I can tell you are a craftsman of skill!⟦13⟧⟦14⟧Thank you, ⟦15⟧, and here are your tickets.",
+  "quest:7890:title": "⟦E35⟧",
+  "quest:7890:progress:0": "To help with my workout, I like to fit a staff between heavy grinding stones, then lift the staff over my head. It isn't easy, but being the strongest woman in the world, like I am, can't be earned sitting down!⟦16⟧⟦17⟧Can you help me? I need more grinding stones - bring me some and I'll trade Darkmoon Faire tickets for them.",
+  "quest:7890:completion:0": "You brought the stones! And they're heavy! I can already feel my muscles getting bigger. Thanks ⟦18⟧!⟦19⟧⟦20⟧Here, take these tickets, and be sure not to eat too many sweets while your at the faire. A big strong ⟦21⟧ like you needs to keep himself in fighting shape!"
+ },
+ "context": {
+  "quest:93963": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": ""
+  },
+  "quest:94369": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Elaadrin Evengale",
+   "turner": ""
+  },
+  "quest:94946": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Elaadrin Evengale",
+   "turner": ""
+  },
+  "quest:94947": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95065": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95217": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95314": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95328": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95349": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "horde",
+   "giver": "Ayessa Dawnsinger",
+   "turner": ""
+  },
+  "quest:98021": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon",
+   "turner": ""
+  },
+  "quest:91282": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 8,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:91294": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 8,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:91316": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 8,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92910": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 8,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92911": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 8,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:93459": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 8,
+   "side": "",
+   "giver": "Vayn Moongaze",
+   "turner": ""
+  },
+  "quest:91317": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92747": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92748": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92752": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92753": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:92819": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95803": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:97222": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98298": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": ""
+  },
+  "quest:98423": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 9,
+   "side": "alliance",
+   "giver": "",
+   "turner": "King Magni Bronzebeard"
+  },
+  "quest:1464": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": "Telf Joolam"
+  },
+  "quest:5640": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7882": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Chronos"
+  },
+  "quest:7890": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Kerri Hicks"
+  }
+ }
+}

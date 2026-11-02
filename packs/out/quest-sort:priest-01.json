@@ -1,0 +1,816 @@
+{
+ "pack": "quest-sort:priest-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:priest-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Hallowed Tablet",
+   "fa": "لوحِ مقدس",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "trainer",
+   "fa": "مربی",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Hallowed Scroll",
+   "fa": "طومارِ مقدس",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Holy Light",
+   "fa": "نور مقدس",
+   "kind": "sp"
+  },
+  "E6": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Hallowed Letter",
+   "fa": "نامهٔ مقدس",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Northshire",
+   "fa": "نورث‌شایر",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Hallowed Rune",
+   "fa": "رونِ مقدس",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Hallowed Sigil",
+   "fa": "نشانِ مقدس",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Shadowglen",
+   "fa": "سایه دره",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "wounds",
+   "fa": "زخمی‌کردن",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Lesser Heal",
+   "fa": "شفای کوچک",
+   "kind": "sp"
+  },
+  "E22": {
+   "en": "Rank",
+   "fa": "رنک",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Elwynn Forest",
+   "fa": "جنگل الزوین",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "in combat",
+   "fa": "درگیر نبرد",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Brill",
+   "fa": "بریل",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "trained",
+   "fa": "آموزش‌دیده",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Hex of Weakness",
+   "fa": "نفرینِ ضعف",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Hallowed Tablet": "لوحِ مقدس",
+  "trainer": "مربی",
+  "Hallowed Scroll": "طومارِ مقدس",
+  "seal": "مهر",
+  "Holy Light": "نور مقدس",
+  "Azeroth": "آزروت",
+  "Hallowed Letter": "نامهٔ مقدس",
+  "Northshire": "نورث‌شایر",
+  "Burning Legion": "لژیون سوزان",
+  "Kalimdor": "کالیمدور",
+  "Hallowed Rune": "رونِ مقدس",
+  "chance": "شانس",
+  "spell": "اسپیل",
+  "Ironforge": "آیرون‌فورج",
+  "Hallowed Sigil": "نشانِ مقدس",
+  "Teldrassil": "تلدراسیل",
+  "Alliance": "اتحاد",
+  "Shadowglen": "سایه دره",
+  "heal": "شفا",
+  "wounds": "زخمی‌کردن",
+  "Lesser Heal": "شفای کوچک",
+  "Rank": "رنک",
+  "Elune": "الون",
+  "battle": "نبرد",
+  "Elwynn Forest": "جنگل الزوین",
+  "healing": "شفا",
+  "ability": "توانایی",
+  "Dun Morogh": "دون موروغ",
+  "in combat": "درگیر نبرد",
+  "Durotar": "دوروتار",
+  "Horde": "هورد",
+  "enemies": "دشمنان",
+  "Brill": "بریل",
+  "damage": "آسیب",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Forsaken": "مطرودان",
+  "Darnassus": "دارناسوس",
+  "trained": "آموزش‌دیده",
+  "Head": "سر",
+  "blessing": "برکت",
+  "Stormwind": "استورم‌ویند",
+  "level": "لِوِل",
+  "Orgrimmar": "اورگریمار",
+  "Hex of Weakness": "نفرینِ ضعف"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$C",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$N",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$gpriest:priestess;",
+  "17": "$N",
+  "18": "$gpriest:priestess;",
+  "19": "$N",
+  "20": "$gpriest:priestess;",
+  "21": "$ghim:her;",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$N",
+  "27": "$N",
+  "28": "$B",
+  "29": "$B",
+  "30": "$N",
+  "31": "$N",
+  "32": "$gpriest:priestess;",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$C",
+  "38": "$C",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$gladdy:lassy;",
+  "45": "$N",
+  "46": "$r",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$N",
+  "51": "$gladdy:lass;",
+  "52": "$N",
+  "53": "$N",
+  "54": "$N",
+  "55": "$N",
+  "56": "$N",
+  "57": "$N",
+  "58": "$r",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$r",
+  "63": "$r",
+  "64": "$N",
+  "65": "$N",
+  "66": "$N",
+  "67": "$N",
+  "68": "$N",
+  "69": "$N"
+ },
+ "rows": {
+  "quest:3085:obj:0": "Read the ⟦E1⟧ and speak to Ken'jai outside the Den in the Valley of Trials.",
+  "quest:3085:details:0": "Ah, while you were gone a tablet came for you, ⟦1⟧.",
+  "quest:3085:details:1": "Read it when you have time. If I'm not mistaken, it came from the priest ⟦E2⟧ Ken'jai. He would have words with you when you're ready.",
+  "quest:3085:progress:0": "So ya made it... good good! Da spirits tol' me you be comin' to see Ken'jai soon enough. Let me be one o' da first to welcome ya to da Valley of Trials. Dis place not be your home fer long, but while it is, why dontcha make da best o' it.",
+  "quest:3085:completion:0": "As ya test yeself, ya'll find ya have better an' better control o'er da spirits--ya'll be callin' on dem fer greata an' greata tings... dat's where ol' Ken'jai come in. You come talk to ole Ken'jai when ya feel yer ready. If da spirits agree, den we see 'bout teachin' ya more powerful abilities... but only if da spirits agree.",
+  "quest:3085:completion:1": "Go now, talk to da rest of da Valley's people. Speak to me again later.",
+  "quest:3097:obj:0": "Read the ⟦E3⟧ and speak to Dark Cleric Duesten in the church in Deathknell.",
+  "quest:3097:details:0": "Ah, while you were off dealing with the mindless Scourge, this scroll arrived for you. I would think it's some matter of importance as it seems it bears the ⟦E4⟧ of the priest ⟦E2⟧ Duesten. I would take some time to read it before heading out again.",
+  "quest:3097:progress:0": "Ah, so between fire, plague, rioting, and much worse, one more of the \"faithful\" comes to my door. Well, let me bid you welcome, ⟦2⟧. And allow me a moment to explain a thing or two before you decide it's time for you to seek whatever drives you forward: the ⟦E5⟧ no longer concerns you, the spirits of your forefathers are fairy tales, and creatures from the Nether don't want you.⟦3⟧⟦4⟧Do you understand me so far?",
+  "quest:3097:completion:0": "There is only one thing you must know: we have survived through will alone. It is faith in ourselves that separates us from others, and with our powers, we will cause great change in all of ⟦E6⟧. The weak will come to lean on you. The lepers will call you Lord. And the ignorant will look to you for guidance. It is my duty to make sure you have the necessary tools so when the time comes, you are prepared. As you grow in experience, seek me out. I will teach you greater powers if you are ready.",
+  "quest:3103:obj:0": "Read the ⟦E7⟧ and speak to Priestess Anetta in ⟦E8⟧ Abbey.",
+  "quest:3103:details:0": "I was asked to bring this to your attention as soon as you returned from the kobold camps, ⟦5⟧. It appears to be a letter sealed with the insignia of Priestess Anetta, our local priest ⟦E2⟧. I wouldn't hesitate to read it before you go about any other business here in the Abbey.",
+  "quest:3103:progress:0": "Ah, at last you've come. I knew you would find your way to me. The ⟦E5⟧ shines upon you, and the path you've chosen. These times are harsh--the ⟦E9⟧ still has a presence upon ⟦E6⟧, the entirety of ⟦E10⟧ seeks new ways to defend itself from its own tribulations, and it is up to you to aid as many as you can.",
+  "quest:3103:completion:0": "As you grow in experience, return to me and I will do what I can to impart my knowledge upon you. Until then, go with compassion in your heart, and let wisdom be your guide. Remember, the world only becomes a better place if you make it so.",
+  "quest:3110:obj:0": "Read the ⟦E11⟧ and speak to Branstock Khalder in Anvilmar.",
+  "quest:3110:details:0": "While you were helping me out, this rune was given to me to pass on to you. Take some time to read it when you have a ⟦E12⟧. I'm thinkin' it came from the priest ⟦E2⟧ Branstock. Take a gander at it and go find him inside Anvilmar when you've a ⟦E12⟧.",
+  "quest:3110:progress:0": "Ach! Ya made it, ⟦6⟧! Wonderful!⟦7⟧⟦8⟧I was gonna say, I was about to lose faith that ye'd arrive at all... get it, lose faith? It's a joke, lass... aww, nevermind. Ya didn't come here for me bad jokes anyway.",
+  "quest:3110:completion:0": "I'm the one who can train ya as you start to find your way around Coldridge Valley. When ya feel yer ready, come back to me and we'll see about maybe teaching you a new ⟦E13⟧ or two to fend off the valley from them blasted troggs.",
+  "quest:3110:completion:1": "Ya got the Light on yer side, along with all of ⟦E14⟧, ⟦9⟧... no pressure on ya to become somethin' special.",
+  "quest:3119:obj:0": "Read the ⟦E15⟧ and speak to Shanda in Aldrassil.",
+  "quest:3119:details:0": "This sigil was given to me by a messenger from our priest ⟦E2⟧, Shanda. It seems Shanda would have words with you when you have a moment. Read it and bring it to her afterwards.",
+  "quest:3119:progress:0": "It pleases me to see you've arrived so quickly, ⟦10⟧. Welcome.⟦11⟧⟦12⟧As you've probably heard, all of ⟦E16⟧ is stirring with the comings and goings of travelers. Even members of the ⟦E17⟧ have even been allowed access onto ⟦E16⟧'s boughs in order to meet with other Kaldorei who prepare for the adventures ahead.",
+  "quest:3119:completion:0": "Do not concern yourself with the world below ⟦E16⟧ for now. There will be time for that later. Go now and speak to the others in ⟦E18⟧--they can tell you more about what events have transpired. Help them in any way you can, and anytime you feel you need more training, come back to me and I will teach you what I can.",
+  "quest:5621:obj:0": "Find Sentinel Shaya and ⟦E19⟧ her ⟦E20⟧ using ⟦E21⟧ (⟦E22⟧ 2). Afterwards, grant her Power Word: Fortitude and then return to Laurna Morninglight in Dolanaar.",
+  "quest:5621:details:0": "I need your help, ⟦13⟧. I am needed here to train the other students, but you, you can help one of our injured Sentinels just south of Dolanaar. She was hurt patrolling the town and could use our aid. Her name is Shaya.",
+  "quest:5621:details:1": "When you find her, ⟦E19⟧ her ⟦E20⟧, and then fortify her body with your spells. This will at least protect her from harm longer if she finds trouble. Return to me here after you've done your duty to ⟦E23⟧.",
+  "quest:5621:progress:0": "Our spells of Fortify are very powerful, Delor. They allow our companions to take further injury from all types of attacks and survive in situations where they would normally fall. But this is nothing when compared to our abilities to ⟦E19⟧. There are no greater healers than a priest--do well to remember that. Your power alone can turn the tides of ⟦E24⟧ easily.",
+  "quest:5621:completion:0": "You have done well and you have served ⟦E23⟧. For that, I thank you.",
+  "quest:5621:completion:1": "Please, take this robe as a token of my thanks. It signifies you have earned your place among our order. If you wish, wear it with pride, but either way, we will always recognize you as one of our own.",
+  "quest:5621:completion:2": "Go with ⟦E23⟧, ⟦14⟧, and thank you.",
+  "quest:5622:obj:0": "Speak to Laurna Morninglight in ⟦E16⟧.",
+  "quest:5622:details:0": "⟦15⟧, you must travel to Dolanaar when your business here in ⟦E18⟧ is done. There, you will find Laurna Morninglight. She will instruct you further in the ways of ⟦E23⟧, and it is with her that you will earn your first garments denoting your station as a ⟦16⟧ of ⟦E23⟧.",
+  "quest:5622:details:1": "Take care, and may you be protected in your journeys.",
+  "quest:5622:completion:0": "I'm happy to see Shanda has sent you to find me, ⟦17⟧. Teaching young priests the ways of ⟦E23⟧ gives me great satisfaction.",
+  "quest:5623:obj:0": "Speak to Priestess Josetta in ⟦E25⟧.",
+  "quest:5623:details:0": "Hello again, young ⟦18⟧. The time has come for you to learn more about our religion. After you've completed whatever tasks you have here in ⟦E8⟧, please seek out Priestess Josetta in Goldshire. She has more to teach you and has heard that you are growing strong in the ways of the Light. She looks forward to tutoring you more.",
+  "quest:5623:completion:0": "I'm glad you've arrived, ⟦19⟧. We have much to discuss about your future and your path within the Light.",
+  "quest:5624:obj:0": "Find Guard Roberts and ⟦E19⟧ his ⟦E20⟧ using ⟦E21⟧ (⟦E22⟧ 2). Afterwards, grant him Power Word: Fortitude and then return to Priestess Josetta in Goldshire.",
+  "quest:5624:details:0": "Normally I put forth a small challenge to followers of the Light to test their skill. I want to see if they are worthy of wearing their first robes--a sign that the church outwardly approves of the ⟦20⟧ and supports ⟦21⟧.",
+  "quest:5624:details:1": "But this situation is a bit different. One of Goldshire's citizens saw an injured guard near the lake to the east of here. His name is Roberts. Find him, ⟦E19⟧ him, fortify his body and return here. If you can do that for me, then I will consider your test complete.",
+  "quest:5624:progress:0": "As you may have already learned, our ⟦E26⟧ magics are vital to the survival of our people in these harsh times--especially to adventurers and heroes who take up arms and magic to fight back so many different threats.⟦22⟧⟦23⟧You would do well to always remember how important that skill is. That, coupled with Fortitude, make your companions far more capable in ⟦E24⟧ since they will be able to stand up to a greater number of blows.⟦24⟧⟦25⟧Do not let anyone dismiss how powerful your magics are.",
+  "quest:5624:completion:0": "Excellent, ⟦26⟧. With one more healthy guard out there to help the town, we'll be that much safer. I'm glad to see you're already learning to use your abilities wisely. If you feel you are ready for more training at any time, please come back to me. But for now, take this robe. It will let others know that you are one of our order. If you don't want to wear it, that's fine. Later there will be more tests and this robe isn't necessary for those.",
+  "quest:5625:obj:0": "Find Mountaineer Dolf and ⟦E19⟧ his ⟦E20⟧ using ⟦E21⟧ (⟦E22⟧ 2). Afterwards, grant him Power Word: Fortitude and then return to Maxan Anvol in Kharanos.",
+  "quest:5625:details:0": "It's usually about this time that one of your power is tested to see if they're worthy of wearing robes denoting their place in the church. But to be honest, I got more pressing matters to look into. Citizen of Kharanos' just came in here and told me 'bout a hurt mountaineer just outside town to the south--name's Dolf.",
+  "quest:5625:details:1": "You ⟦E19⟧ Dolf and give him Fortitude, and I'll consider you done with proving yourself. How's that sound?",
+  "quest:5625:progress:0": "Have you found Dolf yet, ⟦27⟧?⟦28⟧⟦29⟧You've probably already learned this, but our ⟦E27⟧ to ⟦E19⟧ is very useful. Not only are we able to take care of the wounded, but we're vital to the survival of all those would-be heroes out there trying to make a name for themselves. With Fortitude to increase the amount of blows we can take, and our ⟦E26⟧ magic to keep them alive, there's nothing we can't overcome!",
+  "quest:5625:completion:0": "Excellent, ⟦30⟧. With one more healthy guard out there to help the town, we'll be that much safer. I'm glad to see you're already learning to use your abilities wisely. If you feel you are ready for more training at any time, please come back to me. But for now, take this robe. It will let others know that you are one of our order. If you don't want to wear it, that's fine. Later there will be more tests and this robe isn't necessary for those.",
+  "quest:5626:obj:0": "Speak to Maxan Anvol in ⟦E28⟧.",
+  "quest:5626:details:0": "Hey! ⟦31⟧! Got a minute?!",
+  "quest:5626:details:1": "Ya been following the Light now for long enough that you find your way to Maxan Anvol in Kharanos. He'll teach ya more about the path yer following, and if you prove worthy, give ya yer first set of robes to denote your station as a ⟦32⟧.",
+  "quest:5626:details:2": "Now get goin'! As soon as yer done here, head through the tunnel--he'll be waitin' for ya.",
+  "quest:5626:completion:0": "Oh, so Branstock sent ya, did he? Good, good! He's right, it is 'bout time you started taking a much larger step into the Light. It'll build character and make ya stronger... an' that's what you'll need more than anything: strength of body... strength of will.",
+  "quest:5648:obj:0": "Find Grunt Kor'ja and ⟦E19⟧ her ⟦E20⟧ using ⟦E21⟧ (⟦E22⟧ 2). Afterwards, grant her Power Word: Fortitude and then return to Tai'jin at Razor Hill.",
+  "quest:5648:details:0": "You be ready for your first test, ⟦33⟧. South of Razor Hill, just outta town, one of our grunts be hurt fightin' off some o' Proudmoore's old troops. She not doin' too well, an' she benefit much if one of our kind could help her. Find her--her name be Kor'ja--⟦E19⟧ her ⟦E20⟧, an' give her the blessin' of our ancestors.",
+  "quest:5648:details:1": "You do this, an' me thinks that be sufficient proof that you ready to move on in our ways.",
+  "quest:5648:progress:0": "Most think it logical that healin' magics be powerful, but not many understand how powerful. You can keep many alive when instead they should be meetin' their own ancestors. This healin' magic mixed with the ⟦E27⟧ of Fortitude are a very powerful combination of spells. You remember this. It helpful to all manner of people: warriors, mages and everything in between.",
+  "quest:5648:completion:0": "Good, then Kor'ja lives and goes off to defend our town from those malicious humans. I often wish to remember days of ⟦E24⟧; where power was shown ⟦E29⟧ and it was the wise who often destroyed those who relied on just their strength.",
+  "quest:5648:completion:1": "You done good by me, ⟦34⟧. You take this robe now. Maybe it help, maybe you not care, but you earned it and I'm proud to call you brother.",
+  "quest:5649:obj:0": "Speak to Tai'jin in ⟦E30⟧.",
+  "quest:5649:details:0": "Aye, mon. Our kind have joined the ⟦E31⟧ because they be good for us. They loyal, and they teach us much 'bout tings like honor. But our old ways die hard. The orcs may not approve of all our traditions, but that not mean we can't continue to practice some them in secret.",
+  "quest:5649:details:1": "You know this, an' that's why I send you to Tai'jin in Razor Hill. She teach you more 'bout our history. She teach you the ways of our tribe. Go to her when you be ready.",
+  "quest:5649:completion:0": "Ahh... so you finally come to Tai'jin. This be good.",
+  "quest:5649:completion:1": "You already know that we are not da same tribe that once joined with the ⟦E31⟧. We be much stronger now. We stronger 'cause we adapt--the ⟦E31⟧ teach us that much. We no longer defeat our ⟦E32⟧ and gain strength from them; now we gain strength, and then defeat our ⟦E32⟧.",
+  "quest:5649:completion:2": "The difference be subtle, but you will learn. You will see. The tribe count on you to learn such things.",
+  "quest:5650:obj:0": "Find Deathguard Kel and ⟦E19⟧ his ⟦E20⟧ using ⟦E21⟧ (⟦E22⟧ 2). Afterwards, grant him Power Word: Fortitude and then return to Dark Cleric Beryl in ⟦E33⟧.",
+  "quest:5650:details:0": "Our power comes from darkness and shadow, ⟦35⟧, but that is not your only role. You have acknowledged that there is merit in knowing the ⟦E26⟧ arts. This is wise. But before you can know the dark, you must also know the light. And for this, I have a test for you.",
+  "quest:5650:details:1": "North of the cemetery is a wounded Deathguard--Deathguard Kel. He has protected us from gnolls for some time, and needs ⟦E26⟧. But, you must also fortify his body before he can return to duty. Do both with your spells, and then return to me.",
+  "quest:5650:progress:0": "Our powers make us ideal for so many situations, ⟦36⟧. You'll find that no matter what though, our ⟦E27⟧ to mend ⟦E20⟧ and increase the amount of ⟦E34⟧ our companions can take will always be the most desired talents we have access to. Do not let that dissuade you from pursuing other paths as a ⟦37⟧--you can be effective in many ways. But... if you truly wish to destroy your ⟦E32⟧ with magical energy, perhaps the arcane is more to your liking.",
+  "quest:5650:completion:0": "You have passed my test with ease. Good.",
+  "quest:5650:completion:1": "Soon, you will be ready to take on more responsibility and that road will lead to darker powers--powers that no ⟦38⟧ of another race has.",
+  "quest:5650:completion:2": "Take this robe as a symbol of your station. You have earned it. If you do not wish to wear it, then so be it, you may do with it as you will. I and others like us will always acknowledge you for what you've achieved in our ranks.",
+  "quest:5651:obj:0": "Speak to Dark Cleric Beryl in ⟦E35⟧.",
+  "quest:5651:details:0": "There are many lessons that the ⟦E36⟧ have learned through experience--things that some races can only begin to fathom. And although our path lies in darkness, you will find that a great many things rely on both the light and the dark. Your lessons shall teach you to use both... and with discretion. But heed my words: never forget we were forged in corruption and left to rot like so much carrion. The Darkness is our home.",
+  "quest:5651:details:1": "Seek out Dark Cleric Beryl in ⟦E33⟧ when you're ready to learn more.",
+  "quest:5651:completion:0": "Finally, you've arrived. Your faith alone will not allow you to pass the trials before you, young one. A sense of urgency and some ambition will help too.",
+  "quest:5627:completion:0": "You've proven yourself worthy of ⟦E23⟧'s attention, ⟦39⟧. If you feel you're ready, I would very much like to teach you one of her spells unique to our people.",
+  "quest:5628:obj:0": "Speak to Priestess Alathea in ⟦E37⟧.",
+  "quest:5628:details:0": "Ah, yes, hello, ⟦40⟧? I'm glad you stopped to talk for a moment. You are a far way from home at such a young age--I admire such ambition. I wish when I was younger I could have mustered the courage to travel the world.",
+  "quest:5628:details:1": "There was a priestess of your order here looking for you not too long ago. She said it was very urgent you returned to the Temple of the Moon in ⟦E37⟧ and speak to Priestess Alathea--it had something to do with your training. I wouldn't dally too long if you can help it.",
+  "quest:5628:completion:0": "Wonderful, you've returned home, ⟦41⟧. It always pleases Tyrande and myself when those we've ⟦E38⟧ go out into the world and return to us safely. How have things been with you? Does ⟦E23⟧ still bless your travels? Perhaps after we speak more about the business at hand, you could tell me more of your travels.",
+  "quest:5629:obj:0": "Speak to Priestess Alathea in ⟦E37⟧.",
+  "quest:5629:details:0": "Hello again, ⟦42⟧. I know you've been busy aiding our people, but you must take some time for yourself also. Priestess Alathea sent someone here looking for you. It seems that you've caught the attention of our elders and they feel you are prepared for greater things. ⟦E39⟧ to the Temple of the Moon in ⟦E37⟧ and look for Alathea there. She will be waiting. Good luck, and may ⟦E23⟧ be with you.",
+  "quest:5629:completion:0": "Wonderful, you've returned home, ⟦43⟧. It always pleases Tyrande and myself when those we've ⟦E38⟧ go out into the world and return to us safely. How have things been with you? Does ⟦E23⟧ still bless your travels? Perhaps after we speak more about the business at hand, you could tell me more of your travels.",
+  "quest:5630:obj:0": "Speak to Priestess Alathea in ⟦E37⟧.",
+  "quest:5630:details:0": "Hello there, ⟦44⟧. Good to see you travelin' far and wide to distant lands. No offense meant, but a lot o' your kind don't take well to these cold climates usually. Glad to see you're made of tougher stuff.",
+  "quest:5630:details:1": "Not too long ago one of your priestesses was in here lookin' for you--said somethin' about you finding a Priestess Alathea in the Temple of the Moon back in ⟦E37⟧. Said it was important and you should head back there soon.",
+  "quest:5630:completion:0": "Wonderful, you've returned home, ⟦45⟧. It always pleases Tyrande and myself when those we've ⟦E38⟧ go out into the world and return to us safely. How have things been with you? Does ⟦E23⟧ still bless your travels? Perhaps after we speak more about the business at hand, you could tell me more of your travels.",
+  "quest:5631:obj:0": "Speak to Priestess Alathea in ⟦E37⟧.",
+  "quest:5631:details:0": "A priestess recently visited our halls seeking you out, young ⟦46⟧. She said that she was on a mission to find you and that you should return to the Temple of the Moon in ⟦E37⟧ as soon as possible. When you arrive, seek out a Priestess Alathea--she will tell you more.",
+  "quest:5631:details:1": "The Light be with you, ⟦47⟧.",
+  "quest:5631:completion:0": "Wonderful, you've returned home, ⟦48⟧. It always pleases Tyrande and myself when those we've ⟦E38⟧ go out into the world and return to us safely. How have things been with you? Does ⟦E23⟧ still bless your travels? Perhaps after we speak more about the business at hand, you could tell me more of your travels.",
+  "quest:5632:obj:0": "Speak to Priestess Alathea in ⟦E37⟧.",
+  "quest:5632:details:0": "Oh, yes, of course. Hello, ⟦49⟧. A messenger from our order was here not too long ago looking for you. She mentioned something important happening back in ⟦E37⟧ and that you should return to the Temple of the Moon as soon as you can. When you arrive, speak to Priestess Alathea. I believe it has something to do with your progressing so well in our ways.",
+  "quest:5632:details:1": "Again, return to ⟦E37⟧ when you can.",
+  "quest:5632:completion:0": "Wonderful, you've returned home, ⟦50⟧. It always pleases Tyrande and myself when those we've ⟦E38⟧ go out into the world and return to us safely. How have things been with you? Does ⟦E23⟧ still bless your travels? Perhaps after we speak more about the business at hand, you could tell me more of your travels.",
+  "quest:5633:obj:0": "Speak to Priestess Alathea in ⟦E37⟧.",
+  "quest:5633:details:0": "Greetings, ⟦51⟧. Good to see you here in our great halls. A ⟦E40⟧ be on you and your kind.",
+  "quest:5633:details:1": "While you were traveling through our lands, a priestess of your temple came here seeking you. She said that you were to return to the Temple of the Moon as soon as possible. I'm sorry I can't tell you more, but it did sound important. When you get to the temple, speak to a Priestess Alathea.",
+  "quest:5633:completion:0": "Wonderful, you've returned home, ⟦52⟧. It always pleases Tyrande and myself when those we've ⟦E38⟧ go out into the world and return to us safely. How have things been with you? Does ⟦E23⟧ still bless your travels? Perhaps after we speak more about the business at hand, you could tell me more of your travels.",
+  "quest:5634:obj:0": "Speak to High Priestess Laurena in ⟦E41⟧.",
+  "quest:5634:details:0": "You're needed in ⟦E41⟧, ⟦53⟧. The High Priestess there, Laurena, says it's time for you to prove you're worthy of the next ⟦E42⟧ of your training. Don't waste too much time finding your way there. You can find her in the Cathedral of Light in the center of the city. Give her my regards, and prove how worthy you are of such a calling. The Light be with you, ⟦54⟧.",
+  "quest:5634:completion:0": "I'm glad you've arrived, ⟦55⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.",
+  "quest:5634:completion:1": "There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:5635:obj:0": "Speak to High Priestess Laurena in ⟦E41⟧.",
+  "quest:5635:details:0": "You've caught the attention of our superiors, ⟦56⟧. They've asked you travel to the Cathedral of Light in ⟦E41⟧ as soon as possible. Apparently they feel you've proven yourself already and are prepared to further your training. When you get there, find High Priestess Laurena. She will be able to guide you further. Good luck, and may the Light be with you.",
+  "quest:5635:completion:0": "I'm glad you've arrived, ⟦57⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.",
+  "quest:5635:completion:1": "There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:5636:obj:0": "Speak to High Priestess Laurena in ⟦E41⟧.",
+  "quest:5636:details:0": "⟦E23⟧ bless you, good ⟦58⟧. I hope your Light finds you and protects you well this day.",
+  "quest:5636:details:1": "One of your priests was here not long ago looking for you. He mentioned you returning to the Cathedral of Light as soon as possible to speak with High Priestess Laurena. It seems you've done well to garner such attention. I wouldn't spend too much time here--your people have need of you.",
+  "quest:5636:completion:0": "I'm glad you've arrived, ⟦59⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.",
+  "quest:5636:completion:1": "There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:5637:obj:0": "Speak to High Priestess Laurena in ⟦E41⟧.",
+  "quest:5637:details:0": "Time's come for you to head to ⟦E41⟧, ⟦60⟧. High Priestess Laurena in the Cathedral of Light wants to speak to you. Gotta be somethin' really good or really bad for the High Priestess to want you there personally, but I'm guessin' you've only done well for yourself and it's a good thing that she wants to speak to ya.",
+  "quest:5637:details:1": "But don't waste too much time 'round here. I'd head there as soon as you can.",
+  "quest:5637:completion:0": "I'm glad you've arrived, ⟦61⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.",
+  "quest:5637:completion:1": "There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:5638:obj:0": "Speak to High Priestess Laurena in ⟦E41⟧.",
+  "quest:5638:details:0": "Just a short time ago, one of your priests was here looking for you, ⟦62⟧. He said that if I were to see you, I should direct you towards the Cathedral of Light. He said it was very important, but I would not be overly concerned if I were you. His demeanor seemed positive... as though it were good news. I wouldn't take too long in making my way there if I were you.",
+  "quest:5638:details:1": "⟦E23⟧ be with you, good ⟦63⟧.",
+  "quest:5638:completion:0": "I'm glad you've arrived, ⟦64⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.",
+  "quest:5638:completion:1": "There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:5639:obj:0": "Speak to High Priestess Laurena in ⟦E41⟧.",
+  "quest:5639:details:0": "You're needed in ⟦E41⟧, ⟦65⟧. The High Priestess there, Laurena, says it's time for you to prove you're worthy of the next ⟦E42⟧ of your training. Don't waste too much time finding your way there. You can find her in the Cathedral of Light in the center of the city. Give her my regards, and prove how worthy you are of such a calling. The Light be with you, ⟦66⟧.",
+  "quest:5639:completion:0": "I'm glad you've arrived, ⟦67⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.",
+  "quest:5639:completion:1": "There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:5652:obj:0": "Speak to Ur'kyo in ⟦E43⟧.",
+  "quest:5652:details:0": "I sent here to make sure that you not wander too far from home, ⟦68⟧. They send me to make sure you return home because Ur'kyo, greatest of our priests, wish to speak to you. You go there. You got to the Valley of Spirits in the orc city and you speak to Ur'kyo. He wait for you now.",
+  "quest:5652:completion:0": "You would do well to pay heed to this lesson, young one. The ⟦E44⟧ will be a great boon to you in ⟦E24⟧. Later I will have tests for you to further yourself and prove your worth to the tribe.",
+  "quest:5654:obj:0": "Speak to Ur'kyo in ⟦E43⟧.",
+  "quest:5654:details:0": "It be time for you to meet with Ur'kyo, ⟦69⟧. He be in the Valley of Spirits in the orc city. Go there and speak to him. It is time you learn more of the old ways of our kind. It time you be brought into the circle and made a true priest of our tribe.",
+  "quest:5654:completion:0": "You would do well to pay heed to this lesson, young one. The ⟦E44⟧ will be a great boon to you in ⟦E24⟧. Later I will have tests for you to further yourself and prove your worth to the tribe."
+ },
+ "context": {
+  "quest:3085": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek",
+   "turner": "Ken'jai"
+  },
+  "quest:3097": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Shadow Priest Sarvis",
+   "turner": "Dark Cleric Duesten"
+  },
+  "quest:3103": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Marshal McBride",
+   "turner": "Priestess Anetta"
+  },
+  "quest:3110": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm",
+   "turner": "Branstock Khalder"
+  },
+  "quest:3119": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Conservator Ilthalaine",
+   "turner": "Shanda"
+  },
+  "quest:5621": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Laurna Morninglight",
+   "turner": "Laurna Morninglight"
+  },
+  "quest:5622": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Shanda",
+   "turner": "Laurna Morninglight"
+  },
+  "quest:5623": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Priestess Anetta",
+   "turner": "Priestess Josetta"
+  },
+  "quest:5624": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Priestess Josetta",
+   "turner": "Priestess Josetta"
+  },
+  "quest:5625": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Maxan Anvol",
+   "turner": "Maxan Anvol"
+  },
+  "quest:5626": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Branstock Khalder",
+   "turner": "Maxan Anvol"
+  },
+  "quest:5648": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "horde",
+   "giver": "Tai'jin",
+   "turner": "Tai'jin"
+  },
+  "quest:5649": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "horde",
+   "giver": "Ken'jai",
+   "turner": "Tai'jin"
+  },
+  "quest:5650": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "horde",
+   "giver": "Dark Cleric Beryl",
+   "turner": "Dark Cleric Beryl"
+  },
+  "quest:5651": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 4,
+   "side": "horde",
+   "giver": "Dark Cleric Duesten",
+   "turner": "Dark Cleric Beryl"
+  },
+  "quest:5627": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Priestess Alathea",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5628": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Priestess Josetta",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5629": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Laurna Morninglight",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5630": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Maxan Anvol",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5631": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Brother Joshua",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5632": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Nara Meideros",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5633": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Braenna Flintcrag",
+   "turner": "Priestess Alathea"
+  },
+  "quest:5634": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Lariia",
+   "turner": "High Priestess Laurena"
+  },
+  "quest:5635": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Maxan Anvol",
+   "turner": "High Priestess Laurena"
+  },
+  "quest:5636": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Laurna Morninglight",
+   "turner": "High Priestess Laurena"
+  },
+  "quest:5637": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Priestess Josetta",
+   "turner": "High Priestess Laurena"
+  },
+  "quest:5638": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Nara Meideros",
+   "turner": "High Priestess Laurena"
+  },
+  "quest:5639": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "High Priest Rohan",
+   "turner": "High Priestess Laurena"
+  },
+  "quest:5652": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Ur'kyo",
+   "turner": "Ur'kyo"
+  },
+  "quest:5654": {
+   "zone_en": "Priest",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Var'jun",
+   "turner": "Ur'kyo"
+  }
+ },
+ "known": {
+  "quest:3085": {
+   "title": "لوحِ مقدس"
+  },
+  "quest:3097": {
+   "title": "طومارِ مقدس"
+  },
+  "quest:3103": {
+   "title": "نامهٔ مقدس"
+  },
+  "quest:3110": {
+   "title": "رونِ مقدس"
+  },
+  "quest:3119": {
+   "title": "نشانِ مقدس"
+  },
+  "quest:5621": {
+   "title": "جامهٔ ماه"
+  },
+  "quest:5622": {
+   "title": "رضایت الون"
+  },
+  "quest:5623": {
+   "title": "رضایت نور"
+  },
+  "quest:5624": {
+   "title": "جامهٔ نور"
+  },
+  "quest:5625": {
+   "title": "جامهٔ نور"
+  },
+  "quest:5626": {
+   "title": "رضایت نور"
+  },
+  "quest:5648": {
+   "title": "جامهٔ معنویت"
+  },
+  "quest:5649": {
+   "title": "رضایت معنویت"
+  },
+  "quest:5650": {
+   "title": "جامهٔ تاریکی"
+  },
+  "quest:5651": {
+   "title": "رضایت تاریکی"
+  },
+  "quest:5627": {
+   "title": "ستاره‌های الون"
+  },
+  "quest:5628": {
+   "title": "بازگشت به خانه"
+  },
+  "quest:5629": {
+   "title": "بازگشت به خانه"
+  },
+  "quest:5630": {
+   "title": "بازگشت به خانه"
+  },
+  "quest:5631": {
+   "title": "بازگشت به خانه"
+  },
+  "quest:5632": {
+   "title": "بازگشت به خانه"
+  },
+  "quest:5633": {
+   "title": "بازگشت به خانه"
+  },
+  "quest:5634": {
+   "title": "دعای مأجورانه"
+  },
+  "quest:5635": {
+   "title": "دعای مأجورانه"
+  },
+  "quest:5636": {
+   "title": "دعای مأجورانه"
+  },
+  "quest:5637": {
+   "title": "دعای مأجورانه"
+  },
+  "quest:5638": {
+   "title": "دعای مأجورانه"
+  },
+  "quest:5639": {
+   "title": "دعای مأجورانه"
+  },
+  "quest:5652": {
+   "title": "نفرینِ ضعف"
+  },
+  "quest:5654": {
+   "title": "نفرینِ ضعف"
+  }
+ }
+}

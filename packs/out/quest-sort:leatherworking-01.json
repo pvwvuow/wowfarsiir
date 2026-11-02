@@ -1,0 +1,703 @@
+{
+ "pack": "quest-sort:leatherworking-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:leatherworking-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Embossed Leather Gloves",
+   "fa": "دستکشِ چرمِ برجسته",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Embossed Leather Boots",
+   "fa": "چکمهٔ چرمِ برجسته",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Leather",
+   "fa": "چرم",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Moonglow Vest",
+   "fa": "جلیقهٔ مه‌فروز",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Thick Leather",
+   "fa": "چرم ضخیم",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Feathermoon Stronghold",
+   "fa": "سنگر فیدرمون",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Wildvine",
+   "fa": "پیچک وحشی",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Turtle Scale",
+   "fa": "فلس لاک‌پشت",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Turtle Scale Gloves",
+   "fa": "دستکشِ فلسِ لاک‌پشت",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Nightscape Pants",
+   "fa": "شلوارِ شب‌چشم‌انداز",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Nightscape Boots",
+   "fa": "چکمهٔ شب‌چشم‌انداز",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Turtle Scale Bracers",
+   "fa": "ساعدبندِ فلسِ لاک‌پشت",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Pratt's Letter",
+   "fa": "نامهٔ پرت",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Camp Mojache",
+   "fa": "اردوگاه موجاچه",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Jangdor's Letter",
+   "fa": "نامهٔ جانگ‌دور",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Tough Scorpid Gloves",
+   "fa": "دستکشِ عقربِ سفت",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Dragonscale Leatherworking",
+   "fa": "چرم‌دوزیِ فلس اژدها",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "Elemental Leatherworking",
+   "fa": "چرم‌دوزیِ المانی",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "Tribal Leatherworking",
+   "fa": "چرم‌دوزیِ قبیله‌ای",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "dragonkin",
+   "fa": "اژدهازاد",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Wild Leather Vest",
+   "fa": "جلیقهٔ چرمِ وحشی",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Wild Leather Helmet",
+   "fa": "کلاه‌خودِ چرمِ وحشی",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Heart of Fire",
+   "fa": "قلبِ آتش",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Globe of Water",
+   "fa": "گویِ آب",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Core of Earth",
+   "fa": "هستهٔ زمین",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Breath of Wind",
+   "fa": "نفسِ باد",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Sarah",
+   "fa": "سارا",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Searing Gorge",
+   "fa": "تنگهٔ سوزان",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Elemental",
+   "fa": "بنیادی",
+   "kind": "cls"
+  },
+  "E39": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E41": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Embossed Leather Gloves": "دستکشِ چرمِ برجسته",
+  "Embossed Leather Boots": "چکمهٔ چرمِ برجسته",
+  "Leather": "چرم",
+  "Darnassus": "دارناسوس",
+  "Moonglow Vest": "جلیقهٔ مه‌فروز",
+  "Thick Leather": "چرم ضخیم",
+  "Feathermoon Stronghold": "سنگر فیدرمون",
+  "armor": "زره",
+  "Armor": "زره",
+  "Wildvine": "پیچک وحشی",
+  "Turtle Scale": "فلس لاک‌پشت",
+  "Turtle Scale Gloves": "دستکشِ فلسِ لاک‌پشت",
+  "Head": "سر",
+  "Nightscape Pants": "شلوارِ شب‌چشم‌انداز",
+  "Nightscape Boots": "چکمهٔ شب‌چشم‌انداز",
+  "blessing": "برکت",
+  "Turtle Scale Bracers": "ساعدبندِ فلسِ لاک‌پشت",
+  "Pratt's Letter": "نامهٔ پرت",
+  "Camp Mojache": "اردوگاه موجاچه",
+  "Jangdor's Letter": "نامهٔ جانگ‌دور",
+  "Thunder Bluff": "تاندر بلاف",
+  "Tough Scorpid Gloves": "دستکشِ عقربِ سفت",
+  "Azshara": "آزشارا",
+  "Dragonscale Leatherworking": "چرم‌دوزیِ فلس اژدها",
+  "Elemental Leatherworking": "چرم‌دوزیِ المانی",
+  "Tribal Leatherworking": "چرم‌دوزیِ قبیله‌ای",
+  "ability": "توانایی",
+  "dragonkin": "اژدهازاد",
+  "Wild Leather Vest": "جلیقهٔ چرمِ وحشی",
+  "Wild Leather Helmet": "کلاه‌خودِ چرمِ وحشی",
+  "Feralas": "فرالاس",
+  "Heart of Fire": "قلبِ آتش",
+  "Globe of Water": "گویِ آب",
+  "Core of Earth": "هستهٔ زمین",
+  "Breath of Wind": "نفسِ باد",
+  "Sarah": "سارا",
+  "Searing Gorge": "تنگهٔ سوزان",
+  "Elemental": "بنیادی",
+  "requires": "نیازمند",
+  "Badlands": "بیابان",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$n",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$N",
+  "22": "$n",
+  "23": "$N",
+  "24": "$B",
+  "25": "$B",
+  "26": "$n",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$n",
+  "31": "$R",
+  "32": "$n",
+  "33": "$B",
+  "34": "$B",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$B",
+  "42": "$N",
+  "43": "$N",
+  "44": "$B",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$N",
+  "49": "$B",
+  "50": "$B",
+  "51": "$N",
+  "52": "$n",
+  "53": "$B",
+  "54": "$B",
+  "55": "$N",
+  "56": "$n",
+  "57": "$r",
+  "58": "$n",
+  "59": "$N",
+  "60": "$B",
+  "61": "$B",
+  "62": "$c",
+  "63": "$c",
+  "64": "$c",
+  "65": "$c"
+ },
+ "rows": {
+  "quest:1582:obj:0": "Bring 1 ⟦E1⟧, 5 ⟦E2⟧ and 5 Embossed ⟦E3⟧ Cloaks to Lotherias in ⟦E4⟧.",
+  "quest:1582:details:0": "We in ⟦E4⟧, especially we craftsman, are quite busy. Young adventurers are eager to test themselves in the wilderness, and are in constant need of supplies.",
+  "quest:1582:details:1": "If you can help me fill my orders of leather goods, then perhaps I can teach you an advanced leatherworking technique.",
+  "quest:1582:progress:0": "Greetings, ⟦1⟧.",
+  "quest:1582:completion:0": "Yes, these are good pieces. You have a skilled hand and an eye for detail. Your future as a leatherworker is promising.",
+  "quest:1582:completion:1": "Here, ⟦2⟧. Let me show you the pattern to make the ⟦E5⟧.",
+  "quest:2847:obj:0": "Bring 10 ⟦E6⟧ to Pratt McGrubben in ⟦E7⟧.",
+  "quest:2847:details:0": "⟦3⟧, you're becoming quite skilled as a leatherworker! I know some patterns you might be interested in... Wild ⟦E3⟧ ⟦E8⟧! Wild ⟦E3⟧ taps into the potent and chaotic properties of wildvines, found in areas of lush vegetation and on some of the creatures there. The ⟦E8⟧ made using it is second to none for people of your skill, guaranteed.",
+  "quest:2847:details:1": "I'll teach this to you, but you'll be working for me for a while. The first cost is simply ten pieces of thick leather. After this, we'll talk specifics.",
+  "quest:2847:progress:0": "Like I said, you'll be working for me while you learn about Wild ⟦E3⟧ ⟦E8⟧. Because wildvines are both potent and chaotic, it yields a random but strong benefit to the already strong ⟦E8⟧ you will be making. This knowledge, however, was not easy for me to come by.⟦4⟧⟦5⟧The initial cost to begin this process is ten pieces of thick leather.⟦6⟧⟦7⟧Once that is done, we'll get to the work you need to do in order to obtain the patterns.",
+  "quest:2847:completion:0": "Well ⟦8⟧, I'm glad to have you on board. You've made a smart decision as a leatherworker; those who wear leather ⟦E8⟧ will be clamoring to you once you learn how to make any of the Wild ⟦E3⟧ ⟦E8⟧ pieces.",
+  "quest:2847:completion:1": "Let's get to work - where do you want to start?",
+  "quest:2848:obj:0": "Bring 6 Thick ⟦E9⟧ Kits and a ⟦E10⟧ to Pratt McGrubben in ⟦E7⟧.",
+  "quest:2848:details:0": "Wild ⟦E3⟧ shoulders support the wearer's frame extremely well, offering top notch protection of the upper arms and the shoulders themselves. As with all Wild ⟦E3⟧ ⟦E8⟧, a potent but random benefit is applied to the item as the wildvine is stitched in.",
+  "quest:2848:details:1": "For this pattern, I will require six thick ⟦E8⟧ kits and a wildvine. That shouldn't be too tall of an order for you to fill.",
+  "quest:2848:progress:0": "Do you have the six thick ⟦E8⟧ kits and the wildvine I require?⟦9⟧⟦10⟧Don't think of making ⟦E8⟧ kits as monotonous work; the steady fashioning method you develop as you ply your trade on these kits helps develop your skills for the intricate work needed to make Wild ⟦E3⟧ ⟦E8⟧.⟦11⟧⟦12⟧See - there's a real reason behind what you're making for me...",
+  "quest:2848:completion:0": "These ⟦E8⟧ kits are of solid quality, ⟦13⟧. If there is one thing I demand in not only my work, but the work of those in my employ, it is quality.",
+  "quest:2848:completion:1": "You've done well to earn this pattern; I hope it brings you the rewards it has brought me.",
+  "quest:2848:completion:2": "Gains",
+  "quest:2849:obj:0": "Bring 2 ⟦E11⟧ Breastplates, 2 ⟦E12⟧, and a ⟦E10⟧ to Pratt McGrubben in ⟦E7⟧.",
+  "quest:2849:details:0": "Wild ⟦E3⟧ vests are the staple of any Wild ⟦E3⟧ ⟦E8⟧ set. The frame of the vest blends with the wildvine to produce a product that offers maximum protection of the torso while allowing for the potent magic to work its way through the garment.",
+  "quest:2849:details:1": "For this pattern, I will require two ⟦E11⟧ breastplates, two sets of ⟦E11⟧ gloves, and a wildvine. It's a tall order, but one you should have little difficulty in filling for me.",
+  "quest:2849:progress:0": "Do you have the two ⟦E11⟧ breastplates and gloves I ordered? Also, don't forget the wildvine!⟦14⟧⟦15⟧Even with the earliest patterns, we learn that the fundamentals of shape translate well into more difficult garments. Though different items, the shape of the ⟦E11⟧ breastplates prepares you for the detailing needed to make a Wild ⟦E3⟧ vest.⟦16⟧⟦17⟧And the gloves... well, they're just for my own benefit. Remember, you're working for me!",
+  "quest:2849:completion:0": "These are some very nice pieces here, ⟦18⟧. The craftsmanship and care put in to making these alone would fetch several silver more than the average piece made.",
+  "quest:2849:completion:1": "You've filled my order, and with that comes your reward. The knowledge of making Wild ⟦E3⟧ vests is now yours!",
+  "quest:2850:obj:0": "Bring 2 Nightscape Tunics, 2 Nightscape Headbands, and a ⟦E10⟧ to Pratt McGrubben in ⟦E7⟧.",
+  "quest:2850:details:0": "A Wild ⟦E3⟧ helmet offers the wearer superior protection to the vital areas of the head without a sacrifice in comfort. As with all Wild ⟦E3⟧ ⟦E8⟧, the integrated wildvine yields a powerful but random enhancement to the frame of the helm. ⟦E3⟧ wearers will definitely want this piece!",
+  "quest:2850:details:1": "For this pattern, I will need two Nightscape tunics, two Nightscape headbands, and a wildvine. Complete this order and the pattern will be yours!",
+  "quest:2850:progress:0": "I need those tunics and headbands made, and I also need that piece of wildvine before I will share with you the knowledge of Wild ⟦E3⟧ helmets.⟦19⟧⟦20⟧⟦E13⟧ gear is highly coveted amongst adventurers, whether it be a disarmingly simple headband or a full-covering helmet. The fundamentals of creating valued head gear remain constant, no matter what the cosmetic appearance of the gear is.",
+  "quest:2850:completion:0": "This Nightscape equipment you have supplied fills the order perfectly, ⟦21⟧. I expect no less from a leatherworker of your caliber.",
+  "quest:2850:completion:1": "You have definitely earned this pattern. I give it to you freely, and hope you will profit from it accordingly.",
+  "quest:2851:obj:0": "Bring 2 ⟦E14⟧, 2 ⟦E15⟧, and 2 Wildvines to Pratt McGrubben in ⟦E7⟧.",
+  "quest:2851:details:0": "You've learned quite a bit now, ⟦22⟧; still, there is more for you to learn. Next are Wild ⟦E3⟧ boots, the cornerstone of any set.",
+  "quest:2851:details:1": "These boots are crafted to cradle the foot in comfort while bracing it against the hazards of adventuring. The soft soles are a ⟦E16⟧ to those seeking quiet movement in footwear.",
+  "quest:2851:details:2": "For this pattern, I need an order of two Nightscape pants and two Nightscape boots filled. I also will require two wildvines... not just one. When you have all this, let me know.",
+  "quest:2851:progress:0": "The order on the pants, boots, and wildvines needs to be filled before you get the pattern, ⟦23⟧. Are you finished?⟦24⟧⟦25⟧From the earliest pair of boots we learn how to make, we start to understand that a quality boot needs to ride a razor's edge between comfort and function. With both, we are able to create items that allow the wearer to ignore fatigue that would cripple those wearing lower quality goods.",
+  "quest:2851:completion:0": "Once again, you've filled a complex order with the skill of a seasoned professional. You have earned this pattern, as well as my thanks.",
+  "quest:2852:obj:0": "Bring 2 ⟦E11⟧ Helms, 2 ⟦E17⟧, and 2 Wildvines to Pratt McGrubben in ⟦E7⟧.",
+  "quest:2852:details:0": "With the basics down, you are ready to master more complex fare, ⟦26⟧. Wild ⟦E3⟧ leggings are some of the sturdiest and powerful leather gear around. The waist, thighs, calves, and the vitals - all are given tremendous protection. Coupled with the enhancement that the wildvine provides, adventurers who own it will thank you each time they see you.",
+  "quest:2852:details:1": "For this pattern, I need an order of two ⟦E11⟧ helms, two ⟦E11⟧ bracers, and two wildvines filled.",
+  "quest:2852:progress:0": "Do you have the ⟦E11⟧ bracers and helms ready? Don't forget the two wildvines I need!⟦27⟧⟦28⟧By now, you're starting to realize the potential power that lies in Wild ⟦E3⟧ ⟦E8⟧. An ⟦E8⟧ that has no boundaries in application is nearly invaluable to a leatherworker. The limits are only in the quantities of resources to make the items - not the quality of the finished products!",
+  "quest:2852:completion:0": "Again, you've filled an order without flaw. Perhaps some day I will come to YOU seeking knowledge, eh ⟦29⟧?",
+  "quest:2852:completion:1": "Here is the pattern for the leggings, along with my thanks. Commit this lore to your knowledge, and let your finished products tap into your impressive skills!",
+  "quest:2853:obj:0": "Give ⟦E18⟧ to Telonis, the master leatherworker of ⟦E4⟧.",
+  "quest:2853:details:0": "Well ⟦30⟧, you are the definition of diligence. There is one pattern left for Wild ⟦E3⟧ ⟦E8⟧; you've mastered the others. I won't require you to toil needlessly for the pattern. You've earned it outright, and then some... but I cannot give it to you myself. My teacher, the one who brought me into the craft, is the one who must reward you.",
+  "quest:2853:details:1": "Take this letter to Telonis; he teaches leatherworking in ⟦E4⟧. Show him the letter, and let him acknowledge you as an equal, as I do.",
+  "quest:2853:progress:0": "Greetings, ⟦31⟧... from your countenance I can tell you are a leatherworker as am I. Have you come to draw from my skills, or perhaps you have other business with me?",
+  "quest:2853:completion:0": "Ah yes, Pratt sent you. Though he is a human, he reminds me of us night elves sometimes. His dedication and his talents with leather are impressive. For him to compliment you so in this letter, it is a sign of respect I acknowledge.",
+  "quest:2853:completion:1": "I am aware that he has taught you the art of Wild ⟦E3⟧. Allow me to finish your training with this pattern. Make good use of it; few in the world know the secrets of Wild ⟦E3⟧ cloaks.",
+  "quest:2854:obj:0": "Bring 10 ⟦E6⟧ to Jangdor Swiftstrider in ⟦E19⟧.",
+  "quest:2854:details:0": "⟦32⟧, your skill as a leatherworker precedes you. I possess leatherworking lore you would be wise to acquire... Wild ⟦E3⟧ ⟦E8⟧! Wild ⟦E3⟧ taps into the potent and chaotic properties of wildvines, found in areas of lush vegetation and on some of the creatures there. ⟦E9⟧ made using it is second to none for a crafter of your skill, guaranteed.",
+  "quest:2854:details:1": "I'll teach you, but you'll be working for me for a while. The first cost is simply ten pieces of thick leather. After this, we'll talk specifics.",
+  "quest:2854:progress:0": "We must be clear; you shall be apprenticed to me while you learn the art of Wild ⟦E3⟧ ⟦E8⟧. Because wildvines are both potent and chaotic, it yields a random but strong benefit to the already strong ⟦E8⟧ you will be making. This knowledge, however, was not easy for me to acquire.⟦33⟧⟦34⟧The initial cost to begin this process is ten pieces of thick leather.⟦35⟧⟦36⟧Once that is done, we'll get to the work you need to do in order to obtain the patterns.",
+  "quest:2854:completion:0": "Well ⟦37⟧, I'm glad to have you on board as my apprentice. You've made a wise decision as a leatherworker; those who make use of leather ⟦E8⟧ will be clamoring to you once you learn how to master the art of Wild ⟦E3⟧.",
+  "quest:2854:completion:1": "Let's get to work - where do you want to start?",
+  "quest:2855:obj:0": "Bring 6 Thick ⟦E9⟧ Kits and a ⟦E10⟧ to Jangdor Swiftstrider in ⟦E19⟧.",
+  "quest:2855:details:0": "Wild ⟦E3⟧ shoulders support a wearer's frame extremely well, offering superior protection of the upper arms as well as the shoulders. As with all Wild ⟦E3⟧ ⟦E8⟧, a random yet very potent enhancement is imbued within the item as the wildvine is stitched in.",
+  "quest:2855:details:1": "For this pattern, I will require six thick ⟦E8⟧ kits and a wildvine. That shouldn't be too tall of an order for you to fill.",
+  "quest:2855:progress:0": "Do you have the six thick ⟦E8⟧ kits and the wildvine I require?⟦38⟧⟦39⟧Think of making ⟦E8⟧ kits as a lesson in steady and reliable crafting; the consistent fashioning method you develop as you ply your trade on these kits helps develop your skills for the intricate work needed to make Wild ⟦E3⟧ armors.⟦40⟧⟦41⟧Every lesson has a purpose, ⟦42⟧. It is important to embrace each one accordingly.",
+  "quest:2855:completion:0": "These ⟦E8⟧ kits are of solid quality, ⟦43⟧. If there is one thing I demand in not only my work, but in the work of those I give tutelage to, it is quality.",
+  "quest:2855:completion:1": "You've done well to earn this pattern; I hope it brings you the rewards it has brought me.",
+  "quest:2856:obj:0": "Bring 2 ⟦E11⟧ Breastplates, 2 ⟦E12⟧, and a ⟦E10⟧ to Jangdor Swiftstrider in ⟦E19⟧.",
+  "quest:2856:details:0": "Wild ⟦E3⟧ vests are the staple of any Wild ⟦E3⟧ ⟦E8⟧ set. The frame of the vest and the wildvine weave within it produces a product that offers maximum protection of the torso while allowing for potent magic to work its way through the garment.",
+  "quest:2856:details:1": "For this pattern, I will require two ⟦E11⟧ breastplates, two sets of ⟦E11⟧ gloves, and a wildvine. This is not an easy lesson, but it is one you certainly have the skill to complete.",
+  "quest:2856:progress:0": "Do you have the two ⟦E11⟧ breastplates and gloves? Also, don't forget the wildvine!⟦44⟧⟦45⟧Even with the earliest patterns, we learn that the fundamentals of shape translate well into more difficult garments. Though different items, the shape of the ⟦E11⟧ breastplates prepares you for the detailing needed to make a Wild ⟦E3⟧ vest.⟦46⟧⟦47⟧As you progress through your lessons, the skills I teach will become as art.",
+  "quest:2856:completion:0": "These are some very nice pieces here, ⟦48⟧. The craftsmanship and care put in to making these show you have chosen to dedicate yourself fully to these tasks.",
+  "quest:2856:completion:1": "You've met my requests, and with that comes your reward. The knowledge of making Wild ⟦E3⟧ vests is now yours!",
+  "quest:2857:obj:0": "Bring 2 Nightscape Tunics, 2 Nightscape Headbands, and a ⟦E10⟧ to Jangdor Swiftstrider in ⟦E19⟧.",
+  "quest:2857:details:0": "A Wild ⟦E3⟧ helmet offers the wearer superior protection to the vital areas of the head without a sacrifice in comfort. As with all Wild ⟦E3⟧ ⟦E8⟧, the integrated wildvine yields a powerful but random magic imbuement to the helm's frame. ⟦E3⟧ wearers will definitely want this piece!",
+  "quest:2857:details:1": "For this pattern, I will need two Nightscape tunics, 2 Nightscape headbands, and a wildvine. Complete this lesson and the pattern will be yours!",
+  "quest:2857:progress:0": "I need those tunics and headbands made, and I also need that piece of wildvine before I will share with you the knowledge of Wild ⟦E3⟧ helmets.⟦49⟧⟦50⟧⟦E13⟧ gear is highly coveted amongst adventurers, whether it be a disarmingly simple headband or a full-covering helmet. The fundamentals of creating valued head gear remain constant, no matter what the cosmetic appearance of the gear is.",
+  "quest:2857:completion:0": "This Nightscape equipment you have supplied perfectly meets the requirements I have given to you, ⟦51⟧. I expect no less from a leatherworker of your caliber.",
+  "quest:2857:completion:1": "You have earned the honor of crafting Wild ⟦E3⟧ helmets. I give this pattern to you freely, and hope you will profit from it accordingly.",
+  "quest:2859:obj:0": "Bring 2 ⟦E11⟧ Helms, 2 ⟦E17⟧, and 2 Wildvines to Jangdor Swiftstrider in ⟦E19⟧.",
+  "quest:2859:details:0": "You are ready to master more complex lessons, ⟦52⟧. Wild ⟦E3⟧ leggings are some of the sturdiest and powerful leather gear around. The waist, thighs, calves, and the vitals - all are given tremendous protection. Coupled with the enhancement that the wildvine provides, adventurers who own it will thank you each time they see you.",
+  "quest:2859:details:1": "For you to gain this pattern, I need two ⟦E11⟧ helms, two ⟦E11⟧ bracers, and two wildvines.",
+  "quest:2859:progress:0": "Do you have the ⟦E11⟧ bracers and helms ready? Don't forget the two wildvines I require.⟦53⟧⟦54⟧By now, you're starting to realize the potential power that lies in Wild ⟦E3⟧ ⟦E8⟧. An ⟦E8⟧ that has no boundaries in application is nearly invaluable to a leatherworker. The limits are only in the quantities of resources to make the items - not the quality of the finished products!",
+  "quest:2859:completion:0": "Again, you've completed my task without flaw. Perhaps some day I will come to YOU seeking knowledge, eh ⟦55⟧?",
+  "quest:2859:completion:1": "Here is the pattern for the leggings, along with my thanks. Commit this lore to your knowledge, and let your finished products tap into your impressive skills!",
+  "quest:2860:obj:0": "Give ⟦E20⟧ to Una, the master leatherworker of ⟦E21⟧.",
+  "quest:2860:details:0": "⟦56⟧, you have learned all I am able to teach you. There is, however, one remaining pattern for Wild ⟦E3⟧ ⟦E8⟧. I will not require you to toil needlessly for this; you've earned it outright, and then some. This pattern, however, is one that I cannot freely share with you.",
+  "quest:2860:details:1": "My teacher, the one who brought me into the craft, is the one who must reward you. Take this note to Una; she teaches leatherworking in ⟦E21⟧. Show her the letter, and let her acknowledge you as an equal, as I do.",
+  "quest:2860:progress:0": "Greetings, ⟦57⟧... from your countenance I can tell you are a leatherworker as am I. Have you come to draw from my skills, or perhaps you have other business with me?",
+  "quest:2860:completion:0": "Ah yes, Jangdor sent you. I am pleased to see that one of my finest students now has a student of his own.",
+  "quest:2860:completion:1": "His dedication and his talents with leather are impressive. For him to compliment you so in this letter, it is a sign of respect I acknowledge.",
+  "quest:2860:completion:2": "I am aware that he has taught you the art of Wild ⟦E3⟧. Allow me to finish your training with this pattern. Make good use of it; few in the world know the secrets of Wild ⟦E3⟧ cloaks.",
+  "quest:2858:obj:0": "Bring 2 ⟦E14⟧, 2 ⟦E15⟧, and 2 Wildvines to Jangdor Swiftstrider in ⟦E19⟧.",
+  "quest:2858:details:0": "Your knowledge of Wild ⟦E3⟧ ⟦E8⟧ grows, ⟦58⟧; still, there is more for you to learn.",
+  "quest:2858:details:1": "Wild ⟦E3⟧ boots are the cornerstone of any set. Such boots are crafted to cradle the foot in comfort while bracing it against the hazards of adventuring. The soft soles are a ⟦E16⟧ to those seeking quiet movement in footwear.",
+  "quest:2858:details:2": "For this pattern, I need two Nightscape pants and two Nightscape boots crafted. I also will require two wildvines... not just one. When you have these items, we will proceed.",
+  "quest:2858:progress:0": "The pants, boots, and wildvines need to be delivered to me before you learn the pattern, ⟦59⟧. Have you done as I asked?⟦60⟧⟦61⟧From the earliest pair of boots we learn how to make, we start to understand that a quality boot needs to ride a razor's edge between comfort and function. With both, we are able to create items that allow the wearer to ignore fatigue that would cripple those wearing lower quality goods.",
+  "quest:2858:completion:0": "Once again, you have produced items with the skill of a seasoned professional. You have earned this pattern, as well as my congratulations.",
+  "quest:5141:obj:0": "Bring 2 Tough Scorpid Breastplates, 2 ⟦E22⟧, and 10 Worn Dragonscales to Peter Galen in ⟦E23⟧.",
+  "quest:5141:obj:1": "Completing this quest will give you access to the ⟦E24⟧ arts.",
+  "quest:5141:obj:2": "The completion of this quest will prevent you from learning ⟦E25⟧ and ⟦E26⟧; be sure this is the path you wish to follow before doing so.",
+  "quest:5141:details:0": "Dragonscale leatherworking isn't easy, but it's extremely rewarding. I'll teach you how to make this fine mail ⟦E8⟧, but only if you agree to certain conditions.",
+  "quest:5141:details:1": "By choosing this path, you agree never to learn elemental or tribal leatherworking; there is only room for one of the three at the apex of the craft. Furthermore, I'll need some samples of your best work involving scorpid ⟦E8⟧. Finally, I'll need proof of your ⟦E27⟧ to acquire the staple of the trade: scales of the ⟦E28⟧.",
+  "quest:5141:progress:0": "If you're ready to commit to a permanent decision by becoming a dragonscale leatherworker, then I'm ready to take you on as a student. Just bring to me the things I asked for, and we'll begin your education.",
+  "quest:5141:completion:0": "I'll hand it to you - it takes a strong will to make a permanent decision like you've just done. I assure you, dragonscale leatherworking will prove to be a profitable and rewarding path for you to follow.",
+  "quest:5141:completion:1": "To train in the art for the future, simply speak to me and I will make available any knowledge that you have yet to commit as yours.",
+  "quest:5143:obj:0": "Bring a ⟦E29⟧ and a ⟦E30⟧ to Caryssia Moonhunter in ⟦E31⟧.",
+  "quest:5143:obj:1": "Completing this quest will give you access to the ⟦E26⟧ arts.",
+  "quest:5143:obj:2": "The completion of this quest will prevent you from learning ⟦E24⟧ and ⟦E25⟧; be sure this is the path you wish to follow before doing so.",
+  "quest:5143:details:0": "To learn tribal leatherworking demands an understanding of how primal nature truly is; I know that you have already mastered the art of making wild leather ⟦E8⟧, and I am willing to complete your training.",
+  "quest:5143:details:1": "Know this, ⟦62⟧: by choosing this path you agree never to learn dragonscale or elemental leatherworking; there is only room for practice of one of the three arts. Furthermore, bring to me the finest samples of your wild leather ⟦E8⟧. From there, we will begin your mastery.",
+  "quest:5143:progress:0": "Nature is a force that must be appeased before you hope to learn how to bend its will into your leather garments. Bring me your offering to this force, and I will make sure you are heard.",
+  "quest:5143:completion:0": "You've given your finest offerings, and nature will soon permit you to bend her to your will. Once I have finished my tutelage, your work will be a force of nature unto itself.",
+  "quest:5143:completion:1": "To train in the art for the future, simply speak to me and I will make available any knowledge that you have yet to commit as yours.",
+  "quest:5144:obj:0": "Bring 2 ⟦E32⟧, 2 ⟦E33⟧, 2 ⟦E34⟧, and 2 ⟦E35⟧ to ⟦E36⟧ Tanner in ⟦E37⟧.",
+  "quest:5144:obj:1": "Completing this quest will give you access to the ⟦E25⟧ arts.",
+  "quest:5144:obj:2": "The completion of this quest will prevent you from learning ⟦E24⟧ and ⟦E26⟧; be sure this is the path you wish to follow before doing so.",
+  "quest:5144:details:0": "⟦E38⟧ leatherworking is what I know, and if you're willing to open your mind to the greater powers of substance, I will share with you all there is to learn.",
+  "quest:5144:details:1": "Know this, ⟦63⟧: by choosing this path you agree never to learn dragonscale or tribal leatherworking; there is only room for practice of one of the three arts. Furthermore, I'll need adequate proof that you are in tune with the elements of nature; to that end, bring me the purest essences of fire, water, earth, and wind.",
+  "quest:5144:progress:0": "Making this kind of leather-based ⟦E8⟧ ⟦E39⟧ patience and dedication. Once you have cast your lot with the elements, there is no turning your back on them. Bring me proof of your worthiness, and we'll get started.",
+  "quest:5144:completion:0": "You've cast your lot, and the elements accept you. Once I have finished my tutelage, you shall command the will to craft the finest of leather garbs.",
+  "quest:5144:completion:1": "To train in the art for the future, simply speak to me and I will make available any knowledge that you have yet to commit as yours.",
+  "quest:5145:obj:0": "Bring 2 Tough Scorpid Breastplates, 2 ⟦E22⟧, and 10 Worn Dragonscales to Thorkaf Dragoneye in the ⟦E40⟧.",
+  "quest:5145:obj:1": "Completing this quest will give you access to the ⟦E24⟧ arts.",
+  "quest:5145:obj:2": "The completion of this quest will prevent you from learning ⟦E25⟧ and ⟦E26⟧; be sure this is the path you wish to follow before doing so.",
+  "quest:5145:details:0": "Dragonscale leatherworking isn't easy, but it's extremely rewarding. I'll teach you how to make this fine mail ⟦E8⟧, but only if you agree to certain conditions.",
+  "quest:5145:details:1": "By choosing this path, you agree never to learn elemental or tribal leatherworking; there is only room for one of the three at the apex of the craft. Furthermore, I'll need some samples of your best work involving scorpid ⟦E8⟧. Finally, I'll need proof of your ⟦E27⟧ to acquire the staple of the trade: scales of the ⟦E28⟧.",
+  "quest:5145:progress:0": "If you're ready to commit to a permanent decision by becoming a dragonscale leatherworker, then I'm ready to take you on as a student. Just bring to me the things I asked for, and we'll begin your education.",
+  "quest:5145:completion:0": "I'll hand it to you - it takes a strong will to make a permanent decision like you've just done. I assure you, dragonscale leatherworking will prove to be a profitable and rewarding path for you to follow.",
+  "quest:5145:completion:1": "To train in the art for the future, simply speak to me and I will make available any knowledge that you have yet to commit as yours.",
+  "quest:5146:obj:0": "Bring 2 ⟦E32⟧, 2 ⟦E33⟧, 2 ⟦E34⟧, and 2 ⟦E35⟧ to Brumn Winterhoof in the Arathi Mountains.",
+  "quest:5146:obj:1": "Completing this quest will give you access to the ⟦E25⟧ arts.",
+  "quest:5146:obj:2": "The completion of this quest will prevent you from learning ⟦E24⟧ and ⟦E26⟧; be sure this is the path you wish to follow before doing so.",
+  "quest:5146:details:0": "⟦E38⟧ leatherworking is what I know, and if you're willing to open your mind to the greater powers of substance, I will share with you all there is to learn.",
+  "quest:5146:details:1": "Know this, ⟦64⟧: by choosing this path you agree never to learn dragonscale or tribal leatherworking; there is only room for practice of one of the three arts. Furthermore, I'll need adequate proof that you are in tune with the elements of nature; to that end, bring me the purest essences of fire, water, earth, and wind.",
+  "quest:5146:progress:0": "Making this kind of leather-based ⟦E8⟧ ⟦E39⟧ patience and dedication. Once you have cast your lot with the elements, there is no turning your back on them. Bring me proof of your worthiness, and we'll get started.",
+  "quest:5146:completion:0": "You've cast your lot, and the elements accept you. Once I have finished my tutelage, you shall command the will to craft the finest of leather garbs.",
+  "quest:5146:completion:1": "To train in the art for the future, simply speak to me and I will make available any knowledge that you have yet to commit as yours.",
+  "quest:5148:obj:0": "Bring a ⟦E29⟧ and a ⟦E30⟧ to Se'Jib in ⟦E41⟧.",
+  "quest:5148:obj:1": "Completing this quest will give you access to the ⟦E26⟧ arts.",
+  "quest:5148:obj:2": "The completion of this quest will prevent you from learning ⟦E24⟧ and ⟦E25⟧; be sure this is the path you wish to follow before doing so.",
+  "quest:5148:details:0": "To learn tribal leatherworking demands an understanding of how primal nature truly is; I know that you have already mastered the art of making wild leather ⟦E8⟧, and I am willing to complete your training.",
+  "quest:5148:details:1": "Know this, ⟦65⟧: by choosing this path you agree never to learn dragonscale or elemental leatherworking; there is only room for practice of one of the three arts. Furthermore, bring to me the finest samples of your wild leather ⟦E8⟧. From there, we will begin your mastery.",
+  "quest:5148:progress:0": "Nature is a force that must be appeased before you hope to learn how to bend its will into your leather garments. Bring me your offering to this force, and I will make sure you are heard.",
+  "quest:5148:completion:0": "You've given your finest offerings, and nature will soon permit you to bend her to your will. Once I have finished my tutelage, your work will be a force of nature unto itself.",
+  "quest:5148:completion:1": "To train in the art for the future, simply speak to me and I will make available any knowledge that you have yet to commit as yours."
+ },
+ "context": {
+  "quest:1582": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Lotherias",
+   "turner": "Lotherias"
+  },
+  "quest:2847": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2848": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2849": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2850": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2851": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2852": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Pratt McGrubben"
+  },
+  "quest:2853": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Pratt McGrubben",
+   "turner": "Telonis"
+  },
+  "quest:2854": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:2855": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:2856": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:2857": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:2859": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:2860": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 45,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Una"
+  },
+  "quest:2858": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 48,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider",
+   "turner": "Jangdor Swiftstrider"
+  },
+  "quest:5141": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Peter Galen",
+   "turner": "Peter Galen"
+  },
+  "quest:5143": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Caryssia Moonhunter",
+   "turner": "Caryssia Moonhunter"
+  },
+  "quest:5144": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Sarah Tanner",
+   "turner": "Sarah Tanner"
+  },
+  "quest:5145": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 55,
+   "side": "horde",
+   "giver": "Thorkaf Dragoneye",
+   "turner": "Thorkaf Dragoneye"
+  },
+  "quest:5146": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 55,
+   "side": "horde",
+   "giver": "Brumn Winterhoof",
+   "turner": "Brumn Winterhoof"
+  },
+  "quest:5148": {
+   "zone_en": "Leatherworking",
+   "zone_fa": "",
+   "level": 55,
+   "side": "horde",
+   "giver": "Se'Jib",
+   "turner": "Se'Jib"
+  }
+ },
+ "known": {
+  "quest:1582": {
+   "title": "جلیقهٔ ماه‌تاب"
+  },
+  "quest:2847": {
+   "title": "زرهٔ چرمِ وحشی"
+  },
+  "quest:2848": {
+   "title": "شانه‌پوشِ چرمِ وحشی"
+  },
+  "quest:2849": {
+   "title": "جلیقهٔ چرمِ وحشی"
+  },
+  "quest:2850": {
+   "title": "کلاه‌خودِ چرمِ وحشی"
+  },
+  "quest:2851": {
+   "title": "چکمهٔ چرمِ وحشی"
+  },
+  "quest:2852": {
+   "title": "پاافزارِ چرمِ وحشی"
+  },
+  "quest:2853": {
+   "title": "استاد چرمِ وحشی"
+  },
+  "quest:2854": {
+   "title": "زرهٔ چرمِ وحشی"
+  },
+  "quest:2855": {
+   "title": "شانه‌پوشِ چرمِ وحشی"
+  },
+  "quest:2856": {
+   "title": "جلیقهٔ چرمِ وحشی"
+  },
+  "quest:2857": {
+   "title": "کلاه‌خودِ چرمِ وحشی"
+  },
+  "quest:2859": {
+   "title": "پاافزارِ چرمِ وحشی"
+  },
+  "quest:2860": {
+   "title": "استاد چرمِ وحشی"
+  },
+  "quest:2858": {
+   "title": "چکمهٔ چرمِ وحشی"
+  },
+  "quest:5141": {
+   "title": "چرم‌دوزیِ فلس اژدها"
+  },
+  "quest:5143": {
+   "title": "چرم‌دوزیِ قبیله‌ای"
+  },
+  "quest:5144": {
+   "title": "چرم‌دوزیِ المانی"
+  },
+  "quest:5145": {
+   "title": "چرم‌دوزیِ فلس اژدها"
+  },
+  "quest:5146": {
+   "title": "چرم‌دوزیِ المانی"
+  },
+  "quest:5148": {
+   "title": "چرم‌دوزیِ قبیله‌ای"
+  }
+ }
+}

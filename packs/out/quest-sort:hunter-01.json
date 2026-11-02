@@ -1,0 +1,772 @@
+{
+ "pack": "quest-sort:hunter-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:hunter-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "trainer",
+   "fa": "مربی",
+   "kind": "tm"
+  },
+  "E2": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Etched Parchment",
+   "fa": "پوست‌نوشتِ حکاکی‌شده",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Etched Note",
+   "fa": "یادداشت حکاکی‌شده",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Camp Narache",
+   "fa": "اردوگاه ناراچ",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "pet",
+   "fa": "حیوان خانگی",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "revered",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Etched Rune",
+   "fa": "رونِ حکاکی‌شده",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Etched Sigil",
+   "fa": "مهرِ حکاکی‌شده",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Shadowglen",
+   "fa": "سایه دره",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Taming Rod",
+   "fa": "عصای رام‌کردن",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Shrapnel Blaster",
+   "fa": "ترکش‌انداز",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E26": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Claw",
+   "fa": "پنجهٔ وحشی",
+   "kind": "sp"
+  },
+  "E29": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Arms",
+   "fa": "سلاح‌ها",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "friendly",
+   "fa": "دوستانه",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "opponent",
+   "fa": "حریف",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Hunter",
+   "fa": "شکارچی",
+   "kind": "cls"
+  },
+  "E34": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "trainer": "مربی",
+  "Horde": "هورد",
+  "Azeroth": "آزروت",
+  "allies": "متحدان",
+  "Etched Parchment": "پوست‌نوشتِ حکاکی‌شده",
+  "Durotar": "دوروتار",
+  "spell": "اسپیل",
+  "enemy": "دشمن",
+  "Etched Note": "یادداشت حکاکی‌شده",
+  "Camp Narache": "اردوگاه ناراچ",
+  "Mulgore": "مولگر",
+  "pet": "حیوان خانگی",
+  "revered": "ارجمند",
+  "Etched Rune": "رونِ حکاکی‌شده",
+  "chance": "شانس",
+  "Etched Sigil": "مهرِ حکاکی‌شده",
+  "Shadowglen": "سایه دره",
+  "battle": "نبرد",
+  "Elune": "الون",
+  "Use": "استفاده",
+  "Taming Rod": "عصای رام‌کردن",
+  "ability": "توانایی",
+  "Shrapnel Blaster": "ترکش‌انداز",
+  "Orgrimmar": "اورگریمار",
+  "Travel": "سفر",
+  "requires": "نیازمند",
+  "damage": "آسیب",
+  "Claw": "پنجهٔ وحشی",
+  "Ironforge": "آیرون‌فورج",
+  "Arms": "سلاح‌ها",
+  "friendly": "دوستانه",
+  "opponent": "حریف",
+  "Hunter": "شکارچی",
+  "Thunder Bluff": "تاندر بلاف"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$C",
+  "3": "$B",
+  "4": "$B",
+  "5": "$C",
+  "6": "$C",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$B",
+  "14": "$N",
+  "15": "$B",
+  "16": "$B",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$C",
+  "27": "$C",
+  "28": "$N",
+  "29": "$N",
+  "30": "$C",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$C",
+  "35": "$N",
+  "36": "$Glad:lass;",
+  "37": "$Glad:lass;",
+  "38": "$c",
+  "39": "$c",
+  "40": "$c",
+  "41": "$N",
+  "42": "$C",
+  "43": "$C",
+  "44": "$B",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$B",
+  "51": "$N",
+  "52": "$N",
+  "53": "$Glad:lass;",
+  "54": "$N",
+  "55": "$B",
+  "56": "$C",
+  "57": "$N",
+  "58": "$B",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$N",
+  "63": "$B",
+  "64": "$c"
+ },
+ "rows": {
+  "quest:3082:obj:0": "Speak to Jen'shan in the Valley of Trials.",
+  "quest:3082:details:0": "Ah, while you were gone a tablet came for you, ⟦1⟧.",
+  "quest:3082:details:1": "Read it when you have time. If I'm not mistaken, it came from the hunter ⟦E1⟧ Jen'shan. She would have words with you when you're ready.",
+  "quest:3082:progress:0": "Jen'shan see a mighty ⟦2⟧ before her and da spirits approve.⟦3⟧⟦4⟧Da path of da ⟦5⟧ is one of our oldest walks of life. Da ⟦E2⟧ turned to us when they be just strugglin' to survive on ⟦E3⟧, and they ask us to teach them, to show them the secrets of many tings. They were strong already: strong in shaman ways; strong in warrior ways. But the hunter path not be their path... then.",
+  "quest:3082:completion:0": "Now we teach them those things, and they teach us others. We become one race... almost. We be ⟦E4⟧ for long time now. So you remember to help them. And Jen'shan remember to help you.",
+  "quest:3082:completion:1": "Jen'shan teach you da ways of the hunter--teach you good. You never forget, ⟦6⟧'s be respected greatly by da tribe. You be havin' a large role to play in da future... you never forget that.",
+  "quest:3082:completion:2": "When you feel da need, come to Jen'shan. She teach you as much as she can when she feel you ready.",
+  "quest:3087:obj:0": "Read the ⟦E5⟧ and speak to Jen'shan in the Valley of Trials.",
+  "quest:3087:details:0": "Ah, while you were gone a parchment came for you, ⟦7⟧.",
+  "quest:3087:details:1": "Read it when you have time. If I'm not mistaken, it came from the hunter ⟦E1⟧ Jen'shan. She would have words with you when you're ready.",
+  "quest:3087:progress:0": "Ah, so you come at last. Good. Jen'shan be waitin' for you.⟦8⟧⟦9⟧Many tink it be an easy path, but Jen'shan tell you dat not true. Mastering da beasts of ⟦E6⟧ and beyond take as much skill as masterin' the arcane arts or speakin' to our ancestors.⟦10⟧⟦11⟧Firin' a bow or rifle may not be as dangerous to you as castin' a ⟦E7⟧, but it sure be as dangerous to your ⟦E8⟧.",
+  "quest:3087:completion:0": "When we finish speakin', you should talk to da rest of da citizens in da Valley. They ask you to do tings for them... tings that will test your skill and teach you some of da dangers of this land.",
+  "quest:3087:completion:1": "As you grow in experience and wisdom, you be needin' Jen'shan to show you better techniques and skills. Come back to Jen'shan often. I will let you know what I can teach you.",
+  "quest:3092:obj:0": "Read the ⟦E9⟧ and speak to Lanka Farshot in Red Cloud Mesa.",
+  "quest:3092:details:0": "Just a moment ago a messenger was looking for you, ⟦12⟧. I believe she was sent by the hunter ⟦E1⟧ Lanka. If this note is from Lanka, I wouldn't take long in reading it's contents.⟦13⟧",
+  "quest:3092:progress:0": "Welcome to ⟦E10⟧, ⟦14⟧. I hear good things about you. Your bloodline is strong, and many of the elders consider you skilled already. But that we will test.⟦15⟧⟦16⟧The plains of ⟦E11⟧ will be your home for sometime--you should do your best to learn it very well. One day you will travel to unfamilar lands to master greater skills. You must be ready.",
+  "quest:3092:completion:0": "And it is my job to make sure you are prepared by teaching you the basics of our profession--how to tame your ⟦E12⟧, how to fire your rifle, and many other skills that will become necessary.",
+  "quest:3092:completion:1": "Hunters are a strong part of our tradition and history, ⟦17⟧. You would do well to remember how important you are to the tribe. You will be respected and ⟦E13⟧ if you serve our people well.",
+  "quest:3108:obj:0": "Read the ⟦E14⟧ and speak to Thorgas Grimson in Coldridge Valley.",
+  "quest:3108:details:0": "While you were helping me out, this rune was given to me to pass on to you. Take some time to read it when you have a ⟦E15⟧. I'm thinkin' it came from the hunter ⟦E1⟧ Thorgas. Take a gander at it and go find him inside Anvilmar when you've a ⟦E15⟧.",
+  "quest:3108:progress:0": "Ya made it! Good to hear! Betcha didn't have to track me to find the place either. Haha!⟦18⟧⟦19⟧Our profession is pretty steeped in tradition, ⟦20⟧. Learning the ways of the land. Learning to track a bear through the mountains. Even just surviving on wits alone takes a great deal of courage and cunning. Think you're capable?",
+  "quest:3108:completion:0": "One thing you should always remember is that you gotta respect the world you're livin' in. The beasts that choose to fight along side you; the shine of your weapon; the weight of your ammo; the bite of a bitter wind; all these things you need to know intimately.",
+  "quest:3108:completion:1": "I'll do what I can to help you, but most of the work's up to you. Anytime you think you're ready, come back and talk to me. I'll train you when I can.",
+  "quest:3117:obj:0": "Read the ⟦E16⟧ and speak to Ayanna Everstride at the top of Aldrassil in ⟦E17⟧.",
+  "quest:3117:details:0": "This sigil was given to me by a messenger from our hunter ⟦E1⟧, Ayanna. It seems Ayanna would have words with you when you have a moment. Read it and bring it to her afterwards.",
+  "quest:3117:progress:0": "You've arrived, and none too soon, ⟦21⟧. Welcome to ⟦E17⟧.⟦22⟧⟦23⟧I trust my sigil found you in good spirits and health?⟦24⟧⟦25⟧As I said previously, I am here to train you as a ⟦26⟧; to tame beasts to aid you in ⟦E18⟧; to use a bow with unerring accuracy; to respect the lands which we call home and also the lands beyond.",
+  "quest:3117:completion:0": "As you experience what ⟦E17⟧ has to teach you, come see me--I will be able to help you understand more about your role as a ⟦27⟧ and what you are capable of.",
+  "quest:3117:completion:1": "These are dangerous times, ⟦28⟧, do not take for granted the skill of your pets--there are things in this world more dangerous than you can imagine. Go with ⟦E19⟧ and return to me again.",
+  "quest:6061:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame an Adult Plainstrider. Practice your skills, then return the ⟦E21⟧ to Yaw Sharpmane in Bloodhoof Village.",
+  "quest:6061:details:0": "As a tauren, it is important to follow the traditions of our ancestors by fighting mighty creatures. By besting these creatures, we are able to intake their spirits, allowing us to become closer to the Earthmother.",
+  "quest:6061:details:1": "In the same way, taming a beast to fight alongside us helps us become one with nature around us. Eventually, you will learn to tame a beast of your choosing. But all things take practice, and you have much to learn. Begin by taking this taming rod; you must tame an adult plainstrider.",
+  "quest:6061:progress:0": "Practice your skills, ⟦29⟧. Tame the adult plainstrider.",
+  "quest:6061:completion:0": "Signs have appeared to me from the Earthmother; you have done well.",
+  "quest:6062:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Dire Mottled Boar. Practice your skills, then return the ⟦E21⟧ to Thotar in Razor Hill.",
+  "quest:6062:details:0": "It is an admirable skill to command one's authority over nature. As a hunter, you must strive to learn to use the force and power inherent to any creature of your choosing.",
+  "quest:6062:details:1": "Gaining control of an animal is not an easy feat; it is a task that you must undertake with much determination.",
+  "quest:6062:details:2": "For your first assignment, take this taming rod and use it to tame a dire mottled boar. You can find them quite close to Razor Hill. Practice your skills in ⟦E18⟧ with the boar at your side, then return to me.",
+  "quest:6062:progress:0": "Good luck, young ⟦30⟧.",
+  "quest:6062:completion:0": "You have done well, ⟦31⟧. I believe you are ready for your next task.",
+  "quest:6063:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Webwood Lurker. Practice your skills, then return the ⟦E21⟧ to Dazalar in Dolanaar.",
+  "quest:6063:details:0": "As a hunter, it is important to remember the responsibility you hold in your hands. Nature is not a power that can be bent to obey our desires; it is one that is to be respected and acknowledged as something stronger than your very existence.",
+  "quest:6063:details:1": "B⟦32⟧, you must prove your understanding of this before you will gain the ⟦E22⟧ to tame an animal to be your companion.",
+  "quest:6063:details:2": "Your first task is to take this taming rod. With it, you will be able to tame a webwood lurker. Tame it, and practice your skills as a hunter.",
+  "quest:6063:progress:0": "You will learn, ⟦33⟧, and one day you will be a great ⟦34⟧.",
+  "quest:6063:completion:0": "Excellent, ⟦35⟧! You are quite a fast learner.",
+  "quest:6064:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Large Crag Boar. Practice your skills, then return the ⟦E21⟧ to Grif Wildheart in Kharanos.",
+  "quest:6064:details:0": "Hi there, ⟦36⟧! So, you'd be wanting to know how you can gain a ⟦E12⟧ of your own?",
+  "quest:6064:details:1": "Well, let's get started. There's nothing more important than yer equipment when it comes to hunting, but we can chat about my new ⟦E23⟧ some other time. Fer now, let's focus on something I'm sure you're quite interested in: a ⟦E12⟧!",
+  "quest:6064:details:2": "The best way to learn is for you to try out several creatures as companions and see what ya like. So, find a large crag boar, then use the taming rod to tame it.",
+  "quest:6064:progress:0": "Don't worry, ⟦37⟧! You'll get ta try a few before you'll need to decide on just one.",
+  "quest:6064:completion:0": "I know, I know; you're wondering what's next, aren't ya?!",
+  "quest:6065:obj:0": "Speak with Yaw Sharpmane in Bloodhoof Village.",
+  "quest:6065:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6065:details:1": "You must see Yaw Sharpmane in Bloodhoof Village. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6065:completion:0": "Yes, I do believe you are ready...",
+  "quest:6066:obj:0": "Speak with Yaw Sharpmane in Bloodhoof Village.",
+  "quest:6066:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6066:details:1": "You must see Yaw Sharpmane in Bloodhoof Village. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6066:completion:0": "Yes, I do believe you are ready...",
+  "quest:6067:obj:0": "Speak with Yaw Sharpmane in Bloodhoof Village.",
+  "quest:6067:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6067:details:1": "You must see Yaw Sharpmane in Bloodhoof Village. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6067:completion:0": "Yes, I do believe you are ready...",
+  "quest:6068:obj:0": "Speak with Thotar at Razor Hill.",
+  "quest:6068:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6068:details:1": "You must see Thotar at Razor Hill. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6068:completion:0": "Yes, it is time for you to begin your training.",
+  "quest:6069:obj:0": "Speak with Thotar at Razor Hill.",
+  "quest:6069:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6069:details:1": "You must see Thotar at Razor Hill. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6069:completion:0": "Yes, it is time for you to begin your training.",
+  "quest:6070:obj:0": "Speak with Thotar at Razor Hill.",
+  "quest:6070:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6070:details:1": "You must see Thotar at Razor Hill. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6070:completion:0": "Yes, it is time for you to begin your training.",
+  "quest:6071:obj:0": "Speak with Dazalar in Dolanaar.",
+  "quest:6071:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6071:details:1": "You must see Dazalar in Dolanaar. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6071:completion:0": "Yes, it is time, ⟦38⟧.",
+  "quest:6072:obj:0": "Speak with Dazalar in Dolanaar.",
+  "quest:6072:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6072:details:1": "You must see Dazalar in Dolanaar. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6072:completion:0": "Yes, it is time, ⟦39⟧.",
+  "quest:6073:obj:0": "Speak with Dazalar in Dolanaar.",
+  "quest:6073:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6073:details:1": "You must see Dazalar in Dolanaar. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6073:completion:0": "Yes, it is time, ⟦40⟧.",
+  "quest:6074:obj:0": "Speak with Grif Wildheart in Kharanos.",
+  "quest:6074:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6074:details:1": "You must see Grif Wildheart in Kharanos. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6074:completion:0": "Yes, I do believe you are ready, as well....",
+  "quest:6075:obj:0": "Speak with Grif Wildheart in Kharanos.",
+  "quest:6075:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6075:details:1": "You must see Grif Wildheart in Kharanos. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6075:completion:0": "Yes, I do believe you are ready, as well....",
+  "quest:6076:obj:0": "Speak with Grif Wildheart in Kharanos.",
+  "quest:6076:details:0": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.",
+  "quest:6076:details:1": "You must see Grif Wildheart in Kharanos. He can put you on the path to earning a ⟦E12⟧ of your own.",
+  "quest:6076:completion:0": "Yes, I do believe you are ready, as well....",
+  "quest:6081:obj:0": "Speak with Ormak Grimshot in ⟦E24⟧.",
+  "quest:6081:details:0": "You now have the power to tame a ⟦E12⟧, but you must also gain the skills to train it.",
+  "quest:6081:details:1": "⟦E25⟧ to ⟦E24⟧. There you must speak to one of our most ⟦E13⟧ hunters, Ormak Grimshot. He will give you the ⟦E22⟧ to train your new ⟦E12⟧. You will find him in the Valley of Honor.",
+  "quest:6081:details:2": "Good luck, ⟦41⟧.",
+  "quest:6081:completion:0": "A young ⟦42⟧, I see. Yes, I will grant you the skills you need to train and guide your ⟦E12⟧. Not only will you be able to teach your ⟦E12⟧ new abilities, you will now be able to feed your ⟦E12⟧, as well as revive it, should it fall in ⟦E18⟧.",
+  "quest:6081:completion:1": "Now, go, ⟦43⟧. We will speak again, at a later date.",
+  "quest:6082:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame an Armored Scorpid. Practice your skills, then return to Thotar at Razor Hill.",
+  "quest:6082:details:0": "The final creature you need to tame is one you should strive to emulate; the armored scorpid. It strikes quickly and confidently; to control a force such as this is your fate as a hunter.",
+  "quest:6082:details:1": "When you return, I will bestow you with the skills you will need to tame an animal of your choosing; this creature will be yours to command. Under your control, your ⟦E12⟧ will gain experience alongside you. I will also show you how to call it and dismiss it as you wish.⟦44⟧",
+  "quest:6082:progress:0": "Were you able to tame the scorpid?",
+  "quest:6082:completion:0": "You have learned all I can teach you, ⟦45⟧. It is time for you to take what you have learned here and choose a ⟦E12⟧ of your own.",
+  "quest:6082:completion:1": "Here you are, ⟦46⟧. I will now give you the power to tame a beast, as well as call it and dismiss it as you see fit. ⟦E20⟧ your new skills with pride; you have earned them.",
+  "quest:6083:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Surf Crawler. Practice your skills, then return the ⟦E21⟧ to Thotar at Razor Hill.",
+  "quest:6083:details:0": "The advantage a ⟦E12⟧ affords you against your rivals is duly noted, ⟦47⟧. When you gain control over another creature, you are adding to your own strength. Your ⟦E12⟧ must become an extension of yourself.",
+  "quest:6083:details:1": "The next task ⟦E26⟧ you to turn from the land; you will find the next creature in the waters off the coast. Across from Sen'jin Village, near the Echo Isles. look for a spirited crab called the surf crawler. ⟦E20⟧ the taming rod to tame it, then practice your skills.",
+  "quest:6083:progress:0": "You need to practice in order to gain the skills you need to effectively control your ⟦E12⟧. Have you tamed a surf crawler?",
+  "quest:6083:completion:0": "You are a swift learner, ⟦48⟧. You have done well.",
+  "quest:6084:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Snow Leopard. Practice your skills, then return to Grif Wildheart in Kharanos.",
+  "quest:6084:details:0": "Those crag boars are quite burly; maybe you'd like something with a little more finesse? Alright then, I've got jus' the thing. South and east of here, you'll find large white cats called snow leopards. Just like an elegantly-carved rifle, behind their beautiful exterior lies a powerful fighter, capable of doing extreme ⟦E27⟧. You'll find them to be much more agile an' swift than the boar you tamed.",
+  "quest:6084:details:1": "Take this taming rod and see how you like the snow leopard.",
+  "quest:6084:progress:0": "What do you think of the snow leopard, ⟦49⟧?",
+  "quest:6084:completion:0": "When I feel you've learned enough, I will grant you the ⟦E22⟧ to choose any ⟦E12⟧ of your liking.",
+  "quest:6085:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame an Ice ⟦E28⟧ Bear. Practice your skills, then return the ⟦E21⟧ to Grif Wildheart in Kharanos.",
+  "quest:6085:details:0": "Perhaps you'd like a creature that possesses little more than brute strength. The ice claw bear is an excellent companion for a fledgling hunter like yourself, and can be found east of Kharanos. Here is the taming rod; try this animal as a ⟦E12⟧ and see if ya like it!",
+  "quest:6085:details:1": "When you return, I'll give ya the skills you will need to tame an animal of your choosing; this creature will face the challenges you face, and gain experience alongside you. I will also show you how to call it and dismiss it as ya like.⟦50⟧",
+  "quest:6085:progress:0": "Have you tamed the ice claw bear yet?",
+  "quest:6085:completion:0": "Here you are, ⟦51⟧. I will now give ya the power to tame a beast, as well as call it and dismiss it as you please.",
+  "quest:6085:completion:1": "Find yerself a good, loyal ⟦E12⟧, and enjoy the hunt!",
+  "quest:6086:obj:0": "Speak with Belia Thundergranite in ⟦E29⟧.",
+  "quest:6086:details:0": "⟦52⟧, ya now have the power to tame a ⟦E12⟧, but you must also gain the skills ta train it.",
+  "quest:6086:details:1": "⟦E25⟧ to ⟦E29⟧ and find the Hall of ⟦E30⟧. There you must speak to one of our most ⟦E13⟧ animal trainers, Belia Thundergranite. She'll give ya the power to train your new ⟦E12⟧, so get goin', ⟦53⟧!",
+  "quest:6086:details:2": "Belia is a ⟦E31⟧ sort; you should have no problems gaining her approval. Good luck, ⟦54⟧.⟦55⟧",
+  "quest:6086:completion:0": "A new recruit, eh? You're on your way to becoming a great ⟦56⟧, I see.",
+  "quest:6086:completion:1": "Yes, I can bestow you with the skills you need to train and guide your ⟦E12⟧. Not only will you be able to teach your ⟦E12⟧ new abilities, you will now be able to feed your ⟦E12⟧, as well as revive it, should it fall in ⟦E18⟧.",
+  "quest:6086:completion:2": "Remember that the key to getting the most from your new ⟦E12⟧ is to respect it and treat it well. In turn, your ⟦E12⟧ will be your most loyal friend.",
+  "quest:6087:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Prairie Stalker. Practice your skills, then return the ⟦E21⟧ to Yaw Sharpmane in Bloodhoof Village.",
+  "quest:6087:details:0": "You have a fiery spirit, hunter, readily awaiting your next challenge.",
+  "quest:6087:details:1": "Your next task is to gain the companionship of a wolf known as the prairie stalker. This creature is swift and fearless; in taking this beast as your ⟦E12⟧, you must also take on these qualities.",
+  "quest:6087:details:2": "During a ⟦E18⟧, you will learn how you and your ⟦E12⟧ will become a team. In the end you must work as one, muscle to muscle.",
+  "quest:6087:details:3": "Here is the taming rod, ⟦57⟧. Tame a prairie stalker and practice your skills.",
+  "quest:6087:progress:0": "Have you found a prairie stalker?",
+  "quest:6087:completion:0": "Yes... The Earthmother believes that you are ready for the next lesson.",
+  "quest:6088:obj:0": "⟦E20⟧ the ⟦E21⟧ to tame a Swoop. Practice your skills, then return the ⟦E21⟧ to Yaw Sharpmane in Bloodhoof Village.",
+  "quest:6088:details:0": "The final task that I have for you ⟦E26⟧ that you tame a creature that inhabits the sky. The swoop is a difficult ⟦E32⟧, but as your ally, you will acquire its sharp attacks and threatening presence.",
+  "quest:6088:details:1": "By the will of the Earthmother, when you return I will bestow you with the skills you will need to tame an animal of your choosing to be your companion; this creature will face the challenges you face, and gain experience alongside you. I will also show you how to call it and dismiss it as you wish.⟦58⟧",
+  "quest:6088:progress:0": "You will soon be ready, ⟦59⟧.",
+  "quest:6088:completion:0": "You have learned all I can teach you, ⟦60⟧. May the blessings of the Earthmother guide you in choosing a ⟦E12⟧.",
+  "quest:6088:completion:1": "Here you are, ⟦61⟧. I will now give you the power to tame a beast, as well as call it and dismiss it as you see fit. ⟦E20⟧ your new skills with pride and honor the Earthmother.",
+  "quest:6089:obj:0": "Speak with Holt Thunderhorn on ⟦E33⟧ Rise in ⟦E34⟧.",
+  "quest:6089:details:0": "You now have the power to tame a ⟦E12⟧, but you must also gain the skills to train it.",
+  "quest:6089:details:1": "⟦E25⟧ to ⟦E34⟧. There you must speak to one of our most ⟦E13⟧ hunters, Holt Thunderhorn. If he deems you worthy, he will give you the ⟦E22⟧ to train your new ⟦E12⟧.",
+  "quest:6089:details:2": "Holt has bested the most powerful and feared beasts of ⟦E3⟧, and commands many strong creatures of his own. His ties to the Earthmother are strong, and you can learn much from him. Good luck, ⟦62⟧.⟦63⟧",
+  "quest:6089:completion:0": "A young ⟦64⟧, I see. Yes, I can bestow you with the skills you need to train and guide your ⟦E12⟧. Not only will you be able to teach your ⟦E12⟧ new abilities, you will now be able to feed your ⟦E12⟧, as well as revive it, should it fall in ⟦E18⟧.",
+  "quest:6089:completion:1": "Now, go forth. May the Earthmother guide you on your path. We shall speak again, at a later date."
+ },
+ "context": {
+  "quest:3082": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek",
+   "turner": "Jen'shan"
+  },
+  "quest:3087": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek",
+   "turner": "Jen'shan"
+  },
+  "quest:3092": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Grull Hawkwind",
+   "turner": "Lanka Farshot"
+  },
+  "quest:3108": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm",
+   "turner": "Thorgas Grimson"
+  },
+  "quest:3117": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Conservator Ilthalaine",
+   "turner": "Ayanna Everstride"
+  },
+  "quest:6061": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Yaw Sharpmane",
+   "turner": "Yaw Sharpmane"
+  },
+  "quest:6062": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Thotar",
+   "turner": "Thotar"
+  },
+  "quest:6063": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Dazalar",
+   "turner": "Dazalar"
+  },
+  "quest:6064": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Grif Wildheart",
+   "turner": "Grif Wildheart"
+  },
+  "quest:6065": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Kary Thunderhorn",
+   "turner": "Yaw Sharpmane"
+  },
+  "quest:6066": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Lanka Farshot",
+   "turner": "Yaw Sharpmane"
+  },
+  "quest:6067": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Thotar",
+   "turner": "Yaw Sharpmane"
+  },
+  "quest:6068": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Jen'shan",
+   "turner": "Thotar"
+  },
+  "quest:6069": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Sian'dur",
+   "turner": "Thotar"
+  },
+  "quest:6070": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Sian'dur",
+   "turner": "Thotar"
+  },
+  "quest:6071": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Jocaste",
+   "turner": "Dazalar"
+  },
+  "quest:6072": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Ayanna Everstride",
+   "turner": "Dazalar"
+  },
+  "quest:6073": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Dorion",
+   "turner": "Dazalar"
+  },
+  "quest:6074": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Thorgas Grimson",
+   "turner": "Grif Wildheart"
+  },
+  "quest:6075": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Regnus Thundergranite",
+   "turner": "Grif Wildheart"
+  },
+  "quest:6076": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Einris Brightspear",
+   "turner": "Grif Wildheart"
+  },
+  "quest:6081": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Thotar",
+   "turner": "Ormak Grimshot"
+  },
+  "quest:6082": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Thotar",
+   "turner": "Thotar"
+  },
+  "quest:6083": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Thotar",
+   "turner": "Thotar"
+  },
+  "quest:6084": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Grif Wildheart",
+   "turner": "Grif Wildheart"
+  },
+  "quest:6085": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Grif Wildheart",
+   "turner": "Grif Wildheart"
+  },
+  "quest:6086": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Grif Wildheart",
+   "turner": "Belia Thundergranite"
+  },
+  "quest:6087": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Yaw Sharpmane",
+   "turner": "Yaw Sharpmane"
+  },
+  "quest:6088": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Yaw Sharpmane",
+   "turner": "Yaw Sharpmane"
+  },
+  "quest:6089": {
+   "zone_en": "Hunter",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Yaw Sharpmane",
+   "turner": "Holt Thunderhorn"
+  }
+ },
+ "known": {
+  "quest:3082": {
+   "title": "لوحِ حکاکی‌شده"
+  },
+  "quest:3087": {
+   "title": "پوست‌نوشتِ حکاکی‌شده"
+  },
+  "quest:3092": {
+   "title": "یادداشتِ حکاکی‌شده"
+  },
+  "quest:3108": {
+   "title": "رونِ حکاکی‌شده"
+  },
+  "quest:3117": {
+   "title": "مُهرِ حکاکی‌شده"
+  },
+  "quest:6061": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6062": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6063": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6064": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6065": {
+   "title": "راه شکارچی"
+  },
+  "quest:6066": {
+   "title": "راه شکارچی"
+  },
+  "quest:6067": {
+   "title": "راه شکارچی"
+  },
+  "quest:6068": {
+   "title": "راه شکارچی"
+  },
+  "quest:6069": {
+   "title": "راه شکارچی"
+  },
+  "quest:6070": {
+   "title": "راه شکارچی"
+  },
+  "quest:6071": {
+   "title": "راه شکارچی"
+  },
+  "quest:6072": {
+   "title": "راه شکارچی"
+  },
+  "quest:6073": {
+   "title": "راه شکارچی"
+  },
+  "quest:6074": {
+   "title": "راه شکارچی"
+  },
+  "quest:6075": {
+   "title": "راه شکارچی"
+  },
+  "quest:6076": {
+   "title": "راه شکارچی"
+  },
+  "quest:6081": {
+   "title": "آموزش جانور"
+  },
+  "quest:6082": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6083": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6084": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6085": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6086": {
+   "title": "آموزش جانور"
+  },
+  "quest:6087": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6088": {
+   "title": "رام‌کردن جانور"
+  },
+  "quest:6089": {
+   "title": "آموزش جانور"
+  }
+ }
+}

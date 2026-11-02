@@ -1,0 +1,850 @@
+{
+ "pack": "quest-desolace-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-desolace-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "bleed",
+   "fa": "خونریزی",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Roon's Kodo Horn",
+   "fa": "شاخِ کودوی رون",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Hemet Nesingwary",
+   "fa": "همت نسینگ‌وری",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Tauren",
+   "fa": "تورن",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Roon",
+   "fa": "رون",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Regthar Deathgate",
+   "fa": "رگ‌ثار دِث‌گیت",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Friendly",
+   "fa": "دوستانه",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Broken Tears",
+   "fa": "اشک‌های شکسته",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Theradras",
+   "fa": "تیرادراس",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Axe",
+   "fa": "تبر",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Demonslayer",
+   "fa": "ادیان‌کُش",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Malem Pendant",
+   "fa": "گردن‌آویزِ مالم",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "causes",
+   "fa": "ایجاد می‌کند",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Flayed Demon Skin",
+   "fa": "پوستِ مکندهٔ دیو",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Shadowstalker Scalp",
+   "fa": "پوست‌کندگی سایه‌تعقیب‌گر",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Sceptre of Light",
+   "fa": "عصای نور",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Kodo Kombobulator",
+   "fa": "کومبوبولاتورِ کودو",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Khan Dez'hepah's Head",
+   "fa": "سر خان دِز‌هپا",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Khan Dez'hepah",
+   "fa": "خان دِز‌هپا",
+   "kind": "qs"
+  },
+  "E36": {
+   "en": "Crudely Dried Meat",
+   "fa": "گوشت خشک‌شدهٔ سرسری",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Meat",
+   "fa": "گوشت",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "raid",
+   "fa": "رید",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Advanced Target Dummy",
+   "fa": "آدمک هدف پیشرفته",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Scorpashi Venom",
+   "fa": "زهر اسکورپاشی",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Oracle Crystal",
+   "fa": "بلور پیشگو",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Gizelton Caravan",
+   "fa": "کاروان گیزلتون",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Desolace": "دزوله‌یس",
+  "bleed": "خونریزی",
+  "fear": "ترس",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Roon's Kodo Horn": "شاخِ کودوی رون",
+  "Hemet Nesingwary": "همت نسینگ‌وری",
+  "strike": "ضربه",
+  "Tauren": "تورن",
+  "Roon": "رون",
+  "Regthar Deathgate": "رگ‌ثار دِث‌گیت",
+  "Barrens": "بارنز",
+  "threat": "تیت",
+  "Head": "سر",
+  "enemy": "دشمن",
+  "Friendly": "دوستانه",
+  "Broken Tears": "اشک‌های شکسته",
+  "Theradras": "تیرادراس",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "battle": "نبرد",
+  "Darnassus": "دارناسوس",
+  "Elune": "الون",
+  "demon": "اهریمن",
+  "Axe": "تبر",
+  "Demonslayer": "ادیان‌کُش",
+  "Malem Pendant": "گردن‌آویزِ مالم",
+  "nearby": "نزدیک",
+  "causes": "ایجاد می‌کند",
+  "Flayed Demon Skin": "پوستِ مکندهٔ دیو",
+  "Shadowstalker Scalp": "پوست‌کندگی سایه‌تعقیب‌گر",
+  "spell": "اسپیل",
+  "Sceptre of Light": "عصای نور",
+  "Kodo Kombobulator": "کومبوبولاتورِ کودو",
+  "Khan Dez'hepah's Head": "سر خان دِز‌هپا",
+  "Khan Dez'hepah": "خان دِز‌هپا",
+  "Crudely Dried Meat": "گوشت خشک‌شدهٔ سرسری",
+  "Meat": "گوشت",
+  "raid": "رید",
+  "Advanced Target Dummy": "آدمک هدف پیشرفته",
+  "hit": "اصابت",
+  "Scorpashi Venom": "زهر اسکورپاشی",
+  "Ironforge": "آیرون‌فورج",
+  "Oracle Crystal": "بلور پیشگو",
+  "Gizelton Caravan": "کاروان گیزلتون"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$C",
+  "9": "$N",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$C",
+  "19": "$B",
+  "20": "$B",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$N",
+  "25": "$B",
+  "26": "$B",
+  "27": "$N",
+  "28": "$c",
+  "29": "$B",
+  "30": "$B",
+  "31": "$c",
+  "32": "$B",
+  "33": "$B",
+  "34": "$B",
+  "35": "$B",
+  "36": "$C",
+  "37": "$N",
+  "38": "$N",
+  "39": "$B",
+  "40": "$B",
+  "41": "$N",
+  "42": "$c",
+  "43": "$c",
+  "44": "$c",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$C"
+ },
+ "rows": {
+  "quest:5421:title": "Fish in a Bucket",
+  "quest:5421:progress:0": "I'll reward anyone who makes my life a bit easier... I enjoy doing as little as possible, mon!⟦1⟧⟦2⟧Below the docks here in Shadowprey Village, I've many shellfish traps.  If you're kind enough to do my work and collect me my shellfish, then I'll reward you with something you want... get my drift mon?  For every five shellfish you bring me I will give you a fine Bloodbelly fish!",
+  "quest:5421:completion:0": "Sweet mon, nothing beats work being done, especially if it's someone else doing the work... eh?",
+  "quest:1366:obj:0": "Bring 15 Centaur Ears to Felgur Twocuts in ⟦E1⟧.",
+  "quest:1366:details:0": "Now that you scared the centaur clans, it's time to ⟦E2⟧ them. When traveling ⟦E1⟧, hunt centaur. I don't care which clan you hunt. Just gather ears. A hoard of ears.",
+  "quest:1366:details:1": "By weakening their numbers you will weaken their resolve, and stamp out any thoughts of expansion.",
+  "quest:1366:details:2": "Good hunting, ⟦3⟧.",
+  "quest:1366:progress:0": "How is your collection of ears, ⟦4⟧? Large?",
+  "quest:1366:completion:0": "By now, the centaur must know your name. I'm sure they know it, and respect it, and ⟦E3⟧ it. And just as they know you, they know the banner under which you ride.",
+  "quest:1366:completion:1": "The banner of the ⟦E4⟧.",
+  "quest:1387:obj:0": "Bring 15 Centaur Ears to Corporal Melkins at Nijel's Point in ⟦E1⟧.",
+  "quest:1387:details:0": "Many clans make up the centaur race. Each has its own leader and agenda, but all the clans have one thing in common. Cruelty.",
+  "quest:1387:details:1": "If we are to ever find peace, then the centaurs must be removed. And so I put you on the task to do just that.",
+  "quest:1387:details:2": "While wandering ⟦E1⟧, hunt centaur and take their ears. Bring me many, many ears.",
+  "quest:1387:details:3": "Do this in service of the ⟦E5⟧, ⟦5⟧, and we will be one step closer to war's end.",
+  "quest:1387:progress:0": "Do you have a report, ⟦6⟧?",
+  "quest:1387:completion:0": "Ah, the ears. Well done.",
+  "quest:1387:completion:1": "Your service to the ⟦E5⟧ is unquestioned, ⟦7⟧. The blood you spilled in ⟦E1⟧ will, no doubt, save countless lives.",
+  "quest:5763:obj:0": "Bring ⟦E6⟧ to ⟦E7⟧ in Stranglethorn.",
+  "quest:5763:details:0": "Long ago, a dwarf came to this land. His name was Hemet and he wished to hunt great beasts. His skills with the rifle were uncanny, and we spent many days hunting together. Even the enmity between our peoples was forgotten.",
+  "quest:5763:details:1": "When he left ⟦E1⟧ for Stranglethorn, I vowed to one day welcome him back so that we may hunt again. Now is that time.",
+  "quest:5763:details:2": "Take this kodo horn as a gift to Hemet. He will know it is from me. You will find him in Stranglethorn, north of the Grom'gol Base camp.",
+  "quest:5763:progress:0": "Sit, ⟦8⟧. Soon enough you'll ⟦E8⟧ back into the jungle.",
+  "quest:5763:completion:0": "Ah, this horn belongs to a ⟦E9⟧, ⟦E10⟧ Wildmane. He and I had a good time hunting the beasts of ⟦E1⟧. So ⟦E10⟧ is inviting me back, is he?",
+  "quest:5763:completion:1": "We're neck deep in the jungle right now, but thank you, ⟦9⟧. Perhaps my next expedition will take me back to ⟦E1⟧, the land of the centaurs.",
+  "quest:1361:obj:0": "Speak with ⟦E11⟧.",
+  "quest:1361:details:0": "A warrior of the ⟦E4⟧, ⟦E11⟧, is recruiting agents for a mission into the land of ⟦E1⟧. Speak with him if you wish to volunteer. He is stationed in the ⟦E12⟧, in a series of bunkers west of the Crossroads.",
+  "quest:1361:details:1": "And sharpen your weapons. ⟦E1⟧ is a place torn by war.",
+  "quest:1361:completion:0": "Yes, I am recruiting. This mission leads into ⟦E1⟧, against the centaur there. I will be brief so that you may quickly begin.",
+  "quest:1362:obj:0": "Speak with Felgur Twocuts at Ghost Walker Post in ⟦E1⟧.",
+  "quest:1362:details:0": "The Kolkar centaur live in ⟦E1⟧, and their forces have spread into the ⟦E12⟧. This is a known fact and we have ⟦E4⟧ agents dealing with them here.",
+  "quest:1362:details:1": "But as long as the centaur are strong in ⟦E1⟧, they will always pose a ⟦E13⟧. It is time we rid ourselves of that ⟦E13⟧.",
+  "quest:1362:details:2": "Speak with Felgur Twocuts at Ghost Walker Post in ⟦E1⟧. He was sent to gather intelligence on the centaur. He will know how to best deal with the Kolkar of ⟦E1⟧.",
+  "quest:1362:completion:0": "You are here on orders from Regthar? Then you are here to deal with the centaur. Good.",
+  "quest:1362:completion:1": "I hope you're rested. I don't know how our campaign against the centaur will end, but I know the struggle will be long.",
+  "quest:1362:completion:2": "Have a seat, and listen.",
+  "quest:1384:obj:0": "Maintain your reputation with the Gelkis, and bring 10 Crude Charms to Uthek the Wise in the Gelkis Village in ⟦E1⟧.",
+  "quest:1384:details:0": "The Kolkar centaurs think their magic is strong. They do not know magic! They would not know magic if it bit them!",
+  "quest:1384:details:1": "You will show them their magic is weak. Go to the Kolkar to the northeast and kill them. Take their charms. Bring me the charms and I will throw them in the fire and laugh!",
+  "quest:1384:progress:0": "You have the charms? You showed the Kolkar they are weak?",
+  "quest:1384:completion:0": "You do a good thing for the Gelkis. The Kolkar are weak and will die. Their magic is pathetic and will not save them. You showed them this, and their ⟦E3⟧ will make them even more feeble!",
+  "quest:1384:completion:1": "And in our lands, the feeble soon die.",
+  "quest:1386:obj:0": "Maintain your reputation with the Magram. Kill 12 Kolkar Centaurs, 12 Kolkar Scouts and 6 Kolkar Maulers, then return to Warug in the Magram Village in ⟦E1⟧.",
+  "quest:1386:details:0": "The Kolkar think they are strong, but we laugh at them! We laugh and we kill them! You kill them too. Show me you can kill Kolkar like we do. ⟦E14⟧ north and slay them all!",
+  "quest:1386:progress:0": "Are you afraid of the Kolkar? Why do you not kill them? Maybe you forgot how to kill. Hurry and kill Kolkar before they are dead!",
+  "quest:1386:completion:0": "The Kolkar ⟦E3⟧ you now! I hope you laughed when you killed them. It is better to laugh when you kill, so the ⟦E15⟧ can see he is weak.",
+  "quest:1367:obj:0": "Gain a ⟦E16⟧ reputation with the Magram, then speak with Warug.",
+  "quest:1367:details:0": "To beat the centaur, we must use their hatred against them. We will ally with one of the clans and through them, we will learn how to defeat all the clans.",
+  "quest:1367:details:1": "If you choose to ally with the Magram then slay their foes, the Gelkis. This will earn you respect among the Magram. When you earn enough, then meet with the Magram spokesman Warug, on the outskirts of the Magram Village, in southeast ⟦E1⟧.",
+  "quest:1367:progress:0": "Leave! The Magram do not speak with the weak. We kill them!⟦10⟧⟦11⟧If you want to speak with me, then show me you are strong. Return after you slay many Gelkis.",
+  "quest:1367:completion:0": "The Gelkis cry when they hear your name, ⟦12⟧. They ⟦E3⟧ you and they hate you. They hate you like they hate the Magram!",
+  "quest:1367:completion:1": "Maybe you are strong like the Magram. We will see...",
+  "quest:1368:obj:0": "Gain a ⟦E16⟧ reputation with the Gelkis, then speak with Uthek the Wise.",
+  "quest:1368:details:0": "To beat the centaur, we must use their hatred against them. We will ally with one of the clans and through them, we will learn how to defeat all the clans.",
+  "quest:1368:details:1": "If you choose to ally with the Gelkis then slay their most hated rival, the Magram. After you earn the respect of the Gelkis, meet with the Gelkis shaman Uthek the Wise, on the outskirts of the Gelkis Village, in southwest ⟦E1⟧.",
+  "quest:1368:progress:0": "Your two feet step on Gelkis earth. You are not welcome here!⟦13⟧⟦14⟧Prove you seek friendship with the Gelkis. Kill Magram centaur. Return when the ground is wet with Magram blood.",
+  "quest:1368:completion:0": "The earth speaks to me. And it says you have killed many Magram. This is good.",
+  "quest:1368:completion:1": "If you are a friend of the Gelkis, then listen. I have more tasks for you.",
+  "quest:1369:obj:0": "Maintain your reputation with the Magram, and bring 3 ⟦E17⟧ to Warug in the Magram Village.",
+  "quest:1369:details:0": "The Gelkis think our centaur mother, ⟦E18⟧, protects us. They are stupid. No one protects the centaur. The Magram do not need protection! We are the strongest!",
+  "quest:1369:details:1": "Show the Gelkis they are stupid. Go to the cave in their village. They hoard crystals in that cave, the tears of ⟦E18⟧. Destroy the tears and bring me the broken pieces!",
+  "quest:1369:progress:0": "If you are not our ⟦E15⟧, then you will do what I ask!",
+  "quest:1369:completion:0": "You got the tears! Now the Gelkis will know that ⟦E18⟧ will not help them. She will not cry when we crush them! The Magram will rule!",
+  "quest:1369:completion:1": "You are smart to help us, ⟦15⟧. We are the strongest.",
+  "quest:1437:obj:0": "Find and search Tyranis and Dalinda Malem's wagon in ⟦E1⟧.",
+  "quest:1437:details:0": "I am Vahlarriel, ⟦16⟧. I've come here to discover the whereabouts of two missing nobles of a Darnassian merchant family--House Malem. The father of the house fears the worst, and I am to do everything I can to find his missing children. I have yet to start my search for Tyranis or Dalinda, but I am hopeful I shall not be here long.",
+  "quest:1437:details:1": "Last word tells of them passing through the ⟦E19⟧ a few weeks ago.",
+  "quest:1437:details:2": "If you find their wagon, please, come find me immediately.",
+  "quest:1437:completion:0": "As you rummage around the remains of the wagon, it becomes obvious that it was attacked by both spells and weapons. The ⟦E20⟧ seemed one-sided and quick; there's no blood to be found, and no remains of any bodies.",
+  "quest:1437:completion:1": "Whoever attacked the wagon was efficient and swift.",
+  "quest:1438:obj:0": "Find Dalinda Malem in ⟦E1⟧.",
+  "quest:1438:details:0": "Find both Dalinda and Tyranis if you can and come back to me with your findings. Start your search at this fortress. I will contact my superiors in ⟦E21⟧ immediately and let them know the situation.",
+  "quest:1438:details:1": "B⟦17⟧, there is something else I wish to impress upon you. My superiors have shown some concern over Tyranis' and his motives for coming here. It is more important to them that Dalinda is found and brought back safely. Tyranis is to be... gauged before he is taken home.",
+  "quest:1438:completion:0": "Thank ⟦E22⟧ someone has finally come to help. Please, ⟦18⟧, I need your help. My brother Tyranis and I were captured and brought here by the Burning Blade. I think they mean to sacrifice me to their ⟦E23⟧ masters!",
+  "quest:1438:completion:1": "I knew coming to ⟦E1⟧ was a mistake, but Tyranis has recently begun craving knowledge of all things arcane--even against the wishes of our people. He decided to make this trek even after hearing tales of this land's ⟦E23⟧ infestation.",
+  "quest:1438:completion:2": "I ⟦E3⟧ the worst for him.",
+  "quest:1439:obj:0": "Find Tyranis Malem in ⟦E1⟧.",
+  "quest:1439:details:0": "We were brought here after the orcs slaughtered all our guards and servants. Oh, the terrible things they did to them! I thought surely they would kill us right there and then, but it became obvious they had other plans.",
+  "quest:1439:details:1": "Tyranis attempted to speak to them. I think he wanted to impress them with his knowledge of the arcane... I'm not sure why.",
+  "quest:1439:details:2": "Please, I can't leave here until I know what's happened to my brother. Find him, then come back for me when his fate is known.",
+  "quest:1439:progress:0": "I ⟦E3⟧ Tyranis will attempt to learn the Burning Blade's secrets and count himself among their kind if they allow it - he has always adored the power magic brings to those who are seduced by it.⟦19⟧⟦20⟧I'm not sure I could endure returning home to my family with news of Tyranis' spirit flirting with such dangers. It's a terrible enough crime among my kind to pursue such things, but to become that which we attempt to protect ourselves from, well, that's apprehensible.",
+  "quest:1439:completion:0": "This is terrible! But I suppose it was necessary. If it wasn't by your hand, it would have surely been by that of my people's. I suppose I should thank you--please forgive me if it doesn't seem sincere. I mean no offense.",
+  "quest:1439:completion:1": "With the knowledge of my brother's fate in hand, it seems the time for my escape has come. If you are still willing, I will accept your aid in escaping this horrible place.",
+  "quest:1439:completion:2": "When you are ready, we can make our way to safety.",
+  "quest:1440:obj:0": "Escort Dalinda Malem from Thunder ⟦E24⟧ Fortress and then return to Vahlarriel ⟦E25⟧ in ⟦E1⟧.",
+  "quest:1440:details:0": "So, the time is now then? I appreciate your efforts, and if the situation does not lend itself, then allow me to thank you now for everything you've done for me and my family. If you're ready, then there is nothing else for me here--we can leave when you feel the time is right.",
+  "quest:1440:completion:0": "Thank you, ⟦21⟧. Dalinda made it safely back here to Nijel's Point, and in much better condition than I could have asked for. The fact that she arrived here under her own power was a good sign. I hope you're well?",
+  "quest:1440:completion:1": "It pains me to know that both Tyranis and Dalinda didn't return, but the embarrassment of Tyranis' decisions is hers to endure. It is something she will have to deal with when she returns to ⟦E21⟧.",
+  "quest:1458:obj:0": "Bring 10 Hatefury Claws, and 10 Hatefury Horns to Kreldig Ungor in ⟦E1⟧.",
+  "quest:1458:details:0": "One of my tasks out here involves picking up some reagents for Leftwitch, a gnome mage in Kharanos . Roetten seems to think it's easy coin in the bank since we're out here already. He doesn't really care that we're short-handed as is.",
+  "quest:1458:details:1": "The first few items on his list should be easy enough to get, and it'd be a good chunk of coin for anyone helping me out.",
+  "quest:1458:details:2": "I need some horns and claws from the Hatefury satyr to the east of here. Bring 'em back to me and we'll get started on the rest of the list.",
+  "quest:1458:progress:0": "Despicable creatures, the satyr. Story says they're somehow tied to the night elves, but I'm not so sure I believe it.⟦22⟧⟦23⟧I think they get that on account of that one elf that brought them into the war few years back. World's never been the same since. Lot more dangerous, and a lot scarier.",
+  "quest:1458:completion:0": "Good good, ⟦24⟧. Not sure if these are of any good quality, but if Leftwitch wanted a specific type, he should have specified before sending the Reclaimers out here to begin with.",
+  "quest:1458:completion:1": "What say you to getting on with the next item on his list?",
+  "quest:1465:obj:0": "Return the ⟦E26⟧ to Vahlarriel ⟦E25⟧ in ⟦E1⟧.",
+  "quest:1465:details:0": "As you continue your search of the wagon you find not only a pendant, but also footprints leading off towards the south. In the distance you can see smoke rising from a large fort. The smoke is from a kept fire, not the burning of buildings, and your instincts tell you that the Malems, if still alive, were taken that direction.",
+  "quest:1465:details:1": "You think Vahlarriel at Nijel's Point should not only see the pendant you've found, but also know about the signs of life to the south.",
+  "quest:1465:completion:0": "Infuriating! This entire fiasco!",
+  "quest:1465:completion:1": "The two of them were warned about how dangerous coming here would be. Now they're both missing... or worse.",
+  "quest:1465:completion:2": "You said you saw tracks heading to a fort ⟦E27⟧? That may be our best bet.",
+  "quest:1465:completion:3": "From what the locals have said, that fortress is infested with members of the Burning Blade--orcs who have dedicated themselves to ⟦E23⟧ ⟦E28⟧. They may not represent the majority of the ⟦E4⟧'s beliefs, but they are evil and will slay you on sight if you're caught spying.",
+  "quest:1480:obj:0": "Bring the ⟦E29⟧ to Maurin Bonesplitter in ⟦E1⟧.",
+  "quest:1480:details:0": "The torn skin smells rotten, and is remarkably pliable for something that appears to be dry and fragile.",
+  "quest:1480:details:1": "As you unroll it, you can clearly see the red markings of some kind of language on one side. At the bottom of the skin is a very clear symbol that you guess is a signature of some kind.",
+  "quest:1480:details:2": "Perhaps it is something Maurin could tell you more about?",
+  "quest:1480:progress:0": "The Burning Blade begin to realize how weak they truly are. Their magics are pathetic, their strength feeble.⟦25⟧⟦26⟧Their only power comes from those they serve, and not from any understanding of true power and knowledge.",
+  "quest:1480:completion:0": "Hmm, these runes are indeed a language, ⟦27⟧, an old language. They seem remotely similar to the Eredun language, but the differences are drastic. If I am not mistaken, this is a contract of some kind.... Here, yes, this symbol is the ⟦E23⟧'s signature: Lord Azrethoc.",
+  "quest:1481:obj:0": "Bring a ⟦E30⟧ to Maurin Bonesplitter in ⟦E1⟧.",
+  "quest:1481:details:0": "I believe I can find this ⟦E23⟧ lord given the proper reagents.",
+  "quest:1481:details:1": "If he is indeed as powerful as I suspect, I will need items gathered from deadly creatures. But you act in the Warchief's name, so I am sure you will accept my task.",
+  "quest:1481:details:2": "First, I will have to break any wards he has against scrying. For this, I will need the scalp from a satyr--but not any satyr. The scalp must come from a Hatefury shadowstalker.",
+  "quest:1481:details:3": "Search for them among the ancient ruins in the northeast of ⟦E1⟧.",
+  "quest:1481:progress:0": "Do not bring me an incorrect scalp, ⟦28⟧. Using the incorrect reagents could cause our deaths. The ⟦E23⟧ lord may have contingency spells on his person to slay those who would scry upon him.⟦29⟧⟦30⟧Fate has already dealt me enough pain.",
+  "quest:1481:completion:0": "The shadowstalkers were unable to slay you, ⟦31⟧. Impressive... most impressive.",
+  "quest:1481:completion:1": "This scalp will do nicely for my ⟦E31⟧. While you were away, I was able to gather some of the other reagents needed for the ⟦E31⟧.",
+  "quest:1481:completion:2": "I am almost ready. I only need a focus for the ⟦E31⟧--something to project an image of the ⟦E23⟧ lord and his whereabouts.",
+  "quest:5741:obj:0": "Get the ⟦E32⟧ and then return it to Azore Aldamort at the tower in Ethel Rethor.⟦32⟧",
+  "quest:5741:details:0": "The Burning Blade in Thunder ⟦E24⟧ Fortress to the east is rumored to have acquired the ⟦E32⟧ from the Naga. Legend tells that the sceptre is able to sink entire cities under the great seas. The Burning Blade must not be allowed to possess such power.",
+  "quest:5741:details:1": "To that end, you must retrieve the sceptre yourself! It is held by a Burning Blade seer, who studies the sceptre from atop one of the Thunder ⟦E24⟧ watchtowers.⟦33⟧",
+  "quest:5741:progress:0": "Do you have the ⟦E32⟧?⟦34⟧⟦35⟧",
+  "quest:5741:completion:0": "The elusive ⟦E32⟧! Your acquisition of it has removed a grave ⟦E13⟧ to the world. Well done, ⟦36⟧, well done.",
+  "quest:5741:completion:1": "B",
+  "quest:5561:obj:0": "Bring five Tamed Kodos and the ⟦E33⟧ back to Smeed Scrabblescrew at Scrabblescrew's Camp.",
+  "quest:5561:details:0": "Bibbly thinks he is the only goblin in ⟦E1⟧ who knows how to make money. Well, the only caravan brave enough to travel these parts relies on me. Ever since I learned how to rejuvenate and control aged and dying kodos with my kodo kombobulator, the caravan owner Cork, Rigger, and I entered a partnership.",
+  "quest:5561:details:1": "Take the kombobulator and use it on any ancient, aged, or dying kodos; it will jolt the beast into a tamed kodo and force it to follow you. Once you have a kodo tamed, bring it back to me.",
+  "quest:5561:progress:0": "The caravan will be here shortly; do you have the five new tamed kodos I was asking for?",
+  "quest:5561:completion:0": "<Smeed Scrabblescrew begins counting.>",
+  "quest:5561:completion:1": "Three, four, and five... excellent, I ask for five tamed kodos and I get five tamed kodos... I am going to be rich... yes, very rich! I hope to see the look on Bibbly's green face when he hears about my success!",
+  "quest:1365:obj:0": "Bring ⟦E34⟧ to Felgur Twocuts in ⟦E1⟧.",
+  "quest:1365:details:0": "The Kolkar are not the only centaur of ⟦E1⟧. Many clans wander these dry plains, fighting and dying against each other. And it is good that they fight among themselves, for they are strong and brutal. If the centaur united against us, they would be a fierce foe.",
+  "quest:1365:details:1": "We must deal with them before they unite.",
+  "quest:1365:details:2": "Your first task is to disrupt the Kolkar clan. Do this by killing its leader, ⟦E35⟧.",
+  "quest:1365:details:3": "The Kolkar Village is northeast of here. Go, and may fortune go with you.",
+  "quest:1365:progress:0": "⟦37⟧, have you defeated ⟦E35⟧?",
+  "quest:1365:completion:0": "Well done. This swift act against the Kolkar is an effective show of strength, and strength is what the centaur understand best.",
+  "quest:1365:completion:1": "The death of the Kolkar leader will not only disrupt that clan, but give pause to the others.",
+  "quest:1370:obj:0": "Bring 6 bags of ⟦E36⟧ to Uthek the Wise in the Gelkis Village.",
+  "quest:1370:details:0": "When we are not at war, we hunt for meat. ⟦E37⟧ gives us strength, and full bellies fight harder than empty ones.",
+  "quest:1370:details:1": "It is the same with the Magram. They store extra meat so they may fight longer between hunts. If you ⟦E38⟧ their village to the east and take their stores of meat, then their strength will fail.",
+  "quest:1370:progress:0": "Return after you further prove your worth to the Gelkis!",
+  "quest:1370:completion:0": "Good. I can hear the loud Magram bellies grumble from their village, far away!",
+  "quest:1370:completion:1": "I will give this meat to the Gelkis. And we will fight for many days without rest.",
+  "quest:1370:completion:2": "What you did is good for the Gelkis, ⟦38⟧.",
+  "quest:1371:obj:0": "Maintain your reputation with the Magram, and bring an ⟦E39⟧ to Warug in the Magram Village in ⟦E1⟧.",
+  "quest:1371:details:0": "Long ago, a little gnome came to ⟦E1⟧. He had horses and a cart, and the cart held strange things. Funny things. Things that burned different colors. Things that moved and weren't alive. I killed the little gnome, but before that... he made me laugh.",
+  "quest:1371:details:1": "I kept my favorite thing from his cart. It was a human made of wood and it waved at me until I ⟦E40⟧ it and broke it.",
+  "quest:1371:details:2": "I want a new one. Get me a new one!",
+  "quest:1371:progress:0": "If you are not our ⟦E15⟧, then you will do what I ask!",
+  "quest:1371:completion:0": "Yes, this is what I had! I will make it move again. It makes me laugh!",
+  "quest:1382:obj:0": "Gain a ⟦E16⟧ reputation with the Gelkis, then speak with Uthek the Wise.",
+  "quest:1382:details:0": "We are fortunate the centaur clans fight among themselves, for if they joined into a single force then they would be unstoppable. Yes, we are fortunate, and we should press our advantage.",
+  "quest:1382:details:1": "One of the centaur clans, the Gelkis clan, is in brutal war with the Magram clan. If we attack the Magram, then perhaps an alliance may be struck with the Gelkis.",
+  "quest:1382:details:2": "Speak with Uthek the Wise, in the outskirts of the Gelkis camps in southwestern ⟦E1⟧. Through her we might ⟦E8⟧ an alliance with the Gelkis.",
+  "quest:1382:progress:0": "Be gone! The Gelkis do not want you here. Leave now!!⟦39⟧⟦40⟧Return after killing many Magram, and then I will speak with you.",
+  "quest:1382:completion:0": "Your name is whispered among the Gelkis. You have much Magram blood on your hands. This is good.",
+  "quest:1382:completion:1": "Maybe it is also good if we speak. Speak of what you can do for the Gelkis, and what we can do for you.",
+  "quest:1385:obj:0": "Gain a ⟦E16⟧ reputation with the Magram, then speak with Warug.",
+  "quest:1385:details:0": "⟦E1⟧ is a land at war. The centaurs wage war with each other, and we believe the victor among them will spill out and threaten our strongholds. That, we cannot allow",
+  "quest:1385:details:1": "We must learn how to beat the centaurs, and to do that... we must ally with one of the clans. The Magram centaurs war with the Gelkis. If you fight the Gelkis then the Magram might consider an alliance.",
+  "quest:1385:details:2": "Earn the favor of the Magrams then speak with Warug, in the Magram village in southeastern ⟦E1⟧.",
+  "quest:1385:progress:0": "You will go now, or the Magram will crush you! To be our friend, you must kill Gelkis.",
+  "quest:1385:completion:0": "Many Gelkis fall to you. I like that. Maybe you can do more things I like. Maybe you and the Magram can be friends.",
+  "quest:1459:obj:0": "Bring 7 vials of ⟦E41⟧ and 3 Aged Kodo Hides to Kreldig Ungor in ⟦E1⟧.",
+  "quest:1459:details:0": "Next on Leftwitch's list is... let's see... hmm. Oh, here it is.",
+  "quest:1459:details:1": "Simple enough, but pretty explicit in his directions. He needs venom from the scorpashi, and hide from some kodo. The fine print says both are from specific creatures: the venom's got to come from any of the scorpashi, and the hide's got to come from an aged kodo, not the dying or ancient ones.",
+  "quest:1459:details:2": "Mages, I tell ya, some of the stuff they want... it's just weird.",
+  "quest:1459:progress:0": "Sorry I couldn't tell you where to find the kodo or the scorpashi. I'm not terribly familiar with the area, and I haven't had time to explore.",
+  "quest:1459:completion:0": "Your help here's a boon, ⟦41⟧. You're cutting my time spent here in ⟦E1⟧ by half at least. I'll be back in ⟦E42⟧ warming my feet in no time with your help.",
+  "quest:1459:completion:1": "When we get this list taken care of, and I'm back home, look me up, I'll buy you an ale for sure.",
+  "quest:1459:completion:2": "But until then, let's get the rest of these reagents gathered.",
+  "quest:1482:obj:0": "Bring an ⟦E43⟧ to Maurin Bonesplitter in ⟦E1⟧.",
+  "quest:1482:details:0": "An oracle crystal would do nicely. They are crafted by the naga for their oracles to use.",
+  "quest:1482:details:1": "Northwest of here, along the coast, is a vast coral reef that the naga have taken as their home when this close to the shore. You can find their oracles there. The Slitherblade are deadly and will not react kindly to your intrusions, so be careful and make haste.",
+  "quest:1482:details:2": "When you return, we shall see about finding this ⟦E23⟧ lord Azrethoc.",
+  "quest:1482:progress:0": "I am ready for the oracle crystal, ⟦42⟧. Finding and destroying this Lord Azrethoc would garner a great deal of favor with the Warchief for both of us. We would do well to work together and to do so swiftly so we may further our own ends and curry favor with the Warchief. ",
+  "quest:1482:completion:0": "A precious oracle crystal... flawless... beautiful. Indeed.",
+  "quest:1482:completion:1": "We shall begin immediately. Finding this ⟦E23⟧ lord should be our primary concern, and its slaying demands our utmost attention.",
+  "quest:1482:completion:2": "Take a step back, ⟦43⟧, and let us see what this ⟦E23⟧ is, and where he may be found.",
+  "quest:1484:obj:0": "Speak to Takata Steelblade in ⟦E1⟧.",
+  "quest:1484:details:0": "This creature is far more dangerous than I had anticipated. No doubt Takata questions my abilities to take on such a creature, and it would insult his honor if he were not informed about what just happened.",
+  "quest:1484:details:1": "Speak to the swordsman, tell him you are willing to slay the ⟦E23⟧ if he would allow it, but do not press too hard. It is better if he thinks it his own idea.",
+  "quest:1484:completion:0": "I witnessed what just occurred with Maurin and the ⟦E23⟧ lord. That creature, even as an apparition, seems to have more power than my warlock companion. I wonder if he's up to the task of defeating the monster? It would serve the Warchief better if I go myself, but with my responsibilities here, I would disgrace my clan if I turned my back on my duties here to ⟦E20⟧ this evil for my own honor.",
+  "quest:5821:obj:0": "Escort the ⟦E44⟧ past the Kolkar Centaur village. Talk with Smeed at Scrabblescrew's Camp for your reward.",
+  "quest:5821:details:0": "Under normal circumstances, Rigger and I would lead our kodo past the Kolkar Centaur. Every now and then we hear the Centaur war drums, and when we hear those we stop. It's not good for business to be dead!",
+  "quest:5821:details:1": "I'll tell you what ⟦44⟧, if you protect us past the Kolkar village we'll make it worth your while.",
+  "quest:5821:details:2": "It's just a short distance, all you need to do is keep the caravan intact and you can pick up your reward from Smeed Scrabblescrew - he is down the road a bit. We do a little business together.",
+  "quest:5821:progress:0": "Why do I find myself waiting for that blasted caravan?⟦45⟧⟦46⟧<Smeed looks enlightened.>⟦47⟧⟦48⟧Oh yeah, they pay the bills. Have you seen them?",
+  "quest:5821:completion:0": "You know, it doesn't seem prosperous to be paying the likes of you to guard ⟦E44⟧. ⟦49⟧, if I were a bit taller I could take on a second job and sit kodo-side-saddle with the biggest gun my hands could carry... and I'd show them blasted centaur who's their papa."
+ },
+ "context": {
+  "quest:5421": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": "Jinar'Zillen"
+  },
+  "quest:1366": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 31,
+   "side": "horde",
+   "giver": "Felgur Twocuts",
+   "turner": "Felgur Twocuts"
+  },
+  "quest:1387": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Corporal Melkins",
+   "turner": "Corporal Melkins"
+  },
+  "quest:5763": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 31,
+   "side": "horde",
+   "giver": "Roon Wildmane",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  },
+  "quest:1361": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 32,
+   "side": "horde",
+   "giver": "Krusk",
+   "turner": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)"
+  },
+  "quest:1362": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 32,
+   "side": "horde",
+   "giver": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)",
+   "turner": "Felgur Twocuts"
+  },
+  "quest:1384": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Uthek the Wise",
+   "turner": "Uthek the Wise"
+  },
+  "quest:1386": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Warug",
+   "turner": "Warug"
+  },
+  "quest:1367": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "horde",
+   "giver": "Gurda Wildmane",
+   "turner": "Warug"
+  },
+  "quest:1368": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "horde",
+   "giver": "Gurda Wildmane",
+   "turner": "Uthek the Wise"
+  },
+  "quest:1369": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "",
+   "giver": "Warug",
+   "turner": "Warug"
+  },
+  "quest:1437": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Vahlarriel Demonslayer",
+   "turner": "Malem Chest"
+  },
+  "quest:1438": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Vahlarriel Demonslayer",
+   "turner": "Dalinda Malem"
+  },
+  "quest:1439": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Dalinda Malem",
+   "turner": "Dalinda Malem"
+  },
+  "quest:1440": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Dalinda Malem",
+   "turner": "Vahlarriel Demonslayer"
+  },
+  "quest:1458": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Kreldig Ungor",
+   "turner": "Kreldig Ungor"
+  },
+  "quest:1465": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Malem Chest",
+   "turner": "Vahlarriel Demonslayer"
+  },
+  "quest:1480": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "horde",
+   "giver": "",
+   "turner": "Maurin Bonesplitter"
+  },
+  "quest:1481": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "horde",
+   "giver": "Maurin Bonesplitter",
+   "turner": "Maurin Bonesplitter"
+  },
+  "quest:5741": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 33,
+   "side": "",
+   "giver": "Azore Aldamort",
+   "turner": "Azore Aldamort"
+  },
+  "quest:5561": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 34,
+   "side": "",
+   "giver": "Smeed Scrabblescrew",
+   "turner": "Smeed Scrabblescrew"
+  },
+  "quest:1365": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "horde",
+   "giver": "Felgur Twocuts",
+   "turner": "Felgur Twocuts"
+  },
+  "quest:1370": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "",
+   "giver": "Uthek the Wise",
+   "turner": "Uthek the Wise"
+  },
+  "quest:1371": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "",
+   "giver": "Warug",
+   "turner": "Warug"
+  },
+  "quest:1382": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Captain Pentigast",
+   "turner": "Uthek the Wise"
+  },
+  "quest:1385": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Captain Pentigast",
+   "turner": "Warug"
+  },
+  "quest:1459": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Kreldig Ungor",
+   "turner": "Kreldig Ungor"
+  },
+  "quest:1482": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "horde",
+   "giver": "Maurin Bonesplitter",
+   "turner": "Maurin Bonesplitter"
+  },
+  "quest:1484": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "horde",
+   "giver": "Maurin Bonesplitter",
+   "turner": "Takata Steelblade"
+  },
+  "quest:5821": {
+   "zone_en": "Desolace",
+   "zone_fa": "دزوله‌یس",
+   "level": 35,
+   "side": "",
+   "giver": "Cork Gizelton",
+   "turner": "Smeed Scrabblescrew"
+  }
+ },
+ "known": {
+  "quest:1366": {
+   "title": "جایزهٔ سانتورها"
+  },
+  "quest:1387": {
+   "title": "جایزهٔ سانتورها"
+  },
+  "quest:5763": {
+   "title": "شکار در استرنگل‌تورن"
+  },
+  "quest:1361": {
+   "title": "رگ‌ثار دِث‌گیت"
+  },
+  "quest:1362": {
+   "title": "کولکارهای دزوله‌یس"
+  },
+  "quest:1384": {
+   "title": "حمله به کولکارها"
+  },
+  "quest:1386": {
+   "title": "یورش به کولکارها"
+  },
+  "quest:1367": {
+   "title": "اتحاد ماگرام"
+  },
+  "quest:1368": {
+   "title": "اتحاد گلکیس"
+  },
+  "quest:1369": {
+   "title": "اشک‌های شکسته"
+  },
+  "quest:1437": {
+   "title": "جست‌وجوی والاریل"
+  },
+  "quest:1438": {
+   "title": "جست‌وجوی والاریل"
+  },
+  "quest:1439": {
+   "title": "جست‌وجوی تایرانیس"
+  },
+  "quest:1440": {
+   "title": "بازگشت به والاریل"
+  },
+  "quest:1458": {
+   "title": "مواد لازم برای پس‌گیرندگان"
+  },
+  "quest:1465": {
+   "title": "جست‌وجوی والاریل"
+  },
+  "quest:1480": {
+   "title": "فاسدکننده"
+  },
+  "quest:1481": {
+   "title": "فاسدکننده"
+  },
+  "quest:5741": {
+   "title": "عصای نور"
+  },
+  "quest:5561": {
+   "title": "گردآوری کودوها"
+  },
+  "quest:1365": {
+   "title": "خان دِز‌هپا"
+  },
+  "quest:1370": {
+   "title": "دزدیدن لوازم"
+  },
+  "quest:1371": {
+   "title": "ابزار برای واروگ"
+  },
+  "quest:1382": {
+   "title": "اتحاد عجیب"
+  },
+  "quest:1385": {
+   "title": "سیاست بی‌رحم"
+  },
+  "quest:1459": {
+   "title": "مواد لازم برای پس‌گیرندگان"
+  },
+  "quest:1482": {
+   "title": "فاسدکننده"
+  },
+  "quest:1484": {
+   "title": "فاسدکننده"
+  },
+  "quest:5821": {
+   "title": "بادیگارد اجاره‌ای"
+  }
+ }
+}

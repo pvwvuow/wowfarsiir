@@ -1,0 +1,964 @@
+{
+ "pack": "quest-unknown-24",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-24.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Earthshatter Handguards",
+   "fa": "دست‌پیچِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Desecrated Handguards",
+   "fa": "دست‌پیچِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Arcanite Bar",
+   "fa": "شمش آرکانیت",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Naxxramas",
+   "fa": "ناکس‌راماس",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Earthshatter Girdle",
+   "fa": "کمربندِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Desecrated Girdle",
+   "fa": "کمربندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Earthshatter Wristguards",
+   "fa": "مچ‌بندِ زمین‌شکن",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Desecrated Wristguards",
+   "fa": "مچ‌بندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Bonescythe Breastplate",
+   "fa": "سینه‌پوشِ استخوان‌داس",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Desecrated Breastplate",
+   "fa": "سینه‌پوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Leather",
+   "fa": "چرم",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Arcanite",
+   "fa": "آرکانیت",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Bonescythe Legplates",
+   "fa": "صفحه‌پای استخوان‌داس",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Desecrated Legplates",
+   "fa": "صفحه‌پای بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Bonescythe Helmet",
+   "fa": "کلاه‌خودِ استخوان‌داس",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Desecrated Helmet",
+   "fa": "کلاه‌خودِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Nexus Crystal",
+   "fa": "بلور نکسوس",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Bonescythe Pauldrons",
+   "fa": "شانه‌فولادِ استخوان‌داس",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Desecrated Pauldrons",
+   "fa": "شانه‌فولادِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Bonescythe Sabatons",
+   "fa": "صندوقهٔ استخوان‌داس",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Desecrated Sabatons",
+   "fa": "صندوقهٔ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Bonescythe Gauntlets",
+   "fa": "دستکش زرهیِ استخوان‌داس",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Desecrated Gauntlets",
+   "fa": "دستکش زرهیِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Bonescythe Waistguard",
+   "fa": "میان‌بندِ استخوان‌داس",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Desecrated Waistguard",
+   "fa": "میان‌بندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Bonescythe Bracers",
+   "fa": "ساعدبندِ استخوان‌داس",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Desecrated Bracers",
+   "fa": "ساعدبندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Dreamwalker Tunic",
+   "fa": "پیراهنِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Desecrated Tunic",
+   "fa": "پیراهنِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Dreamwalker Legguards",
+   "fa": "پاافزارِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Desecrated Legguards",
+   "fa": "پاافزارِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Dreamwalker Headpiece",
+   "fa": "سرپوشِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Desecrated Headpiece",
+   "fa": "سرپوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Dreamwalker Spaulders",
+   "fa": "شانه‌بندِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Desecrated Spaulders",
+   "fa": "شانه‌بندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Dreamwalker Boots",
+   "fa": "چکمهٔ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Desecrated Boots",
+   "fa": "چکمهٔ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Mooncloth",
+   "fa": "پارچهٔ ماه",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Dreamwalker Handguards",
+   "fa": "دست‌پیچِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Dreamwalker Girdle",
+   "fa": "کمربندِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Dreamwalker Wristguards",
+   "fa": "مچ‌بندِ راه‌روی رؤیا",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Arcane Crystal",
+   "fa": "بلور جادویی",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Argent Dawn",
+   "fa": "سپیدهٔ نقره‌ای",
+   "kind": "tm"
+  },
+  "E48": {
+   "en": "Gloves",
+   "fa": "دستکش",
+   "kind": "sp"
+  },
+  "E49": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E50": {
+   "en": "Frostfire Robe",
+   "fa": "ردای یخ‌آتش",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Desecrated Robe",
+   "fa": "ردای بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Cloth",
+   "fa": "پارچه",
+   "kind": "tm"
+  },
+  "E53": {
+   "en": "points",
+   "fa": "واحد",
+   "kind": "tm"
+  },
+  "E54": {
+   "en": "Frostfire Leggings",
+   "fa": "پاافزارِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Desecrated Leggings",
+   "fa": "شلوارِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Frostfire Circlet",
+   "fa": "نیم‌تاجِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E57": {
+   "en": "Desecrated Circlet",
+   "fa": "نیم‌تاجِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Frostfire Shoulderpads",
+   "fa": "شانه‌پوشِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "Desecrated Shoulderpads",
+   "fa": "شانه‌پوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Frostfire Sandals",
+   "fa": "صندلِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E61": {
+   "en": "Desecrated Sandals",
+   "fa": "صندلِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Frostfire Gloves",
+   "fa": "دستکشِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Desecrated Gloves",
+   "fa": "دستکشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E64": {
+   "en": "Frostfire Belt",
+   "fa": "کمربندِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E65": {
+   "en": "Desecrated Belt",
+   "fa": "کمربندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E66": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E67": {
+   "en": "Frostfire Bindings",
+   "fa": "بندپیچِ یخ‌آتش",
+   "kind": "it"
+  },
+  "E68": {
+   "en": "Desecrated Bindings",
+   "fa": "بندپیچِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E69": {
+   "en": "Plagueheart Robe",
+   "fa": "ردای طاعون‌دل",
+   "kind": "it"
+  },
+  "E70": {
+   "en": "Plagueheart Leggings",
+   "fa": "پاافزارِ طاعون‌دل",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Earthshatter Handguards": "دست‌پیچِ زمین‌شکن",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Desecrated Handguards": "دست‌پیچِ بی‌حرمت‌شده",
+  "Arcanite Bar": "شمش آرکانیت",
+  "armor": "زره",
+  "battle": "نبرد",
+  "Naxxramas": "ناکس‌راماس",
+  "Earthshatter Girdle": "کمربندِ زمین‌شکن",
+  "Desecrated Girdle": "کمربندِ بی‌حرمت‌شده",
+  "Earthshatter Wristguards": "مچ‌بندِ زمین‌شکن",
+  "Desecrated Wristguards": "مچ‌بندِ بی‌حرمت‌شده",
+  "Bonescythe Breastplate": "سینه‌پوشِ استخوان‌داس",
+  "Desecrated Breastplate": "سینه‌پوشِ بی‌حرمت‌شده",
+  "Leather": "چرم",
+  "Arcanite": "آرکانیت",
+  "Bonescythe Legplates": "صفحه‌پای استخوان‌داس",
+  "Desecrated Legplates": "صفحه‌پای بی‌حرمت‌شده",
+  "Bonescythe Helmet": "کلاه‌خودِ استخوان‌داس",
+  "Desecrated Helmet": "کلاه‌خودِ بی‌حرمت‌شده",
+  "Nexus Crystal": "بلور نکسوس",
+  "Bonescythe Pauldrons": "شانه‌فولادِ استخوان‌داس",
+  "Desecrated Pauldrons": "شانه‌فولادِ بی‌حرمت‌شده",
+  "Bonescythe Sabatons": "صندوقهٔ استخوان‌داس",
+  "Desecrated Sabatons": "صندوقهٔ بی‌حرمت‌شده",
+  "Bonescythe Gauntlets": "دستکش زرهیِ استخوان‌داس",
+  "Desecrated Gauntlets": "دستکش زرهیِ بی‌حرمت‌شده",
+  "Bonescythe Waistguard": "میان‌بندِ استخوان‌داس",
+  "Desecrated Waistguard": "میان‌بندِ بی‌حرمت‌شده",
+  "Bonescythe Bracers": "ساعدبندِ استخوان‌داس",
+  "Desecrated Bracers": "ساعدبندِ بی‌حرمت‌شده",
+  "Dreamwalker Tunic": "پیراهنِ راه‌روی رؤیا",
+  "Desecrated Tunic": "پیراهنِ بی‌حرمت‌شده",
+  "Dreamwalker Legguards": "پاافزارِ راه‌روی رؤیا",
+  "Desecrated Legguards": "پاافزارِ بی‌حرمت‌شده",
+  "Dreamwalker Headpiece": "سرپوشِ راه‌روی رؤیا",
+  "Desecrated Headpiece": "سرپوشِ بی‌حرمت‌شده",
+  "Dreamwalker Spaulders": "شانه‌بندِ راه‌روی رؤیا",
+  "Desecrated Spaulders": "شانه‌بندِ بی‌حرمت‌شده",
+  "Dreamwalker Boots": "چکمهٔ راه‌روی رؤیا",
+  "Desecrated Boots": "چکمهٔ بی‌حرمت‌شده",
+  "Mooncloth": "پارچهٔ ماه",
+  "Dreamwalker Handguards": "دست‌پیچِ راه‌روی رؤیا",
+  "Dreamwalker Girdle": "کمربندِ راه‌روی رؤیا",
+  "Dreamwalker Wristguards": "مچ‌بندِ راه‌روی رؤیا",
+  "Arcane Crystal": "بلور جادویی",
+  "Argent Dawn": "سپیدهٔ نقره‌ای",
+  "Gloves": "دستکش",
+  "undead": "مرده‌متحرک",
+  "Frostfire Robe": "ردای یخ‌آتش",
+  "Desecrated Robe": "ردای بی‌حرمت‌شده",
+  "Cloth": "پارچه",
+  "points": "واحد",
+  "Frostfire Leggings": "پاافزارِ یخ‌آتش",
+  "Desecrated Leggings": "شلوارِ بی‌حرمت‌شده",
+  "Frostfire Circlet": "نیم‌تاجِ یخ‌آتش",
+  "Desecrated Circlet": "نیم‌تاجِ بی‌حرمت‌شده",
+  "Frostfire Shoulderpads": "شانه‌پوشِ یخ‌آتش",
+  "Desecrated Shoulderpads": "شانه‌پوشِ بی‌حرمت‌شده",
+  "Frostfire Sandals": "صندلِ یخ‌آتش",
+  "Desecrated Sandals": "صندلِ بی‌حرمت‌شده",
+  "Frostfire Gloves": "دستکشِ یخ‌آتش",
+  "Desecrated Gloves": "دستکشِ بی‌حرمت‌شده",
+  "Frostfire Belt": "کمربندِ یخ‌آتش",
+  "Desecrated Belt": "کمربندِ بی‌حرمت‌شده",
+  "Arcane": "اسرار",
+  "Frostfire Bindings": "بندپیچِ یخ‌آتش",
+  "Desecrated Bindings": "بندپیچِ بی‌حرمت‌شده",
+  "Plagueheart Robe": "ردای طاعون‌دل",
+  "Plagueheart Leggings": "پاافزارِ طاعون‌دل"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$B",
+  "34": "$N",
+  "35": "$B",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$B",
+  "42": "$N",
+  "43": "$B",
+  "44": "$B",
+  "45": "$C",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$N",
+  "51": "$B",
+  "52": "$B",
+  "53": "$N",
+  "54": "$B",
+  "55": "$B",
+  "56": "$B",
+  "57": "$B",
+  "58": "$N",
+  "59": "$B",
+  "60": "$B",
+  "61": "$B",
+  "62": "$B",
+  "63": "$B",
+  "64": "$B",
+  "65": "$N",
+  "66": "$B",
+  "67": "$B",
+  "68": "$N",
+  "69": "$B",
+  "70": "$B",
+  "71": "$N",
+  "72": "$B",
+  "73": "$B",
+  "74": "$N",
+  "75": "$B",
+  "76": "$B",
+  "77": "$N",
+  "78": "$B",
+  "79": "$B",
+  "80": "$N",
+  "81": "$N",
+  "82": "$B",
+  "83": "$B",
+  "84": "$B",
+  "85": "$B",
+  "86": "$N",
+  "87": "$B",
+  "88": "$B",
+  "89": "$B",
+  "90": "$B",
+  "91": "$B",
+  "92": "$N",
+  "93": "$B",
+  "94": "$B",
+  "95": "$B",
+  "96": "$B",
+  "97": "$B",
+  "98": "$N",
+  "99": "$B",
+  "100": "$B",
+  "101": "$B",
+  "102": "$B",
+  "103": "$B",
+  "104": "$N",
+  "105": "$B",
+  "106": "$B",
+  "107": "$B",
+  "108": "$B",
+  "109": "$B",
+  "110": "$N",
+  "111": "$B",
+  "112": "$B",
+  "113": "$B",
+  "114": "$B",
+  "115": "$B",
+  "116": "$N",
+  "117": "$B",
+  "118": "$B",
+  "119": "$B",
+  "120": "$B",
+  "121": "$B",
+  "122": "$N",
+  "123": "$B",
+  "124": "$B",
+  "125": "$B",
+  "126": "$B",
+  "127": "$B",
+  "128": "$N",
+  "129": "$B",
+  "130": "$B",
+  "131": "$B",
+  "132": "$N",
+  "133": "$B",
+  "134": "$B",
+  "135": "$B",
+  "136": "$N",
+  "137": "$B"
+ },
+ "rows": {
+  "quest:9073:title": "⟦E1⟧",
+  "quest:9073:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E1⟧ if you bring him the following: 1 ⟦E4⟧, 8 Wartorn Chain Scraps, 1 ⟦E5⟧ and 5 Cured Rugged Hides.",
+  "quest:9073:details:0": "Would you honor me by returning the ⟦E6⟧ of those that fell in the defense of these lands?⟦1⟧⟦2⟧The ⟦E6⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E6⟧ scraps, the desecrated ⟦E6⟧ can be renewed and worn for ⟦E7⟧ once more.⟦3⟧⟦4⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦5⟧⟦6⟧Search ⟦E8⟧.",
+  "quest:9073:progress:0": "Have you brought me that which I require?",
+  "quest:9073:completion:0": "These handguards channel the power of the elements!",
+  "quest:9074:title": "⟦E9⟧",
+  "quest:9074:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make an ⟦E9⟧ if you bring him the following: 1 ⟦E10⟧, 8 Wartorn Chain Scraps, 1 ⟦E5⟧ and 3 Nexus Crystals.",
+  "quest:9074:details:0": "Would you honor me by returning the ⟦E6⟧ of those that fell in the defense of these lands?⟦7⟧⟦8⟧The ⟦E6⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E6⟧ scraps, the desecrated ⟦E6⟧ can be renewed and worn for ⟦E7⟧ once more.⟦9⟧⟦10⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦11⟧⟦12⟧Search ⟦E8⟧.",
+  "quest:9074:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9074:completion:0": "Exellent ⟦13⟧ !⟦14⟧ , you got everything just as i asked and now i can make a ⟦E9⟧.",
+  "quest:9075:title": "⟦E11⟧",
+  "quest:9075:desc:0": "Rimblat Earthshatter at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E11⟧ if you bring him the following: 1 ⟦E12⟧, 6 Wartorn Chain Scraps, 1 ⟦E5⟧ and 2 Cured Rugged Hides.",
+  "quest:9075:details:0": "Would you honor me by returning the ⟦E6⟧ of those that fell in the defense of these lands?⟦15⟧⟦16⟧The ⟦E6⟧ has been desecrated and is undoubtedly being used for evil; however, with wartorn ⟦E6⟧ scraps, the desecrated ⟦E6⟧ can be renewed and worn for ⟦E7⟧ once more.⟦17⟧⟦18⟧Bring me the remnants of the fallen along with purification materials and Earthshatter shall be yours to don.⟦19⟧⟦20⟧Search ⟦E8⟧.",
+  "quest:9075:progress:0": "Have you brought me that which I require?",
+  "quest:9075:completion:0": "The wristguards are ready, ⟦21⟧.⟦22⟧⟦23⟧<Rimblat bows.>",
+  "quest:9077:title": "⟦E13⟧",
+  "quest:9077:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E13⟧ if you bring him the following: 1 ⟦E14⟧, 25 Wartorn ⟦E15⟧ Scraps, 2 ⟦E16⟧ Bars and 6 Cured Rugged Hides.",
+  "quest:9077:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦24⟧⟦25⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9077:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9077:completion:0": "Exellent ⟦26⟧ !⟦27⟧,you got everything just as i asked and now i can make a ⟦E13⟧.",
+  "quest:9078:title": "⟦E17⟧",
+  "quest:9078:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E17⟧ if you bring him the following: 1 ⟦E18⟧, 20 Wartorn ⟦E15⟧ Scraps, 1 ⟦E5⟧, 8 Cured Rugged Hides and 100 gold pieces.",
+  "quest:9078:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦28⟧⟦29⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9078:progress:0": "<Rohan laughs.>⟦30⟧⟦31⟧I just realized the irony in all of this.",
+  "quest:9078:completion:0": "Be careful walking around in those things. You might cut yourself.",
+  "quest:9079:title": "⟦E19⟧",
+  "quest:9079:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E19⟧ if you bring him the following: 1 ⟦E20⟧, 15 Wartorn ⟦E15⟧ Scraps, 8 Cured Rugged Hides, 1 ⟦E21⟧ and 75 gold pieces.",
+  "quest:9079:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦32⟧⟦33⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9079:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9079:completion:0": "Exellent ⟦34⟧ !⟦35⟧,you got everything just as i asked and now i can make a ⟦E19⟧.",
+  "quest:9080:title": "⟦E22⟧",
+  "quest:9080:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E22⟧ if you bring him the following: 1 ⟦E23⟧, 12 Wartorn ⟦E15⟧ Scraps, 5 Cured Rugged Hides, 1 ⟦E21⟧ and 50 gold pieces.",
+  "quest:9080:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦36⟧⟦37⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9080:progress:0": "<Rohan eyes you suspiciously.>⟦38⟧⟦39⟧Been to Tyr's Hand lately?",
+  "quest:9080:completion:0": "<Rohan wipes the sweat from his brow.>⟦40⟧⟦41⟧These shoulders took some work! Don't go out and get yourself killed like a scrub, ⟦42⟧.",
+  "quest:9081:title": "⟦E24⟧",
+  "quest:9081:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E24⟧ if you bring him the following: 1 ⟦E25⟧, 12 Wartorn ⟦E15⟧ Scraps, 3 Cured Rugged Hides, 2 Nexus Crystals and 25 gold pieces.",
+  "quest:9081:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦43⟧⟦44⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9081:progress:0": "Just bring me the materials and stop wasting my time, ⟦45⟧.",
+  "quest:9081:completion:0": "They go on your feet. Say, you haven't been nosing around in Tyr's Hand again, have you?",
+  "quest:9082:title": "⟦E26⟧",
+  "quest:9082:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E26⟧ if you bring him the following: 1 ⟦E27⟧, 8 Wartorn ⟦E15⟧ Scraps, 1 ⟦E5⟧ and 5 Cured Rugged Hides.",
+  "quest:9082:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦46⟧⟦47⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9082:progress:0": "How do you expect me to get anything done without the items I requested?",
+  "quest:9082:completion:0": "These gauntlets could probably substitute as weapons if absolutely necessary. Wear them with pride!",
+  "quest:9083:title": "⟦E28⟧",
+  "quest:9083:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E28⟧ if you bring him the following: 1 ⟦E29⟧, 8 Wartorn ⟦E15⟧ Scraps, 5 Cured Rugged Hides, 1 ⟦E21⟧ and 15 gold pieces.",
+  "quest:9083:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦48⟧⟦49⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9083:progress:0": "How do you expect me to get anything done without the items I requested?",
+  "quest:9083:completion:0": "The belt is ready, ⟦50⟧. Have you ever seen such a high-quality item sold for so little?",
+  "quest:9084:title": "⟦E30⟧",
+  "quest:9084:desc:0": "Rohan the Assassin at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E30⟧ if you bring him the following: 1 ⟦E31⟧, 6 Wartorn ⟦E15⟧ Scraps, 1 ⟦E5⟧, 2 Cured Rugged Hides and 10 gold pieces.",
+  "quest:9084:details:0": "If you want Bonescythe made, you're going to have to supply the materials.⟦51⟧⟦52⟧Enter ⟦E8⟧, the big floating city of death in the sky up there, and find desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps. Bring those back along with the materials to put everything together and you'll have your Bonescythe. Oh, and you'll need to pay me for my troubles... I'll supply the bones.",
+  "quest:9084:progress:0": "How do you expect me to get anything done without the items I requested?",
+  "quest:9084:completion:0": "The bracers are ready, ⟦53⟧.⟦54⟧⟦55⟧<Rohan bows.>",
+  "quest:9086:title": "⟦E32⟧",
+  "quest:9086:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E32⟧ if you bring her the following: 1 ⟦E33⟧, 25 Wartorn ⟦E15⟧ Scraps, 6 Cured Rugged Hides and 2 Nexus Crystals.",
+  "quest:9086:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦56⟧⟦57⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9086:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9086:completion:0": "Your ⟦E32⟧ is ready, ⟦58⟧.",
+  "quest:9087:title": "⟦E34⟧",
+  "quest:9087:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E34⟧ if you bring her the following: 1 ⟦E35⟧, 20 Wartorn ⟦E15⟧ Scraps, 8 Cured Rugged Hides and 1 ⟦E21⟧.",
+  "quest:9087:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦59⟧⟦60⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9087:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9087:completion:0": "As promised, ⟦E34⟧.⟦61⟧⟦62⟧<Rayne hands you the ⟦E6⟧.>",
+  "quest:9088:title": "⟦E36⟧",
+  "quest:9088:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E36⟧ if you bring her the following: 1 ⟦E37⟧, 15 Wartorn ⟦E15⟧ Scraps, 6 Cured Rugged Hides and 2 Nexus Crystals.",
+  "quest:9088:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦63⟧⟦64⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9088:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9088:completion:0": "Your ⟦E36⟧ is ready, ⟦65⟧.",
+  "quest:9089:title": "⟦E38⟧",
+  "quest:9089:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E38⟧ if you bring her the following: 1 ⟦E39⟧, 12 Wartorn ⟦E15⟧ Scraps, 5 Cured Rugged Hides and 1 ⟦E21⟧.",
+  "quest:9089:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦66⟧⟦67⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9089:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9089:completion:0": "Your ⟦E38⟧ are ready, ⟦68⟧.",
+  "quest:9090:title": "⟦E40⟧",
+  "quest:9090:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E40⟧ if you bring her the following: 1 ⟦E41⟧, 12 Wartorn ⟦E15⟧ Scraps, 3 ⟦E42⟧ and 2 Cured Rugged Hides.",
+  "quest:9090:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦69⟧⟦70⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9090:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9090:completion:0": "Your ⟦E40⟧ are ready, ⟦71⟧.",
+  "quest:9091:title": "⟦E43⟧",
+  "quest:9091:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E43⟧ if you bring her the following: 1 ⟦E4⟧, 8 Wartorn ⟦E15⟧ Scraps, 5 Cured Rugged Hides and 1 ⟦E21⟧.",
+  "quest:9091:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦72⟧⟦73⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9091:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9091:completion:0": "Your ⟦E43⟧ are ready, ⟦74⟧.",
+  "quest:9092:title": "⟦E44⟧",
+  "quest:9092:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E44⟧ if you bring her the following: 1 ⟦E10⟧, 8 Wartorn ⟦E15⟧ Scraps, 3 ⟦E42⟧ and 2 Cured Rugged Hides.",
+  "quest:9092:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦75⟧⟦76⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9092:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9092:completion:0": "Your ⟦E44⟧ is ready, ⟦77⟧.",
+  "quest:9093:title": "⟦E45⟧",
+  "quest:9093:desc:0": "Rayne at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E45⟧ if you bring her the following: 1 ⟦E12⟧, 6 Wartorn ⟦E15⟧ Scraps, 1 ⟦E46⟧ and 2 Cured Rugged Hides.",
+  "quest:9093:details:0": "Many heroes fell in the last war and many continue to perish at the hands of the Scourge to this day. From the corpses of the fallen, the ⟦E6⟧ is stripped and taken back to ⟦E8⟧ to be used for unknown purposes.⟦78⟧⟦79⟧Recover the desecrated ⟦E6⟧ and wartorn ⟦E6⟧ scraps and supply to me the other material components I require and I will craft Dreamwalker ⟦E6⟧.",
+  "quest:9093:progress:0": "The material cost is high, but soon forgotten.",
+  "quest:9093:completion:0": "Your ⟦E45⟧ are ready, ⟦80⟧.",
+  "quest:9094:title": "⟦E47⟧ ⟦E48⟧",
+  "quest:9094:progress:0": "If you bring me thirty necrotic runes, I will give you your choice of hand protection in return. These should prove valuable in our fight against the ⟦E49⟧ Scourge.",
+  "quest:9094:completion:0": "You've done well, ⟦81⟧. Take your pick of hand protection in thanks for your efforts.",
+  "quest:9095:title": "⟦E50⟧",
+  "quest:9095:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E50⟧ if you bring her the following: 1 ⟦E51⟧, 25 Wartorn ⟦E52⟧ Scraps, 4 ⟦E42⟧ and 2 Nexus Crystals.",
+  "quest:9095:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦82⟧⟦83⟧<Angela ⟦E53⟧ to her head.>⟦84⟧⟦85⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9095:progress:0": "ou got some missing parts for the quest please go and get them all!",
+  "quest:9095:completion:0": "Exellent ⟦86⟧ !,⟦87⟧you got everything just as i asked and now i can make a ⟦E50⟧.",
+  "quest:9096:title": "⟦E54⟧",
+  "quest:9096:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E54⟧ if you bring her the following: 1 ⟦E55⟧, 20 Wartorn ⟦E52⟧ Scraps, 4 ⟦E42⟧ and 2 Nexus Crystals.",
+  "quest:9096:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦88⟧⟦89⟧<Angela ⟦E53⟧ to her head.>⟦90⟧⟦91⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9096:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9096:completion:0": "Exellent ⟦92⟧ !,⟦93⟧you got everything just as i asked and now i can make a ⟦E54⟧.",
+  "quest:9097:title": "⟦E56⟧",
+  "quest:9097:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E56⟧ if you bring her the following: 1 ⟦E57⟧, 15 Wartorn ⟦E52⟧ Scraps, 3 ⟦E42⟧ and 3 Nexus Crystals.",
+  "quest:9097:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦94⟧⟦95⟧<Angela ⟦E53⟧ to her head.>⟦96⟧⟦97⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9097:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9097:completion:0": "Exellent ⟦98⟧ !,⟦99⟧you got everything just as i asked and now i can make a ⟦E56⟧.",
+  "quest:9098:title": "⟦E58⟧",
+  "quest:9098:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E58⟧ if you bring her the following: 1 ⟦E59⟧, 12 Wartorn ⟦E52⟧ Scraps, 2 ⟦E42⟧ and 3 Cured Rugged Hides.",
+  "quest:9098:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦100⟧⟦101⟧<Angela ⟦E53⟧ to her head.>⟦102⟧⟦103⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9098:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9098:completion:0": "Exellent ⟦104⟧ !,⟦105⟧you got everything just as i asked and now i can make a ⟦E58⟧.",
+  "quest:9099:title": "⟦E60⟧",
+  "quest:9099:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E60⟧ if you bring her the following: 1 ⟦E61⟧, 12 Wartorn ⟦E52⟧ Scraps, 2 ⟦E42⟧ and 3 Cured Rugged Hides.",
+  "quest:9099:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦106⟧⟦107⟧<Angela ⟦E53⟧ to her head.>⟦108⟧⟦109⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9099:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9099:completion:0": "Exellent ⟦110⟧ !,⟦111⟧you got everything just as i asked and now i can make a ⟦E60⟧.",
+  "quest:9100:title": "⟦E62⟧",
+  "quest:9100:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E62⟧ if you bring her the following: 1 ⟦E63⟧, 8 Wartorn ⟦E52⟧ Scraps and 4 ⟦E42⟧.",
+  "quest:9100:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦112⟧⟦113⟧<Angela ⟦E53⟧ to her head.>⟦114⟧⟦115⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9100:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9100:completion:0": "Exellent ⟦116⟧ !,⟦117⟧you got everything just as i asked and now i can make a ⟦E62⟧.",
+  "quest:9101:title": "⟦E64⟧",
+  "quest:9101:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E64⟧ if you bring her the following: 1 ⟦E65⟧, 8 Wartorn ⟦E52⟧ Scraps, 2 ⟦E66⟧ Crystals and 2 ⟦E42⟧.",
+  "quest:9101:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦118⟧⟦119⟧<Angela ⟦E53⟧ to her head.>⟦120⟧⟦121⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9101:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9101:completion:0": "Exellent ⟦122⟧ !⟦123⟧ ,you got everything just as i asked and now i can make a ⟦E64⟧.",
+  "quest:9102:title": "⟦E67⟧",
+  "quest:9102:desc:0": "Archmage Angela Dosantos at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E67⟧ if you bring her the following: 1 ⟦E68⟧, 6 Wartorn ⟦E52⟧ Scraps, 1 ⟦E46⟧ and 1 ⟦E21⟧.",
+  "quest:9102:details:0": "As a Watcher, I was allowed access to many of Medivh's personal effects. Among those items, I found the tomes most enlightening. While the majority of the books were filled with - to put it bluntly - tripe, there were some gems. One of those tomes documented the creation of a set of ⟦E6⟧ fit for an archmage: Frostfire.⟦124⟧⟦125⟧<Angela ⟦E53⟧ to her head.>⟦126⟧⟦127⟧It's all in here and I am willing to share the fruits of that knowledge with you as long as you are able to provide me with the necessary materials.",
+  "quest:9102:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9102:completion:0": "Exellent ⟦128⟧ !,⟦129⟧you got everything just as i asked and now i can make a ⟦E67⟧.",
+  "quest:9103:title": "⟦E69⟧",
+  "quest:9103:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E69⟧ if you bring him the following: 1 ⟦E51⟧, 25 Wartorn ⟦E52⟧ Scraps, 4 ⟦E42⟧ and 2 Nexus Crystals.",
+  "quest:9103:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦130⟧⟦131⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9103:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9103:completion:0": "Exellent ⟦132⟧ !⟦133⟧ , you got everything just as i asked and now i can make a ⟦E69⟧.",
+  "quest:9104:title": "⟦E70⟧",
+  "quest:9104:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E70⟧ if you bring him the following: 1 ⟦E55⟧, 20 Wartorn ⟦E52⟧ Scraps, 4 ⟦E42⟧ and 2 Nexus Crystals.",
+  "quest:9104:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦134⟧⟦135⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9104:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9104:completion:0": "Exellent ⟦136⟧ !⟦137⟧ , you got everything just as i asked and now i can make a ⟦E70⟧."
+ },
+ "context": {
+  "quest:9073": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9074": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9075": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rimblat Earthshatter",
+   "turner": "Rimblat Earthshatter"
+  },
+  "quest:9077": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9078": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9079": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9080": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9081": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9082": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9083": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9084": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rohan the Assassin",
+   "turner": "Rohan the Assassin"
+  },
+  "quest:9086": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9087": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9088": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9089": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9090": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9091": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9092": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9093": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rayne",
+   "turner": "Rayne"
+  },
+  "quest:9094": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Argent Quartermaster",
+   "turner": "Argent Quartermaster"
+  },
+  "quest:9095": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9096": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9097": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9098": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9099": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9100": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9101": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9102": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Angela Dosantos",
+   "turner": "Archmage Angela Dosantos"
+  },
+  "quest:9103": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9104": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  }
+ }
+}

@@ -1,0 +1,917 @@
+{
+ "pack": "quest-sort:warlock-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:warlock-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Tainted Parchment",
+   "fa": "پوست‌نوشتِ آلوده",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "trainer",
+   "fa": "مربی",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Tainted Scroll",
+   "fa": "طومارِ آلوده",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Tainted Letter",
+   "fa": "نامهٔ آلوده",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Northshire",
+   "fa": "نورث‌شایر",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Twisting Nether",
+   "fa": "خلأ پیچان",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Tainted Memorandum",
+   "fa": "یادداشتِ آلوده",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Holy Light",
+   "fa": "نور مقدس",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Special",
+   "fa": "ویژه",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Powers of the Void",
+   "fa": "قدرت‌های تهی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Runes of Summoning",
+   "fa": "رون‌های احضار",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Egalin's Grimoire",
+   "fa": "گریموار اگالین",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E27": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E28": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Surena's Choker",
+   "fa": "گردنبند سورنا",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Surena Caledon",
+   "fa": "سورنا کالدون",
+   "kind": "qs"
+  },
+  "E32": {
+   "en": "talent",
+   "fa": "تلنت",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Bloodstone Choker",
+   "fa": "گردنبندِ سنگ خون",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "trained",
+   "fa": "آموزش‌دیده",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Tablet of Verga",
+   "fa": "لوح ورگا",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Skull Rock",
+   "fa": "صخرهٔ جمجمه",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Glyphs of Summoning",
+   "fa": "حروف‌نگاره‌های احضار",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Neeru Fireblade",
+   "fa": "نیرو آتش‌تیغ",
+   "kind": "qs"
+  },
+  "E40": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Pure Hearts",
+   "fa": "قلب‌های خالص",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E43": {
+   "en": "The Barrens",
+   "fa": "دشت‌های بایر",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "wounds",
+   "fa": "زخمی‌کردن",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E46": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E47": {
+   "en": "Ken'zigla's Draught",
+   "fa": "بادهٔ کن‌زیگلا",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Dirt-caked Pendant",
+   "fa": "گردن‌آویزِ گِل‌مال‌شده",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E50": {
+   "en": "Dogran's Pendant",
+   "fa": "گردن‌آویزِ دوگران",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Tainted Parchment": "پوست‌نوشتِ آلوده",
+  "trainer": "مربی",
+  "Orgrimmar": "اورگریمار",
+  "Tainted Scroll": "طومارِ آلوده",
+  "seal": "مهر",
+  "hit": "اصابت",
+  "Forsaken": "مطرودان",
+  "Tainted Letter": "نامهٔ آلوده",
+  "Northshire": "نورث‌شایر",
+  "Twisting Nether": "خلأ پیچان",
+  "Tainted Memorandum": "یادداشتِ آلوده",
+  "chance": "شانس",
+  "Holy Light": "نور مقدس",
+  "allies": "متحدان",
+  "Special": "ویژه",
+  "Allies": "متحدان",
+  "ability": "توانایی",
+  "Horde": "هورد",
+  "Powers of the Void": "قدرت‌های تهی",
+  "Runes of Summoning": "رون‌های احضار",
+  "Undercity": "آندر‌سیتی",
+  "spell": "اسپیل",
+  "Use": "استفاده",
+  "Egalin's Grimoire": "گریموار اگالین",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Shadow": "سایه",
+  "Mage": "جادوگر",
+  "Stormwind": "استورم‌ویند",
+  "fear": "ترس",
+  "Surena's Choker": "گردنبند سورنا",
+  "Surena Caledon": "سورنا کالدون",
+  "talent": "تلنت",
+  "Bloodstone Choker": "گردنبندِ سنگ خون",
+  "trained": "آموزش‌دیده",
+  "Ironforge": "آیرون‌فورج",
+  "Tablet of Verga": "لوح ورگا",
+  "Skull Rock": "صخرهٔ جمجمه",
+  "Glyphs of Summoning": "حروف‌نگاره‌های احضار",
+  "Neeru Fireblade": "نیرو آتش‌تیغ",
+  "curse": "نفرین",
+  "Pure Hearts": "قلب‌های خالص",
+  "Wetlands": "تالاب‌ها",
+  "The Barrens": "دشت‌های بایر",
+  "wounds": "زخمی‌کردن",
+  "healing": "شفا",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Ken'zigla's Draught": "بادهٔ کن‌زیگلا",
+  "Dirt-caked Pendant": "گردن‌آویزِ گِل‌مال‌شده",
+  "battle": "نبرد",
+  "Dogran's Pendant": "گردن‌آویزِ دوگران",
+  "Barrens": "بارنز"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$N",
+  "5": "$n",
+  "6": "$gbrother:sister;",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$n",
+  "17": "$n",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$n",
+  "22": "$n",
+  "23": "$n",
+  "24": "$n",
+  "25": "$N",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$N",
+  "31": "$n",
+  "32": "$n",
+  "33": "$N",
+  "34": "$n",
+  "35": "$n",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$b",
+  "47": "$b",
+  "48": "$n",
+  "49": "$B",
+  "50": "$B",
+  "51": "$N",
+  "52": "$N",
+  "53": "$n",
+  "54": "$n",
+  "55": "$n",
+  "56": "$R",
+  "57": "$n",
+  "58": "$n",
+  "59": "$N",
+  "60": "$n",
+  "61": "$B",
+  "62": "$B"
+ },
+ "rows": {
+  "quest:3090:obj:0": "Read the ⟦E1⟧ and speak to Nartok inside the Den in the Valley of Trials.",
+  "quest:3090:details:0": "Ah, while you were gone a parchment came for you, ⟦1⟧.",
+  "quest:3090:details:1": "I usually avoid dealing with warlocks if I can help it, but I think you should read it when you have time. If I'm not mistaken, it came from your newly-appointed ⟦E2⟧ Nartok. He would have words with you when you're ready.",
+  "quest:3090:progress:0": "Finally, you've arrived... and discretely also. Good.⟦2⟧⟦3⟧Our world is full of fools, ⟦4⟧. Even the mighty Thrall has greater flaws than most can see. He turns his back on the power needed to make this land ours completely! We're not the same people who were manipulated and used by creatures from the Nether. We are our own people. We are proud... and we are strong.",
+  "quest:3090:completion:0": "And now you've joined our ranks also. Don't misunderstand, ⟦5⟧. Just because you have access to power that many will be jealous of, it does not mean you will be accepted easily. Thrall allows our kind into ⟦E3⟧ because we are still his fellow kin--he cannot turn his back on us, or we would become as pathetic as the humans who enslaved him. My point is: be careful. You can be powerful, but if you are foolish, then you are as good dead.",
+  "quest:3090:completion:1": "If you need training in spells then return to me.",
+  "quest:3099:obj:0": "Read the ⟦E4⟧ and speak to Maximillion in Deathknell.",
+  "quest:3099:details:0": "Ah, while you were off dealing with the mindless Scourge, this scroll arrived for you. I would think it's some matter of importance as it seems it bears the ⟦E5⟧ of the warlock ⟦E2⟧ Maximillion. I would take some time to read it before heading out again.",
+  "quest:3099:progress:0": "I bid you welcome, ⟦6⟧. I knew you would come. It was only a matter of time.⟦7⟧⟦8⟧What I said interested you, didn't it? I ⟦E6⟧ a chord... something inside you knew what I claimed was truth. Good.⟦9⟧⟦10⟧Know this though: I am no traitor to Sylvanas. If anything, she would appreciate my claims considering it was her own beliefs that has put the ⟦E7⟧ in the position it is now.",
+  "quest:3099:completion:0": "I mentioned a slave still being a slave, no matter the master. Do you remember? We both know that it is that type of control--that type of power--that now drives us. We seek to have creatures serve us. We know we are more powerful and deserve more respect than others give us ... and so now we look to take it.",
+  "quest:3099:completion:1": "I will be your ally in this struggle--the struggle for our own freedom. Freedom to seek our own allegiances. When you feel ready, return to me and I will teach you all I know.",
+  "quest:3105:obj:0": "Read the ⟦E8⟧ and speak to Drusilla La Salle next to ⟦E9⟧ Abbey.",
+  "quest:3105:details:0": "I was asked to bring this to your attention as soon as you returned from the kobold camps, ⟦11⟧. It appears to be a letter sealed with the insignia of Drusilla, one of our local trainers. I wouldn't hesitate to read it before you go about any other business here in the Abbey.",
+  "quest:3105:progress:0": "Ah, so you've arrived, and not a moment too soon, ⟦12⟧. Some of the guards were over here a moment ago and were giving me curious looks... pathetic mundanes.",
+  "quest:3105:completion:0": "As you grow in power, you will be tempted--you must always remember to control yourself. I will not lie--corruption can come to any practitioner of the arcane; especially one who deals with creatures from the ⟦E10⟧. Be patient, and be prudent... but do not let that repress your ambition.",
+  "quest:3105:completion:1": "As you grow more powerful, return to me and I will teach you more about our ways.",
+  "quest:3115:obj:0": "Read the ⟦E11⟧ and speak to Alamar Grimm inside Anvilmar above Coldridge Valley.",
+  "quest:3115:details:0": "While you were helping me out, this memorandum was given to me to pass on to you. Take some time to read it when you have a ⟦E12⟧. I'm thinkin' it came from the warlock ⟦E2⟧ Alamar. Take a gander at it and go find him inside Anvilmar when you've a ⟦E12⟧.",
+  "quest:3115:details:1": "And watch yerself, ⟦13⟧, your kind ain't too trusted 'round these parts.",
+  "quest:3115:progress:0": "Wonderful! You got my memorandum obviously.⟦14⟧⟦15⟧Ignore the fools around you, ⟦16⟧. The ⟦E13⟧?! The sword and shield?! These aren't paths for ones as open minded as us. Look at what \"normal\" magic did to our home. Coupled with  those damned tinkerers, our race almost became extinct. And now we have to rely on the dwarves-- they'd rather spend time allying with humans than help us rebuild our own home. We're like second-class citizens. Have you seen the way they look at us?",
+  "quest:3115:completion:0": "But none of that matters. What matters is that you've seen your own ⟦E13⟧! You know where power truly comes from. You realize that having our own ⟦E14⟧ is much more... prudent. ⟦E15⟧ ⟦E14⟧. ⟦E16⟧ that, no matter the task, will obey till their last breath.",
+  "quest:3115:completion:1": "And that's where I come in, ⟦17⟧. I can train you in the beginnings of those special powers. Seek me out often and I will do what I can to teach you more spells.",
+  "quest:1470:obj:0": "Bring Venya Marthand 3 Rattlecage Skulls.",
+  "quest:1470:details:0": "Greetings, child. I can see that you are still young in the ways of the warlock, power still eluding your grasp. I can sense your eagerness to learn.",
+  "quest:1470:details:1": "And you will learn.",
+  "quest:1470:details:2": "There is no strength in ignorance. Knowledge is our greatest power. Through its application, we can control the chaotic magics and beings of the void, bending them to our will.",
+  "quest:1470:details:3": "I will show you how to bind a servant to your will, but first you must bring me three skulls of the rattlecage skeletons near the abandoned smithy.",
+  "quest:1470:progress:0": "Your power is little now, though I suspect already you sense the possibilities.⟦18⟧⟦19⟧Even the dead might feel alive, with that power coursing through us.",
+  "quest:1470:completion:0": "Though you are still untested and young in your learning, you have proven that you possess sufficient ⟦E17⟧ to master the summoning and binding of an imp. Do not be deceived by an imp's size. Though it lacks physical strength, it possesses powers and a cleverness that will serve you well.",
+  "quest:1470:completion:1": "Attend me carefully, ⟦20⟧, for I will not repeat this lesson, and I will leave its mastery to you.",
+  "quest:1485:obj:0": "Bring 6 Vile Familiar Heads to Ruzan.",
+  "quest:1485:details:0": "Those warlocks who came before us have earned the distrust of the ⟦E18⟧, and while we are tolerated, we are not loved.",
+  "quest:1485:details:1": "This has not brought the warlocks closer together, however, as many choose to live reclusively, dabbling in their magics alone. I will not seek to lead you down one path or the other, but only help you in your maturation.",
+  "quest:1485:details:2": "Before I teach you the art of summoning, bring me six heads of the vile familiars from the cave to the northeast.",
+  "quest:1485:progress:0": "It is important that you can control the beings that you summon through your magic. There are few enough interested in learning the ways of the warlock that I would risk throwing your life away by teaching you something before you are ready.",
+  "quest:1485:completion:0": "Throughout your training as a warlock, you will learn to call forth beings of many sorts. Some may not seem it, but all are useful tools.",
+  "quest:1485:completion:1": "Do not be fooled by the imp's small size. As you no doubt noticed, it is still a formidable adversary.",
+  "quest:1499:obj:0": "Speak with Zureetha Fargaze.",
+  "quest:1499:details:0": "Zureetha has been sending novices like yourself to help cull the numbers of the creatures in the cave near where you fought the vile familiars.",
+  "quest:1499:details:1": "I think it would be good for you to gain experience by assisting her. Be sure to tell her that you assisted with the imp problem, she'll probably have a reward for you.",
+  "quest:1499:completion:0": "You have done well, ⟦21⟧.",
+  "quest:1499:completion:1": "Although the vile familiars were merely pets of the darker powers within the Burning Blade, your success against them foretells greater deeds ahead.",
+  "quest:1598:obj:0": "Retrieve the ⟦E19⟧ for Drusilla La Salle.",
+  "quest:1598:details:0": "You there! ⟦22⟧, right?",
+  "quest:1598:details:1": "I hope you're sure about becoming a warlock, because if you can't hold your own, you're likely to get pulled under.",
+  "quest:1598:details:2": "I'm to teach you, but I need to make sure you're strong enough first.",
+  "quest:1598:details:3": "There was a novice studying at the Abbey who ran off to join the Defias Brotherhood. Why do I care? Well, he stole some important books.",
+  "quest:1598:details:4": "One of those happens to be a book I've wanted for myself, the ⟦E19⟧. Steal it for me, they have it hidden at their tent in the Vineyards.",
+  "quest:1598:progress:0": "It was too conspicuous for me to steal the book myself. What luck one of their own patsies did the dirty work for me.",
+  "quest:1598:completion:0": "Excellent... I was never able to gain access to this text, it was held in a protected wing of the library that would have looked suspicious for me to be loitering around.",
+  "quest:1598:completion:1": "Well, you did a good job in getting this, and I'm convinced that you can probably handle your own imp, so there's no reason for me not to show you how to summon one.",
+  "quest:1599:obj:0": "Bring 3 Feather Charms to Alamar Grimm in Anvilmar.",
+  "quest:1599:details:0": "You must be the new warlock everyone's been whispering about. Must be someone's taken a liking to you if they've asked me to take time away from my research to start your training.",
+  "quest:1599:details:1": "Don't worry, I won't hold it against you.",
+  "quest:1599:details:2": "The simplest of the summoning spells you will learn is that of the imp. Before I impart this to you, however, you must prove that you have the necessary magical and physical ⟦E17⟧.",
+  "quest:1599:details:3": "Bring me three feather charms from the frostmane novices from the cave to the southwest.",
+  "quest:1599:progress:0": "Those feather charms the novices carry have some sort of magical power to them. It will be interesting to research them. I wouldn't have expected it from the trolls.",
+  "quest:1599:completion:0": "Very good, very good! You've done well, ⟦23⟧. Perhaps the interest that is being shown in you is deserved, after all.",
+  "quest:1599:completion:1": "That'll be for the others to decide--assuming your imp doesn't overpower you and nip your career in the bud. For now, I'm satisfied that you'll probably survive your first few months as a warlock.",
+  "quest:1599:completion:2": "BA word about the imp, ⟦24⟧. As a gnome knows, don't let its size fool you, its magic can be very dangerous.",
+  "quest:1471:obj:0": "Using the ⟦E20⟧, summon and subdue a voidwalker, then return the ⟦E20⟧ to Carendin Halgar in the Magic Quarter of the ⟦E21⟧.",
+  "quest:1471:details:0": "Surely you have seen the circle of summoning below us? Only there will you be able to draw forth an unbound voidwalker.",
+  "quest:1471:details:1": "Using these runes, you will be able to draw it forth, and then you must dominate it through strength of arms and magic.",
+  "quest:1471:details:2": "When it is subdued, it will be indentured to you. Come to me then, and I will elucidate the ⟦E22⟧ of summoning, so that it may serve you to whatever end you wish.",
+  "quest:1471:progress:0": "I expect to hear of your success, ⟦25⟧. Not meeting my expectations will be the least of your worries, however, should you fail.",
+  "quest:1471:completion:0": "You have done well, ⟦26⟧. Now, I will impart to you the ⟦E22⟧ used for summoning the voidwalker.",
+  "quest:1471:completion:1": "The power that it unleashed upon you is now yours to command. ⟦E23⟧ it wisely.",
+  "quest:1473:obj:0": "Recover ⟦E24⟧ and bring it to Carendin Halgar in the Temple of the Damned.",
+  "quest:1473:details:0": "It seems the consensus that you are ready to learn to summon a voidwalker.",
+  "quest:1473:details:1": "BA being created of the chaos that lies beyond, if you summon one but cannot control it, you will be torn asunder.",
+  "quest:1473:details:2": "The first voidwalker was summoned by Egalin, and in his grimoire is the process explained.",
+  "quest:1473:details:3": "Unfortunately, it was stolen from us by an agent of the ⟦E25⟧ who has it secreted away in his base at a tower to the west. Bring it to me, and I will impart the knowledge to you.",
+  "quest:1473:progress:0": "Egalin was the teacher that taught me. With hardly a look, he was able to command the voidwalker he had summoned.⟦27⟧⟦28⟧When it came my turn to try, I was overconfident. Do not trifle with the powers that you wield, ⟦29⟧, they can consume even the vigilant.",
+  "quest:1473:completion:0": "Ah, this is excellent. Like as not, Perrine was ignorant to the true power of the musty book he had stolen from us.",
+  "quest:1473:completion:1": "It will not fall out of our hands again. Observe, ⟦30⟧, the structure of the ⟦E22⟧, the manner in which your power must be channeled.",
+  "quest:1478:obj:0": "Speak with Carendin Halgar in the ⟦E21⟧.",
+  "quest:1478:details:0": "Ah, ⟦31⟧! I just received word from Carendin Halgar that he would like to see you for further training.",
+  "quest:1478:details:1": "You should be proud of yourself, ⟦32⟧. It's not every day that Master Halgar personally sees fit to instruct a young warlock.",
+  "quest:1478:details:2": "You'll be able to find him in the Magic Quarter of the ⟦E21⟧, near the Temple of the Damned.",
+  "quest:1478:completion:0": "Good, I see Ageron managed to find you, ⟦33⟧. Let us waste little time with small talk and pleasantries and focus on your training. There is still much you have to learn.",
+  "quest:1506:obj:0": "Speak with Gan'rul Bloodeye in ⟦E3⟧.",
+  "quest:1506:details:0": "You there. ⟦34⟧, right?",
+  "quest:1506:details:1": "I hope your schedule isn't busy, because Gan'rul wants to see you right away. You'll find him with the senior warlocks in the Cleft of ⟦E26⟧.",
+  "quest:1506:details:2": "Based on my past dealings with Gan'rul, your summons is either a very good thing or a very bad thing.",
+  "quest:1506:completion:0": "Good. I was afraid Ophek wouldn't reach you.",
+  "quest:1506:completion:1": "It is time that I further your warlock training. Any business you have currently will have to wait.",
+  "quest:1506:completion:2": "I trust there will not be a problem with this?",
+  "quest:1685:obj:0": "Report to Gakin the Darkbinder in the ⟦E27⟧ Quarter of ⟦E28⟧.",
+  "quest:1685:details:0": "Isn't that how it always works? Was looking for you all day and couldn't find you, now when I'm not expecting it, you come and walk right up to me.",
+  "quest:1685:details:1": "I've wasted enough time trying to find you, so I won't delay you any longer. Master Gakin's summoned you for additional training. Seems to me you should seek him out as soon as possible.",
+  "quest:1685:details:2": "You'll find him in the basement of the Slaughtered Lamb tavern. By the way, you might want to keep that particular location quiet. Don't want word spreading about it.",
+  "quest:1685:completion:0": "I'm glad someone was able to get a hold of you, ⟦35⟧. I was beginning to ⟦E29⟧ the worst. It would be a shame to lose you, after the time we've invested in you. We can talk later, though. Your training is the only important thing now.",
+  "quest:1688:obj:0": "Retrieve ⟦E30⟧ for Gakin the Darkbinder in ⟦E28⟧.",
+  "quest:1688:details:0": "I had a student named ⟦E31⟧. She stood where you stand now, eager to learn of warlock magic, and possessing no small bit of ⟦E32⟧. More than that she was young and pleasing to the eye. Had I seen it then, the traitorous trollop!",
+  "quest:1688:details:1": "The thieving wench ran off with one of the Defias, Erlan Drudgemoor. While her loss is of little importance, I gifted her a bloodstone choker that I must have.",
+  "quest:1688:details:2": "Her life means nothing to me now. You will find her at the Brackwell Pumpkin Patch. Retrieve what is mine.",
+  "quest:1688:progress:0": "Even the older and wiser can be unmanned by the wiles of youth and beauty, ⟦36⟧. A piece of advice you would do well to remember throughout your life.",
+  "quest:1688:completion:0": "Surena was talented, but not enough so to gain mastery of warlock magic on her own. It's a shame to see ⟦E32⟧ wasted, but sometimes it is necessary.",
+  "quest:1688:completion:1": "I hope my investment in you will bear different results.",
+  "quest:1689:obj:0": "Using the ⟦E33⟧, summon and subdue a voidwalker, then return the ⟦E33⟧ to Gakin the Darkbinder in ⟦E28⟧.",
+  "quest:1689:details:0": "By retrieving my choker and besting Surena, you've proven that you're at least as capable as she was.",
+  "quest:1689:details:1": "With that said, I can tell you're direly in need of training. You can manage the flows of magic, yes, but being a warlock is much more than that.",
+  "quest:1689:details:2": "I will show you how to command a voidwalker, but before I can, you must call one forth at a summoning circle and subdue it using whatever weapons--physical and magical--you have at your disposal. ⟦E23⟧ the magic of this choker at the summoning circle below.",
+  "quest:1689:progress:0": "I cannot show you how to control a voidwalker until you have overtaken one.",
+  "quest:1689:completion:0": "You did better than I expected, ⟦37⟧, but as well as I'd hoped. Now, you can learn to command your subjugated voidwalker, an ally you will find valuable in the trials that are sure to stand before you.",
+  "quest:1689:completion:1": "I have nothing more to teach you at the present, but I am far from done with you, ⟦38⟧.",
+  "quest:1715:obj:0": "Report to Gakin the Darkbinder in the ⟦E27⟧ Quarter of ⟦E28⟧.",
+  "quest:1715:details:0": "Hmph. Times past, all warlocks in Khaz Modan were ⟦E34⟧ under the auspices of the masters of Gnomeregan, but now that we've all been forced to relocate into this rat's hole in ⟦E35⟧, and Magni's decided to keep a careful watch on us, we're forced to send our novices to ⟦E28⟧ for training.",
+  "quest:1715:details:1": "Luckily, Gakin's no slouch, so you'll still learn what you need to know, but it burns my blood!",
+  "quest:1715:details:2": "Anyways, you'll find Gakin in the basement of the Slaughtered Lamb in ⟦E28⟧.",
+  "quest:1715:completion:0": "Sent by Blackwrench, were you? Damn warlocks in ⟦E35⟧ need to get things sorted out. There's only so much room and so many teachers in ⟦E28⟧. With all the increased traffic, we're sure to attract attention sooner or later.",
+  "quest:1501:obj:0": "Retrieve the ⟦E36⟧ for Gan'rul Bloodeye in ⟦E3⟧.",
+  "quest:1501:details:0": "So few warlocks remain... We risk much, but the risks are warranted. You must quickly reach maturity in your ⟦E17⟧ if you are to be of use to the ⟦E18⟧ and to the Warchief.",
+  "quest:1501:details:1": "It is time that you learned a new summoning ⟦E22⟧.",
+  "quest:1501:details:2": "First, you must recover the ⟦E36⟧, which was stolen by warlocks of the Burning Blade and is now kept at their lair in ⟦E37⟧ to the east of the city. With the tablet, I will show you the runes necessary to summoning a voidwalker.",
+  "quest:1501:progress:0": "Do you have the ⟦E36⟧, ⟦39⟧? If not, I do not wish to speak with you until you do.",
+  "quest:1501:completion:0": "Good. I hope you inflicted some other losses on the Burning Blade when you went to retrieve this.",
+  "quest:1501:completion:1": "They have been a source of great annoyance for the Warchief, and a great blight upon warlocks as a whole.",
+  "quest:1504:obj:0": "Using the ⟦E38⟧, summon and subdue a voidwalker, then return the ⟦E38⟧ to Gan'rul Bloodeye in ⟦E3⟧.",
+  "quest:1504:details:0": "Now, observe the ⟦E36⟧, for it contains the glyphs you will need for the summoning. Take them to the circle in ⟦E39⟧'s tent on the other side of the cavern. There you will be able to call for the voidwalker.",
+  "quest:1504:details:1": "You must defeat it using whatever physical and magical means you have at your disposal. When this is completed, return to me with the glyphs of summoning and I will demonstrate how you may bind the creature to your will.",
+  "quest:1504:progress:0": "The voidwalker is a powerful creature. I remember when it was I that was in your shoes, ⟦40⟧. Over the years, my own voidwalker has grown to fight me less, though I suspect that is only because it hopes I will let my guard down.⟦41⟧⟦42⟧Remember that, ⟦43⟧.",
+  "quest:1504:completion:0": "You have done well, ⟦44⟧. I will show you how to summon the voidwalker similar to the one you just defeated.",
+  "quest:1504:completion:1": "You should know that we have high expectations for you, and you have, so far, matched them.",
+  "quest:1504:completion:2": "Do not let it go to your head, however, as the tasks that still lie before you will make this seem as simple as waking in the morning.",
+  "quest:1472:obj:0": "Speak with Godrick Farsan in the Temple of the Damned.",
+  "quest:1472:details:0": "A succubus is a devourer of souls, destroyer of hearts, tempter of men. A creature of profound evil and of singular mind.",
+  "quest:1472:details:1": "It cannot be brought into our world without a stimulus.",
+  "quest:1472:details:2": "Thus we use its own strength against it. With the hearts of good men, pure men, loving men, the succubus will be unable to resist, and will cross into our world. Then you can dominate it, and make it your own.",
+  "quest:1472:details:3": "Speak with my assistant, Godrick Farsan, within the Temple. He will help you find your bait.",
+  "quest:1472:completion:0": "You were sent by Carendin? ⟦45⟧, then.⟦46⟧⟦47⟧Do not think light of me because my sight is gone. I see things that lie behind now, with clarity I had never known. What I once thought a ⟦E40⟧, is now a boon.",
+  "quest:1474:obj:0": "Using the ⟦E41⟧, summon and subdue a succubus, then return the ⟦E41⟧ to Carendin Halgar in the Magic Quarter of the ⟦E21⟧.",
+  "quest:1474:details:0": "Using these hearts, cast a ⟦E22⟧ at the summoning circle to open a doorway for the succubus to come through. Your powers are greater now, and you will need all of them to defeat the succubus.",
+  "quest:1474:details:1": "Beware its charms, ⟦48⟧, many a strong mind has been bound to its will. When overcome, the succubus will be returned to the void, and I will teach you the ⟦E22⟧ to summon it forth at your command.",
+  "quest:1474:progress:0": "Of the powers from beyond the void, the succubus is one of the most dangerous, as the weak are most easily wrapped around its fingers.⟦49⟧⟦50⟧Remember that now and in the future.",
+  "quest:1474:completion:0": "Again, you have done well, ⟦51⟧. It has been quite some time since I have seen a young warlock with as much potential as you. Be assured that I will continue to watch your progress, and prepare and assist you in your future trials.",
+  "quest:1474:completion:1": "For now, let me show you the summoning ⟦E22⟧ for your newly dominated succubus.",
+  "quest:1476:obj:0": "Bring the hearts of Dalin Forgewright and Comar Villard to Carendin Halgar in the Temple of the Damned.",
+  "quest:1476:details:0": "Men of honor and goodness? Does such a man exist?",
+  "quest:1476:details:1": "It took much research, but through bits of overheard stories, I managed to find two men that should do.",
+  "quest:1476:details:2": "The first is Dalin Forgewright, who has dedicated himself to the care of the Lordaeron refugees, whom are refused by their kin at the Greymane Wall.",
+  "quest:1476:details:3": "The other is Comar Villard, a man who remains faithful to his lost love, wandering the ⟦E42⟧ for a sign of his wife.",
+  "quest:1476:details:4": "Deliver their hearts to Carendin. But first, let me show you your quarry.",
+  "quest:1476:progress:0": "I have been pleasantly surprised by the speed of your progress so far, ⟦52⟧. Bring me the hearts and you will impress me once again.",
+  "quest:1476:completion:0": "The heart of a goodly man seems much the same as any, when you see it like this, don't you think?",
+  "quest:1476:completion:1": "Perhaps we possess something of a... different... view on the subject. These will do, though. I have no doubt that a succubus would be attracted by their purity.",
+  "quest:1507:obj:0": "Speak with Cazul in the Cleft of ⟦E26⟧.",
+  "quest:1507:details:0": "The time has come for you to learn more of the summoning magics. You will learn to summon a succubus, a creature of incredible mental powers. It can lull those of weak minds into its servitude--but have no ⟦E29⟧! I feel certain that you will be equal to the challenge.",
+  "quest:1507:details:1": "BA succubus can only be summoned when baited with an item that represents great devotion and love. I leave it to you to find such an object.",
+  "quest:1507:details:2": "BA suggestion? Speak with Cazul... There seems to be little the ancient warlock does not know.",
+  "quest:1507:completion:0": "Hm... ⟦53⟧. You are still new to your path, but I sense the possibility for greatness in you.",
+  "quest:1507:completion:1": "You were born with gifts, ⟦54⟧. See that they do not go to waste.",
+  "quest:1508:obj:0": "Speak with Zankaja in ⟦E3⟧.",
+  "quest:1508:details:0": "Hmm... But, of course, that is not why you have come to speak with me.",
+  "quest:1508:details:1": "If Gan'rul has sent you to me, it must be that you are to summon a succubus, and need an object to use for enticement.",
+  "quest:1508:details:2": "Hmm... If you trust a blind man to lead you, ⟦55⟧, then listen. In the bluffs of ⟦E3⟧, west of the wind rider tower, lives Zankaja. She waits for the return of her mate.",
+  "quest:1508:details:3": "Go to her.",
+  "quest:1508:completion:0": "Have you come with news of Dogran? He was to have returned days ago, and I have heard nothing...",
+  "quest:1509:obj:0": "Speak with Gazrog at the Crossroads.",
+  "quest:1509:details:0": "My mate, Dogran, was recently sent to the Crossroads for duty. It was a promotion, and he was very proud.",
+  "quest:1509:details:1": "I was sad, of course, but I didn't let him know that. And worried, too. ⟦E43⟧ is a more dangerous place than ⟦E3⟧, and I feared the worst.",
+  "quest:1509:details:2": "Now it's been a week after he should have returned, and I have received no word from him...",
+  "quest:1509:details:3": "Perhaps you could go to the Crossroads and see if they have any news? He worked with Gazrog, who should still be stationed there.",
+  "quest:1509:completion:0": "Zankaja? That's Dogran's mate, right?",
+  "quest:1509:completion:1": "Yeah, I've heard from him, but it's not the sort of news we should let get back to her...",
+  "quest:1509:completion:2": "No, he's not dead. But he is injured and a prisoner of the quilboar.",
+  "quest:1510:obj:0": "Speak with Ken'zigla at the Malaka'jin.",
+  "quest:1510:details:0": "He was stationed at Camp Taurajo, where we've been trying to weed out the quilboar. He led a few grunts to one of their camps, where he was hurt bad. The others made it back and tried to rescue him. He was in bad shape, his ⟦E44⟧ festered, so they were afraid to move him without patching him up first.",
+  "quest:1510:details:1": "They sent a message here, requesting a ⟦E45⟧ draught from the trolls at the Malaka'jin at the base of the ⟦E46⟧. We sent someone to get it, but they haven't returned yet.",
+  "quest:1510:completion:0": "Another ⟦56⟧, eh? I hope you haven't come for the other. He didn't make it. Those goblins did him in good.",
+  "quest:1510:completion:1": "He said he needed a ⟦E45⟧ draught, but not much else.",
+  "quest:1511:obj:0": "Bring ⟦E47⟧ to Grunt Logmar at Camp Taurajo.",
+  "quest:1511:details:0": "I figured there might be another coming to get the draught, so I prepared it anyways.",
+  "quest:1511:details:1": "Here you go, ⟦57⟧. Mind you, you should only give half of it to him! That will give him enough strength to move without bleeding himself dry. Wait a night, then give him the other half.",
+  "quest:1511:details:2": "Anyways, you'll want to bring this to Logmar at Camp Taurajo. From what the first one told me, he should have an idea where this Dogran is.",
+  "quest:1511:progress:0": "Yes, what is it?",
+  "quest:1511:completion:0": "Well, it's about time! Dogran has been dying out there, waiting for this.",
+  "quest:1511:completion:1": "We need to get this out to him right away, but most of the grunts stationed here are out on a foraging mission.",
+  "quest:1512:obj:0": "Bring the ⟦E48⟧ to Gan'rul Bloodeye in ⟦E3⟧.",
+  "quest:1512:details:0": "Zankaja is young and beautiful. To be chained to an invalid... I will not allow her to suffer that injustice.",
+  "quest:1512:details:1": "Leave me, ⟦58⟧. And thank you. I may end my life in glorious ⟦E49⟧, instead of a lifeless husk.",
+  "quest:1512:details:2": "And please, I would ask you not to tell my mate of this... I do not want guilt on her conscience.",
+  "quest:1512:progress:0": "You have returned. Are you ready to ⟦E49⟧ a succubus?",
+  "quest:1512:completion:0": "If you tell me that this will suffice, then I trust you, ⟦59⟧. Allow me to clean it though... Pristine and shining, it may be even more enticing to a succubus.",
+  "quest:1513:obj:0": "Using ⟦E50⟧, summon and subdue a succubus, then return ⟦E50⟧ to Gan'rul Bloodeye in ⟦E3⟧.",
+  "quest:1513:details:0": "Take this to the summoning circle in Neeru's tent, ⟦60⟧. Summon forth a foul succubus, then show it your mastery. I believe in the strength of your magic. As always, though, be wary, for pride and overconfidence has overcome many a promising warlock.",
+  "quest:1513:details:1": "When you have defeated it, return the pendant to me so that I might deliver the news to Zankaja.",
+  "quest:1513:progress:0": "When I look upon a succubus, my heart begins to soar... But at the same time, I can almost sense my soul's ebb, drifting away like the tides.⟦61⟧⟦62⟧Be wary, my friend.",
+  "quest:1513:completion:0": "Success! Be sure I expected nothing less from my star pupil.",
+  "quest:1513:completion:1": "You have proven your worth, and gladly will I show you the method of summoning your subdued succubus. Go now, you have much to learn, and when next I see you, I will expect you to have found true mastery over your succubus.",
+  "quest:1513:completion:2": "Leave the sorrow of Dogran and Zankaja to those of us who are longer in years, but remember it, and hold it as protection against the wiles of the dark power you have learned to summon today.",
+  "quest:1515:obj:0": "Bring ⟦E47⟧ to Dogran in the ⟦E51⟧.",
+  "quest:1515:details:0": "You've made it this far, so if you want to see this through to the end, I won't stop you. I can't spare you any additional manpower though, you'll be on your own.",
+  "quest:1515:details:1": "Dogran is being held in a quilboar camp to the north of here. Look for a group of two huts. He'll be heavily guarded--that is, if they haven't killed him yet, or he hasn't succumbed to his ⟦E44⟧.",
+  "quest:1515:details:2": "Good luck.",
+  "quest:1515:progress:0": "Urrrghhhh...",
+  "quest:1515:completion:0": "Foul tasting brew...",
+  "quest:1515:completion:1": "I can feel the strength in me now, enough to hobble away... But my leg, I will have lost it for the rest of my life. My arm, too."
+ },
+ "context": {
+  "quest:3090": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek",
+   "turner": "Nartok"
+  },
+  "quest:3099": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Shadow Priest Sarvis",
+   "turner": "Maximillion"
+  },
+  "quest:3105": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Marshal McBride",
+   "turner": "Drusilla La Salle"
+  },
+  "quest:3115": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm",
+   "turner": "Alamar Grimm"
+  },
+  "quest:1470": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 3,
+   "side": "horde",
+   "giver": "Venya Marthand",
+   "turner": "Venya Marthand"
+  },
+  "quest:1485": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 4,
+   "side": "horde",
+   "giver": "Ruzan",
+   "turner": "Ruzan"
+  },
+  "quest:1499": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 4,
+   "side": "horde",
+   "giver": "Ruzan",
+   "turner": "Zureetha Fargaze"
+  },
+  "quest:1598": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Drusilla La Salle",
+   "turner": "Drusilla La Salle"
+  },
+  "quest:1599": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Alamar Grimm",
+   "turner": "Alamar Grimm"
+  },
+  "quest:1471": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Carendin Halgar",
+   "turner": "Carendin Halgar"
+  },
+  "quest:1473": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Carendin Halgar",
+   "turner": "Carendin Halgar"
+  },
+  "quest:1478": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Ageron Kargal",
+   "turner": "Carendin Halgar"
+  },
+  "quest:1506": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Ophek",
+   "turner": "Gan'rul Bloodeye"
+  },
+  "quest:1685": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Remen Marcot",
+   "turner": "Gakin the Darkbinder"
+  },
+  "quest:1688": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Gakin the Darkbinder",
+   "turner": "Gakin the Darkbinder"
+  },
+  "quest:1689": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Gakin the Darkbinder",
+   "turner": "Gakin the Darkbinder"
+  },
+  "quest:1715": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Lago Blackwrench",
+   "turner": "Gakin the Darkbinder"
+  },
+  "quest:1501": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 11,
+   "side": "horde",
+   "giver": "Gan'rul Bloodeye",
+   "turner": "Gan'rul Bloodeye"
+  },
+  "quest:1504": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 11,
+   "side": "horde",
+   "giver": "Gan'rul Bloodeye",
+   "turner": "Gan'rul Bloodeye"
+  },
+  "quest:1472": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Carendin Halgar",
+   "turner": "Godrick Farsan"
+  },
+  "quest:1474": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Carendin Halgar",
+   "turner": "Carendin Halgar"
+  },
+  "quest:1476": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Godrick Farsan",
+   "turner": "Carendin Halgar"
+  },
+  "quest:1507": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Gan'rul Bloodeye",
+   "turner": "Cazul"
+  },
+  "quest:1508": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Cazul",
+   "turner": "Zankaja"
+  },
+  "quest:1509": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Zankaja",
+   "turner": "Gazrog"
+  },
+  "quest:1510": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Gazrog",
+   "turner": "Ken'zigla"
+  },
+  "quest:1511": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Ken'zigla",
+   "turner": "Grunt Logmar"
+  },
+  "quest:1512": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Grunt Dogran",
+   "turner": "Gan'rul Bloodeye"
+  },
+  "quest:1513": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Gan'rul Bloodeye",
+   "turner": "Gan'rul Bloodeye"
+  },
+  "quest:1515": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Grunt Logmar",
+   "turner": "Grunt Dogran"
+  }
+ },
+ "known": {
+  "quest:3090": {
+   "title": "پوست‌نوشتِ آلوده"
+  },
+  "quest:3099": {
+   "title": "طومار آلوده"
+  },
+  "quest:3105": {
+   "title": "نامهٔ آلوده"
+  },
+  "quest:3115": {
+   "title": "یادداشت آلوده"
+  },
+  "quest:1470": {
+   "title": "شکافتن پرده"
+  },
+  "quest:1485": {
+   "title": "فمیلیارهای پلید"
+  },
+  "quest:1499": {
+   "title": "فمیلیارهای پلید"
+  },
+  "quest:1598": {
+   "title": "جلد کتاب دزدیده‌شده"
+  },
+  "quest:1599": {
+   "title": "آغاز"
+  },
+  "quest:1471": {
+   "title": "پیوند"
+  },
+  "quest:1473": {
+   "title": "مخلوق تهی"
+  },
+  "quest:1478": {
+   "title": "فراخوان هالگار"
+  },
+  "quest:1506": {
+   "title": "فراخوان گان‌رول"
+  },
+  "quest:1685": {
+   "title": "فراخوان گاکین"
+  },
+  "quest:1688": {
+   "title": "سورنا کالدون"
+  },
+  "quest:1689": {
+   "title": "پیوند"
+  },
+  "quest:1715": {
+   "title": "برهٔ سلاخی‌شده"
+  },
+  "quest:1501": {
+   "title": "مخلوق تهی"
+  },
+  "quest:1504": {
+   "title": "پیوند"
+  },
+  "quest:1472": {
+   "title": "بلعندهٔ ارواح"
+  },
+  "quest:1474": {
+   "title": "پیوند"
+  },
+  "quest:1476": {
+   "title": "قلب‌های پاک"
+  },
+  "quest:1507": {
+   "title": "بلعندهٔ ارواح"
+  },
+  "quest:1508": {
+   "title": "کازول کور"
+  },
+  "quest:1509": {
+   "title": "خبر دوگران"
+  },
+  "quest:1510": {
+   "title": "خبر دوگران"
+  },
+  "quest:1511": {
+   "title": "معجون کن‌زیگلا"
+  },
+  "quest:1512": {
+   "title": "هدیهٔ عشق"
+  },
+  "quest:1513": {
+   "title": "پیوند"
+  },
+  "quest:1515": {
+   "title": "اسارت دوگران"
+  }
+ }
+}

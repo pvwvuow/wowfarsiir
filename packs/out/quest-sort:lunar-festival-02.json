@@ -1,0 +1,578 @@
+{
+ "pack": "quest-sort:lunar-festival-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:lunar-festival-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "reverence",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Lunar Fireworks",
+   "fa": "آتش‌بازی ماه",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Fireworks",
+   "fa": "آتش‌بازی",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Elune's Blessing",
+   "fa": "برکت الون",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Valadar Starsong",
+   "fa": "والادار ستاره‌آواز",
+   "kind": "qs"
+  },
+  "E9": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Lunar Festival Invitation",
+   "fa": "دعوت‌نامهٔ جشنِ ماه",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "Elune": "الون",
+  "reverence": "ارجمند",
+  "blessing": "برکت",
+  "Lunar Fireworks": "آتش‌بازی ماه",
+  "Fireworks": "آتش‌بازی",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Elune's Blessing": "برکت الون",
+  "Valadar Starsong": "والادار ستاره‌آواز",
+  "allies": "متحدان",
+  "Azeroth": "آزروت",
+  "Ironforge": "آیرون‌فورج",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Stormwind": "استورم‌ویند",
+  "Darnassus": "دارناسوس",
+  "Orgrimmar": "اورگریمار",
+  "Undercity": "آندر‌سیتی",
+  "Thunder Bluff": "تاندر بلاف",
+  "Use": "استفاده",
+  "Lunar Festival Invitation": "دعوت‌نامهٔ جشنِ ماه",
+  "Travel": "سفر"
+ },
+ "tokens": {
+  "1": "$C",
+  "2": "$C",
+  "3": "$C",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$B",
+  "21": "$B",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$n",
+  "29": "$b",
+  "30": "$b",
+  "31": "$n",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$n"
+ },
+ "rows": {
+  "quest:8684:completion:0": "Your spirit burns with life, young ⟦1⟧. I accept the homage you pay, and offer in return this token...",
+  "quest:8685:completion:0": "Your spirit burns with life, young ⟦2⟧. I accept the homage you pay, and offer in return this token...",
+  "quest:8686:completion:0": "Your spirit burns with life, young ⟦3⟧. I accept the homage you pay, and offer in return this token...",
+  "quest:8688:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦4⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8713:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦5⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8714:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦6⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8715:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦7⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8716:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦8⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8717:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦9⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8718:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦10⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8719:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦11⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8720:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦12⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8721:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦13⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8722:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦14⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8723:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦15⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8724:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦16⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8725:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦17⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8726:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦18⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8727:completion:0": "The heavens, in their countless stars, hold answers to earthly mysteries, ⟦19⟧. Might, then, the wise, and the lucky, gaze up and find truth?",
+  "quest:8862:obj:0": "{'type': 'item', 'id': 21100, 'target': 'Coin of Ancestry', 'text': None}",
+  "quest:8862:progress:0": "⟦E1⟧'s candle is an artifact of great ⟦E2⟧ to the disciples of the Lunar Festival. Stored within the candle is true moonlight, ready to be unleashed!⟦20⟧⟦21⟧This light is harmless to most creatures, but you will find that Omen and his minions are burned and dazzled by it.",
+  "quest:8862:completion:0": "Very well then - I accept these coins of ancestry. Please take ⟦E1⟧'s candle with my ⟦E3⟧. Also, please enjoy these complimentary fireworks.",
+  "quest:8862:completion:1": "May your Lunar Festival be joyous and filled with merriment, ⟦22⟧.",
+  "quest:8862:completion:2": "And if you choose to face Omen and his minions, you will find ⟦E1⟧'s candle quite useful...",
+  "quest:8866:completion:0": "It is good to know the people of this land still pay homage to the olden races. I bid you well, ⟦23⟧, and offer you this token...",
+  "quest:8867:obj:0": "Launch 8 ⟦E4⟧ and 2 Cluster ⟦E5⟧ and return to a Lunar Festival Harbinger at any capital city.",
+  "quest:8867:details:0": "Every year the druids of ⟦E6⟧ hold a celebration of our city's great triumph over an ancient evil.",
+  "quest:8867:details:1": "We celebrate the wisdom of our elders, share in magnificent feasts and of course... shoot fireworks!",
+  "quest:8867:details:2": "For a small donation you can purchase colorful rockets from our vendor. Try using some of the launchers around here, ⟦24⟧.",
+  "quest:8867:progress:0": "Did you find the launchers, ⟦25⟧?",
+  "quest:8867:completion:0": "Well done, ⟦26⟧.",
+  "quest:8867:completion:1": "Now that you're in the spirit of things, why don't you take this invitation to the festival in ⟦E6⟧.",
+  "quest:8867:completion:2": "It's quite an enjoyable celebration, if you have the time to spare. We share food, drink, stories and of course... more fireworks!",
+  "quest:8867:completion:3": "Open the invitation while standing inside the circle of greater moonlight and you'll be transported to ⟦E6⟧.",
+  "quest:8868:obj:0": "Summon Omen, defeat him and gain ⟦E7⟧. Return to ⟦E8⟧ in Nighthaven",
+  "quest:8868:details:0": "The beast Omen was once a hero of this world. A wolf of great strength and fortune, Omen fought beside the heroes of the War of the Ancients until he succumbed to demonic magics. Turning against his ⟦E9⟧, he raged across ⟦E10⟧ and carried death and terror in his wake.",
+  "quest:8868:details:1": "Finally defeated here, in ⟦E6⟧, Omen now sleeps among the silt of Lake ⟦E1⟧'ara. But each new year, during the festival, he stirs...",
+  "quest:8868:details:2": "Gather cohorts, ⟦27⟧, and summon and defeat the beast Omen. Earn the ⟦E3⟧ of ⟦E1⟧!",
+  "quest:8868:completion:0": "Very well done, ⟦28⟧. Defeating Omen sent his spirit back to the waters of ⟦E1⟧'ara. Although the beast himself is blessed by ⟦E1⟧ and so cannot die, his anger will subside for another year.⟦29⟧⟦30⟧Your victory is a celebration, ⟦31⟧--a celebration of the might of Omen, of you and your ⟦E9⟧, and of the peace you have given this tragic hero of our past.",
+  "quest:8870:obj:0": "Talk to the Lunar Festival Harbinger in the Mystic Ward of ⟦E11⟧. You can also talk to Lunar Festival Harbingers in other capital cities.",
+  "quest:8870:details:0": "It's that time of the year, ⟦32⟧! The ⟦E12⟧ invites all denizens of ⟦E10⟧ to partake in our celebration of the Lunar Festival. You will find the Lunar Festival Harbinger in this very city at a location marked by a blessed circle of moonlight. She can tell you more about the holiday.",
+  "quest:8870:completion:0": "Welcome, ⟦33⟧. Are you here to join in the festivities?",
+  "quest:8871:obj:0": "Talk to the Lunar Festival Harbinger in the Park District in ⟦E13⟧. You can also talk to Lunar Festival Harbingers in other capital cities.",
+  "quest:8871:details:0": "It's that time of the year, ⟦34⟧! The ⟦E12⟧ invites all denizens of ⟦E10⟧ to partake in our celebration of the Lunar Festival. You will find the Lunar Festival Harbinger in this very city at a location marked by a blessed circle of moonlight. She can tell you more about the holiday.",
+  "quest:8871:completion:0": "Welcome, ⟦35⟧. Are you here to join in the festivities?",
+  "quest:8872:obj:0": "Talk to the Lunar Festival Harbinger at the Cenarion Enclave in ⟦E14⟧. You can also talk to Lunar Festival Harbingers in other capital cities.",
+  "quest:8872:details:0": "It's that time of the year, ⟦36⟧! The ⟦E12⟧ invites all denizens of ⟦E10⟧ to partake in our celebration of the Lunar Festival. You will find the Lunar Festival Harbinger in this very city at a location marked by a blessed circle of moonlight. She can tell you more about the holiday.",
+  "quest:8872:completion:0": "Welcome, ⟦37⟧. Are you here to join in the festivities?",
+  "quest:8873:obj:0": "Talk to the Lunar Festival Harbinger in the Valley of Wisdom in ⟦E15⟧. You can also talk to Lunar Festival Harbingers in other capital cities.",
+  "quest:8873:details:0": "It's that time of the year, ⟦38⟧! The ⟦E12⟧ invites all denizens of ⟦E10⟧ to partake in our celebration of the Lunar Festival. You will find the Lunar Festival Harbinger in this very city at a location marked by a blessed circle of moonlight. She can tell you more about the holiday.",
+  "quest:8873:completion:0": "Welcome, ⟦39⟧. Are you here to join in the festivities?",
+  "quest:8874:obj:0": "Talk to the Lunar Festival Harbinger in the entrance to the ⟦E16⟧. You can also talk to Lunar Festival Harbingers in other capital cities.",
+  "quest:8874:details:0": "It's that time of the year, ⟦40⟧! The ⟦E12⟧ invites all denizens of ⟦E10⟧ to partake in our celebration of the Lunar Festival. You will find the Lunar Festival Harbinger in this very city at a location marked by a blessed circle of moonlight. She can tell you more about the holiday.",
+  "quest:8874:completion:0": "Welcome, ⟦41⟧. Are you here to join in the festivities?",
+  "quest:8875:obj:0": "Talk to the Lunar Festival Harbinger at the Elder Rise in ⟦E17⟧. You can also talk to Lunar Festival Harbingers in other capital cities.",
+  "quest:8875:details:0": "It's that time of the year, ⟦42⟧! The ⟦E12⟧ invites all denizens of ⟦E10⟧ to partake in our celebration of the Lunar Festival. You will find the Lunar Festival Harbinger in this very city at a location marked by a blessed circle of moonlight. She can tell you more about the holiday.",
+  "quest:8875:completion:0": "Welcome, ⟦43⟧. Are you here to join in the festivities?",
+  "quest:8883:obj:0": "⟦E18⟧ your ⟦E19⟧ in the moonlight to travel to ⟦E6⟧. Speak with ⟦E8⟧ in Nighthaven when you arrive.",
+  "quest:8883:details:0": "Now that you have your Lunar Festival invitation, you may travel to ⟦E6⟧! There you will find many revelers, and in the village of Nighthaven ⟦E8⟧ and his sister Fariel await those eager to participate in the celebration.",
+  "quest:8883:details:1": "⟦E20⟧ to ⟦E6⟧ through the greater moonlight and speak with ⟦E8⟧; see what prizes you might gain during the festival!",
+  "quest:8883:completion:0": "⟦44⟧, welcome to Nighthaven, host of the Lunar Festival! Although our village is normally remote and sequestered from the peoples of ⟦E10⟧, during this time of celebration we open our arms and hearts to all.",
+  "quest:8883:completion:1": "Enjoy your visit, ⟦45⟧, and speak with me or my sister again when ready."
+ },
+ "context": {
+  "quest:8684": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Dreamseer",
+   "turner": "Elder Dreamseer"
+  },
+  "quest:8685": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Mistwalker",
+   "turner": "Elder Mistwalker"
+  },
+  "quest:8686": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder High Mountain",
+   "turner": "Elder High Mountain"
+  },
+  "quest:8688": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Windrun",
+   "turner": "Elder Windrun"
+  },
+  "quest:8713": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Starsong",
+   "turner": "Elder Starsong"
+  },
+  "quest:8714": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Moonstrike",
+   "turner": "Elder Moonstrike"
+  },
+  "quest:8715": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Bladeleaf",
+   "turner": "Elder Bladeleaf"
+  },
+  "quest:8716": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Starglade",
+   "turner": "Elder Starglade"
+  },
+  "quest:8717": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Moonwarden",
+   "turner": "Elder Moonwarden"
+  },
+  "quest:8718": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Bladeswift",
+   "turner": "Elder Bladeswift"
+  },
+  "quest:8719": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Bladesing",
+   "turner": "Elder Bladesing"
+  },
+  "quest:8720": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Skygleam",
+   "turner": "Elder Skygleam"
+  },
+  "quest:8721": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Starweave",
+   "turner": "Elder Starweave"
+  },
+  "quest:8722": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Meadowrun",
+   "turner": "Elder Meadowrun"
+  },
+  "quest:8723": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Nightwind",
+   "turner": "Elder Nightwind"
+  },
+  "quest:8724": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Morningdew",
+   "turner": "Elder Morningdew"
+  },
+  "quest:8725": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Riversong",
+   "turner": "Elder Riversong"
+  },
+  "quest:8726": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Brightspear",
+   "turner": "Elder Brightspear"
+  },
+  "quest:8727": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Farwhisper",
+   "turner": "Elder Farwhisper"
+  },
+  "quest:8862": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Valadar Starsong («والادار ستاره‌آواز»)",
+   "turner": "Valadar Starsong («والادار ستاره‌آواز»)"
+  },
+  "quest:8866": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Elder Bronzebeard",
+   "turner": "Elder Bronzebeard"
+  },
+  "quest:8867": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lunar Festival Harbinger",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8868": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Valadar Starsong («والادار ستاره‌آواز»)",
+   "turner": "Valadar Starsong («والادار ستاره‌آواز»)"
+  },
+  "quest:8870": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lunar Festival Emissary",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8871": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lunar Festival Emissary",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8872": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lunar Festival Emissary",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8873": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Lunar Festival Herald",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8874": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Lunar Festival Herald",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8875": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Lunar Festival Herald",
+   "turner": "Lunar Festival Harbinger"
+  },
+  "quest:8883": {
+   "zone_en": "Lunar Festival",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lunar Festival Harbinger",
+   "turner": "Valadar Starsong («والادار ستاره‌آواز»)"
+  }
+ },
+ "known": {
+  "quest:8684": {
+   "title": "سالخوردهٔ رؤیابین"
+  },
+  "quest:8685": {
+   "title": "سالخوردهٔ مه‌پیما"
+  },
+  "quest:8686": {
+   "title": "سالخوردهٔ های‌ماونتین"
+  },
+  "quest:8688": {
+   "title": "سالخوردهٔ بادرو"
+  },
+  "quest:8713": {
+   "title": "سالخوردهٔ ستاره‌آواز"
+  },
+  "quest:8714": {
+   "title": "سالخوردهٔ ماه‌کوب"
+  },
+  "quest:8715": {
+   "title": "سالخوردهٔ تیغ‌برگ"
+  },
+  "quest:8716": {
+   "title": "سالخوردهٔ ستاره‌گلستان"
+  },
+  "quest:8717": {
+   "title": "سالخوردهٔ ماه‌نگهبان"
+  },
+  "quest:8718": {
+   "title": "سالخوردهٔ تیغ‌تند"
+  },
+  "quest:8719": {
+   "title": "سالخوردهٔ تیغ‌آواز"
+  },
+  "quest:8720": {
+   "title": "سالخوردهٔ آسمان‌درخش"
+  },
+  "quest:8721": {
+   "title": "سالخوردهٔ ستاره‌باف"
+  },
+  "quest:8722": {
+   "title": "سالخوردهٔ چمن‌رو"
+  },
+  "quest:8723": {
+   "title": "سالخوردهٔ شب‌باد"
+  },
+  "quest:8724": {
+   "title": "سالخوردهٔ بامدادشبنم"
+  },
+  "quest:8725": {
+   "title": "سالخوردهٔ رودآواز"
+  },
+  "quest:8726": {
+   "title": "سالخوردهٔ درخشان‌نیزه"
+  },
+  "quest:8727": {
+   "title": "سالخوردهٔ دورنجوا"
+  },
+  "quest:8862": {
+   "title": "شمع الون"
+  },
+  "quest:8866": {
+   "title": "سالخوردهٔ برنزبیرد"
+  },
+  "quest:8867": {
+   "title": "آتش‌بازی ماه"
+  },
+  "quest:8868": {
+   "title": "برکت الون"
+  },
+  "quest:8870": {
+   "title": "جشن ماه"
+  },
+  "quest:8871": {
+   "title": "جشن ماه"
+  },
+  "quest:8872": {
+   "title": "جشن ماه"
+  },
+  "quest:8873": {
+   "title": "جشن ماه"
+  },
+  "quest:8874": {
+   "title": "جشن ماه"
+  },
+  "quest:8875": {
+   "title": "جشن ماه"
+  },
+  "quest:8883": {
+   "title": "والادار ستاره‌آواز"
+  }
+ }
+}

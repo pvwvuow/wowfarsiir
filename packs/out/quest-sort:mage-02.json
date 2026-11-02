@@ -1,0 +1,512 @@
+{
+ "pack": "quest-sort:mage-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:mage-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "wand",
+   "fa": "واند",
+   "kind": "tm"
+  },
+  "E2": {
+   "en": "Rituals of Power",
+   "fa": "آیین‌های قدرت",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "polymorph",
+   "fa": "تغییر شکل اجباری",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Jade",
+   "fa": "یشم",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Bolt Charged Bramble",
+   "fa": "خارِ شارژشدهٔ صاعقه",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "totem",
+   "fa": "توتم",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Infernal Orb",
+   "fa": "گوی اهریمنی",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Obsidian Power Source",
+   "fa": "منبع قدرت آبسیدین",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Mana Surges",
+   "fa": "جوشش‌های مانا",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Celestial Orb",
+   "fa": "گویِ آسمانی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Glittering Dust",
+   "fa": "گردِ برق‌افشان",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "volley",
+   "fa": "رگبار",
+   "kind": "sp"
+  },
+  "E23": {
+   "en": "Enchanted Coral",
+   "fa": "مرجان افسون‌شده",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Arcane Shard",
+   "fa": "خرده‌سنگ آرکان",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Destroy Morphaz",
+   "fa": "نابودی مورفاز",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Prismatic Shell",
+   "fa": "پوستهٔ منشوری",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Warlord Krellian",
+   "fa": "جنگ‌سالار کرلیان",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Burn",
+   "fa": "سوختن",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Polymorph",
+   "fa": "تغییر شکل اجباری",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "wand": "واند",
+  "Rituals of Power": "آیین‌های قدرت",
+  "polymorph": "تغییر شکل اجباری",
+  "Jade": "یشم",
+  "Bolt Charged Bramble": "خارِ شارژشدهٔ صاعقه",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "totem": "توتم",
+  "hit": "اصابت",
+  "Scarlet": "سرخ‌پوشان",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Theramore": "ترمور",
+  "Infernal Orb": "گوی اهریمنی",
+  "Desolace": "دزوله‌یس",
+  "Demon": "اهریمن",
+  "demon": "اهریمن",
+  "Obsidian Power Source": "منبع قدرت آبسیدین",
+  "Mana Surges": "جوشش‌های مانا",
+  "spell": "اسپیل",
+  "Celestial Orb": "گویِ آسمانی",
+  "Azshara": "آزشارا",
+  "Glittering Dust": "گردِ برق‌افشان",
+  "volley": "رگبار",
+  "Enchanted Coral": "مرجان افسون‌شده",
+  "Arcane Shard": "خرده‌سنگ آرکان",
+  "allies": "متحدان",
+  "Destroy Morphaz": "نابودی مورفاز",
+  "ability": "توانایی",
+  "Prismatic Shell": "پوستهٔ منشوری",
+  "Warlord Krellian": "جنگ‌سالار کرلیان",
+  "Burn": "سوختن",
+  "aura": "هاله",
+  "Polymorph": "تغییر شکل اجباری"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$R",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$n"
+ },
+ "rows": {
+  "quest:1949:obj:0": "Speak with Magus Tirth in the Shimmering Flats.",
+  "quest:1949:details:0": "To make your ⟦E1⟧, there are key passages in a certain book that I must read. The book is called ⟦E2⟧, written by the Magus Tirth.",
+  "quest:1949:details:1": "I do not have a copy of his book, and none of the world's great libraries possess it. So you must speak with Tirth and gain it from him.",
+  "quest:1949:details:2": "Good luck. Tirth used to be a great mage and scholar, but now he spends his time at the gnome and goblin races in the Shimmering Flats, drinking and gambling.",
+  "quest:1949:completion:0": "What? Speak up! These old ears aren't as sharp as they used to be.",
+  "quest:1949:completion:1": "Well, I hope you're here with a fresh mug of ale or some hot tips on the next race! If not, then you best keep walking... because I have a ⟦E3⟧ ⟦E1⟧ with your name on it!",
+  "quest:1948:obj:0": "Bring 1 ⟦E4⟧ and the ⟦E5⟧ to Tabetha in ⟦E6⟧.",
+  "quest:1948:details:0": "The building of a mage's ⟦E1⟧ is not easy. Rare substances are required, and a vessel must be made that can store great quantities of magical energy. You must gather these things and bring them to me.",
+  "quest:1948:details:1": "I have written onto this parchment that which you need, and instructions on how to get it. Bring me exactly what is on this list, and follow my written directions to the letter, for if you do not then when we make your ⟦E1⟧ things might go... badly.",
+  "quest:1948:progress:0": "Hello, ⟦1⟧. Do you have the items I require?",
+  "quest:1948:completion:0": "Aha! You got the jade and made the bramble! Well done!",
+  "quest:1948:completion:1": "Is that smoke I see rising from your ears? You might have gotten too close when the lightning struck the ⟦E7⟧ sticks, but don't worry. Being ⟦E8⟧ by lightning is good luck!",
+  "quest:1951:obj:0": "Bring the book ⟦E2⟧ to Tabetha in ⟦E6⟧.",
+  "quest:1951:details:0": "Hm... now that I think about it, I don't have my book! You see, I had some gambling debts and to pay them off I sold the last copy of ⟦E2⟧ to a member of the clergy....",
+  "quest:1951:details:1": "BA member of the ⟦E9⟧ Brotherhood. He must have taken it to their library in the ⟦E9⟧ Monastery in ⟦E10⟧!",
+  "quest:1951:details:2": "If you want that book, then you'll have to go to the monastery to find it. And sorry about all the trouble. I'm not myself these days...",
+  "quest:1951:progress:0": "Greetings, ⟦2⟧.  Did you find the book, ⟦E2⟧?",
+  "quest:1951:completion:0": "That's it! It's just what I need to prepare for the ritual to create your ⟦E1⟧! I hope it wasn't too much trouble to find...",
+  "quest:1952:obj:0": "Speak with Tabetha after her ritual.",
+  "quest:1952:details:0": "I'll go make the wands now.",
+  "quest:1952:completion:0": "Here are the wands I made. Take your pick!",
+  "quest:1953:obj:0": "Speak with Tabetha.",
+  "quest:1953:details:0": "It is time, ⟦3⟧, for you to speak with Tabetha... the hermit of ⟦E6⟧. She will instruct you on the creation of a powerful mage's implement.",
+  "quest:1953:details:1": "Tabetha's shack lies deep in ⟦E6⟧, west of ⟦E11⟧.",
+  "quest:1953:completion:0": "Ah, yes. You are here for an orb or a staff, ⟦4⟧? Very well. I will aid you in its construction.",
+  "quest:1953:completion:1": "But be forewarned--the process is a perilous one and could mean your death.",
+  "quest:1953:completion:2": "Or my death. Definitely someone's death...",
+  "quest:1953:completion:3": "But let's hope it's someone else's death, eh?",
+  "quest:1954:obj:0": "Bring an ⟦E12⟧ to Tabetha in ⟦E6⟧.",
+  "quest:1954:details:0": "The first step is to acquire an orb with power. The warlocks of the Burning Blade have nice, high quality orbs... it's too bad they've bound demons into them! But we can fix that, yes we can.",
+  "quest:1954:details:1": "Go to ⟦E13⟧ and snatch an infernal orb from a Burning Blade summoner. You'll find summoners at the Mannoroc Coven.",
+  "quest:1954:details:2": "When you have the orb, return to me.",
+  "quest:1954:progress:0": "Do you have an infernal orb, ⟦5⟧?",
+  "quest:1954:completion:0": "Oh, that's a nice one! No, I don't mean it's \"nice\" like cool juice is nice on a hot day.",
+  "quest:1954:completion:1": "In fact, it's very NOT nice now that I think about it. Not the juice. The orb!",
+  "quest:1954:completion:2": "Focus, ⟦6⟧! We'll need you focused if we're ever to finish our task!",
+  "quest:1955:obj:0": "Kill the ⟦E14⟧ of the Orb, then speak with Tabetha.",
+  "quest:1955:details:0": "Now that we have a summoner's orb, we must exorcise the ⟦E15⟧ within it. I can do that. That's the easy part.",
+  "quest:1955:details:1": "You're the one who has the hard job. You're the one who has to kill the ⟦E15⟧ once it's out.",
+  "quest:1955:details:2": "And you'll have to be quick. If you take too long then he'll jump back in the orb and we'll have to start over!",
+  "quest:1955:details:3": "So get yourself ready. Prepare your strongest spells and keep your potions handy, and go get a friend if you have one. Because this isn't going to be pretty.",
+  "quest:1955:progress:0": "You'll have to kill that ⟦E15⟧ to remove its taint from the orb, ⟦7⟧.",
+  "quest:1955:completion:0": "Nicely done, ⟦8⟧! You gave that ⟦E15⟧ a lesson he won't soon forget.",
+  "quest:1955:completion:1": "He'll think twice before he sticks his ugly head back in this world, looking for the stupid mortal who beat him. Probably with friends this time. Big, scaly friends who'd want nothing more than to tear you into little ⟦9⟧ pieces.",
+  "quest:1955:completion:2": "I didn't scare you, did I...⟦10⟧?",
+  "quest:1956:obj:0": "Retrieve an ⟦E16⟧ and bring it to Tabetha in ⟦E6⟧.",
+  "quest:1956:details:0": "Now that the ⟦E15⟧ has been removed, we must gain a power source. Unfortunately, the best power sources are usually the oldest and the hardest to get. It's neat how fate likes to take a bite out of you sometimes, isn't it?",
+  "quest:1956:details:1": "So you're going to need to go to Uldaman and defeat the obsidian sentinel there. He's big, he's tough, and his power source packs a punch!",
+  "quest:1956:details:2": "I wish you the best of luck, ⟦11⟧. And if you don't get lucky then, well... it was nice knowing you.",
+  "quest:1956:progress:0": "Have you been to Uldaman, ⟦12⟧?  Did you defeat the obsidian sentinel?",
+  "quest:1956:completion:0": "You did it? Well done!",
+  "quest:1956:completion:1": "I was chatting with some of my colleagues and when your name came up they said, \"You know that ⟦13⟧ sure works well under stress!\"",
+  "quest:1956:completion:2": "But when I told them I sent you to Uldaman against the obsidian sentinel, they said I was crazy! They said, \"Tabetha, you're crazy! There's no way ⟦14⟧ could take on that sentinel!\"",
+  "quest:1956:completion:3": "And I said, \"We'll see\", and then they said \"Yeah, we'll see...\"",
+  "quest:1956:completion:4": "Well we sure showed them, didn't we!",
+  "quest:1957:obj:0": "Kill 12 ⟦E17⟧ in the allowed time limit.",
+  "quest:1957:details:0": "We are almost finished, but this last step is the most perilous, ⟦15⟧.",
+  "quest:1957:details:1": "I have the empty summoner's orb and am ready to empower it. We will do this by harnessing the energy of a mana rift. I'll cast a ⟦E18⟧ that will temporarily open a rift, from which creatures, mana surges, will pour out. You must defeat the mana surges and their power will be released, which I will then collect.",
+  "quest:1957:details:2": "Kill enough mana surges before the rift closes and I will place all their collected energy in your orb.",
+  "quest:1957:progress:0": "You have not killed the required amount of mana surges, ⟦16⟧.",
+  "quest:1957:completion:0": "You did it! I never doubted you for a second! Ok, maybe for just a second, or two... but basically I didn't have much doubt.",
+  "quest:1957:completion:1": "Honest.",
+  "quest:1958:completion:0": "You should be proud of yourself, ⟦17⟧. Many mages have fallen to the creatures you faced.",
+  "quest:1958:completion:1": "The ⟦E19⟧ is ready. Or if you'd like I can mount it atop a staff. It's up to you. I'd prefer the orb, but who am I to judge?",
+  "quest:8250:obj:0": "Seek out Sanath Lim-yo and gain passage to see Archmage Xylem.",
+  "quest:8250:details:0": "Archmage Xylem has been asking around lately... for someone of your experience.",
+  "quest:8250:details:1": "If you wish to seek him out, you can find him in ⟦E20⟧. His tower is built high atop the cliffs, and the only way up is a teleport ⟦E18⟧ invoked by his arrogant servant, Sanath Lim-yo.",
+  "quest:8250:details:2": "Sanath makes camp below his master's tower. To find him, travel to where ⟦E20⟧'s main road forks at the entrance to the Ruins of Eldarath. From that spot, head directly north until you reach the cliffs.",
+  "quest:8250:completion:0": "<Sanath sneers at you.>",
+  "quest:8250:completion:1": "Archmage Xylem awaits your arrival.",
+  "quest:8251:obj:0": "Bring 10 ⟦E21⟧ to Archmage Xylem.",
+  "quest:8251:details:0": "The blood elves in ⟦E20⟧ have developed a method for pulverizing the magical items they acquire. This glittering dust they produce differs from the components normally acquired by a disenchantment ⟦E18⟧.",
+  "quest:8251:details:1": "When I sent my apprentice to trade for the dust, he was killed without hesitation. For that, they must pay.",
+  "quest:8251:details:2": "The time for talk is over, ⟦18⟧. Find the blood elves along the cliffs of ⟦E20⟧ and use more \"persuasive\" methods to acquire their glittering dust.",
+  "quest:8251:progress:0": "Have you the dust?",
+  "quest:8251:completion:0": "Well done, ⟦19⟧! It never ceases to amaze me how persuasive a ⟦E22⟧ of arcane missiles can be.",
+  "quest:8252:obj:0": "Collect 6 ⟦E23⟧ and return them to Archmage Xylem.",
+  "quest:8252:details:0": "Take a look around you. The ruins and beaches are overrun with spitelash. Recently, the wretched creatures have learned to recognize the rare components indigenous to ⟦E20⟧.",
+  "quest:8252:details:1": "Specifically, I speak of enchanted coral -- they are drawn to it by reasons unknown to me. Now there is little coral left in the bay, and it is vital to my research. I need you to separate some enchanted coral from the spitelash sirens and bring it to me.",
+  "quest:8252:progress:0": "The spitelash sirens are surprisingly adept mages.  Not as adept as you, I hope?",
+  "quest:8252:completion:0": "This is a superb specimen of coral, ⟦20⟧. Your skills are unquestionably precise and deadly.",
+  "quest:8252:completion:1": "Do not think your efforts have gone unnoticed. Perhaps you are worthy of a true test of your skill...",
+  "quest:8253:obj:0": "Retrieve the ⟦E24⟧ from Morphaz and return to Archmage Xylem.",
+  "quest:8253:details:0": "There is a green drake deep in the sunken temple of Atal'Hakkar by the name of Morphaz.",
+  "quest:8253:details:1": "Years ago, he overwhelmed me in a bold ambush and consumed my apprentice whole. While the loss of an apprentice is not unknown to me, this particular one carried an arcane shard of unsurpassed size and quality.",
+  "quest:8253:details:2": "You must gather powerful ⟦E25⟧ and delve into the temple. ⟦E26⟧ and recover the arcane shard from his ageless stomach.",
+  "quest:8253:progress:0": "Have you slain my old nemesis?",
+  "quest:8253:completion:0": "Incredible. The shard has grown as it absorbed the drake's energy over the long years.",
+  "quest:8253:completion:1": "There is no more I can ask of you now. My full ⟦E27⟧ to forge the arcane has returned with this shard. My first creation is yours, ⟦21⟧, and you have but to choose...",
+  "quest:9362:obj:0": "Retrieve the ⟦E28⟧ for Archmage Xylem. The Archmage resides in a tower atop the cliffs of ⟦E20⟧.",
+  "quest:9362:details:0": "There isn't much time, ⟦22⟧! My scrying spells have revealed a powerful source of magic. I cannot leave the tower, and would ask you to kill the vile creature in possession of this artifact.",
+  "quest:9362:details:1": "The pathetic little cretin is known as ⟦E29⟧, hiding behind his guards in the Temple of Zin-Malor. ⟦E30⟧ him to ashes and take the prismatic shell he covets so dearly.",
+  "quest:9362:progress:0": "There is not time to waste! Have you the shell?",
+  "quest:9362:completion:0": "I must say, this shell has a strange ⟦E31⟧. It seems only fitting that part of your reward for retrieving it would be to test its magical capabilities...",
+  "quest:9364:obj:0": "⟦E32⟧ the Spitelash of ⟦E20⟧ and kill the clones that appear several seconds later. When you have slain 50 ⟦E32⟧ Clones, return to Archmage Xylem in ⟦E20⟧.",
+  "quest:9364:details:0": "My research has revealed a unique purpose for the prismatic shell.",
+  "quest:9364:details:1": "Carry the shell and cast your ⟦E3⟧ ⟦E18⟧ on the Spitelash in ⟦E20⟧. If you wait a few moments, the chaotic ⟦E31⟧ of the shell will cause them to split into several smaller clones for a few moments. Kill these clones as quickly as possible, and the shell will collect their essence.",
+  "quest:9364:details:2": "When the shell is full, return it to me.",
+  "quest:9364:progress:0": "Have you collected the magic?",
+  "quest:9364:completion:0": "Splendid! Splendid!",
+  "quest:9364:completion:1": "Now we are able to reform this magic into a new ⟦E18⟧. Behold!"
+ },
+ "context": {
+  "quest:1949": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 38,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Magus Tirth"
+  },
+  "quest:1948": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:1951": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Magus Tirth",
+   "turner": "Tabetha"
+  },
+  "quest:1952": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:1953": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Anastasia Hartwell، Bink",
+   "turner": "Tabetha"
+  },
+  "quest:1954": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:1955": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:1956": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:1957": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:1958": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha",
+   "turner": "Tabetha"
+  },
+  "quest:8250": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Thurston Xane، Pierce Shackleton",
+   "turner": "Sanath Lim-yo"
+  },
+  "quest:8251": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Archmage Xylem"
+  },
+  "quest:8252": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Archmage Xylem"
+  },
+  "quest:8253": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Archmage Xylem"
+  },
+  "quest:9362": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Archmage Xylem"
+  },
+  "quest:9364": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Archmage Xylem"
+  }
+ },
+ "known": {
+  "quest:1949": {
+   "title": "رازهای پنهان"
+  },
+  "quest:1948": {
+   "title": "اشیای قدرت"
+  },
+  "quest:1951": {
+   "title": "آیین‌های قدرت"
+  },
+  "quest:1952": {
+   "title": "عصای جادوگر"
+  },
+  "quest:1953": {
+   "title": "بازگشت به باتلاق"
+  },
+  "quest:1954": {
+   "title": "گوی اهریمنی"
+  },
+  "quest:1955": {
+   "title": "جن‌گیری"
+  },
+  "quest:1956": {
+   "title": "قدرت در اولدامان"
+  },
+  "quest:1957": {
+   "title": "جوشش‌های مانا"
+  },
+  "quest:1958": {
+   "title": "قدرت آسمانی"
+  },
+  "quest:8250": {
+   "title": "جادوکاری"
+  },
+  "quest:8251": {
+   "title": "گردِ جادویی"
+  },
+  "quest:8252": {
+   "title": "مرجان سیرن"
+  },
+  "quest:8253": {
+   "title": "نابودی مورفاز"
+  },
+  "quest:9362": {
+   "title": "جنگ‌سالار کرلیان"
+  },
+  "quest:9364": {
+   "title": "جادوی خردشده"
+  }
+ }
+}

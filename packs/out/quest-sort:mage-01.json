@@ -1,0 +1,878 @@
+{
+ "pack": "quest-sort:mage-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:mage-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Glyphic Tablet",
+   "fa": "لوحِ حروف‌نگارش‌شده",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "trainer",
+   "fa": "مربی",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Glyphic Scroll",
+   "fa": "طومارِ حروف‌نگارش‌شده",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Glyphic Letter",
+   "fa": "نامهٔ حروف‌نگارش‌شده",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Northshire",
+   "fa": "نورث‌شایر",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Glyphic Memorandum",
+   "fa": "یادداشتِ حروف‌نگارش‌شده",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E10": {
+   "en": "Other",
+   "fa": "سایر",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Speak with Jennea",
+   "fa": "با جنیا صحبت کنید",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Mirror Lake",
+   "fa": "دریاچهٔ آینه",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Speak with Bink",
+   "fa": "با بینک صحبت کنید",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Mage-tastic Gizmonitor",
+   "fa": "گیزمونیتور جادویی",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Speak with Anastasia",
+   "fa": "با آناستازیا صحبت کنید",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Balnir Snapdragons",
+   "fa": "گل‌های دهان‌اژدهای بالنیر",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E23": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Speak with Un'thuwa",
+   "fa": "با اون‌تووا صحبت کنید",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Ju-Ju Heaps",
+   "fa": "توده‌های جوجو",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Zalazane",
+   "fa": "زالازان",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Linen Cloth",
+   "fa": "پارچهٔ کتان",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Gems",
+   "fa": "سنگ‌های قیمتی",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "linen",
+   "fa": "پارچهٔ کتانی",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Mana",
+   "fa": "مانا",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "talent",
+   "fa": "تلنت",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Cantation of Manifestation",
+   "fa": "طلسمِ آشکارسازی",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Chest",
+   "fa": "سینه",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Chest of Containment Coffers",
+   "fa": "صندوقِ صندوقچه‌های نگهداری",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "High Sorcerer Andromath",
+   "fa": "جادوپیشهٔ اعظم آندرومات",
+   "kind": "qs"
+  },
+  "E42": {
+   "en": "Pristine Spider Silk",
+   "fa": "ابریشمِ عنکبوتِ بی‌نقص",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Speak with Deino",
+   "fa": "با دینو صحبت کنید",
+   "kind": "qs"
+  },
+  "E46": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Xavian Water Sample",
+   "fa": "نمونهٔ آب زاویان",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Ur's Treatise on Shadow Magic",
+   "fa": "رسالهٔ اور دربارهٔ جادوی سایه",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Morganth",
+   "fa": "مورگانث",
+   "kind": "qs"
+  },
+  "E52": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E53": {
+   "en": "wand",
+   "fa": "واند",
+   "kind": "tm"
+  },
+  "E54": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E55": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Glyphic Tablet": "لوحِ حروف‌نگارش‌شده",
+  "trainer": "مربی",
+  "Glyphic Scroll": "طومارِ حروف‌نگارش‌شده",
+  "seal": "مهر",
+  "Glyphic Letter": "نامهٔ حروف‌نگارش‌شده",
+  "Northshire": "نورث‌شایر",
+  "Glyphic Memorandum": "یادداشتِ حروف‌نگارش‌شده",
+  "chance": "شانس",
+  "Arcane": "اسرار",
+  "Other": "سایر",
+  "Speak with Jennea": "با جنیا صحبت کنید",
+  "Stormwind": "استورم‌ویند",
+  "Mirror Lake": "دریاچهٔ آینه",
+  "fear": "ترس",
+  "Speak with Bink": "با بینک صحبت کنید",
+  "Ironforge": "آیرون‌فورج",
+  "Mage-tastic Gizmonitor": "گیزمونیتور جادویی",
+  "Speak with Anastasia": "با آناستازیا صحبت کنید",
+  "Undercity": "آندر‌سیتی",
+  "Forsaken": "مطرودان",
+  "Balnir Snapdragons": "گل‌های دهان‌اژدهای بالنیر",
+  "Mage": "جادوگر",
+  "Plaguelands": "طاعون‌زار",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Speak with Un'thuwa": "با اون‌تووا صحبت کنید",
+  "Durotar": "دوروتار",
+  "Ju-Ju Heaps": "توده‌های جوجو",
+  "Zalazane": "زالازان",
+  "Horde": "هورد",
+  "Linen Cloth": "پارچهٔ کتان",
+  "Gems": "سنگ‌های قیمتی",
+  "linen": "پارچهٔ کتانی",
+  "Loch Modan": "لوک مودان",
+  "Dalaran": "دالاران",
+  "Mana": "مانا",
+  "talent": "تلنت",
+  "Cantation of Manifestation": "طلسمِ آشکارسازی",
+  "Chest": "سینه",
+  "Use": "استفاده",
+  "Chest of Containment Coffers": "صندوقِ صندوقچه‌های نگهداری",
+  "High Sorcerer Andromath": "جادوپیشهٔ اعظم آندرومات",
+  "Pristine Spider Silk": "ابریشمِ عنکبوتِ بی‌نقص",
+  "Duskwood": "جنگل تاریک",
+  "silk": "ابریشم",
+  "Speak with Deino": "با دینو صحبت کنید",
+  "Orgrimmar": "اورگریمار",
+  "Xavian Water Sample": "نمونهٔ آب زاویان",
+  "Ashenvale": "اَشِن‌ویل",
+  "Barrens": "بارنز",
+  "Ur's Treatise on Shadow Magic": "رسالهٔ اور دربارهٔ جادوی سایه",
+  "Morganth": "مورگانث",
+  "curse": "نفرین",
+  "wand": "واند",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Theramore": "ترمور"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$n",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$n",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$n",
+  "47": "$N"
+ },
+ "rows": {
+  "quest:3086:obj:0": "Read the ⟦E1⟧ and speak with Mai'ah near the entrance to the Den in the Valley of Trials.",
+  "quest:3086:details:0": "Ah, while you were gone a tablet came for you, ⟦1⟧.",
+  "quest:3086:details:1": "Read it when you have time. If I'm not mistaken, it came from the mage ⟦E2⟧ Mai'ah. She would have words with you when you're ready.",
+  "quest:3086:progress:0": "Ya look to please Mai'ah already, ⟦2⟧. Dat be good. You give Mai'ah respect, and Mai'ah maybe give you respect back. But enough o' dat, you be here to learn 'bout magic, not hear Mai'ah talk.⟦3⟧⟦4⟧There be only one ting Mai'ah can no teach you 'bout magic, ⟦5⟧, and dat's how to stop da corruptin'.",
+  "quest:3086:completion:0": "You be among da most powerful beings on da planet, ⟦6⟧... there no arguin' dat. And everyone know it... know it good, too!",
+  "quest:3086:completion:1": "But ya must be weary! 'cause it not orc, or elf, or dwarf dat you should be scared of... it be da tings you can'na see. Magic be powerful. Make you do tings you may not want to do. Make ya tink you more powerful then you really be. Be patient. Be smart.",
+  "quest:3086:completion:2": "When ya tink you be ready for trainin', come back to Mai'ah. She teach you what you ready to learn, no problem.",
+  "quest:3098:obj:0": "Read the ⟦E3⟧ and speak to Isabella in the church in Deathknell.",
+  "quest:3098:details:0": "Ah, while you were off dealing with the mindless Scourge, this scroll arrived for you. I would think it's some matter of importance as it seems it bears the ⟦E4⟧ of the mage ⟦E2⟧ Isabella. I would take some time to read it before heading out again.",
+  "quest:3098:progress:0": "I knew you would come to me, ⟦7⟧. Not because you do not have the will to follow your own path, but because we are kindred spirits. We both have felt pain. We have both suffered. And now we want the power to take back what we know is ours: this land, our lives, our destinies. But there is much for you to learn still.",
+  "quest:3098:completion:0": "You must return to me often if you are to become powerful enough to destroy those who would oppose us. The rules of magic still apply to you, ⟦8⟧. You will still find corruption follows you like hungry wolves in the night. You will find its caress is not unlike an addiction, an old lover still wanting to be by your side. But these things can be staved off. These things will only control you if you allow them to.",
+  "quest:3098:completion:1": "Go now, return to me when you've grown more powerful.",
+  "quest:3104:obj:0": "Read the ⟦E5⟧ and speak to Khelden Bremen inside ⟦E6⟧ Abbey.",
+  "quest:3104:details:0": "I was asked to bring this to your attention as soon as you returned from the kobold camps, ⟦9⟧. It appears to be a letter sealed with the insignia of Khelden, our local mage ⟦E2⟧. I wouldn't hesitate to read it before you go about any other business here in the Abbey.",
+  "quest:3104:progress:0": "Hello, ⟦10⟧. I am Khelden. Is there something I can do for you?",
+  "quest:3104:completion:0": "Haha, I knew my note would not dissuade you from your path. So, you're prepared then, are you? Prepared to accept your fate? Prepared to challenge the gods and any other forces that stand before you in the pursuit of knowledge and power?",
+  "quest:3104:completion:1": "I will not lie, ⟦11⟧, you will be feared as much as respected. But also know this, I will be here for you when you need training. Simply seek me out as you grow more powerful.",
+  "quest:3114:obj:0": "Read the ⟦E7⟧ and speak to Marryk Nurribit inside Anvilmar above Coldridge Valley.",
+  "quest:3114:details:0": "While you were helping me out, this memorandum was given to me to pass on to you. Take some time to read it when you have a ⟦E8⟧. I'm thinkin' it came from the mage ⟦E2⟧ Marryk. Take a gander at it and go find him inside Anvilmar when you've a ⟦E8⟧.",
+  "quest:3114:progress:0": "Yeah, what's that, gnome? Speak up, if you don't mind. I don't hear so good after a few ales.",
+  "quest:3114:completion:0": "Oh, yeah! ⟦E9⟧ Arts... of course.",
+  "quest:3114:completion:1": "Here's what you need to know, ⟦12⟧: Don't get into too much trouble. Save some coin to buy me an ale... or any spells ya might want. And stay the heck away from Gnomeregan. ⟦E10⟧ than that, have a good day! I'll be here if you need me or want to train... or whatever.",
+  "quest:1860:obj:0": "⟦E11⟧ Cannon in ⟦E12⟧.",
+  "quest:1860:details:0": "We mages have a task that needs doing. One that is vital to the safety of ⟦E12⟧ and Elwynn forest.",
+  "quest:1860:details:1": "Jennea Cannon has the details. She studies in the wizard's sanctum, in the mage district of ⟦E12⟧. You should make your way to her with haste.",
+  "quest:1860:completion:0": "You have been sent to aid me in my task, ⟦13⟧? Good. It is heartening to see young mages eager to help in our cause...",
+  "quest:1860:completion:1": "What cause, you ask? In time, young one. You shall know... in time.",
+  "quest:1861:obj:0": "Bring a ⟦E13⟧ sample to Jennea Cannon in ⟦E12⟧.",
+  "quest:1861:details:0": "This world has been victim to massive mystic struggles, which tore magic currents from once stable channels. We struggle to determine the effects these changes have caused, and some of us ⟦E14⟧ the worst!",
+  "quest:1861:details:1": "But I will reveal more of this later. Right now, we need you to gather information.",
+  "quest:1861:details:2": "Here, take this flask. Go to the base of the waterfall at ⟦E13⟧, southwest of the ⟦E12⟧ gates, and retrieve a sample of the water there. Return it to me so that I might test it for magical taints.",
+  "quest:1861:progress:0": "Do you have the sample, ⟦14⟧? The flow of magic in ⟦E12⟧ and Elwynn has been altered, and I must know if it is seeping into the water.",
+  "quest:1861:completion:0": "Thank you, ⟦15⟧. I will test this water for magical properties. Let us hope that it contains none, or we may find that those who drink from ⟦E13⟧ for too long will be adversely affected.",
+  "quest:1861:completion:1": "Here, ⟦16⟧. Take this orb or staff as a token of your service. May it serve you well.",
+  "quest:1879:obj:0": "⟦E15⟧ in ⟦E16⟧.",
+  "quest:1879:details:0": "⟦17⟧! Bink, my gnome colleague in ⟦E16⟧, sends word. She has a task that needs doing and won't rely on anyone but a mage to do it! Are you that mage, ⟦18⟧?",
+  "quest:1879:details:1": "If so, then speak with Bink. She spends her time in the Hall of Mysteries in the Mystic Ward of ⟦E16⟧.",
+  "quest:1879:completion:0": "Oh, I can see you have promise, yes you do! But it takes more than promise to be a good mage. And if you're not a good mage, then you're a bad mage. And bad mages are part of the problem, yes they are!",
+  "quest:1879:completion:1": "Oops, I'm getting ahead of things. Let's begin at the start!",
+  "quest:1880:obj:0": "Bring Bink her ⟦E17⟧.",
+  "quest:1880:details:0": "We mages do more than just waggle our fingers and make pretty sparks! We control magic, the base fabric of our world! And that takes great care, and resolve. And knowledge... so much knowledge!",
+  "quest:1880:details:1": "One of my devices, the mage-tastic gizmonitor, collects and stores that knowledge in huge amounts! But it's lost! When we fled our home of Gnomeregan, I left it in a chest in one of our huts outside the city, and now the place is crawling with leper gnomes!",
+  "quest:1880:details:2": "Please, ⟦19⟧, retrieve my gizmonitor!",
+  "quest:1880:progress:0": "Did you find the gizmonitor? I must have it before its energy supply runs out!",
+  "quest:1880:completion:0": "Oh, splendid day! When I made the gizmonitor I never realized how dependent on it I would become. Now I can begin my studies anew!",
+  "quest:1880:completion:1": "Thank you, ⟦20⟧! And here--these were my first tools as a mage. They're a little scratched but they're well tested. Take your pick--I'm sure you'll find either of them useful.",
+  "quest:1881:obj:0": "⟦E18⟧ Hartwell.",
+  "quest:1881:details:0": "⟦21⟧, Anastasia Hartwell has a task for someone of your talents. Speak with her in the Magic Quarter of the ⟦E19⟧, and prepare yourself for your first task for the mages of the ⟦E20⟧.",
+  "quest:1881:completion:0": "Greetings, ⟦22⟧. You were wise to answer my call, and wiser still if you heed what I next say...",
+  "quest:1882:obj:0": "Bring ⟦E21⟧ to Anastasia Hartwell in the ⟦E22⟧ Quarter of the ⟦E19⟧.",
+  "quest:1882:details:0": "The ⟦E23⟧ to the east are an aberration. Devised by the Lich King, they spread their magic into the soil, corrupting and killing all that live. Although there is a certain charm to the destructive forces of the plague, we, the mages of the ⟦E20⟧, believe it is unruly and must be curtailed.",
+  "quest:1882:details:1": "But first, we must measure how far it has spread into Tirisfal. Go to the Balnir Farmstead in eastern Tirisfal. In the garden are flowers--snapdragons. Gather these and return.",
+  "quest:1882:progress:0": "Do you have the snapdragons? That breed of flower is highly receptive to magic energies, and studying the snapdragons so close to the ⟦E23⟧ can tell us if the plague has entered ⟦E24⟧.",
+  "quest:1882:completion:0": "Ah, a fine specimen this is. I will send it to be studied by our apothecaries to determine the extent of the Plagueland's taint.",
+  "quest:1882:completion:1": "Well done, ⟦23⟧. For your services, I present to you this choice: an orb or staff. Whichever you choose, you will find it quite useful.",
+  "quest:1883:obj:0": "⟦E25⟧.",
+  "quest:1883:details:0": "Un'thuwa, tribal mage of Sen'jin Village, detects a disturbance in the magic currents of ⟦E26⟧ and asks for aid. ⟦E25⟧ and do what you can to help him.",
+  "quest:1883:details:1": "Do this, and in time further secrets will be revealed to you.",
+  "quest:1883:completion:0": "Hail, ⟦24⟧. Praise to you, for my call for aid is now answered. Let us hope you are up to the task...",
+  "quest:1884:obj:0": "Destroy 4 ⟦E27⟧, then return to Un'thuwa in Sen'jin Village.",
+  "quest:1884:details:0": "The warlock ⟦E28⟧ of the Echo Isles has disrupted the normal flow of magic in ⟦E26⟧. He does this through tainted fetishes, ju-ju heaps, which he has placed among his huts on the main Echo Isle.",
+  "quest:1884:details:1": "These heaps corrupt our wildlife and give power to the warlocks and infernal creatures that lurk in the land's dark corners.",
+  "quest:1884:details:2": "You must destroy the ju-ju heaps, ⟦25⟧, before the flow of magic is forever altered.",
+  "quest:1884:progress:0": "You must hurry, ⟦26⟧. Destroy the ju-ju heaps!",
+  "quest:1884:completion:0": "I sense that ⟦E28⟧'s ju-ju heaps were destroyed, and with time, and luck, the flow of magic in ⟦E26⟧ will return to normal.",
+  "quest:1884:completion:1": "BA great deed you have done for your people, ⟦27⟧. And you have shown your worth to us, the mages of the ⟦E29⟧.",
+  "quest:1919:obj:0": "⟦E11⟧ Cannon in ⟦E12⟧.",
+  "quest:1919:details:0": "Your knowledge of the craft grows, young ⟦28⟧. Are you now ready to begin your true lessons? Are you ready to take your place in the secret war we wage?",
+  "quest:1919:details:1": "If so, then speak with Jennea Cannon, in the wizard's sanctum in the mage district of ⟦E12⟧. She has a task for you which will open your first window into the invisible world.",
+  "quest:1919:completion:0": "⟦29⟧, I have a mission for you, here in the mage district. Listen closely, for there is no time to waste.",
+  "quest:1921:obj:0": "Bring 10 ⟦E30⟧ and the 6 Charged Rift ⟦E31⟧ to Wynne Larson in ⟦E12⟧.",
+  "quest:1921:details:0": "You have served your fellow mages well, and now it is time to don your wizard's robe. Wynne Larson can make your robe, but you must bring her the needed materials",
+  "quest:1921:details:1": "The robe will be made of ⟦E32⟧ which is easy to find, but you must also gain charged rift gems, and the only known location of the gems is in the Silver Stream Mine of ⟦E33⟧, left in crates by the dwarven miners' league.",
+  "quest:1921:details:2": "Gather the ⟦E32⟧ and the gems and bring them to Wynne Larson at the Larson Clothiers in the ⟦E22⟧ District.",
+  "quest:1921:progress:0": "Hello, ⟦30⟧.  Jennea told me you would come.  Do you have something for me?",
+  "quest:1921:completion:0": "Yes, these are great pieces of ⟦E32⟧. I can make a fine robe with them. And after I weave the rift gems into it, we'll have a garment fit for a mage!",
+  "quest:1941:completion:0": "Here is your robe. It's one of my best made yet! Wear it with pride, and when people ask... tell them you got it at the Larson Clothiers!",
+  "quest:1959:obj:0": "⟦E18⟧ Hartwell.",
+  "quest:1959:details:0": "The mages of the ⟦E19⟧ have noted a magical disturbance within the city, and have sent word for mages of the ⟦E29⟧ to investigate.",
+  "quest:1959:details:1": "Anastasia Hartwell can tell you more. Speak with her in the Magic Quarter in the ⟦E19⟧.",
+  "quest:1959:completion:0": "It is true. A magical disturbance has been detected in our city. We are not yet sure of its origin, or whether it is malign or benign. We must first gather more information...",
+  "quest:1959:completion:1": "And that, ⟦31⟧, brings us to your task.",
+  "quest:1961:obj:0": "Bring 10 ⟦E30⟧ and 6 ⟦E34⟧ ⟦E35⟧ ⟦E31⟧ to Josef Gregorian.",
+  "quest:1961:details:0": "It is time for you to don your first mage's robes, ⟦32⟧. They are a sign of your station, and a testament to your worth.",
+  "quest:1961:details:1": "To gain the robes, you must gather the mana gems from the ⟦E34⟧ mages of Silverpine. Their beliefs are similar to ours and so killing them is somewhat distasteful, but if they lack the strength to resist us, then they do not deserve their lives.",
+  "quest:1961:details:2": "Bring the gems and a supply of ⟦E32⟧ to Josef Gregorian at the Magic Quarter's tailor shop.",
+  "quest:1961:progress:0": "Anastasia said you would come to me, and I am prepared to fashion your robes.  Do you have the gems and the ⟦E32⟧?",
+  "quest:1961:completion:0": "This is very good material, and although I lack the ⟦E36⟧ to gauge the quality of these mana gems, we'll soon know if they possess the power needed to create spellfire robes...",
+  "quest:1962:completion:0": "Here are your robes, ⟦33⟧. Wear them well.",
+  "quest:1920:obj:0": "Obtain a ⟦E37⟧ and a ⟦E38⟧ of Containment coffers from behind Jennea Cannon. Bring 3 Filled Containment Coffers to Jennea at the Wizard's Sanctum.",
+  "quest:1920:details:0": "A disturbance has been reported at the Blue Recluse tavern in the ⟦E22⟧ Quarter. Strange, invisible creatures now wander the tavern, and I ⟦E14⟧ a mana rift has formed there.",
+  "quest:1920:details:1": "I want you to investigate the tavern and capture those creatures. ⟦E39⟧ the cantation of manifestation in the tavern to make the creatures visible, subdue them then use a containment coffer to capture them. When you have enough, return to me with your filled coffers, your empty coffers and the cantation.",
+  "quest:1920:progress:0": "Have you captured the creatures, ⟦34⟧?  They must be studied in order to determine the reason behind their arrival.",
+  "quest:1920:completion:0": "Very well done! I will study these creatures and, with diligence and luck, determine how they slipped into our world.",
+  "quest:1920:completion:1": "Your value to the society of mages grows, ⟦35⟧.",
+  "quest:1960:obj:0": "Obtain a ⟦E37⟧ and a ⟦E40⟧ from behind Anastasia Hartwell. Bring 3 Filled Containment Coffers, the ⟦E40⟧ and the ⟦E37⟧ to Anastasia in the ⟦E19⟧.",
+  "quest:1960:details:0": "Algernon's alchemist shop in the Apothecarium is the locus of a strange disturbance. Invisible creatures, made solely of magic, wander the shop--there must be a reason, and we must find it!",
+  "quest:1960:details:1": "Investigate the disturbance and capture those creatures. Take a chest of coffers and a scroll from behind me. ⟦E39⟧ the scroll at the shop to make the creatures visible, subdue them with your spells, then throw down a coffer to capture them. Return with the filled coffers, the empty coffers and the cantation.",
+  "quest:1960:progress:0": "Have you investigated the disturbance, ⟦36⟧?  Have you captured the creatures?",
+  "quest:1960:completion:0": "Very good, ⟦37⟧. The creatures within these containment coffers will be studied by our finest minds, and the reason behind their presence in the ⟦E19⟧ will be determined.",
+  "quest:1960:completion:1": "If their appearance is caused by a rift in the natural flow of magic, then we must determine if the rift was random. If it was not random, but instead an attack by some magical force, then we must prepare for future, more serious disturbances.",
+  "quest:1939:obj:0": "Speak with ⟦E41⟧.",
+  "quest:1939:details:0": "⟦E41⟧ wishes to speak with you, ⟦38⟧. He is at the top of the wizard's sanctum, in the mage's district of ⟦E12⟧.",
+  "quest:1939:details:1": "It would be wise to speak with him, for Andromath is one of the most powerful mages not locked away in ⟦E34⟧. Council with him is high council indeed.",
+  "quest:1939:completion:0": "Greetings, ⟦39⟧. I am pleased to see you, and hope you have time to listen to an old man's words...",
+  "quest:1940:obj:0": "Bring 8 ⟦E42⟧ to Wynne Larson in ⟦E12⟧.",
+  "quest:1940:details:0": "Your service has been unwavering, ⟦40⟧. I think, perhaps, it is time you had a finer garment, one more suiting your station as an adept mage. If you gather the needed materials, then we will arrange the robe made.",
+  "quest:1940:details:1": "You must enter ⟦E43⟧ and hunt carrion recluse spiders. Extract their ⟦E44⟧, but only the finest, most pristine ⟦E44⟧ will do. When you have enough, take it to Wynne Larson, here in the mage district at the Larson Clothiers. She will craft your robe.",
+  "quest:1940:progress:0": "Ah, yes. The mages of the Wizard's Sanctum said you'd speak with me. Do you have the required ⟦E44⟧?",
+  "quest:1940:completion:0": "Nice specimens, these. I'll get right to work!",
+  "quest:1942:completion:0": "Your garment is ready! And that ⟦E44⟧ you gathered was so nice... you don't mind if I made it a little short so that I'd have some ⟦E44⟧ left over for me, do you?",
+  "quest:1942:completion:1": "I'm only joking. It'll fit you great, and will be perfect for both adventure and formal dining. Enjoy!",
+  "quest:1943:obj:0": "⟦E45⟧.",
+  "quest:1943:details:0": "The troll mage Deino has need of your assistance, ⟦41⟧. She resides in ⟦E46⟧, in the Darkbriar Lodge.",
+  "quest:1943:completion:0": "Good, you have come. My task is not an easy one, but vital to the society of mages. If you aid me, I am sure you will find it worthwhile.",
+  "quest:1944:obj:0": "Bring the ⟦E47⟧ to Deino in ⟦E46⟧.",
+  "quest:1944:details:0": "The fabled city of Xavian lies nestled deep within eastern ⟦E48⟧, and tales of its ancient knowledge are well known among the learned. It is said that the waters of Xavian hold vast magical powers.",
+  "quest:1944:details:1": "I would have a sample of those waters, from their source.",
+  "quest:1944:details:2": "Take this flask and go to Xavian. Gather water from the bottom of its highest waterfall, and return to me. And use care as you move through that ancient city--satyrs now hold the ruins and do not like mages prying into their affairs.",
+  "quest:1944:progress:0": "I am pleased you have returned with your skin intact, ⟦42⟧. Do you have the water sample? I am eager to study its properties.",
+  "quest:1944:completion:0": "Ah, very good. I trust the satyrs of Xavian gave you little trouble?",
+  "quest:1944:completion:1": "Thank you, ⟦43⟧. I will study this sample of Xavian water immediately.",
+  "quest:1945:obj:0": "Bring 12 Laughing Sister's Hairs to Kil'hala at the Crossroads.",
+  "quest:1945:details:0": "For your services, I have arranged for the creation of your new robes, provided you can gather the needed materials...",
+  "quest:1945:details:1": "For these robes, you must return to ⟦E48⟧ for the locks of hair from laughing sisters--dryads who gather near the Raynewood Retreat.",
+  "quest:1945:details:2": "When you have their hair, bring it to Kil'hala, a troll tailor at the Crossroads in the ⟦E49⟧. He will be expecting you, and will fashion your robes.",
+  "quest:1945:progress:0": "Greetings, ⟦44⟧. Deino said you would come, and would bring the laughing sisters' hair. Do you have it?",
+  "quest:1945:completion:0": "Ah, this hair will weave into a fine robe, ⟦45⟧. It is a pity the laughing sisters had to die to part with it, though I do doubt they would ever give it willingly.",
+  "quest:1945:completion:1": "BA pity, but only a small one.",
+  "quest:1946:completion:0": "Here is your nether-lace, ⟦46⟧. It is both comfortable and durable, and holds the magic of the laughing sisters' hair.",
+  "quest:1946:completion:1": "Enjoy, and if you find it amenable, please mention so to Deino. She is a mage on whose good side I wish to stay...",
+  "quest:1938:obj:0": "Bring ⟦E50⟧ to ⟦E41⟧ in ⟦E12⟧.",
+  "quest:1938:details:0": "Long ago, three mages studied in this tower until one fell to the dark arts. He was urged to turn away from that evil magic, but he could not resist. And so he was banished.",
+  "quest:1938:details:1": "The fallen mage's new domain is the tower of Ilgalar in Redridge, and he took with him a powerful book--⟦E50⟧.",
+  "quest:1938:details:2": "We, the mages of ⟦E12⟧, would have that book returned. Enter the tower of Ilgalar, find the tome in his library, and bring it to me.",
+  "quest:1938:progress:0": "Do you have the book, ⟦47⟧? Its secrets are not meant for the untrained, and plumbing its depths can lead to doom and ruin.",
+  "quest:1938:completion:0": "I feared that ⟦E51⟧ had hidden the book elsewhere, or that he had found a way to open it and read its contents.",
+  "quest:1938:completion:1": "It is good to see that he did not, and that the seals we placed on ⟦E50⟧ still hold.",
+  "quest:1950:obj:0": "Find the phrase to Tirth's strongbox, then return to Tirth.",
+  "quest:1950:details:0": "I can help you with the book, but first you have to help me!",
+  "quest:1950:details:1": "The tome you seek is in my magically locked strongbox. To open it a special phrase must be uttered, and I can't remember the phrase! Normally my assistant helps me remember these things but he's nowhere to be found.",
+  "quest:1950:details:2": "If you want my book, then find my apprentice! Ask around the race track--if you're lucky then someone has seen him. Either drag him back here, or at least get my magic phrase from him so we can open my box!",
+  "quest:1950:progress:0": "What are you waiting for? I need my magic phrase!",
+  "quest:1950:completion:0": "Ah, now I remember...",
+  "quest:1950:completion:1": "I had forgotten about that little ⟦E52⟧ I put on Johnson. I can't remember why I did it but I'm sure it served him right, the little ingrate!",
+  "quest:1947:obj:0": "Speak with Tabetha.",
+  "quest:1947:details:0": "Now it is time for you to earn your mage's ⟦E53⟧. To begin this quest, speak with the human hermit Tabetha in ⟦E54⟧. You will find her shack deep in the marsh, west of ⟦E55⟧.",
+  "quest:1947:details:1": "Speak with her, for her knowledge is vast. You will find Tabetha's cottage west of ⟦E55⟧, and just north of the Stonemaul Ruins.",
+  "quest:1947:completion:0": "Quiet! I'm in a delicate juncture and mustn't be disturbed!",
+  "quest:1947:completion:1": "One moment..."
+ },
+ "context": {
+  "quest:3086": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek",
+   "turner": "Mai'ah"
+  },
+  "quest:3098": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Shadow Priest Sarvis",
+   "turner": "Isabella"
+  },
+  "quest:3104": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Marshal McBride",
+   "turner": "Khelden Bremen"
+  },
+  "quest:3114": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm",
+   "turner": "Marryk Nurribit"
+  },
+  "quest:1860": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Zaldimar Wefhellt",
+   "turner": "Jennea Cannon"
+  },
+  "quest:1861": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Jennea Cannon",
+   "turner": "Jennea Cannon"
+  },
+  "quest:1879": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Magis Sparkmantle",
+   "turner": "Bink"
+  },
+  "quest:1880": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Bink",
+   "turner": "Bink"
+  },
+  "quest:1881": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Cain Firesong",
+   "turner": "Anastasia Hartwell"
+  },
+  "quest:1882": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Anastasia Hartwell",
+   "turner": "Anastasia Hartwell"
+  },
+  "quest:1883": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Uthel'nay",
+   "turner": "Un'Thuwa"
+  },
+  "quest:1884": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Un'Thuwa",
+   "turner": "Un'Thuwa"
+  },
+  "quest:1919": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Dink",
+   "turner": "Jennea Cannon"
+  },
+  "quest:1921": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Jennea Cannon",
+   "turner": "Wynne Larson"
+  },
+  "quest:1941": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Wynne Larson",
+   "turner": "Wynne Larson"
+  },
+  "quest:1959": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 15,
+   "side": "horde",
+   "giver": "Uthel'nay",
+   "turner": "Anastasia Hartwell"
+  },
+  "quest:1961": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 15,
+   "side": "horde",
+   "giver": "Anastasia Hartwell",
+   "turner": "Josef Gregorian"
+  },
+  "quest:1962": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 15,
+   "side": "horde",
+   "giver": "Josef Gregorian",
+   "turner": "Josef Gregorian"
+  },
+  "quest:1920": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Jennea Cannon",
+   "turner": "Jennea Cannon"
+  },
+  "quest:1960": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Anastasia Hartwell",
+   "turner": "Anastasia Hartwell"
+  },
+  "quest:1939": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "alliance",
+   "giver": "Jennea Cannon",
+   "turner": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)"
+  },
+  "quest:1940": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "alliance",
+   "giver": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)",
+   "turner": "Wynne Larson"
+  },
+  "quest:1942": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "alliance",
+   "giver": "Wynne Larson",
+   "turner": "Wynne Larson"
+  },
+  "quest:1943": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "horde",
+   "giver": "Anastasia Hartwell",
+   "turner": "Deino"
+  },
+  "quest:1944": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "horde",
+   "giver": "Deino",
+   "turner": "Deino"
+  },
+  "quest:1945": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "horde",
+   "giver": "Deino",
+   "turner": "Kil'hala"
+  },
+  "quest:1946": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 26,
+   "side": "horde",
+   "giver": "Kil'hala",
+   "turner": "Kil'hala"
+  },
+  "quest:1938": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)",
+   "turner": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)"
+  },
+  "quest:1950": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "Magus Tirth",
+   "turner": "Magus Tirth"
+  },
+  "quest:1947": {
+   "zone_en": "Mage",
+   "zone_fa": "",
+   "level": 38,
+   "side": "",
+   "giver": "Jennea Cannon، Deino",
+   "turner": "Tabetha"
+  }
+ },
+ "known": {
+  "quest:3086": {
+   "title": "لوحِ حکاکی‌شده"
+  },
+  "quest:3098": {
+   "title": "طومارِ حکاکی‌شده"
+  },
+  "quest:3104": {
+   "title": "نامهٔ حکاکی‌شده"
+  },
+  "quest:3114": {
+   "title": "یادداشتِ حکاکی‌شده"
+  },
+  "quest:1860": {
+   "title": "با جنیا صحبت کنید"
+  },
+  "quest:1861": {
+   "title": "دریاچهٔ آینه"
+  },
+  "quest:1879": {
+   "title": "با بینک صحبت کنید"
+  },
+  "quest:1880": {
+   "title": "گیزمونیتور جادویی"
+  },
+  "quest:1881": {
+   "title": "با آناستازیا صحبت کنید"
+  },
+  "quest:1882": {
+   "title": "مزرعهٔ بالنیر"
+  },
+  "quest:1883": {
+   "title": "با اون‌تووا صحبت کنید"
+  },
+  "quest:1884": {
+   "title": "توده‌های جوجو"
+  },
+  "quest:1919": {
+   "title": "گزارش به جنیا"
+  },
+  "quest:1921": {
+   "title": "گردآوری مواد"
+  },
+  "quest:1941": {
+   "title": "ردای ماناباف"
+  },
+  "quest:1959": {
+   "title": "گزارش به آناستازیا"
+  },
+  "quest:1961": {
+   "title": "گردآوری مواد"
+  },
+  "quest:1962": {
+   "title": "ردای آتش‌افروز"
+  },
+  "quest:1920": {
+   "title": "بررسی گوشه‌گیر آبی"
+  },
+  "quest:1960": {
+   "title": "بررسی مغازهٔ عطاری"
+  },
+  "quest:1939": {
+   "title": "جادوپیشهٔ اعظم آندرومات"
+  },
+  "quest:1940": {
+   "title": "ابریشمِ عنکبوتِ بی‌نقص"
+  },
+  "quest:1942": {
+   "title": "ردای گره آسمانی"
+  },
+  "quest:1943": {
+   "title": "با دینو صحبت کنید"
+  },
+  "quest:1944": {
+   "title": "آب‌های زاویان"
+  },
+  "quest:1945": {
+   "title": "خواهران خندان"
+  },
+  "quest:1946": {
+   "title": "ردای توری اِترنت"
+  },
+  "quest:1938": {
+   "title": "رسالهٔ اور دربارهٔ جادوی سایه"
+  },
+  "quest:1950": {
+   "title": "کشف رمز"
+  },
+  "quest:1947": {
+   "title": "سفر به باتلاق"
+  }
+ }
+}

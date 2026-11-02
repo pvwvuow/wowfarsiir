@@ -1,0 +1,763 @@
+{
+ "pack": "quest-redridge-mountains-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-redridge-mountains-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Solomon",
+   "fa": "سولومون",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "General Marcus Jonathan",
+   "fa": "ژنرال مارکوس جاناتان",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "The People's Militia",
+   "fa": "میلشیای مردم",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Daffodil Bouquet",
+   "fa": "دسته‌گل نرگس",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Hilary's Necklace",
+   "fa": "گردن‌بند هیلاری",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Foreman",
+   "fa": "سرکارگر",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Tough Condor Meat",
+   "fa": "گوشت سفت کندور",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Crisp Spider Meat",
+   "fa": "گوشت برشتهٔ عنکبوت",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Redridge Goulash",
+   "fa": "گولاشِ ردریج",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Verner's Note",
+   "fa": "یادداشتِ ورنر",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Return to Verner",
+   "fa": "بازگشت به ورنر",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Crate of Horseshoes",
+   "fa": "جعبهٔ نعل‌اسبی‌ها",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "trained",
+   "fa": "آموزش‌دیده",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "The Night Watch",
+   "fa": "نگهبانان شب",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Axes",
+   "fa": "تبر",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Glyph of Azora",
+   "fa": "حروف‌نگارهٔ ازورا",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Morganth",
+   "fa": "مورگانث",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "Spotted Sunfish",
+   "fa": "خورشیدماهی خالدار",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Orcs",
+   "fa": "اورک",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Faded Shadowhide Pendant",
+   "fa": "گردن‌آویزِ پوست‌سایه محوشده",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E34": {
+   "en": "Elwynn Forest",
+   "fa": "جنگل الزوین",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "immobilize",
+   "fa": "بی‌حرکت‌کردن",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Solomon": "سولومون",
+  "General Marcus Jonathan": "ژنرال مارکوس جاناتان",
+  "Stormwind": "استورم‌ویند",
+  "fear": "ترس",
+  "Westfall": "وستفال",
+  "The People's Militia": "میلشیای مردم",
+  "Duskwood": "جنگل تاریک",
+  "Daffodil Bouquet": "دسته‌گل نرگس",
+  "Hilary's Necklace": "گردن‌بند هیلاری",
+  "miss": "خطا",
+  "Foreman": "سرکارگر",
+  "hit": "اصابت",
+  "threat": "تیت",
+  "Tough Condor Meat": "گوشت سفت کندور",
+  "Crisp Spider Meat": "گوشت برشتهٔ عنکبوت",
+  "Redridge Goulash": "گولاشِ ردریج",
+  "Verner's Note": "یادداشتِ ورنر",
+  "Return to Verner": "بازگشت به ورنر",
+  "Crate of Horseshoes": "جعبهٔ نعل‌اسبی‌ها",
+  "trained": "آموزش‌دیده",
+  "The Night Watch": "نگهبانان شب",
+  "armor": "زره",
+  "Axes": "تبر",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Glyph of Azora": "حروف‌نگارهٔ ازورا",
+  "Morganth": "مورگانث",
+  "Spotted Sunfish": "خورشیدماهی خالدار",
+  "Orcs": "اورک",
+  "enemy": "دشمن",
+  "Arcane": "اسرار",
+  "demon": "اهریمن",
+  "Faded Shadowhide Pendant": "گردن‌آویزِ پوست‌سایه محوشده",
+  "Mage": "جادوگر",
+  "Elwynn Forest": "جنگل الزوین",
+  "spell": "اسپیل",
+  "immobilize": "بی‌حرکت‌کردن"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$C",
+  "3": "$c",
+  "4": "$C",
+  "5": "$C",
+  "6": "$c",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$C",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$c",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$C",
+  "21": "$C",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N"
+ },
+ "rows": {
+  "quest:120:obj:0": "Magistrate ⟦E1⟧ has given you a report which must be delivered to ⟦E2⟧ in ⟦E3⟧. The judge wants you to return to him as soon as the delivery has been made.",
+  "quest:120:details:0": "These are trying times, ⟦1⟧. The township is under constant siege. Without reinforcements, we will certainly face defeat. The message I now entrust to you is of utmost importance. Get this report to ⟦E2⟧ of ⟦E3⟧ immediately. Once your delivery is made, return to me at once with any news, be it good or bad.",
+  "quest:120:details:1": "Now make haste!",
+  "quest:120:progress:0": "What have you there?",
+  "quest:120:completion:0": "At ease, ⟦2⟧.",
+  "quest:120:completion:1": "Magistrate ⟦E1⟧ is a noble leader. His words carry great weight with me. I shall seek the counsel of the King and make the situation clear to him. Assure the good judge that he has the ⟦E3⟧ Army's support. Reinforcements will be sent as soon as word is given from His Majesty.",
+  "quest:121:obj:0": "Take ⟦E2⟧'s letter of response to Magistrate ⟦E1⟧ in Lakeshire.",
+  "quest:121:details:0": "While I wait for a response from the King I want you to carry this letter to Magistrate ⟦E1⟧.",
+  "quest:121:details:1": "Dismissed, ⟦3⟧!",
+  "quest:121:progress:0": "Did the General send news? Are reinforcements on the way?",
+  "quest:121:completion:0": "Thank you for your time, ⟦4⟧. For your service to Lakeshire and ⟦E3⟧ I reward you with these coins.",
+  "quest:121:completion:1": "Now if you'll excuse me, I find this correspondence somewhat of a mystery. Something is amiss in our Kingdom. I ⟦E4⟧ this is the beginning of conflict, not the end.",
+  "quest:143:obj:0": "Magistrate ⟦E1⟧ wants you to take his written plea to Gryan Stoutmantle in ⟦E5⟧.",
+  "quest:143:details:0": "Something odd is afoot with the ⟦E3⟧ Army. They should have been here in force by now. Time is a luxury we don't have, however. I will not stand by and watch the people of Lakeshire give their lives without trying to enlist more help. I've heard word of a people's militia forming in ⟦E5⟧.",
+  "quest:143:details:1": "Take this plea to their leader, Gryan Stoutmantle. Perhaps Stoutmantle's men can lend some support here until the King sends reserves.",
+  "quest:143:progress:0": "Hail, ⟦5⟧. What business do you have with ⟦E6⟧?",
+  "quest:143:completion:0": "Good Messenger, you have served your master well.",
+  "quest:144:obj:0": "Return to Magistrate ⟦E1⟧ with Gryan Stoutmantle's response.",
+  "quest:144:details:0": "Magistrate ⟦E1⟧'s note pains me to read. But it is obvious he knows not the war which is waged in ⟦E5⟧ or else he would know better than to expect aid from the Militia. If ⟦E3⟧ had not deserted us as well, we would not have the need for the Militia.",
+  "quest:144:details:1": "Take this response to your master in Redridge, ⟦6⟧. And let him know that my heart is heavy with the loss of good men.",
+  "quest:144:progress:0": "Shall we expect the People's Militia soon? Does Lord Stoutmantle's news bode well?",
+  "quest:144:completion:0": "I do say, this is not good at all. I did not realize that Stoutmantle's situation was not unlike ours here in Lakeshire. What action is so important that it calls the ⟦E3⟧ Army away from its people? Bah, I should not ponder aloud.",
+  "quest:144:completion:1": "Here, messenger. Accept these coins in exchange for your service to the Township. I might call upon you again.",
+  "quest:116:obj:0": "Barkeep Daniels of Lakeshire needs a keg of Thunderbrew Lager, a cask of Merlot, a bottle of Moonshine and a skin of Sweet Rum.",
+  "quest:116:details:0": "I find myself in quite a pinch here, ⟦7⟧. The bottles are close to running dry. The latest booze shipment is long overdue. The orc invasion has been hell.",
+  "quest:116:details:1": "Perhaps you can go to work for me?",
+  "quest:116:details:2": "I need you to pick up a keg of Thunderbrew Lager from Grimbooze Thunderbrew in the ⟦E5⟧ hills, a cask of Merlot from ⟦E3⟧, a bottle of Moonshine from Darkshire and a skin of Sweet Rum from Goldshire. Bring those back to me and I will see to it you are rewarded.",
+  "quest:116:progress:0": "I need you to pick up a keg of Thunderbrew Lager from Grimbooze Thunderbrew in the ⟦E5⟧ hills, a cask of Merlot from ⟦E3⟧, a bottle of Moonshine from Darkshire and a skin of Sweet Rum from Goldshire. Bring those back to me and I will see to it you are rewarded.",
+  "quest:116:completion:0": "A job well done, ⟦8⟧! I know well the roads you had to journey to procure this fine array of liquor. But my patrons will be happy once again!",
+  "quest:116:completion:1": "My wife is quite a seamstress. Please accept this cloak she made in return for your services.",
+  "quest:129:obj:0": "Bring Parker's lunch to Guard Parker. He patrols the road leading to Darkshire.",
+  "quest:129:details:0": "Can you do me a favor? I've prepared a lunch for Guard Parker, but he's out on patrol...he's a big, strong ⟦E3⟧ guard who can defend himself, but it's much too dangerous out there for a townsperson like me.",
+  "quest:129:details:1": "So if you deliver his lunch for me, then come back here and I'll give you a free lunch! Parker patrols the stretch of road leading to ⟦E7⟧.",
+  "quest:129:progress:0": "Darcy sent me a lunch, did she? Such a kind heart she has. Well...let's have it!",
+  "quest:129:completion:0": "Thanks, I could really use the meal. Guarding Lakeshire from the orcs and gnolls is tough work!",
+  "quest:130:obj:0": "Speak with the Redridge Herbalist, Martie Jainrose.",
+  "quest:130:details:0": "Before you go back to Darcy, can you bring her some flowers for me? You can get them at the herbalist shop back in Lakeshire, at the west end of town.",
+  "quest:130:details:1": "But when you get the flowers...don't tell the herbalist, Martie, whom they're from, or whom they're for...",
+  "quest:130:completion:0": "You need a bouquet of flowers? You haven't been in town very long...have you already found for yourself a sweetheart here?",
+  "quest:130:completion:1": "I know I shouldn't pry, but it's nice to see that love is in the air... especially in dangerous times like these.",
+  "quest:131:obj:0": "Give Darcy the ⟦E8⟧.",
+  "quest:131:details:0": "Here is your bouquet. I chose Daffodils for you. They're my favorite!",
+  "quest:131:progress:0": "Hello again, ⟦9⟧. Did Parker like the lunch I sent him?",
+  "quest:131:completion:0": "Oh, those are lovely! I can't wait to put them in some water!",
+  "quest:131:completion:1": "But...these are Martie's favorite flowers. Parker didn't have you go to that jealous vixen for this bouquet, did he? You didn't tell her who they were for, did you? If you did, then it wouldn't surprise me if she poisoned them.",
+  "quest:131:completion:2": "Oh, but it's not your fault. Thank you, and here's your meal.",
+  "quest:3741:obj:0": "Find ⟦E9⟧, and return it to Hilary in Lakeshire.",
+  "quest:3741:details:0": "My friend Hilary lost her necklace, and we can't find it. We've been fishing all day right here, and we looked around here already. The only thing I can think of is that it fell into the lake. Our parents don't want us to swim in the lake... my mom says there's some mean things underwater, but you look like you aren't scared of mean things.",
+  "quest:3741:details:1": "Could you find it for her, please?",
+  "quest:3741:progress:0": "Hi. I ⟦E10⟧ my necklace. My daddy got it for me. Daddy says that there are monsters in the lake. Did you beat up any monsters?",
+  "quest:3741:completion:0": "Thank you for finding my necklace mister ⟦10⟧... you are very kind! My kitty thanks you too - isn't that right Effsee?",
+  "quest:125:obj:0": "⟦E11⟧ Oslow of Lakeshire wants you to retrieve his toolbox from the bottom of Lake Everstill.",
+  "quest:125:details:0": "I could really use a hand here, ⟦11⟧. With the town under siege, it's been hard to get supplies. My tools were being delivered from Goldshire by wagon but the bridge was blown out. We put the tools in a boat but the orcs ⟦E12⟧ it with a catapult. Just my luck, my toolbox sank right to the bottom of the lake.",
+  "quest:125:details:1": "Retrieve my toolbox, ⟦12⟧, and I'll make it worth your while.",
+  "quest:125:progress:0": "Were you able to find my tools?",
+  "quest:125:completion:0": "Excellent recovery, ⟦13⟧! I never thought I'd see these tools again.",
+  "quest:244:obj:0": "Report to Deputy Feldon.",
+  "quest:244:details:0": "Hail, ⟦14⟧. I am charged to patrol this stretch of road. Although the road is safe for now, I've seen gnoll encampments to the north and east of here.",
+  "quest:244:details:1": "Lakeshire must know of the gathering gnoll force! Report to Deputy Feldon in Lakeshire and tell him of the gnolls. Do this, and I'm sure Feldon will offer you a scout's wage.",
+  "quest:244:details:2": "Feldon's usually inspecting the area south of the bridge to Lakeshire.",
+  "quest:244:completion:0": "There are Redridge gnolls that close to Elwynn?? They may be poised to advance into our homeland. Soon the people of Lakeshire may not be the only humans under siege!",
+  "quest:244:completion:1": "Here is your pay, though you bring us dire news. And it comes at a bad time, for we are ill equipped to deal with it.",
+  "quest:246:obj:0": "Kill 10 Redridge Mongrels and 6 Redridge Poachers, then report back to Deputy Feldon in Lakeshire.",
+  "quest:246:details:0": "We don't have men to spare, but something must be done about those gnolls you reported to me.",
+  "quest:246:details:1": "Scout southern Redridge for gnolls. Harry them, kill those you can and report back to me with a count of their numbers and an assessment of the ⟦E13⟧ they present. You may find those gnolls camped all along the southern road of Redridge.",
+  "quest:246:details:2": "Do this for the ⟦E3⟧ Army, ⟦15⟧, and you will be rewarded.",
+  "quest:246:progress:0": "Excuse me, ⟦16⟧, but we have a lot to keep our hands tied here. If you have nothing to report, then I must put my mind to other matters.",
+  "quest:246:completion:0": "<Deputy Feldon listens to your report...>",
+  "quest:246:completion:1": "There's a sizable force of gnolls encamped there, and from what you tell me they are tough ones. It must not have been easy for you to gather this intelligence.",
+  "quest:246:completion:2": "Here you are, ⟦17⟧. We are grateful for your aid.",
+  "quest:246:completion:3": "And if you haven't already done so, speak with Marshal Marris and Magistrate ⟦E1⟧ within Lakeshire. Our situation grows ever more desperate - those two will have need of you I'm sure.",
+  "quest:98407:title": "Show of Force",
+  "quest:98407:obj:0": "Collect 5 Spiked Collars from Redridge Thrashers for Deputy Feldon near Lakeshire.",
+  "quest:92:obj:0": "Chef Breanna of Lakeshire wants five pieces of ⟦E14⟧, five Great Goretusk Snouts and five helpings of ⟦E15⟧.",
+  "quest:92:details:0": "Nothing would please me more than to make you some ⟦E16⟧. But there's a slight problem. During the recent orc uprising I fed the entire brigade of ⟦E3⟧ troops. My cupboard is now bare. But if you can provide me with the ingredients, I'd be happy to oblige.",
+  "quest:92:details:1": "Just bring me five pieces of ⟦E14⟧, five Great Goretusk Snouts and five helpings of ⟦E15⟧.",
+  "quest:92:progress:0": "I still need five pieces of ⟦E14⟧, five Great Goretusk Snouts and five helpings of ⟦E15⟧.",
+  "quest:92:completion:0": "Well done, ⟦18⟧. Such fine specimens too! And here is your delicious delicacy known as ⟦E16⟧!",
+  "quest:118:obj:0": "Take ⟦E17⟧ to Smith Argus in Goldshire.",
+  "quest:118:details:0": "I've been using so much iron keeping the ⟦E3⟧ Guards outfitted, I don't have enough to supply the stable's horses with shoes!",
+  "quest:118:details:1": "Take this note to Blacksmith Argus in Goldshire. It explains to him my problem and requests a shipment of horseshoes.",
+  "quest:118:progress:0": "What's that? Verner sent you, you say? Well give me his note. And SPEAK UP!",
+  "quest:118:completion:0": "Heh, so old Verner needs some shoes, does he!?!",
+  "quest:119:obj:0": "⟦E18⟧ Osgood in Redridge. Give him the ⟦E19⟧.",
+  "quest:119:details:0": "Ok, I'll give him his 50 horseshoes...",
+  "quest:119:details:1": "Here they are, all boxed up and ready to go! Tell Verner it was a pleasure doing business, and be sure he reads the note attached to this crate!",
+  "quest:119:progress:0": "Great, you're back! Did you get the shoes?",
+  "quest:119:completion:0": "Thank you, this really helps me out.",
+  "quest:119:completion:1": "But what's this? Argus sent a note with the crate...What?? Argus wants me to PAY him? Bah!",
+  "quest:119:completion:2": "Well, ⟦19⟧, thank you for your help.",
+  "quest:122:obj:0": "Gather 6 Underbelly Whelp Scales from Black Dragon Whelps, and bring them to Verner Osgood in Redridge.",
+  "quest:122:details:0": "I need some underbelly scales from black dragon whelps to pay for the shoes Argus sent me from Goldshire. If you can get 6 of them for me, then I can pay Argus with some... and have enough left to fashion something for you.",
+  "quest:122:details:1": "Black dragon whelps are often flying around south of Lakeshire, but they like to wander. You might have to just keep an eye out and hunt them when you see them.",
+  "quest:122:progress:0": "I know that greedy Argus will send someone to collect his scales if I don't give them to him soon. Have you found those scales yet?",
+  "quest:122:completion:0": "Thanks! These will get me out of debt to Argus...",
+  "quest:145:obj:0": "Magistrate ⟦E1⟧ wants you to take a letter to Lord Ebonlocke in Darkshire.",
+  "quest:145:details:0": "I require your assistance once again. I have written to Lord Ebonlocke, requesting that he sends his ⟦E20⟧ guards, the Night Watch, to help with Lakeshire's defense. It is imperative this message makes it to him swiftly. You must exercise extreme caution. Ebonlocke is the mayor of Darkshire, in the heart of ⟦E7⟧. Do not stray from the roads.",
+  "quest:145:progress:0": "You appear to have traveled from afar, ⟦20⟧. What business do you have here in Darkshire?",
+  "quest:145:completion:0": "Thank you for making the long journey here. This is indeed important information.",
+  "quest:146:obj:0": "Return to Magistrate ⟦E1⟧ with Lord Ebonlocke's letter of response.",
+  "quest:146:details:0": "If I did not know Magistrate ⟦E1⟧ personally, I would say the man has gone mad. Send the Night Watch to Lakeshire because ⟦E3⟧ refuses aid? ⟦E21⟧ was formed because ⟦E3⟧ left us when this foul magic seeped into the land. If I sent my Night Watch, this town would be overrun by evil before the guards even reached the forest's edge.",
+  "quest:146:details:1": "Take this letter of response to your Master in Lakeshire.",
+  "quest:146:progress:0": "Ah, good to see you back, messenger. Shall I inform the Marshal that the Night Watch is on its way from Darkshire?",
+  "quest:146:completion:0": "By the Light! The ⟦E3⟧ Army retreated from ⟦E5⟧. And the Guard no longer protects Darkshire? There is some treachery abound. How could this be so?",
+  "quest:146:completion:1": "Oh I forgot to reward your service, ⟦21⟧. Here are some coins. Now excuse me. Something is amiss in ⟦E3⟧ and I must get to the bottom of it.",
+  "quest:89:obj:0": "Bring 5 Iron Pikes and 5 Iron Rivets to ⟦E11⟧ Oslow in Lakeshire.",
+  "quest:89:details:0": "During the last orc invasion we were forced to smelt our iron down to make bullets, swords and ⟦E22⟧. We sent word to ⟦E3⟧ for a new shipment of materials but a band of Redridge gnolls hijacked the caravan and ran off into the hills behind Lakeshire.",
+  "quest:89:details:1": "Now we're coming up short on supplies to get this bridge rebuilt. If you can bring me 5 iron pikes and 5 iron rivets, ⟦22⟧, I'll make sure you're rewarded.",
+  "quest:89:details:2": "Now let's get to work!",
+  "quest:89:progress:0": "This bridge isn't going to build itself! Now where are those iron pikes and iron rivets?",
+  "quest:89:completion:0": "Great work, ⟦23⟧. These supplies will help the bridge effort immensely. We'll get this beauty shored up in no time.",
+  "quest:124:obj:0": "Kill 10 Redridge Brutes and 8 Redridge Mystics, then return to Verner Osgood.",
+  "quest:124:details:0": "As if the attacking orcs weren't enough! Now I have gnoll brutes and mystics prowling along the ridge north of my stable, taking my horses when they stray...",
+  "quest:124:details:1": "If you can get rid of those gnolls, my horses and I would be very grateful.",
+  "quest:124:progress:0": "Yes? Is there something I can do for you?",
+  "quest:124:completion:0": "Thank you for all your help, ⟦24⟧.",
+  "quest:150:obj:0": "Bring 8 Murloc Fins to Dockmaster Baren in Lakeshire.",
+  "quest:150:details:0": "Murlocs are becoming a problem. Larger groups of the fishmen are dropping anchor along the shores of Lake Everstill and fishing up a storm! We need them gone before they eat all the fish in the lake!",
+  "quest:150:details:1": "Hunt murlocs! Bring me eight of their fins and I might have something for you...",
+  "quest:150:progress:0": "Do you have those fins? Hurry, we need those murlocs driven from the lake!",
+  "quest:150:completion:0": "Well done, ⟦25⟧. I hope you didn't have too much trouble with those murlocs.",
+  "quest:150:completion:1": "It's strange seeing them so far from the sea. I wonder if they're here because they're running from something...",
+  "quest:20:obj:0": "Bring 10 Battleworn ⟦E23⟧ to Marshal Marris in Lakeshire.",
+  "quest:20:details:0": "The Blackrock orcs have travelled from the ⟦E24⟧ and claimed Stonewatch Keep to the north. From there they maraud the areas north of Lakeshire and keep its citizens in town, penned like cattle.",
+  "quest:20:details:1": "Help rid Lakeshire of this menace. Kill these Blackrock orcs and bring me ten of their Battleworn ⟦E23⟧ as proof.",
+  "quest:20:details:2": "And although Blackrocks threaten us from the north, we've received reports of more in the southeastern pocket of Redridge. If you find any there, then they too should be hunted.",
+  "quest:20:progress:0": "Have you been slaying orcs, ⟦26⟧? If so, then show me...",
+  "quest:20:completion:0": "That makes for a lot fewer orcs to worry about, thanks.",
+  "quest:94:obj:0": "Take the ⟦E25⟧ to the Lion Statue near the Tower of Ilgalar in Redridge.",
+  "quest:94:details:0": "My rival, ⟦E26⟧, is a vicious mage of great power who lives in the Tower of Ilgalar in Redridge. I have developed a means of spying on him, the Eye of Azora, and can now view him from afar.",
+  "quest:94:details:1": "But to study his thoughts ... I require further aid.",
+  "quest:94:details:2": "If you are willing, then take my ⟦E25⟧ to the Tower of Ilgalar. Place it upon the Lion Statue near the Tower.",
+  "quest:94:details:3": "When this is done, the power of Azora will grant visions of ⟦E26⟧'s future plans.",
+  "quest:94:progress:0": "This Lion Statue has sat here for decades, and keeps a lonely watch over the infamous Tower of Ilgalar.⟦27⟧⟦28⟧There is a depression at the base of the statue, where a gem or glyph might be set...",
+  "quest:94:completion:0": "You place the ⟦E25⟧ on the stone. It adheres itself... and you hear from it Theocritus' disembodied voice:",
+  "quest:94:completion:1": "You have my gratitude, young ⟦29⟧. You may now speak with me through this Glyph, and I might have future tasks for you... after I have probed the thoughts of my rival.",
+  "quest:127:obj:0": "Bring 10 ⟦E27⟧ to Dockmaster Baren in Lakeshire.",
+  "quest:127:details:0": "Lake Everstill is famous for its spotted sunfish. There's always demand for them...and I'm running low!",
+  "quest:127:details:1": "Bring me a batch of 10 and I'll barter well for them. If you can't fish yourself, then...maybe you can get them off the murlocs!",
+  "quest:127:progress:0": "You have some sunfish for me, eh?",
+  "quest:127:completion:0": "Pleasure doin' business with you, matey!",
+  "quest:98387:title": "Blackrock Blockade",
+  "quest:248:obj:0": "Climb the intact watch tower beside Stonewatch Keep.",
+  "quest:248:obj:1": "Find a suitable container to place the ⟦E25⟧.",
+  "quest:248:details:0": "I have been watching the Tower of Ilgalar, and can detect that ⟦E26⟧ is in conflict with the ⟦E28⟧ in Stonewatch Keep. I do not know the reason behind their contention, but you may aid me in unraveling this mystery.",
+  "quest:248:details:1": "Take another ⟦E25⟧, then go to the top of the intact watch tower beside Stonewatch Keep.",
+  "quest:248:details:2": "Find a suitable object on which to place the Glyph. A chest or a jar -- some place where the glyph will not be noticed -- will suit my purpose.",
+  "quest:248:progress:0": "This jar once held a foul-smelling liquor, but now lies empty and forgotten on a pair of barrels.",
+  "quest:248:completion:0": "It is a suitable vessel for the ⟦E25⟧, allowing Theocritus to delve into the minds within Stonewatch Keep.",
+  "quest:91:obj:0": "Bring 10 Shadowhide Pendants to Bailiff Conacher in the Lakeshire Town Hall.",
+  "quest:91:details:0": "An ⟦E29⟧ of ⟦E3⟧ has taken up residence in the eastern foothills of Redridge. This wicked villain uses the ⟦E30⟧ to spread terror and misery upon our town and our people. Under the name, ⟦E26⟧, he conducts his evil business.",
+  "quest:91:details:1": "⟦E26⟧ now controls the Shadowhide Gnoll Clan to perform his biddings. As stated by the Law of Lakeshire, aiding a criminal of the Kingdom is punishable by death.",
+  "quest:91:details:2": "These vile gnolls must be killed!",
+  "quest:91:details:3": "Turn in 10 Shadowhide Pendants to me, and you shall be rewarded.",
+  "quest:91:progress:0": "Turn in 10 Shadowhide Pendants to me, and you shall be rewarded.",
+  "quest:91:completion:0": "The Court of Lakeshire recognizes your commitment to justice, ⟦30⟧. By enforcing the laws of the Kingdom you have helped uphold the justice of the land.",
+  "quest:115:obj:0": "Bring 3 Midnight Orbs to Marshal Marris in Lakeshire.",
+  "quest:115:details:0": "The Blackrock orcs enlisted shadowcasters to aid their attacks in Redridge, and they have brought with them devices of dark power--midnight orbs. These orbs have struck telling blows against Redridge's defenders, and it's imperative we remove the ⟦E31⟧-tainted items from the conflict.",
+  "quest:115:details:1": "Find and deliver to me midnight orbs from slain Blackrock shadowcasters. I will then have them disposed of, for this world would be a better place without them!",
+  "quest:115:progress:0": "How goes your conflict with the shadowcasters? Did you find the midnight orbs?",
+  "quest:115:completion:0": "Thank you, ⟦31⟧. I'll send these to be destroyed immediately.",
+  "quest:178:obj:0": "Bring the ⟦E32⟧ to Theocritus the ⟦E33⟧.",
+  "quest:178:details:0": "<You hear a disembodied voice...>",
+  "quest:178:details:1": "Do not be alarmed. I am Theocritus, High ⟦E33⟧ of Tower Azora in ⟦E34⟧. The pendant you are holding is a method of communication between the Shadowhide Gnolls and their master, ⟦E26⟧.",
+  "quest:178:details:2": "Through months of research, I believe I too can communicate through these pendants. If you can hear this message, then my ⟦E35⟧ was a success.",
+  "quest:178:details:3": "Bring me this pendant and I will reward you for the service.",
+  "quest:178:progress:0": "I spoke to you through a pendant, you say? Hmm...give it to me, so that I might study it.",
+  "quest:178:completion:0": "You have my gratitude, ⟦32⟧. I sent that message to the Shadowhide Pendants weeks ago and had believed it a failure. But it seems the ⟦E35⟧ did reach at least some pendants, after a significant delay.",
+  "quest:178:completion:1": "In time I hope to learn how to send an attack through the pendants, to ⟦E36⟧ any Shadowhide Gnolls who wear them.",
+  "quest:178:completion:2": "But before that is possible, I'm afraid that much more research is required."
+ },
+ "context": {
+  "quest:120": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Magistrate Solomon",
+   "turner": "General Marcus Jonathan («ژنرال مارکوس جاناتان»)"
+  },
+  "quest:121": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 14,
+   "side": "alliance",
+   "giver": "General Marcus Jonathan («ژنرال مارکوس جاناتان»)",
+   "turner": "Magistrate Solomon"
+  },
+  "quest:143": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Magistrate Solomon",
+   "turner": "Gryan Stoutmantle"
+  },
+  "quest:144": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Gryan Stoutmantle",
+   "turner": "Magistrate Solomon"
+  },
+  "quest:116": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Barkeep Daniels",
+   "turner": "Barkeep Daniels"
+  },
+  "quest:129": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Darcy",
+   "turner": "Guard Parker"
+  },
+  "quest:130": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Guard Parker",
+   "turner": "Martie Jainrose"
+  },
+  "quest:131": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Martie Jainrose",
+   "turner": "Darcy"
+  },
+  "quest:3741": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 15,
+   "side": "",
+   "giver": "Shawn",
+   "turner": "Hilary"
+  },
+  "quest:125": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Foreman Oslow",
+   "turner": "Foreman Oslow"
+  },
+  "quest:244": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Guard Parker",
+   "turner": "Deputy Feldon"
+  },
+  "quest:246": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Deputy Feldon",
+   "turner": "Deputy Feldon"
+  },
+  "quest:98407": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Deputy Feldon",
+   "turner": ""
+  },
+  "quest:92": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Chef Breanna",
+   "turner": "Chef Breanna"
+  },
+  "quest:118": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Verner Osgood",
+   "turner": "Smith Argus"
+  },
+  "quest:119": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Smith Argus",
+   "turner": "Verner Osgood"
+  },
+  "quest:122": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Verner Osgood",
+   "turner": "Verner Osgood"
+  },
+  "quest:145": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Magistrate Solomon",
+   "turner": "Lord Ello Ebonlocke"
+  },
+  "quest:146": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Lord Ello Ebonlocke",
+   "turner": "Magistrate Solomon"
+  },
+  "quest:89": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Foreman Oslow",
+   "turner": "Foreman Oslow"
+  },
+  "quest:124": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Verner Osgood",
+   "turner": "Verner Osgood"
+  },
+  "quest:150": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Dockmaster Baren",
+   "turner": "Dockmaster Baren"
+  },
+  "quest:20": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Marshal Marris",
+   "turner": "Marshal Marris"
+  },
+  "quest:94": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Theocritus",
+   "turner": "Old Lion Statue"
+  },
+  "quest:127": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Dockmaster Baren",
+   "turner": "Dockmaster Baren"
+  },
+  "quest:98387": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Marshal Marris",
+   "turner": ""
+  },
+  "quest:248": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Old Lion Statue",
+   "turner": "An Empty Jar"
+  },
+  "quest:91": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 23,
+   "side": "alliance",
+   "giver": "Bailiff Conacher",
+   "turner": "Bailiff Conacher"
+  },
+  "quest:115": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 23,
+   "side": "alliance",
+   "giver": "Marshal Marris",
+   "turner": "Marshal Marris"
+  },
+  "quest:178": {
+   "zone_en": "Redridge Mountains",
+   "zone_fa": "کوه‌های ردریج",
+   "level": 23,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Theocritus"
+  }
+ },
+ "known": {
+  "quest:120": {
+   "title": "پیک به استورم‌ویند"
+  },
+  "quest:121": {
+   "title": "پیک به استورم‌ویند"
+  },
+  "quest:143": {
+   "title": "پیک به وست‌فال"
+  },
+  "quest:144": {
+   "title": "پیک به وست‌فال"
+  },
+  "quest:116": {
+   "title": "روزهای خشک"
+  },
+  "quest:129": {
+   "title": "ناهار مجانی"
+  },
+  "quest:130": {
+   "title": "دیدار با گیاه‌شناس"
+  },
+  "quest:131": {
+   "title": "رساندن نرگس‌ها"
+  },
+  "quest:3741": {
+   "title": "گردن‌بند هیلاری"
+  },
+  "quest:125": {
+   "title": "ابزار گم‌شده"
+  },
+  "quest:244": {
+   "title": "دیوگرگ‌های تجاوزگر"
+  },
+  "quest:246": {
+   "title": "سنجش تهدید"
+  },
+  "quest:92": {
+   "title": "گولاش ردریج"
+  },
+  "quest:118": {
+   "title": "بهای نعل‌ها"
+  },
+  "quest:119": {
+   "title": "بازگشت به ورنر"
+  },
+  "quest:122": {
+   "title": "فلس‌های شکم‌زیر"
+  },
+  "quest:145": {
+   "title": "پیک به دارک‌شایر"
+  },
+  "quest:146": {
+   "title": "پیک به دارک‌شایر"
+  },
+  "quest:89": {
+   "title": "پل اِوراستیل"
+  },
+  "quest:124": {
+   "title": "زوزهٔ دیوگرگ‌ها"
+  },
+  "quest:150": {
+   "title": "شکارچیان متخلف مرلوک"
+  },
+  "quest:20": {
+   "title": "بلای بلک‌راک"
+  },
+  "quest:94": {
+   "title": "چشمِ بیدار"
+  },
+  "quest:127": {
+   "title": "فروش ماهی"
+  },
+  "quest:248": {
+   "title": "جست‌وجوی بیشتر"
+  },
+  "quest:91": {
+   "title": "قانون سالومون"
+  },
+  "quest:115": {
+   "title": "جادوی سایه"
+  },
+  "quest:178": {
+   "title": "بازپس‌گیری تئوکریتوس"
+  }
+ }
+}

@@ -1,0 +1,587 @@
+{
+ "pack": "quest-silverpine-forest-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-silverpine-forest-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Bethor's Scroll",
+   "fa": "طومار بتور",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Thule Ravenclaw",
+   "fa": "تول ریون‌کلاو",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E5": {
+   "en": "Priest",
+   "fa": "روحانی",
+   "kind": "cls"
+  },
+  "E6": {
+   "en": "spellcasting",
+   "fa": "اجرای اسپیل",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Silverpine Forest",
+   "fa": "جنگل سیلورپاین",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Sample Ichor",
+   "fa": "نمونهٔ چرک",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Alaric's Head",
+   "fa": "سر آلاریک",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Lake Creeper Moss",
+   "fa": "خزهٔ خزندهٔ دریاچه",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Lake Skulker Moss",
+   "fa": "خزهٔ کمین‌گر دریاچه",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Hardened Tumor",
+   "fa": "تومور سخت‌شده",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Berard's Journal",
+   "fa": "دفترچهٔ برارد",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "combat",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Woven Wand",
+   "fa": "عصای بافته",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "wand",
+   "fa": "واند",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Revenge",
+   "fa": "انتقام",
+   "kind": "sp"
+  },
+  "E22": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Beren's Peril",
+   "fa": "مهلکهٔ برن",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Tortured Soul",
+   "fa": "جان شکنجه‌شده",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E29": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Thule's Head",
+   "fa": "سر تول",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E33": {
+   "en": "Mana",
+   "fa": "مانا",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Arcane Mote",
+   "fa": "ذرهٔ رازآمیز",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Dalaran Sewer Key",
+   "fa": "کلید فاضلاب دالاران",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Bethor's Scroll": "طومار بتور",
+  "Thule Ravenclaw": "تول ریون‌کلاو",
+  "Dalaran": "دالاران",
+  "Shadow": "سایه",
+  "Priest": "روحانی",
+  "spellcasting": "اجرای اسپیل",
+  "Silverpine Forest": "جنگل سیلورپاین",
+  "Sample Ichor": "نمونهٔ چرک",
+  "Undercity": "آندر‌سیتی",
+  "spell": "اسپیل",
+  "Alaric's Head": "سر آلاریک",
+  "Lake Creeper Moss": "خزهٔ خزندهٔ دریاچه",
+  "Lake Skulker Moss": "خزهٔ کمین‌گر دریاچه",
+  "Hardened Tumor": "تومور سخت‌شده",
+  "Berard's Journal": "دفترچهٔ برارد",
+  "combat": "نبرد",
+  "Woven Wand": "عصای بافته",
+  "wand": "واند",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Head": "سر",
+  "Revenge": "انتقام",
+  "Tor": "تور",
+  "Beren's Peril": "مهلکهٔ برن",
+  "undead": "مرده‌متحرک",
+  "enemies": "دشمنان",
+  "Tortured Soul": "جان شکنجه‌شده",
+  "nearby": "نزدیک",
+  "Blood": "خون",
+  "Use": "استفاده",
+  "Thule's Head": "سر تول",
+  "Forsaken": "مطرودان",
+  "Arcane": "اسرار",
+  "Mana": "مانا",
+  "Arcane Mote": "ذرهٔ رازآمیز",
+  "Dalaran Sewer Key": "کلید فاضلاب دالاران"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "<class>",
+  "10": "$n",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N"
+ },
+ "rows": {
+  "quest:446:obj:0": "Bring ⟦E1⟧ to Apothecary Renferrel at the Silverpine Sepulcher.",
+  "quest:446:details:0": "This Ichor was crafted by an old colleague of mine: ⟦E2⟧. He was a young, promising mage before the great war, but when the Lich King rose to power, he betrayed his brethren and allied with the Scourge.",
+  "quest:446:details:1": "I did not realize he still lives, nor that he leads the Rot Hides in their forays against us!",
+  "quest:446:details:2": "I know many of his spells, and can help concoct a potion to counter them. Take this scroll back to Apothecary Renferrel. It has the incantations needed for the potion.",
+  "quest:446:progress:0": "Greetings, ⟦1⟧. What did Bethor have to say?",
+  "quest:446:completion:0": "This scroll is laced with powerful magic. I've never used such forces in a potion ... it will be a powerful mixture, and should serve you well should you attack Thule in his stronghold on Fenris Isle.",
+  "quest:448:obj:0": "Report to High Executor Hadrec at the Sepulcher.",
+  "quest:448:details:0": "Before you launch an assault on Fenris Isle, report to High Executor Hadrec. He may have additional information or equipment you'll need.",
+  "quest:448:completion:0": "If what Bethor says is true then ⟦E2⟧ is a force that must be dealt with, and dealt with soon.",
+  "quest:448:completion:1": "To aid in this task, you may take something from our arsenal here...",
+  "quest:479:obj:0": "Obtain 8 ⟦E3⟧ Pendants for ⟦E4⟧ ⟦E5⟧ Allister at the Sepulcher.",
+  "quest:479:details:0": "Dalar is attempting to locate the source of the wizards' ⟦E6⟧. For now, we'll have to slow their progress in any way we can...",
+  "quest:479:details:1": "The conjurers, mages and protectors are no doubt carrying the pendants. Remove and retrieve them.",
+  "quest:479:details:2": "Take the main road south and the eastern fork into Ambermill.",
+  "quest:479:progress:0": "We must hurry, their plans must not come to fruition, or we may lose our hold on ⟦E7⟧.",
+  "quest:479:completion:0": "Dalar has found that the weaving is quite far along, despite the setback.",
+  "quest:479:completion:1": "BA wizard of great power is guiding the magic energy. He must be stopped quickly.",
+  "quest:443:obj:0": "Bring 8 bottles of rot hide ichor to Apothecary Renferrel at the Sepulcher.",
+  "quest:443:details:0": "Before we launch an assault on Fenris Isle, we must determine who is behind the rot hide gnolls. Our apothecaries believe their origin lies within the strange fluid that flows through their bodies.",
+  "quest:443:details:1": "Go to Fenris Isle, east of the Decrepit Ferry, and collect rot hide ichor from the gnolls you find there. Bring it to Apothecary Renferrel, stationed outside the Sepulcher.",
+  "quest:443:progress:0": "Do you have the rot hide ichor, ⟦2⟧?",
+  "quest:443:completion:0": "Very good. This ichor will help us understand the nature of the rot hides, and may show us their weakness...",
+  "quest:443:completion:1": "B...if they have one.",
+  "quest:444:obj:0": "Bring the ⟦E8⟧ to Bethor Iceshard in the ⟦E9⟧.",
+  "quest:444:details:0": "I have reduced the ichor you brought me and separated it into its base components. My findings are not conclusive, but I have determined that warlock and necromantic magics were used in the ichor's creation.",
+  "quest:444:details:1": "While I continue to study the ichor, I want you to take a sample to Bethor Iceshard in the ⟦E9⟧. Bethor is not an apothecary, but his knowledge of magic may help to unravel the mystery of the rot hides.",
+  "quest:444:details:2": "Go. You will find Bethor in the Magic Quarter of the ⟦E9⟧.",
+  "quest:444:progress:0": "My studies require great concentration. So I hope your visit is not a frivolous one.",
+  "quest:444:completion:0": "This substance is laced with powerful spells, some of which I have not seen for a long, long time...",
+  "quest:444:completion:1": "One moment -- I must invoke a ⟦E10⟧ of divination...",
+  "quest:460:obj:0": "Bring ⟦E11⟧ to his grave.",
+  "quest:460:details:0": "You don't look like a rot hide. Good. I had lost hope...",
+  "quest:460:details:1": "My name is Alaric, and I was once Thule's head servant and bodyguard. He used his magic to \"protect\" me from the Plague of Undeath, but instead his ⟦E10⟧ gave me an unlife from which I cannot escape. And after creating the cursed rot hide gnolls, Thule beheaded me... and gave my head to the gnolls as a plaything!",
+  "quest:460:details:2": "Please, take me to my body. I believe the gnolls buried it here in Fenris Keep, near the stable, in an unmarked grave.",
+  "quest:460:progress:0": "This grave was hastily dug.",
+  "quest:460:completion:0": "Thank you, ⟦3⟧. I had feared the Gnolls destroyed my body. It is good to know they did not.",
+  "quest:451:obj:0": "Bring 6 samples of ⟦E12⟧, 6 samples of ⟦E13⟧ and a ⟦E14⟧ to Master Apothecary Faranell in the ⟦E9⟧.",
+  "quest:451:details:0": "According to ⟦E15⟧ the moss from Lake Skulkers and Creepers might prove useful for our quest to brew a new plague. Those beasts dwell on the islands in Lake Lordamere to the east.",
+  "quest:451:details:1": "He also mentions a very rare ⟦E14⟧ that he discovered on a Vile Fin murloc. Apparently the tumor is so rare Berard was only able to obtain one.",
+  "quest:451:details:2": "Collect samples of the moss as well as the rare hardened tumor and take them to Master Apothecary Faranell in the ⟦E9⟧.",
+  "quest:451:progress:0": "What brings you back to the ⟦E9⟧, ⟦4⟧?",
+  "quest:451:completion:0": "Such a blow to the Royal Apothecary Society to lose Berard. But through your hard work and Apothecary Renferrel's diligent research Berard's studies will still be useful to The Dark Lady's plight.",
+  "quest:451:completion:1": "We are on the cusp of something great here, ⟦5⟧. If you were not so skilled in the ways of ⟦E16⟧ I would try to recruit you for membership in the Society.",
+  "quest:461:obj:0": "Take Alaric to the hidden alcove.",
+  "quest:461:details:0": "I know of a hidden niche within the keep that holds an item dear to Thule, and his old colleagues. It also holds something you might find useful. Take me there!",
+  "quest:461:details:1": "The alcove is in the southwestern tower of the keep, behind a dusty shelf.",
+  "quest:461:details:2": "Take my body, but leave my boots. They never fit me anyway...",
+  "quest:461:progress:0": "This is the spot! Bring me closer...",
+  "quest:461:completion:0": "There we are, it's open. Leave me here. I spent the best days of my life in this keep, and the thought of resting within its walls gives me comfort.",
+  "quest:461:completion:1": "Be sure to close the alcove tight - I don't want those Rot Hides to find me.",
+  "quest:461:completion:2": "Oh, and take this. You've earned it.",
+  "quest:491:obj:0": "Take the ⟦E17⟧ to Bethor Iceshard in the Magic Quarter of the ⟦E9⟧.",
+  "quest:491:details:0": "Thule once told me that, long ago, he and two colleagues created a magic ⟦E18⟧, woven together from the apprentice wands each mage possessed. This ⟦E18⟧ was a symbol of their friendship, and although Thule came to despise it he could not part with it, nor could he let the others have it. So he stole the ⟦E18⟧, and hid it in Fenris Keep.",
+  "quest:491:details:1": "Here. Take the ⟦E18⟧ to Bethor Iceshard, one of Thule's friends from years past. I'm sure he will want it.",
+  "quest:491:progress:0": "⟦6⟧. Have you defeated ⟦E2⟧?",
+  "quest:491:completion:0": "...what is this? Thule had our ⟦E17⟧? I thought it was lost when our friendship sundered and he sided with the Lich King!",
+  "quest:491:completion:1": "He must not have invoked its power, for if he had I would have sensed it. And it is good that he did not use it...",
+  "quest:491:completion:2": "This is a marvelous find. You have my gratitude, ⟦7⟧, and will be rewarded.",
+  "quest:493:obj:0": "Deliver Apothecary Renferrel's findings to Apothecary Lydon in the town of Tarren Mill in the ⟦E19⟧.",
+  "quest:493:details:0": "The Royal Apothecary Society is under extreme pressure from the Dark Lady to develop a New Plague. We are working diligently and have made much progress. It is our belief that the success will be achieved much faster if we share information amongst the Society.",
+  "quest:493:details:1": "For that reason I want you to deliver my latest findings to Apothecary Lydon in Tarren Mill, a small town nestled in the ⟦E19⟧. The journey will be a long one.",
+  "quest:493:details:2": "⟦E20⟧ south and stick to the roads. Follow the signs closely!",
+  "quest:493:progress:0": "You have something for me?",
+  "quest:493:completion:0": "Ah, most excellent. Apothecary Renferrel has my utmost respect. I am anxious to study his work.",
+  "quest:530:obj:0": "Kill Valdred Moray.",
+  "quest:530:obj:1": "Bring his hands to Raleigh Andrean in the ⟦E9⟧.",
+  "quest:530:details:0": "Valdred, once my good friend, was my wife's murderer. Although I am incapable of grieving, I do yearn for revenge. If you kill Valdred and bring me his cursed hands, then I will reward you.",
+  "quest:530:details:1": "I last heard he was at the Greymane Wall in southern Silverpine, trying to flee into the kingdom of Gilneas.",
+  "quest:530:progress:0": "Do you have those hands, ⟦8⟧?",
+  "quest:530:completion:0": "Ah, good. These hands killed my wife, Deliah. ⟦E21⟧ for her murder was my only care, and you were the instrument of that revenge.",
+  "quest:530:completion:1": "Here, take the ring you returned earlier. Deliah has been dead to me for so long, her ring is a bauble I no longer care to keep. Instead, I will keep these hands as a remembrance of my friend's betrayal.",
+  "quest:95981:title": "Watching the Roads",
+  "quest:95981:obj:0": "Slay 8 ⟦E3⟧ Wizards and 8 ⟦E3⟧ Watchers for ⟦E4⟧ ⟦E5⟧ Allister in the Sepulcher.",
+  "quest:95981:obj:1": "*⟦E3⟧ Watcher slain (8)",
+  "quest:95981:obj:2": "*⟦E3⟧ Wizard slain (8)",
+  "quest:95981:details:0": "Taking away their pendants is just the first step. If the Kirin ⟦E22⟧ really are shipping a steady supply of relics from ⟦E3⟧, we must stop them at the source.",
+  "quest:95981:details:1": "Search the roads around Ambermill for ⟦E3⟧'s wizards and watchers. Their presence has allowed free access across our borders for too long. If we can cull their numbers, that should put a stop to these pendants making it into ⟦E7⟧ in the first place.",
+  "quest:95981:progress:0": "Every moment we delay another shipment arrives on our doorstep. Put them down, ⟦9⟧!",
+  "quest:98299:title": "Stop the Spread",
+  "quest:516:obj:0": "Locate ⟦E23⟧, then kill 6 Ravenclaw Drudgers and 6 Ravenclaw Guardians, then return to ⟦E4⟧ ⟦E5⟧ Allister at the Sepulcher.",
+  "quest:516:details:0": "I have received reports that a group of ⟦E24⟧ are holing up to prepare for an attack against us. Armed with this information, we can turn the tables and attack them first, nipping their little plan in the bud.",
+  "quest:516:details:1": "Unfortunately, my information is spotty, at best. They are reported to be hiding in a location known as ⟦E23⟧. The exact location is unknown, but it appears to be a cave in the hills, near a pocket of ⟦E3⟧ wizards.",
+  "quest:516:details:2": "I trust your resourcefulness. Find them, and put them down.",
+  "quest:516:progress:0": "Have you located their base yet, ⟦10⟧? Time is of the essence!",
+  "quest:516:completion:0": "If our scouts and agents continue to procure valuable information such as this, we shall have the Lich King's Scourge removed from our lands in no time.",
+  "quest:480:obj:0": "Kill the ⟦E3⟧ archmage, then retrieve his staff for ⟦E4⟧ ⟦E5⟧ Allister at the Sepulcher.",
+  "quest:480:details:0": "An archmage of great power is overseeing the reactivation of the ley energy node. With the progress they have made, our only hope of stopping them is by killing him. It will be difficult, he is no doubt protected by many other mages and warders.",
+  "quest:480:details:1": "You must go, and you must dispatch him quickly. When he is dead, retrieve his staff for me. Go now.",
+  "quest:480:progress:0": "Quickly, time runs short, ⟦11⟧!",
+  "quest:480:completion:0": "The magic of the wizards dissipates, and the ley energies fade into dormancy. Your efforts have been fruitful, ⟦12⟧, and we have dealt a major blow to our ⟦E25⟧, and to the overbearing wizards of ⟦E3⟧.",
+  "quest:480:completion:1": "We must be vigilant, however, knowing that source of energy lies so close at hand... Plans must be made for the future.",
+  "quest:95883:title": "The ⟦E26⟧",
+  "quest:95883:obj:0": "Collect a ⟦E26⟧ from the ⟦E27⟧ ⟦E24⟧ in ⟦E23⟧ in ⟦E7⟧.",
+  "quest:95884:title": "The Offering Stone",
+  "quest:95884:obj:0": "Find the Offering Stone in ⟦E23⟧ in ⟦E7⟧.",
+  "quest:95885:title": "The Offering of ⟦E28⟧",
+  "quest:95885:obj:0": "⟦E29⟧ the ⟦E26⟧ to give an offering of blood at the Offering Stone in ⟦E23⟧.",
+  "quest:442:obj:0": "Bring ⟦E30⟧ to High Executor Hadrec at the Sepulcher.",
+  "quest:442:details:0": "Now is the time to assault the Scourge's place of strength in Silverpine: Fenris Isle.",
+  "quest:442:details:1": "You must again go to the Isle and destroy ⟦E2⟧. I want his head!",
+  "quest:442:details:2": "This mission is as dangerous as it is vital, ⟦13⟧. You must not fail.",
+  "quest:442:progress:0": "The Scourge cannot be allowed to remain in Silverpine, ⟦14⟧. Come back to me when you have proof of Thule's death.",
+  "quest:442:completion:0": "The death of ⟦E2⟧ was no small event, ⟦15⟧. Renferrel tells me that the energies released when you destroyed Thule were felt even as far as the Sepulcher.",
+  "quest:442:completion:1": "Your actions ring through the ranks of the ⟦E31⟧. Your value to us grows.",
+  "quest:92457:title": "Starving ⟦E32⟧",
+  "quest:92457:obj:0": "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 ⟦E33⟧ Echoes inside the City of ⟦E3⟧ for Archmage Modera outside of ⟦E3⟧.",
+  "quest:92457:obj:1": "* Seeking Remnant slain (8)",
+  "quest:92457:obj:2": "* Saturated Remnant slain (8)",
+  "quest:92457:obj:3": "* ⟦E33⟧ Echo slain (8)",
+  "quest:92457:details:0": "The breach has affected many of our factotums and enchantments throughout the city, including many that are seeing to our defenses. This fragmented arcane energy has spoken to rogue elementals who seek to saturate themselves in this free flowing magic.",
+  "quest:92457:details:1": "While we are busy tending to the wards and other major incidents, it would be a favor to the Kirin ⟦E22⟧ if you could cull this elemental throng.",
+  "quest:92458:title": "Heart of Disruption",
+  "quest:92458:obj:0": "Collect the ⟦E34⟧ for the Image of Archmage Modera near the City of ⟦E3⟧.",
+  "quest:92458:obj:1": "* ⟦E34⟧",
+  "quest:92458:obj:2": "* ⟦E35⟧ (provided)",
+  "quest:92458:details:0": "Whatever disturbed the ley lines, it started at the top of the Violet Citadel. A thunderous crash rang out from the parlors above, and now we are overrun with rampant arcane power. It's taking all we have just to keep the wards in place.",
+  "quest:92458:details:1": "We cannot afford to stall any longer. We need help.",
+  "quest:92458:details:2": "The Kirin ⟦E22⟧ are busy inside, but you will still need a less public approach to gain entry. Take this key and meet me in the citadel once you've made your way into the city. We must put an end to this disruption.",
+  "quest:92459:title": "Friend of the Kirin ⟦E22⟧",
+  "quest:92459:obj:0": "Speak to Archmage Celindra in the City of ⟦E3⟧.",
+  "quest:92459:obj:1": "*⟦E34⟧ (provided)",
+  "quest:92459:details:0": "The council will not be happy to learn of our subterfuge, but they cannot deny results. The city is calming down, and we are free to lower our wards.",
+  "quest:92459:details:1": "I think it's only fair you deliver the good word. Take this mote to Archmage Celindra within the Violet Citadel."
+ },
+ "context": {
+  "quest:446": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "Bethor Iceshard",
+   "turner": "Apothecary Renferrel"
+  },
+  "quest:448": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "High Executor Hadrec"
+  },
+  "quest:479": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 16,
+   "side": "horde",
+   "giver": "Shadow Priest Allister",
+   "turner": "Shadow Priest Allister"
+  },
+  "quest:443": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 17,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "Apothecary Renferrel"
+  },
+  "quest:444": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 17,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "Bethor Iceshard"
+  },
+  "quest:460": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 17,
+   "side": "horde",
+   "giver": "",
+   "turner": "Shallow Grave"
+  },
+  "quest:451": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 18,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "Master Apothecary Faranell"
+  },
+  "quest:461": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 18,
+   "side": "horde",
+   "giver": "Shallow Grave",
+   "turner": "Dusty Shelf"
+  },
+  "quest:491": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 18,
+   "side": "horde",
+   "giver": "Dusty Shelf",
+   "turner": "Bethor Iceshard"
+  },
+  "quest:493": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 20,
+   "side": "horde",
+   "giver": "Apothecary Renferrel",
+   "turner": "Apothecary Lydon"
+  },
+  "quest:530": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 20,
+   "side": "horde",
+   "giver": "Raleigh Andrean",
+   "turner": "Raleigh Andrean"
+  },
+  "quest:95981": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 20,
+   "side": "horde",
+   "giver": "Shadow Priest Allister",
+   "turner": ""
+  },
+  "quest:98299": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 20,
+   "side": "horde",
+   "giver": "Dalar Dawnweaver",
+   "turner": ""
+  },
+  "quest:516": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 21,
+   "side": "horde",
+   "giver": "Shadow Priest Allister",
+   "turner": "Shadow Priest Allister"
+  },
+  "quest:480": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 22,
+   "side": "horde",
+   "giver": "Shadow Priest Allister",
+   "turner": "Shadow Priest Allister"
+  },
+  "quest:95883": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 23,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95884": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 23,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95885": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 23,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:442": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 24,
+   "side": "horde",
+   "giver": "High Executor Hadrec",
+   "turner": "High Executor Hadrec"
+  },
+  "quest:92457": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Image of Archmage Modera",
+   "turner": ""
+  },
+  "quest:92458": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Image of Archmage Modera",
+   "turner": "Image of Archmage Modera"
+  },
+  "quest:92459": {
+   "zone_en": "Silverpine Forest",
+   "zone_fa": "جنگل سیلورپاین",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Image of Archmage Modera",
+   "turner": "Archmage Celindra"
+  }
+ },
+ "known": {
+  "quest:446": {
+   "title": "تول ریون‌کلاو"
+  },
+  "quest:448": {
+   "title": "گزارش به هادرک"
+  },
+  "quest:479": {
+   "title": "تحقیقات آمبرمیل"
+  },
+  "quest:443": {
+   "title": "چرک پوست‌پوسیده"
+  },
+  "quest:444": {
+   "title": "خاستگاه پوست‌پوسیده‌ها"
+  },
+  "quest:460": {
+   "title": "آرامش تکه‌تکه"
+  },
+  "quest:451": {
+   "title": "روشی برای مرگ"
+  },
+  "quest:461": {
+   "title": "طاقچهٔ پنهان"
+  },
+  "quest:491": {
+   "title": "عصا برای بتور"
+  },
+  "quest:493": {
+   "title": "سفر به دامنهٔ هیلزبراد"
+  },
+  "quest:530": {
+   "title": "انتقام یک شوهر"
+  },
+  "quest:516": {
+   "title": "مهلکهٔ برن"
+  },
+  "quest:480": {
+   "title": "بافنده"
+  },
+  "quest:442": {
+   "title": "حمله به جزیرهٔ فنریس"
+  }
+ }
+}

@@ -1,0 +1,803 @@
+{
+ "pack": "quest-sort:rogue-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:rogue-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Zando'zan",
+   "fa": "زاندو‌زان",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E3": {
+   "en": "stealth",
+   "fa": "مخفی‌کاری",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E7": {
+   "en": "Southsea Treasure",
+   "fa": "گنج ساوت‌سی",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "E.C.A.C.",
+   "fa": "ای.سی.ای.سی.",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Thieves' Tools",
+   "fa": "ابزارِ دزدی",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "talent",
+   "fa": "تلنت",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Dalaran Status Report",
+   "fa": "گزارش وضعیت دالاران",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Mennet Carkad",
+   "fa": "منهت کارکاد",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Lucius's Lockbox",
+   "fa": "صندوق قفل‌شدهٔ لوسیوس",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Token of Thievery",
+   "fa": "ژتونِ دزدی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Alther's Mill",
+   "fa": "آسیاب آلتر",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Certificate of Thievery",
+   "fa": "گواهیِ دزدی",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Flare Gun",
+   "fa": "تفنگ پرتوِ هشدار",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Fire",
+   "fa": "آتش",
+   "kind": "sp"
+  },
+  "E26": {
+   "en": "Simple Wildflowers",
+   "fa": "گل‌های وحشی ساده",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Leaded Vial",
+   "fa": "شیشهٔ سربی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Bronze Tube",
+   "fa": "لولهٔ برنزی",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Spool of Light Chartreuse Silk Thread",
+   "fa": "قرقرهٔ نخِ ابریشمیِ سبز-زرد روشن",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Horns of Nez'ra",
+   "fa": "شاخ‌های نزرا",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "in combat",
+   "fa": "درگیر نبرد",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Defias Tower Key",
+   "fa": "کلید برج دیفایاس",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Chest",
+   "fa": "سینه",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Kearnen's Journal",
+   "fa": "دفترچهٔ کرنن",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Silixiz's Tower Key",
+   "fa": "کلید برج سیلیکسیز",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Foreman",
+   "fa": "سرکارگر",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Cache of Zanzil's Altered Mixture",
+   "fa": "انبار معجونِ دگرگون‌شدهٔ زنزیل",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Gallywix's Head",
+   "fa": "سر گالیویکس",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Seal of Ravenholdt",
+   "fa": "مُهرِ ریون‌هولت",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Zanzil's Mixture",
+   "fa": "معجون زانزیل",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Sealed Azure Bag",
+   "fa": "کیفِ مهرشدهٔ لاجوردی",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Shaman",
+   "fa": "شمن",
+   "kind": "sp"
+  },
+  "E49": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Encoded Fragments",
+   "fa": "خرده‌رمزها",
+   "kind": "qs"
+  },
+  "E51": {
+   "en": "dispelling",
+   "fa": "رفع جادو",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E53": {
+   "en": "Azure Key",
+   "fa": "کلیدِ لاجوردی",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Zando'zan": "زاندو‌زان",
+  "Shadow": "سایه",
+  "stealth": "مخفی‌کاری",
+  "Orgrimmar": "اورگریمار",
+  "Horde": "هورد",
+  "Travel": "سفر",
+  "Southsea Treasure": "گنج ساوت‌سی",
+  "E.C.A.C.": "ای.سی.ای.سی.",
+  "Thieves' Tools": "ابزارِ دزدی",
+  "level": "لِوِل",
+  "Use": "استفاده",
+  "talent": "تلنت",
+  "Dalaran Status Report": "گزارش وضعیت دالاران",
+  "Mennet Carkad": "منهت کارکاد",
+  "Undercity": "آندر‌سیتی",
+  "Tor": "تور",
+  "Dalaran": "دالاران",
+  "Lucius's Lockbox": "صندوق قفل‌شدهٔ لوسیوس",
+  "Token of Thievery": "ژتونِ دزدی",
+  "Alther's Mill": "آسیاب آلتر",
+  "Certificate of Thievery": "گواهیِ دزدی",
+  "Westfall": "وستفال",
+  "Alliance": "اتحاد",
+  "Flare Gun": "تفنگ پرتوِ هشدار",
+  "Fire": "آتش",
+  "Simple Wildflowers": "گل‌های وحشی ساده",
+  "Leaded Vial": "شیشهٔ سربی",
+  "Bronze Tube": "لولهٔ برنزی",
+  "Spool of Light Chartreuse Silk Thread": "قرقرهٔ نخِ ابریشمیِ سبز-زرد روشن",
+  "silk": "ابریشم",
+  "Horns of Nez'ra": "شاخ‌های نزرا",
+  "demon": "اهریمن",
+  "Darkshore": "کرانهٔ تاریک",
+  "in combat": "درگیر نبرد",
+  "Defias Tower Key": "کلید برج دیفایاس",
+  "Duskwood": "جنگل تاریک",
+  "Chest": "سینه",
+  "Stormwind": "استورم‌ویند",
+  "Kearnen's Journal": "دفترچهٔ کرنن",
+  "Silixiz's Tower Key": "کلید برج سیلیکسیز",
+  "Foreman": "سرکارگر",
+  "Cache of Zanzil's Altered Mixture": "انبار معجونِ دگرگون‌شدهٔ زنزیل",
+  "Gallywix's Head": "سر گالیویکس",
+  "Seal of Ravenholdt": "مُهرِ ریون‌هولت",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Zanzil's Mixture": "معجون زانزیل",
+  "Sealed Azure Bag": "کیفِ مهرشدهٔ لاجوردی",
+  "Shaman": "شمن",
+  "Azshara": "آزشارا",
+  "Encoded Fragments": "خرده‌رمزها",
+  "dispelling": "رفع جادو",
+  "chance": "شانس",
+  "Azure Key": "کلیدِ لاجوردی",
+  "Swamp of Sorrows": "باتلاق اندوه"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$B",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$n",
+  "12": "$N",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$B",
+  "24": "$g sir:miss;",
+  "25": "$N",
+  "26": "$N",
+  "27": "$g fella:lady;",
+  "28": "$N",
+  "29": "$N",
+  "30": "$n",
+  "31": "$n",
+  "32": "$N",
+  "33": "$C",
+  "34": "$N",
+  "35": "$B",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$B",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$C",
+  "44": "$N",
+  "45": "$C",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$B",
+  "51": "$B",
+  "52": "$B",
+  "53": "$B"
+ },
+ "rows": {
+  "quest:2379:obj:0": "Speak with ⟦E1⟧ at the Cleft of ⟦E2⟧.",
+  "quest:2379:details:0": "Your determination alone is not enough to overcome the obstacles that lay ahead of us.",
+  "quest:2379:details:1": "Speak with ⟦E1⟧ to begin your training as an operative of the Shattered Hand.",
+  "quest:2379:details:2": "It is only when you have mastered the practices of ⟦E3⟧ and thievery that you may take the next step towards your destiny.⟦1⟧",
+  "quest:2379:completion:0": "Perhaps ⟦E1⟧ was wrong. ⟦E1⟧ apologizes.",
+  "quest:2380:obj:0": "Speak with Shenthul at the Cleft of ⟦E2⟧ in ⟦E4⟧.",
+  "quest:2380:details:0": "A master of ⟦E3⟧ and deception you are not, however, all of that can and will change. You've obviously impressed those in charge with your meager skills, as the great Shenthul has asked for you by name.",
+  "quest:2380:details:1": "Take the road north of here to ⟦E4⟧ and speak with Shenthul in the Cleft of ⟦E2⟧.⟦2⟧",
+  "quest:2380:completion:0": "It is important that the Shattered Hand remains vigilant in the face of the changes Thrall wishes to bring about to the ⟦E5⟧. Our numbers alone will not be enough to overcome his rule - ⟦E3⟧ and deception must be mastered.",
+  "quest:2382:obj:0": "⟦E6⟧ to Ratchet and speak with Wrenix the Wretched.",
+  "quest:2382:details:0": "⟦E1⟧ has seen it! Yes, the day comes! Thrall's death... the dagger in his back, poison seeping through to his every vein... ⟦E1⟧ has said too much.",
+  "quest:2382:details:1": "B⟦3⟧! ⟦E1⟧ has a task for ⟦4⟧! ⟦5⟧ must travel to Ratchet, east of the Crossroads, and speak with Wrenix the Wretched. Go!⟦6⟧",
+  "quest:2382:completion:0": "Another one? The last five that crazy troll sent me ended up as shark food. Let's hope you fare a little better, eh?",
+  "quest:2382:completion:1": "B",
+  "quest:2381:obj:0": "Bring the ⟦E7⟧ back to Wrenix the Wretched in Ratchet. Do not forget to get an ⟦E8⟧ and ⟦E9⟧ from Wrenix's Gizmotronic Apparatus. You will need both of these items to complete your mission.",
+  "quest:2381:obj:1": "Should you be attacked by any unusually hostile parrots, use your ⟦E8⟧!",
+  "quest:2381:obj:2": "B",
+  "quest:2381:details:0": "I don't mean to scare you, ⟦7⟧, but the last five thieves I sent to steal the southsea treasure came back to me in pieces.",
+  "quest:2381:details:1": "South along the coast you'll find Tide Razor, the southsea freebooter's ship. Nestled in the hold is the payoff - the southsea treasure. On the second ⟦E10⟧ of that ship is the pirate's den, a place where they train all of their thieves.",
+  "quest:2381:details:2": "Board that ship, steal the treasure, and bring it back to me. ⟦E11⟧ the pirate's den if you need to practice your thievery, but be careful!⟦8⟧",
+  "quest:2381:progress:0": "Well, at least you still have all of your body parts. Did you find the treasure?⟦9⟧⟦10⟧",
+  "quest:2381:completion:0": "Incredible! Improbable! Simply amazing! You've got ⟦E12⟧, Weir. Either that or you're the luckiest man alive!",
+  "quest:2381:completion:1": "Here's your cut of the action. I'm sure you would make better use of this stuff than I could.",
+  "quest:2381:completion:2": "B",
+  "quest:1999:obj:0": "Find the ⟦E13⟧ and return it to ⟦E14⟧ in the Rogues' Quarter of the ⟦E15⟧.",
+  "quest:1999:details:0": "The wizards of the Kirin ⟦E16⟧ at Ambermill have stored away important documents pertaining to the current state of ⟦E17⟧. This we know from the admissions of one of our prisoners. Lord Varimathras has placed the duty of recovering them in the hands of the Deathstalkers.",
+  "quest:1999:details:1": "This task falls to you, ⟦11⟧. You will need some equipment, however, and the knowledge of lockpicking. Speak with Estelle Gendry, our outfitter, and ask her for a set of tools before you set out.",
+  "quest:1999:progress:0": "Have you located the documents, ⟦12⟧?",
+  "quest:1999:completion:0": "Very good, ⟦13⟧! You have learned the fine art of lockpicking well, and faster than I could have possibly expected.",
+  "quest:1999:completion:1": "I see that I was right to place my trust in you. Believe me, boy, I foresee that you will go far in this line of work.",
+  "quest:2282:obj:0": "Open ⟦E18⟧, recover the ⟦E19⟧ and return it to Lucius in Lakeshire.",
+  "quest:2282:details:0": "We've been training thieves here for years! After all, not every rapscallion is born with the grace and finesse of old Lucius.",
+  "quest:2282:details:1": "Up off the road here you'll find ⟦E20⟧. I got a chest up there with something important inside. Go get it for me! Bring back that token and you'll receive your ⟦E21⟧!",
+  "quest:2282:progress:0": "Did I forget to mention the orcs?⟦14⟧⟦15⟧I hear they have been nosing around up by the mill.",
+  "quest:2282:completion:0": "Cracked it open, did you? Nice work, ⟦16⟧.",
+  "quest:2282:completion:1": "If you die now, we can rest easy knowing it was due to your own stupidity and not inexperience.",
+  "quest:2360:obj:0": "⟦E6⟧ to ⟦E22⟧ and find Agent Kearnen for your debriefing.",
+  "quest:2360:details:0": "Not a moment too soon, ⟦17⟧. SI:7 reconnaissance is reporting unusually heavy Defias activity in ⟦E22⟧.",
+  "quest:2360:details:1": "It would seem that the Defias have taken over an abandoned ⟦E23⟧ watch tower southeast of Sentinel Hill and are using it as a base of operations to smuggle in goods from the Redridge supply route.",
+  "quest:2360:details:2": "Get to ⟦E22⟧ and contact Agent Kearnen for your debriefing. You will find her hidden near the tower.",
+  "quest:2360:details:3": "B...and ⟦18⟧, should you be discovered, SI:7 will disavow all knowledge of your existence.",
+  "quest:2360:completion:0": "Mathias finally sent another agent to back me up, eh? Well I hope he's ready to hear some bad news.",
+  "quest:2458:obj:0": "⟦E6⟧ to the Venture Co. Tower, north of the Sludge Fen and contact the Shattered Hand's covert operative, Taskmaster Fizzule.",
+  "quest:2458:obj:1": "When the tower is in sight, use the ⟦E24⟧ to signal your arrival to Taskmaster Fizzule. ⟦E25⟧ off TWO flares, then approach Taskmaster Fizzule and perform the Shattered /Salute.",
+  "quest:2458:obj:2": "These actions must be performed in the correct order, as Fizzule will attack and terminate any person he does not recognize.",
+  "quest:2458:details:0": "The Venture Company... Perhaps you have heard of them?",
+  "quest:2458:details:1": "For one year we have worked on planting an agent deep within their ranks. Through much hard work and careful planning, we succeeded.",
+  "quest:2458:details:2": "Recently we received word that the Venture Co. are planning something on a grand scale. Go north of the Sludge Fen to the Venture Co. tower and contact our undercover agent, Taskmaster Fizzule.",
+  "quest:2458:details:3": "When you find the tower, use this flare gun, then approach Fizzule and show him the salute of the Shattered Hand.⟦19⟧",
+  "quest:2458:completion:0": "It's good to see another agent of the Shattered Hand in these parts, however, the flare may have been a little too much!",
+  "quest:2458:completion:1": "Next time you need to speak with me, blow into this whistle twice and I'll know you are an ally.",
+  "quest:2460:obj:0": "Perform the Shattered Salute on Shenthul.",
+  "quest:2460:details:0": "As a rogue of the Shattered Hand, it is imperative that you learn the Shattered Salute. It is the only way to truly identify another member of the Hand.",
+  "quest:2460:details:1": "Watch, learn, repeat.",
+  "quest:2460:completion:0": "Well done, ⟦20⟧. You are now ready to proceed.",
+  "quest:2480:obj:0": "Wait for Serge Hinott to complete the cure.",
+  "quest:2480:details:0": "I have never seen such wondrous results from a poison! Zanzil you say? Never heard of him, however, I must commend him on the creation of this concoction.",
+  "quest:2480:details:1": "So, I am to cure you of this and then teach you how to make use of the poison?",
+  "quest:2480:details:2": "Give me a few moments to examine the toxin, ⟦21⟧.",
+  "quest:2480:completion:0": "The cure is ready! Drink this anti-toxin and the creeping madness will stop, however, I will not be able to do anything about the smell.",
+  "quest:2607:obj:0": "Speak with Doc Mixilpixil in the cellar of the Barracks.",
+  "quest:2607:details:0": "It appears as if you've brought back more information than even I expected. This certainly is a strange turn of events, ⟦22⟧.",
+  "quest:2607:details:1": "BA cure? Hrm... Go down to the cellar and speak with Doc Mixilpixil - he may be able to help.",
+  "quest:2607:completion:0": "It's about time! Just put the cheese on the table and skedaddle. Osborne will pay you on the way out.",
+  "quest:2608:obj:0": "/Lay down to be examined by Doc Mixilpixil. How can he find the cure if he can't find the cause?⟦23⟧",
+  "quest:2608:details:0": "Oh my, you look like death. Correction - I've seen death, you look worse than death. You, ⟦24⟧, would be what death coughed up at his last physical.",
+  "quest:2608:details:1": "Hah! You hear that Noarm? Write that one down!",
+  "quest:2608:details:2": "B*Cough* Hrm yes, in order for me to help you, I'll need to draw some blood. Don't worry, it only hurts the first few... fifty times or so... /lay down when you're ready for the treatment, ⟦25⟧.",
+  "quest:2608:progress:0": "When you're ready for the examination, /lay down on the ground and I'll begin the phlebotomy.",
+  "quest:2608:completion:0": "Give me a moment to confer with my colleagues, ⟦26⟧. Dr. Montgomery, Mr. Noarm, let us conference!",
+  "quest:2609:obj:0": "Bring Doc Mixilpixil one bundle of ⟦E26⟧, one ⟦E27⟧, one ⟦E28⟧, and one ⟦E29⟧. The 'itis' doesn't cure itself, young ⟦27⟧.",
+  "quest:2609:details:0": "It's unanimous, ⟦28⟧. You've got the 'itis.'",
+  "quest:2609:details:1": "Luckily, I have a cure for the 'itis.'",
+  "quest:2609:details:2": "Here's what I need: One bundle of simple wildflowers, one leaded vial, one bronze tube, and last but certainly not least, one spool of light chartreuse ⟦E30⟧ thread. Ol' Emma left a spool of it for me at 'The Finest Thread.' You can find the shop along the canals.",
+  "quest:2609:details:3": "Hurry along now, ⟦29⟧, and try not to touch anyone until you're cured. Oh, and Dr. Montgomery says you need a shower -- his words, not mine.",
+  "quest:2609:progress:0": "If you want the 'itis' cured, you're going to have to try harder than that, ⟦30⟧. Where are the reagents for the cure?",
+  "quest:2609:completion:0": "What am I doing? What does it look like I'm doing? I'm devising a cure for your 'itis!' Don't get indignant with me now, ⟦31⟧!",
+  "quest:2609:completion:1": "Just a few more seconds. There! Just spray this, um, fantastic smelling medicine on yourself and you'll be as good as new.",
+  "quest:2358:obj:0": "Return the ⟦E31⟧ to Arantir's ⟦E2⟧ in Lakeshire.",
+  "quest:2358:details:0": "Many years ago, the ⟦E31⟧ were stolen from Ravenholdt manor. Across continents and oceans I have searched, only to discover that these insignificant beasts have had it in their possession all along.",
+  "quest:2358:details:1": "Slay every Blackrock orc you cross until the ⟦E31⟧ are recovered. Should you recover the horns, find me in Lakeshire.",
+  "quest:2358:details:2": "Do this for me and your name shall be known to Ravenholdt, ⟦32⟧.",
+  "quest:2358:progress:0": "Do you have the ⟦E32⟧ prince's horns?",
+  "quest:2358:completion:0": "To deny Ravenholdt the artifact, would be to deny one's own existence. Well done, ⟦33⟧. You may yet walk among the assassins of Ravenholdt.",
+  "quest:2358:completion:1": "As a young rogue adventuring in ⟦E33⟧, I discovered a tea that replenishes energy ⟦E34⟧. It has served me well throughout the years and now I pass on a taste of the thistle tea to you. Drink of it when you tire, ⟦34⟧, and fight with vigor once more!",
+  "quest:2358:completion:2": "B",
+  "quest:2359:obj:0": "Steal the ⟦E35⟧, break into the Defias Tower and uncover the contents of the ⟦E36⟧ ⟦E37⟧. Take whatever information you find back to Mathias Shaw in ⟦E38⟧. Read ⟦E39⟧ to gain insight about the tower.⟦35⟧",
+  "quest:2359:details:0": "I've been staking out this tower for weeks, ⟦36⟧. Recently a major shipment came through from ⟦E36⟧, and along with it came those guards.",
+  "quest:2359:details:1": "What are they? Your guess is as good as mine. I can tell you one thing - they aren't human.",
+  "quest:2359:details:2": "Anyhow, the shipment had a chest - which is what I assume those abominations are guarding. The zombie with the spikes holds a key we'll need.",
+  "quest:2359:details:3": "Get that key, get in the tower, and uncover whatever is in that chest. Take your findings back to Mathias.",
+  "quest:2359:progress:0": "Any news from Agent Kearnen?",
+  "quest:2359:completion:0": "This would explain the Defias drones you and Kearnen saw outside of the tower, ⟦37⟧. It would also explain the Venture Company's involvement with the Defias and the strange shipments out of ⟦E36⟧.",
+  "quest:2359:completion:1": "According to this book, the Zanzil trolls in Stranglethorn have discovered a way to raise the dead through potions... or to be more specific: poison.",
+  "quest:2359:completion:2": "You'll be of no use to SI:7 without a firm understanding of poisons, ⟦38⟧ -- especially with the recipe to create undeath at our fingertips.",
+  "quest:2478:obj:0": "Steal ⟦E40⟧ from ⟦E41⟧ Silixiz, then kill two Mutated Venture Co. Drones, two Venture Co. Patrollers, and two Venture Co. Lookouts.",
+  "quest:2478:obj:1": "Assassinate Grand ⟦E41⟧ Gallywix and take his head, then pick the lock on Gallywix's lockbox and steal the ⟦E42⟧. Take the Cache and ⟦E43⟧ back to Shenthul in ⟦E4⟧ for further instruction.⟦39⟧",
+  "quest:2478:details:0": "You will need to steal the tower key from ⟦E41⟧ Silixiz, ⟦40⟧. Once you've got the key in your possession, hold on to it - I may need it later.",
+  "quest:2478:details:1": "Remember, the poison has weakened everything in this tower. ⟦E11⟧ your abilities to bring chaos and destruction to its inhabitants. Slay them all -- show no mercy!",
+  "quest:2478:details:2": "Once everything inside lays in a bloodied heap, pick Gallywix's lockbox and steal the cache of Zanzil's mixture held inside. Take both the head of Gallywix and the mixture to Shenthul in ⟦E4⟧.",
+  "quest:2478:progress:0": "What have you to report, ⟦41⟧?",
+  "quest:2478:completion:0": "Poor Fizzule, he was a good agent -- one of our best. Alas, it is the price we pay, ⟦42⟧. Being a field agent of the Shattered Hand is dangerous work.",
+  "quest:2478:completion:1": "You have performed your duty well, ⟦43⟧. It would be a shame if you did not live to serve us again.",
+  "quest:6681:obj:0": "Take the ⟦E44⟧ to Fahrad at Ravenholdt Manor, hidden away in the hills of Hillsbrad.",
+  "quest:6681:obj:1": "Your cunning will be tested along the way. Be prepared.",
+  "quest:6681:details:0": "⟦44⟧,",
+  "quest:6681:details:1": "Ravenholdt has taken an interest in you, young thief. We have been watching. Your style is a bit awkward but nothing we couldn't fix.",
+  "quest:6681:details:2": "Should you be prepared to embark on a career as a disciple of Master Ravenholdt and member of the Assassin's League, you have only to bring the ⟦E44⟧ (attached to this letter) to Ravenholdt Manor.",
+  "quest:6681:details:3": "Your first task is to find the manor, hidden away in the hills of Hillsbrad and demonstrate your cunning.",
+  "quest:6681:details:4": "Regards,",
+  "quest:6681:details:5": "Fahrad",
+  "quest:6681:progress:0": "Did you meet Milton?<Fahrad laughs.>",
+  "quest:6681:completion:0": "Most excellent, young thief.",
+  "quest:6681:completion:1": "You look a bit beaten down, but no worse for the wear.",
+  "quest:6681:completion:2": "BA long journey awaits you - long and rewarding. Are you prepared to finally embrace your destiny among the masters of Ravenholdt?",
+  "quest:6681:completion:3": "Speak with the guards outside. They will get you started.",
+  "quest:2479:obj:0": "⟦E6⟧ to Tarren Mill in ⟦E45⟧ and deliver the Sample of ⟦E46⟧ to Serge Hinott.",
+  "quest:2479:obj:1": "To get to Tarren Mill, take the Zeppelin to the ⟦E15⟧ and follow the road south through Silverpine and towards Hillsbrad. Follow the signs!",
+  "quest:2479:obj:2": "B",
+  "quest:2479:details:0": "Take a sample of the mixture to Serge Hinott in Tarren Mill.",
+  "quest:2479:details:1": "If anyone can cure you, it's Serge. Live long enough and Serge will show you the ways of poison creation and use.",
+  "quest:2479:progress:0": "What's this???",
+  "quest:2479:completion:0": "You look deliciously pale, ⟦45⟧. And what is that foul aroma you are giving off? I must know!",
+  "quest:8233:obj:0": "Speak with Lord Jorach Ravenholdt in Ravenholdt Manor.",
+  "quest:8233:details:0": "Lord Jorach Ravenholdt has requested your presence. The matter is secret, and I cannot say any more.",
+  "quest:8233:details:1": "Ravenholdt Manor is located in the ⟦E45⟧ -- look for a path in the mountains northwest of Durnhold Keep.",
+  "quest:8233:completion:0": "Welcome, welcome, welcome! Please, ⟦46⟧, have a seat and discuss a simple matter with me.",
+  "quest:8233:completion:1": "You see, ⟦47⟧, I've recently lost something dear to me, and to put it bluntly, I want it back at all costs. There's something in it for you, don't worry about that! Oh yes, something very nice.",
+  "quest:8233:completion:2": "Now, what say you ⟦48⟧... are you up for some adventure?",
+  "quest:8234:obj:0": "Retrieve the ⟦E47⟧ from the Timbermaw ⟦E48⟧ in ⟦E49⟧. Then take the bag to Archmage Xylem, also found in ⟦E49⟧.",
+  "quest:8234:details:0": "First things first. What I've lost is a small blue bag, the contents of which are a private matter.",
+  "quest:8234:details:1": "Don't bother going after the thieves, because they are already dead. What we do know is the fools couldn't get the bag open. so they sold it to some timbermaw shaman in ⟦E49⟧ as a holy relic. Clever.",
+  "quest:8234:details:2": "I need you to travel to ⟦E49⟧ and retrieve it from the shaman through subtlety... or force. Better luck with the first method, I'd wager. Once acquired, take it to Archmage Xylem.",
+  "quest:8234:progress:0": "Do I know you?",
+  "quest:8234:completion:0": "I see you have Lord Ravenholdt's bag. Why didn't you say so, boy?",
+  "quest:8235:obj:0": "Bring 10 ⟦E50⟧ to Archmage Xylem in ⟦E49⟧.",
+  "quest:8235:details:0": "Lord Ravenholdt has asked a favor of us both. He wishes to remove the enchantment from this bag.",
+  "quest:8235:details:1": "Unfortunately, some of my books on the subject of ⟦E51⟧ were taken recently, only to be destroyed by savages. The remains of my books are still valuable to me.",
+  "quest:8235:details:2": "If you can bring me enough of the encoded fragments, I can piece them back together. Your best ⟦E52⟧ is to kill the beasts of ⟦E49⟧, since they have a tendency to pick up just about anything.",
+  "quest:8235:progress:0": "Have you found enough fragments to continue my work?",
+  "quest:8235:completion:0": "It looks like you picked up some of the better fragments. Perhaps you aren't worthless after all.",
+  "quest:8236:obj:0": "Return the ⟦E53⟧ to Lord Jorach Ravenholdt.",
+  "quest:8236:details:0": "It will take some time to decipher the fragments and remove the enchantment. When I am complete, I'll deliver the bag to Lord Ravenholdt personally.",
+  "quest:8236:details:1": "There is still the matter of the key, said to be held by a green drake known as Morphaz. The drake has made its home deep in the Temple of Atal'Hakkar, the entrance to which lies in the ⟦E54⟧.",
+  "quest:8236:details:2": "Gather your friends and venture to his lair. Lord Ravenholdt will await your return with the key.",
+  "quest:8236:progress:0": "The bag has already arrived from Archmage Xylem, have you found the key?",
+  "quest:8236:completion:0": "The key! I thought it lost forever. Please, take an enchanted garment from my stores -- they are reserved for rogues of exceptional skill and loyalty. It should be known that ⟦49⟧ is not to be trifled with!",
+  "quest:8236:completion:1": "B<Jorach opens the bag and is bathed by a golden glow from within. His eyes widen and he stares...>",
+  "quest:8249:obj:0": "{'type': 'item', 'id': 16885, 'target': 'Heavy Junkbox', 'text': None}",
+  "quest:8249:progress:0": "My rogues need to hone their lockpicking skills, and I need locks of adequate difficulty -- the stuff Zan makes us is unfit for all but the lowliest neophytes.⟦50⟧⟦51⟧Tell ya what, if you bring me 5 Heavy Junkboxes, I'll provide you with some of the finest throwing knives known to roguekind.⟦52⟧⟦53⟧You can unlock the boxes and rifle through them, but you'll have to leave at least a few coins in them... even a rogue in training needs motivation.",
+  "quest:8249:completion:0": "May these knives find a place in someone's heart.",
+  "quest:8249:completion:1": "Literally."
+ },
+ "context": {
+  "quest:2379": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Shenthul",
+   "turner": "Zando'zan («زاندو‌زان»)"
+  },
+  "quest:2380": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Kaplak",
+   "turner": "Shenthul"
+  },
+  "quest:2382": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Zando'zan («زاندو‌زان»)",
+   "turner": "Wrenix the Wretched"
+  },
+  "quest:2381": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 18,
+   "side": "horde",
+   "giver": "Wrenix the Wretched",
+   "turner": "Wrenix the Wretched"
+  },
+  "quest:1999": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Mennet Carkad («منهت کارکاد»)",
+   "turner": "Mennet Carkad («منهت کارکاد»)"
+  },
+  "quest:2282": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Lucius",
+   "turner": "Lucius"
+  },
+  "quest:2360": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw",
+   "turner": "Agent Kearnen"
+  },
+  "quest:2458": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Shenthul",
+   "turner": "Taskmaster Fizzule"
+  },
+  "quest:2460": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Shenthul",
+   "turner": "Shenthul"
+  },
+  "quest:2480": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Serge Hinott",
+   "turner": "Serge Hinott"
+  },
+  "quest:2607": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw",
+   "turner": "Doc Mixilpixil"
+  },
+  "quest:2608": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Doc Mixilpixil",
+   "turner": "Doc Mixilpixil"
+  },
+  "quest:2609": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Doc Mixilpixil",
+   "turner": "Doc Mixilpixil"
+  },
+  "quest:2358": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 22,
+   "side": "",
+   "giver": "Arantir",
+   "turner": "Arantir"
+  },
+  "quest:2359": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Agent Kearnen",
+   "turner": "Master Mathias Shaw"
+  },
+  "quest:2478": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 24,
+   "side": "horde",
+   "giver": "Taskmaster Fizzule",
+   "turner": "Shenthul"
+  },
+  "quest:6681": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 24,
+   "side": "",
+   "giver": "",
+   "turner": "Fahrad"
+  },
+  "quest:2479": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 26,
+   "side": "horde",
+   "giver": "Shenthul",
+   "turner": "Serge Hinott"
+  },
+  "quest:8233": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Ormok، Anishar",
+   "turner": "Lord Jorach Ravenholdt"
+  },
+  "quest:8234": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Lord Jorach Ravenholdt",
+   "turner": "Archmage Xylem"
+  },
+  "quest:8235": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Archmage Xylem"
+  },
+  "quest:8236": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Archmage Xylem",
+   "turner": "Lord Jorach Ravenholdt"
+  },
+  "quest:8249": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Fahrad",
+   "turner": "Fahrad"
+  }
+ },
+ "known": {
+  "quest:2379": {
+   "title": "زاندو‌زان"
+  },
+  "quest:2380": {
+   "title": "به اورگیمار!"
+  },
+  "quest:2382": {
+   "title": "ورنیکسِ رچت"
+  },
+  "quest:2381": {
+   "title": "غارت غارتگران"
+  },
+  "quest:1999": {
+   "title": "ابزار کار"
+  },
+  "quest:2282": {
+   "title": "آسیاب آلتر"
+  },
+  "quest:2360": {
+   "title": "ماتیاس و دیفایاس‌ها"
+  },
+  "quest:2458": {
+   "title": "نفوذ عمیق"
+  },
+  "quest:2460": {
+   "title": "سلامِ دست شکسته"
+  },
+  "quest:2480": {
+   "title": "کمک هینوت"
+  },
+  "quest:2607": {
+   "title": "لمسِ زنزیل"
+  },
+  "quest:2608": {
+   "title": "لمسِ زنزیل"
+  },
+  "quest:2609": {
+   "title": "لمسِ زنزیل"
+  },
+  "quest:2358": {
+   "title": "شاخ‌های نزرا"
+  },
+  "quest:2359": {
+   "title": "برج کلاون"
+  },
+  "quest:2478": {
+   "title": "مأموریت: ممکن ولی بعید"
+  },
+  "quest:6681": {
+   "title": "عمارتِ ریون‌هولت"
+  },
+  "quest:2479": {
+   "title": "کمک هینوت"
+  },
+  "quest:8233": {
+   "title": "درخواستی ساده"
+  },
+  "quest:8234": {
+   "title": "کیفِ مهرشدهٔ لاجوردی"
+  },
+  "quest:8235": {
+   "title": "خرده‌رمزها"
+  },
+  "quest:8236": {
+   "title": "کلیدِ لاجوردی"
+  },
+  "quest:8249": {
+   "title": "جعبهٔ زباله لازم است"
+  }
+ }
+}

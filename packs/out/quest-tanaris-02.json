@@ -1,0 +1,850 @@
+{
+ "pack": "quest-tanaris-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-tanaris-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Gahz'ridian",
+   "fa": "گاز‌ریدین",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Gahz'rilla",
+   "fa": "گازریلا",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Insect Analysis Report",
+   "fa": "گزارش تحلیل حشرات",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Laden Dew Gland",
+   "fa": "غدهٔ شبنم پر",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Violet Tragan",
+   "fa": "تراگان بنفش",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Violet Powder",
+   "fa": "پودرِ بنفش",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Noggenfogger Elixir",
+   "fa": "اکسیرِ ناگن‌فاگر",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Ravager",
+   "fa": "ویرانگر جنگی",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "The Dunemaul Compound",
+   "fa": "مجمع دونه‌مول",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Tran'rek",
+   "fa": "تران‌رک",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Thistleshrub Valley",
+   "fa": "درهٔ تیغ‌درخت",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Stone Circle",
+   "fa": "دایرهٔ سنگی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Gorishi Scent Gland",
+   "fa": "غدهٔ بوی گوریشی",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Un'Goro Soil",
+   "fa": "خاک اون‌گورو",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Un'Goro Crater",
+   "fa": "دهانهٔ اون‌گورو",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Super Sticky Tar",
+   "fa": "قیر فوق‌چسبنده",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Pestlezugg's Un'Goro Report",
+   "fa": "گزارشِ پستلزوگ از اون‌گورو",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Skeleton Key Mold",
+   "fa": "کلیدِ اسکلت کپکِ",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Fire",
+   "fa": "آتش",
+   "kind": "sp"
+  },
+  "E30": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Unfinished Skeleton Key",
+   "fa": "کلید اسکلتی ناتمام",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Chillwind Point",
+   "fa": "نقطهٔ چیل‌ویند",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "The Super Egg-O-Matic",
+   "fa": "تخم‌مَهمَق فوق‌پیشرفته",
+   "kind": "qs"
+  },
+  "E36": {
+   "en": "Draconic for Dummies",
+   "fa": "اژدهایی برای مبتدی‌ها",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Lakmaeran's Carcass",
+   "fa": "لاشهٔ لاک‌مارن",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Goblin Rocket Fuel",
+   "fa": "سوخت موشکی گابلین",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Deeprock Salt",
+   "fa": "نمک دیپ‌راک",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Dirge's Kickin' Chimaerok Chops",
+   "fa": "دندهٔ تندِ کیماروکِ دیرج",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "500 Pound Chicken",
+   "fa": "مرغ ۵۰۰ پوندی",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Tanaris": "تاناریس",
+  "Gahz'ridian": "گاز‌ریدین",
+  "Gahz'rilla": "گازریلا",
+  "Insect Analysis Report": "گزارش تحلیل حشرات",
+  "Darnassus": "دارناسوس",
+  "Azeroth": "آزروت",
+  "threat": "تیت",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Laden Dew Gland": "غدهٔ شبنم پر",
+  "Violet Tragan": "تراگان بنفش",
+  "Hope": "امید",
+  "Violet Powder": "پودرِ بنفش",
+  "Noggenfogger Elixir": "اکسیرِ ناگن‌فاگر",
+  "Ravager": "ویرانگر جنگی",
+  "The Dunemaul Compound": "مجمع دونه‌مول",
+  "Tran'rek": "تران‌رک",
+  "Thistleshrub Valley": "درهٔ تیغ‌درخت",
+  "Stone Circle": "دایرهٔ سنگی",
+  "Gorishi Scent Gland": "غدهٔ بوی گوریشی",
+  "Un'Goro Soil": "خاک اون‌گورو",
+  "Un'Goro Crater": "دهانهٔ اون‌گورو",
+  "Kalimdor": "کالیمدور",
+  "Super Sticky Tar": "قیر فوق‌چسبنده",
+  "Head": "سر",
+  "Pestlezugg's Un'Goro Report": "گزارشِ پستلزوگ از اون‌گورو",
+  "Orgrimmar": "اورگریمار",
+  "Skeleton Key Mold": "کلیدِ اسکلت کپکِ",
+  "Fire": "آتش",
+  "Use": "استفاده",
+  "Unfinished Skeleton Key": "کلید اسکلتی ناتمام",
+  "Chillwind Point": "نقطهٔ چیل‌ویند",
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "requires": "نیازمند",
+  "The Super Egg-O-Matic": "تخم‌مَهمَق فوق‌پیشرفته",
+  "Draconic for Dummies": "اژدهایی برای مبتدی‌ها",
+  "Burning Legion": "لژیون سوزان",
+  "Lakmaeran's Carcass": "لاشهٔ لاک‌مارن",
+  "Feralas": "فرالاس",
+  "Goblin Rocket Fuel": "سوخت موشکی گابلین",
+  "Deeprock Salt": "نمک دیپ‌راک",
+  "Dirge's Kickin' Chimaerok Chops": "دندهٔ تندِ کیماروکِ دیرج",
+  "500 Pound Chicken": "مرغ ۵۰۰ پوندی"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$N",
+  "8": "$n",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$B",
+  "21": "$B",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$B",
+  "30": "$B",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$B",
+  "35": "$B",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$N",
+  "40": "$B",
+  "41": "$B",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$R",
+  "48": "$N",
+  "49": "$N",
+  "50": "$R",
+  "51": "$B",
+  "52": "$B"
+ },
+ "rows": {
+  "quest:351:obj:0": "Bring the distress beacon to Oglethorpe's homing robot.",
+  "quest:351:details:0": "You have uncovered some sort of strange, egg-shaped device made from metal. Fiddling with one of its knobs springs the egg to life, as it opens up into some sort of gnomish robotic contraption! A voice from inside the robotic egg crackles to life.",
+  "quest:351:details:1": "B\"The name's Oglethorpe, and my homing robot has gone missing! I will reward you for its recovery! Please take this beacon to the robot. Excellent, I now have computed the coordinates for you! It crashed near the Gaping Chasm in ⟦E1⟧!\"",
+  "quest:351:progress:0": "You appear to have uncovered the wreckage of... a robotic chicken? The voice from within the egg crackles to life again:⟦1⟧⟦2⟧\"Yes, excellent work! This is indeed my homing robot, though my sensors indicate that it needs a jump start before it can fly back to Booty Bay for repairs. Go ahead and place the beacon inside the rover. The beacon will take care of the rest!\"",
+  "quest:351:completion:0": "You place the egg... distress beacon... inside the chicken... homing robot.",
+  "quest:351:completion:1": "Hums and whirs are heard from inside the robot as it struggles to stand up. After the robot comes to life, Oglethorpe's voice is heard once more, but now from inside the robot:",
+  "quest:351:completion:2": "B\"OOX-17/TN is working at least, but it needs major repairs! It is much too heavy for you to carry it... but I think I have an idea. Are you up for watching over it some more?\"",
+  "quest:648:obj:0": "Escort OOX-17/TN to Steamwheedle Port, then report to Oglethorpe Obnoticus in Booty Bay.",
+  "quest:648:details:0": "The gnome's voice crackles once again from the robot:",
+  "quest:648:details:1": "B\"I need to move OOX-17/TN to an open, safe place so it can begin a lengthy take-off procedure. It has built-in cloaking, but I need time on my end to make it operational again. I need you to escort the robot from its current location to, let's say, Steamwheedle Port! That should be a perfect place, and long enough, to get things on line!\"",
+  "quest:648:details:2": "B\"Escort it safely to the port, and then come talk to me in Booty Bay! Oglethorpe Obnoticus - out!\"",
+  "quest:648:completion:0": "Oh, YOU'RE the great savior of OOX-17/TN! I cannot even begin to express my thanks for your assistance! My homing robot series needs more developing, but your recovery has saved me countless hours of rebuilding time, as well as many gold pieces in rebinding costs!",
+  "quest:648:completion:1": "Please, take your choice of any of these items I have. Hopefully, you will make good use of one of them. Thank you again for your generous assistance, my robots and I are in your debt!",
+  "quest:3161:obj:0": "Marvon Rivetseeker in ⟦E1⟧ wants you to collect 30 ⟦E2⟧ Ornaments.",
+  "quest:3161:details:0": "⟦3⟧, I'm a scientist, but also a treasure hunter at heart!",
+  "quest:3161:details:1": "Long ago, when trolls used to occupy this land, they created large amounts of ornaments modeled after ⟦E3⟧, a hydra they worshipped as a deity. These ornaments are carved out of an element that I call \"⟦E2⟧\", after the hydra god.",
+  "quest:3161:details:2": "I did find some myself, but I'd like to have some more to study -- maybe you can find some?",
+  "quest:3161:details:3": "I even invented a detector that makes finding the ⟦E2⟧ a snap! Just put it on, and the search begins!",
+  "quest:3161:progress:0": "Are you having any trouble?⟦4⟧⟦5⟧You can find ⟦E2⟧ just about anywhere in ⟦E1⟧, ⟦6⟧, so keep looking!",
+  "quest:3161:completion:0": "Perfect; these ornaments are perfect for my studies. Thanks so much for the help, ⟦7⟧.",
+  "quest:3161:completion:1": "Oh, can I get my helmet back?",
+  "quest:162:obj:0": "Take the ⟦E4⟧ to Gracina Spiritmight in ⟦E5⟧.",
+  "quest:162:details:0": "I urge you to take this report to someone who has working knowledge in this kind of thing.",
+  "quest:162:details:1": "I know this night elf scholar named Gracina Spiritmight. She's spent a lot of time studying life forms that are unique to the ecology of ⟦E6⟧; she's a historian to boot! If you want someone to help figure out what exactly this ⟦E7⟧ is, and more importantly how to stop it, give her the report. We'll need the help.",
+  "quest:162:details:2": "Last I heard, she was residing in the Temple of the Moon, located in ⟦E5⟧.",
+  "quest:162:progress:0": "Peace and tranquility be upon you, stranger.  Why have you sought me out this day?",
+  "quest:162:completion:0": "This report... we night elves know of the terror mentioned here. Fizzledowser was wise to send this, and you, to me.",
+  "quest:162:completion:1": "These creatures will consume the ⟦E1⟧ desert rapidly; they are nothing short of one of the greatest menaces we all will ever face. Familiarize yourself with this name, ⟦8⟧: silithid. The insects mentioned here are the silithid, and they are the tools of one of the greatest threats that both the ⟦E8⟧ and ⟦E9⟧ face.",
+  "quest:162:completion:2": "If only we were smart enough to see that before.",
+  "quest:2605:obj:0": "Collect a ⟦E10⟧ and bring it to Marin Noggenfogger in Gadgetzan.",
+  "quest:2605:details:0": "I've got an idea, see. I've heard of some strange creatures called dew collectors that live to the southwest... and that they are able to store water in special glands.",
+  "quest:2605:details:1": "I think that if I could get one of these glands, I could create a drink that would quench my terrible thirst! Do you think you could help me, ⟦9⟧?",
+  "quest:2605:details:2": "Look for the cactus garden, ⟦10⟧; that's where you'll find the dew collectors.",
+  "quest:2605:progress:0": "Please, tell me you found the dew collectors?",
+  "quest:2605:completion:0": "Oh, wonderful! Give it here -- let me drink it!",
+  "quest:2606:obj:0": "Marin Noggenfogger wants you to speak with Sprinkle in Gadgetzan.",
+  "quest:2606:details:0": "Blech! This stuff tastes terrible! So much for that idea...",
+  "quest:2606:details:1": "Wait, what's that? Oh, I know, I know, you think I shouldn't give up on this stuff. Well, okay then.",
+  "quest:2606:details:2": "Uhhhh, I have an idea! Brilliant! Take this dew to my friend Sprinkle -- she's an excellent chef. Tell her what we're up to here and that we want to make it go down a little easier.",
+  "quest:2606:details:3": "I mean, if it's going to taste that bad, it at least should have some kick to it... And I'm just not feeling it...",
+  "quest:2606:progress:0": "So old Marin's up to it again, eh? What's this concoction made from?",
+  "quest:2606:completion:0": "Marin's a good guy, don't get me wrong -- just a little... eccentric, I'd say.",
+  "quest:2606:completion:1": "And of course he needs my help, yet again.",
+  "quest:2641:obj:0": "Sprinkle in Gadgetzan wants you to collect a ⟦E11⟧ and return it to her.",
+  "quest:2641:details:0": "When I was a kid, my sister used to do all the cooking. It was horrible! I could barely stomach some of her concoctions -- until I found what I like to call my \"secret\" ingredient! Add it to anything, and... WOW! It tastes great!",
+  "quest:2641:details:1": "What is it, you ask? It's a mushroom called the ⟦E11⟧. If you want me to help you turn this horrid-tasting brew into something edible, head to the Hinterlands, and look for a small lake there.",
+  "quest:2641:details:2": "Oh, and remember, the ⟦E11⟧ can only be found underwater.",
+  "quest:2641:progress:0": "Under the waters of that lake -- it's the only place where the ⟦E11⟧ can be found.  ⟦E12⟧ you're good at holding your breath!",
+  "quest:2641:completion:0": "That's the stuff, ⟦11⟧!",
+  "quest:2641:completion:1": "It looks so good, I might just... Haha, gotcha!",
+  "quest:2661:obj:0": "Sprinkle wants to you take the ⟦E13⟧ to Marin Noggenfogger in Gadgetzan.",
+  "quest:2661:details:0": "Here's the ⟦E13⟧, ⟦12⟧. Take it to Marin and tell him he owes me a favor!",
+  "quest:2661:progress:0": "Oh, ⟦13⟧, you're finally back.  What have you brought?",
+  "quest:2661:completion:0": "⟦E13⟧, eh? Let's give it a try -- it sure couldn't make it any worse, that's for sure!",
+  "quest:2662:obj:0": "Marin Noggenfogger wants you to speak to him again after he creates his elixir.",
+  "quest:2662:details:0": "Now, to mix this powder in with the dew.",
+  "quest:2662:details:1": "Come back and talk to me in a minute... after I have perfected the fabulous ⟦E14⟧!",
+  "quest:2662:completion:0": "Drink this! It's absolutely wonderful!!!",
+  "quest:2662:completion:1": "I knew I had it in me... Oh thanks again, ⟦14⟧ for your help, but please, stand a little to the side, will you? You're blocking my business! I'm going to make millions on the fabulous ⟦E14⟧, millions!",
+  "quest:2662:completion:2": "What's that? Sprinkle says I owe her a favor? Oh, that Sprinkle, such a kidder!",
+  "quest:5863:obj:0": "Andi Lynn in Gadgetzan wants you to destroy the Dunemaul Compound by killing 10 Dunemaul Brutes, 10 Dunemaul Enforcers, and Gor'marok the ⟦E15⟧.",
+  "quest:5863:details:0": "Just recently, a large band of nomadic ogres arrived in ⟦E1⟧. South of here, they have taken over a large area of the desert and formed a compound. Several smaller bands are currently wandering the desert, some of which have invaded the old troll ruins.",
+  "quest:5863:details:1": "⟦E16⟧ must be destroyed! We cannot allow these ogres to build up a force.",
+  "quest:5863:details:2": "The leader of this band is named Gor'marok the ⟦E15⟧; I believe that putting an end to his leadership will be the beginning of the end for the ogres.",
+  "quest:5863:progress:0": "I'm so worried! Please be careful!",
+  "quest:5863:completion:0": "I'm so glad you were able to do this for me, ⟦15⟧! Thanks for your help!",
+  "quest:1560:obj:0": "Show Tooga the way back to his wife, Torta.",
+  "quest:1560:details:0": "I am so lost!",
+  "quest:1560:details:1": "My wife, Torta, sent me out to fetch dinner and I must have taken a wrong turn somewhere.",
+  "quest:1560:details:2": "Would you be so kind as to lead me back to Torta? She's waiting for me just south of Steamwheedle Port.",
+  "quest:1560:progress:0": "Where is Tooga?",
+  "quest:1560:completion:0": "So he couldn't find his way back on his own? Figures.",
+  "quest:1560:completion:1": "Well, I guess you deserve something for your troubles....",
+  "quest:2954:obj:0": "Learn the purpose of the Stone Watcher of Norgannon, and then interact with the Uldum Pedestal in the ⟦E1⟧ desert.",
+  "quest:2954:details:0": "\"Salutations - I am a guardian of entry. Unless you have the Plates of Uldum already integrated with your disc set, I will not allow for entry into the Uldum compound.\"",
+  "quest:2954:details:1": "The appearance of the Stone Watcher of Norgannon must be the reaction that was hoped for in sending you out to the ⟦E1⟧ desert with the platinum discs. As instructed, you will need to find out what the story behind the Stone Watcher is before continuing on.",
+  "quest:2954:progress:0": "The purpose of the stone watcher must be learned before continuing on...",
+  "quest:2954:completion:0": "The stone watcher's voice resonates with power and authority:",
+  "quest:2954:completion:1": "B\"Your discs will be returned to you once you access the pedestal. When you have obtained the Plates of Uldum and incorporated them into your existing disc set, you may then enter the complex.\"",
+  "quest:3362:obj:0": "⟦E17⟧ in Gadgetzan wants you to kill 8 Gnarled Thistleshrubs and 8 Thistleshrub Rootshapers.",
+  "quest:3362:details:0": "Have you ever seen ⟦E18⟧? It's a mighty dangerous place, ⟦16⟧.",
+  "quest:3362:details:1": "Those strange beasts there, I don't trust them for a minute! Gnarled thistleshrubs and thistleshrub rootshapers, that's what I think they were called...",
+  "quest:3362:details:2": "Anyhow, I want to get into the valley, but with so many of those thistleshrubs around, there's no way I'm going back there. But here's where you come in -- if you clear some of them out, I just might think about going back. What do you think, ⟦17⟧? Help me out?",
+  "quest:3362:progress:0": "I'd like to take a closer look at that cactus in the valley... So leave some of it in one piece, will ya?",
+  "quest:3362:completion:0": "They're that big? I might have to rethink my plan...",
+  "quest:3362:completion:1": "But you did hold up your end of the bargain, so here's what I promised.",
+  "quest:3444:obj:0": "Retrieve the ⟦E19⟧ from Marvon Rivetseeker's workshop in Ratchet.",
+  "quest:3444:details:0": "I once entered the foreboding chambers of the Sunken Temple. The evil in that place penetrates all that enter; I barely managed to find my way out, wading through the ooze that now covers the floors. All I can remember is stumbling through a large circular room, filled with serpent statues...",
+  "quest:3444:details:1": "Recently, I discovered a round stone that appeared to have the same serpent symbol imprinted on it. I had it packed up and shipped to my workshop in Ratchet. Retrieve it, and I might be able to tell you more.",
+  "quest:3444:progress:0": "Ratchet is not far from here, ⟦18⟧. The journey shouldn't take long.",
+  "quest:3444:completion:0": "Yes... This is the stone.",
+  "quest:3444:completion:1": "It's all coming back to me now, ⟦19⟧...",
+  "quest:4496:obj:0": "Bring a ⟦E20⟧ and 5 ⟦E21⟧ samples to Alchemist Pestlezugg in Gadgetzan.",
+  "quest:4496:details:0": "My research revealed to me that the silithid are like bees; destroy the queen of the hive, and the rest of should be thrown into disarray. I'll brew a lure that we'll use to bring out the queen; once summoned, you'll take her down.",
+  "quest:4496:details:1": "First though, we need some reagents; we don't want you bungling into the jungle unprepared. Go west to find the silithid hive in ⟦E22⟧ and obtain a scent gland from one of the bugs. I'll also need some samples of the native Un'Goro soil.",
+  "quest:4496:progress:0": "Finding a suitable scent gland might take a bit - the gland can't be damaged, but the process of getting one certainly doesn't lend itself to it. As for the soil, I'd assume it should be easy enough to find.⟦20⟧⟦21⟧Anyway, do you have the items I need to make the lure?",
+  "quest:4496:completion:0": "The scent gland, ah yes. The membrane appears intact - excellent. The soil, yes, this should work out perfectly. With my special additions, I should be able to grind all this up into the perfect lure.",
+  "quest:4496:completion:1": "Give me a moment to make the lure, ⟦22⟧. Once it's ready, we'll be able to enact the next step that may hopefully stop the silithid before they overrun Gadgetzan... and the rest of ⟦E23⟧.",
+  "quest:4504:obj:0": "Collect 12 samples of ⟦E24⟧ for ⟦E17⟧ in Gadgetzan.",
+  "quest:4504:details:0": "I'm always looking for a quick way to earn a gold, ⟦23⟧. If you help me with my newest idea, I'll let you in on a little of the profit. How does that sound to you?",
+  "quest:4504:details:1": "I thought so!",
+  "quest:4504:details:2": "⟦E25⟧ to the tar pits in northern ⟦E22⟧, and collect me some tar. Not just any tar, now, you'll need to get it from the beasts that live around the tar pits. Regular tar just simply isn't sticky enough.",
+  "quest:4504:details:3": "The plant-like creatures contain chlorophyll in their skin, and mixed with the tar, it's super sticky!",
+  "quest:4504:progress:0": "⟦E17⟧'s done it again -- this super sticky glue will be all the rage!",
+  "quest:4504:completion:0": "Yes, this tar is just the stuff...",
+  "quest:4504:completion:1": "Hey, wait a minute, my hands... I can't seem to get them apart...",
+  "quest:4504:completion:2": "Maybe this wasn't such a good idea. Oh, but wait! Super sticky tar remover! That's where the real money is!",
+  "quest:4507:obj:0": "Defeat the Gorishi Hive Queen once she is summoned.",
+  "quest:4507:obj:1": "Bring the Gorishi Queen's Brain to Alchemist Pestlezugg in Gadgetzan.",
+  "quest:4507:details:0": "Here's the lure. Inside the hive network should be a crystal of some sort. We think the silithid use the crystal as some sort of hive-wide attunement device. As for where this crystal might be, I'd say try the hatcheries inside the hive.",
+  "quest:4507:details:1": "Using the lure on the crystal should roust out the queen, but be warned - she will probably be protected by several guards. Take out the queen and remove her brain. As icky as that sounds, we desperately need to study it. Good luck, ⟦24⟧!",
+  "quest:4507:progress:0": "Acquiring the queen's brain for our research is absolutely imperative.  From what we have learned, we believe that these silithid are quite possibly being controlled by a malign intelligence.  I shudder to think what could control something as insidious as the silithid, ⟦25⟧.",
+  "quest:4507:completion:0": "Fantastic, ⟦26⟧! We've won quite the victory here today. It will take some time for us to fully understand what we have here; we'll put it to good use though, don't you worry about that.",
+  "quest:4507:completion:1": "As for the silithid, I genuinely doubt that this was the full extent of their presence. This is much too clean of a resolution, I'm sorry to say.",
+  "quest:4508:obj:0": "Bring ⟦E26⟧ to Gracina Spiritmight in ⟦E5⟧.",
+  "quest:4508:details:0": "My recent findings and the knowledge we have gained here today needs to reach hands that can quite possibly do something with it. As resourceful as we are here in Gadgetzan, we can't do this alone.",
+  "quest:4508:details:1": "Take my latest report back to Gracina Spiritmight in ⟦E5⟧; she's still at the Temple of the Moon, is she not? She's got friends who are ⟦E9⟧ bigwigs; if we can get them involved in this ⟦27⟧, then we just might make it out of this alive.",
+  "quest:4508:progress:0": "They are fools, ⟦28⟧!  They cannot even think to look around them for a greater ⟦E7⟧; their irrational hatred of the ⟦E8⟧ will be the end of us all.  I do not know how much more proof I can give them of the silithid ⟦E7⟧ short of dropping them in one of the hives so they can see for themselves!⟦29⟧⟦30⟧I'm sorry, you bring news for my attention?",
+  "quest:4508:completion:0": "While I genuinely appreciate this, I am not sure what good it will do us. The ⟦E9⟧ ignores threats from any source other than the ⟦E8⟧, and even our own leaders here in ⟦E5⟧ cannot agree on what exactly this ⟦E7⟧ is. Fools like Fandral Staghelm theorize that the silithid are nothing like the ⟦E7⟧ from the ancient past I claim them to be. His ignorance is only surpassed by his arrogance.",
+  "quest:4508:completion:1": "You have seen the ⟦E7⟧ yourself, ⟦31⟧. We must remain committed to defeating the silithid!",
+  "quest:4509:obj:0": "Bring ⟦E26⟧ to Zilzibin Drumlore in ⟦E27⟧.",
+  "quest:4509:details:0": "My recent findings and the knowledge we have gained here today needs to reach hands that can quite possibly do something with it. As resourceful as we are here in Gadgetzan, we can't do this alone.",
+  "quest:4509:details:1": "Take my latest report back to Zilzibin Drumlore in ⟦E27⟧; he's still in his place on the upper part of the Drag, is he not? He's got friends who are high within the ⟦E8⟧; if we can get them involved in this ⟦32⟧, then we just might make it out of this alive.",
+  "quest:4509:progress:0": "They are fools, ⟦33⟧!  They cannot even think to look around them for a greater ⟦E7⟧; their irrational hatred of the ⟦E9⟧ will be our undoing.  I do not know how much more proof I can give them of the silithid ⟦E7⟧ short of dropping them in one of the hives so they can see for themselves!⟦34⟧⟦35⟧I'm sorry, you bring news for my attention?",
+  "quest:4509:completion:0": "While I genuinely appreciate this, I am not sure what good it will do us. The ⟦E8⟧ ignores threats from any source other than the ⟦E9⟧. While Thrall himself might take action were the facts presented to him, he is beset on all sides by conflicting advice. These fools would have us chase our own imaginary tails were they to think it might catch the ⟦E9⟧ unawares!",
+  "quest:4509:completion:1": "You have seen the ⟦E7⟧ yourself, ⟦36⟧. We must remain committed to defeating the silithid!",
+  "quest:5801:obj:0": "Take the ⟦E28⟧ and 2 Thorium Bars to the top of ⟦E29⟧ Plume Ridge in ⟦E22⟧. ⟦E30⟧ the ⟦E28⟧ by the lava lake to forge the ⟦E31⟧.",
+  "quest:5801:obj:1": "Bring the ⟦E31⟧ to Alchemist Arbington at ⟦E32⟧, ⟦E33⟧.",
+  "quest:5801:details:0": "You need two bars of thorium and a powerfully hot heat source to forge the key stem. You're on your own for the thorium, but I can help with the heat.",
+  "quest:5801:details:1": "To our west in ⟦E22⟧ is ⟦E29⟧ Plume Ridge - a simmering volcano. The lava lake up top is hot enough to fuse thorium and bone together. Your gold has bought you a mold that simply ⟦E34⟧ you to dip it in the lake up top; the lava will take care of the rest.",
+  "quest:5801:details:2": "That's it on my end. To finish your key, you'll need to talk to Arbington again.",
+  "quest:5801:progress:0": "Do you have the stem of the skeletal key finished? I'm truly sorry you had to bear the brunt of the fee to purchase the mold, but we must all do our part to counter the Scourge. Once you hand me the unfinished key, you'll be ready for the final item needed to complete its construction.⟦37⟧⟦38⟧It won't be easy at all, but the work you've done to date in preparing for an assault on Andorhal will now start to pay for itself. You'll see.",
+  "quest:5801:completion:0": "We've got quite the costly skeleton key there, don't we ⟦39⟧? Still, it remains unfinished; the time has now come to put some focus behind our creation. To that end, you're going to have to face the ultimate foe we've been working towards facing in Andorhal... the being that runs the show within the ruined city walls.",
+  "quest:5801:completion:1": "I'm speaking of Araj the Summoner - a lich, and one of the most powerful beings the Scourge calls as its own.",
+  "quest:5802:obj:0": "Take the ⟦E28⟧ and 2 Thorium Bars to the top of ⟦E29⟧ Plume Ridge in ⟦E22⟧. ⟦E30⟧ the ⟦E28⟧ by the lava lake to forge the ⟦E31⟧.",
+  "quest:5802:obj:1": "Bring the ⟦E31⟧ to Apothecary Dithers at the Bulwark, ⟦E33⟧.",
+  "quest:5802:details:0": "You need two bars of thorium and a powerfully hot heat source to forge the key stem. You're on your own for the thorium, but I can help with the heat.",
+  "quest:5802:details:1": "To our west in ⟦E22⟧ is ⟦E29⟧ Plume Ridge - a simmering volcano. The lava lake up top is hot enough to fuse thorium and bone together. Your gold has bought you a mold that simply ⟦E34⟧ you to dip it in the lake up top; the lava will take care of the rest.",
+  "quest:5802:details:2": "That's it on my end. To finish your key, you'll need to talk to Dithers again.",
+  "quest:5802:progress:0": "Do you have the stem of the skeletal key finished? I'm truly sorry you had to bear the brunt of the fee to purchase the mold, but we must all do our part to counter the Scourge. Once you hand me the unfinished key, you'll be ready for the final item needed to complete its construction.⟦40⟧⟦41⟧It won't be easy at all, but the work you've done to date in preparing for an assault on Andorhal will now start to pay for itself. You'll see.",
+  "quest:5802:completion:0": "We've got quite the costly skeleton key there, don't we ⟦42⟧? Still, it remains unfinished; the time has now come to put some focus behind our creation. To that end, you're going to have to face the ultimate foe we've been working towards facing in Andorhal... the being that runs the show within the ruined city walls.",
+  "quest:5802:completion:1": "I'm speaking of Araj the Summoner - a lich, and one of the most powerful beings the Scourge calls as its own.",
+  "quest:8182:obj:0": "Speak with Molthor in Stranglethorn.",
+  "quest:8182:details:0": "⟦43⟧, our worst fears have come. Legend speaks of the Soulflayer ruling the ancient troll world through evil and terror, and his power was absolute. If he cannot be stopped now, then his new reign may spread across all of ⟦E6⟧!",
+  "quest:8182:details:1": "There is a contingent of Zandalarian trolls who may help us stem this tide of darkness. They have camped on Yojamba Isle, off the coast of Stranglethorn, west of the ruins of Zul'Kunda. Speak with their leader, Molthor, and pray he knows how to defeat Hakkar.",
+  "quest:8182:completion:0": "You were sent by the prospector, Ironboot? His kind are wise, and wiser still to bring you to me, for I and the Zandalarian trolls may know a way to defeat the Soulflayer.",
+  "quest:8182:completion:1": "Speak with the trolls of this isle, heed their words, and prepare yourself, ⟦44⟧, for the task before you is soaked in blood.",
+  "quest:2741:obj:0": "{'type': 'item', 'id': 8564, 'target': 'Hippogryph Egg', 'text': None}",
+  "quest:2741:progress:0": "⟦E35⟧ is the latest of Curgle Cranklehop's inventions. It is quite an impressive piece of machinery.⟦45⟧⟦46⟧⟦E35⟧ sputters wildly as you approach the control panel.",
+  "quest:2741:completion:0": "You place the hippogryph egg into the machine. A series of beeps follows along with some strange mechanical sounds.",
+  "quest:2741:completion:1": "It appears that the Eggometer has weighed, measured, and packaged your egg. Now that's speedy service!",
+  "quest:8555:completion:0": "Eranikus, Vaelastrasz, and Azuregos... No doubt you know of these dragons, mortal. It is no coincidence, then, that they have played such influential roles as watchers of our world.",
+  "quest:8555:completion:1": "Unfortunately (and my own naivety is partially to blame) whether by agents of the Old Gods or betrayal by those that would call them friend, each guardian has fallen to tragedy. The extent of which has fueled my own distrust towards your kind.",
+  "quest:8555:completion:2": "Seek them out... And ⟦47⟧, prepare yourself for the worst.",
+  "quest:8576:completion:0": "First things first, ⟦48⟧! We need to figure out what Azuregos wrote in this ledger.",
+  "quest:8576:completion:1": "You say that he's told you to make an arcanite buoy and that this is the schematic? Strange that he would write this in Draconic. That old goat knows I can't read this nonsense.",
+  "quest:8576:completion:2": "If this is going to work, I'm going to need my scrying goggles, a five hundred pound chicken and volume II of \"⟦E36⟧.\" Not necessarily in that order.",
+  "quest:8577:obj:0": "Narain Soothfancy wants you to find his ex-best friend forever (BFF), Stewvul, and take back the scrying goggles that Stewvul stole from him.",
+  "quest:8577:details:0": "If I am to translate anything, I will need my scrying goggles. Unfortunately, those were stolen quite some time ago by my ex-best friend forever, Stewvul. He broke my heart in five places and then left me here to rot.",
+  "quest:8577:details:1": "With the help of my trusty crystal ball, I've isolated his whereabouts to either the Greymane Wall in Silverpine or what appears to be a portal world in the Outland that is currently being overrun by the ⟦E37⟧. You're going to have to track him down and get my goggles back, ⟦49⟧!",
+  "quest:8577:completion:0": "I can't believe he found me. I thought for sure that I'd lost him when I was in the Outland. I'm not going back there, ⟦50⟧! No way, no how! I'm through being his part time best friend forever and full time slave.",
+  "quest:8584:obj:0": "Narain Soothfancy in ⟦E1⟧ wants you to speak with Dirge Quikcleave in Gadgetzan.",
+  "quest:8584:details:0": "If there is one thing that you should know about me, it is this: NEVER ask me about my business! I work with things you simply cannot understand. Like for example: Do you know what a psychotronic muzzledorf is? Of course you don't! And that's why we leave the planning to me and the fetching to you.",
+  "quest:8584:details:1": "As I said earlier, if this is going to work, we're going to need a 500 pound chicken.",
+  "quest:8584:details:2": "⟦E25⟧ to Gadgetzan and speak with Dirge Quikcleave - he'll get you started on finding a suitable specimen.⟦51⟧",
+  "quest:8584:completion:0": "<Dirge scratches his head.>",
+  "quest:8584:completion:1": "BA 500 pound chicken? There's no such thing! Not anymore, at least. I knew of such a chicken... The Black Chicken of Death...",
+  "quest:8584:completion:2": "B<Dirge's voice trails off.>",
+  "quest:8584:completion:3": "But yes, nobody ever saw that chicken and lived to tell the tale. I've got an idea that could benefit the both of us, kid.",
+  "quest:8585:obj:0": "Recover ⟦E38⟧ and 20 Chimaerok Tenderloins for Dirge Quikcleave in ⟦E1⟧.",
+  "quest:8585:details:0": "Legend has it that the chimaerok of the Isle of Dread in ⟦E39⟧ have the most succulent and tender vittles in existence! Now these chimaerok also have a daddy who, with proper preparation, may or may not look like a 500 pound chicken.",
+  "quest:8585:details:1": "⟦E25⟧ to the Isle of Dread and kill Lord Lakmaeran and bring me his fresh carcass. That should satisfy the gnome. To satisfy me, you'll need to get your hands on some chimaerok tenderloin.",
+  "quest:8585:details:2": "Do this and you'll have your 500 pound chicken and a little something extra.⟦52⟧",
+  "quest:8585:progress:0": "Mmmmm... Chimaerok...",
+  "quest:8585:completion:0": "Look at the marbleization on those tenderloins! Fantastic!",
+  "quest:8585:completion:1": "Now about that chicken... Hrm, let me see. I'm going to need a few minutes to devise the recipe.",
+  "quest:8586:obj:0": "Dirge Quikcleave in Gadgetzan wants you to bring him 20 ⟦E40⟧ and 20 ⟦E41⟧.",
+  "quest:8586:details:0": "My recipe is complete! What I need from you now is some rocket fuel and deeprock salt. I'll handle the spices and the meat you brought me will cover the rest.",
+  "quest:8586:details:1": "After you bring me what I asked for, the chicken will be ready to take back to Narain.",
+  "quest:8586:progress:0": "Hurry it up, kid. We don't want this meat to go bad. ",
+  "quest:8586:completion:0": "It's ready! I present to you my greatest creation: ⟦E42⟧!",
+  "quest:8587:obj:0": "Deliver the ⟦E43⟧ to Narain Soothfancy in ⟦E1⟧.",
+  "quest:8587:details:0": "I'm a goblin of my word, kid. Here's your 500 pound chicken.",
+  "quest:8587:details:1": "What a gnome wants with a 500 pound chicken, I'll never know...",
+  "quest:8587:details:2": "B<Dirge grumbles something unintelligible.>",
+  "quest:8587:details:3": "Probably to sleep in it... Dirty gnomes...",
+  "quest:8587:progress:0": "What is that scrumptious smell? ",
+  "quest:8587:completion:0": "<Narain mashes two fists into the huge chicken, stuffing his face full of Dirge's delicious delicacy.>",
+  "quest:8587:completion:1": "BMMmmm... This is unbelievable! Best chicken I've ever had!"
+ },
+ "context": {
+  "quest:351": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "",
+   "giver": "",
+   "turner": "Homing Robot OOX-17/TN"
+  },
+  "quest:648": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "",
+   "giver": "Homing Robot OOX-17/TN",
+   "turner": "Oglethorpe Obnoticus"
+  },
+  "quest:3161": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "",
+   "giver": "Marvon Rivetseeker",
+   "turner": "Marvon Rivetseeker"
+  },
+  "quest:162": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "alliance",
+   "giver": "Senior Surveyor Fizzledowser",
+   "turner": "Gracina Spiritmight"
+  },
+  "quest:2605": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "",
+   "giver": "Marin Noggenfogger",
+   "turner": "Marin Noggenfogger"
+  },
+  "quest:2606": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "",
+   "giver": "Marin Noggenfogger",
+   "turner": "Sprinkle"
+  },
+  "quest:2641": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "",
+   "giver": "Sprinkle",
+   "turner": "Sprinkle"
+  },
+  "quest:2661": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "",
+   "giver": "Sprinkle",
+   "turner": "Marin Noggenfogger"
+  },
+  "quest:2662": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "",
+   "giver": "Marin Noggenfogger",
+   "turner": "Marin Noggenfogger"
+  },
+  "quest:5863": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 49,
+   "side": "",
+   "giver": "Andi Lynn",
+   "turner": "Andi Lynn"
+  },
+  "quest:1560": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 50,
+   "side": "",
+   "giver": "Tooga",
+   "turner": "Torta"
+  },
+  "quest:2954": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 50,
+   "side": "",
+   "giver": "Stone Watcher of Norgannon",
+   "turner": "Uldum Pedestal"
+  },
+  "quest:3362": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 50,
+   "side": "",
+   "giver": "Tran'rek («تران‌رک»)",
+   "turner": "Tran'rek («تران‌رک»)"
+  },
+  "quest:3444": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 51,
+   "side": "",
+   "giver": "Marvon Rivetseeker",
+   "turner": "Marvon Rivetseeker"
+  },
+  "quest:4496": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 53,
+   "side": "",
+   "giver": "Alchemist Pestlezugg",
+   "turner": "Alchemist Pestlezugg"
+  },
+  "quest:4504": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 54,
+   "side": "",
+   "giver": "Tran'rek («تران‌رک»)",
+   "turner": "Tran'rek («تران‌رک»)"
+  },
+  "quest:4507": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 54,
+   "side": "",
+   "giver": "Alchemist Pestlezugg",
+   "turner": "Alchemist Pestlezugg"
+  },
+  "quest:4508": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Alchemist Pestlezugg",
+   "turner": "Gracina Spiritmight"
+  },
+  "quest:4509": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 54,
+   "side": "horde",
+   "giver": "Alchemist Pestlezugg",
+   "turner": "Zilzibin Drumlore"
+  },
+  "quest:5801": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Krinkle Goodsteel",
+   "turner": "Alchemist Arbington"
+  },
+  "quest:5802": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 57,
+   "side": "horde",
+   "giver": "Krinkle Goodsteel",
+   "turner": "Apothecary Dithers"
+  },
+  "quest:8182": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 58,
+   "side": "",
+   "giver": "Prospector Ironboot",
+   "turner": "Molthor"
+  },
+  "quest:2741": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Egg-O-Matic",
+   "turner": "Egg-O-Matic"
+  },
+  "quest:8555": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8576": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy",
+   "turner": "Narain Soothfancy"
+  },
+  "quest:8577": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy",
+   "turner": "Inconspicuous Crate"
+  },
+  "quest:8584": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy",
+   "turner": "Dirge Quikcleave"
+  },
+  "quest:8585": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Dirge Quikcleave",
+   "turner": "Dirge Quikcleave"
+  },
+  "quest:8586": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Dirge Quikcleave",
+   "turner": "Dirge Quikcleave"
+  },
+  "quest:8587": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Dirge Quikcleave",
+   "turner": "Narain Soothfancy"
+  }
+ },
+ "known": {
+  "quest:351": {
+   "title": "اُواِکس-۱۷/تی‌ان را پیدا کنید!"
+  },
+  "quest:648": {
+   "title": "نجات اُواِکس-۱۷/تی‌ان!"
+  },
+  "quest:3161": {
+   "title": "گاز‌ریدین"
+  },
+  "quest:162": {
+   "title": "برخاستن سیلیتیدها"
+  },
+  "quest:2605": {
+   "title": "گابلین تشنه"
+  },
+  "quest:2606": {
+   "title": "درست‌سلیقه"
+  },
+  "quest:2641": {
+   "title": "مادهٔ مخفی اسپرینکل"
+  },
+  "quest:2661": {
+   "title": "تحویل برای مارین"
+  },
+  "quest:2662": {
+   "title": "معجون نوگن‌فاگر"
+  },
+  "quest:5863": {
+   "title": "مجمع دونه‌مول"
+  },
+  "quest:1560": {
+   "title": "درخواست توگا"
+  },
+  "quest:2954": {
+   "title": "پاسدار سنگی"
+  },
+  "quest:3362": {
+   "title": "درهٔ تیغ‌درخت"
+  },
+  "quest:3444": {
+   "title": "دایرهٔ سنگی"
+  },
+  "quest:4496": {
+   "title": "شلوغی در جنگل"
+  },
+  "quest:4504": {
+   "title": "فوق‌چسبنده"
+  },
+  "quest:4507": {
+   "title": "پیاده وزیر را می‌گیرد"
+  },
+  "quest:4508": {
+   "title": "آرامش پیش از توفان"
+  },
+  "quest:4509": {
+   "title": "آرامش پیش از توفان"
+  },
+  "quest:5801": {
+   "title": "ریخته‌گری در آتشفشان"
+  },
+  "quest:5802": {
+   "title": "ریخته‌گری در آتشفشان"
+  },
+  "quest:8182": {
+   "title": "دست راستان راستاخان"
+  },
+  "quest:2741": {
+   "title": "تخم‌مَهمَق فوق‌پیشرفته"
+  },
+  "quest:8555": {
+   "title": "اژدهایان به میدان می‌آیند"
+  },
+  "quest:8576": {
+   "title": "ترجمهٔ دفتر کل"
+  },
+  "quest:8577": {
+   "title": "استیوول، دوست سابق"
+  },
+  "quest:8584": {
+   "title": "از کارم نپرس!"
+  },
+  "quest:8585": {
+   "title": "جزیرهٔ رعب!"
+  },
+  "quest:8586": {
+   "title": "چاپ‌های تندِ چیماروکِ دریژ"
+  },
+  "quest:8587": {
+   "title": "بازگشت به نارین"
+  }
+ }
+}

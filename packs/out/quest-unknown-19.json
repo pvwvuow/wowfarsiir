@@ -1,0 +1,905 @@
+{
+ "pack": "quest-unknown-19",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-19.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E2": {
+   "en": "Skullsplitter",
+   "fa": "اسکال‌اسپلیتر",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Zanza",
+   "fa": "زانزا",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "exalted",
+   "fa": "ستوده",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Stranglekelp",
+   "fa": "جلبک خفه‌گر",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Purple Lotus",
+   "fa": "نیلوفر بنفش",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Arthas' Tears",
+   "fa": "اشک‌های آرتاس",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "The Alliance Needs Light Leather!",
+   "fa": "اتحادیه به چرمِ سبک نیاز دارد!",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "light leather",
+   "fa": "چرم سبک",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Medium Leather",
+   "fa": "چرمِ متوسط",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Thick Leather",
+   "fa": "چرم ضخیم",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Engineering",
+   "fa": "مهندسی",
+   "kind": "sp"
+  },
+  "E20": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Bandages",
+   "fa": "بانداژها",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "linen",
+   "fa": "پارچهٔ کتانی",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Rainbow Fin Albacore",
+   "fa": "الباکورِ بالهٔ رنگین",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Roast Raptor",
+   "fa": "رپتور کبابی",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Sarah",
+   "fa": "سارا",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Spotted Yellowtail",
+   "fa": "دم‌زرد خالدار",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Conqueror's Spaulders",
+   "fa": "شانه‌بندِ فولادیِ فاتح",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Qiraji Bindings of Command",
+   "fa": "ساعدبندهایِ قیراجیِ فرمان",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Idols",
+   "fa": "بت‌ها",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Neutral",
+   "fa": "بی‌طرف",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Nefarian",
+   "fa": "نفاریان",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "Mithril Bar",
+   "fa": "شمشِ میتریل",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "The Horde Needs Peacebloom!",
+   "fa": "هورد به گلِ آرامش نیاز دارد!",
+   "kind": "qs"
+  },
+  "E45": {
+   "en": "Peacebloom",
+   "fa": "گلِ آرامش",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Conqueror's Greaves",
+   "fa": "پاافزار زرهیِ فاتح",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E48": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E49": {
+   "en": "Conqueror's Legguards",
+   "fa": "پاافزارِ محافظِ فاتح",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Ouro's Intact Hide",
+   "fa": "پوستِ سالم اُورو",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Friendly",
+   "fa": "دوستانه",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "Conqueror's Crown",
+   "fa": "تاجِ فاتح",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Vek'nilash's Circlet",
+   "fa": "نیم‌تاجِ وک‌نیلاش",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Conqueror's Breastplate",
+   "fa": "سینه‌پوشِ فاتح",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Carapace of the Old God",
+   "fa": "پوستهٔ خدای کهن",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Honored",
+   "fa": "محترم",
+   "kind": "tm"
+  },
+  "E57": {
+   "en": "Firebloom",
+   "fa": "شکوفهٔ آتش",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Blood": "خون",
+  "Skullsplitter": "اسکال‌اسپلیتر",
+  "Zanza": "زانزا",
+  "exalted": "ستوده",
+  "blessing": "برکت",
+  "Alliance": "اتحاد",
+  "Dun Morogh": "دون موروغ",
+  "Back": "شنل",
+  "armor": "زره",
+  "stack": "استک",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Stranglekelp": "جلبک خفه‌گر",
+  "Purple Lotus": "نیلوفر بنفش",
+  "Arthas' Tears": "اشک‌های آرتاس",
+  "The Alliance Needs Light Leather!": "اتحادیه به چرمِ سبک نیاز دارد!",
+  "light leather": "چرم سبک",
+  "Medium Leather": "چرمِ متوسط",
+  "Thick Leather": "چرم ضخیم",
+  "Engineering": "مهندسی",
+  "Horde": "هورد",
+  "Bandages": "بانداژها",
+  "linen": "پارچهٔ کتانی",
+  "Azeroth": "آزروت",
+  "Elune": "الون",
+  "silk": "ابریشم",
+  "Runecloth": "پارچهٔ رونی",
+  "Rainbow Fin Albacore": "الباکورِ بالهٔ رنگین",
+  "Roast Raptor": "رپتور کبابی",
+  "Sarah": "سارا",
+  "Spotted Yellowtail": "دم‌زرد خالدار",
+  "Durotar": "دوروتار",
+  "Silithus": "سیلیتوس",
+  "Conqueror's Spaulders": "شانه‌بندِ فولادیِ فاتح",
+  "Qiraji Bindings of Command": "ساعدبندهایِ قیراجیِ فرمان",
+  "Idols": "بت‌ها",
+  "Neutral": "بی‌طرف",
+  "Nefarian": "نفاریان",
+  "strike": "ضربه",
+  "fear": "ترس",
+  "enemies": "دشمنان",
+  "Orgrimmar": "اورگریمار",
+  "hit": "اصابت",
+  "Mithril Bar": "شمشِ میتریل",
+  "The Horde Needs Peacebloom!": "هورد به گلِ آرامش نیاز دارد!",
+  "Peacebloom": "گلِ آرامش",
+  "Conqueror's Greaves": "پاافزار زرهیِ فاتح",
+  "requires": "نیازمند",
+  "enemy": "دشمن",
+  "Conqueror's Legguards": "پاافزارِ محافظِ فاتح",
+  "Ouro's Intact Hide": "پوستِ سالم اُورو",
+  "Friendly": "دوستانه",
+  "Conqueror's Crown": "تاجِ فاتح",
+  "Vek'nilash's Circlet": "نیم‌تاجِ وک‌نیلاش",
+  "Conqueror's Breastplate": "سینه‌پوشِ فاتح",
+  "Carapace of the Old God": "پوستهٔ خدای کهن",
+  "Honored": "محترم",
+  "Firebloom": "شکوفهٔ آتش"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$b",
+  "12": "$b",
+  "13": "$n",
+  "14": "$b",
+  "15": "$b",
+  "16": "$c",
+  "17": "$C",
+  "18": "$B",
+  "19": "$B",
+  "20": "$C",
+  "21": "$c",
+  "22": "$C",
+  "23": "$N",
+  "24": "$B",
+  "25": "$B",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$C",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$c",
+  "34": "$C",
+  "35": "$N",
+  "36": "$B",
+  "37": "$B",
+  "38": "$c",
+  "39": "$C",
+  "40": "$B",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$g sir : ma'am;",
+  "47": "$B",
+  "48": "$B",
+  "49": "$N",
+  "50": "$N",
+  "51": "$B",
+  "52": "$B",
+  "53": "$N",
+  "54": "$B",
+  "55": "$B",
+  "56": "$B",
+  "57": "$B",
+  "58": "$N",
+  "59": "$C",
+  "60": "$C",
+  "61": "$N",
+  "62": "$B",
+  "63": "$B",
+  "64": "$c",
+  "65": "$c",
+  "66": "$N",
+  "67": "$B",
+  "68": "$B",
+  "69": "$N",
+  "70": "$c",
+  "71": "$B",
+  "72": "$B",
+  "73": "$N",
+  "74": "$C",
+  "75": "$B",
+  "76": "$B",
+  "77": "$N",
+  "78": "$N",
+  "79": "<drool>",
+  "80": "$B",
+  "81": "$B",
+  "82": "<drool>",
+  "83": "$B",
+  "84": "$B",
+  "85": "$B",
+  "86": "$B",
+  "87": "$c",
+  "88": "$C",
+  "89": "$N",
+  "90": "$N",
+  "91": "$N",
+  "92": "$c",
+  "93": "$C",
+  "94": "$C",
+  "95": "$B",
+  "96": "$B",
+  "97": "$C",
+  "98": "$B",
+  "99": "$B",
+  "100": "$N",
+  "101": "$B",
+  "102": "$B",
+  "103": "$B",
+  "104": "$B",
+  "105": "$B",
+  "106": "$B",
+  "107": "$B",
+  "108": "$N",
+  "109": "$C",
+  "110": "$N",
+  "111": "$B",
+  "112": "$B",
+  "113": "$B",
+  "114": "$B",
+  "115": "$N",
+  "116": "$N",
+  "117": "$B",
+  "118": "$B",
+  "119": "$B",
+  "120": "$B",
+  "121": "$B",
+  "122": "$B",
+  "123": "$B",
+  "124": "$B",
+  "125": "$N",
+  "126": "$B",
+  "127": "$B",
+  "128": "$B",
+  "129": "$B",
+  "130": "$N",
+  "131": "$N",
+  "132": "$B",
+  "133": "$B",
+  "134": "$B",
+  "135": "$B",
+  "136": "$B",
+  "137": "$B",
+  "138": "$N",
+  "139": "$B",
+  "140": "$B",
+  "141": "$B",
+  "142": "$B",
+  "143": "$B",
+  "144": "$B",
+  "145": "$B",
+  "146": "$B",
+  "147": "$C",
+  "148": "$B",
+  "149": "$B",
+  "150": "$C",
+  "151": "$B",
+  "152": "$C",
+  "153": "$N",
+  "154": "$C",
+  "155": "$B",
+  "156": "$B",
+  "157": "$C",
+  "158": "$B",
+  "159": "$N",
+  "160": "$B",
+  "161": "$B"
+ },
+ "rows": {
+  "quest:8238:title": "Gurubashi, Vilebranch, and Witherbark Coins",
+  "quest:8238:details:0": "I seek the Paragons of Power known as the Coins of the Tribes.  They are the currency used by the various denizens of Zul'Gurub, and each is imbued with subtle but powerful mojo.⟦1⟧⟦2⟧There are nine distinct kinds to be found.  Some are sought after by my compatriots for various armors they offer Zandalar heroes.  Should you have any extra, I will trade you one of our Honor Tokens for a set of three.  You may use the Tokens with Rin'wosho the Trader; he offers our heroes special items for them.",
+  "quest:8238:progress:0": "I seek the Paragons of Power known as the Coins of the Tribes.  They are the currency used by the various denizens of Zul'Gurub, and each is imbued with subtle but powerful mojo.⟦3⟧⟦4⟧There are nine distinct kinds to be found.  Should you have any extra, I will trade you one of our Honor Tokens for a set of three.  You may use the Tokens with Rin'wosho the Trader; he offers our heroes special items for them.",
+  "quest:8238:completion:0": "Excellent - this set of coins will make a fine addition to our growing collection... one that we will use in the tribe's defense against the rise of the ⟦E1⟧ God. You've earned this Honor Token, ⟦5⟧, as well as the thanks of the tribe!",
+  "quest:8239:title": "Sandfury, ⟦E2⟧, and Bloodscalp Coins",
+  "quest:8239:details:0": "I seek the Paragons of Power known as the Coins of the Tribes.  They are the currency used by the various denizens of Zul'Gurub, and each is imbued with subtle but powerful mojo.⟦6⟧⟦7⟧There are nine distinct kinds to be found.  Some are sought after by my compatriots for various armors they offer Zandalar heroes.  Should you have any extra, I will trade you one of our Honor Tokens for a set of three.  You may use the Tokens with Rin'wosho the Trader; he offers our heroes special items for them.",
+  "quest:8239:progress:0": "I seek the Paragons of Power known as the Coins of the Tribes.  They are the currency used by the various denizens of Zul'Gurub, and each is imbued with subtle but powerful mojo.⟦8⟧⟦9⟧There are nine distinct kinds to be found.  Should you have any extra, I will trade you one of our Honor Tokens for a set of three.  You may use the Tokens with Rin'wosho the Trader; he offers our heroes special items for them.",
+  "quest:8239:completion:0": "Excellent - this set of coins will make a fine addition to our growing collection... one that we will use in the tribe's defense against the rise of the ⟦E1⟧ God. You've earned this Honor Token, ⟦10⟧, as well as the thanks of the tribe!",
+  "quest:8243:title": "⟦E3⟧'s Potent Potables",
+  "quest:8243:progress:0": "With your increased status amongst the tribe comes access to some of our more potent potables. Behold... these brews are strong in the mojo - blessed by ⟦E3⟧ and fit for adventurers from all walks of life!⟦11⟧⟦12⟧I will allow you to choose one from the three I offer; in exchange, I require three Zandalar Honor Tokens. Note that only the effects of a single one may course through your spirit at any given time.",
+  "quest:8243:completion:0": "A fair trade, my friend - please enjoy the blessings of ⟦E3⟧ with our compliments!",
+  "quest:8246:title": "Signets of the Zandalar",
+  "quest:8246:progress:0": "⟦13⟧ - for someone as ⟦E4⟧ among the Zandalar as you are, I have something very special for you. Direct from our home in the South Seas... the Signets of the Zandalar! These signets are used to enhance any shoulder item you may possess. Should you seek might, mojo, or serenity - I have what you need!⟦14⟧⟦15⟧I ask for fifteen Zandalar Honor Tokens in exchange for your choice of one signet. If you have the tokens ready, then I'm ready to make a deal!",
+  "quest:8246:completion:0": "A fair trade, my friend - please accept your signet with the ⟦E5⟧ of the tribe!",
+  "quest:8493:title": "The ⟦E6⟧ Needs More Copper Bars!",
+  "quest:8493:desc:0": "Bring 20 copper bars to Sergeant Stonebrow at the airfield in ⟦E7⟧.",
+  "quest:8493:details:0": "⟦E8⟧ again ⟦16⟧? Outstanding! We still need more stacks of copper bars if you can procure them for the Ahn'Qiraj war effort.  Will you help us out?",
+  "quest:8493:progress:0": "⟦E8⟧ again, ⟦17⟧? Outstanding! The bars you've provided thus far are really going to help out in making all sorts of things for the war. I know, for example, that the copper is going to be used for parts of the steam tanks that are being built, as well as in a small fleet of gyrocopters that we're planning to deploy if time allows.⟦18⟧⟦19⟧Don't let the stacks here fool you though, we still need more copper bars if you can procure them for the Ahn'Qiraj war effort.  Will you help us out?",
+  "quest:8493:completion:0": "Excellent work! Digging around for that copper and smelting it must have been quite an adventure. Unless you bought them at the auction house. Either way, it works for me. You are to be commended for your contribution to the war effort, ⟦20⟧. And please don't hesitate to bring me more copper bars if you have them.",
+  "quest:8495:title": "The ⟦E6⟧ Needs More Iron Bars!",
+  "quest:8495:desc:0": "Bring 20 iron bars to Corporal Carnes at the airfield in ⟦E7⟧.",
+  "quest:8495:details:0": "⟦E8⟧ so soon? Stop making me re-evaluate my low opinion of you ⟦21⟧, you're making me feel all gooey inside. So, as you can tell we still don't have enough iron bars for all of the weapons, ⟦E9⟧, steam tanks and whatnot that need building for the bug hunt. Think you have it in you to bring back another ⟦E10⟧ of twenty iron bars in between all of those trips to Zul'Gurub, or wherever it is that you kids hang out these days?",
+  "quest:8495:progress:0": "⟦E8⟧ so soon? Stop making me re-evaluate my low opinion of you, ⟦22⟧, you're making me feel all gooey inside. So, as you can tell we still don't have enough iron bars for all of the weapons, ⟦E9⟧, steam tanks and whatnot that need building for the bug hunt. Think you have it in you to bring back another ⟦E10⟧ of twenty iron bars in between all of those trips to Zul'Gurub, or wherever it is that you kids hang out these days?",
+  "quest:8495:completion:0": "Must be a cold day in the ⟦E11⟧. Look here, it's ⟦23⟧, and she's brought me a gift. Twenty iron bars! Just what I always wanted.⟦24⟧⟦25⟧In all seriousness though, thank you, ⟦26⟧. You're a credit to yourself and the ⟦E6⟧. Now get back out there and bring in more stuff for the war effort!",
+  "quest:8500:title": "The ⟦E6⟧ Needs More Thorium Bars!",
+  "quest:8500:desc:0": "Bring 20 thorium bars to Dame Twinbraid at the airfield in ⟦E7⟧.",
+  "quest:8500:details:0": "It is so good to see you again ⟦27⟧. I hope that you've been doing well. It's true that we are still in need of thorium bars. If you have them to spare I am collecting them for the Ahn'Qiraj war effort.",
+  "quest:8500:progress:0": "It is so good to see you again, ⟦28⟧. I hope that you've been doing well. It's true that we are still in need of thorium bars. If you have them to spare I am collecting them for the Ahn'Qiraj war effort.",
+  "quest:8500:completion:0": "Excellent, ⟦29⟧! A job well done. I'll see to it that those bars get onto the pallet and into the hands of the blacksmiths and engineers that are hard at work building up the supplies for our army. Thank you again, and if you come across more thorium bars be sure to drop by.",
+  "quest:8504:title": "The ⟦E6⟧ Needs More ⟦E12⟧!",
+  "quest:8504:desc:0": "Bring 20 stranglekelp to Private Draxlegauge at the airfield in ⟦E7⟧.",
+  "quest:8504:details:0": "Well hello again there... what was it? Ah yes, ⟦30⟧! Come to see if I still need more stranglekelp have you? Well, it's your lucky day, because the answer to that very important question is a very affirmative YES! Think you could gather up twenty more?",
+  "quest:8504:progress:0": "Well hello again there... what was it? Ah yes, ⟦31⟧ ! Come to see if I still need more stranglekelp have you? Well, it's your lucky day, because the answer to that very important question is a very affirmative YES! Think you could gather up twenty more?",
+  "quest:8504:completion:0": "Oh goodness that's a quite a load of stranglekelp you have there. Quick, let's get that into a box to keep it fresh. You've done me... us, the ⟦E6⟧ a great favor by bringing that batch in. I'll make sure that everyone knows that it was you, the great ⟦32⟧ , that helped to tip the scales in the Ahn'Qiraj war effort with your contribution of stranglekelp!",
+  "quest:8506:title": "The ⟦E6⟧ Needs More ⟦E13⟧!",
+  "quest:8506:desc:0": "Bring 20 purple lotus to Master Nightsong at the airfield in ⟦E7⟧.",
+  "quest:8506:details:0": "Welcome back ⟦33⟧. Our collection grows, but even now we have a need for additional purple lotus. If it is still within your power to gather more of the herb, I entreat you to do so and return them to me here.",
+  "quest:8506:progress:0": "Welcome back, ⟦34⟧ . Our collection grows, but even now we have a need for additional purple lotus. If it is still within your power to gather more of the herb, I entreat you to do so and return them to me here.",
+  "quest:8506:completion:0": "I gladly accept your contribution on behalf of the ⟦E6⟧, ⟦35⟧ . Your efforts will directly lead to the creation of several potions and oils in support of our men and women in the field. Thank you, and should come across more, please consider returning to me.",
+  "quest:8510:title": "The ⟦E6⟧ Needs More ⟦E14⟧!",
+  "quest:8510:desc:0": "Bring 20 ⟦E14⟧ to Sergeant Major Germaine at the airfield in ⟦E7⟧.",
+  "quest:8510:details:0": "Ok, so it looks like I still need more ⟦E14⟧. I would imagine that you will be able to find them in the general location that you gathered them up for me last time. The quicker we get these, the faster we can start up the offensive against the forces at Ahn'Qiraj.⟦36⟧⟦37⟧You gonna help us out again ⟦38⟧?",
+  "quest:8510:progress:0": "Ok, so it looks like I still need more ⟦E14⟧, ⟦39⟧ . I would imagine that you will be able to find them in the general location that you gathered them up last time. The war effort is coming along nicely, but the quicker we get these, the faster we can start up the offensive against the forces at Ahn'Qiraj. ⟦40⟧ You gonna help us out again, ⟦41⟧ ?",
+  "quest:8510:completion:0": "Simply outstanding, ⟦42⟧ ! You're a real credit to the ⟦E6⟧. I'll make sure to get these herbs packed away until someone comes to make them into something useful for the war. Feel free to come back around anytime, especially if you have more ⟦E14⟧ for me.",
+  "quest:8512:title": "⟦E15⟧",
+  "quest:8512:desc:0": "Bring 10 ⟦E16⟧ to Bonnie Stoneflayer at the airfield in ⟦E7⟧.",
+  "quest:8512:details:0": "Good to see you again ⟦43⟧. It does appear that we need more ⟦E16⟧ for the creation of the various war materiel. If you could bring me a ⟦E10⟧ of ten that would be just perfect.",
+  "quest:8512:progress:0": "Good to see you again, ⟦44⟧. It does appear that we need more ⟦E16⟧ for the creation of the various war materiels. If you would bring me a ⟦E10⟧ of ten, that would be just perfect.",
+  "quest:8512:completion:0": "Thank you for your generous donation, ⟦45⟧. I'm going to get those onto the pile right now, and in no time I'm sure that they'll get changed into a nice set of ⟦E9⟧, some leather patches, or used for something else in our preparations. Seems like we're always in need of more ⟦E16⟧. Come back and visit me soon.",
+  "quest:8514:title": "The ⟦E6⟧ Needs More ⟦E17⟧!",
+  "quest:8514:desc:0": "Bring 10 medium leather to Private Porter at the airfield in ⟦E7⟧.",
+  "quest:8514:details:0": "Yes ⟦46⟧, looks like we've collected $2063w pieces of medium leather to date. I know it's a lot to ask, but if you're still willing, I could use your help in attempting to put a dent in the rest of my quota.",
+  "quest:8514:progress:0": "Yes sir, looks like we've collected many pieces of medium leather, but we need more. I can assure you that it will all be put to good use; not one piece will get wasted. I know it's a lot to ask, but if you're still willing, I could use your help in attempting to put a dent in the rest of my quota.",
+  "quest:8514:completion:0": "Golly, that sure is a lot of medium leather that you've brought round, sir! I'm gonna make sure that all of that gets put to proper use, yes indeed. With your help we'll have filled our estimation for medium leather in no time!⟦47⟧⟦48⟧Thanks, ⟦49⟧!",
+  "quest:8516:title": "The ⟦E6⟧ Needs More ⟦E18⟧!",
+  "quest:8516:desc:0": "Bring 10 thick leather to Marta Finespindle at the airfield in ⟦E7⟧.",
+  "quest:8516:details:0": "Yep, the ⟦E10⟧'s still not high enough. ⟦50⟧, we still haven't reached our goal of $2071w thick leather. Just think of all the things that we can make with all of that leather! All kinds of ⟦E9⟧ and weapons. Stuff for inside the steam tanks and rifle scopes! ⟦E19⟧ goggles, and I bet if it ends up that we collect too much we could give the rest to the ⟦E20⟧ for their zeppelins!⟦51⟧⟦52⟧You gonna bring me back some more thick leather?",
+  "quest:8516:progress:0": "Yep, the ⟦E10⟧'s still not high enough. ⟦53⟧, we still haven't reached our thick leather goal. Just think of all the things that we can make with all of that leather! All kinds of ⟦E9⟧ and weapons. Stuff for inside the steam tanks and rifle scopes! And engineering goggles, those are always fun!⟦54⟧⟦55⟧You gonna bring me back some more thick leather?",
+  "quest:8516:completion:0": "You did it again! That is simply amazing how you go out there, collect all of this stuff, and then bring it back here and hand it over. I tell ya, when they find out how much you've been helping out around here you're not going to be able to walk down the street without people asking you for your autograph!⟦56⟧⟦57⟧Thanks again for your very generous donation of thick leather, ⟦58⟧.",
+  "quest:8518:title": "The ⟦E6⟧ Needs More Linen ⟦E21⟧!",
+  "quest:8518:desc:0": "Bring 20 ⟦E22⟧ bandages to Sentinel Silversky at the airfield in ⟦E7⟧.",
+  "quest:8518:details:0": "Ever am I amazed by the selflessness exhibited when so many would instead turn to selfishness instead. ⟦59⟧, I am still in need of a number of ⟦E22⟧ bandages before my assignment here is fulfilled. Will you aid me once more in the collection of those bandages?",
+  "quest:8518:progress:0": "Ever am I amazed by the selflessness exhibited when so many would instead turn to selfishness instead. ⟦60⟧, I am still in need of a number of ⟦E22⟧ bandages before my assignment here is fulfilled. Will you aid me once more in the collection of those bandages?",
+  "quest:8518:completion:0": "You are to be commended, ⟦61⟧. While there are those that would take advantage of the economics of our war footing to line their pockets in a fervor of greed, you have proven time and again that your devotion to the ⟦E6⟧, and indeed to all of ⟦E23⟧, comes first.⟦62⟧⟦63⟧Blessings of ⟦E24⟧ be with you always!",
+  "quest:8521:title": "The ⟦E6⟧ Needs More Silk ⟦E21⟧!",
+  "quest:8521:desc:0": "Bring 20 ⟦E25⟧ bandages to Nurse Stonefield at the airfield in ⟦E7⟧.",
+  "quest:8521:details:0": "It is very kind of you to offer to help me again ⟦64⟧. It looks like we've collected $2082w ⟦E25⟧ bandages, so we'll need more.",
+  "quest:8521:progress:0": "It is very kind of you to offer to help me again, ⟦65⟧. It looks like we've collected a goodly number of the ⟦E25⟧ bandages we've been tasked with, but we still need more. ⟦66⟧, is there any way that you could see fit to put together another bundle and return them to me here? The ⟦E6⟧ and I will be most grateful.",
+  "quest:8521:completion:0": "You are such a selfless person. Thank you very much for your contribution to the war effort. It's people like you that are going to make the difference between success and failure at Ahn'Qiraj. I just hope that all of this will be enough.⟦67⟧⟦68⟧Thanks again, ⟦69⟧.",
+  "quest:8523:title": "The ⟦E6⟧ Needs More ⟦E26⟧ ⟦E21⟧!",
+  "quest:8523:desc:0": "Bring 20 runecloth bandages to Keeper Moonshade at the airfield in ⟦E7⟧.",
+  "quest:8523:details:0": "So it is that we come to discuss pressing matters yet again ⟦70⟧. Once more I thank you for your previous efforts; it is not everyone who would give so selflessly. But there is still more work to do.⟦71⟧⟦72⟧⟦73⟧, will you once more collect runecloth bandages and return them to me here?",
+  "quest:8523:progress:0": "So it is that we come to discuss pressing matters yet again, ⟦74⟧. Once more I thank you for your previous efforts; it is not everyone who would give so selflessly. But there is still more work to do.⟦75⟧⟦76⟧⟦77⟧, will you once more collect runecloth bandages and return them to me here?",
+  "quest:8523:completion:0": "This is a fine road we are traveling together, ⟦78⟧. You make an excellent working companion. Once more do I give thanks to you for your efforts on behalf of the entire ⟦E6⟧. Come and talk again with me soon.",
+  "quest:8525:title": "The ⟦E6⟧ Needs More ⟦E27⟧!",
+  "quest:8525:desc:0": "Bring 20 rainbow fin albacore to Slicky Gastronome at the airfield in ⟦E7⟧.",
+  "quest:8525:details:0": "What! You again? Well I'll be a monkey's uncle... except that I'm a gnome. Slicky Gastronome to be precise! So you're back to help out again eh? Well, I can't say as I blame you. Don't you just love the smell of all of that food? ⟦79⟧⟦80⟧⟦81⟧Enough loitering! Get out there and bring me back more rainbow fin albacore!",
+  "quest:8525:progress:0": "What! You again? Well I'll be a monkey's uncle... except that I'm a gnome. Slicky Gastronome to be precise! So you're back to help out again, eh? Well, I can't say as I blame you. Don't you just love the smell of all of that food? ⟦82⟧⟦83⟧⟦84⟧Enough loitering! Get out there and bring me back more rainbow fin albacore!",
+  "quest:8525:completion:0": "I knew that you had it in you, kid. You've got the look of someone who knows what she likes. Specifically that you like pleasing me and the powers that be. And that you have, I guarantee.⟦85⟧⟦86⟧Haha, ok, I'll just get these fish properly stashed away, and then you and I can have a little talk concerning you collecting another twenty albacore.",
+  "quest:8527:title": "The ⟦E6⟧ Needs More ⟦E28⟧!",
+  "quest:8527:desc:0": "Bring 20 roast raptor to ⟦E29⟧ Sadwhistle at the airfield in ⟦E7⟧.",
+  "quest:8527:details:0": "Hi again ⟦87⟧. I can tell you're very excited about all of this. So I suppose you want to bring me another twenty roast raptor. Great. Well you do that. I guess I'll see you when you get back.",
+  "quest:8527:progress:0": "Hi again, ⟦88⟧ . I can tell you're very excited about all of this. So I suppose you want to bring me another twenty roast raptor? Great. Well you do that. I guess I'll see you when you get back.",
+  "quest:8527:completion:0": "Wow, you're a real go-getter. You make me tired just looking at you. Anyway, thanks from the ⟦E6⟧ and all that. I'll make sure that all of that dead meat gets packed away. I guess you could check back with me later to see if we still need more of it, though it's starting to stink up the place if you ask me.",
+  "quest:8529:title": "The ⟦E6⟧ Needs More ⟦E30⟧!",
+  "quest:8529:desc:0": "Bring 20 spotted yellowtail to Huntress Swiftriver at the airfield in ⟦E7⟧.",
+  "quest:8529:details:0": "If you're still willing I'd like to send you back out to bring in another haul of spotted yellowtail, ⟦89⟧. I'd imagine with the expertise you gained the first time out that this catch should be much faster and easier. Are you game?",
+  "quest:8529:progress:0": "If you're still willing I'd like to send you back out to bring in another haul of spotted yellowtail, ⟦90⟧. I'd imagine with the expertise you gained the first time out that this catch should be much faster and easier. Are you game?",
+  "quest:8529:completion:0": "You are a true member of the ⟦E6⟧, ⟦91⟧. Your efforts shall not go unnoticed, or unappreciated. And thank you for cooking up the fish as well. I will see to it that they are stored away properly, and then I'll need to update my count. Every one brings us that much closer to catching our goal.",
+  "quest:8533:title": "The ⟦E20⟧ Needs More Copper Bars!",
+  "quest:8533:desc:0": "Bring 20 copper bars to Miner Cromwell in ⟦E31⟧.",
+  "quest:8533:details:0": "⟦E8⟧ so soon? You'll be a real miner in no time ⟦92⟧. So, you already know the drill; I need you to go out, mine up a mess of copper ore, smelt it into bars and bring it back to me here. I know that's something you're capable of, the question is, are you willing?",
+  "quest:8533:progress:0": "⟦E8⟧ so soon? You'll be a real miner in no time, ⟦93⟧. So, you already know the drill; I need you to go out, mine up a mess of copper ore, smelt it into bars and bring it back to me here. I know that's something you're capable of, the question is, are you willing?",
+  "quest:8533:completion:0": "You've proven yourself to me yet again, ⟦94⟧. I will see to it that this copper is used in due time. For now though, I need to get these copper bars onto the pallet and tallied. If you still feel inclined, I could probably use your help in gathering even more copper bars.",
+  "quest:8543:title": "The ⟦E20⟧ Needs More Tin Bars!",
+  "quest:8543:desc:0": "Bring 20 tin bars to Grunt Maug in ⟦E31⟧.",
+  "quest:8543:details:0": "Very good, I see that you are serious about the war. I'm a little edgy waiting for it to start though, which means I'm going to get angry if you don't start bringing in the goods faster. Maybe I can just practice on you instead.⟦95⟧⟦96⟧Har! Maybe not, 'cuz then who would bring me back the tin bars?",
+  "quest:8543:progress:0": "Very good, I see that you are serious about the war. I'm a little edgy waiting for it to start though, as I'm sure you are as well, ⟦97⟧. It will be glorious when it begins. The ⟦E20⟧ running over the sands of the ⟦E32⟧ desert, weapons in hand, charging headlong into the insect masses. Great honor will be had that day by all!⟦98⟧⟦99⟧Har! But first we need more tin bars. Funny how such a small thing may make such a huge difference, don't you think?",
+  "quest:8543:completion:0": "Throm'ka, ⟦100⟧. You honor me and the ⟦E20⟧ with your tin bars. I will put them on the ⟦E10⟧ and then they will come and make things from them. And then when that is all done we will go to war and show the puny ⟦E6⟧ how to fight the bugs.⟦101⟧⟦102⟧Now bring me back more tin bars!",
+  "quest:8544:title": "⟦E33⟧",
+  "quest:8544:desc:0": "Bring the ⟦E34⟧, 2 ⟦E35⟧ of Night, 5 Stone Scarabs and 5 Clay Scarabs to Andorgos in Ahn'Qiraj. You must also attain ⟦E36⟧ reputation with the Brood of Nozdormu to complete this quest.",
+  "quest:8544:details:0": "It is said among us that the ornate shoulder ⟦E9⟧ worn by the mortal races started as an attempt to emulate the wings of a dragon.⟦103⟧⟦104⟧Bring me the bindings worn by the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful than even the wings of ⟦E37⟧ himself!",
+  "quest:8544:progress:0": "Have you collected the components I require?",
+  "quest:8544:completion:0": "From the materials you bring and from the scales of our fallen Qiraji foes I make you these pauldrons, mortal. May they grant you the protection you need and may the sight of them ⟦E38⟧ ⟦E39⟧ into our ⟦E40⟧.",
+  "quest:8546:title": "The ⟦E20⟧ Needs More Mithril Bars!",
+  "quest:8546:desc:0": "Bring 20 Mithril Bars to Senior Sergeant T'kelah at the Valley of Spirits in ⟦E41⟧.",
+  "quest:8546:details:0": "Yup, I be glad you're here, mon. You helped me before, and now I need your help again. We still lookin' ta bring in more mithril bars for the war effort; gonna build lots of ⟦E9⟧ and weapons and things to go squish them bugs at Ahn'Qiraj.⟦105⟧⟦106⟧So if you be a true friend, you bring me back more stacks of mithril bars. I take all you got until we ⟦E42⟧ our quota. You have some for me now?",
+  "quest:8546:progress:0": "Yup, I be glad you're here, mon. You helped me before, and now I need your help again. We still lookin' ta bring in more mithril bars for the war effort; gonna build lots of ⟦E9⟧ and weapons and things to go squish them bugs at Ahn'Qiraj. ⟦107⟧ So if you be a true friend, you bring me back more stacks of mithril bars. I take all you got until we ⟦E42⟧ our quota. You have some for me now?\n⟦E43⟧ ( 20 )",
+  "quest:8546:completion:0": "That be good work ⟦108⟧! Another twenty bars get us that much closer to the goal, and get us more war materiel. I see to it they get put away. And if you get another ⟦E10⟧ of mithril bars mon, you make sure to be bringin' them here to me.",
+  "quest:8550:title": "⟦E44⟧",
+  "quest:8550:desc:0": "Bring 20 ⟦E45⟧ to Herbalist Proudfeather at the Valley of Spirits in ⟦E41⟧.",
+  "quest:8550:details:0": "Hello again, Abyssmal. I am glad that you wish to speak to me once more concerning our neverending need for peacebloom. The war effort continues, and with it our production of potions and elixirs to aid in the battles to come. Will you help us again, ⟦109⟧? I am in need of the same amount of peacebloom as before, so if you can gather it up and return it to me here I would be most grateful. Of course, if you already have it on your person, I will be more than happy to accept it from you now",
+  "quest:8550:completion:0": "Thank you for your continued efforts, ⟦110⟧. You bring great honor to yourself and your ancestors with your selfless giving, and it will be known to all! I will store these herbs away so that they stay fresh until they are needed. Once again you reveal the truest spirit of the ⟦E20⟧, the struggle to overcome and the promise that we can work together to do so.",
+  "quest:8559:title": "⟦E46⟧",
+  "quest:8559:desc:0": "Bring the ⟦E34⟧, 2 ⟦E35⟧ of War, 5 Ivory Scarabs and 5 Gold Scarabs to Kandrostrasz in Ahn'Qiraj. This quest also ⟦E47⟧ ⟦E36⟧ faction with the Brood of Nozdormu.",
+  "quest:8559:details:0": "Qiraji magic is strong and ancient.  The most powerful qiraji wield items of such might, they'd give pause even to a dragon.⟦111⟧⟦112⟧Bring me the qiraji bindings of command and other minor components by and I'll create a set of powerful boots for you.⟦113⟧⟦114⟧You will find them useful in the fight against the ⟦E48⟧.",
+  "quest:8559:progress:0": "You've acquired the items I requested, ⟦115⟧?",
+  "quest:8559:completion:0": "You've done well, ⟦116⟧. You've proven you're no ordinary mortal.⟦117⟧⟦118⟧I give you these with the confidence they'll aid you in crushing the vile qiraji.",
+  "quest:8560:title": "⟦E49⟧",
+  "quest:8560:desc:0": "Bring ⟦E50⟧, 2 ⟦E35⟧ of Death, 5 Bronze Scarabs and 5 Ivory Scarabs to Kandrostrasz inside Ahn'Qiraj. You must also attain ⟦E51⟧ reputation with the Brood of Nozdormu to complete this quest.",
+  "quest:8560:details:0": "You seek to prove your worth to my kind, mortal?  Very well, perhaps we can be of mutual assistance.⟦119⟧⟦120⟧The ancient sandworm, Ouro, is a being of legendary power.  He is rumored to have been created by the Old God himself as a mockery of life.⟦121⟧⟦122⟧His skin is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with the speed and grace of a much smaller creature.⟦123⟧⟦124⟧Bring me a sample of his skin along with other minor components and I shall craft you leggings of great power.",
+  "quest:8560:progress:0": "Did you bring the components I require, ⟦125⟧?",
+  "quest:8560:completion:0": "Yes... the worm's hide will make for an excellent protective layer. Combined with the strongest parts from the Qiraji we've destroyed on our way here, this should make for a formidable piece of ⟦E9⟧. May it aid you in facing the unspeakable horrors that await inside!",
+  "quest:8561:title": "⟦E52⟧",
+  "quest:8561:desc:0": "Bring ⟦E53⟧, 2 ⟦E35⟧ of the Sun, 5 Stone Scarabs and 5 Crystal Scarabs to Andorgos in Ahn'Qiraj. You must also attain ⟦E51⟧ reputation with the Brood of Nozdormu to complete this quest.",
+  "quest:8561:details:0": "The Twin Emperors... their incessant whispers are slowly taking a toll on my sanity.  They mock me, knowing I cannot step further into their domain to save my brother Arygos.⟦126⟧⟦127⟧In my visions I see their monstrous faces adorned by powerful crowns.  But I will have my revenge... I will transmute these symbols of Qiraji power to ones better suited to our needs.⟦128⟧⟦129⟧Bring me the components I require, ⟦130⟧.  I will give you a headpiece of unmatched power.",
+  "quest:8561:progress:0": "Did you bring me the components I asked for, ⟦131⟧?",
+  "quest:8561:completion:0": "You've succeeded! The whispers from the Twin Emperors have ceased.⟦132⟧⟦133⟧Take this as a reward. The mere sight of it will ⟦E38⟧ ⟦E39⟧ in the hearts of the Qiraji... it shall remind them of their fallen leaders and of the mortal that slew them.",
+  "quest:8562:title": "⟦E54⟧",
+  "quest:8562:desc:0": "Bring the the ⟦E55⟧, 2 ⟦E35⟧ of War, 5 Silver Scarabs and 5 Bone Scarabs to Vethsera inside Ahn'Qiraj. You must also attain ⟦E56⟧ reputation with the Brood of Nozdormu to complete this quest.",
+  "quest:8562:details:0": "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj.  The terrible fate that awaits ⟦E23⟧ could come in days or years; time has no meaning for beings of his power.⟦134⟧⟦135⟧When the stars are favorable, he will lash out against all living beings with terrible wrath.  You must find him before then and find a way to bring his existence to an end.⟦136⟧⟦137⟧Do this and bring me a piece of his husk.  I shall grant you ⟦E9⟧ no mortal has ever worn... ⟦E9⟧ fit for one who has slain a god!",
+  "quest:8562:progress:0": "At his dwelling in Ahn'Qiraj, dread C'Thun awaits in slumber.",
+  "quest:8562:completion:0": "I did not expect you to return from your attempt, ⟦138⟧.⟦139⟧⟦140⟧You've fulfilled a destiny greater than that of most immortal beings.⟦141⟧⟦142⟧By slaying C'Thun you've not only saved all of ⟦E23⟧, you've also tipped the scales of cosmic events beyond your comprehension.⟦143⟧⟦144⟧Accept this breastplate as a symbol of the glory and burden that will come as a consequence of your actions.⟦145⟧⟦146⟧May its power aid you in the challenges that await you, god-slayer!",
+  "quest:8581:title": "The ⟦E20⟧ Needs More ⟦E57⟧!",
+  "quest:8581:desc:0": "Bring 20 ⟦E57⟧ to Batrider Pele'keiki at the Valley of Spirits in ⟦E41⟧.",
+  "quest:8581:details:0": "Pele'keiki know you come to help. Bring many firebloom and make him very happy. Pele'keiki might make big bombs with firebloom. Drop them on insects from his bat over Ahn'Qiraj when war come. But Pele'keiki need more firebloom, ⟦147⟧!⟦148⟧⟦149⟧You gonna bring Pele'keiki that firebloom, real quick now. Come back with at least as much as last time, and Pele'keiki be pleased.",
+  "quest:8581:progress:0": "Pele'keiki know you come to help. Bring many firebloom and make him very happy. Pele'keiki might make big bombs with firebloom. Drop them on insects from his bat over Ahn'Qiraj when war come. But Pele'keiki need more firebloom, ⟦150⟧ ! ⟦151⟧ You gonna bring Pele'keiki that firebloom, real quick now. Come back with at least as much as last time, and Pele'keiki be pleased.\n⟦E57⟧ ( 20 )",
+  "quest:8581:completion:0": "This no joke, ⟦152⟧? You bring Pele'keiki firebloom that fast? Pele'keiki count them up right now, mon! You makin' Pele'keiki so happy, he be tellin' everyone, ⟦153⟧ best firebloom collector ever! Pele'keiki can't wait for war to start. Now we really light up the sky over ⟦E32⟧, right, bruddah?!",
+  "quest:8583:title": "The ⟦E20⟧ Needs More ⟦E13⟧!",
+  "quest:8583:desc:0": "Bring 20 ⟦E13⟧ to Apothecary Jezel at the Valley of Spirits in ⟦E41⟧.",
+  "quest:8583:details:0": "In fact it does appear that we are in need of even more purple lotus, ⟦154⟧. While my own studies have yet to determine a new useful application for the herb, there are tried and true methodologies yet to be employed.⟦155⟧⟦156⟧I need you to once again go out into the field and collect at least twenty purple lotus samples. Return them to me here.",
+  "quest:8583:progress:0": "In fact it does appear that we are in need of even more purple lotus, ⟦157⟧ . While my own studies have yet to determine a new useful application for the herb, there are tried and true methodologies yet to be employed. ⟦158⟧ I need you to once again go out into the field and collect at least twenty purple lotus samples. Return them to me here.\n⟦E13⟧ ( 20 )",
+  "quest:8583:completion:0": "Excellent and precise work, ⟦159⟧. Your diligence is to be commended, as is your celerity. I will personally see to it that none of these purple lotus go to waste.⟦160⟧⟦161⟧Thank you again, and should you come by more purple lotus do not hesitate to bring them to me with utmost haste."
+ },
+ "context": {
+  "quest:8238": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Vinchaxa",
+   "turner": "Vinchaxa"
+  },
+  "quest:8239": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Vinchaxa",
+   "turner": "Vinchaxa"
+  },
+  "quest:8243": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rin'wosho the Trader",
+   "turner": "Rin'wosho the Trader"
+  },
+  "quest:8246": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Rin'wosho the Trader",
+   "turner": "Rin'wosho the Trader"
+  },
+  "quest:8493": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sergeant Stonebrow",
+   "turner": "Sergeant Stonebrow"
+  },
+  "quest:8495": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Corporal Carnes",
+   "turner": "Corporal Carnes"
+  },
+  "quest:8500": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Dame Twinbraid",
+   "turner": "Dame Twinbraid"
+  },
+  "quest:8504": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Private Draxlegauge",
+   "turner": "Private Draxlegauge"
+  },
+  "quest:8506": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Master Nightsong",
+   "turner": "Master Nightsong"
+  },
+  "quest:8510": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sergeant Major Germaine",
+   "turner": "Sergeant Major Germaine"
+  },
+  "quest:8512": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bonnie Stoneflayer",
+   "turner": "Bonnie Stoneflayer"
+  },
+  "quest:8514": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Private Porter",
+   "turner": "Private Porter"
+  },
+  "quest:8516": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Marta Finespindle",
+   "turner": "Marta Finespindle"
+  },
+  "quest:8518": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sentinel Silversky",
+   "turner": "Sentinel Silversky"
+  },
+  "quest:8521": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Nurse Stonefield",
+   "turner": "Nurse Stonefield"
+  },
+  "quest:8523": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Keeper Moonshade",
+   "turner": "Keeper Moonshade"
+  },
+  "quest:8525": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Slicky Gastronome",
+   "turner": "Slicky Gastronome"
+  },
+  "quest:8527": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sarah Sadwhistle",
+   "turner": "Sarah Sadwhistle"
+  },
+  "quest:8529": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntress Swiftriver",
+   "turner": "Huntress Swiftriver"
+  },
+  "quest:8533": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Miner Cromwell",
+   "turner": "Miner Cromwell"
+  },
+  "quest:8543": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Grunt Maug",
+   "turner": "Grunt Maug"
+  },
+  "quest:8544": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Andorgos",
+   "turner": "Andorgos"
+  },
+  "quest:8546": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Senior Sergeant T'kelah",
+   "turner": "Senior Sergeant T'kelah"
+  },
+  "quest:8550": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Herbalist Proudfeather",
+   "turner": "Herbalist Proudfeather"
+  },
+  "quest:8559": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Kandrostrasz",
+   "turner": "Kandrostrasz"
+  },
+  "quest:8560": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Kandrostrasz",
+   "turner": "Kandrostrasz"
+  },
+  "quest:8561": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Andorgos",
+   "turner": "Andorgos"
+  },
+  "quest:8562": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Vethsera",
+   "turner": "Vethsera"
+  },
+  "quest:8581": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Batrider Pele'keiki",
+   "turner": "Batrider Pele'keiki"
+  },
+  "quest:8583": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Apothecary Jezel",
+   "turner": "Apothecary Jezel"
+  }
+ }
+}

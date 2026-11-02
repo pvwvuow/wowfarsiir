@@ -1,0 +1,813 @@
+{
+ "pack": "quest-sort:seasonal-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:seasonal-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Thunder Bluff Marzipan",
+   "fa": "مارزیپان تاندر بلوف",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Darkspear Gumdrop",
+   "fa": "ژله‌دانهٔ دارک‌اسپیر",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Orgrimmar Nougat",
+   "fa": "نوقای اورگیمار",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Undercity Mint",
+   "fa": "نعنای شهر زیرین",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Rotten Eggs",
+   "fa": "تخم‌مرغ‌های گندیده",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Stink Bomb Cleaner",
+   "fa": "خنثی‌کنندهٔ بمبِ بو",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Metzen the Reindeer",
+   "fa": "متزن گوزن شمالی",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Pouch of Reindeer Dust",
+   "fa": "کیسهٔ گرد گوزن شمالی",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Deeprock Salt",
+   "fa": "نمک دیپ‌راک",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Preserved Holly",
+   "fa": "خاسِ محفوظ",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Carefully Penned Note",
+   "fa": "یادداشتِ نوشته‌شدهٔ موقر",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Creased Letter",
+   "fa": "نامهٔ چروک",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Immaculate Letter",
+   "fa": "نامهٔ بی‌لکه",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Slightly Creased Note",
+   "fa": "یادداشتِ چروکِ جزئی",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Carefully Written Letter",
+   "fa": "نامهٔ نوشته‌شدهٔ موقر",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Lovingly Composed Letter",
+   "fa": "نامهٔ سروده‌شدهٔ عاشقانه",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Stormwind Guard's Card",
+   "fa": "کارت نگهبان استورم‌ویند",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Guardian's Moldy Card",
+   "fa": "کارت کپک‌زدهٔ نگهبان",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "immune to",
+   "fa": "مصون در برابر",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Cologne Bottle",
+   "fa": "بطری ادکلن",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Perfume Bottle",
+   "fa": "بطری عطر",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Innkeeper",
+   "fa": "مهمان‌دار",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Mara",
+   "fa": "مارا",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E40": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E41": {
+   "en": "Shadow Council",
+   "fa": "شورای سایه",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Smokywood Supplies",
+   "fa": "تدارکاتِ اسموکی‌وود",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "party",
+   "fa": "گروه",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "Hunter",
+   "fa": "شکارچی",
+   "kind": "cls"
+  }
+ },
+ "glossary": {
+  "Orgrimmar": "اورگریمار",
+  "Undercity": "آندر‌سیتی",
+  "Thunder Bluff": "تاندر بلاف",
+  "Thunder Bluff Marzipan": "مارزیپان تاندر بلوف",
+  "Darkspear Gumdrop": "ژله‌دانهٔ دارک‌اسپیر",
+  "Orgrimmar Nougat": "نوقای اورگیمار",
+  "Undercity Mint": "نعنای شهر زیرین",
+  "Rotten Eggs": "تخم‌مرغ‌های گندیده",
+  "Southshore": "ساحل جنوبی",
+  "Use": "استفاده",
+  "Stink Bomb Cleaner": "خنثی‌کنندهٔ بمبِ بو",
+  "Forsaken": "مطرودان",
+  "Horde": "هورد",
+  "Ironforge": "آیرون‌فورج",
+  "Metzen the Reindeer": "متزن گوزن شمالی",
+  "Pouch of Reindeer Dust": "کیسهٔ گرد گوزن شمالی",
+  "Deeprock Salt": "نمک دیپ‌راک",
+  "Preserved Holly": "خاسِ محفوظ",
+  "Carefully Penned Note": "یادداشتِ نوشته‌شدهٔ موقر",
+  "Stormwind": "استورم‌ویند",
+  "Creased Letter": "نامهٔ چروک",
+  "Immaculate Letter": "نامهٔ بی‌لکه",
+  "Slightly Creased Note": "یادداشتِ چروکِ جزئی",
+  "miss": "خطا",
+  "chance": "شانس",
+  "Carefully Written Letter": "نامهٔ نوشته‌شدهٔ موقر",
+  "Mulgore": "مولگر",
+  "Lovingly Composed Letter": "نامهٔ سروده‌شدهٔ عاشقانه",
+  "Tor": "تور",
+  "Stormwind Guard's Card": "کارت نگهبان استورم‌ویند",
+  "threat": "تیت",
+  "Alliance": "اتحاد",
+  "Guardian's Moldy Card": "کارت کپک‌زدهٔ نگهبان",
+  "immune to": "مصون در برابر",
+  "Cologne Bottle": "بطری ادکلن",
+  "Perfume Bottle": "بطری عطر",
+  "Innkeeper": "مهمان‌دار",
+  "Mara": "مارا",
+  "Mage": "جادوگر",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Shadow Council": "شورای سایه",
+  "Smokywood Supplies": "تدارکاتِ اسموکی‌وود",
+  "party": "گروه",
+  "Hunter": "شکارچی"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$C",
+  "16": "$N"
+ },
+ "rows": {
+  "quest:8312:obj:0": "Speak with the innkeepers of ⟦E1⟧, ⟦E2⟧, and ⟦E3⟧, as well as Kali Remik in Sen'jin Village. Perform the tricks they ask of you in exchange for the treats they offer.",
+  "quest:8312:obj:1": "Return to Spoops at the ⟦E1⟧ Orphanage with a ⟦E4⟧, ⟦E5⟧, ⟦E6⟧, and ⟦E7⟧.",
+  "quest:8312:details:0": "I want to go trick-or-treating, but I can't because I'm sick. If you go for me, I'd trade you the candy you get for some I already have! I think you'd like this candy - it makes you turn into things both funny and scary!",
+  "quest:8312:details:1": "Each of the innkeepers in the big cities have candy they give for Hallow's End - talk to them and do the tricks they ask for! Also, a troll named Kali Remik in Sen'jin Village is handing out candy as well. When you have all the candy, bring them back to me here!",
+  "quest:8312:progress:0": "Have you finished trick-or-treating yet?  I'm sad that I can't go because I'm sick, but you helping me out makes me feel a little better...",
+  "quest:8312:completion:0": "Wow, you got them all! You're awesome!",
+  "quest:8312:completion:1": "Thank you for trick-or-treating for me. Here, take these pumpkin treats - I think you'll like them a lot!",
+  "quest:8312:completion:2": "Happy Hallow's End, ⟦1⟧!",
+  "quest:8322:obj:0": "Place the ⟦E8⟧ in the main brew keg located inside the ⟦E9⟧ Inn.",
+  "quest:8322:details:0": "The humans of ⟦E9⟧ love their ale, and as such they prize the ale served at the ⟦E9⟧ Inn. With the chaos of Hallow's End now upon them, we can use it to ruin their latest batch of beverages for weeks - if not months to come!",
+  "quest:8322:details:1": "Take these rotten eggs and place them in the main brew keg inside the ⟦E9⟧ Inn. Your presence alone will cause strife, so be prepared to defend yourself!",
+  "quest:8322:details:2": "Once you've given ⟦E9⟧ a taste they'll not soon forget, return to me here at the festival!",
+  "quest:8322:completion:0": "The keg is filled with ale.",
+  "quest:8322:completion:1": "Having successfully fought your way inside the inn, you now place the eggs inside the keg. You can smell the foul odor permeating the air...",
+  "quest:8373:obj:0": "⟦E10⟧ a ⟦E11⟧ to remove any ⟦E12⟧ Stink Bomb that's been dropped on ⟦E9⟧. Return to Sergeant Hartman in ⟦E9⟧ when you're done.",
+  "quest:8373:details:0": "The thing I hate the most about Hallow's End are the stink bombs the ⟦E12⟧ use on ⟦E9⟧. Who knew that celebrating liberation would have to involve such a smelly mess?",
+  "quest:8373:details:1": "During Hallow's End, use this cleaner to remove any nasty stink bombs the ⟦E13⟧ may drop here in the village. It uses the power of pine to fight funky smells.",
+  "quest:8373:details:2": "Do your part to keep ⟦E9⟧ clean, and I'll give you some Hallow's End treats I'm sure you'll enjoy. We have a deal?",
+  "quest:8373:completion:0": "Ah, it almost smells better around here already. Almost.",
+  "quest:8373:completion:1": "Thanks to you, ⟦2⟧, ⟦E9⟧ just might make it through another Hallow's End. Here's your treats, with my thanks! If you run out of candy, I think there's a gnome named Katrina Shimmerstar in ⟦E14⟧ who can sell you more; she's only around during Hallow's End, I believe.",
+  "quest:8409:obj:0": "Return to Darkcaller Yanka at the Wickerman Festival in Tirisfal Glade.",
+  "quest:8409:details:0": "The rotten eggs have been successfully placed inside the keg. Future batches of ale from the ⟦E9⟧ Inn are sure to be ruined!",
+  "quest:8409:details:1": "You should now report back to Darkcaller Yanka at the Wickerman Festival in Tirisfal Glade and report your success.",
+  "quest:8409:completion:0": "Ah, success! You've shown true Hallow's End spirit - FORSAKEN spirit, I should say!",
+  "quest:8409:completion:1": "B<Darkcaller Yanka laughs and rubs her hands together.>",
+  "quest:8409:completion:2": "I revel in the fact that ⟦E9⟧ must now feast on bad ale or go without! As for you, take these treats. I believe you will find good use for them!",
+  "quest:8746:obj:0": "Find ⟦E15⟧. ⟦E10⟧ the notes provided to you for clues as to where he is being held.",
+  "quest:8746:obj:1": "When you find Metzen, have the ⟦E16⟧ in your possession so you can sprinkle some of the dust on him; this should free Metzen from his bonds of captivity.",
+  "quest:8746:obj:2": "Return the ⟦E16⟧ to Kaymard Copperpinch in ⟦E1⟧ once Metzen is freed.",
+  "quest:8746:details:0": "DISASTER has struck! ⟦E15⟧ has been kidnapped!",
+  "quest:8746:details:1": "Metzen is one of Great-father Winter's eight reindeer - and property of Smokywood Pastures. We've received not one but TWO ransom letters from groups claiming to have Metzen. With the holiday season well under way, we're strapped to the coin box here! Please - find Metzen and return him to us!",
+  "quest:8746:details:2": "Check out the ransom letters for clues, and sprinkle this reindeer dust on him - it will free him from any of his bonds!",
+  "quest:8746:details:3": "Please, hurry!",
+  "quest:8746:progress:0": "⟦3⟧!  Did you find him?  Were the notes in the satchel I gave you enough information to locate Metzen?  I hate to think of what those cruel thugs might do to him... but there's no way we can afford to pay such an exorbitant ransom!",
+  "quest:8746:completion:0": "You did it! Huzzah!",
+  "quest:8746:completion:1": "Metzen flew back into Great-father Winter's stables - yes Metzen can really fly - just a little while ago! The dust worked like a charm; I knew it would. You've saved the Feast of Winter Veil as well as Smokywood Pastures from disaster. Thank you, ⟦4⟧.",
+  "quest:8746:completion:2": "Listen... because of what you've done here, I want you to have this. It's something VERY special; if you have a mount, I think you'll get a kick out of it. Happy Winter Veil!",
+  "quest:8762:obj:0": "Find ⟦E15⟧. ⟦E10⟧ the notes provided to you for clues as to where he is being held.",
+  "quest:8762:obj:1": "When you find Metzen, have the ⟦E16⟧ in your possession so you can sprinkle some of the dust on him; this should free Metzen from his bonds of captivity.",
+  "quest:8762:obj:2": "Return the ⟦E16⟧ to Wulmort Jinglepocket in ⟦E14⟧ once Metzen is freed.",
+  "quest:8762:details:0": "DISASTER has struck! ⟦E15⟧ has been kidnapped!",
+  "quest:8762:details:1": "Metzen is one of Greatfather Winter's eight reindeer - and property of Smokywood Pastures. We've received not one but TWO ransom letters from groups claiming to have Metzen. With the holiday season well under way, we're strapped to the coin box here! Please - find Metzen and return him to us!",
+  "quest:8762:details:2": "Check out the ransom letters for clues, and sprinkle this reindeer dust on him - it will free him from any of his bonds!",
+  "quest:8762:details:3": "Please, hurry!",
+  "quest:8762:progress:0": "⟦5⟧!  Were the notes in the satchel I gave you enough information to locate Metzen?  I hate to think of what those cruel thugs might do to him... but there's no way we can afford to pay such an exorbitant ransom!",
+  "quest:8762:completion:0": "You did it! Huzzah!",
+  "quest:8762:completion:1": "Metzen flew back into Greatfather Winter's stables - yes Metzen can really fly - just a little while ago! The dust worked like a charm; I knew it would. You've saved the Feast of Winter Veil as well as Smokywood Pastures from disaster. Thank you, ⟦6⟧.",
+  "quest:8762:completion:2": "Listen... because of what you've done here, I want you to have this. It's something VERY special; if you have a mount, I think you'll get a kick out of it. Happy Winter Veil!",
+  "quest:8763:obj:0": "Bring 1 ⟦E17⟧ and 5 gold coins to any Holly Preserver machine, upon which you will receive 5 ⟦E18⟧.",
+  "quest:8763:details:0": "Listen... I'm not really supposed to be telling you this, but since you're the hero of the day and all...",
+  "quest:8763:details:1": "There's fresh holly everywhere this time of the year, but it never lasts. We've got a machine that preserves holly - it never goes bad! We use it to spice up the holiday... and profits during the summer!",
+  "quest:8763:details:2": "I'll let you use the preserver, but only if you're a master cook. You'll need some deeprock salt and two, three, oh let's say five gold. It'll net you a nice batch that's yours to keep.",
+  "quest:8763:progress:0": "The \"Holly Preserver\" machine looks like some sort of still at first, but a careful examination of it reveals some goblin-esque changes to it. Still, your skill at cooking seems to allow you to understand how the machine works. ⟦7⟧⟦8⟧There is already fresh holly in the machine - you simply need to provide some deeprock salt and five gold coins to get the machine working.",
+  "quest:8763:completion:0": "The machine lets off a little rumble and a small amount of steam as it starts working. It is not too long thereafter until it stops, heralded by another small jet of steam erupting from it. A door hatch opens, revealing a batch of preserved holly!",
+  "quest:8799:obj:0": "Bring 1 ⟦E17⟧ and 5 gold coins to the Holly Preserver machine, upon which you will receive 5 ⟦E18⟧.",
+  "quest:8799:details:0": "Listen... I'm not really supposed to be telling you this, but since you're the hero of the day and all...",
+  "quest:8799:details:1": "There's fresh holly everywhere this time of the year, but it never lasts. We've got a machine that preserves holly - it never goes bad! We use it to spice up the holiday... and profits during the summer!",
+  "quest:8799:details:2": "I'll let you use the preserver, but only if you're a master cook. You'll need some deeprock salt and two, three, oh let's say five gold. It'll net you a nice batch that's yours to keep.",
+  "quest:8799:progress:0": "The \"Holly Preserver\" machine looks like some sort of still at first, but a careful examination of it reveals some goblin-esque changes to it. Still, your skill at cooking seems to allow you to understand how the machine works. ⟦9⟧⟦10⟧There is already fresh holly in the machine - you simply need to provide some deeprock salt and five gold coins to get the machine working.",
+  "quest:8799:completion:0": "The machine lets off a little rumble and a small amount of steam as it starts working. It is not too long thereafter until it stops, heralded by another small jet of steam erupting from it. A door hatch opens, revealing a batch of preserved holly!",
+  "quest:8897:obj:0": "Deliver Lieutenant Heldric's ⟦E19⟧ to Colara Dean outside the bank in ⟦E20⟧.",
+  "quest:8897:details:0": "I've got to keep watch here at the gate, but I'm always worrying about my sweetheart, Colara. I only get to see her for a few hours, if I'm lucky, and well, just look at me. I've got a minor officer's pay and I could be called to the front any day now.",
+  "quest:8897:details:1": "Would she just forget about me? There are a lot of men in the city. A lot of rich ones.",
+  "quest:8897:details:2": "Anyways, I've scribbled some things down... nothing much, but if you could take it to her for me, that'd be great.",
+  "quest:8897:progress:0": "Hello there, handsome. Something I can help you with?",
+  "quest:8897:completion:0": "Oh, isn't that sweet! This is the first time he's ever sent me something. Do you suppose he's getting serious?",
+  "quest:8897:completion:1": "Colara Heldric? I suppose it has a ring to it. Oh, but I'm getting ahead of myself. Thank you.",
+  "quest:8898:obj:0": "Deliver the ⟦E21⟧ to Colara Dean outside the bank in ⟦E20⟧.",
+  "quest:8898:details:0": "I met a lass in ⟦E20⟧ when I was last there on the bank's business. She stole my heart away. Now, I can't stop thinking about her! I'd like to send her this message - I've rewritten it twelve times!",
+  "quest:8898:details:1": "The mail is so full now, and I want to make sure it gets there.",
+  "quest:8898:details:2": "If you're heading that way, could you help me?",
+  "quest:8898:progress:0": "Hello there, handsome. Something I can help you with?",
+  "quest:8898:completion:0": "Tormek? Oh yes, I do remember him. He had quite a nice beard and smile underneath.",
+  "quest:8898:completion:1": "Ah, I can't believe he remembered me!",
+  "quest:8899:obj:0": "Deliver the ⟦E22⟧ to Colara Dean outside the bank in ⟦E20⟧.",
+  "quest:8899:details:0": "How to describe her beauty? Thousands of years of words and I am at a loss.",
+  "quest:8899:details:1": "These mortals confound the mind and leave us babbling fools.",
+  "quest:8899:details:2": "I've stared at these words too long. No more eloquent meaning can I squeeze from them. No, she must have it now, or some other suitor will surely steal her eye.",
+  "quest:8899:progress:0": "Hello there, handsome. Something I can help you with?",
+  "quest:8899:completion:0": "I've never received something like this before. How lovely!",
+  "quest:8900:obj:0": "Deliver the ⟦E23⟧ to Elenia Haydon near the bank in the ⟦E2⟧.",
+  "quest:8900:details:0": "She was so sad. I could see that, once I saw past her state. I mean, she seemed sad - wouldn't you?",
+  "quest:8900:details:1": "But after talking to her, there was a connection. I didn't think anyone could understand what I was thinking, but she could.",
+  "quest:8900:details:2": "When I told the others, they laughed at me, so I never spoke with her again. But I ⟦E24⟧ her. Can you take this letter to her for me? I want to be sure it finds her hands.",
+  "quest:8900:progress:0": "Oh, and to what do I owe this pleasure?",
+  "quest:8900:completion:0": "You wouldn't expect an orc to be so eloquent. Of course, we never really had a ⟦E25⟧ to know them before now. Thank you for bringing this to me.",
+  "quest:8901:obj:0": "Deliver the ⟦E26⟧ to Elenia Haydon near the bank in the ⟦E2⟧.",
+  "quest:8901:details:0": "Have you ever known love, young one? It was a thing foreign to me until lately, when I met a girl from the ⟦E2⟧, Elenia. It is rare enough for one of my kind to look outside our own, let alone one of the ⟦E12⟧.",
+  "quest:8901:details:1": "But now thoughts of her occupy my mind both days and nights.",
+  "quest:8901:details:2": "If you can, could you take this letter to her? I want her to come here to ⟦E27⟧. I hope that she will say yes.",
+  "quest:8901:progress:0": "Oh, and to what do I owe this pleasure?",
+  "quest:8901:completion:0": "What kind words Temma writes for me. But, as much as his words move me, I cannot consider the love of a tauren. In thoughts, body and mind we are too different.",
+  "quest:8901:completion:1": "It is good I do not have to receive these thoughts of his in person. I could not bear to break his heart.",
+  "quest:8902:obj:0": "Deliver the ⟦E28⟧ to Elenia Haydon near the bank in the ⟦E2⟧.",
+  "quest:8902:details:0": "A lifetime ago, I was betrothed to marry Elenia, my childhood sweetheart. It's been years since I thought about her last, but of late, she frequently occupies my thoughts.",
+  "quest:8902:details:1": "Perhaps, even with everything that has passed, there can be some room in each other's lives for our love.",
+  "quest:8902:details:2": "I'm sure she has changed, also. Can you deliver this letter to her for me? I am too nervous to give it in person.",
+  "quest:8902:progress:0": "Oh, and to what do I owe this pleasure?",
+  "quest:8902:completion:0": "This brings back memories from a lifetime ago, ⟦11⟧. Elenia ⟦E29⟧. That was going to be my name, you know. We would have a beautiful ceremony out on the shores of the lake. When he retired, we'd find a farm to retire to.",
+  "quest:8902:completion:1": "Simple dreams, then.",
+  "quest:8902:completion:2": "But if he saw me now, I doubt he'd even see Elenia in me. Only cold flesh and a dead heart...",
+  "quest:8903:obj:0": "Get a ⟦E30⟧ and return it to Aristan Mottar in ⟦E20⟧.",
+  "quest:8903:details:0": "There's something unnatural about this epidemic of love. It's not proper, it's an eyesore, and at worst, it could be a ⟦E31⟧ to the the safety of the ⟦E32⟧ itself.",
+  "quest:8903:details:1": "Just think: what if the guards have been taken in by this strange affliction? Something must be done.",
+  "quest:8903:details:2": "Go to one of the guards here in ⟦E20⟧ and see if they've been caught up in this foolishness.",
+  "quest:8903:progress:0": "Was I right to worry? Are the guards afflicted with this lovesickness?",
+  "quest:8903:completion:0": "So it is true. This is unbelievable. How could this have happened? Let me think for a moment. There must be a reason behind this.",
+  "quest:8904:obj:0": "Get a ⟦E33⟧ and bring it to Fenstad Argyle in the ⟦E2⟧.",
+  "quest:8904:details:0": "There's something unnatural about this epidemic of love. It's disgusting, and as it lowers our defenses, it could be a ⟦E31⟧ to the all of us.",
+  "quest:8904:details:1": "It's bad enough that so many of our people are caught up in this ridiculous behavior. But I think that it has spread even to our guardians, who should be ⟦E34⟧ such things.",
+  "quest:8904:details:2": "Find one of our guardians and see if they've been caught up in this foolishness.",
+  "quest:8904:progress:0": "Was I right to worry? Have our idiot guardians been overcome?",
+  "quest:8904:completion:0": "So it is true. This is unbelievable. How could this have happened? Let me think for a moment. There must be a reason behind this.",
+  "quest:8979:obj:0": "Bring 1 ⟦E35⟧ and 1 ⟦E36⟧ to Apothecary Zinge in the ⟦E2⟧'s Apothecarium.",
+  "quest:8979:details:0": "I believe I know the cause of this recent behavior. Have you smelled the new fragrance on the wind, over the stink of the canals? The new colognes and perfumes that have come into fashion?",
+  "quest:8979:details:1": "Our thinking has been clouded by some foul alchemy.",
+  "quest:8979:details:2": "There is only one way to be sure - bring a bottle of cologne and perfume to my friend, Apothecary Zinge. The Royal Apothecary Society will find the truth.",
+  "quest:8979:details:3": "B I will reimburse you for their purchase when you return.",
+  "quest:8979:progress:0": "How may I serve you?",
+  "quest:8979:completion:0": "Another one of Fenstad's obsessions, I see. Does he think that the Royal Apothecary Society has nothing better to do than to perform his little investigations?",
+  "quest:8979:completion:1": "Very well, I will humor him once again.",
+  "quest:8980:obj:0": "Return to Fenstad Argyle outside the bank in the ⟦E2⟧.",
+  "quest:8980:details:0": "This is unexpected. It looks like Fenstad might be on to something after all. I found traces of substances used in mind control potions.",
+  "quest:8980:details:1": "It isn't unheard of for perfumes to have some of this, but a few of the ingredients I detected... This is serious alchemy, along the abilities of a member of the Royal Apothecary Society.",
+  "quest:8980:completion:0": "So, I was right. We must waste no time. We must determine the source of these tainted fragrances.",
+  "quest:8980:completion:1": "Here, to repay you for the purchase of the cologne and perfume.",
+  "quest:8982:obj:0": "Speak with ⟦E37⟧ Norman in the ⟦E2⟧.",
+  "quest:8982:details:0": "We must find who the supplier is. I noticed Apothecary Katrina with a bottle of the perfume tucked in her pack. She told me that she purchased it from Norman, the innkeeper.",
+  "quest:8982:completion:0": "Ah yes, I just recently received stock of the perfume and cologne. I don't know how long I can keep it on the shelves - seems like no one can get enough of it.",
+  "quest:8982:completion:1": "If you ask me, I don't see what the big deal is.",
+  "quest:8983:obj:0": "Speak with ⟦E38⟧ Rennick at the tailor's shop in the ⟦E2⟧'s ⟦E39⟧ Quarter.",
+  "quest:8983:details:0": "Something's wrong with my product? Well, I've never seen so many people wanting something so badly.",
+  "quest:8983:details:1": "I bought my supply from a merchant named ⟦E38⟧ Rennick. She's new in town.",
+  "quest:8983:details:2": "She mentioned she had some goods she had to deliver to the tailor in the ⟦E39⟧ Quarter.",
+  "quest:8983:completion:0": "I'm afraid I sold my entire supply of perfume and cologne to Norman, the innkeeper. If you'd like some, you should speak with him - assuming he has any left.",
+  "quest:8983:completion:1": "You shouldn't waste any time, though. I think you'll find the cologne irresistible.",
+  "quest:8984:obj:0": "Find Apothecary Staffron Lerent in the ⟦E40⟧ past Ravenholdt Manor.",
+  "quest:8984:details:0": "Look, the actions of a rogue apothecary are not my concern. If he's undermining our efforts, then let me be the first to point you in the right direction",
+  "quest:8984:details:1": "If he's innocent, then he's got nothing to hide, right?",
+  "quest:8984:details:2": "I purchased the goods from Apothecary Staffron Lerent. He's working in a secluded area past Ravenholdt Manor in the hills over Hillsbrad. To be honest with you, I thought he was a little odd.",
+  "quest:8984:completion:0": "Yes, I made those fragrances. Wonderful smell, isn't it? Irresistible.",
+  "quest:8984:completion:1": "Once the warriors of ⟦E32⟧ and ⟦E13⟧ alike are smitten with these feelings of love, they will be powerless to stop the rise of the ⟦E41⟧.",
+  "quest:8984:completion:2": "They will be weakened, unprepared. As they worry for their loved ones, they will lose their edge.",
+  "quest:8984:completion:3": "The solution was so simple. Why did it take me so long to come upon it? The weakness of all is through the heart. And there is nothing you can do to stop the inevitable.",
+  "quest:9024:obj:0": "Bring 1 ⟦E35⟧ and 1 ⟦E36⟧ to Morgan Pestle in the Trade District of ⟦E20⟧.",
+  "quest:9024:details:0": "I've got it! Have you smelled the new fragrance on the wind? The new colognes and perfumes that have come into fashion? Our guards wouldn't neglect their duties so easily.",
+  "quest:9024:details:1": "That is, unless their thinking has been clouded by some foul alchemy.",
+  "quest:9024:details:2": "There is only one way to be sure - bring a bottle of cologne and perfume to Morgan Pestle, and tell him my suspicions. I will reimburse you for their purchase when you return.",
+  "quest:9024:progress:0": "Something I can help you with?",
+  "quest:9024:completion:0": "I understand Aristan's concerns, but I really think he's overreacting. Let young men and women do what they will. I think Aristan has forgotten what it means to be young and in love.",
+  "quest:9024:completion:1": "But it would be better not to tell him that. We'll humor him.",
+  "quest:9025:obj:0": "Return to Aristan Mottar outside the bank in ⟦E20⟧'s Trade District.",
+  "quest:9025:details:0": "Well, I'll be. It looks like Aristan might be on to something after all. I found traces of substances used in love potions and insidious mind-altering draughts.",
+  "quest:9025:details:1": "It isn't unheard of for perfumes to have some of them, but a few of the ingredients I detected... Smells funny.",
+  "quest:9025:completion:0": "While I thought this would be the case, finding out that my suspicions were correct is still unsettling. We must carefully consider our next move.",
+  "quest:9025:completion:1": "Here, to repay you for the purchase of the cologne and perfume.",
+  "quest:9026:obj:0": "Speak with ⟦E37⟧ Allison at The Gilded Rose in ⟦E20⟧'s Trade District.",
+  "quest:9026:details:0": "We've got to find the source. I've seen a lot more people than usual - guards included - going in and out of The Gilded Rose. Talk to Allison. If she's selling them, she can tell you where they came from.",
+  "quest:9026:completion:0": "Oh yes, I just got the perfume and cologne in stock recently. It's been selling so well, I don't know how long I can keep it on the shelves.",
+  "quest:9026:completion:1": "If you ask me, it's kind of boring. Everyone smelling the same? It smells great, but still.",
+  "quest:9027:obj:0": "Speak with Evert Sorisam at The Finest Thread along ⟦E20⟧'s Canals.",
+  "quest:9027:details:0": "Something funny about the cologne? It's possible. I've never seen so many people after one product like this.",
+  "quest:9027:details:1": "Look, if there's something wrong with it, I want to know, too. I bought my supply from a merchant named Evert Sorisam. He's new in town.",
+  "quest:9027:details:2": "He mentioned he had some goods he was going to deliver to The Finest Thread.",
+  "quest:9027:completion:0": "Yes, of course. Those fragrances are the hottest items this season. You must be the fifth or sixth person this hour to inquire about them.",
+  "quest:9027:completion:1": "I'm afraid my supplies are all sold out. If you'd like some, you should speak with Allison, the innkeeper of The Gilded Rose.",
+  "quest:9027:completion:2": "You shouldn't waste any time, though. I think you'll find the perfume will be irresistible.",
+  "quest:9028:obj:0": "Find Apothecary Staffron Lerent in the ⟦E40⟧ behind Ravenholdt Manor.",
+  "quest:9028:details:0": "What? Treason? No, no. I assure you, my intentions are completely harmless.",
+  "quest:9028:details:1": "Is it so wrong to help those who wish to ease the painful ritual of courtship? Come, that is no crime.",
+  "quest:9028:details:2": "And to prove that I mean no harm, I will even tell you my source.",
+  "quest:9028:details:3": "They were shipped to me by a Staffron Lerent, an apothecary of some sort. I never spoke with him.",
+  "quest:9028:details:4": "Our goblin middle man said that he worked in the foothills over Hillsbrad past that mysterious Ravenholdt Manor. I wish you luck in finding him.",
+  "quest:9028:completion:0": "Yes, I made those fragrances. Wonderful smell, isn't it? Irresistible.",
+  "quest:9028:completion:1": "Once the warriors of ⟦E32⟧ and ⟦E13⟧ alike are smitten with these feelings of love, they will be powerless to stop the rise of the ⟦E41⟧.",
+  "quest:9028:completion:2": "They will be weakened, unprepared. As they worry for their loved ones, they will lose their edge.",
+  "quest:9028:completion:3": "The solution was so simple. Why did it take me so long to come upon it? The weakness of all is through the heart. And there is nothing you can do to stop the inevitable.",
+  "quest:9029:completion:0": "A pleasant smell wafts up from the cauldron.",
+  "quest:8860:obj:0": "Bring the ⟦E42⟧ to ⟦E37⟧ Allison in ⟦E20⟧.",
+  "quest:8860:details:0": "⟦E20⟧ is holding a celebration for the new year! All day long today you can get free booze, and at night they'll put on a firework show! It should be pretty nice... but Booty Bay is also having a ⟦E43⟧ today; I bet it'll be even better!",
+  "quest:8860:details:1": "Well anyway, ⟦E37⟧ Allison in ⟦E20⟧ needs a supply of Smoky Wood Pasture fare to help feed all the ⟦E43⟧ goers. Can you do me a favor and deliver it!",
+  "quest:8860:details:2": "Thanks, ⟦12⟧! ⟦E37⟧ Allison is in the Gilded Rose, in the Trade District of ⟦E20⟧.",
+  "quest:8860:progress:0": "Greetings! Are you here for the ⟦E43⟧! Or perhaps you just need to rest those weary feet of yours...",
+  "quest:8860:completion:0": "Oh, my Smokywood supplies! Splendid! I'll need these to feed all the people in town for the celebration!",
+  "quest:8860:completion:1": "Thank you, ⟦13⟧. Please take this as payment, and don't forget to drink and dance with the revelers outside!",
+  "quest:8861:obj:0": "Bring the ⟦E42⟧ to ⟦E37⟧ Pala in ⟦E3⟧.",
+  "quest:8861:details:0": "⟦E3⟧ is holding a celebration for the new year! All day you'll find free booze there, and at night they'll put on a firework show!",
+  "quest:8861:details:1": "It should be pretty nice... but Booty Bay is also having a ⟦E43⟧ today; I bet it'll be even better!",
+  "quest:8861:details:2": "Well anyway, ⟦E37⟧ Pala in ⟦E3⟧ needs a supply of Smoky Wood Pasture fare to help feed all the ⟦E43⟧ goers. Can you do me a favor and deliver it!",
+  "quest:8861:details:3": "Thanks, ⟦14⟧! ⟦E37⟧ Pala is in the inn near the bridge to ⟦E44⟧'s Rise.",
+  "quest:8861:progress:0": "Good day, ⟦15⟧! Did you come to ⟦E3⟧ for our celebrations?  Or are you here to rest a weary hoof between hunts?",
+  "quest:8861:completion:0": "Oh, very good! These supplies will help feed all our people, here to celebrate the new year!",
+  "quest:8861:completion:1": "I thank you, ⟦16⟧. You are in my debt. Please, take these coins... and heed my advice - drink heartily from the kegs outside, and join our revelers in a dance of celebration!"
+ },
+ "context": {
+  "quest:8312": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Spoops",
+   "turner": "Spoops"
+  },
+  "quest:8322": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Darkcaller Yanka",
+   "turner": "Keg"
+  },
+  "quest:8373": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sergeant Hartman",
+   "turner": "Sergeant Hartman"
+  },
+  "quest:8409": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Keg",
+   "turner": "Darkcaller Yanka"
+  },
+  "quest:8746": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kaymard Copperpinch",
+   "turner": "Kaymard Copperpinch"
+  },
+  "quest:8762": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Wulmort Jinglepocket",
+   "turner": "Wulmort Jinglepocket"
+  },
+  "quest:8763": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Wulmort Jinglepocket",
+   "turner": "Holly Preserver"
+  },
+  "quest:8799": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kaymard Copperpinch",
+   "turner": "Holly Preserver"
+  },
+  "quest:8897": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Jocryn Heldric",
+   "turner": "Colara Dean"
+  },
+  "quest:8898": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Tormek Stoneriver",
+   "turner": "Colara Dean"
+  },
+  "quest:8899": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Aldris Fourclouds",
+   "turner": "Colara Dean"
+  },
+  "quest:8900": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Orok Deathbane",
+   "turner": "Elenia Haydon"
+  },
+  "quest:8901": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Temma of the Wells",
+   "turner": "Elenia Haydon"
+  },
+  "quest:8902": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Deathguard Tor",
+   "turner": "Elenia Haydon"
+  },
+  "quest:8903": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Aristan Mottar",
+   "turner": "Aristan Mottar"
+  },
+  "quest:8904": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Fenstad Argyle",
+   "turner": "Fenstad Argyle"
+  },
+  "quest:8979": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Fenstad Argyle",
+   "turner": "Apothecary Zinge"
+  },
+  "quest:8980": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Apothecary Zinge",
+   "turner": "Fenstad Argyle"
+  },
+  "quest:8982": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Fenstad Argyle",
+   "turner": "Innkeeper Norman"
+  },
+  "quest:8983": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Innkeeper Norman",
+   "turner": "Mara Rennick"
+  },
+  "quest:8984": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Mara Rennick",
+   "turner": "Apothecary Staffron Lerent"
+  },
+  "quest:9024": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Aristan Mottar",
+   "turner": "Morgan Pestle"
+  },
+  "quest:9025": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Morgan Pestle",
+   "turner": "Aristan Mottar"
+  },
+  "quest:9026": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Aristan Mottar",
+   "turner": "Innkeeper Allison"
+  },
+  "quest:9027": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Innkeeper Allison",
+   "turner": "Evert Sorisam"
+  },
+  "quest:9028": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Evert Sorisam",
+   "turner": "Apothecary Staffron Lerent"
+  },
+  "quest:9029": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Fragrant Cauldron",
+   "turner": "Fragrant Cauldron"
+  },
+  "quest:8860": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 70,
+   "side": "alliance",
+   "giver": "Wonderform Operator",
+   "turner": "Innkeeper Allison"
+  },
+  "quest:8861": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 70,
+   "side": "horde",
+   "giver": "Wonderform Operator",
+   "turner": "Innkeeper Pala"
+  }
+ },
+ "known": {
+  "quest:8312": {
+   "title": "خوراکی‌های هالوین برای اسپوپس!"
+  },
+  "quest:8322": {
+   "title": "تخم‌مرغ‌های فاسد"
+  },
+  "quest:8373": {
+   "title": "قدرت کاج"
+  },
+  "quest:8409": {
+   "title": "بشکه‌های نابودشده"
+  },
+  "quest:8746": {
+   "title": "متزن گوزن شمالی"
+  },
+  "quest:8762": {
+   "title": "متزن گوزن شمالی"
+  },
+  "quest:8763": {
+   "title": "قهرمان روز"
+  },
+  "quest:8799": {
+   "title": "قهرمان روز"
+  },
+  "quest:8897": {
+   "title": "عزیزترین کولارا،"
+  },
+  "quest:8898": {
+   "title": "عزیزترین کولارا،"
+  },
+  "quest:8899": {
+   "title": "عزیزترین کولارا،"
+  },
+  "quest:8900": {
+   "title": "عزیزترین النیا،"
+  },
+  "quest:8901": {
+   "title": "عزیزترین النیا،"
+  },
+  "quest:8902": {
+   "title": "عزیزترین النیا،"
+  },
+  "quest:8903": {
+   "title": "عشق خطرناک"
+  },
+  "quest:8904": {
+   "title": "عشق خطرناک"
+  },
+  "quest:8979": {
+   "title": "حدس فنستاد"
+  },
+  "quest:8980": {
+   "title": "ارزیابی زینگ"
+  },
+  "quest:8982": {
+   "title": "ردیابی سرچشمه"
+  },
+  "quest:8983": {
+   "title": "ردیابی سرچشمه"
+  },
+  "quest:8984": {
+   "title": "سرچشمه آشکار شد"
+  },
+  "quest:9024": {
+   "title": "حدس آریستان"
+  },
+  "quest:9025": {
+   "title": "کشف مورگان"
+  },
+  "quest:9026": {
+   "title": "ردیابی سرچشمه"
+  },
+  "quest:9027": {
+   "title": "ردیابی سرچشمه"
+  },
+  "quest:9028": {
+   "title": "سرچشمه آشکار شد"
+  },
+  "quest:9029": {
+   "title": "دیگ جوشان"
+  },
+  "quest:8860": {
+   "title": "جشن سال نو!"
+  },
+  "quest:8861": {
+   "title": "جشن سال نو!"
+  }
+ }
+}

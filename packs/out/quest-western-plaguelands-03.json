@@ -1,0 +1,923 @@
+{
+ "pack": "quest-western-plaguelands-03",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-western-plaguelands-03.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Empty Gahrron's Withering Bottle",
+   "fa": "بطری خالیِ پژمردگیِ گاهرون",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "swings",
+   "fa": "ضربه‌ها",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Chillwind Point",
+   "fa": "نقطهٔ چیل‌ویند",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Filled Gahrron's Withering Bottle",
+   "fa": "بطری پُرشدهٔ پژمردگیِ گاهرون",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E10": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Araj's Phylactery Shard",
+   "fa": "خرده‌فیلاکتری آراج",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Catalogue of the Wayward",
+   "fa": "فهرست سرگردانان",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Breastplate of the Chromatic Flight",
+   "fa": "سینه‌پوش پرواز رنگین",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Chromatic Carapace",
+   "fa": "پوستهٔ رنگین‌کمانی",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Blood of Heroes",
+   "fa": "خون قهرمان",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Legplates of the Chromatic Defier",
+   "fa": "ساق‌زره سرکش رنگین",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Skin of Shadow",
+   "fa": "پوست سایه",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Barov",
+   "fa": "باروف",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Arathi Highlands",
+   "fa": "ارتفاعات آراتی",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Keepsake of Remembrance",
+   "fa": "یادگار یادمان",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Leonid Barthalomew",
+   "fa": "لئونید بارتالومیو",
+   "kind": "qs"
+  },
+  "E34": {
+   "en": "Revered",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Argent Dawn",
+   "fa": "سپیدهٔ نقره‌ای",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Caer Darrow",
+   "fa": "کائِر دارو",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Soulbound Keepsake",
+   "fa": "یادگارِ روح‌بسته",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "revered",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "resistance",
+   "fa": "مقاومت",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Skeleton Key",
+   "fa": "کلیدِ اسکلت",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Mantles of the Dawn",
+   "fa": "شانه‌پوش‌های سپیدهٔ دم",
+   "kind": "qs"
+  },
+  "E44": {
+   "en": "Chromatic Mantle of the Dawn",
+   "fa": "شنل‌شانهٔ رنگینِ سپیده",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Exalted",
+   "fa": "ستوده",
+   "kind": "tm"
+  },
+  "E46": {
+   "en": "Araj's Scarab",
+   "fa": "سوسک آراج",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "The Key to Scholomance",
+   "fa": "کلید شولومانس",
+   "kind": "qs"
+  },
+  "E48": {
+   "en": "Tirion's Gift",
+   "fa": "هدیهٔ تیریون",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "rank",
+   "fa": "رنک",
+   "kind": "tm"
+  },
+  "E51": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "effect",
+   "fa": "اثر",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Empty Gahrron's Withering Bottle": "بطری خالیِ پژمردگیِ گاهرون",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "swings": "ضربه‌ها",
+  "Chillwind Point": "نقطهٔ چیل‌ویند",
+  "Filled Gahrron's Withering Bottle": "بطری پُرشدهٔ پژمردگیِ گاهرون",
+  "requires": "نیازمند",
+  "Shadow": "سایه",
+  "Forsaken": "مطرودان",
+  "Horde": "هورد",
+  "Stormwind": "استورم‌ویند",
+  "Alliance": "اتحاد",
+  "Araj's Phylactery Shard": "خرده‌فیلاکتری آراج",
+  "allies": "متحدان",
+  "chance": "شانس",
+  "Plaguelands": "طاعون‌زار",
+  "Catalogue of the Wayward": "فهرست سرگردانان",
+  "Breastplate of the Chromatic Flight": "سینه‌پوش پرواز رنگین",
+  "Chromatic Carapace": "پوستهٔ رنگین‌کمانی",
+  "Blood of Heroes": "خون قهرمان",
+  "battle": "نبرد",
+  "Legplates of the Chromatic Defier": "ساق‌زره سرکش رنگین",
+  "Skin of Shadow": "پوست سایه",
+  "form": "شکل",
+  "fear": "ترس",
+  "Travel": "سفر",
+  "Barov": "باروف",
+  "Arathi Highlands": "ارتفاعات آراتی",
+  "Keepsake of Remembrance": "یادگار یادمان",
+  "undead": "مرده‌متحرک",
+  "Hope": "امید",
+  "Leonid Barthalomew": "لئونید بارتالومیو",
+  "Revered": "ارجمند",
+  "Stratholme": "استراتهولم",
+  "Argent Dawn": "سپیدهٔ نقره‌ای",
+  "Caer Darrow": "کائِر دارو",
+  "Soulbound Keepsake": "یادگارِ روح‌بسته",
+  "revered": "ارجمند",
+  "resistance": "مقاومت",
+  "Skeleton Key": "کلیدِ اسکلت",
+  "Scholomance": "شولومانس",
+  "Mantles of the Dawn": "شانه‌پوش‌های سپیدهٔ دم",
+  "Chromatic Mantle of the Dawn": "شنل‌شانهٔ رنگینِ سپیده",
+  "Exalted": "ستوده",
+  "Araj's Scarab": "سوسک آراج",
+  "The Key to Scholomance": "کلید شولومانس",
+  "Tirion's Gift": "هدیهٔ تیریون",
+  "Scarlet": "سرخ‌پوشان",
+  "rank": "رنک",
+  "spell": "اسپیل",
+  "effect": "اثر"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$c",
+  "6": "$N",
+  "7": "$N",
+  "8": "$c",
+  "9": "$N",
+  "10": "$C",
+  "11": "$N",
+  "12": "$N",
+  "13": "$Ghis:her;",
+  "14": "$N",
+  "15": "$N",
+  "16": "$Ghis:her;",
+  "17": "$N",
+  "18": "$N",
+  "19": "$n",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$B",
+  "29": "$B",
+  "30": "$R",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$C",
+  "39": "$N",
+  "40": "$Gbrother:sister;",
+  "41": "$n",
+  "42": "$b",
+  "43": "$b",
+  "44": "$N",
+  "45": "$C",
+  "46": "$N",
+  "47": "$Gbrother:sister;",
+  "48": "$n",
+  "49": "$b",
+  "50": "$b",
+  "51": "$G Brother : Sister;",
+  "52": "$N",
+  "53": "$C",
+  "54": "$N",
+  "55": "$G Brother : Sister;",
+  "56": "$N",
+  "57": "$C",
+  "58": "$N",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$N",
+  "63": "$N",
+  "64": "$R"
+ },
+ "rows": {
+  "quest:6023:obj:0": "Kill Huntsman Radley and Cavalier Durgen before returning to Kirsta Deepshadow in ⟦E1⟧.",
+  "quest:6023:details:0": "My real mission was to weaken the ⟦E2⟧'s outlying forces and then infiltrate Hearthglen to gauge their numbers. I'm still in no shape to do it on my own, so perhaps I could ask you to aid me again, ⟦1⟧? From what information I gathered before being discovered, the Crusade has two important members that are the backbone of their forces outside the town: Huntsman Radley and Cavalier Durgen. Kill them, and we're making progress. They should be along Hearthglen Pass outside the town proper.",
+  "quest:6023:progress:0": "Have you found them yet, ⟦2⟧? With the two of them taken care of, I can proceed to enter Hearthglen to take a closer look at their setup. I can't do it without your help. Please, find Radley and Durgen for me.",
+  "quest:6023:completion:0": "Thank you, ⟦3⟧. You've been more help than I could have hoped for. The air here just seems to suck my will. I feel tired, and I can tell I'm not getting any better the longer I'm here.",
+  "quest:6023:completion:1": "I'm not really sure how I'm going to infiltrate Hearthglen itself and report on how strong the ⟦E2⟧'s presence is.",
+  "quest:6023:completion:2": "But that's another matter, before you leave, here, take this... as payment for your help. Thank you again.",
+  "quest:5225:obj:0": "Go to Gahrron's Withering in ⟦E1⟧ to locate and defeat the Cauldron Lord present there, and use its key to gain access to the cauldron. You must have the ⟦E3⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5225:details:0": "The last cauldron that remains is located on a farm now called Gahrron's Withering. It is guarded by some of the Scourge's tougher minions - specifically, wraiths and ghosts. They are not to be trifled with, ⟦4⟧.",
+  "quest:5225:details:1": "Gahrron's Withering is due northeast of our position here, close to where the ⟦E4⟧ begin; again, eliminate the cauldron lord present there for its key. Here is your empty sample bottle; bring it to me filled. May the Light protect you in this dangerous mission, ⟦5⟧.",
+  "quest:5225:progress:0": "An access panel to the cauldron remains securely fastened.  In order to open it, you will need to find the key.",
+  "quest:5225:completion:0": "Cauldron Lord Soulwrath's key disintegrates as it touches the lock on the access panel at the base of the cauldron's platform. A slight clanking noise is heard within, and the access panel ⟦E5⟧ open to reveal more viscous toxins within the cauldron's framework.",
+  "quest:5225:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for High Priestess MacDonnell back at ⟦E6⟧.",
+  "quest:5226:obj:0": "Bring the ⟦E7⟧ to High Priestess MacDonnell at Chillwind Camp, ⟦E1⟧.",
+  "quest:5226:details:0": "You carefully close the spigot in the control panel, watching the cauldron's putrid ichors drip into the empty bottle.",
+  "quest:5226:details:1": "With the poison in hand, it is time to return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+  "quest:5226:progress:0": "Gahrron's Withering houses the last cauldron here in the west that we need access to. Once we have a sample of the plague it spews forth, we will be able to introduce our reagents into the environment through four separate vessels! The Scourge will be hard pressed to keep us out of all four, even with the power of Kel'Thuzad behind them.",
+  "quest:5226:completion:0": "Congratulations ⟦6⟧, you've unlocked the last cauldron for us! Alchemist Arbington will soon know what this cauldron ⟦E8⟧ as far as reagents needed for the mix.",
+  "quest:5226:completion:1": "As for you, I am sure that Commander Valorfist will want to thank you personally for the assistance you've given us. Without you, our struggle against the Scourge would have been nearly insurmountable. Thank you, hero!",
+  "quest:5235:obj:0": "Go to Gahrron's Withering in ⟦E1⟧ to locate and defeat the Cauldron Lord present there, and use its key to gain access to the cauldron. You must have the ⟦E3⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5235:details:0": "The last cauldron that remains is located on a farm now called Gahrron's Withering. It is guarded by some of the Scourge's tougher minions - specifically, wraiths and ghosts. They are not to be trifled with, ⟦7⟧.",
+  "quest:5235:details:1": "Gahrron's Withering is far to the east of the Bulwark, close to where the ⟦E4⟧ begin; again, eliminate the cauldron lord present there for its key. Here is your empty sample bottle; bring it to me filled. May the shadows cloak you in safety for this dangerous mission, ⟦8⟧.",
+  "quest:5235:progress:0": "An access panel to the cauldron remains securely fastened. In order to open it, you will need to find the key.",
+  "quest:5235:completion:0": "Cauldron Lord Soulwrath's key disintegrates as it touches the lock on the access panel at the base of the cauldron's platform. A slight clanking noise is heard within, and the access panel ⟦E5⟧ open to reveal more viscous toxins within the cauldron's framework.",
+  "quest:5235:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for ⟦E9⟧ Priestess Vandis back at the Bulwark.",
+  "quest:5236:obj:0": "Bring the ⟦E7⟧ to ⟦E9⟧ Priestess Vandis at the Bulwark, ⟦E1⟧.",
+  "quest:5236:details:0": "You carefully close the spigot in the control panel, watching the cauldron's putrid ichors drip into the empty bottle.",
+  "quest:5236:details:1": "With the poison in hand, it is time to return to ⟦E9⟧ Priestess Vandis at the Bulwark to complete the mission.",
+  "quest:5236:progress:0": "Gahrron's Withering houses the last cauldron that we need to acquire access to here in the west. Once we have a sample of the plague from that cauldron, we will be able to introduce our reagents into the environment through four separate vessels! The Scourge will be hard pressed to keep us out of all four, even with the power of Kel'Thuzad behind them.",
+  "quest:5236:completion:0": "Congratulations ⟦9⟧, you've unlocked the last cauldron for us! Apothecary Dithers will soon know what this cauldron ⟦E8⟧ as far as reagents needed for the mix.",
+  "quest:5236:completion:1": "As for you, I am sure that High Executor Derrington will want to thank you personally for the assistance you've given us. Without you, our struggle against the Scourge would have been nearly insurmountable. I thank you, mighty ⟦10⟧.",
+  "quest:5237:completion:0": "⟦11⟧, your successful re-engineering of the cauldrons is a tremendous victory for us!",
+  "quest:5237:completion:1": "B<The high executor clears his throat and begins to bellow loudly.>",
+  "quest:5237:completion:2": "Let all within my presence hear: for service to the ⟦E10⟧ and to the ⟦E11⟧ as a whole above and beyond what was expected - in the face of overwhelming odds and incredible danger, might I add - I give ⟦12⟧ this, and I extend upon ⟦13⟧ our undying gratitude as a true hero of the ⟦E11⟧. Huzzah!",
+  "quest:5238:completion:0": "⟦14⟧, your successful re-engineering of the cauldrons is a tremendous victory for us!",
+  "quest:5238:completion:1": "B<The commander clears his throat and begins to bellow loudly.>",
+  "quest:5238:completion:2": "Let all within my presence hear: for service to the Kingdom of ⟦E12⟧ and to the ⟦E13⟧ above and beyond the call of duty - in the face of overwhelming odds and incredible danger, might I add - I give ⟦15⟧ this, and I extend upon ⟦16⟧ our undying gratitude as a true hero of the ⟦E13⟧. Cheers, I say!",
+  "quest:6025:obj:0": "Enter Hearthglen and find a high vantage point from which you can see the town and gauge the ⟦E2⟧'s forces, then return to Kirsta Deepshadow in ⟦E1⟧.",
+  "quest:6025:details:0": "What? Really? You want to know more? But you've already done so much for me, ⟦17⟧. I couldn't possibly ask you to enter Hearthglen itself on my behalf.",
+  "quest:6025:details:1": "Are you sure, ⟦18⟧? Hearthglen is much more dangerous than the Pass--I cannot provide you any protection or even information about what you might face.",
+  "quest:6025:details:2": "Well, if you really are willing to help, then enter the town and find a high place to gain a good view of the town. From there you can gauge their numbers and report them back to me. But be careful....",
+  "quest:6025:progress:0": "It's a dangerous task, ⟦19⟧. I envy your courage.",
+  "quest:6025:completion:0": "You've done it, ⟦20⟧! Thank you!",
+  "quest:6025:completion:1": "I'll return to Elling... I mean ⟦E12⟧ as soon as I can. Here, take this coin, it's the least I can do for you. You're a credit to your people, ⟦21⟧. Thank you and good luck.",
+  "quest:105:obj:0": "Bring ⟦E14⟧ to High Executor Derrington at the Bulwark, ⟦E1⟧.",
+  "quest:105:details:0": "Alas, the time to attack Andorhal and drive out the lich that controls it is upon us!",
+  "quest:105:details:1": "Inside the ruins of the city is where the lich - Araj the Summoner - holds dominion. He is guarded by numerous Scourge surrounding the remains of city's center, and his personal retinue of guardians attached to him directly is formidable. You will need numerous ⟦E15⟧ to even stand a ⟦E16⟧ of facing him successfully.",
+  "quest:105:details:2": "Destroy Araj, ⟦22⟧, and bring me a shard from his phylactery as proof!",
+  "quest:105:progress:0": "Your task has been given to you, ⟦23⟧. Do you have a shard from the lich's phylactery as proof of the task being accomplished?",
+  "quest:105:completion:0": "You've done it! Araj... the lich is finally defeated!",
+  "quest:105:completion:1": "You've done a tremendous service to the ⟦E11⟧ on this day, ⟦24⟧. Your bravery and perseverance are a testament to what it means to be a true hero. Please - accept this as a token for all to see and know that you have delivered the ⟦E11⟧ a victory for the ages!",
+  "quest:211:obj:0": "Bring ⟦E14⟧ to Commander Ashlam Valorfist at Chillwind Camp, ⟦E1⟧.",
+  "quest:211:details:0": "Alas, the time to attack Andorhal and drive out the lich that controls it is upon us!",
+  "quest:211:details:1": "Inside the ruins of the city is where the lich - Araj the Summoner - holds dominion. He is guarded by numerous Scourge surrounding the remains of city's center, and his personal retinue of guardians attached to him directly is formidable. You will need numerous ⟦E15⟧ to even stand a ⟦E16⟧ of facing him successfully.",
+  "quest:211:details:2": "Destroy Araj, ⟦25⟧, and bring me a shard from his phylactery as proof!",
+  "quest:211:progress:0": "Your task has been given to you, ⟦26⟧. Do you have a shard from the lich's phylactery as proof of the task being accomplished?",
+  "quest:211:completion:0": "You've done it! Araj... the lich is finally defeated!",
+  "quest:211:completion:1": "You've done a tremendous service to the ⟦E13⟧ on this day, ⟦27⟧. Your bravery and perseverance are a testament to what it means to be a true hero. Please - accept this as a token for all to see and know that you have delivered the ⟦E13⟧ a victory for the ages!",
+  "quest:5162:obj:0": "Speak with Jeziba in the ⟦E17⟧. He resides in Andorhal.",
+  "quest:5162:details:0": "It is the arcane that I control and the arcane which will send you to your next destination.",
+  "quest:5162:details:1": "When you are ready, the journey will begin. To the ⟦E17⟧ you will go and to Jeziba you will speak.",
+  "quest:5162:details:2": "He is a mortal as wise as the ancients and as patient as the immovable earth. Find him in Andorhal.⟦28⟧",
+  "quest:5162:completion:0": "I am Jeziba, known to many as the Sculptor. What I sculpt, however, are not statues, but heroes.",
+  "quest:5162:completion:1": "B",
+  "quest:5164:obj:0": "Read from the ⟦E18⟧.⟦29⟧",
+  "quest:5164:details:0": "A finer instrument of justice, Haleh could not have chosen. Read from the catalogue of the wayward and be enlightened.",
+  "quest:5164:details:1": "Should you persist... should you do what is asked of you... should you survive... a hero you will make.",
+  "quest:5164:completion:0": "Hundreds upon hundreds of pages filled with garbled text and symbols make up the brunt of this book.",
+  "quest:5166:obj:0": "To forge the ⟦E19⟧, you will be required to bring the following items to Jeziba the 'Sculptor':",
+  "quest:5166:obj:1": "B1 ⟦E20⟧.",
+  "quest:5166:obj:2": "B10 Brilliant Chromatic Scales.",
+  "quest:5166:obj:3": "B10 ⟦E21⟧.",
+  "quest:5166:obj:4": "B10 Frayed Abomination Stitchings.",
+  "quest:5166:details:0": "The forging of a powerful breastplate to protect against the unrelenting attacks of the chromatic flight is one built upon irony.",
+  "quest:5166:details:1": "The scales of the very beasts we ⟦E22⟧ must be sewn to the pristine carapace of an elder chromatic drake or dragon. None are known to exist at this time and we should hope that none will ever exist.",
+  "quest:5166:details:2": "Lastly, perhaps the most difficult of all components: the blood of heroes.",
+  "quest:5166:details:3": "The Sculptor must ultimately forge this creation.",
+  "quest:5166:progress:0": "You have chosen wisely, ⟦30⟧.",
+  "quest:5166:completion:0": "Do you not yet understand? The journey was the destination. Can you not feel the ⟦E22⟧ scars? The pain you underwent?",
+  "quest:5166:completion:1": "Having survived the ordeal, you are a more powerful being. Much more powerful. This breastplate is merely a reflection of your own innate abilities.",
+  "quest:5167:obj:0": "To forge the ⟦E23⟧, you will be required to bring the following items to Jeziba the 'Sculptor':",
+  "quest:5167:obj:1": "B1 ⟦E20⟧.",
+  "quest:5167:obj:2": "B10 Brilliant Chromatic Scales.",
+  "quest:5167:obj:3": "B10 ⟦E21⟧.",
+  "quest:5167:obj:4": "B5 ⟦E24⟧.",
+  "quest:5167:details:0": "The carapace of a mature chromatic drake is needed to ⟦E25⟧ the foundation of the leggings. Brilliant chromatic scales are then layered upon the wire frame and enchanted in the blood of heroes. Finally, the supple skin of shadow must be applied to the inner greaves.",
+  "quest:5167:progress:0": "Such an item has never been crafted!",
+  "quest:5167:completion:0": "They will smell their kin as you enter their halls, ⟦31⟧. Crush them with their own ⟦E26⟧!",
+  "quest:5342:obj:0": "⟦E27⟧ to Chillwind Camp - ⟦E13⟧ territory - and assassinate Weldon ⟦E28⟧. Take his head and return to Alexi ⟦E28⟧.",
+  "quest:5342:obj:1": "Be warned, Weldon will probably be well protected by ⟦E13⟧ scum.",
+  "quest:5342:details:0": "Naturally, with my brother still alive, there may be some contention as to the primary beneficiary of the family's fortune. This cannot be.",
+  "quest:5342:details:1": "BA low down guttersnipe like you isn't above a little cold-blooded murder, I hope.",
+  "quest:5342:details:2": "It's a simple task and one that I expect you will complete; that is, if you wish to claim your reward.",
+  "quest:5342:details:3": "Weldon sits under ⟦E13⟧ protection at Chillwind Camp, to the east. Slay him, return his head.",
+  "quest:5342:details:4": "B<Alexi yawns.>",
+  "quest:5342:details:5": "Hurry along now.",
+  "quest:5342:progress:0": "Secure my fortune and share in the spoils.",
+  "quest:5342:completion:0": "Wonderful! Now only I hold the power and fortune of house ⟦E28⟧!",
+  "quest:5342:completion:1": "B<Alexi throws a large bag at you.>",
+  "quest:5342:completion:2": "And keep the change, you filthy animal.",
+  "quest:5344:obj:0": "⟦E27⟧ to the Bulwark - ⟦E11⟧ territory - and assassinate Alexi ⟦E28⟧. Take his head and return to Weldon ⟦E28⟧.",
+  "quest:5344:obj:1": "Be warned, Alexi will probably be well protected by ⟦E11⟧ filth.",
+  "quest:5344:details:0": "With the deeds recovered, there is but one thing left to do. Alexi must be killed. With him dead, I need not ever worry about an unscrupulous gang of mercenaries seeking my head.",
+  "quest:5344:details:1": "It's a simple task. Alexi hides under the protection of the ⟦E11⟧ - at the Bulwark.",
+  "quest:5344:details:2": "No, I do not expect you to just walk up and kill him, I want his head! How you get it... well, that part is up to you. That type of behavior is below one of my noble upbringing.",
+  "quest:5344:progress:0": "You do want payment, do you not?",
+  "quest:5344:completion:0": "A glorious day it is! Finally, the pockmark of house ⟦E28⟧ eliminated and my fortune secure!",
+  "quest:5344:completion:1": "Take this and leave my sight, peasant.",
+  "quest:5461:obj:0": "⟦E27⟧ to the ⟦E29⟧, to the ruins of Stromgarde. Search Stromgarde for a ⟦E30⟧. If you find such an item, return with it to Magistrate Marduke.",
+  "quest:5461:details:0": "The ⟦E31⟧ ⟦E26⟧ life just as the living ⟦E26⟧ death. It is not unusual for a sentient ⟦E31⟧ being to completely destroy all remnants of his or her previous life after having turned.",
+  "quest:5461:details:1": "Unfortunately, in order to create an artifact capable of reverting Ras Frostwhisper to a mortal, we must have a keepsake from his years among the living.",
+  "quest:5461:details:2": "You must venture to the ruined city of Stromgarde, Frostwhisper's home, and search for such an item. May luck be with you, ⟦32⟧.",
+  "quest:5461:progress:0": "A keepsake of remembrance is a rare find, ⟦33⟧.",
+  "quest:5461:completion:0": "I had doubted the possibility of such an item existing. This certainly opens up an incredible opportunity - one we must not squander.",
+  "quest:5461:completion:1": "Prepare yourself, ⟦34⟧, for what I am about to ask of you will take you into the depths of hell.",
+  "quest:5462:obj:0": "⟦E27⟧ to Light's ⟦E32⟧ in ⟦E4⟧ and seek out ⟦E33⟧ the ⟦E34⟧. Show him the ⟦E30⟧ and tell him all that you have discovered.",
+  "quest:5462:details:0": "Upon tainted soil, the keepsake must be attuned.",
+  "quest:5462:details:1": "It is rumored that ⟦E35⟧ is where Frostwhisper succumbed to the Lich King. Upon those bloodied grounds he gave his life - freely and with motive - to become one of the undying.",
+  "quest:5462:details:2": "It is those grounds that must be found.",
+  "quest:5462:details:3": "There is one, an ⟦E31⟧ dissenter of the Scourge, freed by the Banshee Queen but loyal to the cause of the ⟦E36⟧. Find him: ⟦E33⟧ the ⟦E34⟧. He may know more. Seek out Light's ⟦E32⟧, ⟦35⟧.",
+  "quest:5462:progress:0": "Do not ask questions of which you do not want answers.",
+  "quest:5462:completion:0": "<Leonid looks over the keepsake.>",
+  "quest:5462:completion:1": "Your quandary stirs up memories that I had hoped would never resurface.",
+  "quest:5465:obj:0": "Return to Magistrate Marduke in ⟦E37⟧. Show him the ⟦E38⟧.",
+  "quest:5465:details:0": "Return to Marduke with the keepsake, ⟦36⟧. He will instruct you in its use.",
+  "quest:5465:progress:0": "Have you done the impossible?",
+  "quest:5465:completion:0": "I was certain that you would be joining me as another hapless spirit.",
+  "quest:5504:obj:0": "Bring 10 ⟦E36⟧ Valor Tokens to Quartermaster Hasana at the Bulwark, ⟦E1⟧.",
+  "quest:5504:details:0": "Your service to the ⟦E36⟧ is to be commended, ⟦37⟧. You are truly ⟦E39⟧ amongst us. I have been authorized to make available for you to purchase one of the Dawn's most valued items - our magic ⟦E40⟧ mantles.",
+  "quest:5504:details:1": "Application of a mantle to your existing shoulder piece will enhance your ⟦E40⟧ to the powers of magic in one of five potential ways. As a sign of continued dedication to our cause, I ask for no less than ten of our valor tokens in exchange for access to these mantles.",
+  "quest:5504:progress:0": "Ah, noble ⟦38⟧! Have you brought the valor tokens requested of you? Once you hand them to me, I will make our various mantles available to you for purchase.",
+  "quest:5504:completion:0": "Outstanding - your tribute to the Dawn is duly noted, ⟦39⟧. With this accomplished, I am delighted to make our mantles available to you for purchase. So long as you maintain your current status with us, these mantles will be purchasable from any authorized quartermaster of the ⟦E36⟧.",
+  "quest:5504:completion:1": "For the Dawn, my ⟦40⟧!",
+  "quest:5505:completion:0": "Well, here you are, ⟦41⟧ - the completed ⟦E41⟧. I am certain as I can be that this key will allow you within the confines of the ⟦E42⟧. There's only one way to be absolutely sure it works, though. Waste no time in trying it out, I say.⟦42⟧⟦43⟧Good luck, mighty hero. May you continue to bring light unto the darkness!",
+  "quest:5507:obj:0": "Bring 10 ⟦E36⟧ Valor Tokens to Quartermaster Lightspark at Chillwind Camp, ⟦E1⟧.",
+  "quest:5507:details:0": "Your service to the ⟦E36⟧ is to be commended, ⟦44⟧. You are truly ⟦E39⟧ amongst us. I have been authorized to make available for you to purchase one of the Dawn's most valued items - our magic ⟦E40⟧ mantles.",
+  "quest:5507:details:1": "Application of a mantle to your existing shoulder piece will enhance your ⟦E40⟧ to the powers of magic in one of five potential ways. As a sign of continued dedication to our cause, I ask for no less than ten of our valor tokens in exchange for access to these mantles.",
+  "quest:5507:progress:0": "Ah, noble ⟦45⟧! Have you brought the valor tokens requested of you? Once you hand them to me, I will make our various mantles available to you for purchase.",
+  "quest:5507:completion:0": "Outstanding - your tribute to the Dawn is duly noted, ⟦46⟧. With this accomplished, I am delighted to make our mantles available to you for purchase. So long as you maintain your current status with us, these mantles will be purchasable from any authorized quartermaster of the ⟦E36⟧.",
+  "quest:5507:completion:1": "For the Dawn, my ⟦47⟧!",
+  "quest:5511:completion:0": "Well, here you are, ⟦48⟧ - the completed ⟦E41⟧. I am certain as I can be that this key will allow you within the confines of the ⟦E42⟧. There's only one way to be absolutely sure it works, though. Waste no time in trying it out, I say.⟦49⟧⟦50⟧Good luck, mighty hero. May your victories continue to bring you fame and power as you lay waste to ⟦E42⟧!",
+  "quest:5521:obj:0": "Bring 25 ⟦E36⟧ Valor Tokens to Quartermaster Lightspark at Chillwind Camp, ⟦E1⟧.",
+  "quest:5521:details:0": "⟦51⟧ ⟦52⟧ - your deeds on behalf of the ⟦E36⟧ are far too numerous to be recounted easily. As a fitting tribute, I'll part with one of our special Chromatic ⟦E43⟧ - a version that protects the wearer from all forms of resistible magic simultaneously. Chromatic ⟦E43⟧ are reserved for only the mightiest of the Dawn's heroes!",
+  "quest:5521:details:1": "Bring to me twenty-five valor tokens as a sign of tribute, and I'll give you the finest of all our mantles.",
+  "quest:5521:progress:0": "Salutations, mighty ⟦53⟧! Have you brought the valor tokens I asked of you? Once you hand them to me, I will issue you your own ⟦E44⟧.",
+  "quest:5521:completion:0": "Most impressive, ⟦54⟧ - the ⟦E44⟧ is now yours!",
+  "quest:5521:completion:1": "As long as you maintain ⟦E45⟧ status with the ⟦E36⟧, you will be able to purchase additional Chromatic Mantles. They will be made available to you immediately from any of the Dawn's quartermasters.",
+  "quest:5524:obj:0": "Bring 25 ⟦E36⟧ Valor Tokens to Quartermaster Hasana at the Bulwark, ⟦E1⟧.",
+  "quest:5524:details:0": "⟦55⟧ ⟦56⟧ - your deeds on behalf of the ⟦E36⟧ are far too numerous to be recounted easily. As a fitting tribute, I'll part with one of our special Chromatic ⟦E43⟧ - a version that protects the wearer from all forms of resistible magic simultaneously. Chromatic ⟦E43⟧ are reserved for only the mightiest of the Dawn's heroes!",
+  "quest:5524:details:1": "Bring to me twenty-five valor tokens as a sign of tribute, and I'll give you the finest of all our mantles.",
+  "quest:5524:progress:0": "Salutations, mighty ⟦57⟧! Have you brought the valor tokens I asked of you? Once you hand them to me, I will issue you your own ⟦E44⟧.",
+  "quest:5524:completion:0": "Most impressive, ⟦58⟧ - the ⟦E44⟧ is now yours!",
+  "quest:5524:completion:1": "As long as you maintain ⟦E45⟧ status with the ⟦E36⟧, you will be able to purchase additional Chromatic Mantles. They will be made available to you immediately from any of the Dawn's quartermasters.",
+  "quest:5803:obj:0": "Destroy Araj the Summoner and bring ⟦E46⟧ to Alchemist Arbington at ⟦E6⟧, ⟦E1⟧.",
+  "quest:5803:details:0": "Araj the Summoner lords over Andorhal from the ruined city's heart. We know that he was the former leader of ⟦E42⟧ before claiming the city as his own. To finish the key, we will need his signet - called a scarab - mounted as the head of the key.",
+  "quest:5803:details:1": "Make your way into the heart of Andorhal, and break his hold on the city now that he is drawn into the open. Once destroyed, seize his scarab from his fallen phylactery!",
+  "quest:5803:details:2": "⟦E47⟧ awaits, ⟦59⟧!",
+  "quest:5803:progress:0": "You've come this far ⟦60⟧ - only the destruction of the physical ⟦E25⟧ of Araj the Summoner will provide us with the means to finish the key. Get Araj's scarab, by hook or by crook, and bring it to me - I will fuse it on as the head of the key.",
+  "quest:5803:completion:0": "Yes, this is it! I... again, I'm absolutely amazed at the depths of your cunning and bravery. It simply boggles the mind the lengths you are willing to go in order achieve victory.",
+  "quest:5803:completion:1": "Allow me now to play my small part in this. I've prepared a special solvent that should allow me to secure the scarab on as the head of the key, infusing it with the power to breech the locked door of ⟦E42⟧.",
+  "quest:5803:completion:2": "This should take just a moment...",
+  "quest:5804:obj:0": "Destroy Araj the Summoner and bring ⟦E46⟧ to Apothecary Dithers at the Bulwark, ⟦E1⟧.",
+  "quest:5804:details:0": "Araj the Summoner lords over Andorhal from the ruined city's heart. We know that he was the former leader of ⟦E42⟧ before claiming the city as his own. To finish the key, we will need his signet - called a scarab - mounted as the head of the key.",
+  "quest:5804:details:1": "Make your way into the heart of Andorhal, and break his hold on the city now that he is drawn into the open. Once destroyed, seize his scarab from his fallen phylactery!",
+  "quest:5804:details:2": "⟦E47⟧ awaits, ⟦61⟧!",
+  "quest:5804:progress:0": "You've come this far ⟦62⟧ - only the destruction of the physical ⟦E25⟧ of Araj the Summoner will provide us with the means to finish the key. Get Araj's scarab, by hook or by crook, and bring it to me - I will fuse it on as the head of the key.",
+  "quest:5804:completion:0": "Yes, this is it! I... again, I'm absolutely amazed at the depths of your cunning and bravery. It simply boggles the mind the lengths you are willing to go in order achieve victory.",
+  "quest:5804:completion:1": "Allow me now to play my small part in this. I've prepared a special solvent that should allow me to secure the scarab on as the head of the key, infusing it with the power to breech the locked door of ⟦E42⟧.",
+  "quest:5804:completion:2": "This should take just a moment...",
+  "quest:5861:obj:0": "⟦E27⟧ to Uther's Tomb, located in the southern ⟦E17⟧. Show Myranda the Hag ⟦E48⟧.",
+  "quest:5861:details:0": "⟦63⟧, you have done all that I have asked thus far. Only one step remains in your quest of redemption.",
+  "quest:5861:details:1": "You must deliver the items you have collected to Taelan. Unfortunately, Taelan and his ⟦E49⟧ Crusaders will attack you on sight.",
+  "quest:5861:details:2": "There is only one way in which to deliver my message and that is through a guise of deception.",
+  "quest:5861:details:3": "To the south you will find Uther's tomb. An old and trusted confidant of mine, Myranda, now resides there - seek her out. Show her the items and she will assist you.",
+  "quest:5861:progress:0": "I knew this day would come.",
+  "quest:5861:completion:0": "I was Tirion's most trusted advisor when he held ⟦E50⟧ as Lord of Mardenholde. I openly dissented the verdict passed by the Order of the Silver Hand and was banished for my insolence.",
+  "quest:5861:completion:1": "He has been through much heart ache and disappointment in his life, ⟦64⟧. Are you prepared to right the wrongs set upon the Fordrings?",
+  "quest:5862:obj:0": "Speak to Myranda to gain the ⟦E49⟧ Illusion. ⟦E27⟧ to Hearthglen while under the ⟦E49⟧ Illusion and deliver ⟦E48⟧ to Highlord Taelan Fordring.",
+  "quest:5862:obj:1": "Hearthglen is to the north, Taelan should be inside of Mardenholde Keep.",
+  "quest:5862:details:0": "I am what you would call, an illusionist. Though I may be able to create an illusion to allow you entry into Hearthglen, be warned; my powers have their limitations.",
+  "quest:5862:details:1": "Should you travel too far from these lands, the effects of the illusion will cease. The ⟦E51⟧ itself takes a great amount of concentration and power from me, and thus, I can only sustain the ⟦E52⟧ for a short time.",
+  "quest:5862:details:2": "Speak to me again when you are ready.",
+  "quest:5862:progress:0": "Are you the reinforcements from Tyr's Hand?",
+  "quest:5862:completion:0": "What is this, soldier?",
+  "quest:5862:completion:1": "B<Taelan opens the box and begins to examine its contents.>",
+  "quest:5862:completion:2": "This... this cannot be true. But all that you have shown me...",
+  "quest:5862:completion:3": "B<Taelan falls to one knee, his heartbeat quickens. The fury of ages is about to be loosed upon this town.>",
+  "quest:5944:obj:0": "Escort Taelan Fordring out of Hearthglen.",
+  "quest:5944:details:0": "For so long, I have been a puppet of the Grand Crusader. What reason was there to fight against what the ⟦E2⟧ had become? It has been decades, yet the memories of my father; those precious memories, they are what have kept me alive.",
+  "quest:5944:details:1": "I have dreams, stranger. In these dreams my father is with me. He stands proudly at my side as I am inducted into the Order. We ⟦E22⟧ legion of Scourge, side by side. We bring honor to the ⟦E13⟧, to Lordaeron.",
+  "quest:5944:details:2": "I want not to dream anymore.",
+  "quest:5944:details:3": "Take me to him.",
+  "quest:5944:progress:0": "<Tirion regains his composure.>",
+  "quest:5944:completion:0": "The death of my son at the hands of these monsters will not pass without incident. Take solace in knowing that the Order is reborn.",
+  "quest:5944:completion:1": "I now take my place as Highlord of the new Order of the Silver Hand.",
+  "quest:5944:completion:2": "These possessions of my past - they are all that I have to offer for all that you have done. Please, take these as a symbol of my gratitude; all have served me well over the years.",
+  "quest:5944:completion:3": "May we meet again, in better times, and reminisce of days long past... battles hard fought... dreams redeemed."
+ },
+ "context": {
+  "quest:6023": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 57,
+   "side": "",
+   "giver": "Kirsta Deepshadow",
+   "turner": "Kirsta Deepshadow"
+  },
+  "quest:5225": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "alliance",
+   "giver": "High Priestess MacDonnell",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5226": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "alliance",
+   "giver": "Scourge Cauldron",
+   "turner": "High Priestess MacDonnell"
+  },
+  "quest:5235": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "horde",
+   "giver": "Shadow Priestess Vandis",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5236": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "horde",
+   "giver": "Scourge Cauldron",
+   "turner": "Shadow Priestess Vandis"
+  },
+  "quest:5237": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "alliance",
+   "giver": "High Executor Derrington",
+   "turner": "High Executor Derrington"
+  },
+  "quest:5238": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "horde",
+   "giver": "Commander Ashlam Valorfist",
+   "turner": "Commander Ashlam Valorfist"
+  },
+  "quest:6025": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 58,
+   "side": "",
+   "giver": "Kirsta Deepshadow",
+   "turner": "Kirsta Deepshadow"
+  },
+  "quest:105": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "horde",
+   "giver": "High Executor Derrington",
+   "turner": "High Executor Derrington"
+  },
+  "quest:211": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist",
+   "turner": "Commander Ashlam Valorfist"
+  },
+  "quest:5162": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Haleh",
+   "turner": "Jeziba"
+  },
+  "quest:5164": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Jeziba",
+   "turner": "Catalogue of the Wayward («فهرست سرگردانان»)"
+  },
+  "quest:5166": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Catalogue of the Wayward («فهرست سرگردانان»)",
+   "turner": "Jeziba"
+  },
+  "quest:5167": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Catalogue of the Wayward («فهرست سرگردانان»)",
+   "turner": "Jeziba"
+  },
+  "quest:5342": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Alexi Barov",
+   "turner": "Alexi Barov"
+  },
+  "quest:5344": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Weldon Barov",
+   "turner": "Weldon Barov"
+  },
+  "quest:5461": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Magistrate Marduke",
+   "turner": "Magistrate Marduke"
+  },
+  "quest:5462": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Magistrate Marduke",
+   "turner": "Leonid Barthalomew the Revered"
+  },
+  "quest:5465": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Leonid Barthalomew the Revered",
+   "turner": "Magistrate Marduke"
+  },
+  "quest:5504": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Argent Quartermaster Hasana",
+   "turner": "Argent Quartermaster Hasana"
+  },
+  "quest:5505": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Alchemist Arbington",
+   "turner": "Alchemist Arbington"
+  },
+  "quest:5507": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Argent Quartermaster Lightspark",
+   "turner": "Argent Quartermaster Lightspark"
+  },
+  "quest:5511": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "horde",
+   "giver": "High Executor Derrington",
+   "turner": "High Executor Derrington"
+  },
+  "quest:5521": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Argent Quartermaster Lightspark",
+   "turner": "Argent Quartermaster Lightspark"
+  },
+  "quest:5524": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Argent Quartermaster Hasana",
+   "turner": "Argent Quartermaster Hasana"
+  },
+  "quest:5803": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Alchemist Arbington",
+   "turner": "Alchemist Arbington"
+  },
+  "quest:5804": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Apothecary Dithers",
+   "turner": "Apothecary Dithers"
+  },
+  "quest:5861": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Tirion Fordring",
+   "turner": "Myranda the Hag"
+  },
+  "quest:5862": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Myranda the Hag",
+   "turner": "Highlord Taelan Fordring"
+  },
+  "quest:5944": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 60,
+   "side": "",
+   "giver": "Highlord Taelan Fordring",
+   "turner": "Tirion Fordring، Lord Tirion Fordring"
+  }
+ },
+ "known": {
+  "quest:6023": {
+   "title": "کار نیمه‌تمام"
+  },
+  "quest:5225": {
+   "title": "هدف: پژمردگی گارون"
+  },
+  "quest:5226": {
+   "title": "بازگشت به نقطهٔ چیلویند"
+  },
+  "quest:5235": {
+   "title": "هدف: پژمردگی گارون"
+  },
+  "quest:5236": {
+   "title": "بازگشت به بارویل"
+  },
+  "quest:5237": {
+   "title": "مأموریت انجام شد!"
+  },
+  "quest:5238": {
+   "title": "مأموریت انجام شد!"
+  },
+  "quest:6025": {
+   "title": "کار نیمه‌تمام"
+  },
+  "quest:105": {
+   "title": "آه، آندرهال"
+  },
+  "quest:211": {
+   "title": "آه، آندرهال"
+  },
+  "quest:5162": {
+   "title": "خشم ناوگان آبی"
+  },
+  "quest:5164": {
+   "title": "فهرست سرگردانان"
+  },
+  "quest:5166": {
+   "title": "سینه‌پوش ناوگان رنگین"
+  },
+  "quest:5167": {
+   "title": "ران‌پوش تبارستان رنگین"
+  },
+  "quest:5342": {
+   "title": "آخرین باروو"
+  },
+  "quest:5344": {
+   "title": "آخرین باروو"
+  },
+  "quest:5461": {
+   "title": "انسان، راس فراست‌وایسپر"
+  },
+  "quest:5462": {
+   "title": "در حال مرگ، راس فراست‌وایسپر"
+  },
+  "quest:5465": {
+   "title": "یادگار روان‌پیوند"
+  },
+  "quest:5504": {
+   "title": "شانه‌پوش‌های سپیدهٔ دم"
+  },
+  "quest:5505": {
+   "title": "کلید شولومانس"
+  },
+  "quest:5507": {
+   "title": "شانه‌پوش‌های سپیدهٔ دم"
+  },
+  "quest:5511": {
+   "title": "کلید شولومانس"
+  },
+  "quest:5521": {
+   "title": "شانه‌پوش رنگین‌پرندهٔ سپیدهٔ دم"
+  },
+  "quest:5524": {
+   "title": "شانه‌پوش رنگین‌پرندهٔ سپیدهٔ دم"
+  },
+  "quest:5803": {
+   "title": "سوسک آراژ"
+  },
+  "quest:5804": {
+   "title": "سوسک آراژ"
+  },
+  "quest:5861": {
+   "title": "میراندا را پیدا کن"
+  },
+  "quest:5862": {
+   "title": "فریب صلیب سرخ"
+  },
+  "quest:5944": {
+   "title": "در رؤیاها"
+  }
+ }
+}

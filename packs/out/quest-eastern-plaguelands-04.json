@@ -1,0 +1,762 @@
+{
+ "pack": "quest-eastern-plaguelands-04",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-eastern-plaguelands-04.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Craftsman's Writ - Runecloth Boots",
+   "fa": "فرمان استادکار - چکمهٔ پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Runecloth Boots",
+   "fa": "چکمهٔ پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Argent Dawn",
+   "fa": "سپیدهٔ نقره‌ای",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Craftsman's Writ - Runecloth Bag",
+   "fa": "فرمان استادکار - کیسهٔ پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Bags",
+   "fa": "کیف‌ها",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Craftsman's Writ - Runecloth Robe",
+   "fa": "فرمان استادکار - ردای پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Naxxramas",
+   "fa": "ناکس‌راماس",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Craftsman's Writ - Goblin Sapper Charge",
+   "fa": "فرمان استادکار - چاشنی تخریبی گابلین",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Charges",
+   "fa": "شارژ",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Craftsman's Writ - Thorium Grenade",
+   "fa": "فرمان استادکار - نارنجک توریم",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Craftsman's Writ - Gnomish Battle Chicken",
+   "fa": "فرمان استادکار - مرغ جنگی نومی",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "immune to",
+   "fa": "مصون در برابر",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Craftsman's Writ - Thorium Tube",
+   "fa": "فرمان استادکار - لولهٔ توریم",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Craftsman's Writ - Major Mana Potion",
+   "fa": "فرمان استادکار - معجونِ مانای بزرگ",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Mana",
+   "fa": "مانا",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Potions",
+   "fa": "معجون‌ها",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Craftsman's Writ - Greater Arcane Protection Potion",
+   "fa": "فرمان استادکار - معجونِ محافظتِ جادوییِ بزرگ‌تر",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E26": {
+   "en": "Protection",
+   "fa": "حفاظت",
+   "kind": "sp"
+  },
+  "E27": {
+   "en": "Craftsman's Writ - Major Healing Potion",
+   "fa": "فرمان استادکار - معجون شفای بزرگ",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "Craftsman's Writ - Flask of Petrification",
+   "fa": "فرمان استادکار - فلاسک سنگ‌شدگی",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Flask of Petrification",
+   "fa": "فلاسک سنگ‌شدگی",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Craftsman's Writ - Stonescale Eel",
+   "fa": "فرمان استادکار - مارماهی سنگ‌پولک",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Stonescale Eel",
+   "fa": "مارماهی سنگ‌پولک",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Craftsman's Writ - Plated Armorfish",
+   "fa": "فرمان استادکار - ماهی‌زره صفحه‌ای",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Plated Armorfish",
+   "fa": "ماهی‌زره صفحه‌ای",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Craftsman's Writ - Lightning Eel",
+   "fa": "فرمان استادکار - مارماهی برقی",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Lightning Eel",
+   "fa": "مارماهیِ آذرخش",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Ice Guard",
+   "fa": "نگهبانِ یخ",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Insignia of the Crusade",
+   "fa": "نشانِ صلیبیان",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Shadow Guard",
+   "fa": "نگهبانِ سایه",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Exalted",
+   "fa": "ستوده",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E43": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E47": {
+   "en": "bleed",
+   "fa": "خونریزی",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Craftsman's Writ - Runecloth Boots": "فرمان استادکار - چکمهٔ پارچهٔ رونی",
+  "Runecloth Boots": "چکمهٔ پارچهٔ رونی",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "form": "شکل",
+  "Argent Dawn": "سپیدهٔ نقره‌ای",
+  "Craftsman's Writ - Runecloth Bag": "فرمان استادکار - کیسهٔ پارچهٔ رونی",
+  "Runecloth": "پارچهٔ رونی",
+  "Bags": "کیف‌ها",
+  "Craftsman's Writ - Runecloth Robe": "فرمان استادکار - ردای پارچهٔ رونی",
+  "Naxxramas": "ناکس‌راماس",
+  "Craftsman's Writ - Goblin Sapper Charge": "فرمان استادکار - چاشنی تخریبی گابلین",
+  "Charges": "شارژ",
+  "Craftsman's Writ - Thorium Grenade": "فرمان استادکار - نارنجک توریم",
+  "Craftsman's Writ - Gnomish Battle Chicken": "فرمان استادکار - مرغ جنگی نومی",
+  "Battle": "نبرد",
+  "battle": "نبرد",
+  "immune to": "مصون در برابر",
+  "Craftsman's Writ - Thorium Tube": "فرمان استادکار - لولهٔ توریم",
+  "stack": "استک",
+  "Craftsman's Writ - Major Mana Potion": "فرمان استادکار - معجونِ مانای بزرگ",
+  "Mana": "مانا",
+  "Potions": "معجون‌ها",
+  "Craftsman's Writ - Greater Arcane Protection Potion": "فرمان استادکار - معجونِ محافظتِ جادوییِ بزرگ‌تر",
+  "Arcane": "اسرار",
+  "Protection": "حفاظت",
+  "Craftsman's Writ - Major Healing Potion": "فرمان استادکار - معجون شفای بزرگ",
+  "Healing": "شفا",
+  "Craftsman's Writ - Flask of Petrification": "فرمان استادکار - فلاسک سنگ‌شدگی",
+  "Flask of Petrification": "فلاسک سنگ‌شدگی",
+  "Craftsman's Writ - Stonescale Eel": "فرمان استادکار - مارماهی سنگ‌پولک",
+  "Stonescale Eel": "مارماهی سنگ‌پولک",
+  "Craftsman's Writ - Plated Armorfish": "فرمان استادکار - ماهی‌زره صفحه‌ای",
+  "Plated Armorfish": "ماهی‌زره صفحه‌ای",
+  "Craftsman's Writ - Lightning Eel": "فرمان استادکار - مارماهی برقی",
+  "Lightning Eel": "مارماهیِ آذرخش",
+  "Ice Guard": "نگهبانِ یخ",
+  "Insignia of the Crusade": "نشانِ صلیبیان",
+  "Shadow Guard": "نگهبانِ سایه",
+  "Exalted": "ستوده",
+  "Tor": "تور",
+  "Plaguelands": "طاعون‌زار",
+  "Forsaken": "مطرودان",
+  "allies": "متحدان",
+  "Alliance": "اتحاد",
+  "enemies": "دشمنان",
+  "bleed": "خونریزی"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$C",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$C",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$B",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$B",
+  "34": "$B",
+  "35": "$C",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$B",
+  "42": "$B",
+  "43": "$B",
+  "44": "$B",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$C",
+  "51": "$C",
+  "52": "$B",
+  "53": "$B",
+  "54": "$B",
+  "55": "$B",
+  "56": "$B",
+  "57": "$B",
+  "58": "$B",
+  "59": "$B",
+  "60": "$B",
+  "61": "$B",
+  "62": "$B",
+  "63": "$C",
+  "64": "$N",
+  "65": "$B",
+  "66": "$B",
+  "67": "$B",
+  "68": "$B",
+  "69": "$B",
+  "70": "$B",
+  "71": "$B",
+  "72": "$B",
+  "73": "$B",
+  "74": "$B",
+  "75": "$C",
+  "76": "$Gmister:missy;",
+  "77": "$B",
+  "78": "$B",
+  "79": "$B",
+  "80": "$B",
+  "81": "$B",
+  "82": "$B",
+  "83": "$B",
+  "84": "$B",
+  "85": "$B",
+  "86": "$B",
+  "87": "$B",
+  "88": "$B",
+  "89": "$C",
+  "90": "$B",
+  "91": "$B",
+  "92": "$B",
+  "93": "$B",
+  "94": "$B",
+  "95": "$B",
+  "96": "$B",
+  "97": "$B",
+  "98": "$B",
+  "99": "$B",
+  "100": "$B",
+  "101": "$B",
+  "102": "$B",
+  "103": "$C",
+  "104": "$B",
+  "105": "$B",
+  "106": "$B",
+  "107": "$B",
+  "108": "$B",
+  "109": "$B",
+  "110": "$B",
+  "111": "$B",
+  "112": "$B",
+  "113": "$B",
+  "114": "$B",
+  "115": "$C",
+  "116": "$B",
+  "117": "$B",
+  "118": "$B",
+  "119": "$B",
+  "120": "$B",
+  "121": "$B",
+  "122": "$B",
+  "123": "$B",
+  "124": "$B",
+  "125": "$B",
+  "126": "$B",
+  "127": "$B",
+  "128": "$C",
+  "129": "$B",
+  "130": "$B",
+  "131": "$B",
+  "132": "$B",
+  "133": "$B",
+  "134": "$B",
+  "135": "$B",
+  "136": "$B",
+  "137": "$B",
+  "138": "$B",
+  "139": "$B",
+  "140": "$B",
+  "141": "$B",
+  "142": "$B",
+  "143": "$B",
+  "144": "$B",
+  "145": "$C",
+  "146": "$B",
+  "147": "$B",
+  "148": "$B",
+  "149": "$B",
+  "150": "$B",
+  "151": "$B",
+  "152": "$B",
+  "153": "$B",
+  "154": "$B",
+  "155": "$B",
+  "156": "$B",
+  "157": "$B",
+  "158": "$B",
+  "159": "$B",
+  "160": "$C",
+  "161": "$N",
+  "162": "$B",
+  "163": "$B",
+  "164": "$B",
+  "165": "$B",
+  "166": "$B",
+  "167": "$B",
+  "168": "$B",
+  "169": "$B",
+  "170": "$B",
+  "171": "$B",
+  "172": "$C",
+  "173": "$B",
+  "174": "$B",
+  "175": "$B",
+  "176": "$B",
+  "177": "$B",
+  "178": "$B",
+  "179": "$B",
+  "180": "$B",
+  "181": "$B",
+  "182": "$B",
+  "183": "$B",
+  "184": "$B",
+  "185": "$B",
+  "186": "$B",
+  "187": "$C",
+  "188": "$B",
+  "189": "$B",
+  "190": "$B",
+  "191": "$B",
+  "192": "$R",
+  "193": "$B",
+  "194": "$B",
+  "195": "$B",
+  "196": "$B",
+  "197": "$R",
+  "198": "$n",
+  "199": "$N",
+  "200": "$B",
+  "201": "$B",
+  "202": "$N"
+ },
+ "rows": {
+  "quest:9190:title": "⟦E1⟧",
+  "quest:9190:desc:0": "Deliver 8 ⟦E2⟧ and the ⟦E1⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9190:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦1⟧⟦2⟧Work Order TR-635:⟦3⟧⟦4⟧8 ⟦E2⟧.⟦5⟧⟦6⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦7⟧⟦8⟧Contract is null and void if tampered with or damaged.⟦9⟧⟦10⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9190:progress:0": "Filling a work order, ⟦11⟧?",
+  "quest:9190:completion:0": "By Bronzebeard's beard! You actually brought me runecloth boots... I guess I lost that bet.",
+  "quest:9191:title": "⟦E7⟧",
+  "quest:9191:desc:0": "Deliver 8 ⟦E8⟧ ⟦E9⟧ and the ⟦E7⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9191:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦12⟧⟦13⟧Work Order TR-9999:⟦14⟧⟦15⟧8 ⟦E8⟧ ⟦E9⟧.⟦16⟧⟦17⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦18⟧⟦19⟧Contract is null and void if tampered with or damaged.⟦20⟧⟦21⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9191:progress:0": "Filling a work order, ⟦22⟧?",
+  "quest:9191:completion:0": "Blessed bootstraps! Are those what I think they are? The troops have been complaining non-stop about the lack of storage space for all that is required while in the field. One of them even drew me a diagram - such a pansy...⟦23⟧⟦24⟧These will definitely help alleviate some of the whining.",
+  "quest:9194:title": "⟦E10⟧",
+  "quest:9194:desc:0": "Deliver 8 ⟦E8⟧ Robes and the ⟦E10⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9194:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦25⟧⟦26⟧Work Order TR-7229:⟦27⟧⟦28⟧8 ⟦E8⟧ Robes.⟦29⟧⟦30⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦31⟧⟦32⟧Contract is null and void if tampered with or damaged.⟦33⟧⟦34⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9194:progress:0": "Filling a work order, ⟦35⟧?",
+  "quest:9194:completion:0": "You shouldn't have! No really, you shouldn't have. I don't know what Metz is thinking, but nobody is going to be wearing these robes into ⟦E11⟧.⟦36⟧⟦37⟧<Packmaster Stonebruiser sighs.>⟦38⟧⟦39⟧Bah, another pile of junk I'll have to get transferred to the front lines and another berating I'll have to take from Chambers.",
+  "quest:9195:title": "⟦E12⟧",
+  "quest:9195:desc:0": "Deliver 20 Goblin Sapper ⟦E13⟧ and the ⟦E12⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9195:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦40⟧⟦41⟧Work Order EN-11:⟦42⟧⟦43⟧20 Goblin Sapper ⟦E13⟧.⟦44⟧⟦45⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦46⟧⟦47⟧Contract is null and void if tampered with or damaged.⟦48⟧⟦49⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9195:progress:0": "Filling a work order, ⟦50⟧?",
+  "quest:9195:completion:0": "Now you're talking my language, ⟦51⟧. Things that go BOOM!",
+  "quest:9196:title": "⟦E14⟧",
+  "quest:9196:desc:0": "Deliver 20 Thorium Grenades and the ⟦E14⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9196:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦52⟧⟦53⟧Work Order EN-7:⟦54⟧⟦55⟧20 Thorium Grenades.⟦56⟧⟦57⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦58⟧⟦59⟧Contract is null and void if tampered with or damaged.⟦60⟧⟦61⟧-Dispatch Commander Metz, The ⟦E6⟧⟦62⟧",
+  "quest:9196:progress:0": "Filling a work order, ⟦63⟧?",
+  "quest:9196:completion:0": "These must have cost a pretty copper piece to make. Am I right or am I right, ⟦64⟧?",
+  "quest:9197:title": "⟦E15⟧",
+  "quest:9197:desc:0": "Deliver 4 Gnomish ⟦E16⟧ Chickens and the ⟦E15⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9197:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦65⟧⟦66⟧Work Order EN-0:⟦67⟧⟦68⟧4 Gnomish ⟦E16⟧ Chickens.⟦69⟧⟦70⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦71⟧⟦72⟧Contract is null and void if tampered with or damaged.⟦73⟧⟦74⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9197:progress:0": "Filling a work order, ⟦75⟧?",
+  "quest:9197:completion:0": "Why are you smiling? What's so funny? Listen, ⟦76⟧, a gnomish ⟦E17⟧ chicken is a very important unit and not to be taken lightly - EVER. We send these in to areas that might be heavily plagued or infested and they clean up any plagued insects or carrion maggots that might still be fluttering about. Everybody knows that robots are ⟦E18⟧ the plague.⟦77⟧⟦78⟧I bet you don't feel so smart now, do you? Big dummy...",
+  "quest:9198:title": "⟦E19⟧",
+  "quest:9198:desc:0": "Deliver 14 Thorium Tubes and the ⟦E19⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9198:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦79⟧⟦80⟧Work Order EN-558:⟦81⟧⟦82⟧14 Thorium Tubes.⟦83⟧⟦84⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦85⟧⟦86⟧Contract is null and void if tampered with or damaged.⟦87⟧⟦88⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9198:progress:0": "Filling a work order, ⟦89⟧?",
+  "quest:9198:completion:0": "Thorium tubes? Gee, thanks.⟦90⟧⟦91⟧<Packmaster Stonebruiser throws the ⟦E20⟧ of thorium tubes into a large pile of assorted junk.>",
+  "quest:9200:title": "⟦E21⟧",
+  "quest:9200:desc:0": "Deliver 10 Major ⟦E22⟧ ⟦E23⟧ and the ⟦E21⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9200:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦92⟧⟦93⟧Work Order AL-473:⟦94⟧⟦95⟧10 Major ⟦E22⟧ ⟦E23⟧.⟦96⟧⟦97⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦98⟧⟦99⟧Contract is null and void if tampered with or damaged.⟦100⟧⟦101⟧-Dispatch Commander Metz, The ⟦E6⟧⟦102⟧",
+  "quest:9200:progress:0": "Filling a work order, ⟦103⟧?",
+  "quest:9200:completion:0": "The utility of these should go without saying.",
+  "quest:9201:title": "⟦E24⟧",
+  "quest:9201:desc:0": "Deliver 15 Greater ⟦E25⟧ ⟦E26⟧ ⟦E23⟧ and the ⟦E24⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9201:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦104⟧⟦105⟧Work Order AL-1420:⟦106⟧⟦107⟧15 Greater ⟦E25⟧ ⟦E26⟧ ⟦E23⟧.⟦108⟧⟦109⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦110⟧⟦111⟧Contract is null and void if tampered with or damaged.⟦112⟧⟦113⟧-Dispatch Commander Metz, The ⟦E6⟧⟦114⟧",
+  "quest:9201:progress:0": "Filling a work order, ⟦115⟧?",
+  "quest:9201:completion:0": "<Packmaster Stonebruiser pops open one of the greater arcane protection potions and take a swig.>⟦116⟧⟦117⟧WOOT! These pack a kick, baby! A kick I say!",
+  "quest:9202:title": "⟦E27⟧",
+  "quest:9202:desc:0": "Deliver 20 Major ⟦E28⟧ ⟦E23⟧ and the ⟦E27⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9202:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦118⟧⟦119⟧Work Order AL-169110:⟦120⟧⟦121⟧20 Major ⟦E28⟧ ⟦E23⟧.⟦122⟧⟦123⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦124⟧⟦125⟧Contract is null and void if tampered with or damaged.⟦126⟧⟦127⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9202:progress:0": "Filling a work order, ⟦128⟧?",
+  "quest:9202:completion:0": "Do you know what the troops on the front lines call these? Priests in a bottle...⟦129⟧⟦130⟧<Packmaster Stonebruiser sings.>⟦131⟧⟦132⟧\"I'm your priest in a bott-le baby... you gotta drink me the right way...\"⟦133⟧⟦134⟧What's the matter sonny? It's a very popular song around these parts.",
+  "quest:9203:title": "⟦E29⟧",
+  "quest:9203:desc:0": "Deliver 1 ⟦E30⟧ and the ⟦E29⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9203:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦135⟧⟦136⟧Work Order AL-90:⟦137⟧⟦138⟧1 ⟦E30⟧.⟦139⟧⟦140⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦141⟧⟦142⟧Contract is null and void if tampered with or damaged.⟦143⟧⟦144⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9203:progress:0": "Filling a work order, ⟦145⟧?",
+  "quest:9203:completion:0": "No comment.⟦146⟧⟦147⟧<Packmaster Stonebruiser glares at you.>⟦148⟧⟦149⟧I said no comment! Now get out of my sight!",
+  "quest:9204:title": "⟦E31⟧",
+  "quest:9204:desc:0": "Deliver 40 ⟦E32⟧ and the ⟦E31⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9204:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦150⟧⟦151⟧Work Order FS-5:⟦152⟧⟦153⟧40 ⟦E32⟧.⟦154⟧⟦155⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦156⟧⟦157⟧Contract is null and void if tampered with or damaged.⟦158⟧⟦159⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9204:progress:0": "Filling a work order, ⟦160⟧?",
+  "quest:9204:completion:0": "You could have used this for something else, but you didn't, did you? No use crying about it now, ⟦161⟧.",
+  "quest:9205:title": "⟦E33⟧",
+  "quest:9205:desc:0": "Deliver 30 ⟦E34⟧ and the ⟦E33⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9205:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦162⟧⟦163⟧Work Order FS-12:⟦164⟧⟦165⟧30 ⟦E34⟧.⟦166⟧⟦167⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦168⟧⟦169⟧Contract is null and void if tampered with or damaged.⟦170⟧⟦171⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9205:progress:0": "Filling a work order, ⟦172⟧? ",
+  "quest:9205:completion:0": "You really don't know what these are for?⟦173⟧⟦174⟧<Packmaster Stonebruiser laughs.>⟦175⟧⟦176⟧Like I'm going to tell you! ",
+  "quest:9206:title": "⟦E35⟧",
+  "quest:9206:desc:0": "Deliver 30 ⟦E36⟧ and the ⟦E35⟧ - to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.",
+  "quest:9206:details:0": "The bearer of this writ is entitled to payment in the ⟦E5⟧ of an insignia of their choice upon completion of the contracted work order.⟦177⟧⟦178⟧Work Order FS-9:⟦179⟧⟦180⟧30 ⟦E36⟧.⟦181⟧⟦182⟧All filled orders should be delivered to Packmaster Stonebruiser at ⟦E3⟧ in the ⟦E4⟧.⟦183⟧⟦184⟧Contract is null and void if tampered with or damaged.⟦185⟧⟦186⟧-Dispatch Commander Metz, The ⟦E6⟧",
+  "quest:9206:progress:0": "Filling a work order, ⟦187⟧?",
+  "quest:9206:completion:0": "These make the best eel rolls in the world. That's right - IN THE WORLD.",
+  "quest:9211:title": "The ⟦E37⟧",
+  "quest:9211:desc:0": "Mataus the Wrathcaster at ⟦E3⟧ in the ⟦E4⟧ wants 10 ⟦E38⟧ and 30 gold.",
+  "quest:9211:obj:0": "Mataus the Wrathcaster at ⟦E3⟧ in the ⟦E4⟧ wants 10 ⟦E38⟧ and 30 gold.",
+  "quest:9211:details:0": "Mataus the Wrathcaster at ⟦E3⟧ in the ⟦E4⟧ wants 10 ⟦E38⟧ and 30 gold.",
+  "quest:9211:progress:0": "If it were not for these ⟦E6⟧ guards, you would be a stain upon this floor.⟦188⟧⟦189⟧",
+  "quest:9211:completion:0": "<Mataus pockets the gold.>⟦190⟧⟦191⟧Enjoy the repair costs, ⟦192⟧. ⟦E11⟧ is 'unkind' to the uninitiated.",
+  "quest:9213:title": "The ⟦E39⟧",
+  "quest:9213:desc:0": "Mataus the Wrathcaster at ⟦E3⟧ in the ⟦E4⟧ wants 10 ⟦E38⟧ and 30 gold.",
+  "quest:9213:obj:0": "Mataus the Wrathcaster at ⟦E3⟧ in the ⟦E4⟧ wants 10 ⟦E38⟧ and 30 gold.",
+  "quest:9213:details:0": "Mataus the Wrathcaster at ⟦E3⟧ in the ⟦E4⟧ wants 10 ⟦E38⟧ and 30 gold.",
+  "quest:9213:progress:0": "<Mataus yawns.>⟦193⟧⟦194⟧Be gone, insect, lest you have something for me.",
+  "quest:9213:completion:0": "<Mataus stuffs the gold into his robe.>⟦195⟧⟦196⟧What are you still standing around for, ⟦197⟧? Our business is done.",
+  "quest:9378:obj:0": "Archmage Angela Dosantos at ⟦E3⟧ in the ⟦E4⟧ will grant you ⟦E25⟧ Cloaking at no cost. You must be ⟦E40⟧ with the ⟦E6⟧.",
+  "quest:9378:details:0": "In the thick of Plaguewood lies the entrance to the dread citadel of ⟦E11⟧. Previously, all attempts to enter had been stymied by the magical wards placed upon the rune portal. That is, until now.",
+  "quest:9378:details:1": "We have devised a way to gain entry via a permanent arcane cloaking of sorts - an old cantrip of the Kirin ⟦E41⟧ with a few modifications of my own. With that said, the cloaking is costly; however, your dedication to the cause of the Dawn is unwavering! We will waive all cost associations.",
+  "quest:9664:obj:0": "Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the ⟦E4⟧, then return to Emmisary Whitebeard at ⟦E3⟧.",
+  "quest:9664:details:0": "Welcome to the ⟦E42⟧, ⟦198⟧. As you know, the ⟦E43⟧ and their ⟦E44⟧ hold the lands to the west of here against our best efforts. The ⟦E45⟧ commanders have decided that here in the east, we will establish new fortifications to tighten the noose around our ⟦E46⟧.",
+  "quest:9664:details:1": "Towers long abandoned since the days of Lordaeron are to be seized and rebuilt for this purpose. These lands are dangerous, and we could use your help.",
+  "quest:9664:progress:0": "When the towers are under our control, we will soon be able to surround the ⟦E43⟧. After that, it is only a matter of time before we can crush them.",
+  "quest:9664:completion:0": "Very good, ⟦199⟧. It will be important for us to hold these towers against future attacks, and for that we may need your assistance until reinforcements can be brought in to secure the area.",
+  "quest:9665:obj:0": "Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the ⟦E4⟧, then return to Emmisary Gormok at ⟦E3⟧.",
+  "quest:9665:details:0": "Agents of the ⟦E43⟧ uncovered an ⟦E45⟧ plot to establish new bases here in the ⟦E4⟧, at abandoned towers throughout the area.",
+  "quest:9665:details:1": "It is imperative that we not allow them to establish a significant presence on our eastern borders, and so we must stave off this ⟦E45⟧ incursion. Our current plans are to drive them out of any towers they may have already seized, and occupy those that we have under our control against further attacks.",
+  "quest:9665:progress:0": "They must be fools to think that we would allow them to establish bases so close to one of our capitals.⟦200⟧⟦201⟧We will ⟦E47⟧ their numbers until they turn tail and retreat back to the south.",
+  "quest:9665:completion:0": "This is good news, ⟦202⟧. It will be a constant struggle here in the ⟦E42⟧ until we have fully driven back the forces of the ⟦E45⟧.",
+  "quest:9665:completion:1": "Until that day, I hope that we will have your continued assistance."
+ },
+ "context": {
+  "quest:9190": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9191": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9194": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9195": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9196": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9197": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9198": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9200": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9201": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9202": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9203": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9204": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9205": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9206": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Packmaster Stonebruiser"
+  },
+  "quest:9211": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9213": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9378": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:9664": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Emmisary Whitebeard",
+   "turner": "Emmisary Whitebeard"
+  },
+  "quest:9665": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Emmisary Gormok",
+   "turner": "Emmisary Gormok"
+  }
+ },
+ "known": {
+  "quest:9378": {
+   "title": "DND FLAG دژ ترسناک — نکس‌راماس"
+  },
+  "quest:9664": {
+   "title": "برپایی دیده‌بانی‌های تازه"
+  },
+  "quest:9665": {
+   "title": "تقویت دفاع‌هایمان"
+  }
+ }
+}

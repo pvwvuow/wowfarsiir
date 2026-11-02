@@ -1,0 +1,824 @@
+{
+ "pack": "quest-darkshore-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-darkshore-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Onu",
+   "fa": "اونو",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E3": {
+   "en": "Legs",
+   "fa": "پاها",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Buzzbox 827",
+   "fa": "بازباکس ۸۲۷",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "silence",
+   "fa": "سکوت",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Nessa's Collection",
+   "fa": "مجموعهٔ نسا",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Laird's Response",
+   "fa": "پاسخِ لِرد",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Nessa Shadowsong",
+   "fa": "نسا شدوسانگ",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "root",
+   "fa": "محبوس‌شدن در جا",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Well of Eternity",
+   "fa": "چشمهٔ ابدیت",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Bashal'Aran",
+   "fa": "باشال‌آران",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Thundris Windweaver",
+   "fa": "تاندریس ویند‌ویور",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Buzzbox 411",
+   "fa": "بازباکس ۴۱۱",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Ancient Moonstone Seal",
+   "fa": "مُهر باستانی سنگ‌ماهه",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Sea Creature Bones",
+   "fa": "استخوان‌های موجود دریایی",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "The Temple of the Moon",
+   "fa": "معبد ماه",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Sea Turtle Remains",
+   "fa": "بقایای لاک‌پشت دریایی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Mist",
+   "fa": "میست",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "combat",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "stealth",
+   "fa": "مخفی‌کاری",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Buzzbox 323",
+   "fa": "بازباکس ۳۲۳",
+   "kind": "qs"
+  },
+  "E34": {
+   "en": "Darkshore Grouper",
+   "fa": "گروپر کرانهٔ تاریک",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Blump Family Fishing Pole",
+   "fa": "چوب‌ماهیگیریِ خانوادهٔ بلومپ",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Tharnariun's Hope",
+   "fa": "امیدِ ثارناریون",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E39": {
+   "en": "Hostile",
+   "fa": "خصمانه",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "reverence",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Empty Water Tube",
+   "fa": "لولهٔ آب خالی",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E43": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "Strangely Marked Box",
+   "fa": "جعبهٔ نشان‌دارِ عجیب",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Onu": "اونو",
+  "Hammer": "چکش",
+  "Legs": "پاها",
+  "Buzzbox 827": "بازباکس ۸۲۷",
+  "silence": "سکوت",
+  "Nessa's Collection": "مجموعهٔ نسا",
+  "Darkshore": "کرانهٔ تاریک",
+  "Teldrassil": "تلدراسیل",
+  "Laird's Response": "پاسخِ لِرد",
+  "Nessa Shadowsong": "نسا شدوسانگ",
+  "root": "محبوس‌شدن در جا",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Azshara": "آزشارا",
+  "Well of Eternity": "چشمهٔ ابدیت",
+  "aura": "هاله",
+  "Bashal'Aran": "باشال‌آران",
+  "form": "شکل",
+  "seal": "مهر",
+  "spell": "اسپیل",
+  "Thundris Windweaver": "تاندریس ویند‌ویور",
+  "Buzzbox 411": "بازباکس ۴۱۱",
+  "Ancient Moonstone Seal": "مُهر باستانی سنگ‌ماهه",
+  "Sea Creature Bones": "استخوان‌های موجود دریایی",
+  "Darnassus": "دارناسوس",
+  "The Temple of the Moon": "معبد ماه",
+  "chance": "شانس",
+  "Sea Turtle Remains": "بقایای لاک‌پشت دریایی",
+  "Mist": "میست",
+  "enemy": "دشمن",
+  "combat": "نبرد",
+  "stealth": "مخفی‌کاری",
+  "threat": "تیت",
+  "Buzzbox 323": "بازباکس ۳۲۳",
+  "Darkshore Grouper": "گروپر کرانهٔ تاریک",
+  "Blump Family Fishing Pole": "چوب‌ماهیگیریِ خانوادهٔ بلومپ",
+  "hit": "اصابت",
+  "Tharnariun's Hope": "امیدِ ثارناریون",
+  "Travel": "سفر",
+  "Hostile": "خصمانه",
+  "reverence": "ارجمند",
+  "Empty Water Tube": "لولهٔ آب خالی",
+  "Use": "استفاده",
+  "Felwood": "فل‌وود",
+  "Strangely Marked Box": "جعبهٔ نشان‌دارِ عجیب",
+  "battle": "نبرد"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$r",
+  "8": "$C",
+  "9": "$n",
+  "10": "$N",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$n",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$B",
+  "26": "$B",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$N",
+  "42": "$c"
+ },
+ "rows": {
+  "quest:961:title": "⟦E1⟧ is meditating",
+  "quest:961:completion:0": "The finding of Twilight's ⟦E2⟧ cultists is troubling.  I must meditate on their intentions...⟦1⟧⟦2⟧When you have more information, speak to me through a scrying bowl.  If you require a phial of scrying in order to create a bowl, then...here is another.",
+  "quest:983:obj:0": "Collect 6 Crawler ⟦E3⟧ and place them in ⟦E4⟧.",
+  "quest:983:details:0": "Hey! Help me with my latest invention, the buzzbox. You can talk to people far away!",
+  "quest:983:details:1": "Maybe you've already seen them, they're boxes with levers on them. The only problem is they need constant maintenance.",
+  "quest:983:details:2": "Each one suffers from a different problem, but I made a really smart decision. I placed each one near creatures that have the proper parts to fix that particular machine. Right now ⟦E4⟧ is on the fritz. It's just south of Auberdine, real close. It takes 6 Crawler ⟦E3⟧ to fix it. I'll pay ya...",
+  "quest:983:progress:0": "⟦E4⟧ sits with an eerie ⟦E5⟧. A single flashing light indicates that it needs 6 Crawler ⟦E3⟧ to be placed in its holding box.",
+  "quest:983:completion:0": "As you place the Crawler ⟦E3⟧ inside the machine, you hear gears begin to grind. Judging from the banging sounds coming from the Buzzbox, you believe the Crawler ⟦E3⟧ are being put in their proper place. Soon the machine begins to hum, and you hear a tiny voice calling out from within.",
+  "quest:983:completion:1": "B\"Hello? Uhh... Hello! You fixed it! This is Wizbang by the way! Thanks a lot... Hey, you wouldn't want to fix another one, would ya?\"",
+  "quest:6341:obj:0": "Bring ⟦E6⟧ to Vesprystus.",
+  "quest:6341:details:0": "The fishermen of Rut'theran village do very well, for the fish here are extremely large and abundant. I would like to compare the bounty here with that of the mainland.",
+  "quest:6341:details:1": "I have a collection of fish bones and scales that I would like taken to a colleague of mine in ⟦E7⟧. His name is Laird, he is a fish vendor in the village of Auberdine.",
+  "quest:6341:details:2": "Bring my collection to our hippogryph master, Vesprystus, and speak to him about traveling to Auberdine.",
+  "quest:6341:progress:0": "How may I help you? Are you in need of transport?",
+  "quest:6341:completion:0": "Ah, you wish to get this to Auberdine? Very well...",
+  "quest:6342:obj:0": "Ride a hippogryph to Auberdine from the hippogryph master Vesprystus, then bring ⟦E6⟧ to Laird.",
+  "quest:6342:details:0": "From Rut'theran, there are two methods of travel to Auberdine: by ferry and by hippogryph. Both are quick and reliable, but if you have not yet flown to Auberdine by hippogryph, then I suggest you do.",
+  "quest:6342:details:1": "It is sound advice to speak with the hippogryph master in every town that has one. Once you speak to the master, you can then fly there from other towns.",
+  "quest:6342:details:2": "Here is Nessa's collection. Speak with me again when you are ready to fly to Auberdine and deliver Nessa's collection to Laird.",
+  "quest:6342:progress:0": "Have you come from ⟦E8⟧? Tell me, how is the fishing there?",
+  "quest:6342:completion:0": "A package from Nessa? Thank you, ⟦3⟧! She told me she would send me samples of the fish caught near Rut'theran village. She thinks they may be very different from the fish caught here...",
+  "quest:6342:completion:1": "My! This jawbone is nearly twice the size of the same fish found here. And these scales are as big as a closed fist! Amazing!",
+  "quest:6343:obj:0": "Bring ⟦E9⟧ to ⟦E10⟧.",
+  "quest:6343:details:0": "I must send a response to Nessa. She'll be very interested to know how different the fish here are from those along ⟦E8⟧'s coastline. We can only guess the cause, but it is my suspicion that the world tree itself is affecting the wildlife around it!",
+  "quest:6343:details:1": "Please, take this response to Nessa. If you wish to take a hippogryph back to Rut'theran then speak with the hippogryph master Caylais Moonfeather. If you wish to take the ferry, then one regularly departs from the dock to the northwest.",
+  "quest:6343:progress:0": "⟦4⟧, you're back from Auberdine? Did you speak with Laird?",
+  "quest:6343:completion:0": "This is very interesting. The fish here are large, but I didn't think the difference in bounties between here and the mainland was so great. There must be a reason for this...",
+  "quest:6343:completion:1": "Well thank you, ⟦5⟧. I will discuss with the villagers the news you brought. Perhaps, one day, we will find the ⟦E11⟧ of this oddity. But until then, we shall reap its benefits!",
+  "quest:94913:title": "⟦E12⟧",
+  "quest:953:obj:0": "Study the tablets which tell of Ameth'Aran and of its fall, then return to Sentinel Tysha Moonblade in ⟦E7⟧.",
+  "quest:953:details:0": "To the east you will find the ruins of Ameth'Aran. It is now inhabited by the restless spirits of the Highborne that once dwelt within its walls, but once it was a place where the servants of ⟦E13⟧ freely practiced their powerful magics.",
+  "quest:953:details:1": "I was sent to explore the ruins and came across two large tablets, scrawled with the stories of Ameth'Aran and its fall. While I read the runes, I was accosted by the spirits, and fled.",
+  "quest:953:details:2": "Please, if you can, venture to the ruins and decipher the tablets in my place.",
+  "quest:953:progress:0": "When you have studied the tablets and learned of Ameth'Aran's fall, I will take the knowledge on to Auberdine, and inform the Circle of Ancients.",
+  "quest:953:completion:0": "We have few records from the time around the War of the Ancients, especially near the destruction of the ⟦E14⟧. Given the upheaval and cataclysmic events that were taking place, it is no big surprise.",
+  "quest:953:completion:1": "Thank you, ⟦6⟧. With your help, my work here is finished, and I will be able to deliver a full report to the Circle.",
+  "quest:954:obj:0": "Find the source of the strange blue ⟦E15⟧ in the ruins of ⟦E16⟧.",
+  "quest:954:details:0": "The ruins of ⟦E16⟧ to the east are overrun with demonic minions. The sprites and satyrs that have taken up residence in the area feed upon the magical energies of the area, their powers growing from continued exposure.",
+  "quest:954:details:1": "Even with that, I have noticed that there is one shrine they will not approach. On the western side of the ruins, atop a small bluff, a strange blue ⟦E15⟧ permeates... There must be an explanation to the demons' reluctance.",
+  "quest:954:details:2": "I would like you to investigate it.",
+  "quest:954:completion:0": "Ahh... To what could I possibly owe the exceedingly special honor of a ⟦7⟧ such as yourself as company. Truly it says much of my current companions--with no offense to my hosts, the noble grells and satyrs--that your presence could be considered an improvement.",
+  "quest:954:completion:1": "But please, do not let my uncivil tongue drive you from the place. It has indeed been many years, decades even, since I had civil accompaniment.",
+  "quest:955:obj:0": "Acquire 8 Grell Earrings for Asterion in ⟦E16⟧.",
+  "quest:955:details:0": "If I were to relate the story of my life, I have no doubt it would surpass the limits of your patience. Let us say that mine has been a long and painful life, and this spectral ⟦E17⟧ is perhaps the worst torment of all.",
+  "quest:955:details:1": "I am held here by the means of magic. Though my words may seem disingenuous, I assure you I would be grateful beyond words if you would help me find the means of my imprisonment. A ⟦E18⟧ binds me, and by examining the earpieces of the sprites and grells, I may find a trace of it.",
+  "quest:955:progress:0": "Once I have the earrings, I will cast the ⟦E19⟧ to search for the whereabouts of the ⟦E18⟧ that binds me. For centuries I have thought on the freedom destroying the ⟦E18⟧ would bring to me... Perhaps those centuries have taken a toll upon my mind that I might never recover...",
+  "quest:955:completion:0": "Indeed... The grells of ⟦E16⟧ do not possess that which I am searching... however they have come into contact with it recently. Recently... I would reckon that by your time, not mine. Recent for me stretches into the veil of the past, almost another Age...",
+  "quest:958:obj:0": "Retrieve 7 Highborne Relics for ⟦E20⟧ in Auberdine.",
+  "quest:958:details:0": "⟦8⟧. A task I would ask of you.",
+  "quest:958:details:1": "Have you seen the ruins of Ameth'Aran? If not, you will find them on the eastern side of the main road, some ways to the south. Once they were the home of many powerful Highborne, now they are a testament to the destruction their dabblings produced.",
+  "quest:958:details:2": "I have been told by the Sentinels that the spirits of the Highborne persist, and that they wield their ancient magical implements. Those relics must be appropriated, so that we might destroy them.",
+  "quest:958:progress:0": "If only the tools of their undoing could have been destroyed in the cataclysm that destroyed our world... Nonetheless, we must do what we can to ensure that the horrors of our past are not repeated in the future.",
+  "quest:958:completion:0": "Though it is surely a figment of my imagination, I feel as though I can almost feel the taint of foul Highborne magic upon them. I will have these destroyed, so that their long dormant evil might never be released again.",
+  "quest:1001:obj:0": "Collect 3 Thresher Eyes from ⟦E7⟧ Threshers in the deep sea near ⟦E21⟧.",
+  "quest:1001:details:0": "A tiny voice crackles from deep within the machine.",
+  "quest:1001:details:1": "B\"Wizbang here! The next Buzzbox is north of Auberdine, on the beach",
+  "quest:1001:details:2": "So, that Buzzbox is number 411 and it needs 3 Thresher Eyes for its repairs. They're just off the coast! The darkshore threshers... *Hic*... Sorry about that...",
+  "quest:1001:details:3": "Just like last time, when you give the Buzzbox the goods, it'll spit out your reward. *Hic*... What? No, I'm fine!\"",
+  "quest:1001:progress:0": "The machine's hatch is open and it seems to wait expectantly for 3 Thresher Eyes to be placed inside.",
+  "quest:1001:completion:0": "The Buzzbox hums to life soon after you place the Thresher Eyes inside. There is a moment of static before you hear a familiar tiny voice call out.",
+  "quest:1001:completion:1": "B\"Crawler wine is the best...\" *hic*",
+  "quest:1001:completion:2": "B\"What? Oh, you fixed it already? Wow, you're a fasht one. Sho, would ya like to fix another?\"",
+  "quest:1001:completion:3": "You believe you hear a liquid being poured into a cup, followed by loud gulping sounds.",
+  "quest:956:obj:0": "Obtain the ⟦E22⟧ and bring it to Asterion in ⟦E16⟧.",
+  "quest:956:details:0": "If the grells have come into close contact with the ⟦E18⟧ that binds my eternal prison, I suspect I know the cause. No doubt the ⟦E18⟧ has come into the possession of the satyr that lead them.",
+  "quest:956:details:1": "I feel strongly that this must be true, ⟦9⟧. One of the satyr must surely possess it. If you can obtain it, you would bring me so close to passing the bars of my prison that tears would come to my eyes.",
+  "quest:956:progress:0": "The pillars of this shrine are as the bars of a prison to me, ⟦10⟧. No strength I still possess might break them, and no magic I wield might destroy them...⟦11⟧⟦12⟧For a thousand years and more I have stared at them, wondering if at long last I outlived even the stone, would I be free? Or would it be invisible bars that held me then...",
+  "quest:956:completion:0": "It... it is hard for me to even believe that what I hold now is that which has held me for so long. Let us waste no time, ⟦13⟧. When the ⟦E18⟧ is destroyed, I might walk the forests of the earth freely again.",
+  "quest:957:obj:0": "Destroy the ⟦E22⟧ at the ancient flame in Ameth'Aran, then return to Asterion in ⟦E16⟧.",
+  "quest:957:details:0": "It was the craft of one of the most powerful of the Highborne that created the ⟦E18⟧ that formed my prison. In Ameth'Aran, the ruins to the south that are twin to these, persists even today an ancient flame, blue in color. In this flame this ⟦E18⟧ could be destroyed.",
+  "quest:957:details:1": "Be wary in the ruins, ⟦14⟧...",
+  "quest:957:progress:0": "In truth, ⟦15⟧, I am afraid... Afraid that your coming--all of this--is merely a figment of a deranged mind. Can you know the torture that this is? I... Please, you must go quickly.",
+  "quest:957:completion:0": "I am freed, ⟦16⟧! I can now see with my own eyes the changes that have come to our world... Only bits and pieces have I known. To think that when I last walked freely, the Well still stood and the Highborne held court with ⟦E13⟧, our beloved queen.",
+  "quest:957:completion:1": "I sense that my jailor, my former master, Athrikus, still lives... Already my feelings of hopelessness will give way into thoughts of vengeance.",
+  "quest:3524:obj:0": "Recover ⟦E23⟧ from the beached sea creature just south of Auberdine, and then return with it to Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:3524:details:0": "Majestic sea creatures are known to launch themselves at the ⟦E7⟧ coastline, beached there until they die. Lately, these beasts have been washing ashore in ever-increasing numbers. I've been sent here by the Temple of the Moon to investigate, but the presence of murlocs along the water has made my research difficult.",
+  "quest:3524:details:1": "There is a giant creature washed ashore just south of Auberdine that is ringed by the foul Greymist murlocs. Could you go there and retrieve bones from the creature for our study?",
+  "quest:3524:progress:0": "It is only recently that these creatures started landing on the coast of ⟦E7⟧ in such alarming numbers. I can't help but think that this is an ill omen of some sort. Recovering a sample of that creature's bones to the south would help us in ⟦E24⟧ assess this situation!",
+  "quest:3524:completion:0": "I hope the murloc did not give you much trouble in collecting this for us! I will be sure to get this on the next hippogryph to ⟦E24⟧. ⟦E25⟧ has given me some funds to hand out for assistance; please have some with our thanks.",
+  "quest:3524:completion:1": "Your success here emboldens me to offer you a ⟦E26⟧ to aid the Temple of the Moon further, if you are interested...",
+  "quest:4722:obj:0": "Take the ⟦E27⟧ to Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:4722:details:0": "You find a corpse of a sea turtle that had beached itself on the coast of ⟦E7⟧ some time ago. It has been scavenged by the murlocs who have encamped themselves around the creature's remains. Still, there appear to be some suitable samples left on the creature's remains that Gwennyth Bly'Leggonde in Auberdine might be able to make use of.",
+  "quest:4722:progress:0": "Hello ⟦17⟧ - do you have any discoveries of creatures that have washed ashore to report on?",
+  "quest:4722:completion:0": "Another discovery for us to research - well done ⟦18⟧! These remains will be properly studied once they get to ⟦E24⟧. Please accept this small honorarium in exchange for the remains you have provided for our study.",
+  "quest:4723:obj:0": "Take the ⟦E23⟧ to Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:4723:details:0": "The remains of a giant thresher - much larger than one you'd expect to find in ⟦E7⟧ - lie beached on the coast of the ⟦E28⟧'s Edge. How this creature came to be here is unknown; the group of murlocs that now feast off the carcass of it seem to be much too weak, even in large numbers, to have brought down the beast.",
+  "quest:4723:details:1": "While some of it has been picked clean, enough of it remains to take a sample for Gwennyth Bly'Leggonde in Auberdine to study.",
+  "quest:4723:progress:0": "Hello again, ⟦19⟧! Are you here to report on another discovery?",
+  "quest:4723:completion:0": "The bones you have are from gentle sea mammals that are known to inhabit the waters surrounding the base of ⟦E8⟧. They had never been known to violently beach themselves like the threshers had been known to. Why would these creatures do this, I wonder? Well, perhaps the study of their remains will bear the fruits of knowledge that we seek.",
+  "quest:4723:completion:1": "Again, thank you for your aid. Please accept this honorarium from the Temple of the Moon.",
+  "quest:98025:title": "WANTED: Jai'vhanel",
+  "quest:98025:obj:0": "Find and slay the owl known as Jai'vhanel and take one of her feathers. The black owl was last seen north of the Ameth'Aran ruins near the mountain base. ...",
+  "quest:984:obj:0": "Find a corrupt furbolg camp in ⟦E7⟧ and return to Terenthis in Auberdine.",
+  "quest:984:details:0": "Some of my brethren were rescued from a corrupt furbolg in ⟦E8⟧, and I've vowed to stop any more atrocities before more of our kind are injured... or worse.",
+  "quest:984:details:1": "I have seen a couple hints of corruption in ⟦E7⟧ already, but I have yet to find any widespread signs. I think it would be logical if the investigation continued with the furbolgs. Would you find one of their camps, and return to me if you see any signs of corruption?",
+  "quest:984:progress:0": "How goes your search, ⟦20⟧?",
+  "quest:984:completion:0": "This is terrible news indeed, ⟦21⟧.",
+  "quest:984:completion:1": "With the furbolgs this close to Auberdine, we will have to prepare ourselves for the inevitable.",
+  "quest:984:completion:2": "Thank you, ⟦22⟧.",
+  "quest:985:obj:0": "Kill 8 Blackwood Pathfinders and 5 Windtalkers and return to Terenthis in Auberdine.",
+  "quest:985:details:0": "You've already proven adept at scouting our ⟦E29⟧, ⟦23⟧. Do you have what it takes to fight them as well?",
+  "quest:985:details:1": "Not all adventurers prefer straightforward ⟦E30⟧ to the art of ⟦E31⟧ and evasion.",
+  "quest:985:details:2": "If you think you're up for the task, then the furbolg camp south of Auberdine is currently the biggest ⟦E32⟧ to our people. You'll find some of the Blackwood tribe there. Kill 8 pathfinders and 5 windtalkers, and return to me here.",
+  "quest:985:progress:0": "Do not stay your hand from what must be done, child. I know how repulsive the idea of killing the creatures of the forest must be, but in this case it is necessary. No cure has been discovered for the corruption let loose upon the forest, and we must do what we can to halt its progress until one is found.",
+  "quest:985:completion:0": "Wash the blood from your garments, ⟦24⟧, and do not mourn what you had to do. Instead, give thanks. You have lessened the ⟦E32⟧ to our people here in Auberdine, even if ⟦E7⟧ is still in jeopardy from the effects of fel moss.",
+  "quest:1002:obj:0": "Collect 6 Moonstalker Fangs and place them in ⟦E33⟧.",
+  "quest:1002:details:0": "The Buzzbox gives a burst of static as you hear Wizbang begin to speak.",
+  "quest:1002:details:1": "B\"The next Buzzbox is number 323. Ish north of Auberdine but... where's the ale? Wha? Oh, ish on the road sho ya shouldn't have trouble finding it near the bridge.\"",
+  "quest:1002:details:2": "Wizbang mumbles something incoherent before you hear a loud gulping sound.",
+  "quest:1002:details:3": "B\"Thish one needs Moonstalker Fangs... 6 of 'em.\"",
+  "quest:1002:progress:0": "Though you have yet to place the 6 Moonstalker Fangs inside, you believe you hear the sounds of static and incoherent gnome ramblings coming from within. Could someone else have fixed the machine already?",
+  "quest:1002:completion:0": "The Buzzbox suddenly leaps into action, and you can hear the distinct sounds of teeth being ground to dust coming from within.",
+  "quest:1002:completion:1": "B\"Sho, ya made it! Thatsh exshellent newsh... Sho... Why doncha move along? Oh! Unless you want another job!\"",
+  "quest:1141:obj:0": "Catch 6 ⟦E34⟧ for Gubber Blump in Auberdine.",
+  "quest:1141:details:0": "I love fishing. The Blump family is known for fishing. My name is Gubber Blump; I fish.",
+  "quest:1141:details:1": "There's a kind of fish I like to catch around these parts called ⟦E7⟧ grouper. I used to go out on a boat to fish for grouper, but no boats have been going out since them mean ol' murlocs moved in. I bet they been eating up all the grouper too.",
+  "quest:1141:details:2": "Say, you wanna help me catch ⟦E7⟧ grouper? I'd give you a bona fide ⟦E35⟧ if you did! It's a real good pole to catch fish with.",
+  "quest:1141:progress:0": "There's plenty of good dishes you use ⟦E7⟧ groupers for.  They're good to eat, but I think it's more fun catching them.⟦25⟧⟦26⟧You caught any ⟦E7⟧ groupers yet?",
+  "quest:1141:completion:0": "Them's some real nice groupers, ⟦27⟧! Thanks for helping me out!",
+  "quest:1141:completion:1": "You're at least as good of a fisherman as my cousin, Graun Blump. She also has a beard and she smells kinda funny, but that don't do nothing to stop her fishing. I reckon you have what it takes to use a ⟦E35⟧.",
+  "quest:2118:obj:0": "Capture a living Rabid Thistle Bear and bring it back to Tharnariun.",
+  "quest:2118:obj:1": "Should you fail to capture a Rabid Thistle Bear and lose your trap, return to Tharnariun Treetender and request another trap.",
+  "quest:2118:details:0": "A sickness spreads across the ⟦E7⟧, gripping the minds and bodies of all it touches.",
+  "quest:2118:details:1": "The Thistle Bears have been ⟦E36⟧ the hardest by this plague. The once noble beasts are now an instrument of destruction - rabid and frenzied. I may have a cure for this ailment.",
+  "quest:2118:details:2": "Take this trap to the forest and lay it on the ground. Any Rabid Thistle Bear that crosses the light shall become docile for a short time. Once the bear is docile, it shall follow you. Lead it back here, ⟦28⟧.",
+  "quest:2118:progress:0": "Have you brought me the sick animal, ⟦29⟧?⟦30⟧⟦31⟧Should you fail to spring the trap, do not fret - ⟦E37⟧ is eternal. If you require another trap, abandon your task and report back to me.",
+  "quest:2118:completion:0": "Our work has only just begun, ⟦32⟧. Are you prepared for your next task?",
+  "quest:4681:obj:0": "Recover the ⟦E27⟧ from the Skeletal Sea Turtle in the waters west of Auberdine, and then speak with Gwennyth Bly'Leggonde back in Auberdine.",
+  "quest:4681:details:0": "That beached creature is not an isolated incident here in ⟦E7⟧. There are more along the coastline and even in the water. I would like for you to investigate another one that we know of; this one was reported to be in the water due west of Auberdine, close to a sunken vessel. Return to me with anything that you may recover that would aid our research.",
+  "quest:4681:details:1": "Also, in your travels you may find other creatures. By all means, if you should discover anything then please bring it to our attention!",
+  "quest:4681:progress:0": "Once you have investigated the creature's remains in the water to the west of here, I should be able to file a proper report with the Temple of the Moon in ⟦E24⟧. Perhaps then we will be closer to discovering the reason why these unfortunate creatures choose to end their lives beached on the coast of ⟦E7⟧.",
+  "quest:4681:completion:0": "You've been a tremendous help here today; we now have a solid ⟦E26⟧ at unlocking the mystery of why these creatures choose to beach themselves on the cost of ⟦E7⟧. The idea that they might be fleeing the area around ⟦E8⟧ is disturbing. Should you come across others in your travels, please let me know. Our research here is but in its infancy.",
+  "quest:4681:completion:1": "On behalf of the Temple of the Moon, please accept this as thanks for the effort you have given. Thank you, ⟦33⟧!",
+  "quest:4728:obj:0": "Take the ⟦E23⟧ to Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:4728:details:0": "The corpse of what appears to be some sort of giant sea mammal lies partially gutted on the beach. A wheelbarrow and various tools lie abandoned by this enormous beached sea creature, as though an attempt to study it had been made previously. Though murlocs have scavenged this beast, enough of it remains to gather a suitable sample for Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:4728:progress:0": "Greetings once again, ⟦34⟧!  What brings you back to Auberdine?  Are you here to report on another discovery, perhaps?",
+  "quest:4728:completion:0": "Ah, I believe you discovered one that was originally being examined by the Explorer's League. They have a presence here in ⟦E7⟧, and they had mentioned that they were studying one of the beached creatures until they were chased out by the murlocs. You appear to have succeeded where we both have not. Please - accept this honorarium on behalf of the Temple of the Moon.",
+  "quest:4811:obj:0": "⟦E38⟧ east of Auberdine and look for a large, red crystal along ⟦E7⟧'s eastern mountain range. Report back what you find to Sentinel Glynda Nal'Shea in Auberdine.",
+  "quest:4811:details:0": "⟦E39⟧ moonkin roam in ever increasing numbers to our east. They once were thought to be gentle, almost mystical creatures. While some continue to hold ⟦E40⟧ for them, the safety of Auberdine forces me to keep a more realistic view.",
+  "quest:4811:details:1": "I've received reports that moonkin are being drawn to a large red crystal along ⟦E7⟧'s eastern mountain range. No one has any idea what that crystal is, or even if it really exists. I want you to locate it over there and report back to me what you find.",
+  "quest:4811:progress:0": "What do you have to report on that red crystal? Does it even really exist?",
+  "quest:4811:completion:0": "So the crystal exists, ⟦35⟧? Fascinating... anyway, your task has been well executed; good work!",
+  "quest:4811:completion:1": "What exactly is this crystal? This is but a single question in a sea of questions. Another question that comes to mind is why the moonkin would be drawn to this object? Is the crystal benign in nature, or does it hold a more sinister purpose?",
+  "quest:4811:completion:2": "I have many more questions, but we're going to need to examine that crystal closely to get some answers.",
+  "quest:4812:obj:0": "Fill the ⟦E41⟧ at the Auberdine moonwell, and then investigate the red crystal along ⟦E7⟧'s eastern mountain wall.",
+  "quest:4812:details:0": "⟦E42⟧ this empty vial and fill up on some moonwell water here in Auberdine. Such potent magic should provide a clue as to the composition of the crystal. To do that, you'll pour the liquid over the crystal; it should take care of the rest.",
+  "quest:4812:details:1": "While I don't anticipate anything bad happening to you, I still want you to be careful. Above us to the east is ⟦E43⟧; if that crystal is tied to that place as I suspect it is, then it could prove to be very dangerous.",
+  "quest:4812:progress:0": "The crystal looks very alien against the wooded scenery of ⟦E7⟧. You think you hear a very slight humming coming from deep within it.",
+  "quest:4812:completion:0": "You have made it once more to the mysterious crystal. Removing the stopper on the tube of moonwell water, you gingerly pour the contents out over the top of the crystal. As the water cascades down its lattices, you see the opaque surface turn transparent...",
+  "quest:4813:obj:0": "Report back what you have found to Sentinel Glynda Nal'Shea in Auberdine.",
+  "quest:4813:details:0": "The moonwell water has revealed that embedded inside the crystal are a few small fragments of bone, as well as half of a jawbone. The jawbone appears to be from a humanoid, but it is unclear without breaking open the crystal - a feat that even the strongest of magic would find near impossible.",
+  "quest:4813:details:1": "With the task at hand complete, all that remains is to report back to Sentinel Glynda Nal'Shea in Auberdine.",
+  "quest:4813:completion:0": "Well, it would seem that even though we know more about this crystal, more unanswered questions are the result!",
+  "quest:4813:completion:1": "I'll take the information you've uncovered to the council here in Auberdine. Perhaps they'll know a course of action to follow on this crystal. Well, that is if there is one to be taken; for now, the ⟦E32⟧ remains far enough to our east to be out of harm's way.",
+  "quest:4813:completion:2": "As for you, please have this. Consider it a reward for a job well done, ⟦36⟧.",
+  "quest:4725:obj:0": "Take the ⟦E44⟧ to Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:4725:details:0": "More sea turtle remains lie beached along the coastline. This particular set has an abandoned carriage attached to the turtle's shell. Perhaps this creature was driven to the shoreline by unknown beings rather than beaching itself as some of the other remains suggested. Greymist murlocs now make the remains of this creature their home, feasting off the carrion.",
+  "quest:4725:details:1": "In the carriage, you find a box with strange markings on it; perhaps Gwennyth Bly'Leggonde in Auberdine can make sense of it.",
+  "quest:4725:progress:0": "It is a pleasure to see you again, ⟦37⟧. We are making great strives in uncovering the mystery of why majestic sea creatures beach themselves on the ⟦E7⟧ coastline, but with every question answered, two more are raised it seems.⟦38⟧⟦39⟧Are you here to offer us more aid in our research?",
+  "quest:4725:completion:0": "I have heard of the kinds of carriages found on the back of the turtle you found. Those I do believe are naga carriages, used both in ⟦E45⟧ and in transportation of their supplies on to land. The markings on the box you found are of the naga; this would explain their invasive presence in far-northern ⟦E7⟧.",
+  "quest:4725:completion:1": "I will send this box to ⟦E24⟧ along with the rest of your discoveries. This is for you - thank you again for your assistance.",
+  "quest:4727:obj:0": "Take the ⟦E27⟧ to Gwennyth Bly'Leggonde in Auberdine.",
+  "quest:4727:details:0": "The skeletal remains of a sea turtle lie in the sand of the northern ⟦E7⟧ beaches. The Greymist murlocs have either not found this carcass, or perhaps they have and are shying away from it for some unknown reason. Regardless, there is enough of the turtle left to take a sample back to Gwennyth Bly'Leggonde in Auberdine for the Temple of the Moon to study.",
+  "quest:4727:progress:0": "Hello again, ⟦40⟧! Are you here to report on another discovery?",
+  "quest:4727:completion:0": "You've found even more beached creatures, ⟦41⟧? Sea turtles were commonly found frolicking along the base of Nordrassil before it was destroyed. With the birth of ⟦E8⟧, however, these creatures have been seen in ever decreasing numbers. Some, as we have discovered, end their lives here for some unknown reason.",
+  "quest:4727:completion:1": "Your aid will perhaps unlock the mystery before us. Please accept this in exchange for the remains you have provided for our study.",
+  "quest:4761:obj:0": "Speak with ⟦E20⟧ in Auberdine.",
+  "quest:4761:details:0": "Your scouting of the furbolg camp is information that ⟦E20⟧ should be made aware of. He graciously serves as the elder of Auberdine, offering sage and just stewardship of the day to day affairs of the village. Please - share with him your findings to date on the furbolg situation.",
+  "quest:4761:details:1": "I believe he has some ideas of his own on the reasons behind their corruption. Perhaps you can work with him to enact a plan to restore the balance of nature here!",
+  "quest:4761:completion:0": "Well met, ⟦42⟧. Your scouting of the furbolg situation comes at a fortuitous time for us in Auberdine. For some time we have dealt with not only forest dwellers who are now openly hostile to our presence, but also the outright corruption of the forest itself. Hopefully you might be able to lend Auberdine aid during these troubling times."
+ },
+ "context": {
+  "quest:961": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 1,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:983": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Wizbang Cranktoggle",
+   "turner": "Buzzbox 827 («بازباکس ۸۲۷»)"
+  },
+  "quest:6341": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Nessa Shadowsong («نسا شدوسانگ»)",
+   "turner": "Vesprystus"
+  },
+  "quest:6342": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Vesprystus",
+   "turner": "Laird"
+  },
+  "quest:6343": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Laird",
+   "turner": "Nessa Shadowsong («نسا شدوسانگ»)"
+  },
+  "quest:94913": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 10,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:953": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Sentinel Tysha Moonblade",
+   "turner": "Sentinel Tysha Moonblade"
+  },
+  "quest:954": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Thundris Windweaver («تاندریس ویند‌ویور»)",
+   "turner": "Asterion"
+  },
+  "quest:955": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Asterion",
+   "turner": "Asterion"
+  },
+  "quest:958": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Thundris Windweaver («تاندریس ویند‌ویور»)",
+   "turner": "Thundris Windweaver («تاندریس ویند‌ویور»)"
+  },
+  "quest:1001": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Buzzbox 827 («بازباکس ۸۲۷»)",
+   "turner": "Buzzbox 411 («بازباکس ۴۱۱»)"
+  },
+  "quest:956": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Asterion",
+   "turner": "Asterion"
+  },
+  "quest:957": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Asterion",
+   "turner": "Asterion"
+  },
+  "quest:3524": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Gwennyth Bly'Leggonde",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:4722": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Beached Sea Turtle («لاک‌پشت دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:4723": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Beached Sea Creature («موجود دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:98025": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 13,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:984": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Terenthis",
+   "turner": "Terenthis"
+  },
+  "quest:985": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Terenthis",
+   "turner": "Terenthis"
+  },
+  "quest:1002": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Buzzbox 411 («بازباکس ۴۱۱»)",
+   "turner": "Buzzbox 323 («بازباکس ۳۲۳»)"
+  },
+  "quest:1141": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Gubber Blump",
+   "turner": "Gubber Blump"
+  },
+  "quest:2118": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Tharnariun Treetender",
+   "turner": "Tharnariun Treetender"
+  },
+  "quest:4681": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Gwennyth Bly'Leggonde",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:4728": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Beached Sea Creature («موجود دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:4811": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Sentinel Glynda Nal'Shea",
+   "turner": "Sentinel Glynda Nal'Shea"
+  },
+  "quest:4812": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Sentinel Glynda Nal'Shea",
+   "turner": "Mysterious Red Crystal"
+  },
+  "quest:4813": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Mysterious Red Crystal",
+   "turner": "Sentinel Glynda Nal'Shea"
+  },
+  "quest:4725": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Beached Sea Turtle («لاک‌پشت دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:4727": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Beached Sea Turtle («لاک‌پشت دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde"
+  },
+  "quest:4761": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Terenthis",
+   "turner": "Thundris Windweaver («تاندریس ویند‌ویور»)"
+  }
+ },
+ "known": {
+  "quest:983": {
+   "title": "بازباکس ۸۲۷"
+  },
+  "quest:6341": {
+   "title": "بهرهٔ تِلدراسیل"
+  },
+  "quest:6342": {
+   "title": "پرواز به اوبِردین"
+  },
+  "quest:6343": {
+   "title": "بازگشت به نسا"
+  },
+  "quest:953": {
+   "title": "سقوط آمِث‌آران"
+  },
+  "quest:954": {
+   "title": "باشال‌آران"
+  },
+  "quest:955": {
+   "title": "باشال‌آران"
+  },
+  "quest:958": {
+   "title": "ابزار های‌بورن"
+  },
+  "quest:1001": {
+   "title": "بازباکس ۴۱۱"
+  },
+  "quest:956": {
+   "title": "باشال‌آران"
+  },
+  "quest:957": {
+   "title": "باشال‌آران"
+  },
+  "quest:3524": {
+   "title": "به ساحل رانده‌شده"
+  },
+  "quest:4722": {
+   "title": "لاک‌پشت دریایی به‌کرانه‌رانده"
+  },
+  "quest:4723": {
+   "title": "موجود دریایی به‌کرانه‌رانده"
+  },
+  "quest:984": {
+   "title": "خطر چقدر بزرگ است؟"
+  },
+  "quest:985": {
+   "title": "خطر چقدر بزرگ است؟"
+  },
+  "quest:1002": {
+   "title": "بازباکس ۳۲۳"
+  },
+  "quest:1141": {
+   "title": "خانواده و چوب‌ماهیگیری"
+  },
+  "quest:2118": {
+   "title": "اراضی طاعون‌زده"
+  },
+  "quest:4681": {
+   "title": "به ساحل رانده‌شده"
+  },
+  "quest:4728": {
+   "title": "موجود دریایی به‌کرانه‌رانده"
+  },
+  "quest:4811": {
+   "title": "بلور سرخ"
+  },
+  "quest:4812": {
+   "title": "مثل آبشار"
+  },
+  "quest:4813": {
+   "title": "خرده‌سنگ‌های درون"
+  },
+  "quest:4725": {
+   "title": "لاک‌پشت دریایی به‌کرانه‌رانده"
+  },
+  "quest:4727": {
+   "title": "لاک‌پشت دریایی به‌کرانه‌رانده"
+  },
+  "quest:4761": {
+   "title": "تاندریس ویند‌ویور"
+  }
+ }
+}

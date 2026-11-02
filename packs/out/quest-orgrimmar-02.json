@@ -1,0 +1,870 @@
+{
+ "pack": "quest-orgrimmar-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-orgrimmar-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Darkspear Trolls",
+   "fa": "ترول‌های نیزه‌تیره",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "For Great Honor",
+   "fa": "به افتخار بزرگ",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Alterac Valley",
+   "fa": "درهٔ آلتراک",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Arathi Basin",
+   "fa": "حوضهٔ آراثی",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Warsong Gulch",
+   "fa": "درهٔ وار‑سونگ",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Un'Goro Crater",
+   "fa": "دهانهٔ اون‌گورو",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Hunter",
+   "fa": "شکارچی",
+   "kind": "cls"
+  },
+  "E12": {
+   "en": "Tauren",
+   "fa": "تورن",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "Sealed Letter to Ag'tor",
+   "fa": "نامهٔ مهرشده برای اگ'تور",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Bloodfist",
+   "fa": "مشت خونین",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E18": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Bank Voucher",
+   "fa": "سندِ بانک",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E27": {
+   "en": "Hamuul Runetotem",
+   "fa": "هامول رون‌توتوم",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Head of Magus Rimtori",
+   "fa": "سر مگوس ریم‌توری",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Rend",
+   "fa": "دریدن",
+   "kind": "sp"
+  },
+  "E34": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "dragonkin",
+   "fa": "اژدهازاد",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Head of Onyxia",
+   "fa": "سرِ اونکسیا",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Onyxia",
+   "fa": "اونیکسیا",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "honored",
+   "fa": "محترم",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Strength",
+   "fa": "قدرت",
+   "kind": "tm"
+  },
+  "E42": {
+   "en": "Nefarian",
+   "fa": "نفاریان",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Head of Nefarian",
+   "fa": "سرِ نفاریان",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Deathwing",
+   "fa": "بال مرگ",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E46": {
+   "en": "Cloth",
+   "fa": "پارچه",
+   "kind": "tm"
+  },
+  "E47": {
+   "en": "wool",
+   "fa": "پشم",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Free Ticket Voucher",
+   "fa": "کوپنِ بلیتِ رایگان",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "The Darkmoon Faire",
+   "fa": "نمایشگاه دارک‌مون",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Runecloth": "پارچهٔ رونی",
+  "stack": "استک",
+  "Darkspear Trolls": "ترول‌های نیزه‌تیره",
+  "For Great Honor": "به افتخار بزرگ",
+  "Alterac Valley": "درهٔ آلتراک",
+  "Arathi Basin": "حوضهٔ آراثی",
+  "Warsong Gulch": "درهٔ وار‑سونگ",
+  "Horde": "هورد",
+  "Orgrimmar": "اورگریمار",
+  "Un'Goro Crater": "دهانهٔ اون‌گورو",
+  "Hunter": "شکارچی",
+  "Tauren": "تورن",
+  "Sealed Letter to Ag'tor": "نامهٔ مهرشده برای اگ'تور",
+  "Bloodfist": "مشت خونین",
+  "Azshara": "آزشارا",
+  "battle": "نبرد",
+  "Blood": "خون",
+  "allies": "متحدان",
+  "silk": "ابریشم",
+  "threat": "تیت",
+  "Azeroth": "آزروت",
+  "Kalimdor": "کالیمدور",
+  "Tanaris": "تاناریس",
+  "Bank Voucher": "سندِ بانک",
+  "fear": "ترس",
+  "Druid": "دروئید",
+  "Hamuul Runetotem": "هامول رون‌توتوم",
+  "Thunder Bluff": "تاندر بلاف",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Silithus": "سیلیتوس",
+  "Head of Magus Rimtori": "سر مگوس ریم‌توری",
+  "Rend": "دریدن",
+  "Desolace": "دزوله‌یس",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Feralas": "فرالاس",
+  "dragonkin": "اژدهازاد",
+  "Head of Onyxia": "سرِ اونکسیا",
+  "Onyxia": "اونیکسیا",
+  "honored": "محترم",
+  "Strength": "قدرت",
+  "Nefarian": "نفاریان",
+  "Head of Nefarian": "سرِ نفاریان",
+  "Deathwing": "بال مرگ",
+  "form": "شکل",
+  "Cloth": "پارچه",
+  "wool": "پشم",
+  "Free Ticket Voucher": "کوپنِ بلیتِ رایگان",
+  "The Darkmoon Faire": "نمایشگاه دارک‌مون",
+  "Mulgore": "مولگر",
+  "miss": "خطا",
+  "Alliance": "اتحاد"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$r",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$r",
+  "14": "$N",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$N",
+  "24": "$c",
+  "25": "$C",
+  "26": "$C",
+  "27": "$C",
+  "28": "$N",
+  "29": "$B",
+  "30": "$B",
+  "31": "$N",
+  "32": "$N",
+  "33": "$C",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$B",
+  "38": "$N",
+  "39": "$R",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$n",
+  "44": "$B",
+  "45": "$B",
+  "46": "$N",
+  "47": "$B",
+  "48": "$B",
+  "49": "$N",
+  "50": "$B",
+  "51": "$B",
+  "52": "$N",
+  "53": "$B",
+  "54": "$B",
+  "55": "$N",
+  "56": "$B",
+  "57": "$B",
+  "58": "$N",
+  "59": "$B",
+  "60": "$B",
+  "61": "$N",
+  "62": "$n",
+  "63": "$B",
+  "64": "$B",
+  "65": "$C",
+  "66": "$N"
+ },
+ "rows": {
+  "quest:7837:title": "Additional ⟦E1⟧",
+  "quest:7837:progress:0": "Greetings once again, ⟦1⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional ⟦E2⟧ of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of the ⟦E3⟧.⟦2⟧⟦3⟧Whenever you are ready to hand in the ⟦E2⟧ of runecloth, I'll accept it.",
+  "quest:7837:completion:0": "⟦4⟧ - without heroes like you working on behalf of the trolls, we'd surely suffer. Thank you for your continued efforts!",
+  "quest:8388:title": "⟦E4⟧",
+  "quest:8388:desc:0": "Bring 3 ⟦E5⟧ Marks of Honor, 3 ⟦E6⟧ Marks of Honor and 3 ⟦E7⟧ Marks of Honor to a ⟦E8⟧ Warbringer outside the battlegrounds.",
+  "quest:8388:obj:0": "Bring 3 ⟦E5⟧ Marks of Honor, 3 ⟦E6⟧ Marks of Honor and 3 ⟦E7⟧ Marks of Honor to a ⟦E8⟧ Warbringer outside the battlegrounds.",
+  "quest:8388:details:0": "Bring 3 ⟦E5⟧ Marks of Honor, 3 ⟦E6⟧ Marks of Honor and 3 ⟦E7⟧ Marks of Honor to a ⟦E8⟧ Warbringer outside the battlegrounds.",
+  "quest:8388:progress:0": "Arathi is still wet with the blood of great warriors and the clash of steel still rings throughout Alterac. Do not waste my time unless you bring news from the front!",
+  "quest:8388:completion:0": "You continue to honor the ⟦E8⟧, ⟦5⟧. I'm glad to see you haven't turned soft.",
+  "quest:4300:obj:0": "Bring 8 White Ravasaur Claws to Jes'rimon in ⟦E9⟧.",
+  "quest:4300:details:0": "Hmm, maybe there be somethin' you can do for the Hand now that me think 'bout it. Yes, Jes'rimon could use your help for sure.",
+  "quest:4300:details:1": "In ⟦E10⟧ there be raptors with deadly claws. Some of those raptors sometimes have white claws instead of ones black like death. The Hand have... clients... that like weapons crafted from these claws. Bring me many of those white claws, and me pay you good coin. Do it fast enough, and maybe me help you in other ways.",
+  "quest:4300:progress:0": "Me clients are not so patient, ⟦6⟧. Have you gotten any of the claws yet?",
+  "quest:4300:completion:0": "Ah, these do nicely. Thank you, ⟦7⟧. An' you be here long before they needed... that be good.",
+  "quest:4300:completion:1": "Maybe we have a weapon fashioned for you from the claws. What do you say?",
+  "quest:7341:title": "A Fair Trade",
+  "quest:7341:progress:0": "Greetings, ⟦8⟧. I am Kolark, Bounty ⟦E11⟧ from Thunderbluff. Much of the world I have traveled and much I have seen.⟦9⟧⟦10⟧My journeys across the South Seas led to the discovery of these wonderous thorium headed arrows. Alas, I have an endless supply of the arrows but have exhausted my supply of shells. Bah, no self respecting ⟦E12⟧ would ever be caught dead using a flimsy bow. The arrows are useless!⟦11⟧⟦12⟧I will offer a trade: An even exchange of thorium shells for my thorium headed arrows. Deal?",
+  "quest:7341:completion:0": "Excellent! I am a ⟦E12⟧ of my word, ⟦13⟧. The arrows are yours.",
+  "quest:3504:obj:0": "Deliver the ⟦E13⟧ ⟦E14⟧ in ⟦E15⟧.",
+  "quest:3504:details:0": "Betraying, thieving woman! That's what I call her--that's all she'll ever be!",
+  "quest:3504:details:1": "I may have made a grave mistake, ⟦14⟧. I trusted a blood elf. What's worse, I trusted a woman!",
+  "quest:3504:details:2": "She claimed ⟦E15⟧ would hold great riches... powerful items. I simply send some warriors with her to protect her and I would be rewarded. Well, look who's the fool--she's killed them all.",
+  "quest:3504:details:3": "I want vengeance, ⟦15⟧, but I can't afford to send anyone else. Find Ag'tor at Valormok, north of the Haldarr Encampment. He'll tell you more.",
+  "quest:3504:progress:0": "Ah, Belgrom wizened up and finally sent someone not in his ranks to aid us, did he?⟦16⟧⟦17⟧This camp used to be a dozen warriors strong, ⟦18⟧, but now they're all dead. That mage, Rimtori, has slain them all. She played Belgrom like a lute... seduced him even. It's none of my business, but between you and I, she is quite the temptress. That's probably why I'm still out here helping Belgrom--I probably would have done the same thing.",
+  "quest:3504:completion:0": "We've sent everything we had at her and her workers, but they are strong in ⟦E16⟧. None have bothered to return. I'm assuming some have died, but I'm sure others simply ran... cowards.",
+  "quest:3504:completion:1": "But now that reinforcements have arrived, perhaps there's still something we can do. Perhaps we can still punish her for lying and betraying Belgrom.",
+  "quest:3504:completion:2": "What do you say, are you in?",
+  "quest:3505:obj:0": "Kill 10 ⟦E17⟧ Elf Reclaimers, and 10 ⟦E17⟧ Elf Surveyors before seeking out Magus Rimtori's camp. Once you've found it, look for something that might be important to her that can be used to draw her into a fight.",
+  "quest:3505:details:0": "I thought as much.",
+  "quest:3505:details:1": "We start our crusade against her workers along the southern bluffs on the northern peninsula of ⟦E15⟧. Kill them with bloody rage--let them know they've betrayed the wrong ⟦E18⟧.",
+  "quest:3505:details:2": "Do not concern yourself with her yet--she spends most of her time with her bodyguards searching ⟦E15⟧. It would be prudent after you've slain her workers to find her personal camp. Scouting out where we can attack her would be wise. Perhaps there is something there we can use to provoke her.",
+  "quest:3505:progress:0": "The title of the book is emblazoned on the black leather cover in gold leaf--Kaldorei Tome of Summoning. As you open the pages you can see that the book is very old but in superb condition.⟦19⟧⟦20⟧You assume the text is of some ancient language... perhaps Kaldorei?⟦21⟧⟦22⟧Your instincts tell you that you should return here once you've finished doling out retribution on the blood elves for their betrayal.",
+  "quest:3505:completion:0": "You begin to skim some of the pages until you come to a page that's marked by a thin, black strip of ⟦E19⟧ cloth.",
+  "quest:3505:completion:1": "As you try to decipher the script, you see a diagram on the bottom of one of the pages. A quick look around at the scene before you and you realize that the crystals, the circle, and even some of the other components on the ground are set up in a similar pattern as the diagram.",
+  "quest:4494:obj:0": "Speak to Alchemist Pestlezugg in Gadgetzan.",
+  "quest:4494:details:0": "It would seem that the silithid's intent, nay - reason for being, is to devour everything in their path that is not of their ecology. Their focus is singular, and it is for this reason they are a grave ⟦E20⟧ to all life on ⟦E21⟧.",
+  "quest:4494:details:1": "What we've seen to date is but the first stages. I suspect that their strength comes from deeper in ⟦E22⟧: ⟦E10⟧. Go to Gadgetzan in the ⟦E23⟧ desert and speak to Alchemist Pestlezugg. Tell him of my theory; he will surely aid us in fighting the silithid.",
+  "quest:4494:completion:0": "Yes, I gathered that Zilzibin sent you to me. Your experience in fighting these beasties is priceless; no one to my knowledge has ever dealt with their kind before. As for Zil's idea that ⟦E10⟧ is their heart... perhaps it is. Un'Goro is a mysterious and dangerous jungle to the west of here. Perhaps it is also one step closer to figuring out what the silithid are all about.",
+  "quest:4511:obj:0": "Bring the ⟦E24⟧ to Karus in the bank of ⟦E9⟧.",
+  "quest:4511:details:0": "⟦23⟧, we could not have gotten this far without you. The time will come soon, no doubt, when I'll ask for your help against the silithid once more. We must absorb what we have learned in Un'Goro; I ⟦E25⟧ that my assumptions that the silithid originated from Un'Goro are now wrong... that indeed there is a far stronger presence somewhere.",
+  "quest:4511:details:1": "Take this note to Karus at the bank. He'll give you something from my vault that should be viewed as a token of my gratitude. Thank you for your assistance, mighty ⟦24⟧.",
+  "quest:4511:progress:0": "Zug zug!  What may I help you with today, ⟦25⟧?",
+  "quest:4511:completion:0": "This bank voucher authorizes me to withdraw an item from Zilzibin Drumlore's account with us and present it to you. Congratulations would seem to be in order!",
+  "quest:1018:obj:0": "Speak with Arch ⟦E26⟧ ⟦E27⟧ on the Elder Rise of ⟦E28⟧ about the ⟦E29⟧'s call to explore the frontiers of ⟦E22⟧.",
+  "quest:1018:details:0": "Attention, heroes!",
+  "quest:1018:details:1": "The ⟦E29⟧ seeks able bodied individuals to assist them in exploring the vast new frontiers of ⟦E22⟧! A forbidden wasteland of unimaginable dangers lies far to the west of ⟦E23⟧ and Gadgetzan, and the Circle needs willing and honorable proxies to act in their stead.",
+  "quest:1018:details:2": "All interested individuals should seek audience with the ⟦E29⟧. Speak with the Arch ⟦E26⟧ ⟦E27⟧ on the Elder's Rise of ⟦E28⟧ for more information!",
+  "quest:1018:completion:0": "Greetings, ⟦26⟧.",
+  "quest:1018:completion:1": "I am pleased to see the likes of you taking an interest in the well being of nature; tales of your mighty deeds precede you, and you are welcomed here. Seeing you before me instills the feeling of confidence that the ⟦E29⟧ will get the proper aid it needs.",
+  "quest:1018:completion:2": "Our connection with the ⟦E29⟧ in ⟦E30⟧ transcends racial and political divides. Remember this as you work on behalf of the Circle, and you will do well.",
+  "quest:8276:obj:0": "Talk to Windcaller Proudhorn at Cenarion Hold in ⟦E31⟧.",
+  "quest:8276:details:0": "Attention, champions of the ⟦E8⟧! There's a ⟦E20⟧ we've left unchallenged for too long. Tremors in the earth near silithid hives all around ⟦E21⟧ have alerted us to large movements in their numbers as they prepare for expansion.",
+  "quest:8276:details:1": "⟦E29⟧ forces are gathering in ⟦E31⟧ to take the fight to the silithid before it's too late! No more shall they defile our lands!",
+  "quest:8276:details:2": "All able-bodied combatants are to report to Windcaller Proudhorn at Cenarion Hold! The silithid shall be vanquished!",
+  "quest:8276:completion:0": "Excellent, a new recruit answering the call to arms against the silithid. Welcome to Cenarion Hold, ⟦27⟧. I am pleased to see the words of our emissaries are reaching heroes of your caliber. You will find no shortage of opportunities to help us in our efforts here and I expect you'll quickly prove to be a valuable ally to our cause.",
+  "quest:3506:obj:0": "Destroy the arcane focusing crystal tied to Magus Rimtori and then slay her. Afterwards, take the ⟦E32⟧ to Ag'tor ⟦E14⟧ in ⟦E15⟧.",
+  "quest:3506:details:0": "A few more moments of thought brings a few ideas to mind, one of which brings a smile to your face: perhaps destroying the crystals would upset the blood elf responsible for the slaughter of so many orcs and the betrayal of Belgrom?",
+  "quest:3506:details:1": "You continue to decipher more of the script and pictures and realize that one of the crystals is tied to the creator of the circle--the others are tied to something far more sinister.",
+  "quest:3506:details:2": "You close the book and begin to decide which crystal to destroy.",
+  "quest:3506:progress:0": "How goes your slaughter of the blood elf traitors, ⟦28⟧? Have you made any progress?⟦29⟧⟦30⟧I hope you are the one strong enough to bring that dog to her knees! She deserves nothing but a painful death for all that she has done!",
+  "quest:3506:completion:0": "RAR!! Incredible!",
+  "quest:3506:completion:1": "You've done it! Belgrom will be pleased! Finally the spirits of dozens of our warriors can be at peace. Thank you, ⟦31⟧.",
+  "quest:3507:obj:0": "Speak to Belgrom Rockmaul in ⟦E9⟧.",
+  "quest:3507:details:0": "Return to Belgrom in ⟦E9⟧. He will want to see her head for himself! We'll return there shortly.",
+  "quest:3507:details:1": "Ah, this is indeed a good day. Thank you for your help, ⟦32⟧.",
+  "quest:3507:progress:0": "I remember you, ⟦33⟧. I asked you to go to ⟦E15⟧ to destroy that wench that betrayed me! That seems like many moons ago. Don't tell me that Ag'tor and the others are dead also!",
+  "quest:3507:completion:0": "HAHA! Look at you now, pathetic woman! I spit on your remains!",
+  "quest:3507:completion:1": "Thank you, ⟦34⟧. Thank you from the bottom of my heart! This is indeed a great day!",
+  "quest:3507:completion:2": "I would give you a kingdom if it were in my power! But perhaps you will settle for this.",
+  "quest:3507:completion:3": "B<Belgrom looks down at the head of the mage who had betrayed him.>",
+  "quest:3507:completion:4": "Haha! Stupid blood elf, look at you now... in a burlap sack and missing your body! You should never have betrayed Belgrom!",
+  "quest:4941:obj:0": "Speak with Eitrigg in ⟦E9⟧. When you have discussed matters with Eitrigg, seek council from Thrall.",
+  "quest:4941:obj:1": "You recall having seen Eitrigg in Thrall's chamber.",
+  "quest:4941:details:0": "⟦E33⟧ lives?",
+  "quest:4941:details:1": "Impossible!",
+  "quest:4941:details:2": "It had been thought that ⟦E33⟧ was slain decades ago.",
+  "quest:4941:details:3": "Seek out the wisdom of Eitrigg, ⟦35⟧. None know the workings of the Blackrock better than he and if what is written here bares truth, Eitrigg should be informed. No person should be denied the right of vengeance.",
+  "quest:4941:details:4": "You will find him in ⟦E9⟧.",
+  "quest:4941:details:5": "Once you have spoken with Eitrigg, confer with the Warchief to find out what he wishes to do about this problem.",
+  "quest:4941:progress:0": "Can you not see that I must not be interrupted?",
+  "quest:4941:completion:0": "<Thrall appears dismayed by the news you bring.>",
+  "quest:6566:obj:0": "Listen to Thrall.",
+  "quest:6566:details:0": "It is good to see you again, ⟦36⟧. The wind carries with it news from the Eastern Kingdom.",
+  "quest:6566:details:1": "Sit, listen. ⟦37⟧",
+  "quest:6566:progress:0": "Patience, ⟦38⟧. Pay attention!",
+  "quest:6566:completion:0": "Are you prepared to take on this task?",
+  "quest:6567:obj:0": "Seek out Rexxar. The Warchief has instructed you as to his whereabouts. Search the paths of ⟦E34⟧, between the ⟦E35⟧ and ⟦E36⟧.",
+  "quest:6567:details:0": "I have received word from one of my champions that a way into the lair of the dragon may exist. You are to seek him out.",
+  "quest:6567:details:1": "Rexxar wanders the desert wasteland of ⟦E34⟧, traveling between Stonetalon and ⟦E36⟧. He awaits your arrival.",
+  "quest:6567:completion:0": "There is but one way into the dragon's lair, ⟦39⟧.",
+  "quest:6567:completion:1": "You see, only the strongest of the Black Dragonflight are allowed entry into the lair of the brood mother. Many trials must be passed and the key to enter ceremoniously enchanted by General Drakkisath himself!",
+  "quest:6567:completion:2": "Since you are not of black ⟦E37⟧, you may have some difficulty in obtaining passage.",
+  "quest:6567:completion:3": "B<Rexxar grins.>",
+  "quest:7490:obj:0": "Take the ⟦E38⟧ to Thrall in ⟦E9⟧.",
+  "quest:7490:details:0": "You have accomplished the impossible. The brood mother of the Black Dragonflight lies dead at your feet. Take her head and present it to your Warchief.",
+  "quest:7490:progress:0": "<Thrall's stoic demeanor changes for a split second when he sees the enormous head of ⟦E39⟧. The mighty Doomhammer was nearly unsheathed.>",
+  "quest:7490:completion:0": "This is a great victory for the ⟦E8⟧, ⟦40⟧. So many times you have ⟦E40⟧ your Warchief. It is time for the Warchief to honor you.",
+  "quest:7491:obj:0": "Seek out Overlord Runthak in the Valley of ⟦E41⟧.",
+  "quest:7491:details:0": "Overlord Runthak awaits your arrival in the Valley of ⟦E41⟧.",
+  "quest:7491:details:1": "B<Thrall salutes you.>",
+  "quest:7491:details:2": "Do not keep your public waiting, hero.",
+  "quest:7491:completion:0": "Choose your reward and let the celebration of your glorious victory begin.",
+  "quest:7493:completion:0": "A dragon slayer and a seasoned leatherworker? You do not cease to astonish, hero. I am humbled.",
+  "quest:7493:completion:1": "Please accept what I am about to teach you. This knowledge will prove to be invaluable if you are to destroy what remains of the Black Dragonflight.",
+  "quest:7493:completion:2": "Create the cloak from the scales of the brood mother. It will protect you and your ⟦E18⟧ against the incendiary breath of the Lord of Blackrock... ⟦E42⟧.",
+  "quest:7783:obj:0": "Return the ⟦E43⟧ to Thrall in ⟦E9⟧.",
+  "quest:7783:details:0": "The old feeling returns. The welcome pangs of victory reverberate throughout your being. Before you lies the monolithic, ⟦E16⟧ scarred head of ⟦E42⟧. Return it to your Warchief, champion.",
+  "quest:7783:progress:0": "I wish that I could have been there to see the look on the face of the beast as you struck the killing blow, ⟦41⟧.",
+  "quest:7783:completion:0": "You have ⟦E40⟧ the ⟦E8⟧ once more, ⟦42⟧. The son of ⟦E44⟧ lays dead. Surely, the evil one stirs.",
+  "quest:7784:obj:0": "Speak with High Overlord Saurfang in ⟦E9⟧. He stands waiting for you in the Valley of ⟦E41⟧.",
+  "quest:7784:details:0": "Seek out High Overlord Saurfang in the Valley of ⟦E41⟧.",
+  "quest:7784:completion:0": "Choose your reward so that I may mount the head of the beast for all to see.",
+  "quest:7824:obj:0": "{'type': 'item', 'id': 14047, 'target': 'Runecloth', 'text': None}",
+  "quest:7824:progress:0": "⟦43⟧, you've been a tremendous contributor to our cloth drive. As we work hard to replenish our reserves, one ⟦E45⟧ of cloth remains critically low - runecloth. We are in absolutely dire need of runecloth, and we hope that you will be able to help us as you have in the past.⟦44⟧⟦45⟧If you are willing, please bring me what runecloth you can spare. We'll initially accept a single donation of sixty, and then we'll go from there.",
+  "quest:7824:completion:0": "Fantastic - these will go right to use, I assure you. Thank you again for your assistance! We'd certainly be lost without you.",
+  "quest:7824:completion:1": "With all the donations you've made, I would certainly process any additional runecloth donations you care to make in the future. Just be sure to check in with me, and I'll personally make sure that your good deeds won't go unrecognized!",
+  "quest:7826:obj:0": "{'type': 'item', 'id': 2592, 'target': 'Wool ⟦E46⟧', 'text': None}",
+  "quest:7826:progress:0": "If you have the sixty pieces of ⟦E47⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7826:completion:0": "Wonderful! We thank you for your generous donation, ⟦46⟧!",
+  "quest:7827:obj:0": "{'type': 'item', 'id': 4306, 'target': 'Silk ⟦E46⟧', 'text': None}",
+  "quest:7827:progress:0": "As with most other fabrics, our stocks of ⟦E19⟧ are at an all-time low.  Our stores are such that we'd only need sixty pieces of ⟦E19⟧ from you total; we should be able to reach our goal with the support of others.⟦47⟧⟦48⟧A benevolent gift such as ⟦E19⟧, might I add, would certainly increase your local standing in the community!  If you have the sixty pieces of ⟦E19⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7827:completion:0": "Wonderful! We thank you for your generous donation, ⟦49⟧!",
+  "quest:7831:obj:0": "{'type': 'item', 'id': 4338, 'target': 'Mageweave ⟦E46⟧', 'text': None}",
+  "quest:7831:progress:0": "Mageweave is running low, and we could use your help to replenish our stocks!  By counting on the community as a whole, we would only need a donation of 60 pieces of mageweave cloth from you to enable us to reach our goal.  Such generosity would not go unnoticed by ⟦E9⟧, I assure you!⟦50⟧⟦51⟧If you have the sixty pieces of mageweave cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7831:completion:0": "Wonderful! We thank you for your generous donation, ⟦52⟧!",
+  "quest:7833:obj:0": "{'type': 'item', 'id': 2592, 'target': 'Wool ⟦E46⟧', 'text': None}",
+  "quest:7833:progress:0": "We are currently accepting donations for ⟦E47⟧ cloth. A donation of sixty pieces of ⟦E47⟧ cloth will net you full recognition by ⟦E3⟧ for your generous actions. Our stores are such on ⟦E47⟧ that we would only need sixty pieces from you total; we should be able to acquire enough from others in the realm to support our drive.⟦53⟧⟦54⟧If you have the sixty pieces of ⟦E47⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7833:completion:0": "Wonderful! We thank you for your generous donation, ⟦55⟧!",
+  "quest:7834:obj:0": "{'type': 'item', 'id': 4306, 'target': 'Silk ⟦E46⟧', 'text': None}",
+  "quest:7834:progress:0": "As with most other fabrics, our stocks of ⟦E19⟧ are at an all-time low.  Our stores are such that we'd only need sixty pieces of ⟦E19⟧ from you total; we should be able to reach our goal with the support of others.⟦56⟧⟦57⟧A benevolent gift such as ⟦E19⟧, might I add, would certainly increase your local standing in the community!  If you have the sixty pieces of ⟦E19⟧ cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7834:completion:0": "Wonderful! We thank you for your generous donation, ⟦58⟧!",
+  "quest:7835:obj:0": "{'type': 'item', 'id': 4338, 'target': 'Mageweave ⟦E46⟧', 'text': None}",
+  "quest:7835:progress:0": "Mageweave is running low, and we could use your help to replenish our stocks!  By counting on the community as a whole, we would only need a donation of 60 pieces of mageweave cloth from you to enable us to reach our goal.  Such generosity would not go unnoticed by the ⟦E3⟧, I assure you!⟦59⟧⟦60⟧If you have the sixty pieces of mageweave cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7835:completion:0": "Wonderful! We thank you for your generous donation, ⟦61⟧!",
+  "quest:7836:obj:0": "{'type': 'item', 'id': 14047, 'target': 'Runecloth', 'text': None}",
+  "quest:7836:progress:0": "⟦62⟧, you've been a tremendous contributor to our cloth drive. As we work hard to replenish our reserves, one ⟦E45⟧ of cloth remains critically low - runecloth. We are in absolutely dire need of runecloth, and we hope that you will be able to help us as you have in the past.⟦63⟧⟦64⟧If you are willing, please bring me what runecloth you can spare. We'll initially accept a single donation of sixty, and then we'll go from there.",
+  "quest:7836:completion:0": "Fantastic - these will go right to use, I assure you. Thank you again for your assistance! We'd certainly be lost without you.",
+  "quest:7836:completion:1": "With all the donations you've made, I would certainly process any additional runecloth donations you care to make in the future. Just be sure to check in with me, and I'll personally make sure that your good deeds won't go unrecognized!",
+  "quest:7926:obj:0": "Deliver the ⟦E48⟧ to Gelvas Grimgate, located inside the Darkmoon Faire carnival.",
+  "quest:7926:details:0": "⟦E49⟧ is coming! Be sure to experience all the wonders and excitement of it when it comes to town!",
+  "quest:7926:details:1": "If you act right now, you can redeem this voucher for free prize tickets! Just hand your voucher to Gelvas Grimgate located inside the carnival.",
+  "quest:7926:details:2": "Right now, the Faire is just outside ⟦E28⟧, in ⟦E50⟧. Don't ⟦E51⟧ out! Go today!",
+  "quest:7926:progress:0": "Yes friend, may I help you?  Do you have a voucher that needs redeeming?",
+  "quest:7926:completion:0": "Welcome to the Darkmoon Faire! This voucher is good for FIVE, yes, FIVE prize tickets!",
+  "quest:7926:completion:1": "When you accumulate prize tickets, you'll want to speak to me about redeeming them for valuable prizes. The more tickets you get, the more prizes you can win. Huzzah!",
+  "quest:8367:obj:0": "Bring 3 ⟦E5⟧ Marks of Honor, 3 ⟦E6⟧ Marks of Honor and 3 ⟦E7⟧ Marks of Honor to a ⟦E8⟧ Warbringer outside the battlegrounds.",
+  "quest:8367:details:0": "Serving the ⟦E8⟧ in one of the great battles against the ⟦E52⟧ is a source of great honor! The few however, that have served the ⟦E8⟧ in ALL of our active battlefronts are our truly great fighters. We shall vanquish our opponents, not by fighting isolated skirmishes, but by waging a well-coordinated war.",
+  "quest:8367:details:1": "Go forth and crush the ⟦E52⟧ in ⟦E6⟧, ⟦E5⟧, Eye of the Storm and ⟦E7⟧! For Honor! For the ⟦E8⟧!",
+  "quest:8367:progress:0": "Arathi is still wet with the blood of great warriors and the clash of steel still rings throughout Alterac.  Do not waste my time unless you bring news from the front!",
+  "quest:8367:completion:0": "Your trials have not been easy, but your courage did not escape you and your strength did not fail. Part with past tokens of victory, ⟦65⟧. None shall need them as a reminder of your worth. Stand up straight, ⟦66⟧. Today you will walk with great pride for you are a hero!"
+ },
+ "context": {
+  "quest:7837": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 50,
+   "side": "horde",
+   "giver": "",
+   "turner": "Vehena"
+  },
+  "quest:8388": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 51,
+   "side": "horde",
+   "giver": "",
+   "turner": "Horde Warbringer"
+  },
+  "quest:4300": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 52,
+   "side": "horde",
+   "giver": "Jes'rimon",
+   "turner": "Jes'rimon"
+  },
+  "quest:7341": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 52,
+   "side": "horde",
+   "giver": "",
+   "turner": "Bounty Hunter Kolark"
+  },
+  "quest:3504": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 53,
+   "side": "horde",
+   "giver": "Belgrom Rockmaul",
+   "turner": "Ag'tor Bloodfist"
+  },
+  "quest:3505": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 53,
+   "side": "horde",
+   "giver": "Ag'tor Bloodfist",
+   "turner": "Kaldorei Tome of Summoning"
+  },
+  "quest:4494": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 53,
+   "side": "horde",
+   "giver": "Zilzibin Drumlore",
+   "turner": "Alchemist Pestlezugg"
+  },
+  "quest:4511": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 54,
+   "side": "horde",
+   "giver": "Zilzibin Drumlore",
+   "turner": "Karus"
+  },
+  "quest:1018": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 55,
+   "side": "horde",
+   "giver": "Warcaller Gorlach",
+   "turner": "Arch Druid Hamuul Runetotem"
+  },
+  "quest:8276": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 55,
+   "side": "horde",
+   "giver": "Cenarion Emissary Blackhoof",
+   "turner": "Windcaller Proudhorn"
+  },
+  "quest:3506": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 56,
+   "side": "horde",
+   "giver": "Kaldorei Tome of Summoning",
+   "turner": "Ag'tor Bloodfist"
+  },
+  "quest:3507": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 56,
+   "side": "horde",
+   "giver": "Ag'tor Bloodfist",
+   "turner": "Belgrom Rockmaul"
+  },
+  "quest:4941": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warlord Goretooth",
+   "turner": "Thrall"
+  },
+  "quest:6566": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Thrall",
+   "turner": "Thrall"
+  },
+  "quest:6567": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Thrall",
+   "turner": "Rexxar"
+  },
+  "quest:7490": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Thrall"
+  },
+  "quest:7491": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Thrall",
+   "turner": "Overlord Runthak"
+  },
+  "quest:7493": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Overlord Runthak",
+   "turner": "Overlord Runthak"
+  },
+  "quest:7783": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Thrall"
+  },
+  "quest:7784": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Thrall",
+   "turner": "High Overlord Saurfang"
+  },
+  "quest:7824": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Rashona Straglash",
+   "turner": "Rashona Straglash"
+  },
+  "quest:7826": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Rashona Straglash",
+   "turner": "Rashona Straglash"
+  },
+  "quest:7827": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Rashona Straglash",
+   "turner": "Rashona Straglash"
+  },
+  "quest:7831": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Rashona Straglash",
+   "turner": "Rashona Straglash"
+  },
+  "quest:7833": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Vehena",
+   "turner": "Vehena"
+  },
+  "quest:7834": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Vehena",
+   "turner": "Vehena"
+  },
+  "quest:7835": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Vehena",
+   "turner": "Vehena"
+  },
+  "quest:7836": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Vehena",
+   "turner": "Vehena"
+  },
+  "quest:7926": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kruban Darkblade",
+   "turner": "Gelvas Grimegate"
+  },
+  "quest:8367": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 60,
+   "side": "horde",
+   "giver": "Horde Warbringer",
+   "turner": "Horde Warbringer"
+  }
+ },
+ "known": {
+  "quest:4300": {
+   "title": "سلاح‌های استخوان‌تیغ"
+  },
+  "quest:3504": {
+   "title": "خیانت"
+  },
+  "quest:3505": {
+   "title": "خیانت"
+  },
+  "quest:4494": {
+   "title": "پیشروی سیلیتیدها"
+  },
+  "quest:4511": {
+   "title": "آرامش پیش از توفان"
+  },
+  "quest:1018": {
+   "title": "مرزهای تازه"
+  },
+  "quest:8276": {
+   "title": "پس‌گرفتن سیلیتوس"
+  },
+  "quest:3506": {
+   "title": "خیانت"
+  },
+  "quest:3507": {
+   "title": "خیانت"
+  },
+  "quest:4941": {
+   "title": "حکمت آیتریک"
+  },
+  "quest:6566": {
+   "title": "آنچه باد می‌آورد"
+  },
+  "quest:6567": {
+   "title": "قهرمان اردو"
+  },
+  "quest:7490": {
+   "title": "پیروزی برای اردو"
+  },
+  "quest:7491": {
+   "title": "برای دیدن همه"
+  },
+  "quest:7493": {
+   "title": "سفر تازه آغاز شده است"
+  },
+  "quest:7783": {
+   "title": "سرور بلک‌راک"
+  },
+  "quest:7784": {
+   "title": "سرور بلک‌راک"
+  },
+  "quest:7824": {
+   "title": "اهدای رون‌کلاث"
+  },
+  "quest:7826": {
+   "title": "اهدای پشم"
+  },
+  "quest:7827": {
+   "title": "اهدای ابریشم"
+  },
+  "quest:7831": {
+   "title": "اهدای مگ‌ویو"
+  },
+  "quest:7833": {
+   "title": "اهدای پشم"
+  },
+  "quest:7834": {
+   "title": "اهدای ابریشم"
+  },
+  "quest:7835": {
+   "title": "اهدای مگ‌ویو"
+  },
+  "quest:7836": {
+   "title": "اهدای رون‌کلاث"
+  },
+  "quest:7926": {
+   "title": "نمایشگاه دارک‌مون"
+  },
+  "quest:8367": {
+   "title": "به افتخار بزرگ"
+  }
+ }
+}

@@ -1,0 +1,866 @@
+{
+ "pack": "quest-searing-gorge-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-searing-gorge-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Silk Cloth",
+   "fa": "پارچهٔ ابریشمی",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Searing Gorge",
+   "fa": "تنگهٔ سوزان",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Fiery Flux",
+   "fa": "گدازهٔ آتشین",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Kingsblood",
+   "fa": "خونِ شاه",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Coal",
+   "fa": "زغال",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Heavy Leather",
+   "fa": "چرمِ سنگین",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Grimesilt Outhouse Key",
+   "fa": "کلید دست‌شوییِ گرایمسیلت",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Margol's Gigantic Horn",
+   "fa": "شاخ غول‌آسای مارگول",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Bleeding",
+   "fa": "خونریزی",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "Singed Letter",
+   "fa": "نامهٔ داغ‌زده",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Golem Oil",
+   "fa": "روغن گولم",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "target",
+   "fa": "هدف",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Daggers",
+   "fa": "خنجر",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Junk",
+   "fa": "زباله",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Smithing Tuyere",
+   "fa": "لولهٔ دم آهنگری",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Lookout's Spyglass",
+   "fa": "تلسکوپ دیده‌بان",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Thelsamar Blood Sausages",
+   "fa": "سوسیس‌های خونی تلسامار",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "Prayer to Elune",
+   "fa": "نیایش الون",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Symbol of Ragnaros",
+   "fa": "نماد راگناروس",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E32": {
+   "en": "Torch of Retribution",
+   "fa": "مشعلِ مکافات",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "interrupt",
+   "fa": "قطع",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Squire Maltrake",
+   "fa": "سکوایر مالتریک",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "Chambermaid Pillaclencher's Pillow",
+   "fa": "بالشِ خدمتکارِ اتاقِ پیلکلنچر",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Secret Plans: Fiery Flux",
+   "fa": "نقشه‌های محرمانه: فلاکس آتشین",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Mysterious Artifact",
+   "fa": "مصنوعهٔ مرموز",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Set",
+   "fa": "ست",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Silk Cloth": "پارچهٔ ابریشمی",
+  "Searing Gorge": "تنگهٔ سوزان",
+  "silk": "ابریشم",
+  "Fiery Flux": "گدازهٔ آتشین",
+  "Kingsblood": "خونِ شاه",
+  "Coal": "زغال",
+  "Heavy Leather": "چرمِ سنگین",
+  "Tanaris": "تاناریس",
+  "Grimesilt Outhouse Key": "کلید دست‌شوییِ گرایمسیلت",
+  "Margol's Gigantic Horn": "شاخ غول‌آسای مارگول",
+  "Barrens": "بارنز",
+  "Ironforge": "آیرون‌فورج",
+  "Bleeding": "خونریزی",
+  "Singed Letter": "نامهٔ داغ‌زده",
+  "Golem Oil": "روغن گولم",
+  "strike": "ضربه",
+  "damage": "آسیب",
+  "requires": "نیازمند",
+  "target": "هدف",
+  "Daggers": "خنجر",
+  "Junk": "زباله",
+  "Azeroth": "آزروت",
+  "Smithing Tuyere": "لولهٔ دم آهنگری",
+  "Lookout's Spyglass": "تلسکوپ دیده‌بان",
+  "Thelsamar Blood Sausages": "سوسیس‌های خونی تلسامار",
+  "Prayer to Elune": "نیایش الون",
+  "Darnassus": "دارناسوس",
+  "Elune": "الون",
+  "Symbol of Ragnaros": "نماد راگناروس",
+  "form": "شکل",
+  "Hammer": "چکش",
+  "Torch of Retribution": "مشعلِ مکافات",
+  "interrupt": "قطع",
+  "Squire Maltrake": "سکوایر مالتریک",
+  "Chambermaid Pillaclencher's Pillow": "بالشِ خدمتکارِ اتاقِ پیلکلنچر",
+  "Secret Plans: Fiery Flux": "نقشه‌های محرمانه: فلاکس آتشین",
+  "Mysterious Artifact": "مصنوعهٔ مرموز",
+  "Set": "ست"
+ },
+ "tokens": {
+  "1": "$R",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$r",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$R",
+  "21": "$B",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$B",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$r",
+  "34": "$B",
+  "35": "$B",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$B",
+  "42": "$B",
+  "43": "$B",
+  "44": "$B",
+  "45": "$B",
+  "46": "$R",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$B",
+  "51": "$B",
+  "52": "$B",
+  "53": "$B",
+  "54": "$B",
+  "55": "$B",
+  "56": "$B",
+  "57": "$B",
+  "58": "$B",
+  "59": "$r",
+  "60": "$B",
+  "61": "$B",
+  "62": "$B",
+  "63": "$B",
+  "64": "$B",
+  "65": "$B",
+  "66": "$B",
+  "67": "$B",
+  "68": "$B",
+  "69": "$B",
+  "70": "$B",
+  "71": "$B",
+  "72": "$B",
+  "73": "$B",
+  "74": "$R",
+  "75": "$C",
+  "76": "$B",
+  "77": "$B",
+  "78": "$N",
+  "79": "$B",
+  "80": "$N",
+  "81": "$B",
+  "82": "$r",
+  "83": "$N",
+  "84": "$B",
+  "85": "$B",
+  "86": "$r",
+  "87": "$N",
+  "88": "$N",
+  "89": "$B",
+  "90": "$N",
+  "91": "$N",
+  "92": "$C",
+  "93": "$g lad:lass;",
+  "94": "$B",
+  "95": "$B",
+  "96": "$B",
+  "97": "$B",
+  "98": "$B",
+  "99": "$B",
+  "100": "$B",
+  "101": "$N",
+  "102": "$N",
+  "103": "$B",
+  "104": "$B",
+  "105": "$N",
+  "106": "$R",
+  "107": "$N",
+  "108": "$B",
+  "109": "$N",
+  "110": "$N",
+  "111": "$B",
+  "112": "$r",
+  "113": "$B",
+  "114": "$N",
+  "115": "$N",
+  "116": "$N"
+ },
+ "rows": {
+  "quest:7737:title": "Gaining Acceptance",
+  "quest:7737:progress:0": "You've worked your way up through the Brotherhood's corporate hierarchy, ⟦1⟧. We have begun to look favorably upon you. Quite an accomplishment! ⟦2⟧ ⟦3⟧If you're interested in more work and earning more respect amongst us, listen up.⟦4⟧ ⟦5⟧We can refine the fiery flux by adding a simple Dark Iron residue to the mix. The Dark Iron residue can be found in Blackrock Depths.",
+  "quest:7737:completion:0": "Keep the residue pouring in!",
+  "quest:4449:obj:0": "Kill 8 Dark Iron Geologists and bring 15 pieces of ⟦E1⟧ to the person locked in the outhouse in ⟦E2⟧.",
+  "quest:4449:details:0": "Hey! Hey, you! Get over here!",
+  "quest:4449:details:1": "Ya gotta help me out. I was runnin' from them Dark Iron dwarves, and I hid in here to get out of sight. Damn bastard geologists and their magic ways! They musta seen me hide, cause next thing I knew, they locked the door and stuck me in here.",
+  "quest:4449:details:2": "Teach them geologists a lesson! Oh... an' can ya get me some pieces of ⟦E3⟧ cloth for... for... nothin'.",
+  "quest:4449:progress:0": "I ain't got all day! Get me those pieces of ⟦E3⟧ cloth! I mean geologists. Get those geologists! They deserve to feel my, well... your wrath.",
+  "quest:4449:completion:0": "Oh, this is great! Nice feel to it too!",
+  "quest:4449:completion:1": "What? Oh, yeah... geologists. Got 'em good, did ya? I can't thank ya enough, ⟦6⟧. That'll give me some time to finish up in here... I mean, it'll let me not have to worry about them comin' back for me anytime soon. Thanks again.",
+  "quest:7736:title": "Restoring ⟦E4⟧ Supplies via ⟦E5⟧",
+  "quest:7736:desc:0": "Deliver 2 Incendosaur Scales, 4 ⟦E5⟧ and one ⟦E6⟧ to Master Smith Burninate.",
+  "quest:7736:obj:0": "Deliver 2 Incendosaur Scales, 4 ⟦E5⟧ and one ⟦E6⟧ to Master Smith Burninate.",
+  "quest:7736:details:0": "Deliver 2 Incendosaur Scales, 4 ⟦E5⟧ and one ⟦E6⟧ to Master Smith Burninate.",
+  "quest:7736:progress:0": "Let's not waste more of my precious time with jibber jabber, ⟦7⟧. It's time to focus on replenishing our dwindling fiery flux supply.⟦8⟧⟦9⟧What I'm gonna need from you is the following:⟦10⟧⟦11⟧*Incendosaur scales.⟦12⟧⟦13⟧*⟦E5⟧.⟦14⟧⟦15⟧*⟦E6⟧.⟦16⟧⟦17⟧I'll take all that you can offer!⟦18⟧⟦19⟧And you'll do it fast if you wanna get in good with the Brotherhood.",
+  "quest:7736:completion:0": "There's always room for more fiery flux, junior. Keep it comin'... unless I tell you to stop.",
+  "quest:8241:title": "Restoring ⟦E4⟧ Supplies via Iron",
+  "quest:8241:details:0": "Let's not waste more of my precious time with jibber jabber, ⟦20⟧. It's time to focus on replenishing our dwindling fiery flux supply.⟦21⟧⟦22⟧What I'm gonna need from you is the following:⟦23⟧⟦24⟧*Incendosaur scales.⟦25⟧⟦26⟧*Iron bars.⟦27⟧⟦28⟧*⟦E6⟧.⟦29⟧⟦30⟧I'll take all that you can offer!⟦31⟧⟦32⟧And you'll do it fast if you wanna get in good with the Brotherhood.",
+  "quest:8241:progress:0": "Let's not waste more of my precious time with jibber jabber, ⟦33⟧. It's time to focus on replenishing our dwindling fiery flux supply.⟦34⟧⟦35⟧What I'm gonna need from you is the following:⟦36⟧⟦37⟧*Incendosaur scales.⟦38⟧⟦39⟧*Iron bars.⟦40⟧⟦41⟧*⟦E6⟧.⟦42⟧⟦43⟧I'll take all that you can offer!⟦44⟧⟦45⟧And you'll do it fast if you wanna get in good with the Brotherhood.",
+  "quest:8241:completion:0": "There's always room for more fiery flux, junior. Keep it comin'... unless I tell you to stop.",
+  "quest:8242:title": "Restoring ⟦E4⟧ Supplies via ⟦E7⟧",
+  "quest:8242:details:0": "Let's not waste more of my precious time with jibber jabber, ⟦46⟧. It's time to focus on replenishing our dwindling fiery flux supply.⟦47⟧⟦48⟧What I'm gonna need from you is the following:⟦49⟧⟦50⟧*Incendosaur scales.⟦51⟧⟦52⟧*⟦E7⟧.⟦53⟧⟦54⟧*⟦E6⟧.⟦55⟧⟦56⟧I'll take all that you can offer!⟦57⟧⟦58⟧And you'll do it fast if you wanna get in good with the Brotherhood.",
+  "quest:8242:progress:0": "Let's not waste more of my precious time with jibber jabber, ⟦59⟧. It's time to focus on replenishing our dwindling fiery flux supply.⟦60⟧⟦61⟧What I'm gonna need from you is the following:⟦62⟧⟦63⟧*Incendosaur scales.⟦64⟧⟦65⟧*⟦E7⟧.⟦66⟧⟦67⟧*⟦E6⟧.⟦68⟧⟦69⟧I'll take all that you can offer!⟦70⟧⟦71⟧And you'll do it fast if you wanna get in good with the Brotherhood.⟦72⟧⟦73⟧",
+  "quest:8242:completion:0": "There's always room for more fiery flux, junior. Keep it comin'... unless I tell you to stop.",
+  "quest:4450:obj:0": "Take the copy of Goodsteel's Ledger and then find the items listed in it before seeking Krinkle Goodsteel in ⟦E8⟧.",
+  "quest:4450:details:0": "Oh, you know what? That reminds me.",
+  "quest:4450:details:1": "You wanna finish up a little job I took up while I was in ⟦E8⟧? It's easy...",
+  "quest:4450:details:2": "Krinkle Goodsteel in Gadgetzan was lookin' for some stuff found here in ⟦E2⟧ and a few other places. Maybe you could take a look at the list and then bring it all to him?",
+  "quest:4450:details:3": "I'll just slide his ledger under the door if you're interested. Take that, and the stuff he wants back to him after ya collected it all.",
+  "quest:4450:progress:0": "Yes, yes? What can I do for you, ⟦74⟧? I'm awfully busy and have many patrons requesting my services. Perhaps you can speed things up. I don't mean to be rude, but I just don't have the time if I'm to catch up on all my work.",
+  "quest:4450:completion:0": "Oh, you've seen fit to do some of the work I requested. Excellent. And here I thought you were going to ask me to craft you something.",
+  "quest:4450:completion:1": "These are all perfect... and everything's here. Thank you, ⟦75⟧.",
+  "quest:4450:completion:2": "Maybe it wouldn't hurt to reward you some... hmm, what would you find useful.",
+  "quest:4451:obj:0": "Search ⟦E2⟧ and find a use for the ⟦E9⟧ you have found.",
+  "quest:4451:details:0": "The small brass key looks simple enough.. The only thing that seems to make it stand out are some words scratched into the head of it:",
+  "quest:4451:details:1": "B\"Dark Iron Outhouse - Do Not Duplicate.\"",
+  "quest:4451:details:2": "You have no idea what it means or what it will lead to.",
+  "quest:4451:progress:0": "*cough*⟦76⟧⟦77⟧Who is it? Can't ya see I'm busy?",
+  "quest:4451:completion:0": "Well, I'll be! How in tarnation!? You found the key! I knew them blasted Dark Irons were hiding it after they locked me in here! Thank ya so much, ⟦78⟧. You're the greatest! Now, just turn the key and let ol' Locheed outta here!",
+  "quest:3181:obj:0": "Take ⟦E10⟧ to Mountaineer Pebblebitty.⟦79⟧",
+  "quest:3181:details:0": "The gigantic horn has numerous scratches and cracks. An unusual metal object is lodged into the rough surface.",
+  "quest:3181:details:1": "Upon further examination, you notice that the metal is actually a broken axe head. On the metal, the following words are etched:",
+  "quest:3181:details:2": "Property of Mountaineer Pebblebitty.",
+  "quest:3181:details:3": "When you try and dislodge the broken axe head, it shatters into a million pieces.",
+  "quest:3181:details:4": "Woops!",
+  "quest:3181:progress:0": "No, I will not open the gate.",
+  "quest:3181:completion:0": "What have you got there? A fake obviously!",
+  "quest:3181:completion:1": "I've been face to face with Margol and I know for a fact that her horn is at least eight times larger than the one you've got in your hands, ⟦80⟧. You probably got that off of a stormsnout in the ⟦E11⟧. No ma'am, you can't fool Pebblebitty!",
+  "quest:3367:obj:0": "Help Dorius get back to ⟦E12⟧.⟦81⟧",
+  "quest:3367:details:0": "<Dorius groans.>",
+  "quest:3367:details:1": "I'm badly injured, ⟦82⟧. Feel... light headed... World spinning... ⟦E13⟧... internally.",
+  "quest:3367:details:2": "I must get back to ⟦E12⟧. Help me, ⟦83⟧.⟦84⟧",
+  "quest:3367:progress:0": "I'm not going to make it...",
+  "quest:3367:completion:0": "This letter was dropped by Dorius when he was shot.",
+  "quest:3368:obj:0": "Take the ⟦E14⟧ to Thorius in ⟦E12⟧. He is in the Hall of Explorers.",
+  "quest:3368:details:0": "Brother,",
+  "quest:3368:details:1": "If you are reading this letter, I am no more. How it got to you, I do not know, but thank and reward the ones responsible.",
+  "quest:3368:details:2": "About the stones: They exist and the Dark Irons have them in their possession. Their leader, Lathoric the Black, is using the power of the stones to enslave my excavation team. They were taken to the cauldron. Their minds are twisted, working night and day to complete something called Obsidion.",
+  "quest:3368:details:3": "Help them, brother. It is the final wish of a dead man.",
+  "quest:3368:details:4": "B-Dorius⟦85⟧",
+  "quest:3368:progress:0": "<Thorius sobs.>",
+  "quest:3368:completion:0": "<Thorius wipes his face dry.>",
+  "quest:3368:completion:1": "In the name of the Light, he will have his wish. This I vow.",
+  "quest:3441:obj:0": "Listen as Kalaran Windblade tells his story.",
+  "quest:3441:details:0": "Hear my tale, adventurer.",
+  "quest:3441:progress:0": "Allow me to finish mo... ⟦86⟧.",
+  "quest:3441:completion:0": "Have you heard enough? Are you prepared to act?",
+  "quest:3441:completion:1": "B",
+  "quest:3442:obj:0": "Collect 4 Hearts of Flame and 4 globes of ⟦E15⟧ and return the items to Kalaran Windblade.",
+  "quest:3442:details:0": "You have made the right decision, ⟦87⟧.",
+  "quest:3442:details:1": "We must ⟦E16⟧ where we will do the most ⟦E17⟧: the four sentry towers.",
+  "quest:3442:details:2": "With the four towers in flames, we can initiate an offensive before they have time to react.",
+  "quest:3442:details:3": "You will need the proper tool to set the towers ablaze. To make the tool ⟦E18⟧ some materials.",
+  "quest:3442:details:4": "Bring me four hearts of flame and four golem oil and I shall craft the torch of flawless flame.",
+  "quest:3442:details:5": "The golems and elementals in these lands should be your first ⟦E19⟧.",
+  "quest:3442:progress:0": "Have you collected the materials?",
+  "quest:3442:completion:0": "Well done, ⟦88⟧. We are almost ready.",
+  "quest:3443:obj:0": "Bring 8 Thorium Plated ⟦E20⟧ to Kalaran Windblade.",
+  "quest:3443:details:0": "To hold the flawless flame, we will need a shaft and a casing. You must first find a suitable shaft.",
+  "quest:3443:details:1": "The Dark Iron taskmasters and slavers of the cauldron use weapons of enchanted thorium, an extremely sturdy alloy. If you bring me eight thorium plated daggers, I can break the alloy down and reforge a shaft.⟦89⟧",
+  "quest:3443:progress:0": "Eight, ⟦90⟧. I need eight!",
+  "quest:3443:completion:0": "You're an exceptional laborer, ⟦91⟧. Have you ever considered a change of vocation? Perhaps a detective? ⟦E21⟧ collector? Oh, I know, one of those silly gnomes that crawl across the beaches of ⟦E22⟧ with their metal detecting contraptions, looking for lost treasure. Yes, that would be an ideal position for you.",
+  "quest:7728:obj:0": "Find and return the ⟦E23⟧ and ⟦E24⟧ to Taskmaster Scrange in the ⟦E2⟧.",
+  "quest:7728:obj:1": "The only information you have about these items is the following: They were definitely stolen by Dark Iron dwarves. The ⟦E23⟧ is a blacksmithing tool used by blacksmiths and the ⟦E24⟧ is an invaluable monitoring tool to lookouts.",
+  "quest:7728:details:0": "The following items have been stolen:",
+  "quest:7728:details:1": "B*One Dark Iron Tuyere.",
+  "quest:7728:details:2": "B*One ⟦E24⟧.",
+  "quest:7728:details:3": "BA reward is being offered to individuals who find and return these pilfered items.",
+  "quest:7728:details:4": "The Thorium Brotherhood is certain that these items were stolen by unscrupulous and jealous Dark Iron dwarves that inhabit the ⟦E2⟧.",
+  "quest:7728:details:5": "The spyglass in question was an excellent tool for the lookouts and the tuyere was an irreplaceable smithing tool.",
+  "quest:7728:details:6": "Should you find the missing items, return them to Scrange.",
+  "quest:7728:progress:0": "If you're here for the reward, you're gonna have to give me the stolen goods.",
+  "quest:7728:completion:0": "Fantastic work! Now for your reward.",
+  "quest:7729:obj:0": "Slay 15 Dark Iron Taskmasters and 15 Dark Iron Slavers. Return to Taskmaster Scrange in the ⟦E2⟧ once you have accomplished this task.",
+  "quest:7729:details:0": "Taskmaster Scrange is looking for a few good men and women to help 'cull the competition' in the ⟦E2⟧.",
+  "quest:7729:details:1": "If you are interested in this position, venture out into the ⟦E2⟧ and slaughter every Dark Iron Taskmaster and Dark Iron Slaver that you see.",
+  "quest:7729:details:2": "Return to Taskmaster Scrange when your clothes are bloody enough.",
+  "quest:7729:details:3": "You'll know when they're bloody enough so don't ask.",
+  "quest:7729:progress:0": "We're gonna need to weigh you with and without clothes to be sure.",
+  "quest:7729:completion:0": "15.9 pounds! That may be a new record for blood and gut weight on apparel! Congratulations, ⟦92⟧!",
+  "quest:7723:obj:0": "Hansel Heavyhands wants you to kill 20 Heavy War Golems.",
+  "quest:7723:obj:1": "The Heavy War Golems wander the areas surrounding the Cauldron in the ⟦E2⟧. When you've killed enough, return to Hansel in ⟦E2⟧.",
+  "quest:7723:details:0": "Unfortunately, I can't dish out the beats like I used to, due to this here fat finger problem. Ye see, the climate out here combined with the lack o' air pressure makes me fingers expand. They're like gigantic ⟦E25⟧, they are...",
+  "quest:7723:details:1": "Ye're gonna have to carry out me orders of business and what have ye.",
+  "quest:7723:details:2": "First on me agenda: Poundin' the livin' daylights out o' the heavy war golems o' the Gorge. Get crackin'.",
+  "quest:7723:progress:0": "Did ye pound 'em?",
+  "quest:7723:completion:0": "Ye're a good lad, ye are. I got ye a lil' present fer yer troubles.",
+  "quest:7724:obj:0": "Hansel Heavyhands wants you to kill 20 Greater Lava Spiders in the ⟦E2⟧. You can find Greater Lava Spiders in the plateaus and lava pools of the ⟦E2⟧.",
+  "quest:7724:obj:1": "Return to Hansel Heavyhands in the ⟦E2⟧ when you have killed enough Greater Lava Spiders.",
+  "quest:7724:details:0": "Wouldn't ye know it, every time ol' Hansel wants to take a moment to relax and reflect upon his life, the powers that be give him another job.",
+  "quest:7724:details:1": "Me gots to think, come on! Ye know what I be saying? Come. On.",
+  "quest:7724:details:2": "So, these here greater lava spiders are causin' a ruckus o' some sort. Oilfist says they shoot fire out their... erm, yea well, anyway, such things upset the children.",
+  "quest:7724:details:3": "I guess we gots to kill 'em. Rather, ye gots to kill 'em.",
+  "quest:7724:progress:0": "Was he right? Does it come out their rumps?",
+  "quest:7724:completion:0": "<Hansel sneezes.>",
+  "quest:7724:completion:1": "I think I'm gettin' a cold. Damn this frigid climate!",
+  "quest:7727:obj:0": "Hansel Heavyhands wants you to kill 20 Incendosaurs.",
+  "quest:7727:obj:1": "You will find Incendosaurs occupying the lava pools inside the Slag Pit. The Slag Pit can be found in the Cauldron of the ⟦E2⟧.",
+  "quest:7727:obj:2": "Return to Hansel Heavyhands in the ⟦E2⟧ when you have killed enough Incendosaurs.",
+  "quest:7727:details:0": "Bunions, ⟦93⟧. Me bunions got bunions. How am I supposed to do any sort of killin' with me feet in such disarray? That's why ye're gonna help.",
+  "quest:7727:details:1": "Scrange and Burninate tasked me to kill these things so they can send some expeditionary teams down into the Slag Pit lava pools to do some explorin'. Supposedly some incendosaurs or some such nonsense down there causin' all kinds o' problems. Now move along an' don't come back 'til the incendosaur population be extinct.",
+  "quest:7727:progress:0": "<Hansel is busily rubbing his bunions.>⟦94⟧⟦95⟧Don't just stand there, grab some oil and a luffa and get to scrubbin' these bunions.⟦96⟧⟦97⟧Ye don't have a luffa? Well then! Perhaps it's time I sent you out to find a luffa?%⟦98⟧⟦99⟧Hey, where are ye goin'?",
+  "quest:7727:completion:0": "Oh me achin' feets.",
+  "quest:7727:completion:1": "I figured since ye didn't have a luffa...",
+  "quest:3377:obj:0": "Hear Zamael tell his tale.",
+  "quest:3377:details:0": "Will you assist me, mortal? Hear my tale.",
+  "quest:3377:progress:0": "Allow me to finish my story.",
+  "quest:3377:completion:0": "I have accepted my fate here in this cage, but the prayer must be found.",
+  "quest:3378:obj:0": "Find the ⟦E26⟧ and take it to Astarii Starseeker in ⟦E27⟧.⟦100⟧",
+  "quest:3378:details:0": "Will you assist me, mortal? Will you find the prayer to ⟦E28⟧?",
+  "quest:3378:details:1": "As I stated, the prayer was etched onto a golden tablet. One of these idol worshipping scoundrels must have it on their person.",
+  "quest:3378:details:2": "If you do recover my prayer, take it to Astarii Starseeker in ⟦E27⟧. It matters little that my faith has been rekindled after the countless malevolent actions that I have taken against this world and its inhabitants, but my prayer must be heard. Absolution is the last thing I expect.",
+  "quest:3378:progress:0": "What brings you to the Temple of the Moon, ⟦101⟧?",
+  "quest:3378:completion:0": "⟦E28⟧ smiles upon you this eve, ⟦102⟧. You have returned a lost soul to her. Please accept this as a token of our gratitude.",
+  "quest:3452:obj:0": "Find and return a ⟦E29⟧ to Kalaran Windblade.",
+  "quest:3452:details:0": "We need one final piece to ⟦E30⟧ the torch.",
+  "quest:3452:details:1": "In the mountains to the northwest you will find a large encampment of Twilight's ⟦E31⟧. It is rumored that they carry symbols and idols that pay homage to their god. These symbols and idols could carry sufficient enchantment to ⟦E30⟧ a magical casing. Bring me a single symbol of Ragnaros and I will try to extract the magic from the item to create the casing.",
+  "quest:3452:progress:0": "Without a suitable source of arcane energy, the torch of retribution cannot be completed.",
+  "quest:3452:completion:0": "The symbol radiates foul magic; perfectly suited for our task.",
+  "quest:3453:obj:0": "Wait for Kalaran Windblade to complete the ⟦E32⟧.⟦103⟧",
+  "quest:3453:details:0": "Give me a moment to combine the pieces and apply the necessary enchantments.⟦104⟧",
+  "quest:3453:progress:0": "Do not ⟦E33⟧ the channeling process.",
+  "quest:3453:completion:0": "There is one final task that you must complete.",
+  "quest:3453:completion:1": "B",
+  "quest:3454:obj:0": "Take the ⟦E32⟧.",
+  "quest:3454:details:0": "The torch must now be bound to its owner. Pick up the torch, ⟦105⟧.",
+  "quest:3454:completion:0": "You grab the torch with both hands; waves of hatred and anger pulse through your being.",
+  "quest:3462:obj:0": "Speak with ⟦E34⟧.",
+  "quest:3462:details:0": "Speak with my envoy, ⟦E34⟧. He will further instruct you as to the use of the ⟦E32⟧.",
+  "quest:3462:completion:0": "Are you prepared to make your ⟦E16⟧?",
+  "quest:3462:completion:1": "B",
+  "quest:3481:obj:0": "Open the chest.",
+  "quest:3481:details:0": "The chest appears locked.",
+  "quest:3481:completion:0": "The chest opens at your touch. How much cheese could possibly be in here? There is only one way to find out.",
+  "quest:7701:obj:0": "Deep within the Slag Pit of the Cauldron, in the ⟦E2⟧, you will find the traitorous Dark Iron dwarf named Overseer Maltorius.",
+  "quest:7701:obj:1": "Slay Overseer Maltorius and take his head. Return the head to Lookout Captain Lolo Longstriker in the ⟦E2⟧ for your reward.",
+  "quest:7701:details:0": "By order o' 'is eminence, Overseer Oilfist, the rogue Thorium Brotherhood agent an' newly hired commander o' the Dark Iron Slag Pit crew o' the Cauldron, Overseer Maltorius, is to be killed an' 'is head brung back as proof o' the deed.",
+  "quest:7701:details:1": "See Lookout Captan Lolo Longstriker fer the reward on this bounty.",
+  "quest:7701:progress:0": "Can't ya shee I'm bushy? What *hic* ish it ya be wantin? *hic*",
+  "quest:7701:completion:0": "I never thunk I'd be lookin' at thish ugly mug again!",
+  "quest:7701:completion:1": "He acshually looksh better without the resht o' him attached.",
+  "quest:7701:completion:2": "Here's yer reward *hic*, ⟦106⟧.",
+  "quest:7704:obj:0": "Take ⟦E35⟧ to Evonice Sootsmoker in the ⟦E2⟧.",
+  "quest:7704:details:0": "Well, well, well... Isn't this a surprise. The Chambermaid had a gigantic ornate pillow and now it's yours. Evonice Sootsmoker will definitely want to get her grubby little hands all over this item. Take it to her and see if she'll offer you any goodies for your trouble.",
+  "quest:7704:completion:0": "This is better than even I could have thought possible! The Chambermaid's magical pillow is mine! You better believe you're going to get a nice reward for this accomplishment, ⟦107⟧!",
+  "quest:7722:obj:0": "Somewhere in the Slag Pit of the Cauldron you will find the ⟦E36⟧ that Overseer Maltorius stole. Find those plans and return them to Master Smith Burninate in the ⟦E2⟧.⟦108⟧",
+  "quest:7722:details:0": "When that bastard, Maltorius, left our clan, he left with something more valuable than a pristine arcane crystal: Our recipe for fiery flux! I'd bet anything that the recipe was part of the deal in his new promotion amongst the Dark Irons.",
+  "quest:7722:details:1": "I want you to get our secret plans back, ⟦109⟧. I'm sure they're somewhere near Maltorius, deep inside the Slag Pit.",
+  "quest:7722:progress:0": "Did you find the plans?",
+  "quest:7722:completion:0": "I hope you kicked his teeth in too, ⟦110⟧. Ragnaros knows, he deserved it.",
+  "quest:7722:completion:1": "Now we can get down to business.",
+  "quest:3372:obj:0": "Find the ⟦E37⟧ being guarded by the Twilight's ⟦E31⟧ Idolaters in the northwest quadrant of the ⟦E2⟧ and bring it to the Altar of Suntara in the Slag Pit.⟦111⟧",
+  "quest:3372:details:0": "Release them, ⟦112⟧. Even after their bodies give out, the power of the Suntara forces them to complete their tasks.",
+  "quest:3372:details:1": "The altar of Suntara is the key. Go northwest; in the hills above the cave... Twilight's ⟦E31⟧ guard a relic. Retrieve it and place it on the altar of Suntara.",
+  "quest:3372:details:2": "B<The dying archaeologist collapses.>",
+  "quest:3372:progress:0": "The altar is empty.",
+  "quest:3372:completion:0": "You place the mysterious artifact on the altar of Suntara.",
+  "quest:3463:obj:0": "⟦E38⟧ the North, South, East, and West Sentry Towers on fire by using the ⟦E32⟧ inside each of the buildings. ⟦113⟧",
+  "quest:3463:details:0": "Listen well, ⟦114⟧. While the four towers can never be destroyed, you can use the torch of retribution to set them ablaze for a very long period of time: A fire that no element or force can subdue.",
+  "quest:3463:details:1": "While they are ablaze, no guard or sentry unit can inhabit the watch posts and thus, their first line of defense is nullified.",
+  "quest:3463:details:2": "You must enter each tower and use the ⟦E32⟧ within their fortifications. Beware the lookouts posted by the Dark Irons, ⟦115⟧.",
+  "quest:3463:progress:0": "Are you lost, ⟦116⟧?",
+  "quest:3463:completion:0": "It is glorious! Is it not glorious master?"
+ },
+ "context": {
+  "quest:7737": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 40,
+   "side": "",
+   "giver": "",
+   "turner": "Master Smith Burninate"
+  },
+  "quest:4449": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 45,
+   "side": "",
+   "giver": "Wooden Outhouse",
+   "turner": "Wooden Outhouse"
+  },
+  "quest:7736": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Master Smith Burninate"
+  },
+  "quest:8241": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Master Smith Burninate"
+  },
+  "quest:8242": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Master Smith Burninate"
+  },
+  "quest:4450": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 46,
+   "side": "",
+   "giver": "Wooden Outhouse",
+   "turner": "Krinkle Goodsteel"
+  },
+  "quest:4451": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 47,
+   "side": "",
+   "giver": "",
+   "turner": "Wooden Outhouse"
+  },
+  "quest:3181": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Mountaineer Pebblebitty"
+  },
+  "quest:3367": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Dorius Stonetender",
+   "turner": "Singed Letter («نامهٔ داغ‌زده»)"
+  },
+  "quest:3368": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Singed Letter («نامهٔ داغ‌زده»)",
+   "turner": "Curator Thorius"
+  },
+  "quest:3441": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Kalaran Windblade"
+  },
+  "quest:3442": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Kalaran Windblade"
+  },
+  "quest:3443": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Kalaran Windblade"
+  },
+  "quest:7728": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "",
+   "giver": "Wanted/Missing/Lost & Found",
+   "turner": "Taskmaster Scrange"
+  },
+  "quest:7729": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 48,
+   "side": "",
+   "giver": "Wanted/Missing/Lost & Found",
+   "turner": "Taskmaster Scrange"
+  },
+  "quest:7723": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 49,
+   "side": "",
+   "giver": "Hansel Heavyhands",
+   "turner": "Hansel Heavyhands"
+  },
+  "quest:7724": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 49,
+   "side": "",
+   "giver": "Hansel Heavyhands",
+   "turner": "Hansel Heavyhands"
+  },
+  "quest:7727": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 49,
+   "side": "",
+   "giver": "Hansel Heavyhands",
+   "turner": "Hansel Heavyhands"
+  },
+  "quest:3377": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Zamael Lunthistle",
+   "turner": "Zamael Lunthistle"
+  },
+  "quest:3378": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Zamael Lunthistle",
+   "turner": "Astarii Starseeker"
+  },
+  "quest:3452": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Kalaran Windblade"
+  },
+  "quest:3453": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Kalaran Windblade"
+  },
+  "quest:3454": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Torch of Retribution («مشعلِ مکافات»)"
+  },
+  "quest:3462": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Kalaran Windblade",
+   "turner": "Squire Maltrake («سکوایر مالتریک»)"
+  },
+  "quest:3481": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Hoard of the Black Dragonflight («گنجینهٔ نژاد اژدهای سیاه»)",
+   "turner": "Hoard of the Black Dragonflight («گنجینهٔ نژاد اژدهای سیاه»)"
+  },
+  "quest:7701": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Wanted/Missing/Lost & Found",
+   "turner": "Lookout Captain Lolo Longstriker"
+  },
+  "quest:7704": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Evonice Sootsmoker"
+  },
+  "quest:7722": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Master Smith Burninate",
+   "turner": "Master Smith Burninate"
+  },
+  "quest:3372": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Dying Archaeologist",
+   "turner": "Altar of Suntara"
+  },
+  "quest:3463": {
+   "zone_en": "Searing Gorge",
+   "zone_fa": "تنگهٔ سوزان",
+   "level": 52,
+   "side": "",
+   "giver": "Squire Maltrake («سکوایر مالتریک»)",
+   "turner": "Squire Maltrake («سکوایر مالتریک»)"
+  }
+ },
+ "known": {
+  "quest:4449": {
+   "title": "گرفتار!"
+  },
+  "quest:4450": {
+   "title": "دفتر کل از تاناریس"
+  },
+  "quest:4451": {
+   "title": "کلید آزادی"
+  },
+  "quest:3181": {
+   "title": "شاخِ وحشی"
+  },
+  "quest:3367": {
+   "title": "سنگ‌های سون‌تارا"
+  },
+  "quest:3368": {
+   "title": "سنگ‌های سون‌تارا"
+  },
+  "quest:3441": {
+   "title": "مکافات الهی"
+  },
+  "quest:3442": {
+   "title": "شعلهٔ بی‌نقص"
+  },
+  "quest:3443": {
+   "title": "آهنگری ساقه"
+  },
+  "quest:7728": {
+   "title": "به‌سرقت‌رفته: لولهٔ دم آهنگری و تلسکوپ دیده‌بان"
+  },
+  "quest:7729": {
+   "title": "فرصت شغلی: سرکوب رقبا"
+  },
+  "quest:7723": {
+   "title": "نفرین این انگشتان چاق"
+  },
+  "quest:7724": {
+   "title": "بلای آتشین!"
+  },
+  "quest:7727": {
+   "title": "اینسندوسور؟ هرچه‌سور بهتر است دیگر!"
+  },
+  "quest:3377": {
+   "title": "نیایش الون"
+  },
+  "quest:3378": {
+   "title": "نیایش الون"
+  },
+  "quest:3452": {
+   "title": "پوستهٔ شعله"
+  },
+  "quest:3453": {
+   "title": "مشعل مکافات"
+  },
+  "quest:3454": {
+   "title": "مشعل مکافات"
+  },
+  "quest:3462": {
+   "title": "سکوایر مالتریک"
+  },
+  "quest:3481": {
+   "title": "قلکه‌ها..."
+  },
+  "quest:7701": {
+   "title": "تحت تعقیب: ناظر مالتوریوس"
+  },
+  "quest:7704": {
+   "title": "ببین چه بزرگ است!"
+  },
+  "quest:7722": {
+   "title": "این چه فلاکسی است؟"
+  },
+  "quest:3372": {
+   "title": "رهایشان کنید"
+  },
+  "quest:3463": {
+   "title": "شعله‌ورشان کنید!"
+  }
+ }
+}

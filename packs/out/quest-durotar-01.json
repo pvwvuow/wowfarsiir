@@ -1,0 +1,771 @@
+{
+ "pack": "quest-durotar-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-durotar-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Raptor",
+   "fa": "رپتور",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Abandoned Training Weapon",
+   "fa": "سلاحِ تمرینیِ رهاشده",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Ukor's Burden",
+   "fa": "بارِ اوکور",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Innkeeper",
+   "fa": "مهمان‌دار",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Lost Journal",
+   "fa": "دفترچهٔ گمشده",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Cooking",
+   "fa": "آشپزی",
+   "kind": "sp"
+  },
+  "E9": {
+   "en": "Bite",
+   "fa": "گازگرفتن",
+   "kind": "sp"
+  },
+  "E10": {
+   "en": "Back",
+   "fa": "شنل",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Prickly Pear Fruit",
+   "fa": "میوهٔ گلابی خاردار",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Blacksmithing",
+   "fa": "آهنگری",
+   "kind": "sp"
+  },
+  "E13": {
+   "en": "Enchanting",
+   "fa": "افسون‌گری",
+   "kind": "sp"
+  },
+  "E14": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Mining",
+   "fa": "معدن‌کاری",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Lodestone",
+   "fa": "سنگ‌آهنربا",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Skinning",
+   "fa": "پوست‌کنی",
+   "kind": "sp"
+  },
+  "E18": {
+   "en": "Lieutenant Benedict",
+   "fa": "ستوان بندیکت",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Canvas Scraps",
+   "fa": "تکه‌های کرباس",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Poison",
+   "fa": "زهر",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Crawler Mucus",
+   "fa": "موکوس خزنده",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Admiral Proudmoore's Orders",
+   "fa": "فرمان‌های دریاسالار پرادمور",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Humans",
+   "fa": "انسان",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "Raider's Battleaxe",
+   "fa": "تبر جنگی مهاجم",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Raider's Bow",
+   "fa": "کمان مهاجم",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Raider's Shield",
+   "fa": "سپرِ مهاجم",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Gnomish Tools",
+   "fa": "ابزار نومی",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Neck",
+   "fa": "گردن",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Luminous Residue",
+   "fa": "باقی‌ماندهٔ نورانی",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Zalazane",
+   "fa": "زالازان",
+   "kind": "qs"
+  },
+  "E41": {
+   "en": "Ukor's Lost Pack",
+   "fa": "بستهٔ گمشدهٔ اوکور",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Venomtail Antidote",
+   "fa": "پادزهر دم‌زهر",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E44": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  }
+ },
+ "glossary": {
+  "Raptor": "رپتور",
+  "Abandoned Training Weapon": "سلاحِ تمرینیِ رهاشده",
+  "Ukor's Burden": "بارِ اوکور",
+  "Innkeeper": "مهمان‌دار",
+  "fear": "ترس",
+  "Horde": "هورد",
+  "Lost Journal": "دفترچهٔ گمشده",
+  "Cooking": "آشپزی",
+  "Bite": "گازگرفتن",
+  "Back": "شنل",
+  "Prickly Pear Fruit": "میوهٔ گلابی خاردار",
+  "Blacksmithing": "آهنگری",
+  "Enchanting": "افسون‌گری",
+  "Orgrimmar": "اورگریمار",
+  "Mining": "معدن‌کاری",
+  "Lodestone": "سنگ‌آهنربا",
+  "Skinning": "پوست‌کنی",
+  "Lieutenant Benedict": "ستوان بندیکت",
+  "Durotar": "دوروتار",
+  "threat": "تیت",
+  "Canvas Scraps": "تکه‌های کرباس",
+  "battle": "نبرد",
+  "Poison": "زهر",
+  "Crawler Mucus": "موکوس خزنده",
+  "Admiral Proudmoore's Orders": "فرمان‌های دریاسالار پرادمور",
+  "seal": "مهر",
+  "Humans": "انسان",
+  "Raider's Battleaxe": "تبر جنگی مهاجم",
+  "Raider's Bow": "کمان مهاجم",
+  "Raider's Shield": "سپرِ مهاجم",
+  "Tanaris": "تاناریس",
+  "armor": "زره",
+  "strike": "ضربه",
+  "Gnomish Tools": "ابزار نومی",
+  "enemies": "دشمنان",
+  "Alliance": "اتحاد",
+  "chance": "شانس",
+  "Neck": "گردن",
+  "Luminous Residue": "باقی‌ماندهٔ نورانی",
+  "Zalazane": "زالازان",
+  "Ukor's Lost Pack": "بستهٔ گمشدهٔ اوکور",
+  "Venomtail Antidote": "پادزهر دم‌زهر",
+  "nearby": "نزدیک",
+  "Shadow": "سایه"
+ },
+ "tokens": {
+  "1": "<class>",
+  "2": "$C",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$C",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$C",
+  "13": "$N",
+  "14": "$C",
+  "15": "$C",
+  "16": "$c",
+  "17": "$C",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$N",
+  "25": "$n",
+  "26": "$B",
+  "27": "$B",
+  "28": "$C",
+  "29": "<name>",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "<sigh>"
+ },
+ "rows": {
+  "quest:7664:title": "Ivory ⟦E1⟧ Replacement",
+  "quest:7664:progress:0": "You bring me your old raptor, I give you new one with freshly sharpened claws!  The new raptor will be just as fast as your old one, but with a new look to him.   You can look at the swift raptors here to see what you will have to choose from.",
+  "quest:7665:title": "Red ⟦E1⟧ Replacement",
+  "quest:7665:progress:0": "You bring me your old raptor, I give you new one with freshly sharpened claws!  The new raptor will be just as fast as your old one, but with a new look to him.   You can look at the swift raptors here to see what you will have to choose from.",
+  "quest:97279:title": "Wayward Weapons",
+  "quest:97279:desc:0": "With an influx of new recruits like yourself, it's been hard to keep our weapons supplied. Our weaponsmith, Kzan, is running low on training weapons and I'd like to see what kinds of skills you possess to get an idea of what I have to work with. Luckily for you, I have a solution to both. ...",
+  "quest:97279:obj:0": "Collect 6 Abandoned Training Weapons, then return to Kzan Thornslash in the Den.",
+  "quest:97279:obj:1": "*⟦E2⟧ (6)",
+  "quest:97279:details:0": "With an influx of new recruits like yourself, it's been hard to keep our weapons supplied. Our weaponsmith, Kzan, is running low on training weapons and I'd like to see what kinds of skills you possess to get an idea of what I have to work with. Luckily for you, I have a solution to both.",
+  "quest:97279:details:1": "While you're out there cutting your teeth on boars, salvage six abandoned training weapons. Our failed recruits left them laying on the ground. Once you do, return them to our weaponsmith Kzan behind me in the Den.",
+  "quest:97279:progress:0": "Throm'ka, ⟦1⟧. Gorak told me I should be expecting you. It is good to see you in one piece!",
+  "quest:2161:obj:0": "Bring ⟦E3⟧ to ⟦E4⟧ Grosk in Razor Hill.",
+  "quest:2161:details:0": "Excuse me? Can you help me?",
+  "quest:2161:details:1": "I have a load of food here. I walked along the road and braved scorpids and spiders and worse! I brought the food to the Valley of Trials because I thought they needed it and I like to help out. But they don't need any food! Now I have to take it back to Razor Hill and I'm afraid of all the beasts along the way...",
+  "quest:2161:details:2": "Can you take it for me? I'm just a peon, but you're a hero. You ⟦E5⟧ nothing!",
+  "quest:2161:details:3": "Take it to ⟦E4⟧ Grosk at the Razor Hill inn. Thank you!",
+  "quest:2161:progress:0": "Welcome to Razor Hill!",
+  "quest:2161:completion:0": "Ah, this is the food Ukor brought to the Valley of Trials. Did they not need it? Well, I guess they like to starve you heroes in training. Builds spirit, they say!",
+  "quest:2161:completion:1": "Thank you for returning the food. I'll stick it back on the shelves... but here, let me offer you some refreshment first!",
+  "quest:2161:completion:2": "And don't forget to rest here in the inn. You may be a brave ⟦2⟧ ready to take on the world, but if your energy is sapped you won't be doing yourself, or the ⟦E6⟧, much good.",
+  "quest:96604:title": "The Great Outdoors",
+  "quest:96604:obj:0": "Sit near Brakk's Basic Campfire and wait until you receive the Boosted Rest buff.",
+  "quest:96652:title": "The Adventurer",
+  "quest:96652:obj:0": "Bring the journal to Brakk near Razor Hill.",
+  "quest:96652:obj:1": "*⟦E7⟧ (item) (provided)",
+  "quest:96652:details:0": "<The journal appears to be quite plain, detailing the life and adventures of someone you've never heard of.",
+  "quest:96652:details:1": "There are multiple entries mentioning camping. It seems to be quite... fun.>",
+  "quest:96652:progress:0": "Are you here to learn about camping in the wilderness?",
+  "quest:96655:title": "Camping 101: ⟦E8⟧",
+  "quest:96655:obj:0": "Speak with Cook Torka in Razor Hill to learn to become a cook.",
+  "quest:96821:title": "Legging It",
+  "quest:96821:desc:0": "We see fewer and fewer travelers from Razor Hill these days. The scorpids were never much fun, but now I hear there are spiders making their nest along the road.\nIf your travels take you up north, kill some of the spiders on your way. Then, let Razor Hill know the path's a bit safer for them.",
+  "quest:96821:obj:0": "Kill 6 Ridgeshade Creepers and 6 Ridgeshade Lurkers in southern , then report to Gar'thok in Razor Hill.",
+  "quest:96821:obj:1": "*Ridgeshade Creeper slain (6)",
+  "quest:96821:obj:2": "*Ridgeshade Lurker slain (6)",
+  "quest:96821:details:0": "We see fewer and fewer travelers from Razor Hill these days. The scorpids were never much fun, but now I hear there are spiders making their nest along the road.",
+  "quest:96821:details:1": "If your travels take you up north, kill some of the spiders on your way. Then, let Razor Hill know the path's a bit safer for them.",
+  "quest:96821:progress:0": "Yes?",
+  "quest:96825:title": "This Fruit Could ⟦E9⟧ ⟦E10⟧",
+  "quest:96825:desc:0": "Our hunters and fishers bring back plenty of savory food for our troops - but it's rare that they get a sweet treat.\nI've seen a cactus that produces a prickly, tasty fruit. But it only grows in the hills to the west, where the wretched quilboars make their camps. ...",
+  "quest:96825:obj:0": "Cook Torka in Razor Hill wants you to collect 8 ⟦E11⟧ from the Razormane Grounds west of town.",
+  "quest:96825:obj:1": "*⟦E11⟧ (Forever) (8)",
+  "quest:96825:details:0": "Our hunters and fishers bring back plenty of savory food for our troops - but it's rare that they get a sweet treat.",
+  "quest:96825:details:1": "I've seen a cactus that produces a prickly, tasty fruit. But it only grows in the hills to the west, where the wretched quilboars make their camps. Make your way past the quilboars and bring me some of those fruits. And be careful - the fruits are as spiny as the quilboars!",
+  "quest:96825:progress:0": "Did you find the fruits?",
+  "quest:97900:title": "Camping 101: ⟦E12⟧",
+  "quest:97900:obj:0": "Speak with Dwukk in Razor Hill to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97901:title": "Camping 101: ⟦E13⟧",
+  "quest:97901:obj:0": "Speak with Jhag in ⟦E14⟧ to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97907:title": "Camping 101: ⟦E15⟧",
+  "quest:97907:desc:0": "⟦E15⟧ isn't the most glamorous, but it's good honest work and a fine profession for you to explore.\nI reckon I know someone that can teach you how to craft a ⟦E16⟧ for your camp. ...",
+  "quest:97907:obj:0": "Speak with Krunn in Razor Hill to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97907:details:0": "⟦E15⟧ isn't the most glamorous, but it's good honest work and a fine profession for you to explore.\nI reckon I know someone that can teach you how to craft a ⟦E16⟧ for your camp. ...",
+  "quest:97908:title": "Camping 101: ⟦E17⟧",
+  "quest:97908:obj:0": "Speak with Thuwd in ⟦E14⟧ to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:784:obj:0": "Kill 10 Kul Tiras Sailors, 8 Kul Tiras Marines and ⟦E18⟧ and return to Gar'Thok in Razor Hill.",
+  "quest:784:details:0": "Led by Admiral Proudmoore, the humans of Kul Tiras encroached on ⟦E19⟧, violating the Warchief's pact made with Jaina Proudmoore in order to defeat Archimonde years ago.",
+  "quest:784:details:1": "The human aggression was repelled and Tiragarde Keep fell. But recently, the Admiral's reserves, led by ⟦E18⟧, have retaken the keep and once again pose a ⟦E20⟧ to our homeland. These humans show no respect for diplomacy.",
+  "quest:784:details:2": "Prove your honor and travel south to Tiragarde Keep to eliminate the human invaders.",
+  "quest:784:progress:0": "You have your orders, ⟦3⟧. The safety of ⟦E19⟧ is in question. Complete the task before you or hang your head in shame.⟦4⟧⟦5⟧Show your honor and defeat the humans of Tiragarde Keep.",
+  "quest:784:completion:0": "Word of your bravery travels fast, ⟦6⟧. Tales of your victory at Tiragarde Keep will be heralded in ⟦E14⟧.",
+  "quest:791:obj:0": "Furl Scornbrow in the Razor Hill watchtower wants 8 ⟦E21⟧.",
+  "quest:791:details:0": "Age has rendered me useless in ⟦E22⟧. Now I make myself useful in other ways.",
+  "quest:791:details:1": "From this vantage point I watch for invaders. As our strength here grows, I find myself blowing the signal horn less and less.",
+  "quest:791:details:2": "To pass the time I fashion goods to help younger, more able warriors defend our homeland.",
+  "quest:791:details:3": "For you, I can fashion you a bag for your belongings. If such an item would be of use to you, bring me some canvas, a material common to the humans and centaurs.",
+  "quest:791:progress:0": "I fought proudly alongside the Warchief when these lands were pioneered. The scars of ⟦E22⟧ mark my skin.⟦7⟧⟦8⟧The honor of the ⟦E6⟧ has been upheld with the help of my axe and battlecry during the defeat of Archimonde, when the unholy alliance was made with the humans and elves, wrought from necessity.⟦9⟧⟦10⟧But my position as watchman and provider has given me a new sense of worth.",
+  "quest:791:completion:0": "Most excellent, ⟦11⟧. Any good ⟦12⟧ will surely find a use for this bag on the battlefield.",
+  "quest:791:completion:1": "I salute your vigor and willingness to die in the name of the ⟦E6⟧!",
+  "quest:813:title": "Finding the Antidote",
+  "quest:813:desc:0": "Bring 4 Venomtail ⟦E23⟧ Sacs to Kor'ghan in ⟦E14⟧.",
+  "quest:813:obj:0": "Bring 4 Venomtail ⟦E23⟧ Sacs to Kor'ghan in ⟦E14⟧.",
+  "quest:813:details:0": "Bring 4 Venomtail ⟦E23⟧ Sacs to Kor'ghan in ⟦E14⟧.",
+  "quest:813:progress:0": "Remember, no matter what creature you hunt, you would do well to study it and understand its behavior. That knowledge could save your life.",
+  "quest:813:completion:0": "Here is the antidote, ⟦13⟧. Take it to Rhinag as soon as you can, and be cautious.",
+  "quest:818:obj:0": "Bring 4 Intact Makrura Eyes and 8 vials of ⟦E24⟧ to Master Vornal in Sen'jin Village.",
+  "quest:818:details:0": "Although my eyes fail me, I still can see clearly enough. More often I must rely on my alchemical skills to aid me in magics that once came easily. But I refuse to take on an apprentice--no troll or orc worthy enough has ever come forward.",
+  "quest:818:details:1": "Are you worthy? Yes, of course you are... of course you think you are.",
+  "quest:818:details:2": "I need a few things. Will you get them for me?",
+  "quest:818:details:3": "I need intact makrura eyes, and vials of crawler mucus. You can find them on any makrura or crawler in ⟦E19⟧. We shall speak again soon.",
+  "quest:818:progress:0": "Time is the true test of your strength and will. Lose patience or give in to weakness, and your true self will be shown.",
+  "quest:818:completion:0": "Well done, young one... well done indeed.",
+  "quest:823:obj:0": "Speak with Orgnil Soulscar in Razor Hill.",
+  "quest:823:details:0": "We at Sen'jin Village are not without our own troubles, and we thank you for your aid. But the news you bring regarding the Burning Blade could be trouble for everyone.",
+  "quest:823:details:1": "There is an orc stationed at Razor Hill, Orgnil Soulscar, who polices ⟦E19⟧ from evils such as the Burning Blade! Go to Orgnil and tell him of our plight, as well as your news from the Valley of Trials. He will want to know these things.",
+  "quest:823:details:2": "Razor Hill lies to the north.",
+  "quest:823:completion:0": "Yes? You have something to report? Well then, let's have it!",
+  "quest:830:obj:0": "Take ⟦E25⟧ to Gar'Thok in Razor Hill.",
+  "quest:830:details:0": "You open the aged and weathered envelope and discover an official looking document. You recognize the ⟦E26⟧ of Admiral Proudmoore.",
+  "quest:830:details:1": "This looks important. Perhaps Gar'Thok, the commander of Razor Hill, would be interested in having this information.",
+  "quest:830:progress:0": "There is a look of concern on your face, ⟦14⟧. What have you there?",
+  "quest:830:completion:0": "This does not bode well at all. You were wise to bring this information to my attention.",
+  "quest:831:obj:0": "Deliver ⟦E25⟧ to Nazgrel in Thrall's chamber in ⟦E14⟧.",
+  "quest:831:details:0": "⟦E27⟧ cannot be trusted. We fought alongside them with a weary heart, knowing they would betray us one day.",
+  "quest:831:details:1": "Admiral Proudmoore's death was not enough to stop his legacy of deceit. The human scum had his plans well laid out before he ever met his demise.",
+  "quest:831:details:2": "His reign won't even die with Benedict it seems. Who knows how long it will be before the next waves of Proudmoore's men land upon our shores.",
+  "quest:831:details:3": "We need to get these orders to Nazgrel in ⟦E14⟧ immediately! He can be found in Thrall's chamber.",
+  "quest:831:progress:0": "Can you not see that I am busy? This had better be pressing...",
+  "quest:831:completion:0": "Countless times I urged the Warchief not to trust the humans, but personal pride is not what is at stake here.",
+  "quest:831:completion:1": "You have served the ⟦E6⟧ honorably, young ⟦15⟧.",
+  "quest:831:completion:2": "Now excuse me, I must counsel Thrall on these matters at once...",
+  "quest:96822:title": "For Honor",
+  "quest:96822:obj:0": "Collect the ⟦E28⟧, ⟦E29⟧, and ⟦E30⟧ from the Tiragarde Keep outskirts, then return them to Turroc in Razor Hill.",
+  "quest:96822:obj:1": "*⟦E29⟧",
+  "quest:96822:obj:2": "*⟦E28⟧",
+  "quest:96822:obj:3": "*⟦E30⟧ (Forever)",
+  "quest:96822:details:0": "We lost many brave warriors of the ⟦E6⟧ when we sacked Tiragarde Keep. Now that the humans have reinforced the ruins, we cannot collect their remains to properly honor their deaths.",
+  "quest:96822:details:1": "Go to the ruins surrounding the keep, and search for the weapons left by our fallen kin. We will display them in a place of honor.",
+  "quest:96822:progress:0": "Have you done what I asked?",
+  "quest:786:obj:0": "Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.",
+  "quest:786:details:0": "Lower your voice, ⟦16⟧. The Kolkar centaurs lie just over the ridge to the west in Kolkar Crag.",
+  "quest:786:details:1": "Last night while they were raiding, I snuck into their village and discovered that the dirty beasts have a three-tiered attack planned on the trolls and orcs of ⟦E19⟧.",
+  "quest:786:details:2": "We mustn't let their invasion come to fruition. Perhaps you can muster the might needed to infiltrate Kolkar Crag and destroy their attack plans.",
+  "quest:786:details:3": "Last I saw, they had divided them up amongst three of their leaders.",
+  "quest:786:progress:0": "The centaurs have proven to be a consistent nuisance to the ⟦E6⟧. Their intentions to lay siege to our homeland cannot be tolerated.",
+  "quest:786:completion:0": "The ⟦E6⟧ would surely prevail if the Kolkar centaurs were to attack. But by preventing such an attack. we have spared our mighty warriors unnecessary bloodshed.",
+  "quest:786:completion:1": "And as sure as there is sand in the ⟦E31⟧ desert, we know that there will be blood spilled before these trying times are through.",
+  "quest:786:completion:2": "You have served your people well, ⟦17⟧.",
+  "quest:815:obj:0": "Bring 3 Taillasher Eggs to Cook Torka in Razor Hill.",
+  "quest:815:details:0": "Bah! I almost forgot I need to get breakfast ready.",
+  "quest:815:details:1": "B⟦18⟧, get yourself movin' and get me some taillasher eggs. I'll need at least three of them if I'm going to have enough for tomorrow's meal.",
+  "quest:815:details:2": "The Bloodtalon taillashers can be fierce, and protect their eggs to the death more often than not. They sometimes bury their eggs too deep in the earth to uncover safely, but if you head to the Echo Isles to the southeast of Sen'jin Village, you can usually find them all over those islands.",
+  "quest:815:progress:0": "Breakfast, lunch, dinner! Who cares which meal it is? It still has to be cooked by someone--namely me!",
+  "quest:815:completion:0": "You might be weak, but at least you're not clumsy, ⟦19⟧.",
+  "quest:815:completion:1": "Here, take this and get outta my way. I've got cooking to do.",
+  "quest:817:obj:0": "Bring 4 ⟦E19⟧ Tiger Furs to Vel'rin Fang in Sen'jin Village.",
+  "quest:817:details:0": "Many of the hides we use come from ⟦E19⟧ tigers, ⟦20⟧. Blankets, ⟦E32⟧, tents: there are a great many reasons we hunt the beasts, and many reasons we let them thrive at the same time.",
+  "quest:817:details:1": "The time has come for us to cull the flock, so to speak. Our numbers grow, and our needs are beginning to overwhelm our stocks. I need more hides if I'm to prepare suitable goods for our people.",
+  "quest:817:details:2": "Bring me 4 ⟦E19⟧ tiger furs, and I shall reward you. You can find them on the islands south of here.",
+  "quest:817:progress:0": "I remember my first tiger hunt, ⟦21⟧. I chose to hunt on the largest of the Echo Isles, and I sat perfectly still in the shadows of its foliage for almost a full day... watching... waiting.⟦22⟧⟦23⟧My muscles were taut, and I was ready to ⟦E33⟧. It was one of my greatest victories when that tiger finally took the bait.",
+  "quest:817:completion:0": "I am pleased, ⟦24⟧. Because of your help, our people will be protected, and not go cold as the seasons change.",
+  "quest:817:completion:1": "Thank you.",
+  "quest:825:obj:0": "Gar'Thok of Razor Hill wants you to retrieve 3 ⟦E34⟧ from the wreckage off the coast.",
+  "quest:825:details:0": "One of my most observant scouts brings back word that the wreckage of Proudmoore's fleet still remains off the coast of ⟦E19⟧, just east of Tiragarde Keep.",
+  "quest:825:details:1": "It is no secret that the humans, in alliance with those foul little creatures known as gnomes, have an advanced knowledge of mechanics. We must have a complete understanding of all our potential ⟦E35⟧. And our people will benefit from this new knowledge as well.",
+  "quest:825:details:2": "Swim through the wreckage, ⟦25⟧, and retrieve for me the tools of the ⟦E36⟧.",
+  "quest:825:progress:0": "Once we learn how the humans operate their strange machinery, we will stand a greater ⟦E37⟧ of defeating them in future battles.⟦26⟧⟦27⟧With our new gained knowledge, the ⟦E6⟧ only stands to grow in strength.",
+  "quest:825:completion:0": "Your recovery mission was a success, ⟦28⟧. I will see to it that these tools get to ⟦E14⟧ with the next caravan.",
+  "quest:825:completion:1": "Nicely done.",
+  "quest:96873:title": "A Pain in the ⟦E38⟧",
+  "quest:96873:obj:0": "Pa'zula in Sen'jin Village wants you to collect 3 ⟦E39⟧. ⟦E39⟧ can be obtained by disenchanting Hexed Pendants dropped by trolls in the Echo Isles.",
+  "quest:96873:obj:1": "*⟦E39⟧ (3)",
+  "quest:96873:details:0": "The trolls east of here have lost their will to the witchdoctor, ⟦E40⟧. He uses many cruel magics to keep hold of his prisoners' minds, but one of his favorite tricks is to make them wear pendants wrapped in evil binding spells.",
+  "quest:96873:details:1": "Practice your enchanting skills by stripping the magic from these pendants, and bring me the results. And don't accidentally put one around your neck, if you value your freedom!",
+  "quest:96873:progress:0": "What do you have for me, ⟦29⟧?",
+  "quest:96876:title": "⟦E41⟧",
+  "quest:96876:obj:0": "Return the pack to Ukor in southern .",
+  "quest:96876:obj:1": "*⟦E41⟧ (provided)",
+  "quest:96876:details:0": "The pack has the name \"Ukor\" crudely stitched along the flap.",
+  "quest:96876:progress:0": "Something need doing?",
+  "quest:96876:completion:0": "My pack! When I dropped it to run from that huge spider, I thought I'd never see it again. You really are a hero!",
+  "quest:99123:title": "Lost in the Shadows",
+  "quest:99123:obj:0": "Help Pal'juh escape Kolkar Crag and bring news of your success to Master Vornal in Sen'jin Village.",
+  "quest:99123:details:0": "I decided to do a bit of scouting in the crag on my own. Unfortunately my magic ran out at the wrong time and I've been stuck hiding here since.",
+  "quest:99123:details:1": "If you could help me escape, I would appreciate it.",
+  "quest:808:obj:0": "Retrieve Minshina's skull from the circle of power on the Echo Isles.",
+  "quest:808:obj:1": "Bring it to Master Gadrin in Sen'jin Village.",
+  "quest:808:details:0": "I hear the voice of my brother, Minshina, calling to me in my dreams.",
+  "quest:808:details:1": "He was taken by ⟦E40⟧, the warlock on the Echo Isles to the east. And he is dead.",
+  "quest:808:details:2": "But death is not freedom for my brother. Minshina's spirit was trapped within his own skull by ⟦E40⟧'s magics. In my dreams I see it with other skulls, in a circle of power on the largest Echo Isle. As long as it remains there my brother's soul is doomed.",
+  "quest:808:details:3": "Please, ⟦30⟧. Find the circle and retrieve Minshina's skull. Bring it to me.",
+  "quest:808:details:4": "Free him!",
+  "quest:808:progress:0": "Do you have my brother's skull, ⟦31⟧? Is he finally free?",
+  "quest:808:completion:0": "Thank you, ⟦32⟧. You have saved Minshina. You have saved my brother's spirit from slavery!",
+  "quest:812:obj:0": "Find Kor'ghan in ⟦E14⟧ and get the ⟦E42⟧. Then bring the antidote to Rhinag near the northwestern border of ⟦E19⟧.",
+  "quest:812:details:0": "⟦33⟧... your timing is perfect. I just hope I can compliment your haste as well.",
+  "quest:812:details:1": "I was careless while fighting a few of the venomtails ⟦E43⟧, and one of them stung me deeply. I can feel its poison weakening me even as we speak. At this rate, I got maybe an hour left to live. But I'll need your help if I'm to do so...",
+  "quest:812:details:2": "Kor'ghan in ⟦E14⟧ knows how to make the antidote. Find him... and hurry, ⟦34⟧. I won't be able to last much longer. He should be in the Cleft of ⟦E44⟧.",
+  "quest:812:progress:0": "I'm almost glad I can't return to Sen'jin as I am now. My weakness and stupidity would surely be mocked.",
+  "quest:812:completion:0": "⟦35⟧, you've saved my life. Thank you.",
+  "quest:812:completion:1": "Please take this; I hope it can at least help you in your travels, if not bring you some coin. From what you say, I won't be usin' it anytime soon. Kor'ghan is gonna march me through more of his rituals until I prove myself. More killin' boars, more gatherin' scorpid tails... ⟦36⟧"
+ },
+ "context": {
+  "quest:7664": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 1,
+   "side": "horde",
+   "giver": "Zjolnir",
+   "turner": "Zjolnir"
+  },
+  "quest:7665": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 1,
+   "side": "horde",
+   "giver": "Zjolnir",
+   "turner": "Zjolnir"
+  },
+  "quest:97279": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 2,
+   "side": "horde",
+   "giver": "Gornek",
+   "turner": "Kzan Thornslash"
+  },
+  "quest:2161": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 5,
+   "side": "horde",
+   "giver": "Ukor",
+   "turner": "Innkeeper Grosk"
+  },
+  "quest:96604": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Brakk",
+   "turner": "Brakk"
+  },
+  "quest:96652": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "",
+   "turner": "Brakk"
+  },
+  "quest:96655": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Brakk",
+   "turner": "Cook Torka"
+  },
+  "quest:96821": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Vel'rin Fang",
+   "turner": "Gar'Thok"
+  },
+  "quest:96825": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Cook Torka",
+   "turner": "Cook Torka"
+  },
+  "quest:97900": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Brakk",
+   "turner": "Dwukk"
+  },
+  "quest:97901": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Brakk",
+   "turner": ""
+  },
+  "quest:97907": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Brakk",
+   "turner": ""
+  },
+  "quest:97908": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 6,
+   "side": "horde",
+   "giver": "Brakk",
+   "turner": "Thuwd"
+  },
+  "quest:784": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "Gar'Thok",
+   "turner": "Gar'Thok"
+  },
+  "quest:791": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "Furl Scornbrow",
+   "turner": "Furl Scornbrow"
+  },
+  "quest:813": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "",
+   "turner": "Kor'ghan"
+  },
+  "quest:818": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "Master Vornal",
+   "turner": "Master Vornal"
+  },
+  "quest:823": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "Master Gadrin",
+   "turner": "Orgnil Soulscar"
+  },
+  "quest:830": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "",
+   "turner": "Gar'Thok"
+  },
+  "quest:831": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "Gar'Thok",
+   "turner": "Nazgrel"
+  },
+  "quest:96822": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 7,
+   "side": "horde",
+   "giver": "Turroc",
+   "turner": "Turroc"
+  },
+  "quest:786": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "Lar Prowltusk",
+   "turner": "Lar Prowltusk"
+  },
+  "quest:815": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "Cook Torka",
+   "turner": "Cook Torka"
+  },
+  "quest:817": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "Vel'rin Fang",
+   "turner": "Vel'rin Fang"
+  },
+  "quest:825": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "Gar'Thok",
+   "turner": "Gar'Thok"
+  },
+  "quest:96873": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "Pa'zula",
+   "turner": "Pa'zula"
+  },
+  "quest:96876": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "",
+   "turner": "Ukor"
+  },
+  "quest:99123": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 8,
+   "side": "horde",
+   "giver": "",
+   "turner": "Master Vornal"
+  },
+  "quest:808": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 9,
+   "side": "horde",
+   "giver": "Master Gadrin",
+   "turner": "Master Gadrin"
+  },
+  "quest:812": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 9,
+   "side": "horde",
+   "giver": "Rhinag",
+   "turner": "Rhinag"
+  }
+ },
+ "known": {
+  "quest:2161": {
+   "title": "بارِ پیون"
+  },
+  "quest:784": {
+   "title": "شکست خیانت‌کاران"
+  },
+  "quest:791": {
+   "title": "سهمت را ادا کن"
+  },
+  "quest:818": {
+   "title": "روحِ حل‌کننده"
+  },
+  "quest:823": {
+   "title": "گزارش به اورگنیل"
+  },
+  "quest:830": {
+   "title": "فرمان‌های دریاسالار"
+  },
+  "quest:831": {
+   "title": "فرمان‌های دریاسالار"
+  },
+  "quest:786": {
+   "title": "برهم‌زدن تجاوز کولکارها"
+  },
+  "quest:815": {
+   "title": "چند تخم بشکن"
+  },
+  "quest:817": {
+   "title": "شکار عملی"
+  },
+  "quest:825": {
+   "title": "از میان آوارها...."
+  },
+  "quest:808": {
+   "title": "جمجمهٔ مینشینا"
+  },
+  "quest:812": {
+   "title": "نیاز به درمان"
+  }
+ }
+}

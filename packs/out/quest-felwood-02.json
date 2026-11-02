@@ -1,0 +1,723 @@
+{
+ "pack": "quest-felwood-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-felwood-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Root",
+   "fa": "محبوس‌شدن در جا",
+   "kind": "tm"
+  },
+  "E2": {
+   "en": "root",
+   "fa": "محبوس‌شدن در جا",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Deadwood",
+   "fa": "دارک‌وود",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Shadow Council",
+   "fa": "شورای سایه",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E9": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Empty Canteen",
+   "fa": "قمقمهٔ خالی",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E14": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Flute of Xavaric",
+   "fa": "نیِ زاواریک",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Jadefire Felbind",
+   "fa": "فِلبایند آتشِ یشم",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Emerald Circle",
+   "fa": "حلقهٔ زمرد",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Eridan's Vial",
+   "fa": "شیشهٔ اریدان",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Vial of Blessed Water",
+   "fa": "شیشهٔ آب متبرک",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "treant",
+   "fa": "ترنت",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "spirit form",
+   "fa": "شکل روح",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Head",
+   "fa": "سر",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Blood Amber",
+   "fa": "کهربای خونین",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Cenarion Circle",
+   "fa": "حلقهٔ سِناریون",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Root": "محبوس‌شدن در جا",
+  "root": "محبوس‌شدن در جا",
+  "form": "شکل",
+  "Deadwood": "دارک‌وود",
+  "Felwood": "فل‌وود",
+  "enemy": "دشمن",
+  "Shadow Council": "شورای سایه",
+  "Travel": "سفر",
+  "Burning Legion": "لژیون سوزان",
+  "battle": "نبرد",
+  "Ashenvale": "اَشِن‌ویل",
+  "Empty Canteen": "قمقمهٔ خالی",
+  "Shadow": "سایه",
+  "Barrens": "بارنز",
+  "threat": "تیت",
+  "Flute of Xavaric": "نیِ زاواریک",
+  "Jadefire Felbind": "فِلبایند آتشِ یشم",
+  "Emerald Circle": "حلقهٔ زمرد",
+  "heal": "شفا",
+  "damage": "آسیب",
+  "Darnassus": "دارناسوس",
+  "Eridan's Vial": "شیشهٔ اریدان",
+  "Vial of Blessed Water": "شیشهٔ آب متبرک",
+  "treant": "ترنت",
+  "allies": "متحدان",
+  "Elune": "الون",
+  "spirit form": "شکل روح",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "enemies": "دشمنان",
+  "Head": "سر",
+  "healing": "شفا",
+  "Blood Amber": "کهربای خونین",
+  "Cenarion Circle": "حلقهٔ سِناریون",
+  "spell": "اسپیل"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$C",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$N",
+  "39": "$B",
+  "40": "$B",
+  "41": "$N",
+  "42": "$N"
+ },
+ "rows": {
+  "quest:4443:title": "Corrupted Whipper ⟦E1⟧",
+  "quest:4443:progress:0": "You have found a sickly, corrupted version of what appears to be a whipper ⟦E2⟧ plant. The visible roots of the plant appear tough and leathery, and a slimy film hangs from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4443:completion:0": "You apply 3 Cenarion Plant Salves to the Whipper ⟦E1⟧. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4444:title": "Corrupted Whipper ⟦E1⟧",
+  "quest:4444:progress:0": "You have found a sickly, corrupted version of what appears to be a whipper ⟦E2⟧ plant.  The visible roots of the plant appear tough and leathery, and a slimy film hangs from the plant.  It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4444:completion:0": "You apply 3 Cenarion Plant Salves to the Whipper ⟦E1⟧. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4445:title": "Corrupted Whipper ⟦E1⟧",
+  "quest:4445:progress:0": "You have found a sickly, corrupted version of what appears to be a whipper ⟦E2⟧ plant. The visible roots of the plant appear tough and leathery, and a slimy film hangs from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4445:completion:0": "You apply 3 Cenarion Plant Salves to the Whipper ⟦E1⟧. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4446:title": "Corrupted Whipper ⟦E1⟧",
+  "quest:4446:progress:0": "You have found a sickly, corrupted version of what appears to be a whipper ⟦E2⟧ plant. The visible roots of the plant appear tough and leathery, and a slimy film hangs from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4446:completion:0": "You apply 3 Cenarion Plant Salves to the Whipper ⟦E1⟧. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4447:title": "Corrupted Night Dragon",
+  "quest:4447:progress:0": "You have found a sickly, corrupted version of what appears to be a night dragon plant.  The fruits that hang from the plant appear rotten and poisonous.  It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4447:completion:0": "You apply 4 Cenarion Plant Salves to the Night Dragon. It immediately begins to shed it's corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4448:title": "Corrupted Night Dragon",
+  "quest:4448:progress:0": "You have found a sickly, corrupted version of what appears to be a Night Dragon plant. The fruits that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4448:completion:0": "You apply 4 Cenarion Plant Salves to the Night Dragon. It immediately begins to shed it's corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4461:title": "Corrupted Whipper ⟦E1⟧",
+  "quest:4461:progress:0": "You have found a sickly, corrupted version of what appears to be a whipper ⟦E2⟧ plant. The visible roots of the plant appear tough and leathery, and a slimy film hangs from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4461:completion:0": "You apply 3 Cenarion Plant Salves to the Whipper ⟦E1⟧. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4462:title": "Corrupted Night Dragon",
+  "quest:4462:progress:0": "You have found a sickly, corrupted version of what appears to be a Night Dragon plant. The fruits that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4462:completion:0": "You apply 4 Cenarion Plant Salves to the Night Dragon. It immediately begins to shed it's corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4464:title": "Corrupted Songflower",
+  "quest:4464:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4464:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4465:title": "Corrupted Songflower",
+  "quest:4465:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant.  A pungent, unhealthy odor emanates from the plant.  It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4465:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4466:title": "Corrupted Windblossom",
+  "quest:4466:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4466:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:4467:title": "Corrupted Windblossom",
+  "quest:4467:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4467:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted ⟦E3⟧, blossoming into a vibrant and healthy plant.",
+  "quest:8460:obj:0": "Grazle wants you to prove yourself by killing 6 ⟦E4⟧ Warriors, 6 ⟦E4⟧ Pathfinders, and 6 ⟦E4⟧ Gardeners. Return to him in southern ⟦E5⟧ near the Emerald Sanctuary when you are done.",
+  "quest:8460:details:0": "The Timbermaw are the only furbolg tribe to escape the corruption. However, many other races kill furbolg blindly now, without bothering to see if they are friend or foe. For this reason, the Timbermaw furbolg trust very few.",
+  "quest:8460:details:1": "Are you interested in proving yourself? Drive back the corrupted ⟦E4⟧ tribe of ⟦E5⟧ and we may one day consider you an ally. You'll find the first ⟦E4⟧ tribe - warriors, pathfinders and gardeners - to my west.",
+  "quest:8460:progress:0": "Keep at it, ⟦1⟧. If you are to earn our trust, you will need to prove yourself to us.",
+  "quest:8460:completion:0": "We suffer much from the events of the past. Thank you for what you have done to help protect the Timbermaw. As a sign of our growing friendship, please accept this humble offering.",
+  "quest:8469:title": "Beads for Salfa",
+  "quest:8469:desc:0": "The Winterfall are known to carry spirit beads to ward against foul spirits. These beads have clearly failed in their purpose, as the Winterfall themselves are the agents of corruption. Bring to me these spirit beads from fallen Winterfall furbolgs; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8469:obj:0": "The Winterfall are known to carry spirit beads to ward against foul spirits. These beads have clearly failed in their purpose, as the Winterfall themselves are the agents of corruption. Bring to me these spirit beads from fallen Winterfall furbolgs; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8469:details:0": "The Winterfall are known to carry spirit beads to ward against foul spirits. These beads have clearly failed in their purpose, as the Winterfall themselves are the agents of corruption. Bring to me these spirit beads from fallen Winterfall furbolgs; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8469:progress:0": "You've certainly earned my trust, ⟦2⟧, but you may need to continue to earn the trust of my untrusting tribe.  There is something you can do to earn that trust.⟦3⟧⟦4⟧The Winterfall are known to carry spirit beads to ward against foul spirits.  These beads have clearly failed in their purpose, as the Winterfall themselves are the agents of corruption.  Bring to me these spirit beads from fallen Winterfall furbolgs; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8469:completion:0": "Once again, you prove your honor to us! I will make sure that your deeds are known amongst my kind.⟦5⟧⟦6⟧Remember to bring any of the Winterfall's beads you find to me. For each set you continue to bring to me, I will speak on your behalf to the tribe.",
+  "quest:5155:obj:0": "Enter Jaedenar and slay 4 Jaedenar Hounds, 4 Jaedenar Guardsmen, 6 Jaedenar Adepts, and 6 Jaedenar Cultists before returning to Greta Mosshoof in ⟦E5⟧.",
+  "quest:5155:details:0": "If I am to trust you in this matter, you will first have to prove yourself.",
+  "quest:5155:details:1": "I must know that you are an ⟦E6⟧ of the ⟦E7⟧--the ones responsible for many evils here and abroad.",
+  "quest:5155:details:2": "⟦E8⟧ deeper into ⟦E5⟧. To the west you will see a path leading to Jaedenar. It is there that the Council plots with the ⟦E9⟧.",
+  "quest:5155:details:3": "Enter the depths of one of the corrupted Barrow Dens they inhabit and slay their kind. Return to me after you've done this. Then I will know you truly seek to help us.",
+  "quest:5155:progress:0": "How goes your fight, ⟦7⟧? I know the shedding of blood as proof of honor can be disgusting to some, but you must understand that it serves two goals: you make my task easier by hurting their numbers, and we gain a respect for each other that will only make us stronger in times to come.⟦8⟧⟦9⟧I hope you understand.",
+  "quest:5155:completion:0": "Good, ⟦10⟧! With their numbers weakening, we can further press them.",
+  "quest:5155:completion:1": "How was your first taste of their power? Were they as strong as you thought they would be? Stronger? Or perhaps they were no challenge for you at all. Wouldn't that be something?",
+  "quest:5155:completion:2": "We can discuss the details of your exploits later. There are other things we must focus on now.",
+  "quest:6162:obj:0": "Kill Overlord Ror and return his claw to Dreka'Sur at Bloodvenom Post in ⟦E5⟧.",
+  "quest:6162:details:0": "My husband traveled ⟦E5⟧ for the honor of our clan, doing ⟦E10⟧ against the ⟦E7⟧ and other corrupt atrocities!",
+  "quest:6162:details:1": "After he escaped death numerous times, I received a letter from him saying that a druid asked him for help against a great befouled furbolg named Overlord Ror--the two were never heard from again.",
+  "quest:6162:details:2": "I want this Ror's clawed hand, ⟦11⟧. I want it to pay for leaving me a widow! I believe the creature is to the south... near the ⟦E11⟧ border.",
+  "quest:6162:progress:0": "Do you have the beast's claw yet, ⟦12⟧? It will pay for its crimes. I don't care if it's corrupt or just angry for living in such a dismal forest. No furbolg will live for long committing such crimes against my family!",
+  "quest:6162:completion:0": "You bring honor to me for following through with your word. My husband died in ⟦E10⟧--he would have been proud of that. But I could not rest until I knew that the creature that has forced me to live my life alone paid for what it had done.",
+  "quest:6162:completion:1": "Thank you again, ⟦13⟧.",
+  "quest:5157:obj:0": "Take the ⟦E12⟧ to the Moon Well in the center of Jaedenar and fill it before returning to Greta Mosshoof in ⟦E5⟧.",
+  "quest:5157:details:0": "Deep within Jaedenar lies ⟦E13⟧ Hold--the main fortress of their corruption and evil.",
+  "quest:5157:details:1": "The ⟦E7⟧ has protective spells surrounding their lair in the ⟦E3⟧ of braziers. If I am to find out any more information about our ⟦E6⟧ through scrying, then those braziers must be extinguished. By doing so, I should be able to spy on the Council and find out who leads them.",
+  "quest:5157:details:2": "If you can, take this canteen and fill it at the Moon Well in the center of Jaedenar. Return to me afterwards.",
+  "quest:5157:progress:0": "Once we have the waters from the Moon Well, we will purify it and use it to extinguish the braziers of protection within ⟦E13⟧ Hold. That should allow me ample time to see into the chambers even deeper and discern who actually leads this... cult.⟦14⟧⟦15⟧I pray the Earthmother is with us.",
+  "quest:5157:completion:0": "This will do nicely, ⟦16⟧.",
+  "quest:5157:completion:1": "Now all we have to do besides apply the waters to the braziers is to have it purified. That should not be difficult--it should only require a little travel.",
+  "quest:5157:completion:2": "Hopefully we can do this quickly.",
+  "quest:5158:obj:0": "Take the Corrupt Moon Well Water to Islen Waterseer in the ⟦E14⟧.",
+  "quest:5158:details:0": "Take the corrupt water to the ⟦E14⟧, ⟦17⟧. South of Ratchet, hidden along the shore, is an old friend of mine, a shaman named Islen Waterseer. She is a powerful shaman who will help us. Her relationship with the spirits of water has always been strong. Our task being a noble one should be enough to persuade her and the spirits of water to aid us in this task.",
+  "quest:5158:details:1": "You should find her at a small camp right along the water's edge. And, ⟦18⟧, ignore the pirates... they are but a nuisance and no ⟦E15⟧ to you.",
+  "quest:5158:progress:0": "I sense you are not just a simple traveler looking for the path to Ratchet. Come, sit and rest at our camp. Speak to me when you're ready.",
+  "quest:5158:completion:0": "Ah, you need the water from this Moon Well cleansed. Stopping this force of malice in ⟦E5⟧ seems noble enough, but it is not for me to decide if the water will be purified. I will ask the spirits of water--it will be up to them to decide if the cause is just.",
+  "quest:5158:completion:1": "Give me a moment and I will tell them of your plea. I hope they are as sympathetic as I am to your cause.",
+  "quest:939:obj:0": "Bring the ⟦E16⟧ and 5 ⟦E17⟧ samples to Eridan Bluewind in southern ⟦E5⟧.",
+  "quest:939:details:0": "You study the simple wooden flute you picked up after defeating Xavaric.",
+  "quest:939:details:1": "The knotted wood feels solid, but it seems as if the spirals and patterns in the surface begin to spin and move as you turn it over in your hands. Suddenly, you feel a sense of dread...",
+  "quest:939:details:2": "You shake your head, sure that your mind is playing tricks on you.",
+  "quest:939:details:3": "It's possible that other satyrs carry clues as to what you have found. Bring your findings to the druid, Eridan Bluewind, that lives in southern ⟦E5⟧.",
+  "quest:939:progress:0": "What is it, ⟦19⟧? You look concerned.",
+  "quest:939:completion:0": "I sense the suffering of ancient ones, ⟦20⟧...",
+  "quest:939:completion:1": "Holding these items is almost unbearable...",
+  "quest:4421:obj:0": "Kill 11 Jadefire Felsworns, 9 Jadefire Shadowstalkers, 9 Jadefire Rogues, and Xavathras. Return to Eridan Bluewind in ⟦E5⟧ when the task has been completed.",
+  "quest:4421:details:0": "Not many seek adventure here... ⟦E5⟧'s corruption is widespread and indiscriminate.",
+  "quest:4421:details:1": "As part of the ⟦E18⟧, I seek to ⟦E19⟧ this land, but there are some that wish it to fester.",
+  "quest:4421:details:2": "The ones I speak of are the Jadefire satyrs that dwell to the northwest of here, at the Ruins of Constellas. Led by a particularly cruel satyr named Xavathras, they continue to spread the disease to any creatures they encounter.",
+  "quest:4421:details:3": "We must defend this land that was once ours. Defeat Xavathras and destroy his minions.",
+  "quest:4421:progress:0": "The corruption here drives the creatures into madness...",
+  "quest:4421:completion:0": "Ridding ⟦E5⟧ of Xavathras is only the first step in a long process. It will take much work to repair the ⟦E20⟧ that has been done here.",
+  "quest:4421:completion:1": "I sense that there is something much larger than just the satyrs at work here, but we will only know the truth with time...",
+  "quest:4441:obj:0": "⟦E8⟧ to ⟦E21⟧ and use ⟦E22⟧ to collect a ⟦E23⟧ from the Temple of the Moon. Return to Eridan with the filled vial.",
+  "quest:4441:details:0": "The flute you found was carved from an ancient protector, the ⟦E24⟧ ⟦E25⟧ that have faithfully protected the night elves.",
+  "quest:4441:details:1": "The satyrs have been able to corrupt anything they come in contact with, which includes the ancients that made ⟦E5⟧ their home. By the use of the fel, the spirit of the ancient has been bound and tortured, never completely released. The felbind you found is no doubt related.",
+  "quest:4441:details:2": "We must try to purify the flute, ⟦21⟧. Bring me blessed water from the Temple of the Moon in ⟦E21⟧.",
+  "quest:4441:progress:0": "The water will hopefully release the spirit of the ancient, and allow it to be at peace.",
+  "quest:4441:completion:0": "Thank you, ⟦22⟧. Now, we must pray that we can undo the ⟦E20⟧ that has been done...",
+  "quest:4442:obj:0": "Speak to Eridan again in a moment.",
+  "quest:4442:details:0": "Using the water of ⟦E26⟧, I will attempt to purify the flute. We must end this suffering...",
+  "quest:4442:details:1": "May ⟦E26⟧ guide my hands and heart.",
+  "quest:4442:details:2": "Speak with me again in a moment.",
+  "quest:4442:completion:0": "With the blessed water, I was able to break the link between the flute and the ancient spirit. I do believe though, that if you were to use this flute in a sacred spot, you may be able to summon the ancient spirits.",
+  "quest:4442:completion:1": "Perhaps you might try the ruins in the southern part of Irontree Woods. Many corrupted treants inhabited this area at one time, and it is possible that they may still reside there, even in ⟦E27⟧.",
+  "quest:4505:obj:0": "Collect a sample of corrupted water from the Jadefire Satyrs' moonwell and bring it to Winna Hazzard at Bloodvenom Post.",
+  "quest:4505:details:0": "Some may say that I am exceptionally cruel... But truly, it is only a strong desire to see the ⟦E28⟧ gain an advantage against the ⟦E29⟧, in any way possible.",
+  "quest:4505:details:1": "My newest interest is a moonwell at the Ruins of Constellas, south of here, tended by the Jadefire satyrs. The moonwell, once a symbol of renewal for the insufferable night elves, is now corrupted, and used to bring forth more satyrs.",
+  "quest:4505:details:2": "I have an idea, ⟦23⟧, and I'd like a sample of the water... for my little feline friend here.",
+  "quest:4505:progress:0": "This is of utmost importance. Be on your way, now.",
+  "quest:4505:completion:0": "Very well. We must find a way to use this corruption against our ⟦E30⟧...",
+  "quest:4506:obj:0": "Take Winna's kitten to the corrupted moonwell, release it, then bring it back to Winna.",
+  "quest:4506:obj:1": "Once you have returned to Winna, click on the cat to release it to Winna.",
+  "quest:4506:details:0": "This corrupted water can be used to our advantage, ⟦24⟧. With just a small amount of the water, my kitten doubled in size, and seems to be stronger... somehow. These cats may prove useful...",
+  "quest:4506:details:1": "Here, ⟦25⟧. Take this cat carrier, and release the kitten inside next to the moonwell in the Ruins of Constellas. Heh, heh... I'm sure you'll be pleased with the results!",
+  "quest:4506:details:2": "Return the cat to me, and I'm sure I can make it worth your time.",
+  "quest:4506:progress:0": "Don't tell me that you can't go back there! Get going!",
+  "quest:4506:completion:0": "Excellent!",
+  "quest:4506:completion:1": "The forsaken will resort to any means necessary to crush the alliance! The use of the corrupted water will surely prove useful in our future efforts...",
+  "quest:4906:obj:0": "Eridan Bluewind in ⟦E5⟧ wants you to kill 8 Jadefire Hellcallers, 8 Jadefire Betrayers, 8 Jadefire Tricksters, and Xavaric. Return to Eridan when the task is completed.",
+  "quest:4906:details:0": "A second encampment of satyrs threatens the land of ⟦E5⟧ towards the north, led by the cruel Xavaric. The vile betrayers and tricksters feed upon the corruption of the native creatures of ⟦E5⟧.",
+  "quest:4906:details:1": "Xavathras and his minions were only part of a larger plan -- to cultivate a corrupted moonwell, and then provide the spoils to Xavaric.",
+  "quest:4906:details:2": "Now that Xavathras is out of the way, finish this task, ⟦26⟧. ⟦E31⟧ to the north and defeat Xavaric.",
+  "quest:4906:progress:0": "Please, put and end to the suffering of ⟦E5⟧'s creatures.",
+  "quest:4906:completion:0": "Thank you for all you have done, ⟦27⟧. May ⟦E26⟧ protect you and guide you on the path ahead.",
+  "quest:5156:obj:0": "Seek out and destroy 2 Entropic Beasts and 2 Entropic Horrors while exploring Shatter Scar Vale. After checking to see if the craters there are still filled with corrupt fel water, return to Taronn Redfeather in ⟦E5⟧.",
+  "quest:5156:details:0": "To the north, along the east of the road in what's called Shatter Scar Vale, is an area where infernals were called down during the last great war--the craters still scar the land, as do the infernals themselves.",
+  "quest:5156:details:1": "I am curious about two things. First, are there still entropic elementals roaming the area? And second, are the craters still filled with the corrupt, fetid water that gathered there years ago? Will you help me and check, ⟦28⟧? Be careful though, the infernals destroy anything in their path.",
+  "quest:5156:progress:0": "I hope your search goes well, ⟦29⟧. I haven't started heading that far north, but I will admit, the thought of crossing the path of an infernal at any point scares me just a little. The creatures are brainless, but still quite intimidating.",
+  "quest:5156:completion:0": "Good that you're alive, ⟦30⟧. Bad that the water still exists. I was hoping to find at least one pure source of water here in ⟦E5⟧. It looks like my search has failed. The process of ⟦E32⟧ the land could have been made much easier with its existence.",
+  "quest:5156:completion:1": "I will have to concern myself with saving what forest creatures I can while destroying those that have become so corrupt that they endanger themselves as much as travelers through this once-mighty forest.",
+  "quest:5159:obj:0": "Take the Purified Moon Well Water to Greta Mosshoof in ⟦E5⟧.",
+  "quest:5159:details:0": "Thank the spirits, ⟦31⟧. They are the ones that have come to your aid, not me.",
+  "quest:5159:details:1": "I give this purified water to you now. Please give my regards to Greta and my best wishes. She is tackling something greater than many of us... as I'm sure she will soon find out.",
+  "quest:5159:details:2": "The ⟦E7⟧ is not a force to be trifled with, ⟦32⟧. Remember that.",
+  "quest:5159:details:3": "Go now. Take the water and return to Greta.",
+  "quest:5159:progress:0": "Ah, I see you've returned, ⟦33⟧. Good. Did you find Islen in the ⟦E14⟧? Or do we have to find another way to accomplish our goals?",
+  "quest:5159:completion:0": "This should be more than enough water for our purposes.",
+  "quest:5159:completion:1": "I'm glad to hear that Islen was able to help us. Her strength with the water spirits has always been a strong one. She is also wise, and rare is it that the spirits do not agree with her purpose. The fact that both of them have blessed our task gives me hope that we are on the right path.",
+  "quest:4101:obj:0": "Bring 15 ⟦E33⟧ to Arathandris Silversky in ⟦E5⟧.",
+  "quest:4101:details:0": "Plants give life to ⟦E5⟧, yet even they suffer the taint of corruption. I know ways to cleanse them, but I cannot give out such knowledge to those I don't know or trust. Prove to me that you will truly aid the cause of the ⟦E34⟧!",
+  "quest:4101:details:1": "To the north lie the Irontree Caverns. The Warpwood elementals present there are now beyond hope of cleansing. I ask you to bring me their sap - blood amber it is called - so I may study it in the hopes of saving other forms of life here.",
+  "quest:4101:progress:0": "I know ⟦E5⟧ suffers, ⟦34⟧ - I suffer along with it!  I must remain steadfast in my conviction; were the knowledge I possess to fall into the wrong hands, it would ⟦E35⟧ disaster for all of ⟦E5⟧.⟦35⟧⟦36⟧Bring to me the blood amber drawn from the slain Warpwood elementals, and I will trust you enough to help me enact a means to fight the corruption.",
+  "quest:4101:completion:0": "This blood amber will be used to find a means of defeating the corruption present in ⟦E5⟧. You've proven to me that you're willing to do whatever it takes for the ⟦E34⟧. I trust you now, friend.",
+  "quest:4101:completion:1": "It might seem odd that killing the elementals proved yourself to me, but the end of saving countless sentient beings must justify the means we take. You and I can now focus on the preservation of life through the salves I can make.",
+  "quest:4101:completion:2": "B⟦37⟧, the time has come to cleanse ⟦E5⟧.",
+  "quest:4102:obj:0": "Bring 15 ⟦E33⟧ to Maybess Riverbreeze in ⟦E5⟧.",
+  "quest:4102:details:0": "Plants give life to ⟦E5⟧, yet even they suffer the taint of corruption. I know ways to cleanse them, but I cannot give out such knowledge to those I don't know or trust. Prove to me that you will truly aid the cause of the ⟦E34⟧!",
+  "quest:4102:details:1": "To the north lie the Irontree Caverns. The Warpwood elementals present there are now beyond hope of cleansing. I ask you to bring me their sap - blood amber it is called - so I may study it in the hopes of saving other forms of life here.",
+  "quest:4102:progress:0": "I know ⟦E5⟧ suffers, ⟦38⟧ - I suffer along with it!  I must remain steadfast in my conviction; were the knowledge I possess to fall into the wrong hands, it would ⟦E35⟧ disaster for all of ⟦E5⟧.⟦39⟧⟦40⟧Bring to me the blood amber drawn from the slain Warpwood elementals, and I will trust you enough to help me enact a means to fight the corruption.",
+  "quest:4102:completion:0": "This blood amber will be used to find a means of defeating the corruption present in ⟦E5⟧. You've proven to me that you're willing to do whatever it takes for the ⟦E34⟧. I trust you now, friend.",
+  "quest:4102:completion:1": "It might seem odd that killing the elementals proved yourself to me, but the end of saving countless sentient beings must justify the means we take. You and I can now focus on the preservation of life through the salves I can make.",
+  "quest:4102:completion:2": "B⟦41⟧, the time has come to cleanse ⟦E5⟧.",
+  "quest:5165:obj:0": "Using the Purified Moon Well Water, douse the flames of the four braziers of protection within ⟦E13⟧ Hold in ⟦E5⟧, then return to Greta Mosshoof in the Emerald Sanctuary.",
+  "quest:5165:details:0": "Now, you must return to Jaedenar. The braziers are more than likely spread throughout ⟦E13⟧ Hold. Douse each of their flames and the protections the Council has set up will fall for at least a short period of time. I will be waiting for that to happen. When it does, I will look deep within the Hold and try to find out who the head of this beast is. Then, and only then, will we see about attacking them directly.",
+  "quest:5165:progress:0": "The braziers must be extinguished if we are to have any hope of being prepared for a much greater ⟦E10⟧. Going in to the dragon's lair without any knowledge is a fool's errand. And this is much worse than a dragon. The ⟦E7⟧ are solely responsible for a great number of crimes and atrocities. We'll have to work quickly if we're to stop them.",
+  "quest:5165:completion:0": "I was able to see you with my spells as soon as the last brazier's flames died. Well done, ⟦42⟧.",
+  "quest:5165:completion:1": "I learned a few things before the ⟦E7⟧'s warlocks were able to recast their spells. Hopefully it will be enough.",
+  "quest:5165:completion:2": "For now, rest. I will tell you what I've learned in a moment."
+ },
+ "context": {
+  "quest:4443": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Whipper Root",
+   "turner": "Corrupted Whipper Root"
+  },
+  "quest:4444": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Whipper Root",
+   "turner": "Corrupted Whipper Root"
+  },
+  "quest:4445": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Whipper Root",
+   "turner": "Corrupted Whipper Root"
+  },
+  "quest:4446": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Whipper Root",
+   "turner": "Corrupted Whipper Root"
+  },
+  "quest:4447": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Night Dragon",
+   "turner": "Corrupted Night Dragon"
+  },
+  "quest:4448": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Night Dragon",
+   "turner": "Corrupted Night Dragon"
+  },
+  "quest:4461": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Whipper Root",
+   "turner": "Corrupted Whipper Root"
+  },
+  "quest:4462": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Night Dragon",
+   "turner": "Corrupted Night Dragon"
+  },
+  "quest:4464": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower",
+   "turner": "Corrupted Songflower"
+  },
+  "quest:4465": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower",
+   "turner": "Corrupted Songflower"
+  },
+  "quest:4466": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom",
+   "turner": "Corrupted Windblossom"
+  },
+  "quest:4467": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom",
+   "turner": "Corrupted Windblossom"
+  },
+  "quest:8460": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Grazle",
+   "turner": "Grazle"
+  },
+  "quest:8469": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Salfa"
+  },
+  "quest:5155": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 51,
+   "side": "",
+   "giver": "Greta Mosshoof",
+   "turner": "Greta Mosshoof"
+  },
+  "quest:6162": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 51,
+   "side": "horde",
+   "giver": "Dreka'Sur",
+   "turner": "Dreka'Sur"
+  },
+  "quest:5157": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 52,
+   "side": "",
+   "giver": "Greta Mosshoof",
+   "turner": "Greta Mosshoof"
+  },
+  "quest:5158": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 52,
+   "side": "",
+   "giver": "Greta Mosshoof",
+   "turner": "Islen Waterseer"
+  },
+  "quest:939": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Eridan Bluewind"
+  },
+  "quest:4421": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Eridan Bluewind",
+   "turner": "Eridan Bluewind"
+  },
+  "quest:4441": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Eridan Bluewind",
+   "turner": "Eridan Bluewind"
+  },
+  "quest:4442": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Eridan Bluewind",
+   "turner": "Eridan Bluewind"
+  },
+  "quest:4505": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "horde",
+   "giver": "Winna Hazzard",
+   "turner": "Winna Hazzard"
+  },
+  "quest:4506": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "horde",
+   "giver": "Winna Hazzard",
+   "turner": "Winna Hazzard"
+  },
+  "quest:4906": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Eridan Bluewind",
+   "turner": "Eridan Bluewind"
+  },
+  "quest:5156": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "",
+   "giver": "Taronn Redfeather",
+   "turner": "Taronn Redfeather"
+  },
+  "quest:5159": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 54,
+   "side": "",
+   "giver": "Islen Waterseer",
+   "turner": "Greta Mosshoof"
+  },
+  "quest:4101": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Arathandris Silversky",
+   "turner": "Arathandris Silversky"
+  },
+  "quest:4102": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 55,
+   "side": "horde",
+   "giver": "Maybess Riverbreeze",
+   "turner": "Maybess Riverbreeze"
+  },
+  "quest:5165": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 55,
+   "side": "",
+   "giver": "Greta Mosshoof",
+   "turner": "Greta Mosshoof"
+  }
+ },
+ "known": {
+  "quest:8460": {
+   "title": "هم‌پیمان تیمبرمو"
+  },
+  "quest:5155": {
+   "title": "نیروهای جای‌دنار"
+  },
+  "quest:6162": {
+   "title": "آخرین نبرد همسر"
+  },
+  "quest:5157": {
+   "title": "برداشت آب آلوده"
+  },
+  "quest:5158": {
+   "title": "در جست‌وجوی یاری معنوی"
+  },
+  "quest:939": {
+   "title": "نی خاواریک"
+  },
+  "quest:4421": {
+   "title": "فساد یشم‌آتش"
+  },
+  "quest:4441": {
+   "title": "باستانیان فِل‌زده"
+  },
+  "quest:4442": {
+   "title": "پاک شد!"
+  },
+  "quest:4505": {
+   "title": "چاه فساد"
+  },
+  "quest:4506": {
+   "title": "سبرهای آلوده"
+  },
+  "quest:4906": {
+   "title": "فساد افزون"
+  },
+  "quest:5156": {
+   "title": "راستی‌آزمایی فساد"
+  },
+  "quest:5159": {
+   "title": "آب پاک‌شده به فل‌وود بازمی‌گردد"
+  },
+  "quest:4101": {
+   "title": "پاک‌سازی فل‌وود"
+  },
+  "quest:4102": {
+   "title": "پاک‌سازی فل‌وود"
+  },
+  "quest:5165": {
+   "title": "خاموش‌کردن شعله‌های پناه"
+  }
+ }
+}

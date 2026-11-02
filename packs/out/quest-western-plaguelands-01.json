@@ -1,0 +1,785 @@
+{
+ "pack": "quest-western-plaguelands-01",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-western-plaguelands-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Stormwind City",
+   "fa": "شهر استورم‌ویند",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Good Luck Half-Charm",
+   "fa": "نیم‌طلسمِ اقبال",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Locked Away",
+   "fa": "زندانی پنهان",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "friendly",
+   "fa": "دوستانه",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Counting Out Time",
+   "fa": "شمارش زمان",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Flame in a Bottle",
+   "fa": "شعله در شیشه",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "raid",
+   "fa": "رید",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Chillwind Point",
+   "fa": "نقطهٔ چیل‌ویند",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Empty Felstone Field Bottle",
+   "fa": "بطری خالیِ کشتزارِ فل‌ستون",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Filled Felstone Field Bottle",
+   "fa": "بطری پُرشدهٔ کشتزارِ فل‌ستون",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E27": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E28": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E29": {
+   "en": "salvation",
+   "fa": "رستگاری",
+   "kind": "sp"
+  },
+  "E30": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Good Luck Charm",
+   "fa": "تعویذ خوش‌شانسی",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Caer Darrow",
+   "fa": "کائِر دارو",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Key",
+   "fa": "کلید",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Empty Dalson's Tears Bottle",
+   "fa": "بطری خالیِ اشک‌های دالسون",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "Filled Dalson's Tears Bottle",
+   "fa": "بطری پُرشدهٔ اشک‌های دالسون",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Empty Writhing Haunt Bottle",
+   "fa": "بطری خالیِ مزرعهٔ ریتینگ",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Filled Writhing Haunt Bottle",
+   "fa": "شیشهٔ پُرشدهٔ مزرعهٔ ریتینگ",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Undercity": "آندر‌سیتی",
+  "Horde": "هورد",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Plaguelands": "طاعون‌زار",
+  "Azeroth": "آزروت",
+  "threat": "تیت",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Stormwind": "استورم‌ویند",
+  "Stormwind City": "شهر استورم‌ویند",
+  "Forsaken": "مطرودان",
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Good Luck Half-Charm": "نیم‌طلسمِ اقبال",
+  "Locked Away": "زندانی پنهان",
+  "friendly": "دوستانه",
+  "strike": "ضربه",
+  "undead": "مرده‌متحرک",
+  "Counting Out Time": "شمارش زمان",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Flame in a Bottle": "شعله در شیشه",
+  "raid": "رید",
+  "Chillwind Point": "نقطهٔ چیل‌ویند",
+  "battle": "نبرد",
+  "Empty Felstone Field Bottle": "بطری خالیِ کشتزارِ فل‌ستون",
+  "Filled Felstone Field Bottle": "بطری پُرشدهٔ کشتزارِ فل‌ستون",
+  "hit": "اصابت",
+  "Shadow": "سایه",
+  "heal": "شفا",
+  "damage": "آسیب",
+  "salvation": "رستگاری",
+  "nearby": "نزدیک",
+  "Good Luck Charm": "تعویذ خوش‌شانسی",
+  "form": "شکل",
+  "Caer Darrow": "کائِر دارو",
+  "Scholomance": "شولومانس",
+  "enemy": "دشمن",
+  "Key": "کلید",
+  "Empty Dalson's Tears Bottle": "بطری خالیِ اشک‌های دالسون",
+  "Use": "استفاده",
+  "Filled Dalson's Tears Bottle": "بطری پُرشدهٔ اشک‌های دالسون",
+  "Empty Writhing Haunt Bottle": "بطری خالیِ مزرعهٔ ریتینگ",
+  "Filled Writhing Haunt Bottle": "شیشهٔ پُرشدهٔ مزرعهٔ ریتینگ"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$N",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$b",
+  "20": "$b",
+  "21": "$N",
+  "22": "$c",
+  "23": "$N",
+  "24": "$N",
+  "25": "$R",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$C",
+  "32": "$b",
+  "33": "$b",
+  "34": "$B",
+  "35": "$B",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N"
+ },
+ "rows": {
+  "quest:5093:obj:0": "Seek out High Executor Derrington. His base camp is located at the Bulwark, east of Tirisfal Glade and the ⟦E1⟧.",
+  "quest:5093:details:0": "Heroes of the realm, hear me - the ⟦E2⟧ calls upon you for swift action!",
+  "quest:5093:details:1": "BA call to arms has been issued for all able bodied individuals to take up arms against the Scourge! Rumors fly of new threats rising from the ruins of the ⟦E3⟧. They loom to the east of the ⟦E1⟧, in the northern reaches of the lands now known as the ⟦E4⟧!",
+  "quest:5093:details:2": "Heroes of the realm - seek out High Executor Derrington, who has set up his base camp at the Bulwark, east of Tirisfal Glade!",
+  "quest:5093:completion:0": "Welcome to the ⟦E4⟧, hero. This is one of the most dangerous frontiers in ⟦E5⟧, with the looming ⟦E6⟧ of the Scourge to our east, and then even further still eastward from there. I am glad to hear that the call of duty and service to the ⟦E2⟧ did not fall on deaf ears with you!",
+  "quest:5093:completion:1": "If you are ready to get your hands dirty, then there is plenty for willing and able heroes to do here on the edge of the ⟦E4⟧.",
+  "quest:5094:obj:0": "Seek out High Executor Derrington. His base camp is located at the Bulwark, east of Tirisfal Glade and the ⟦E1⟧.",
+  "quest:5094:details:0": "Heroes of the realm, hear me - the ⟦E2⟧ calls upon you for swift action!",
+  "quest:5094:details:1": "BA call to arms has been issued for all able bodied individuals to take up arms against the Scourge! Rumors fly of new threats rising from the ruins of the ⟦E3⟧. They loom to the east of the ⟦E1⟧, in the northern reaches of the lands now known as the ⟦E4⟧!",
+  "quest:5094:details:2": "Heroes of the realm - seek out High Executor Derrington, who has set up his base camp at the Bulwark, east of Tirisfal Glade!",
+  "quest:5094:completion:0": "Welcome to the ⟦E4⟧, hero. This is one of most dangerous frontiers in ⟦E5⟧, with the looming ⟦E6⟧ of the Scourge to our east, and then even further still eastward from there. I am glad to hear that the call of duty and service to the ⟦E2⟧ did not fall on deaf ears with you!",
+  "quest:5094:completion:1": "If you are ready to get your hands dirty, then there is plenty for willing and able heroes to do here on the edge of the ⟦E4⟧.",
+  "quest:5095:obj:0": "Seek out High Executor Derrington. His base camp is located at the Bulwark, east of ⟦E7⟧ and the ⟦E1⟧.",
+  "quest:5095:details:0": "Heroes of the realm, hear me - the ⟦E2⟧ calls upon you for swift action!",
+  "quest:5095:details:1": "BA call to arms has been issued for all able bodied individuals to take up arms against the Scourge! Rumors fly of new threats rising from the ruins of the ⟦E3⟧. They loom to the east of the ⟦E1⟧, in the northern reaches of the lands now known as the ⟦E4⟧!",
+  "quest:5095:details:2": "Heroes of the realm - seek out High Executor Derrington, who has set up his base camp at the Bulwark, east of ⟦E7⟧!",
+  "quest:5095:completion:0": "Welcome to the ⟦E4⟧, hero. This is one of the most dangerous frontiers in ⟦E5⟧, with the looming ⟦E6⟧ of the Scourge to our east, and then even further still eastward from there. I am glad to hear that the call of duty and service to the ⟦E2⟧ did not fall on deaf ears with you!",
+  "quest:5095:completion:1": "If you are ready to get your hands dirty, then there is plenty for willing and able heroes to do here on the edge of the ⟦E4⟧.",
+  "quest:5218:title": "Felstone Field Cauldron",
+  "quest:5218:progress:0": "The Scourge's plague cauldron stands before you, spewing vast amounts of toxins into the air.  A small, non-descript access panel lies in the base of the cauldron's vast platform.⟦1⟧⟦2⟧Having already defeated the cauldron lord and acquired its key, you are free to add the appropriate reagents to the cauldron to make a counter agent to the plague.",
+  "quest:5218:completion:0": "Adding the reagents to the cauldron's mix begins to change the color and texture of the cloud it spews forth.  Scourge that are even remotely near the cauldron appear to recoil at the introduction of the new components into the environment.",
+  "quest:5221:title": "Dalson's Tears Cauldron",
+  "quest:5221:progress:0": "The Scourge's plague cauldron stands before you, spewing vast amounts of toxins into the air.  A small, non-descript access panel lies in the base of the cauldron's vast platform.⟦3⟧⟦4⟧Having already defeated the cauldron lord and acquired its key, you are free to add the appropriate reagents to the cauldron to make a counter agent to the plague.",
+  "quest:5221:completion:0": "Adding the reagents to the cauldron's mix begins to change the color and texture of the cloud it spews forth. Scourge that are even remotely near the cauldron appear to recoil at the introduction of the new components into the environment.",
+  "quest:5224:title": "Writhing Haunt Cauldron",
+  "quest:5224:progress:0": "The Scourge's plague cauldron stands before you, spewing vast amounts of toxins into the air.  A small, non-descript access panel lies in the base of the cauldron's vast platform.⟦5⟧⟦6⟧Having already defeated the cauldron lord and acquired its key, you are free to add the appropriate reagents to the cauldron to make a counter agent to the plague.",
+  "quest:5224:completion:0": "Adding the reagents to the cauldron's mix begins to change the color and texture of the cloud it spews forth. Scourge that are even remotely near the cauldron appear to recoil at the introduction of the new components into the environment.",
+  "quest:5227:title": "Gahrron's Withering Cauldron",
+  "quest:5227:progress:0": "The Scourge's plague cauldron stands before you, spewing vast amounts of toxins into the air.  A small, non-descript access panel lies in the base of the cauldron's vast platform.⟦7⟧⟦8⟧Having already defeated the cauldron lord and acquired its key, you are free to add the appropriate reagents to the cauldron to make a counter agent to the plague.",
+  "quest:5227:completion:0": "Adding the reagents to the cauldron's mix begins to change the color and texture of the cloud it spews forth. Scourge that are even remotely near the cauldron appear to recoil at the introduction of the new components into the environment.",
+  "quest:5021:obj:0": "The ramblings of the ghostly woman indicated that she needed a package delivered. She claimed that it was where her horse was. As to where the horse is or where the package was to be delivered - the ghost remains incomprehensible.",
+  "quest:5021:details:0": "\"The package must be delivered... delivered before I'm trapped here!\"",
+  "quest:5021:details:1": "The cries of a panicked woman feel almost like a whisper floating through the house. Cowered in the upstairs corner is the apparition of a woman. She does not seem to be fully cognizant of her surroundings, and she is only vaguely aware of you.",
+  "quest:5021:details:2": "B\"Are you here to deliver my package? Please, before it gets much worse! I was going to ride out of here. It should still be by my horse... or am I too late?\"",
+  "quest:5021:completion:0": "A package in the barn that you might have otherwise overlooked now stands out amongst the decay and ruin. Perhaps this is the one that the ghost of Janice Felstone was clamoring about...",
+  "quest:5022:obj:0": "Check with the Royal Factors of ⟦E8⟧ to learn the whereabouts of an Emma Felstone. There is usually a census officer located in City Hall.",
+  "quest:5022:details:0": "You pick up the package, wiping off a small layer of dust and grime that had settled on it. It is addressed in a hurried hand to an Emma Felstone of ⟦E8⟧; the delivery of the package is dated for well over four years ago.",
+  "quest:5022:details:1": "Though it is unclear if Emma Felstone is even alive, it is widely known that the ⟦E9⟧ Hall keep records on the populace of the city. This is handled through the Royal Factors of the ⟦E8⟧ Census.",
+  "quest:5022:progress:0": "Welcome to the office of the ⟦E8⟧ census. If you are in need of information on our populace, then I can assist you.",
+  "quest:5022:completion:0": "A package for an Emma Felstone, you say? Last known address was ⟦E8⟧, four years ago? Well let me see here...",
+  "quest:5022:completion:1": "According to what we know, there was an Emma Felstone in the city about four years ago. Well, I should say possibly - this census I refer to is from five years ago, and I don't have a report of her vacating the city. This doesn't mean that she is still here though.",
+  "quest:5022:completion:2": "Wait a second... this package couldn't be for Ol' Emma, could it?",
+  "quest:5023:obj:0": "Check with the Royal Overseers of the ⟦E1⟧ to learn the whereabouts of a Jeremiah Felstone. There is usually a census officer located near guild and tabard registration.",
+  "quest:5023:details:0": "You pick up the package, wiping off a small layer of dust and grime that had settled on it. It is addressed in a hurried hand to a Jeremiah Felstone of Lordaeron; the delivery of the package is dated for well over four years ago.",
+  "quest:5023:details:1": "Though it is unclear if Jeremiah Felstone is even alive, it is widely known that the ⟦E1⟧, formerly known as Lordaeron, keeps records on the populace of the city. This is handled through the Royal Overseers of the ⟦E1⟧ Census.",
+  "quest:5023:progress:0": "Are you here to seek the assistance of the ⟦E1⟧ census, or just to ask me if someone you knew is dead? I get asked that a lot.",
+  "quest:5023:completion:0": "A package for a Jeremiah Felstone, with his last known address as Lordaeron... I should be able to assist you.",
+  "quest:5023:completion:1": "Jeremiah Felstone was in the city before the plague. Well, I should say the former Jeremiah Felstone - some of the ⟦E10⟧ have changed their last names to rid themselves of their former countenance. This case is no exception; the former Jeremiah Felstone is now known as Jeremiah Payson.",
+  "quest:5023:completion:2": "Wait a minute... isn't he the cockroach vendor?",
+  "quest:5050:obj:0": "Return to Janice Felstone in ⟦E11⟧ her ⟦E12⟧.",
+  "quest:5050:details:0": "It would seem that I was wrong about you ⟦9⟧, and for that I owe you an apology. My sister sent me a number of personal effects, including humorously enough the deed to the Felstone farm. I think I'll pass on reclaiming it right now.",
+  "quest:5050:details:1": "If my sister's spirit remains tethered to the farm and cannot rest, please... could you return this to her? It is half of a good luck charm she had, with her husband having the other half.",
+  "quest:5050:details:2": "Maybe her knowing I have these things will now put her soul to rest.",
+  "quest:5050:progress:0": "John, sweetheart... is that you? I'm so cold all the sudden...",
+  "quest:5050:completion:0": "You give the half-charm back to the apparition. She looks at it, then at you expectantly.",
+  "quest:5050:completion:1": "B\"Honey, where did you put your half of the charm? We can't be together unless we have both halves. Honey... can you see me?\"",
+  "quest:5059:title": "⟦E13⟧",
+  "quest:5059:progress:0": "The door to the outhouse has begun to splinter at the edges of the frame as though it has been repeatedly and incessantly tried to be forced open. It is currently locked up tight from the outside of the outhouse.⟦10⟧⟦11⟧As you rattle the door, you hear a guttural moaning come from inside! Whatever is inside there, it certainly does not sound ⟦E14⟧.",
+  "quest:5059:completion:0": "Using the key found on the skeleton of the former Mrs. Dalson, you unlock the door to the outhouse. A bloodthirsty ghoul leaps from the outhouse, having been trapped inside for who knows how long.⟦12⟧⟦13⟧It is clear by the bloodcurdling scream of the ghoul at your presence that the former Farmer Dalson is now beyond saving.",
+  "quest:5092:obj:0": "Kill 10 Skeletal Flayers and 10 Slavering Ghouls in Sorrow Hill.",
+  "quest:5092:obj:1": "Return to Commander Ashlam Valorfist at Chillwind Camp, ⟦E11⟧.",
+  "quest:5092:details:0": "With Andorhal's western and northern roads into the city well fortified, I'm looking to ⟦E15⟧ at it from the less defended eastern road. The Scourge relies on the buffer of ⟦E16⟧ that infests Sorrow Hill as a first line of defense. If we are to advance on Andorhal, we will need to do it through Sorrow Hill.",
+  "quest:5092:details:1": "Your first assignment will be to clear the way through Sorrow Hill. Thin out the skeletons and ghouls that haunt the area; report back to me when this is done!",
+  "quest:5092:progress:0": "I want you to prepare for the worst, ⟦14⟧ - dig deep.  The task in front of us will not be easy.  As we rally our forces here to eventually ⟦E15⟧ out against the Scourge, you will be part of our advance effort that takes the fight to them!  Your assigned mission in Sorrow Hill will begin our path to victory!",
+  "quest:5092:completion:0": "Mission accomplished, ⟦15⟧! Well played, well played.",
+  "quest:5092:completion:1": "Allow me to reward your work thus far with some coin from the ⟦E8⟧ coffers. I'd recommend spending it on materiel that will aid you in your next mission... one that will take you into the ruins of Andorhal itself.",
+  "quest:5092:completion:2": "Be ready! Be vigilant!",
+  "quest:4973:title": "⟦E17⟧",
+  "quest:4973:desc:0": "Locate 5 Andorhal Watches amongst the rubble of the city, and return with them to Chromie in the Andorhal Inn, ⟦E11⟧.",
+  "quest:4973:obj:0": "Locate 5 Andorhal Watches amongst the rubble of the city, and return with them to Chromie in the Andorhal Inn, ⟦E11⟧.",
+  "quest:4973:details:0": "Locate 5 Andorhal Watches amongst the rubble of the city, and return with them to Chromie in the Andorhal Inn, ⟦E11⟧.",
+  "quest:4973:progress:0": "The watches of Andorhal, much like the large clock on the ruins of the town hall, all are frozen in time at three o'clock.  This was when the full effects of the plague first spread out over the city, choking the life out of it.⟦16⟧⟦17⟧As much as we all may regret what happened that day, it has shaped the flow of time as you mortals perceive it.  The bronze dragonflight must persevere in protecting the timeline!",
+  "quest:4973:completion:0": "Again, I think you for your assistance.  Please accept this gift.  While you still may not know when to use such an item, perhaps in the future the path of time will reveal its true intentions to you.  You could say that I've seen as such happening to you, ⟦18⟧.",
+  "quest:5096:obj:0": "Proceed to the ⟦E18⟧'s base camp between Felstone Field and Dalson's Tears and destroy their command tent.",
+  "quest:5096:obj:1": "Place the Scourge banner at the camp, and then return to High Executor Derrington at the Bulwark, ⟦E11⟧.",
+  "quest:5096:details:0": "Before Andorhal, we must tackle the advancing ⟦E18⟧ menace from Hearthglen. They've made camp between Felstone Field and Dalson's Tears, making us risk conflict against both the Scourge and the Crusade at once.",
+  "quest:5096:details:1": "My plan is to play them off of each other by sending you to destroy the command tent they've set up; use some ⟦E19⟧ from this box of incendiaries. Once razed, plant this Scourge banner by the tent. With some luck, they'll ignore us and focus on the Scourge for vengeance.",
+  "quest:5096:progress:0": "A surprise ⟦E20⟧ on the ⟦E18⟧'s tenuous forward position will give us a buffer of time to be able to march on Andorhal.  I trust you are here to report success!⟦19⟧⟦20⟧Once this is successfully executed, we will need to work diligently and quickly.  We do not have the materiel and manpower to fight both the Scourge and the ⟦E18⟧ at the same time if they do not buy our little ruse.",
+  "quest:5096:completion:0": "Finely executed, ⟦21⟧. Your attack on the ⟦E18⟧ will buy us time. I have sent one of my best scouts out to watch over the camp and make sure that the Crusade forces that come to reinforce the position will take the bait.",
+  "quest:5096:completion:1": "With the pressure on us lessened, we should now finally be able to risk a mission into Andorhal itself, and an important one at that. I'd very much like it if you'd perform this one as well, based on your success to date.",
+  "quest:5215:obj:0": "Speak with High Priestess MacDonnell at ⟦E21⟧, ⟦E11⟧.",
+  "quest:5215:details:0": "Within the lands of former Lordaeron are eight cauldrons - four here in the west, and four more ensconced in the east. These cauldrons spew poisons into the air, propagating the plague throughout the land for the Scourge.",
+  "quest:5215:details:1": "The necromantic might of Kel'Thuzad is too strong to outright shut down these cauldrons, but we think we might have a way to subvert them to our advantage. My second, High Priestess MacDonnell, will be your point on this assignment; she'll continue the briefing from here.",
+  "quest:5215:completion:0": "May the power of the Light shine upon you in these dark times, ⟦22⟧. I am pleased to serve as your coordinator for our plan to sabotage the Scourge's cauldrons.",
+  "quest:5215:completion:1": "Our goal will be to change the composition of the plague that the cauldrons create into something that negatively affects the Scourge. In order to affect this change, you will need to secure access to each of the four cauldrons present in the ⟦E11⟧.",
+  "quest:5215:completion:2": "Stand ready hero, for a glorious ⟦E22⟧ against the vile Scourge awaits you!",
+  "quest:5216:obj:0": "Go to Felstone Field in ⟦E11⟧ to locate and defeat the Cauldron Lord present there. It may have a key that will allow access to the cauldron. You must have the ⟦E23⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5216:details:0": "Of the four cauldrons here in the west, the one located at Felstone Field may be the easiest one in obtaining access to. The Scourge have greener troops positioned here, though they should not be underestimated.",
+  "quest:5216:details:1": "Go to Felstone Field, northwest of Andorhal, and engage the cauldron lord there. We think it has a key that will unlock access to the cauldron. When unlocked, use this bottle to obtain a sample of the poisons inside the cauldron; we'll need it for study in developing a counter agent.",
+  "quest:5216:progress:0": "An access panel to the cauldron remains securely fastened.  In order to open it, you will need to find the key.",
+  "quest:5216:completion:0": "The key taken from Cauldron Lord Bilemaw is a perfect fit in unlocking the access panel. A foul stench emanates from the opened panel as an unknown mix of concentrated substances swirl inside the cauldron.",
+  "quest:5216:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for High Priestess MacDonnell back at ⟦E21⟧.",
+  "quest:5217:obj:0": "Bring the ⟦E24⟧ to High Priestess MacDonnell at Chillwind Camp, ⟦E11⟧.",
+  "quest:5217:details:0": "You fill the bottle with enough of the cauldron's poisonous concoction for a suitable sample to be studied.",
+  "quest:5217:details:1": "With the poison in hand, it is time to return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+  "quest:5217:progress:0": "Welcome back to the relative safety of Chillwind Camp, ⟦23⟧.  What progress on the cauldrons do you have to report?",
+  "quest:5217:completion:0": "Well done ⟦24⟧ - it should take Alchemist Arbington no time at all to analyze this and devise a counter agent to introduce into the cauldron. If we are able to pump out enough of it into the air, we might be able to weaken all the Scourge present here.",
+  "quest:5217:completion:1": "This will no doubt be an ongoing ordeal; we will need to continually ⟦E25⟧ these cauldrons and introduce our reagents into their mix. Still, if we can keep it up, we will have a huge advantage over Scourge when the time comes for ⟦E22⟧!",
+  "quest:5228:obj:0": "Speak with ⟦E26⟧ Priestess Vandis at the Bulwark, ⟦E11⟧.",
+  "quest:5228:details:0": "Within the lands of former Lordaeron are eight cauldrons - four in the west, and four more entrenched in the east. These cauldrons spew poisons into the air, propagating the plague throughout the land for the Scourge.",
+  "quest:5228:details:1": "The necromantic might of Kel'Thuzad is too strong to outright shut down these cauldrons, but we think we might have a way to subvert them to our advantage. My second, ⟦E26⟧ Priestess Vandis, will be your point on this assignment; she'll continue the briefing from here.",
+  "quest:5228:completion:0": "From the shadows, brother ⟦25⟧, I bid you greetings. I am to serve as your coordinator for our plan to sabotage the Scourge's cauldrons.",
+  "quest:5228:completion:1": "Our goal will be to change the composition of the plague that the cauldrons create into something that negatively affects the Scourge. In order to affect this change, you will need to secure access to each of the four cauldrons here in the ⟦E11⟧.",
+  "quest:5228:completion:2": "The time has come for you to lead the charge against the Scourge, hero.",
+  "quest:5229:obj:0": "Go to Felstone Field in ⟦E11⟧ to locate and defeat the Cauldron Lord present there. It may have a key that will allow access to the cauldron. You must have the ⟦E23⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5229:details:0": "Of the four cauldrons in the ⟦E11⟧, the one at Felstone Field may be the easiest one to gain access to. The Scourge have greener troops positioned here, though they should not be underestimated.",
+  "quest:5229:details:1": "Go to Felstone Field, due east of here and northwest of Andorhal, and engage the cauldron lord there. On it is a key that will unlock access to the cauldron. When unlocked, use this bottle to get a sample of the cauldron's toxins; we'll need it for study in developing a counter agent.",
+  "quest:5229:progress:0": "An access panel to the cauldron remains securely fastened.  In order to open it, you will need to find the key. ",
+  "quest:5229:completion:0": "The key taken from Cauldron Lord Bilemaw is a perfect fit in unlocking the access panel, though it disappears after you use it. Still, you think you can open the panel now without a key. A foul stench emanates from the opened panel as an unknown mix of concentrated substances swirl inside the cauldron.",
+  "quest:5229:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for ⟦E26⟧ Priestess Vandis back at the Bulwark.",
+  "quest:5230:obj:0": "Bring the ⟦E24⟧ to ⟦E26⟧ Priestess Vandis at the Bulwark, ⟦E11⟧.",
+  "quest:5230:details:0": "You fill the bottle with enough of the cauldron's poisonous concoction for a suitable sample to be studied.",
+  "quest:5230:details:1": "With the poison in hand, it is time to return to ⟦E26⟧ Priestess Vandis at the Bulwark to complete the mission.",
+  "quest:5230:progress:0": "Welcome back to the relative safety of the Bulwark, ⟦26⟧. What progress on the cauldrons do you have to report?",
+  "quest:5230:completion:0": "Well done ⟦27⟧ - it should take Apothecary Dithers no time at all to analyze this and devise a counter agent to introduce into the cauldron. If we are able to pump out enough of it into the air, we might be able to weaken all the Scourge present here.",
+  "quest:5230:completion:1": "This will no doubt be an ongoing ordeal; we will need to continually ⟦E25⟧ these cauldrons and introduce our reagents into their mix. Still, if we can keep it up, we will have a huge advantage over Scourge when the time comes for ⟦E22⟧!",
+  "quest:4984:obj:0": "Destroy 8 Diseased Wolves, and then return to Mulgris Deepriver at the Writhing Haunt, ⟦E11⟧.",
+  "quest:4984:obj:1": "B",
+  "quest:4984:details:0": "While there was little I could do alone to thwart the Scourge, I nevertheless came to these lands to try and ⟦E27⟧ the ⟦E28⟧ done to nature. Animals suffer from the plague that continues to choke these lands, unable to find mercy and peace. I ask for you to continue what I could not finish here.",
+  "quest:4984:details:1": "There is no ⟦E29⟧ for the suffering animals but a sweet and merciful release. Seek out diseased wolves ⟦E30⟧ and put them down. Please ⟦28⟧, end their misery - doing so will surely soothe mine.",
+  "quest:4984:progress:0": "The wolves that are infected with the plague must be put down, ⟦29⟧.  The disease they carry cannot be cured.  I tried... I tried until I succumbed to the plague myself.",
+  "quest:4984:completion:0": "I... I sense that the souls of those wolves you have put down now have rest. They - and I - thank you for a merciful release.",
+  "quest:4984:completion:1": "The wolves are not alone in their suffering within this damnable place, ⟦30⟧. Please, I have need of you once more.",
+  "quest:5051:obj:0": "Locate the other half of the ⟦E31⟧ somewhere on the Felstone Farm in ⟦E11⟧ and reassemble it.",
+  "quest:5051:obj:1": "Give the ⟦E31⟧ to Janice Felstone on the Felstone Farm, ⟦E11⟧.",
+  "quest:5051:details:0": "The ramblings of the poor ghost continue:",
+  "quest:5051:details:1": "B\"I'm so cold, John. Bring me your charm, and we'll be together! Quickly John, before the plague comes to change us into hideous beasts! I can't see you John... but I know you're near. I feel you near me.\"",
+  "quest:5051:details:2": "Perhaps if the second half of the charm was found and reassembled, this would constitute what the spirit of Janice Felstone is seeking.",
+  "quest:5051:progress:0": "John, don't let the ghouls get you... don't let the ghouls get me... nasty ghouls... our charm will keep us safe.",
+  "quest:5051:completion:0": "You hand the reassembled good luck charm to Janice Felstone's ghost. As soon as she grasps it, you observe an almost immediate change in her. Her ethereal ⟦E32⟧ shimmers, and she looks upon you with clear yet sad eyes.",
+  "quest:5051:completion:1": "B\"You've freed me... I no longer will need this charm. Please, take it and perhaps it will give you the solace it has given me.\"",
+  "quest:838:obj:0": "Speak with Apothecary Dithers at the Bulwark, ⟦E11⟧.",
+  "quest:838:details:0": "On the island of ⟦E33⟧ lies ⟦E34⟧ - a school that serves as a stronghold for the Scourge. Our ⟦E35⟧ dwells within, safely allowed to pursue research that strengthens their power. A door bars the way, and try as we might no entry is to be had without a proper key.",
+  "quest:838:details:1": "Apothecary Dithers is well versed on ⟦E34⟧, and has an idea how to obtain a key. You have proved your value to me as someone who can get things done; I now entrust this task to you. Speak with him on this matter.",
+  "quest:838:completion:0": "Yes, ⟦31⟧, the High Executor mentioned you might be the one to trust in the matter of the key. I've dedicated a fair portion of my recent studies to the ⟦E34⟧, and I believe I know a means by which you can acquire one that will let you past the front door at will.⟦32⟧⟦33⟧This task will not be easy, but such tasks seldom are. You most assuredly look like the type to know this as fact.",
+  "quest:5058:completion:0": "A diary with yellowing pages lies open to the last entry:",
+  "quest:5058:completion:1": "B\"I don't know what's going to happen now that Harold's turned. It took everything out of me to drag him into the only place I could find that'd lock him up tight and hold him. I hid the key on me, and I pray it works...",
+  "quest:5058:completion:2": "I hope I can get out of here, but I need money to do that. Our stuff's all in the cabinet I think... and now that I think about it, doesn't Harold keep the key on him?",
+  "quest:5058:completion:3": "I'll rest on it, I'm dead tired now.\"",
+  "quest:5060:obj:0": "{'type': 'item', 'id': 12739, 'target': 'Dalson Cabinet ⟦E36⟧', 'text': None}",
+  "quest:5060:progress:0": "An extremely sturdy cabinet stands before you, securely fastened shut by a built-in lock. The front of the cabinet is deeply scratched and marked. This could be surmised as being from numerous and violent failed attempts to reveal whatever secrets the cabinet currently obfuscates from view.⟦34⟧⟦35⟧If you are going to open this cabinet, you will need to find the key.",
+  "quest:5060:completion:0": "The key taken from Farmer Dalson's ghoulish remains fits the lock perfectly. The doors of the cabinet swing open, revealing several items that remain intact and appear quite valuable.",
+  "quest:5219:obj:0": "Go to Dalson's Tears in ⟦E11⟧ to locate and defeat the Cauldron Lord present there, and use its key to gain access to the cauldron. You must have the ⟦E37⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5219:details:0": "One of the plague cauldrons is located in the field of a former farmhouse now referred to as Dalson's Tears. Well, we shall shed no tears this day as we thwart the Scourge and have them choke on their own fumes!",
+  "quest:5219:details:1": "Go to Dalson's Tears, almost due north of Andorhal, and eliminate the cauldron lord there. It should have a key like the last one did, allowing you into the cauldron. ⟦E38⟧ this bottle to obtain a sample from inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
+  "quest:5219:progress:0": "An access panel to the cauldron remains securely fastened. In order to open it, you will need to find the key.",
+  "quest:5219:completion:0": "The macabre key found on the cauldron lord easily slides into a keyhole and then disappears, allowing you permanent access to it. Crude, viscous ichors pulsate through twisted tubes within the cauldrons underpinnings.",
+  "quest:5219:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for High Priestess MacDonnell back at ⟦E21⟧.",
+  "quest:5220:obj:0": "Bring the ⟦E39⟧ to High Priestess MacDonnell at Chillwind Camp, ⟦E11⟧.",
+  "quest:5220:details:0": "You carefully fill the bottle with enough of the cauldron's ichors for what you consider to be suitably sized sample.",
+  "quest:5220:details:1": "With the poison in hand, it is time to return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+  "quest:5220:progress:0": "We know that each cauldron employs a different mix of reagents to generate its plague-inducing toxin; likewise, we know that we will need to develop a counter agent that is unique for each cauldron. Your sample from Dalson's Tears will be the key to figure out that cauldron's distinct reagent requirement.",
+  "quest:5220:completion:0": "Ah, there is plenty in here for study. Well done, ⟦36⟧!",
+  "quest:5220:completion:1": "For now, the next step is in our hands. We'll need to produce a list of reagents that, when combined with what is already in the cauldron, will act as its counter.",
+  "quest:5220:completion:2": "The only way we will be able to introduce this is by placing the reagents into the cauldron directly. Alchemist Arbington will have more information on that, so be sure to speak with him at your earliest convenience.",
+  "quest:5222:obj:0": "Go to the Writhing Haunt in ⟦E11⟧ to locate and defeat the Cauldron Lord present there, and use its key to gain access to the cauldron. You must have the ⟦E40⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5222:details:0": "Two cauldrons have been successfully opened; while you will be able to access them indefinitely, we still want to open up the other two that remain. This will provide all of us with more options to introduce the counter agent!",
+  "quest:5222:details:1": "This time, you'll be hitting the Writhing Haunt's cauldron. It is almost due east of Andorhal, relatively close to the ruined city walls; again, eliminate the cauldron lord present there for its key. ⟦E38⟧ this bottle to obtain the sample from the cauldron.",
+  "quest:5222:details:2": "Good hunting, ⟦37⟧!",
+  "quest:5222:progress:0": "An access panel to the cauldron remains securely fastened. In order to open it, you will need to find the key.",
+  "quest:5222:completion:0": "The cauldron lord's key unlocks the access panel to this cauldron and then disappears, much like the other keys have for the previous two cauldrons you've dealt of. A putrid smelling substance churns violently beneath the platform of the cauldron.",
+  "quest:5222:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for High Priestess MacDonnell back at ⟦E21⟧.",
+  "quest:5223:obj:0": "Bring the ⟦E41⟧ to High Priestess MacDonnell at Chillwind Camp, ⟦E11⟧.",
+  "quest:5223:details:0": "You delicately top off the empty bottle; a sample of the foul substance that churns under the platform of the cauldron now oozes back and forth inside the fragile glass container.",
+  "quest:5223:details:1": "With the poison in hand, it is time to return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+  "quest:5223:progress:0": "Once we successfully analyze the sample drawn from the Writhing Haunt's cauldron, it will provide us with a third avenue to deliver a devastating counter agent onto the Scourge!",
+  "quest:5223:completion:0": "Another finely executed mission, ⟦38⟧! This makes three cauldrons available to us to turn against the Scourge. If Kel'Thuzad's necromantic dominance over these lands wasn't as strong as it currently is, I'd dare say you'd shut them down completely!",
+  "quest:5223:completion:1": "Alchemist Arbington will have a report on what this cauldron - as well as the other cauldrons subverted - will require to deliver our counter agent to the plague. With that, the time has come to bring the last cauldron of the west under our influence!"
+ },
+ "context": {
+  "quest:5093": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "horde",
+   "giver": "Warcaller Gorlach",
+   "turner": "High Executor Derrington"
+  },
+  "quest:5094": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "horde",
+   "giver": "Harbinger Balthazad",
+   "turner": "High Executor Derrington"
+  },
+  "quest:5095": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "horde",
+   "giver": "Bluff Runner Windstrider",
+   "turner": "High Executor Derrington"
+  },
+  "quest:5218": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "",
+   "giver": "Scourge Cauldron",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5221": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "",
+   "giver": "Scourge Cauldron",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5224": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "",
+   "giver": "Scourge Cauldron",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5227": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 50,
+   "side": "",
+   "giver": "Scourge Cauldron",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5021": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 52,
+   "side": "",
+   "giver": "Janice Felstone",
+   "turner": "Janice's Parcel («بستهٔ جنیس»)"
+  },
+  "quest:5022": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Janice's Parcel («بستهٔ جنیس»)",
+   "turner": "Royal Factor Bathrilor"
+  },
+  "quest:5023": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 52,
+   "side": "horde",
+   "giver": "Janice's Parcel («بستهٔ جنیس»)",
+   "turner": "Royal Overseer Bauhaus"
+  },
+  "quest:5050": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 52,
+   "side": "",
+   "giver": "Ol' Emma، Jeremiah Payson",
+   "turner": "Janice Felstone"
+  },
+  "quest:5059": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 52,
+   "side": "",
+   "giver": "Outhouse",
+   "turner": "Outhouse"
+  },
+  "quest:5092": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist",
+   "turner": "Commander Ashlam Valorfist"
+  },
+  "quest:4973": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "",
+   "giver": "",
+   "turner": "Chromie"
+  },
+  "quest:5096": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "horde",
+   "giver": "High Executor Derrington",
+   "turner": "High Executor Derrington"
+  },
+  "quest:5215": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist",
+   "turner": "High Priestess MacDonnell"
+  },
+  "quest:5216": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "alliance",
+   "giver": "High Priestess MacDonnell",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5217": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "alliance",
+   "giver": "Scourge Cauldron",
+   "turner": "High Priestess MacDonnell"
+  },
+  "quest:5228": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "horde",
+   "giver": "High Executor Derrington",
+   "turner": "Shadow Priestess Vandis"
+  },
+  "quest:5229": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "horde",
+   "giver": "Shadow Priestess Vandis",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5230": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 53,
+   "side": "horde",
+   "giver": "Scourge Cauldron",
+   "turner": "Shadow Priestess Vandis"
+  },
+  "quest:4984": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 54,
+   "side": "",
+   "giver": "Mulgris Deepriver",
+   "turner": "Mulgris Deepriver"
+  },
+  "quest:5051": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 54,
+   "side": "",
+   "giver": "Janice Felstone",
+   "turner": "Janice Felstone"
+  },
+  "quest:838": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "High Executor Derrington",
+   "turner": "Apothecary Dithers"
+  },
+  "quest:5058": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "",
+   "giver": "Mrs. Dalson's Diary («دفتر خاطرات خانم دالسون»)",
+   "turner": "Mrs. Dalson's Diary («دفتر خاطرات خانم دالسون»)"
+  },
+  "quest:5060": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "",
+   "giver": "Locked Cabinet",
+   "turner": "Locked Cabinet"
+  },
+  "quest:5219": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "High Priestess MacDonnell",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5220": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Scourge Cauldron",
+   "turner": "High Priestess MacDonnell"
+  },
+  "quest:5222": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "High Priestess MacDonnell",
+   "turner": "Scourge Cauldron"
+  },
+  "quest:5223": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Scourge Cauldron",
+   "turner": "High Priestess MacDonnell"
+  }
+ },
+ "known": {
+  "quest:5093": {
+   "title": "فراخوان به سلاح: اراضی طاعون‌زده!"
+  },
+  "quest:5094": {
+   "title": "فراخوان به سلاح: اراضی طاعون‌زده!"
+  },
+  "quest:5095": {
+   "title": "فراخوان به سلاح: اراضی طاعون‌زده!"
+  },
+  "quest:5021": {
+   "title": "دیر ولی بهتر از هیچ"
+  },
+  "quest:5022": {
+   "title": "دیر ولی بهتر از هیچ"
+  },
+  "quest:5023": {
+   "title": "دیر ولی بهتر از هیچ"
+  },
+  "quest:5050": {
+   "title": "طلسم خوش‌شانسی"
+  },
+  "quest:5092": {
+   "title": "پاک‌سازی راه"
+  },
+  "quest:5096": {
+   "title": "گمراهی صلیب سرخ"
+  },
+  "quest:5215": {
+   "title": "دیگ‌های اسکارج"
+  },
+  "quest:5216": {
+   "title": "هدف: مزرعهٔ فِلستون"
+  },
+  "quest:5217": {
+   "title": "بازگشت به اردوگاه چیلویند"
+  },
+  "quest:5228": {
+   "title": "دیگ‌های اسکارج"
+  },
+  "quest:5229": {
+   "title": "هدف: مزرعهٔ فِلستون"
+  },
+  "quest:5230": {
+   "title": "بازگشت به بارویل"
+  },
+  "quest:4984": {
+   "title": "حیات‌وحش هم رنج می‌برد"
+  },
+  "quest:5051": {
+   "title": "دو نیمه یکی می‌شوند"
+  },
+  "quest:838": {
+   "title": "شولومانس"
+  },
+  "quest:5058": {
+   "title": "دفتر خاطرات خانم دالسون"
+  },
+  "quest:5060": {
+   "title": "زندانی پنهان"
+  },
+  "quest:5219": {
+   "title": "هدف: اشک‌های دالسون"
+  },
+  "quest:5220": {
+   "title": "بازگشت به اردوگاه چیلویند"
+  },
+  "quest:5222": {
+   "title": "هدف: مزرعهٔ ریتینگ"
+  },
+  "quest:5223": {
+   "title": "بازگشت به اردوگاه چیلویند"
+  }
+ }
+}

@@ -1,0 +1,830 @@
+{
+ "pack": "quest-stormwind-city-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stormwind-city-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Defias Docket",
+   "fa": "پروندهٔ دیفایاس",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "The Defias Brotherhood",
+   "fa": "برادری دیفایاس",
+   "kind": "qs"
+  },
+  "E9": {
+   "en": "Deathwing",
+   "fa": "بال مرگ",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E13": {
+   "en": "Silk Cloth",
+   "fa": "پارچهٔ ابریشمی",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "effect",
+   "fa": "اثر",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E17": {
+   "en": "Arathi Highlands",
+   "fa": "ارتفاعات آراتی",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Miss",
+   "fa": "خطا",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Mana",
+   "fa": "مانا",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "Elemental",
+   "fa": "بنیادی",
+   "kind": "cls"
+  },
+  "E25": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "High Sorcerer Andromath",
+   "fa": "جادوپیشهٔ اعظم آندرومات",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "Stormwind City",
+   "fa": "شهر استورم‌ویند",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Other",
+   "fa": "سایر",
+   "kind": "tm"
+  },
+  "E32": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "trained",
+   "fa": "آموزش‌دیده",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "James Hyal",
+   "fa": "جیمز هایال",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Worn Leather Book",
+   "fa": "کتاب چرمی کهنه",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Tomes of Alterac",
+   "fa": "کتاب‌های بزرگِ آلتراک",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Chilled Basilisk Haunch",
+   "fa": "ران باسیلیسک سردشده",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Angus",
+   "fa": "انگوس",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Perenolde Tiara",
+   "fa": "تاج پرنولده",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "The Perenolde Tiara",
+   "fa": "تاج پرنولده",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E45": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "Defias Docket": "پروندهٔ دیفایاس",
+  "Duskwood": "جنگل تاریک",
+  "threat": "تیت",
+  "Westfall": "وستفال",
+  "Stormwind": "استورم‌ویند",
+  "Southshore": "ساحل جنوبی",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "The Defias Brotherhood": "برادری دیفایاس",
+  "Deathwing": "بال مرگ",
+  "Alliance": "اتحاد",
+  "form": "شکل",
+  "Shadow": "سایه",
+  "Silk Cloth": "پارچهٔ ابریشمی",
+  "effect": "اثر",
+  "silk": "ابریشم",
+  "Hammer": "چکش",
+  "Arathi Highlands": "ارتفاعات آراتی",
+  "Wetlands": "تالاب‌ها",
+  "miss": "خطا",
+  "Theramore": "ترمور",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Miss": "خطا",
+  "Mana": "مانا",
+  "Elemental": "بنیادی",
+  "Dalaran": "دالاران",
+  "High Sorcerer Andromath": "جادوپیشهٔ اعظم آندرومات",
+  "Stormwind City": "شهر استورم‌ویند",
+  "Tor": "تور",
+  "allies": "متحدان",
+  "demon": "اهریمن",
+  "Other": "سایر",
+  "Harbor": "بندر",
+  "trained": "آموزش‌دیده",
+  "James Hyal": "جیمز هایال",
+  "Horde": "هورد",
+  "Worn Leather Book": "کتاب چرمی کهنه",
+  "fear": "ترس",
+  "Tomes of Alterac": "کتاب‌های بزرگِ آلتراک",
+  "Chilled Basilisk Haunch": "ران باسیلیسک سردشده",
+  "Angus": "انگوس",
+  "Perenolde Tiara": "تاج پرنولده",
+  "The Perenolde Tiara": "تاج پرنولده",
+  "Ironforge": "آیرون‌فورج",
+  "Mage": "جادوگر",
+  "Arcane": "اسرار"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$C",
+  "11": "$N",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$N",
+  "18": "$c",
+  "19": "$b",
+  "20": "$b",
+  "21": "$C",
+  "22": "$g his:her;",
+  "23": "$B",
+  "24": "$B",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N"
+ },
+ "rows": {
+  "quest:1244:obj:0": "Find the ⟦E1⟧ and return it to Watcher Backus in ⟦E2⟧.",
+  "quest:1244:details:0": "Defias activity? Well, there's always some activity; even if they keep to themselves we consider them a ⟦E3⟧.",
+  "quest:1244:details:1": "But now that I think about it, there was a recent sighting that seemed odd. It must have been a couple weeks ago, but some of their agents had gathered around Addle's Stead. From the report, I'd guessed something big went down.",
+  "quest:1244:details:2": "Why don't you check there first and bring me back anything you find?",
+  "quest:1244:details:3": "The farmstead is south of the road from ⟦E4⟧ just as you enter ⟦E2⟧.",
+  "quest:1244:progress:0": "Be careful out there, ⟦1⟧. I know Trias was the one to send you here, but that doesn't mean there isn't anything lurking out in the woods that couldn't cause you some trouble... especially with you investigating the Defias.",
+  "quest:1244:completion:0": "You're back safe and sound. Couldn't ask for much more than that, could you?",
+  "quest:1244:completion:1": "Now, let's see what we have here. This looks pretty official as far as any Defias documents I've seen. But it could be a dupe just to throw you off track of whatever it is you're looking for.",
+  "quest:1245:obj:0": "Bring the ⟦E1⟧ to Elling Trias in ⟦E5⟧.",
+  "quest:1245:details:0": "Whoa, this looks way too complex to be something to just lead you astray. I shouldn't even be looking at this stuff. Take it to Trias--he'll be able to make sense of it. And DON'T let anyone get in your way. This is bigger than me. It might even be bigger than him, but we'll see.",
+  "quest:1245:details:1": "And do me a favor, ⟦2⟧, don't tell anyone I helped you. If my superiors found out I knew about any of this and didn't share it with them they'd probably hang me.",
+  "quest:1245:progress:0": "I see you're back, and in one piece. We both know you're not here for cheese, so let's cut out the pleasantries. Was Backus any help, or have you even left for ⟦E2⟧ yet?",
+  "quest:1245:completion:0": "Yeah... this is an interesting read. Jorgen and DeLavey were smart to bring me in on this.",
+  "quest:1245:completion:1": "Seems the Defias have been trying pretty hard to complete this plan of theirs. Hmm... what's this? Fist? That's a familiar name.",
+  "quest:98219:title": "The Shamed Lieutenant",
+  "quest:98219:obj:0": "Speak to Lieutenant Farren Orinelle in ⟦E6⟧ in ⟦E7⟧.",
+  "quest:350:obj:0": "Speak to Elling Trias in ⟦E5⟧.",
+  "quest:350:details:0": "That Marzon would be contacting a member of the Defias and have ties to Lescovar...",
+  "quest:350:details:1": "Having killed VanCleef and Thredd, it would be hard to see Lescovar brought to proper justice, as your evidence is nothing without their testimonies. That is not even considering the fact that Lescovar is a noble and well connected. It effectively makes him above the law.",
+  "quest:350:details:2": "You'll need other help. I loathe to do so, but there is someone I know that will aid us. You'll find Trias in the Trade District of the city.",
+  "quest:350:completion:0": "You're kidding? Shaw wants my help again? Of all the nerve...",
+  "quest:350:completion:1": "⟦E8⟧, you say? Well, you're certainly the bearer of wonderful news, aren't you? Next you're going to tell me that ⟦E9⟧ is still alive and attacking the city.",
+  "quest:350:completion:2": "All right, tell me everything from the beginning. And don't leave out something you think might not be important. I need to know it all.",
+  "quest:394:obj:0": "Speak to Mathias Shaw in ⟦E5⟧.",
+  "quest:394:details:0": "Find Shaw in Old Town. Let him know that the Lescovar ⟦E3⟧ has been dealt with and about your involvement in the Lord's plots against the city. I'm sure he'll be proud to have another hero among ⟦E5⟧'s citizens.",
+  "quest:394:details:1": "He'll more than likely send you off to meet with the Prince or some other noble. Don't let it get to your head, ⟦3⟧. The nobles can think they rule the city all they want, but some things remain out of their hands.",
+  "quest:394:completion:0": "He is dead, then? Your justice was swift, ⟦4⟧. I pray to the Light that I never become your quarry!",
+  "quest:394:completion:1": "B<He laughs and claps you on the shoulder.>",
+  "quest:394:completion:2": "I mean no criticism, ⟦5⟧. How could I, being the master of all assassins? But in truth, you have done the people of ⟦E5⟧ a great service, and for that, I thank you.",
+  "quest:395:obj:0": "Speak with Baros Alexston in ⟦E5⟧.",
+  "quest:395:details:0": "Ah, I almost forgot. Alexston came while you were away, he wished to speak with you. No doubt he wishes to report the goings-on of the Defias Brotherhood to the nobles.",
+  "quest:395:details:1": "BA bit of advice, ⟦6⟧: if anyone should ask, I would provide all details but that it was your hand that slew Lescovar. Trust me. I am... acquainted... with the ways of such things.",
+  "quest:395:details:2": "And as far as Trias goes, well, speak to no one of him... ever... if you can help it.",
+  "quest:395:completion:0": "It's good to see you, ⟦7⟧. I have heard that Lord Gregor Lescovar was found dead not long ago.",
+  "quest:395:completion:1": "It would seem that you were successful in your mission. You have my gratitude that you have saved me, and many others, from VanCleef's revenge.",
+  "quest:396:obj:0": "Deliver Baros Alexston's report on the Defias Brotherhood to King Varian Wrynn in ⟦E5⟧ Keep.",
+  "quest:396:details:0": "I have prepared a report for the King. I believe you should be the one to deliver it to him, along with an account of your findings. Do not worry, there is no doubt that he will commend you for doing your duty to the people of ⟦E5⟧.",
+  "quest:396:details:1": "Your audience is scheduled soon, so you'd best hurry, it's a bit of a ways to ⟦E5⟧ Keep.",
+  "quest:396:progress:0": "⟦8⟧, yes? I was informed by Baros Alexston that you would be coming. I must say, I am most interested in what you have to say.",
+  "quest:396:completion:0": "You are to be commended for the service you have done for ⟦E5⟧, ⟦9⟧. If VanCleef had been successful in his machinations, he would no doubt have done considerable harm to the kingdom - something we must obviously avoid.",
+  "quest:396:completion:1": "Take this, ⟦10⟧, as a token of the King's appreciation. I am only sorry he cannot present it to you himself, but he is away on a diplomatic mission and shall not return for some time.",
+  "quest:434:obj:0": "Remain in the garden until Lord Gregor Lescovar and Marzon the Silent Blade have had their conversation. Afterwards, kill them both before returning to Elling Trias in ⟦E5⟧.",
+  "quest:434:details:0": "After I put on Spybot's disguise, he'll head in to talk to Lescovar. The guards should let him pass no problem.",
+  "quest:434:details:1": "While you were getting materials for me, I took care of informing Marzon that it was time for him and Lescovar to meet again. I even dropped some false information.",
+  "quest:434:details:2": "Lescovar will dismiss his guards and wait for Marzon out here in the garden. After you catch wind of talk about the Defias, make your move. You need to kill them both before the guards return! When you're done, speak to Trias.",
+  "quest:434:progress:0": "Yes, ⟦11⟧? Are things going well with Tyrion? He apprised me of the situation and I've helped him trick Marzon into going to the castle.⟦12⟧⟦13⟧Marzon has been a thorn in the side of many people in ⟦E5⟧; many of which are close friends of mine. No one messes with my friends... not if they know what's healthy for them.⟦14⟧⟦15⟧It's just a shame I'm indirectly doing a favor for Shaw and SI:7 in the meantime. Oh well, not every plan is perfect.",
+  "quest:434:completion:0": "So it is done? Good. Thank you greatly for your discretion, ⟦16⟧. You've proven worthy on more than one count. I'll be sure to keep my eyes on you and your progress within the ⟦E10⟧.",
+  "quest:434:completion:1": "Be sure to keep your nose clean.",
+  "quest:1246:obj:0": "Speak to Dashel Stonefist in ⟦E5⟧.",
+  "quest:1246:details:0": "Yeah, now that I think about it... Dashel... Dashel something... What was his name? FIST! Dashel Stonefist. They call him Fist in some circles--probably on account that he likes to get in brawls.",
+  "quest:1246:details:1": "You can find him in Old Town usually--right smack dab in the center of it. Go talk to him. If you have to, use a sword or something heavy and blunt to persuade him to open up some. And don't hesitate. If he's in this as deep as these papers suggest, then he's not going to give you any information willingly.",
+  "quest:1246:completion:0": "What?!",
+  "quest:1246:completion:1": "You come into me alley and ask questions about me personal business? Business which you obviously have nothing to do with.",
+  "quest:1247:obj:0": "Speak to Elling Trias in ⟦E5⟧.",
+  "quest:1247:details:0": "So yeah... um... I might know something 'bout that meeting at Addle's Stead. Happened a few weeks back I think. I really didn't have any part in it. Me part was done when plan A failed... damn adventurers.",
+  "quest:1247:details:1": "The guy we got on the inside for plan B came out of Menethil; guy called Slim. That's all I know regarding their backup plan.",
+  "quest:1247:completion:0": "Good to see you're still alive, ⟦17⟧. So, it went well with Dashel then, huh?",
+  "quest:1247:completion:1": "I've been reading up more on this plan of theirs, and although it doesn't state the name of the diplomat they were after, it does talk about this plan B they enacted after failing on their first attempt to capture him.",
+  "quest:1247:completion:2": "This Slim that Dashel mentioned doesn't have any other name written here, but if you say he's in Menethil, then that's a start.",
+  "quest:1447:obj:0": "Defeat Dashel Stonefist in ⟦E5⟧.",
+  "quest:1447:details:0": "Yeah, you're obviously not the smartest ⟦18⟧ to come into ⟦E5⟧, but you're about to be one of the dumbest to never leave.⟦19⟧⟦20⟧Have you met me friends?",
+  "quest:1447:progress:0": "I didn't mean anything by the comment 'bout you being a stupid ⟦21⟧. We're friends, right? No hard feelings?",
+  "quest:1447:completion:0": "So, you came to me for a reason. What is it you need?",
+  "quest:2745:obj:0": "Speak to Tyrion in ⟦E5⟧ Castle.",
+  "quest:2745:details:0": "Hmm, an interesting tale, and not one to be taken lightly. Yeah, I can help you, but what you need to do is divvy out a ⟦E11⟧ of justice that's not... legal, if you're to see this through to the end.",
+  "quest:2745:details:1": "Lescovar and Marzon need to be dealt with, and swiftly. Do you think you're capable of such a thing?",
+  "quest:2745:details:2": "You decide. If so, then make haste to the castle and find an old friend of mine, a gnome named Tyrion. He's been watching Lescovar now for a couple weeks. He should be able to help you end this.",
+  "quest:2745:completion:0": "What the...?! Don't sneak up on me like that! And keep your voice down! What in the name of the ⟦E12⟧ are you doing sneakin' up on me for? Can't you see I'm busy, you daft fool?",
+  "quest:2745:completion:1": "What do you mean, what am I doing? I'm waiting for the next Dark Portal to open, what the heck do you think I'm doing? Speak your peace and be off with you... 'fore the guards notice the two of us hiding in the bushes together. I have a reputation to maintain.",
+  "quest:2746:obj:0": "Bring 3 ⟦E13⟧ and 2 of Clara's Fresh Apples to Tyrion in ⟦E5⟧.",
+  "quest:2746:details:0": "Trias wants the timetable pushed up some, huh? Okay, we can do that, but I'm not ready. And know this, I'm doing the hard part, but you're the one that's going to get ⟦22⟧ hands dirty, understand? Good.",
+  "quest:2746:details:1": "Okay, I'll need you to get me a few things before I can put my plan into ⟦E14⟧. I got the perfect disguise that'll get Spybot past those guards.",
+  "quest:2746:details:2": "Bring me some ⟦E15⟧ and a couple apples. The ⟦E15⟧'s up to you, but Clara's little farm right outside the city has the perfect sized apples.",
+  "quest:2746:progress:0": "I've been watching Lescovar for a couple weeks now. Trias has never trusted him, but we didn't suspect he was involved in anything to do with the Defias Brotherhood. We were following leads that tied him to the Twilight's ⟦E16⟧. Either way, he's become more dangerous than this city can deal with, and that's where we come in.⟦23⟧⟦24⟧Get me those items and we can put my plan into ⟦E14⟧.",
+  "quest:2746:completion:0": "These will do nicely, ⟦25⟧. Great job.",
+  "quest:2746:completion:1": "I have the rest of the gear I'll need in my pack... thank the Light I just got a tailor friend of mine to make me a ⟦E15⟧ bag. I was running out of room carrying all my gear around.",
+  "quest:2746:completion:2": "Before Spybot heads in, let's get the details set so you know what you have to do.",
+  "quest:690:obj:0": "Find Skuerto at Refuge Pointe in the ⟦E17⟧.",
+  "quest:690:details:0": "Greetings, ⟦26⟧. You have the look of an adventurer about you, and I have a task that needs some tending to.",
+  "quest:690:details:1": "Archmage Trelane, my original master, fled Stromgarde in the ⟦E17⟧ not too long ago, and he's asked me to help him in recovering some of the items he left behind.",
+  "quest:690:details:2": "The city fell under siege, and he attempted to defend the Tower of Arathor, but to no avail. I have agents in the Highlands already, but they've requested I send more aid. Are you interested?",
+  "quest:690:completion:0": "So, Malin sent ye? I don't care if Muradin rose up from the dead and whisked ye here on a dragon. I'm busy! Talk to Kryten if you need somethin'.",
+  "quest:1248:obj:0": "Speak to Mikhail in the ⟦E18⟧.",
+  "quest:1248:details:0": "A contact of mine retired in the ⟦E18⟧ at the harbor city of Menethil. He should be willing to help on your word alone if you tell him you're working for me. His name is Mikhail. He mentioned becoming a bartender before leaving ⟦E5⟧ a few years ago.",
+  "quest:1248:details:1": "Speak to him, find this Slim, and find out if there's anything else to know about this kidnapped diplomat. We need to find out where they've taken him, or at least who he is. The docket doesn't mention anything about their plans after he's captured.",
+  "quest:1248:completion:0": "Welcome, welcome, welcome, ⟦27⟧. Good of you to join us. Perhaps an ale today? Or some mutton?",
+  "quest:1248:completion:1": "Name your pleasure and I'll see to it that you're taken care of. My name is Mikhail, and I look forward to serving you.",
+  "quest:1248:completion:2": "Hmm? What's that? Trias? Keep your voice down, my friend. This isn't something for the whole tavern to hear about.",
+  "quest:1249:obj:0": "Subdue Tapoke Jahn before he escapes, and then return to Mikhail in Menethil.",
+  "quest:1249:details:0": "You say Elling sent you here? Well then, the hospitality I expressed is now tenfold. Anything you need, just ask. I will do my best to aid you.",
+  "quest:1249:details:1": "Hmm, Slim, you say? Not sure the name sounds familiar, but I'll keep my eyes out for him.",
+  "quest:1249:details:2": "Don't look now, ⟦28⟧, but the gentleman over by the exit is looking over here. He's listening to our conversation a little too intently if you catch my meaning? If I were you, I'd do what you can to subdue him before he makes a break for the door.",
+  "quest:1249:progress:0": "Did he slip away? He looked a little shady the way he was watching us.",
+  "quest:1249:completion:0": "Caught him, huh? Good for you. I'm surprised that was Slim.",
+  "quest:1249:completion:1": "I'll be honest, I never thought I'd ⟦E19⟧ the excitement of some of the more devious underground activities. I guess old habits die hard. Don't mention that to Elling--he'd probably try and get me to come back to ⟦E5⟧ if he heard I missed the action.",
+  "quest:1249:completion:2": "I'm glad I could at least be of a little service to you while you were in Menethil. If you need anything else, just ask.",
+  "quest:1250:obj:0": "Speak to Mikhail in the ⟦E18⟧.",
+  "quest:1250:details:0": "The Defias didn't pay me well enough to die for their cause. They took the king. Yeah, the king of ⟦E5⟧, not some lowly diplomat. He was on his way to ⟦E20⟧ to meet with Jaina Proudmore--it was a big deal apparently, and a big secret. But it's not just the Defias that are involved. They're working with someone. I think they knew this was bigger than them.",
+  "quest:1250:details:1": "My part was just to get their man on board the king's ship while it was in the harbor. The guy's name was Hendel. That's all I know. I swear!",
+  "quest:1250:completion:0": "THE KING?! I mean... the king? The real king? Are you joking? You didn't mention you were looking for the king's kidnappers. I didn't even hear he was missing--that would explain his son being crowned some.",
+  "quest:1250:completion:1": "I'll send word to Elling right away. He'll want to know you're on the trail.",
+  "quest:1250:completion:2": "I would never have guessed Jahn would sell out ⟦E5⟧ for some lousy coin. Even a rogue's got to have honor when it comes to some things.",
+  "quest:1250:completion:3": "The key now is to find this Hendel. And I think I can help with that.",
+  "quest:1264:obj:0": "Find Commander Samaul in ⟦E21⟧.",
+  "quest:1264:details:0": "The beginning of every month the Kul Tiras Marines all get paid and usually leave ⟦E20⟧ for somewhere else. A lot of them come here to womanize, carouse, and just have a good time. One of those groups I'd consider regulars here at the tavern, and I believe this Hendel is among them.",
+  "quest:1264:details:1": "Commander Samaul in ⟦E20⟧ would be able to help you find him if Hendel's still stationed there. He's completely loyal to Proudmoore, but if you drop Elling's name, he should help you out... discreetly.",
+  "quest:1264:completion:0": "A pleasure to meet you, ⟦29⟧. I am Commander Samaul. I'm in charge of ⟦E22⟧ Proudmoore's forces here in ⟦E20⟧.",
+  "quest:1264:completion:1": "Although I'm quite busy, if you have any questions, please feel free to speak up. I might have to keep it short, but there's no reason for me to be rude if you need my help.",
+  "quest:1264:completion:2": "If you plan on traveling out of the city, I'd suggest you be careful. Besides ogres, orcs and murlocs, the southern part of the swamp is filled with black dragons.",
+  "quest:92489:title": "Power Overwhelming",
+  "quest:92489:obj:0": "Slay the ⟦E23⟧ ⟦E24⟧ in the City of ⟦E25⟧ for ⟦E26⟧ in ⟦E27⟧.",
+  "quest:92489:obj:1": "* Arcanic Enigma slain",
+  "quest:92489:details:0": "The Kirin ⟦E28⟧ have long been ⟦E29⟧ of the ⟦E10⟧. With the destruction of their city at the hands of the arch ⟦E30⟧ Archimonde, the once proud city of mages has now become reclusive and distrusting of outsiders.",
+  "quest:92489:details:1": "In recent years they have begun reconstruction efforts to bring the city of ⟦E25⟧ back to its former glory. However, reports show they are struggling to contain an outbreak of wayward arcane energies.",
+  "quest:92489:details:2": "We must help them disperse these attacks lest we lose one of our most powerful ⟦E29⟧.",
+  "quest:1265:obj:0": "Search Sentry Point for any sign of Private Hendel.",
+  "quest:1265:details:0": "Hendel? Yes, I know the man. But why would you need one of my soldiers?",
+  "quest:1265:details:1": "Elling sent you to find him? Hmm, I don't like the sound of that. Elling wouldn't have you come to me first if your business wasn't troubling. I understand if you can't tell me what this is about, but know this: I have a duty to protect these lands. If you're going to cause a disturbance, then I suggest you inform me of whatever you can.",
+  "quest:1265:details:2": "I believe Hendel was stationed at the first tower outside of ⟦E20⟧. Be cautious.",
+  "quest:1265:progress:0": "Yes, ⟦30⟧?",
+  "quest:1265:completion:0": "The man you seek, the one known as Hendel, is not here. ⟦E31⟧ sources have brought to the Lady Proudmoore information I believe you already know. She has asked me to find you, and give you aid in your venture. If you would allow it, I will tell you where to find Private Hendel so we can bring him to justice.",
+  "quest:1301:obj:0": "Speak with Vincent Hyal in Menethil ⟦E32⟧.",
+  "quest:1301:details:0": "Before working here at the Blue Recluse, I was ⟦E33⟧ by one of the best chefs and innkeepers I'd ever met. His name was ⟦E34⟧. Everything I have and everywhere I've gotten in life is thanks to him.",
+  "quest:1301:details:1": "I wonder how he's doing. His brother Vincent and he went to work in a tavern in Menethil ⟦E32⟧, but I haven't heard from him recently.",
+  "quest:1301:details:2": "If you ever happen to be headed in that direction, maybe you could say hello to him for me?",
+  "quest:1301:completion:0": "James? Oh, he left quite some time ago.",
+  "quest:1301:completion:1": "Felt the second wind of patriotism, I suppose. Not hard to see why he would. With all the insanity in Lordaeron, many people joined up with Jaina Proudmoore when she went across the sea.",
+  "quest:1266:obj:0": "Find Private Hendel in ⟦E21⟧.",
+  "quest:1266:details:0": "Private Hendel is to the west of here. He's currently on guard duty protecting some of ⟦E20⟧'s infiltrators while they rest. They've been keeping tabs on the ⟦E35⟧ base, Brackenwall, and looking for anything else that might threaten our borders.",
+  "quest:1266:details:1": "You should have no problem finding him; just look for the tents along the road.",
+  "quest:1266:details:2": "I have another matter to attend to, but I shall catch up to you soon enough. You can always find me in the Lady Proudmoore's tower if you have any problems.",
+  "quest:1266:completion:0": "Hello, citizen. This is a dangerous place to be wandering about. I wouldn't hang around too long if you value your life.",
+  "quest:1266:completion:1": "If you keep your questions short, I'll see if I can help you. Just keep your eyes open for any of those filthy ogres. Rumor has it there's a ⟦E35⟧ base somewhere in the swamps. The infiltrators are doing what they can to find it, but the process has been slow going and we've had little progress.",
+  "quest:538:obj:0": "Speak with Loremaster Dibbs in ⟦E6⟧.",
+  "quest:538:details:0": "⟦31⟧. If you don't mind a long journey then I have a task for you, to again help ⟦E5⟧ fill its library.",
+  "quest:538:details:1": "The old kingdom of Alterac fell after the great war, and it had a large collection of books. It's a tragedy that the city is ruined, but even more tragic is all of their knowledge lost! We must recover what we can.",
+  "quest:538:details:2": "⟦E6⟧ is the closest town to the Ruins of Alterac. Go there and speak with Loremaster Dibbs. He can direct you to the ruins, and to what books may be found there.",
+  "quest:538:completion:0": "Ah yes, I remember Milton. A bookworm, no doubt. Bless him.",
+  "quest:538:completion:1": "And he's right. The Ruins of Alterac still hold stores of knowledge in danger of being lost!",
+  "quest:538:completion:2": "Ogres now dwell in Alterac, and they don't care much for higher learning.",
+  "quest:540:obj:0": "Bring 5 Recovered Tomes and the ⟦E36⟧ containing The Arm of Gri'lek to Loremaster Dibbs in ⟦E6⟧.",
+  "quest:540:details:0": "Those beastly ogres now reside within Alterac's ruins, and I shudder to think what they're doing with the precious books still there. You must recover what you can!",
+  "quest:540:details:1": "Enter the Ruins of Alterac and search for tomes looted by the ogres. Get whatever you can find and bring them to me, but also seek out one book in particular: The Arm of Gri'lek. It contains ancient troll lore that I must learn, and the Ruins of Alterac was the last known location of an intact copy of this book.",
+  "quest:540:progress:0": "I wish I could search the ruins too, but I ⟦E37⟧ these bones wouldn't hold me during my climb up the mountains. However, how does your hunt for knowledge progress, ⟦32⟧?",
+  "quest:540:completion:0": "Oh, you got them! Splendid! I must begin studying the Arm of Gri'lek immediately!",
+  "quest:542:obj:0": "Bring the ⟦E38⟧ to Milton Sheaf in ⟦E5⟧.",
+  "quest:542:details:0": "I need to spend some time studying the Arm of Gri'lek book you brought me, though I'm sure Milton is eager to get the other recovered books into ⟦E5⟧'s collection.",
+  "quest:542:details:1": "Here are the books you gathered from the Ruins of Alterac, packed and catalogued. Take them back to Milton Sheaf in ⟦E5⟧ and I'm sure he'll be grateful.",
+  "quest:542:progress:0": "⟦33⟧, you've returned! How did your foray into Alterac go? Did you bring anything back with you?",
+  "quest:542:completion:0": "My oh my! Look at these! I can't believe they survived the ruination of Alterac. And all those ogres too!",
+  "quest:542:completion:1": "Thank you, ⟦34⟧. Thank you so much! You have helped preserve human knowledge, and you add to the grandeur of the Royal Library of ⟦E5⟧.",
+  "quest:1267:obj:0": "Speak to Jaina Proudmore in Dustwallow Swamp.",
+  "quest:1267:details:0": "Speak to Jaina Proudmore in Dustwallow Swamp.",
+  "quest:1267:completion:0": "Thank you for your help ⟦35⟧. Please accept this token of my appriciation for your efforts.",
+  "quest:1324:obj:0": "Defeat Private Hendel in ⟦E21⟧.",
+  "quest:1324:details:0": "What?! You come here accusing me of allying with the Defias, and think I'll just stand here while you insult me?! Something tells me you've had this coming for a long time.",
+  "quest:1324:progress:0": "Hello again, ⟦36⟧. I hope you don't mind the assistance, but we couldn't have Hendel escaping, or worse, wind up dead.",
+  "quest:1324:completion:0": "I assure you, we're all quite upset about current events, but allow us to take him back to ⟦E20⟧ for some questioning, and we'll see about finding the King.",
+  "quest:1324:completion:1": "I'm sure my lady Proudmore would like to thank you for your help. Speak to her when you have a moment.",
+  "quest:212:obj:0": "Kill a Cold Eye Basilisk, get a ⟦E39⟧, and return it to ⟦E40⟧ Stern in the Blue Recluse.",
+  "quest:212:details:0": "One of my most famous dishes is Chilled Basilisk in Lime Vinaigrette. But the problem is... the meat is impossible to keep fresh, and I must serve the dish tonight for a noble's birthday!",
+  "quest:212:details:1": "So if you can bring me a ⟦E39⟧ from a freshly-killed Cold Eye Basilisk, quickly, then I will owe you a king's feast!",
+  "quest:212:details:2": "Cold Eye Basilisks are known to roam along the beach dunes of northwestern Stranglethorn, so you have much traveling to do. And be swift!",
+  "quest:212:progress:0": "⟦37⟧! Do you have that haunch? I must begin preparing it soon, or the banquet will be ruined!",
+  "quest:212:completion:0": "Ah, this will do nicely! Many, many thanks!",
+  "quest:212:completion:1": "Now if you'll excuse me, I must get the haunch chopped, marinated and garnished for the banquet.",
+  "quest:543:obj:0": "Bring the ⟦E41⟧ to Remington Ridgewell in ⟦E5⟧.",
+  "quest:543:details:0": "⟦E42⟧ is an old heirloom of the Perenolde \"nobles\" - the ruling family of Alterac before that kingdom fell to ruin. It is said to have been crafted by master jewelers in ⟦E43⟧, and fitted with the finest of emeralds.",
+  "quest:543:details:1": "When Alterac was destroyed the Tiara was lost, but there are rumors that an Ogre ⟦E44⟧, Grel'borg the Miser, found the tiara and now wanders the Ruins of Alterac searching for more treasures.",
+  "quest:543:details:2": "We would have you acquire the tiara for us.",
+  "quest:543:progress:0": "Salutations, ⟦38⟧. Do try to avoid stepping on my pant cuffs. This outfit is newly tailored.",
+  "quest:543:completion:0": "Ah, this is splendid. This will have to be cleaned of course, but you really outdid yourself, ⟦39⟧. I will have someone prepare the tiara and place it within our collection posthaste.",
+  "quest:1363:obj:0": "Speak with Acolyte Dellis in ⟦E5⟧.",
+  "quest:1363:details:0": "As caretaker of the works here in the library of the Academy of ⟦E45⟧ Arts and Sciences, it is my responsibility to ensure all the magical tomes and scrolls are accounted for at all times. Who knows what folly would unfold if some of these enchanted texts were to fall into the wrong hands?",
+  "quest:1363:details:1": "Which reminds me... my assistant, Dellis, made a horrible mistake last week. He's quite able in the library but incompetent when he leaves the gates of ⟦E5⟧. Be a hero, and help old Dellis out, would you?",
+  "quest:1363:completion:0": "It wasn't my fault. Really it wasn't."
+ },
+ "context": {
+  "quest:1244": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Watcher Backus",
+   "turner": "Watcher Backus"
+  },
+  "quest:1245": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Watcher Backus",
+   "turner": "Elling Trias"
+  },
+  "quest:98219": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Lieutenant Farren Orinelle"
+  },
+  "quest:350": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw",
+   "turner": "Elling Trias"
+  },
+  "quest:394": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Elling Trias",
+   "turner": "Master Mathias Shaw"
+  },
+  "quest:395": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw",
+   "turner": "Baros Alexston"
+  },
+  "quest:396": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Baros Alexston",
+   "turner": "Lady Katrana Prestor"
+  },
+  "quest:434": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Tyrion",
+   "turner": "Elling Trias"
+  },
+  "quest:1246": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Elling Trias",
+   "turner": "Dashel Stonefist"
+  },
+  "quest:1247": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Dashel Stonefist",
+   "turner": "Elling Trias"
+  },
+  "quest:1447": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Dashel Stonefist",
+   "turner": "Dashel Stonefist"
+  },
+  "quest:2745": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Elling Trias",
+   "turner": "Tyrion"
+  },
+  "quest:2746": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Tyrion",
+   "turner": "Tyrion"
+  },
+  "quest:690": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Archmage Malin",
+   "turner": "Skuerto"
+  },
+  "quest:1248": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Elling Trias",
+   "turner": "Mikhail"
+  },
+  "quest:1249": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Mikhail",
+   "turner": "Mikhail"
+  },
+  "quest:1250": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Tapoke \"Slim\" Jahn",
+   "turner": "Mikhail"
+  },
+  "quest:1264": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Mikhail",
+   "turner": "Commander Samaul"
+  },
+  "quest:92489": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 33,
+   "side": "alliance",
+   "giver": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)",
+   "turner": "High Sorcerer Andromath («جادوپیشهٔ اعظم آندرومات»)"
+  },
+  "quest:1265": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Commander Samaul",
+   "turner": "Archmage Tervosh"
+  },
+  "quest:1301": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Connor Rivers",
+   "turner": "Vincent Hyal"
+  },
+  "quest:1266": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 36,
+   "side": "alliance",
+   "giver": "Archmage Tervosh",
+   "turner": "Private Hendel"
+  },
+  "quest:538": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Milton Sheaf",
+   "turner": "Loremaster Dibbs"
+  },
+  "quest:540": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Loremaster Dibbs",
+   "turner": "Loremaster Dibbs"
+  },
+  "quest:542": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Loremaster Dibbs",
+   "turner": "Milton Sheaf"
+  },
+  "quest:1267": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Archmage Tervosh",
+   "turner": "Lady Jaina Proudmoore"
+  },
+  "quest:1324": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Private Hendel",
+   "turner": "Archmage Tervosh"
+  },
+  "quest:212": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Angus Stern",
+   "turner": "Angus Stern"
+  },
+  "quest:543": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Count Remington Ridgewell",
+   "turner": "Count Remington Ridgewell"
+  },
+  "quest:1363": {
+   "zone_en": "Stormwind City",
+   "zone_fa": "شهر استورم‌ویند",
+   "level": 41,
+   "side": "alliance",
+   "giver": "Mazen Mac'Nadir",
+   "turner": "Acolyte Dellis"
+  }
+ },
+ "known": {
+  "quest:1244": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1245": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:350": {
+   "title": "نگاهی به دوست قدیمی"
+  },
+  "quest:394": {
+   "title": "سر وحش"
+  },
+  "quest:395": {
+   "title": "پایان برادری"
+  },
+  "quest:396": {
+   "title": "دیدار با پادشاه"
+  },
+  "quest:434": {
+   "title": "حمله!"
+  },
+  "quest:1246": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1247": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1447": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:2745": {
+   "title": "نفوذ به قلعه"
+  },
+  "quest:2746": {
+   "title": "مواردی مهم"
+  },
+  "quest:690": {
+   "title": "درخواست مالین"
+  },
+  "quest:1248": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1249": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1250": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1264": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1265": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1301": {
+   "title": "جیمز هایال"
+  },
+  "quest:1266": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:538": {
+   "title": "ساوت‌شور"
+  },
+  "quest:540": {
+   "title": "پاسداشت دانش"
+  },
+  "quest:542": {
+   "title": "بازگشت به میلتون"
+  },
+  "quest:1267": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:1324": {
+   "title": "دیپلمات گمشده"
+  },
+  "quest:212": {
+   "title": "غذایی سرد"
+  },
+  "quest:543": {
+   "title": "تاج پرنولده"
+  },
+  "quest:1363": {
+   "title": "به فرمان مِیزن"
+  }
+ }
+}

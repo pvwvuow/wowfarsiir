@@ -1,0 +1,687 @@
+{
+ "pack": "quest-durotar-02",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-durotar-02.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Flawed Power Stone",
+   "fa": "سنگِ قدرتِ معیوب",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "trained",
+   "fa": "آموزش‌دیده",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Bloodtalon Matriarch Eggs",
+   "fa": "تخم‌های ماده‌سالارِ چنگالِ خون",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Loa",
+   "fa": "لو",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Idols",
+   "fa": "بت‌ها",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Zalazane",
+   "fa": "زالازان",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Forgotten Loa Idol",
+   "fa": "بت لوی فراموش‌شده",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "reverence",
+   "fa": "ارجمند",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "Trolls",
+   "fa": "ترول",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "Zalazane's Head",
+   "fa": "سر زالازان",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Darkspear trolls",
+   "fa": "ترول‌های نیزه‌تیره",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Darkspear",
+   "fa": "نیزه‌تیره",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Threat",
+   "fa": "تیت",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Fizzle's Claw",
+   "fa": "پنجهٔ فیزل",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Skull Rock",
+   "fa": "صخرهٔ جمجمه",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "Margoz",
+   "fa": "مارگوز",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Example Collar",
+   "fa": "قلادهٔ نمونه",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Neeru Fireblade",
+   "fa": "نیرو آتش‌تیغ",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E31": {
+   "en": "Eye of Burning Shadow",
+   "fa": "چشمِ سوزان سایه",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Sergra Darkthorn",
+   "fa": "سرگرا دارک‌تورن",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Halikor's Hoof",
+   "fa": "سم هالیکور",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Ak'Zeloth",
+   "fa": "اکزلوت",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Dreadmist Peak",
+   "fa": "قلهٔ مه هراس",
+   "kind": "zn"
+  },
+  "E41": {
+   "en": "Fire",
+   "fa": "آتش",
+   "kind": "sp"
+  },
+  "E42": {
+   "en": "The Demon Seed",
+   "fa": "تخم دیو",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "Orgrimmar": "اورگریمار",
+  "Durotar": "دوروتار",
+  "Flawed Power Stone": "سنگِ قدرتِ معیوب",
+  "trained": "آموزش‌دیده",
+  "Kalimdor": "کالیمدور",
+  "Bloodtalon Matriarch Eggs": "تخم‌های ماده‌سالارِ چنگالِ خون",
+  "strike": "ضربه",
+  "allies": "متحدان",
+  "enemies": "دشمنان",
+  "Loa": "لو",
+  "Idols": "بت‌ها",
+  "Zalazane": "زالازان",
+  "Forgotten Loa Idol": "بت لوی فراموش‌شده",
+  "reverence": "ارجمند",
+  "Trolls": "ترول",
+  "Zalazane's Head": "سر زالازان",
+  "Darkspear trolls": "ترول‌های نیزه‌تیره",
+  "Darkspear": "نیزه‌تیره",
+  "enemy": "دشمن",
+  "Tor": "تور",
+  "Barrens": "بارنز",
+  "fear": "ترس",
+  "Threat": "تیت",
+  "nearby": "نزدیک",
+  "Fizzle's Claw": "پنجهٔ فیزل",
+  "Skull Rock": "صخرهٔ جمجمه",
+  "Margoz": "مارگوز",
+  "Example Collar": "قلادهٔ نمونه",
+  "Neeru Fireblade": "نیرو آتش‌تیغ",
+  "Shadow": "سایه",
+  "Eye of Burning Shadow": "چشمِ سوزان سایه",
+  "Horde": "هورد",
+  "chance": "شانس",
+  "Sergra Darkthorn": "سرگرا دارک‌تورن",
+  "curse": "نفرین",
+  "Halikor's Hoof": "سم هالیکور",
+  "Ak'Zeloth": "اکزلوت",
+  "Burning Legion": "لژیون سوزان",
+  "Demon": "اهریمن",
+  "Dreadmist Peak": "قلهٔ مه هراس",
+  "Fire": "آتش",
+  "The Demon Seed": "تخم دیو",
+  "Travel": "سفر"
+ },
+ "tokens": {
+  "1": "<name>",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$n",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$C",
+  "17": "$C",
+  "18": "$R",
+  "19": "$N",
+  "20": "$N",
+  "21": "$GI see that look in your eyes, do not think I will tolerate any insolence. Thrall himself has declared the Hordes females to be on equal footing with you men. Disrespect me in the slightest, and you will know true pain.:I'm happy to have met you. Thrall will be glad to know that more females like you and I are taking the initiative to push forward in the Barrens.;"
+ },
+ "rows": {
+  "quest:834:obj:0": "Retrieve 5 Sacks of Supplies and return them to Rezlak near ⟦E1⟧.",
+  "quest:834:details:0": "I'm Rezlak, one of Gazlowe's boys. Boss sent me to help the orcs here in ⟦E2⟧. Things'd been going good except for the caravans. Can't manage to keep them safe! Makes my job a little harder, you know?",
+  "quest:834:details:1": "The last shipment--they promised it'd get through!--was snatched by the Dustwind harpies of...where was it...Razorwind Canyon?",
+  "quest:834:details:2": "I gotta have those supplies or I'll never get anything done! Follow the big canyon to the south, you'll find the ravine cut right into the west and east sides of the walls.",
+  "quest:834:progress:0": "I'm great at what I do, don't get me wrong, but this is ridiculous! What am I supposed to do, build sand castles?",
+  "quest:834:completion:0": "Hey, now isn't that just the thing! You've got our supplies back for us. That's great. I'll be able to get back to work just as soon as I can find someone to haul these sacks for me.",
+  "quest:926:title": "⟦E3⟧",
+  "quest:926:completion:0": "These stones are infused with magical energy, but purposefully flawed. They are very unstable and once removed from the table they will consume themselves quickly.",
+  "quest:97223:title": "Bloodtalon Matriarch",
+  "quest:97223:desc:0": "All of the raptors you see before you are ones I have ⟦E4⟧ myself. They come from all over ⟦E5⟧, but some of the finest come from the Bloodtalon raptors on the isles off our coast. ...",
+  "quest:97223:obj:0": "Bring Eggs of the Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
+  "quest:97223:obj:1": "* ⟦E6⟧",
+  "quest:97223:details:0": "All of the raptors you see before you are ones I have ⟦E4⟧ myself. They come from all over ⟦E5⟧, but some of the finest come from the Bloodtalon raptors on the isles off our coast.",
+  "quest:97223:details:1": "One raptor amongst them, the Bloodtalon Matriarch, is particularly savage and has killed many from our village and has become too dangerous to leave at our borders. If you can ⟦E7⟧ her down, return with her eggs so that we can raise the hatchlings as ⟦E8⟧ instead of ⟦E9⟧.",
+  "quest:97223:progress:0": "The Bloodtalon are known for their cunning and swiftness, and make fine companions when raised from egg to adult.",
+  "quest:97223:progress:1": "Unfortunately adult raptors are very difficult to train, and I have tried to capture the Matriarch on more than one occasion. But she had become too dangerous of late.",
+  "quest:97223:progress:2": "Still I hope to preserve her legacy by raising her children as companions here in Sen'Jin.",
+  "quest:97225:title": "Forgotten ⟦E10⟧ ⟦E11⟧",
+  "quest:97225:desc:0": "When we fled the isles that ⟦E12⟧ and his ilk now inhabit, we left behind many precious idols that help us commune with spirits we worship: our loa. They are of grave importance to our tribe. ...",
+  "quest:97225:obj:0": "Collect 8 Forgotten ⟦E10⟧ ⟦E11⟧ from the Echo Isles. Bring them to Master Gadrin in Sen'jin Village.",
+  "quest:97225:obj:1": "*⟦E13⟧ (8)",
+  "quest:97225:details:0": "When we fled the isles that ⟦E12⟧ and his ilk now inhabit, we left behind many precious idols that help us commune with spirits we worship: our loa. They are of grave importance to our tribe.",
+  "quest:97225:details:1": "The followers of ⟦E12⟧ show no ⟦E14⟧ for our loa and have scattered these idols across the largest of the isles.",
+  "quest:97225:details:2": "This is an action that will not go unnoticed if we are not able to collect these idols, and offending a loa is a grave matter.",
+  "quest:97225:details:3": "Go, find as many loa idols as you can and return them to me.",
+  "quest:97225:progress:0": "Have you found our loa idols, ⟦1⟧? We must begin our rituals again soon.",
+  "quest:826:obj:0": "Defeat ⟦E12⟧.",
+  "quest:826:obj:1": "Kill 8 Voodoo ⟦E15⟧ and 8 Hexed ⟦E15⟧.",
+  "quest:826:obj:2": "Bring ⟦E16⟧ to Gadrin.",
+  "quest:826:details:0": "The witchdoctor ⟦E12⟧ dwells on the Echo Isles to the east. They are the isles we once called home.",
+  "quest:826:details:1": "From there he sends his trolls to the mainland, to hex our people and drag more of them under his sway.",
+  "quest:826:details:2": "He must be stopped.",
+  "quest:826:details:3": "Defeat ⟦E12⟧ and his minions -- former ⟦E17⟧, now lost to us. Bring me his head and I will know his reign of evil is over.",
+  "quest:826:progress:0": "Is ⟦E12⟧ defeated, ⟦2⟧?",
+  "quest:826:completion:0": "With ⟦E12⟧ gone, our tribe can again sleep in peace.",
+  "quest:826:completion:1": "Thank you, ⟦3⟧. The ⟦E18⟧ tribe owes you much. If you suffer from an ailment, visit my assistant Bom'bay, behind me. His voodoo is strong...",
+  "quest:837:obj:0": "Kill 4 Razormane Quilboars, 4 Razormane Scouts, 4 Razormane Dustrunners and 4 Razormane Battleguards for Gar'Thok at Razor Hill.",
+  "quest:837:details:0": "When we arrived, the Razormane quilboars possessed much of the land, and proved a thorn in our sides. Through our efforts we have driven out the largest part of their numbers, but still they remain well-fortified in some areas.",
+  "quest:837:details:1": "It has gone on long enough, however. For our own protection, we cannot allow the Razormane any hold in our lands. Their camps can be found to the west of here. Look for the brambles and you will find them. Today we drive them from ⟦E2⟧, tomorrow, perhaps from all of ⟦E5⟧.",
+  "quest:837:progress:0": "Though they do possess some intelligence and some organization, I find it constantly amazing that the quilboars were able to capture and hold so much territory in ⟦E5⟧. Perhaps they are more crafty an ⟦E19⟧ than I give them credit for...",
+  "quest:837:completion:0": "I will pass along word that the quilboars have been removed from their lairs, and that their structures may be set to fire. The removal of the Razormane from ⟦E2⟧ brings us closer to fully securing the borders of our new homeland.",
+  "quest:97282:title": "Stormy Potential",
+  "quest:97282:obj:0": "Bring 5 Charged Thunder Lizard Organs to Rezlak near Drygulch Ravine.",
+  "quest:816:obj:0": "Bring a sign of Kron's fate to Misha ⟦E20⟧'kren at the farmstead northwest of Razor Hill.",
+  "quest:816:details:0": "⟦4⟧, please, can you help me? My son Kron went hunting days ago, and he still hasn't returned. He went west towards the ⟦E21⟧ to hunt crocolisks along Southfury River. I ⟦E22⟧ the worst.",
+  "quest:816:details:1": "As strong as he was, his stubborn pride has always drawn him into trouble. I warned him that the crocolisks were powerful and vicious. He grew angry and stormed off.",
+  "quest:816:details:2": "If you can't find him, at least bring me a sign of his fate... even if you have to open up the stomach of every crocolisk along the Southfury's banks.",
+  "quest:816:progress:0": "I pray that Kron will return to me, but I'm almost certain I know his fate already.",
+  "quest:816:completion:0": "Oh, my son... my beautiful son.",
+  "quest:816:completion:1": "Uncertain of my son's fate, I have tormented myself since he left. Now that I know what's happened, perhaps I can finally begin to mourn.",
+  "quest:816:completion:2": "Thank you, ⟦5⟧. Please take this. I was going to give it to Kron as a gift when he returned successful. Now that I know he is dead, I cannot bear to look at it.",
+  "quest:835:obj:0": "Kill 12 Dustwind Savages and 8 Dustwind Storm Witches for Rezlak near Drygulch Ravine.",
+  "quest:835:details:0": "Gazlowe told me once, \"Rezlak. There's one thing you need to know in life, and that's if you want something done well, do it yourself.\"",
+  "quest:835:details:1": "I can't deal with losing all our caravans, so I'm just going to take matters into my own hands. Drygulch Ravine lies through the eastern part of Razorwind Canyon. If we kill all the harpies there, the routes will be safe.",
+  "quest:835:details:2": "Of course, there was one other thing that Gazlowe taught me, and that's \"You can get anything done for a price.\" So, going to help me out, ⟦6⟧?",
+  "quest:835:progress:0": "You wouldn't think it from a guy like my boss Gazlowe, but he always seemed to know the score. \"Don't be afraid to take that big step\", he said.⟦7⟧⟦8⟧Harpies won't stop bothering us and the caravans won't stop being attacked unless we do something about it, eh?",
+  "quest:835:completion:0": "I think I can breathe easy now, knowing that the harpies won't be bothering our supply caravans anymore. And not one moment too soon, either. I hear I'm being sent some fun little toys with the next shipment!",
+  "quest:835:completion:1": "You're pretty good at what you do, ⟦9⟧, you ought to track down my boss in Ratchet. I'll bet he could find some work for you.",
+  "quest:835:completion:2": "Oh, and don't worry, I wouldn't forget to pay you for the service you provided me.",
+  "quest:97281:title": "A Simmering Storm",
+  "quest:97281:obj:0": "Bring the Dull Stormy Orb to Rezlak near Drygulch Ravine.",
+  "quest:99048:title": "A Missing Hand",
+  "quest:99048:obj:0": "Find Heglan Shadeeye north of Tiragarde Keep.",
+  "quest:99048:details:0": "A member of the Shattered Hand, a group of more... subtle fighters, was watching Tiragarde Keep from a distance. Her reports suddenly stopped coming in.",
+  "quest:99048:details:1": "I doubt the humans would have caught her, so I'm concerned something more dangerous is at play. See if you can find her. Hopefully the messages are just delayed.",
+  "quest:99049:title": "⟦E23⟧ from Below",
+  "quest:99049:desc:0": "The ⟦E24⟧ area is destroyed with obvious signs of a skirmish. Whatever ambushed Heglan didn't make it out unscathed. There's probably signs ⟦E24⟧ of what happened.\nOrgnil will probably want to see any evidence left by the attackers.",
+  "quest:99049:obj:0": "Find signs of what attacked Heglan Shadeeye.",
+  "quest:99049:details:0": "The ⟦E24⟧ area is destroyed with obvious signs of a skirmish. Whatever ambushed Heglan didn't make it out unscathed. There's probably signs ⟦E24⟧ of what happened.\nOrgnil will probably want to see any evidence left by the attackers.",
+  "quest:99051:title": "⟦E23⟧ from Below",
+  "quest:99051:obj:0": "Collect 9 Naga Spinefins.",
+  "quest:806:obj:0": "Bring ⟦E25⟧ to Orgnil Soulscar in Razor Hill.",
+  "quest:806:details:0": "We cannot allow the Burning Blade a foothold in ⟦E2⟧! We must destroy them before their evil festers!",
+  "quest:806:details:1": "I have undergone my own investigations and found that a Burning Blade warlock, the goblin Fizzle Darkstorm, has camped within Thunder Ridge to the northwest. There he and his cultist minions spread chaos.",
+  "quest:806:details:2": "Find and defeat Fizzle, and bring me his dead claw!",
+  "quest:806:progress:0": "Did you find Fizzle, ⟦10⟧? He, and rest of the Burning Blade, must be scoured from our lands!",
+  "quest:806:completion:0": "Aha! You got him!",
+  "quest:806:completion:1": "You do your clan proud, ⟦11⟧. And because of you, ⟦E2⟧ is free of one more agent of evil.",
+  "quest:827:obj:0": "Gather Searing Collars from the cultists in ⟦E26⟧.",
+  "quest:827:obj:1": "Bring them to ⟦E27⟧ at his camp.",
+  "quest:827:details:0": "⟦12⟧. The Burning Blade has infested the cave east of ⟦E1⟧ known as ⟦E26⟧. Inside that cave they perform vile rituals, and burn their own flesh with Searing Collars.",
+  "quest:827:details:1": "By wearing these collars, I believe the cultists attune themselves to demonic power. But to confirm this, I must have a collection of the collars to study.",
+  "quest:827:details:2": "Go to ⟦E26⟧ and gather Searing Collars from the cultists you find there. Bring them to me, and I will uncover their secrets.",
+  "quest:827:progress:0": "Have you yet entered ⟦E26⟧, ⟦13⟧? Do you have the Searing Collars?",
+  "quest:827:completion:0": "Good. Hiding within these collars is the secret behind the Burning Blade. And I will uncover that secret...",
+  "quest:828:obj:0": "Speak with ⟦E27⟧.",
+  "quest:828:details:0": "One of our Shamans, ⟦E27⟧, knows more of the Burning Blade's corruption. He speaks of a cave called ⟦E26⟧ in the mountains - just outside ⟦E1⟧! - that shelters a large band of Burning Blade cultists.",
+  "quest:828:details:1": "Before you go to ⟦E26⟧ speak with ⟦E27⟧. He is wise and his council is valued.",
+  "quest:828:details:2": "He is camped to the northeast, between the coast and Drygulch Ravine.",
+  "quest:828:details:3": "Follow his advice, but whatever ⟦E27⟧ says, ⟦14⟧, I still want you to crush those cultists!",
+  "quest:828:completion:0": "Welcome, ⟦15⟧. Word reached me of your coming, and of your exploits in ⟦E2⟧.",
+  "quest:828:completion:1": "You are a ⟦16⟧ of growing skill and renown.",
+  "quest:828:completion:2": "Stay on the pure path, and your future will be great indeed.",
+  "quest:829:obj:0": "Bring an ⟦E28⟧ to ⟦E29⟧ in ⟦E1⟧.",
+  "quest:829:details:0": "The Searing Collars you brought me are powerful, demonic implements. Divining their origin is, I'm afraid, beyond my skills as a shaman. We will need a warlock to study them.",
+  "quest:829:details:1": "Take a searing collar to ⟦E29⟧. Although he is a skilled warlock, he professes to use his powers to thwart demons, and claims his research in the occult is benign. Be that true or false, we may need his aid against the demonic cult in ⟦E2⟧.",
+  "quest:829:details:2": "You may find Neeru in ⟦E1⟧ in the Cleft of ⟦E30⟧.",
+  "quest:829:progress:0": "My most humble greetings, ⟦17⟧. How might I help my ⟦18⟧ brother today?",
+  "quest:829:completion:0": "Ah, and where did you get this? Good ⟦E27⟧ in Razor Hill sent you to me, did he?",
+  "quest:829:completion:1": "Well, let me take a closer look...",
+  "quest:832:obj:0": "Take this eye to ⟦E29⟧.",
+  "quest:832:details:0": "<Words emanate from the pendant and into your mind.>",
+  "quest:832:details:1": "Gazz'uz?",
+  "quest:832:details:2": "Gazz'uz...report!",
+  "quest:832:details:3": "There is word of your discovery in ⟦E26⟧. You must prepare for an attack!",
+  "quest:832:details:4": "Gazz'uz, I order you to speak! Speak or I will make sure ⟦E29⟧ knows of your presence, and he will descend on you with swift brutality.",
+  "quest:832:details:5": "Do not test your skills against Neeru...",
+  "quest:832:details:6": "B...Gazz'uz, are you there...?",
+  "quest:832:progress:0": "You have something vital to report. I can sense it behind your eyes.",
+  "quest:832:completion:0": "<Examines the ⟦E31⟧>",
+  "quest:832:completion:1": "Intriguing. The voice you heard mentioned my name? I am known for hunting down ⟦E9⟧ of our Warchief, but...it is strange that I was singled out. Stranger still that the Burning Blade cultists from whom you recovered this pendant have a name so close to my own.",
+  "quest:832:completion:2": "I must study this pendant. I must study and, and must ponder the meaning of its message.",
+  "quest:832:completion:3": "Thank you for bringing this to my attention, ⟦19⟧. You have done your people a great service.",
+  "quest:840:obj:0": "Follow the western road from Razor Hill to the ⟦E21⟧ over a bridge.",
+  "quest:840:obj:1": "Stop at the orc outpost across the bridge.",
+  "quest:840:obj:2": "Give Kargal Battlescar at the ⟦E21⟧ outpost your recruitment letter.",
+  "quest:840:details:0": "Hmm, you look pretty strong.",
+  "quest:840:details:1": "Listen, my good friend Kargal needs some new recruits for ⟦E21⟧ duty. I know you want to do what's right for the ⟦E32⟧. Well, this is your ⟦E33⟧.",
+  "quest:840:details:2": "Take this recruitment letter to Kargal and see if he'll sign it.",
+  "quest:840:progress:0": "What do you want, pup? If you're not here for recruitment, I don't have time for you.",
+  "quest:840:completion:0": "Oh, so Takrin sent you? He's an excellent scout, I'm not sure what I'd do without him.",
+  "quest:840:completion:1": "I'll sign your recruitment letter, but what we really need is someone at the Crossroads.",
+  "quest:842:obj:0": "Follow the western road from Kargal's Far Watch Outpost.",
+  "quest:842:obj:1": "At the T intersection, turn left and follow the road south.",
+  "quest:842:obj:2": "Find ⟦E34⟧ at the crossing of roads within the Crossroads.",
+  "quest:842:details:0": "Take this signed recruitment letter to the Crossroads.",
+  "quest:842:details:1": "⟦E34⟧, ⟦E35⟧ her hide, is in charge there. She's a nasty shaman who will talk your head in circles before she lets you do anything useful. Thrall is convinced she's something special, but I'm not so sure.",
+  "quest:842:details:2": "You'll just have to decide for yourself, pup...",
+  "quest:842:progress:0": "Well well well, what do we have here? Has Kargal deemed me worthy of another recruit?",
+  "quest:842:completion:0": "Alright, ⟦20⟧. You want to earn your keep with the ⟦E32⟧? Well there's plenty to do here, so listen close and do what you're told.",
+  "quest:842:completion:1": "B⟦21⟧",
+  "quest:96877:title": "⟦E36⟧",
+  "quest:96877:obj:0": "Deliver ⟦E36⟧ to ⟦E1⟧.",
+  "quest:99052:title": "⟦E23⟧ from Below",
+  "quest:99052:desc:0": "One of my scouts has reported a sea giant followed those naga down here. Not sure if they brought him intentionally or what, but he's dangerous in any case.\nIt's a young one, but it could still rip an orc in half in a heartbeat if they were caught off guard. I need him gone. ...",
+  "quest:99052:obj:0": "Kill the sea giant along ⟦E2⟧'s north coast and bring back proof of your accomplishment.",
+  "quest:99052:details:0": "One of my scouts has reported a sea giant followed those naga down here. Not sure if they brought him intentionally or what, but he's dangerous in any case.\nIt's a young one, but it could still rip an orc in half in a heartbeat if they were caught off guard. I need him gone. ...",
+  "quest:809:obj:0": "Speak with ⟦E37⟧ in the ⟦E21⟧.",
+  "quest:809:details:0": "Since the last great war when the ⟦E38⟧ was defeated, I have searched for sources of demonic corruption in orc society. The collar you brought me confirms my fears.",
+  "quest:809:details:1": "It belongs to the Burning Blade, a cult that rallies around an item of demonic power. It is called the ⟦E39⟧ Seed, and it resides in the ⟦E21⟧ atop ⟦E40⟧. It must be destroyed!",
+  "quest:809:details:2": "Go to Far Watch Post, on the border of the ⟦E21⟧ to the west, and speak with my assistant, ⟦E37⟧. He will direct you further.",
+  "quest:809:completion:0": "Neeru wants the ⟦E39⟧ Seed destroyed, does he? Strange...",
+  "quest:809:completion:1": "Very well. If he wishes the seed gone, then I will tell you how to remove it.",
+  "quest:924:obj:0": "Grab a ⟦E3⟧. Bring it to the Altar of ⟦E41⟧ before the stone expires, then return to ⟦E37⟧.",
+  "quest:924:details:0": "⟦E42⟧ is a powerful tool for the ⟦E38⟧. It rests in a cave on ⟦E40⟧, above a demonic altar of fire.",
+  "quest:924:details:1": "I have prepared power stones that when placed near the Seed will disrupt its connection to the Legion.",
+  "quest:924:details:2": "Take a stone from the table and bring it to the altar of fire atop ⟦E40⟧. ⟦E43⟧ west, then north when the road forks. The Peak will be to your left. The safest climb to the top is on its northern face.",
+  "quest:924:details:3": "And hurry--the stone's power will consume itself in time.",
+  "quest:924:progress:0": "⟦E42⟧ still exists. I can sense its power...",
+  "quest:924:completion:0": "Your task is complete. You have destroyed the ⟦E39⟧ Seed as Neeru bid. But this is not the end...",
+  "quest:924:completion:1": "The destruction of the ⟦E39⟧ Seed sent waves of power through the ether, waves of staggering force. I felt them, and I am sure other beings did as well. Others who will wonder why their toy was broken...",
+  "quest:924:completion:2": "But regardless of future troubles, I have something for you. Neeru sent it as payment. And he bid me thank you.",
+  "quest:924:completion:3": "So, thank you."
+ },
+ "context": {
+  "quest:834": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 9,
+   "side": "horde",
+   "giver": "Rezlak",
+   "turner": "Rezlak"
+  },
+  "quest:926": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 9,
+   "side": "horde",
+   "giver": "Flawed Power Stone («سنگِ قدرتِ معیوب»)، Flawed Power Stones",
+   "turner": "Flawed Power Stone («سنگِ قدرتِ معیوب»)، Flawed Power Stones"
+  },
+  "quest:97223": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 9,
+   "side": "horde",
+   "giver": "Xar'Ti",
+   "turner": "Xar'Ti"
+  },
+  "quest:97225": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 9,
+   "side": "horde",
+   "giver": "Master Vornal",
+   "turner": "Master Gadrin"
+  },
+  "quest:826": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 10,
+   "side": "horde",
+   "giver": "Master Gadrin",
+   "turner": "Master Gadrin"
+  },
+  "quest:837": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 10,
+   "side": "horde",
+   "giver": "Gar'Thok",
+   "turner": "Gar'Thok"
+  },
+  "quest:97282": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 10,
+   "side": "horde",
+   "giver": "Rezlak",
+   "turner": "Rezlak"
+  },
+  "quest:816": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 11,
+   "side": "horde",
+   "giver": "Misha Tor'kren",
+   "turner": "Misha Tor'kren"
+  },
+  "quest:835": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 11,
+   "side": "horde",
+   "giver": "Rezlak",
+   "turner": "Rezlak"
+  },
+  "quest:97281": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 11,
+   "side": "horde",
+   "giver": "",
+   "turner": "Rezlak"
+  },
+  "quest:99048": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 11,
+   "side": "horde",
+   "giver": "Orgnil Soulscar",
+   "turner": "Heglan Shadeeye"
+  },
+  "quest:99049": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 11,
+   "side": "horde",
+   "giver": "Heglan Shadeeye",
+   "turner": "Orgnil Soulscar"
+  },
+  "quest:99051": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 11,
+   "side": "horde",
+   "giver": "Orgnil Soulscar",
+   "turner": ""
+  },
+  "quest:806": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Orgnil Soulscar",
+   "turner": "Orgnil Soulscar"
+  },
+  "quest:827": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Margoz («مارگوز»)",
+   "turner": "Margoz («مارگوز»)"
+  },
+  "quest:828": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Orgnil Soulscar",
+   "turner": "Margoz («مارگوز»)"
+  },
+  "quest:829": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Margoz («مارگوز»)",
+   "turner": "Neeru Fireblade («نیرو آتش‌تیغ»)"
+  },
+  "quest:832": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "",
+   "turner": "Neeru Fireblade («نیرو آتش‌تیغ»)"
+  },
+  "quest:840": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Takrin Pathseeker",
+   "turner": "Kargal Battlescar"
+  },
+  "quest:842": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Kargal Battlescar",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:96877": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "",
+   "turner": "Kamari"
+  },
+  "quest:99052": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Orgnil Soulscar",
+   "turner": ""
+  },
+  "quest:809": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 13,
+   "side": "horde",
+   "giver": "Neeru Fireblade («نیرو آتش‌تیغ»)",
+   "turner": "Ak'Zeloth («اکزلوت»)"
+  },
+  "quest:924": {
+   "zone_en": "Durotar",
+   "zone_fa": "دوروتار",
+   "level": 14,
+   "side": "horde",
+   "giver": "Ak'Zeloth («اکزلوت»)",
+   "turner": "Ak'Zeloth («اکزلوت»)"
+  }
+ },
+ "known": {
+  "quest:834": {
+   "title": "بادها در بیابان"
+  },
+  "quest:826": {
+   "title": "زالازان"
+  },
+  "quest:837": {
+   "title": "دست‌درازی"
+  },
+  "quest:816": {
+   "title": "گم‌شده ولی فراموش‌نشده"
+  },
+  "quest:835": {
+   "title": "تأمین خطوط"
+  },
+  "quest:806": {
+   "title": "توفان‌های تاریک"
+  },
+  "quest:827": {
+   "title": "صخرهٔ جمجمه"
+  },
+  "quest:828": {
+   "title": "مارگوز"
+  },
+  "quest:829": {
+   "title": "نیرو آتش‌تیغ"
+  },
+  "quest:832": {
+   "title": "سایه‌های سوزان"
+  },
+  "quest:840": {
+   "title": "سربازگیری هورد"
+  },
+  "quest:842": {
+   "title": "سربازگیری در تقاطع"
+  },
+  "quest:809": {
+   "title": "اکزلوت"
+  },
+  "quest:924": {
+   "title": "تخم دیو"
+  }
+ }
+}

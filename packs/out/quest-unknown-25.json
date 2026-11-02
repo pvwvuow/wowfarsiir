@@ -1,0 +1,792 @@
+{
+ "pack": "quest-unknown-25",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-25.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Plagueheart Circlet",
+   "fa": "نیم‌تاجِ طاعون‌دل",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Desecrated Circlet",
+   "fa": "نیم‌تاجِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Cloth",
+   "fa": "پارچه",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Mooncloth",
+   "fa": "پارچهٔ ماه",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Plagueheart Shoulderpads",
+   "fa": "شانه‌پوشِ طاعون‌دل",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Desecrated Shoulderpads",
+   "fa": "شانه‌پوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Plagueheart Sandals",
+   "fa": "صندلِ طاعون‌دل",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Desecrated Sandals",
+   "fa": "صندلِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Plagueheart Gloves",
+   "fa": "دستکشِ طاعون‌دل",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Desecrated Gloves",
+   "fa": "دستکشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Plagueheart Belt",
+   "fa": "کمربندِ طاعون‌دل",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Desecrated Belt",
+   "fa": "کمربندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Plagueheart Bindings",
+   "fa": "ساعدبندِ طاعون‌دل",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Desecrated Bindings",
+   "fa": "بندپیچِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Arcane Crystal",
+   "fa": "بلور جادویی",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Nexus Crystal",
+   "fa": "بلور نکسوس",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Robe of Faith",
+   "fa": "ردای ایمان",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Desecrated Robe",
+   "fa": "ردای بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "Leggings of Faith",
+   "fa": "پاافزارِ ایمان",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Desecrated Leggings",
+   "fa": "شلوارِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Circlet of Faith",
+   "fa": "نیم‌تاجِ ایمان",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Shoulderpads of Faith",
+   "fa": "شانه‌بندِ ایمان",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Smite",
+   "fa": "ضربهٔ مقدس",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Sandals of Faith",
+   "fa": "صندلِ ایمان",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Gloves of Faith",
+   "fa": "دستکشِ ایمان",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Belt of Faith",
+   "fa": "کمربندِ ایمان",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Bindings of Faith",
+   "fa": "بندِ ایمان",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Savage Guard",
+   "fa": "نگهبانِ وحشی",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Arcanum of Protection",
+   "fa": "راز‌نوشتهٔ پاسداری",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Zanza",
+   "fa": "زانزا",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Arcanum of Rapidity",
+   "fa": "راز‌نوشتهٔ شتاب",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Arcanum of Focus",
+   "fa": "راز‌نوشتهٔ تمرکز",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "Major Mana Potion",
+   "fa": "معجونِ مانای بزرگ",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Argent Dawn",
+   "fa": "سپیدهٔ نقره‌ای",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Gloves",
+   "fa": "دستکش",
+   "kind": "sp"
+  },
+  "E41": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E42": {
+   "en": "Craftsman's Writ: Iridescent Hammer",
+   "fa": "فرمان استادکار - پتکِ پرچین‌دارِ درخشان",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Darkspear Islands",
+   "fa": "جزایر نیزه‌تیره",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "Level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "The Monogrammed Sash",
+   "fa": "کمربند نشان‌خورده",
+   "kind": "qs"
+  },
+  "E46": {
+   "en": "Arena Master",
+   "fa": "استادِ میدان",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Keefer's Angelfish",
+   "fa": "ماهیِ فرشتهٔ کیفر",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Dezian Queenfish",
+   "fa": "ماهی شهبانوی دیزیان",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Brownell's Blue Striped Racer",
+   "fa": "مارِ تندروی آبی‌خطِ برانل",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Blessed Wizard Oil",
+   "fa": "روغنِ جادوانِ مبارک",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Plagueheart Circlet": "نیم‌تاجِ طاعون‌دل",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Desecrated Circlet": "نیم‌تاجِ بی‌حرمت‌شده",
+  "Cloth": "پارچه",
+  "Mooncloth": "پارچهٔ ماه",
+  "Plagueheart Shoulderpads": "شانه‌پوشِ طاعون‌دل",
+  "Desecrated Shoulderpads": "شانه‌پوشِ بی‌حرمت‌شده",
+  "Plagueheart Sandals": "صندلِ طاعون‌دل",
+  "Desecrated Sandals": "صندلِ بی‌حرمت‌شده",
+  "Plagueheart Gloves": "دستکشِ طاعون‌دل",
+  "Desecrated Gloves": "دستکشِ بی‌حرمت‌شده",
+  "Plagueheart Belt": "کمربندِ طاعون‌دل",
+  "Desecrated Belt": "کمربندِ بی‌حرمت‌شده",
+  "Arcane": "اسرار",
+  "Plagueheart Bindings": "ساعدبندِ طاعون‌دل",
+  "Desecrated Bindings": "بندپیچِ بی‌حرمت‌شده",
+  "Arcane Crystal": "بلور جادویی",
+  "Nexus Crystal": "بلور نکسوس",
+  "Robe of Faith": "ردای ایمان",
+  "Desecrated Robe": "ردای بی‌حرمت‌شده",
+  "battle": "نبرد",
+  "Leggings of Faith": "پاافزارِ ایمان",
+  "Desecrated Leggings": "شلوارِ بی‌حرمت‌شده",
+  "Circlet of Faith": "نیم‌تاجِ ایمان",
+  "Shoulderpads of Faith": "شانه‌بندِ ایمان",
+  "Smite": "ضربهٔ مقدس",
+  "Sandals of Faith": "صندلِ ایمان",
+  "Gloves of Faith": "دستکشِ ایمان",
+  "Belt of Faith": "کمربندِ ایمان",
+  "Bindings of Faith": "بندِ ایمان",
+  "Savage Guard": "نگهبانِ وحشی",
+  "Arcanum of Protection": "راز‌نوشتهٔ پاسداری",
+  "Zanza": "زانزا",
+  "Arcanum of Rapidity": "راز‌نوشتهٔ شتاب",
+  "Arcanum of Focus": "راز‌نوشتهٔ تمرکز",
+  "Use": "استفاده",
+  "Major Mana Potion": "معجونِ مانای بزرگ",
+  "Argent Dawn": "سپیدهٔ نقره‌ای",
+  "Gloves": "دستکش",
+  "undead": "مرده‌متحرک",
+  "Craftsman's Writ: Iridescent Hammer": "فرمان استادکار - پتکِ پرچین‌دارِ درخشان",
+  "Darkspear Islands": "جزایر نیزه‌تیره",
+  "Level": "لِوِل",
+  "The Monogrammed Sash": "کمربند نشان‌خورده",
+  "Arena Master": "استادِ میدان",
+  "Keefer's Angelfish": "ماهیِ فرشتهٔ کیفر",
+  "Dezian Queenfish": "ماهی شهبانوی دیزیان",
+  "Brownell's Blue Striped Racer": "مارِ تندروی آبی‌خطِ برانل",
+  "Blessed Wizard Oil": "روغنِ جادوانِ مبارک"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$N",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$N",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$g boy:girl;",
+  "28": "$B",
+  "29": "$B",
+  "30": "$N",
+  "31": "$B",
+  "32": "$B",
+  "33": "$B",
+  "34": "$g boy:girl;",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$g boy:girl;",
+  "42": "$B",
+  "43": "$B",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$g boy:girl;",
+  "49": "$B",
+  "50": "$B",
+  "51": "$N",
+  "52": "$B",
+  "53": "$B",
+  "54": "$g boy:girl;",
+  "55": "$B",
+  "56": "$B",
+  "57": "$N",
+  "58": "$B",
+  "59": "$B",
+  "60": "$g boy:girl;",
+  "61": "$B",
+  "62": "$B",
+  "63": "$N",
+  "64": "$B",
+  "65": "$B",
+  "66": "$g boy:girl;",
+  "67": "$B",
+  "68": "$B",
+  "69": "$N",
+  "70": "$B",
+  "71": "$B",
+  "72": "$B",
+  "73": "$g boy:girl;",
+  "74": "$B",
+  "75": "$B",
+  "76": "$N",
+  "77": "$B",
+  "78": "$B",
+  "79": "$B",
+  "80": "$B",
+  "81": "$B",
+  "82": "$B",
+  "83": "$B",
+  "84": "$B",
+  "85": "$B",
+  "86": "$B",
+  "87": "$B",
+  "88": "$B",
+  "89": "$B",
+  "90": "$B",
+  "91": "$B",
+  "92": "$B",
+  "93": "$N",
+  "94": "$N",
+  "95": "$N",
+  "96": "$B",
+  "97": "$B",
+  "98": "$B",
+  "99": "$B",
+  "100": "$B",
+  "101": "$B",
+  "102": "$B",
+  "103": "$B",
+  "104": "$B",
+  "105": "$B",
+  "106": "$B",
+  "107": "$B",
+  "108": "$B",
+  "109": "$B",
+  "110": "$B",
+  "111": "$B",
+  "112": "$B",
+  "113": "$B",
+  "114": "$B",
+  "115": "$B",
+  "116": "$B",
+  "117": "$B",
+  "118": "$B",
+  "119": "$B"
+ },
+ "rows": {
+  "quest:9105:title": "⟦E1⟧",
+  "quest:9105:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E1⟧ if you bring him the following: 1 ⟦E4⟧, 15 Wartorn ⟦E5⟧ Scraps, 3 ⟦E6⟧ and 3 Nexus Crystals.",
+  "quest:9105:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦1⟧⟦2⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9105:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9105:completion:0": "Exellent ⟦3⟧ !⟦4⟧ , you got everything just as i asked and now i can make a ⟦E1⟧.",
+  "quest:9106:title": "⟦E7⟧",
+  "quest:9106:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E7⟧ if you bring him the following: 1 ⟦E8⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ and 3 Cured Rugged Hides.",
+  "quest:9106:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦5⟧⟦6⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9106:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9106:completion:0": "Exellent ⟦7⟧ !⟦8⟧ , you got everything just as i asked and now i can make a ⟦E7⟧.",
+  "quest:9107:title": "⟦E9⟧",
+  "quest:9107:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E9⟧ if you bring him the following: 1 ⟦E10⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ and 3 Cured Rugged Hides.",
+  "quest:9107:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦9⟧⟦10⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9107:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9107:completion:0": "Exellent ⟦11⟧ !⟦12⟧ , you got everything just as i asked and now i can make a ⟦E9⟧.",
+  "quest:9108:title": "⟦E11⟧",
+  "quest:9108:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E11⟧ if you bring him the following: 1 ⟦E12⟧, 8 Wartorn ⟦E5⟧ Scraps and 4 ⟦E6⟧.",
+  "quest:9108:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦13⟧⟦14⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9108:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9108:completion:0": "Exellent ⟦15⟧ !⟦16⟧ , you got everything just as i asked and now i can make a ⟦E11⟧.",
+  "quest:9109:title": "⟦E13⟧",
+  "quest:9109:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E13⟧ if you bring him the following: 1 ⟦E14⟧, 8 Wartorn ⟦E5⟧ Scraps, 2 ⟦E15⟧ Crystals and 2 ⟦E6⟧.",
+  "quest:9109:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦17⟧⟦18⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9109:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9109:completion:0": "Exellent ⟦19⟧ !⟦20⟧ , you got everything just as i asked and now i can make a ⟦E13⟧.",
+  "quest:9110:title": "⟦E16⟧",
+  "quest:9110:desc:0": "Mataus the Wrathcaster at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E16⟧ if you bring him the following: 1 ⟦E17⟧, 6 Wartorn ⟦E5⟧ Scraps, 1 ⟦E18⟧ and 1 ⟦E19⟧.",
+  "quest:9110:details:0": "I make no pretenses, maggot. The darkness Plagueheart items hold could very well destroy the both of us. That is why the price is so high. If I'm going to die, it's going to be as a rich man.⟦21⟧⟦22⟧And I don't give an ounce of gnoll spit how you die, only that you do as I ask. Bring me what I require and we will both benefit - or die; but I've already explained this...",
+  "quest:9110:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9110:completion:0": "Exellent ⟦23⟧ !⟦24⟧ , you got everything just as i asked and now i can make a ⟦E16⟧.",
+  "quest:9111:title": "⟦E20⟧",
+  "quest:9111:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E20⟧ if you bring him the following: 1 ⟦E21⟧, 25 Wartorn ⟦E5⟧ Scraps, 4 ⟦E6⟧ and 2 Nexus Crystals.",
+  "quest:9111:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦25⟧⟦26⟧Blessed ⟦27⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦28⟧⟦29⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9111:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9111:completion:0": "Exellent ⟦30⟧ !⟦31⟧, you got everything just as i asked and now i can make a ⟦E20⟧.",
+  "quest:9112:title": "⟦E23⟧",
+  "quest:9112:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E23⟧ if you bring him the following: 1 ⟦E24⟧, 20 Wartorn ⟦E5⟧ Scraps, 4 ⟦E6⟧ and 2 Nexus Crystals.",
+  "quest:9112:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦32⟧⟦33⟧Blessed ⟦34⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦35⟧⟦36⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9112:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9112:completion:0": "Exellent ⟦37⟧ !⟦38⟧, you got everything just as i asked and now i can make a ⟦E23⟧.",
+  "quest:9113:title": "⟦E25⟧",
+  "quest:9113:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E25⟧ if you bring him the following: 1 ⟦E4⟧, 15 Wartorn ⟦E5⟧ Scraps, 3 ⟦E6⟧ and 3 Nexus Crystals.",
+  "quest:9113:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦39⟧⟦40⟧Blessed ⟦41⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦42⟧⟦43⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9113:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9113:completion:0": "Exellent ⟦44⟧ !⟦45⟧, you got everything just as i asked and now i can make a ⟦E25⟧.",
+  "quest:9114:title": "⟦E26⟧",
+  "quest:9114:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E26⟧ if you bring him the following: 1 ⟦E8⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ and 3 Cured Rugged Hides.",
+  "quest:9114:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦46⟧⟦47⟧Blessed ⟦48⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦49⟧⟦50⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9114:progress:0": "Have you brought me the reagents, child?",
+  "quest:9114:completion:0": "The vestments are ready, ⟦51⟧. ⟦E27⟧ those that would harm our world in your righteous fire.",
+  "quest:9115:title": "⟦E28⟧",
+  "quest:9115:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E28⟧ if you bring him the following: 1 ⟦E10⟧, 12 Wartorn ⟦E5⟧ Scraps, 2 ⟦E6⟧ and 3 Cured Rugged Hides.",
+  "quest:9115:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦52⟧⟦53⟧Blessed ⟦54⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦55⟧⟦56⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9115:progress:0": "Have you brought me the reagents, child?",
+  "quest:9115:completion:0": "The vestments are ready, ⟦57⟧. ⟦E27⟧ those that would harm our world in your righteous fire.",
+  "quest:9116:title": "⟦E29⟧",
+  "quest:9116:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E29⟧ if you bring him the following: 1 ⟦E12⟧, 8 Wartorn ⟦E5⟧ Scraps and 4 ⟦E6⟧.",
+  "quest:9116:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦58⟧⟦59⟧Blessed ⟦60⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦61⟧⟦62⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9116:progress:0": "Have you brought me the reagents, child?",
+  "quest:9116:completion:0": "The vestments are ready, ⟦63⟧. ⟦E27⟧ those that would harm our world in your righteous fire.",
+  "quest:9117:title": "⟦E30⟧",
+  "quest:9117:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make a ⟦E30⟧ if you bring him the following: 1 ⟦E14⟧, 8 Wartorn ⟦E5⟧ Scraps, 2 ⟦E15⟧ Crystals and 2 ⟦E6⟧.",
+  "quest:9117:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦64⟧⟦65⟧Blessed ⟦66⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦67⟧⟦68⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9117:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9117:completion:0": "Exellent ⟦69⟧ !⟦70⟧, you got everything just as i asked and now i can make a ⟦E30⟧.",
+  "quest:9118:title": "⟦E31⟧",
+  "quest:9118:desc:0": "Father Inigo Montoy at ⟦E2⟧ in the ⟦E3⟧ will make ⟦E31⟧ if you bring him the following: 1 ⟦E17⟧, 6 Wartorn ⟦E5⟧ Scraps, 1 ⟦E18⟧ and 1 ⟦E19⟧.",
+  "quest:9118:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦71⟧⟦72⟧Blessed ⟦73⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of ⟦E22⟧ - stripped of everything including their dignity.⟦74⟧⟦75⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9118:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9118:completion:0": "Exellent ⟦76⟧ !⟦77⟧, you got everything just as i asked and now i can make a ⟦E31⟧.",
+  "quest:9208:title": "The ⟦E32⟧ - ⟦E33⟧",
+  "quest:9208:desc:0": "⟦E34⟧ the Restless in Zul'Gurub wants an ⟦E33⟧.",
+  "quest:9208:details:0": "⟦E34⟧ can create many ancient troll enchantments with proper components! Have you heard of the ⟦E32⟧? No, of course you haven't. Your mind is addled with the inferior elven magic.⟦78⟧⟦79⟧Bring me an arcanum of elven creation so that I may destroy the aberration. Do this and the ⟦E32⟧ will be yours.⟦80⟧",
+  "quest:9208:progress:0": "Do you have the arcanum?",
+  "quest:9208:completion:0": "The worthless magic in these enchantments fuels my anger. My anger gives me strength.⟦81⟧⟦82⟧Bring me more and you shall receive another ⟦E32⟧.",
+  "quest:9209:title": "The ⟦E32⟧ - ⟦E35⟧",
+  "quest:9209:desc:0": "⟦E34⟧ the Restless in Zul'Gurub wants an ⟦E35⟧.",
+  "quest:9209:details:0": "⟦E34⟧ can create many ancient troll enchantments with proper components! Have you heard of the ⟦E32⟧? No, of course you haven't. Your mind is addled with the inferior elven magic.⟦83⟧⟦84⟧Bring me an arcanum of elven creation so that I may destroy the aberration. Do this and the ⟦E32⟧ will be yours.⟦85⟧",
+  "quest:9209:progress:0": "Do you have the arcanum?",
+  "quest:9209:completion:0": "The worthless magic in these enchantments fuels my anger. My anger gives me strength.⟦86⟧⟦87⟧Bring me more and you shall receive another ⟦E32⟧.",
+  "quest:9210:title": "The ⟦E32⟧ - ⟦E36⟧",
+  "quest:9210:desc:0": "⟦E34⟧ the Restless in Zul'Gurub wants an ⟦E36⟧.",
+  "quest:9210:details:0": "⟦E34⟧ can create many ancient troll enchantments with proper components! Have you heard of the ⟦E32⟧? No, of course you haven't. Your mind is addled with the inferior elven magic.⟦88⟧⟦89⟧Bring me an arcanum of elven creation so that I may destroy the aberration. Do this and the ⟦E32⟧ will be yours.⟦90⟧",
+  "quest:9210:progress:0": "Do you have the arcanum?",
+  "quest:9210:completion:0": "The worthless magic in these enchantments fuels my anger. My anger gives me strength.⟦91⟧⟦92⟧Bring me more and you shall receive another ⟦E32⟧.",
+  "quest:9317:title": "Consecrated Sharpening Stones",
+  "quest:9317:progress:0": "If you bring me eight necrotic runes from the Scourge invaders, I can give you a consecrated sharpening stone. It should be of great help in your ⟦E22⟧ against the minions of the Lich King.",
+  "quest:9317:completion:0": "Thank you, ⟦93⟧. Here are your consecrated sharpening stones. ⟦E37⟧ them prudently.",
+  "quest:9320:title": "⟦E38⟧",
+  "quest:9320:progress:0": "In addition to our other supplies, we also have a number of major mana potions you may find useful. I will give you one in exchange for fifteen necrotic runes.",
+  "quest:9320:completion:0": "Here you are, ⟦94⟧. Be careful out there. Our numbers are not so large we can afford many battlefield casualties.",
+  "quest:9333:title": "⟦E39⟧ ⟦E40⟧",
+  "quest:9333:progress:0": "If you bring me thirty necrotic runes, I will give you your choice of hand protection in return. These should prove valuable in our fight against the ⟦E41⟧ Scourge.",
+  "quest:9333:completion:0": "You've done well, ⟦95⟧. Take your pick of hand protection in thanks for your efforts.",
+  "quest:94222:title": "⟦E42⟧",
+  "quest:98893:title": "Conflict at ⟦E43⟧ [⟦E44⟧ 60]",
+  "quest:98901:title": "⟦E43⟧ Clash [⟦E44⟧ 60]",
+  "quest:620:title": "⟦E45⟧ [Old] - completed with quest 8552",
+  "quest:7908:title": "⟦E46⟧ [Old] - completed with quest 7810",
+  "quest:8194:title": "Apprentice Angler",
+  "quest:8194:progress:0": "Even though we already have a contest winner, I will still buy your Tastyfish from you at a reasonable price. Whadda ya say!",
+  "quest:8194:completion:0": "This deal works for me if it works for you!",
+  "quest:8221:title": "Rare Fish - ⟦E47⟧",
+  "quest:8221:progress:0": "*Whir* *Click*⟦96⟧⟦97⟧I seek rare fish for Fishmaster Bluegill to catalogue. If you bring me a ⟦E47⟧, I will provide you with this fine reward.⟦98⟧⟦99⟧*Zzzap* *Whir*",
+  "quest:8221:completion:0": "*Whir* ⟦100⟧⟦101⟧ Identification of ⟦E47⟧ complete. ⟦102⟧⟦103⟧ Your Reward is now available. ⟦104⟧⟦105⟧ *click-click* *Bzzzz*",
+  "quest:8224:title": "Rare Fish - ⟦E48⟧",
+  "quest:8224:progress:0": "*Whir* *Click*⟦106⟧⟦107⟧I seek rare fish for Fishmaster Bluegill to catalogue. If you bring me a ⟦E48⟧, I will provide you with this fine reward.⟦108⟧⟦109⟧*Zzzap* *Whir*",
+  "quest:8224:completion:0": "*Whir* ⟦110⟧⟦111⟧ Identification of ⟦E48⟧ complete. ⟦112⟧⟦113⟧ Your Reward is now available. ⟦114⟧⟦115⟧ *click-click* *Bzzzz*",
+  "quest:8225:title": "Rare Fish - ⟦E49⟧",
+  "quest:8225:progress:0": "*Whir* *Click*⟦116⟧⟦117⟧I seek rare fish for Fishmaster Bluegill to catalogue. If you bring me a ⟦E49⟧, I will provide you with this fine reward.⟦118⟧⟦119⟧*Zzzap* *Whir*",
+  "quest:8225:completion:0": "*Whir* Identification of Brownell's Racer complete. Your Reward is now available. *click* *click* *Bzzzz*",
+  "quest:9318:title": "⟦E50⟧",
+  "quest:9318:progress:0": "In exchange for the necrotic runes of the Scourge invaders, the ⟦E39⟧ will give you one vial of blessed wizard oil.",
+  "quest:9318:completion:0": "I hope that you will find these items useful in future battles."
+ },
+ "context": {
+  "quest:9105": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9106": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9107": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9108": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9109": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9110": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mataus the Wrathcaster",
+   "turner": "Mataus the Wrathcaster"
+  },
+  "quest:9111": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9112": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9113": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9114": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9115": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9116": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9117": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9118": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy",
+   "turner": "Father Inigo Montoy"
+  },
+  "quest:9208": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Zanza the Restless",
+   "turner": "Zanza the Restless"
+  },
+  "quest:9209": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Zanza the Restless",
+   "turner": "Zanza the Restless"
+  },
+  "quest:9210": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Zanza the Restless",
+   "turner": "Zanza the Restless"
+  },
+  "quest:9317": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Argent Quartermaster",
+   "turner": "Argent Quartermaster"
+  },
+  "quest:9320": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Argent Outfitter",
+   "turner": "Argent Outfitter"
+  },
+  "quest:9333": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Argent Outfitter",
+   "turner": "Argent Outfitter"
+  },
+  "quest:94222": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98893": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98901": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:620": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7908": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8194": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Jang"
+  },
+  "quest:8221": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Fishbot 5000"
+  },
+  "quest:8224": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Fishbot 5000"
+  },
+  "quest:8225": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Fishbot 5000"
+  },
+  "quest:9318": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "Argent Quartermaster",
+   "turner": "Argent Quartermaster"
+  }
+ }
+}

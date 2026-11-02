@@ -1,0 +1,606 @@
+{
+ "pack": "quest-alterac-valley-03",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-alterac-valley-03.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Alterac Valley",
+   "fa": "درهٔ آلتراک",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Frostwolf",
+   "fa": "گرگ یخی",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Severed Night Elf Head",
+   "fa": "سر بریدهٔ نایت‌الف",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Darkspear",
+   "fa": "نیزه‌تیره",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Tuft of Gnome Hair",
+   "fa": "دسته‌ای موی نوم",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "The Elder Crone",
+   "fa": "پیرزن بزرگ",
+   "kind": "qs"
+  },
+  "E9": {
+   "en": "out of combat",
+   "fa": "بیرون از نبرد",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Human Bone Chip",
+   "fa": "خرده‌استخوان انسانی",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Humans",
+   "fa": "انسان",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "Dirk",
+   "fa": "خنجر",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Tauren Hoof",
+   "fa": "سم تاورن",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "Darkspear Troll Mojo",
+   "fa": "موجوی ترول دارک‌اسپیر",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Forsaken Heart",
+   "fa": "قلب سوزنده",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "Explosives",
+   "fa": "مواد منفجره",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E23": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E24": {
+   "en": "disarm",
+   "fa": "خلع سلاح",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "Garrison",
+   "fa": "گارنیزون",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Korrak the Bloodrager",
+   "fa": "کوراک خون‌خروشان",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "Skull of Korrak",
+   "fa": "جمجمهٔ کوراک",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Trolls",
+   "fa": "ترول",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "Dwarf",
+   "fa": "دورف",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Dwarf Spine",
+   "fa": "ستون فقرات دورف",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "in combat",
+   "fa": "درگیر نبرد",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Orc",
+   "fa": "اورک",
+   "kind": "tm"
+  },
+  "E34": {
+   "en": "Orc Tooth",
+   "fa": "دندان اورک",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Defense",
+   "fa": "دفاع",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Alterac Valley": "درهٔ آلتراک",
+  "Frostwolf": "گرگ یخی",
+  "Severed Night Elf Head": "سر بریدهٔ نایت‌الف",
+  "Darkspear": "نیزه‌تیره",
+  "Kalimdor": "کالیمدور",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Tuft of Gnome Hair": "دسته‌ای موی نوم",
+  "The Elder Crone": "پیرزن بزرگ",
+  "out of combat": "بیرون از نبرد",
+  "Human Bone Chip": "خرده‌استخوان انسانی",
+  "Humans": "انسان",
+  "Undercity": "آندر‌سیتی",
+  "healing": "شفا",
+  "Dirk": "خنجر",
+  "Tauren Hoof": "سم تاورن",
+  "battle": "نبرد",
+  "Darkspear Troll Mojo": "موجوی ترول دارک‌اسپیر",
+  "Forsaken": "مطرودان",
+  "Forsaken Heart": "قلب سوزنده",
+  "undead": "مرده‌متحرک",
+  "Explosives": "مواد منفجره",
+  "enemy": "دشمن",
+  "strike": "ضربه",
+  "disarm": "خلع سلاح",
+  "Garrison": "گارنیزون",
+  "Korrak the Bloodrager": "کوراک خون‌خروشان",
+  "Skull of Korrak": "جمجمهٔ کوراک",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Trolls": "ترول",
+  "Dwarf": "دورف",
+  "Dwarf Spine": "ستون فقرات دورف",
+  "in combat": "درگیر نبرد",
+  "Orc": "اورک",
+  "Orc Tooth": "دندان اورک",
+  "Defense": "دفاع",
+  "enemies": "دشمنان",
+  "Horde": "هورد",
+  "Alliance": "اتحاد"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$R",
+  "3": "$R",
+  "4": "$c",
+  "5": "$N",
+  "6": "$c",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$C",
+  "21": "$N",
+  "22": "$N",
+  "23": "$B",
+  "24": "$N",
+  "25": "$N",
+  "26": "$c"
+ },
+ "rows": {
+  "quest:7361:obj:0": "You have been tasked with slaying opposing night elf players in ⟦E1⟧.",
+  "quest:7361:obj:1": "Kill a night elf and return to Najak Hexxen at ⟦E2⟧ Keep with a ⟦E3⟧.",
+  "quest:7361:details:0": "<Najak snarls.>",
+  "quest:7361:details:1": "Before the night elves existed there was troll. It was from troll that the night elves came.",
+  "quest:7361:details:2": "Their mutinous attacks against my people will not be tolerated. Staghelm seeks to wipe us out - to leave no trace of those that bore him and his ilk. It will not happen!",
+  "quest:7361:details:3": "For every night elf that you slay and decapitate, Najak will grant you favor amongst the ⟦E4⟧. Word of your deeds will be spread across ⟦E5⟧ and the ⟦E6⟧. Go now and serve the ⟦E4⟧!",
+  "quest:7361:progress:0": "They seek to exterminate us? It is they who shall be exterminated.",
+  "quest:7361:completion:0": "⟦1⟧, it is but one of thousands. A job well done nonetheless.",
+  "quest:7362:obj:0": "You have been tasked with slaying opposing gnome players in ⟦E1⟧.",
+  "quest:7362:obj:1": "Kill a gnome and return to Ravak Grimtotem at ⟦E2⟧ Keep with a ⟦E7⟧.",
+  "quest:7362:details:0": "⟦E8⟧ has sent me to this warzone to research the other races. More specifically, I am to collect gnome samples. Magatha is primarily interested in their survivability. Aye, the gnomes - while pitifully weak and miniscule - exude great resilience both in and ⟦E9⟧.",
+  "quest:7362:details:1": "Fortunately for you, I am looking for ruffians to do Magatha's bidding. Return to me with tufts of gnome hair and you shall be known to the tauren as an ally.",
+  "quest:7362:progress:0": "I don't care where the hair comes from, ⟦2⟧.",
+  "quest:7362:completion:0": "Aye, this is definitely gnome. Well done, ⟦3⟧, but there is more work to be done.",
+  "quest:7363:obj:0": "You have been tasked with slaying opposing human players in ⟦E1⟧.",
+  "quest:7363:obj:1": "Kill a human and return to Commander Louis Philips (who wanders between the front lines and ⟦E2⟧ keep) with a ⟦E10⟧.",
+  "quest:7363:obj:2": "BA cure for the human condition is close at hand!",
+  "quest:7363:details:0": "⟦E11⟧ are so utterly detestable.",
+  "quest:7363:details:1": "B<Commander Philips grimaces.>",
+  "quest:7363:details:2": "While it is true that I am a soldier of ⟦E2⟧, I remain a servant of Sylvanas.",
+  "quest:7363:details:3": "During my tour of duty, I do extra work on the side for the Dark Apothecaries of the ⟦E12⟧.",
+  "quest:7363:details:4": "I have been tasked with collecting human bone chips that are to be used in curing the human condition.",
+  "quest:7363:details:5": "I am authorized to pass that task on to my subordinates.",
+  "quest:7363:details:6": "Find them. Kill them. Return their bone chips to me.",
+  "quest:7363:progress:0": "Yes, it is true. My brother is a human. Shameful... A stain upon my nearly immaculate record.",
+  "quest:7363:completion:0": "It would be easier if they just accepted their illness and gave in to your ⟦E13⟧ touch. It would also probably be less fun. Carry on! We'll cure them, one way or another.",
+  "quest:7364:obj:0": "You have been tasked with slaying opposing tauren players in ⟦E1⟧.",
+  "quest:7364:obj:1": "Kill a tauren and return to ⟦E14⟧ Swindle at Dun'Baldar with a ⟦E15⟧.",
+  "quest:7364:details:0": "The High Tinkerer himself has sent me to this field of ⟦E16⟧ to defend my gnomish brothers and sisters. We have received word that the tauren are singling out and slaying gnomes. Worst of all, they are removing tufts of glorious gnome hair from the corpses of the fallen. These atrocities must be stopped. We must reciprocate!",
+  "quest:7364:details:1": "I want them de-hoofed, ⟦4⟧. Bring me their hooves! Show yourself as an ally of the gnomes.",
+  "quest:7365:obj:0": "You have been tasked with slaying opposing troll players in ⟦E1⟧.",
+  "quest:7365:obj:1": "Kill a troll and return to Athramanis at Dun'Baldar with ⟦E17⟧.",
+  "quest:7365:details:0": "Staghelm has given the order. All trolls on the field of ⟦E16⟧ must be exterminated. Their preposterous claims of birthing night elves must be met with force and due prejudice.",
+  "quest:7365:details:1": "Slay them and return to me with their mojo. To reiterate: I want you to steal their mojo.",
+  "quest:7366:obj:0": "You have been tasked with slaying opposing ⟦E18⟧ players in ⟦E1⟧.",
+  "quest:7366:obj:1": "Kill a ⟦E18⟧ and return to Commander Karl Philips (who wanders between the lumber mill and the mine) with a ⟦E19⟧.",
+  "quest:7366:details:0": "The Archbishop is as kind as he is wise. For a man to look mercifully on such a wretched lot...",
+  "quest:7366:details:1": "B<Commander Philips shakes his head in disbelief.>",
+  "quest:7366:details:2": "Too kind... Just too kind.",
+  "quest:7366:details:3": "The Archbishop asks that we take pity on the ⟦E20⟧ and grant them swift and permanent deaths. For this grand display of mercy, we merely require their black, disease ridden hearts.",
+  "quest:7366:details:4": "Bring me the hearts of the ⟦E18⟧ so that they may be ceremoniously incinerated at the Cathedral of Light. Make haste, ⟦5⟧!",
+  "quest:7366:progress:0": "Benedictus! I am but a speck in the shadow of his grandeur. Praise him!",
+  "quest:7366:completion:0": "Praise be to Benedictus! Another lost soul, soon to be saved by the white hot flames of the Light!",
+  "quest:7366:completion:1": "Go ye, oh soldier of Light! More must be saved!",
+  "quest:7367:obj:0": "Find the ⟦E2⟧ ⟦E21⟧ Expert and kill him. Return to the Stormpike ⟦E21⟧ Expert when the task is complete.",
+  "quest:7367:details:0": "The ⟦E2⟧ have their front lines and bases booby trapped, ⟦6⟧. You have to watch your step when invading ⟦E22⟧ territory.",
+  "quest:7367:details:1": "If you want to make a solid ⟦E23⟧ against them, you must destroy their source of anti personnel munitions - I'm talking about their explosives expert. If you kill him, you are safe to ⟦E24⟧ the mines. As long as he is kept down, the mines will also stay down.",
+  "quest:7367:details:2": "You will probably find him in a tower near the Iceblood ⟦E25⟧. Good luck!",
+  "quest:7368:obj:0": "Find the Stormpike ⟦E21⟧ Expert and kill him. Return to the ⟦E2⟧ ⟦E21⟧ Expert when the task is complete.",
+  "quest:7368:details:0": "I know all about landmines. I'm the one that lays all the mines on the front lines here, after all.",
+  "quest:7368:details:1": "If you want to defuse the Stormpike mine fields, all you have to do is kill their explosives expert. That dwarven coward is no doubt hiding in the first tower on the Field of Strife. Take him out and those landmines won't come back after they've been disarmed.",
+  "quest:7368:details:2": "If you do happen to kill him, come back here and let me know. No good deed should go unrewarded.",
+  "quest:7381:title": "The Return of Korrak",
+  "quest:7381:desc:0": "Should ⟦E26⟧ make a return to the Field of Strife, seek him out and destroy him.",
+  "quest:7381:desc:1": "Return the ⟦E27⟧ to Warmaster Laggrond in the ⟦E28⟧.",
+  "quest:7381:details:0": "While it is true that Korrak has been slain, one question remains: Will he remain dead? ⟦E29⟧ are notorious for their other-worldly tribal magics. I would not be surprised if the fallen leader was raised from the dead to once more rule over his clan.⟦7⟧⟦8⟧You know what to do should this ever occur.⟦9⟧⟦10⟧<Warmaster Laggrond makes a cutting motion across his neck with his index finger.>⟦11⟧⟦12⟧And  this time, I want his skull. Just keep your eyes peeled, soldier.⟦13⟧⟦14⟧Dismissed!",
+  "quest:7382:title": "Korrak the Everliving",
+  "quest:7382:desc:0": "Should ⟦E26⟧ make a return to the Field of Strife, seek him out and destroy him.",
+  "quest:7382:desc:1": "Return the ⟦E27⟧ to Lieutenant Haggerdin in the ⟦E28⟧.",
+  "quest:7382:details:0": "There's something not quite right about all of this... Did anybody think to burn Korrak's corpse? Those trolls will stop at nothing to revive their fallen leader - as blue skinned pagan man-beasts often do.⟦15⟧⟦16⟧Just keep your eyes out, ⟦17⟧. Don't be alarmed if Korrak makes a surprise appearance; and if he does, I want him executed - his corpse burned to ashes.⟦18⟧⟦19⟧For good measure, lop off his head and bring me his skull before you ignite the lifeless mass.",
+  "quest:7401:obj:0": "You have been tasked with slaying opposing ⟦E30⟧ players in ⟦E1⟧.",
+  "quest:7401:obj:1": "Kill a ⟦E30⟧ and rip out their spine. Take the ⟦E31⟧ to Sergeant Yazra Bloodsnarl at ⟦E2⟧ Keep.",
+  "quest:7401:details:0": "By order of Sergeant Yazra Bloodsnarl, all dwarves on the field of ⟦E16⟧ are to be killed on sight.",
+  "quest:7401:details:1": "Should you slay a dwarf ⟦E32⟧, rip out their spine, leaving a spineless heap of stink and rot to serve as a warning to any and all that dare oppose the might of the ⟦E2⟧.",
+  "quest:7401:details:2": "Return to Sergeant Yazra Bloodsnarl with proof of your heroics.",
+  "quest:7401:progress:0": "I deal in wholesale irony, soldier.",
+  "quest:7401:completion:0": "You now have license to decimate dwarves by the dozen, ⟦20⟧!",
+  "quest:7401:completion:1": "B<Yazra stares off into the distance for a moment.>",
+  "quest:7401:completion:2": "You never forget your first de-spining...",
+  "quest:7402:obj:0": "You have been tasked with slaying opposing ⟦E33⟧ players in ⟦E1⟧.",
+  "quest:7402:obj:1": "Kill an ⟦E33⟧ and take their ⟦E34⟧ back to Corporal Noreg Stormpike at Dun Baldar.",
+  "quest:7402:details:0": "By order of Corporal Noreg Stormpike, all able bodied soldiers of Stormpike are required to slay any opposing orcs that they meet upon the field of ⟦E16⟧.",
+  "quest:7402:details:1": "Soldiers are required to remove a tusk or tooth from the maw of the ⟦E22⟧ and present said tooth as proof of their accomplishment.",
+  "quest:7402:details:2": "Wear protective gloves.",
+  "quest:7421:title": "⟦E4⟧ ⟦E35⟧",
+  "quest:7422:title": "Tuft it Out",
+  "quest:7423:title": "I've Got A Fever For More Bone Chips",
+  "quest:7424:title": "What the Hoof?",
+  "quest:7424:details:0": "null",
+  "quest:7424:progress:0": "Give 'em a limp, ⟦21⟧. They must learn that the gnomish people won't take to being bullied!",
+  "quest:7424:completion:0": "*⟦E14⟧ throws the hoof in a pile behind him.*",
+  "quest:7425:title": "Staghelm's Mojo Jamboree",
+  "quest:7426:title": "One Man's Love",
+  "quest:7427:title": "Wanted: MORE DWARVES!",
+  "quest:7428:title": "Wanted: MORE ORCS!",
+  "quest:8271:completion:0": "As a hero of the Stormpike, you may choose one item from these recently plun... er, recovered treasures.",
+  "quest:8272:completion:0": "How does it feel, ⟦22⟧ ? How does it feel to crush your ⟦E36⟧ and watch their lines break apart? It feels good, doesn't it? ⟦23⟧ You should be rewarded for this heroic deed, soldier.",
+  "quest:8369:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to a ⟦E37⟧ Warbringer outside the battlegrounds.",
+  "quest:8369:details:0": "Listen up, ⟦24⟧. No matter what you might have heard about the ⟦E16⟧ raging in ⟦E1⟧, one thing remains true: the Stormpike Expedition invaded ⟦E2⟧ Territory. The day we allow the ⟦E38⟧ to invade ⟦E37⟧ lands without a forceful response is the day I hang up my axe and live the rest of my life in shame. Go forth and expel the invaders!",
+  "quest:8369:progress:0": "What news do you bring from the lands of the Frostwolves? How does the ⟦E16⟧ for ⟦E1⟧ fare?",
+  "quest:8369:completion:0": "You've shown great bravery in protecting our lands in ⟦E1⟧! I will tell my superiors of your deeds.",
+  "quest:8375:obj:0": "Bring 3 ⟦E1⟧ Marks of Honor to an ⟦E38⟧ Brigadier General outside the battlegrounds.",
+  "quest:8375:details:0": "Make no mistake about it, ⟦25⟧. The ⟦E37⟧ is quite right when they say ⟦E1⟧ is ⟦E2⟧ Territory.",
+  "quest:8375:details:1": "You see, the Stormpike Expedition arrived as peaceful visitors to the area in search of ore and relics. The Frostwolves reacted with the most brutal and uncivilized act of aggression the ⟦E38⟧ has experienced.",
+  "quest:8375:details:2": "Let us never forget the brave dwarves that perished in that cowardly unannounced attack. Go now, ⟦26⟧, do your part in the ⟦E16⟧ for ⟦E1⟧. For the ⟦E38⟧!",
+  "quest:8375:progress:0": "What news do you bring from the lands of the Stormpikes? How does the ⟦E16⟧ for ⟦E1⟧ fare?",
+  "quest:8375:completion:0": "You've shown great bravery in protecting our lands in ⟦E1⟧! I will tell my superiors of your deeds."
+ },
+ "context": {
+  "quest:7361": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7362": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7363": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7364": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7365": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7366": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7367": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7368": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7381": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Warmaster Laggrond"
+  },
+  "quest:7382": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Lieutenant Haggerdin"
+  },
+  "quest:7401": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Wanted: DWARVES! («مطلوب: دورف‌ها!»)",
+   "turner": ""
+  },
+  "quest:7402": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "",
+   "giver": "Wanted: ORCS! («مطلوب: اورک‌ها!»)",
+   "turner": ""
+  },
+  "quest:7421": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7422": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7423": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7424": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7425": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7426": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7427": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:7428": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8271": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Prospector Stonehewer",
+   "turner": "Prospector Stonehewer"
+  },
+  "quest:8272": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Voggah Deathgrip",
+   "turner": "Voggah Deathgrip"
+  },
+  "quest:8369": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Horde Warbringer",
+   "turner": "Horde Warbringer"
+  },
+  "quest:8375": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Alliance Brigadier General",
+   "turner": "Alliance Brigadier General"
+  }
+ },
+ "known": {
+  "quest:7361": {
+   "title": "محبوبیت نزد تیر‌نیزه"
+  },
+  "quest:7362": {
+   "title": "همپیمان تاورن‌ها"
+  },
+  "quest:7363": {
+   "title": "وضعیت انسانی"
+  },
+  "quest:7364": {
+   "title": "جایزهٔ نومریگان"
+  },
+  "quest:7365": {
+   "title": "مرثیه‌ای برای استگهِلم"
+  },
+  "quest:7366": {
+   "title": "رحمت اسقف اعظم"
+  },
+  "quest:7367": {
+   "title": "خنثی‌سازی خطر"
+  },
+  "quest:7368": {
+   "title": "خنثی‌سازی خطر"
+  },
+  "quest:7401": {
+   "title": "مطلوب: دورف‌ها!"
+  },
+  "quest:7402": {
+   "title": "مطلوب: اورک‌ها!"
+  },
+  "quest:8271": {
+   "title": "قهرمان استورم‌پایک"
+  },
+  "quest:8272": {
+   "title": "قهرمان فراست‌وولف"
+  },
+  "quest:8369": {
+   "title": "مهاجمان درهٔ آلتراک"
+  },
+  "quest:8375": {
+   "title": "به یاد آور درهٔ آلتراک!"
+  }
+ }
+}
