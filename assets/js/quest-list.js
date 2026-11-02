@@ -1,12 +1,12 @@
 /* quest-list.js: the quest database LIST (quest.html with no ?id=). quest.html renames #quest-root to
    #quest-list-root on the list view, so quest.js stays in charge of single quests only.
-   Data: quest-index.json [name, zoneKey, level], quest-fa-titles.json, zones-meta.json.
+   Data: quest-index.json [name, zoneKey, level, forever, fnew], quest-fa-titles.json, zones-meta.json.
    Index keys that start with "sort:" are CATEGORIES (class / profession / seasonal quests), not zones: they get their own
    "category" filter (quest-cats.js) and stay out of the zone list.
    URL state: ?q= name/id, z= zone, c= category (sort:hunter), lo/hi = level, t= fa|en (translated / not), s= name|fa (sort). */
 (function () {
   'use strict';
-  var V = '20261201g', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102a', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var root = document.getElementById('quest-list-root');
   if (!root) return;
   var WF = window.WFTR || null;
@@ -107,6 +107,8 @@
     var q = nz(S.q), lo = parseInt(S.lo, 10), hi = parseInt(S.hi, 10), isId = /^[0-9]+$/.test(q), fa = hasAr(q), out = [];
     S.all.forEach(function (a) {
       var t;
+      /* issue #235: only the real Forever set by default (index tuple pos 4; old 3-field index has no pos 4 -> everything shows) */
+      if (S.fonly && !a[5]) return;
       if (S.zone && a[2] !== S.zone) return;
       if (S.cat && a[2] !== S.cat) return;
       if (!isNaN(lo) && (a[3] == null || a[3] < lo)) return;
@@ -129,7 +131,8 @@
     return '<a class="ql-row" href="quest.html?id=' + esc(a[0]) + '"><i class="ql-d' + (a[4] ? ' on' : '') + '" aria-hidden="true"></i>'
       + '<span class="ql-lv">' + (a[3] ? num(a[3]) : '–') + '</span>'
       + '<span class="ql-t">' + (fa ? '<b>' + esc(FT[a[0]]) + '</b><small class="rt-en" dir="ltr">' + esc(a[1]) + '</small>'
-        : '<b class="rt-en" dir="ltr">' + esc(a[1]) + '</b>') + '</span>'
+        : '<b class="rt-en" dir="ltr">' + esc(a[1]) + '</b>')
+      + (a[6] ? '<span class="fex-newq">' + lbl('جدید', 'New') + '</span>' : '') + '</span>'
       + '<span class="ql-z">' + (a[2] ? zoneHtml(a[2]) : '') + '</span></a>';
   }
   function rows() {
@@ -186,7 +189,8 @@
       + '<div class="npcl-f"><label for="ql-c">' + lbl('دسته (کلاس، حرفه …)', 'Category (class, profession …)') + '</label><select id="ql-c" class="npcl-in">' + copts + '</select></div>'
       + '<div class="npcl-f"><label for="ql-lo">' + lbl('از سطح', 'Level from') + '</label><input id="ql-lo" class="npcl-in" type="number" min="1" max="63" value="' + esc(S.lo) + '"></div>'
       + '<div class="npcl-f"><label for="ql-hi">' + lbl('تا سطح', 'to') + '</label><input id="ql-hi" class="npcl-in" type="number" min="1" max="63" value="' + esc(S.hi) + '"></div>'
-      + '<div class="npcl-f"><label for="ql-s">' + lbl('مرتب‌سازی', 'Sort') + '</label><select id="ql-s" class="npcl-in">' + sopts + '</select></div></div>'
+      + '<div class="npcl-f"><label for="ql-s">' + lbl('مرتب‌سازی', 'Sort') + '</label><select id="ql-s" class="npcl-in">' + sopts + '</select></div>'
+      + '<div class="npcl-f npcl-fchk"><label><input id="ql-fonly" type="checkbox"' + (S.fonly ? ' checked' : '') + '> ' + lbl('فقط Forever', 'Forever only') + '</label></div></div>'
       + '<div class="ql-chips">' + chips + '<button type="button" class="ql-chip ql-reset" data-act="reset">' + lbl('پاک کردن فیلترها', 'Reset') + '</button></div>'
       + '<p class="npcl-count" id="ql-cnt"></p><div id="ql-res" class="fex-secbd"></div></section></div>';
     sync();
@@ -206,10 +210,13 @@
       if (!e || !e[0]) return; /* untitled records are not listed */
       has = !!FT[k];
       if (has) nfa++;
-      arr.push([+k, e[0], e[1], e[2], has]);
+      /* issue #235: index tuples carry [name, zoneKey, reqLevel, forever, fnew];
+         an old 3-field index has no position 4 -> treat every quest as Forever (show everything) */
+      arr.push([+k, e[0], e[1], e[2], has, e.length > 3 ? !!e[3] : true, !!e[4]]);
       if (e[1]) { if (QC.isCat(e[1])) cats[e[1]] = 1; else zones[e[1]] = 1; }
     });
     S = readUrl();
+    S.fonly = true;
     S.all = arr;
     S.nfa = nfa;
     S.zones = Object.keys(zones).sort(function (a, b) { return zoneText(a) < zoneText(b) ? -1 : 1; });
@@ -255,6 +262,7 @@
     if (t.id === 'ql-z') { S.zone = t.value; if (S.zone && S.cat) { S.cat = ''; paint(); } update(); }
     else if (t.id === 'ql-c') { S.cat = t.value; if (S.cat && S.zone) { S.zone = ''; paint(); } update(); }
     else if (t.id === 'ql-s') { S.sort = t.value; update(); }
+    else if (t.id === 'ql-fonly') { S.fonly = t.checked; update(); }
   });
 
   Promise.all([opt(DB + 'zones-meta.json'), opt(DB + 'quest-index.json'), opt(I18N + 'quest-fa-titles.json')]).then(function (r) {
