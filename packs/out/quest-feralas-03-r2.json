@@ -1,0 +1,586 @@
+{
+ "pack": "quest-feralas-03-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-feralas-03-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Agnar Beastamer",
+   "fa": "آگنار رام‌کنندهٔ جانوران",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Zorbin's Ultra-Shrinker",
+   "fa": "کوچک‌کنندهٔ فراِ زوربین",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Zorbin Fandazzle",
+   "fa": "زوربین فندزل",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Water Elemental",
+   "fa": "عنصر آب",
+   "kind": "sp"
+  },
+  "E10": {
+   "en": "Camp Mojache Zukk'ash Report",
+   "fa": "گزارش زوک‌آش اردوگاه موجاچه",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Zilzibin Drumlore",
+   "fa": "زیلزیبین درام‌لور",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Camp Mojache",
+   "fa": "اردوگاه موجاچه",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Rage Scar Yeti",
+   "fa": "یتی زخم‌خشم",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Pratt McGrubben",
+   "fa": "پرت مک‌گروبن",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Feathermoon Stronghold",
+   "fa": "سنگر فیدرمون",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Feral",
+   "fa": "وحشی",
+   "kind": "cls"
+  },
+  "E23": {
+   "en": "Jangdor Swiftstrider",
+   "fa": "جنگدور تندگام",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Shay's Bell",
+   "fa": "زنگ شای",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Shay Leafrunner",
+   "fa": "شی برگ‌رو",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Rockbiter",
+   "fa": "سنگ‌گز",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Troyas' Stave",
+   "fa": "عصای ترویاس",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Equinex Monolith",
+   "fa": "سنگ یادبود اکوینکس",
+   "kind": "ob"
+  },
+  "E29": {
+   "en": "Stave of Equinex",
+   "fa": "عصای اِکوینکس",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "The Stave of Equinex",
+   "fa": "عصای اِکوینکس",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Troyas Moonbreeze",
+   "fa": "ترویاس نسیم ماه",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Talo Thornhoof",
+   "fa": "تالو سم‌خار",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Edana Hatetalon",
+   "fa": "ایدانا نفرت‌چنگ",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Dark Heart",
+   "fa": "قلب تاریک",
+   "kind": "qs"
+  },
+  "E41": {
+   "en": "Encrusted Minerals",
+   "fa": "کانی پوشیده",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Resilient Sinew",
+   "fa": "زردپی سرسخت",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Metallic Fragments",
+   "fa": "خردهٔ فلزی",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Witch Doctor Uzer'i",
+   "fa": "جادوپزشک اوزری",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "treant",
+   "fa": "ترنت",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Marvon Rivetseeker",
+   "fa": "مارون پرچ‌جو",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Sunken Temple",
+   "fa": "معبد غرق‌شده",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "Agnar Beastamer": "آگنار رام‌کنندهٔ جانوران",
+  "Zorbin's Ultra-Shrinker": "کوچک‌کنندهٔ فراِ زوربین",
+  "Feralas": "فرالاس",
+  "Zorbin Fandazzle": "زوربین فندزل",
+  "Water Elemental": "عنصر آب",
+  "Camp Mojache Zukk'ash Report": "گزارش زوک‌آش اردوگاه موجاچه",
+  "Zilzibin Drumlore": "زیلزیبین درام‌لور",
+  "Orgrimmar": "اورگریمار",
+  "Camp Mojache": "اردوگاه موجاچه",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Rage Scar Yeti": "یتی زخم‌خشم",
+  "Pratt McGrubben": "پرت مک‌گروبن",
+  "Feathermoon Stronghold": "سنگر فیدرمون",
+  "Feral": "وحشی",
+  "Jangdor Swiftstrider": "جنگدور تندگام",
+  "Shay's Bell": "زنگ شای",
+  "Shay Leafrunner": "شی برگ‌رو",
+  "Rockbiter": "سنگ‌گز",
+  "Troyas' Stave": "عصای ترویاس",
+  "Equinex Monolith": "سنگ یادبود اکوینکس",
+  "Stave of Equinex": "عصای اِکوینکس",
+  "The Stave of Equinex": "عصای اِکوینکس",
+  "Troyas Moonbreeze": "ترویاس نسیم ماه",
+  "Talo Thornhoof": "تالو سم‌خار",
+  "Edana Hatetalon": "ایدانا نفرت‌چنگ",
+  "Dark Heart": "قلب تاریک",
+  "Encrusted Minerals": "کانی پوشیده",
+  "Resilient Sinew": "زردپی سرسخت",
+  "Metallic Fragments": "خردهٔ فلزی",
+  "Witch Doctor Uzer'i": "جادوپزشک اوزری",
+  "treant": "ترنت",
+  "Marvon Rivetseeker": "مارون پرچ‌جو",
+  "Tanaris": "تاناریس",
+  "Sunken Temple": "معبد غرق‌شده",
+  "Felwood": "فل‌وود",
+  "Ashenvale": "اَشِن‌ویل",
+  "Travel": "سفر"
+ },
+ "tokens": {
+  "1": "$gdadda:momma;",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N"
+ },
+ "rows": {
+  "quest:4298:obj:0": "Speak to ⟦E1⟧ in the Hinterlands.",
+  "quest:4298:details:0": "Whoa, it was a lot more ready than I thought...",
+  "quest:4298:completion:0": "Here, take the egg... better you have it so it bonds to you and looks to you to be its ⟦1⟧.",
+  "quest:4298:completion:1": "Congrats, ⟦2⟧. You're a parent... kinda.",
+  "quest:7003:obj:0": "Use ⟦E3⟧ to zap any kind of giant found in ⟦E4⟧ into a more manageable form. Bring 15 Miniaturization Residues found on the zapped versions of these giants to ⟦E7⟧ at the docks of the Forgotten Coast, ⟦E4⟧.",
+  "quest:7003:details:0": "I'm going to have to do something about the giants if I stay out here! They're certainly not good for business, now are they?",
+  "quest:7003:details:1": "I've been working on a variant of a gnomish shrinking ray, but I'm using superior GOBLIN technological advances in its construction! In an effort to avoid inconveniences for myself such as death, I'd like for you to try it out on any of the giants in ⟦E4⟧. You should find miniaturization residue on them after you shrink them - bring me back some!",
+  "quest:7003:progress:0": "Miniaturization residue, I assure you, is a valuable commodity when it comes to engineering!  Well, it is valuable in that it helps me make sure the zapper won't do something as disappointing as explode on the user.⟦3⟧⟦4⟧Oh, I mean for the zappers other than the one I gave you.  Absolutely!",
+  "quest:7003:completion:0": "Splendifimous! Not only am I glad to see that you've returned with the residue, but also with all your major appendages intact! That is, well, there was never any danger in using the Ultra-Shrinker, now was there!",
+  "quest:7003:completion:1": "I do appreciate your effort on my behalf, ⟦5⟧. Truly, you are a friend to goblins everywhere. Accept this as a token of my appreciation!",
+  "quest:7721:obj:0": "Collect 10 ⟦E8⟧ Cores from the Sea Elementals and Sea Sprays along the Forgotten Coast of ⟦E4⟧, and bring them back to ⟦E7⟧ who is near the dock there.",
+  "quest:7721:details:0": "If I bet against my own better judgment and stay to run an engineering shop along the Forgotten Coast, I will need to deal with these pesky elementals. Curse the powers of elementalism unchecked, I say!",
+  "quest:7721:details:1": "Fortunately for me, and now for you my hopeful agent provocateur, the elementals represent an ideal source of raw power for my Ultra-Shrinker refinement - give them the what-for I say! When doing this though, be sure to save me the water elemental cores!",
+  "quest:7721:progress:0": "While I could bore you with the technical details of the utility behind elemental cores, I will instead tempt you to completion of this important task by offering valuable coin and prizes for doing so.  Yon verily, are you finished?",
+  "quest:7721:completion:0": "Scrumdillyriffic! These cores will keep me working for some time. Add to that the benefit of there now being fewer elementals along the coast, and I might no longer cry myself to sleep at the prospect of having set up shop in perhaps the worst place imaginable!",
+  "quest:7721:completion:1": "Thank you, ⟦6⟧, for your efforts on my behalf. While it certainly straps me financially to do this, allow me to show you some gratitude you may understand and appreciate... loot!",
+  "quest:7732:obj:0": "Deliver the ⟦E10⟧ to ⟦E11⟧. He resides in the Drag of ⟦E12⟧.",
+  "quest:7732:details:0": "You've done doubly well in addressing the threat that the Zukk'ash insects pose to ⟦E14⟧. The threat these things pose is far from over, and I'd like to ask you for one last task on behalf of the ⟦E15⟧.",
+  "quest:7732:details:1": "This is a document that details all the information we have learned about these Zukk'ash insects. I want you to deliver it to ⟦E11⟧ in the Drag of ⟦E12⟧. He's an expert on alien creatures like these; I hope he can do something with the lore we've obtained.",
+  "quest:7732:progress:0": "Greetings friend... you look as though you are on urgent business.  Is there something I can help you with?",
+  "quest:7732:completion:0": "Ah, I've been expecting this. These creatures you faced... they are an ancient threat that the ⟦E15⟧ continues to choose to ignore. Hadoken was wise to bring this - and you - to me.",
+  "quest:7732:completion:1": "The Zukk'ash are nothing more than creatures called the silithid. Some would think that they are a mindless nuisance, but let me assure you - they are a far, far worse threat than anything the ⟦E16⟧ could muster.",
+  "quest:7732:completion:2": "If you're willing and strong enough, I could use your aid in bringing this threat to light.",
+  "quest:7733:obj:0": "Bring 10 ⟦E17⟧ Hides to ⟦E18⟧ at ⟦E19⟧, ⟦E4⟧.",
+  "quest:7733:details:0": "I have a lead on an even BETTER source of hides, if that's even possible to believe! In the northern parts of ⟦E4⟧ - deep within Rage Scar Hold - are another throng of yetis. They're much tougher than the ones you dealt with before, so if you're up for a bigger challenge you'd best be on your toes!",
+  "quest:7733:details:1": "I would reward you handsomely for a stack of ten of their hides; bring them to me here, and we'll finish our business.",
+  "quest:7733:progress:0": "If these Rage Scar yeti hides are anything like the quality displayed by their ⟦E22⟧ Scar counterparts, they could very well be as resilient as thorium!⟦7⟧⟦8⟧Imagine that!",
+  "quest:7733:completion:0": "Excellent, excellent! These are going to work out incredibly well - I can already tell that they're going to be much harder when properly cured.",
+  "quest:7733:completion:1": "Thanks again for your help ⟦9⟧. Here - please take one of my latest creations.",
+  "quest:7734:obj:0": "Bring 10 ⟦E17⟧ Hides to ⟦E23⟧ at ⟦E14⟧, ⟦E4⟧.",
+  "quest:7734:details:0": "I have a lead on an even BETTER source of hides, if that's even possible to believe! In the northern parts of ⟦E4⟧ - deep within Rage Scar Hold - are another throng of yetis. They're much tougher than the ones you dealt with before, so if you're up for a bigger challenge you'd best be on your toes!",
+  "quest:7734:details:1": "I would reward you handsomely for a stack of ten of their hides; bring them to me here, and we'll finish our business.",
+  "quest:7734:progress:0": "If these Rage Scar yeti hides are anything like the quality displayed by their ⟦E22⟧ Scar counterparts, they could very well be as resilient as thorium!⟦10⟧⟦11⟧Imagine that!",
+  "quest:7734:completion:0": "Excellent, excellent! These are going to work out incredibly well - I can already tell that they're going to be much harder when properly cured.",
+  "quest:7734:completion:1": "Thanks again for your aid, ⟦12⟧. Here - please take one of my latest creations.",
+  "quest:2844:obj:0": "Locate the lost night elf girl.",
+  "quest:2844:details:0": "I am no good, ⟦13⟧. I was 'spose to be watchin' over my little friend, Shay, and somehow, she got away from me. I'm not all that sure what happened, really, but last time I saw her, we was walkin' through the ruins just north of here.",
+  "quest:2844:details:1": "Everythin' was goin' fine, but then I turned around, and... she was gone.",
+  "quest:2844:details:2": "Now I jus can't quite figure out what I should do here. Got any ideas, ⟦14⟧? I'm awful worried.",
+  "quest:2844:details:3": "Hey, how 'bout you go look fer Shay? Yer legs can travel much faster 'n mine.",
+  "quest:2844:completion:0": "Oh, I am so glad you found me! I must admit, I am a bit lost... But isn't this a beautiful place?",
+  "quest:2845:obj:0": "Pick up ⟦E24⟧ from the chest.",
+  "quest:2845:obj:1": "Escort ⟦E25⟧ to ⟦E26⟧'s camp.",
+  "quest:2845:details:0": "Do you think you could help me find my way back to my friend, ⟦E26⟧? He was supposed to be watching me... But I do have a tendency to wander off now and then. There are just so many things to see, and I get so distracted.",
+  "quest:2845:details:1": "There is one thing that will always work to get my attention, though.",
+  "quest:2845:details:2": "Inside this chest, you'll find a bell that is very precious to me. I just love the sound of it. You have my word, if I wander off, all you have to do is ring it and I'll come running back.",
+  "quest:2845:progress:0": "I was gettin' worried 'bout ya! Thank you so much for bringin' Shay home, ⟦15⟧.",
+  "quest:2845:completion:0": "What? You say dis bell will work when Shay runs off? Well, how 'bout that!",
+  "quest:2845:completion:1": "Since you did so much fer me, here ya go, ⟦16⟧.",
+  "quest:2879:obj:0": "Energize ⟦E27⟧ and find the ⟦E28⟧.",
+  "quest:2879:details:0": "This stave might be the ⟦E29⟧! ⟦E30⟧ is actually a key, used to unlock the ⟦E28⟧ in the Ruins of Ravenwind, on the mainland west of the Dream Bough.",
+  "quest:2879:details:1": "Find the four flames that still burn in those ruins: Samha, Imbel, Byltan, and Lahassa. Retrieve their essence and then while standing by the ⟦E28⟧, use the essences to energize the stave. If this is truly is the ⟦E29⟧, you will be able to unlock the Monolith and gather a sacred artifact from it.",
+  "quest:2879:progress:0": "The ⟦E28⟧ stands silently among the ruins. What could it be holding?",
+  "quest:2879:completion:0": "Holding the energized stave is almost impossible. Its power rumbles through your body.",
+  "quest:2879:completion:1": "You reach out to the cold surface of the ⟦E28⟧...",
+  "quest:2879:completion:2": "BA small door opens, allowing you to reach in and take the artifact inside.",
+  "quest:2879:completion:3": "Beams of light fill the area around the ⟦E28⟧.",
+  "quest:2942:obj:0": "Return the Sparkling Stone and the ⟦E29⟧ to ⟦E31⟧ in ⟦E19⟧.",
+  "quest:2942:details:0": "The moment the artifact is removed from the Monolith, you feel the energy in the ⟦E29⟧ begin to fade.",
+  "quest:2942:progress:0": "I am glad you have returned, ⟦17⟧. I am eager to hear of your findings.",
+  "quest:2942:completion:0": "I have been reading since you left, ⟦18⟧. This stone you have found is called the Morrow Stone. While I am not entirely sure what its purpose is yet, you can be sure that it is something of great significance to be hidden away inside the ⟦E28⟧ the way it was.",
+  "quest:2942:completion:1": "I will continue my studies, and I hope I will be able to count on you in the future, ⟦19⟧. Thank you for all your help.",
+  "quest:3062:obj:0": "⟦E32⟧ in ⟦E14⟧ wants ⟦E33⟧'s ⟦E34⟧.",
+  "quest:3062:details:0": "⟦E33⟧ is the queen of the Northspring harpies that reside in the ruins to the west. She is pure evil; I have heard that her heart is one of crystal. She is void of any emotion aside from the hate she feels towards all others. You must face Edana and bring me back her dark heart.",
+  "quest:3062:details:1": "I have heard of a horn that harpies carry -- blowing it by the Hatetalon stones, in the northern part of the ruins, will summon the queen.",
+  "quest:3062:details:2": "Imagine her surprise when it is not her kin calling her, but her death.",
+  "quest:3062:progress:0": "The hate that Edana spreads across the land must be stopped.",
+  "quest:3062:completion:0": "Now I know that Edana is truly dead. This heart; I will keep it in memory of what did here for me, ⟦20⟧. Thank you.",
+  "quest:3063:obj:0": "⟦E32⟧ wants you to kill 4 Northspring Harpies, 4 Northspring Roguefeathers, 4 Northspring Windcallers, and 4 Northspring Slayers.",
+  "quest:3063:details:0": "In my day, I was a seasoned hunter. There wasn't any creature around that I feared. Until...",
+  "quest:3063:details:1": "I was out in the forest, sharpening my blade after a tough battle, when I was ambushed. Harpies surrounded me, and I barely managed to drag myself to safety.",
+  "quest:3063:details:2": "Even now, I can still hear their cries echoing...",
+  "quest:3063:details:3": "I was never the same after that. But the hate boils inside of me -- I must get even, after all these years.",
+  "quest:3063:details:4": "The Northspring harpies can be found to the west of here. ⟦21⟧, get my revenge.",
+  "quest:3063:progress:0": "The wings of the Northspring harpies are black as the night; do not take your eyes off of them, lest they disappear into darkness.",
+  "quest:3063:completion:0": "Thank you, ⟦22⟧. You have put an old tauren's mind at peace.",
+  "quest:3126:obj:0": "Kill 3 Wandering Forest Walkers. Use the Muisek Vessel to shrink and capture the fallen Treants.",
+  "quest:3126:details:0": "The wandering forest walkers that can be found meandering through the forest are our next target, ⟦23⟧. Night elves have enlisted treants as allies to fight against the horde. Their movement may be slow, but their role as protectors is undeniable.",
+  "quest:3126:details:1": "Soon we will be able to use this power for our own benefit.",
+  "quest:3126:details:2": "Find 3 wandering forest walkers; kill them, and use the muisek vessel to shrink and capture them.",
+  "quest:3126:progress:0": "Were you able to capture the wandering forest walkers?",
+  "quest:3126:completion:0": "Thank you, ⟦24⟧. Our muisek collection is almost complete.",
+  "quest:3127:obj:0": "Kill 7 Land Walkers or Cliff Giants. Use the Muisek Vessel to shrink and capture the fallen Mountain Giants.",
+  "quest:3127:details:0": "The last task I will require of you is to travel to the northwest and find the final enemy.",
+  "quest:3127:details:1": "The mountain giants left the mountains to aid the night elves when the burning legion appeared in the world. You will know them by their massive size and the way the ground begins to shake as you travel along their rocky terrain.",
+  "quest:3127:details:2": "I am eager to harness power of that size. Kill 7 mountain giants, then use the muisek vessel to capture their powerful muisek.",
+  "quest:3127:progress:0": "Were you able to capture the mountain giants?",
+  "quest:3127:completion:0": "Just imagine the possibilities of what we now possess, ⟦25⟧. Along with the materials that you have collected, I will be able to forever trap the muisek of these creatures into whatever I wish.",
+  "quest:3128:obj:0": "Bring 2 Splintered Logs, 6 ⟦E41⟧, 20 pieces of ⟦E42⟧, and 40 ⟦E43⟧ to ⟦E44⟧ in ⟦E14⟧.",
+  "quest:3128:details:0": "I will need certain materials to complete my endeavor... You may do this alongside the other tasks I will give you.",
+  "quest:3128:details:1": "I'll need a splintered log from a ⟦E45⟧ of ⟦E4⟧. Encrusted minerals, these can be found on the mountain giants and faerie dragons to the west. Also, find me some resilient sinew from the owlbeasts of the Hinterlands or hippogryphs of ⟦E4⟧. Finally, I'll need a large amount of metallic fragments from any of these creatures I mentioned.",
+  "quest:3128:progress:0": "Were you able to collect the materials I need?",
+  "quest:3128:completion:0": "Excellent! These materials, combined with the muisek, should yield just the results we've been wanting.",
+  "quest:3129:obj:0": "⟦E44⟧ wants you to wait for a moment while he prepares the weapons.",
+  "quest:3129:details:0": "Imbuing the muisek into the weapons is a difficult process. Now that I have all of the required materials and the muisek of the creatures that you captured, I may begin. Please wait; I will return in a moment.",
+  "quest:3129:completion:0": "As promised, you have your choice, ⟦26⟧. The muisek of the creatures has been forever sealed into the power of these weapons.",
+  "quest:3129:completion:1": "You may now wield their energy as your own. Use it well.",
+  "quest:3445:obj:0": "Find ⟦E46⟧ in ⟦E47⟧.",
+  "quest:3445:details:0": "I have heard of a place that lies deep below the surface of the earth -- banished there by powers greater than I have ever seen.",
+  "quest:3445:details:1": "If you wish to learn more of this place; the ⟦E48⟧, seek out a goblin named ⟦E46⟧. Much like Troyas and I, he has studied many ancient areas of the world. He was last known to have left his home in Ratchet to study the troll ruins in ⟦E47⟧.",
+  "quest:3445:details:2": "Good luck finding him; he hasn't been heard from in some time.",
+  "quest:3445:completion:0": "Yes, the ⟦E48⟧, I can say that I have seen it with my own eyes. Perhaps you'd like to hear more about it?",
+  "quest:3445:completion:1": "You look like the adventurous type -- I know things that may intrigue you...",
+  "quest:4120:obj:0": "⟦E32⟧ at ⟦E14⟧ in ⟦E4⟧ wants you to kill 12 Angerclaw Grizzlies and 12 Felpaw Ravagers in ⟦E49⟧.",
+  "quest:4120:details:0": "Being a hunter, I strive to emulate the strengths I see in my opponents. It is possible to turn the battle in your favor by simply knowing your enemy well, ⟦27⟧.",
+  "quest:4120:details:1": "In a place called ⟦E49⟧, north of ⟦E50⟧, the creatures have been tainted by a substance called fel. The bears and wolves have been driven mad by it, but I believe that they have also grown even stronger as well.",
+  "quest:4120:details:2": "Go, ⟦28⟧. ⟦E51⟧ to ⟦E49⟧ and face these beasts. Learn for yourself if they are truly as strong as I believe.",
+  "quest:4120:progress:0": "Everything touched by the fel emanates a strange green glow... I sense it is evil, but at the same time, very powerful.",
+  "quest:4120:completion:0": "It sounds from your descriptions as if the creatures show a mindless ferocity...",
+  "quest:4120:completion:1": "Stay alert, ⟦29⟧. It would be in your best interest to learn more of the corruption. Always know your enemy."
+ },
+ "context": {
+  "quest:4298": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Agnar Beastamer («آگنار رام‌کنندهٔ جانوران»)",
+   "turner": "Agnar Beastamer («آگنار رام‌کنندهٔ جانوران»)"
+  },
+  "quest:7003": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "",
+   "giver": "Zorbin Fandazzle («زوربین فندزل»)",
+   "turner": "Zorbin Fandazzle («زوربین فندزل»)"
+  },
+  "quest:7721": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "",
+   "giver": "Zorbin Fandazzle («زوربین فندزل»)",
+   "turner": "Zorbin Fandazzle («زوربین فندزل»)"
+  },
+  "quest:7732": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "horde",
+   "giver": "Hadoken Swiftstrider («هادوکن تندگام»)",
+   "turner": "Zilzibin Drumlore («زیلزیبین درام‌لور»)"
+  },
+  "quest:7733": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Pratt McGrubben («پرت مک‌گروبن»)",
+   "turner": "Pratt McGrubben («پرت مک‌گروبن»)"
+  },
+  "quest:7734": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 48,
+   "side": "horde",
+   "giver": "Jangdor Swiftstrider («جنگدور تندگام»)",
+   "turner": "Jangdor Swiftstrider («جنگدور تندگام»)"
+  },
+  "quest:2844": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 49,
+   "side": "alliance",
+   "giver": "Rockbiter («سنگ‌گز»)",
+   "turner": "Shay Leafrunner («شی برگ‌رو»)"
+  },
+  "quest:2845": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 49,
+   "side": "alliance",
+   "giver": "Shay Leafrunner («شی برگ‌رو»)",
+   "turner": "Rockbiter («سنگ‌گز»)"
+  },
+  "quest:2879": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Troyas Moonbreeze («ترویاس نسیم ماه»)",
+   "turner": "Equinex Monolith («سنگ یادبود اکوینکس»)"
+  },
+  "quest:2942": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Equinex Monolith («سنگ یادبود اکوینکس»)",
+   "turner": "Troyas Moonbreeze («ترویاس نسیم ماه»)"
+  },
+  "quest:3062": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "horde",
+   "giver": "Talo Thornhoof («تالو سم‌خار»)",
+   "turner": "Talo Thornhoof («تالو سم‌خار»)"
+  },
+  "quest:3063": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "horde",
+   "giver": "Talo Thornhoof («تالو سم‌خار»)",
+   "turner": "Talo Thornhoof («تالو سم‌خار»)"
+  },
+  "quest:3126": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i («جادوپزشک اوزری»)",
+   "turner": "Witch Doctor Uzer'i («جادوپزشک اوزری»)"
+  },
+  "quest:3127": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i («جادوپزشک اوزری»)",
+   "turner": "Witch Doctor Uzer'i («جادوپزشک اوزری»)"
+  },
+  "quest:3128": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i («جادوپزشک اوزری»)",
+   "turner": "Witch Doctor Uzer'i («جادوپزشک اوزری»)"
+  },
+  "quest:3129": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 50,
+   "side": "horde",
+   "giver": "Witch Doctor Uzer'i («جادوپزشک اوزری»)",
+   "turner": "Witch Doctor Uzer'i («جادوپزشک اوزری»)"
+  },
+  "quest:3445": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 51,
+   "side": "alliance",
+   "giver": "Angelas Moonbreeze («آنجلاس نسیم‌ماه»)",
+   "turner": "Marvon Rivetseeker («مارون پرچ‌جو»)"
+  },
+  "quest:4120": {
+   "zone_en": "Feralas",
+   "zone_fa": "فرالاس",
+   "level": 52,
+   "side": "horde",
+   "giver": "Talo Thornhoof («تالو سم‌خار»)",
+   "turner": "Talo Thornhoof («تالو سم‌خار»)"
+  }
+ },
+ "known": {
+  "quest:4298": {
+   "title": "والد شدن"
+  },
+  "quest:7003": {
+   "title": "غول‌های برق‌زده"
+  },
+  "quest:7721": {
+   "title": "سوخت زدن"
+  },
+  "quest:7732": {
+   "title": "گزارش زوک‌آش"
+  },
+  "quest:7733": {
+   "title": "کیفیت بهتر"
+  },
+  "quest:7734": {
+   "title": "کیفیت بهتر"
+  },
+  "quest:2844": {
+   "title": "نگهبان غول‌پیکر"
+  },
+  "quest:2845": {
+   "title": "شای سرگردان"
+  },
+  "quest:2879": {
+   "title": "عصای اِکوینکس"
+  },
+  "quest:2942": {
+   "title": "سنگ فردا"
+  },
+  "quest:3062": {
+   "title": "قلب تاریک"
+  },
+  "quest:3063": {
+   "title": "انتقام از نورث‌اسپرینگ"
+  },
+  "quest:3126": {
+   "title": "موسیک درخت‌مرد"
+  },
+  "quest:3127": {
+   "title": "موسیک غول کوه"
+  },
+  "quest:3128": {
+   "title": "مواد طبیعی"
+  },
+  "quest:3129": {
+   "title": "سلاح‌های روح"
+  },
+  "quest:3445": {
+   "title": "معمد فرورفته"
+  },
+  "quest:4120": {
+   "title": "قدرت فساد"
+  }
+ }
+}

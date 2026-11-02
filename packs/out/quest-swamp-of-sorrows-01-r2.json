@@ -1,0 +1,718 @@
+{
+ "pack": "quest-swamp-of-sorrows-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-swamp-of-sorrows-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Lost Supplies",
+   "fa": "آذوقهٔ گم‌شده",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Quartermaster Lungertz",
+   "fa": "تدارکات‌چی لونگرتز",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Magtoor",
+   "fa": "مگتور",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Neeka Bloodscar",
+   "fa": "نیکا بلاداسکار",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E12": {
+   "en": "Wizards' Reagents",
+   "fa": "ماده‌های جادویی جادوگران",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Watcher Biggs",
+   "fa": "دیده‌بان بیگز",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "Dream Dust",
+   "fa": "غبار رؤیا",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Krazek",
+   "fa": "کرازک",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Noboru's Cudgel",
+   "fa": "چماقِ نوبورو",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Tok'Kar",
+   "fa": "توککار",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Dar",
+   "fa": "دار",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Sawtooth Snapper",
+   "fa": "گازگیر دندانه‌اره‌ای",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Sundried Driftwood",
+   "fa": "چوب شناور آفتاب‌خشک",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Shipment to Nethergarde",
+   "fa": "محموله برای ندرگارد",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Fel'zerul",
+   "fa": "فل‌زرول",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "The Temple of Atal'Hakkar",
+   "fa": "معبد آتال‌هاکار",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Pool of Tears",
+   "fa": "برکهٔ اشک",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Marsh Inkspewer",
+   "fa": "جوهرپاش مرداب",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Marsh Flesheater",
+   "fa": "گوشت‌خوار مرداب",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Katar",
+   "fa": "کاتار",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Bundle of Atal'ai Artifacts",
+   "fa": "بستهٔ دست‌ساخته‌های آتال‌آی",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Atal'ai Exile",
+   "fa": "تبعیدی آتال‌آی",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Jammal'an the Prophet",
+   "fa": "جمالان پیشگو",
+   "kind": "qs"
+  },
+  "E36": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E37": {
+   "en": "Monstrous Crawler",
+   "fa": "خزندهٔ غول‌آسا",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Bengor",
+   "fa": "بنگور",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Warchief's Orders",
+   "fa": "فرمان‌های وارچیف",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Fallen Hero of the Horde",
+   "fa": "قهرمان سقوط‌کردهٔ هورد",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Swamp Talker",
+   "fa": "سخنگوی باتلاق",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Oathstone of Ysera's Dragonflight",
+   "fa": "سنگ‌سوگندِ رستهٔ اژدهای یسرا",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Chained Essence of Eranikus",
+   "fa": "جوهر زنجیرشدهٔ ارانیکوس",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Itharius",
+   "fa": "ایتاریوس",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Ysera",
+   "fa": "یسرا",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Umbranse the Spiritspeaker",
+   "fa": "آمبرنس، سخنگوی ارواح",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Lost Supplies": "آذوقهٔ گم‌شده",
+  "Quartermaster Lungertz": "تدارکات‌چی لونگرتز",
+  "Magtoor": "مگتور",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Azeroth": "آزروت",
+  "Neeka Bloodscar": "نیکا بلاداسکار",
+  "Badlands": "بیابان",
+  "Alliance": "اتحاد",
+  "Loch Modan": "لوک مودان",
+  "Travel": "سفر",
+  "Wizards' Reagents": "ماده‌های جادویی جادوگران",
+  "Watcher Biggs": "دیده‌بان بیگز",
+  "Blasted Lands": "اراضی ویران",
+  "Dream Dust": "غبار رؤیا",
+  "Krazek": "کرازک",
+  "Booty Bay": "خلیج غنیمت",
+  "Noboru's Cudgel": "چماقِ نوبورو",
+  "Tok'Kar": "توککار",
+  "Dar": "دار",
+  "Sawtooth Snapper": "گازگیر دندانه‌اره‌ای",
+  "Sundried Driftwood": "چوب شناور آفتاب‌خشک",
+  "Shipment to Nethergarde": "محموله برای ندرگارد",
+  "Fel'zerul": "فل‌زرول",
+  "The Temple of Atal'Hakkar": "معبد آتال‌هاکار",
+  "Pool of Tears": "برکهٔ اشک",
+  "Horde": "هورد",
+  "Marsh Inkspewer": "جوهرپاش مرداب",
+  "Marsh Flesheater": "گوشت‌خوار مرداب",
+  "Katar": "کاتار",
+  "Bundle of Atal'ai Artifacts": "بستهٔ دست‌ساخته‌های آتال‌آی",
+  "Atal'ai Exile": "تبعیدی آتال‌آی",
+  "Jammal'an the Prophet": "جمالان پیشگو",
+  "Blood": "خون",
+  "Monstrous Crawler": "خزندهٔ غول‌آسا",
+  "Orgrimmar": "اورگریمار",
+  "Bengor": "بنگور",
+  "Warchief's Orders": "فرمان‌های وارچیف",
+  "Fallen Hero of the Horde": "قهرمان سقوط‌کردهٔ هورد",
+  "Swamp Talker": "سخنگوی باتلاق",
+  "Oathstone of Ysera's Dragonflight": "سنگ‌سوگندِ رستهٔ اژدهای یسرا",
+  "Chained Essence of Eranikus": "جوهر زنجیرشدهٔ ارانیکوس",
+  "Itharius": "ایتاریوس",
+  "Ysera": "یسرا",
+  "Winterspring": "وینتراسپرینگ",
+  "Umbranse the Spiritspeaker": "آمبرنس، سخنگوی ارواح"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$C",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$C",
+  "27": "$c",
+  "28": "$N",
+  "29": "$N",
+  "30": "$C",
+  "31": "$C",
+  "32": "$N",
+  "33": "$N",
+  "34": "$B",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N"
+ },
+ "rows": {
+  "quest:1423:title": "The ⟦E1⟧",
+  "quest:1423:desc:0": "Bring the ⟦E1⟧ to ⟦E2⟧.",
+  "quest:1423:obj:0": "Bring the ⟦E1⟧ to ⟦E2⟧.",
+  "quest:1423:details:0": "Bring the ⟦E1⟧ to ⟦E2⟧.",
+  "quest:1423:progress:0": "You have something for me?",
+  "quest:1423:completion:0": "Ah, thank you ⟦1⟧! So many supplies are lost from Darkshire to here. It's good to see that some are recovered.",
+  "quest:1389:obj:0": "Bring 6 Draenethyst crystals to ⟦E3⟧ at The Harborage in the ⟦E4⟧.",
+  "quest:1389:details:0": "The lost ones who live in the Fallow Sanctuary look as we look, but they are monsters... driven mad by the rigors of our journey to ⟦E5⟧. Once our brethren, they now live in the Fallow Sanctuary to the east, catching or killing any who wander near.",
+  "quest:1389:details:1": "And they have stolen something sacred to us--draenethyst crystals.",
+  "quest:1389:details:2": "We lack the force to enter the Fallow Sanctuary and reclaim our stolen draenethyst from among their huts and campfires, but without those crystals... we too may lose our way.",
+  "quest:1389:progress:0": "Do you have the crystals?",
+  "quest:1389:completion:0": "Thank you, ⟦2⟧. We, are in your debt.",
+  "quest:1418:obj:0": "Speak with ⟦E6⟧.",
+  "quest:1418:details:0": "The ⟦E7⟧ is harsh and lies close to the ⟦E8⟧-held land of ⟦E9⟧, so communication between Stonard and the ⟦E7⟧ outpost of Kargath is often cut.",
+  "quest:1418:details:1": "Prove yourself, ⟦3⟧. ⟦E10⟧ to the ⟦E7⟧ and speak with ⟦E6⟧, head scout of the Kargath outpost. Speak with her, and then send her report back to me.",
+  "quest:1418:completion:0": "Helgrum wants a report, eh? I sent an outrunner to Stonard not three days past. Did he fail his mission? If Stonard does not have my report, then it appears he did fail.",
+  "quest:1418:completion:1": "Let's hope the next runner I send has more skill, or more luck.",
+  "quest:1421:obj:0": "Find the Caravan Chest in the Fallow Sanctuary, obtain the ⟦E12⟧ and bring to ⟦E13⟧.",
+  "quest:1421:details:0": "I was stunned during the attack by the Lost Ones, but before my sight went black I spied one of our wagons being dragged to the Fallow Sanctuary, the lost one village to the north.",
+  "quest:1421:details:1": "BA caravan chest with valuable reagents was in that wagon, reagents vital to the studies of the wizards of Nethergarde Keep. Find the chest and get those reagents, ⟦4⟧. Get them and bring them to me.",
+  "quest:1421:progress:0": "Do you have the wizard's reagents, ⟦5⟧?",
+  "quest:1421:completion:0": "Ah, you found them! With these, the wizards in Nethergarde may continue their work. I do not know what it is that they do, but it is linked to the Dark Portal in the ⟦E14⟧, and is vital to the security of the ⟦E8⟧.",
+  "quest:1116:obj:0": "Bring 10 Specks of ⟦E15⟧ to ⟦E16⟧ in ⟦E17⟧. ⟦E15⟧ is gathered from the dragon whelps of the ⟦E4⟧.",
+  "quest:1116:details:0": "Getting the information on Nazz is quite a favor, ⟦6⟧. Yes, quite a favor. But you've come all the way from the Shimmering Flats to get it... are you willing to travel some more?",
+  "quest:1116:details:1": "While I contact my sources, why don't you gather something for me, eh?",
+  "quest:1116:details:2": "Hm... what will it be? How about dream dust, from the dragon whelps of the ⟦E4⟧. Yes, I'd love some dream dust for my snuff pouch!",
+  "quest:1116:details:3": "Get it for me, ⟦7⟧, and I'll give you the information you seek.",
+  "quest:1116:progress:0": "Back so soon? Do you have my dream dust?",
+  "quest:1116:completion:0": "Well, look at that. You found the dream dust!",
+  "quest:1116:completion:1": "And how did you like the swamp, ⟦8⟧? It's not easy to get a hot meal there, is it?",
+  "quest:1396:obj:0": "Kill 8 Young Sawtooth Crocolisks, 10 Sorrow Spinners and 10 Swamp Jaguars then return to ⟦E13⟧ in the ⟦E4⟧.",
+  "quest:1396:details:0": "My caravan was destined for the eastern coast, but we did not reach our goal. Lost Ones attacked us, killing guards and dashing supplies.",
+  "quest:1396:details:1": "I alone survived their assault. I have sworn to protect what supplies remain, but wild creatures skulk near. Please, help me defend my camp from the beasts!",
+  "quest:1396:progress:0": "The swamp creatures press close, ⟦9⟧. Please, you must defend the camp!",
+  "quest:1396:completion:0": "The sounds of animals are now faint, more distant. Thank you, ⟦10⟧. Now let's hope they don't return!",
+  "quest:1393:obj:0": "Escort Galen out of danger, then find his camp in the ⟦E4⟧ and open his strongbox.",
+  "quest:1393:details:0": "Please help! These creatures are going to eat me!",
+  "quest:1393:details:1": "Help me out of here, and I'll give you a great treasure! It's in my camp in the swamp north of Stonard, but it's locked in a strongbox that can be opened through a trick that only I know.",
+  "quest:1393:details:2": "If you help me escape, then I'll teach it to you.",
+  "quest:1393:progress:0": "The keyhole of this strongbox is filled with black resin.  It is impossible to open.",
+  "quest:1393:completion:0": "The keyhole of this strongbox is filled with black resin. It is impossible to open.",
+  "quest:1393:completion:1": "But Galen told you of a hidden latch on the box's bottom...",
+  "quest:1393:completion:2": "B...After a quick search the latch is found. The latch is flipped, and the strongbox opens...",
+  "quest:1392:obj:0": "Bring ⟦E19⟧ to the leader of The Harborage in the ⟦E4⟧.",
+  "quest:1392:details:0": "Noboru has plagued the Draenei of the Harborage for months, and his cudgel is a symbol of the brutality they have suffered at the hands of the lost ones.",
+  "quest:1392:progress:0": "Greetings. And welcome to the Harborage.",
+  "quest:1392:completion:0": "You have gained the weapon of the dreaded Noboru? Is he then dead?",
+  "quest:1392:completion:1": "This is a joyous day for the Harborage. Noboru and his gang were a terror to us, wandering the swamps and killing any Draenei who crossed his path. He was a direct threat to our survival, and we did not have the strength to face him.",
+  "quest:1392:completion:2": "We are fortunate to have a friend in you, ⟦11⟧.",
+  "quest:698:obj:0": "Bring 8 Unprepared Sawtooth Flanks to ⟦E21⟧ in ⟦E4⟧.",
+  "quest:698:details:0": "I'm working on getting some supplies together for our outpost near the beach to the east--Tok'kar does what he can, but between shifts of guard duty and cooking for his soldiers there's not much time left in the day.",
+  "quest:698:details:1": "They do enjoy cooking up some sawtooth meat when they can, but I haven't had time to get them another shipment. Would you mind helping them out?",
+  "quest:698:details:2": "The young sawtooths aren't as tasty as the older ones, so stay clear of those; give them a year or two to get to full size.",
+  "quest:698:progress:0": "Lok'tar, ⟦12⟧. Traveling through the swamps isn't a risk taken lightly. You're brave to test your mettle here.",
+  "quest:698:completion:0": "Ah! Wonderful. Fresh meat for the fire tonight. Thank you, ⟦13⟧.",
+  "quest:698:completion:1": "You've helped make the coming nights more tolerable. The fire burns bright, and our stomachs will be full.",
+  "quest:698:completion:2": "Its a pleasant surprise to have you bring us a shipment; ⟦E22⟧'s not the most attractive orc anyone's laid eyes upon, but at least his attitude reeks far less than his smell.",
+  "quest:699:obj:0": "Bring 6 ⟦E23⟧ Claws to ⟦E21⟧ in the ⟦E4⟧.",
+  "quest:699:details:0": "With the threat of murlocs along the coast, we're stationed out here to protect--or warn if the force is too large--of any coming threats to Stonard. It doesn't give us much time for relaxation, and we could use some more help if you're able.",
+  "quest:699:details:1": "The sawtooth snappers' claws make for fine weapons when properly prepared. Bring me some of their claws and I'll see you're rewarded with one of our weapons in thanks for the fresh meat and the good company.",
+  "quest:699:progress:0": "Good mead, a warm fire, an army of orcs and an arsenal of weapons... that's all we really need out here along the coast. I don't regret my position out here safeguarding Stonard, but it would be nice if we could one day get a burrow, or at least a tower.",
+  "quest:699:completion:0": "Glad to see you're alive and well, ⟦14⟧.",
+  "quest:699:completion:1": "These claws should make do nicely. The more weapons we have at the ready for attacks against us, the better off we'll be.",
+  "quest:699:completion:2": "I'll get started on your weapon as soon as possible. It will only take a short time. I've become quite adept and quick at their production.",
+  "quest:1398:obj:0": "Bring 8 pieces of ⟦E24⟧ to ⟦E13⟧ in the ⟦E4⟧.",
+  "quest:1398:details:0": "I owe you greatly, ⟦15⟧. An honorable heart beats within you. And now I have another task for which I humbly ask your aid.",
+  "quest:1398:details:1": "If I'm ever to reach Nethergarde, then I must fix this wagon. And for that... I will need wood. Strong, dry wood--not the spongy, tangled wood of the swamp's trees.",
+  "quest:1398:details:2": "B⟦16⟧, go east to the coast and search for driftwood that has been dried by the sun. Bring it to me.",
+  "quest:1398:progress:0": "Did you find any driftwood, ⟦17⟧?",
+  "quest:1398:completion:0": "This wood is light, but tough. Thank you, ⟦18⟧. It will work nicely.",
+  "quest:1425:obj:0": "Bring the ⟦E25⟧ to ⟦E2⟧ in Nethergarde Keep.",
+  "quest:1425:details:0": "While I fix this wagon, ⟦19⟧, I have one last task for you.",
+  "quest:1425:details:1": "I have packed the most vital supplies saved from the ogre attacks. Take them to Nethergarde Keep. The keep is nestled in the northern hills of the ⟦E14⟧, keeping watch over the Dark Portal.",
+  "quest:1425:details:2": "To reach Nethergard, follow the road east. When it branches head south into the ⟦E14⟧, then turn left at the next fork. Follow the road, ⟦20⟧, and be wary.",
+  "quest:1425:progress:0": "You have business with me?",
+  "quest:1425:completion:0": "What? A package from Biggs' caravan? We thought it, and he, were lost.",
+  "quest:1425:completion:1": "Thank you, ⟦21⟧. With luck, these supplies will carry the much needed reagent, Azoran Crystals. Our stock is running low...",
+  "quest:1424:obj:0": "⟦E26⟧ in Stonard wants you to gather 10 Atal'ai Artifacts.",
+  "quest:1424:details:0": "The Warchief sent us to investigate strange happenings at ⟦E27⟧.",
+  "quest:1424:details:1": "The Atal'ai trolls are a tribe of dark casters, known for practicing forbidden magic. You can imagine how astonished we were when we arrived here to discover the temple had been sunk.",
+  "quest:1424:details:2": "The green dragons now guard the site, claiming to be protectors of ⟦E5⟧.",
+  "quest:1424:details:3": "We need to discover what happened. Explore around the ⟦E28⟧ and gather Atal'ai artifacts. From those I can begin to piece together this puzzle.",
+  "quest:1424:progress:0": "No one knows what dark practices went on inside ⟦E27⟧. But we do know that great and powerful forces of magic were used.⟦22⟧⟦23⟧We must learn as much as we can about such magic. Perhaps the spells of the Atal'ai will prove of use to the ⟦E29⟧.⟦24⟧⟦25⟧Once you have gathered enough Atal'ai artifacts from around the ⟦E28⟧, I can begin to understand what the trolls were hoping to accomplish and what went so horribly wrong.",
+  "quest:1424:completion:0": "Your diligence in collecting the Atal'ai artifacts is worthy of praise, ⟦26⟧.",
+  "quest:1426:obj:0": "Kill 10 Marsh Murlocs, 10 ⟦E30⟧, and 10 ⟦E31⟧, then return to ⟦E32⟧ in the ⟦E4⟧.",
+  "quest:1426:details:0": "I have no love for the sea, nor any creature I've seen come from its depths. It is a powerful but blind mistress; callous and brutal. It would bring me great pleasure to slay the fish men by the hundreds if it were within my power. But I garner some pleasure from watching their deaths at the hands of any who do the ⟦E29⟧'s will.",
+  "quest:1426:details:1": "Which brings us to you, ⟦27⟧. How many can you slay? Would you test yourself against their most powerful kind?",
+  "quest:1426:progress:0": "I am patient. Patient and everlasting like an old kank stone from Draenor. The fish men shall not make it past our borders--not while I still stand. If we had an army at our disposal I would cleanse this world and all others of their presence. I feel my hatred seethe just speaking about them.",
+  "quest:1426:completion:0": "The sea seems vast and relentless, but you have stained her with the blood of her own spawn. The fish men know pain. Their stupidity will force them to refortify their ranks from the devastation you've caused, and that is good.",
+  "quest:1426:completion:1": "Let their gurgling screams overshadow the sea's roar long into the night. I shall smile every time I hear one of them silenced.",
+  "quest:1426:completion:2": "Return to me if you wish to slay more of the fish men. I will gladly reward you again.",
+  "quest:1427:obj:0": "Speak with ⟦E21⟧ in the ⟦E4⟧.",
+  "quest:1427:details:0": "Before you take rest, speak to ⟦E21⟧ again. While you were gone I believe he finished a few weapons. For your help here, he would offer one of them to you. You would do well to test its strength against the fish men when you are ready... but only to please me further.",
+  "quest:1427:completion:0": "Ah, ⟦28⟧, you've returned. Good. I've finished crafting more weapons for our fight against the murlocs. For bringing us the fresh sawtooth meat, and for bringing a small smile to ⟦E32⟧'s face, I offer one of them to you.",
+  "quest:1429:obj:0": "Bring the ⟦E33⟧ to the ⟦E34⟧ in the Hinterlands.",
+  "quest:1429:details:0": "While you were braving the dangers of the ⟦E28⟧, one of my scouts returned with a scroll written in blood on dried flesh. It seems to be a judicial sentence against a priest of the Atal'ai tribe.",
+  "quest:1429:details:1": "This priest was sentenced to a fate worse than death amongst the Atal'ai.",
+  "quest:1429:details:2": "He was exiled to live far north in the Hinterlands, with the Witherbark trolls.",
+  "quest:1429:details:3": "I will bundle these artifacts. You are to seek out the exile and discover their true use. Return to me once your journey is complete.",
+  "quest:1429:progress:0": "You are brave to come here. Brave or foolish...",
+  "quest:1429:completion:0": "You bring me the summoning artifacts of the Atail'ai?",
+  "quest:1429:completion:1": "I see ⟦E35⟧ is leading the disciples of the Chamber of ⟦E36⟧ towards their chosen fate. Has Hakkar returned to the Temple I wonder? Has their fate been met?",
+  "quest:1430:obj:0": "Bring 10 ⟦E37⟧ Legs to ⟦E22⟧ in the ⟦E4⟧.",
+  "quest:1430:details:0": "There's a high demand for the succulent taste of crawler meat among my customers; especially the meat from the monstrous crawlers.",
+  "quest:1430:details:1": "If you plan on heading to the coast, then I could easily make it worth your while to bring me back some of their legs to have transported back to ⟦E39⟧.",
+  "quest:1430:details:2": "The coast is to the east from here, and you should have no problem finding the creatures scurrying along the beaches and under the sea.",
+  "quest:1430:progress:0": "I have a cask of wine waiting for your success, ⟦29⟧. It's only right I taste the goods before I have it shipped back to my customers.",
+  "quest:1430:completion:0": "Ah, this should be perfect. I can't wait to taste these after they are prepared perfectly over an open fire. You should take a sample of it with you on your travels. It truly is delicious.",
+  "quest:1422:obj:0": "Speak to ⟦E32⟧ in the ⟦E4⟧.",
+  "quest:1422:details:0": "While I begin work on your weapon, why don't you talk to ⟦E32⟧? He mentioned needing help with patrols along the beach, and I'd rather see you keep your wits and weapons prepared instead of getting drunk with some of the other louses I share this camp with.",
+  "quest:1422:completion:0": "Be silent a moment, ⟦30⟧. Even over the dull roar of the sea you can still hear those disgusting gurgles from the fish men.",
+  "quest:1428:obj:0": "Kill 10 Marsh Inkspewers, 10 Marsh Flesheaters, and 10 Marsh Oracles, then return to ⟦E32⟧ in the ⟦E4⟧.",
+  "quest:1428:details:0": "It pleases me to see your hatred for the fish men grows with mine.",
+  "quest:1428:details:1": "Find more of their kind along the beach, and when you've had your fill of combat, return to me. We shall speak then of a reward for your diligence.",
+  "quest:1428:progress:0": "Not until the sea and all her children are silenced will I be pleased... especially those disgusting fish men.",
+  "quest:1428:completion:0": "Well done, ⟦31⟧. I call for more of their blood. Let all the fish men perish.",
+  "quest:2622:obj:0": "Speak to ⟦E41⟧.",
+  "quest:2622:details:0": "The orders? What could you possibly want with the orders?",
+  "quest:2622:details:1": "What are you implying, ⟦32⟧? Of course I relayed those orders! The soldiers I sent the orders with were ambushed and brutally beaten by murlocs. Only one survived, if you can call that surviving. He can hardly speak, cannot walk, and must be fed through a tube. If you want to know what happened to those orders, speak with ⟦E41⟧. I'm sure he is around here somewhere... and, ⟦33⟧, be mindful of what you stick your nose into - it may get bitten off.",
+  "quest:2622:completion:0": "Swamp tal... talk.. talker...",
+  "quest:2622:completion:1": "B",
+  "quest:2623:obj:0": "Retrieve the ⟦E42⟧ and return them to the ⟦E43⟧.",
+  "quest:2623:details:0": "Orders were given by the dispatch commander. We took... took orders. On way to ⟦E14⟧, ambushed.",
+  "quest:2623:details:1": "Murlocs... Many murlocs... One named ⟦E44⟧. Took orders from my hands as spear thrust into my skull. East... cave....",
+  "quest:2623:details:2": "B<⟦E41⟧ passes out.>⟦34⟧",
+  "quest:2623:progress:0": "Awaiting orders.",
+  "quest:2623:completion:0": "It is worse than I imagined. Nineteen of my men could have been spared from the agony which they faced. If only I had not acted so irrationally.",
+  "quest:2623:completion:1": "You must help them, ⟦35⟧! I am powerless to act.",
+  "quest:3374:obj:0": "Bring the ⟦E45⟧ and the ⟦E46⟧ to ⟦E47⟧ in the ⟦E4⟧. It is there that you will make your choice to aid ⟦E48⟧'s Dragonflight or not.",
+  "quest:3374:details:0": "You engage the Oathstone, and ⟦E47⟧ speaks directly to your mind through the stone.",
+  "quest:3374:details:1": "B\"By accepting the charge placed in this Oathstone, you agree to aid my cause and the cause of ⟦E48⟧'s Dragonflight in redeeming the corrupted soul of Eranikus. The first sacrifice, one of many you and I will no doubt make, will be to relinquish the gem to me that has chained what free-willed part of Eranikus' psyche remains.\"",
+  "quest:3374:details:2": "B\"Do this ⟦36⟧, and we will work together to redeem a soul worthy of redemption.\"",
+  "quest:3374:progress:0": "Here we are ⟦37⟧, at yet another crossroads. The time has come to make another choice. What choice do you make, mortal?",
+  "quest:3374:completion:0": "You have made your choice, and so it begins. Your choices have been, to date, what I would consider to be the correct ones; your actions and deeds henceforth will determine whether this is to continue.",
+  "quest:3512:obj:0": "⟦E10⟧ to the eastern part of ⟦E49⟧ and speak with ⟦E50⟧.",
+  "quest:3512:details:0": "⟦38⟧, our first step will be to devise a method to speak with Eranikus through the gem. He lies in a precarious state between sleep and death now, twisted within a weave of nightmares. Though the essence you have given me is badly tainted, there is a chance we can reach him.",
+  "quest:3512:details:1": "⟦E10⟧ far to the icy lands of eastern ⟦E49⟧ and seek one of our mortal allies, ⟦E50⟧. He is a human medium who speaks for the dead. Though Eranikus is not truly dead, he may be of aid to us still.",
+  "quest:3512:completion:0": "⟦E47⟧ was wise to send you to me. While he is not dead as you understand death, Eranikus will soon give us advice in his own words. For now though, I cannot directly help you... at least not yet.",
+  "quest:3512:completion:1": "I will lend my skill at death-speaking to you, but first I need the help of one who - unlike me - is not limited by the frailties of old age. My most potent augury device has been taken from me against my will, and unless I have it back we will be at a loss to help Eranikus."
+ },
+ "context": {
+  "quest:1423": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 30,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Quartermaster Lungertz («تدارکات‌چی لونگرتز»)"
+  },
+  "quest:1389": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 35,
+   "side": "",
+   "giver": "Magtoor («مگتور»)",
+   "turner": "Magtoor («مگتور»)"
+  },
+  "quest:1418": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 35,
+   "side": "horde",
+   "giver": "Helgrum the Swift («هلگروم تند»)",
+   "turner": "Neeka Bloodscar («نیکا بلاداسکار»)"
+  },
+  "quest:1421": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Watcher Biggs («دیده‌بان بیگز»)",
+   "turner": "Watcher Biggs («دیده‌بان بیگز»)"
+  },
+  "quest:1116": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 36,
+   "side": "",
+   "giver": "Krazek («کرازک»)",
+   "turner": "Krazek («کرازک»)"
+  },
+  "quest:1396": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Watcher Biggs («دیده‌بان بیگز»)",
+   "turner": "Watcher Biggs («دیده‌بان بیگز»)"
+  },
+  "quest:1393": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 38,
+   "side": "",
+   "giver": "Galen Goodward («گیلن گودوارد»)",
+   "turner": "Galen's Strongbox («صندوق محکم گیلن»)"
+  },
+  "quest:1392": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 39,
+   "side": "",
+   "giver": "",
+   "turner": "Magtoor («مگتور»)"
+  },
+  "quest:698": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 40,
+   "side": "horde",
+   "giver": "Dar («دار»)",
+   "turner": "Tok'Kar («توککار»)"
+  },
+  "quest:699": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 42,
+   "side": "horde",
+   "giver": "Tok'Kar («توککار»)",
+   "turner": "Tok'Kar («توککار»)"
+  },
+  "quest:1398": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 42,
+   "side": "alliance",
+   "giver": "Watcher Biggs («دیده‌بان بیگز»)",
+   "turner": "Watcher Biggs («دیده‌بان بیگز»)"
+  },
+  "quest:1425": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 42,
+   "side": "alliance",
+   "giver": "Watcher Biggs («دیده‌بان بیگز»)",
+   "turner": "Quartermaster Lungertz («تدارکات‌چی لونگرتز»)"
+  },
+  "quest:1424": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 43,
+   "side": "horde",
+   "giver": "Fel'zerul («فل‌زرول»)",
+   "turner": "Fel'zerul («فل‌زرول»)"
+  },
+  "quest:1426": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 43,
+   "side": "horde",
+   "giver": "Katar («کاتار»)",
+   "turner": "Katar («کاتار»)"
+  },
+  "quest:1427": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 43,
+   "side": "horde",
+   "giver": "Katar («کاتار»)",
+   "turner": "Tok'Kar («توککار»)"
+  },
+  "quest:1429": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 44,
+   "side": "horde",
+   "giver": "Fel'zerul («فل‌زرول»)",
+   "turner": "Atal'ai Exile («تبعیدی آتال‌آی»)"
+  },
+  "quest:1430": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 44,
+   "side": "horde",
+   "giver": "Dar («دار»)",
+   "turner": "Dar («دار»)"
+  },
+  "quest:1422": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 45,
+   "side": "horde",
+   "giver": "Tok'Kar («توککار»)",
+   "turner": "Katar («کاتار»)"
+  },
+  "quest:1428": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 45,
+   "side": "horde",
+   "giver": "Katar («کاتار»)",
+   "turner": "Katar («کاتار»)"
+  },
+  "quest:2622": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 50,
+   "side": "horde",
+   "giver": "Dispatch Commander Ruag («فرمانده اعزام روآگ»)",
+   "turner": "Bengor («بنگور»)"
+  },
+  "quest:2623": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 55,
+   "side": "horde",
+   "giver": "Bengor («بنگور»)",
+   "turner": "Fallen Hero of the Horde («قهرمان سقوط‌کردهٔ هورد»)"
+  },
+  "quest:3374": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Itharius («ایتاریوس»)"
+  },
+  "quest:3512": {
+   "zone_en": "Swamp of Sorrows",
+   "zone_fa": "باتلاق اندوه",
+   "level": 55,
+   "side": "",
+   "giver": "Itharius («ایتاریوس»)",
+   "turner": "Umbranse the Spiritspeaker («آمبرنس، سخنگوی ارواح»)"
+  }
+ },
+ "known": {
+  "quest:1389": {
+   "title": "بلورهای درائنیستیت"
+  },
+  "quest:1418": {
+   "title": "نیکا بلاداسکار"
+  },
+  "quest:1421": {
+   "title": "کاروان گمشده"
+  },
+  "quest:1116": {
+   "title": "غبار رؤیا در باتلاق"
+  },
+  "quest:1396": {
+   "title": "حیات وحش مهاجم"
+  },
+  "quest:1393": {
+   "title": "فرار گالن"
+  },
+  "quest:1392": {
+   "title": "نوبورو چماق‌به‌دست"
+  },
+  "quest:698": {
+   "title": "کمبود مازاد"
+  },
+  "quest:699": {
+   "title": "کمبود مازاد"
+  },
+  "quest:1398": {
+   "title": "چوب شناور"
+  },
+  "quest:1425": {
+   "title": "تحویل مرسوله"
+  },
+  "quest:1424": {
+   "title": "برکهٔ اشک"
+  },
+  "quest:1426": {
+   "title": "خطر از دریا"
+  },
+  "quest:1427": {
+   "title": "خطر از دریا"
+  },
+  "quest:1429": {
+   "title": "تبعیدی آتال‌آی"
+  },
+  "quest:1430": {
+   "title": "گوشت تازه"
+  },
+  "quest:1422": {
+   "title": "خطر از دریا"
+  },
+  "quest:1428": {
+   "title": "خطر ادامه‌دار"
+  },
+  "quest:2622": {
+   "title": "فرمان‌های گمشده"
+  },
+  "quest:2623": {
+   "title": "سخن‌سرای باتلاق"
+  },
+  "quest:3374": {
+   "title": "جوهر ارانیکوس"
+  },
+  "quest:3512": {
+   "title": "به زبان خود ارانیکوس"
+  }
+ }
+}

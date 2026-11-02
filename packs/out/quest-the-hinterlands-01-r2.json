@@ -1,0 +1,944 @@
+{
+ "pack": "quest-the-hinterlands-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-the-hinterlands-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Troll Necklace Bounty",
+   "fa": "جایزهٔ گردن‌آویز ترول‌ها",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Nimboya's Pike",
+   "fa": "نیزهٔ نیم‌بویا",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Nimboya's Laden Pike",
+   "fa": "نیزهٔ بارزدهٔ نیم‌بویا",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Nimboya",
+   "fa": "نیمبویا",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Thrall",
+   "fa": "ترال",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Gryphon Master Talonaxe",
+   "fa": "استاد گریفون تالون‌اکس",
+   "kind": "qs"
+  },
+  "E10": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Brohann Caskbelly",
+   "fa": "برهان شکم‌بشکه",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Uldaman",
+   "fa": "اولدامان",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Rhapsody Shindigger",
+   "fa": "راپسودی شین‌دیگر",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "The Hinterlands",
+   "fa": "هینترلندز",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "Roc",
+   "fa": "روک",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Rhapsody Malt",
+   "fa": "مالت راپسودی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Atal'ai Tablet Fragment",
+   "fa": "تکهٔ لوح آتال‌آی",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Venom Bottle",
+   "fa": "بطریِ زهر",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Return to Fel'Zerul",
+   "fa": "بازگشت به فِل‌زرول",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "Jammal'an the Prophet",
+   "fa": "جمالان پیشگو",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "The Temple of Atal'Hakkar",
+   "fa": "معبد آتال‌هاکار",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Tribal",
+   "fa": "قبیله",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Fraggar Thundermantle",
+   "fa": "فراگار شنل‌تندر",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Undamaged Venom Sac",
+   "fa": "کیسهٔ زهر سالم",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Apothecary Lydon",
+   "fa": "داروساز لیدون",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Shadra",
+   "fa": "شادرا",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Master Gadrin",
+   "fa": "استاد گادرین",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E37": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Sharpbeak",
+   "fa": "منقار تیز",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Rin'ji",
+   "fa": "رینجی",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Oran Snakewrithe",
+   "fa": "اوران مارپیچ",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Sharpbeak's Feather",
+   "fa": "پرِ تیغ‌منقار",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Thadius Grimshade",
+   "fa": "تادیوس گریم‌شید",
+   "kind": "qs"
+  },
+  "E44": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "Vile Priestess Hexx",
+   "fa": "کاهنهٔ پلید هکس",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Hinterlands Honey Ripple",
+   "fa": "شراب عسلی هینترلندز",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Dran Droffers",
+   "fa": "دران دروفرز",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Oglethorpe Obnoticus",
+   "fa": "اگل‌ثورپ آبناتیکوس",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Jade",
+   "fa": "یشم",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Katoom the Angler",
+   "fa": "کاتوم ماهیگیر",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Gammerita",
+   "fa": "گامریتا",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "Katoom's Best Lure",
+   "fa": "طعمهٔ عالی کتوم",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Huntsman Markhor",
+   "fa": "شکارچی مارخور",
+   "kind": "npc"
+  },
+  "E58": {
+   "en": "Razorbeak Skylord",
+   "fa": "سالار آسمانی منقارتیز",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Skylord Plume",
+   "fa": "پر آسمان‌سالار",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Smith Slagtree",
+   "fa": "آهنگر سلاگتری",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Slagtree's Lost Tools",
+   "fa": "ابزارهای گم‌شدهٔ اسلگ‌تری",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Otho Moji'ko",
+   "fa": "اوتو موجیکو",
+   "kind": "npc"
+  },
+  "E63": {
+   "en": "Highvale Marksman",
+   "fa": "تیرانداز دره‌بلند",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Troll Necklace Bounty": "جایزهٔ گردن‌آویز ترول‌ها",
+  "Nimboya's Pike": "نیزهٔ نیم‌بویا",
+  "Nimboya's Laden Pike": "نیزهٔ بارزدهٔ نیم‌بویا",
+  "Nimboya": "نیمبویا",
+  "Horde": "هورد",
+  "Thrall": "ترال",
+  "Forsaken": "مطرودان",
+  "Gryphon Master Talonaxe": "استاد گریفون تالون‌اکس",
+  "Azeroth": "آزروت",
+  "Brohann Caskbelly": "برهان شکم‌بشکه",
+  "Uldaman": "اولدامان",
+  "Rhapsody Shindigger": "راپسودی شین‌دیگر",
+  "The Hinterlands": "هینترلندز",
+  "Roc": "روک",
+  "Kalimdor": "کالیمدور",
+  "Tanaris": "تاناریس",
+  "Feralas": "فرالاس",
+  "Rhapsody Malt": "مالت راپسودی",
+  "Atal'ai Tablet Fragment": "تکهٔ لوح آتال‌آی",
+  "Stormwind": "استورم‌ویند",
+  "Venom Bottle": "بطریِ زهر",
+  "Return to Fel'Zerul": "بازگشت به فِل‌زرول",
+  "Jammal'an the Prophet": "جمالان پیشگو",
+  "The Temple of Atal'Hakkar": "معبد آتال‌هاکار",
+  "Tribal": "قبیله",
+  "Fraggar Thundermantle": "فراگار شنل‌تندر",
+  "Alliance": "اتحاد",
+  "Undamaged Venom Sac": "کیسهٔ زهر سالم",
+  "Apothecary Lydon": "داروساز لیدون",
+  "Shadra": "شادرا",
+  "Master Gadrin": "استاد گادرین",
+  "Travel": "سفر",
+  "Durotar": "دوروتار",
+  "Sharpbeak": "منقار تیز",
+  "Rin'ji": "رینجی",
+  "Oran Snakewrithe": "اوران مارپیچ",
+  "Undercity": "آندر‌سیتی",
+  "Sharpbeak's Feather": "پرِ تیغ‌منقار",
+  "Thadius Grimshade": "تادیوس گریم‌شید",
+  "Blasted Lands": "اراضی ویران",
+  "Vile Priestess Hexx": "کاهنهٔ پلید هکس",
+  "Hinterlands Honey Ripple": "شراب عسلی هینترلندز",
+  "Dran Droffers": "دران دروفرز",
+  "Oglethorpe Obnoticus": "اگل‌ثورپ آبناتیکوس",
+  "Booty Bay": "خلیج غنیمت",
+  "Jade": "یشم",
+  "Ironforge": "آیرون‌فورج",
+  "Katoom the Angler": "کاتوم ماهیگیر",
+  "Gammerita": "گامریتا",
+  "Katoom's Best Lure": "طعمهٔ عالی کتوم",
+  "Huntsman Markhor": "شکارچی مارخور",
+  "Razorbeak Skylord": "سالار آسمانی منقارتیز",
+  "Skylord Plume": "پر آسمان‌سالار",
+  "Smith Slagtree": "آهنگر سلاگتری",
+  "Slagtree's Lost Tools": "ابزارهای گم‌شدهٔ اسلگ‌تری",
+  "Otho Moji'ko": "اوتو موجیکو",
+  "Highvale Marksman": "تیرانداز دره‌بلند"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$B",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$g boy:girl;",
+  "10": "$c",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$C",
+  "21": "$C",
+  "22": "$r",
+  "23": "$B",
+  "24": "$B",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$r",
+  "29": "$r",
+  "30": "$r",
+  "31": "$Ghe helps Rin'ji out of here:she helps Rin'ji out of here;",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$C",
+  "36": "$N",
+  "37": "$C",
+  "38": "$N",
+  "39": "$B",
+  "40": "$B",
+  "41": "$N",
+  "42": "$r",
+  "43": "$c",
+  "44": "$N",
+  "45": "$r",
+  "46": "$R",
+  "47": "$r",
+  "48": "$r",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N"
+ },
+ "rows": {
+  "quest:2881:title": "⟦E1⟧",
+  "quest:2881:progress:0": "You've done it already, but we will continue to accept any troll tribal necklaces you find and are willing to turn in.  By turning them in to me, you'll continue to improve your standing amongst the Wildhammers; if you're willing to fight for us, then we'll be willing to fight for you!⟦1⟧⟦2⟧I need five troll tribal necklaces for them to count, ⟦3⟧.",
+  "quest:2881:completion:0": "Another set of necklaces means that there are fewer trolls in the Hinterlands we have to worry about!⟦4⟧You've done it again, ⟦5⟧.⟦6⟧⟦7⟧Keep up the good work!",
+  "quest:2932:obj:0": "Gather Witherbark Skulls and place on ⟦E2⟧. Place ⟦E3⟧ at one of the Witherbark Villages in the Hinterlands, then return to ⟦E4⟧ in Stranglethorn.",
+  "quest:2932:details:0": "The Witherbark trolls were once allies to the ⟦E6⟧, but they betrayed ⟦E7⟧... and that must be punished!",
+  "quest:2932:details:1": "Here, take my pike and go to the Hinterlands, far to the north. You will find it northeast of Tarren Mill, a village held by our allies, the ⟦E8⟧.",
+  "quest:2932:details:2": "When you enter the Hinterlands, hunt Witherbark trolls. Gather their skulls and drive my pike into the ground at one of their smaller villages, Hiri'watha or Zun'watha.",
+  "quest:2932:details:3": "Show them their vile actions are of consequence!",
+  "quest:2932:progress:0": "You have not completed my task, ⟦8⟧.",
+  "quest:2932:completion:0": "Word reached me of your deed. A grim deed, but one of honor. Let us hope the Witherbarks heed your message.",
+  "quest:1450:obj:0": "Speak with ⟦E9⟧ inside the Aerie Peak Aviary.",
+  "quest:1450:details:0": "So you're a glorified errand ⟦9⟧ for some old Explorers' League geezer, eh?",
+  "quest:1450:details:1": "Well you listen to me, ⟦10⟧. I don't know who your old buddy was flying around with down in ⟦E10⟧. Do I look like ⟦E9⟧ to you? Do I?",
+  "quest:1450:details:2": "If you're so interested in the flight assignments why don't you ask the gryphon master? If I catch you idling around here for much longer, I'm going to put you to some real work.",
+  "quest:1450:details:3": "Now get a move on.",
+  "quest:1450:completion:0": "Ah, yes. Of course I remember sending one of my gryphon riders to lend a hand to ⟦E11⟧.",
+  "quest:1450:completion:1": "Always had a soft spot in my heart for the Explorers' League. My father helped with the initial excavation team that discovered ⟦E12⟧ as a matter of fact.",
+  "quest:1450:completion:2": "I sent who I thought was my best gryphon rider at the time with Brohann. He was a chap by the name of ⟦E13⟧.",
+  "quest:1450:completion:3": "And what a gryphon jockey he was! Well until...",
+  "quest:1451:obj:0": "Seek out ⟦E13⟧ in ⟦E14⟧.",
+  "quest:1451:details:0": "Rhapsody took quite a liking to the booze. Now don't get me wrong -- all of us dwarves up here at the aviary love a good ale when the time is right.",
+  "quest:1451:details:1": "But ol' Shindigger took to the liquor like a gryphon takes to the skies. And a damned shame it was, too. No one could fly like Rhapsody.",
+  "quest:1451:details:2": "First sign of trouble was when he came stumbling back from that mission with your buddy, Brohann. All went down hill quickly after that. Had to let him go.",
+  "quest:1451:details:3": "Last I heard, he's set up a brew camp to the east of here...",
+  "quest:1451:completion:0": "Hiccup!",
+  "quest:1451:completion:1": "I'm a-lookin' right at you but you keep bobbing up and down. Makin' me dizzy. Hoho!",
+  "quest:1451:completion:2": "Hiccup!",
+  "quest:1451:completion:3": "Whoa! Did ya feel that? Ground is a-shakin', my friend. I need a drink.",
+  "quest:1451:completion:4": "Hiccup!",
+  "quest:1452:obj:0": "⟦E13⟧ in ⟦E14⟧ wants you to bring him 3 ⟦E15⟧ Gizzards, 3 Groddoc Livers and 3 Ironfur Livers.",
+  "quest:1452:details:0": "Hiccup!",
+  "quest:1452:details:1": "So that crazy fool Brohann sent ya? My we had quite an adventure...Hiccup!",
+  "quest:1452:details:2": "If ya want me to tell ya what happened down in the swamp, I'm gonna need me something stiff to drink. It wasn't a pretty scene, ya see. Hiccup!",
+  "quest:1452:details:3": "Tell ya what... bring me what I need to whip up a ⟦E16⟧ Kocktail and I'll tell ya all about it.",
+  "quest:1452:details:4": "Gonna need some ⟦E15⟧ gizzards from ⟦E17⟧... and let's see... some Groddoc and Ironfur livers from ⟦E18⟧...",
+  "quest:1452:details:5": "BA nice stiff ⟦E16⟧ Kocktail... that'll get me talking!",
+  "quest:1452:progress:0": "Ya ever had a ⟦E19⟧? One of my finest brews, if I do say so myself. Hiccup!⟦11⟧⟦12⟧But if I'm gonna relive the horrors of that fateful flight over... hiccup... the swamp, well I'm gonna need me something a wee bit stronger. Hiccup!⟦13⟧⟦14⟧Don't suppose you found me those gizzards and livers I need to add that extra kick to my ⟦E16⟧ Kocktail?⟦15⟧⟦16⟧Hiccup!",
+  "quest:1452:completion:0": "I see ya had no trouble at all getting me what I need! Musta been quite a stint you had over there in far-off ⟦E16⟧.",
+  "quest:1452:completion:1": "It won't take but a moment for me to extract what I need from these gizzards and livers. Hiccup!",
+  "quest:1452:completion:2": "Then I can distill me a fierce ol' drink and finally tell ya what ya wanna know.",
+  "quest:1452:completion:3": "Hiccup!",
+  "quest:1452:completion:4": "Getting shivers just thinking about that ol' swamp.",
+  "quest:1452:completion:5": "Hiccup!",
+  "quest:1452:completion:6": "Lemme whip up a drink real fast.",
+  "quest:1469:obj:0": "Bring the ⟦E20⟧ to ⟦E11⟧ in ⟦E21⟧.",
+  "quest:1469:details:0": "Before the flight, I drank me a whole keg of stout. Hiccup!",
+  "quest:1469:details:1": "And what a flight it was. Zipping around with Brohann following me. Didn't see no temple though. Hiccup!",
+  "quest:1469:details:2": "Well, didn't see no temple till I got a little too tipsy and fell off my mount. I plunged right into the water and was sucked down. Found myself surrounded by a bunch of creepy trolls. Sure swam out of there fast! Even made off with this troll souvenir. Here, take it to Brohann and let him know his temple is down there, indeed. Hiccup!",
+  "quest:1469:progress:0": "At long last you have returned, ⟦17⟧. It has been quite some time since we last spoke. I thought perhaps you had forgotten about my quest.⟦18⟧⟦19⟧Did you locate that wily gryphon rider? Did he have anything to report?",
+  "quest:1469:completion:0": "⟦E13⟧! That's right... how could I forget such a name?",
+  "quest:1469:completion:1": "So he knew about the sinking of the temple all along? Well, that certainly would have saved you some leg work.",
+  "quest:1469:completion:2": "But this Atal'ai artifact! Why, it's quite a find!",
+  "quest:2933:obj:0": "Bring a ⟦E22⟧ to an apothecary in Tarren Mill.",
+  "quest:2933:details:0": "These bottles hold a vile, green venom.",
+  "quest:2933:details:1": "Considering the number of bottles in this village, the Witherbarks must deem it very important. Perhaps an apothecary in nearby Tarren Mill would like a sample.",
+  "quest:2933:progress:0": "Hello, gentle ⟦20⟧. The day has been long and not a single experiment successful...I hope you bring good news to me.",
+  "quest:2933:completion:0": "Ah, and what is this? It appears to be venom... from some arachnoid creature I deem. And where did you get it?",
+  "quest:1444:obj:0": "⟦E24⟧ in Stonard.",
+  "quest:1444:details:0": "⟦E25⟧ sentenced me to exile from ⟦E26⟧. I once felt the high priest was a worthy leader.",
+  "quest:1444:details:1": "His unyielding faith in his prophecy will bring about the destruction of the Atal'ai. If it hasn't already.",
+  "quest:1444:details:2": "When I expressed my concerns, I was labeled an infidel and ousted from the temple.",
+  "quest:1444:details:3": "Those artifacts you brought to me are harmless. But if Jammal'an has found the proper fetish enchantment for the summoning ritual, the world lies in great peril....",
+  "quest:1444:completion:0": "It has been quite some time since we spoke, ⟦21⟧. I hope your journey was successful.",
+  "quest:1444:completion:1": "What knowledge did you gain from the exiled Atal'ai in the Hinterlands?",
+  "quest:2880:obj:0": "Bring 5 Troll ⟦E28⟧ Necklaces to ⟦E29⟧ in Aerie Peak.",
+  "quest:2880:details:0": "Get this straight, ⟦22⟧ - we are NOT part of the ⟦E30⟧! The Wildhammers are independent, relying on deeds and actions to prove one's worth, rather than the blather of those who use jibber-jabber to bolster their do-nothing attitudes!",
+  "quest:2880:details:1": "If you're looking for friends here, then prove your worth to us first! The foul trolls that choke the hillsides of the Hinterlands sometimes carry tribal necklaces. Bring five of them to me, and we'll mark it down as a step in the right direction for you.",
+  "quest:2880:progress:0": "I want five of those tribal necklaces the trolls carry on them.  If you need it spelled out further, then killing one of them stands you a good chance of getting one!⟦23⟧⟦24⟧Prove your worth to the Wildhammers!",
+  "quest:2880:completion:0": "Now that's what I am talking about! See - these necklaces prove that you're willing to get your hands dirty. We Wildhammers value that in those we associate with.",
+  "quest:2880:completion:1": "You keep this up, and you'll be in our good graces yet.",
+  "quest:2934:obj:0": "Bring an ⟦E32⟧ to ⟦E33⟧ in Tarren Mill.",
+  "quest:2934:details:0": "I must have a fresh sample of the venom you brought me. The spiders from which it was gathered must dwell in the Hinterlands -- hunt them until you find an undamaged venom sac and bring it to me. You will find many spiders near the troll city of ⟦E34⟧'Alor.",
+  "quest:2934:details:1": "Do not tarry, ⟦25⟧, for the venom sac must be fresh when you deliver it.",
+  "quest:2934:progress:0": "Do you have the undamaged venom sac, ⟦26⟧?  I yearn to run experiments with its fresh venom, and have ordered a collection of small, terribly cute animals on which to test it!",
+  "quest:2934:completion:0": "Oh, splendid! The venom is quite fresh and I'm sure very deadly. Thank you!",
+  "quest:2935:obj:0": "Speak with ⟦E35⟧ in Sen'jin Village.",
+  "quest:2935:details:0": "The venom from the broodguards wasn't as potent as the venom you brought originally. It must have come from a different spider.",
+  "quest:2935:details:1": "I want a fresh sample of that venom. To find out where it came from, you must consult with a troll who knows the Witherbark well--⟦E35⟧ in Sen'jin Village. ⟦E36⟧ to ⟦E37⟧ and speak with Gadrin. With luck, he'll know where the Witherbarks get their venom.",
+  "quest:2935:completion:0": "Ah, so you want fresh venom from the spider of the witherbarks, yes? Well, sit down... you're not going to like what I have to tell you.",
+  "quest:2988:obj:0": "Check the cages at the two Witherbark villages, then return to ⟦E9⟧.",
+  "quest:2988:details:0": "The son of our mightiest gryphon is gone! Swiftwing's heir, ⟦E38⟧, was lost while hunting with his parents a few days ago, and we believe it was the trolls who took him.",
+  "quest:2988:details:1": "You must aid us! Search the cages in the two Witherbark troll villages to see if ⟦E38⟧ is there.",
+  "quest:2988:progress:0": "Have you searched the cages, ⟦27⟧? We must find ⟦E38⟧!",
+  "quest:2988:completion:0": "⟦E38⟧ wasn't at the villages? Hm... this is grim news. That gryphon is destined to lead the next generation of gryphons. If he is lost then the strength and spirit of our fleet will suffer immensely.",
+  "quest:2742:obj:0": "Escort ⟦E39⟧ out of the Quel'Danil Lodge, then find his hidden secret at the Overlook Cliffs to the east.",
+  "quest:2742:details:0": "Hey ⟦28⟧!",
+  "quest:2742:details:1": "⟦E39⟧ lost axe and was captured! Please, help ⟦E39⟧ escape. Me know that ⟦29⟧ like you don't like ⟦E39⟧'s kind, but ⟦E39⟧ begs! Must get out of here!",
+  "quest:2742:details:2": "Got something for nice ⟦30⟧ if ⟦31⟧...",
+  "quest:2742:details:3": "⟦E39⟧ is hiding something secret at the Overlook Cliffs.",
+  "quest:2742:progress:0": "⟦E39⟧ is scared!",
+  "quest:2742:completion:0": "This troll tablet must be the \"secret\" that ⟦E39⟧ was talking about.",
+  "quest:2742:completion:1": "Covered with strange markings, you can not decipher what the tablet says.",
+  "quest:2742:completion:2": "⟦E40⟧ sent you to this area in the first place... Perhaps he might be able to tell you more about it.",
+  "quest:2782:obj:0": "⟦E40⟧, a well known scholar on matters concerning the Witherbark trolls, may be able to decipher the tablet. She is known to reside within the Magic Quarter of the ⟦E41⟧.",
+  "quest:2782:details:0": "The tablet is covered with Witherbark troll markings. ⟦E39⟧'s secret truly is a mystery...",
+  "quest:2782:details:1": "It's possible that you might have something quite valuable on your hands here. On the other hand, quite the opposite is also possible. A Witherbark troll in distress would probably do anything to find his way out of trouble...",
+  "quest:2782:progress:0": "Well, now, what is this?",
+  "quest:2782:completion:0": "This tablet... Quite unusual... Where did you find this, ⟦32⟧?",
+  "quest:2990:obj:0": "Bring ⟦E42⟧ to ⟦E43⟧ in the ⟦E44⟧.",
+  "quest:2990:details:0": "Take this feather to ⟦E43⟧, the diviner. He left Aerie Peak years ago to pursue darker knowledge, but in his heart he is still a Wildhammer!",
+  "quest:2990:details:1": "And perhaps his talents can help us find ⟦E38⟧.",
+  "quest:2990:details:2": "This feather was taken from the nest where the gryphon child sleeps. If you give it to Thadius then, with luck, he can use his divining magics to find ⟦E38⟧.",
+  "quest:2990:details:3": "Good luck, ⟦33⟧. You will find Thadius in the ⟦E44⟧, in the mage tower of Nethergarde Keep.",
+  "quest:2990:progress:0": "⟦34⟧, you come bearing a gift?",
+  "quest:2990:completion:0": "Ah, yes. This feather belongs to a fine gryphon. One destined for great things... if he can survive into adulthood undamaged.",
+  "quest:2990:completion:1": "You wish to find him? Then listen close, brave ⟦35⟧...",
+  "quest:2992:obj:0": "Wait until Grimshade performs the ritual of divination.",
+  "quest:2992:details:0": "Give me room while I perform a ritual of divination. I will find the connection between the feather you brought me and its owner, and follow that connection to ⟦E38⟧ himself.",
+  "quest:2992:details:1": "That is... I will if all goes according to plan. If it does not, then... you better close your eyes.",
+  "quest:2992:completion:0": "The ritual was a success. I have seen ⟦E38⟧ and can tell you how to find him.",
+  "quest:2993:obj:0": "Speak with ⟦E9⟧.",
+  "quest:2993:details:0": "⟦E38⟧ is held in a cage, high on a cliff at the top of Jintha'Alor in the Hinterlands. The key to this cage is possessed by the high priestess of the Vilebranch trolls, ⟦E45⟧.",
+  "quest:2993:details:1": "There. I have done my part. I bid you fortune on your quest, ⟦36⟧.",
+  "quest:2993:completion:0": "You've spoken with Grimshade? What did he say?",
+  "quest:2993:completion:1": "B...What? The Vilebranch trolls have ⟦E38⟧? That's unbearable! We must organize a force to get him back!",
+  "quest:8273:completion:0": "Now isn't this interesting? You say you found this tablet on a small, deserted island at The Overlook Cliffs in ⟦E14⟧, ⟦37⟧? Very interesting indeed. <Oran carefully puts the tablet away and rubs her hands together.>",
+  "quest:8273:completion:1": "I thank you for your efforts in this matter. Our Dark Lady shall be very pleased with this discovery. Here, allow me to reward you proportionately.",
+  "quest:77:obj:0": "Recover 10 bottles of ⟦E46⟧ from the crates located around the abandoned ⟦E6⟧ base in Skulk Rock.",
+  "quest:77:details:0": "I possess original packaging materials for the ripple ⟦E47⟧ seeks. I will assist you in packaging the ripple for Malton's abrasive father... for a fee of two additional bottles of said ripple. They are located in crates found in the abandoned ⟦E6⟧ base near Skulk Rock.",
+  "quest:77:details:1": "It will be an arduous task, to wit; foul slimes and oozes will be found sticking to the ruins; rumor has it they are led by some sort of master ooze. Regardless, procure the ripple and return to me here for packaging.",
+  "quest:77:progress:0": "I trust that your arrival here at our camp is to deliver the bottles of ripple that are integral to the task at hand, yes?",
+  "quest:77:completion:0": "Finely executed, ⟦38⟧. I am glad you had enough foresight not to bruise the delicacy of the ripple. There is nothing worse than the bouquet of ripple that has been jostled about needlessly.",
+  "quest:77:completion:1": "It will take a moment for the magic to be wrought over this precious cargo. Actually, no magic is involved; I merely have some empty packaging for ⟦E46⟧. Our chicanery shall turn these bottles into an alcoholic treasure of the ages.",
+  "quest:77:completion:2": "Onward - for great booze!",
+  "quest:485:obj:0": "Take the distress beacon to Oglethorpe's homing robot at the head of the river in the Hinterlands, near Skulk Rock.",
+  "quest:485:details:0": "You have uncovered some sort of strange, egg-shaped device made from metal. Fiddling with one of its knobs springs the egg to life, as it opens up into some sort of gnomish robotic contraption! A voice from inside the robotic egg crackles to life.",
+  "quest:485:details:1": "B\"My name's ⟦E48⟧, and my homing robot has crashed! I will reward you for its recovery; please take this beacon to the robot!\"",
+  "quest:485:details:2": "B\"I now have computed the coordinates of the robot for you; it crashed at the head of the river near Skulk Rock!\"",
+  "quest:485:progress:0": "You appear to have uncovered the wreckage of... a robotic chicken? The voice from within the egg crackles to life again:⟦39⟧⟦40⟧\"Yes, excellent work! This is indeed my homing robot, though my sensors indicate that it needs a jump start before it can fly back to ⟦E49⟧ for repairs. Go ahead and place the beacon inside the rover - the beacon will take care of the rest!\"",
+  "quest:485:completion:0": "You place the egg... distress beacon... inside the chicken... homing robot.",
+  "quest:485:completion:1": "Hums and whirs are heard from inside the robot as it struggles to stand up. After the robot comes to life, Oglethorpe's voice is heard once more, but now from inside the robot:",
+  "quest:485:completion:2": "B\"OOX-09/HL is working at least, but it needs major repairs! It is much too heavy for you to carry it... but I think I have an idea. Are you up for watching over it some more?\"",
+  "quest:836:obj:0": "Escort OOX-09/HL to the shoreline beyond Overlook Cliff, then report to ⟦E48⟧ in ⟦E49⟧.",
+  "quest:836:details:0": "The gnome's voice crackles once again from the robot:",
+  "quest:836:details:1": "B\"I need to move OOX-09/HL to an open, safe place so it can begin a lengthy take-off procedure. It has built-in cloaking, but I need time on my end to make it operational again. Escort the robot from its current location to, let's say, the shoreline beyond Overlook Cliff! That should be a perfect place, and long enough, to get things online!\"",
+  "quest:836:details:2": "B\"Escort it safely to the shore, and then come talk to me in ⟦E49⟧! ⟦E48⟧ - out!\"",
+  "quest:836:completion:0": "Oh, YOU'RE the great savior of OOX-09/HL! I cannot even begin to express my thanks for your assistance! My homing robot series needs more development, but your recovery has saved me countless hours of extra rebuilding time, as well as many gold pieces in manufacture costs!",
+  "quest:836:completion:1": "Please, take your choice of any of these items I have. Thank you again for your generous assistance ⟦41⟧, my robots and I are in your debt!",
+  "quest:2877:obj:0": "Kill 10 Green Sludges and 10 ⟦E50⟧ Oozes, and then report back to ⟦E29⟧ in Aerie Peak.",
+  "quest:2877:details:0": "We Wildhammers remember the past, more than our brothers in ⟦E51⟧. If you want to make friends here, then you get your hands dirty for us!",
+  "quest:2877:details:1": "The ⟦E6⟧ abandoned their positions in the Hinterlands around Skulk Rock; it's now overrun with nasty sludges and oozes. We've got plans on that area, but first we need a clean-up crew to make a hole for us.",
+  "quest:2877:details:2": "That's where you come in, Sunshine! Head down there and take out ten green sludges and ten jade oozes, then report back to me here. Move out!",
+  "quest:2877:progress:0": "Make no effort to negotiate the mission at hand, ⟦42⟧!  If the gods had wanted those oozes killed, they would have miracled it done by now, wouldn't they?!",
+  "quest:2877:completion:0": "Well look at you, helping out the Wildhammers! You're a ⟦43⟧ of action, and action is what we respect around here.",
+  "quest:2877:completion:1": "Your little clean-up mission is a lot more important than you might think it is. With folks thinning out the oozes and sludges, we'll be able to extend our sphere of influence in no time. Here - have a little something in addition to just making new friends here in Aerie Peak!",
+  "quest:2989:obj:0": "Check the top of the Altar of Zul, then return to ⟦E9⟧.",
+  "quest:2989:details:0": "⟦E38⟧ was not with the Witherbark trolls. Perhaps the Vilebranch trolls took him. Go to the Altar of Zul on the western edge of Vilebranch territory and search for the gryphon child.",
+  "quest:2989:progress:0": "Hurry, ⟦44⟧!  If the Vilebranch trolls have ⟦E38⟧, then who knows what they might be doing with him!",
+  "quest:2989:completion:0": "⟦E38⟧ wasn't there? That is bad news, but it is good news too...",
+  "quest:2989:completion:1": "It is good that he was not at the Altar of Zul for the Vilebranch trolls are known for performing sacrifices.",
+  "quest:2989:completion:2": "I thank you for all of your aid, but I'm afraid I have an even greater task ahead.",
+  "quest:7816:obj:0": "⟦E53⟧ at Revantusk Village in the Hinterlands wants you to kill ⟦E54⟧ and retrieve ⟦E55⟧ from her corpse.",
+  "quest:7816:obj:1": "Katoom mentioned that ⟦E54⟧ hangs out on the coast with the other turtles.",
+  "quest:7816:details:0": "Yo! There be a turtle out there not like the others. She be the ⟦E54⟧, leader of the saltwater snapjaws - a downright dirty thievin' reptile.",
+  "quest:7816:details:1": "Mon, she stole my best lure. Snapped it right off my line! Since then, the fish just aren't biting the same.",
+  "quest:7816:details:2": "Find ⟦E54⟧ and get my lure out of her stomach.",
+  "quest:7816:progress:0": "Did you get it yet?",
+  "quest:7816:completion:0": "MON! This is fantastic! With my best lure and the snapjaw population down, the fish will pile up.",
+  "quest:7828:obj:0": "⟦E56⟧ at Revantusk Village in the Hinterlands wants you to kill 10 Silvermane Stalkers and 10 Silvermane Howlers. Return to him once the task is complete.",
+  "quest:7828:obj:1": "Markhor mentioned that the wolves hide in the wilds of the Hinterlands.",
+  "quest:7828:details:0": "Many brave trolls have been lost to the harsh wilds of the Hinterlands, ⟦45⟧. The Silvermane wolves are one of the biggest threats to our hunters. They lay in wait, hiding amongst the bushes and landscape, then strike out when the opportunity presents itself.",
+  "quest:7828:details:1": "This type of ferocity will not go unchecked!",
+  "quest:7828:details:2": "You must think like the Silvermane. Stalk the stalkers! Slay them all!",
+  "quest:7828:progress:0": "Show them the might of Revantusk!",
+  "quest:7828:completion:0": "A job well done, ⟦46⟧. The Revantusk thank you for your contribution.",
+  "quest:7829:obj:0": "⟦E56⟧ at Revantusk Village in the Hinterlands wants you to kill 20 Savage Owlbeasts. Return to him once the task is complete.",
+  "quest:7829:obj:1": "Markhor mentioned that the Savage Owlbeasts occupy the wilds of the Hinterlands.",
+  "quest:7829:details:0": "Among the more ornery of the wildlife of the Hinterlands are the savage owlbeasts. Many a good Revantusk warrior has been lost to the ferocious claws and beak of the beasts.",
+  "quest:7829:details:1": "Kill every savage owlbeast you see, ⟦47⟧. Return to me when you can stand no more bloodshed. Your contribution will then be weighed, measured, and judged.",
+  "quest:7829:progress:0": "Clear your head of impure thoughts, ⟦48⟧. Become one with the wilds!",
+  "quest:7829:completion:0": "You have proven a worthy ally to the Revantusk, ⟦49⟧. Well done.",
+  "quest:7830:obj:0": "⟦E56⟧ at Revantusk Village in the Hinterlands wants you to kill a ⟦E58⟧ and retrieve its ⟦E59⟧. Return to him once the task is complete.",
+  "quest:7830:obj:1": "Markhor mentioned that the ⟦E58⟧ are a rare breed that tend to occupy the wilds of the Hinterlands.",
+  "quest:7830:details:0": "The filth that calls itself Wildhammer trains gryphon to slay troll. Horrible, I know, but worry not, justice will soon be meted out.",
+  "quest:7830:details:1": "For now, I want you to focus on eradicating the elder gryphons of the region. They are known as Skylords.",
+  "quest:7830:details:2": "Slay one and return to me with its plume.",
+  "quest:7830:progress:0": "The ⟦E58⟧ is a much rarer breed of gryphon: One responsible for mating and creating murderous offspring.",
+  "quest:7830:completion:0": "<Markhor examines the plume.>",
+  "quest:7830:completion:1": "I wonder how many of our hunters this beast devoured before you brought it to justice.",
+  "quest:7839:obj:0": "⟦E60⟧ at Revantusk Village in the Hinterlands wants you to find ⟦E61⟧. Return to him once this task is complete.",
+  "quest:7839:obj:1": "You recall ⟦E60⟧ mentioning that the tools might be at one of the Vilebranch temples in the northeastern region of the Hinterlands. You should also check Skulk Rock.",
+  "quest:7839:details:0": "Vilebranch scum invaded our village and stole my tools! I have backup tools but the set they stole was a gift given to me by a kind hearted gnome that saved my life when I was a young orc.",
+  "quest:7839:details:1": "I want those tools back, ⟦50⟧ - they mean the world to me.",
+  "quest:7839:details:2": "Markhor reported that the tools were spotted near the Agol'watha and Shaol'watha temples.",
+  "quest:7839:details:3": "Those temples are in the northeastern region of the Hinterlands.",
+  "quest:7839:details:4": "Recover my tools!",
+  "quest:7839:progress:0": "Watch out for the Vilebranch trolls of the region, ⟦51⟧. They are ruthless, murderous filth.",
+  "quest:7839:completion:0": "My tools! You found them! Oh glorious day! Thank you, ⟦52⟧.",
+  "quest:7841:obj:0": "⟦E62⟧ at Revantusk Village in the Hinterlands wants you to slaughter 15 Highvale Outrunners, 15 Highvale Scouts, 15 ⟦E63⟧ and 15 Highvale Rangers. Return to him when this task is complete.",
+  "quest:7841:obj:1": "You can find the Highvale high elves at the Quel'Danil Lodge in the northwestern region of the Hinterlands.",
+  "quest:7841:details:0": "The Wildhammer be striking up deals with our enemies, forgin' new alliances. This time, they be workin' with the high elves, mon.",
+  "quest:7841:details:1": "B<Otho spits.>",
+  "quest:7841:details:2": "We be needin' to send those Wildhammer dwarves a message - a message in the blood of our enemies. Slaughter every Highvale high elf that you come across, leave their bodies as a warnin'.",
+  "quest:7841:details:3": "Never mess with trolls!",
+  "quest:7841:progress:0": "You be too clean, mon. You gotta mix it up - get down and dirty with the enemy.",
+  "quest:7841:completion:0": "It be lookin' like the Revantusk are forgin' new alliances as well, mon! You done good.",
+  "quest:7842:obj:0": "⟦E62⟧ at Revantusk Village in the Hinterlands wants you to bring him 10 Long Elegant Feathers from the gryphons that inhabit the Hinterlands. Return to him once this task is complete.",
+  "quest:7842:obj:1": "Gryphons are known to inhabit every region of the Hinterlands.",
+  "quest:7842:details:0": "They say the Wildhammer and gryphon are as close to each other as troll and mate. Disgusting, but we be able to use this to our advantage, mon. We send them another message.",
+  "quest:7842:details:1": "Kill all the gryphons you see in the Hinterlands, collect their feathers. From this we make the final message.",
+  "quest:7842:progress:0": "The last message gonna scare them off for sure. Either that or make them very, very angry.",
+  "quest:7842:completion:0": "Oh, mon, this gonna be good. One more step to go and Wildhammer see that they can't mess with troll!"
+ },
+ "context": {
+  "quest:2881": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 40,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Fraggar Thundermantle («فراگار شنل‌تندر»)"
+  },
+  "quest:2932": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 42,
+   "side": "horde",
+   "giver": "Nimboya («نیمبویا»)",
+   "turner": "Nimboya («نیمبویا»)"
+  },
+  "quest:1450": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Falstad Wildhammer («فالستاد وایلدهمر»)",
+   "turner": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)"
+  },
+  "quest:1451": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)",
+   "turner": "Rhapsody Shindigger («راپسودی شین‌دیگر»)"
+  },
+  "quest:1452": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Rhapsody Shindigger («راپسودی شین‌دیگر»)",
+   "turner": "Rhapsody Shindigger («راپسودی شین‌دیگر»)"
+  },
+  "quest:1469": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Rhapsody Shindigger («راپسودی شین‌دیگر»)",
+   "turner": "Brohann Caskbelly («برهان شکم‌بشکه»)"
+  },
+  "quest:2933": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 43,
+   "side": "horde",
+   "giver": "Venom Bottle («بطریِ زهر»)",
+   "turner": "Apothecary Lydon («داروساز لیدون»)"
+  },
+  "quest:1444": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 44,
+   "side": "horde",
+   "giver": "Atal'ai Exile («تبعیدی آتال‌آی»)",
+   "turner": "Fel'zerul («فل‌زرول»)"
+  },
+  "quest:2880": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Fraggar Thundermantle («فراگار شنل‌تندر»)",
+   "turner": "Fraggar Thundermantle («فراگار شنل‌تندر»)"
+  },
+  "quest:2934": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 45,
+   "side": "horde",
+   "giver": "Apothecary Lydon («داروساز لیدون»)",
+   "turner": "Apothecary Lydon («داروساز لیدون»)"
+  },
+  "quest:2935": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 45,
+   "side": "horde",
+   "giver": "Apothecary Lydon («داروساز لیدون»)",
+   "turner": "Master Gadrin («استاد گادرین»)"
+  },
+  "quest:2988": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)",
+   "turner": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)"
+  },
+  "quest:2742": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 47,
+   "side": "horde",
+   "giver": "Rin'ji («رینجی»)",
+   "turner": "Rin'ji's Secret («رازِ رین‌جی»)"
+  },
+  "quest:2782": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 47,
+   "side": "horde",
+   "giver": "Rin'ji's Secret («رازِ رین‌جی»)",
+   "turner": "Oran Snakewrithe («اوران مارپیچ»)"
+  },
+  "quest:2990": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)",
+   "turner": "Thadius Grimshade («تادیوس گریم‌شید»)"
+  },
+  "quest:2992": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Thadius Grimshade («تادیوس گریم‌شید»)",
+   "turner": "Thadius Grimshade («تادیوس گریم‌شید»)"
+  },
+  "quest:2993": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Thadius Grimshade («تادیوس گریم‌شید»)",
+   "turner": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)"
+  },
+  "quest:8273": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 47,
+   "side": "horde",
+   "giver": "Oran Snakewrithe («اوران مارپیچ»)",
+   "turner": "Oran Snakewrithe («اوران مارپیچ»)"
+  },
+  "quest:77": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Gilveradin Sunchaser («گیلوراندین خورشیددنبال»)",
+   "turner": "Gilveradin Sunchaser («گیلوراندین خورشیددنبال»)"
+  },
+  "quest:485": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "",
+   "giver": "",
+   "turner": "Homing Robot OOX-09/HL («ربات ردیاب او‌او‌ایکس-۰۹/اچ‌ال»)"
+  },
+  "quest:836": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "",
+   "giver": "Homing Robot OOX-09/HL («ربات ردیاب او‌او‌ایکس-۰۹/اچ‌ال»)",
+   "turner": "Oglethorpe Obnoticus («اگل‌ثورپ آبناتیکوس»)"
+  },
+  "quest:2877": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Fraggar Thundermantle («فراگار شنل‌تندر»)",
+   "turner": "Fraggar Thundermantle («فراگار شنل‌تندر»)"
+  },
+  "quest:2989": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)",
+   "turner": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)"
+  },
+  "quest:7816": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Katoom the Angler («کاتوم ماهیگیر»)",
+   "turner": "Katoom the Angler («کاتوم ماهیگیر»)"
+  },
+  "quest:7828": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Huntsman Markhor («شکارچی مارخور»)",
+   "turner": "Huntsman Markhor («شکارچی مارخور»)"
+  },
+  "quest:7829": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Huntsman Markhor («شکارچی مارخور»)",
+   "turner": "Huntsman Markhor («شکارچی مارخور»)"
+  },
+  "quest:7830": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Huntsman Markhor («شکارچی مارخور»)",
+   "turner": "Huntsman Markhor («شکارچی مارخور»)"
+  },
+  "quest:7839": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Smith Slagtree («آهنگر سلاگتری»)",
+   "turner": "Smith Slagtree («آهنگر سلاگتری»)"
+  },
+  "quest:7841": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Otho Moji'ko («اوتو موجیکو»)",
+   "turner": "Otho Moji'ko («اوتو موجیکو»)"
+  },
+  "quest:7842": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Otho Moji'ko («اوتو موجیکو»)",
+   "turner": "Otho Moji'ko («اوتو موجیکو»)"
+  }
+ },
+ "known": {
+  "quest:2932": {
+   "title": "پیامی هولناک"
+  },
+  "quest:1450": {
+   "title": "استاد گریفون تالون‌اکس"
+  },
+  "quest:1451": {
+   "title": "راپسودی شین‌دیگر"
+  },
+  "quest:1452": {
+   "title": "کوکتل کالیم‌دورِ راپسودی"
+  },
+  "quest:1469": {
+   "title": "حکایت راپسودی"
+  },
+  "quest:2933": {
+   "title": "شیشه‌های زهر"
+  },
+  "quest:1444": {
+   "title": "بازگشت به فِل‌زرول"
+  },
+  "quest:2880": {
+   "title": "جایزهٔ گردن‌آویز ترول‌ها"
+  },
+  "quest:2934": {
+   "title": "کیسهٔ زهر سالم"
+  },
+  "quest:2935": {
+   "title": "مشورت با استاد گادرین"
+  },
+  "quest:2988": {
+   "title": "قفس‌های وایتربارک"
+  },
+  "quest:2742": {
+   "title": "رین‌جی به دام افتاده!"
+  },
+  "quest:2782": {
+   "title": "راز رین‌جی"
+  },
+  "quest:2990": {
+   "title": "تادیوس گریم‌شید"
+  },
+  "quest:2992": {
+   "title": "طالع‌بینی"
+  },
+  "quest:2993": {
+   "title": "بازگشت به هینترلندز"
+  },
+  "quest:8273": {
+   "title": "قدردانی اوران"
+  },
+  "quest:77": {
+   "title": "وضعیت چسبناک"
+  },
+  "quest:485": {
+   "title": "اُواِکس-۰۹/اچ‌ال را پیدا کنید!"
+  },
+  "quest:836": {
+   "title": "نجات اُواِکس-۰۹/اچ‌ال!"
+  },
+  "quest:2877": {
+   "title": "پاک‌سازی صخرهٔ اسکالک"
+  },
+  "quest:2989": {
+   "title": "محراب زول"
+  },
+  "quest:7816": {
+   "title": "گامریتا، مون!"
+  },
+  "quest:7828": {
+   "title": "تعقیب تعقیب‌گرها"
+  },
+  "quest:7829": {
+   "title": "شکار وحشی‌ها"
+  },
+  "quest:7830": {
+   "title": "انتقام از کشتگان"
+  },
+  "quest:7839": {
+   "title": "ارازل وی‌لبرَنچ"
+  },
+  "quest:7841": {
+   "title": "پیامی به وایلدهامرها"
+  },
+  "quest:7842": {
+   "title": "پیامی دیگر به وایلدهامرها"
+  }
+ }
+}

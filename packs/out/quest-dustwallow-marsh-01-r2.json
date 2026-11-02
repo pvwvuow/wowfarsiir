@@ -1,0 +1,784 @@
+{
+ "pack": "quest-dustwallow-marsh-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-dustwallow-marsh-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Highperch Venom",
+   "fa": "زهر هایپرچ",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Fiora Longears",
+   "fa": "فیورا لانگیز",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Nazeer Bloodpike",
+   "fa": "نظیر نیزه‌خون",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Captain's Documents",
+   "fa": "اسناد ناخدا",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Moonsteel Broadsword",
+   "fa": "شمشیر پهن ماه‌فولاد",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "\"Swamp Eye\" Jarl",
+   "fa": "«چشم مرداب» یارل",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Soothing Spices",
+   "fa": "ادویهٔ آرام‌بخش",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Spy's Report",
+   "fa": "گزارشِ جاسوس",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Theramore Lieutenant",
+   "fa": "ستوان ترمورد",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Captain Garran Vimes",
+   "fa": "کاپیتان گاران ویمز",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Captain Vimes",
+   "fa": "ناخدا وایمز",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Defiant Orc Head",
+   "fa": "سر ارکِ سرکش",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Kin'weelay",
+   "fa": "کین‌ویلی",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Blackened Iron Shield",
+   "fa": "سپرِ آهنِ سیاه‌شده",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Krog",
+   "fa": "کروگ",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "James Hyal",
+   "fa": "جیمز هایال",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Caz Twosprocket",
+   "fa": "کاز دو‌چرخ‌دنده",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Do'gol",
+   "fa": "دوگل",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Mudcrush Durtfeet",
+   "fa": "مادکراش درت‌فیت",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "\"Stinky\" Ignatz",
+   "fa": "«بدبو» ایگناتز",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Morgan Stern",
+   "fa": "مورگان استرن",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Reethe's Badge",
+   "fa": "نشانِ ریتی",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Lieutenant Paval Reethe",
+   "fa": "سروان پاول ریته",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Ogron",
+   "fa": "اوگرون",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Mebok Mizzyrix",
+   "fa": "مبوک میزیریکس",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Mosarn",
+   "fa": "موسارن",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Earthen Ring",
+   "fa": "حلقهٔ زمین",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Mudrock Soup and Bugs",
+   "fa": "سوپ مادروک و حشرات",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Highperch Venom": "زهر هایپرچ",
+  "Fiora Longears": "فیورا لانگیز",
+  "Theramore": "ترمور",
+  "Thousand Needles": "هزار سوزن",
+  "Nazeer Bloodpike": "نظیر نیزه‌خون",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Captain's Documents": "اسناد ناخدا",
+  "Moonsteel Broadsword": "شمشیر پهن ماه‌فولاد",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "\"Swamp Eye\" Jarl": "«چشم مرداب» یارل",
+  "Soothing Spices": "ادویهٔ آرام‌بخش",
+  "Spy's Report": "گزارشِ جاسوس",
+  "Theramore Lieutenant": "ستوان ترمورد",
+  "Captain Garran Vimes": "کاپیتان گاران ویمز",
+  "Captain Vimes": "ناخدا وایمز",
+  "Defiant Orc Head": "سر ارکِ سرکش",
+  "Kin'weelay": "کین‌ویلی",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "Blackened Iron Shield": "سپرِ آهنِ سیاه‌شده",
+  "Krog": "کروگ",
+  "Barrens": "بارنز",
+  "James Hyal": "جیمز هایال",
+  "Caz Twosprocket": "کاز دو‌چرخ‌دنده",
+  "Do'gol": "دوگل",
+  "Mudcrush Durtfeet": "مادکراش درت‌فیت",
+  "\"Stinky\" Ignatz": "«بدبو» ایگناتز",
+  "Morgan Stern": "مورگان استرن",
+  "Stormwind": "استورم‌ویند",
+  "Reethe's Badge": "نشانِ ریتی",
+  "Lieutenant Paval Reethe": "سروان پاول ریته",
+  "Ogron": "اوگرون",
+  "Mebok Mizzyrix": "مبوک میزیریکس",
+  "Mosarn": "موسارن",
+  "Thunder Bluff": "تاندر بلاف",
+  "Earthen Ring": "حلقهٔ زمین",
+  "Mudrock Soup and Bugs": "سوپ مادروک و حشرات"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$gbrother:sister;",
+  "14": "$n",
+  "15": "$n",
+  "16": "$c",
+  "17": "$n",
+  "18": "$gbuddy:lady;",
+  "19": "$N",
+  "20": "$gbuddy:lady;",
+  "21": "$N",
+  "22": "$c",
+  "23": "$n",
+  "24": "$n",
+  "25": "$N",
+  "26": "$N",
+  "27": "$c"
+ },
+ "rows": {
+  "quest:1135:obj:0": "Bring 10 ⟦E1⟧ Sacs to ⟦E2⟧ in ⟦E3⟧.",
+  "quest:1135:details:0": "As you may know, wyverns are often tamed by orcs for use as mounts. But what is less known is that the venom of a wyvern, in some circles, is more valuable than the beast itself. So if you're not afraid to do a little wyvern hunting, then... I have a job for you.",
+  "quest:1135:details:1": "There is a place called Highperch in the land of a ⟦E4⟧, west of here. The Highperch wyverns have a potent venom. Potent, and valuable.",
+  "quest:1135:progress:0": "Did you find Highperch, ⟦1⟧? Any luck with the wyverns there?",
+  "quest:1135:completion:0": "Ah, most of these are nearly bursting with venom, ⟦2⟧. Such are normally only gathered from young wyverns, or fertile females. It must have been quite a slaughter up there in Highperch!",
+  "quest:1201:obj:0": "Kill 9 ⟦E3⟧ Infiltrators, then return to ⟦E5⟧ in Brackenwall Village.",
+  "quest:1201:details:0": "The ⟦E6⟧ and ⟦E7⟧ hold an uneasy truce. Outlying skirmishes and covert actions are taken by one side against the other, and it is our duty to ensure the ⟦E6⟧ is on top!",
+  "quest:1201:details:1": "Now is the chance to do just that.",
+  "quest:1201:details:2": "⟦E7⟧ infiltrators have taken positions east of Brackenwall Village. They spy on the village and report our movements to ⟦E3⟧, which we cannot allow.",
+  "quest:1201:details:3": "Hunt down the infiltrators and slay them. Send a clear message to their superiors that we will not tolerate their spies' presence!",
+  "quest:1201:progress:0": "Did you find the infiltrators, ⟦3⟧?",
+  "quest:1201:completion:0": "Good work. Their infiltrators are skilled, but they're not good enough to escape the watchful eye of the ⟦E6⟧!",
+  "quest:1202:obj:0": "Bring the ⟦E9⟧ to ⟦E5⟧ in Brackenwall Village.",
+  "quest:1202:details:0": "⟦4⟧, two of our spies were sent to steal documents from a ship at the ⟦E3⟧ docks. They gained the papers but were discovered, and were forced to throw the documents into the sea.",
+  "quest:1202:details:1": "One spy later escaped, but was unable to recover the prize. He reported his failure to me, and I now charge the task to you.",
+  "quest:1202:details:2": "The documents are in a footlocker, in the waters somewhere beneath the ⟦E3⟧ docks. Find those documents, ⟦5⟧, and bring them to me.",
+  "quest:1202:progress:0": "Did you find the documents, ⟦6⟧?  They hold information vital to the stability of the ⟦E7⟧ and, hence, vital to the security of the ⟦E6⟧.",
+  "quest:1202:completion:0": "I commend you, ⟦7⟧. This was not an easy mission. But the documents you gained are valued greatly by our superiors.",
+  "quest:1203:obj:0": "Bring a ⟦E10⟧ to Jarl in ⟦E11⟧.",
+  "quest:1203:details:0": "I have cutting to do. I can't tell you what I'm going to cut, but... I need myself a blade. A certain blade...",
+  "quest:1203:details:1": "Some people call it a moonsteel broadsword. I call it a swing blade.",
+  "quest:1203:details:2": "You help me? Maybe you find it in town, maybe you talk to a blacksmith and he'll make it special.",
+  "quest:1203:details:3": "But don't sleep on this. What I'm cutting won't keep forever...",
+  "quest:1203:progress:0": "You have my blade??",
+  "quest:1203:completion:0": "That's a good blade. It has a good swing. It's a good swing blade. Thank you. Thank you, thank you, thank you!!! Now I want to try it....",
+  "quest:1203:completion:1": "Later. I'll try it later. But like I was saying... thanks.",
+  "quest:1206:obj:0": "Bring 20 Unpopped Darkmist Eyes to ⟦E12⟧ at the Swamplight Manor.",
+  "quest:1206:details:0": "Eye juice is good juice for drinking. Too bad most critters only have two eyes.",
+  "quest:1206:details:1": "But spiders have lots of eyes. Lots and lots. And Darkmist eye juice is tasty. Smooth and salty! Unpopped spider eyes... I taste them already.",
+  "quest:1206:details:2": "Darkmist spiders are west of here, in the Darkmist Cavern. You figure the spiders are named after the cave... or is it the other way around?",
+  "quest:1206:progress:0": "Where are those eyes?",
+  "quest:1206:completion:0": "You got the eyes! You got the eyes! Tasty, tasty spider eyes!",
+  "quest:1206:completion:1": "Some eyes... when you stare at them they stare back. Eat those last. They keep you company... out in the swamp.",
+  "quest:1206:completion:2": "Hello, little spider eyes. Hello! You taste like chicken. Gooey, salty chicken!",
+  "quest:1206:completion:3": "Mmmh.",
+  "quest:1218:obj:0": "Bring 3 ⟦E13⟧ to ⟦E12⟧ in ⟦E11⟧.",
+  "quest:1218:details:0": "I like cooking. Good swamp cooking. Fried green frog legs and the like.",
+  "quest:1218:details:1": "And for cooking, I need spice. Soothing spice. Then I'll make a stew and stew it up and suck it down and give you some too.",
+  "quest:1218:details:2": "Do you like stew?",
+  "quest:1218:progress:0": "Spice. We could all use some spice in our life. You agree?",
+  "quest:1218:completion:0": "Ah, that's the spice! Now here's some swampy good stew.",
+  "quest:1219:obj:0": "Bring the ⟦E14⟧ to a ⟦E15⟧.",
+  "quest:1219:details:0": "Sifting through the loose dirt, the severed hand of an orc is found. And clutched in the hand is a bone-carved tube. And in the tube is a dirt-stained parchment.",
+  "quest:1219:details:1": "The parchment is written in orcish... and it looks important.",
+  "quest:1219:progress:0": "Do you have a report to make?",
+  "quest:1219:completion:0": "Hm... I can't read orcish very well, but this looks like a report... written by an orc spy!",
+  "quest:1220:obj:0": "Bring the ⟦E14⟧ to ⟦E16⟧.",
+  "quest:1220:details:0": "⟦E17⟧ should see the orc report you found, ⟦8⟧. He knows the orcish language better than most. And he should know that there are ⟦E6⟧ spies near ⟦E3⟧!",
+  "quest:1220:details:1": "The captain is in the barracks, on the northeastern side of ⟦E3⟧ Isle.",
+  "quest:1220:progress:0": "You have something for me?",
+  "quest:1220:completion:0": "A report from an orc spy! How did you find this? No matter -- let's see what it says...",
+  "quest:1238:obj:0": "Bring the ⟦E14⟧ to ⟦E5⟧ in Brackenwall Village.",
+  "quest:1238:details:0": "Sifting through the loose dirt, the severed hand of an orc is found. And clutched in the hand is a bone-carved tube. And in the tube is a dirt-stained parchment.",
+  "quest:1238:details:1": "The parchment is a report made by an orc who spent weeks spying on the city of ⟦E3⟧.",
+  "quest:1238:details:2": "After scanning the parchment, it is clear that it must be brought to the orc spymaster in Brackenwall Village.",
+  "quest:1238:progress:0": "You have something for me?",
+  "quest:1238:completion:0": "Good work, ⟦9⟧. Our agent, Marg Nighteye, was stationed outside ⟦E3⟧. He was charged to spy on the city.",
+  "quest:1238:completion:1": "This is his latest report, and it may be his last -- from your testimony, I fear that Marg met his end in the swamp...",
+  "quest:1239:obj:0": "Bring the ⟦E19⟧ to ⟦E5⟧ in Brackenwall Village.",
+  "quest:1239:details:0": "Vigorous digging reveals the head of a male orc, raggedly severed at the neck. His lips are frozen in a snarl, and its dark eyes stare defiantly.",
+  "quest:1239:progress:0": "You have another matter to report, ⟦10⟧?",
+  "quest:1239:completion:0": "This is the head of Marg Nighteye! As I feared, he is dead.",
+  "quest:1239:completion:1": "Look at the wound on his neck! Could a weapon have made that ragged cut, or did some beast slay our agent?",
+  "quest:1239:completion:2": "This is a mystery we must solve, ⟦11⟧. We must discover if Marg's death was at the hands of the ⟦E7⟧!",
+  "quest:1240:obj:0": "Take the ⟦E19⟧ to ⟦E20⟧ in the Grom'gol Base Camp in ⟦E21⟧.",
+  "quest:1240:details:0": "We must know the events surrounding Marg's death! And the only way to do that, ⟦12⟧, is through the witch-magic of trolls.",
+  "quest:1240:details:1": "Bring Marg's head to ⟦E20⟧ in ⟦E21⟧, at the Grom'gol Base Camp.",
+  "quest:1240:details:2": "⟦E20⟧ is the most powerful witchdoctor of the Darkspear trolls. If anyone can speak to Marg Nighteye's spirit, it is he.",
+  "quest:1240:progress:0": "There is an angry spirit about you, ⟦13⟧. What brings you to ⟦E20⟧?",
+  "quest:1240:completion:0": "Ah, I now see. The spirit of this orc is bound in our world, boiling with rage from a task yet undone.",
+  "quest:1240:completion:1": "Well, let us have words with this angry orc...",
+  "quest:1251:obj:0": "Bring the ⟦E23⟧ to ⟦E24⟧ in Brackenwall Village.",
+  "quest:1251:details:0": "An iron shield, blackened by the fire that raged through the inn, is affixed to the crumbling chimney, one of the few remaining parts of the structure that once made up the Shady Rest Inn.",
+  "quest:1251:details:1": "The shield can be removed from the brick of the chimney.",
+  "quest:1251:progress:0": "What's that you have there, ⟦14⟧? Evidence from the remains of the Shady Rest Inn?",
+  "quest:1251:completion:0": "I grant that humans have strange decorating tastes, but would they use a plain iron shield to adorn their fireplace? Perhaps this shield was placed there by the ones who burned the inn.",
+  "quest:1251:completion:1": "BA warning? A threat?",
+  "quest:1253:obj:0": "Bring the ⟦E23⟧ to ⟦E16⟧ in ⟦E3⟧.",
+  "quest:1253:details:0": "An iron shield, blackened by the fire that raged through the inn, is affixed to the crumbling chimney, one of the few remaining parts of the structure that once made up the Shady Rest Inn.",
+  "quest:1253:details:1": "The shield can be removed from the brick of the chimney.",
+  "quest:1253:progress:0": "Have you found evidence from the site of the Shady Rest Inn?",
+  "quest:1253:completion:0": "Hm, I'm no expert with the construction of arms and armor. Their use, yes, but not their making.",
+  "quest:1253:completion:1": "This shield seems as ordinary as any, excepting the damage from the fire that engulfed the inn.",
+  "quest:1268:obj:0": "Report about the suspicious prints at the Shady Rest Inn to ⟦E24⟧ in Brackenwall Village.",
+  "quest:1268:details:0": "Rows of hoofprints lead away from the still-smoking skeleton of the Shady Rest Inn. There are at least a few visible impressions, with more rows of prints almost imperceptible in the soft mud of the marsh.",
+  "quest:1268:completion:0": "Hoofprints... It could have been the quilboar, I suppose. Or maybe even the centaur. Their presence in the ⟦E28⟧ is not insignificant, and I would not think it a stretch to commit such an act.",
+  "quest:1268:completion:1": "Did I tell you? It wasn't just that the inn was burned down... The owner's woman and pup were killed. Bad business, that.",
+  "quest:1268:completion:2": "Nonetheless, I will send Kagoro to find where the tracks lead.",
+  "quest:1282:obj:0": "Speak with ⟦E16⟧ on the top floor of Foothold Citadel.",
+  "quest:1282:details:0": "I can't help it if I feel sorry for ol' Jim there. He wasn't always like that. Ran an inn out in the marsh for a while, wonderful place.",
+  "quest:1282:details:1": "Look, I don't really want to talk about it. Bring it up with ⟦E17⟧ if you really have to. He's stationed on the top floor of Foothold Citadel, the large barracks to the east of Lady Jaina's tower.",
+  "quest:1282:completion:0": "⟦E29⟧'s his real name. He opened an inn at the edge of the ⟦E28⟧. Wanted to make a nice place for travelers to stop over...",
+  "quest:1282:completion:1": "Might be he was thinking too big, but the inn did do well for a while. Then we lost control of the roads in the marsh, and the ogres took over.",
+  "quest:1282:completion:2": "James was too stubborn to give up his dream for safety within our walls, and the Shady Rest Inn was burnt to the ground. We're investigating, but haven't had much luck. If you want to help out, see what you can find in the rubble.",
+  "quest:1284:obj:0": "Report about the suspicious prints at the Shady Rest Inn to ⟦E16⟧ in ⟦E3⟧.",
+  "quest:1284:details:0": "Rows of hoofprints lead away from the still-smoking skeleton of the Shady Rest Inn. There are at least a few visible impressions, with more rows of prints almost imperceptible in the soft mud of the marsh.",
+  "quest:1284:completion:0": "Hoofprints, eh? It is true that there is an extraordinary amount of centaur activity in the lands near the ⟦E11⟧. In brief excursions into the ⟦E28⟧, we found their camps and holdings dotting the area.",
+  "quest:1284:completion:1": "I'll send out Falgran Hastil, one of our trackers, to see if he can find where the tracks lead.",
+  "quest:1319:obj:0": "Show the ⟦E23⟧ to ⟦E30⟧ in ⟦E3⟧.",
+  "quest:1319:details:0": "I'm sorry I can't be of much help, ⟦15⟧, but I can refer you to someone who would be. ⟦E30⟧, one of our best blacksmiths, works the forge at the smithy.",
+  "quest:1319:details:1": "Take the shield to him, and see what he can tell you.",
+  "quest:1319:progress:0": "Something for me to look at?",
+  "quest:1319:completion:0": "Hm... interesting piece of iron you have here. Definitely not made by any of the blacksmiths I know over on this side of the sea, and it's certainly not my work.",
+  "quest:1320:obj:0": "Speak with ⟦E16⟧ in ⟦E3⟧.",
+  "quest:1320:details:0": "Ah, I almost missed this... The leather strap on the back must have burned off, but it seems like it was made to fit a large person. I'd guess a tauren, actually.",
+  "quest:1320:details:1": "That's about all I can tell you. Tell ⟦E17⟧ I'm sorry I couldn't be of more help.",
+  "quest:1320:completion:0": "That's not much information to work on, but we'll have to keep it in mind. Hopefully some of the other pieces of this mystery will fall into place, and paint a more helpful picture of what happened.",
+  "quest:1321:obj:0": "Show the ⟦E23⟧ to ⟦E31⟧ in Brackenwall Village.",
+  "quest:1321:details:0": "Hmm... I don't see anything out of the ordinary with this shield. We should have ⟦E31⟧, the blacksmith, take a look at it, and see if he can tell us more about it, but I wouldn't hold out hope...",
+  "quest:1321:progress:0": "Something for me, ⟦16⟧?",
+  "quest:1321:completion:0": "This is good shield. Very strong, heavy, good. But ⟦E31⟧ don't need it. I make shields, not buy them, ⟦17⟧.",
+  "quest:1321:completion:1": "You should know that.",
+  "quest:1177:obj:0": "⟦E32⟧ in northern Dustwallow wants 8 Mirefin Heads.",
+  "quest:1177:details:0": "Mud big ogre.",
+  "quest:1177:details:1": "Me hungry.",
+  "quest:1177:details:2": "Go bash fishy. Bring Mud food.",
+  "quest:1177:details:3": "You feed Mud or Mud eat you.",
+  "quest:1177:progress:0": "Gimme food or me eat you.",
+  "quest:1177:completion:0": "Me like fishy head!",
+  "quest:1177:completion:1": "Me no eat you now.",
+  "quest:1222:obj:0": "Escort ⟦E33⟧, then speak with ⟦E34⟧ in ⟦E3⟧.",
+  "quest:1222:details:0": "Great, finally something that doesn't want to eat me!",
+  "quest:1222:details:1": "I need help handling the critters around here, and you fit the mold, ⟦18⟧.",
+  "quest:1222:details:2": "The cook ⟦E34⟧ is researching a new recipe, and he sent me out here to gather bogbean leaves. I guess he thinks they're tasty.",
+  "quest:1222:details:3": "Anyway, while looking for a bogbean plant... I got myself surrounded! Can you help me out of here, and watch my back as I look for the bogbean?",
+  "quest:1222:progress:0": "Have you seen Mr. Ignatz? I sent him into the swamp some time ago and he hasn't returned!",
+  "quest:1222:completion:0": "Mr. Ignatz was just here with the bogbean leaves, and he told me you helped him out of some real trouble.",
+  "quest:1222:completion:1": "Thank you, ⟦19⟧. I will ask my uncle to treat you to a feast the next time you visit the Blue Recluse in ⟦E35⟧.",
+  "quest:1269:obj:0": "Bring ⟦E36⟧ to ⟦E24⟧ in Brackenwall Village.",
+  "quest:1269:details:0": "A glint of light on the ground catches your eye from underneath the rubble. Brushing debris and ash caked onto the object reveals the insignia of a gold anchor on white, enameled on the surface: the sign of ⟦E3⟧.",
+  "quest:1269:details:1": "Underneath the anchor is embossed the name \"⟦E37⟧\".",
+  "quest:1269:progress:0": "Have you found any leads on what happened at the Shady Rest Inn?",
+  "quest:1269:completion:0": "I know this human, Paval Reethe. Pathetic, even for his kind. He deserted his fellow soldiers and is now hiding out in the woods.",
+  "quest:1269:completion:1": "I sent ⟦E38⟧ out to track him down. Some of the others suspect he's been stealing from our supplies. I think I saw ⟦E38⟧ heading off to the southeast.",
+  "quest:1270:obj:0": "Escort ⟦E33⟧, then speak with ⟦E39⟧ in Ratchet.",
+  "quest:1270:details:0": "Great, finally something that doesn't want to eat me!!",
+  "quest:1270:details:1": "I need help handling the critters around here, and you fit the mold, ⟦20⟧.",
+  "quest:1270:details:2": "BA goblin from Ratchet named ⟦E39⟧ needs some bogbean leaves for a potion, or something... I honestly don't care why -- his money was good and I know this swamp, so here I am.",
+  "quest:1270:details:3": "Too bad I got myself surrounded before I found the bogbean! Can you help me out of here, and watch my back as I look for Mebok's plant?",
+  "quest:1270:completion:0": "Stinky was here with the herbs I ask of him, and he told me you helped him out of a bind. Good work! A friend of Stinky's is a friend of mine!",
+  "quest:1270:completion:1": "He asked me to give you this if I ever saw you, right before he walked back south toward the marsh.",
+  "quest:1271:completion:0": "My nephew said you aided him with his research in Dustwallow, and that you helped his associate out of a tight spot. Well, we Sterns stick together and we don't ignore our friends!",
+  "quest:1271:completion:1": "So wash your hands, ⟦21⟧, because we're about to throw a party in your honor!",
+  "quest:1273:obj:0": "Go with ⟦E38⟧ to speak with Reethe, then return to ⟦E24⟧ in Brackenwall Village.",
+  "quest:1273:details:0": "It took a long time, but I found Reethe. He hide good for a human.",
+  "quest:1273:details:1": "⟦E38⟧ worried that he might be crazy after so much time in swamp. You come with me for we go get answers from him.",
+  "quest:1273:progress:0": "Did you find Reethe?",
+  "quest:1273:completion:0": "Hmph. It is good that Reethe will no longer be lurking around the swamp, but it is a shame that humans are built so frail that he could not recover from a little arrow wound.",
+  "quest:1273:completion:1": "It seems that this thread of the mystery has led nowhere, and we must look elsewhere.",
+  "quest:1276:obj:0": "Show the ⟦E23⟧ to ⟦E41⟧ in ⟦E42⟧.",
+  "quest:1276:details:0": "Ah, I remember now! ⟦E41⟧ is a well-respected blacksmith in ⟦E42⟧. I knew I had heard his name somewhere, before.",
+  "quest:1276:details:1": "In thanks, the ⟦E43⟧ awarded me with a set of armor crafted by ⟦E41⟧. Very good work.",
+  "quest:1276:details:2": "Perhaps he can tell you more about the shield he crafted.",
+  "quest:1276:details:3": "It's not much of a lead, but since we didn't get anything useful out of Reethe, it's all we have.",
+  "quest:1276:progress:0": "Hello there, ⟦22⟧. Something I can help you with?",
+  "quest:1276:completion:0": "Yes, you are certainly correct. This is a shield that I made.",
+  "quest:1276:completion:1": "I'm afraid there's not much more I can tell you though, ⟦23⟧. I craft so many different shields and sets of armor, I can't keep track of them all.",
+  "quest:1322:obj:0": "Acquire 5 Acidic Venom Sacs for ⟦E31⟧ in Brackenwall Village.",
+  "quest:1322:details:0": "Hmmm, there's writing right here on the rim of the shield, but it's hard to read from all the burned stuff.",
+  "quest:1322:details:1": "I need acid to make it clear. Venom from the darkmist spiders would do good. The spiders have taken over an old mine, the Darkmist Cavern, northwest of the village. Get me some of their sacs and I can clean this up.",
+  "quest:1322:progress:0": "Did you get them sacs from the spiders?",
+  "quest:1322:completion:0": "I don't like spiders that are so big I can't sit on them and squish them.",
+  "quest:1322:completion:1": "Thanks for getting them, ⟦24⟧. Now I rip them open and pour them onto the shield...",
+  "quest:1323:obj:0": "Talk with ⟦E24⟧ in Brackenwall Village.",
+  "quest:1323:details:0": "Oh, I think I might have dropped too much acid onto the shield. Let me just rub a little...",
+  "quest:1323:details:1": "Hm, kind of hard to read, but it looks like the name ⟦E41⟧. Never heard of him. Maybe ⟦E24⟧ knows. ⟦E24⟧ knows many people.",
+  "quest:1323:completion:0": "⟦E41⟧? Sounds familiar... I can't put my finger on it. Maybe it'll come to me later.",
+  "quest:1323:completion:1": "It probably isn't important. A shield can come from anywhere and not mean anything...",
+  "quest:1204:obj:0": "Bring 8 Forked Mudrock Tongues to ⟦E34⟧ in ⟦E3⟧.",
+  "quest:1204:details:0": "I'm working on a dish I call \"⟦E44⟧.\" I still need the major ingredients, and... well, I don't think I'd last long trudging through ⟦E11⟧!",
+  "quest:1204:details:1": "So, ⟦25⟧, can you do some hunting for me? First, I need the tongues of Mudrock turtles. You can find Mudrocks along the coast, mostly around the bay.",
+  "quest:1204:details:2": "But I don't want just any tongues! I hear that the tongues of some Mudrocks are forked...",
+  "quest:1204:details:3": "They say the forked tongues have a distinct flavor, and I want that flavor in my dish...",
+  "quest:1204:progress:0": "Did you get the forked tongues?",
+  "quest:1204:completion:0": "These will do fine! Thank you, ⟦26⟧!",
+  "quest:1204:completion:1": "Now I'll try different cooking techniques on these tongues to find the best way to bring out their flavor.",
+  "quest:1204:completion:2": "Eventually I'll have a dish worthy of serving at the Blue Recluse in ⟦E35⟧!",
+  "quest:1260:obj:0": "Speak with ⟦E34⟧ in ⟦E3⟧.",
+  "quest:1260:details:0": "I'm developing a new menu for the restaurant. It will be filled with rural dishes with a \"bayou\" theme. I think my clientele at the Blue Recluse will love them!",
+  "quest:1260:details:1": "I sent my nephew Morgan to ⟦E3⟧, a city on the edge of the ⟦E11⟧. He's there gathering recipes from the locals, and I must know what he found so far.",
+  "quest:1260:details:2": "The trip to ⟦E3⟧ is long. Too long for me. But I bet a young ⟦27⟧ like yourself would jump at the chance to travel, yes?",
+  "quest:1260:completion:0": "Oh, my uncle sent you, did he?",
+  "quest:1260:completion:1": "Well I've been researching recipes and I have some leads, but I need help.",
+  "quest:1260:completion:2": "Help from someone willing to get his feet wet."
+ },
+ "context": {
+  "quest:1135": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Fiora Longears («فیورا لانگیز»)",
+   "turner": "Fiora Longears («فیورا لانگیز»)"
+  },
+  "quest:1201": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Nazeer Bloodpike («نظیر نیزه‌خون»)",
+   "turner": "Nazeer Bloodpike («نظیر نیزه‌خون»)"
+  },
+  "quest:1202": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Nazeer Bloodpike («نظیر نیزه‌خون»)",
+   "turner": "Nazeer Bloodpike («نظیر نیزه‌خون»)"
+  },
+  "quest:1203": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "",
+   "giver": "\"Swamp Eye\" Jarl (««چشم مرداب» یارل»)",
+   "turner": "\"Swamp Eye\" Jarl (««چشم مرداب» یارل»)"
+  },
+  "quest:1206": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "",
+   "giver": "\"Swamp Eye\" Jarl (««چشم مرداب» یارل»)",
+   "turner": "\"Swamp Eye\" Jarl (««چشم مرداب» یارل»)"
+  },
+  "quest:1218": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "",
+   "giver": "\"Swamp Eye\" Jarl (««چشم مرداب» یارل»)",
+   "turner": "\"Swamp Eye\" Jarl (««چشم مرداب» یارل»)"
+  },
+  "quest:1219": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Loose Dirt («خاک سست»)",
+   "turner": "Theramore Lieutenant («ستوان ترمورد»)"
+  },
+  "quest:1220": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Theramore Lieutenant («ستوان ترمورد»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1238": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Loose Dirt («خاک سست»)",
+   "turner": "Nazeer Bloodpike («نظیر نیزه‌خون»)"
+  },
+  "quest:1239": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Loose Dirt («خاک سست»)",
+   "turner": "Nazeer Bloodpike («نظیر نیزه‌خون»)"
+  },
+  "quest:1240": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Nazeer Bloodpike («نظیر نیزه‌خون»)",
+   "turner": "Kin'weelay («کین‌ویلی»)"
+  },
+  "quest:1251": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Black Shield («سپر سیاه»)",
+   "turner": "Krog («کروگ»)"
+  },
+  "quest:1253": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Black Shield («سپر سیاه»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1268": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Suspicious Hoofprint («ردپای سم مشکوک»)",
+   "turner": "Krog («کروگ»)"
+  },
+  "quest:1282": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Guard Byron («نگهبان بایرون»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1284": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Suspicious Hoofprint («ردپای سم مشکوک»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1319": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Captain Garran Vimes («کاپیتان گاران ویمز»)",
+   "turner": "Caz Twosprocket («کاز دو‌چرخ‌دنده»)"
+  },
+  "quest:1320": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Caz Twosprocket («کاز دو‌چرخ‌دنده»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1321": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 35,
+   "side": "horde",
+   "giver": "Krog («کروگ»)",
+   "turner": "Do'gol («دوگل»)"
+  },
+  "quest:1177": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 36,
+   "side": "",
+   "giver": "Mudcrush Durtfeet («مادکراش درت‌فیت»)",
+   "turner": "Mudcrush Durtfeet («مادکراش درت‌فیت»)"
+  },
+  "quest:1222": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "alliance",
+   "giver": "\"Stinky\" Ignatz (««بدبو» ایگناتز»)",
+   "turner": "Morgan Stern («مورگان استرن»)"
+  },
+  "quest:1269": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "horde",
+   "giver": "Theramore Guard Badge («نشان نگهبان ترامور»)",
+   "turner": "Krog («کروگ»)"
+  },
+  "quest:1270": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "horde",
+   "giver": "\"Stinky\" Ignatz (««بدبو» ایگناتز»)",
+   "turner": "Mebok Mizzyrix («مبوک میزیریکس»)"
+  },
+  "quest:1271": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Angus Stern («آنگوس استرن»)",
+   "turner": "Angus Stern («آنگوس استرن»)"
+  },
+  "quest:1273": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "horde",
+   "giver": "Ogron («اوگرون»)",
+   "turner": "Krog («کروگ»)"
+  },
+  "quest:1276": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "horde",
+   "giver": "Krog («کروگ»)",
+   "turner": "Mosarn («موسارن»)"
+  },
+  "quest:1322": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "horde",
+   "giver": "Do'gol («دوگل»)",
+   "turner": "Do'gol («دوگل»)"
+  },
+  "quest:1323": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 37,
+   "side": "horde",
+   "giver": "Do'gol («دوگل»)",
+   "turner": "Krog («کروگ»)"
+  },
+  "quest:1204": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Morgan Stern («مورگان استرن»)",
+   "turner": "Morgan Stern («مورگان استرن»)"
+  },
+  "quest:1260": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Angus Stern («آنگوس استرن»)",
+   "turner": "Morgan Stern («مورگان استرن»)"
+  }
+ },
+ "known": {
+  "quest:1135": {
+   "title": "زهر هایپرچ"
+  },
+  "quest:1201": {
+   "title": "جاسوسان ترامور"
+  },
+  "quest:1202": {
+   "title": "اسکله‌های ترامور"
+  },
+  "quest:1203": {
+   "title": "جارل به شمشیر نیاز دارد"
+  },
+  "quest:1206": {
+   "title": "جارل به چشم نیاز دارد"
+  },
+  "quest:1218": {
+   "title": "ادویهٔ آرام‌بخش"
+  },
+  "quest:1219": {
+   "title": "گزارش اورک"
+  },
+  "quest:1220": {
+   "title": "ناخدا وایمز"
+  },
+  "quest:1238": {
+   "title": "گزارش گم‌شده"
+  },
+  "quest:1239": {
+   "title": "سر بریده"
+  },
+  "quest:1240": {
+   "title": "ویچ داکتور ترول"
+  },
+  "quest:1251": {
+   "title": "سپر سیاه"
+  },
+  "quest:1253": {
+   "title": "سپر سیاه"
+  },
+  "quest:1268": {
+   "title": "علائم سم مشکوک"
+  },
+  "quest:1282": {
+   "title": "به او می‌گویند جیم خندان"
+  },
+  "quest:1284": {
+   "title": "علائم سم مشکوک"
+  },
+  "quest:1319": {
+   "title": "سپر سیاه"
+  },
+  "quest:1320": {
+   "title": "سپر سیاه"
+  },
+  "quest:1321": {
+   "title": "سپر سیاه"
+  },
+  "quest:1177": {
+   "title": "گرسنه!"
+  },
+  "quest:1222": {
+   "title": "فرار استینکی"
+  },
+  "quest:1269": {
+   "title": "سروان پاول ریته"
+  },
+  "quest:1270": {
+   "title": "فرار استینکی"
+  },
+  "quest:1271": {
+   "title": "مهمانی در خزندهٔ آبی"
+  },
+  "quest:1273": {
+   "title": "بازجویی از ریته"
+  },
+  "quest:1276": {
+   "title": "سپر سیاه"
+  },
+  "quest:1322": {
+   "title": "سپر سیاه"
+  },
+  "quest:1323": {
+   "title": "سپر سیاه"
+  },
+  "quest:1204": {
+   "title": "سوپ مادروک و حشرات"
+  },
+  "quest:1260": {
+   "title": "مورگان استرن"
+  }
+ }
+}

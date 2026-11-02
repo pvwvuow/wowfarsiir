@@ -1,0 +1,479 @@
+{
+ "pack": "quest-felwood-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-felwood-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Grazle",
+   "fa": "گرازل",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Deadwood",
+   "fa": "دارک‌وود",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Nafien",
+   "fa": "نافین",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Corrupted Windblossom",
+   "fa": "گل‌باد فاسد",
+   "kind": "ob"
+  },
+  "E6": {
+   "en": "Corrupted Songflower",
+   "fa": "گل‌آوای فاسد",
+   "kind": "ob"
+  },
+  "E7": {
+   "en": "Salve via Hunting",
+   "fa": "مرهم از راه شکار",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Cenarion Beacon",
+   "fa": "چراغ راهنمای سِناریون",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Salve via Mining",
+   "fa": "مرهم از راه معدن‌کاری",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "Salve via Gathering",
+   "fa": "مرهم از راه چیدن",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Salve via Skinning",
+   "fa": "مرهم از راه پوست‌کندن",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "Salve via Disenchanting",
+   "fa": "مرهم از راه جادوزدایی",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "Corrupted Whipper Root",
+   "fa": "ریشهٔ شلاق‌زن فاسد",
+   "kind": "ob"
+  },
+  "E18": {
+   "en": "Corrupted Night Dragon",
+   "fa": "اژدهای شب فاسد",
+   "kind": "ob"
+  }
+ },
+ "glossary": {
+  "Grazle": "گرازل",
+  "Deadwood": "دارک‌وود",
+  "Nafien": "نافین",
+  "Corrupted Windblossom": "گل‌باد فاسد",
+  "Corrupted Songflower": "گل‌آوای فاسد",
+  "Salve via Hunting": "مرهم از راه شکار",
+  "Cenarion Beacon": "چراغ راهنمای سِناریون",
+  "Felwood": "فل‌وود",
+  "Salve via Mining": "مرهم از راه معدن‌کاری",
+  "Salve via Gathering": "مرهم از راه چیدن",
+  "Salve via Skinning": "مرهم از راه پوست‌کندن",
+  "Salve via Disenchanting": "مرهم از راه جادوزدایی",
+  "Corrupted Whipper Root": "ریشهٔ شلاق‌زن فاسد",
+  "Corrupted Night Dragon": "اژدهای شب فاسد"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$n",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$n",
+  "19": "$r",
+  "20": "$B",
+  "21": "$B",
+  "22": "$n",
+  "23": "$B",
+  "24": "$B",
+  "25": "$n",
+  "26": "$B",
+  "27": "$B",
+  "28": "$n",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$n",
+  "34": "$r",
+  "35": "$B",
+  "36": "$B",
+  "37": "$n",
+  "38": "$B",
+  "39": "$B",
+  "40": "$n"
+ },
+ "rows": {
+  "quest:8466:title": "Feathers for ⟦E1⟧",
+  "quest:8466:desc:0": "Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers. Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8466:obj:0": "Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers. Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8466:details:0": "Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers. Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8466:progress:0": "While you have proven yourself to me, you may need to continue to work toward proving yourself to the suspicious brethren of my tribe.  To that end, I may be able to continue assisting you.⟦1⟧⟦2⟧Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers.  Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8466:completion:0": "Well done, ⟦3⟧! I will make sure that your deeds are known amongst my kind.⟦4⟧⟦5⟧Remember to bring any of the feathers you find to me. I will continue to accept them as long as necessary.",
+  "quest:8467:title": "Feathers for ⟦E3⟧",
+  "quest:8467:desc:0": "Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers. Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8467:obj:0": "Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers. Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8467:details:0": "Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers. Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8467:progress:0": "While you have proven yourself to me, you may need to continue to work toward proving yourself to the suspicious brethren of my tribe.  To that end, I may be able to continue assisting you.⟦6⟧⟦7⟧Some of the ⟦E2⟧ furbolgs wear a distinctive headdress that may be used as a means of proof in thinning their numbers.  Bring me a feather from any headdresses you acquire; for every set of five you bring me, you will earn recognition amongst the Timbermaw.",
+  "quest:8467:completion:0": "Well done, ⟦8⟧!  I will make sure that your deeds are known amongst my kind.⟦9⟧⟦10⟧Remember to bring any of the feathers you find to me.  I will continue to accept them as long as necessary.",
+  "quest:996:title": "⟦E4⟧",
+  "quest:996:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant.  The berries that hang from the plant appear rotten and poisonous.  It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:996:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:998:title": "⟦E4⟧",
+  "quest:998:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:998:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:1514:title": "⟦E4⟧",
+  "quest:1514:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:1514:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:2523:title": "⟦E6⟧",
+  "quest:2523:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:2523:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:2878:title": "⟦E6⟧",
+  "quest:2878:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:2878:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:3363:title": "⟦E6⟧",
+  "quest:3363:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:3363:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4103:title": "⟦E7⟧",
+  "quest:4103:progress:0": "Possessing a ⟦E8⟧ allows one to see a corrupted soul shard on those tainted beasts that are put down for the greater good. I grind shards into a usable reagent that goes into making Cenarion plant salve. We will use that salve to turn corrupted plants into healthy ones again.⟦11⟧⟦12⟧In exchange for these shards, I will give you some Cenarion plant salves I have already prepared.",
+  "quest:4103:completion:0": "Very well then, here are your Cenarion plant salves. Scour ⟦E9⟧ for corrupted plants, ⟦13⟧! Wherever they are, use the salve I have given you to purify them.",
+  "quest:4104:title": "⟦E10⟧",
+  "quest:4104:progress:0": "If you possess a Cenarion beacon while mining in ⟦E9⟧, you will be able to see tainted vitriol that corrupts a vein of raw metal. I know how to purify that vitriol and turn it into a reagent that goes into making Cenarion plant salve. You will then use that salve on plants you find in the wild that need saving.⟦14⟧⟦15⟧If you have collected any tainted vitriol, I'll give you some Cenarion plant salve I have already prepared.",
+  "quest:4104:completion:0": "Very well then, here's some Cenarion plant salve. If you find more vitriol when you mine in ⟦E9⟧, remember to hold on to it for me! The more of it you find, the more salve I will be able to make.",
+  "quest:4105:title": "⟦E11⟧",
+  "quest:4105:progress:0": "A Cenarion beacon allows a seasoned herbalist to spot insidious fel creep - a malfeasant product of ⟦E9⟧'s corruption. My work here has taught me the knowledge of purifying fel creep into a cleansing reagent... used in what we now refer to as Cenarion plant salve.⟦16⟧⟦17⟧When you gather herbs in ⟦E9⟧, you should encounter the fel creep so long as you have the beacon. In exchange for what you bring to me, I will give you pre-made Cenarion plant salve.",
+  "quest:4105:completion:0": "Excellent work ⟦18⟧ - every bit of this, once we purify it, will help us take back ⟦E9⟧. Here, take some doses of Cenarion plant salve and head into the forest. The reclaiming of the land from the corruption waits for no ⟦19⟧!",
+  "quest:4106:title": "⟦E12⟧",
+  "quest:4106:progress:0": "A Cenarion beacon will allow a well-trained skinner to spot patches of tainted skin from bounty gathered in ⟦E9⟧. I convert these seemingly useless patches into a thick paste that serves as a quickening agent for Cenarion plant salve. When you skin your kills here in ⟦E9⟧, be sure to have a beacon on you!⟦20⟧⟦21⟧When you collect tainted patches, bring them to me and I will give you some Cenarion plant salves that I have already made.",
+  "quest:4106:completion:0": "This is exactly what I need. Here - take these plant salves and use them to reclaim ⟦E9⟧ from the corruption. We must persevere, ⟦22⟧!",
+  "quest:4107:title": "⟦E14⟧",
+  "quest:4107:progress:0": "The power of a disenchanted magical item is felt by the essence it creates. I've devised a way to turn raw essence used by enchanters into a suitable reagent for creating Cenarion plant salve. You don't need a Cenarion beacon for this; any suitably disenchanted item that yields lesser nether essences will work.⟦23⟧⟦24⟧I just need a single lesser nether essence; in exchange, I will give you Cenarion plant salves. The essence is extremely potent - a little definitely goes a long way!",
+  "quest:4107:completion:0": "Here are some Cenarion plant salves - I only need one lesser nether essence for this, ⟦25⟧. Essence is by far the most potent item I can make use of to turn swords into plowshares, as it were. If you need more salve, then find me here!",
+  "quest:4108:title": "⟦E7⟧",
+  "quest:4108:progress:0": "Possessing a ⟦E8⟧ allows one to see a corrupted soul shard on those tainted beasts that are put down for the greater good. I grind shards into a usable reagent that goes into making Cenarion plant salve. We will use that salve to turn corrupted plants into healthy ones again.⟦26⟧⟦27⟧In exchange for these shards, I will give you some Cenarion plant salves I have already prepared.",
+  "quest:4108:completion:0": "Very well then, here are your Cenarion plant salves. Scour ⟦E9⟧ for corrupted plants, ⟦28⟧! Wherever they are, use the salve I have given you to purify them.",
+  "quest:4109:title": "⟦E10⟧",
+  "quest:4109:progress:0": "If you possess a Cenarion beacon while mining in ⟦E9⟧, you will be able to see tainted vitriol that corrupts a vein of raw metal. I know how to purify that vitriol and turn it into a reagent that goes into making Cenarion plant salve. You will then use that salve on plants you find in the wild that need saving.⟦29⟧⟦30⟧If you have collected any tainted vitriol, I'll give you some Cenarion plant salve I have already prepared.",
+  "quest:4109:completion:0": "Very well then, here's some Cenarion plant salve. If you find more vitriol when you mine in ⟦E9⟧, remember to hold on to it for me! The more of it you find, the more salve I will be able to make.",
+  "quest:4110:title": "⟦E11⟧",
+  "quest:4110:progress:0": "A Cenarion beacon allows a seasoned herbalist to spot insidious fel creep - a malfeasant product of ⟦E9⟧'s corruption. My work here has taught me the knowledge of purifying fel creep into a cleansing reagent... used in what we now refer to as Cenarion plant salve.⟦31⟧⟦32⟧When you gather herbs in ⟦E9⟧, you should encounter the fel creep so long as you have the beacon. In exchange for what you bring to me, I will give you pre-made Cenarion plant salve.",
+  "quest:4110:completion:0": "Excellent work ⟦33⟧ - every bit of this, once we purify it, will help us take back ⟦E9⟧. Here, take some doses of Cenarion plant salve and head into the forest. The reclaiming of the land from the corruption waits for no ⟦34⟧!",
+  "quest:4111:title": "⟦E12⟧",
+  "quest:4111:progress:0": "A Cenarion beacon will allow a well-trained skinner to spot patches of tainted skin from bounty gathered in ⟦E9⟧. I convert these seemingly useless patches into a thick paste that serves as a quickening agent for Cenarion plant salve. When you skin your kills here in ⟦E9⟧, be sure to have a beacon on you!⟦35⟧⟦36⟧When you collect tainted patches, bring them to me and I will give you some Cenarion plant salves that I have already made.",
+  "quest:4111:completion:0": "This is exactly what I need. Here - take these plant salves and use them to reclaim ⟦E9⟧ from the corruption. We must persevere, ⟦37⟧!",
+  "quest:4112:title": "⟦E14⟧",
+  "quest:4112:progress:0": "The power of a disenchanted magical item is felt by the essence it creates. I've devised a way to turn raw essence used by enchanters into a suitable reagent for creating Cenarion plant salve. You don't need a Cenarion beacon for this; any suitably disenchanted item that yields lesser nether essences will work.⟦38⟧⟦39⟧I just need a single lesser nether essence; in exchange, I will give you Cenarion plant salves. The essence is extremely potent - a little definitely goes a long way!",
+  "quest:4112:completion:0": "Here are some Cenarion plant salves - I only need one lesser nether essence for this, ⟦40⟧. Essence is by far the most potent item I can make use of to turn swords into plowshares, as it were. If you need more salve, then find me here!",
+  "quest:4113:title": "⟦E6⟧",
+  "quest:4113:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant.  A pungent, unhealthy odor emanates from the plant.  It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4113:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4114:title": "⟦E6⟧",
+  "quest:4114:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4114:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4115:title": "⟦E4⟧",
+  "quest:4115:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4115:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4116:title": "⟦E6⟧",
+  "quest:4116:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4116:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4117:title": "⟦E15⟧",
+  "quest:4117:progress:0": "You have found a sickly, corrupted version of what appears to be a whipper root plant. The visible roots of the plant appear tough and leathery, and a slimy film hangs from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4117:completion:0": "You apply 3 Cenarion Plant Salves to the Whipper Root. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4118:title": "⟦E6⟧",
+  "quest:4118:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4118:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4119:title": "⟦E18⟧",
+  "quest:4119:progress:0": "You have found a sickly, corrupted version of what appears to be a night dragon plant.  The fruits that hang from the plant appear rotten and poisonous.  It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4119:completion:0": "You apply 4 Cenarion Plant Salves to the Night Dragon. It immediately begins to shed it's corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4221:title": "⟦E4⟧",
+  "quest:4221:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4221:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4222:title": "⟦E4⟧",
+  "quest:4222:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4222:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4343:title": "⟦E4⟧",
+  "quest:4343:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4343:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4401:title": "⟦E6⟧",
+  "quest:4401:progress:0": "You have found a sickly, corrupted version of what appears to be a songflower plant. A pungent, unhealthy odor emanates from the plant. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4401:completion:0": "You apply some Cenarion plant salve to the songflower. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant.",
+  "quest:4403:title": "⟦E4⟧",
+  "quest:4403:progress:0": "You have found a sickly, corrupted version of what appears to be a windblossom plant. The berries that hang from the plant appear rotten and poisonous. It desperately needs some sort of attention if it is to be turned back to normal.",
+  "quest:4403:completion:0": "You apply two Cenarion plant salves to the windblossom. It immediately begins to shed its corrupted form, blossoming into a vibrant and healthy plant."
+ },
+ "context": {
+  "quest:8466": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Grazle («گرازل»)"
+  },
+  "quest:8467": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Nafien («نافین»)"
+  },
+  "quest:996": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:998": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:1514": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:2523": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:2878": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:3363": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:4103": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arathandris Silversky («آراتاندریس آسمان‌نقره»)"
+  },
+  "quest:4104": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arathandris Silversky («آراتاندریس آسمان‌نقره»)"
+  },
+  "quest:4105": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arathandris Silversky («آراتاندریس آسمان‌نقره»)"
+  },
+  "quest:4106": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arathandris Silversky («آراتاندریس آسمان‌نقره»)"
+  },
+  "quest:4107": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Arathandris Silversky («آراتاندریس آسمان‌نقره»)"
+  },
+  "quest:4108": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "horde",
+   "giver": "",
+   "turner": "Maybess Riverbreeze («می‌بس نسیم‌رود»)"
+  },
+  "quest:4109": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "horde",
+   "giver": "",
+   "turner": "Maybess Riverbreeze («می‌بس نسیم‌رود»)"
+  },
+  "quest:4110": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "horde",
+   "giver": "",
+   "turner": "Maybess Riverbreeze («می‌بس نسیم‌رود»)"
+  },
+  "quest:4111": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "horde",
+   "giver": "",
+   "turner": "Maybess Riverbreeze («می‌بس نسیم‌رود»)"
+  },
+  "quest:4112": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "horde",
+   "giver": "",
+   "turner": "Maybess Riverbreeze («می‌بس نسیم‌رود»)"
+  },
+  "quest:4113": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:4114": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:4115": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:4116": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:4117": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Whipper Root («ریشهٔ شلاق‌زن فاسد»)",
+   "turner": "Corrupted Whipper Root («ریشهٔ شلاق‌زن فاسد»)"
+  },
+  "quest:4118": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:4119": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Night Dragon («اژدهای شب فاسد»)",
+   "turner": "Corrupted Night Dragon («اژدهای شب فاسد»)"
+  },
+  "quest:4221": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:4222": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:4343": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  },
+  "quest:4401": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Songflower («گل‌آوای فاسد»)",
+   "turner": "Corrupted Songflower («گل‌آوای فاسد»)"
+  },
+  "quest:4403": {
+   "zone_en": "Felwood",
+   "zone_fa": "فل‌وود",
+   "level": 48,
+   "side": "",
+   "giver": "Corrupted Windblossom («گل‌باد فاسد»)",
+   "turner": "Corrupted Windblossom («گل‌باد فاسد»)"
+  }
+ }
+}

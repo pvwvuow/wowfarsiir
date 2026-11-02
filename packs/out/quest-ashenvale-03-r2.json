@@ -1,0 +1,550 @@
+{
+ "pack": "quest-ashenvale-03-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-ashenvale-03-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Clerk Daltry",
+   "fa": "منشی دالتری",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Jonathan Carevin",
+   "fa": "جاناتان کروین",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Velinde Starsong",
+   "fa": "وِلینده استارزونگ",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Calor",
+   "fa": "کالور",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Thyn'tel Bladeweaver",
+   "fa": "تینتل بافندهٔ تیغه",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Ran Bloodtooth",
+   "fa": "ران دندان‌خون",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Krolg",
+   "fa": "کرولگ",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Ran Bloodtooth's Skull",
+   "fa": "جمجمهٔ رنِ خون‌دندان",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Dartol's Rod of Transformation",
+   "fa": "عصای دگردیسی دارتیل",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Raene Wolfrunner",
+   "fa": "رین گرگ‌دو",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Gurda Ragescar",
+   "fa": "گوردا زخم‌خشم",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Strange Water Globe",
+   "fa": "گویِ آبِ عجیب",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Je'neu Sancrea",
+   "fa": "ژنو سانکریا",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Earthen Ring",
+   "fa": "حلقهٔ زمین",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Baron Aquanis",
+   "fa": "بارون آکوانیس",
+   "kind": "qs"
+  },
+  "E27": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Maseara Autumnmoon",
+   "fa": "ماسیارا ماه‌پاییز",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Taneel Darkwood",
+   "fa": "تانیل جنگل تاریک",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Uthil Mooncall",
+   "fa": "اوتیل، فراخوان ماه",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Mavoris Cloudsbreak",
+   "fa": "ماووریس شکافندهٔ ابر",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Kayneth Stillwind",
+   "fa": "کِینت استیل‌ویند",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Anilia",
+   "fa": "آنیلیا",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Branch of Cenarius",
+   "fa": "شاخهٔ سناریوس",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Geltharis",
+   "fa": "گلتاریس",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Illiyana",
+   "fa": "ایلیانا",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Satyr Horns",
+   "fa": "شاخ‌های ساتیر",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Shandrina",
+   "fa": "شاندرینا",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Warsong Gulch",
+   "fa": "درهٔ وار‑سونگ",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Clerk Daltry": "منشی دالتری",
+  "Jonathan Carevin": "جاناتان کروین",
+  "Velinde Starsong": "وِلینده استارزونگ",
+  "Calor": "کالور",
+  "Elune": "الون",
+  "Duskwood": "جنگل تاریک",
+  "Thyn'tel Bladeweaver": "تینتل بافندهٔ تیغه",
+  "Darnassus": "دارناسوس",
+  "Ran Bloodtooth": "ران دندان‌خون",
+  "Krolg": "کرولگ",
+  "Ran Bloodtooth's Skull": "جمجمهٔ رنِ خون‌دندان",
+  "Dartol's Rod of Transformation": "عصای دگردیسی دارتیل",
+  "Raene Wolfrunner": "رین گرگ‌دو",
+  "Ashenvale": "اَشِن‌ویل",
+  "Gurda Ragescar": "گوردا زخم‌خشم",
+  "Strange Water Globe": "گویِ آبِ عجیب",
+  "Je'neu Sancrea": "ژنو سانکریا",
+  "Earthen Ring": "حلقهٔ زمین",
+  "Horde": "هورد",
+  "Baron Aquanis": "بارون آکوانیس",
+  "Hammer": "چکش",
+  "Maseara Autumnmoon": "ماسیارا ماه‌پاییز",
+  "Taneel Darkwood": "تانیل جنگل تاریک",
+  "Uthil Mooncall": "اوتیل، فراخوان ماه",
+  "Mavoris Cloudsbreak": "ماووریس شکافندهٔ ابر",
+  "Kayneth Stillwind": "کِینت استیل‌ویند",
+  "Forsaken": "مطرودان",
+  "Anilia": "آنیلیا",
+  "Branch of Cenarius": "شاخهٔ سناریوس",
+  "Geltharis": "گلتاریس",
+  "Illiyana": "ایلیانا",
+  "Satyr Horns": "شاخ‌های ساتیر",
+  "Shandrina": "شاندرینا",
+  "Warsong Gulch": "درهٔ وار‑سونگ"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$n",
+  "3": "$B",
+  "4": "$B",
+  "5": "$r",
+  "6": "$N",
+  "7": "$B",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$n",
+  "15": "$R",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N"
+ },
+ "rows": {
+  "quest:1041:obj:0": "Speak with ⟦E1⟧ in Darkshire.",
+  "quest:1041:details:0": "Turns out I was wrong about you, and that isn't something that happens everyday.",
+  "quest:1041:details:1": "It just so happens that I remember this Velinde you're looking for. Isn't every day that a night elf priestess that wants to travel with a dirty old--but great for your shipping needs!--caravan like my own.",
+  "quest:1041:details:2": "We split up on the way north, she was headed for Darkshire. The clerk there keeps all sorts of records. Might know something useful.",
+  "quest:1041:details:3": "Be careful in the jungle, it is a deadly place even at the best of times.",
+  "quest:1041:completion:0": "With all the strange happenings of the last few years, I keep as good records of strangers as I can. Never know when it might come in handy... though it's usually not pleasant business when it does. Not to suggest anything about this Velinde you're looking for.",
+  "quest:1042:obj:0": "Speak with ⟦E2⟧ in Darkshire.",
+  "quest:1042:details:0": "No, I don't have any records of a ⟦E3⟧ staying in Darkshire... though, if you don't mind me saying, I can hardly imagine a night elf priestess taking a room in the inn, if you get my meaning?",
+  "quest:1042:details:1": "These wolf-men you mentioned though, that's something I've heard about. Just the other day, ⟦E4⟧ came into town with a string of their heads. He works with the Carevin family. Hunters of demons, undead, and other monstrosities. Speak with Jonathan, he's the head of the household.",
+  "quest:1042:completion:0": "Dark times these are. Ill news is whispered from every swaying branch, and evil can be found under every rock.",
+  "quest:1042:completion:1": "And in such times an unknown stranger enters my home and asks of worgen... I'll ask no forgiveness for my suspicions, only answers.",
+  "quest:1042:completion:2": "And answers, I will have.",
+  "quest:1043:obj:0": "Look for signs of the Scythe of ⟦E6⟧ then return to ⟦E2⟧ in Darkshire.",
+  "quest:1043:details:0": "Your story rings true... I do not entirely understand your motives, but if your business here in ⟦E7⟧ involves ridding the forest of worgen in any number, then I can forgo understanding for results.",
+  "quest:1043:details:1": "There is a mine to the south that has been overrun with worgen... They appeared out of nowhere, but from what we know, that is where they first were found.",
+  "quest:1043:details:2": "Go about your business, but I would ask that if you find anything of import, you share it with me. We will accept any aid in our war against evil.",
+  "quest:1043:progress:0": "The woods are perilous for the unprepared. Keep your weapons close at hand and your wits even closer, or your next journey into the haunted forest may be your last.",
+  "quest:1043:completion:0": "It is an interesting story you tell, ⟦1⟧. Though the Carevin family's influence is not large enough that we might find the root of these troubles and finish them once and for all, we will do what we can to contain the worgens' numbers in ⟦E7⟧.",
+  "quest:1043:completion:1": "Already I have instructed ⟦E4⟧ to make this his first priority.",
+  "quest:1044:obj:0": "Return to ⟦E9⟧ in ⟦E10⟧.",
+  "quest:1044:details:0": "We shall rein in the worgen problem, have no worry of that. This evil that your friend introduced to our woods will be contained, and I bear her no ill will for her actions. Strange events are afoot in these times, ⟦2⟧, and the darkness knows no respite.",
+  "quest:1044:details:1": "I will keep you no longer. I suspect that there are others that should hear of what you have found in the mines of ⟦E7⟧.",
+  "quest:1044:completion:0": "So this is the fate of Velinde, is it? The high priestess will be disappointed to hear of this, they were good friends before her disappearance. Still, the Scythe of ⟦E6⟧ was surely granted to her as a boon by our goddess, and it is unsettling to me that it has fallen out of her servants' hands.",
+  "quest:1044:completion:1": "Another matter for another time, however. I owe you my thanks in no small amount for what you have accomplished.",
+  "quest:1045:obj:0": "Kill ⟦E11⟧ and 4 Bloodtooth Guards and return to ⟦E12⟧ near Lake Mystral.",
+  "quest:1045:details:0": "The night elves are as old as time, but their arrogance destroys their very world. And now it destroys our lives too. But that can no longer be controlled...",
+  "quest:1045:details:1": "I blame the elves for much, but we are still responsible for our actions. Even beyond the corruption, we are capable of great evil.",
+  "quest:1045:details:2": "⟦E11⟧ is one such evil. Power hungry, lusting... the corruption has only made him stronger. My hatred for the elves burns, but I do not wish ill upon their children, so we must police our own.",
+  "quest:1045:progress:0": "Have you slain Ran yet, my friend?⟦3⟧⟦4⟧Even the Night elves do not truly deserve his wrath. His hatred burns even brighter than my own, but his mind is no longer his own. He is a threat to all the natural creatures of this forest.",
+  "quest:1045:completion:0": "You have done well, my friend.",
+  "quest:1045:completion:1": "The forest is still tainted, but at least we know we have done a small part to return it to its former glory. If you wish to return to me again, I would enjoy the company of my own kind.",
+  "quest:1045:completion:2": "Be well. Perhaps our tribes will meet again under less violent times.",
+  "quest:1046:obj:0": "Bring ⟦E15⟧ and ⟦E16⟧ to ⟦E17⟧ in Astranaar.",
+  "quest:1046:details:0": "Return to your own tribe and let them know of your victory here.",
+  "quest:1046:details:1": "Show them your trophy, and bask in the glory...",
+  "quest:1046:progress:0": "The Sentinels do what they can here in ⟦E18⟧, but it's thanks to ⟦5⟧s like you that we have gained the ground we have.",
+  "quest:1046:completion:0": "So, this is the skull of the fiercest furbolg threat in ⟦E18⟧?",
+  "quest:1046:completion:1": "I am more than pleased with your abilities, ⟦6⟧. The Sentinels cannot thank you enough. I hope we can rely on you again in the future to help our people.",
+  "quest:1046:completion:2": "I shall put this skull and Dartol's Rod in a place of reverence for others to see.",
+  "quest:1046:completion:3": "Teronis would be proud. Thank you again.",
+  "quest:6504:obj:0": "Find the 12 missing pages of the Shredder Operating Manual, and put them together to form Chapters 1, 2, and 3. Return the pages to ⟦E21⟧ near Splintertree Post.⟦7⟧",
+  "quest:6504:details:0": "I just picked up this shredder from Ratchet and I was on my way back to the Warsong Lumber Camp, where I am supposed to be on duty. I was given a manual on how to operate the shredder, but on the trip back, a huge gust of wind blew it from my hands. The pages went everywhere, and all I was left with was the cover.",
+  "quest:6504:details:1": "The pages could be just about anywhere by now, I suppose... but I don't know how to use the shredder without them! Will you find them for me?",
+  "quest:6504:progress:0": "I hope you find the pages soon, ⟦8⟧! I really need to get back to work!",
+  "quest:6504:completion:0": "Reading isn't my strong point... but now I'll be able to get back to work! Thanks, ⟦9⟧!",
+  "quest:6922:obj:0": "Bring the ⟦E22⟧ to ⟦E23⟧ at Zoram'gar Outpost, ⟦E18⟧.",
+  "quest:6922:details:0": "The defeated water elemental has left behind a strange water globe. You surmise that the object somehow fed the beast energy. Inside the globe, a putrid-looking form of water sloshes about. The globe itself seems impervious to any sort of physical force.",
+  "quest:6922:details:1": "If anyone can make any sense of this item, it would be ⟦E23⟧ of the ⟦E24⟧. He is located at the ⟦E25⟧'s Zoram'gar Outpost in ⟦E18⟧.",
+  "quest:6922:progress:0": "Ah, hello again ⟦10⟧.  I was just reading the waves the sea, much like I always do.  What brings you to the outpost?",
+  "quest:6922:completion:0": "This... this is quite the find, ⟦11⟧.",
+  "quest:6922:completion:1": "You acquired this from ⟦E26⟧ in Blackfathom, you say? ⟦E26⟧ has long been thought of as a corrupted elemental power; this globe will prove what exactly had corrupted him. While it would be no surprise if it turned out to be the Twilight's ⟦E27⟧, our studies will also show how they did it as well.",
+  "quest:6922:completion:2": "You did well in bringing this to me. Please - take this, along with the ⟦E24⟧'s warmest regards.",
+  "quest:98417:title": "Vengeful Trail",
+  "quest:98417:obj:0": "⟦E28⟧ wants you to search west of Forest Song, amongst the Satyrnaar demons. Report any signs of her husband Kurothel upon your return.",
+  "quest:1012:obj:0": "Kill the druids: ⟦E29⟧, ⟦E30⟧, ⟦E31⟧; then return to ⟦E32⟧ in Forest Song.",
+  "quest:1012:details:0": "When I struggled with the ⟦E33⟧'s poisons, I had a vision. I had a vision of the druids in the Dor'danil Barrow Den, poisoned... murdered by the undead! They are now errant ghosts, severed from their bodies and driven mad.",
+  "quest:1012:details:1": "So that the druids' spirits might some day find peace, you must enter the Dor'danil Barrow Den and destroy its once great leaders: ⟦E29⟧, ⟦E30⟧ and ⟦E31⟧.",
+  "quest:1012:details:2": "Do this, then return to me.",
+  "quest:1012:progress:0": "The anguish of the Dor'danil druids still haunt my dreams, ⟦12⟧. You must destroy their leaders!",
+  "quest:1012:completion:0": "I felt the anguish of the Dor'danil Barrows lessen, and knew you had completed your task.",
+  "quest:1012:completion:1": "It was grim work you did, ⟦13⟧, for the spirits you destroyed were merely victims of the ⟦E33⟧'s evil. But with their destruction, let us hope the other maddened spirits find peace.",
+  "quest:1021:obj:0": "Find ⟦E34⟧ in Xavian.",
+  "quest:1021:details:0": "Listen, I don't know who you are, but I need your help. My sisters went to take back the ⟦E35⟧ from the satyr. They said they'd be back soon, but it's been two whole days!",
+  "quest:1021:details:1": "B⟦14⟧, you have to find them! They were looking for the ruins of a night elf temple in Xavian to the northwest. I don't know what to think. Look for ⟦E34⟧, she was leading them on the search.",
+  "quest:1021:completion:0": "Judging by the gaping wound in her side, ⟦E34⟧ is on the verge of death.",
+  "quest:1031:obj:0": "Kill ⟦E36⟧ and return the ⟦E35⟧ to ⟦E37⟧ at Forest Song.",
+  "quest:1031:details:0": "⟦E34⟧ puts her hands on your shoulders and draws you close. Gasping, she points towards the arch to the north, before her eyes close and her last wheezing breath leaves her body. \"He has taken it... ⟦E36⟧...\" You know in your heart that ⟦E34⟧'s dying wish is to see the ⟦E35⟧ back in dryad hands.",
+  "quest:1031:progress:0": "Have you found them? What did ⟦E34⟧ say? Where is she?",
+  "quest:1031:completion:0": "⟦E34⟧ died? No... that can't be! It was just yesterday that we were running and playing together in the woods.",
+  "quest:1031:completion:1": "I guess those days are over...",
+  "quest:1032:obj:0": "Bring 16 ⟦E39⟧ to ⟦E37⟧ in Forest Song.",
+  "quest:1032:details:0": "I can't believe that ⟦E34⟧ is gone... We used to play together in the forests all the time. I almost feel... sad.",
+  "quest:1032:details:1": "I know something that might make me feel better. Please, slay the satyrs that took ⟦E34⟧ from me! Bring me their horns as proof of your actions and you will forever have my gratitude.",
+  "quest:1032:details:2": "B",
+  "quest:1032:progress:0": "Please, help me avenge ⟦E34⟧'s death.",
+  "quest:1032:completion:0": "Thank you, kind ⟦15⟧. My sister's spirit is gladdened by your efforts.",
+  "quest:86757:title": "Slowing the Orc Advance",
+  "quest:86757:obj:0": "Bring 6 Jagged Orc Swords and 4 Curved Orc Daggers to ⟦E43⟧.",
+  "quest:7863:completion:0": "You've certainly begun to prove yourself to us, ⟦16⟧. As a reward, please take this care package! Inside it you'll find rations and bandages that are usable only inside ⟦E44⟧.",
+  "quest:7863:completion:1": "As you continue to prove yourself inside the Gulch, you'll find that these items will become available to you for purchase. Rations become available when you are Friendly with us, and bandages when you are Honored.",
+  "quest:7866:completion:0": "You've certainly begun to prove yourself to us, ⟦17⟧. As a reward, please take this care package! Inside it you'll find rations and bandages that are usable only inside ⟦E44⟧.",
+  "quest:7866:completion:1": "As you continue to prove yourself inside the Gulch, you'll find that these items will become available to you for purchase. Rations become available when you are Friendly with us, and bandages when you are Honored.",
+  "quest:7864:completion:0": "You've certainly begun to prove yourself to us, ⟦18⟧. As a reward, please take this care package! Inside it you'll find rations and bandages that are usable only inside ⟦E44⟧.",
+  "quest:7864:completion:1": "As you continue to prove yourself inside the Gulch, you'll find that these items will become available to you for purchase. Rations become available when you are Friendly with us, and bandages when you are Honored.",
+  "quest:7867:completion:0": "You've certainly begun to prove yourself to us, ⟦19⟧. As a reward, please take this care package! Inside it you'll find rations and bandages that are usable only inside ⟦E44⟧.",
+  "quest:7867:completion:1": "As you continue to prove yourself inside the Gulch, you'll find that these items will become available to you for purchase. Rations become available when you are Friendly with us, and bandages when you are Honored.",
+  "quest:7865:completion:0": "You've certainly begun to prove yourself to us, ⟦20⟧. As a reward, please take this care package! Inside it you'll find rations and bandages that are usable only inside ⟦E44⟧.",
+  "quest:7865:completion:1": "As you continue to prove yourself inside the Gulch, you'll find that these items will become available to you for purchase. Rations become available when you are Friendly with us, and bandages when you are Honored.",
+  "quest:7868:completion:0": "You've certainly begun to prove yourself to us, ⟦21⟧. As a reward, please take this care package! Inside it you'll find rations and bandages that are usable only inside ⟦E44⟧.",
+  "quest:7868:completion:1": "As you continue to prove yourself inside the Gulch, you'll find that these items will become available to you for purchase. Rations become available when you are Friendly with us, and bandages when you are Honored."
+ },
+ "context": {
+  "quest:1041": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Caravaneer Ruzzgot («کاروان‌سالار روزگات»)",
+   "turner": "Clerk Daltry («منشی دالتری»)"
+  },
+  "quest:1042": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Clerk Daltry («منشی دالتری»)",
+   "turner": "Jonathan Carevin («جاناتان کروین»)"
+  },
+  "quest:1043": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Jonathan Carevin («جاناتان کروین»)",
+   "turner": "Jonathan Carevin («جاناتان کروین»)"
+  },
+  "quest:1044": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Jonathan Carevin («جاناتان کروین»)",
+   "turner": "Thyn'tel Bladeweaver («تینتل بافندهٔ تیغه»)"
+  },
+  "quest:1045": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Krolg («کرولگ»)",
+   "turner": "Krolg («کرولگ»)"
+  },
+  "quest:1046": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Krolg («کرولگ»)",
+   "turner": "Raene Wolfrunner («رین گرگ‌دو»)"
+  },
+  "quest:6504": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "horde",
+   "giver": "Gurda Ragescar («گوردا زخم‌خشم»)",
+   "turner": "Gurda Ragescar («گوردا زخم‌خشم»)"
+  },
+  "quest:6922": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "horde",
+   "giver": "",
+   "turner": "Je'neu Sancrea («ژنو سانکریا»)"
+  },
+  "quest:98417": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Maseara Autumnmoon («ماسیارا ماه‌پاییز»)",
+   "turner": ""
+  },
+  "quest:1012": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Kayneth Stillwind («کِینت استیل‌ویند»)",
+   "turner": "Kayneth Stillwind («کِینت استیل‌ویند»)"
+  },
+  "quest:1021": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Illiyana («ایلیانا»)",
+   "turner": "Anilia («آنیلیا»)"
+  },
+  "quest:1031": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Anilia («آنیلیا»)",
+   "turner": "Illiyana («ایلیانا»)"
+  },
+  "quest:1032": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Illiyana («ایلیانا»)",
+   "turner": "Illiyana («ایلیانا»)"
+  },
+  "quest:86757": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Shandrina («شاندرینا»)",
+   "turner": ""
+  },
+  "quest:7863": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 34,
+   "side": "alliance",
+   "giver": "Illiyana Moonblaze («ایلیانا ماه‌شعله»)",
+   "turner": "Illiyana Moonblaze («ایلیانا ماه‌شعله»)"
+  },
+  "quest:7866": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 34,
+   "side": "horde",
+   "giver": "Kelm Hargunth («کلم هارگانث»)",
+   "turner": "Kelm Hargunth («کلم هارگانث»)"
+  },
+  "quest:7864": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 44,
+   "side": "alliance",
+   "giver": "Illiyana Moonblaze («ایلیانا ماه‌شعله»)",
+   "turner": "Illiyana Moonblaze («ایلیانا ماه‌شعله»)"
+  },
+  "quest:7867": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 44,
+   "side": "horde",
+   "giver": "Kelm Hargunth («کلم هارگانث»)",
+   "turner": "Kelm Hargunth («کلم هارگانث»)"
+  },
+  "quest:7865": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Illiyana Moonblaze («ایلیانا ماه‌شعله»)",
+   "turner": "Illiyana Moonblaze («ایلیانا ماه‌شعله»)"
+  },
+  "quest:7868": {
+   "zone_en": "Ashenvale",
+   "zone_fa": "اشن‌وِیل",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kelm Hargunth («کلم هارگانث»)",
+   "turner": "Kelm Hargunth («کلم هارگانث»)"
+  }
+ },
+ "known": {
+  "quest:1041": {
+   "title": "جادهٔ کاروان"
+  },
+  "quest:1042": {
+   "title": "خانواده کِروین"
+  },
+  "quest:1043": {
+   "title": "داس الون"
+  },
+  "quest:1044": {
+   "title": "پاسخ‌های روشن"
+  },
+  "quest:1045": {
+   "title": "پاک‌سازی رنه"
+  },
+  "quest:1046": {
+   "title": "پاک‌سازی رنه"
+  },
+  "quest:6504": {
+   "title": "صفحات گم‌شده"
+  },
+  "quest:6922": {
+   "title": "بارون آکوانیس"
+  },
+  "quest:1012": {
+   "title": "دروئیدهای دیوانه"
+  },
+  "quest:1021": {
+   "title": "ساتیر پلید! دریادها در خطرند!"
+  },
+  "quest:1031": {
+   "title": "شاخهٔ سناریوس"
+  },
+  "quest:1032": {
+   "title": "کشتن ساتیرها!"
+  },
+  "quest:7863": {
+   "title": "بستهٔ مراقبت پایهٔ نگهبانان"
+  },
+  "quest:7866": {
+   "title": "بستهٔ مراقبت پایهٔ سواران گشت"
+  },
+  "quest:7864": {
+   "title": "بستهٔ مراقبت استاندارد نگهبانان"
+  },
+  "quest:7867": {
+   "title": "بستهٔ مراقبت استاندارد سواران گشت"
+  },
+  "quest:7865": {
+   "title": "بستهٔ مراقبت پیشرفتهٔ نگهبانان"
+  },
+  "quest:7868": {
+   "title": "بستهٔ مراقبت پیشرفتهٔ سواران گشت"
+  }
+ }
+}

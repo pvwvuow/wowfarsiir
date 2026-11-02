@@ -1,0 +1,679 @@
+{
+ "pack": "quest-unknown-25-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-25-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Shoulderpads of Faith",
+   "fa": "شانه‌بندِ ایمان",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Father Inigo Montoy",
+   "fa": "کشیش اینیگو مونتویا",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Desecrated Shoulderpads",
+   "fa": "شانه‌پوشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Mooncloth",
+   "fa": "پارچهٔ ماه",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Smite",
+   "fa": "ضربهٔ مقدس",
+   "kind": "sp"
+  },
+  "E10": {
+   "en": "Sandals of Faith",
+   "fa": "صندلِ ایمان",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Desecrated Sandals",
+   "fa": "صندلِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Gloves of Faith",
+   "fa": "دستکشِ ایمان",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Desecrated Gloves",
+   "fa": "دستکشِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Belt of Faith",
+   "fa": "کمربندِ ایمان",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Desecrated Belt",
+   "fa": "کمربندِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E17": {
+   "en": "Bindings of Faith",
+   "fa": "بندِ ایمان",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Desecrated Bindings",
+   "fa": "بندپیچِ بی‌حرمت‌شده",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Arcane Crystal",
+   "fa": "بلور جادویی",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Nexus Crystal",
+   "fa": "بلور نکسوس",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Savage Guard",
+   "fa": "نگهبانِ وحشی",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Arcanum of Protection",
+   "fa": "راز‌نوشتهٔ پاسداری",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Zanza the Restless",
+   "fa": "زانزا بی‌قرار",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Zul'Gurub",
+   "fa": "زول‌گوروب",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Zanza",
+   "fa": "زانزا",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Arcanum of Rapidity",
+   "fa": "راز‌نوشتهٔ شتاب",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Arcanum of Focus",
+   "fa": "راز‌نوشتهٔ تمرکز",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Craftsman's Writ: Iridescent Hammer",
+   "fa": "فرمان استادکار - پتکِ پرچین‌دارِ درخشان",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Darkspear Islands",
+   "fa": "جزایر نیزه‌تیره",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Keefer's Angelfish",
+   "fa": "ماهیِ فرشتهٔ کیفر",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Dezian Queenfish",
+   "fa": "ماهی شهبانوی دیزیان",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Brownell's Blue Striped Racer",
+   "fa": "مارِ تندروی آبی‌خطِ برانل",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Tabard of the Argent Dawn",
+   "fa": "جلیقه‌زارِ سپیدهٔ نقره‌ای",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Bewitchments and Glamours",
+   "fa": "افسون‌ها و فریب‌ها",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Arcanic Systems Manual",
+   "fa": "راهنمایِ سامانه‌های رازآمیز",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Fury",
+   "fa": "خشم",
+   "kind": "cls"
+  },
+  "E42": {
+   "en": "Scarlet Monastery",
+   "fa": "صومعهٔ اسکارلت",
+   "kind": "zn"
+  },
+  "E43": {
+   "en": "Shadowfang Keep",
+   "fa": "دژ نیش‌سایه",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Shoulderpads of Faith": "شانه‌بندِ ایمان",
+  "Father Inigo Montoy": "کشیش اینیگو مونتویا",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Desecrated Shoulderpads": "شانه‌پوشِ بی‌حرمت‌شده",
+  "Mooncloth": "پارچهٔ ماه",
+  "Smite": "ضربهٔ مقدس",
+  "Sandals of Faith": "صندلِ ایمان",
+  "Desecrated Sandals": "صندلِ بی‌حرمت‌شده",
+  "Gloves of Faith": "دستکشِ ایمان",
+  "Desecrated Gloves": "دستکشِ بی‌حرمت‌شده",
+  "Belt of Faith": "کمربندِ ایمان",
+  "Desecrated Belt": "کمربندِ بی‌حرمت‌شده",
+  "Arcane": "اسرار",
+  "Bindings of Faith": "بندِ ایمان",
+  "Desecrated Bindings": "بندپیچِ بی‌حرمت‌شده",
+  "Arcane Crystal": "بلور جادویی",
+  "Nexus Crystal": "بلور نکسوس",
+  "Savage Guard": "نگهبانِ وحشی",
+  "Arcanum of Protection": "راز‌نوشتهٔ پاسداری",
+  "Zanza the Restless": "زانزا بی‌قرار",
+  "Zul'Gurub": "زول‌گوروب",
+  "Zanza": "زانزا",
+  "Arcanum of Rapidity": "راز‌نوشتهٔ شتاب",
+  "Arcanum of Focus": "راز‌نوشتهٔ تمرکز",
+  "Craftsman's Writ: Iridescent Hammer": "فرمان استادکار - پتکِ پرچین‌دارِ درخشان",
+  "Darkspear Islands": "جزایر نیزه‌تیره",
+  "Keefer's Angelfish": "ماهیِ فرشتهٔ کیفر",
+  "Dezian Queenfish": "ماهی شهبانوی دیزیان",
+  "Brownell's Blue Striped Racer": "مارِ تندروی آبی‌خطِ برانل",
+  "Tabard of the Argent Dawn": "جلیقه‌زارِ سپیدهٔ نقره‌ای",
+  "Dalaran": "دالاران",
+  "Bewitchments and Glamours": "افسون‌ها و فریب‌ها",
+  "Arcanic Systems Manual": "راهنمایِ سامانه‌های رازآمیز",
+  "Fury": "خشم",
+  "Scarlet Monastery": "صومعهٔ اسکارلت",
+  "Shadowfang Keep": "دژ نیش‌سایه"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$g boy:girl;",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$g boy:girl;",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$g boy:girl;",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$B",
+  "22": "$B",
+  "23": "$g boy:girl;",
+  "24": "$B",
+  "25": "$B",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$B",
+  "30": "$g boy:girl;",
+  "31": "$B",
+  "32": "$B",
+  "33": "$N",
+  "34": "$B",
+  "35": "$B",
+  "36": "$B",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$B",
+  "42": "$B",
+  "43": "$B",
+  "44": "$B",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$B",
+  "51": "$B",
+  "52": "$B",
+  "53": "$B",
+  "54": "$B",
+  "55": "$B",
+  "56": "$B",
+  "57": "$B",
+  "58": "$B",
+  "59": "$B",
+  "60": "$B",
+  "61": "$B",
+  "62": "$B",
+  "63": "$B",
+  "64": "$B",
+  "65": "$B",
+  "66": "$B",
+  "67": "$B",
+  "68": "$B",
+  "69": "$B",
+  "70": "$B",
+  "71": "$B",
+  "72": "$B",
+  "73": "$B",
+  "74": "$N",
+  "75": "$N",
+  "76": "$N",
+  "77": "$B",
+  "78": "$N",
+  "79": "$B",
+  "80": "$N",
+  "81": "$B",
+  "82": "$N",
+  "83": "$B",
+  "84": "$N",
+  "85": "$B",
+  "86": "$N",
+  "87": "$B",
+  "88": "$N",
+  "89": "$B",
+  "90": "$N",
+  "91": "$B",
+  "92": "$N",
+  "93": "$B",
+  "94": "$B",
+  "95": "$N"
+ },
+ "rows": {
+  "quest:9114:title": "⟦E1⟧",
+  "quest:9114:desc:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E1⟧ if you bring him the following: 1 ⟦E5⟧, 12 Wartorn Cloth Scraps, 2 ⟦E7⟧ and 3 Cured Rugged Hides.",
+  "quest:9114:obj:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E1⟧ if you bring him the following: 1 ⟦E5⟧, 12 Wartorn Cloth Scraps, 2 ⟦E7⟧ and 3 Cured Rugged Hides.",
+  "quest:9114:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦1⟧⟦2⟧Blessed ⟦3⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of battle - stripped of everything including their dignity.⟦4⟧⟦5⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9114:progress:0": "Have you brought me the reagents, child?",
+  "quest:9114:completion:0": "The vestments are ready, ⟦6⟧. ⟦E9⟧ those that would harm our world in your righteous fire.",
+  "quest:9115:title": "⟦E10⟧",
+  "quest:9115:desc:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E10⟧ if you bring him the following: 1 ⟦E11⟧, 12 Wartorn Cloth Scraps, 2 ⟦E7⟧ and 3 Cured Rugged Hides.",
+  "quest:9115:obj:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E10⟧ if you bring him the following: 1 ⟦E11⟧, 12 Wartorn Cloth Scraps, 2 ⟦E7⟧ and 3 Cured Rugged Hides.⟦7⟧",
+  "quest:9115:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦8⟧⟦9⟧Blessed ⟦10⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of battle - stripped of everything including their dignity.⟦11⟧⟦12⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9115:progress:0": "Have you brought me the reagents, child?",
+  "quest:9115:completion:0": "The vestments are ready, ⟦13⟧. ⟦E9⟧ those that would harm our world in your righteous fire.",
+  "quest:9116:title": "⟦E12⟧",
+  "quest:9116:desc:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E12⟧ if you bring him the following: 1 ⟦E13⟧, 8 Wartorn Cloth Scraps and 4 ⟦E7⟧.",
+  "quest:9116:obj:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E12⟧ if you bring him the following: 1 ⟦E13⟧, 8 Wartorn Cloth Scraps and 4 ⟦E7⟧.⟦14⟧",
+  "quest:9116:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦15⟧⟦16⟧Blessed ⟦17⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of battle - stripped of everything including their dignity.⟦18⟧⟦19⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9116:progress:0": "Have you brought me the reagents, child?",
+  "quest:9116:completion:0": "The vestments are ready, ⟦20⟧. ⟦E9⟧ those that would harm our world in your righteous fire.",
+  "quest:9117:title": "⟦E14⟧",
+  "quest:9117:desc:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make a ⟦E14⟧ if you bring him the following: 1 ⟦E15⟧, 8 Wartorn Cloth Scraps, 2 ⟦E16⟧ Crystals and 2 ⟦E7⟧.",
+  "quest:9117:obj:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make a ⟦E14⟧ if you bring him the following: 1 ⟦E15⟧, 8 Wartorn Cloth Scraps, 2 ⟦E16⟧ Crystals and 2 ⟦E7⟧.",
+  "quest:9117:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦21⟧⟦22⟧Blessed ⟦23⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of battle - stripped of everything including their dignity.⟦24⟧⟦25⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9117:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9117:completion:0": "Exellent ⟦26⟧ !⟦27⟧, you got everything just as i asked and now i can make a ⟦E14⟧.",
+  "quest:9118:title": "⟦E17⟧",
+  "quest:9118:desc:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E17⟧ if you bring him the following: 1 ⟦E18⟧, 6 Wartorn Cloth Scraps, 1 ⟦E19⟧ and 1 ⟦E20⟧.",
+  "quest:9118:obj:0": "⟦E2⟧ at ⟦E3⟧ in the ⟦E4⟧ will make ⟦E17⟧ if you bring him the following: 1 ⟦E18⟧, 6 Wartorn Cloth Scraps, 1 ⟦E19⟧ and 1 ⟦E20⟧.",
+  "quest:9118:details:0": "<Father Montoy makes some strange gestures in the air in front of you.>⟦28⟧⟦29⟧Blessed ⟦30⟧, have you found the vestments of the fallen? The poor souls whose last breaths were taken on the field of battle - stripped of everything including their dignity.⟦31⟧⟦32⟧Bring me the desecrated remnants of the departed along with reagents of purification and you shall know faith.",
+  "quest:9118:progress:0": "You got some missing parts for the quest please go and get them all!",
+  "quest:9118:completion:0": "Exellent ⟦33⟧ !⟦34⟧, you got everything just as i asked and now i can make a ⟦E17⟧.",
+  "quest:9208:title": "The ⟦E21⟧ - ⟦E22⟧",
+  "quest:9208:desc:0": "⟦E23⟧ in ⟦E24⟧ wants an ⟦E22⟧.",
+  "quest:9208:obj:0": "⟦E23⟧ in ⟦E24⟧ wants an ⟦E22⟧.",
+  "quest:9208:details:0": "⟦E25⟧ can create many ancient troll enchantments with proper components! Have you heard of the ⟦E21⟧? No, of course you haven't. Your mind is addled with the inferior elven magic.⟦35⟧⟦36⟧Bring me an arcanum of elven creation so that I may destroy the aberration. Do this and the ⟦E21⟧ will be yours.⟦37⟧",
+  "quest:9208:progress:0": "Do you have the arcanum?",
+  "quest:9208:completion:0": "The worthless magic in these enchantments fuels my anger. My anger gives me strength.⟦38⟧⟦39⟧Bring me more and you shall receive another ⟦E21⟧.",
+  "quest:9209:title": "The ⟦E21⟧ - ⟦E26⟧",
+  "quest:9209:desc:0": "⟦E23⟧ in ⟦E24⟧ wants an ⟦E26⟧.",
+  "quest:9209:obj:0": "⟦E23⟧ in ⟦E24⟧ wants an ⟦E26⟧.",
+  "quest:9209:details:0": "⟦E25⟧ can create many ancient troll enchantments with proper components! Have you heard of the ⟦E21⟧? No, of course you haven't. Your mind is addled with the inferior elven magic.⟦40⟧⟦41⟧Bring me an arcanum of elven creation so that I may destroy the aberration. Do this and the ⟦E21⟧ will be yours.⟦42⟧",
+  "quest:9209:progress:0": "Do you have the arcanum?",
+  "quest:9209:completion:0": "The worthless magic in these enchantments fuels my anger. My anger gives me strength.⟦43⟧⟦44⟧Bring me more and you shall receive another ⟦E21⟧.",
+  "quest:9210:title": "The ⟦E21⟧ - ⟦E27⟧",
+  "quest:9210:desc:0": "⟦E23⟧ in ⟦E24⟧ wants an ⟦E27⟧.",
+  "quest:9210:obj:0": "⟦E23⟧ in ⟦E24⟧ wants an ⟦E27⟧.",
+  "quest:9210:details:0": "⟦E25⟧ can create many ancient troll enchantments with proper components! Have you heard of the ⟦E21⟧? No, of course you haven't. Your mind is addled with the inferior elven magic.⟦45⟧⟦46⟧Bring me an arcanum of elven creation so that I may destroy the aberration. Do this and the ⟦E21⟧ will be yours.⟦47⟧",
+  "quest:9210:progress:0": "Do you have the arcanum?",
+  "quest:9210:completion:0": "The worthless magic in these enchantments fuels my anger. My anger gives me strength.⟦48⟧⟦49⟧Bring me more and you shall receive another ⟦E21⟧.",
+  "quest:94222:title": "⟦E28⟧",
+  "quest:98893:title": "Conflict at ⟦E29⟧ [Level 60]",
+  "quest:98901:title": "⟦E29⟧ Clash [Level 60]",
+  "quest:8194:title": "Apprentice Angler",
+  "quest:8194:progress:0": "Even though we already have a contest winner, I will still buy your Tastyfish from you at a reasonable price. Whadda ya say!",
+  "quest:8194:completion:0": "This deal works for me if it works for you!",
+  "quest:8221:title": "Rare Fish - ⟦E31⟧",
+  "quest:8221:progress:0": "*Whir* *Click*⟦50⟧⟦51⟧I seek rare fish for Fishmaster Bluegill to catalogue. If you bring me a ⟦E31⟧, I will provide you with this fine reward.⟦52⟧⟦53⟧*Zzzap* *Whir*",
+  "quest:8221:completion:0": "*Whir* ⟦54⟧⟦55⟧ Identification of ⟦E31⟧ complete. ⟦56⟧⟦57⟧ Your Reward is now available. ⟦58⟧⟦59⟧ *click-click* *Bzzzz*",
+  "quest:8224:title": "Rare Fish - ⟦E32⟧",
+  "quest:8224:progress:0": "*Whir* *Click*⟦60⟧⟦61⟧I seek rare fish for Fishmaster Bluegill to catalogue. If you bring me a ⟦E32⟧, I will provide you with this fine reward.⟦62⟧⟦63⟧*Zzzap* *Whir*",
+  "quest:8224:completion:0": "*Whir* ⟦64⟧⟦65⟧ Identification of ⟦E32⟧ complete. ⟦66⟧⟦67⟧ Your Reward is now available. ⟦68⟧⟦69⟧ *click-click* *Bzzzz*",
+  "quest:8225:title": "Rare Fish - ⟦E33⟧",
+  "quest:8225:progress:0": "*Whir* *Click*⟦70⟧⟦71⟧I seek rare fish for Fishmaster Bluegill to catalogue. If you bring me a ⟦E33⟧, I will provide you with this fine reward.⟦72⟧⟦73⟧*Zzzap* *Whir*",
+  "quest:8225:completion:0": "*Whir* Identification of Brownell's Racer complete. Your Reward is now available. *click* *click* *Bzzzz*",
+  "quest:9341:title": "⟦E34⟧",
+  "quest:9341:progress:0": "You have aided our cause greatly, ⟦74⟧. If you wish, I can make available the tabard of the Argent Dawn. We are proud to have you among our allies.",
+  "quest:9341:completion:0": "Take this tabard and wear it proudly. Perhaps your deeds might inspire others to take up arms in support of our fight against the Scourge.",
+  "quest:9343:title": "⟦E34⟧",
+  "quest:9343:progress:0": "You have aided our cause greatly, ⟦75⟧. If you wish, I can make available the tabard of the Argent Dawn. We are proud to have you among our allies.",
+  "quest:9343:completion:0": "Take this tabard and wear it proudly. Perhaps your deeds might inspire others to take up arms in support of our fight against the Scourge.",
+  "quest:78124:title": "Nar'thalas Almanac",
+  "quest:78124:progress:0": "Have you brought something to add to our collection?\nNar'thalas Almanac, Vol. 74 ( 1 )",
+  "quest:78124:completion:0": "Thank you, ⟦76⟧ . Our knowledge expands through your efforts. ⟦77⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78127:title": "The ⟦E37⟧ Digest",
+  "quest:78127:progress:0": "Have you brought something to add to our collection?\nThe ⟦E37⟧ Digest, Vol. 23 ( 1 )",
+  "quest:78127:completion:0": "Thank you, ⟦78⟧ . Our knowledge expands through your efforts. ⟦79⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78142:title": "⟦E38⟧",
+  "quest:78142:progress:0": "Have you brought something to add to our collection?\n⟦E38⟧ ( 1 )",
+  "quest:78142:completion:0": "Thank you, ⟦80⟧ . Our knowledge expands through your efforts. ⟦81⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78143:title": "Secrets of the Dreamers",
+  "quest:78143:progress:0": "Have you brought something to add to our collection?\nSecrets of the Dreamers ( 1 )",
+  "quest:78143:completion:0": "Thank you, ⟦82⟧ . Our knowledge expands through your efforts. ⟦83⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78145:title": "⟦E39⟧",
+  "quest:78145:progress:0": "Have you brought something to add to our collection?\n⟦E39⟧ ( 1 )",
+  "quest:78145:completion:0": "Thank you, ⟦84⟧ . Our knowledge expands through your efforts. ⟦85⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78146:title": "Goaz Scrolls",
+  "quest:78146:progress:0": "Have you brought something to add to our collection?\nGoaz Scrolls ( 1 )",
+  "quest:78146:completion:0": "Thank you, ⟦86⟧ . Our knowledge expands through your efforts. ⟦87⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78147:title": "Crimes Against Anatomy",
+  "quest:78147:progress:0": "Have you brought something to add to our collection?\nCrimes Against Anatomy ( 1 )",
+  "quest:78147:completion:0": "Thank you, ⟦88⟧ . Our knowledge expands through your efforts. ⟦89⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78148:title": "Runes of the Sorceror-Kings",
+  "quest:78148:progress:0": "Have you brought something to add to our collection?\nRunes of the Sorcerer-Kings ( 1 )",
+  "quest:78148:completion:0": "Thank you, ⟦90⟧ . Our knowledge expands through your efforts. ⟦91⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78149:title": "⟦E41⟧ of the Land",
+  "quest:78149:progress:0": "Have you brought something to add to our collection?\n⟦E41⟧ of the Land ( 1 )",
+  "quest:78149:completion:0": "Thank you, ⟦92⟧ . Our knowledge expands through your efforts. ⟦93⟧ If you discover more magical works that might benefit the library, please bring them to me.",
+  "quest:78150:title": "Friend of the Library",
+  "quest:78150:completion:0": "Thanks to your donations, the library is thriving. ⟦94⟧ Please, take this.",
+  "quest:78261:title": "The Horn of Xelthos (1/2)",
+  "quest:78307:title": "The Horn of Xelthos (2/2)",
+  "quest:78676:title": "The Eye of Bhossca",
+  "quest:78676:details:0": "Glad to have you back, ⟦95⟧ .\n\nThe latest object of my desire is an artifact known as the Eye of Bhossca. My sources tell me the eye is somewhere within the ⟦E42⟧. As with ⟦E43⟧, you must infiltrate the monastery alone.\n\nIt may behoove you to find a disguise before going in. It will make getting around a touch easier. I'm sure you could find something on the monastery's grounds.\n\nReturn the eye here, and payment will be delivered as before.\n\n- C",
+  "quest:78676:completion:0": "<You place The Eye of Bhossca into the chest>"
+ },
+ "context": {
+  "quest:9114": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy («کشیش اینیگو مونتویا»)",
+   "turner": "Father Inigo Montoy («کشیش اینیگو مونتویا»)"
+  },
+  "quest:9115": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy («کشیش اینیگو مونتویا»)",
+   "turner": "Father Inigo Montoy («کشیش اینیگو مونتویا»)"
+  },
+  "quest:9116": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy («کشیش اینیگو مونتویا»)",
+   "turner": "Father Inigo Montoy («کشیش اینیگو مونتویا»)"
+  },
+  "quest:9117": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy («کشیش اینیگو مونتویا»)",
+   "turner": "Father Inigo Montoy («کشیش اینیگو مونتویا»)"
+  },
+  "quest:9118": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Father Inigo Montoy («کشیش اینیگو مونتویا»)",
+   "turner": "Father Inigo Montoy («کشیش اینیگو مونتویا»)"
+  },
+  "quest:9208": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Zanza the Restless («زانزا بی‌قرار»)",
+   "turner": "Zanza the Restless («زانزا بی‌قرار»)"
+  },
+  "quest:9209": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Zanza the Restless («زانزا بی‌قرار»)",
+   "turner": "Zanza the Restless («زانزا بی‌قرار»)"
+  },
+  "quest:9210": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Zanza the Restless («زانزا بی‌قرار»)",
+   "turner": "Zanza the Restless («زانزا بی‌قرار»)"
+  },
+  "quest:94222": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98893": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98901": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8194": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Jang («جنگ»)"
+  },
+  "quest:8221": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Fishbot 5000 («ماهی‌ربات ۵۰۰۰»)"
+  },
+  "quest:8224": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Fishbot 5000 («ماهی‌ربات ۵۰۰۰»)"
+  },
+  "quest:8225": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "",
+   "turner": "Fishbot 5000 («ماهی‌ربات ۵۰۰۰»)"
+  },
+  "quest:9341": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "Argent Quartermaster («تدارکاتچی سپیدهٔ نقره‌ای»)",
+   "turner": "Argent Quartermaster («تدارکاتچی سپیدهٔ نقره‌ای»)"
+  },
+  "quest:9343": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 0,
+   "side": "",
+   "giver": "Argent Outfitter («تجهیزکار سپیدهٔ نقره‌ای»)",
+   "turner": "Argent Outfitter («تجهیزکار سپیدهٔ نقره‌ای»)"
+  },
+  "quest:78124": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78127": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": "Owen Thadd («اوون تاد»)"
+  },
+  "quest:78142": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78143": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78145": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78146": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": "Garion Wendell («گاریون وندل»)"
+  },
+  "quest:78147": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78148": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78149": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78150": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78261": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78307": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78676": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": "",
+   "side": "",
+   "giver": "",
+   "turner": ""
+  }
+ }
+}

@@ -1,0 +1,895 @@
+{
+ "pack": "quest-thousand-needles-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-thousand-needles-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Urgent Message",
+   "fa": "پیام فوری",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Cliffwatcher Longhorn",
+   "fa": "دیده‌بان صخره شاخ‌بلند",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Test of Faith",
+   "fa": "آزمون ایمان",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Alien Egg",
+   "fa": "تخم بیگانه",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Hagar Lightninghoof",
+   "fa": "هاگار سم‌آذرخش",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Motega Firemane",
+   "fa": "موتگا یال‌آتش",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Vengeance",
+   "fa": "کیفار",
+   "kind": "sp"
+  },
+  "E11": {
+   "en": "Arikara",
+   "fa": "آریکارا",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Incendia Agave",
+   "fa": "آگاوهٔ اینسندیا",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Magatha Grimtotem",
+   "fa": "ماگاتا گریم‌توتم",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Kanati Greycloud",
+   "fa": "کاناتی ابرخاکستری",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Protect Kanati Greycloud",
+   "fa": "حفاظت از کاناتی گری‌کلاود",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Spirit Totem",
+   "fa": "توتمِ ارواح",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Cairne Bloodhoof",
+   "fa": "کیرن سم‌خون",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Zamek",
+   "fa": "زامک",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Indurium Ore",
+   "fa": "کانهٔ ایندوریوم",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Uldaman",
+   "fa": "اولدامان",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Highperch Wyvern",
+   "fa": "ویورن اوج‌نشین",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Elu",
+   "fa": "الو",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Pao'ka Swiftmountain",
+   "fa": "پائوکا کوه‌تند",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Lakota Windsong",
+   "fa": "لاکوتا آوازباد",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Thalia Amberhide",
+   "fa": "تالیا پوست کهربایی",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Arnak Grimtotem",
+   "fa": "آرناک گریم‌توتم",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Fizzle Brassbolts",
+   "fa": "فیزل برس‌بولتس",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Wizzle Brassbolts",
+   "fa": "ویزل براس‌بولتس",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Grenka's Claw",
+   "fa": "چنگال گرنکا",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Dorn Plainstalker",
+   "fa": "دورن دشت‌شکارچی",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Grenka Bloodscreech",
+   "fa": "گرنکا خون‌جیغ",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Fragments of Rok'Alim",
+   "fa": "تکه‌های روک‌آلیم",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Test of Strength",
+   "fa": "آزمون قدرت",
+   "kind": "qs"
+  },
+  "E44": {
+   "en": "Braug Dimspirit",
+   "fa": "براگ روح‌تیره",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Test of Lore",
+   "fa": "آزمون دانش",
+   "kind": "qs"
+  },
+  "E47": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Legacy of the Aspects",
+   "fa": "میراث ریخت‌ها",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Parqual Fintallas",
+   "fa": "پارکوال فینتالاس",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Pozzik",
+   "fa": "پازیک",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Hypercapacitor Gizmo",
+   "fa": "ابزار ابرخازن",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Panther Cage Key",
+   "fa": "کلیدِ قفسِ پلنگ",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Wizlo Bearingshiner",
+   "fa": "ویزلو بیرینگ‌شاینر",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Rocket Car Parts",
+   "fa": "قطعات ماشین موشکی",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Kravel Koalbeard",
+   "fa": "کراول ریش‌زغال",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Kravel's Crate",
+   "fa": "جعبهٔ کراول",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Hemet Nesingwary",
+   "fa": "همت نسینگ‌وری",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Urgent Message": "پیام فوری",
+  "Cliffwatcher Longhorn": "دیده‌بان صخره شاخ‌بلند",
+  "Thousand Needles": "هزار سوزن",
+  "Test of Faith": "آزمون ایمان",
+  "Alien Egg": "تخم بیگانه",
+  "Hagar Lightninghoof": "هاگار سم‌آذرخش",
+  "Motega Firemane": "موتگا یال‌آتش",
+  "Vengeance": "کیفار",
+  "Arikara": "آریکارا",
+  "Incendia Agave": "آگاوهٔ اینسندیا",
+  "Magatha Grimtotem": "ماگاتا گریم‌توتم",
+  "Thunder Bluff": "تاندر بلاف",
+  "Travel": "سفر",
+  "Kanati Greycloud": "کاناتی ابرخاکستری",
+  "Protect Kanati Greycloud": "حفاظت از کاناتی گری‌کلاود",
+  "Spirit Totem": "توتمِ ارواح",
+  "Cairne Bloodhoof": "کیرن سم‌خون",
+  "Horde": "هورد",
+  "Zamek": "زامک",
+  "Indurium Ore": "کانهٔ ایندوریوم",
+  "Uldaman": "اولدامان",
+  "Badlands": "بیابان",
+  "Highperch Wyvern": "ویورن اوج‌نشین",
+  "Elu": "الو",
+  "Pao'ka Swiftmountain": "پائوکا کوه‌تند",
+  "Lakota Windsong": "لاکوتا آوازباد",
+  "Thalia Amberhide": "تالیا پوست کهربایی",
+  "Arnak Grimtotem": "آرناک گریم‌توتم",
+  "Fizzle Brassbolts": "فیزل برس‌بولتس",
+  "Wizzle Brassbolts": "ویزل براس‌بولتس",
+  "Grenka's Claw": "چنگال گرنکا",
+  "Dorn Plainstalker": "دورن دشت‌شکارچی",
+  "Grenka Bloodscreech": "گرنکا خون‌جیغ",
+  "Fragments of Rok'Alim": "تکه‌های روک‌آلیم",
+  "Test of Strength": "آزمون قدرت",
+  "Braug Dimspirit": "براگ روح‌تیره",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Test of Lore": "آزمون دانش",
+  "Ashenvale": "اَشِن‌ویل",
+  "Forsaken": "مطرودان",
+  "Kalimdor": "کالیمدور",
+  "Legacy of the Aspects": "میراث ریخت‌ها",
+  "Parqual Fintallas": "پارکوال فینتالاس",
+  "Undercity": "آندر‌سیتی",
+  "Pozzik": "پازیک",
+  "Hypercapacitor Gizmo": "ابزار ابرخازن",
+  "Panther Cage Key": "کلیدِ قفسِ پلنگ",
+  "Wizlo Bearingshiner": "ویزلو بیرینگ‌شاینر",
+  "Rocket Car Parts": "قطعات ماشین موشکی",
+  "Kravel Koalbeard": "کراول ریش‌زغال",
+  "Kravel's Crate": "جعبهٔ کراول",
+  "Hemet Nesingwary": "همت نسینگ‌وری"
+ },
+ "tokens": {
+  "1": "$C",
+  "2": "$B",
+  "3": "$B",
+  "4": "$N",
+  "5": "$B",
+  "6": "$N",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$n",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$B",
+  "24": "$N",
+  "25": "$N",
+  "26": "$c",
+  "27": "$N",
+  "28": "$B",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$N",
+  "33": "$N",
+  "34": "$C",
+  "35": "$c",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$C",
+  "47": "$n",
+  "48": "$B",
+  "49": "$c",
+  "50": "$C",
+  "51": "$C",
+  "52": "$N",
+  "53": "$B",
+  "54": "$B",
+  "55": "$r",
+  "56": "$N",
+  "57": "$N",
+  "58": "$N",
+  "59": "$B",
+  "60": "$B",
+  "61": "$N"
+ },
+ "rows": {
+  "quest:4542:obj:0": "Bring the ⟦E1⟧ to ⟦E2⟧ at Freewind Post.",
+  "quest:4542:details:0": "Brave traveler, the centaurs have increased their attacks in this area. Freewind Post must know about this renewed harassment immediately! Seek ⟦E2⟧ at Freewind Post to the southeast and give him this urgent message.",
+  "quest:4542:details:1": "Be warned, avoid the Grimtotem Clan nearby... they have been acting strange toward us lately.",
+  "quest:4542:details:2": "B",
+  "quest:4542:progress:0": "What do you want, ⟦1⟧? An urgent message - for me?⟦2⟧",
+  "quest:4542:completion:0": "More bad news! These centaurs have gone too far! They raided one of my supply caravans and slaughtered the whole party. This is an outrage, and it will not go unpunished!⟦3⟧",
+  "quest:4841:obj:0": "Kill 12 Galak Scouts, 10 Galak Wranglers, and 6 Galak Windchasers, and then return to ⟦E2⟧ in Freewind Post.",
+  "quest:4841:details:0": "⟦4⟧, I entreat you to hunt these centaur down. They shall feel the wrath of our revenge. Attack the centaur camp to the north of Freewind Post! Let wrath guide your hand!⟦5⟧",
+  "quest:4841:progress:0": "Come now ⟦6⟧, I know you haven't killed your share yet. Hunt them down, and I shall give you a reward for my gratitude.",
+  "quest:4841:completion:0": "For my gratitude, this is for you, ⟦7⟧.",
+  "quest:1149:obj:0": "If you have faith, leap from the planks overlooking ⟦E5⟧.",
+  "quest:1149:details:0": "So, you have sought me out, or perhaps destiny brings you to me? No matter. You are here now, and so your journey will begin anew.",
+  "quest:1149:details:1": "Many facets make up a being: the spirit, the body, the mind. Some of these can be measured by a culture's traditions. Others we can only hope exist within ourselves. If you agree, I shall test some of the facets within you.",
+  "quest:1149:details:2": "If you pass, then you shall become stronger. If you fail, then you will realize the vastness of the Nether.",
+  "quest:1149:details:3": "The first is a ⟦E6⟧.",
+  "quest:1149:progress:0": "Faith. It is far more important than some realize.⟦8⟧⟦9⟧It does not matter what you believe sometimes. It is just important that you believe in something.",
+  "quest:1149:completion:0": "It is not until faced with unforeseen adversity that we begin to see how strong our spirits are. You took the leap of faith even though you had no guarantees that you would survive. Your mind is open, and your spirit is prepared for what is to come.",
+  "quest:1149:completion:1": "If you are willing, then the next of your tests is ready.",
+  "quest:4821:obj:0": "Return the ⟦E7⟧ to ⟦E8⟧ in Freewind Post.",
+  "quest:4821:details:0": "A rumor has surfaced about an alien egg here in ⟦E5⟧. Those that report seeing this egg have failed to even get close enough to examine it in detail. Serpents guard the egg as if it's one of their own.",
+  "quest:4821:details:1": "I want you to seek out this alien egg and bring it to me so that I may examine it. Reports say the egg is located within a serpent den, but there are several serpent dens along the base of the cliff walls south and northeast of Freewind Post.",
+  "quest:4821:progress:0": "I must know more about this mysterious egg, who knows what will hatch from it.",
+  "quest:4821:completion:0": "Yes, finally... the mysterious egg has finally been delivered to me. Now, let me take a closer look at this... What..! What is this..?⟦10⟧",
+  "quest:4865:obj:0": "Report your findings to ⟦E9⟧.",
+  "quest:4865:details:0": "If I did not see that with my own eyes I would never have believed it to be true. ⟦E10⟧ has come to ⟦E5⟧!",
+  "quest:4865:details:1": "B<Hagar wipes his brow.>",
+  "quest:4865:details:2": "B⟦11⟧, you must act quickly! Go now and seek out ⟦E9⟧; he is located at Whitereach Post just northwest of Freewind Post along the road. He will know what to do!",
+  "quest:4865:completion:0": "⟦E10⟧! So, the legend of ⟦E11⟧ is true. Indeed, this is a problem that must be resolved immediately.",
+  "quest:5062:obj:0": "Gather 10 bushels of ⟦E12⟧, and then consult ⟦E13⟧ on Elder Rise in Thunderbluff.",
+  "quest:5062:details:0": "⟦E11⟧ is a deadly creature that must be dealt with swiftly. In order to hunt her down you will need to light the sacred fire of life - this will summon ⟦E11⟧.",
+  "quest:5062:details:1": "Go now and harvest the rare Incendia agave plant. Once you have harvested enough agave, seek council with ⟦E13⟧ on Elder Rise in ⟦E14⟧. She is a powerful shaman that can enchant the agave plant to create a powder that will light the fire.",
+  "quest:5062:details:2": "⟦E15⟧ northeast to the Boiling Pool and gather ⟦E12⟧.",
+  "quest:5062:progress:0": "So, Motega Firemain sends word of ⟦E11⟧...well now that is grave news.⟦12⟧⟦13⟧⟦14⟧⟦15⟧⟦E11⟧ is a deadly creature born only to seek vengeance against those who have committed heinous acts.⟦16⟧⟦17⟧",
+  "quest:5062:completion:0": "Good, you have gathered the essential amount of Incendia agave. This rare herb found only in ⟦E5⟧ will help light the dormant sacred fire of life.",
+  "quest:5062:completion:1": "B<Magatha begins to enchant the Incendia agave.>",
+  "quest:4881:obj:0": "Warn ⟦E16⟧ at Whitereach Post of the plot to kill him.",
+  "quest:4881:details:0": "The Tauren, ⟦E16⟧ is bold to set up a hunting camp in ⟦E5⟧. We must kill him to rid this hunting camp and all who may follow him. We will converge at the small post Southwest of the Great Lift.⟦18⟧",
+  "quest:4881:completion:0": "They come to kill me? I will show them how a Tauren fights!",
+  "quest:4966:obj:0": "⟦E18⟧ from the centaur attack.",
+  "quest:4966:details:0": "But, there may be more centaur than I thought, I ask you, ⟦19⟧, to fight with me against these vile assassins.",
+  "quest:4966:completion:0": "Thank you for your help, ⟦20⟧. I couldn't have held them off without you.",
+  "quest:5064:obj:0": "Locate and retrieve the three Secret Notes in Darkcloud Pinnacle.",
+  "quest:5064:details:0": "⟦21⟧, you have served us well in the past, so I now entrust to you an important mission. The Grimtotem Clan is up to something secretive. Three agents of unknown origin were seen visiting the Grimtotem over the recent weeks. We discovered that separate chests in Darkcloud Pinnacle hold these guarded messages.",
+  "quest:5064:details:1": "B⟦22⟧, if you succeed in this dangerous mission, I will reward you in kind.⟦23⟧",
+  "quest:5064:progress:0": "Have you discovered what the Grimtotem are up to?",
+  "quest:5064:completion:0": "Great ⟦E19⟧! This is dire news indeed. I must begin to plan for whatever may come.",
+  "quest:5064:completion:1": "B⟦24⟧, as promised, here is your reward for your brave service.",
+  "quest:5064:completion:2": "B",
+  "quest:5088:obj:0": "Slay ⟦E11⟧. Bring her remains and the Incendia powder to ⟦E9⟧ in Whitereach Post as proof of your deed.",
+  "quest:5088:details:0": "Take this refined and purified Incendia powder to ⟦E5⟧ and toss it on the sacred fire of life. It is located in the Darkcloud Pinnacle on an isolated needle where they bury their dead.",
+  "quest:5088:details:1": "The enchantment that I have weaved into the Incendia powder will summon ⟦E11⟧ to you, ⟦25⟧.",
+  "quest:5088:details:2": "I fear she may be stalking ⟦E21⟧; too much Tauren lore has changed, and I fear this has angered ⟦E11⟧. Move quickly before all is lost, ⟦26⟧!",
+  "quest:5088:progress:0": "Have you slain the vicious serpent ⟦E11⟧, ⟦27⟧?",
+  "quest:5088:completion:0": "This does not make sense. Why would ⟦E11⟧ be after ⟦E21⟧? Magatha could not be wrong, she is our most powerful shaman.",
+  "quest:5088:completion:1": "B<Motega shakes his head.>",
+  "quest:5088:completion:2": "Regardless, your great deed to the ⟦E22⟧ shall not go unnoticed - please, choose one of these as a reward for your aid.",
+  "quest:1191:title": "⟦E23⟧'s Distraction",
+  "quest:1191:completion:0": "Let's go!",
+  "quest:1192:title": "⟦E24⟧",
+  "quest:1192:progress:0": "I'd like to integrate indurium into different parts of our racers, but I need large amounts of raw indurium to create these parts.⟦28⟧⟦29⟧You can find indurium ore in the ⟦E25⟧ excavation in the ⟦E26⟧, across the sea in Khaz Modan.⟦30⟧⟦31⟧The gnomes are getting their own supply of it, so it's important we get our own to keep pace with them.",
+  "quest:1192:completion:0": "Excellent! I'll get the crew to work right away on the parts we'll need for the next race.",
+  "quest:4767:obj:0": "Bring 10 ⟦E27⟧ Eggs to ⟦E28⟧ in Freewind Post.",
+  "quest:4767:details:0": "I've been tasked to recruit more wyverns for the master wind riders. Their numbers are growing and I myself hope to become a wind rider one day. However, we cannot train enough wyverns to keep up with the demand. Perhaps you can help me, ⟦32⟧.",
+  "quest:4767:details:1": "I need you to travel to Highperch to gather some wyvern eggs. From here, head northwest along the canyon walls to a ramp that will lead you into Highperch. Be careful, wyverns are very protective over their eggs and they will not be kind to intruders.",
+  "quest:4767:progress:0": "⟦33⟧, have you retrieved the wyvern eggs that I seek? I'm really anxious to start my wind rider training!",
+  "quest:4767:completion:0": "Perfect! With these eggs I hope to take the next step to become a wind rider. Here is a token of my appreciation; may good hunting always shine upon you, ⟦34⟧.",
+  "quest:4770:obj:0": "Escort ⟦E29⟧ from Highperch, and then talk to ⟦E9⟧ in Whitereach Post.",
+  "quest:4770:details:0": "Please help me, ⟦35⟧! I've been hiding here in Highperch for some time now and it's been days since I've seen a friendly face. I came here to study the wyvern and I think I got a little too close. After being chased away from one of the nests I got lost.",
+  "quest:4770:details:1": "I need to get back to Whitereach Post! Motega does not know that I am missing and will be furious to know that I ventured into Highperch by myself.",
+  "quest:4770:details:2": "Whitereach Post is just east of here... please take me there!",
+  "quest:4770:completion:0": "Whats! If I knew that ⟦E29⟧ was going to snoop around Highperch, I would have chained him to a totem! His father was reluctant allowing him to come with me to ⟦E5⟧. We came here to study the different creatures that inhabit these beautiful lands.",
+  "quest:4770:completion:1": "I appreciate the help you have shown Pao'ka. I hope this covers any misfortunes this deed has cost you.",
+  "quest:4904:obj:0": "Escort ⟦E32⟧ from the Darkcloud Pinnacle, and then talk to ⟦E33⟧ at Freewind Post.",
+  "quest:4904:details:0": "Arnak thinks we're going to be married... but after I declined his offer he came back that night and kidnapped me. My brother tried to stop him, but Arnak was too strong. He... he slew my brother and then brought me here. My poor brother...",
+  "quest:4904:details:1": "B⟦36⟧, could you escort me out of the Darkcloud Pinnacle? Please... I need to get back to Thalia! She must be worried sick about me.",
+  "quest:4904:progress:0": "⟦E33⟧:",
+  "quest:4904:completion:0": "Thank you, ⟦37⟧. Deep in my bones I knew that she would find her way back to me. She told me of your bravery and how you helped her escape. These items belonged to her brother. I know she would want you to have them.",
+  "quest:5147:obj:0": "Slay ⟦E34⟧ and bring proof of your deed to ⟦E2⟧ in Freewind Post.",
+  "quest:5147:details:0": "Wanted: ⟦E34⟧",
+  "quest:5147:details:1": "Arnak the outcast is wanted for the heinous crimes of murder and kidnapping. Handsome rewards will be given to those brave enough to bring this criminal to justice.",
+  "quest:5147:details:2": "Arnak was last seen on the cliffs near the Darkcloud Pinnacle. Show the proof of your deed to ⟦E2⟧ in Freewind Post in order to claim the reward.",
+  "quest:5147:progress:0": "Have you any news of that murderous ⟦E34⟧?",
+  "quest:5147:completion:0": "Hah! Well, this is excellent news! I was starting to think that he would never be brought to justice!",
+  "quest:5147:completion:1": "Here you are, ⟦38⟧... and thanks. News of Anrak's foul deeds boiled my blood!",
+  "quest:1104:obj:0": "Bring 6 Salty Scorpid Venoms to ⟦E35⟧ in the Shimmering Flats.",
+  "quest:1104:details:0": "I have so many designs for our rocket car! So many! And I must try them all!!",
+  "quest:1104:details:1": "I'm working on a new type of fuel. One that burns really really really hot!! I haven't gotten the mixture perfect, but I think I know what I need...",
+  "quest:1104:details:2": "The scorpids who wander the Shimmering Flats have a venom with lots and lots of salt in it. It's very unique! And it's just what I need!",
+  "quest:1104:details:3": "Bring me venom and trust me -- our car will fly!!",
+  "quest:1104:progress:0": "Hi hi hi! Did you get that venom??",
+  "quest:1104:completion:0": "All right! This venom is going to work great! Thanks, ⟦39⟧!",
+  "quest:1104:completion:1": "Now I just need to boil it down, apply skipper-otomer, add a nega-catalyst, and... Drat! Where are my notes!?",
+  "quest:1105:obj:0": "Bring 9 Hardened Tortoise Shells to ⟦E36⟧ in the Shimmering Flats.",
+  "quest:1105:details:0": "My brother is working on a new fuel for his rocket car. He's brilliant, he really is. So brilliant that... I think that new fuel he's designing is strong enough to eat right through the car's chassis!",
+  "quest:1105:details:1": "I want to reinforce its fuel tanks before that happens.",
+  "quest:1105:details:2": "The tortoises out on the flats have very hard shells. I want to use them to create new tanks for our rocket car. Tanks that can hold my brother's new fuel.",
+  "quest:1105:details:3": "You look responsible enough. Will you get me those shells?",
+  "quest:1105:progress:0": "My brother is making progress with his new fuel design, and that has me worried. I need to start work on a tortoise shell fuel tank as soon as possible!",
+  "quest:1105:completion:0": "You got them! Thanks, ⟦40⟧!",
+  "quest:1150:obj:0": "Bring ⟦E37⟧ to ⟦E38⟧ in ⟦E5⟧.",
+  "quest:1150:details:0": "I'm pleased to see your courage remains steadfast in light of what you've already done. Since your faith is intact, the time has come to test your body.",
+  "quest:1150:details:1": "First is a test of endurance. Go to the Roguefeather Den west of Freewind Post. Make your way to the depths of their lair and destroy their foodstuffs. By then you should have provoked their fury, and if you are able to survive long enough, ⟦E40⟧ herself will come for you--kill her and bring me her claw to complete your test.",
+  "quest:1150:progress:0": "You must be prepared spiritually, physically and mentally for the challenges that lie ahead of you.⟦41⟧⟦42⟧Too often do we rush forward before we are ready. I consider it my duty to the youth, no matter which tribe they belong to, to prepare them for the dangers they may face after they leave the sanctity of their home.",
+  "quest:1150:completion:0": "Grenka was powerful, even by troll standards. You should be proud of your accomplishment this day.",
+  "quest:1150:completion:1": "During your test of faith you displayed strength of spirit, and now you have shown endurance in battle by taking on the Roguefeather harpies, but the time has come for a new test.",
+  "quest:1151:obj:0": "Bring ⟦E42⟧ to ⟦E38⟧ in ⟦E5⟧.",
+  "quest:1151:details:0": "During the time of the Old Gods, elementals inhabited much of this world. They worshipped the Old Gods, and the Gods, through their power, kept the elementals bound to this world. When the Old Gods were banished, the elementals faded from our world and now only return at the bidding of powerful mages.",
+  "quest:1151:details:1": "There are exceptions though. Some elementals were powerful enough to remain here on their own. One such elemental is Rok'Alim.",
+  "quest:1151:details:2": "To test your strength, find Rok'Alim in ⟦E5⟧ and slay him.",
+  "quest:1151:progress:0": "Rok'Alim is also called the Pounder by the centaur tribes in ⟦E5⟧ because of the thundering his fists make as he pummels the creatures brave, or stupid, enough to stand in his path.",
+  "quest:1151:completion:0": "The ⟦E43⟧ is done. You have shown strength and bravery, and you are now prepared for the final test before these rites are completed.",
+  "quest:1152:obj:0": "Find ⟦E44⟧ near the entrance to Talondeep Path in ⟦E45⟧.",
+  "quest:1152:details:0": "Your time with me is just about finished. I am knowledgeable, but the ⟦E46⟧ is not mine to give. There are lessons to be learned and places to visit that others claim domain over.",
+  "quest:1152:details:1": "If you are prepared, then seek out ⟦E44⟧--he is a shaman of great wisdom. He will test you further, so heed his words, ⟦43⟧.",
+  "quest:1152:details:2": "When you are ready, find the tunnel that connects the ⟦E45⟧ with ⟦E47⟧: Braug dwells near there. And be careful, ⟦44⟧, the night elves may wish to impede your test.",
+  "quest:1152:completion:0": "The days and nights grow colder throughout the world as goblins rape the land, and the night elves point fingers at the younger races. The ⟦E48⟧ and orcs are not the only ones to blame for the hardships found throughout ⟦E49⟧ and Lordaeron. Many of the intelligent races have contributed to the world's pain. Dorn knows this, and he has sent you to me because you have shown the attributes necessary to realize it also.",
+  "quest:1152:completion:1": "Now you stand before Braug.",
+  "quest:1154:obj:0": "Find the ⟦E50⟧ and return it to ⟦E44⟧ near the entrance to Talondeep Path in ⟦E45⟧.",
+  "quest:1154:details:0": "You have passed Dorn's tests, and now you seek to pass your next trial. Very good. But up until now, your challenges have been childish. It is easy to test your body--your mind is another matter completely.",
+  "quest:1154:details:1": "I shall explain it simply: find the book I name, study it, and answer my question about its contents.",
+  "quest:1154:details:2": "What book, you must be asking? The ⟦E50⟧. It can be found at the bottom of Dor'danil in southern ⟦E47⟧, protected by the dead druids and their slayers.",
+  "quest:1154:progress:0": "Bring me the book after you've studied it. I will not ask you your question until after you have given me the book.",
+  "quest:1154:completion:0": "This is the book I named. There is hope you will answer my question correctly then... unless you've forgotten to study its contents.",
+  "quest:1154:completion:1": "When you are prepared, speak to me again and I shall ask a question of you.",
+  "quest:1159:obj:0": "Find ⟦E51⟧ in ⟦E52⟧.",
+  "quest:1159:details:0": "Well done, ⟦45⟧. You have passed the first portion of the ⟦E46⟧, but there is still another question to be answered. But that question is not mine to ask.",
+  "quest:1159:details:1": "Seek out ⟦E51⟧ in Lordaeron City. He was a great historian for the humans before the Plague overtook him. Now he continues to seek enlightenment, but of a different nature.",
+  "quest:1159:details:2": "He will have another requirement of you before he asks you anything, but you have done masterfully thus far--I'm sure you will overcome his obstacle.",
+  "quest:1159:completion:0": "Braug sent you? Impossible.",
+  "quest:1159:completion:1": "B<Parqual looks you up and down.>",
+  "quest:1159:completion:2": "Braved Dor'Danil, took a leap of faith, fought and overpowered a powerful elemental? Bah! You're probably a farce; some adventurer that overheard talk in a tavern. And now you think you have what it takes to pass my test. So be it... ⟦46⟧.",
+  "quest:1176:obj:0": "Get 10 Hollow Vulture Bones for ⟦E53⟧ in the Shimmering Flats.",
+  "quest:1176:details:0": "When it comes to racing, every bit counts! Whether it's a minor tweaking on the power output, a slight slackening on the tension coils, or lightening the weight of the frame, you have to take everything into account.",
+  "quest:1176:details:1": "We use vulture bones for a lot of the minor structural tweaks we make to our racers, which offer the perfect balance of strength and weight. Even better, it's easy for us to get more, as the salt flats are littered with vultures.",
+  "quest:1176:details:2": "Bring me some and I'll give you a good price on them.",
+  "quest:1176:progress:0": "Do you have those bones for me? I was just about to start working on lightening the steering rig, but I don't want to open her up without all the parts I need.",
+  "quest:1176:completion:0": "Great! I can get the crew working on this right away. Thanks, ⟦47⟧!",
+  "quest:1179:obj:0": "Bring the crate of crash helmets to ⟦E36⟧ in the Shimmering Flats.",
+  "quest:1179:details:0": "You ever heard of the Shimmering Flats? It's a stretch of salt flats way over in ⟦E49⟧, just south of the ⟦E5⟧ canyon. It's a great place for racing because, well, it's so flat!",
+  "quest:1179:details:1": "BA couple of gnome brothers are out there, friends of mine, trying out their new rocket car, and from what I hear it's fast! Heh, so fast that their pilots keep crashing. Giving themselves concussions.",
+  "quest:1179:details:2": "So they asked me for some Siege Engine helmets, but I have duties here. I can't make the trip!",
+  "quest:1179:details:3": "Can you?",
+  "quest:1179:progress:0": "Watch where you're stepping! Watch watch watch!! This is delicate stuff you see here, and if we're to win then it must all work perfectly!",
+  "quest:1179:completion:0": "Ah! Longbeard sent you with a load of helmets! Hooray!",
+  "quest:1179:completion:1": "Now maybe we can talk a pilot into driving our car...",
+  "quest:5151:obj:0": "Slay the beast and bring back the ⟦E54⟧ and ⟦E55⟧ to ⟦E56⟧.",
+  "quest:5151:details:0": "I am the only survivor from our caravan attack by the centaur! A rare yet mighty panther is guarding my best gizmo, which is around his neck. Hah! Even the centaur tremble in the presence of this ferocious beast!",
+  "quest:5151:details:1": "Here is the key to the cage. They took everything there, but left him alone. Slay this beast and bring back my hypercapacitor, and I shall reward you.",
+  "quest:5151:details:2": "The wrecked caravan is just north of here.⟦48⟧",
+  "quest:5151:progress:0": "Do you have my hypercapacitor?",
+  "quest:5151:completion:0": "My hypercapacitor! This will keep me busy for a while until I can figure out what it does...",
+  "quest:6627:obj:0": "Answer ⟦E44⟧'s question successfully and then speak to him again. He will remain in ⟦E45⟧ when you are ready.",
+  "quest:6627:details:0": "You have brought me the book, and now it is time for your question. Are you ready?",
+  "quest:6627:details:1": "Time is not an issue, ⟦49⟧, so do not feel pressured. You may take as long as you like to answer.",
+  "quest:6627:progress:0": "Life is full of questions, ⟦50⟧. You will never be able to answer all of them, but with some time and study, perhaps you will become a little more knowledgeable.",
+  "quest:6627:completion:0": "Well done, ⟦51⟧. You have studied the text I asked you to, and now you have passed another of our tests.",
+  "quest:6628:obj:0": "Answer ⟦E51⟧' question successfully and then speak to him again. He will remain in the ⟦E52⟧ until you are ready.",
+  "quest:6628:details:0": "So the time is once again upon us. As a student of lore, you have shown great tenacity by undertaking my task.",
+  "quest:6628:details:1": "And so now I offer you your question. If you are ready, speak to me again, and take all the time you need, ⟦52⟧--there is no pressure to answer quickly.",
+  "quest:6628:progress:0": "There is only one rule I feel you must know if you wish to survive in this world: the more you know, the more you'll see.⟦53⟧⟦54⟧If you study, if you observe, then you will begin to see things in the world that no other ⟦55⟧ will see.",
+  "quest:6628:completion:0": "Well done, ⟦56⟧. I had my doubts if you studied the text I asked you to get, but you've answered correctly.",
+  "quest:1110:obj:0": "Bring 30 ⟦E57⟧ to ⟦E58⟧ in the Shimmering Flats.",
+  "quest:1110:details:0": "Heh heh, with all the races they're running here, it's no surprise that a few mishaps happen along the way. If you look around the Shimmering Flats then you'll see evidence of past crashes -- scraps of rocket car parts are littered everywhere!",
+  "quest:1110:details:1": "And those parts are worth money to the gnomes and goblins. They're always looking for more contraptions to slap onto their cars.",
+  "quest:1110:details:2": "So go out and get me parts. Bring me a heap and I'll pay you well.",
+  "quest:1110:progress:0": "⟦57⟧, have you been out into the Flats? Did you bring back that load of parts I wanted?",
+  "quest:1110:completion:0": "Whoa, look at all that! There's some good stuff in that heap of junk. I'm sure I can pawn it off for a hefty sum.",
+  "quest:1110:completion:1": "And... is that an ear I see squashed between those two sheets of metal?? Ouch! Heh, I sure wouldn't want to be that pilot!",
+  "quest:1110:completion:2": "Thanks, ⟦58⟧. Here's your pay. And here's some advice, free of charge...",
+  "quest:1110:completion:3": "If you look hard enough, you can always find profit in someone else's tragedy.",
+  "quest:5762:obj:0": "Take ⟦E59⟧ to ⟦E60⟧ in Stranglethorn.",
+  "quest:5762:details:0": "I have a package for an old customer of mine, a dwarf named ⟦E60⟧. The package took weeks to arrive, and Hemet's long gone by now. He said he was going to Stranglethorn to hunt the beasts there, but he left me some money to send his delivery when I could.",
+  "quest:5762:details:1": "Hemet's a rich dwarf and it's a good idea to keep up relations with the rich ones, yeah? So... you want to deliver the package for me?",
+  "quest:5762:details:2": "I heard Hemet has a camp in Stranglethorn, north of Grom'gol.",
+  "quest:5762:progress:0": "Is that desert dust on your collar?⟦59⟧⟦60⟧Hm... if my nose tells true, I'd say it's not desert dust, it's desert salt!  Been to the Shimmering Flats, have you?",
+  "quest:5762:completion:0": "Great, my package from Koalbeard! Thank you ⟦61⟧. This crate holds special-gauge ammunition, and it'll serve us well out in the jungle!",
+  "quest:5762:completion:1": "Here's your pay, and tell me, how is crusty old Kravel these days? Still up to no good I'd wager..."
+ },
+ "context": {
+  "quest:4542": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 25,
+   "side": "horde",
+   "giver": "Brave Moonhorn («شاخ‌ماه دلاور»)",
+   "turner": "Cliffwatcher Longhorn («دیده‌بان صخره شاخ‌بلند»)"
+  },
+  "quest:4841": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 25,
+   "side": "horde",
+   "giver": "Cliffwatcher Longhorn («دیده‌بان صخره شاخ‌بلند»)",
+   "turner": "Cliffwatcher Longhorn («دیده‌بان صخره شاخ‌بلند»)"
+  },
+  "quest:1149": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 26,
+   "side": "horde",
+   "giver": "Dorn Plainstalker («دورن دشت‌شکارچی»)",
+   "turner": "Dorn Plainstalker («دورن دشت‌شکارچی»)"
+  },
+  "quest:4821": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 26,
+   "side": "horde",
+   "giver": "Hagar Lightninghoof («هاگار سم‌آذرخش»)",
+   "turner": "Hagar Lightninghoof («هاگار سم‌آذرخش»)"
+  },
+  "quest:4865": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 26,
+   "side": "horde",
+   "giver": "Hagar Lightninghoof («هاگار سم‌آذرخش»)",
+   "turner": "Motega Firemane («موتگا یال‌آتش»)"
+  },
+  "quest:5062": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 27,
+   "side": "horde",
+   "giver": "Motega Firemane («موتگا یال‌آتش»)",
+   "turner": "Magatha Grimtotem («ماگاتا گریم‌توتم»)"
+  },
+  "quest:4881": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 28,
+   "side": "horde",
+   "giver": "",
+   "turner": "Kanati Greycloud («کاناتی ابرخاکستری»)"
+  },
+  "quest:4966": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 28,
+   "side": "horde",
+   "giver": "Kanati Greycloud («کاناتی ابرخاکستری»)",
+   "turner": "Kanati Greycloud («کاناتی ابرخاکستری»)"
+  },
+  "quest:5064": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 28,
+   "side": "horde",
+   "giver": "Cliffwatcher Longhorn («دیده‌بان صخره شاخ‌بلند»)",
+   "turner": "Cliffwatcher Longhorn («دیده‌بان صخره شاخ‌بلند»)"
+  },
+  "quest:5088": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 28,
+   "side": "horde",
+   "giver": "Magatha Grimtotem («ماگاتا گریم‌توتم»)",
+   "turner": "Motega Firemane («موتگا یال‌آتش»)"
+  },
+  "quest:1191": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 29,
+   "side": "",
+   "giver": "",
+   "turner": "Zamek («زامک»)"
+  },
+  "quest:1192": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 29,
+   "side": "",
+   "giver": "Pozzik («پازیک»)",
+   "turner": "Pozzik («پازیک»)"
+  },
+  "quest:4767": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 29,
+   "side": "horde",
+   "giver": "Elu («الو»)",
+   "turner": "Elu («الو»)"
+  },
+  "quest:4770": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 29,
+   "side": "horde",
+   "giver": "Pao'ka Swiftmountain («پائوکا کوه‌تند»)",
+   "turner": "Motega Firemane («موتگا یال‌آتش»)"
+  },
+  "quest:4904": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 29,
+   "side": "horde",
+   "giver": "Lakota Windsong («لاکوتا آوازباد»)",
+   "turner": "Thalia Amberhide («تالیا پوست کهربایی»)"
+  },
+  "quest:5147": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 29,
+   "side": "horde",
+   "giver": "Wanted Poster - Arnak Grimtotem («اعلان تحت تعقیب - آرناک گریم‌توتم»)",
+   "turner": "Cliffwatcher Longhorn («دیده‌بان صخره شاخ‌بلند»)"
+  },
+  "quest:1104": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "",
+   "giver": "Fizzle Brassbolts («فیزل برس‌بولتس»)",
+   "turner": "Fizzle Brassbolts («فیزل برس‌بولتس»)"
+  },
+  "quest:1105": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "",
+   "giver": "Wizzle Brassbolts («ویزل براس‌بولتس»)",
+   "turner": "Wizzle Brassbolts («ویزل براس‌بولتس»)"
+  },
+  "quest:1150": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Dorn Plainstalker («دورن دشت‌شکارچی»)",
+   "turner": "Dorn Plainstalker («دورن دشت‌شکارچی»)"
+  },
+  "quest:1151": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Dorn Plainstalker («دورن دشت‌شکارچی»)",
+   "turner": "Dorn Plainstalker («دورن دشت‌شکارچی»)"
+  },
+  "quest:1152": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Dorn Plainstalker («دورن دشت‌شکارچی»)",
+   "turner": "Braug Dimspirit («براگ روح‌تیره»)"
+  },
+  "quest:1154": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Braug Dimspirit («براگ روح‌تیره»)",
+   "turner": "Braug Dimspirit («براگ روح‌تیره»)"
+  },
+  "quest:1159": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Braug Dimspirit («براگ روح‌تیره»)",
+   "turner": "Parqual Fintallas («پارکوال فینتالاس»)"
+  },
+  "quest:1176": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "",
+   "giver": "Pozzik («پازیک»)",
+   "turner": "Pozzik («پازیک»)"
+  },
+  "quest:1179": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Pilot Longbeard («خلبان ریش‌بلند»)",
+   "turner": "Wizzle Brassbolts («ویزل براس‌بولتس»)"
+  },
+  "quest:5151": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Wizlo Bearingshiner («ویزلو بیرینگ‌شاینر»)",
+   "turner": "Wizlo Bearingshiner («ویزلو بیرینگ‌شاینر»)"
+  },
+  "quest:6627": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Braug Dimspirit («براگ روح‌تیره»)",
+   "turner": "Braug Dimspirit («براگ روح‌تیره»)"
+  },
+  "quest:6628": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 30,
+   "side": "horde",
+   "giver": "Parqual Fintallas («پارکوال فینتالاس»)",
+   "turner": "Parqual Fintallas («پارکوال فینتالاس»)"
+  },
+  "quest:1110": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 31,
+   "side": "",
+   "giver": "Kravel Koalbeard («کراول ریش‌زغال»)",
+   "turner": "Kravel Koalbeard («کراول ریش‌زغال»)"
+  },
+  "quest:5762": {
+   "zone_en": "Thousand Needles",
+   "zone_fa": "هزار سوزن",
+   "level": 31,
+   "side": "",
+   "giver": "Kravel Koalbeard («کراول ریش‌زغال»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  }
+ },
+ "known": {
+  "quest:4542": {
+   "title": "پیامی برای پست فری‌ویند"
+  },
+  "quest:4841": {
+   "title": "آرام‌سازی سانتورها"
+  },
+  "quest:1149": {
+   "title": "آزمون ایمان"
+  },
+  "quest:4821": {
+   "title": "تخم بیگانه"
+  },
+  "quest:4865": {
+   "title": "سرزمین مارها"
+  },
+  "quest:5062": {
+   "title": "آتش مقدس"
+  },
+  "quest:4881": {
+   "title": "نقشهٔ ترور"
+  },
+  "quest:4966": {
+   "title": "حفاظت از کاناتی گری‌کلاود"
+  },
+  "quest:5064": {
+   "title": "جاسوسی گریم‌توتم"
+  },
+  "quest:5088": {
+   "title": "آریکارا"
+  },
+  "quest:4767": {
+   "title": "بادسوار"
+  },
+  "quest:4770": {
+   "title": "راه خانه"
+  },
+  "quest:4904": {
+   "title": "بالاخره آزاد"
+  },
+  "quest:5147": {
+   "title": "مطلوب - آرناک گریم‌توتم"
+  },
+  "quest:1104": {
+   "title": "زهر دشت نمکی"
+  },
+  "quest:1105": {
+   "title": "لاک‌های سخت‌شده"
+  },
+  "quest:1150": {
+   "title": "آزمون استقامت"
+  },
+  "quest:1151": {
+   "title": "آزمون قدرت"
+  },
+  "quest:1152": {
+   "title": "آزمون دانش"
+  },
+  "quest:1154": {
+   "title": "آزمون دانش"
+  },
+  "quest:1159": {
+   "title": "آزمون دانش"
+  },
+  "quest:1176": {
+   "title": "سبک‌کردن بار"
+  },
+  "quest:1179": {
+   "title": "برادران برس‌بولتز"
+  },
+  "quest:5151": {
+   "title": "ابزار ابرخازن"
+  },
+  "quest:6627": {
+   "title": "آزمون دانش"
+  },
+  "quest:6628": {
+   "title": "آزمون دانش"
+  },
+  "quest:1110": {
+   "title": "قطعات ماشین موشکی"
+  },
+  "quest:5762": {
+   "title": "همت نسینگ‌وری"
+  }
+ }
+}

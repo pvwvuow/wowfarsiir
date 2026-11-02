@@ -1,0 +1,496 @@
+{
+ "pack": "quest-zephras-isle-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-zephras-isle-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Raan Wildwind",
+   "fa": "ران بادوحشی",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Cooking",
+   "fa": "آشپزی",
+   "kind": "sp"
+  },
+  "E3": {
+   "en": "Zerril Softbreeze",
+   "fa": "زریل نسیم‌نرم",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Alchemy",
+   "fa": "کیمیاگری",
+   "kind": "sp"
+  },
+  "E5": {
+   "en": "Herbalism",
+   "fa": "گیاه‌شناسی",
+   "kind": "sp"
+  },
+  "E6": {
+   "en": "Syriel Nightrain",
+   "fa": "سیریل باران‌شب",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Hippogryph Down",
+   "fa": "پر نرم هیپوگریف",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Missionary Jasaan",
+   "fa": "مبلغ جاسان",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Sania Silverstream",
+   "fa": "سانیا جوی نقره‌ای",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Havoc",
+   "fa": "ویرانی",
+   "kind": "cls"
+  },
+  "E12": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E13": {
+   "en": "Stolen Supplies",
+   "fa": "تدارکات دزدیده‌شده",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Stolen Shen'dar Supplies",
+   "fa": "تدارکات دزدیده‌شدهٔ شِن‌دار",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Aonda's Written Report",
+   "fa": "گزارشِ نوشتاریِ آئوندا",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Valennia Stormfist",
+   "fa": "والنیا استورم‌فیست",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Peacekeeper Vaaniel",
+   "fa": "صلح‌بان وانیل",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E19": {
+   "en": "Alvarion Windfield",
+   "fa": "آلواریون بادمزرعه",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Aamelia Windfield",
+   "fa": "آمیلیا بادمزرعه",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Flutterfly Dust",
+   "fa": "غبار پروانهٔ بال‌چین",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Malfunctioning Cyclone Construct",
+   "fa": "سازهٔ گردباد معیوب",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Ayessa Dawnsinger",
+   "fa": "آیسا سپیده‌خوان",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "WANTED",
+   "fa": "تحت تعقیب",
+   "kind": "ob"
+  },
+  "E25": {
+   "en": "Constable Aonda",
+   "fa": "پاسبان آئوندا",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Danarii Bellowveil",
+   "fa": "داناری غرش‌نقاب",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Riaani Nightwind",
+   "fa": "ریانی بادشب",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Shadowsong Family Signet",
+   "fa": "مُهرنگین خانوادهٔ سایه‌نغمه",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Talaanis Shadowsong",
+   "fa": "تالاانیس آواز سایه",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Raan Wildwind": "ران بادوحشی",
+  "Cooking": "آشپزی",
+  "Zerril Softbreeze": "زریل نسیم‌نرم",
+  "Alchemy": "کیمیاگری",
+  "Herbalism": "گیاه‌شناسی",
+  "Syriel Nightrain": "سیریل باران‌شب",
+  "Hippogryph Down": "پر نرم هیپوگریف",
+  "Missionary Jasaan": "مبلغ جاسان",
+  "Sania Silverstream": "سانیا جوی نقره‌ای",
+  "Havoc": "ویرانی",
+  "Travel": "سفر",
+  "Stolen Supplies": "تدارکات دزدیده‌شده",
+  "Stolen Shen'dar Supplies": "تدارکات دزدیده‌شدهٔ شِن‌دار",
+  "Aonda's Written Report": "گزارشِ نوشتاریِ آئوندا",
+  "Valennia Stormfist": "والنیا استورم‌فیست",
+  "Peacekeeper Vaaniel": "صلح‌بان وانیل",
+  "Blood": "خون",
+  "Alvarion Windfield": "آلواریون بادمزرعه",
+  "Aamelia Windfield": "آمیلیا بادمزرعه",
+  "Flutterfly Dust": "غبار پروانهٔ بال‌چین",
+  "Malfunctioning Cyclone Construct": "سازهٔ گردباد معیوب",
+  "Ayessa Dawnsinger": "آیسا سپیده‌خوان",
+  "WANTED": "تحت تعقیب",
+  "Constable Aonda": "پاسبان آئوندا",
+  "Danarii Bellowveil": "داناری غرش‌نقاب",
+  "Riaani Nightwind": "ریانی بادشب",
+  "Shadowsong Family Signet": "مُهرنگین خانوادهٔ سایه‌نغمه",
+  "Talaanis Shadowsong": "تالاانیس آواز سایه"
+ },
+ "tokens": {},
+ "rows": {
+  "quest:96638:title": "The Adventurer",
+  "quest:96638:obj:0": "Speak to ⟦E1⟧ near Shen'dar Village.",
+  "quest:96638:details:0": "More and more adventurers like yourself have been seeking glory and fortune outside of the safety of Thendal Grove. There's one such adventurer who has made a camp outside of Shen'dar Village, along the road leading southwest out of Thendal Grove.",
+  "quest:96638:details:1": "Seek him out and see what you can learn from him that may help you in your own travels.",
+  "quest:96646:title": "Camping 101: ⟦E2⟧",
+  "quest:96646:obj:0": "Speak with ⟦E3⟧ in Shen'dar Village to learn to become a cook.",
+  "quest:97963:title": "Camping 101: ⟦E4⟧",
+  "quest:97963:obj:0": "Speak with Nyassa Swiftdraught in Shen'dar Village to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97968:title": "Camping 101: ⟦E5⟧",
+  "quest:97968:obj:0": "Speak with ⟦E6⟧ in Valanaar to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:92516:title": "Hippogryph Harassment",
+  "quest:92516:desc:0": "A flock of Hippogryph have recently established nesting grounds southeast of Shen'dar Village and they've been wreaking havoc on travelers on the road. I need someone to head down there and thin them out for us.",
+  "quest:92516:obj:0": "Slay 8 Hippogryph Youths, 6 Hippogryph Protectors and a Hippogryph Matriarch in the Shen'dar Highlands.",
+  "quest:92516:details:0": "A flock of Hippogryph have recently established nesting grounds southeast of Shen'dar Village and they've been wreaking havoc on travelers on the road. I need someone to head down there and thin them out for us.",
+  "quest:92517:title": "The Criminal Element",
+  "quest:92517:desc:0": "There's a cave not far to the north, hidden behind a waterfall. It's well known to me that there's a group of bandits that are operating out of that cave. They were a problem for us before the cult arrived, but now they are a real terror. ...",
+  "quest:92517:obj:0": "Kill 10 Highlands Bandits and their leader, \"Badwind\" Bennic in the Shen'dar Highlands.",
+  "quest:92517:details:0": "There's a cave not far to the north, hidden behind a waterfall. It's well known to me that there's a group of bandits that are operating out of that cave. They were a problem for us before the cult arrived, but now they are a real terror. ...",
+  "quest:93319:title": "Pilfered Windstones",
+  "quest:93319:desc:0": "We are relying on windstones more and more for day-to-day living here on Zephras so we try and maintain a cache of them in reserve for emergencies. Lately I've noticed some go missing from our stores. ...",
+  "quest:93319:obj:0": "Collect 10 Pilfered Windstones from the Highlands Bandits in the Shen'dar Highlands.",
+  "quest:93319:details:0": "We are relying on windstones more and more for day-to-day living here on Zephras so we try and maintain a cache of them in reserve for emergencies. Lately I've noticed some go missing from our stores. ...",
+  "quest:93951:title": "A Little Beauty",
+  "quest:93951:desc:0": "The hippogryphs that have taken up residence southwest of the village can be a nuisance, but they also present a rather unique opportunity to obtain their feathers. ...",
+  "quest:93951:obj:0": "Collect 8 ⟦E7⟧ feathers in the Shen'dar Highlands.",
+  "quest:93951:details:0": "The hippogryphs that have taken up residence southwest of the village can be a nuisance, but they also present a rather unique opportunity to obtain their feathers. ...",
+  "quest:92528:title": "Among the Faithful",
+  "quest:92528:obj:0": "Look around Falaath Village to learn about the cult's intentions in the Shen'dar Highlands.",
+  "quest:92529:title": "Falaath Village",
+  "quest:92529:obj:0": "Report to ⟦E8⟧ near the entrance to Falaath Village.\nIf you lose your Mark of Akir, speak with ⟦E9⟧ in Shen'dar Village to regain the effect.",
+  "quest:92550:title": "⟦E11⟧ in the Highlands",
+  "quest:92550:obj:0": "⟦E12⟧ to the ruins of Falaath Village and slay 6 Al'Aketh Stormcallers, 4 Living Lightning and take the head of Commander Cyclas.",
+  "quest:92551:title": "⟦E13⟧",
+  "quest:92551:obj:0": "Collect 10 packs of ⟦E14⟧ from Falaath Village in the Shen'dar Highlands.",
+  "quest:92579:title": "To Valanaar",
+  "quest:92579:obj:0": "Deliver ⟦E15⟧ to ⟦E16⟧ in Valanaar.",
+  "quest:93036:title": "Infiltrating the Cult",
+  "quest:93036:obj:0": "Speak with ⟦E9⟧ in Shen'dar Village.",
+  "quest:93926:title": "The Western Watch",
+  "quest:93926:obj:0": "Find ⟦E17⟧ at the western watchtower.",
+  "quest:93927:title": "A Last Request",
+  "quest:93927:obj:0": "Collect the note you found near the dead peacekeeper and read it to determine your next steps.",
+  "quest:92679:title": "⟦E18⟧ Tithe",
+  "quest:92679:obj:0": "Listen to what ⟦E19⟧ has to say and find ⟦E20⟧ at the Windfield Orchard.",
+  "quest:92682:title": "Make Yourself Useful",
+  "quest:92682:obj:0": "Gather 10 Ripe Stormapples and slay 5 Hungry Bandits at the Windfield Orchard.",
+  "quest:92683:title": "⟦E21⟧",
+  "quest:92683:obj:0": "Gather 5 ⟦E21⟧ from the Flutterflies around the Gustberry Lowlands.",
+  "quest:92684:title": "Ornery Ornery Galestriders",
+  "quest:92684:obj:0": "Gather 7 Lowlands Galestrider Tenderloins from the Ornery Galestriders found throughout the Gustberry Lowlands.",
+  "quest:92685:title": "The Hills Have Eyes",
+  "quest:92685:obj:0": "Loot 7 ⟦E18⟧-Stained Bandit Masks from Highwayman Bandits in the Gustberry Lowlands.",
+  "quest:92698:title": "What Is My Purpose?",
+  "quest:92698:obj:0": "Speak with ⟦E20⟧ about the ⟦E22⟧.",
+  "quest:92700:title": "The Grand Skyseer",
+  "quest:92700:obj:0": "Find ⟦E23⟧ in Valanaar.",
+  "quest:93317:title": "Crab Season",
+  "quest:93318:title": "⟦E24⟧: Vulgara the Insatiable",
+  "quest:93318:desc:0": "By order of ⟦E25⟧ of the Peacekeepers, a bounty is hereby placed upon the scourge of the highlands, Vulgara the Insatiable. Last spotted on a hilltop rise just southwest of Shen'dar Village, the winged vuldren terror is highly dangerous and should be approached with caution. ...",
+  "quest:93318:obj:0": "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to ⟦E26⟧.",
+  "quest:93318:details:0": "By order of ⟦E25⟧ of the Peacekeepers, a bounty is hereby placed upon the scourge of the highlands, Vulgara the Insatiable. Last spotted on a hilltop rise just southwest of Shen'dar Village, the winged vuldren terror is highly dangerous and should be approached with caution. ...",
+  "quest:93735:title": "The Broken Construct",
+  "quest:93735:obj:0": "Find ⟦E27⟧ on the west side of Valanaar.",
+  "quest:93736:title": "Unwelcome Spirits",
+  "quest:93736:obj:0": "Gather 10 Wind Hollow Essences from Wind Hollows in the Shadowgale Forest.",
+  "quest:93737:title": "The Broken Construct",
+  "quest:93737:obj:0": "Speak with ⟦E27⟧ and listen to what he has to say.",
+  "quest:93948:title": "Deliver the Signet",
+  "quest:93948:obj:0": "Deliver the ⟦E29⟧ to ⟦E30⟧ in Valanaar.",
+  "quest:92727:title": "The Missing Scholar"
+ },
+ "context": {
+  "quest:96638": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 6,
+   "side": "",
+   "giver": "Aetheen of the Gales («آیتین توفان‌ها»)",
+   "turner": "Raan Wildwind («ران بادوحشی»)"
+  },
+  "quest:96646": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 6,
+   "side": "",
+   "giver": "Raan Wildwind («ران بادوحشی»)",
+   "turner": "Zerril Softbreeze («زریل نسیم‌نرم»)"
+  },
+  "quest:97963": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 6,
+   "side": "",
+   "giver": "Raan Wildwind («ران بادوحشی»)",
+   "turner": ""
+  },
+  "quest:97968": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 6,
+   "side": "",
+   "giver": "Raan Wildwind («ران بادوحشی»)",
+   "turner": "Syriel Nightrain («سیریل باران‌شب»)"
+  },
+  "quest:92516": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 7,
+   "side": "",
+   "giver": "Teeri Wellwind («تیری باد خوش»)",
+   "turner": "Teeri Wellwind («تیری باد خوش»)"
+  },
+  "quest:92517": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 7,
+   "side": "",
+   "giver": "Constable Aonda («پاسبان آئوندا»)",
+   "turner": "Constable Aonda («پاسبان آئوندا»)"
+  },
+  "quest:93319": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 7,
+   "side": "",
+   "giver": "Teeri Wellwind («تیری باد خوش»)",
+   "turner": "Teeri Wellwind («تیری باد خوش»)"
+  },
+  "quest:93951": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 7,
+   "side": "",
+   "giver": "Taleen Shimmerthread («تالین نخ‌درخشان»)",
+   "turner": "Taleen Shimmerthread («تالین نخ‌درخشان»)"
+  },
+  "quest:92528": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Missionary Jasaan («مبلغ جاسان»)",
+   "turner": "Constable Aonda («پاسبان آئوندا»)"
+  },
+  "quest:92529": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Sania Silverstream («سانیا جوی نقره‌ای»)",
+   "turner": "Missionary Jasaan («مبلغ جاسان»)"
+  },
+  "quest:92550": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Constable Aonda («پاسبان آئوندا»)",
+   "turner": "Constable Aonda («پاسبان آئوندا»)"
+  },
+  "quest:92551": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Danarii Bellowveil («داناری غرش‌نقاب»)",
+   "turner": "Danarii Bellowveil («داناری غرش‌نقاب»)"
+  },
+  "quest:92579": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "horde",
+   "giver": "Constable Aonda («پاسبان آئوندا»)",
+   "turner": "Valennia Stormfist («والنیا استورم‌فیست»)"
+  },
+  "quest:93036": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Constable Aonda («پاسبان آئوندا»)",
+   "turner": "Sania Silverstream («سانیا جوی نقره‌ای»)"
+  },
+  "quest:93926": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Constable Aonda («پاسبان آئوندا»)",
+   "turner": "Peacekeeper Vaaniel («صلح‌بان وانیل»)"
+  },
+  "quest:93927": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 8,
+   "side": "",
+   "giver": "Peacekeeper Vaaniel («صلح‌بان وانیل»)",
+   "turner": "Constable Aonda («پاسبان آئوندا»)"
+  },
+  "quest:92679": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Alvarion Windfield («آلواریون بادمزرعه»)",
+   "turner": "Aamelia Windfield («آمیلیا بادمزرعه»)"
+  },
+  "quest:92682": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Aamelia Windfield («آمیلیا بادمزرعه»)",
+   "turner": "Aamelia Windfield («آمیلیا بادمزرعه»)"
+  },
+  "quest:92683": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Aamelia Windfield («آمیلیا بادمزرعه»)",
+   "turner": "Aamelia Windfield («آمیلیا بادمزرعه»)"
+  },
+  "quest:92684": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Aamelia Windfield («آمیلیا بادمزرعه»)",
+   "turner": "Aamelia Windfield («آمیلیا بادمزرعه»)"
+  },
+  "quest:92685": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Aamelia Windfield («آمیلیا بادمزرعه»)",
+   "turner": ""
+  },
+  "quest:92698": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Malfunctioning Cyclone Construct («سازهٔ گردباد معیوب»)",
+   "turner": "Aamelia Windfield («آمیلیا بادمزرعه»)"
+  },
+  "quest:92700": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "horde",
+   "giver": "Valennia Stormfist («والنیا استورم‌فیست»)",
+   "turner": "Ayessa Dawnsinger («آیسا سپیده‌خوان»)"
+  },
+  "quest:93317": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:93318": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "",
+   "turner": "Danarii Bellowveil («داناری غرش‌نقاب»)"
+  },
+  "quest:93735": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "horde",
+   "giver": "Ayessa Dawnsinger («آیسا سپیده‌خوان»)",
+   "turner": "Riaani Nightwind («ریانی بادشب»)"
+  },
+  "quest:93736": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "horde",
+   "giver": "Endaria Mistgaze («اندریا نگاه‌مه»)",
+   "turner": "Endaria Mistgaze («اندریا نگاه‌مه»)"
+  },
+  "quest:93737": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "horde",
+   "giver": "Riaani Nightwind («ریانی بادشب»)",
+   "turner": ""
+  },
+  "quest:93948": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 9,
+   "side": "",
+   "giver": "Constable Aonda («پاسبان آئوندا»)",
+   "turner": "Talaanis Shadowsong («تالاانیس آواز سایه»)"
+  },
+  "quest:92727": {
+   "zone_en": "Zephras Isle",
+   "zone_fa": "جزیرهٔ زفراس",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  }
+ }
+}

@@ -1,0 +1,862 @@
+{
+ "pack": "quest-winterspring-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-winterspring-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Everlook Report",
+   "fa": "گزارش اورلوک",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Argent Officer Pureheart",
+   "fa": "افسر سپیدهٔ نقره‌ای پیورهارت",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Everlook",
+   "fa": "ایورلوک",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Argent Officer Garush",
+   "fa": "افسر سپیدهٔ نقره‌ای گاروش",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Studies in Spirit Speaking",
+   "fa": "مطالعاتِ سخن‌گوییِ با ارواح",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Duke Nicholas Zverenhoff",
+   "fa": "دوک نیکلاس زورنهوف",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "Chillwind Horns",
+   "fa": "شاخ‌های چیلویند",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Felnok Steelspring",
+   "fa": "فلنوک استیل‌اسپرینگ",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Felnok's Package",
+   "fa": "بستهٔ فلنوک",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Tinkee Steamboil",
+   "fa": "تینکی استیم‌بویل",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Winna Hazzard",
+   "fa": "وینا هزارد",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Frostsaber E'ko",
+   "fa": "ایکوی فراست‌سابر",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Cache of Mau'ari",
+   "fa": "انبارِ مائوآری",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Winterfall E'ko",
+   "fa": "اکوِ وینترفال",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Shardtooth E'ko",
+   "fa": "اِ'کوی دندان‌تراش",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Chillwind E'ko",
+   "fa": "ایکوی سردباد",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Ice Thistle E'ko",
+   "fa": "ایکوی خارِ یخی",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Frostmaul E'ko",
+   "fa": "ایکوی فراست‌مول",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Wildkin E'ko",
+   "fa": "اکوِ وحش‌پیکر",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Umi Rumplesnicker",
+   "fa": "اومی رامپل‌اسنیکر",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Donova Snowden",
+   "fa": "دونووا اسنودن",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Storm Shadowhoof",
+   "fa": "طوفان سم‌سایه",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Ursius",
+   "fa": "اورسیوس",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Empty Firewater Flask",
+   "fa": "فلاسک آتش‌آبِ خالی",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Deadwood",
+   "fa": "دارک‌وود",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Winterfall Runners",
+   "fa": "دونده‌های زمستان‌فرون",
+   "kind": "qs"
+  },
+  "E44": {
+   "en": "Toxic Horror",
+   "fa": "وحشت سمی",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Jaron Stoneshaper",
+   "fa": "جارون سنگ‌تراش",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Starfall",
+   "fa": "ستاره‌باران",
+   "kind": "qs"
+  },
+  "E47": {
+   "en": "Jaron's Pick",
+   "fa": "کلنگِ جارون",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Highborne Relic",
+   "fa": "یادگار های‌بورن",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Aurora Skycaller",
+   "fa": "آئورورا آسمان‌خوان",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Winterfall Ritual Totem",
+   "fa": "توتمِ آیینیِ وینترفال",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Arch Druid Fandral Staghelm",
+   "fa": "دروید اعظم فاندرال گوزن‌کلاه",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Cap of the Scarlet Savant",
+   "fa": "کلاه دانای اسکارلت",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Malyfous Darkhammer",
+   "fa": "مالیفوس چکش‌تاریک",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Pristine Hide of the Beast",
+   "fa": "پوست بکر جانور",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Arcane",
+   "fa": "اسرار",
+   "kind": "sp"
+  },
+  "E61": {
+   "en": "Enchanted Scarlet Thread",
+   "fa": "نخِ لاکیِ افسون‌شده",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Leggings of Arcana",
+   "fa": "شلوار اسرار",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Arcanite",
+   "fa": "آرکانیت",
+   "kind": "qs"
+  },
+  "E64": {
+   "en": "Frostwhisper's Embalming Fluid",
+   "fa": "مایعِ مومیاگیِ فراست‌ویسپر",
+   "kind": "it"
+  },
+  "E65": {
+   "en": "Breastplate of Bloodthirst",
+   "fa": "سینه‌بند تشنهٔ خون",
+   "kind": "it"
+  },
+  "E66": {
+   "en": "Skin of Shadow",
+   "fa": "پوست سایه",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Winterspring": "وینتراسپرینگ",
+  "Everlook Report": "گزارش اورلوک",
+  "Argent Officer Pureheart": "افسر سپیدهٔ نقره‌ای پیورهارت",
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Everlook": "ایورلوک",
+  "Argent Officer Garush": "افسر سپیدهٔ نقره‌ای گاروش",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Studies in Spirit Speaking": "مطالعاتِ سخن‌گوییِ با ارواح",
+  "Duke Nicholas Zverenhoff": "دوک نیکلاس زورنهوف",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Chillwind Horns": "شاخ‌های چیلویند",
+  "Felnok Steelspring": "فلنوک استیل‌اسپرینگ",
+  "Felnok's Package": "بستهٔ فلنوک",
+  "Tinkee Steamboil": "تینکی استیم‌بویل",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Winna Hazzard": "وینا هزارد",
+  "Felwood": "فل‌وود",
+  "Frostsaber E'ko": "ایکوی فراست‌سابر",
+  "Cache of Mau'ari": "انبارِ مائوآری",
+  "Winterfall E'ko": "اکوِ وینترفال",
+  "Shardtooth E'ko": "اِ'کوی دندان‌تراش",
+  "Chillwind E'ko": "ایکوی سردباد",
+  "Ice Thistle E'ko": "ایکوی خارِ یخی",
+  "Frostmaul E'ko": "ایکوی فراست‌مول",
+  "Wildkin E'ko": "اکوِ وحش‌پیکر",
+  "Umi Rumplesnicker": "اومی رامپل‌اسنیکر",
+  "Donova Snowden": "دونووا اسنودن",
+  "Storm Shadowhoof": "طوفان سم‌سایه",
+  "Ursius": "اورسیوس",
+  "Empty Firewater Flask": "فلاسک آتش‌آبِ خالی",
+  "Deadwood": "دارک‌وود",
+  "Winterfall Runners": "دونده‌های زمستان‌فرون",
+  "Toxic Horror": "وحشت سمی",
+  "Jaron Stoneshaper": "جارون سنگ‌تراش",
+  "Starfall": "ستاره‌باران",
+  "Jaron's Pick": "کلنگِ جارون",
+  "Highborne Relic": "یادگار های‌بورن",
+  "Aurora Skycaller": "آئورورا آسمان‌خوان",
+  "Winterfall Ritual Totem": "توتمِ آیینیِ وینترفال",
+  "Arch Druid Fandral Staghelm": "دروید اعظم فاندرال گوزن‌کلاه",
+  "Darnassus": "دارناسوس",
+  "Elune": "الون",
+  "Cap of the Scarlet Savant": "کلاه دانای اسکارلت",
+  "Malyfous Darkhammer": "مالیفوس چکش‌تاریک",
+  "Pristine Hide of the Beast": "پوست بکر جانور",
+  "Arcane": "اسرار",
+  "Enchanted Scarlet Thread": "نخِ لاکیِ افسون‌شده",
+  "Leggings of Arcana": "شلوار اسرار",
+  "Arcanite": "آرکانیت",
+  "Frostwhisper's Embalming Fluid": "مایعِ مومیاگیِ فراست‌ویسپر",
+  "Breastplate of Bloodthirst": "سینه‌بند تشنهٔ خون",
+  "Skin of Shadow": "پوست سایه"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$N",
+  "5": "$N",
+  "6": "$C",
+  "7": "$C",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$C",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$N",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$N",
+  "29": "$B",
+  "30": "$B",
+  "31": "$B",
+  "32": "$B",
+  "33": "$N",
+  "34": "$B",
+  "35": "$B",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$B",
+  "40": "$B",
+  "41": "$N",
+  "42": "$N",
+  "43": "$c",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$N",
+  "51": "$C",
+  "52": "$R",
+  "53": "$N",
+  "54": "$N",
+  "55": "$B",
+  "56": "$B",
+  "57": "$n",
+  "58": "$B",
+  "59": "$B"
+ },
+ "rows": {
+  "quest:9266:title": "Making Amends",
+  "quest:9266:progress:0": "You must've done something really bad to us or our friends, ⟦1⟧. At any rate, I'm here to offer you a way to get our good graces back.⟦2⟧⟦3⟧As you know, ⟦E1⟧ is quite cold. With so many of us goblins coming from other cities, we could use a hand keeping warm. Bring me some runecloth and coal and I'll put in the good word for ya. Be warned though, our enemies are not going to take kindly to your helping us.",
+  "quest:9266:completion:0": "Thank you, ⟦4⟧. You're on a quick path to redeeming yourself with our fair town.",
+  "quest:6028:obj:0": "Deliver the ⟦E3⟧ to ⟦E4⟧ at Chillwind Camp, ⟦E5⟧.",
+  "quest:6028:details:0": "I am looking for a responsible individual to aid me in a small but nonetheless important matter. I'm here as a representative of the Argent Dawn's interests to the local governance of ⟦E7⟧. I need to get a progress report to ⟦E4⟧ at Chillwind Camp; it's a ways from here, located along the southern fringe of the ⟦E5⟧.",
+  "quest:6028:details:1": "If I may be so bold - this would be a perfect means to introduce yourself to my superior and perhaps earn some work from her!",
+  "quest:6028:progress:0": "Greetings, ⟦5⟧. On behalf of the Argent Dawn, I offer you safety and shelter while you are here at Chillwind Camp. I might also have some work for you...",
+  "quest:6028:completion:0": "Very resourceful, Gregor is. He's been dealing with the Steamwheedle Cartel for some time now, and has become an expert on the \"art\" of goblin negotiations. Though it's true that the goblins' primary loyalties lie with those who have the largest coin purses, they also know and respect the value of diplomacy. If anything, it provides them with repeat customers...",
+  "quest:6028:completion:1": "At any rate, the Argent Dawn acknowledges you for your effort. Please have this, with our thanks.",
+  "quest:6029:obj:0": "Deliver the ⟦E3⟧ to ⟦E8⟧ at the Bulwark, ⟦E5⟧.",
+  "quest:6029:details:0": "I'm looking for a responsible individual to aid me in a small but nonetheless important matter. I'm here as a representative of the Argent Dawn's interests to the local governance of ⟦E7⟧. I need to get a progress report to ⟦E8⟧ at the Bulwark; it's a ways from here, located along the western fringe of the ⟦E5⟧, east of ⟦E9⟧.",
+  "quest:6029:details:1": "If I may be so bold - this would be a perfect means to introduce yourself to my superior and perhaps earn some work from him!",
+  "quest:6029:progress:0": "Greetings, ⟦6⟧.  On behalf of the Argent Dawn, I offer you safety and shelter while you are here at Bulwark.  I might also offer you the chance to fight for a cause that's worth fighting for!",
+  "quest:6029:completion:0": "Resourceful for a human, Gregor is. He's been dealing with the Steamwheedle Cartel for some time now, and has become an expert on the \"art\" of goblin negotiations. Though it's true that the goblins' primary loyalties lie with those who have the largest coin purses, they also know and respect the value of diplomacy. If anything, it provides them with repeat customers...",
+  "quest:6029:completion:1": "At any rate, the Argent Dawn acknowledges you for your effort. Please have this, with our thanks.",
+  "quest:6030:obj:0": "Deliver the book, \"⟦E11⟧\", to ⟦E12⟧ at ⟦E13⟧, ⟦E14⟧.",
+  "quest:6030:details:0": "A recluse medium found in these parts by the name of Umbranse has provided the Argent Dawn with quite a literary masterpiece... one that amounts to quite possibly the largest collection of jibber-jabber I've ever seen written.",
+  "quest:6030:details:1": "One of the Dawn's most respected leaders, ⟦E12⟧, is a brilliant linguist. Could you take this to him for me - for a reward, of course? ⟦E13⟧ - that's where he's currently at, far in the eastern part of the ⟦E14⟧.",
+  "quest:6030:progress:0": "May the Light guide you in these troubling times, ⟦7⟧. What brings you here to this beacon of hope in the middle of darkness and despair?",
+  "quest:6030:completion:0": "This... this is a very special book you have brought me. I'd like to tell you that \"special\" in this case means \"unique and quite possibly illuminating\", but that remains to be seen.",
+  "quest:6030:completion:1": "B\"Ooooooo?\" Who in their right mind thinks this up?",
+  "quest:6030:completion:2": "Well now, I've heard of this Umbranse that Gregor spoke of, so this isn't without merit. I'll do my best to decipher it. As for you... please, have this - courtesy of the Argent Dawn. While you are here, perhaps there are some other things you can aid us with.",
+  "quest:4809:obj:0": "Bring 8 Uncracked ⟦E15⟧ to ⟦E16⟧.",
+  "quest:4809:details:0": "I have most of what Tinkee needs, but I'm missing one important component, and that's chillwind horns. The horns of the chillwind chimaera in ⟦E1⟧ are a concentrated source of cold, but only pristine, uncracked horns will do! I'll need a supply of those to complete Tinkee's order.",
+  "quest:4809:details:1": "Bring me the uncracked chillwind horns, and I'll prepare a package for Tinkee.",
+  "quest:4809:progress:0": "Do you have the chillwind horns, ⟦8⟧?",
+  "quest:4809:completion:0": "These are good specimens. They're packed with cold! Let me get some gloves on, then pack them along with the other things Tinkee needs...",
+  "quest:4810:obj:0": "Bring ⟦E17⟧ to ⟦E18⟧ in the ⟦E19⟧.",
+  "quest:4810:details:0": "Ok, everything is prepared and packed and ready for transport! Good luck in your journey, and make sure you tell Tinkee that she owes me!",
+  "quest:4810:progress:0": "⟦9⟧! Did you talk to Felnok? Did you bring the components I need?",
+  "quest:4810:completion:0": "You brought them! Great! I'll get to work right away! Thanks a ton, ⟦10⟧!",
+  "quest:4810:completion:1": "You've been so helpful to me, I might need you for even more important tasks later...",
+  "quest:6605:obj:0": "Speak with ⟦E20⟧ in ⟦E21⟧.",
+  "quest:6605:details:0": "I just got back from ⟦E21⟧, ⟦11⟧. On my way through, I stopped at Bloodvenom Post and I met a very odd character... She seemed intent on one thing, and I suppose I could tell you what that is, but I think she'd like to explain it to you herself.",
+  "quest:6605:details:1": "If you're interested, head to Bloodvenom Post in western ⟦E21⟧ and look for ⟦E20⟧.",
+  "quest:6605:details:2": "Who knows, she might need your help...",
+  "quest:6605:completion:0": "Ah, ⟦12⟧. I see that there is hope yet. Are you here to assist me?",
+  "quest:4801:title": "⟦E22⟧",
+  "quest:4801:progress:0": "In ⟦E1⟧, you will fight great cats called frostsabers. These beasts possess incredible speed an' cunning. If you wish ta gain the speed a' da frostsaber, bring me da E'ko you find from dem.⟦13⟧⟦14⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.",
+  "quest:4801:completion:0": "Mau'ari can derive da juju for ⟦15⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:4802:title": "⟦E26⟧",
+  "quest:4802:progress:0": "In ⟦E1⟧, you will fight misguided creatures known as da Winterfall furbolg. Through the wishes of their leader, dey have gained incredible strength. If you wish ta gain the power a' da Winterfall, bring me da E'ko you find from dem.⟦16⟧⟦17⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.",
+  "quest:4802:completion:0": "Mau'ari can derive da juju for ⟦18⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:4803:title": "⟦E27⟧",
+  "quest:4803:progress:0": "In ⟦E1⟧, you will find large bears wit extremely thick hides. These Shardtooth bears gain much protection from what dey can withstand. If you wish ta gain the resistance against fire, bring me da E'ko you find from da Shardtooth.⟦19⟧⟦20⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.⟦21⟧⟦22⟧",
+  "quest:4803:completion:0": "Mau'ari can derive da juju for ⟦23⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:4804:title": "⟦E29⟧",
+  "quest:4804:progress:0": "In ⟦E1⟧, you will fight great flying creatures called da Chillwind. These beasts possess da power ta wield frost magics. If you wish ta gain resistance ta frost, bring me da E'ko you find from da Chillwind.⟦24⟧⟦25⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.⟦26⟧⟦27⟧",
+  "quest:4804:completion:0": "Mau'ari can derive da juju for ⟦28⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:4805:title": "⟦E30⟧",
+  "quest:4805:progress:0": "In ⟦E1⟧, you will fight great creatures called da ice thistle yeti. These beasts move slowly, but dey are able to evade many blows from da protection their thick fur provides dem. If you wish ta gain da ability to dodge attacks, bring me da E'ko you find from dem.⟦29⟧⟦30⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.⟦31⟧⟦32⟧",
+  "quest:4805:completion:0": "Mau'ari can derive da juju for ⟦33⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:4806:title": "⟦E33⟧",
+  "quest:4806:progress:0": "In ⟦E1⟧, you have fought da large ice giants called frostmaul. Sheer power and force is at their disposal. If you wish ta gain da force of da frostmaul, bring me da E'ko you find from dem.⟦34⟧⟦35⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.",
+  "quest:4806:completion:0": "Mau'ari can derive da juju for ⟦36⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:4807:title": "⟦E35⟧",
+  "quest:4807:progress:0": "In ⟦E1⟧, you will fight creatures of might dat seem to possess an innate magic ability. These wildkin can use strong magics. If you wish ta gain an increase in your intellect bring me da E'ko you find from any a' da owlbeasts you find der.⟦37⟧⟦38⟧Rememba, you must have the ⟦E23⟧ in your inventory if you want ta hunt for E'ko.⟦39⟧⟦40⟧",
+  "quest:4807:completion:0": "Mau'ari can derive da juju for ⟦41⟧... Use da ⟦E23⟧ to cast dis upon yourself or your allies.",
+  "quest:3783:obj:0": "Collect 10 Thick Yeti Furs for ⟦E36⟧ in ⟦E7⟧.",
+  "quest:3783:details:0": "My friends are always coming up with great ideas. I've never felt like I could match them... until today! I just drew up the plans for something great! If you promise not to tell, I'll let you in on the secret...",
+  "quest:3783:details:1": "I'm going to make a mechanical yeti! Not only are my friends sure to be freaked out when they see it, but when they get over that, I know they'll be impressed!",
+  "quest:3783:details:2": "I need thick yeti fur from the ice thistle yeti to start with. Will you help? You'll find them to the southeast.",
+  "quest:3783:progress:0": "I've got lots to get started on here. Please get me those furs as soon as you can!",
+  "quest:3783:completion:0": "These furs are perfect, ⟦42⟧. We're off to a great start here!",
+  "quest:4842:obj:0": "Follow ⟦E37⟧'s instructions, then report back.",
+  "quest:4842:details:0": "To tell you the truth, although there are no volcanoes here in ⟦E1⟧, I believe that there are far more threatening reasons for these hot springs...",
+  "quest:4842:details:1": "Well, I think you'll want to see it for yourself. You'll need to travel the length of ⟦E1⟧, and head to the very south. When the air becomes thick and muggy, and the sky turns dark, you'll have found what I believe to be the source of the hot springs.",
+  "quest:4842:details:2": "Have a look. I'm sure you'll have many questions when you return.",
+  "quest:4842:progress:0": "The water in the springs seems to have some very odd properties... I am still unsure of what it means...",
+  "quest:4842:completion:0": "Yes, the demons there in Darkwhisper Gorge; I believe it is their presence that is affecting the land in this way. I am going to continue observing the hot springs here and see if I learn anything more.",
+  "quest:4842:completion:1": "I'd wait until you are a bit stronger if you have plans of heading farther into Darkwhisper Gorge.",
+  "quest:5054:obj:0": "⟦E38⟧ at ⟦E7⟧ in ⟦E1⟧ wants you to kill ⟦E39⟧.",
+  "quest:5054:details:0": "In the snowy mountains of ⟦E1⟧, to the northwest, a skilled hunter stalks his prey... I speak of ⟦E39⟧ of the shardtooth bears, an agile and clever beast.",
+  "quest:5054:details:1": "I send you now against him. He roams the sloping hills to the northwest of ⟦E7⟧. Find and hunt him, before he discovers your intent.",
+  "quest:5054:details:2": "All that have gone up against ⟦E39⟧ have quickly found themselves to be the prey, and he, the hunter. Stay on your guard.",
+  "quest:5054:progress:0": "Go now, ⟦43⟧. Seek out ⟦E39⟧.",
+  "quest:5054:completion:0": "This was no easy task, yet you have excelled. But do not be too quick to think you have impressed me, ⟦44⟧.",
+  "quest:5082:obj:0": "⟦E37⟧ in ⟦E1⟧ wants you to kill 8 Winterfall Pathfinders, 8 Winterfall Den Watchers, and 8 Winterfall Totemics.",
+  "quest:5082:details:0": "I came to ⟦E1⟧ to investigate the Frostfire Hot Springs. I've noticed that the water seems to have ...strange qualities. I haven't yet been able to discover the source, and to tell you the truth, I've had some difficulty lately, due to the Winterfall furbolg.",
+  "quest:5082:details:1": "They seem to be drawn to the springs, just as I am. They have become extremely protective of the water, and won't let me come near the two larger springs to the north of here.",
+  "quest:5082:details:2": "I'd like to continue my studies, so won't you help me?",
+  "quest:5082:progress:0": "I appreciate your help!",
+  "quest:5082:completion:0": "Thanks so much, ⟦45⟧! Now I can get back to work here.",
+  "quest:5082:completion:1": "Did you find anything of interest at the Winterfall camp?",
+  "quest:5083:obj:0": "Bring the ⟦E40⟧ to ⟦E37⟧ in ⟦E1⟧.",
+  "quest:5083:details:0": "This vial that you picked up from the Winterfall furbolg is empty, but you can detect a few drops of a strange green liquid inside; it almost glows.",
+  "quest:5083:details:1": "Is it something important?",
+  "quest:5083:details:2": "⟦E37⟧ would probably be able to tell you more, since she has been camped by the hot springs in ⟦E1⟧ for some time now.",
+  "quest:5083:progress:0": "What is that you have found?",
+  "quest:5083:completion:0": "You got this from the Winterfall?",
+  "quest:5084:obj:0": "Search the ⟦E41⟧ furbolg camp in northern ⟦E21⟧ for a clue.",
+  "quest:5084:details:0": "This greenish liquid... it reminds me a bit of the sludge I saw when traveling through ⟦E21⟧. And I have seen some ⟦E42⟧ passing into Timbermaw... Perhaps these things have something to do with the flask you found, ⟦46⟧.",
+  "quest:5084:details:1": "There is a large group of furbolg just past Timbermaw Hold, in ⟦E21⟧. Called the ⟦E41⟧ tribe, they have been corrupted and driven mad by the fel. Why don't you look around there and see if you can find any evidence of dealings between the Winterfall and the ⟦E41⟧?",
+  "quest:5084:completion:0": "Inside the cauldron bubbles a rotting, repulsive-smelling substance...",
+  "quest:5085:obj:0": "Report back to ⟦E37⟧ with your findings.",
+  "quest:5085:details:0": "The greenish substance inside the cauldron appears to be similar to what you found in the flask. This strange gooey stuff could be as corrupted as the furbolg that created it...",
+  "quest:5085:details:1": "If the Winterfall furbolg are using it, does this mean that they will soon be as corrupted as the ⟦E41⟧ tribe?",
+  "quest:5085:details:2": "It would be best to report back to Donova with your findings, along with a sample of the liquid in the cauldron.",
+  "quest:5085:progress:0": "I hope you found something, ⟦47⟧. The Winterfall are becoming increasingly aggressive!",
+  "quest:5085:completion:0": "You are very resourceful, ⟦48⟧. Do you think that the Winterfall furbolgs have been to the ⟦E41⟧ camp?",
+  "quest:5086:obj:0": "Collect 3 ⟦E44⟧ Droplets for ⟦E37⟧ in ⟦E1⟧.",
+  "quest:5086:details:0": "I've studied the sample you returned with, and while I can't say for sure, I believe it contains traces of toxic elements. However, the only way to know for sure is to gather some as a comparison.",
+  "quest:5086:details:1": "I believe that the ⟦E41⟧ furbolg may be gathering these elements from other corrupted creatures in ⟦E21⟧; in particular, the elementals living in the Irontree Woods, called toxic horrors.",
+  "quest:5086:details:2": "Collect a few samples for me to compare, but be careful -- it's very dangerous there!",
+  "quest:5086:progress:0": "I think we are beginning to uncover what is happening here, ⟦49⟧.",
+  "quest:5086:completion:0": "I have to compare this to the substance you found in the cauldron, and then I'm sure we'll know more.",
+  "quest:5244:obj:0": "Speak with ⟦E45⟧ in ⟦E46⟧ Village.",
+  "quest:5244:details:0": "The story behind Kel'Theril is one of a cursed race, bound to the place where they attempted an unfortunate ritual...",
+  "quest:5244:details:1": "The highborne that you will find there once stole a sacred artifact, believing that they could siphon its power for themselves, becoming even more powerful. In their efforts, the relic shattered in a huge explosion, driving the pieces below the ice of the lake...",
+  "quest:5244:details:2": "Speak with ⟦E45⟧ if you'd like to learn more; he has recently visited the area and can tell you more.",
+  "quest:5244:completion:0": "Well, sure, I can tell you more about Kel'Theril. Mind you now, I'm no historian, but I can tell ya about what I saw there...",
+  "quest:5245:obj:0": "Use ⟦E47⟧ to find the four ⟦E48⟧ Fragments. Bring them to ⟦E49⟧ in ⟦E14⟧.",
+  "quest:5245:details:0": "The highborne spirits are miserable creatures, that's for sure. They are still searching for pieces of the very thing that has cursed them to Kel'Theril forever -- the stolen relic.",
+  "quest:5245:details:1": "If you are that interested, take my pick and go south to the lake, see if you can gather the pieces of it from within the ice.",
+  "quest:5245:details:2": "Now, I can't tell you a thing about what you find, but I do know of someone who might... ⟦E49⟧; she dwells near the Northpass Tower in the northern part of ⟦E14⟧.",
+  "quest:5245:progress:0": "Why have you come here?",
+  "quest:5245:completion:0": "The past of the high elves is something that I do not wish to discuss, ⟦50⟧. Please, it pains me to think of all that has happened... And that there is no way to make things right.",
+  "quest:6603:obj:0": "Find ⟦E37⟧ near the hot springs in ⟦E1⟧.",
+  "quest:6603:details:0": "There's trouble in ⟦E1⟧!",
+  "quest:6603:details:1": "Why, sure, I spend some time out in the wilds and know about these things... I'm always mighty proud to say it. I consider the hours I spend out there in the hills to be golden. Help you cultivate quick reflexes, a cool head and a keen eye...",
+  "quest:6603:details:2": "It takes judgement, brains and maturity to appreciate the wilderness in the way that I do.",
+  "quest:6603:details:3": "Now, what was I talking about?",
+  "quest:6603:details:4": "Ah yes, trouble. See ⟦E37⟧ at the hot springs and she can tell you more.",
+  "quest:6603:details:5": "B",
+  "quest:6603:completion:0": "Well, hi there! So Meggi told you of the trouble I have found here?",
+  "quest:8471:obj:0": "Take the ⟦E50⟧ inside Timbermaw Hold and see if one of the furbolgs there will find a use for the item. The Timbermaw will not speak with you unless you are of Neutral reputation or greater with them.",
+  "quest:8471:details:0": "You have found one of the Winterfall furbolg's ritual totems. The totem itself is of non-descript construction, but it seems to emanate an almost tangible sense of dread and despair. If many of the Winterfall furbolgs do indeed carry these, it certainly would go a long way in explaining their current condition.",
+  "quest:8471:details:1": "One of the furbolgs inside Timbermaw Hold may have a use for such an item... that is, if you've earned their trust enough for them to speak with you.",
+  "quest:8471:progress:0": "⟦51⟧ - you approach us in a peaceful manner, but I sense that you are here on matters that are grave and severe... for both furbolg and ⟦52⟧ alike. What have you come to tell us?",
+  "quest:8471:completion:0": "This thing... it is in the shape of a ⟦E50⟧, but it has been twisted by forces I cannot begin to comprehend. Whatever taint that has set the Winterfall against us is surely present in this object.",
+  "quest:8471:completion:1": "Divine wisdom has brought both this and you to us, ⟦53⟧. We will study this object intently; perhaps one day, the Winterfall will rage against us no longer.",
+  "quest:8471:completion:2": "Thank you, friend please accept these offerings in exchange for your benevolence.",
+  "quest:4902:obj:0": "Speak with ⟦E53⟧ in ⟦E54⟧.",
+  "quest:4902:details:0": "That's fascinating!",
+  "quest:4902:details:1": "I have always wondered about the truth... Well, you must share this knowledge, definitely! Go to ⟦E53⟧ right away -- you'll find him in ⟦E54⟧, in the Cenarion Circle. Explain to him what happened, just the same as you told me. I'm sure he will be just as interested!",
+  "quest:4902:details:2": "This is important information, ⟦54⟧!",
+  "quest:4902:completion:0": "Do not hesitate; tell me why you have come.",
+  "quest:4902:completion:1": "Oh, yes? Hmm. Well.",
+  "quest:4902:completion:2": "Thank you for bringing this straight to me; it is always best to go right to the top... But... Yes. The druids of the Cenarion Circle have known of the Wildkin for some time. That they are pets of ⟦E56⟧, and were chosen to guard the most sacred of places.",
+  "quest:4902:completion:3": "So while this isn't news, I definitely compliment you on your effort. Here, take this -- it is something that seems suitable for such a deed.",
+  "quest:5063:title": "⟦E57⟧",
+  "quest:5063:desc:0": "In order to create the ⟦E57⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 5 Frayed Abomination Stitchings; 8 ⟦E60⟧ Crystals; 5 ⟦E61⟧. ",
+  "quest:5063:desc:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5063:obj:0": "In order to create the ⟦E57⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 5 Frayed Abomination Stitchings; 8 ⟦E60⟧ Crystals; 5 ⟦E61⟧. ",
+  "quest:5063:obj:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5063:details:0": "In order to create the ⟦E57⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 5 Frayed Abomination Stitchings; 8 ⟦E60⟧ Crystals; 5 ⟦E61⟧. ",
+  "quest:5063:details:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5063:progress:0": "Unless you've got everything I need, you're wasting my time.",
+  "quest:5063:completion:0": "Astounding! It must have taken weeks to gather those components... and how did you find a pristine hide?!?⟦55⟧⟦56⟧Enjoy the cap, ⟦57⟧!",
+  "quest:5067:title": "⟦E62⟧",
+  "quest:5067:desc:0": "In order to create the ⟦E62⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 5 Frayed Abomination Stitchings; 5 ⟦E63⟧ Bars; 5 ⟦E64⟧.",
+  "quest:5067:desc:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5067:obj:0": "In order to create the ⟦E62⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 5 Frayed Abomination Stitchings; 5 ⟦E63⟧ Bars; 5 ⟦E64⟧.",
+  "quest:5067:obj:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5067:details:0": "In order to create the ⟦E62⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 5 Frayed Abomination Stitchings; 5 ⟦E63⟧ Bars; 5 ⟦E64⟧.",
+  "quest:5067:details:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5067:progress:0": "Unless you've got everything I need, you're wasting my time.",
+  "quest:5067:completion:0": "Few more improbable tasks I have seen completed by mortals. Bask in the glory of my handiwork! Reap its rewards!",
+  "quest:5068:title": "⟦E65⟧",
+  "quest:5068:desc:0": "In order to create the ⟦E65⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 10 Frayed Abomination Stitchings; 5 ⟦E63⟧ Bars; 5 ⟦E66⟧.",
+  "quest:5068:desc:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5068:obj:0": "In order to create the ⟦E65⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 10 Frayed Abomination Stitchings; 5 ⟦E63⟧ Bars; 5 ⟦E66⟧.",
+  "quest:5068:obj:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5068:details:0": "In order to create the ⟦E65⟧, you will be required to bring the following items back to ⟦E58⟧: 1 ⟦E59⟧; 10 Frayed Abomination Stitchings; 5 ⟦E63⟧ Bars; 5 ⟦E66⟧.",
+  "quest:5068:details:1": "You will also be required to pay 50 gold pieces for the crafting of the item.",
+  "quest:5068:progress:0": "Unless you've got everything I need, you're wasting my time.",
+  "quest:5068:completion:0": "I thought I would be dead and buried before I ever saw this day.⟦58⟧⟦59⟧An accomplishment of this magnitude can only be overshadowed by the reward."
+ },
+ "context": {
+  "quest:9266": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 40,
+   "side": "",
+   "giver": "",
+   "turner": "Bronn Fitzwrench («برون فیتس‌رنچ»)"
+  },
+  "quest:6028": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Gregor Greystone («گرگور گریستون»)",
+   "turner": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)"
+  },
+  "quest:6029": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 52,
+   "side": "horde",
+   "giver": "Gregor Greystone («گرگور گریستون»)",
+   "turner": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)"
+  },
+  "quest:6030": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 52,
+   "side": "",
+   "giver": "Gregor Greystone («گرگور گریستون»)",
+   "turner": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)"
+  },
+  "quest:4809": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 54,
+   "side": "",
+   "giver": "Felnok Steelspring («فلنوک استیل‌اسپرینگ»)",
+   "turner": "Felnok Steelspring («فلنوک استیل‌اسپرینگ»)"
+  },
+  "quest:4810": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 54,
+   "side": "",
+   "giver": "Felnok Steelspring («فلنوک استیل‌اسپرینگ»)",
+   "turner": "Tinkee Steamboil («تینکی استیم‌بویل»)"
+  },
+  "quest:6605": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 54,
+   "side": "horde",
+   "giver": "Harlo Wigglesworth («هارلو ویگلزورث»)",
+   "turner": "Winna Hazzard («وینا هزارد»)"
+  },
+  "quest:4801": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:4802": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:4803": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:4804": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:4805": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:4806": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:4807": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Mau'ari («جادوپزشک ماوآری»)"
+  },
+  "quest:3783": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Umi Rumplesnicker («اومی رامپل‌اسنیکر»)",
+   "turner": "Umi Rumplesnicker («اومی رامپل‌اسنیکر»)"
+  },
+  "quest:4842": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Donova Snowden («دونووا اسنودن»)",
+   "turner": "Donova Snowden («دونووا اسنودن»)"
+  },
+  "quest:5054": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "horde",
+   "giver": "Storm Shadowhoof («طوفان سم‌سایه»)",
+   "turner": "Storm Shadowhoof («طوفان سم‌سایه»)"
+  },
+  "quest:5082": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Donova Snowden («دونووا اسنودن»)",
+   "turner": "Donova Snowden («دونووا اسنودن»)"
+  },
+  "quest:5083": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "",
+   "turner": "Donova Snowden («دونووا اسنودن»)"
+  },
+  "quest:5084": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Donova Snowden («دونووا اسنودن»)",
+   "turner": "Deadwood Cauldron («دیگ چوب‌مرده»)"
+  },
+  "quest:5085": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Deadwood Cauldron («دیگ چوب‌مرده»)",
+   "turner": "Donova Snowden («دونووا اسنودن»)"
+  },
+  "quest:5086": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Donova Snowden («دونووا اسنودن»)",
+   "turner": "Donova Snowden («دونووا اسنودن»)"
+  },
+  "quest:5244": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "alliance",
+   "giver": "Wynd Nightchaser («ویند نایت‌چیسر»)",
+   "turner": "Jaron Stoneshaper («جارون سنگ‌تراش»)"
+  },
+  "quest:5245": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "alliance",
+   "giver": "Jaron Stoneshaper («جارون سنگ‌تراش»)",
+   "turner": "Aurora Skycaller («آئورورا آسمان‌خوان»)"
+  },
+  "quest:6603": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "Meggi Peppinrocker («مگی پپین‌راکر»)",
+   "turner": "Donova Snowden («دونووا اسنودن»)"
+  },
+  "quest:8471": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 56,
+   "side": "",
+   "giver": "",
+   "turner": "Kernda («کرندا»)"
+  },
+  "quest:4902": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Erelas Ambersky («ارلاس آسمان‌کهربا»)",
+   "turner": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)"
+  },
+  "quest:5063": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 57,
+   "side": "",
+   "giver": "",
+   "turner": "Malyfous Darkhammer («مالیفوس چکش‌تاریک»)"
+  },
+  "quest:5067": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 57,
+   "side": "",
+   "giver": "",
+   "turner": "Malyfous Darkhammer («مالیفوس چکش‌تاریک»)"
+  },
+  "quest:5068": {
+   "zone_en": "Winterspring",
+   "zone_fa": "وینتراسپرینگ",
+   "level": 57,
+   "side": "",
+   "giver": "Malyfous's Catalogue",
+   "turner": "Malyfous Darkhammer («مالیفوس چکش‌تاریک»)"
+  }
+ },
+ "known": {
+  "quest:6028": {
+   "title": "گزارش اورلوک"
+  },
+  "quest:6029": {
+   "title": "گزارش اورلوک"
+  },
+  "quest:6030": {
+   "title": "دوک نیکلاس زورنهوف"
+  },
+  "quest:4809": {
+   "title": "شاخ‌های چیلویند"
+  },
+  "quest:4810": {
+   "title": "بازگشت به تینکی"
+  },
+  "quest:6605": {
+   "title": "یکی عجیب"
+  },
+  "quest:3783": {
+   "title": "رسیدیم، یتی؟"
+  },
+  "quest:4842": {
+   "title": "منابع عجیب"
+  },
+  "quest:5054": {
+   "title": "اورسیوس دندان‌خرده"
+  },
+  "quest:5082": {
+   "title": "تهدید زمستان‌فرون"
+  },
+  "quest:5083": {
+   "title": "آتش‌نوش زمستان‌فرون"
+  },
+  "quest:5084": {
+   "title": "سقوط در فساد"
+  },
+  "quest:5085": {
+   "title": "لجن مرموز"
+  },
+  "quest:5086": {
+   "title": "هول‌های سمی"
+  },
+  "quest:5244": {
+   "title": "خرابه‌های کِل‌تریل"
+  },
+  "quest:5245": {
+   "title": "ارواح پریشان کِل‌تریل"
+  },
+  "quest:6603": {
+   "title": "دردسر در وینتراسپرینگ!"
+  },
+  "quest:8471": {
+   "title": "توتم آیین زمستان‌فرون"
+  },
+  "quest:4902": {
+   "title": "وایلدکین‌های الون"
+  }
+ }
+}

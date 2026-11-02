@@ -1,0 +1,950 @@
+{
+ "pack": "quest-sort:rogue-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:rogue-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Encrypted Tablet",
+   "fa": "لوحِ رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Rwag",
+   "fa": "رواگ",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Valley of Trials",
+   "fa": "درهٔ آزمون‌ها",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Encrypted Parchment",
+   "fa": "پوست‌نوشتِ رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Nartok",
+   "fa": "نارتوک",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Encrypted Scroll",
+   "fa": "طومار رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "David Trias",
+   "fa": "دیوید تریاس",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Deathknell",
+   "fa": "ناقوس مرگ",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Encrypted Letter",
+   "fa": "نامهٔ رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Jorik Kerridan",
+   "fa": "جوریک کریدان",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Northshire Abbey",
+   "fa": "صومعهٔ نورث‌شایر",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Encrypted Rune",
+   "fa": "رونِ رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Solm Hargrin",
+   "fa": "سولم هارگرین",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Coldridge Valley",
+   "fa": "درهٔ کولدریج",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Gnomeregan",
+   "fa": "گنومریگان",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Encrypted Memorandum",
+   "fa": "یادداشت رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Encrypted Sigil",
+   "fa": "مهرِ رمزنگاری‌شده",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Frahun Shadewhisper",
+   "fa": "فراهون نجوای سایه",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Shadowglen",
+   "fa": "سایه دره",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Therzok",
+   "fa": "ترزوک",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E29": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Kaplak",
+   "fa": "کاپلاک",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Mennet Carkad",
+   "fa": "منهت کارکاد",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Keryn Sylvius",
+   "fa": "کرین سیلویوس",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Master Mathias Shaw",
+   "fa": "استاد ماتیاس شا",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Defias Dockmaster",
+   "fa": "رئیس اسکله دیفیاس",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Hulfdan Blackbeard",
+   "fa": "هولفدان ریش‌سیاه",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "salvation",
+   "fa": "رستگاری",
+   "kind": "sp"
+  },
+  "E40": {
+   "en": "Onin MacHammar",
+   "fa": "اونین مک‌همر",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Onin's Report",
+   "fa": "گزارشِ اونین",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Jannok's Rose",
+   "fa": "گلِ رزِ جانوک",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Syurna",
+   "fa": "سیورنا",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Sethir the Ancient",
+   "fa": "سثیر باستانی",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Tazan",
+   "fa": "تازان",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Gamon",
+   "fa": "گامون",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Astor's Letter of Introduction",
+   "fa": "نامهٔ معرفیِ آستور",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Varimathras",
+   "fa": "واری‌ماتراس",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Astor Hadren",
+   "fa": "آستور هادرن",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Andron Gant",
+   "fa": "آندرون گانت",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Andron's Ledger",
+   "fa": "دفترِ حسابِ آندرون",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "Syndicate",
+   "fa": "سندیکا",
+   "kind": "npc"
+  },
+  "E60": {
+   "en": "The Deathstalkers",
+   "fa": "مرگ‌خزها",
+   "kind": "qs"
+  },
+  "E61": {
+   "en": "Fenwick Thatros",
+   "fa": "فنویک تاتروس",
+   "kind": "qs"
+  },
+  "E63": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E66": {
+   "en": "Silverpine Forest",
+   "fa": "جنگل سیلورپاین",
+   "kind": "zn"
+  },
+  "E67": {
+   "en": "Erion Shadewhisper",
+   "fa": "اریون سایه‌نجوا",
+   "kind": "qs"
+  },
+  "E68": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E69": {
+   "en": "Stormwind City",
+   "fa": "شهر استورم‌ویند",
+   "kind": "zn"
+  },
+  "E70": {
+   "en": "Renzik \"The Shiv\"",
+   "fa": "رنزیک «خنجر»",
+   "kind": "npc"
+  },
+  "E71": {
+   "en": "Redridge Mountains",
+   "fa": "کوه‌های ردریج",
+   "kind": "zn"
+  },
+  "E72": {
+   "en": "Lucius",
+   "fa": "لوسیوس",
+   "kind": "npc"
+  },
+  "E73": {
+   "en": "Shenthul",
+   "fa": "شنثول",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Encrypted Tablet": "لوحِ رمزنگاری‌شده",
+  "Rwag": "رواگ",
+  "Valley of Trials": "درهٔ آزمون‌ها",
+  "Encrypted Parchment": "پوست‌نوشتِ رمزنگاری‌شده",
+  "Nartok": "نارتوک",
+  "Encrypted Scroll": "طومار رمزنگاری‌شده",
+  "David Trias": "دیوید تریاس",
+  "Deathknell": "ناقوس مرگ",
+  "Encrypted Letter": "نامهٔ رمزنگاری‌شده",
+  "Jorik Kerridan": "جوریک کریدان",
+  "Northshire Abbey": "صومعهٔ نورث‌شایر",
+  "Stormwind": "استورم‌ویند",
+  "Encrypted Rune": "رونِ رمزنگاری‌شده",
+  "Solm Hargrin": "سولم هارگرین",
+  "Coldridge Valley": "درهٔ کولدریج",
+  "Ironforge": "آیرون‌فورج",
+  "Gnomeregan": "گنومریگان",
+  "Encrypted Memorandum": "یادداشت رمزنگاری‌شده",
+  "Encrypted Sigil": "مهرِ رمزنگاری‌شده",
+  "Frahun Shadewhisper": "فراهون نجوای سایه",
+  "Shadowglen": "سایه دره",
+  "Horde": "هورد",
+  "Therzok": "ترزوک",
+  "Shadow": "سایه",
+  "Orgrimmar": "اورگریمار",
+  "Kaplak": "کاپلاک",
+  "Mennet Carkad": "منهت کارکاد",
+  "Undercity": "آندر‌سیتی",
+  "Keryn Sylvius": "کرین سیلویوس",
+  "Master Mathias Shaw": "استاد ماتیاس شا",
+  "Defias Dockmaster": "رئیس اسکله دیفیاس",
+  "Westfall": "وستفال",
+  "Hulfdan Blackbeard": "هولفدان ریش‌سیاه",
+  "salvation": "رستگاری",
+  "Onin MacHammar": "اونین مک‌همر",
+  "Onin's Report": "گزارشِ اونین",
+  "Jannok's Rose": "گلِ رزِ جانوک",
+  "Syurna": "سیورنا",
+  "Darnassus": "دارناسوس",
+  "Sethir the Ancient": "سثیر باستانی",
+  "Teldrassil": "تلدراسیل",
+  "Darkshore": "کرانهٔ تاریک",
+  "Tazan": "تازان",
+  "Gamon": "گامون",
+  "Astor's Letter of Introduction": "نامهٔ معرفیِ آستور",
+  "Varimathras": "واری‌ماتراس",
+  "Astor Hadren": "آستور هادرن",
+  "Andron Gant": "آندرون گانت",
+  "Andron's Ledger": "دفترِ حسابِ آندرون",
+  "Syndicate": "سندیکا",
+  "The Deathstalkers": "مرگ‌خزها",
+  "Fenwick Thatros": "فنویک تاتروس",
+  "Forsaken": "مطرودان",
+  "Silverpine Forest": "جنگل سیلورپاین",
+  "Erion Shadewhisper": "اریون سایه‌نجوا",
+  "Travel": "سفر",
+  "Stormwind City": "شهر استورم‌ویند",
+  "Renzik \"The Shiv\"": "رنزیک «خنجر»",
+  "Redridge Mountains": "کوه‌های ردریج",
+  "Lucius": "لوسیوس",
+  "Shenthul": "شنثول"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$N",
+  "5": "$B",
+  "6": "$B",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$n",
+  "18": "$n",
+  "19": "$g boy:girl;",
+  "20": "$B",
+  "21": "$C",
+  "22": "$B",
+  "23": "$N",
+  "24": "$N",
+  "25": "$C",
+  "26": "$C",
+  "27": "$N",
+  "28": "$B",
+  "29": "$N",
+  "30": "$N",
+  "31": "$r",
+  "32": "$B",
+  "33": "$B",
+  "34": "$B",
+  "35": "$N",
+  "36": "$C",
+  "37": "$B",
+  "38": "$N",
+  "39": "$B",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$n",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$n",
+  "48": "$N",
+  "49": "$B",
+  "50": "$N",
+  "51": "$R",
+  "52": "$B",
+  "53": "$N",
+  "54": "$N",
+  "55": "$B",
+  "56": "$N",
+  "57": "$B",
+  "58": "$N",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$B",
+  "63": "$B",
+  "64": "$N",
+  "65": "$B"
+ },
+ "rows": {
+  "quest:3083:obj:0": "Read the ⟦E1⟧ and speak to ⟦E2⟧ in the ⟦E3⟧.",
+  "quest:3083:details:0": "Ah, while you were gone a tablet came for you, ⟦1⟧.",
+  "quest:3083:details:1": "Read it when you have time. If I'm not mistaken, it came from the rogue trainer ⟦E2⟧. He would have words with you when you're ready.",
+  "quest:3083:progress:0": "Welcome to the ⟦E3⟧, Rangrang. You wouldn't be here if you hadn't gotten my tablet, so I will get to the point.⟦2⟧⟦3⟧I am ⟦E2⟧ and I am responsible for training the rogues, thieves, and cutpurses here in the Valley. I'm the one the Hand will turn to if you're not ready for what's to come. But don't worry, the Hand won't be controlling everything you do, but it would be wise to work with them if they have need of your talents.",
+  "quest:3083:completion:0": "Until such time comes, you'll be under my tutelage. I will show you the ropes as some folks say. Whenever you feel prepared, come to me and I will see about training you further. Until then, practice your skills and keep them honed to a razor's edge. You'll never know when you'll need even the most insignificant ability.",
+  "quest:3088:obj:0": "Read the ⟦E6⟧ and speak to ⟦E2⟧ in the ⟦E3⟧.",
+  "quest:3088:details:0": "Ah, while you were gone a parchment came for you, ⟦4⟧.",
+  "quest:3088:details:1": "Read it when you have time. If I'm not mistaken, it came from the rogue trainer ⟦E2⟧. He would have words with you when you're ready.",
+  "quest:3088:progress:0": "Shhh, not so loud. I don't trust ⟦E7⟧ over there. Anyone that has to hide deeper in a cave than I do shouldn't be trifled with.⟦5⟧⟦6⟧I trust you had no problem finding your way around?",
+  "quest:3088:completion:0": "Now that you know where I'm holding up, I should let you know: the Shattered Hand's asked me to look out for you. They want me to train you and keep you informed of anything they might need. Even if you're not interested in helping them yet--which you'd be a fool not to be--I'll do what I can to train you... for a small fee. Come back to me anytime you think you're ready, and we'll see what you're ready to learn.",
+  "quest:3096:obj:0": "Read the ⟦E8⟧ and speak to ⟦E9⟧ in ⟦E10⟧.",
+  "quest:3096:details:0": "Ah, while you were off dealing with the mindless Scourge, this scroll arrived for you. I would think it's some matter of importance as it seems it bears the seal of the rogue trainer ⟦E9⟧. I would take some time to read it before heading out again.",
+  "quest:3096:progress:0": "So you've made it? Good, we'll have need of more rogues as time goes on. The Shadowstalkers will probably wind up finding you when they think the time's right, so don't go and slip up or do anything you might regret. They need talented agents... not pickpockets and fools.",
+  "quest:3096:completion:0": "I spend most of my time here in the inn keeping an eye out for new faces and just keeping tabs on up-and-coming prospects. Keep your nose clean and I'll do what I can to teach you a few things. Just come back to me whenever you want, and we'll see if you're ready for a new skill or two.",
+  "quest:3102:obj:0": "Read the ⟦E12⟧ and speak to ⟦E13⟧ in the stable behind ⟦E14⟧.",
+  "quest:3102:details:0": "I was asked to bring this to your attention as soon as you returned from the kobold camps, ⟦7⟧. It appears to be a letter sealed with the insignia of Jorik, one of our local trainers. I wouldn't hesitate to read it before you go about any other business here in the Abbey.",
+  "quest:3102:progress:0": "You made it here in one piece, and it doesn't look like too many people saw you. Good enough for me. I don't like to have much attention drawn to me back here... nice and quiet. I'm sure you can understand.⟦8⟧⟦9⟧Have any trouble yet? I'm glad to hear not. That'll change soon enough.",
+  "quest:3102:completion:0": "You're gonna find that there a number of outfits that'll covet our skills, ⟦10⟧. Adventurers, SI:7... heck, even the Defias Brotherhood wouldn't mind a spy or two inside ⟦E15⟧. But you remember this, you're your own man. Don't let nobody bully you into doing something you don't wanna do! Besides, we hold all the cards... at least, we do before the game's done. Know what I mean?",
+  "quest:3102:completion:1": "Anyway, just wanted to introduce myself and let you know that I'm here if you need any training. Come by anytime.",
+  "quest:3109:obj:0": "Read the ⟦E16⟧ and speak to ⟦E17⟧ in ⟦E18⟧.",
+  "quest:3109:details:0": "While you were helping me out, this rune was given to me to pass on to you. Take some time to read it when you have a chance. I'm thinkin' it came from the rogue trainer Solm. Take a gander at it and go find him inside Anvilmar when you've a chance.",
+  "quest:3109:progress:0": "You made it! Great!⟦11⟧⟦12⟧We've got an influx of activity lately, so I'm glad to count another of the ⟦E20⟧ clan among our numbers. Too many of us are lookin' to the arcane, and divine for my own tastes. Nothin' against them and their beliefs, but there's nothing like a cold blade in your hand and a shadow to keep you from the light, know what I mean?",
+  "quest:3109:completion:0": "Anyway, as you start peekin' around Coldridge you'll probably have need of training at some point. You just come back to me whenever you feel you need it and I'll teach you what I know--a trick here, a maneuver there. You know, the stuff that keeps you alive and makin' a little extra coin.",
+  "quest:3109:completion:1": "Keep an eye out on our gnomish friends too... they kinda got the short end of the stick what with ⟦E21⟧ being... destroyed. They'll need our help to feel welcome.",
+  "quest:3113:obj:0": "Read the ⟦E22⟧ and speak to ⟦E17⟧ in ⟦E18⟧.",
+  "quest:3113:details:0": "While you were helping me out, this memorandum was given to me to pass on to you. Take some time to read it when you have a chance. I'm thinkin' it came from the rogue trainer Solm. Take a gander at it and go find him inside Anvilmar when you've a chance.",
+  "quest:3113:progress:0": "Glad to see you got my note and came over. Sorry about pretendin' it was a memorandum from your higher-ups... no offense intended. I just knew the two of us, along with others of our kind, gotta stick together.⟦13⟧⟦14⟧Not many think it's the best thing in the world to have your kind and my kind holed up in the same city, but I think we can work things out just fine. What do you think?",
+  "quest:3113:completion:0": "I pretty much keep to myself around here so we don't get a bad wrap for things gone missing, but if you need anything, some training or somethin', just come back anytime.",
+  "quest:3113:completion:1": "You and me got an understandin'. We know when it comes down to it you can only trust family... and that's just what we got going on here, isn't it? Regardless of ⟦E21⟧ being... overrun, and whatever else is thrown our way, we got one another to back each other up. Right?",
+  "quest:3118:obj:0": "Read the ⟦E23⟧ and speak to ⟦E24⟧ in ⟦E25⟧.",
+  "quest:3118:details:0": "This sigil was given to me by a messenger from our rogue trainer, Frahun. It seems Frahun would have words with you when you have a moment. Read it and bring it to him afterwards.",
+  "quest:3118:progress:0": "Hello, Ferlis. I'm glad you found me. I was thinking that perhaps you got lost on the way here.⟦15⟧⟦16⟧Nothing really new has happened in ⟦E25⟧ since I sent you my sigil, but I'll leave all the information gathering to you. Speak to the rest of the people around Aldrassil if you'd like.",
+  "quest:3118:completion:0": "Until then, know that our kind are needed more than ever in this tenuous time. Peace with the other races can fail at any moment, and there is much talk about members of the ⟦E26⟧ looking to sow even greater seeds of distrust. Remember that.",
+  "quest:3118:completion:1": "As you gain in power and feel more prepared, come back to me here and I will see about getting you some training. It's important that you know how to handle your weapon of choice, among other things.",
+  "quest:1859:obj:0": "Speak with ⟦E27⟧ in the Cleft of ⟦E28⟧ in ⟦E29⟧.",
+  "quest:1859:details:0": "Lower your voice, ⟦17⟧. Yeah, I know your name. Was told to keep an eye out for an orc by your description.",
+  "quest:1859:details:1": "From what we've heard about you, you can handle yourself in combat, and aren't opposed to a little sneakery from time to time.",
+  "quest:1859:details:2": "Am I right?",
+  "quest:1859:details:3": "Anyways, you should go see ⟦E27⟧ in ⟦E29⟧. He's got an offer for you to hear.",
+  "quest:1859:completion:0": "Very good, I'm glad ⟦E31⟧ was able to get a hold of you.",
+  "quest:1859:completion:1": "We have some things to speak of, not the least of which is your future with the Hand.",
+  "quest:1885:obj:0": "Speak with ⟦E32⟧ in the Rogues' Quarter of the ⟦E33⟧.",
+  "quest:1885:details:0": "⟦18⟧? Not quite what I was expecting, considering Carkad himself has taken an interest to you. Looks can be deceiving though, right?",
+  "quest:1885:details:1": "Either way, you should go see him as soon as possible. You wouldn't want to know what happened to the last few that chose to ignore his summons.",
+  "quest:1885:completion:0": "Hm. No doubt you made your way here at first mention of my summons, yes? Of course. I would expect no less from a prospective Deathstalker.",
+  "quest:2205:obj:0": "Deliver ⟦E34⟧'s package to ⟦E35⟧ at the ⟦E15⟧ Barracks.",
+  "quest:2205:details:0": "The badge? Oh, it's nothing, fish - nothing you could handle anyhow. By the looks of you, I'd say Mathias is likely to mistake you for the cheese delivery ⟦19⟧ instead of a proper rogue. Regardless, I've been assigned a job and I've made a promise to deliver on that job.",
+  "quest:2205:details:1": "Speaking of which, deliver this package to Mathias and he may give you a small task or two.",
+  "quest:2205:details:2": "Get cracking. ⟦20⟧",
+  "quest:2205:progress:0": "Can I help you, ⟦21⟧?",
+  "quest:2205:completion:0": "You found me - and by looking at you, I'd say the run and subsequent search may have been a great strain on your system, both mentally and physically.",
+  "quest:2205:completion:1": "Would you like Renzik to show you the way to an inn or are you ready for some work?",
+  "quest:2206:obj:0": "Find the ⟦E36⟧ and recover the Shipping Schedule for ⟦E35⟧.⟦22⟧",
+  "quest:2206:details:0": "Our operatives in the field are reporting heavy Defias activity south of Goldshire. The reports indicate that the Defias have taken over Jerod's Landing and are now using it as a way to smuggle large quantities of contraband from Redridge to ⟦E37⟧.",
+  "quest:2206:details:1": "I need you to infiltrate the dock house and get me that shipping schedule, ⟦23⟧. You will probably find it buried deep in the pockets of the Dockmaster.",
+  "quest:2206:details:2": "B...and ⟦24⟧, should you be discovered, SI:7 will disavow all knowledge of your existence.",
+  "quest:2206:progress:0": "Your mortality wanes with every moment you waste loitering in the barracks, ⟦25⟧.",
+  "quest:2206:completion:0": "I am astonished... Astonished that Keryn finally found a recruit that could possibly have the makings of a proper ⟦26⟧. Take this blade, ⟦27⟧. A day will come when you will be called upon again to serve the SI:7. Hone your skills, keep your eyes open and that blade sharp.",
+  "quest:2206:completion:1": "You won't see us coming but you'll feel it when we get there...",
+  "quest:2218:obj:0": "Speak with ⟦E38⟧ in ⟦E20⟧.",
+  "quest:2218:details:0": "Another lost soul looking for guidance, eh? I suppose you want to find a purpose - your purpose. I've seen it a thousand times, another hero looking for work.",
+  "quest:2218:details:1": "Well, today's your lucky day, friend. Hogral's got the cure for your ailment.",
+  "quest:2218:details:2": "Here's what you do: Take this road here up to ⟦E20⟧ and make your way to the Forlorn Cavern. Once there, locate the thieves' guild and speak with ⟦E38⟧. He'll put you on the road to ⟦E39⟧.⟦28⟧",
+  "quest:2218:completion:0": "So ye think yer a right scoundrel? Destined to be one o' Blackbeard's chosen few - an officer o' the Hidden Circle?",
+  "quest:2218:completion:1": "Only a good fer nothin' scallywag would think so highly o' hisself.",
+  "quest:2218:completion:2": "That's exactly what we be lookin' fer! Welcome aboard, ⟦29⟧!",
+  "quest:2238:obj:0": "Find ⟦E40⟧ by ⟦E21⟧.",
+  "quest:2238:details:0": "Ye see, the King be strip mining the quarry fer ore and gems. More riches than any one dwarf should see in ten lifetimes.",
+  "quest:2238:details:1": "The Hidden Circle has values, ⟦30⟧. We value valuables. Can ye understand?",
+  "quest:2238:details:2": "Now we feels the King should be sharing some of that booty, but we don't want ol' 'Stinkbeard' to know he's sharin' - if ye catch me drift.",
+  "quest:2238:details:3": "We needs ye to speak with ⟦E40⟧ over by ⟦E21⟧ and bring back a report. The crafty dwarf has hidden hisself amongst the lepers. Be careful.",
+  "quest:2238:completion:0": "Shhhh! Keep it down you daft fool. They'll hear us.",
+  "quest:2239:obj:0": "Take ⟦E41⟧ back to Hulfdan in ⟦E20⟧.",
+  "quest:2239:details:0": "The Quarry? Yap, I see those monstrous armored steam tanks come by this post near every day.",
+  "quest:2239:details:1": "My contacts to the east tell me that the tank starts off at ⟦E20⟧, makes a pickup at the Gol'Bolar Quarry, stops over at Kharanos to refuel and then for some blasted reason, it takes the long way around past ⟦E21⟧, before reaching ⟦E20⟧ to drop off the shipment.",
+  "quest:2239:details:2": "It's all in the report, ⟦31⟧. Take it back to Hulfdan so he can plan the next step.⟦32⟧",
+  "quest:2239:progress:0": "Did ye enjoy the stench of leper gnome? I only ask because ye got a crazy smile on yer face.⟦33⟧⟦34⟧What news do ye bring from Onin?",
+  "quest:2239:completion:0": "Long route? In the name o' me own beard!",
+  "quest:2239:completion:1": "Ye done good, ⟦35⟧. Take this dagger and be gone with ye. The Circle will call upon ye again when step three be ready to be set into motion.",
+  "quest:2239:completion:2": "What's step three? It comes right after step two - me putting me boot up yer backside.",
+  "quest:2239:completion:3": "Interested?",
+  "quest:2241:obj:0": "Take ⟦E42⟧ to ⟦E43⟧ in ⟦E44⟧.",
+  "quest:2241:details:0": "They say I'm 'lovestruck,' whatever that means.",
+  "quest:2241:details:1": "Sure, I spend my every waking moment thinking about ⟦E43⟧. Sure, my home is full of paintings and drawings of ⟦E43⟧. Sure, I often go days without eating, sleeping, or drinking, while I lament about the love we could have had. Is that so wrong?",
+  "quest:2241:details:2": "Now she won't see me! ME! I've tried sending her messages but she won't even talk to another person unless they are a rogue.",
+  "quest:2241:details:3": "Could you deliver this flower to her? Don't forget to tell her it's from Jannok.",
+  "quest:2241:progress:0": "Oh, isn't this wonderful. You've brought flowers for your own funeral.",
+  "quest:2241:completion:0": "Had I saved every flower that dolt, Jannok, had sent me, I would have had the means to open a shop. Regardless, it seems as if Jannok's latest courier may prove to be useful.Interested in some work, ⟦36⟧?",
+  "quest:2242:obj:0": "Find ⟦E45⟧ and bring back any clues that you may discover to ⟦E43⟧.⟦37⟧",
+  "quest:2242:details:0": "We believe there is one being that may be able to help us understand what is happening to the forests of ⟦E46⟧. Unfortunately, getting the creature to cooperate has proven disastrous.",
+  "quest:2242:details:1": "He hides on a branch at the outskirts of the Oracle Glade. All who have so far approached the satyr, whether through force or diplomacy, have met with doom. Perhaps stealth is the answer, ⟦38⟧.",
+  "quest:2242:details:2": "Find what ⟦E45⟧ carries in his packs and report back to me.⟦39⟧",
+  "quest:2242:progress:0": "Have you anything to report from ⟦E45⟧, ⟦40⟧?",
+  "quest:2242:completion:0": "This is grim news, ⟦41⟧. It would seem that the sickness which has gripped the forests and rivers of ⟦E48⟧ has begun to taint our home.",
+  "quest:2242:completion:1": "You have served us well, but there is nothing more you can do here. Take this blade as a reward for your service to ⟦E46⟧.",
+  "quest:1858:obj:0": "Steal ⟦E49⟧'s key, then use it to open his Satchel and deliver its contents to ⟦E27⟧ in the Cleft of ⟦E28⟧ in ⟦E29⟧.",
+  "quest:1858:details:0": "I'll leave it to you to get ⟦E49⟧'s satchel open, and return to me with its contents. The locking mechanism is complex, so it would probably be easiest if you obtained the key.",
+  "quest:1858:details:1": "As you didn't find it on ⟦E49⟧'s body, I can only assume that he left the key in the care of another... Ah, yes, that's right. He had an assistant named ⟦E50⟧. A drunkard, you'll most likely find him at the tavern. Perhaps you could quietly relieve him of the key.",
+  "quest:1858:progress:0": "Is it not vexing to have the subject of your desire within your grasp, but to have no way of getting to it?",
+  "quest:1858:completion:0": "Hmmm, now this is interesting. You've more than proved your worth with this, ⟦42⟧. I am quite impressed. Consider yourself the newest member of the Shattered Hand. And take this, it will be a great help to you in the future, I think.",
+  "quest:1886:obj:0": "Get ⟦E51⟧ and return it to ⟦E32⟧ in the Rogues' Quarter.",
+  "quest:1886:details:0": "If you wish to join the Deathstalkers, Lord ⟦E52⟧' elite guard, you will have to prove your worth.",
+  "quest:1886:details:1": "I will not lie to you, ⟦43⟧, this task could mean your death.",
+  "quest:1886:details:2": "I have some things that need attending to. I require the personal effects of ⟦E53⟧, a messenger who travels between Silverpine and the ⟦E33⟧. I will leave the method of procurement to your discretion.",
+  "quest:1886:details:3": "It will be better for you if you know less of the nature of this business. Succeed and I shall tell you more.",
+  "quest:1886:progress:0": "Success to report?",
+  "quest:1886:completion:0": "Well done, ⟦44⟧. You've passed the first part of this test. Hopefully Andron will not have caught wind of your activities, and we will be able to convince him that you are, in fact, the messenger he is expecting.",
+  "quest:1898:obj:0": "Speak with ⟦E54⟧ in the ⟦E33⟧.",
+  "quest:1898:details:0": "The letter of introduction should be enough to convince Andron that you are the messenger he's been waiting for. I've met Andron before, he doesn't quite have the mental capacity to be that suspicious.",
+  "quest:1898:details:1": "Lord ⟦E52⟧ suspects that Andron has been providing aid to some other group. He wishes to know what organization this is and requires proof of it.",
+  "quest:1898:details:2": "I want you to speak with Andron, and obtain this information. You'll find him at his shop near the Apothecarium.",
+  "quest:1898:progress:0": "Hello. Something I can do for you?",
+  "quest:1898:completion:0": "Ah, yes, I've been expecting you. I have no doubt our mutual acquaintances are pleased with the information that I have provided so far?",
+  "quest:1898:completion:1": "I suppose there's no point in asking you, I doubt they would burden you with this knowledge. Why place so much trust in the messenger, hm?",
+  "quest:1899:obj:0": "Bring ⟦E56⟧ to ⟦E32⟧ in the Rogues' Quarter of ⟦E33⟧.",
+  "quest:1899:details:0": "You'll find the ledger with the information your employers seek on the bookshelf behind me. Deliver it with my regards, and tell them that I would prefer it if they sent you, if they find enough value that they should wish to continue our arrangement.",
+  "quest:1899:progress:0": "Success, ⟦45⟧?",
+  "quest:1899:completion:0": "Well, this is certainly more information than I suspected to get out of Andron. Give me a moment to peruse it, before I set you to your next task.",
+  "quest:1963:obj:0": "Kill ⟦E49⟧ and bring his Satchel to ⟦E27⟧ in the Cleft of ⟦E28⟧ in ⟦E29⟧.",
+  "quest:1963:details:0": "The Warchief is too subtle in his methods. He is cautious to unleash the might of the ⟦E26⟧. Once we were stronger, mighty conquerors all. That pride we must regain, and the Shattered Hand will do so.",
+  "quest:1963:details:1": "We build strength from the shadows and strike at the exposed, secretly laying our enemies low. A task you must complete for me, to prove your worth.",
+  "quest:1963:details:2": "The troll ⟦E49⟧ trades with the pirates near Ratchet. He has information I must have. Kill him and bring me his satchel.",
+  "quest:1963:progress:0": "It is a fool who believes a charge with axe drawn is more dangerous than a knife in the dark.",
+  "quest:1963:completion:0": "Hm, while I am glad to hear that ⟦E49⟧ is no longer with us, a locked satchel does us no good. We need the information kept within.",
+  "quest:1963:completion:1": "This should prove a worthy second challenge for one who wishes to join the Shattered Hand.",
+  "quest:1978:obj:0": "Deliver ⟦E56⟧ to ⟦E52⟧ in the Hall of the Dark Lady in the ⟦E33⟧.",
+  "quest:1978:details:0": "The ⟦E59⟧? I would never have suspected. It seems the lords of Alterac have fallen far in the years since their betrayal.",
+  "quest:1978:details:1": "Lord ⟦E52⟧ will be pleased to learn of this, and as you were so instrumental in this discovery, it would be fitting if you were the one to deliver it to him.",
+  "quest:1978:details:2": "Ah, and how could I forget?",
+  "quest:1978:details:3": "Welcome to the Deathstalkers.",
+  "quest:1978:progress:0": "Yes?",
+  "quest:1978:completion:0": "Hmm, this is interesting. ⟦E60⟧ have performed their duties admirably in ferreting this out.",
+  "quest:1978:completion:1": "From what I understand, you also deserve commendation for your performance. I hope that this will become routine for you, ⟦46⟧, my Deathstalkers always have use of a good man.",
+  "quest:1998:obj:0": "Kill ⟦E61⟧ and bring his head back to ⟦E32⟧ in the Rogues' Quarter of the ⟦E33⟧.",
+  "quest:1998:details:0": "Lord ⟦E52⟧ has just sent me a missive about a threat to the ⟦E63⟧ that must be immediately removed. His name is ⟦E61⟧, one whom Lord ⟦E52⟧ believes is a leader of the undead that have taken root in ⟦E66⟧.",
+  "quest:1998:details:1": "Your name came to mind immediately, ⟦47⟧. I have faith enough in your abilities that you will carry out this mission flawlessly.",
+  "quest:1998:details:2": "The latest reports from the Deathstalkers in Silverpine indicate that Thatros can be found near the decrepit dock on Lordamere.",
+  "quest:1998:progress:0": "I have placed the utmost faith in you to perform this service for Lord ⟦E52⟧.",
+  "quest:1998:completion:0": "You've done well, ⟦48⟧. It occurs to me that you have performed many services for the Deathstalkers, proving your worth, and that perhaps it is time that we furthered your training in the shadow arts.",
+  "quest:2259:obj:0": "Contact ⟦E67⟧ in ⟦E44⟧.⟦49⟧",
+  "quest:2259:details:0": "Do not worry, ⟦50⟧, I am not sending you to see ⟦E43⟧. Erion requires your presence at the Cenarion Enclave. Make haste!",
+  "quest:2259:completion:0": "It is time to branch out, ⟦51⟧ - the world awaits.",
+  "quest:2260:obj:0": "⟦E68⟧ to ⟦E69⟧ and seek council with Renzik \"The Shiv.\"⟦52⟧",
+  "quest:2260:details:0": "Word of your deeds has spread far and wide, ⟦53⟧. So far, in fact, that ⟦E15⟧ Intelligence has asked for you by name.",
+  "quest:2260:details:1": "The journey is taxing and not without peril, but an opportunity to train under SI:7 should not be taken lightly.",
+  "quest:2260:details:2": "BA new world awaits you, ⟦54⟧. Make your way to Old Town in ⟦E15⟧ and speak with ⟦E70⟧ at SI:7 headquarters.⟦55⟧",
+  "quest:2260:completion:0": "You have answered SI:7's calling, ⟦56⟧ and journeyed from distant shores to join our ranks, however, there is much for you to learn.",
+  "quest:2281:obj:0": "Venture forth to Lakeshire in the ⟦E71⟧ and speak with ⟦E72⟧.⟦57⟧",
+  "quest:2281:details:0": "Sending you out in the field now would be suicide. Renzik doesn't need another dead rogue on his hands. Don't fret, though, ⟦58⟧ - Renzik is going to get you up to speed.",
+  "quest:2281:details:1": "Make your way to the ⟦E71⟧ and speak with an associate of SI:7 named ⟦E72⟧. You will find him hanging around the docks of Lakeshire with the other shady good-for-nothings.",
+  "quest:2281:completion:0": "Ah, so your fingers are a little fat, eh? Don't worry, ⟦59⟧, I've turned more useless thieves than you into accomplished rogues.",
+  "quest:2298:obj:0": "⟦E68⟧ to ⟦E15⟧ and seek out Renzik \"The Shiv.\"",
+  "quest:2298:details:0": "So there we were, about to start plottin' out phase III when a couple o' Magni's blockheads come bargin' in here talkin' bout some kind o' heist and arresting some o' the Hidden Circle.",
+  "quest:2298:details:1": "Well nobody puts the iron on old Blackbeard! The argumentations got heavy and thick and somehow yer name weres blurted out!",
+  "quest:2298:details:2": "Me advice? Take the first Gryphon out o' ⟦E20⟧ and get to ⟦E15⟧. Get yerself to Old Town and once there, talk to an old friend o' mine named Renzik \"The Shiv.\"",
+  "quest:2298:completion:0": "It's always good to have one of Hulfdan's rogues among our ranks!",
+  "quest:2299:obj:0": "⟦E68⟧ to ⟦E20⟧ and speak with ⟦E38⟧.",
+  "quest:2299:details:0": "Where have you been, ⟦60⟧? Hulfdan's been looking all over the place for you. We thought the king may have put you in irons.",
+  "quest:2299:details:1": "Get to ⟦E20⟧ as soon as possible and speak with Hulfdan!",
+  "quest:2299:completion:0": "Keep yer voice down, ⟦61⟧, the guards may hear ye.",
+  "quest:2300:obj:0": "⟦E68⟧ to ⟦E15⟧ and seek out Renzik \"The Shiv.\"⟦62⟧",
+  "quest:2300:details:0": "Renzik was looking for you, fish.",
+  "quest:2300:details:1": "I wouldn't keep Mathias's second in command waiting if I were you.⟦63⟧",
+  "quest:2300:completion:0": "Are you ready to get to work or do you need to take a nap before we get started?",
+  "quest:2378:obj:0": "Journey to ⟦E29⟧ and speak with ⟦E73⟧ at the Cleft of ⟦E28⟧.",
+  "quest:2378:details:0": "You have served the Deathstalkers well, ⟦64⟧, but perhaps it is time for you to venture outward. While you have shown aptitude in the ways of stealth and deception, you still require much training.",
+  "quest:2378:details:1": "⟦E60⟧ have allies within the Shattered Hand. Seek out those that would assist us - find ⟦E73⟧ in ⟦E29⟧.⟦65⟧",
+  "quest:2378:completion:0": "So, you are what our mighty allies have sent ⟦E73⟧? How uninspiring...."
+ },
+ "context": {
+  "quest:3083": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek («گورنک»)",
+   "turner": "Rwag («رواگ»)"
+  },
+  "quest:3088": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Gornek («گورنک»)",
+   "turner": "Rwag («رواگ»)"
+  },
+  "quest:3096": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Shadow Priest Sarvis («سارویس»)",
+   "turner": "David Trias («دیوید تریاس»)"
+  },
+  "quest:3102": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Marshal McBride («مارشال مک‌براید»)",
+   "turner": "Jorik Kerridan («جوریک کریدان»)"
+  },
+  "quest:3109": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm («ستن بازوستبر»)",
+   "turner": "Solm Hargrin («سولم هارگرین»)"
+  },
+  "quest:3113": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Sten Stoutarm («ستن بازوستبر»)",
+   "turner": "Solm Hargrin («سولم هارگرین»)"
+  },
+  "quest:3118": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Conservator Ilthalaine («نگهبان ایلتالین»)",
+   "turner": "Frahun Shadewhisper («فراهون نجوای سایه»)"
+  },
+  "quest:1859": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Kaplak («کاپلاک»)",
+   "turner": "Therzok («ترزوک»)"
+  },
+  "quest:1885": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "horde",
+   "giver": "Marion Call («ماریون کال»)",
+   "turner": "Mennet Carkad («منهت کارکاد»)"
+  },
+  "quest:2205": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Keryn Sylvius («کرین سیلویوس»)",
+   "turner": "Master Mathias Shaw («استاد ماتیاس شا»)"
+  },
+  "quest:2206": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Master Mathias Shaw («استاد ماتیاس شا»)",
+   "turner": "Master Mathias Shaw («استاد ماتیاس شا»)"
+  },
+  "quest:2218": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Hogral Bakkan («هوگرال باکان»)",
+   "turner": "Hulfdan Blackbeard («هولفدان ریش‌سیاه»)"
+  },
+  "quest:2238": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Hulfdan Blackbeard («هولفدان ریش‌سیاه»)",
+   "turner": "Onin MacHammar («اونین مک‌همر»)"
+  },
+  "quest:2239": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Onin MacHammar («اونین مک‌همر»)",
+   "turner": "Hulfdan Blackbeard («هولفدان ریش‌سیاه»)"
+  },
+  "quest:2241": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Jannok Breezesong («جانوک آواز نسیم»)",
+   "turner": "Syurna («سیورنا»)"
+  },
+  "quest:2242": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Syurna («سیورنا»)",
+   "turner": "Syurna («سیورنا»)"
+  },
+  "quest:1858": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 13,
+   "side": "horde",
+   "giver": "Therzok («ترزوک»)",
+   "turner": "Therzok («ترزوک»)"
+  },
+  "quest:1886": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 13,
+   "side": "horde",
+   "giver": "Mennet Carkad («منهت کارکاد»)",
+   "turner": "Mennet Carkad («منهت کارکاد»)"
+  },
+  "quest:1898": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 13,
+   "side": "horde",
+   "giver": "Mennet Carkad («منهت کارکاد»)",
+   "turner": "Andron Gant («آندرون گانت»)"
+  },
+  "quest:1899": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 13,
+   "side": "horde",
+   "giver": "Andron Gant («آندرون گانت»)",
+   "turner": "Mennet Carkad («منهت کارکاد»)"
+  },
+  "quest:1963": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 13,
+   "side": "horde",
+   "giver": "Therzok («ترزوک»)",
+   "turner": "Therzok («ترزوک»)"
+  },
+  "quest:1978": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 13,
+   "side": "horde",
+   "giver": "Mennet Carkad («منهت کارکاد»)",
+   "turner": "Varimathras («واری‌ماتراس»)"
+  },
+  "quest:1998": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Mennet Carkad («منهت کارکاد»)",
+   "turner": "Mennet Carkad («منهت کارکاد»)"
+  },
+  "quest:2259": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Jannok Breezesong («جانوک آواز نسیم»)",
+   "turner": "Erion Shadewhisper («اریون سایه‌نجوا»)"
+  },
+  "quest:2260": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Erion Shadewhisper («اریون سایه‌نجوا»)",
+   "turner": "Renzik \"The Shiv\" («رنزیک «خنجر»»)"
+  },
+  "quest:2281": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Renzik \"The Shiv\" («رنزیک «خنجر»»)",
+   "turner": "Lucius («لوسیوس»)"
+  },
+  "quest:2298": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Hulfdan Blackbeard («هولفدان ریش‌سیاه»)",
+   "turner": "Renzik \"The Shiv\" («رنزیک «خنجر»»)"
+  },
+  "quest:2299": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Hogral Bakkan («هوگرال باکان»)",
+   "turner": "Hulfdan Blackbeard («هولفدان ریش‌سیاه»)"
+  },
+  "quest:2300": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Keryn Sylvius («کرین سیلویوس»)",
+   "turner": "Renzik \"The Shiv\" («رنزیک «خنجر»»)"
+  },
+  "quest:2378": {
+   "zone_en": "Rogue",
+   "zone_fa": "",
+   "level": 16,
+   "side": "horde",
+   "giver": "Mennet Carkad («منهت کارکاد»)",
+   "turner": "Shenthul («شنثول»)"
+  }
+ },
+ "known": {
+  "quest:3083": {
+   "title": "لوح رمزگذاری‌شده"
+  },
+  "quest:3088": {
+   "title": "پوست‌نوشت رمزگذاری‌شده"
+  },
+  "quest:3096": {
+   "title": "طومار رمزگذاری‌شده"
+  },
+  "quest:3102": {
+   "title": "نامهٔ رمزگذاری‌شده"
+  },
+  "quest:3109": {
+   "title": "رون رمزگذاری‌شده"
+  },
+  "quest:3113": {
+   "title": "یادداشت رمزگذاری‌شده"
+  },
+  "quest:3118": {
+   "title": "مُهر رمزگذاری‌شده"
+  },
+  "quest:1859": {
+   "title": "ترزوک"
+  },
+  "quest:1885": {
+   "title": "منهت کارکاد"
+  },
+  "quest:2205": {
+   "title": "جست‌وجوی SI:7"
+  },
+  "quest:2206": {
+   "title": "قاپ بزن و بیاور"
+  },
+  "quest:2218": {
+   "title": "راه رستگاری"
+  },
+  "quest:2238": {
+   "title": "فریبکاری ساده"
+  },
+  "quest:2239": {
+   "title": "گزارش اونین"
+  },
+  "quest:2241": {
+   "title": "سیب می‌افتد"
+  },
+  "quest:2242": {
+   "title": "فراخوان سرنوشت"
+  },
+  "quest:1858": {
+   "title": "دست شکسته"
+  },
+  "quest:1886": {
+   "title": "مرگ‌خزها"
+  },
+  "quest:1898": {
+   "title": "مرگ‌خزها"
+  },
+  "quest:1899": {
+   "title": "مرگ‌خزها"
+  },
+  "quest:1963": {
+   "title": "دست شکسته"
+  },
+  "quest:1978": {
+   "title": "مرگ‌خزها"
+  },
+  "quest:1998": {
+   "title": "فنویک تاتروس"
+  },
+  "quest:2259": {
+   "title": "اریون سایه‌نجوا"
+  },
+  "quest:2260": {
+   "title": "به خواستِ اریون"
+  },
+  "quest:2281": {
+   "title": "قرار ردریج"
+  },
+  "quest:2298": {
+   "title": "اخاذی سلطنتی"
+  },
+  "quest:2299": {
+   "title": "به هولفدان!"
+  },
+  "quest:2300": {
+   "title": "SI:7"
+  },
+  "quest:2378": {
+   "title": "دست شکسته را پیدا کن"
+  }
+ }
+}

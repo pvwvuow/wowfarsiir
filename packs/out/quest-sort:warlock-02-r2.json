@@ -1,0 +1,881 @@
+{
+ "pack": "quest-sort:warlock-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:warlock-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Takar the Seer",
+   "fa": "تاکار غیب‌گو",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Gakin the Darkbinder",
+   "fa": "گاکین بندتاریک",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Mage",
+   "fa": "جادوگر",
+   "kind": "cls"
+  },
+  "E7": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Heartswood",
+   "fa": "چوب‌دل",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Heartswood Core",
+   "fa": "هستهٔ چوب‌دل",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Large Soran'ruk Fragment",
+   "fa": "تکهٔ بزرگ سوران‌روک",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Doan Karhan",
+   "fa": "دوآن کارهان",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E17": {
+   "en": "Blackfathom Deeps",
+   "fa": "ژرفای سیاه‌ژرف",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Shadowfang Keep",
+   "fa": "دژ نیش‌سایه",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Krom Stoutarm",
+   "fa": "کروم بازوقوی",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Tome of the Cabal",
+   "fa": "کتاب بزرگِ کابال",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Strahad Farsan",
+   "fa": "ستراهاد فارسان",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Jorah Annison",
+   "fa": "جوراه آنیسون",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Moldy Tome",
+   "fa": "جلد کتاب کپک‌زده",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Tattered Manuscript",
+   "fa": "دست‌نوشتهٔ پاره‌پاره",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Reconstructed Tome",
+   "fa": "جلد کتابِ بازساخته",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Menara Voidrender",
+   "fa": "منارا شکافندهٔ خلأ",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Robes of Arcana",
+   "fa": "ردای آرکان",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Briarthorn",
+   "fa": "خارشاخ",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Zevrost",
+   "fa": "زوروست",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Gold Bar",
+   "fa": "شمشِ طلا",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Xizk Goodstitch",
+   "fa": "زیزک گوداستیچ",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E47": {
+   "en": "Lesser Infernal Stone",
+   "fa": "سنگ اهریمنی جزئی",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Fine Gold Thread",
+   "fa": "نخِ طلای مرغوب",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Soul Shard",
+   "fa": "تکهٔ جان",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Arathi Highlands",
+   "fa": "ارتفاعات آراتی",
+   "kind": "zn"
+  },
+  "E54": {
+   "en": "Infernal Orb",
+   "fa": "گوی اهریمنی",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Tabetha",
+   "fa": "تابثا",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Takar the Seer": "تاکار غیب‌گو",
+  "Barrens": "بارنز",
+  "Kalimdor": "کالیمدور",
+  "Gakin the Darkbinder": "گاکین بندتاریک",
+  "Mage": "جادوگر",
+  "Stormwind": "استورم‌ویند",
+  "Heartswood": "چوب‌دل",
+  "Ashenvale": "اَشِن‌ویل",
+  "Heartswood Core": "هستهٔ چوب‌دل",
+  "Large Soran'ruk Fragment": "تکهٔ بزرگ سوران‌روک",
+  "Doan Karhan": "دوآن کارهان",
+  "Azeroth": "آزروت",
+  "Hammer": "چکش",
+  "Blackfathom Deeps": "ژرفای سیاه‌ژرف",
+  "Shadowfang Keep": "دژ نیش‌سایه",
+  "Burning Legion": "لژیون سوزان",
+  "Krom Stoutarm": "کروم بازوقوی",
+  "Ironforge": "آیرون‌فورج",
+  "Tome of the Cabal": "کتاب بزرگِ کابال",
+  "Strahad Farsan": "ستراهاد فارسان",
+  "Jorah Annison": "جوراه آنیسون",
+  "Undercity": "آندر‌سیتی",
+  "Moldy Tome": "جلد کتاب کپک‌زده",
+  "Tattered Manuscript": "دست‌نوشتهٔ پاره‌پاره",
+  "Thousand Needles": "هزار سوزن",
+  "Southshore": "ساحل جنوبی",
+  "Harbor": "بندر",
+  "Reconstructed Tome": "جلد کتابِ بازساخته",
+  "Wetlands": "تالاب‌ها",
+  "Menara Voidrender": "منارا شکافندهٔ خلأ",
+  "Robes of Arcana": "ردای آرکان",
+  "Briarthorn": "خارشاخ",
+  "Zevrost": "زوروست",
+  "Gold Bar": "شمشِ طلا",
+  "Xizk Goodstitch": "زیزک گوداستیچ",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "Booty Bay": "خلیج غنیمت",
+  "Blood": "خون",
+  "Lesser Infernal Stone": "سنگ اهریمنی جزئی",
+  "Desolace": "دزوله‌یس",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Fine Gold Thread": "نخِ طلای مرغوب",
+  "Soul Shard": "تکهٔ جان",
+  "Arathi Highlands": "ارتفاعات آراتی",
+  "Infernal Orb": "گوی اهریمنی",
+  "Tabetha": "تابثا",
+  "Dustwallow Marsh": "باتلاق داست‌والو"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$n",
+  "3": "$n",
+  "4": "$N",
+  "5": "$n",
+  "6": "$N",
+  "7": "$n",
+  "8": "$N",
+  "9": "$n",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$C",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$c",
+  "36": "$N",
+  "37": "$B",
+  "38": "$B",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$n",
+  "45": "$N",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$B",
+  "50": "$n"
+ },
+ "rows": {
+  "quest:1716:obj:0": "Speak with ⟦E1⟧ in the ⟦E2⟧.",
+  "quest:1716:details:0": "A succubus is a devourer of souls, destroyer of hearts, and dominator of minds. It knows nothing but evil.",
+  "quest:1716:details:1": "This will be the creature you will learn to summon and control, but it cannot be brought into our world without a stimulus.",
+  "quest:1716:details:2": "With a symbol of love as bait, it will surely answer your call. Then you can defeat it, and make it your tool.",
+  "quest:1716:details:3": "It will be hard to find something of this nature, though. You should speak with ⟦E1⟧. You will find him in the ⟦E2⟧ of ⟦E3⟧ near Camp Taurajo.",
+  "quest:1716:completion:0": "Was your crossing difficult, ⟦1⟧? You have come a long way to speak with me. But fear not, I know why Gakin has sent you, and he was wise to, for I can help you in your search.",
+  "quest:1717:obj:0": "Report to ⟦E5⟧ in the ⟦E6⟧ Quarter of ⟦E7⟧.",
+  "quest:1717:details:0": "⟦2⟧! Didn't expect to see you around these parts, but I was instructed to keep an eye out for you.",
+  "quest:1717:details:1": "It's past time you got some more training, so you should stop in to see Gakin the next time you're in ⟦E7⟧. He'll be waiting for you.",
+  "quest:1717:completion:0": "I'm glad someone was able to get a hold of you, ⟦3⟧. I was beginning to fear the worst. It would be a shame to lose you, after the time we've invested in you. We can talk later, though. Your training is the only important thing now.",
+  "quest:1738:obj:0": "Retrieve the ⟦E8⟧ from ⟦E9⟧ and bring it to ⟦E5⟧ in the ⟦E6⟧ Quarter of ⟦E7⟧.",
+  "quest:1738:details:0": "In preparation for your coming, I used my sight to look over the world and through the mists of time. I have found what it is you seek.",
+  "quest:1738:details:1": "In the War of the Ancients, two lovers fell together in battle. Where they took their last breaths, a tree known as the heartswood grew, a symbol of their undying love.",
+  "quest:1738:details:2": "That should be enough to tempt a succubus. You will find it in the ruins of Ordil'Aran in the northwestern part of the forest of ⟦E9⟧.",
+  "quest:1738:progress:0": "Was your search a success, ⟦4⟧?",
+  "quest:1738:completion:0": "Yes, I can tell this will do nicely, let me just work with it for a moment...",
+  "quest:1738:completion:1": "Takar is a resourceful fellow to have around, isn't he? If only I could persuade him to move back to civilization.",
+  "quest:1739:obj:0": "Using the ⟦E11⟧, summon and subdue a succubus, then return the ⟦E11⟧ to ⟦E5⟧ in the Slaughtered Lamb.",
+  "quest:1739:details:0": "Using the heartswood core, you will be able to cast a spell at the summoning circle in the crypt below to open a portal for the succubus to pass through.",
+  "quest:1739:details:1": "Be careful, ⟦5⟧, succubi have overrun even the strongest of minds.",
+  "quest:1739:details:2": "Once you have bested and returned it to the void, return to me and I will show you how to call and control it.",
+  "quest:1739:progress:0": "Sometimes I wonder if Surena was not a succubus in disguise, sent to warp and twist my mind... Ha! I give her too much credit, I think.",
+  "quest:1739:completion:0": "Well done, well done, ⟦6⟧. I see we've done right in deciding to train you. Your performance certainly does not disappoint.",
+  "quest:1739:completion:1": "I've no qualms in showing you the way to control your newly bound succubus. Observe carefully.",
+  "quest:1740:obj:0": "Find 3 Soran'ruk Fragments and 1 ⟦E13⟧ and return them to ⟦E14⟧ in the ⟦E2⟧.",
+  "quest:1740:details:0": "When demons of the Legion fall out of favor, their spirits are imprisoned within orbs and distributed to their mages and warlocks.",
+  "quest:1740:details:1": "Many were carried by their servants in ⟦E15⟧. Even fragmented, they still possess the powers of the demons trapped inside.",
+  "quest:1740:details:2": "The orb of Soran'ruk was broken into two pieces, one was further broken to be used by the acolytes of the Twilight's ⟦E16⟧ in ⟦E17⟧. The other, larger piece, was possessed by a wizard in ⟦E18⟧. Find them and I can reform it.",
+  "quest:1740:progress:0": "It took me many years to collect the pieces of the orb of Zargain, but it has served me well, as I am sure the orb of Soran'ruk will serve you.",
+  "quest:1740:completion:0": "Yes... The orb was not greatly fragmented, and almost all of the pieces are here. It is a simple thing to recreate them, to make Soran'ruk whole again.",
+  "quest:1740:completion:1": "I have dedicated my life to the study of the ⟦E19⟧'s orbs and their recreation. You have done me a favor collecting these pieces to study, and I will give you them back - fully reconstructed - in a form of your choosing.",
+  "quest:1758:obj:0": "Speak with ⟦E21⟧ in ⟦E22⟧.",
+  "quest:1758:details:0": "It will take more than a simple summoning circle to bring forth a felhunter for you to challenge.",
+  "quest:1758:details:1": "My three acolytes and I will assist in creating the magic circles. You require a copy of the ⟦E23⟧, which has been lost to us for some time. It was written by the first group of warlocks to summon a felhunter unaided.",
+  "quest:1758:details:2": "Perhaps ⟦E21⟧ can help you with this. An itinerant warlock these days, he spends his days hoarding ancient texts and skulking about the library in ⟦E22⟧.",
+  "quest:1758:completion:0": "Tome of Cabal? Hmm...sounds familiar. I have never seen it here before, though--and believe me, I remember every book I read.",
+  "quest:1758:completion:1": "Hmm... Ah, yes!",
+  "quest:1758:completion:2": "I have seen reference to it in library cataloging books.",
+  "quest:1795:obj:0": "Using the ⟦E23⟧, summon and subdue a felhunter, then return the ⟦E23⟧ to ⟦E24⟧ in Ratchet.",
+  "quest:1795:details:0": "If you are sufficiently prepared, then we should begin. Let me explain the process to you.",
+  "quest:1795:details:1": "I will begin by creating the basic summoning circle. When that is finished, my acolytes will use the rods of channeling to create the greater circle.",
+  "quest:1795:details:2": "Once that is done, read the incantation from the ⟦E23⟧, and the felhunter will be pulled forth. Be careful, ⟦7⟧. A felhunter is a powerful foe, and I'd like to see you keep your head on your shoulders.",
+  "quest:1795:progress:0": "Every warlock should have a felhunter at his command. Though it be difficult to tame, the powers it brings to its master far outweigh the cost.",
+  "quest:1795:completion:0": "I must say I'm impressed, ⟦8⟧. When I faced down my felhunter, I barely escaped with my life. I sense that you have the potential to become one of the most powerful warlocks of this era.",
+  "quest:1798:obj:0": "Speak with ⟦E24⟧ in the ⟦E2⟧.",
+  "quest:1798:details:0": "It is time you learned the felhunter summoning, ⟦9⟧. I do not have the reagents and items necessary to teach you here, so you will have to seek out another, ⟦E24⟧, another of our inner circle.",
+  "quest:1798:details:1": "He makes his residence in the goblin port of Ratchet. I will send word ahead of you to inform him of your coming.",
+  "quest:1798:completion:0": "⟦10⟧? Ah, of course. Our latest prodigy. The real thing can not live up to the legend, I am afraid.",
+  "quest:1798:completion:1": "No matter, you have come here to learn, not to hear me make jokes to myself.",
+  "quest:1801:obj:0": "Speak with ⟦E25⟧ in the ⟦E26⟧.",
+  "quest:1801:details:0": "It will take more than a simple summoning circle to bring forth a felhunter for you to challenge.",
+  "quest:1801:details:1": "My three acolytes and I will assist in creating the magic circles. You require a copy of the ⟦E23⟧, which has been lost to us for some time. It was written by the first group of warlocks to summon a felhunter unaided.",
+  "quest:1801:details:2": "Perhaps ⟦E25⟧ can help you with this. He's employed as a cartographer in the ⟦E26⟧ these days, but still knows more of ancient texts than any I know.",
+  "quest:1801:completion:0": "Map making! Pictures, estimations of reality. I have no use for such things.",
+  "quest:1801:completion:1": "In books, narrative, description! That is where truth lies. I would trade all the maps in this store for one book on the rise of necromancy, or a tale of the Dark Lady's triumph.",
+  "quest:1802:obj:0": "Retrieve the ⟦E27⟧ and ⟦E28⟧ for ⟦E21⟧ in ⟦E22⟧.",
+  "quest:1802:details:0": "It was lost, but there's some idea as to where it might be found.",
+  "quest:1802:details:1": "There was only one copy ever made and it was vandalized at some point, a large portion of it ripped from the binding. Rumor has it that it somehow passed into the hands of the centaur of ⟦E29⟧.",
+  "quest:1802:details:2": "The rest was lost off the coast west of ⟦E30⟧, where it was to be transported to Menethil ⟦E31⟧ by boat. It never arrived.",
+  "quest:1802:details:3": "In exchange for this knowledge, all I ask is that if you find it, bring it to me to see.",
+  "quest:1802:progress:0": "Did the rumors prove true, ⟦11⟧?",
+  "quest:1802:completion:0": "Fantastic! Now I may join the ranks of the few that have spied its contents.",
+  "quest:1802:completion:1": "I can't wait to further peruse this text. This is a great day, ⟦12⟧! If you will just allow me to glance at it before you leave. I'm sure that Strahad will be willing to send me a copy.",
+  "quest:1803:obj:0": "Retrieve the ⟦E27⟧ and ⟦E28⟧ for ⟦E25⟧ in the ⟦E26⟧.",
+  "quest:1803:details:0": "Ah! I see that you are a warlock of similar tastes to mine. Indeed, acquiring the ⟦E23⟧ is a worthy aspiration. Did you know that it was once held within the walls of Lordaeron? It was vandalized though, almost half its pages removed. Who would commit such a heinous act?",
+  "quest:1803:details:1": "That half is lost, though rumor says that it fell into the hands of the centaur of the ⟦E29⟧.",
+  "quest:1803:details:2": "The rest of the text was to be transferred to ⟦E22⟧, but was lost in transit on the coast west of ⟦E30⟧.",
+  "quest:1803:progress:0": "It may be that you are chasing after fairy tales, ⟦13⟧, but truth can be found at the center of even the wildest rumors.",
+  "quest:1803:completion:0": "Well well well! What do we have here?",
+  "quest:1803:completion:1": "This is impressive, ⟦14⟧. I wouldn't have thought it possible, but here it is in my very hands, the complete ⟦E23⟧.",
+  "quest:1803:completion:2": "Allow me to leaf through its pages for just a moment before you are off again.",
+  "quest:1804:obj:0": "Bring the ⟦E32⟧ and 3 Rods of Channeling to ⟦E24⟧ in Ratchet.",
+  "quest:1804:details:0": "Well, ah, it's hard to let it go. But you found it, and you have more important things to do with it, of course. Just, please, be sure to mention to Strahad that I wanted a copy.",
+  "quest:1804:details:1": "While you were out, he sent a message for you. He wanted me to tell you that for his acolytes to assist with the summoning, you'll have to acquire three rods of channeling.",
+  "quest:1804:details:2": "He might not know where to find them, but I do! They were last used by the orcs of the Dragonmaw clan in the ⟦E33⟧. I'd check their spellcasters!",
+  "quest:1804:progress:0": "Haven't seen you around these parts for a while. Have you found the tome and the rods?",
+  "quest:1804:completion:0": "Well done! The ⟦E23⟧ and three pristine--slightly scratched, I suppose--rods of channeling.",
+  "quest:1804:completion:1": "This will be interesting. It's been some time since a young warlock took on a felhunter to make his own.",
+  "quest:1805:obj:0": "Bring the ⟦E32⟧ and 3 Rods of Channeling to ⟦E24⟧ in Ratchet.",
+  "quest:1805:details:0": "This is one of the most interesting texts I have perused in the last few years. The selection here is sparse--mostly books on geography--and I have already read them all. I should hope that Strahad would send me a copy of this tome when he has the chance.",
+  "quest:1805:details:1": "Speaking of him, he sent word to me while you were away. For your task, you must obtain three rods of channeling.",
+  "quest:1805:details:2": "For allowing me to look at this text, I will share a secret: You can find the rods on orcs of the Dragonmaw Clan in the ⟦E33⟧.",
+  "quest:1805:progress:0": "Yes, ⟦15⟧? Of what service can I be to you?",
+  "quest:1805:completion:0": "Well done! The ⟦E23⟧ and three pristine--slightly scratched, I suppose--rods of channeling.",
+  "quest:1805:completion:1": "This will be interesting. It's been some time since a young warlock took on a felhunter to make his own.",
+  "quest:2996:obj:0": "Speak to ⟦E24⟧ in Ratchet.",
+  "quest:2996:details:0": "I have taught you skills in the past, but the time has come for another to teach you. He is in Ratchet, and his name is Strahad. He is human, but do not let that fool you into thinking he is weak. He is powerful even though he may be small. He can teach you about more powerful summonings--I feel you are ready. Go to him now. He is in Ratchet... above the port town next to his tower.",
+  "quest:2996:completion:0": "A busy day in Ratchet, isn't it? How I enjoy watching the toil of a port city. So much mystery, so much adventure... so much ignorance.",
+  "quest:2996:completion:1": "Is that hatred I see in your eyes, ⟦16⟧? Good, we will put that to good use.",
+  "quest:3001:obj:0": "Find ⟦E24⟧ in Ratchet.",
+  "quest:3001:details:0": "I have taught you skills in the past, but the time has come for another to teach you. He is in Ratchet, and his name is Strahad. He is human, but do not let that fool you into thinking he is weak, nor is he your enemy... at least for now. He is powerful and should be respected. He can teach you about greater summonings, summonings I feel you are prepared for. Go to him now.",
+  "quest:3001:details:1": "You can find him in Ratchet... above the port town next to the tower there.",
+  "quest:3001:completion:0": "A busy day in Ratchet, isn't it? How I enjoy watching the toil of a port city. So much mystery, so much adventure... so much ignorance.",
+  "quest:3001:completion:1": "Is that hatred I see in your eyes, ⟦17⟧? Good, we will put that to good use.",
+  "quest:1796:obj:0": "Bring Robes of the Arcana to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:1796:details:0": "The first item I will aid you in creating is a robe. You will gather the items for me, and we will put them together. Afterwards, assuming you succeed, you will have the first of many items that will make you more powerful and aid you in your struggles.",
+  "quest:1796:details:1": "To start, you must have crafted ⟦E37⟧. A tailor can make this for you, or perhaps you can purchase one from someone else--I'd be most impressed if you could make it yourself--but regardless, bring me the robes, and we shall go from there.",
+  "quest:1796:progress:0": "How goes your search for the robes, ⟦18⟧? Have you created them yourself? Such personal touches I find make the imbuing of magic that much sweeter. It gives you a greater sense of accomplishment. But I understand if you choose the quicker path and have it made for you - there's something to be said for such... ambition.",
+  "quest:1796:completion:0": "This will do nicely, ⟦19⟧.",
+  "quest:1796:completion:1": "All magical items must begin with an item of high quality. The more effort and skill put into an item, the greater the magics it can hold. Rare and more expensive components hold the magic better. You will not regret having the robes fashioned into the ones we will make for you later on.",
+  "quest:4736:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4736:details:0": "Ah, hello, ⟦20⟧. You're progressing well in your training. So well in fact that I think you should be rewarded for your hard work--and for not becoming corrupted by the arcane yet.",
+  "quest:4736:details:1": "If you're interested, seek out ⟦E36⟧ in Ratchet. She is currently staying at ⟦E24⟧'s tower overlooking the town.",
+  "quest:4736:details:2": "She's not very friendly, ⟦21⟧, so don't expect any praise. But if you work hard, she'll make sure you're taken care of.",
+  "quest:4736:completion:0": "Ah, ⟦E39⟧ sent you. Good. Then word does reach far enough to find future students. This pleases me.",
+  "quest:4736:completion:1": "It is typical of our kind, ⟦22⟧, to band together, regardless of race. It is especially important since those we deal with most do not discriminate in their malice if we fail to appease them or control them properly.",
+  "quest:4736:completion:2": "I feel you've learned a great many things, and if you are willing, I would help you create tools to compliment your skills.",
+  "quest:4737:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4737:details:0": "Hmph, still you strive to become more powerful. I say it's only time before the corruption and addiction takes hold of you and you become a slave to that which you seek to gain power over.",
+  "quest:4737:details:1": "Pfah! A fool you are! Time will prove me right--nothing else... just time.",
+  "quest:4737:details:2": "But it seems that not all agree with ⟦E40⟧. It seems Menara would create tools for you to become more powerful and to harness your strength. If you're interested, then go to Ratchet in the ⟦E2⟧. She is there overlooking the town.",
+  "quest:4737:completion:0": "Ah, ⟦E40⟧ sent you. Good. Then word does reach far enough to find future students. This pleases me.",
+  "quest:4737:completion:1": "It is typical of our kind, ⟦23⟧, to band together, regardless of race. It is especially important since those we deal with most do not discriminate in their malice if we fail to appease them or control them properly.",
+  "quest:4737:completion:2": "I feel you've learned a great many things, and if you are willing, I would help you create tools to compliment your skills.",
+  "quest:4738:obj:0": "Speak with ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4738:details:0": "Let us be clear about one thing, ⟦24⟧: I don't feel you are ready for such responsibilities. I don't think aiding in the creation of any item of power is something a novice should ever be involved in; especially one so untested.",
+  "quest:4738:details:1": "But that's not my decision. The powers that be, or at least the ones that do wish to impart such gifts upon you get to decide that.",
+  "quest:4738:details:2": "If you're interested in learning more, I suggest you seek out ⟦E36⟧ in Ratchet. She usually resides in the tower above the port town.",
+  "quest:4738:completion:0": "Ah, Demisette sent you. Good. Then word does reach far enough to find future students. This pleases me.",
+  "quest:4738:completion:1": "It is typical of our kind, ⟦25⟧, to band together, regardless of race. It is especially important since those we deal with most do not discriminate in their malice if we fail to appease them or control them properly.",
+  "quest:4738:completion:2": "I feel you've learned a great many things, and if you are willing, I would help you create tools to compliment your skills.",
+  "quest:4739:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4739:details:0": "⟦26⟧! Yes, you!",
+  "quest:4739:details:1": "You don't have all the accoutrements, but it's plain to see you're ready--the air around you exudes greater confidence. Yes, I see it now.",
+  "quest:4739:details:2": "⟦E36⟧ would teach you a few things if you feel you're ready. She spends her time tutoring younger students in the arcane. She even gives gifts to those who pass her tests.",
+  "quest:4739:details:3": "Go to Ratchet in the ⟦E2⟧ if you're interested. She's above the city in Strahad's tower.",
+  "quest:4739:completion:0": "Ah, Kaal sent you. Good. Then word does reach far enough to find future students. This pleases me.",
+  "quest:4739:completion:1": "It is typical of our kind, ⟦27⟧, to band together, regardless of race. It is especially important since those we deal with most do not discriminate in their malice if we fail to appease them or control them properly.",
+  "quest:4739:completion:2": "I feel you've learned a great many things, and if you are willing, I would help you create tools to compliment your skills.",
+  "quest:4781:obj:0": "Bring a ⟦E41⟧ to ⟦E42⟧ in ⟦E43⟧.",
+  "quest:4781:details:0": "Your next task is as simple as your first, but will require you to seek out aid.",
+  "quest:4781:details:1": "I require gold thread for the embroidery of the cloak, but gold thread is not easy to come by, and very few know how to make it. Fortunately, one who is loyal to our cause knows its secrets and is willing to help those rising in our ranks.",
+  "quest:4781:details:2": "Bring a gold bar to ⟦E42⟧ in ⟦E44⟧. He is a master tailor and will be happy to spin the thread for you. Gold bars are smelted by skilled miners. Ask a miner for help.",
+  "quest:4781:progress:0": "Gold bars, yes... yes. Bring me one and we'll see what we can do about spinning some thread for you. Until then, I would suggest you focus your efforts on becoming more powerful. Your toughest trials are still ahead. And trust me... you'll wish you were more prepared, regardless of how powerful you think you might be.",
+  "quest:4781:completion:0": "Perfect, ⟦28⟧. I'm glad you could find a miner to help you out so quickly. Or did you do this work yourself? Either way, you've done well. This will be perfect for the thread.",
+  "quest:4781:completion:1": "It will take some time to create the stuff, so you'll have to come back--I actually send it off to some princess who we have locked in a tower who's only job is to spin gold thread... no, seriously. I mean it... okay, not really.",
+  "quest:4782:obj:0": "Return to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4782:details:0": "Return to Menara, tell her it'll take some time, but I'll make sure to come through for her... and you. Tell her to have you finish gathering the rest of your components--I should have the thread done by then. You can return and pick it up then.",
+  "quest:4782:details:1": "Good luck, ⟦29⟧. Oh, and say hello to Strahad for me while you're there. That old coot... putting a tower right there next to Ratchet... crazy.",
+  "quest:4782:completion:0": "Good, you've returned, ⟦30⟧. And where is the thread?",
+  "quest:4782:completion:1": "Ah, I understand. That is acceptable. The goblin and his brother have not failed us yet--I suppose it is understandable that he did not have it prepared right then. So be it... we have other things we can attend to in the meantime.",
+  "quest:4782:completion:2": "Are you prepared for the next step?",
+  "quest:4965:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4965:details:0": "Well, well, well... a pleasure to see you're growing in power, ⟦31⟧. I'd wager you'd be about ready to speak to ⟦E36⟧ in the ⟦E2⟧. If you haven't spoken to her before, then let me tell you, I don't think I've ever met another expert in the creation of items--orbs specifically--that can inprison even a demon to serve our will so easily.",
+  "quest:4965:details:1": "If you're interested, she's in Strahad's tower above Ratchet in the ⟦E2⟧.",
+  "quest:4965:completion:0": "Ah, you do seek something more... substantial. That I can help you if you truly are prepared.",
+  "quest:4965:completion:1": "It's a welcome change to see one of our kind seeking more power in forms other than just knowledge.",
+  "quest:4965:completion:2": "So, do you feel you're ready, ⟦32⟧?",
+  "quest:4967:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4967:details:0": "Still a fool, and still seeking the trappings of mortals. Yes, I speak to you with arrogance. I see you before me and I laugh. You're pathetic!",
+  "quest:4967:details:1": "But it matters not what I think. It only matters what those willing to deal with you thinks! And in this case, against my better judgment, those with some portion of power feel you deserve more.",
+  "quest:4967:details:2": "If this is something you strive for then you should speak with ⟦E36⟧ in the tower above Ratchet. I believe you have met her before some time ago.",
+  "quest:4967:completion:0": "Ah, you do seek something more... substantial. That I can help you if you truly are prepared.",
+  "quest:4967:completion:1": "It's a welcome change to see one of our kind seeking more power in forms other than just knowledge.",
+  "quest:4967:completion:2": "So, do you feel you're ready, ⟦33⟧?",
+  "quest:4968:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4968:details:0": "Hmm, you've made it this far... truly astonishing. I would have thought the corruption of channeling the arcane would have seeped into your very soul and driven you mad by now. How about we try and push you further then?",
+  "quest:4968:details:1": "If you want to test your skill, seek out ⟦E36⟧ above Ratchet in Strahad's tower. She will guide you.",
+  "quest:4968:completion:0": "Ah, you do seek something more... substantial. That I can help you if you truly are prepared.",
+  "quest:4968:completion:1": "It's a welcome change to see one of our kind seeking more power in forms other than just knowledge.",
+  "quest:4968:completion:2": "So, do you feel you're ready, ⟦34⟧?",
+  "quest:4969:obj:0": "Speak to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4969:details:0": "Haha! You're doing very well for yourself, young ⟦35⟧.",
+  "quest:4969:details:1": "Given time, infernals and dreadlords will bow before you!",
+  "quest:4969:details:2": "But until that time comes, you must still rely on weapons forged by the hands of the mortal races.",
+  "quest:4969:details:3": "You seem prepared for another such creation, and if you are willing, ⟦E36⟧ would speak with you! She is near Strahad's tower overlooking the port town of Ratchet. Go there when you are ready.",
+  "quest:4969:completion:0": "Ah, you do seek something more... substantial. I can help you if you truly are prepared.",
+  "quest:4969:completion:1": "It's a welcome change to see one of our kind seeking more power in forms other than just knowledge.",
+  "quest:4969:completion:2": "So, do you feel you're ready, ⟦36⟧?",
+  "quest:4783:obj:0": "Bring 10 Vials of Hatefury ⟦E46⟧ and 1 ⟦E47⟧ to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4783:details:0": "The next components are found in ⟦E48⟧, far to the west of the ⟦E2⟧ and even the ⟦E49⟧.",
+  "quest:4783:details:1": "There, chaos still reigns after the Sundering. Both your strength and cunning will be tested there--you will face creatures of hatred and also of the ⟦E19⟧.",
+  "quest:4783:details:2": "From the Hatefury satyr in the northeast, bring me their blood. From the lesser infernals in Mannoroc Coven, bring me a lesser infernal stone.",
+  "quest:4783:details:3": "We will use both in the construction of your robe.",
+  "quest:4783:progress:0": "⟦E48⟧ is not a kind area: naga, giants, satyr, the ⟦E19⟧... all of those and warring centaur clans all make the land dangerous if you're not careful.⟦37⟧⟦38⟧Like I said before, it will not only test your strength and cunning, but also your patience. Be wary in those lands, ⟦39⟧.",
+  "quest:4783:completion:0": "Excellent, ⟦40⟧. These will do nicely. I will prepare them now while you move on to your last two components. Are you ready?",
+  "quest:4784:obj:0": "Bring some ⟦E51⟧, 2 Smoldering Coals, and a ⟦E52⟧ to ⟦E36⟧ in the ⟦E2⟧.",
+  "quest:4784:details:0": "I need only three things now, ⟦41⟧, then we can finish your robe.",
+  "quest:4784:details:1": "First, the fine gold thread Xizk is making for you. Return to him in ⟦E44⟧ and get it.",
+  "quest:4784:details:2": "Second, bring me two smoldering coals from the fire elementals in the ⟦E53⟧. If I recall correctly, they are to the west, near Thoradin's Wall.",
+  "quest:4784:details:3": "Finally, a soul shard created by you.",
+  "quest:4784:details:4": "After you have all the components, return here to the tower and I will complete the robe for you.",
+  "quest:4784:progress:0": "Soon, ⟦42⟧. I promise you. The robe will be more than adequate for your needs and certainly give you an edge over your opponents.",
+  "quest:4784:completion:0": "Excellent, ⟦43⟧! The components are gathered and we are ready.",
+  "quest:4784:completion:1": "I trust you will be pleased.",
+  "quest:4786:obj:0": "Wait for ⟦E36⟧ to complete your robe and then speak to her again.",
+  "quest:4786:details:0": "I will put the robe together for you now. It will take but a few moments. Do not go far.",
+  "quest:4786:progress:0": "A moment, ⟦44⟧...",
+  "quest:4786:completion:0": "It is done, ⟦45⟧. Here you are. Wear it with pride.",
+  "quest:4786:completion:1": "You've worked hard and I see great things in your future. Remember, to defy the corruption that comes with our path takes great will and fortitude. As long as your will is your own, then you shall have great success.",
+  "quest:1799:obj:0": "Speak to Menara's acolytes inside the tower above Ratchet and choose one of their paths to follow.",
+  "quest:1799:obj:1": "Afterwards, bring an ⟦E54⟧ to ⟦E55⟧ in ⟦E56⟧.",
+  "quest:1799:details:0": "Good, then we shall begin.",
+  "quest:1799:details:1": "The first thing you must do is speak to my acolytes inside. Choose one of their paths to follow--they will explain more.",
+  "quest:1799:details:2": "Second, you must travel to ⟦E48⟧ and find an ⟦E54⟧ from one of the warlocks of Mannoroc Coven. It is that orb that you will cleanse with the help of a mage named ⟦E55⟧ deep in southern ⟦E56⟧. She will aid you because of our history together.",
+  "quest:1799:details:3": "Again, do not come back until you have done both things I've asked.",
+  "quest:1799:progress:0": "And obviously not being a mage, I wonder if I can trust you at all. I can smell the power of the arcane on you, but you seem to have eluded the stank of corruption that comes so willingly with your kind.⟦46⟧⟦47⟧Yes, a warlock... a warlock has come to ask for my help.⟦48⟧⟦49⟧Well, what is it I can do for you, ⟦50⟧?",
+  "quest:1799:completion:0": "Oh, so Menara sent you. Fair enough... I suppose you may stay as my guest for the time being. But you must be on some pressing business - perhaps you're here seeking lost power? Maybe I'm mistaken. Maybe corruption isn't too far away from you after all."
+ },
+ "context": {
+  "quest:1716": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Gakin the Darkbinder («گاکین بندتاریک»)",
+   "turner": "Takar the Seer («تاکار غیب‌گو»)"
+  },
+  "quest:1717": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Lago Blackwrench («لاگو آچارسیاه»)",
+   "turner": "Gakin the Darkbinder («گاکین بندتاریک»)"
+  },
+  "quest:1738": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Takar the Seer («تاکار غیب‌گو»)",
+   "turner": "Gakin the Darkbinder («گاکین بندتاریک»)"
+  },
+  "quest:1739": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Gakin the Darkbinder («گاکین بندتاریک»)",
+   "turner": "Gakin the Darkbinder («گاکین بندتاریک»)"
+  },
+  "quest:1740": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "Doan Karhan («دوآن کارهان»)",
+   "turner": "Doan Karhan («دوآن کارهان»)"
+  },
+  "quest:1758": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Strahad Farsan («ستراهاد فارسان»)",
+   "turner": "Krom Stoutarm («کروم بازوقوی»)"
+  },
+  "quest:1795": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "Strahad Farsan («ستراهاد فارسان»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:1798": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Gakin the Darkbinder («گاکین بندتاریک»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:1801": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Strahad Farsan («ستراهاد فارسان»)",
+   "turner": "Jorah Annison («جوراه آنیسون»)"
+  },
+  "quest:1802": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Krom Stoutarm («کروم بازوقوی»)",
+   "turner": "Krom Stoutarm («کروم بازوقوی»)"
+  },
+  "quest:1803": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Jorah Annison («جوراه آنیسون»)",
+   "turner": "Jorah Annison («جوراه آنیسون»)"
+  },
+  "quest:1804": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Krom Stoutarm («کروم بازوقوی»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:1805": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Jorah Annison («جوراه آنیسون»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:2996": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Gan'rul Bloodeye («گن‌رول چشم‌خون»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:3001": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Carendin Halgar («کارندین هالگار»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:1796": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 31,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4736": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 31,
+   "side": "horde",
+   "giver": "Briarthorn («خارشاخ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4737": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Zevrost («زوروست»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4738": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Demisette Cloyce («دمیزت کلویس»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4739": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 31,
+   "side": "horde",
+   "giver": "Kaal Soulreaper («کال روح‌درو»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4781": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 34,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Xizk Goodstitch («زیزک گوداستیچ»)"
+  },
+  "quest:4782": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 34,
+   "side": "",
+   "giver": "Xizk Goodstitch («زیزک گوداستیچ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4965": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Briarthorn («خارشاخ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4967": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Zevrost («زوروست»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4968": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 35,
+   "side": "horde",
+   "giver": "Demisette Cloyce («دمیزت کلویس»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4969": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 35,
+   "side": "horde",
+   "giver": "Kaal Soulreaper («کال روح‌درو»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4783": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 37,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4784": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 37,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4786": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 38,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:1799": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Tabetha («تابثا»)"
+  }
+ },
+ "known": {
+  "quest:1716": {
+   "title": "بلعندهٔ ارواح"
+  },
+  "quest:1717": {
+   "title": "فراخوان گاکین"
+  },
+  "quest:1738": {
+   "title": "چوب‌دل"
+  },
+  "quest:1739": {
+   "title": "پیوند"
+  },
+  "quest:1740": {
+   "title": "گوی سوران‌روک"
+  },
+  "quest:1758": {
+   "title": "جلد کتاب کابال"
+  },
+  "quest:1795": {
+   "title": "پیوند"
+  },
+  "quest:1798": {
+   "title": "جست‌وجوی استراهاد"
+  },
+  "quest:1801": {
+   "title": "جلد کتاب کابال"
+  },
+  "quest:1802": {
+   "title": "جلد کتاب کابال"
+  },
+  "quest:1803": {
+   "title": "جلد کتاب کابال"
+  },
+  "quest:1804": {
+   "title": "جلد کتاب کابال"
+  },
+  "quest:1805": {
+   "title": "جلد کتاب کابال"
+  },
+  "quest:2996": {
+   "title": "جست‌وجوی استراهاد"
+  },
+  "quest:3001": {
+   "title": "جست‌وجوی استراهاد"
+  },
+  "quest:1796": {
+   "title": "اجزای ردای خونی طلایی افسون‌شده"
+  },
+  "quest:4736": {
+   "title": "در جست‌وجوی منارا ویدرندر"
+  },
+  "quest:4737": {
+   "title": "در جست‌وجوی منارا ویدرندر"
+  },
+  "quest:4738": {
+   "title": "در جست‌وجوی منارا ویدرندر"
+  },
+  "quest:4739": {
+   "title": "در جست‌وجوی منارا ویدرندر"
+  },
+  "quest:4781": {
+   "title": "اجزای ردای خونی طلایی افسون‌شده"
+  },
+  "quest:4782": {
+   "title": "اجزای ردای خونی طلایی افسون‌شده"
+  },
+  "quest:4965": {
+   "title": "دانش گوی اوراهیل"
+  },
+  "quest:4967": {
+   "title": "دانش گوی اوراهیل"
+  },
+  "quest:4968": {
+   "title": "دانش گوی اوراهیل"
+  },
+  "quest:4969": {
+   "title": "دانش گوی اوراهیل"
+  },
+  "quest:4783": {
+   "title": "اجزای ردای خونی طلایی افسون‌شده"
+  },
+  "quest:4784": {
+   "title": "اجزای ردای خونی طلایی افسون‌شده"
+  },
+  "quest:4786": {
+   "title": "ردای تکمیل‌شده"
+  },
+  "quest:1799": {
+   "title": "تکه‌های گوی اوراهیل"
+  }
+ }
+}

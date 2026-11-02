@@ -1,0 +1,788 @@
+{
+ "pack": "quest-tanaris-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-tanaris-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Chief Engineer Bilgewhizzle",
+   "fa": "سرمهندس بیلج‌ویزل",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Water Pouch Bounty",
+   "fa": "پاداش کیسه‌های آب",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Extraordinary Egg",
+   "fa": "تخم شگفت‌انگیز",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Fine Egg",
+   "fa": "تخمِ مرغوب",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Ordinary Egg",
+   "fa": "تخمِ معمولی",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Bad Egg",
+   "fa": "تخم‌مرغِ فاسد",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Egg-O-Matic",
+   "fa": "تخم‌ساز خودکار",
+   "kind": "ob"
+  },
+  "E13": {
+   "en": "The Super Egg-O-Matic",
+   "fa": "تخم‌مَهمَق فوق‌پیشرفته",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "Curgle Cranklehop",
+   "fa": "کورگل کرانکل‌هاپ",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E17": {
+   "en": "Spigot Operator Luglunket",
+   "fa": "شیرآب اپراتور لوگلونکت",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Care Package",
+   "fa": "بستهٔ مراقبت",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Yeh'kinya",
+   "fa": "یه‌کینیا",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Stoley",
+   "fa": "ستولی",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Stoley's Shipment",
+   "fa": "مرسولهٔ استولی",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "\"Sea Wolf\" MacKinley",
+   "fa": "«گرگ دریا» مک‌کینلی",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Stoley's Bottle",
+   "fa": "بطریِ استولی",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Security Chief Bilgewhizzle",
+   "fa": "بیلگ‌ویزل",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Andre Firebeard",
+   "fa": "آندره آتش‌ریش",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Ship Schedules",
+   "fa": "برنامه‌های کشتی‌ها",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Haughty Modiste",
+   "fa": "خیاط مغرور",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Southsea Pirate",
+   "fa": "دزد دریایی دریای جنوبی",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Southsea Freebooters",
+   "fa": "راهزنان ساوت‌سی",
+   "kind": "qs"
+  },
+  "E34": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Senior Surveyor Fizzledowser",
+   "fa": "ارشد نقشه‌بردار فیزل‌داوزر",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Caliph Scorpidsting",
+   "fa": "خلیفه نیش‌عقرب",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "WANTED: Caliph Scorpidsting",
+   "fa": "مطلوب: خلیفهٔ عقرب‌گز",
+   "kind": "qs"
+  },
+  "E39": {
+   "en": "Alchemist Pestlezugg",
+   "fa": "کیمیاگر پستل‌زاگ",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Erelas Ambersky",
+   "fa": "ارلاس آسمان‌کهربا",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Rut'theran Village",
+   "fa": "روستای روت‌تران",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E47": {
+   "en": "Zilzibin Drumlore",
+   "fa": "زیلزیبین درام‌لور",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Chief Engineer Bilgewhizzle": "سرمهندس بیلج‌ویزل",
+  "Water Pouch Bounty": "پاداش کیسه‌های آب",
+  "Tanaris": "تاناریس",
+  "Extraordinary Egg": "تخم شگفت‌انگیز",
+  "Feralas": "فرالاس",
+  "Fine Egg": "تخمِ مرغوب",
+  "Darnassus": "دارناسوس",
+  "Ordinary Egg": "تخمِ معمولی",
+  "Bad Egg": "تخم‌مرغِ فاسد",
+  "Egg-O-Matic": "تخم‌ساز خودکار",
+  "The Super Egg-O-Matic": "تخم‌مَهمَق فوق‌پیشرفته",
+  "Curgle Cranklehop": "کورگل کرانکل‌هاپ",
+  "Shadow": "سایه",
+  "Spigot Operator Luglunket": "شیرآب اپراتور لوگلونکت",
+  "Care Package": "بستهٔ مراقبت",
+  "Yeh'kinya": "یه‌کینیا",
+  "Stoley": "ستولی",
+  "Kalimdor": "کالیمدور",
+  "Booty Bay": "خلیج غنیمت",
+  "Stoley's Shipment": "مرسولهٔ استولی",
+  "\"Sea Wolf\" MacKinley": "«گرگ دریا» مک‌کینلی",
+  "Stoley's Bottle": "بطریِ استولی",
+  "Security Chief Bilgewhizzle": "بیلگ‌ویزل",
+  "Andre Firebeard": "آندره آتش‌ریش",
+  "Ship Schedules": "برنامه‌های کشتی‌ها",
+  "Haughty Modiste": "خیاط مغرور",
+  "Southsea Pirate": "دزد دریایی دریای جنوبی",
+  "Horde": "هورد",
+  "Southsea Freebooters": "راهزنان ساوت‌سی",
+  "Dun Morogh": "دون موروغ",
+  "Senior Surveyor Fizzledowser": "ارشد نقشه‌بردار فیزل‌داوزر",
+  "Caliph Scorpidsting": "خلیفه نیش‌عقرب",
+  "WANTED: Caliph Scorpidsting": "مطلوب: خلیفهٔ عقرب‌گز",
+  "Alchemist Pestlezugg": "کیمیاگر پستل‌زاگ",
+  "Erelas Ambersky": "ارلاس آسمان‌کهربا",
+  "Rut'theran Village": "روستای روت‌تران",
+  "Teldrassil": "تلدراسیل",
+  "Zilzibin Drumlore": "زیلزیبین درام‌لور",
+  "Orgrimmar": "اورگریمار",
+  "Azeroth": "آزروت",
+  "Alliance": "اتحاد"
+ },
+ "tokens": {
+  "1": "$n",
+  "2": "$N",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$n",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$c",
+  "29": "$N",
+  "30": "$N",
+  "31": "$R",
+  "32": "$B",
+  "33": "$B",
+  "34": "$n",
+  "35": "$B",
+  "36": "$B",
+  "37": "$C",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$n",
+  "44": "$n"
+ },
+ "rows": {
+  "quest:841:title": "Another Power Source?",
+  "quest:841:desc:0": "Bring 10 Wastewander Water Pouches to ⟦E1⟧ in Gadgetzan in exchange for another power source.",
+  "quest:841:obj:0": "Bring 10 Wastewander Water Pouches to ⟦E1⟧ in Gadgetzan in exchange for another power source.",
+  "quest:841:details:0": "Bring 10 Wastewander Water Pouches to ⟦E1⟧ in Gadgetzan in exchange for another power source.",
+  "quest:841:progress:0": "Well, have you got the ten water pouches?",
+  "quest:841:completion:0": "Very well, here is another power source. I highly recommend you using it properly this time, unless you are eager to spend ten more water pouches for another water source.",
+  "quest:1878:title": "⟦E2⟧",
+  "quest:1878:progress:0": "Back again, ⟦1⟧?  If you have five more Wastewander water pouches, then I have a care package with your name on it!",
+  "quest:1878:completion:0": "Excellent - the more water pouches we are able to reclaim, the further away from disaster we'll all be! Keep 'em coming, and I will be sure to reward you for every five water pouches you bring me.",
+  "quest:9268:title": "War at Sea",
+  "quest:9268:progress:0": "You seek to befriend the goblins of ⟦E4⟧ once again, ⟦2⟧? We're in need of materials for sails and guns to fight off our old enemies, the Bloodsail Buccaneers. Bring me mageweave and strong flux and we'll be on our way to pardoning your trespasses.",
+  "quest:9268:completion:0": "Keep it coming, ⟦3⟧. Us goblins don't forget that easily!",
+  "quest:2747:title": "An ⟦E6⟧",
+  "quest:2747:progress:0": "I have seen very few eggs retrieved from ⟦E7⟧ in extraordinary condition. These are eggs of the rarest sort...",
+  "quest:2747:completion:0": "Well now, you have one--amazing!⟦4⟧⟦5⟧I hope you always remember the good you have done today.",
+  "quest:2748:title": "A ⟦E8⟧",
+  "quest:2748:progress:0": "A fine egg is one that will, in ideal conditions, hatch free of the evil effects of the Gordunni ogres' incantations.",
+  "quest:2748:completion:0": "Very good, ⟦6⟧. I will be sending this egg to ⟦E9⟧ where I hope it will soon hatch!⟦7⟧⟦8⟧Please accept this as a symbol of my gratitude.",
+  "quest:2749:title": "An ⟦E10⟧",
+  "quest:2749:progress:0": "Ordinary hippogryph eggs hatch about half the time. We do our best to nurture them and with a little luck, they will hatch.",
+  "quest:2749:completion:0": "So, you have found an ordinary egg, ⟦9⟧? Please give it to me... And we can only hope for the best.⟦10⟧⟦11⟧I don't have much, but please accept this reward. If you ever find yourself in ⟦E7⟧ again, know that I am always here to take the eggs you find there.",
+  "quest:2750:title": "A ⟦E11⟧",
+  "quest:2750:progress:0": "These are the eggs that cannot be saved -- they will never hatch.",
+  "quest:2750:completion:0": "I am afraid I have bad news for you, ⟦12⟧. This egg is too far gone. I can take it from you so that it may be disposed of properly.⟦13⟧⟦14⟧Please don't be discouraged; we cannot save them all. If you find yourself in ⟦E7⟧ again, please try again. Bring another egg for the Super ⟦E12⟧!",
+  "quest:8893:title": "⟦E13⟧",
+  "quest:8893:progress:0": "⟦E13⟧ is the latest of ⟦E14⟧'s inventions. It is quite an impressive piece of machinery.⟦15⟧⟦16⟧⟦E13⟧ sputters wildly as you approach the control panel.",
+  "quest:8893:completion:0": "You place the hippogryph egg into the machine. A series of beeps follows along with some strange mechanical sounds.⟦17⟧⟦18⟧It appears that the Eggometer has weighed, measured, and packaged your egg. Now that's speedy service!",
+  "quest:1690:obj:0": "Take down 10 Wastewander Bandits and Thieves east of Gadgetzan, then report back to ⟦E1⟧.",
+  "quest:1690:details:0": "You there! It's time for you to be a big helper to the Gadgetzan Water Company.",
+  "quest:1690:details:1": "The Wastewander nomads out in the ⟦E4⟧ desert have seized almost all the water wells! Without access to them, our water supply will dry up in no time. If you want to get in our good graces, then you'll help us bring justice to those nomads!",
+  "quest:1690:details:2": "Head east of here and bring down ten Wastewander Bandits and Thieves, then report back to me on the double. Justice waits for no man... goblin... bah, just get on it!",
+  "quest:1690:progress:0": "Back so soon? I hope you were able to bring some goblin-style justice to those Wastewander Bandits and Thieves like I asked you to!",
+  "quest:1690:completion:0": "Now that's what I call efficiency! You've helped thin out the nomad's numbers enough now that we can start to think about how we can win back those water wells.",
+  "quest:1690:completion:1": "The Gadgetzan Water Company thanks you for your help, but we're far from done in dealing with those foul nomads. Listen close - here's what we need next...",
+  "quest:1691:obj:0": "Take down 10 Wastewander ⟦E16⟧ Mages, 8 Wastewander Rogues, and 6 Wastewander Assassins for ⟦E1⟧ in Gadgetzan.⟦19⟧",
+  "quest:1691:details:0": "We need you to take on the stronger ranks of the Wastewander nomads now. You've done a good job thus far, but if we are to take back those water wells, then it only makes sense to do it against as few nomads as possible!",
+  "quest:1691:details:1": "This time around we need you to take down their rogues, assassins, and shadow mages. You'll find them east and southeast of here.",
+  "quest:1691:details:2": "I'm not going to lie to you - they're a nasty lot. Do this for us though, and we'll be on our way to taking back what is rightfully ours!",
+  "quest:1691:progress:0": "Well, were you able to take out those nomads like I asked? The Gadgetzan Water Company is developing plans based on your success here! Don't let us down, now...",
+  "quest:1691:completion:0": "Top notch work, ⟦20⟧... top notch! You've thinned down the nomad population to a point where we can actually take the fight to them!",
+  "quest:1691:completion:1": "If you haven't already, talk to ⟦E17⟧ here; he gives a bounty on any of the Wastewander water pouches you may have run across while bringing those nomads to justice!",
+  "quest:1707:obj:0": "Bring 5 Wastewander Water Pouches to ⟦E17⟧ in Gadgetzan.",
+  "quest:1707:details:0": "Greetings ⟦21⟧ - the name's Luglunket, and we've got an important job for you if you're up for it! Huzzah!",
+  "quest:1707:details:1": "Nothing would please me more as a seasoned spigot operator to take any Wastewander water pouches you might find out in the desert. That's our water anyway - the nomads have just stolen it is all! The Gadgetzan Water Company will offer you an official care package for every five you turn in. Most importantly though, you're helping Gadgetzan help itself!",
+  "quest:1707:progress:0": "Got the five Wastewander Water Pouches we need? If you do, then the Gadgetzan Water Company ⟦E18⟧, Model 103-XB, will be yours!",
+  "quest:1707:completion:0": "Excellent - the more water pouches we are able to reclaim, the further away from disaster we'll all be! Keep 'em coming, and I will be sure to reward you for every five water pouches you bring me.",
+  "quest:3520:obj:0": "Capture the spirits of 3 screechers in ⟦E7⟧, then return to ⟦E19⟧ in Steamwheedle Port.",
+  "quest:3520:details:0": "I seek the spirits of the vale screechers of ⟦E7⟧. They are the cousins of an old, old god, and their spirits are linked to him.",
+  "quest:3520:details:1": "Take this bramble wand and go to ⟦E7⟧. Find and defeat vale screechers in southern and central ⟦E7⟧, then wave my bramble over their fallen bodies. This will coax their spirit to reveal itself. Touch the spirit and collect its essence.",
+  "quest:3520:details:2": "Return to me with my bramble and with the collected essence, and I will tell you more of the old god of which I spoke.",
+  "quest:3520:progress:0": "Have you collected the essence of the screecher spirits, ⟦22⟧?",
+  "quest:3520:completion:0": "You have done well, ⟦23⟧. Perhaps now it is time to reveal more...",
+  "quest:3520:completion:1": "There is an ancient prophecy among the trolls, where the dead god Hakkar, the Soulflayer, will one day return to this earth. Some say the coming of Hakkar will bring joy and glory to trollkind, while others believe his resurrection marks the end of all things.",
+  "quest:3520:completion:2": "I do not believe this myth, but I do know the essence of Hakkar holds great power, and this power should be kept from those who would abuse it...",
+  "quest:2872:obj:0": "Speak with ⟦E21⟧ in Steamwheedle Port.",
+  "quest:2872:details:0": "My old buddy ⟦E21⟧ owes me a very special bottle of rum. He tends the bar at Steamwheedle Port in ⟦E4⟧, ⟦E22⟧, and he promised me that the rum there is stronger than anything we can find in ⟦E23⟧. He's so confident that he says if I try that rum and don't agree with him, then he'll double the money he owes me!",
+  "quest:2872:details:1": "Well, I think he's not as confident as he was when last we spoke, and now he's afraid to give me that rum. But I don't back down from wagers, so why don't you talk to him for me...",
+  "quest:2872:completion:0": "Ah, so you've been speaking with MacKinley, have you?",
+  "quest:2872:completion:1": "It's not what he thinks! I'm not afraid to give him some Steamwheedle Bilge Rum...",
+  "quest:2872:completion:2": "I just don't have any rum to give him!",
+  "quest:2873:obj:0": "Bring ⟦E24⟧ to ⟦E21⟧ in Steamwheedle Port.",
+  "quest:2873:details:0": "I owe ⟦E25⟧ in ⟦E23⟧ some rum, to settle a bet, but I'm all out of rum! Captain Cuergo stole my last shipment, and he has it stowed in that walled pirate town to the south.",
+  "quest:2873:details:1": "If you can find my shipment of rum and return it to me, then I can prove to MacKinley that ⟦E22⟧'s booze beats the dirt out of ⟦E23⟧!",
+  "quest:2873:progress:0": "Did you find my shipment of rum, ⟦24⟧?",
+  "quest:2873:completion:0": "Great, thanks for the shipment! Now MacKinley and I can finally settle our wager.",
+  "quest:2874:obj:0": "Bring ⟦E26⟧ to ⟦E25⟧ in ⟦E23⟧.",
+  "quest:2874:details:0": "Thanks again for your help, ⟦25⟧. Here's a bottle of Steamwheedle bilge rum. Take it to MacKinley and he can finally put to rest his crazy beliefs about ⟦E23⟧ booze.",
+  "quest:2874:progress:0": "Did ⟦E21⟧ cough up my booze?",
+  "quest:2874:completion:0": "Hm, let's try this...",
+  "quest:2874:completion:1": "I can't believe it! This stuff is... terrible! That's great!",
+  "quest:2874:completion:2": "Well I guess ⟦E21⟧ can keep the money he owes me. He's true to his word about Steamwheedle bilge rum. That stuff is as thick as gravel and burns like lava!",
+  "quest:2875:obj:0": "Bring Andre's Head to ⟦E27⟧ in Steamwheedle Port.",
+  "quest:2875:details:0": "The vile pirate ⟦E28⟧ is wanted for crimes against Steamwheedle and Gadgetzan.",
+  "quest:2875:details:1": "By decree of governing counsel, any who read this are hereby authorized to use lethal force during the apprehension of Andre and his abettors.",
+  "quest:2875:details:2": "By further decree, should Andre be deceased, or otherwise indisposed, during the time of his hearing, his head may act as proxy, and deliverance of such head to ⟦E27⟧ constitutes a binding, and tenderable, contract.",
+  "quest:2875:progress:0": "You look a little dazed. Have you been reading our legal documents?",
+  "quest:2875:completion:0": "Ah, Andre's head. So I guess he'll make his trial after all!",
+  "quest:2875:completion:1": "Much appreciated, ⟦26⟧. Now if you'll just sign here, I can issue you payment for services rendered.",
+  "quest:2875:completion:2": "Don't worry about the small print. It's harmless, and... I don't think there's a magnifying glass small enough to read it anyway.",
+  "quest:2876:obj:0": "Report the ⟦E29⟧ to an authority in Steamwheedle Port.",
+  "quest:2876:details:0": "This scroll contains the schedules of shipments between Steamwheedle Port and ⟦E23⟧. Both past and future shipments are included, along with ship names, with large 'X's next to some ships' journeys, and annotations like \"GREAT LOOT\" and \"HARD FIGHT\" next to others.",
+  "quest:2876:details:1": "Someone at Steamwheedle Port would want to see this document.",
+  "quest:2876:progress:0": "You look out of breath.  You have something to tell me?",
+  "quest:2876:completion:0": "Oh my, this looks to be a list of ship departures and arrivals, with accurate dates and times and everything! If the captain of a pirate ship got his hands on this, he could have himself a field day!",
+  "quest:2876:completion:1": "You say you got this from a pirate? Well that's disturbing news...",
+  "quest:2876:completion:2": "Thank you, ⟦27⟧. I'm glad you took it from him, and I'm glad that pirate's eating dirt right now!",
+  "quest:8365:obj:0": "⟦E30⟧ wants you to collect 20 ⟦E31⟧ Hats and return them to her at Steamwheedle Port in ⟦E4⟧.",
+  "quest:8365:details:0": "You're the help the Cartel sent? I suppose you'll do. Listen carefully ⟦28⟧. As you know, I am a procurer of fashionable apparel for the elite of Azerothian society. Kings and Queens, Warchiefs and, well whatever the ⟦E32⟧ calls their queens, all wear what I choose is in style. And they pay through the nose for it, which is the best part.",
+  "quest:8365:details:1": "So here's what's going to happen. You head down to Lost Rigger Cove and acquire a lot of pirate hats by whatever means. Do you think you can handle that?",
+  "quest:8365:progress:0": "Do you have all 20 hats? I don't believe you, let me see them. They better be in pristine condition!",
+  "quest:8365:completion:0": "Oh you're a darling, even if it did take you longer than I am accustomed to. This shipment should make me quite a bit of money once I've cleaned and personalized these hats. And seeing as I'm always willing to reward work that's well done, here's a little something for you. I suggest that you spend some of it on a bath sweetie.",
+  "quest:8366:obj:0": "⟦E27⟧ of Steamwheedle Port in ⟦E4⟧ wants you to kill 10 Southsea Pirates, 10 ⟦E33⟧, 10 Southsea Dock Workers and 10 Southsea Swashbucklers.",
+  "quest:8366:details:0": "Argh! They want the impossible from me!",
+  "quest:8366:details:1": "The Steamwheedle Cartel wants me to teach the Southsea pirates a lesson. The problem is that I can't be in two places at once; I need to stay here to keep the peace.",
+  "quest:8366:details:2": "Of late, the pirates have been disregarding the protection money that the cartel regularly forks over. So I'd like to temporarily deputize you to go down there and show them what for.",
+  "quest:8366:details:3": "You'll find them at Lost Rigger Cove, which is not too far to the south. Thanks ⟦29⟧, I'll owe you one!",
+  "quest:8366:progress:0": "Back so soon? I hope you taught those Southsea hoodlums a lesson they won't soon forget.",
+  "quest:8366:completion:0": "⟦30⟧! You are the man!!!",
+  "quest:8366:completion:1": "I'm sure that the Cartel will ease up on me now that you've dealt with those Southsea scum. Let's see, what can I give you as a reward? How about a little coin and you choose from one of these for your trouble?",
+  "quest:243:obj:0": "Speak to ⟦E1⟧ in Gadgetzan about getting a power source for the testing kit.",
+  "quest:243:details:0": "You will be headed to the ⟦E4⟧ desert, testing the tissue consistency of the basilisks, scorpids, and hyena native there. Obtain tissue samples and use them with the testing kit in tow; expect a chunk of the samples to fail. I need eight acceptable samples of each creature type.",
+  "quest:243:details:1": "In addition, the goblins of Gadgetzan have a power source that must be used with this kind of modified kit. Speak to ⟦E1⟧ and acquire one for the kit.",
+  "quest:243:details:2": "Return to me only when you are successful.",
+  "quest:243:completion:0": "Ah, our model 4711-FTZ power sources! We normally use them to power the water wells, but THANKS TO THE VILE NOMADS, we have an over abundance of power sources right now.",
+  "quest:243:completion:1": "Sure, I can get you a power source for whatever nefarious science experiment you think you're trying to hide from me. It ain't gonna be free though, ⟦31⟧. Nothing's free in Gadgetzan.",
+  "quest:379:obj:0": "Bring 5 Wastewander Water Pouches to ⟦E1⟧ in Gadgetzan.",
+  "quest:379:details:0": "You want a power source. I can help you with that. Know what I want? I want something to drink! Bring me five Wastewander Water Pouches, and I'll give you the 4711-FTZ.",
+  "quest:379:details:1": "Now... guess where you can find Wastewander Water Pouches! Why don't you walk up to one of the Wastewander nomads to the east of here and ask them for one. Let me know how that works out for you.",
+  "quest:379:progress:0": "Well, did the nomads 'volunteer' up those water pouches for you?",
+  "quest:379:completion:0": "Excellent, the power source is yours. Now, it isn't completely designed for use in a science kit like that, so you'll only have a limited amount of time before all the data you collect will go kablooey!",
+  "quest:379:completion:1": "When you collect everything you need for whatever it is you are doing, bring it to me and I'll shut it down properly. You'll have at most two hours to get what you need to get done, done.",
+  "quest:379:completion:2": "If you don't get it done in time, I can always sell you another power source to try again. You heard me - sell!",
+  "quest:654:obj:0": "Acquire acceptable samples for 8 basilisks, 8 hyenas, and 8 scorpions. Bring the testing kit back to ⟦E1⟧ in Gadgetzan before the power source runs out.",
+  "quest:654:details:0": "Activating the power source makes the field testing kit start to glow and vibrate. It would seem to be working as planned.",
+  "quest:654:details:1": "According to ⟦E1⟧, you now have two hours to collect the data you need in the ⟦E4⟧ desert. If you do not collect it within two hours, all the data will be lost and you will need to buy another power source from him.",
+  "quest:654:details:2": "Return to him when you have completed the task.",
+  "quest:654:progress:0": "Well, did you get everything you needed? If you didn't and the power runs out, everything inside will be ruined and you'll have to start over.⟦32⟧⟦33⟧Hey, don't look to me for sympathy; I'm all about the Gadgetzan Water Company making a profit, and if that means selling you power sources until we can afford to import water in from the icy springs of ⟦E34⟧, so be it!",
+  "quest:654:completion:0": "All right then, it will take me just a second to remove the power source. After that, you can do with it whatever you like now without having to worry about losing the data inside.",
+  "quest:992:obj:0": "Use the untapped dowsing widget near the pool of water by Sandsorrow Watch. Once you have collected the sample, return the tapped dowsing widget to ⟦E36⟧ in Gadgetzan.",
+  "quest:992:details:0": "We've got a position open for a temporary junior-grade surveyor in the Gadgetzan Water Company, if you're interested!",
+  "quest:992:details:1": "With the nomads seizing all our wells, we need to exploit more free sources of water! There is water to be had in the desert, but only to those smart enough to survey them first.",
+  "quest:992:details:2": "Take this dowsing widget and tap a sample of the water by the pool near Sandsorrow Watch. It's right in sight of the trolls around there. Bring the tapped widget back to me when you're done!",
+  "quest:992:progress:0": "Welcome back, Junior Surveyor ⟦34⟧!  Have you completed your assignment yet?",
+  "quest:992:completion:0": "What's this? You were ambushed by some sort of bad mojo creepy-crawly? Oh, this does not bode well for the Gadgetzan Water Company, no indeed...",
+  "quest:992:completion:1": "I guess I should have told you about the reports coming in on some crazy bug-creatures that appear to be sucking up all the water in the desert. At first, I thought it was just a crock. We have enough trouble with the nomads as is; I thought it was just more of their shenanigans. Well, now we know at least!",
+  "quest:2781:obj:0": "Bring the head of ⟦E37⟧ to ⟦E1⟧ in Gadgetzan.",
+  "quest:2781:details:0": "⟦E38⟧!",
+  "quest:2781:details:1": "The Gadgetzan Water Company of Gadgetzan, ⟦E4⟧ will pay a high bounty for the head of ⟦E37⟧, leader of the Wastewander outlaws. His crimes include:",
+  "quest:2781:details:2": "B1. Murdering Gadgetzan Water Co. employees!⟦35⟧2.Stealing Gadgetzan Water Co. resources!⟦36⟧3.Seizing Gadgetzan Water Co. property!",
+  "quest:2781:details:3": "Bring proof of ⟦E37⟧'s demise to ⟦E1⟧ for an immediate reward!",
+  "quest:2781:progress:0": "Yes ⟦37⟧, I am an official of the Gadgetzan Water Company. What can I assist you with?",
+  "quest:2781:completion:0": "Finally - justice is served! You have struck a mighty blow against those vile nomads! With Scorpidsting's demise, this might be just the thing to finally push those squatters off of Gadgetzan's water wells!",
+  "quest:2781:completion:1": "By the authority of the Gadgetzan Water Company, I gladly award you with this bounty. You've done a great service for us all.",
+  "quest:82:obj:0": "Bring five Centipaar insect parts from the Noxious Lair to ⟦E39⟧ in Gadgetzan.",
+  "quest:82:details:0": "All right now, these reports about the bugs... what we know is that they are draining the water pools that used to be where the Noxious Lair is. What we DON'T know is, well, everything else.",
+  "quest:82:details:1": "Let's figure out who our enemy is first! I want you to head into the Noxious Lair and get some parts off of those critters. Get five from the Centipaar there and bring them to ⟦E39⟧ for him to dink with. With him on the case, we'll figure out what they are!",
+  "quest:82:progress:0": "You're Junior Surveyor ⟦38⟧, yes? Quickly now, there is a dire situation at hand! Do you have the insect parts that Fizzledowser said you would?!",
+  "quest:82:completion:0": "Good work - I'll start my analysis on these now! I can tell you right from the start though... these are nothing like any insect form I have ever seen. It's almost as if these bugs are being controlled by an outside force or something.",
+  "quest:82:completion:1": "You need to go talk to Fizzledowser right away; apparently there is an emergency that he needs your help with on the double! I'm not sure, but I think it involves more of the bugs in the ⟦E4⟧ desert!",
+  "quest:3022:obj:0": "Bring the Carefully-packed Crate to ⟦E42⟧ in ⟦E43⟧.",
+  "quest:3022:details:0": "⟦39⟧, I can see you yearn to be dedicated to my worthwhile cause. Yes, of course, you can do something for me!",
+  "quest:3022:details:1": "Take this crate of eggs to ⟦E42⟧. He is a druid that cares for these eggs, helping them to hatch and then training the young hippogryphs. You will find him in ⟦E44⟧, in a small village to the south called Rut'theran.",
+  "quest:3022:progress:0": "Another shipment from Curgle, I assume?",
+  "quest:3022:completion:0": "Thank you for your help, ⟦40⟧. The hippogryph population simply wouldn't flourish if it weren't for us. Ah, but I am sure you understand all too well, having traveled to ⟦E7⟧ yourself, and seen the devastation of the Gordunni there.",
+  "quest:3022:completion:1": "Well, as you can see, I am hard at work here, so you'd best be on your way.",
+  "quest:3022:completion:2": "Thanks again, ⟦41⟧.",
+  "quest:10:obj:0": "Discover the fate of Junior Surveyor Scrimshank, and bring either him or his surveying equipment to ⟦E36⟧ in Gadgetzan.",
+  "quest:10:details:0": "Oh, this is just terrible! I sent out my top assistant, Junior Surveyor Scrimshank, into the desert southeast of here. That's an area we call the Gaping Chasm. Well, he's gone missing, and his last report had more of those weird bugs where he was. Could it be that they've infested two major regions of the desert now?",
+  "quest:10:details:1": "I need you to head into the Gaping Chasm and look for Scrimshank, please! That... or at least find his surveying equipment. I fear that may be all that is left of the poor sod.",
+  "quest:10:progress:0": "Well, what news do you have?  You look like you've been in quite the fight... is Scrimshank alive?",
+  "quest:10:completion:0": "He was a good goblin, young Scrimshank. Let's hope that his demise was not in vain by what he was able to record with his surveying equipment.",
+  "quest:10:completion:1": "It seems as though we have quite the situation on our hands here with these bugs. They're way too cunning for their own good, and the research we've done so far is shaping up to indicate that they might even be under the controlling influence of a third party! If this is the case, then it bodes ill for not only Gadgetzan, but the whole desert!",
+  "quest:32:obj:0": "Take the report to ⟦E47⟧ in ⟦E48⟧.",
+  "quest:32:details:0": "Here's your report. I urge you to take it to someone who might have working knowledge in this kind of thing.",
+  "quest:32:details:1": "I know this troll scholar named ⟦E47⟧. He's spent a lot of time studying life forms that are unique to the ecology of ⟦E49⟧; he's a historian to boot! If you want someone to help figure out what exactly this threat is and how to stop it, give this report to him. We're going to need all the help we can get.",
+  "quest:32:details:2": "Zil lives in a house on the second tier of the Drag in ⟦E48⟧.",
+  "quest:32:progress:0": "I'm sorry. I don't know you... but from the look of things you have at least heard something of me. Now, what can I help you with? Do you have something for me?",
+  "quest:32:completion:0": "This report... I've dealt with these beasts before. Fizzledowser was wise to send this. and you, to me.",
+  "quest:32:completion:1": "These creatures will consume the ⟦E4⟧ desert rapidly; they are nothing short of one of the greatest menaces we all will ever face. Familiarize yourself with this name, ⟦42⟧: silithid. The insects mentioned here are the silithid, and they are the tools of one of the greatest threats that both the ⟦E32⟧ and ⟦E51⟧ face.",
+  "quest:32:completion:2": "If only we were smart enough to see that before.",
+  "quest:110:obj:0": "Check in Gadgetzan for ⟦E39⟧ and his analysis of the insect parts.",
+  "quest:110:details:0": "I'm going to spend some time taking a look at Scrimshank's surveying gear... as well as putting his personal effects in order. I get the sneaking feeling behind my ears that this isn't the last loss we'll be facing against these bugs.",
+  "quest:110:details:1": "I'd like for you to check in with ⟦E39⟧ to see if he has had a chance to process the insect parts we sent him. If they're ready, bring them to me.",
+  "quest:110:completion:0": "Yes, I have the results right here. They are... unsettling, to say the least",
+  "quest:110:completion:1": "Our initial suspicion that the bugs are being controlled by an outside force, we believe, is correct. If this is the case, then we are dealing with not only a very powerful unknown force, but also a malignant one. These bugs have been changed to be pure ravagers. I've never seen anything quite like it.",
+  "quest:113:obj:0": "Deliver the report to ⟦E36⟧ in Gadgetzan. Be sure he gives you a copy of the report, as ⟦E39⟧ has requested.",
+  "quest:113:details:0": "⟦E36⟧ needs to see this report immediately. Actually... everyone who can read needs to see this report. We are facing a grave and serious threat to not only ⟦E4⟧ and Gadgetzan, but if left unchecked, the entirety of southern ⟦E22⟧. Heck, even quite possible the whole of ⟦E49⟧; this thing has given no indication it will subside.",
+  "quest:113:details:1": "Have Fizzledowser make a duplicate of the report for you to distribute freely to your allegiance. Everyone must know about this threat!",
+  "quest:113:progress:0": "Well Junior Surveyor ⟦43⟧, has ol' Pestlezugg got that report ready yet?",
+  "quest:113:completion:0": "Thank you for delivering the report, Junior Surveyor ⟦44⟧; here is your pay for your diligent service to the Gadgetzan Water Company.",
+  "quest:113:completion:1": "While I am usually not thrilled about handing out our valuable information carte blanche to those who would otherwise pay good coin for it, I've known Pestlezugg for a number of years now. If he recommends letting everyone know about it, then so be it. Give me a moment and I'll make you a copy."
+ },
+ "context": {
+  "quest:841": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 38,
+   "side": "horde",
+   "giver": "",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:1878": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 40,
+   "side": "",
+   "giver": "",
+   "turner": "Spigot Operator Luglunket («شیرآب اپراتور لوگلونکت»)"
+  },
+  "quest:9268": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 40,
+   "side": "",
+   "giver": "",
+   "turner": "Rumsen Fizzlebrack («رومسن فیزل‌براک»)"
+  },
+  "quest:2747": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 42,
+   "side": "",
+   "giver": "",
+   "turner": "Curgle Cranklehop («کورگل کرانکل‌هاپ»)"
+  },
+  "quest:2748": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 42,
+   "side": "",
+   "giver": "",
+   "turner": "Curgle Cranklehop («کورگل کرانکل‌هاپ»)"
+  },
+  "quest:2749": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 42,
+   "side": "",
+   "giver": "",
+   "turner": "Curgle Cranklehop («کورگل کرانکل‌هاپ»)"
+  },
+  "quest:2750": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 42,
+   "side": "",
+   "giver": "",
+   "turner": "Curgle Cranklehop («کورگل کرانکل‌هاپ»)"
+  },
+  "quest:8893": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 42,
+   "side": "",
+   "giver": "Egg-O-Matic («تخم‌ساز خودکار»)",
+   "turner": "Egg-O-Matic («تخم‌ساز خودکار»)"
+  },
+  "quest:1690": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 43,
+   "side": "",
+   "giver": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:1691": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 44,
+   "side": "",
+   "giver": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:1707": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 44,
+   "side": "",
+   "giver": "Spigot Operator Luglunket («شیرآب اپراتور لوگلونکت»)",
+   "turner": "Spigot Operator Luglunket («شیرآب اپراتور لوگلونکت»)"
+  },
+  "quest:3520": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 44,
+   "side": "",
+   "giver": "Yeh'kinya («یه‌کینیا»)",
+   "turner": "Yeh'kinya («یه‌کینیا»)"
+  },
+  "quest:2872": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "\"Sea Wolf\" MacKinley (««گرگ دریا» مک‌کینلی»)",
+   "turner": "Stoley («ستولی»)"
+  },
+  "quest:2873": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "Stoley («ستولی»)",
+   "turner": "Stoley («ستولی»)"
+  },
+  "quest:2874": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "Stoley («ستولی»)",
+   "turner": "\"Sea Wolf\" MacKinley (««گرگ دریا» مک‌کینلی»)"
+  },
+  "quest:2875": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "Wanted Poster («اعلان تحت تعقیب»)، Wanted Poster («اعلان تحت تعقیب»)",
+   "turner": "Security Chief Bilgewhizzle («بیلگ‌ویزل»)"
+  },
+  "quest:2876": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "",
+   "turner": "Security Chief Bilgewhizzle («بیلگ‌ویزل»)"
+  },
+  "quest:8365": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "Haughty Modiste («خیاط مغرور»)",
+   "turner": "Haughty Modiste («خیاط مغرور»)"
+  },
+  "quest:8366": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 45,
+   "side": "",
+   "giver": "Security Chief Bilgewhizzle («بیلگ‌ویزل»)",
+   "turner": "Security Chief Bilgewhizzle («بیلگ‌ویزل»)"
+  },
+  "quest:243": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 46,
+   "side": "horde",
+   "giver": "Apothecary Zinge («داروساز زینگ»)",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:379": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 46,
+   "side": "horde",
+   "giver": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:654": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 46,
+   "side": "horde",
+   "giver": "",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:992": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 46,
+   "side": "",
+   "giver": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)",
+   "turner": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)"
+  },
+  "quest:2781": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 46,
+   "side": "",
+   "giver": "Wanted Poster («اعلان تحت تعقیب»)",
+   "turner": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)"
+  },
+  "quest:82": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 47,
+   "side": "",
+   "giver": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)",
+   "turner": "Alchemist Pestlezugg («کیمیاگر پستل‌زاگ»)"
+  },
+  "quest:3022": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "Curgle Cranklehop («کورگل کرانکل‌هاپ»)",
+   "turner": "Erelas Ambersky («ارلاس آسمان‌کهربا»)"
+  },
+  "quest:10": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "",
+   "giver": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)",
+   "turner": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)"
+  },
+  "quest:32": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "horde",
+   "giver": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)",
+   "turner": "Zilzibin Drumlore («زیلزیبین درام‌لور»)"
+  },
+  "quest:110": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "",
+   "giver": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)",
+   "turner": "Alchemist Pestlezugg («کیمیاگر پستل‌زاگ»)"
+  },
+  "quest:113": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 48,
+   "side": "",
+   "giver": "Alchemist Pestlezugg («کیمیاگر پستل‌زاگ»)",
+   "turner": "Senior Surveyor Fizzledowser («ارشد نقشه‌بردار فیزل‌داوزر»)"
+  }
+ },
+ "known": {
+  "quest:1690": {
+   "title": "دادخواهی از آواره‌ها"
+  },
+  "quest:1691": {
+   "title": "دادخواهی بیشتری از آواره‌ها"
+  },
+  "quest:1707": {
+   "title": "پاداش کیسه‌های آب"
+  },
+  "quest:3520": {
+   "title": "ارواخ جیغ‌کش‌ها"
+  },
+  "quest:2872": {
+   "title": "بدهی استولی"
+  },
+  "quest:2873": {
+   "title": "مرسولهٔ استولی"
+  },
+  "quest:2874": {
+   "title": "تحویل به مک‌کینلی"
+  },
+  "quest:2875": {
+   "title": "مطلوب: آندر فایربِرد"
+  },
+  "quest:2876": {
+   "title": "برنامه‌های کشتی‌ها"
+  },
+  "quest:8365": {
+   "title": "کلاه‌های دزدان دریایی به‌صورت دسته‌ای!"
+  },
+  "quest:8366": {
+   "title": "گردهمایی ساوت‌سی"
+  },
+  "quest:243": {
+   "title": "به میدان"
+  },
+  "quest:379": {
+   "title": "فرونشاندن تشنگی"
+  },
+  "quest:654": {
+   "title": "نمونه‌برداری میدانی تاناریس"
+  },
+  "quest:992": {
+   "title": "بررسی آب گجتزان"
+  },
+  "quest:2781": {
+   "title": "مطلوب: خلیفهٔ عقرب‌گز"
+  },
+  "quest:82": {
+   "title": "بررسی لانهٔ زهرآگین"
+  },
+  "quest:3022": {
+   "title": "با احتیاط حمل شود"
+  },
+  "quest:10": {
+   "title": "نجات اسکریم‌شانک"
+  },
+  "quest:32": {
+   "title": "برخاستن سیلیتیدها"
+  },
+  "quest:110": {
+   "title": "تحلیل قطعات حشره"
+  },
+  "quest:113": {
+   "title": "تحلیل قطعات حشره"
+  }
+ }
+}

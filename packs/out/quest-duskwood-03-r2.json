@@ -1,0 +1,648 @@
+{
+ "pack": "quest-duskwood-03-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-duskwood-03-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Letter to Ello",
+   "fa": "نامه‌ای به الو",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Sirra Von'Indi",
+   "fa": "سیررا وونیندی",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Abercrombie",
+   "fa": "آبرکرومبی",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Translated Letter",
+   "fa": "نامهٔ ترجمه‌شده",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Lord Ello Ebonlocke",
+   "fa": "لرد الو آبنوس‌گیس",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Eliza",
+   "fa": "الیزا",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Nightbane Vile Fang",
+   "fa": "نیش پلید شب‌آفت",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Nightbane Tainted One",
+   "fa": "آلودهٔ شب‌آفت",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Calor",
+   "fa": "کالور",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Jonathan Carevin",
+   "fa": "جاناتان کروین",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Morbent's Bane",
+   "fa": "بلای موربنت",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Morbent Fel",
+   "fa": "موربنت فِل",
+   "kind": "qs"
+  },
+  "E17": {
+   "en": "Sven",
+   "fa": "سوین",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Raven Hill",
+   "fa": "تپهٔ کلاغ",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Stalvan Mistmantle",
+   "fa": "ستالوان ردای مه",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Madame Eva",
+   "fa": "مادام اوا",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E23": {
+   "en": "Morgan Ladimore",
+   "fa": "مورگان لادیمور",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Commander Althea Ebonlocke",
+   "fa": "فرمانده آلتیا آبنوس‌گیس",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Mor'Ladim",
+   "fa": "مورلادیم",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "Watchmen",
+   "fa": "نگهبانان",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Sarah Ladimore",
+   "fa": "سارا لادیمور",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Sarah",
+   "fa": "سارا",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Archeus",
+   "fa": "آرکیوس",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Apothecary Faustin",
+   "fa": "داروساز فاستین",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Varimathras",
+   "fa": "واری‌ماتراس",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Shadow Panther",
+   "fa": "پلنگ سایه",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Mire Lord Fungus",
+   "fa": "قارچ لردِ باتلاق",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Deep Strider",
+   "fa": "ژرف‌گرد",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Mire Lord",
+   "fa": "لرد باتلاق",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E44": {
+   "en": "Faustin's Truth Serum",
+   "fa": "سرمِ حقیقتِ فاوستین",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Deathstalker Zraedus",
+   "fa": "مرگ‌شکار زرائدوس",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Zraedus's Brew",
+   "fa": "دمنوشِ زرائدوس",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Infiltrator Marksen",
+   "fa": "نفوذی مارکسن",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Quartermaster Lungertz",
+   "fa": "تدارکات‌چی لونگرتز",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Deadwind Pass",
+   "fa": "گردنهٔ باد مرگ",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Craftsman's Writ: Elixir of Lesser Agility",
+   "fa": "فرمان استادکار - اکسیرِ کمتر چابکی",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Letter to Ello": "نامه‌ای به الو",
+  "Sirra Von'Indi": "سیررا وونیندی",
+  "Abercrombie": "آبرکرومبی",
+  "Translated Letter": "نامهٔ ترجمه‌شده",
+  "Lord Ello Ebonlocke": "لرد الو آبنوس‌گیس",
+  "Eliza": "الیزا",
+  "Nightbane Vile Fang": "نیش پلید شب‌آفت",
+  "Nightbane Tainted One": "آلودهٔ شب‌آفت",
+  "Calor": "کالور",
+  "Jonathan Carevin": "جاناتان کروین",
+  "Morbent's Bane": "بلای موربنت",
+  "Morbent Fel": "موربنت فِل",
+  "Sven": "سوین",
+  "Raven Hill": "تپهٔ کلاغ",
+  "Duskwood": "جنگل تاریک",
+  "Stalvan Mistmantle": "ستالوان ردای مه",
+  "Madame Eva": "مادام اوا",
+  "Travel": "سفر",
+  "Morgan Ladimore": "مورگان لادیمور",
+  "Commander Althea Ebonlocke": "فرمانده آلتیا آبنوس‌گیس",
+  "Mor'Ladim": "مورلادیم",
+  "Watchmen": "نگهبانان",
+  "Sarah Ladimore": "سارا لادیمور",
+  "Sarah": "سارا",
+  "Archeus": "آرکیوس",
+  "Apothecary Faustin": "داروساز فاستین",
+  "Varimathras": "واری‌ماتراس",
+  "Azeroth": "آزروت",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Horde": "هورد",
+  "Shadow Panther": "پلنگ سایه",
+  "Mire Lord Fungus": "قارچ لردِ باتلاق",
+  "Deep Strider": "ژرف‌گرد",
+  "Mire Lord": "لرد باتلاق",
+  "Desolace": "دزوله‌یس",
+  "Shadow": "سایه",
+  "Faustin's Truth Serum": "سرمِ حقیقتِ فاوستین",
+  "Deathstalker Zraedus": "مرگ‌شکار زرائدوس",
+  "Zraedus's Brew": "دمنوشِ زرائدوس",
+  "Infiltrator Marksen": "نفوذی مارکسن",
+  "Quartermaster Lungertz": "تدارکات‌چی لونگرتز",
+  "Blasted Lands": "اراضی ویران",
+  "Deadwind Pass": "گردنهٔ باد مرگ",
+  "Craftsman's Writ: Elixir of Lesser Agility": "فرمان استادکار - اکسیرِ کمتر چابکی"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$C",
+  "5": "$n",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$C",
+  "10": "$N",
+  "11": "$N",
+  "12": "$c",
+  "13": "$N",
+  "14": "$N",
+  "15": "$n",
+  "16": "$N",
+  "17": "$N",
+  "18": "$n",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$N",
+  "24": "$n",
+  "25": "$n",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N"
+ },
+ "rows": {
+  "quest:251:obj:0": "Bring the ⟦E1⟧ to ⟦E2⟧.",
+  "quest:251:details:0": "Take the note you gave me to ⟦E2⟧. He's very learned in languages and ancient arts - if anyone here can translate this message, it's he.",
+  "quest:251:progress:0": "A note from ⟦E3⟧ the hermit, eh? I don't know him, though if he lives out at the graveyard then I do know his brains have rotted out!",
+  "quest:251:completion:0": "<Sirra begins translating the note...>",
+  "quest:252:obj:0": "Bring the ⟦E4⟧ to ⟦E5⟧",
+  "quest:252:details:0": "Oh my! If what is written on this note is true, then ⟦E3⟧'s done something...unspeakable.",
+  "quest:252:details:1": "You better bring the translated note back to Ello.",
+  "quest:252:details:2": "And do so quickly, for I fear a doom already lumbers toward our town...",
+  "quest:252:progress:0": "Ah, is the note translated? Please, let me see it...",
+  "quest:252:completion:0": "<Ello reads the letter...and his face goes white. He then looks at you...>",
+  "quest:252:completion:1": "Although the aid you gave ⟦E3⟧ may have been motivated from kindness, your actions have doomed our town.",
+  "quest:252:completion:2": "B<Ello becomes lost in his thoughts...>",
+  "quest:253:obj:0": "Find ⟦E7⟧'s grave. Retrieve the Embalmer's Heart from her, then return to Ello Ebonlocke.",
+  "quest:253:details:0": "The Embalmer is a name told in one of our children's stories. He was a kindly alchemist, driven mad by the death of his wife, ⟦E7⟧. To restore her, he used dark magic to place his own heart within the bosom of his dead spouse.",
+  "quest:253:details:1": "This revived ⟦E7⟧...but it cursed her with a hunger for human flesh, forcing the Embalmer to keep her buried.",
+  "quest:253:details:2": "His heart is his power. Find his wife's grave, retrieve his heart, and bring it to me while it still beats. Do this and his power will be broken.",
+  "quest:253:progress:0": "Have you yet found ⟦E7⟧'s grave? Do you have the Embalmer's heart?",
+  "quest:253:completion:0": "You've done it! The magic within his heart will be proof against the Embalmer's evil, and a powerful aegis over the town of Darkshire.",
+  "quest:253:completion:1": "You have done a great thing for our people, ⟦1⟧. Your name will remain in our annals forever.",
+  "quest:401:obj:0": "Wait a moment, then speak with ⟦E2⟧ again.",
+  "quest:401:details:0": "I'm almost finished translating that note. If you come back in a few moments I should be done.",
+  "quest:401:completion:0": "There we are. It's translated...",
+  "quest:401:completion:1": "B<The air grows heavy, as if a thick, black curtain is drawn over the land...>",
+  "quest:222:obj:0": "Kill 8 ⟦E8⟧ and 8 ⟦E9⟧ worgen for ⟦E10⟧ in Darkshire.",
+  "quest:222:details:0": "Your previous accomplishments have convinced me that you are ready to take on the toughest worgen infesting the woods.",
+  "quest:222:details:1": "Of the worgen that have made their new home here, the Vile Fangs and the Tainted Ones have proven the most dangerous. They've settled down near some of the caves and in the mine to the south.",
+  "quest:222:details:2": "From far away you can even see the light from their bonfires...",
+  "quest:222:progress:0": "Intimidating beasts aren't they? But have no fear, ⟦2⟧, those who stand for the Light will never fall!",
+  "quest:222:completion:0": "⟦3⟧, to be honest with you, I did not believe that you would get this far, but you are clearly a ⟦4⟧ to be reckoned with. In fact, if you wish to formally join Master Carevin's struggle, I will gladly write for you a letter of recommendation.",
+  "quest:223:obj:0": "Bring ⟦E10⟧'s note to ⟦E11⟧.",
+  "quest:223:details:0": "Here you go, ⟦5⟧. Bring this message to Master Carevin.",
+  "quest:223:details:1": "B<He quickly removes a piece of faded parchment and offers it to you.>",
+  "quest:223:details:2": "BA few more like you, and we will outnumber the Night Watch! Perhaps then we could complete the work that we few carry on today.",
+  "quest:223:progress:0": "Yes, what is it? Make it quick, I've pressing matters to attend to.",
+  "quest:223:completion:0": "Excuse me for my cold reception, ⟦6⟧, but as I'm sure you can tell, I am an extremely busy man. I see that you have impressed ⟦E10⟧--and I assure you, that is no small feat--and that he has given his recommendation.",
+  "quest:223:completion:1": "There are unsavory types afoot, ⟦7⟧, and we can use the help of all who have proven themselves. We battle against demons, the undead, and those who would provide them aid. Be vigilant, be wary, and trust none who would not give aid to our cause.",
+  "quest:223:completion:2": "Glory under the Light.",
+  "quest:55:obj:0": "Use ⟦E15⟧ on ⟦E16⟧, kill ⟦E16⟧, then return ⟦E15⟧ to ⟦E17⟧ at his camp.",
+  "quest:55:details:0": "⟦E16⟧ hides in his lair, the house perched atop the hill to the east overlooking the ⟦E18⟧ cemetery. His time in this land is drawing to an end...",
+  "quest:55:details:1": "Use ⟦E15⟧ against him. It will render his protective magics powerless.",
+  "quest:55:details:2": "Slay him. Slay him, and save us from his wickedness. Be the instrument of my revenge, and a hero of ⟦E19⟧!",
+  "quest:55:progress:0": "Is ⟦E16⟧ defeated?!",
+  "quest:55:completion:0": "⟦E16⟧ has been defeated. The dark riders are still at large, but a small piece of that which I had hoped beyond hope has come to pass.",
+  "quest:55:completion:1": "You have done the impossible, and your deeds will forever live in the legends of ⟦E19⟧.",
+  "quest:55:completion:2": "Go, ⟦8⟧. And perhaps, one day, fate may bring you back to me...",
+  "quest:98:obj:0": "Kill ⟦E20⟧ and show ⟦E21⟧ his family ring.",
+  "quest:98:details:0": "⟦E20⟧ led a life of depravity. Innocent victims died by his hand. Undoubtedly he is guilty of countless crimes. Now the lunatic threatens Darkshire. The Light only knows what sordid acts he is plotting. ⟦E22⟧ to his cottage just north of town, ⟦9⟧, and execute Stalvan, once and for all.",
+  "quest:98:details:1": "When the deed is done, travel to ⟦E21⟧'s and show her his family ring. After all, it was her premonition that led to this gruesome discovery. But Darkshire is safer because of her.",
+  "quest:98:progress:0": "Yes, ⟦10⟧?",
+  "quest:98:completion:0": "I know, ⟦11⟧: Stalvan is dead. I sensed a wave of hope ripple through the tainted forest. Once and for all, ⟦E19⟧ is free from his blood thirst. My joy is hampered by thoughts of those who fell prey to the horrible beast. Nonetheless, you are a brave and cunning ⟦12⟧.",
+  "quest:225:obj:0": "Speak with ⟦E2⟧ in Darkshire.",
+  "quest:225:details:0": "The weathered grave marker reads simply:",
+  "quest:225:details:1": "BMORGAN LADIMORE",
+  "quest:225:details:2": "B<Upon further examination, you notice that dirt over the grave has been recently disturbed, and that a good amount of the dirt seems to have been displaced...>",
+  "quest:225:completion:0": "⟦E23⟧?",
+  "quest:225:completion:1": "Ahh, yes, of course. His was a long and sorrowful tale. I knew him, well, before he left for the war, but that was the last time I saw him. A noble and good man, he was, but he suffered a bad end.",
+  "quest:225:completion:2": "Here, I should have something here that can tell the tale better than my own recollections...",
+  "quest:227:obj:0": "Speak with ⟦E24⟧ in Darkshire.",
+  "quest:227:details:0": "<He searches through the shelves and comes up with a leatherbound book.>",
+  "quest:227:details:1": "If you would like to know more, you might ask Althea, she's been the one to handle the... trouble... with him of late.",
+  "quest:227:completion:0": "⟦E23⟧? Never heard of...",
+  "quest:227:completion:1": "Oh, you mean ⟦E25⟧! I guess you haven't heard the story?",
+  "quest:227:completion:2": "Well, I'll give you the short version. A wandering undead calling itself ⟦E25⟧ has been wandering ⟦E19⟧. From what we've gathered, it appears to be the undead body of ⟦E23⟧, of whom you apparently know. He's been causing us all sorts of problems, attacking ⟦E26⟧ on patrol and killing people.",
+  "quest:227:completion:3": "B<She sizes you up.>",
+  "quest:227:completion:4": "You seem to be capable enough, maybe you could lay him to rest.",
+  "quest:228:obj:0": "Kill ⟦E25⟧, then return his skull to ⟦E24⟧ in Darkshire.",
+  "quest:228:details:0": "From what my scouts tell me, ⟦E25⟧ wanders throughout ⟦E19⟧, following a strange and meandering path through the cemetery. We buried him out past the house on the hill, you know where that is?",
+  "quest:228:details:1": "There isn't anything I can do to help you, but I wish you good luck.",
+  "quest:228:progress:0": "I don't blame you if you're having trouble with him, ⟦13⟧. Some of our strongest Watchers have been lost to ⟦E25⟧.",
+  "quest:228:completion:0": "You killed him? That's no small accomplishment, ⟦14⟧! On behalf of the people of Darkshire and the Night Watch, I thank you.",
+  "quest:228:completion:1": "Ah... there is one small matter, however...",
+  "quest:229:obj:0": "Speak with Watcher ⟦E27⟧ in Darkshire.",
+  "quest:229:details:0": "I should have told you this earlier...",
+  "quest:229:details:1": "How do I put this...",
+  "quest:229:details:2": "Morgan may have believed that his family was all dead, but, in fact, his daughter ⟦E27⟧ is now a Watcher. She's always been troubled by the... circumstances... surrounding her father's death. Perhaps you could go to bring the news to her.",
+  "quest:229:completion:0": "Yes? My father...",
+  "quest:229:completion:1": "B<Her eyes become downcast.>",
+  "quest:229:completion:2": "I wish... there was something I could have done for him... If only I had talked to him before he...",
+  "quest:231:obj:0": "Take ⟦E27⟧'s ring to ⟦E23⟧'s grave.",
+  "quest:231:details:0": "Here, take this and lay it on his grave. Maybe... somehow, he'll know that I'm okay, and that none of us hold him responsible for what happened.",
+  "quest:231:details:1": "B<There are tears in her eyes now, as she slides a ring from her right hand, and presses it into your hands.>",
+  "quest:231:details:2": "And... thank you, ⟦15⟧.",
+  "quest:231:progress:0": "Leave me be...",
+  "quest:231:completion:0": "<A ghostly voice sounds on the wind...>",
+  "quest:231:completion:1": "This is...? ⟦E28⟧? Could it be she's still alive? The weight is removed from my shoulders...",
+  "quest:231:completion:2": "B⟦16⟧. Take my sword, ⟦E29⟧. As my soul is put to rest, I have no more need for it. It was forged to do good, and though I have proved myself unworthy to hold it, perhaps you will carry on the Light through it.",
+  "quest:231:completion:3": "Lys, my love...",
+  "quest:1372:obj:0": "Speak with ⟦E30⟧ at Beggar's Haunt.",
+  "quest:1372:details:0": "Our expeditionary force was sent at ⟦E31⟧'s behest to survey lower ⟦E32⟧.",
+  "quest:1372:details:1": "While out scouting I noticed a human Infiltrator spying on Beggar's Haunt. Before I could apprehend him, some of our orcish... brethren... captured him and took him to Stonard, their stronghold in ⟦E33⟧.",
+  "quest:1372:details:2": "I want to... help... our orcish allies. They did not see our camp here but nonetheless I want to lend a hand.",
+  "quest:1372:details:3": "Work with Faustin here to develop a... truth serum for our friend in Stonard.",
+  "quest:1372:completion:0": "Zraedus was just telling me about the nosey little Infiltrator before you arrived.",
+  "quest:1372:completion:1": "Quite a problem, indeed. The last thing we need is a busybody sniffing around Beggar's Haunt.",
+  "quest:1372:completion:2": "I am sure the orcs of Stonard would be quite anxious to hear what our friend has to say. Seeing that they are our allies, ahem, we must help them to get any information they can from the human.",
+  "quest:1372:completion:3": "Work with me, ⟦17⟧, and we will deliver a truth serum to Stonard.",
+  "quest:1372:completion:4": "For the ⟦E35⟧!",
+  "quest:1372:completion:5": "B...did I get that right?",
+  "quest:1383:obj:0": "⟦E30⟧ at Beggar's Haunt needs 5 ⟦E36⟧ Hearts, ⟦E37⟧ and a ⟦E38⟧ Tumor.",
+  "quest:1383:details:0": "I have just the right serum in mind. It will deal with the truth in precisely the way the truth should be dealt with.",
+  "quest:1383:details:1": "For this concoction I will need several ⟦E36⟧ hearts from the Swamp. I also require the enchanted fungus off of the ⟦E39⟧ who resides there. I am sure one as able as you, ⟦18⟧, can persuade him to part with some.",
+  "quest:1383:details:2": "Now the hard part will be locating a Deepstrider tumor from far-off ⟦E40⟧. Very rarely the giants there become ill and a tumor forms.",
+  "quest:1383:details:3": "Now, off you go!",
+  "quest:1383:progress:0": "That Infiltrator in Stonard will surely.... open up... after he drinks my special serum. Haha!⟦19⟧⟦20⟧The ingredients required are by no means easy to procure. ⟦E42⟧ Panthers are common in the Swamp but collecting enough hearts for our purpose can be daunting. And the ⟦E39⟧ can be such a fussy beast.⟦21⟧⟦22⟧As for the Deepstrider tumor, they are terribly difficult to find. But the chemical reaction I can draw from it is second to none.",
+  "quest:1383:completion:0": "Splendid, ⟦23⟧! And just in time too. From what Zraedus tells me, the Infiltrator has recovered from his wounds and is ready to be questioned by the orcs.",
+  "quest:1383:completion:1": "Give me but a moment to prepare the pois - I mean prepare the truth serum.",
+  "quest:1388:obj:0": "Give ⟦E44⟧ to ⟦E45⟧ at Beggar's Haunt.",
+  "quest:1388:details:0": "Everything is proceeding according to plan, ⟦24⟧. I want you to give this truth serum to ⟦E45⟧ and he'll show you how to administer it.... properly.",
+  "quest:1388:details:1": "Haha!",
+  "quest:1388:progress:0": "I hope you have proven yourself of use to our dear friend, ⟦E30⟧.",
+  "quest:1388:completion:0": "I knew old Faustin would come up with something good! You were a tremendous help, no doubt.",
+  "quest:1388:completion:1": "Now let's get down to business, shall we?",
+  "quest:1391:obj:0": "Take ⟦E46⟧ to ⟦E47⟧ in Stonard.",
+  "quest:1391:details:0": "We need to operate with a certain amount of discretion. After all, it's not like you're going to waltz in there and convince the fool to drink Faustin's concoction here, right?",
+  "quest:1391:details:1": "But if there's one thing those humans cannot deny it's the booze. I'll take Faustin's serum and mix it into this ale. I guarantee the poor sap will show no reluctance when it comes to chug-a-lugging a brew.",
+  "quest:1391:details:2": "Make haste to Stonard in the ⟦E33⟧, ⟦25⟧. And keep our little mission nice and quiet...",
+  "quest:1391:progress:0": "Please have mercy on me! I have information that goes beyond alliance boundaries. While I am no sympathizer of the ⟦E35⟧, there is political treachery going on that must be revealed!",
+  "quest:1391:completion:0": "A drink for me? How kind. It's been days since they've allowed me to drink. Let me drink this down and then I'll tell you what I've learned....",
+  "quest:1395:obj:0": "Bring the Crate of Powerstones to ⟦E48⟧, before the powerstones expire.",
+  "quest:1395:details:0": "This crate of powerstones needs to go to Nethergarde Keep, in the ⟦E49⟧. They won't hold their power for long, so we can't ship them with the next caravan.",
+  "quest:1395:details:1": "You must take them, and you must take them quickly.",
+  "quest:1395:details:2": "Bring them to ⟦E48⟧ in Nethergarde Keep. To reach the keep, you must travel east through ⟦E50⟧, then east through the ⟦E33⟧, then south through the ⟦E49⟧.",
+  "quest:1395:details:3": "Use caution, ⟦26⟧. You will travel through dangerous lands, yet you must not fail.",
+  "quest:1395:progress:0": "Hello! Don't mind all the commotion, it's just business as usual at Nethergarde Keep.⟦27⟧⟦28⟧You have something for me?",
+  "quest:1395:completion:0": "Ah, the powerstones! The mages will be happy to see these!",
+  "quest:1395:completion:1": "Many thanks, ⟦29⟧. I know your trip from Darkshire was not an easy one.",
+  "quest:94216:title": "⟦E51⟧",
+  "quest:94216:obj:0": "Acquire the items requested by the customer and deliver them to the location marked on your map. This writ must be in your possession to complete the transaction."
+ },
+ "context": {
+  "quest:251": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Lord Ello Ebonlocke («لرد الو آبنوس‌گیس»)",
+   "turner": "Sirra Von'Indi («سیررا وونیندی»)"
+  },
+  "quest:252": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Sirra Von'Indi («سیررا وونیندی»)",
+   "turner": "Lord Ello Ebonlocke («لرد الو آبنوس‌گیس»)"
+  },
+  "quest:253": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Lord Ello Ebonlocke («لرد الو آبنوس‌گیس»)",
+   "turner": "Lord Ello Ebonlocke («لرد الو آبنوس‌گیس»)"
+  },
+  "quest:401": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Sirra Von'Indi («سیررا وونیندی»)",
+   "turner": "Sirra Von'Indi («سیررا وونیندی»)"
+  },
+  "quest:222": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Calor («کالور»)",
+   "turner": "Calor («کالور»)"
+  },
+  "quest:223": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Calor («کالور»)",
+   "turner": "Jonathan Carevin («جاناتان کروین»)"
+  },
+  "quest:55": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Sven Yorgen («سون یورگن»)",
+   "turner": "Sven Yorgen («سون یورگن»)"
+  },
+  "quest:98": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)",
+   "turner": "Madame Eva («مادام اوا»)"
+  },
+  "quest:225": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 35,
+   "side": "alliance",
+   "giver": "A Weathered Grave («گوری فرسوده»)",
+   "turner": "Sirra Von'Indi («سیررا وونیندی»)"
+  },
+  "quest:227": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Sirra Von'Indi («سیررا وونیندی»)",
+   "turner": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)"
+  },
+  "quest:228": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)",
+   "turner": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)"
+  },
+  "quest:229": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)",
+   "turner": "Watcher Ladimore («دیده‌بان لادیمور»)"
+  },
+  "quest:231": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Watcher Ladimore («دیده‌بان لادیمور»)",
+   "turner": "A Weathered Grave («گوری فرسوده»)"
+  },
+  "quest:1372": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 42,
+   "side": "horde",
+   "giver": "Deathstalker Zraedus («مرگ‌شکار زرائدوس»)",
+   "turner": "Apothecary Faustin («داروساز فاستین»)"
+  },
+  "quest:1383": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 42,
+   "side": "horde",
+   "giver": "Apothecary Faustin («داروساز فاستین»)",
+   "turner": "Apothecary Faustin («داروساز فاستین»)"
+  },
+  "quest:1388": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 42,
+   "side": "horde",
+   "giver": "Apothecary Faustin («داروساز فاستین»)",
+   "turner": "Deathstalker Zraedus («مرگ‌شکار زرائدوس»)"
+  },
+  "quest:1391": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 42,
+   "side": "horde",
+   "giver": "Deathstalker Zraedus («مرگ‌شکار زرائدوس»)",
+   "turner": "Infiltrator Marksen («نفوذی مارکسن»)"
+  },
+  "quest:1395": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Watchmaster Sorigal («سردستهٔ دیده‌بانان، سوریگال»)",
+   "turner": "Quartermaster Lungertz («تدارکات‌چی لونگرتز»)"
+  },
+  "quest:94216": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  }
+ },
+ "known": {
+  "quest:251": {
+   "title": "ترجمهٔ یادداشت اِبرکرومی"
+  },
+  "quest:252": {
+   "title": "ترجمه برای الّو"
+  },
+  "quest:253": {
+   "title": "عروس مومیایی‌کننده"
+  },
+  "quest:401": {
+   "title": "صبر کنید تا سیرا تمام کند"
+  },
+  "quest:222": {
+   "title": "ورگ‌ها در جنگل"
+  },
+  "quest:223": {
+   "title": "ورگ‌ها در جنگل"
+  },
+  "quest:55": {
+   "title": "موربنت فِل"
+  },
+  "quest:98": {
+   "title": "افسانهٔ استالوان"
+  },
+  "quest:225": {
+   "title": "قبر فرسوده"
+  },
+  "quest:227": {
+   "title": "مورگان لادیمور"
+  },
+  "quest:228": {
+   "title": "مورلادیم"
+  },
+  "quest:229": {
+   "title": "دختری که زنده ماند"
+  },
+  "quest:231": {
+   "title": "عشق یک دختر"
+  },
+  "quest:1372": {
+   "title": "جز حقیقت هیچ"
+  },
+  "quest:1383": {
+   "title": "جز حقیقت هیچ"
+  },
+  "quest:1388": {
+   "title": "جز حقیقت هیچ"
+  },
+  "quest:1391": {
+   "title": "جز حقیقت هیچ"
+  },
+  "quest:1395": {
+   "title": "لوازم برای ندرگارد"
+  }
+ }
+}

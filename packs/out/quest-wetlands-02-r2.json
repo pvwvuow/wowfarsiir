@@ -1,0 +1,771 @@
+{
+ "pack": "quest-wetlands-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-wetlands-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Snellig's Snuffbox",
+   "fa": "جعبهٔ انفیهٔ اسنلیگ",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "First Mate Fitzsimmons",
+   "fa": "همیار کاپیتان فیتس‌سیمونز",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Ormer Ironbraid",
+   "fa": "اورمر بافته‌آهن",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Sarltooth",
+   "fa": "دندان‌سارل",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Nord'el",
+   "fa": "نوردل",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Sylessa Duskwhisper",
+   "fa": "سیلسسا زمزمهٔ غروب",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Thundris Windweaver",
+   "fa": "تاندریس ویند‌ویور",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Howin Kindfeather",
+   "fa": "هاوین پرمهربان",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Intrepid Strongbox Key",
+   "fa": "کلید صندوق اینترپرید",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Captain Halyndor",
+   "fa": "کاپیتان هالیندور",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Intrepid's Locked Strongbox",
+   "fa": "صندوق قفل‌دار اینترپید",
+   "kind": "ob"
+  },
+  "E17": {
+   "en": "Glorin Steelbrow",
+   "fa": "گلورین ابرو‌فولاد",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Cursed Eye of Paleth",
+   "fa": "چشم نفرین‌شدهٔ پالت",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Eye of Paleth",
+   "fa": "چشم پالت",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Archbishop Benedictus",
+   "fa": "اسقف اعظم بندیکتوس",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Motley Garmason",
+   "fa": "ماتلی گارماسون",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "MacKreel's Moonshine",
+   "fa": "مشروب مکریل",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Brewmeister Bilger",
+   "fa": "استاد دم‌کنی بیلجر",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Foggy MacKreel",
+   "fa": "مه‌آلود مک‌کریل",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Fiora Longears",
+   "fa": "فیورا لانگیز",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Carnage's Head",
+   "fa": "سر کارنیج",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Rethiel the Greenwarden",
+   "fa": "رثیل، نگهبان سبز",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Dragonmaw Armaments",
+   "fa": "تجهیزات اژدهادهان",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Captain Stoutfist",
+   "fa": "کاپیتان مشت‌قوی",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "spark",
+   "fa": "جرقه",
+   "kind": "sp"
+  },
+  "E44": {
+   "en": "Rhag Garmason",
+   "fa": "رگ گارماسون",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Arathi Highlands",
+   "fa": "ارتفاعات آراتی",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Captain Nials",
+   "fa": "کاپیتان نیالز",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E50": {
+   "en": "Stolen Explosives",
+   "fa": "مواد انفجاریِ دزدی",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Dark Iron Dwarf",
+   "fa": "دورف آهن‌سیاه",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E54": {
+   "en": "Horrible Rootcore",
+   "fa": "هستهٔ ریشهٔ هولناک",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Understanding",
+   "fa": "درک",
+   "kind": "sp"
+  },
+  "E56": {
+   "en": "Goaz Stone",
+   "fa": "سنگ گواز",
+   "kind": "it"
+  },
+  "E57": {
+   "en": "Titanic Keystone",
+   "fa": "سنگ کلیدی تایتان",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Prospector Whelgar",
+   "fa": "جویندهٔ رگه ولگار",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Tattered Spellbook",
+   "fa": "کتاب اسپیلِ پاره‌پاره",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Chieftain Nek'rosh",
+   "fa": "سردار نک‌روش",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Nek'rosh's Head",
+   "fa": "سر نک‌روش",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Whelgar Relic Package",
+   "fa": "بستهٔ یادگار ولگار",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Historian Karnik",
+   "fa": "تاریخ‌نگار کارنیک",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Snellig's Snuffbox": "جعبهٔ انفیهٔ اسنلیگ",
+  "First Mate Fitzsimmons": "همیار کاپیتان فیتس‌سیمونز",
+  "Harbor": "بندر",
+  "Ormer Ironbraid": "اورمر بافته‌آهن",
+  "Sarltooth": "دندان‌سارل",
+  "Nord'el": "نوردل",
+  "Sylessa Duskwhisper": "سیلسسا زمزمهٔ غروب",
+  "Thundris Windweaver": "تاندریس ویند‌ویور",
+  "Darkshore": "کرانهٔ تاریک",
+  "Howin Kindfeather": "هاوین پرمهربان",
+  "Intrepid Strongbox Key": "کلید صندوق اینترپرید",
+  "Captain Halyndor": "کاپیتان هالیندور",
+  "Intrepid's Locked Strongbox": "صندوق قفل‌دار اینترپید",
+  "Glorin Steelbrow": "گلورین ابرو‌فولاد",
+  "Cursed Eye of Paleth": "چشم نفرین‌شدهٔ پالت",
+  "Eye of Paleth": "چشم پالت",
+  "Archbishop Benedictus": "اسقف اعظم بندیکتوس",
+  "Stormwind": "استورم‌ویند",
+  "Motley Garmason": "ماتلی گارماسون",
+  "Alliance": "اتحاد",
+  "Hope": "امید",
+  "MacKreel's Moonshine": "مشروب مکریل",
+  "Brewmeister Bilger": "استاد دم‌کنی بیلجر",
+  "Southshore": "ساحل جنوبی",
+  "Foggy MacKreel": "مه‌آلود مک‌کریل",
+  "Fiora Longears": "فیورا لانگیز",
+  "Theramore": "ترمور",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Kalimdor": "کالیمدور",
+  "Carnage's Head": "سر کارنیج",
+  "Rethiel the Greenwarden": "رثیل، نگهبان سبز",
+  "Dragonmaw Armaments": "تجهیزات اژدهادهان",
+  "Captain Stoutfist": "کاپیتان مشت‌قوی",
+  "spark": "جرقه",
+  "Rhag Garmason": "رگ گارماسون",
+  "Arathi Highlands": "ارتفاعات آراتی",
+  "Captain Nials": "کاپیتان نیالز",
+  "Ironforge": "آیرون‌فورج",
+  "Travel": "سفر",
+  "Stolen Explosives": "مواد انفجاریِ دزدی",
+  "Dark Iron Dwarf": "دورف آهن‌سیاه",
+  "Wetlands": "تالاب‌ها",
+  "Horrible Rootcore": "هستهٔ ریشهٔ هولناک",
+  "Understanding": "درک",
+  "Goaz Stone": "سنگ گواز",
+  "Titanic Keystone": "سنگ کلیدی تایتان",
+  "Prospector Whelgar": "جویندهٔ رگه ولگار",
+  "Tattered Spellbook": "کتاب اسپیلِ پاره‌پاره",
+  "Chieftain Nek'rosh": "سردار نک‌روش",
+  "Nek'rosh's Head": "سر نک‌روش",
+  "Whelgar Relic Package": "بستهٔ یادگار ولگار",
+  "Historian Karnik": "تاریخ‌نگار کارنیک"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$c",
+  "5": "$C",
+  "6": "$c",
+  "7": "$r",
+  "8": "$C",
+  "9": "$N",
+  "10": "$R",
+  "11": "$c",
+  "12": "$N",
+  "13": "$n",
+  "14": "$c",
+  "15": "$N",
+  "16": "$R"
+ },
+ "rows": {
+  "quest:289:obj:0": "Kill 13 Cursed Sailors, 5 Cursed Marines and First Mate Snellig. Bring ⟦E1⟧ to ⟦E2⟧ in Menethil ⟦E3⟧.",
+  "quest:289:details:0": "<Bolstered, Fitzsimmons continues his tale...>",
+  "quest:289:details:1": "I am the sole survivor of the ill-fated Third Fleet of Kul Tiras, wrecked off the coast to the north. But although I'm the only member of the fleet still breathing, I'm not the only one still walking about! For on one of our ships was hidden a great, and terrible treasure, and the eerie power of it keeps the souls of my brothers trapped within the ships' rotting hulls.",
+  "quest:289:details:2": "But if you can free some of my brothers, then perhaps you can break their curse.",
+  "quest:289:progress:0": "In my dreams, I can sometimes hear the doomed moans of my brethren! Please, good sir, free them from the bonds and quiet their cries.",
+  "quest:289:completion:0": "My thanks to you, ⟦1⟧. And the gratitude of my cursed brethren goes to you as well.",
+  "quest:296:obj:0": "⟦E5⟧ at the Whelgar Excavation Site wants you to kill ⟦E6⟧ and return to him with one of his talons once the task is fulfilled.",
+  "quest:296:details:0": "While you were down there I happened to notice that one of those beasts stood out from the rest. He was bigger and more menacing. I bet he's the one who led the others here to cause the disruption to the dig site.",
+  "quest:296:details:1": "I ask of you now one final task, ⟦2⟧. See to it that ⟦E6⟧ is brought to justice. And considering the gravity of his crimes, justice in this case means death! Bring me one of his talons as proof of his death.",
+  "quest:296:progress:0": "Is ⟦E6⟧ dead? Have you redeemed the memory of the fallen?",
+  "quest:296:completion:0": "Thank you, ⟦3⟧. Your efforts here will not be forgotten. Many innocent Dwarves died at this site, simply doing their jobs. The vengeance you delivered to those evil creatures should make them think twice before attacking King Magni's subjects ever again.",
+  "quest:98208:title": "Bloom of the Heavens",
+  "quest:98208:obj:0": "Recover ⟦E8⟧ for ⟦E9⟧ in Menethil ⟦E3⟧.",
+  "quest:98209:title": "Bloom of the Heavens",
+  "quest:98209:obj:0": "Bring ⟦E8⟧ to ⟦E10⟧ in Auberdine in ⟦E11⟧.\nYou recall Sylessa mentioning a boat in Menethil ⟦E3⟧ can take you there.",
+  "quest:98230:title": "This Land Was Their Land",
+  "quest:98230:obj:0": "Find ⟦E12⟧ east of Menethil ⟦E3⟧, along the road.",
+  "quest:98245:title": "Razormaw Needling",
+  "quest:98245:obj:0": "Collect 10 Razormaw Incisors for ⟦E12⟧.",
+  "quest:98246:title": "Trying Times",
+  "quest:98246:obj:0": "Gather 12 Perfect Razormaw Eggs for ⟦E12⟧.",
+  "quest:290:obj:0": "Get the ⟦E13⟧ from ⟦E14⟧.",
+  "quest:290:obj:1": "Use the key to open the ⟦E16⟧.",
+  "quest:290:details:0": "To break the curse and free all of my brethren, the...thing...stowed on my ship must be retrieved and cleansed! I don't know what it was, but I do know that it was stored securely in the ship's strongbox, which ⟦E14⟧ lorded over.",
+  "quest:290:details:1": "My old captain is still in my dreams. I know he walks my doomed ship, the Intrepid. Get the key from him, and use it to open the Intrepid's strongbox.",
+  "quest:290:details:2": "Then, after you have the cursed thing, bring it to the priest ⟦E17⟧ in town.",
+  "quest:290:progress:0": "This chest is securely locked.",
+  "quest:290:completion:0": "The key is rusted but it fits the lock neatly.",
+  "quest:292:obj:0": "Bring the ⟦E18⟧ to ⟦E17⟧.",
+  "quest:292:details:0": "Opening the chest reveals a blackened orb, pulsing with an eerie light. It is the treasure of which Fitzsimmons spoke: a ⟦E18⟧.",
+  "quest:292:details:1": "Take the ⟦E18⟧ to the dwarven priest ⟦E17⟧, in Menethil ⟦E3⟧. Ask him how to remove the Eye's curse.",
+  "quest:292:progress:0": "That drunk Fitzsimmons sent you to me? Well, you can tell him I don't have any extra ale. He's going to have to panhandle someone else!",
+  "quest:292:completion:0": "An ⟦E19⟧? Amazing! Hmm... there's something wrong with this one. You found it on one of those shipwrecks? Well that explains it! But... I didn't know they had such an Eye on the Third Fleet...",
+  "quest:292:completion:1": "It's no wonder Fitzsimmons was so spooked. A ⟦E18⟧ is no cause for mirth.",
+  "quest:293:obj:0": "Bring ⟦E20⟧ the ⟦E18⟧. Benedictus is in the Cathedral of Light, in the city of ⟦E21⟧.",
+  "quest:293:details:0": "I can't lift the curse from the ⟦E19⟧. The Eyes were crafted by Human Priests, so you'll have to go to ⟦E21⟧ to find someone who can help you. Speak with ⟦E20⟧. He is head of the Cathedral of Light in ⟦E21⟧. He can help.",
+  "quest:293:details:1": "I hope, for your sake.",
+  "quest:293:progress:0": "What is that orb you have? It looks...soiled.",
+  "quest:293:completion:0": "An ⟦E19⟧. But this one has seen much sorrow...it must have been witness to a terrible, terrible tragedy.",
+  "quest:293:completion:1": "Let me cleanse it, for the Eyes were created to shine bright, and their powers can be quite dangerous if tainted like this one.",
+  "quest:303:obj:0": "⟦E23⟧ at Dun Modr wants you to kill 10 Dark Iron Dwarves, 5 Dark Iron Tunnelers, 5 Dark Iron Saboteurs and 5 Dark Iron Demolitionists.",
+  "quest:303:details:0": "War rages both home and abroad. While mighty Dwarven soldiers give their lives in far off territories in the name of the ⟦E24⟧, our own lands fall prey to the evil deeds of the Dark Iron Dwarves. They laid waste to the Thandol Span. Dun Modr fell soon after.",
+  "quest:303:details:1": "We need you to gather force and push the front back. If you can kill 10 Dark Iron Dwarves, 5 Tunnelers, 5 Saboteurs and 5 Demolitionists, the reserve might arrive in time to finish the drive.",
+  "quest:303:details:2": "Now make haste!",
+  "quest:303:progress:0": "Roggo has been unable to contact the reserve forces. We need offensive pressure on that Dark Iron encampment, ⟦4⟧. Now get back out there and serve your duty to King Magni!",
+  "quest:303:completion:0": "You upheld your orders well, ⟦5⟧. You have proven yourself to be a valiant soldier and loyal servant to King Magni and for that I salute you! With the pressure you applied to the Dark Iron encampment, we now stand a chance of driving them off our lands for good. . .if only the damned reserve would show. . . .",
+  "quest:472:obj:0": "Search for Longbraid near the town of Dun Modr.",
+  "quest:472:details:0": "Dun Modr has fallen to the Dark Iron Dwarves!",
+  "quest:472:details:1": "My wounds are grave, ⟦6⟧. Most of the regiment was killed! The Dark Iron thugs attacked us before we could regroup from the Thandol Span ambush.",
+  "quest:472:details:2": "Our leader, Longbraid, sounded the retreat horn. As we left the town I was hit by a stray axe in the back. All went black.",
+  "quest:472:details:3": "I awoke here in Menethil but I fear for my fellow soldiers. ⟦E29⟧ still burns within me. Perhaps Longbraid is still alive! See if you can find him near Dun Modr, ⟦7⟧!",
+  "quest:472:completion:0": "What brave ⟦8⟧ sends word from Menethil? Ah ⟦9⟧, they call you.",
+  "quest:472:completion:1": "You bring hope to a hopeless situation. 'Tis good news indeed that young Harlo survived. While fleeing he received a grievous wound. We had but little time to send him on his way on the back of the only surviving steed with the regiment.",
+  "quest:472:completion:2": "But now we face a perilous situation. Dun Modr has fallen and we are but a shadow of the great regiment we once were.",
+  "quest:647:obj:0": "Take ⟦E30⟧ to ⟦E31⟧ in ⟦E32⟧.",
+  "quest:647:details:0": "Had quite a bit of the ol' Moonshine last night! Longbraid would have my head if he knew that I passed out during my watch.",
+  "quest:647:details:1": "The noggin hurts something fierce. Felt as though a whole brigade of siege engines passed overhead, all that rumbling.",
+  "quest:647:details:2": "Oh my, look at the time! I promised ⟦E31⟧ in ⟦E32⟧ that I'd repay my debt to him by sending some Moonshine.",
+  "quest:647:details:3": "But there are just 15 minutes left before I'm overdue! Take him this batch, would you please? And hurry!",
+  "quest:647:progress:0": "What's the good word, ⟦10⟧?",
+  "quest:647:completion:0": "Ah, nothing like ⟦E33⟧'s Moonshine to warm you up on a brisk day! And here I was thinking the little bugger was going to be overdue on his bills again. Thank you, friend! Many thanks indeed!",
+  "quest:1132:obj:0": "Speak with ⟦E34⟧ on the docks at ⟦E35⟧ in ⟦E36⟧.",
+  "quest:1132:details:0": "Oh, to be at sea once again! To feel the kiss of the wind, and to have the waves rock me like my blessed mother, long ago!",
+  "quest:1132:details:1": "Oh, I wish I had your fortune, good ⟦11⟧, for I see the sea in your future!",
+  "quest:1132:details:2": "It's my job to tell eager souls of the land of ⟦E37⟧, the land of opportunity! If you're willing to try your luck across the sea, then take a ship from here to the lovely port of ⟦E35⟧. Speak there with my partner, the elf, ⟦E34⟧.",
+  "quest:1132:details:3": "She'll start you on your ⟦E37⟧ adventure!",
+  "quest:1132:completion:0": "Good day to you! You were sent by Mr. Flint in Menethil ⟦E3⟧? Well Mr. Flint is a strong judge of character. If he sent you, then there's no doubt you belong here in ⟦E37⟧!",
+  "quest:98283:title": "Carnage",
+  "quest:98283:obj:0": "Bring ⟦E38⟧ to ⟦E39⟧ in The Green Belt.",
+  "quest:98291:title": "Death to the Dragonmaw",
+  "quest:98291:obj:0": "Kill 8 Dragonmaw Reclaimers, 5 Dragonmaw Soulbinders, and 3 Dragonmaw Infiltrators in Dragonmaw Retreat for ⟦E12⟧.",
+  "quest:98293:title": "Forced Disarmament",
+  "quest:98293:obj:0": "Collect 30 ⟦E40⟧ in Dragonmaw Retreat, then bring them to ⟦E41⟧ in Menethil Keep.",
+  "quest:465:obj:0": "Destroy the Dragonmaw catapults.",
+  "quest:465:details:0": "While you were fighting the Dragonmaws, we discovered more of their plans.",
+  "quest:465:details:1": "Nek'rosh has built catapults and aims to lay siege to Menethil! And with the fighting in Dun Algaz, we're effectively blocked from reinforcements!",
+  "quest:465:details:2": "You need to take out those catapults. They're in the Dragonmaw encampment.",
+  "quest:465:details:3": "Here, take this tinder. Fight your way to the catapults and light them with the tinder.",
+  "quest:465:details:4": "And after you've done that, find and kill Nek'rosh. We need to cut this Dragonmaw beast down...at its neck.",
+  "quest:465:progress:0": "The first catapult is before you. Will you set it aflame?",
+  "quest:465:completion:0": "You place some of the tinder on the catapult then strike a ⟦E43⟧ onto it.",
+  "quest:465:completion:1": "Flame erupts and quickly spreads!",
+  "quest:631:obj:0": "⟦E44⟧ wants you to locate Ol' Rustlocke.",
+  "quest:631:details:0": "A tremendous explosion roared through the hills. 'Twas horrible, I tell you!",
+  "quest:631:details:1": "Good soldiers died defending the Thandol Span. Longbraid says we'll take revenge on the Dark Irons before all is said and done.",
+  "quest:631:details:2": "We're in a world of hurt though and I don't see any reinforcements in sight. Longbraid sent Ol' Rustlocke to scout the eastern bridge to see if we could secure it.",
+  "quest:631:details:3": "That was days ago. We haven't the manpower to search for him with Dun Modr under siege.",
+  "quest:631:details:4": "Perhaps you can find him...",
+  "quest:631:completion:0": "You search the tiny, dwarven corpse. Engraved into the helmet you can clearly read: Ebenezer Rustlocke.",
+  "quest:632:obj:0": "Report back to ⟦E44⟧ and show him the parchment you found on Rustlocke's corpse.",
+  "quest:632:details:0": "It seems as though poor Ol' Rustlocke ran into a Dark Iron ambush. You notice a parchment next to his clenched fist.",
+  "quest:632:details:1": "Report the grim news to ⟦E44⟧ and show him what you found.",
+  "quest:632:progress:0": "Any sign of Ol' Rustlocke, ⟦12⟧?",
+  "quest:632:completion:0": "Oh my, the news is grave....",
+  "quest:633:obj:0": "Destroy the cache of explosives.",
+  "quest:633:details:0": "Heavens no! Poor Rustlocke. 'Tis quite a tragedy indeed.",
+  "quest:633:details:1": "We must not let his death pass in vain. This parchment you discovered indicates that Kam Deepfury, the mastermind behind the original attack, arranged for a cache of explosives to be stashed just across the Thandol Span, in ⟦E45⟧.",
+  "quest:633:details:2": "If those explosives make it to the bridge, our major supply line to the north will be severed! The cache must be destroyed, ⟦13⟧! Return to me when your mission is complete.",
+  "quest:633:details:3": "You're our only hope.",
+  "quest:633:progress:0": "The cache of explosives must be destroyed!",
+  "quest:633:completion:0": "The remaining bridge is saved! You have done a great service to King Magni and the people of Khaz Modan.",
+  "quest:633:completion:1": "Now if we can only hold out long enough for reinforcements to show...",
+  "quest:634:obj:0": "Seek out ⟦E46⟧ at Refuge Pointe.",
+  "quest:634:details:0": "I ask of you one more small favor, ⟦14⟧. We await the reserves of ⟦E47⟧. However, Roggo has knowledge of an ⟦E24⟧ camp to the north in ⟦E45⟧ at Refuge Pointe.",
+  "quest:634:details:1": "⟦E48⟧ there and seek out ⟦E46⟧. Ask the good Captain if the ⟦E24⟧ can spare some soldiers to help us reclaim Dun Modr and the Thandol Span.",
+  "quest:634:completion:0": "My condolences go out to Longbraid and his brave soldiers. The news of the Thandol Span tragedy and the fall of Dun Modr hangs heavy in my heart.",
+  "quest:634:completion:1": "But Stromgarde has fallen! Hence our presence here at Refuge Pointe. We are faced with retaking our own great city.",
+  "quest:634:completion:2": "Honor and duty require that we do not leave the Highlands until Stromgarde raises the mighty banner of the King once again. I will send word to Longbraid that he is on his own...",
+  "quest:88756:title": "Bring Back a Bang",
+  "quest:88756:obj:0": "Retrieve 3 ⟦E50⟧ from the ⟦E51⟧ camps.",
+  "quest:95646:title": "Horrors in the Highland",
+  "quest:95646:obj:0": "Kill a Highland Horror within Excavation Sites and bring its root core to ⟦E39⟧ in the ⟦E53⟧.",
+  "quest:95646:obj:1": "* ⟦E54⟧",
+  "quest:95646:details:0": "These brackish wetlands hold a greater well of unsalted southern waters. It pains me, yet within my roots I sense a corruption seeping through that mountain gully.",
+  "quest:95646:details:1": "The creatures, like those in our lowlands, react more bitterly to the taint. Lacking the sea's hardening salt since life's dawn, they have little strength against such evil.",
+  "quest:95646:details:2": "Go to those highlands, and bring me the Highland Horror's root core.",
+  "quest:95646:progress:0": "These waters harbor unique life in a brine that gives and takes equally.",
+  "quest:95647:title": "Lost in the Thicket Things",
+  "quest:95647:obj:0": "Find Ardin Grassman in the Excavation Sites.",
+  "quest:95647:obj:1": "* Learn what happened to Ardin Grassman",
+  "quest:95647:details:0": "My husband, Ardin, has a rare gift for sensing nature. He'll scale any peak to gather the herbs and flowers I need for my alchemy, keeping our shelves and pantry stocked.",
+  "quest:95647:details:1": "But I fear he's wandered into trouble. An excavation crew passed through seeking supplies. They spoke, among other things, of towering grasses unlike anything they'd ever seen. Those were what he told me he had to go see for himself. He's been gone too long!",
+  "quest:95647:details:2": "If you learn anything of him, I'd be grateful.",
+  "quest:98216:title": "⟦E55⟧ Our Present",
+  "quest:98216:obj:0": "Use the ⟦E56⟧ near the Goaz Warder and bring its ⟦E57⟧ back to ⟦E58⟧.",
+  "quest:98223:title": "Old Habits",
+  "quest:98223:obj:0": "Bring the ⟦E59⟧ to ⟦E41⟧ in Menethil ⟦E3⟧.",
+  "quest:474:obj:0": "Kill ⟦E60⟧",
+  "quest:474:obj:1": "Bring ⟦E61⟧ to ⟦E41⟧.",
+  "quest:474:details:0": "Now that the catapults have been burned, find and kill ⟦E60⟧.",
+  "quest:474:progress:0": "Have you killed Nek'rosh?",
+  "quest:474:completion:0": "Stoutly done, ⟦15⟧. You have dealt a telling blow to the Dragonmaw orc clan. They may never recover. And the destruction of those catapults has made Menethil ⟦E3⟧ safe.",
+  "quest:474:completion:1": "You are a ⟦16⟧ of merit, and the kingdom of ⟦E47⟧ rewards those who serve it well.",
+  "quest:98310:title": "Gleaning Our Future",
+  "quest:98310:obj:0": "Use the ⟦E56⟧ near Ados, Modr, Golm, and Neru and bring their hearts back to ⟦E58⟧.",
+  "quest:98313:title": "For Further Study",
+  "quest:98313:obj:0": "Bring the ⟦E62⟧ to ⟦E63⟧ in ⟦E47⟧."
+ },
+ "context": {
+  "quest:289": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "alliance",
+   "giver": "First Mate Fitzsimmons («همیار کاپیتان فیتس‌سیمونز»)",
+   "turner": "First Mate Fitzsimmons («همیار کاپیتان فیتس‌سیمونز»)"
+  },
+  "quest:296": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Ormer Ironbraid («اورمر بافته‌آهن»)",
+   "turner": "Ormer Ironbraid («اورمر بافته‌آهن»)"
+  },
+  "quest:98208": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "",
+   "giver": "Sylessa Duskwhisper («سیلسسا زمزمهٔ غروب»)",
+   "turner": "Sylessa Duskwhisper («سیلسسا زمزمهٔ غروب»)"
+  },
+  "quest:98209": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "",
+   "giver": "Sylessa Duskwhisper («سیلسسا زمزمهٔ غروب»)",
+   "turner": "Thundris Windweaver («تاندریس ویند‌ویور»)"
+  },
+  "quest:98230": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Captain Stoutfist («کاپیتان مشت‌قوی»)",
+   "turner": "Howin Kindfeather («هاوین پرمهربان»)"
+  },
+  "quest:98245": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Howin Kindfeather («هاوین پرمهربان»)",
+   "turner": "Howin Kindfeather («هاوین پرمهربان»)"
+  },
+  "quest:98246": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Howin Kindfeather («هاوین پرمهربان»)",
+   "turner": "Howin Kindfeather («هاوین پرمهربان»)"
+  },
+  "quest:290": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "First Mate Fitzsimmons («همیار کاپیتان فیتس‌سیمونز»)",
+   "turner": "Intrepid's Locked Strongbox («صندوق قفل‌دار اینترپید»)"
+  },
+  "quest:292": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Intrepid's Locked Strongbox («صندوق قفل‌دار اینترپید»)",
+   "turner": "Glorin Steelbrow («گلورین ابرو‌فولاد»)"
+  },
+  "quest:293": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Glorin Steelbrow («گلورین ابرو‌فولاد»)",
+   "turner": "Archbishop Benedictus («اسقف اعظم بندیکتوس»)"
+  },
+  "quest:303": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Motley Garmason («ماتلی گارماسون»)",
+   "turner": "Motley Garmason («ماتلی گارماسون»)"
+  },
+  "quest:472": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Harlo Barnaby («هارلو بارنابی»)",
+   "turner": "Longbraid the Grim («گیس‌دراز خشن»)"
+  },
+  "quest:647": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Foggy MacKreel («مه‌آلود مک‌کریل»)",
+   "turner": "Brewmeister Bilger («استاد دم‌کنی بیلجر»)"
+  },
+  "quest:1132": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Red Jack Flint («جک فلینت سرخ»)",
+   "turner": "Fiora Longears («فیورا لانگیز»)"
+  },
+  "quest:98283": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Rethiel the Greenwarden («رثیل، نگهبان سبز»)",
+   "turner": "Rethiel the Greenwarden («رثیل، نگهبان سبز»)"
+  },
+  "quest:98291": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Howin Kindfeather («هاوین پرمهربان»)",
+   "turner": "Howin Kindfeather («هاوین پرمهربان»)"
+  },
+  "quest:98293": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 30,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Captain Stoutfist («کاپیتان مشت‌قوی»)"
+  },
+  "quest:465": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Captain Stoutfist («کاپیتان مشت‌قوی»)",
+   "turner": "Dragonmaw Catapult («منجنیق دراگون‌مو»)"
+  },
+  "quest:631": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Rhag Garmason («رگ گارماسون»)",
+   "turner": "Ebenezer Rustlocke's Corpse («جسد ابنزر راست‌لاک»)"
+  },
+  "quest:632": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Ebenezer Rustlocke's Corpse («جسد ابنزر راست‌لاک»)",
+   "turner": "Rhag Garmason («رگ گارماسون»)"
+  },
+  "quest:633": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Rhag Garmason («رگ گارماسون»)",
+   "turner": "Rhag Garmason («رگ گارماسون»)"
+  },
+  "quest:634": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Rhag Garmason («رگ گارماسون»)",
+   "turner": "Captain Nials («کاپیتان نیالز»)"
+  },
+  "quest:88756": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Ashlan Stonesmirk («آشلان استون‌اسمرک»)",
+   "turner": ""
+  },
+  "quest:95646": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Rethiel the Greenwarden («رثیل، نگهبان سبز»)",
+   "turner": ""
+  },
+  "quest:95647": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Caitlin Grassman («کیتلین گراس‌من»)",
+   "turner": ""
+  },
+  "quest:98216": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Prospector Whelgar («جویندهٔ رگه ولگار»)",
+   "turner": "Prospector Whelgar («جویندهٔ رگه ولگار»)"
+  },
+  "quest:98223": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 31,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Captain Stoutfist («کاپیتان مشت‌قوی»)"
+  },
+  "quest:474": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Dragonmaw Catapult («منجنیق دراگون‌مو»)",
+   "turner": "Captain Stoutfist («کاپیتان مشت‌قوی»)"
+  },
+  "quest:98310": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Prospector Whelgar («جویندهٔ رگه ولگار»)",
+   "turner": "Prospector Whelgar («جویندهٔ رگه ولگار»)"
+  },
+  "quest:98313": {
+   "zone_en": "Wetlands",
+   "zone_fa": "تالاب‌ها",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Prospector Whelgar («جویندهٔ رگه ولگار»)",
+   "turner": "Historian Karnik («تاریخ‌نگار کارنیک»)"
+  }
+ },
+ "known": {
+  "quest:289": {
+   "title": "خدمهٔ نفرین‌شده"
+  },
+  "quest:296": {
+   "title": "انتقام اورمر"
+  },
+  "quest:290": {
+   "title": "برداشتن نفرین"
+  },
+  "quest:292": {
+   "title": "چشم پالت"
+  },
+  "quest:293": {
+   "title": "پاکسازی چشم"
+  },
+  "quest:303": {
+   "title": "جنگ آهن سیاه"
+  },
+  "quest:472": {
+   "title": "سقوط دان مودر"
+  },
+  "quest:647": {
+   "title": "مشروب مکریل"
+  },
+  "quest:1132": {
+   "title": "فیورا لانگیز"
+  },
+  "quest:465": {
+   "title": "نیرنگ نک‌روش"
+  },
+  "quest:631": {
+   "title": "پل تندول"
+  },
+  "quest:632": {
+   "title": "پل تندول"
+  },
+  "quest:633": {
+   "title": "پل تندول"
+  },
+  "quest:634": {
+   "title": "التماس به اتحادیه"
+  },
+  "quest:474": {
+   "title": "شکست نک‌روش"
+  }
+ }
+}

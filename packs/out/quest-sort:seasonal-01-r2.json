@@ -1,0 +1,819 @@
+{
+ "pack": "quest-sort:seasonal-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:seasonal-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Greatfather Winter",
+   "fa": "پدربزرگ زمستان",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Great-father Winter",
+   "fa": "بزرگ‌پدر زمستان",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Stolen Treats",
+   "fa": "خوراکی‌های دزدیده‌شده",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Kaymard Copperpinch",
+   "fa": "کیمارد کاپرپینچ",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "The Abominable Greench",
+   "fa": "گرینچ نفرت‌انگیز",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Graccu",
+   "fa": "گرکو",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Wulmort Jinglepocket",
+   "fa": "والمورت جینگل‌پاکت",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E15": {
+   "en": "Darkcaller Yanka",
+   "fa": "تاریک‌خوان یانکا",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Sergeant Hartman",
+   "fa": "گروهبان هارتمان",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Ice Cold Milk",
+   "fa": "شیرِ یخِ سرد",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Sagorne Creststrider",
+   "fa": "ساگورن کرستستریدر",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "The Feast of Winter Veil",
+   "fa": "ضیافتِ پردهٔ زمستانی",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Furmund",
+   "fa": "فورموند",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Cairne Bloodhoof",
+   "fa": "کیرن سم‌خون",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Historian Karnik",
+   "fa": "تاریخ‌نگار کارنیک",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "King Magni Bronzebeard",
+   "fa": "شاه مگنی ریش‌مفرغی",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Uther's Tribute",
+   "fa": "پیشکشِ اتر",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Wagner Hammerstrike",
+   "fa": "واگنر هامراسترایک",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Arthas",
+   "fa": "آرتاس",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Grom's Tribute",
+   "fa": "پیشکشِ گروم",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Javnir Nashak",
+   "fa": "جاونیر ناشاک",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Grom Hellscream",
+   "fa": "گروم جهنمی‌فریاد",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Talvash del Kissel",
+   "fa": "تالواش دل کیسسل",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Jesper",
+   "fa": "جسپر",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Darnassus Marzipan",
+   "fa": "مارزیپان دارناسوس",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Gnomeregan Gumdrop",
+   "fa": "ژله‌دانهٔ گنومرگان",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Stormwind Nougat",
+   "fa": "نوقا استورم‌ویند",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Ironforge Mint",
+   "fa": "نعنای ایرون‌فورج",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Greatfather Winter": "پدربزرگ زمستان",
+  "Ironforge": "آیرون‌فورج",
+  "Great-father Winter": "بزرگ‌پدر زمستان",
+  "Orgrimmar": "اورگریمار",
+  "Azeroth": "آزروت",
+  "Stolen Treats": "خوراکی‌های دزدیده‌شده",
+  "Kaymard Copperpinch": "کیمارد کاپرپینچ",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "The Abominable Greench": "گرینچ نفرت‌انگیز",
+  "Graccu": "گرکو",
+  "Wulmort Jinglepocket": "والمورت جینگل‌پاکت",
+  "Forsaken": "مطرودان",
+  "Southshore": "ساحل جنوبی",
+  "Darkcaller Yanka": "تاریک‌خوان یانکا",
+  "Alliance": "اتحاد",
+  "Sergeant Hartman": "گروهبان هارتمان",
+  "Ice Cold Milk": "شیرِ یخِ سرد",
+  "Sagorne Creststrider": "ساگورن کرستستریدر",
+  "The Feast of Winter Veil": "ضیافتِ پردهٔ زمستانی",
+  "Furmund": "فورموند",
+  "Cairne Bloodhoof": "کیرن سم‌خون",
+  "Thunder Bluff": "تاندر بلاف",
+  "Mulgore": "مولگر",
+  "Historian Karnik": "تاریخ‌نگار کارنیک",
+  "King Magni Bronzebeard": "شاه مگنی ریش‌مفرغی",
+  "Travel": "سفر",
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Uther's Tribute": "پیشکشِ اتر",
+  "Wagner Hammerstrike": "واگنر هامراسترایک",
+  "Plaguelands": "طاعون‌زار",
+  "Arthas": "آرتاس",
+  "Ashenvale": "اَشِن‌ویل",
+  "Grom's Tribute": "پیشکشِ گروم",
+  "Javnir Nashak": "جاونیر ناشاک",
+  "Horde": "هورد",
+  "Grom Hellscream": "گروم جهنمی‌فریاد",
+  "Burning Legion": "لژیون سوزان",
+  "Stormwind": "استورم‌ویند",
+  "Darnassus": "دارناسوس",
+  "Talvash del Kissel": "تالواش دل کیسسل",
+  "Jesper": "جسپر",
+  "Darnassus Marzipan": "مارزیپان دارناسوس",
+  "Gnomeregan Gumdrop": "ژله‌دانهٔ گنومرگان",
+  "Stormwind Nougat": "نوقا استورم‌ویند",
+  "Ironforge Mint": "نعنای ایرون‌فورج"
+ },
+ "tokens": {
+  "1": "$b",
+  "2": "$b",
+  "3": "$N",
+  "4": "$b",
+  "5": "$b",
+  "6": "$b",
+  "7": "$b",
+  "8": "$r",
+  "9": "$c",
+  "10": "$r",
+  "11": "$c",
+  "12": "$R",
+  "13": "$C",
+  "14": "$R",
+  "15": "$C",
+  "16": "$b",
+  "17": "$b",
+  "18": "$n",
+  "19": "$b",
+  "20": "$b",
+  "21": "$b",
+  "22": "$b",
+  "23": "$b",
+  "24": "$b",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$B",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$B",
+  "33": "$B",
+  "34": "$N",
+  "35": "$N",
+  "36": "$g boy : girl;",
+  "37": "$N",
+  "38": "$N",
+  "39": "$g boy : girl;",
+  "40": "$N",
+  "41": "$N",
+  "42": "$c",
+  "43": "$C",
+  "44": "$B",
+  "45": "$B",
+  "46": "$N",
+  "47": "$B",
+  "48": "$B",
+  "49": "$N",
+  "50": "$N"
+ },
+ "rows": {
+  "quest:8744:completion:0": "The tag on this present reads:⟦1⟧⟦2⟧To ⟦3⟧,⟦4⟧⟦5⟧May your feast of Great-Winter be merry and bright!",
+  "quest:8767:completion:0": "This present looks like it has been shaken a few times. The tag on it reads:⟦6⟧⟦7⟧To a very special ⟦8⟧ ⟦9⟧.",
+  "quest:8788:completion:0": "This present looks like it has been shaken a few times. The tag on it reads:",
+  "quest:8788:completion:1": "To a very special ⟦10⟧ ⟦11⟧.",
+  "quest:8827:obj:0": "Speak with ⟦E1⟧. He is located near the Smokywood Pastures vendor area in ⟦E2⟧.",
+  "quest:8827:details:0": "I hear ⟦E1⟧ - with the generous support of Smokywood Pastures - has put presents for everyone under the tree in ⟦E2⟧. I wish I could go, but I've got to look after the PX-238 Winter Wondervolt.",
+  "quest:8827:details:1": "But you should definitely check it out. I'm sure ⟦E1⟧ has some presents with your name on them.",
+  "quest:8827:completion:0": "Oh, ho hello there! You can only be here for one reason: to open your Winter Veil presents.",
+  "quest:8827:completion:1": "Now, don't you worry, ⟦E1⟧ hasn't forgotten about his favorite ⟦12⟧ ⟦13⟧. Look under the tree and you'll find your gifts.",
+  "quest:8827:completion:2": "During this season of giving, perhaps your friends would also enjoy receiving some of Smokeywood Pasture's excellent products?",
+  "quest:8828:obj:0": "Speak with ⟦E3⟧. He is located near the Smokywood Pastures vendor area in ⟦E4⟧.",
+  "quest:8828:details:0": "I hear ⟦E3⟧ - with the generous support of Smokywood Pastures - has put presents for everyone under the tree in ⟦E4⟧. I wish I could go, but I've got to look after the PX-238 Winter Wondervolt.",
+  "quest:8828:details:1": "But you should definitely check it out. I'm sure ⟦E3⟧ has some presents with your name on them.",
+  "quest:8828:completion:0": "Oh, ho hello there! You can only be here for one reason: to open your Winter Veil presents.",
+  "quest:8828:completion:1": "Now, don't you worry, ⟦E1⟧ hasn't forgotten about his favorite ⟦14⟧ ⟦15⟧. Look under the tree and you'll find your gifts.",
+  "quest:8828:completion:2": "During this season of giving, perhaps your friends would also enjoy receiving some of Smokeywood Pasture's excellent products?",
+  "quest:8803:completion:0": "The note on this present reads:⟦16⟧⟦17⟧To ⟦18⟧,⟦19⟧⟦20⟧In hoping this will help you spread warm tidings and holiday cheer to all of ⟦E5⟧.⟦21⟧⟦22⟧From ⟦E1⟧",
+  "quest:8768:completion:0": "This festively-wrapped present has your name on it.⟦23⟧⟦24⟧Wait, did it just move?",
+  "quest:6983:obj:0": "Locate and return the ⟦E6⟧ to ⟦E7⟧ in ⟦E4⟧. It was last thought to be in the possession of the Abominable Greench, found somewhere in the snowy regions of the ⟦E8⟧.",
+  "quest:6983:details:0": "A c-c-creature called \"⟦E9⟧\" is the one w-w-who stole our shipment of t-t-treats, ⟦25⟧. Be c-c-careful though! He is t-t-the one who turned me into this s-s-snowy mess!",
+  "quest:6983:details:1": "You're g-g-gonna need some help in f-f-facing him. I've seen him w-w-wander all around where the y-y-yeti are; he's s-s-surely here s-s-somewhere! F-f-find the treats ⟦26⟧, take them b-b-back to Smokywood Pastures in ⟦E4⟧, and t-t-tell them I n-n-need to be unfrozen!",
+  "quest:6983:progress:0": "⟦27⟧ - our Feast of Winter Veil will be ruined without those treats to restock!  ⟦E10⟧ himself will miss out on sharing his delicious meat pies with all the good boys and girls this season...",
+  "quest:6983:completion:0": "You found it! You've saved Smokywood Pasture's Feast of Winter Veil!",
+  "quest:6983:completion:1": "Poor Sacks... we'll be sure to send a team out there and figure out a way to unfreeze him. Hopefully, he'll be back in time for the day of the Feast; he'll need to make up missed time working though. Still, this wouldn't even be possible if it weren't for you!",
+  "quest:7043:obj:0": "Locate and return the ⟦E6⟧ to ⟦E12⟧ in ⟦E2⟧. It was last thought to be in the possession of the Abominable Greench, found somewhere in the snowy regions of the ⟦E8⟧.⟦28⟧",
+  "quest:7043:details:0": "A c-c-creature called \"⟦E9⟧\" is the one w-w-who stole our shipment of t-t-treats, ⟦29⟧. Be c-c-careful though! He is t-t-the one who turned me into this s-s-snowy mess!",
+  "quest:7043:details:1": "You're g-g-gonna need some help in f-f-facing him. I've seen him w-w-wander all around where the y-y-yeti are; he's s-s-surely here s-s-somewhere! F-f-find the treats ⟦30⟧, take them b-b-back to Smokywood Pastures in ⟦E2⟧, and t-t-tell them I n-n-need to be unfrozen!",
+  "quest:7043:progress:0": "⟦31⟧ - our Feast of Winter Veil will be ruined without those treats to restock!  ⟦E10⟧ himself will miss out on sharing his delicious meat pies with all the good boys and girls this season...",
+  "quest:7043:completion:0": "You found it! You've saved Smokywood Pasture's Feast of Winter Veil!",
+  "quest:7043:completion:1": "Poor Sacks... we'll be sure to send a team out there and figure out a way to unfreeze him. Hopefully, he'll be back in time for the day of the Feast; he'll need to make up missed time working though. Still, this wouldn't even be possible if it weren't for you!",
+  "quest:8769:completion:0": "Have a joyous Feast of Great-Winter from your friends at Smokeywood Pastures.",
+  "quest:1657:obj:0": "Toss three ⟦E13⟧ Stink Bombs into the heart of ⟦E14⟧ in Hillsbrad, and return to ⟦E15⟧ at the Wickerman Festival in Tirisfal Glade.",
+  "quest:1657:details:0": "Celebrate Hallow's End in style... by bringing grief to our enemies in ⟦E14⟧!",
+  "quest:1657:details:1": "Take one of these specially crafted stink bombs. It is filled with an odiferous funk that no human - or any weak-willed beast for that matter - can stand to smell. You'll need to throw it right in the heart of ⟦E14⟧ for it to do its job, so be prepared for a fight against the ⟦E17⟧!",
+  "quest:1657:details:2": "When you've completed this task... this tribute to our liberation, return to me!",
+  "quest:1657:progress:0": "Have you delivered our \"gift\" to the people of ⟦E14⟧?⟦32⟧⟦33⟧<⟦E15⟧ laughs wickedly.>",
+  "quest:1657:completion:0": "Ah, well done! I hope the ⟦E17⟧ chokes on the foul gift we've given them, much like we were forced to choke on the yoke of enslavement to the Scourge!",
+  "quest:1657:completion:1": "You've kept the ideas of Hallow's End true, ⟦34⟧, and for that I salute you. As an extra bonus, let me share some of these Hallow's End treats I have with you. I think you might find them to be quite the enjoyable diversion!",
+  "quest:1658:obj:0": "Locate the ⟦E13⟧'s Wickerman Festival in Tirisfal Glade. Return to ⟦E18⟧ in ⟦E14⟧ once you've done so.",
+  "quest:1658:details:0": "I need brave individuals to head up to Tirisfal Glade and check out the Wickerman Festival. I'm not going to lie - heading up there will be dangerous. The guards at the festival will be exceptionally vicious. Still, we need to know how big the festival is this year, and how much trouble the ⟦E13⟧ are going to cause us during Hallow's End.",
+  "quest:1658:details:1": "If you're up for it, head to Tirisfal and scout out the festival. Return to me with the information, and I'll make sure you're well compensated.",
+  "quest:1658:completion:0": "Well done, ⟦35⟧. The Wickerman Festival will continue to be trouble so long as the abominable ⟦E13⟧ are allowed to haunt the remnants of Lordaeron. It is NOT a fitting tribute to that once proud kingdom, let me tell you...",
+  "quest:1658:completion:1": "Here's some coin for any repairs you might need, and in the spirit of the season I've also included some treats you might like. Happy Hallow's End - let's keep it as safe as possible here in ⟦E14⟧.",
+  "quest:6961:obj:0": "Speak with ⟦E1⟧; he is located near the Smokywood Pastures vendor area in ⟦E4⟧.",
+  "quest:6961:details:0": "Have a wondrous Winter Veil, friend! Be sure to say hello to ⟦E1⟧! If you've been nice this year, you'll receive wondrous treats on the day of the Feast of Winter Veil. Be sure to tell him what you hope to get this year!",
+  "quest:6961:details:1": "Also, be sure to stock up on treats to give those who've been nice this year. We have a great selection to choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!",
+  "quest:6961:completion:0": "Ho ho hello. I am ⟦E1⟧, and I - courtesy of the fine folks of Smokywood Pastures... \"Fresh from our farm to your plate, it's Smokywood Pastures wholesome goodness\" - would like to wish you a fantastic Feast of Winter Veil.",
+  "quest:6961:completion:1": "If you've been good this year, maybe you will receive treats from Smokywood Pastures as your treat for the Feast of Winter Veil. Huzzah.",
+  "quest:6962:obj:0": "Bring 5 Gingerbread Cookies and an ⟦E19⟧ to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:6962:details:0": "Hey, can you do ⟦E3⟧ a favor, um, little ⟦36⟧?",
+  "quest:6962:details:1": "Not to needlessly talk about myself in the third person, but ⟦E3⟧ has been at this all day and he could use a treat himself. Some gingerbread cookies and ice cold milk to wash them down with would really hit the spot. Think you could be a friend to the Great-father and fetch some for me?",
+  "quest:6962:progress:0": "All this talk of treats has given me a hankering for some myself.  Mmmm... gingerbread cookies and milk...",
+  "quest:6962:completion:0": "You're quite the helper to ol' ⟦E3⟧ there, ⟦37⟧. Have a great Feast of Winter Veil.",
+  "quest:6962:completion:1": "Here's a little something... you know, for the effort.",
+  "quest:6963:obj:0": "Locate the Smokywood Pastures investigator that has gone missing in the snowy regions of the ⟦E8⟧.",
+  "quest:6963:details:0": "Listen... not to shatter the magic of the season here, but Smokywood Pastures could use some assistance - the kind you adventuring types are known to give.",
+  "quest:6963:details:1": "We're missing an important shipment of treats that was restocking us for the season, and now we're missing the agent of Smokywood Pastures that we sent out to the field to find it! Please - the shipment was last reported in the ⟦E8⟧, and that's where our man went to look for it.",
+  "quest:6963:details:2": "See if both are out there, safe and sound!",
+  "quest:6963:completion:0": "Y-y-you can h-h-hear me! Thank the b-b-bottom line!",
+  "quest:6963:completion:1": "I'm not really a s-s-snowman - my n-n-name is Sacks, and I w-w-work for the ⟦E4⟧ b-b-branch of Smokywood Pastures... I g-g-got sent out here to look for a m-m-missing package, when I was attacked by a c-c-creature I have never seen b-b-before!",
+  "quest:6963:completion:2": "So v-v-very cold...",
+  "quest:6964:obj:0": "Speak with ⟦E21⟧ in the Valley of Wisdom of ⟦E4⟧ about the Feast of Winter Veil.",
+  "quest:6964:details:0": "Gifts, treats, presents... bah, I say!",
+  "quest:6964:details:1": "Those goblins pollute the true meaning of this season - the Feast of Winter Veil. This is a time of renewal; the land slumbers under a blanket of snow brought forth by ⟦E1⟧, who is NOT the bumbling fool over there in the red suit!",
+  "quest:6964:details:2": "If you're interested in learning what the Feast is all about for yourself, ask ⟦E21⟧. I'm sure he'll be surprised that someone cares about history rather than getting presents.",
+  "quest:6964:completion:0": "⟦E22⟧, you say? Alas, in times past it held a more substantial meaning to us tauren. Nowadays, it seems as though others have turned the legend of this season of renewal into something that helps to sell candies and presents.",
+  "quest:6964:completion:1": "It's no surprise that ⟦E23⟧ is bitter about that sort of change. He and other tauren like him cling to our past like a banner of war. While I think a little celebration is always good, it is important to remember the origins of the Feast.",
+  "quest:6984:obj:0": "Speak with ⟦E3⟧ in ⟦E4⟧.",
+  "quest:6984:details:0": "We at Smokywood Pastures appreciate the recovery of the stolen treats, ⟦38⟧. For that, we'd like to offer you a special gift... presented by none other than ⟦E3⟧ himself!",
+  "quest:6984:details:1": "Please, speak with ⟦E3⟧, and he will give you your Feast of Winter Veil gift from us here at Smokywood Pastures. From our farm to your plate, it's always Smokywood Pastures wholesome goodness... thanks to you, of course!",
+  "quest:6984:completion:0": "Ho ho hello, adventurer!",
+  "quest:6984:completion:1": "The goblins told me that you have earned a special gift this holiday season, and I am pleased to give it to you. Here you go - have a wondrous Feast of Winter Veil this and every season in the future.",
+  "quest:7021:obj:0": "Speak with ⟦E1⟧; he is located near the Smokywood Pastures vendor area in ⟦E4⟧.",
+  "quest:7021:details:0": "Have a wondrous Winter Veil, friend! Be sure to say hello to ⟦E1⟧, who's currently in ⟦E4⟧! If you've been nice this year, you'll receive wondrous treats on the day of the Feast of Winter Veil. Be sure to tell him what you hope to get this year!",
+  "quest:7021:details:1": "Also, be sure to stock up on treats to give those who've been nice this year. We have a great selection to choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!",
+  "quest:7021:completion:0": "Ho ho hello. I am ⟦E1⟧, and I - courtesy of the fine folks of Smokywood Pastures... \"Fresh from our farm to your plate, it's Smokywood Pastures wholesome goodness\" - would like to wish you a fantastic Feast of Winter Veil.",
+  "quest:7021:completion:1": "If you've been good this year, maybe you will receive treats from Smokywood Pastures as your treat for the Feast of Winter Veil. Huzzah.",
+  "quest:7022:obj:0": "Speak with ⟦E1⟧; he is located near the Smokywood Pastures vendor area in ⟦E2⟧.",
+  "quest:7022:details:0": "Have a wondrous Winter Veil, friend! Be sure to say hello to ⟦E1⟧! If you've been nice this year, you'll receive wondrous treats on the day of the Feast of Winter Veil. Be sure to tell him what you hope to get this year!",
+  "quest:7022:details:1": "Also, be sure to stock up on treats to give those who've been nice this year. We have a great selection to choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!",
+  "quest:7022:completion:0": "Ho ho hello. I am ⟦E1⟧, and I - courtesy of the fine folks of Smokywood Pastures... \"Fresh from our farm to your plate, it's Smokywood Pastures wholesome goodness\" - would like to wish you a fantastic Feast of Winter Veil.",
+  "quest:7022:completion:1": "If you've been good this year, maybe you will receive treats from Smokywood Pastures as your treat for the Feast of Winter Veil. Huzzah.",
+  "quest:7023:obj:0": "Speak with ⟦E1⟧; he is located near the Smokywood Pastures vendor area in ⟦E2⟧.",
+  "quest:7023:details:0": "Have a wondrous Winter Veil, friend! Be sure to say hello to ⟦E1⟧, who's currently in ⟦E2⟧! If you've been nice this year, you'll receive wondrous treats on the day of the Feast of Winter Veil. Be sure to tell him what you hope to get this year!",
+  "quest:7023:details:1": "Also, be sure to stock up on treats to give those who've been nice this year. We have a great selection to choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!",
+  "quest:7023:completion:0": "Ho ho hello. I am ⟦E1⟧, and I - courtesy of the fine folks of Smokywood Pastures... \"Fresh from our farm to your plate, it's Smokywood Pastures wholesome goodness\" - would like to wish you a fantastic Feast of Winter Veil.",
+  "quest:7023:completion:1": "If you've been good this year, maybe you will receive treats from Smokywood Pastures as your treat for the Feast of Winter Veil. Huzzah.",
+  "quest:7024:obj:0": "Speak with ⟦E1⟧; he is located near the Smokywood Pastures vendor area in ⟦E4⟧.",
+  "quest:7024:details:0": "Have a wondrous Winter Veil, friend! Be sure to say hello to ⟦E1⟧, who's currently in ⟦E4⟧! If you've been nice this year, you'll receive wondrous treats on the day of the Feast of Winter Veil. Be sure to tell him what you hope to get this year!",
+  "quest:7024:details:1": "Also, be sure to stock up on treats to give those who've been nice this year. We have a great selection to choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!",
+  "quest:7024:completion:0": "Ho ho hello. I am ⟦E1⟧, and I - courtesy of the fine folks of Smokywood Pastures... \"Fresh from our farm to your plate, it's Smokywood Pastures wholesome goodness\" - would like to wish you a fantastic Feast of Winter Veil.",
+  "quest:7024:completion:1": "If you've been good this year, maybe you will receive treats from Smokywood Pastures as your treat for the Feast of Winter Veil. Huzzah.",
+  "quest:7025:obj:0": "Bring 5 Gingerbread Cookies and an ⟦E19⟧ to ⟦E1⟧ in ⟦E2⟧.",
+  "quest:7025:details:0": "Hey, can you do ⟦E1⟧ a favor, um, little ⟦39⟧?",
+  "quest:7025:details:1": "Not to needlessly talk about myself in the third person, but ⟦E1⟧ has been at this all day and he could use a treat himself. Some gingerbread cookies and ice cold milk to wash them down with would really hit the spot. Think you could be a friend to the Greatfather and fetch some for me?",
+  "quest:7025:progress:0": "All this talk of treats has given me a hankering for some myself.  Mmmm... gingerbread cookies and milk...",
+  "quest:7025:completion:0": "You're quite the helper to ol' ⟦E1⟧ there, ⟦40⟧. Have a great Feast of Winter Veil.",
+  "quest:7025:completion:1": "Here's a little something... you know, for the effort.",
+  "quest:7042:obj:0": "Locate the Smokywood Pastures investigator that has gone missing in the snowy regions of the ⟦E8⟧.",
+  "quest:7042:details:0": "Listen... not to shatter the magic of the season here, but Smokywood Pastures could use some assistance - the kind you adventuring types are known to give.",
+  "quest:7042:details:1": "We're missing an important shipment of treats that was restocking us for the season, and now we're missing the agent of Smokywood Pastures that we sent out to the field to find it! Please - the shipment was last reported in the ⟦E8⟧, and that's where our man went to look for it.",
+  "quest:7042:details:2": "See if both are out there, safe and sound!",
+  "quest:7042:completion:0": "Y-y-you can h-h-hear me! Thank the b-b-bottom line!",
+  "quest:7042:completion:1": "I'm not really a s-s-snowman - my n-n-name is Sacks, and I w-w-work for the ⟦E2⟧ b-b-branch of Smokywood Pastures... I g-g-got sent out here to look for a m-m-missing package, when I was attacked by a c-c-creature I have never seen b-b-before!",
+  "quest:7042:completion:2": "So v-v-very cold...",
+  "quest:7045:obj:0": "Speak with ⟦E1⟧ in ⟦E2⟧.",
+  "quest:7045:details:0": "We at Smokywood Pastures appreciate the recovery of the stolen treats, ⟦41⟧. For that, we'd like to offer you a special gift... presented by none other than ⟦E1⟧ himself!",
+  "quest:7045:details:1": "Please, speak with ⟦E1⟧, and he will give you your Feast of Winter Veil gift from us here at Smokywood Pastures. From our farm to your plate, it's always Smokywood Pastures wholesome goodness... thanks to you, of course!",
+  "quest:7045:completion:0": "Ho ho hello, adventurer!",
+  "quest:7045:completion:1": "The goblins told me that you have earned a special gift this holiday season, and I am pleased to give it to you. Here you go - have a wondrous Feast of Winter Veil this and every season in the future.",
+  "quest:7061:obj:0": "Feel free to read the book, \"⟦E22⟧\", to learn more about the holiday. When you are finished with the book, deliver it to ⟦E24⟧ in ⟦E25⟧.",
+  "quest:7061:details:0": "Here - if you are interested in learning more about the Feast of Winter Veil, read this book. While I think our recognition of the legend is the appropriate one, I'm enough of a student of legends to appreciate the collection of all information into a single source.",
+  "quest:7061:details:1": "When you're done, take the book to ⟦E24⟧ in ⟦E25⟧. I know for a fact he'd be interested in hearing that others have taken an interest in the lore of our people.",
+  "quest:7061:progress:0": "I bid you welcome to ⟦E26⟧ and our humble community of ⟦E25⟧, friend.  I always take an interest in those who choose to take an interest in the kingdom, its people, and its lore.  Is this why you are standing before me?",
+  "quest:7061:completion:0": "The legends and lore surrounding the Winter Veil are ones that have faded from the forefront of public thought over the years. Yes, I know that the goblins are helping to revive the season for their own ends, the fact that our people reflect upon it at least in some form does good to keep such lore alive.",
+  "quest:7061:completion:1": "Your desire to go beyond the material and learn about our past is an admirable trait, young ⟦42⟧. I salute your wisdom.",
+  "quest:7062:obj:0": "Speak with ⟦E28⟧ at the Explorer's League in ⟦E2⟧ about the Feast of Winter Veil.",
+  "quest:7062:details:0": "Gifts, treats, presents... bah, I say!",
+  "quest:7062:details:1": "Those goblins pollute the true meaning of this season - the Feast of Winter Veil. This is a time of renewal; the land slumbers under a blanket of snow brought forth by ⟦E1⟧, who is NOT the bumbling fool over there in the red suit!",
+  "quest:7062:details:2": "If you're interested in learning what the Feast is all about for yourself, ask ⟦E28⟧ at the Explorer's League. I'm sure he'll be surprised that someone cares about history rather than getting presents.",
+  "quest:7062:completion:0": "⟦E22⟧, you say? Alas, in times past it held a more substantial meaning to us dwarves. Nowadays, it seems as though others have turned the legend of ⟦E1⟧ into something that helps to sell candies and presents.",
+  "quest:7062:completion:1": "It's no surprise that Goli is bitter about that sort of change. He and other dwarves like him cling to our past like a banner of war. While I think a little celebration is always good, it is important to remember the origins of the Feast.",
+  "quest:7063:obj:0": "Feel free to read the book, \"⟦E22⟧\", to learn more about the holiday. When you are finished with the book, deliver it to ⟦E29⟧ in ⟦E2⟧.",
+  "quest:7063:details:0": "Here - if you are interested in learning more about the Feast of Winter Veil, read this book. While I think our recognition of the legend is the appropriate one, I'm enough of a scholar to appreciate the collection of all information into a single source.",
+  "quest:7063:details:1": "When you're done, take the book to ⟦E29⟧. I know for a fact he'd be interested in hearing that others have taken an interest in the older legends.",
+  "quest:7063:progress:0": "I bid you welcome to the Kingdom of ⟦E2⟧, friend. I always take an interest in those who choose to take an interest in the kingdom, its people, and its lore. Is this why you are standing before me?",
+  "quest:7063:completion:0": "The legends and lore surrounding the Winter Veil are ones that have faded from the forefront of public thought over the years. While I recognize that the goblins are helping to revive the season for their own ends, the fact that the citizenry thinks about it at least in some form does good to keep such lore alive.",
+  "quest:7063:completion:1": "Your desire to go beyond the material and learn about our past is an admirable trait, young ⟦43⟧. I salute your erudite nature.",
+  "quest:8149:obj:0": "⟦E30⟧ to Uther's Tomb in ⟦E31⟧ and use ⟦E32⟧ at his statue, and then return to ⟦E33⟧ outside ⟦E2⟧ before the Harvest Festival is over.",
+  "quest:8149:details:0": "During the Harvest Festival of ⟦E5⟧, we give thanks to heroes for the sacrifices - in some cases ultimate sacrifices - they have given on our behalf. The ⟦E17⟧ acknowledges many heroes, but none weave a more tragic tale than that of Uther Lightbringer.",
+  "quest:8149:details:1": "Help us honor Uther by taking this offering to his tomb in the ⟦E31⟧. Place it at his statue, and then return to me. I'll only be here through the end of the festival, so waste no time in giving Uther his tribute.",
+  "quest:8149:progress:0": "Have you made the journey to Uther's Tomb and placed the tribute there?⟦44⟧⟦45⟧It can be a dangerous trip for less experienced adventurers; a safer way of traveling there, relatively speaking, may be to travel north from the river that runs through Hillsbrad into the ⟦E34⟧. It flows from a lake that is adjacent to Sorrow Hill; travel west up through the hills, steering clear of the adjacent tomb... one that is infested with the Scourge.",
+  "quest:8149:completion:0": "He was a hero among heroes, Uther was. I can't even begin to imagine the anguish of what he felt when ⟦E35⟧ - his greatest student and someone whom Uther loved like his own son - betrayed all of humanity. Still, he rose to try and stop ⟦E35⟧, and for that he will be forever remembered as a true paladin. His fight was to the end, thinking only of those he might save.",
+  "quest:8149:completion:1": "Thank you, ⟦46⟧. You've paid tribute to a great hero today, honoring his spirit and the spirit of the Harvest Festival.",
+  "quest:8150:obj:0": "⟦E30⟧ to Grom's Monument in the Demon Fall Canyon of ⟦E37⟧ and use ⟦E38⟧ at the base of the monument. Return to ⟦E39⟧ outside ⟦E4⟧ before the Harvest Festival is over.",
+  "quest:8150:details:0": "During the Harvest Festival of ⟦E5⟧, we give thanks to heroes for the sacrifices - in some cases ultimate sacrifices - they have given on our behalf. The ⟦E40⟧ acknowledges many heroes, but none exemplify strength and sacrifice more than ⟦E41⟧.",
+  "quest:8150:details:1": "Help us honor Grom by taking this offering to his monument in the Demon Fall Canyon of ⟦E37⟧. Place it at the base, and then return to me. I'll only be here through the end of the festival, so waste no time in giving Grom his tribute.",
+  "quest:8150:progress:0": "Have you made the journey to Grom's Monument and placed his tribute there?⟦47⟧⟦48⟧The site where the monument is still touched by the taint of the ⟦E42⟧. Should you be less experienced in the ways of adventuring, be on your toes when approaching the monument.",
+  "quest:8150:completion:0": "Grom's full name - Grommash - means \"The Giant's Heart\"; it took that and more to stand alone against Mannoroth. I think the Warchief said it best when the curse of the orcs began and ended with Grom. Fitting that Grom's sacrifice - and perhaps redemption - would be the wellspring from which the ⟦E40⟧ flows today.",
+  "quest:8150:completion:1": "Thank you, ⟦49⟧. You've paid tribute to a great hero today, honoring his spirit and the spirit of the Harvest Festival.",
+  "quest:8311:obj:0": "Speak with the innkeepers of ⟦E44⟧, ⟦E2⟧, and ⟦E45⟧, as well as ⟦E46⟧ in ⟦E2⟧. Perform the tricks they ask of you in exchange for the treats they offer.",
+  "quest:8311:obj:1": "Return to ⟦E47⟧ at the ⟦E44⟧ Orphanage with a ⟦E48⟧, ⟦E49⟧, ⟦E50⟧, and ⟦E51⟧.",
+  "quest:8311:details:0": "I want to go trick-or-treating, but I can't because I'm sick. If you go for me, I'd trade you the candy you get for some I already have! I think you'd like this candy - it makes you turn into things both funny and scary!",
+  "quest:8311:details:1": "Each of the innkeepers in the big cities have candy they give for Hallow's End - talk to them and do the tricks they ask for! Also, a little gnome named Talvash in ⟦E2⟧ is handing out candy as well. When you have all the candy, bring them back to me here!",
+  "quest:8311:progress:0": "Have you finished trick-or-treating yet?  I'm sad that I can't go because I'm sick, but you helping me out makes me feel a little better...",
+  "quest:8311:completion:0": "Wow, you got them all! You're awesome!",
+  "quest:8311:completion:1": "Thank you for trick-or-treating for me. Here, take these pumpkin treats - I think you'll like them a lot!",
+  "quest:8311:completion:2": "Happy Hallow's End, ⟦50⟧!"
+ },
+ "context": {
+  "quest:8744": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 1,
+   "side": "",
+   "giver": "Carefully Wrapped Present («هدیهٔ پیچیده‌شدهٔ موقر»)",
+   "turner": "Carefully Wrapped Present («هدیهٔ پیچیده‌شدهٔ موقر»)"
+  },
+  "quest:8767": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 1,
+   "side": "",
+   "giver": "Gently Shaken Gift («هدیهٔ به‌آرامی تکان‌خورده»)",
+   "turner": "Gently Shaken Gift («هدیهٔ به‌آرامی تکان‌خورده»)"
+  },
+  "quest:8788": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 1,
+   "side": "",
+   "giver": "Gently Shaken Gift («هدیهٔ به‌آرامی تکان‌خورده»)",
+   "turner": "Gently Shaken Gift («هدیهٔ به‌آرامی تکان‌خورده»)"
+  },
+  "quest:8827": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Wonderform Operator («اپراتور شگفت‌پیکر»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:8828": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 1,
+   "side": "horde",
+   "giver": "Wonderform Operator («اپراتور شگفت‌پیکر»)",
+   "turner": "Great-father Winter («بزرگ‌پدر زمستان»)"
+  },
+  "quest:8803": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 10,
+   "side": "",
+   "giver": "Festive Gift («هدیهٔ جشن»)",
+   "turner": "Festive Gift («هدیهٔ جشن»)"
+  },
+  "quest:8768": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 20,
+   "side": "",
+   "giver": "Gaily Wrapped Present («هدیهٔ شادانه»)",
+   "turner": "Gaily Wrapped Present («هدیهٔ شادانه»)"
+  },
+  "quest:6983": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 35,
+   "side": "horde",
+   "giver": "Strange Snowman («غریب آدم‌برفی»)",
+   "turner": "Kaymard Copperpinch («کیمارد کاپرپینچ»)"
+  },
+  "quest:7043": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Strange Snowman («غریب آدم‌برفی»)",
+   "turner": "Wulmort Jinglepocket («والمورت جینگل‌پاکت»)"
+  },
+  "quest:8769": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Ticking Present («هدیهٔ تیک‌تاک‌دار»)",
+   "turner": "Ticking Present («هدیهٔ تیک‌تاک‌دار»)"
+  },
+  "quest:1657": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Darkcaller Yanka («تاریک‌خوان یانکا»)",
+   "turner": "Darkcaller Yanka («تاریک‌خوان یانکا»)"
+  },
+  "quest:1658": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sergeant Hartman («گروهبان هارتمان»)",
+   "turner": "Sergeant Hartman («گروهبان هارتمان»)"
+  },
+  "quest:6961": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kaymard Copperpinch («کیمارد کاپرپینچ»)",
+   "turner": "Great-father Winter («بزرگ‌پدر زمستان»)"
+  },
+  "quest:6962": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Great-father Winter («بزرگ‌پدر زمستان»)",
+   "turner": "Great-father Winter («بزرگ‌پدر زمستان»)"
+  },
+  "quest:6963": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kaymard Copperpinch («کیمارد کاپرپینچ»)",
+   "turner": "Strange Snowman («غریب آدم‌برفی»)"
+  },
+  "quest:6964": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Furmund («فورموند»)",
+   "turner": "Sagorne Creststrider («ساگورن کرستستریدر»)"
+  },
+  "quest:6984": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kaymard Copperpinch («کیمارد کاپرپینچ»)",
+   "turner": "Great-father Winter («بزرگ‌پدر زمستان»)"
+  },
+  "quest:7021": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Whulwert Copperpinch («هولورت کاپرپینچ»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:7022": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Nardstrum Copperpinch («ناردستروم مس‌چنگ»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:7023": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Nardstrum Copperpinch («ناردستروم مس‌چنگ»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:7024": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Nardstrum Copperpinch («ناردستروم مس‌چنگ»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:7025": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Greatfather Winter («پدربزرگ زمستان»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:7042": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Wulmort Jinglepocket («والمورت جینگل‌پاکت»)",
+   "turner": "The Abominable Greench («گرینچ نفرت‌انگیز»)، Strange Snowman («غریب آدم‌برفی»)"
+  },
+  "quest:7045": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Wulmort Jinglepocket («والمورت جینگل‌پاکت»)",
+   "turner": "Greatfather Winter («پدربزرگ زمستان»)"
+  },
+  "quest:7061": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Sagorne Creststrider («ساگورن کرستستریدر»)",
+   "turner": "Cairne Bloodhoof («کیرن سم‌خون»)"
+  },
+  "quest:7062": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Goli Krumn («گولی کرامن»)، Courier Hammerfall («پیک همرفال»)",
+   "turner": "Historian Karnik («تاریخ‌نگار کارنیک»)"
+  },
+  "quest:7063": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Historian Karnik («تاریخ‌نگار کارنیک»)",
+   "turner": "King Magni Bronzebeard («شاه مگنی ریش‌مفرغی»)"
+  },
+  "quest:8149": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Wagner Hammerstrike («واگنر هامراسترایک»)",
+   "turner": "Wagner Hammerstrike («واگنر هامراسترایک»)"
+  },
+  "quest:8150": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Javnir Nashak («جاونیر ناشاک»)",
+   "turner": "Javnir Nashak («جاونیر ناشاک»)"
+  },
+  "quest:8311": {
+   "zone_en": "Seasonal",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Jesper («جسپر»)",
+   "turner": "Jesper («جسپر»)"
+  }
+ },
+ "known": {
+  "quest:8744": {
+   "title": "هدیه‌ای با دقت پیچیده‌شده"
+  },
+  "quest:8767": {
+   "title": "هدیه‌ای به‌آرامی تکان‌خورده"
+  },
+  "quest:8788": {
+   "title": "هدیه‌ای به‌آرامی تکان‌خورده"
+  },
+  "quest:8827": {
+   "title": "هدایای زمستان"
+  },
+  "quest:8828": {
+   "title": "هدایای زمستان"
+  },
+  "quest:8803": {
+   "title": "هدیهٔ جشن"
+  },
+  "quest:8768": {
+   "title": "هدیه‌ای شادانه پیچیده‌شده"
+  },
+  "quest:6983": {
+   "title": "چه بی‌رحمی..."
+  },
+  "quest:7043": {
+   "title": "چه بی‌رحمی..."
+  },
+  "quest:8769": {
+   "title": "هدیهٔ تیک‌تیک‌کننده"
+  },
+  "quest:1657": {
+   "title": "بدمبویی در ساوت‌شور"
+  },
+  "quest:1658": {
+   "title": "نفوذ به جشن ویکرمن (PvP)"
+  },
+  "quest:6961": {
+   "title": "پدربزرگ زمستان اینجاست!"
+  },
+  "quest:6962": {
+   "title": "خوراکی برای پدربزرگ زمستان"
+  },
+  "quest:6963": {
+   "title": "خوراکی‌های دزدیده‌شدهٔ پردهٔ زمستان"
+  },
+  "quest:6964": {
+   "title": "معنای جشن"
+  },
+  "quest:6984": {
+   "title": "تشکر چراگاه‌های دودآلود!"
+  },
+  "quest:7021": {
+   "title": "پدربزرگ زمستان اینجاست!"
+  },
+  "quest:7022": {
+   "title": "پدربزرگ زمستان اینجاست!"
+  },
+  "quest:7023": {
+   "title": "پدربزرگ زمستان اینجاست!"
+  },
+  "quest:7024": {
+   "title": "پدربزرگ زمستان اینجاست!"
+  },
+  "quest:7025": {
+   "title": "خوراکی برای پدربزرگ زمستان"
+  },
+  "quest:7042": {
+   "title": "خوراکی‌های دزدیده‌شدهٔ پردهٔ زمستان"
+  },
+  "quest:7045": {
+   "title": "تشکر چراگاه‌های دودآلود!"
+  },
+  "quest:7061": {
+   "title": "جشن پردهٔ زمستان"
+  },
+  "quest:7062": {
+   "title": "معنای جشن"
+  },
+  "quest:7063": {
+   "title": "جشن پردهٔ زمستان"
+  },
+  "quest:8149": {
+   "title": "ادای احترام به قهرمان"
+  },
+  "quest:8150": {
+   "title": "ادای احترام به قهرمان"
+  },
+  "quest:8311": {
+   "title": "خوراکی‌های هالوین برای جسپر!"
+  }
+ }
+}

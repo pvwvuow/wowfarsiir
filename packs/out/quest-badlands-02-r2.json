@@ -1,0 +1,472 @@
+{
+ "pack": "quest-badlands-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-badlands-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Murdaloc",
+   "fa": "موردالوک",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Prospector Ironband",
+   "fa": "جویندهٔ رگه، گروه‌آهن",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Cog #5",
+   "fa": "چرخ‌دندهٔ شمارهٔ ۵",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Lotwil Veriatus",
+   "fa": "لوتویل وریاتوس",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Sign of the Earth",
+   "fa": "نشان زمین",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Garek",
+   "fa": "گارک",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Deathwing",
+   "fa": "بال مرگ",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Gorn",
+   "fa": "گورن",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Bonegrip's Note",
+   "fa": "یادداشت استخوان‌گیر",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Gerrig Bonegrip",
+   "fa": "گریگ استخوان‌چنگ",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Yagyin's Digest",
+   "fa": "چکیدهٔ یاگین",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Advisor Belgrum",
+   "fa": "مشاور بلگروم",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Uldaman",
+   "fa": "اولدامان",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Historian Karnik",
+   "fa": "تاریخ‌نگار کارنیک",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Jarkal Mossmeld",
+   "fa": "جارکال ماس‌ملد",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Black Drake's Heart",
+   "fa": "قلب اژدهای جوانِ سیاه",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Sigrun Ironhew",
+   "fa": "سیگرون آهن‌تراش",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Fam'retor Guardian",
+   "fa": "نگهبان فام‌رتور",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Lotwil's Shackles of Elemental Binding",
+   "fa": "زنجیرهای بستن المان لاتویل",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Blacklash's Bindings",
+   "fa": "بندهای شلاقِ سیاه",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Chains of Hematus",
+   "fa": "زنجیرهای هماتوس",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Seal of the Earth",
+   "fa": "مهر زمین",
+   "kind": "ob"
+  },
+  "E38": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Sha'ni Proudtusk",
+   "fa": "شانی عاج‌مغرور",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E42": {
+   "en": "Elemental Shard Sample",
+   "fa": "نمونهٔ خرده‌سنگ المان",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Murdaloc": "موردالوک",
+  "Prospector Ironband": "جویندهٔ رگه، گروه‌آهن",
+  "Loch Modan": "لوک مودان",
+  "Badlands": "بیابان",
+  "Cog #5": "چرخ‌دندهٔ شمارهٔ ۵",
+  "Lotwil Veriatus": "لوتویل وریاتوس",
+  "Sign of the Earth": "نشان زمین",
+  "Garek": "گارک",
+  "Tor": "تور",
+  "Deathwing": "بال مرگ",
+  "Gorn": "گورن",
+  "Horde": "هورد",
+  "Bonegrip's Note": "یادداشت استخوان‌گیر",
+  "Gerrig Bonegrip": "گریگ استخوان‌چنگ",
+  "Ironforge": "آیرون‌فورج",
+  "Yagyin's Digest": "چکیدهٔ یاگین",
+  "Advisor Belgrum": "مشاور بلگروم",
+  "Uldaman": "اولدامان",
+  "Historian Karnik": "تاریخ‌نگار کارنیک",
+  "Jarkal Mossmeld": "جارکال ماس‌ملد",
+  "Black Drake's Heart": "قلب اژدهای جوانِ سیاه",
+  "Sigrun Ironhew": "سیگرون آهن‌تراش",
+  "Fam'retor Guardian": "نگهبان فام‌رتور",
+  "Lotwil's Shackles of Elemental Binding": "زنجیرهای بستن المان لاتویل",
+  "Blacklash's Bindings": "بندهای شلاقِ سیاه",
+  "Chains of Hematus": "زنجیرهای هماتوس",
+  "Seal of the Earth": "مهر زمین",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Sha'ni Proudtusk": "شانی عاج‌مغرور",
+  "Travel": "سفر",
+  "Elemental Shard Sample": "نمونهٔ خرده‌سنگ المان"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$N",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$C",
+  "9": "$c",
+  "10": "$N",
+  "11": "$N",
+  "12": "$c",
+  "13": "$C",
+  "14": "$N",
+  "15": "$N",
+  "16": "$n",
+  "17": "$n",
+  "18": "$N",
+  "19": "$B",
+  "20": "$R"
+ },
+ "rows": {
+  "quest:739:obj:0": "Slay Agmond's killer, ⟦E1⟧.",
+  "quest:739:obj:1": "Slay 12 Stonevault Bonesnappers.",
+  "quest:739:obj:2": "Report to ⟦E2⟧ in ⟦E3⟧.",
+  "quest:739:details:0": "Agmond's tracks lead from the west. It is easy to tell from the bloody smears across rock and sand that the dwarf crawled some distance.",
+  "quest:739:details:1": "And here he died.",
+  "quest:739:details:2": "Upon close inspection, the word \"⟦E1⟧\" is roughly scrawled in a patch of ⟦E4⟧ sandstone.",
+  "quest:739:details:3": "Scrawled next to Agmond's dead hand.",
+  "quest:739:progress:0": "Do you have news of Agmond's fate? Did you find him?",
+  "quest:739:completion:0": "This is sobering news, ⟦1⟧. But Agmond had a strong arm and a fierce hammer-swing, and his skull was as thick as they come! Although he was killed by those cursed troggs I'm sure he took a lot of them down with him.",
+  "quest:777:obj:0": "Bring ⟦E5⟧ to ⟦E6⟧.",
+  "quest:777:details:0": "Okay, here you go.",
+  "quest:777:details:1": "I'm going to be over here... behind cover.",
+  "quest:777:details:2": "Feel free to join me.",
+  "quest:777:progress:0": "<Without looking up from the shackles, Lotwil holds out a hand and waggles his fingers impatiently.>⟦2⟧⟦3⟧The cog, ⟦4⟧, the cog!",
+  "quest:777:completion:0": "Ah, perfect. Stand back while I prepare to make more history!",
+  "quest:777:completion:1": "B<Lotwil continues to work feverishly.>",
+  "quest:732:obj:0": "Retrieve the ⟦E7⟧ for ⟦E8⟧.",
+  "quest:732:details:0": "I heard from Sigrun that you have been a great help to him. Perhaps I might enlist your help. I was sent here by my master, Krasus of the Kirin ⟦E9⟧, to put an end to the trouble brewing in Lethlor Ravine.",
+  "quest:732:details:1": "I cannot divulge the exact nature of my assignment here or the tasks that I must undertake, but be assured it is of vital importance.",
+  "quest:732:details:2": "BA band of wandering ogres, sometimes seen near Camp Boff, stole an object called the ⟦E7⟧; I must have it. Bring it to me, and I will tell you more.",
+  "quest:732:progress:0": "The nomadic band of ogres travels between their camps across the ⟦E4⟧; heat rising from the dry earth and the swirling winds will make it difficult to track their progress. I have heard that sometimes they travel through Camp Boff. If you are lost, you might try your search there.",
+  "quest:732:completion:0": "Good tidings you bring bearing the Sign, ⟦5⟧. The ⟦E7⟧ was created by the Dark Iron dwarves of Angor Fortress to bind two of ⟦E10⟧'s ruthless lieutenants, the twins Blacklash and Hematus.",
+  "quest:782:obj:0": "Kill Boss Tho'grun and bring the ⟦E7⟧ to ⟦E11⟧ in Kargath.",
+  "quest:782:details:0": "From the ⟦E12⟧'s alliance with the dragon ⟦E10⟧ during the Second War, we know that two of his lieutenants, Blacklash and Hematus, were imprisoned within Lethlor Ravine far to the east. We must silence our depraved allies of old to restore honor to the ⟦E12⟧!",
+  "quest:782:details:1": "We hired Tho'grun and his band of ogre mercenaries to help us obtain the ⟦E7⟧, a key needed to unlock the drakes' prison. Tho'grun betrayed us though, overwhelming us and taking it for himself. Go to Camp Boff and take it back!",
+  "quest:782:progress:0": "Tho'grun's betrayal... is there any wonder why the ogres are part of the ⟦E12⟧ no longer? I will be glad to see him dead, and the ⟦E7⟧ returned.⟦6⟧⟦7⟧If you've not dispatched him yet, then waste no time going to Camp Boff.  It is to the southeast of Kargath.",
+  "quest:782:completion:0": "With Tho'grun dead, his corpse picked clean by the desert winds and scavenging buzzards, the ogres will be put into disarray. Though a small victory, this will lead to a much larger one",
+  "quest:782:completion:1": "The ⟦E7⟧ is now in our possession, and we can open the black drakes' prison in Lethlor. We shall free them from endless imprisonment, albeit to their doom!",
+  "quest:735:obj:0": "Return the items on the ⟦E15⟧ to ⟦E16⟧ in ⟦E17⟧.",
+  "quest:735:details:0": "⟦E18⟧, eh? Are you starting a new chapter of us, somewhere? Never mind, it is not my place to ask.",
+  "quest:735:details:1": "I will help you, for I have an extra copy. We must aid each other, yes? That is how we flourish.",
+  "quest:735:details:2": "I require three items of power. Bring them to me and I will give you the digest.",
+  "quest:735:details:3": "I will not speak their names. Ears may be on us. But here, I will write them down.",
+  "quest:735:progress:0": "Do you have the relics for which I asked?",
+  "quest:735:completion:0": "You are resourceful, ⟦8⟧. If it truly is your charge to begin a new chapter of our order, then I believe you will run it well.",
+  "quest:762:obj:0": "Kill Ambassador Infernus in Angor Fortress and bring proof of his death to ⟦E19⟧ in ⟦E17⟧.",
+  "quest:762:details:0": "Ambassador Infernus was sent to Angor Fortress by Ragnaros himself to mind the Shadowforge seeking lost artifacts in ⟦E20⟧.",
+  "quest:762:details:1": "It has already meant tremendous casualties for our people, but it has obviously grown worse. I hesitate to guess how many artifacts they would be able to find and use against ⟦E17⟧.",
+  "quest:762:details:2": "Our goal is simple, ⟦9⟧. Return to the ⟦E4⟧ and destroy Ambassador Infernus. Once the threat is eliminated, return to ⟦E19⟧ with proof of your victory.",
+  "quest:762:details:3": "It is in your hands now.",
+  "quest:762:progress:0": "Time is of the essence, ⟦10⟧. Ragnaros will not wait for us to prepare.",
+  "quest:762:completion:0": "⟦11⟧, your dedication to ⟦E17⟧ and to the dwarven people cannot be refuted. I thank you for your help in this matter.",
+  "quest:762:completion:1": "I shall send word to ⟦E22⟧ informing him that you have succeeded, and I shall also have aid sent to the ⟦E4⟧ as soon as possible to help recover the excavation site. Thank you again.",
+  "quest:762:completion:2": "Before you go, there is one more thing I would ask of you in the name of King Bronzebeard.",
+  "quest:2203:obj:0": "Use the empty thaumaturgy vessels on scorched guardian dragons found in the ⟦E4⟧. Once you have them filled, bring them to ⟦E24⟧ in Kargath.",
+  "quest:2203:details:0": "You have been most helpful to me, ⟦12⟧. I would reward you with the very recipe for the brew I gave you earlier... but I would ask of you a task that is quite dangerous. Hear my request.",
+  "quest:2203:details:1": "This lockbox contains three empty thaumaturgy vessels; they are imbued with an attunement aura that will drain the blood of a scorched guardian dragon. Using one on the beast will anger it greatly, so be warned. Once you have all three filled, bring them to me.",
+  "quest:2203:details:2": "Do this, and the recipe will be yours.",
+  "quest:2203:progress:0": "Have you used the vessels to get me the scorched guardian dragon blood I need?  Yes, I know it is a dangerous task... but the recipe for my restorative brew awaits your success.  Risk and reward, my friend... risk and reward...",
+  "quest:2203:completion:0": "From one alchemist to another, I salute you. Here, take this recipe and commit it to your knowledge. May it bring you the success and rewards that it has brought me over the years.",
+  "quest:706:obj:0": "Acquire a ⟦E26⟧ for ⟦E27⟧.",
+  "quest:706:details:0": "As an apprentice to Feranor Steeltoe, I learned his special technique for imbuing weapons with fiery enchantments. Last I heard of him, he was working at a smithy with a hunting party up in Lordaeron.",
+  "quest:706:details:1": "I can't tell you too many of the details about the process, but I can tell you it requires blood from a rare, still-beating black drake whelp's heart. I don't have much to do waiting for word from ⟦E17⟧. If you bring me a heart from the whelps in Lethlor Ravine, I'll show you my skill!",
+  "quest:706:progress:0": "How goes the hunt, ⟦13⟧?",
+  "quest:706:completion:0": "Ah yes, this will do excellently. This will enable your weapons to strike with searing heat!",
+  "quest:778:obj:0": "Defeat the ⟦E31⟧ and bring ⟦E32⟧ back to ⟦E6⟧.",
+  "quest:778:details:0": "Haha! Done! The shackles are done!",
+  "quest:778:details:1": "It's time, Lucien. It's time, Servo!",
+  "quest:778:details:2": "Are you ready to bear witness to the perfect blend of alchemy, engineering, and the arcane, ⟦14⟧?",
+  "quest:778:details:3": "I shall summon forth a powerful elemental now. This is a groundbreaking day for all of us.",
+  "quest:778:progress:0": "Not quite the outcome I was expecting. Could you get my shackles back?",
+  "quest:778:completion:0": "Thank you, ⟦15⟧. That was quite an ordeal, wasn't it?",
+  "quest:778:completion:1": "I'm not sure what could have gone wrong. It was a good thing my magics were here to help send the creature back to its home plane.",
+  "quest:778:completion:2": "Perhaps a little token of appreciation for all your hard work...",
+  "quest:717:desc:2": "Slay them and return ⟦E33⟧, the ⟦E34⟧, and the ⟦E7⟧ to ⟦E8⟧.",
+  "quest:717:obj:0": "Use the ⟦E7⟧ to activate the Pillars of Amethyst, Opal, and Diamond and obtain the Runestones.",
+  "quest:717:obj:1": "Place the runestones in the ⟦E35⟧ to free Blacklash and Hematus.",
+  "quest:717:obj:2": "Slay them and return ⟦E33⟧, the ⟦E34⟧, and the ⟦E7⟧ to ⟦E8⟧.",
+  "quest:717:details:0": "It has become obvious that we cannot ensure that Blacklash and Hematus will remain imprisoned in Lethlor. That black dragons have taken up residence there, and that the ogres managed to steal the Sign indicates that more drastic measures will have to be taken.",
+  "quest:717:details:1": "The drakes' prison is maintained by three runestones that may only be retrieved using the ⟦E7⟧. Those runestones can then be used to break the seal which imprisons them.",
+  "quest:717:details:2": "B⟦16⟧... assure that their dreams are eternal.",
+  "quest:717:progress:0": "Strong magics and powers held the drakes' prison for so long, but we cannot allow any possibility that Blacklash and Hematus may be released.",
+  "quest:717:completion:0": "No longer will the Kirin ⟦E9⟧ need to worry over the prisoners of Lethlor. I will return to report success to my master. Krasus will no doubt be pleased.",
+  "quest:793:desc:2": "Slay them and return ⟦E33⟧, the ⟦E34⟧, and the ⟦E7⟧ to ⟦E11⟧.",
+  "quest:793:obj:0": "Use the ⟦E7⟧ to activate the Pillars of Diamond, Opal, and Amethyst and obtain the Runestones.",
+  "quest:793:obj:1": "Place the runestones in the ⟦E35⟧ to free Blacklash and Hematus.",
+  "quest:793:obj:2": "Slay them and return ⟦E33⟧, the ⟦E34⟧, and the ⟦E7⟧ to ⟦E11⟧.",
+  "quest:793:details:0": "The ⟦E35⟧ is held by three runestones, held in the Pillars of Diamond, Opal, and Amethyst in Lethlor Ravine. Using the ⟦E7⟧, you will be able to remove the runestones and unlock the ⟦E35⟧.",
+  "quest:793:details:1": "Be wary though, ⟦17⟧, the black drakes Blacklash and Hematus are not to be trifled with. See them dead and return their bindings to me.",
+  "quest:793:details:2": "To reach the ravine, travel to the far eastern part of the ⟦E4⟧. Be careful though, for the ravine is home to countless drakes.",
+  "quest:793:progress:0": "There are few enemies more deadly than dragonkind, and there were few dragons that fought as ferociously as Blacklash and Hematus.",
+  "quest:793:completion:0": "The black dragonflight continues to ally with the renegade Blackrock orcs, and both must be brought into line, or removed. With Blacklash and Hematus dead, we can turn our attentions westwards, towards ⟦E38⟧.",
+  "quest:3821:obj:0": "Venture forth to the ⟦E39⟧ and find out what became of ⟦E40⟧.",
+  "quest:3821:details:0": "Sha'ni was sent to investigate reports of strange ritualistic activity coming from the Firegut ogres of the ⟦E39⟧ over three weeks ago.",
+  "quest:3821:details:1": "Goretooth tells me that he hasn't heard from anyone in that platoon and that it's best that I move on and focus on the task at hand. Can you believe it? That's my wife!",
+  "quest:3821:details:2": "I can't leave my post, ⟦18⟧, but I must know what became of Sha'ni. ⟦E41⟧ to the ⟦E39⟧ and search for her.",
+  "quest:3821:completion:0": "My poor Thal'trak.",
+  "quest:3821:completion:1": "We were planning on moving in with my mother and father in the Hinterlands after our tours were over. Now those plans are ruined!",
+  "quest:4062:obj:0": "Take the ⟦E42⟧ to ⟦E6⟧.",
+  "quest:4062:obj:1": "You recall Theodora saying that Lotwil was stationed in a camp to the east.⟦19⟧",
+  "quest:4062:details:0": "G.L.A.",
+  "quest:4062:details:1": "Those are the 'initials' imprinted on the elemental shards. Below the initials are a rank marking of some sort. The machinations you destroyed in the ⟦E39⟧ were of 'Rank IV.' I assume that this is a lowly rank.",
+  "quest:4062:details:2": "Take this shard sample to ⟦E6⟧ in the camp to the east. He is a scholar of some renown in the field of elemental sciences. He may be able to assist us in our search.",
+  "quest:4062:progress:0": "What have you got there, ⟦20⟧?",
+  "quest:4062:completion:0": "<Lotwil's face turns white.>",
+  "quest:4062:completion:1": "I... I know these markings."
+ },
+ "context": {
+  "quest:739": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 42,
+   "side": "alliance",
+   "giver": "Battered Dwarven Skeleton («اسکلت داغان یک دورف»)",
+   "turner": "Prospector Ironband («جویندهٔ رگه، گروه‌آهن»)"
+  },
+  "quest:777": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 42,
+   "side": "",
+   "giver": "Lucien Tosselwrench («لوسین تاسل‌رنچ»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:732": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 43,
+   "side": "alliance",
+   "giver": "Garek («گارک»)",
+   "turner": "Garek («گارک»)"
+  },
+  "quest:782": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 43,
+   "side": "horde",
+   "giver": "Gorn («گورن»)",
+   "turner": "Gorn («گورن»)"
+  },
+  "quest:735": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 44,
+   "side": "alliance",
+   "giver": "Gerrig Bonegrip («گریگ استخوان‌چنگ»)",
+   "turner": "Gerrig Bonegrip («گریگ استخوان‌چنگ»)"
+  },
+  "quest:762": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 44,
+   "side": "alliance",
+   "giver": "Historian Karnik («تاریخ‌نگار کارنیک»)",
+   "turner": "Advisor Belgrum («مشاور بلگروم»)"
+  },
+  "quest:2203": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 44,
+   "side": "horde",
+   "giver": "Jarkal Mossmeld («جارکال ماس‌ملد»)",
+   "turner": "Jarkal Mossmeld («جارکال ماس‌ملد»)"
+  },
+  "quest:706": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 45,
+   "side": "alliance",
+   "giver": "Sigrun Ironhew («سیگرون آهن‌تراش»)",
+   "turner": "Sigrun Ironhew («سیگرون آهن‌تراش»)"
+  },
+  "quest:778": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 45,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:717": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Garek («گارک»)",
+   "turner": "Garek («گارک»)"
+  },
+  "quest:793": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 50,
+   "side": "horde",
+   "giver": "Gorn («گورن»)",
+   "turner": "Gorn («گورن»)"
+  },
+  "quest:3821": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 52,
+   "side": "horde",
+   "giver": "Thal'trak Proudtusk («تالتراک عاج‌مغرور»)",
+   "turner": "Sha'ni Proudtusk («شانی عاج‌مغرور»)"
+  },
+  "quest:4062": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 54,
+   "side": "horde",
+   "giver": "Hierophant Theodora Mulvadania («روحانی اعظم تئودورا مولوادانیا»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  }
+ },
+ "known": {
+  "quest:739": {
+   "title": "موردالوک"
+  },
+  "quest:777": {
+   "title": "این کار سخت خواهد بود"
+  },
+  "quest:732": {
+   "title": "لرزش‌های زمین"
+  },
+  "quest:782": {
+   "title": "اتحادهای شکسته"
+  },
+  "quest:735": {
+   "title": "ستاره، دست و قلب"
+  },
+  "quest:762": {
+   "title": "سفیری از شرارت"
+  },
+  "quest:2203": {
+   "title": "گردآوری مواد جادویی بیابان II"
+  },
+  "quest:706": {
+   "title": "افسون شعلهٔ آتشین"
+  },
+  "quest:778": {
+   "title": "این کار سخت خواهد بود"
+  },
+  "quest:717": {
+   "title": "لرزش‌های زمین"
+  },
+  "quest:793": {
+   "title": "اتحادهای شکسته"
+  },
+  "quest:3821": {
+   "title": "صخرهٔ دردمال"
+  },
+  "quest:4062": {
+   "title": "برآمدن ماشین‌ها"
+  }
+ }
+}

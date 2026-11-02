@@ -1,0 +1,759 @@
+{
+ "pack": "quest-duskwood-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-duskwood-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Chef Grual",
+   "fa": "سرآشپز گرول",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Dusky Crab Cakes",
+   "fa": "کیک خرچنگِ گرگ‌ومیش",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Raven Hill",
+   "fa": "تپهٔ کلاغ",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "Calor",
+   "fa": "کالور",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Jitters",
+   "fa": "جیتِرز",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Return to Jitters",
+   "fa": "بازگشت به جیترز",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Lars",
+   "fa": "لارس",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Sven's Camp",
+   "fa": "اردوگاه اسوِن",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "Sven",
+   "fa": "سوین",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Morbent Fel",
+   "fa": "موربنت فِل",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Watcher Dodds",
+   "fa": "دیده‌بان دادز",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Commander Althea Ebonlocke",
+   "fa": "فرمانده آلتیا آبنوس‌گیس",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "The Night Watch",
+   "fa": "نگهبانان شب",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Madame Eva",
+   "fa": "مادام اوا",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Ghost Hair Thread",
+   "fa": "تارِ موی شبح",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Spectral Comb",
+   "fa": "شانهٔ شبح‌وار",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Blind Mary",
+   "fa": "مری نابینا",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Ghost Hair Comb",
+   "fa": "شانهٔ موی شبح",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Tavernkeep Smitts",
+   "fa": "مهمان‌دار سمیتتس",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Abercrombie",
+   "fa": "آبرکرومبی",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Zombie Juice",
+   "fa": "شربت زامبی",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Ira's Dagger",
+   "fa": "خنجر ایرا",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Sirra Von'Indi",
+   "fa": "سیررا وونیندی",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Stormwind Seasoning Herbs",
+   "fa": "گیاهان چاشنی استورم‌ویند",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Seasoned Wolf Kabobs",
+   "fa": "کباب گرگ چاشنی‌دار",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "Felicia Gump",
+   "fa": "فلیشیا گامپ",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Seasoned Wolf Kabob",
+   "fa": "کبابِ گرگِ چاشنی‌دار",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Deadwind Pass",
+   "fa": "گردنهٔ باد مرگ",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Totem of Infliction",
+   "fa": "توتمِ آزار",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Viktori Prism'Antras",
+   "fa": "ویکتوری پریزم‌آنتراس",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Insane Ghoul",
+   "fa": "غول مرده‌خوار دیوانه",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Book from Sven's Farm",
+   "fa": "کتاب مزرعهٔ اسون",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Return to Sven",
+   "fa": "بازگشت به اسوِن",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Chef Grual": "سرآشپز گرول",
+  "Scarlet": "سرخ‌پوشان",
+  "Dusky Crab Cakes": "کیک خرچنگِ گرگ‌ومیش",
+  "Raven Hill": "تپهٔ کلاغ",
+  "Calor": "کالور",
+  "Duskwood": "جنگل تاریک",
+  "Jitters": "جیتِرز",
+  "Return to Jitters": "بازگشت به جیترز",
+  "Lars": "لارس",
+  "Sven's Camp": "اردوگاه اسوِن",
+  "Sven": "سوین",
+  "Morbent Fel": "موربنت فِل",
+  "Watcher Dodds": "دیده‌بان دادز",
+  "Commander Althea Ebonlocke": "فرمانده آلتیا آبنوس‌گیس",
+  "The Night Watch": "نگهبانان شب",
+  "Stormwind": "استورم‌ویند",
+  "Madame Eva": "مادام اوا",
+  "Ghost Hair Thread": "تارِ موی شبح",
+  "Spectral Comb": "شانهٔ شبح‌وار",
+  "Blind Mary": "مری نابینا",
+  "Ghost Hair Comb": "شانهٔ موی شبح",
+  "Tavernkeep Smitts": "مهمان‌دار سمیتتس",
+  "Abercrombie": "آبرکرومبی",
+  "Zombie Juice": "شربت زامبی",
+  "Ira's Dagger": "خنجر ایرا",
+  "Sirra Von'Indi": "سیررا وونیندی",
+  "Stormwind Seasoning Herbs": "گیاهان چاشنی استورم‌ویند",
+  "Seasoned Wolf Kabobs": "کباب گرگ چاشنی‌دار",
+  "Felicia Gump": "فلیشیا گامپ",
+  "Seasoned Wolf Kabob": "کبابِ گرگِ چاشنی‌دار",
+  "Deadwind Pass": "گردنهٔ باد مرگ",
+  "Totem of Infliction": "توتمِ آزار",
+  "Azeroth": "آزروت",
+  "Viktori Prism'Antras": "ویکتوری پریزم‌آنتراس",
+  "Insane Ghoul": "غول مرده‌خوار دیوانه",
+  "Book from Sven's Farm": "کتاب مزرعهٔ اسون",
+  "Return to Sven": "بازگشت به اسوِن"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$n",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$N",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$c",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$C",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$c",
+  "28": "$N",
+  "29": "$C",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$B",
+  "34": "$B",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N"
+ },
+ "rows": {
+  "quest:5:obj:0": "Speak with ⟦E1⟧.",
+  "quest:5:details:0": "I've been stuck hiding in this ghost town for weeks, and I haven't eaten anything but grubs and weeds! I need some decent food, and I'm willing to trade well for it.",
+  "quest:5:details:1": "Bring me a feast and I'll pay you handsomely.",
+  "quest:5:details:2": "I heard ⟦E1⟧ at the ⟦E2⟧ Raven Tavern in Darkshire makes very good ⟦E3⟧...",
+  "quest:5:progress:0": "Oh, a shipment from my brother? Splendid! Fortune truly shines on me today!",
+  "quest:5:completion:0": "You need some Crab Cakes, do you? Well I might be able to cook some up for you...",
+  "quest:93:obj:0": "Gather 6 Gooey Spider Legs and bring them to ⟦E1⟧ in Darkshire.",
+  "quest:93:details:0": "I'll let you in on a little secret - Dusky \"Crab\" Cakes are really made from spider legs! I know it's a bit disgusting, but the cakes have a nice, tangy flavor and make great snacks! Bring me Gooey Spider Legs and I'll whip you up a few of them.",
+  "quest:93:details:1": "I hear Venom Web Spiders are a good source - they nest to the north, between the foothills and the river.",
+  "quest:93:progress:0": "Hail, ⟦1⟧. Did you get those Gooey Spider Legs yet?",
+  "quest:93:completion:0": "Ah yes, a nice clutch of legs you have there! Let me just get these seasoned with my secret spices (no looking!) and get them to skittering on a skillet for a while...",
+  "quest:93:completion:1": "And, although ⟦E3⟧ are my specialty and I won't give out the recipe, here's the recipe for a dish that's almost as good.",
+  "quest:163:obj:0": "Find out what is haunting ⟦E5⟧.",
+  "quest:163:details:0": "Something's amiss at ⟦E5⟧, ⟦2⟧. ⟦E6⟧ swears that someone--or something--is haunting the buildings there. Two nights running he's noticed the shadows moving, and the third before that he says he saw light in one of the windows.",
+  "quest:163:details:1": "If, as you say, you care about the safety of ⟦E7⟧, find out what monster haunts in ⟦E5⟧.",
+  "quest:163:progress:0": "Ah, ⟦3⟧! Back so soon? No doubt you've been at the hunt again? Don't worry if you've had some setbacks, in the long run it will make you better!⟦4⟧⟦5⟧...You couldn't get much worse, anyway...",
+  "quest:163:completion:0": "No! Please don't kill me! It's just me... ⟦E9⟧!! They're everywhere... I can't escape them! Monsters in ⟦E5⟧? N-n-n-o... couldn't be. Only harmless ⟦E9⟧.",
+  "quest:240:obj:0": "⟦E10⟧ with the ⟦E3⟧.",
+  "quest:240:details:0": "And here we are - \"Crab\" Cakes ala Grual!",
+  "quest:240:progress:0": "⟦6⟧, you're here! Do you have my food?!?",
+  "quest:240:completion:0": "Aha! Thank you, ⟦7⟧. Those really hit the spot!",
+  "quest:240:completion:1": "And here, please let me pay you for these!",
+  "quest:254:title": "Digging Through the Dirt",
+  "quest:254:completion:0": "You dig through the semi-loose dirt over the grave...and find the remains of a coffin.⟦8⟧⟦9⟧Within the coffin you can feel the vibrating scrapes of clawed fingers and the gnashing of rotted teeth...⟦10⟧⟦11⟧Will you open the coffin and retrieve the Embalmer's heart?",
+  "quest:226:obj:0": "Kill 12 Starving Dire Wolves and 8 Rabid Dire Wolves, then return to ⟦E12⟧ at ⟦E13⟧ on the western border of ⟦E7⟧.",
+  "quest:226:details:0": "⟦E14⟧ and I have dangerous days ahead of us, what with the Necromancer to the east and all. And out here alone as we are, we have to hunt for our own food. It seems every time I'm heading back to camp with some meat on me, starving or rabid dire wolves come out of the forest wanting a bite. It goes without saying, living out here is dangerous work!",
+  "quest:226:details:1": "But if you can rid us of some of those wolves, we'd have an easier time of it. They mostly prowl north and east of here, near the river.",
+  "quest:226:progress:0": "You still hunting wolves...?",
+  "quest:226:completion:0": "Oh good. You thinned out that pack quite a bit, and without those wolves nipping out our heels, we can bind our minds to dealing with ⟦E15⟧.",
+  "quest:226:completion:1": "Here, take some of these Flash Bundles. They make them in town, and a lot have been donated to ⟦E14⟧ to help with his cause.",
+  "quest:245:obj:0": "Kill 15 Pygmy Venom Web Spiders, and then report back to ⟦E16⟧ in ⟦E7⟧.",
+  "quest:245:details:0": "Hail, ⟦12⟧. Perhaps you've seen those spiders that have taken over the western border? The eight-legged menaces are too much for us to handle, and the Commander hasn't enough manpower to spare so far from Darkshire.",
+  "quest:245:details:1": "I hate to ask this of you, but you seem like you might be able to handle them. I can't promise you anything of great value, but I can reward you if you can help root out the filthy bugs.",
+  "quest:245:details:2": "Oh, and a word of advice, you'll want to avoid their venom if you can.",
+  "quest:245:progress:0": "You'd best be careful when dealing with the spiders, I've lost a few of my men to them, and trust me, it isn't a pleasant sight to see a man hanging upside down in their webs after the venom has started to soften them up.⟦13⟧⟦14⟧I wouldn't want to see one of the bugs having you for lunch.",
+  "quest:245:completion:0": "Ah! You're back. And not too much worse for wear, it'd seem. Of course, ⟦15⟧, the Night Watch is grateful for your work, and I did promise you a reward, so here.",
+  "quest:164:obj:0": "Deliver the supplies to ⟦E14⟧.",
+  "quest:164:details:0": "Do you know ⟦E14⟧? Now, there is a man who does the work of the Light! He and his followers keep a camp at the northwestern edge of ⟦E7⟧.",
+  "quest:164:details:1": "Unfortunately, because they are so few, they cannot even spare a man to fetch supplies from town. Will you deliver these supplies to him?",
+  "quest:164:progress:0": "You look a sturdy type, ⟦16⟧. Have you come to join our fight?",
+  "quest:164:completion:0": "These supplies will be most useful. The aid of the Carevin family is always appreciated. Here is a little something for your trouble.",
+  "quest:56:obj:0": "⟦E18⟧ of Darkshire wants you to kill 8 Skeletal Warriors and 6 Skeletal Mages.",
+  "quest:56:details:0": "As Commander of ⟦E19⟧ it is my sworn duty to protect the citizens of Darkshire. ⟦E20⟧ has retracted their commissioned guards from their posts here, leaving us to our own devices.",
+  "quest:56:details:1": "If you feel worthy of the task, we need your help! Assist ⟦E19⟧ by venturing forth into Tranquil Gardens, just south of Darkshire, and slaying 8 Skeletal Warriors and 6 Skeletal Mages. The undead threat must be thwarted!",
+  "quest:56:progress:0": "Have you killed those warriors and mages?",
+  "quest:56:completion:0": "Splendid, ⟦17⟧. For your service to the people of Darkshire you shall be rewarded.",
+  "quest:148:obj:0": "Speak with ⟦E23⟧.",
+  "quest:148:details:0": "Oh, what is a poor old man to do? I need some supplies from Darkshire, but the village is so far away and I am so old and feeble...I would never make the trip.",
+  "quest:148:details:1": "Can you go to Darkshire and bring me back some ⟦E24⟧? You can get it from ⟦E23⟧ at her home on the Darkshire square.",
+  "quest:148:completion:0": "Ah, ⟦E24⟧ is what you need, is it? I'm afraid I have none in stock, but I can make some for you...if you can supply the ghost hair.",
+  "quest:149:obj:0": "Bring the ⟦E25⟧ to ⟦E26⟧.",
+  "quest:149:details:0": "There is a poor, sad spirit, ⟦E26⟧, who haunts an old farm house in the hills south of Darkshire.",
+  "quest:149:details:1": "Here, take this ⟦E25⟧ and ask ⟦E26⟧ to comb her hair. Then bring back the comb and I will glean from it the Ghost Hair I'll need for the thread.",
+  "quest:149:details:2": "And take care, for dark things now lurk near that house...",
+  "quest:149:progress:0": "Oh please, don't look at me! I tore out these eyes with my own hands, but I can still feel your gaze!⟦18⟧⟦19⟧I'm hideous! Hideous! Please, look away!!",
+  "quest:149:completion:0": "What is this? A comb? It's lovely! And it glides through my hair as if it weren't the stiff, stringy horror that it is.",
+  "quest:149:completion:1": "Oh, if only I had a mirror...",
+  "quest:154:obj:0": "Return the ⟦E27⟧ to ⟦E23⟧ in Darkshire.",
+  "quest:154:details:0": "NO!!!!!",
+  "quest:154:details:1": "Take it, take this comb away from me!",
+  "quest:154:details:2": "I'm a monster, and no one will ever think me lovely again!",
+  "quest:154:progress:0": "I sense that you have seen ⟦E26⟧. You have my Comb...?",
+  "quest:154:completion:0": "I can make a spool of ⟦E24⟧ with this, and have a few strands to spare. Here are some coins for those extra strands.",
+  "quest:156:obj:0": "Gather 8 Rot Blossoms and bring them to ⟦E28⟧ in Darkshire.",
+  "quest:156:details:0": "If you bring me some rot blossoms then I can brew you up a batch of zombie juice.",
+  "quest:156:details:1": "Rot blossoms grow in strange places. In particular, I hear you can find them inside the skulls of Skeletal Horrors and Skeletal Fiends... not that I've gotten close enough to look!",
+  "quest:156:details:2": "The ⟦E5⟧ Cemetery is lousy with those skeletons. You may as well get rid of them while you're looking for rot blossoms. The town of Darkshire would be grateful.",
+  "quest:156:progress:0": "Hi, ⟦20⟧. You have that rot blossoms for me yet?",
+  "quest:156:completion:0": "Good, you got the rot blossoms. And I'll tell Althea Ebonlocke of the Night Watch that you were killing skeletons.",
+  "quest:156:completion:1": "Keeping the people of Darkshire safe is a grim burden for the Night Watch, and news that others are helping stem the tide of fiends in ⟦E7⟧ is welcome news indeed.",
+  "quest:157:obj:0": "Bring the ⟦E24⟧ to ⟦E29⟧, in his shack north of the ⟦E5⟧ Cemetery.",
+  "quest:157:details:0": "Here is your thread, ⟦21⟧. It has a thousand uses, from binding evil spirits to sewing life into inanimate objects.",
+  "quest:157:progress:0": "I need to string the ⟦E24⟧ along my door and my windows to keep out unwanted spirits. Did you get it for me?",
+  "quest:157:completion:0": "Delightful! This will do splendidly...",
+  "quest:157:completion:1": "Here, good ⟦22⟧, take this as payment for your honorable deed.",
+  "quest:158:obj:0": "Speak with ⟦E28⟧.",
+  "quest:158:details:0": "I need a bottle of a certain liquor - ⟦E30⟧. ⟦E28⟧ at the ⟦E2⟧ Raven Tavern in Darkshire should have some.",
+  "quest:158:details:1": "And please hurry, ⟦23⟧. These nights get cold, and I need that drink to put fire in my veins again!",
+  "quest:158:completion:0": "You need some ⟦E30⟧, do you? Hmm...that's some strong stuff - I don't usually get requests for it.",
+  "quest:159:obj:0": "Bring the ⟦E30⟧ to ⟦E29⟧ at his shack.",
+  "quest:159:details:0": "Here's your ⟦E30⟧...",
+  "quest:159:details:1": "B...and be careful with this stuff. It's strong enough to raise the dead!",
+  "quest:159:progress:0": "I need that ⟦E30⟧ to keep me warm on these cold, dark nights. Did you get it for me?",
+  "quest:159:completion:0": "A thousand thanks, ⟦24⟧. You warm an old man's heart with your foolish-...I mean...with your kindness!",
+  "quest:159:completion:1": "Here you are, friend. Take this as a token of my gratitude.",
+  "quest:96137:title": "⟦E31⟧",
+  "quest:96137:obj:0": "Defeat 10 Young Black Ravagers and 7 Black Ravagers then return to ⟦E32⟧ in Darkshire for more information.",
+  "quest:90:obj:0": "Gather 10 Lean Wolf Flanks and ⟦E33⟧ and return to ⟦E1⟧ in Darkshire.",
+  "quest:90:details:0": "⟦E34⟧ are a house favorite! Sure, I can make you some. But first I'll need the supplies. Bring me 10 Lean Wolf Flanks as well as some ⟦E33⟧. There are so many wolves here in the forest, I am sure finding the Flanks will be no problem. For the herbs, seek out ⟦E35⟧ in her canal district flower shop in ⟦E20⟧.",
+  "quest:90:progress:0": "Were you able to find 10 Lean Wolf Flanks yet? How about the herbs from Felicia in ⟦E20⟧?",
+  "quest:90:completion:0": "Very nice work, ⟦25⟧! Enjoy the delicacy known as ⟦E36⟧!",
+  "quest:95:obj:0": "Go to ⟦E14⟧'s Farm and find what was buried behind the old stump.",
+  "quest:95:details:0": "I used to work one of the farms to the southeast...until Dark Riders from ⟦E37⟧ descended upon my farm and slaughtered my family when I was away!",
+  "quest:95:details:1": "When I returned I saw a shadowy figure skulking near my barn, burying something. He fled before I could catch him, and I couldn't linger for I was hot on the heels of the Dark Riders. So I never discovered what was hidden.",
+  "quest:95:details:2": "If you can find what that shadowy figure buried, I would be grateful. The hiding spot is behind the old stump near my barn.",
+  "quest:95:completion:0": "A mound of dirt is here, hastily piled up as if someone had need of hiding something...without much time to do it.",
+  "quest:101:obj:0": "Bring 10 Ghoul Fangs, 10 Skeleton Fingers and 5 Vials of Spider Venom to ⟦E23⟧ in Darkshire.",
+  "quest:101:details:0": "As the mystical taint creeps through the forest, the need for self-protection is undeniable, ⟦26⟧. The winds whisper to me and they speak of a great danger which waits patiently for you in the near future.",
+  "quest:101:details:1": "If you wish to protect yourself, noble ⟦27⟧, bring to me 10 ghoul fangs, 10 skeleton fingers and 5 vials of spider venom. For you I shall enchant a ⟦E38⟧ which will harm those who attempt violent acts against you.",
+  "quest:101:progress:0": "Bring to me 10 ghoul fangs, 10 skeleton fingers and 5 vials of spider venom. For you I shall enchant a ⟦E38⟧ which will harm those who attempt violent acts against you.",
+  "quest:101:completion:0": "Very wise of you, ⟦28⟧. This ⟦E38⟧ will help to protect you against the evil which lurks throughout ⟦E39⟧ and beyond. When you feel threatened, hold this totem and take comfort in its magical aura. Be brave, fair ⟦29⟧. You will need all the courage you can muster for I see much bloodshed in your future.",
+  "quest:165:obj:0": "Check on the old man in the shack near ⟦E5⟧ cemetery.",
+  "quest:165:details:0": "There was an old man who used to come into town to buy supplies rather frequently, but I haven't seen him for quite some time now. He lives out in a shack overlooking ⟦E5⟧ cemetery, if I remember correctly. Perhaps you should go see if something is amiss.",
+  "quest:165:completion:0": "Hehe, oh yes... of course, the Carevins.",
+  "quest:165:completion:1": "No, nothing's wrong but it is hard for me to go into town now. The roads are dangerous and I'm not getting any younger. Maybe you can do an old man some favors?",
+  "quest:174:obj:0": "⟦E42⟧ of Darkshire wants you to bring him a bronze tube.",
+  "quest:174:details:0": "My Gnomish friend, Cog, has promised to help me build a device which will let me peer towards the stars. A truth exists, beyond magic, that can explain the strange transformation in the forest.",
+  "quest:174:details:1": "Bring to me a bronze tube made by a skilled engineer. That is the first step, according to Cog's blueprint.",
+  "quest:174:progress:0": "Have you found a skilled engineer to create a bronze tube yet?",
+  "quest:174:completion:0": "This is perfect, ⟦30⟧. The first step is complete!",
+  "quest:175:obj:0": "Locate Mary and persuade her to give up a reflective surface for Viktori's project.",
+  "quest:175:details:0": "According to Cog's blueprint, what I need now is a way to reflect light. I remember a woman by the name of Mary who became well known around these parts for always carrying a looking glass. Perhaps you can track Mary down and see if she might lend us a reflective surface for this project? I believe she once resided in southern ⟦E7⟧. . .",
+  "quest:175:completion:0": "Why yes, I used to own a looking glass.",
+  "quest:177:obj:0": "Retrieve ⟦E26⟧'s Looking Glass from the ⟦E43⟧ and give it to Viktori in Darkshire.",
+  "quest:177:details:0": "The looking glass was one of my finest treasures until. . .the incident. After that happened, I discarded it behind the barn. There was an ⟦E43⟧ who used to roam back there. Perhaps he picked it up. Rumor has it the devilish beast resides in the Tranquil Gardens Cemetery.",
+  "quest:177:progress:0": "I showed Cog the beginnings of our star-viewing machine. He was impressed. Did you happen to find a reflective device?",
+  "quest:177:completion:0": "Most superb! This will work perfectly. Many thanks!",
+  "quest:230:obj:0": "Bring the ⟦E44⟧ to ⟦E14⟧.",
+  "quest:230:details:0": "Digging through the mound, you find a small, dirt-stained book.",
+  "quest:230:details:1": "The book has no title, but...it has information ⟦E14⟧ would like to know.",
+  "quest:230:progress:0": "You found what?? Please, let me see it...",
+  "quest:230:completion:0": "<⟦E14⟧ reads the book's pages, then slams it shut.>",
+  "quest:230:completion:1": "That shadowy figure I saw was a witness to my family's death! There are questions I'd like to ask that man...if only I knew who he was!",
+  "quest:262:obj:0": "Take the book you found at ⟦E14⟧'s farm and show it to townsfolk in Darkshire.",
+  "quest:262:details:0": "I must know who was that skulker in the shadows I saw the night my family was killed!",
+  "quest:262:details:1": "Please, ⟦31⟧, you have shown your resourcefulness. Please find that shadowy figure. I must learn what secrets he holds!",
+  "quest:262:details:2": "I do not have clues that you do not already know, but here - take the book you found at my farm. Perhaps some of the townsfolk can link this book with its owner.",
+  "quest:262:progress:0": "If you have something that belongs to the shadowy figure for whom you seek, then let me see it. I may be able to divine something of its owner.",
+  "quest:262:completion:0": "Hmm... Someone handled this book recently, someone who is driven by revenge. But the impressions left on it, at least the impressions from the original owner, are faint.",
+  "quest:262:completion:1": "I can tell, however, that the original owner of this book is not a native of Darkshire.",
+  "quest:265:obj:0": "See if other townsfolk have clues about the shadowy figure.",
+  "quest:265:details:0": "Here is your book back, ⟦32⟧, and I bid you fortune with your search. If you ask others in town, perhaps they can offer you more clues.",
+  "quest:265:details:1": "And here is one more for you - although the author of this book is a stranger to Darkshire, the book itself was purchased here.",
+  "quest:265:progress:0": "Sometimes I'll sell blank books to scholars and mages, or to anyone who wants to keep a journal.⟦33⟧⟦34⟧I remember well everyone to whom I sold a book within the last few months...",
+  "quest:265:completion:0": "Ah, yes. I sold this book a month ago to a shady person. He didn't tell me his name, but he was a nervous, jittery chap, always looking over his shoulder.",
+  "quest:265:completion:1": "I hope that helps you...",
+  "quest:266:obj:0": "Search the inn for clues about the shadowy figure.",
+  "quest:266:details:0": "Here is your book, and good luck with your inquiries.",
+  "quest:266:details:1": "You might want to expand your search to the inn. If the person whom you seek spent time in town, then chances are someone saw him there.",
+  "quest:266:progress:0": "The ⟦E2⟧ Raven doesn't see the business it used to, but we still do get travelers passing through.⟦35⟧⟦36⟧If you can describe the person you're looking for, maybe I'll remember him.",
+  "quest:266:completion:0": "Oh yeah, I remember this book. Its owner rented a room for a few days, and spent his nights at the bar, writing.",
+  "quest:266:completion:1": "He left town in a hurry, muttering about being hunted by...something. Last I saw him he was heading west out of town, looking for a new spot to hide.",
+  "quest:266:completion:2": "The first place he'd find to the west is ⟦E5⟧...",
+  "quest:268:obj:0": "⟦E45⟧ with ⟦E9⟧' completed journal.",
+  "quest:268:details:0": "The book you found was only half finished. I had to leave it at ⟦E14⟧'s farm when I fled there...",
+  "quest:268:details:1": "Here. Take my completed journal to ⟦E14⟧. It describes more fully what happened at his farm.",
+  "quest:268:details:2": "Although this journal has been my only company these past weeks, if giving it up keeps me from having to face ⟦E14⟧ and his wrath, then I do it willingly!",
+  "quest:268:progress:0": "Did you find who the Shadowy Figure was?",
+  "quest:268:completion:0": "This journal explains much to me, and sets me on the path against the dark riders! I have seen these riders in ⟦E7⟧, and have seen them speak with the wizard ⟦E15⟧, at the Forlorn Rowe.",
+  "quest:337:obj:0": "Return the book: The History of ⟦E20⟧, to the ⟦E20⟧ Library.",
+  "quest:337:details:0": "Although the cover of this book is marred by scratches and caked with mud, the words \"The History of ⟦E20⟧\" can still be read along its spine. Upon opening the book, the seal of the ⟦E20⟧ Library is clearly stamped on the book's first page.",
+  "quest:337:details:1": "It looks like someone checked out this book, and never returned it...",
+  "quest:337:progress:0": "Ooh! What's that old book you have there? Can I see it??",
+  "quest:337:completion:0": "Oh my! This book hasn't rested on these shelves since before the rebuilding of ⟦E20⟧, years ago. It will have to be restored of course, it's in bad shape, but I would be honored to place it within our rare books collection.",
+  "quest:337:completion:1": "Thank you, ⟦37⟧. Please accept this as payment for returning the book!"
+ },
+ "context": {
+  "quest:5": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Jitters («جیتِرز»)",
+   "turner": "Chef Grual («سرآشپز گرول»)"
+  },
+  "quest:93": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Chef Grual («سرآشپز گرول»)",
+   "turner": "Chef Grual («سرآشپز گرول»)"
+  },
+  "quest:163": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Elaine Carevin («الین کرین»)",
+   "turner": "Jitters («جیتِرز»)"
+  },
+  "quest:240": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Chef Grual («سرآشپز گرول»)",
+   "turner": "Jitters («جیتِرز»)"
+  },
+  "quest:254": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Eliza's Grave Dirt («خاک گور الیزا»)",
+   "turner": "Eliza's Grave Dirt («خاک گور الیزا»)"
+  },
+  "quest:226": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Lars («لارس»)",
+   "turner": "Lars («لارس»)"
+  },
+  "quest:245": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Watcher Dodds («دیده‌بان دادز»)",
+   "turner": "Watcher Dodds («دیده‌بان دادز»)"
+  },
+  "quest:164": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 23,
+   "side": "alliance",
+   "giver": "Elaine Carevin («الین کرین»)",
+   "turner": "Sven Yorgen («سون یورگن»)"
+  },
+  "quest:56": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)",
+   "turner": "Commander Althea Ebonlocke («فرمانده آلتیا آبنوس‌گیس»)"
+  },
+  "quest:148": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Abercrombie («آبرکرومبی»)",
+   "turner": "Madame Eva («مادام اوا»)"
+  },
+  "quest:149": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Madame Eva («مادام اوا»)",
+   "turner": "Blind Mary («مری نابینا»)"
+  },
+  "quest:154": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Blind Mary («مری نابینا»)",
+   "turner": "Madame Eva («مادام اوا»)"
+  },
+  "quest:156": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Tavernkeep Smitts («مهمان‌دار سمیتتس»)",
+   "turner": "Tavernkeep Smitts («مهمان‌دار سمیتتس»)"
+  },
+  "quest:157": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Madame Eva («مادام اوا»)",
+   "turner": "Abercrombie («آبرکرومبی»)"
+  },
+  "quest:158": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Abercrombie («آبرکرومبی»)",
+   "turner": "Tavernkeep Smitts («مهمان‌دار سمیتتس»)"
+  },
+  "quest:159": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Tavernkeep Smitts («مهمان‌دار سمیتتس»)",
+   "turner": "Abercrombie («آبرکرومبی»)"
+  },
+  "quest:96137": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 24,
+   "side": "",
+   "giver": "",
+   "turner": "Sirra Von'Indi («سیررا وونیندی»)"
+  },
+  "quest:90": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Chef Grual («سرآشپز گرول»)",
+   "turner": "Chef Grual («سرآشپز گرول»)"
+  },
+  "quest:95": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Sven Yorgen («سون یورگن»)",
+   "turner": "Mound of loose dirt («تودهٔ خاک سست»)"
+  },
+  "quest:101": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Madame Eva («مادام اوا»)",
+   "turner": "Madame Eva («مادام اوا»)"
+  },
+  "quest:165": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Elaine Carevin («الین کرین»)",
+   "turner": "Abercrombie («آبرکرومبی»)"
+  },
+  "quest:174": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Viktori Prism'Antras («ویکتوری پریزم‌آنتراس»)",
+   "turner": "Viktori Prism'Antras («ویکتوری پریزم‌آنتراس»)"
+  },
+  "quest:175": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Viktori Prism'Antras («ویکتوری پریزم‌آنتراس»)",
+   "turner": "Blind Mary («مری نابینا»)"
+  },
+  "quest:177": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Blind Mary («مری نابینا»)",
+   "turner": "Viktori Prism'Antras («ویکتوری پریزم‌آنتراس»)"
+  },
+  "quest:230": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Mound of loose dirt («تودهٔ خاک سست»)",
+   "turner": "Sven Yorgen («سون یورگن»)"
+  },
+  "quest:262": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Sven Yorgen («سون یورگن»)",
+   "turner": "Madame Eva («مادام اوا»)"
+  },
+  "quest:265": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Madame Eva («مادام اوا»)",
+   "turner": "Clerk Daltry («منشی دالتری»)"
+  },
+  "quest:266": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Clerk Daltry («منشی دالتری»)",
+   "turner": "Tavernkeep Smitts («مهمان‌دار سمیتتس»)"
+  },
+  "quest:268": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "Jitters («جیتِرز»)",
+   "turner": "Sven Yorgen («سون یورگن»)"
+  },
+  "quest:337": {
+   "zone_en": "Duskwood",
+   "zone_fa": "جنگل تاریک",
+   "level": 25,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Milton Sheaf («میلتون شیف»)"
+  }
+ },
+ "known": {
+  "quest:5": {
+   "title": "شکم غرینگ جیترز"
+  },
+  "quest:93": {
+   "title": "کیک خرچنگ تاریکی"
+  },
+  "quest:163": {
+   "title": "تپهٔ کلاغ"
+  },
+  "quest:240": {
+   "title": "بازگشت به جیترز"
+  },
+  "quest:226": {
+   "title": "گرگ‌ها در تعقیب ما"
+  },
+  "quest:245": {
+   "title": "خطرات هشت‌پا"
+  },
+  "quest:164": {
+   "title": "تحویل برای اسوِن"
+  },
+  "quest:56": {
+   "title": "نگهبانان شب"
+  },
+  "quest:148": {
+   "title": "لوازم از دارک‌شایر"
+  },
+  "quest:149": {
+   "title": "نخِ موی روح"
+  },
+  "quest:154": {
+   "title": "بازگرداندن شانه"
+  },
+  "quest:156": {
+   "title": "جمع‌آوری شکوفه‌های پوسیده"
+  },
+  "quest:157": {
+   "title": "تحویل نخ"
+  },
+  "quest:158": {
+   "title": "شربت زامبی"
+  },
+  "quest:159": {
+   "title": "تحویل شربت"
+  },
+  "quest:90": {
+   "title": "کباب گرگ چاشنی‌دار"
+  },
+  "quest:95": {
+   "title": "انتقام اسوِن"
+  },
+  "quest:101": {
+   "title": "تسمهٔ آفلاختی"
+  },
+  "quest:165": {
+   "title": "گوشه‌نشین"
+  },
+  "quest:174": {
+   "title": "نگاه به ستارگان"
+  },
+  "quest:175": {
+   "title": "نگاه به ستارگان"
+  },
+  "quest:177": {
+   "title": "نگاه به ستارگان"
+  },
+  "quest:230": {
+   "title": "اردوگاه اسوِن"
+  },
+  "quest:262": {
+   "title": "شبح پنهان‌کار"
+  },
+  "quest:265": {
+   "title": "جست‌وجوی شبح ادامه دارد"
+  },
+  "quest:266": {
+   "title": "پرس‌وجو در مسافرخانه"
+  },
+  "quest:268": {
+   "title": "بازگشت به اسوِن"
+  },
+  "quest:337": {
+   "title": "کتاب تاریخ کهنه"
+  }
+ }
+}

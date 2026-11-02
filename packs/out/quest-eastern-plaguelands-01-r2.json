@@ -1,0 +1,711 @@
+{
+ "pack": "quest-eastern-plaguelands-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-eastern-plaguelands-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Corruptor's Scourgestone",
+   "fa": "سنگ طاعون فسادگر",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Invader's Scourgestone",
+   "fa": "سنگ طاعونِ مهاجم",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Minion's Scourgestone",
+   "fa": "سنگ طاعونِ خدمتکار",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Pamela Redpath",
+   "fa": "پاملا ردپث",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Carlin Redpath",
+   "fa": "کارلین ردپث",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "Argent Dawn Valor Token",
+   "fa": "توکن دلاوری سپیدهٔ نقره‌ای",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Zaeldarr's Head",
+   "fa": "سر زالدار",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Caretaker Alen",
+   "fa": "سرپرست آلن",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E24": {
+   "en": "Zaeldarr the Outcast",
+   "fa": "زالدار تبعیدی",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "Augustus' Receipt Book",
+   "fa": "دفتر رسیدهای آگوستوس",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Augustus the Touched",
+   "fa": "آگوستوس دست‌خورده",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Crypt Fiend Parts",
+   "fa": "قطعات دیو کشتگاه",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Bone Fragments",
+   "fa": "تکه‌های استخوان",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Core of Elements",
+   "fa": "هستهٔ عناصر",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Naxxramas",
+   "fa": "ناکس‌راماس",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Dark Iron Scraps",
+   "fa": "خردهٔ آهن سیاه",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Writ of Safe Passage",
+   "fa": "فرمانِ گذرِ امن",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Dispatch Commander Metz",
+   "fa": "فرمانده اعزام متز",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Epic",
+   "fa": "حماسی",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Auntie Marlene",
+   "fa": "خالهٔ مارلین",
+   "kind": "qs"
+  },
+  "E41": {
+   "en": "Joseph",
+   "fa": "جوزف",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Joseph's Wedding Ring",
+   "fa": "حلقهٔ ازدواج جوزف",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Chromie",
+   "fa": "کرومی",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Davil's Libram",
+   "fa": "لبرام داویل",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Redpath's Shield",
+   "fa": "سپر ردپاث",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Annals of Darrowshire",
+   "fa": "سالنامه‌های داروشیر",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Extended Annals of Darrowshire",
+   "fa": "سالنامهٔ گستردهٔ داروشیر",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "The Annals of Darrowshire",
+   "fa": "سالنامه‌های داروشایر",
+   "kind": "qs"
+  },
+  "E49": {
+   "en": "Uncle Carlin",
+   "fa": "دایی کارلین",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Corruptor's Scourgestone": "سنگ طاعون فسادگر",
+  "Invader's Scourgestone": "سنگ طاعونِ مهاجم",
+  "Plaguelands": "طاعون‌زار",
+  "Minion's Scourgestone": "سنگ طاعونِ خدمتکار",
+  "Pamela Redpath": "پاملا ردپث",
+  "Carlin Redpath": "کارلین ردپث",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Argent Dawn Valor Token": "توکن دلاوری سپیدهٔ نقره‌ای",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Zaeldarr's Head": "سر زالدار",
+  "Caretaker Alen": "سرپرست آلن",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Zaeldarr the Outcast": "زالدار تبعیدی",
+  "Augustus' Receipt Book": "دفتر رسیدهای آگوستوس",
+  "Augustus the Touched": "آگوستوس دست‌خورده",
+  "Crypt Fiend Parts": "قطعات دیو کشتگاه",
+  "Bone Fragments": "تکه‌های استخوان",
+  "Core of Elements": "هستهٔ عناصر",
+  "Naxxramas": "ناکس‌راماس",
+  "Dark Iron Scraps": "خردهٔ آهن سیاه",
+  "Writ of Safe Passage": "فرمانِ گذرِ امن",
+  "Dispatch Commander Metz": "فرمانده اعزام متز",
+  "Epic": "حماسی",
+  "Auntie Marlene": "خالهٔ مارلین",
+  "Joseph": "جوزف",
+  "Joseph's Wedding Ring": "حلقهٔ ازدواج جوزف",
+  "Chromie": "کرومی",
+  "Davil's Libram": "لبرام داویل",
+  "Redpath's Shield": "سپر ردپاث",
+  "Annals of Darrowshire": "سالنامه‌های داروشیر",
+  "Extended Annals of Darrowshire": "سالنامهٔ گستردهٔ داروشیر",
+  "The Annals of Darrowshire": "سالنامه‌های داروشایر",
+  "Uncle Carlin": "دایی کارلین"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$Gbrother:sister;",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$c",
+  "23": "$N",
+  "24": "$C",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$n",
+  "29": "$n",
+  "30": "$n",
+  "31": "$n",
+  "32": "$B",
+  "33": "$B",
+  "34": "$n",
+  "35": "$B",
+  "36": "$B",
+  "37": "$n",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N",
+  "53": "$N"
+ },
+ "rows": {
+  "quest:5508:title": "Corruptor's Scourgestones",
+  "quest:5508:progress:0": "A ⟦E1⟧ is the insignia of the Scourge's overlords.  A powerful being that holds a position of authority over the Scourge will always possess one.  To slay such a malevolent creature would surely advance the cause of the Argent Dawn, and all good causes!⟦1⟧⟦2⟧On behalf of the Argent Dawn, I will give you a valor token in exchange for just a single one of these insignia.  Use caution in acquiring one, ⟦3⟧ - such powerful beings are not to be trifled with.",
+  "quest:5508:completion:0": "Congratulations, ⟦4⟧ - I am pleased to award you with an Argent Dawn valor token!⟦5⟧⟦6⟧To acquire a valor token in such a manner indicates that you are a true hero in the cause of good. We value all effort brought to bear against the Scourge, but to take down one of their leaders is to truly deliver onto them a crushing defeat!⟦7⟧⟦8⟧For the Dawn, my ⟦9⟧!",
+  "quest:5509:title": "Invader's Scourgestones",
+  "quest:5509:progress:0": "An ⟦E5⟧ is the insignia of the Scourge's elite troops.  These are sometimes found on the stronger of the troops positioned in the ⟦E6⟧.  Slaying such a creature is indeed a challenge, but one that should be relished with a commission to vanquish evil.⟦10⟧⟦11⟧The Argent Dawn currently offers a valor token in exchange for ten of these insignia.  Bring them to me here, and I will make sure you receive your just reward.",
+  "quest:5509:completion:0": "Congratulations, ⟦12⟧ - I am pleased to award you with an Argent Dawn valor token!⟦13⟧⟦14⟧Each valor token handed out to worthy recipients is a sign of the tide turning against the Scourge. With more and more heroes fighting the Scourge in their own lands, the Argent Dawn will assuredly be at the forefront when the time comes to wage war on the ultimate evil of the Scourge. I hope that the valor you've shown what it took to acquiring your token will carry the day then as well!",
+  "quest:5510:title": "Minion's Scourgestones",
+  "quest:5510:progress:0": "A ⟦E7⟧ is the insignia of the Scourge rank and file.  These are sometimes found on the weaker of their troops positioned in the ⟦E6⟧, though the term \"weaker\" is certainly to be considered in context.  The Scourge, no matter where they are, should never be underestimated.⟦15⟧⟦16⟧The Argent Dawn currently offers a valor token in exchange for twenty of these insignia - an exchange I'm happy to do, provided you have earned enough scourgestones!",
+  "quest:5510:completion:0": "Congratulations, ⟦17⟧ - I am pleased to award you with an Argent Dawn valor token!⟦18⟧⟦19⟧The tokens serve two purposes. One - they can be used to further your standing within the Argent Dawn; to do so may avail you options and rewards that are reserved for our honored and revered allies. Two - they can be given to our quartermasters, along with coin, as payment for some of the Dawn's more prized items.⟦20⟧⟦21⟧Whatever you decide, know that you are earning your commission. Well done!",
+  "quest:5142:obj:0": "Find ⟦E12⟧.",
+  "quest:5142:details:0": "So many of us died at the battle of Darrowshire. So many died... and worse.",
+  "quest:5142:details:1": "When the battle began I hid my niece Pamela, and I do not know what happened to her. I am but a wandering spirit, but my heart still longs to know Pamela's fate.",
+  "quest:5142:details:2": "Please, good ⟦22⟧. Will you go to Darrowshire and search for her? It is to the east, beyond Gahrron's Withering.",
+  "quest:5142:completion:0": "Hello. I'm Pamela, what's your name?",
+  "quest:5149:obj:0": "Find Pamela's doll.",
+  "quest:5149:details:0": "My auntie Marlene told me to stay here in our house because my father had to go and fight. My father's the bravest man in the whole world!",
+  "quest:5149:details:1": "But I've been here for a long time, and he hasn't come for me. Sometimes bad people come and whisper to me and I want my dad to make them go away, but he's not here!",
+  "quest:5149:details:2": "And sometimes when it gets dark I want to play with my doll but I can't because I left it in town.",
+  "quest:5149:details:3": "Will you find my doll for me?",
+  "quest:5149:progress:0": "Did you find my doll?",
+  "quest:5149:completion:0": "You found it! You found my doll! Oh, thank you!",
+  "quest:5211:obj:0": "Free 15 Darrowshire Spirits and return to ⟦E14⟧.",
+  "quest:5211:details:0": "Many of the defenders fell at the battle of Darrowshire. And many roam again as the ghastly servants of the Scourge! Find these poor souls and end their misery!",
+  "quest:5211:details:1": "Hunt cannibal ghouls, gibbering ghouls and diseased flayers. Many of these fiends were once the good folk of Darrowshire and destroying their forms now will set their souls free.",
+  "quest:5211:details:2": "You will find them in Plaguewood and Corin's Crossing, and in other Scourge strongholds of ⟦E15⟧.",
+  "quest:5211:progress:0": "The poor defenders of Darrowshire cry out to me in my dreams, ⟦23⟧. You must free them!",
+  "quest:5211:completion:0": "It is good to hear you found the tortured souls of my brethren and freed them. My heart will weep less, knowing at least some of the defenders of Darrowshire no longer wallow in the vile subservience of the Scourge.",
+  "quest:5503:completion:0": "All who fight evil on behalf of the Argent Dawn must don our commission. Wearing such will earn your right to claim rewards our quartermasters have to offer.",
+  "quest:5503:completion:1": "While under commission, you'll be able to acquire Scourgestones from slain Scourge; these are marks of insignia that they sometimes possess. Procure these insignia and bring them to me. For each set you turn in, you will receive our marker of heroism - the ⟦E16⟧.",
+  "quest:5503:completion:2": "Achieve your destiny, ⟦24⟧ join the fight today!",
+  "quest:5601:obj:0": "Find ⟦E12⟧ in Darrowshire.",
+  "quest:5601:details:0": "I fled Lordaeron during the great war, and was lucky to escape before the Scourge swept through my homeland and turned it into a plagued nightmare! I was lucky, but my family was not. I fear they were all killed during the battle of Darrowshire.",
+  "quest:5601:details:1": "Darrowshire is a village in the ⟦E18⟧, nestled in the southern hills of what is now the ⟦E15⟧. Will you go there and search for my family? I miss them so much, especially my little sister Pamela.",
+  "quest:5601:details:2": "Please, find her for me!",
+  "quest:5601:completion:0": "Where is my sister Jessica? She left so long ago, when I was just a little girl. She cried so much when she went away. I don't know why she cried! Maybe she fell and hit her toe.",
+  "quest:5601:completion:1": "When Jessica was here we used to play games and dance and pick pretty flowers around the house. And sometimes we'd hide when we saw daddy coming home, then jump out and surprise him!",
+  "quest:5601:completion:2": "Come back, Jessica! If you come back then maybe daddy will too and we can all play together again...",
+  "quest:6021:obj:0": "Bring ⟦E21⟧ to ⟦E22⟧ at ⟦E23⟧.",
+  "quest:6021:details:0": "Can you believe that, after all the trouble we have in the plaguelands... we have to worry about thieves too? And not just normal thieves, troll thieves.",
+  "quest:6021:details:1": "And not just normal troll thieves. Dead troll thieves!",
+  "quest:6021:details:2": "They're led by this big, dead troll named ⟦E24⟧, and they come here at night and steal bodies from the pit below, then take them back to their evil, dead troll hideout--the Undercroft to the west.",
+  "quest:6021:details:3": "Go there and take out Zaeldarr, ⟦25⟧. I'm sick to death of his mischief!",
+  "quest:6021:progress:0": "Did you find the hideout, ⟦26⟧? Did you take care of Zaeldarr?",
+  "quest:6021:completion:0": "Great, you got him! And I hope you taught his gang a lesson too!",
+  "quest:6164:obj:0": "Bring ⟦E25⟧ to ⟦E26⟧ in Terrordale.",
+  "quest:6164:details:0": "I'm ready for business! What you do want?",
+  "quest:6164:details:1": "Oh wait... I can't open up shop without my receipt book. How am I to keep track of things without my receipt book?",
+  "quest:6164:details:2": "I must have left it in town somewhere. I had a room in the inn... the book must be there.",
+  "quest:6164:details:3": "Bring me my book. Please, bring it to me! Bring me my book and you'll see! I'll set up shop and you'll see that my prices are INSANE!",
+  "quest:6164:progress:0": "Do you have my receipt book? I can't wait to get back to business!",
+  "quest:6164:completion:0": "There it is! And oh my! I forgot how full it was!",
+  "quest:6164:completion:1": "This is a glorious day, ⟦27⟧! Stupendous! Insanely good, I say!",
+  "quest:9125:title": "⟦E27⟧",
+  "quest:9125:progress:0": "You did an exemplary job on the first bundle, ⟦28⟧. If you have more, I will take them now. For every bundle that you turn in, I will reward you with another insignia.",
+  "quest:9125:completion:0": "Most excellent, ⟦29⟧! These will definitely come to good use.",
+  "quest:9127:title": "⟦E28⟧",
+  "quest:9127:progress:0": "A man in my line of work can never have too many bone fragments, ⟦30⟧. Whenever you have a surplus of fragments, bring them to me and I'll reward you with another insignia.",
+  "quest:9127:completion:0": "My dream of becoming a full-time dancer at the Gadgetzan disco is soon to become a reality! Keep up the good work, ⟦31⟧.",
+  "quest:9129:title": "⟦E29⟧",
+  "quest:9129:progress:0": "Truth be told, I use the cores to create Frostfire armor. It is the armor used by the mages battling in ⟦E31⟧. Without you and others like you, we would most definitely be losing this war.⟦32⟧⟦33⟧With that said, bring me more cores and I shall grant you more insignias.",
+  "quest:9129:completion:0": "You perform a great service for us, ⟦34⟧. Well done!",
+  "quest:9132:title": "⟦E32⟧",
+  "quest:9132:progress:0": "For every armful of the scraps, I'll give you an insignia - the more the better. Now get out of my sight before I split you in two!",
+  "quest:9132:completion:0": "That's all you brought me? Maybe you didn't hear me the first time. I need MORE!",
+  "quest:9137:title": "Savage Fronds",
+  "quest:9137:progress:0": "For every bundle of fronds that you deliver to me, I will pay you with your choice of an insignia of the Dawn or the Crusade.⟦35⟧⟦36⟧Insignias may be turned in to the Quartermaster for various rewards.",
+  "quest:9137:completion:0": "Thank you, ⟦37⟧. Your work is vital to the success of our campaign against the Scourge.",
+  "quest:9142:title": "Craftsman's Writ",
+  "quest:9142:details:0": "You know the drill, kid. One valor token gets you a craftsman's writ.",
+  "quest:9142:progress:0": "You know the drill, kid. One valor token gets you a craftsman's writ.\n⟦E16⟧ ( 1 )",
+  "quest:9142:completion:0": "You earned this, scrub. Now, don't cry about your orders. Fill 'em or destroy 'em.",
+  "quest:9165:title": "⟦E33⟧",
+  "quest:9165:desc:0": "Deliver the signed ⟦E33⟧ to ⟦E34⟧ at ⟦E23⟧ in the ⟦E15⟧.",
+  "quest:9165:obj:0": "Deliver the signed ⟦E33⟧ to ⟦E34⟧ at ⟦E23⟧ in the ⟦E15⟧.",
+  "quest:9165:details:0": "Deliver the signed ⟦E33⟧ to ⟦E34⟧ at ⟦E23⟧ in the ⟦E15⟧.",
+  "quest:9165:progress:0": "Name, rank and serial number!",
+  "quest:9165:completion:0": "<⟦E34⟧ takes the writ and signs it.>⟦38⟧⟦39⟧Excellent work, ⟦40⟧. Outstanding even! Take this as a token of our appreciation. No pun intended, scrub.",
+  "quest:9221:title": "Superior Armaments of Battle - Friend of the Dawn",
+  "quest:9221:desc:0": "For 30 Insignias of the Dawn and 30 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9221:obj:0": "For 30 Insignias of the Dawn and 30 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9221:details:0": "For 30 Insignias of the Dawn and 30 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9221:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9221:completion:0": "Good day, ⟦41⟧. It was a pleasure doing business with you.",
+  "quest:9222:title": "⟦E36⟧ Armaments of Battle - Friend of the Dawn",
+  "quest:9222:desc:0": "For 110 Insignias of the Dawn and 110 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9222:obj:0": "For 110 Insignias of the Dawn and 110 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9222:details:0": "For 110 Insignias of the Dawn and 110 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9222:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9222:completion:0": "Good day, ⟦42⟧. It was a pleasure doing business with you.",
+  "quest:9223:title": "Superior Armaments of Battle - Honored Amongst the Dawn",
+  "quest:9223:desc:0": "For 20 Insignias of the Dawn and 20 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9223:obj:0": "For 20 Insignias of the Dawn and 20 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9223:details:0": "For 20 Insignias of the Dawn and 20 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9223:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9223:completion:0": "Good day, ⟦43⟧. It was a pleasure doing business with you.",
+  "quest:9224:title": "⟦E36⟧ Armaments of Battle - Honored Amongst the Dawn",
+  "quest:9224:desc:0": "For 75 Insignias of the Dawn and 75 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9224:obj:0": "For 75 Insignias of the Dawn and 75 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9224:details:0": "For 75 Insignias of the Dawn and 75 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9224:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9224:completion:0": "Good day, ⟦44⟧. It was a pleasure doing business with you.",
+  "quest:9225:title": "⟦E36⟧ Armaments of Battle - Revered Amongst the Dawn",
+  "quest:9225:desc:0": "For 45 Insignias of the Dawn and 45 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9225:obj:0": "For 45 Insignias of the Dawn and 45 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9225:details:0": "For 45 Insignias of the Dawn and 45 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9225:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9225:completion:0": "Good day, ⟦45⟧. It was a pleasure doing business with you.",
+  "quest:9226:title": "Superior Armaments of Battle - Revered Amongst the Dawn",
+  "quest:9226:desc:0": "For 7 Insignias of the Dawn and 7 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9226:obj:0": "For 7 Insignias of the Dawn and 7 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9226:details:0": "For 7 Insignias of the Dawn and 7 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9226:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9226:completion:0": "Good day, ⟦46⟧. It was a pleasure doing business with you.",
+  "quest:9227:title": "Superior Armaments of Battle - Exalted Amongst the Dawn",
+  "quest:9227:desc:0": "For 6 Insignias of the Dawn and 6 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9227:obj:0": "For 6 Insignias of the Dawn and 6 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9227:details:0": "For 6 Insignias of the Dawn and 6 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9227:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9227:completion:0": "Good day, ⟦47⟧. It was a pleasure doing business with you.",
+  "quest:9228:title": "⟦E36⟧ Armaments of Battle - Exalted Amongst the Dawn",
+  "quest:9228:desc:0": "For 27 Insignias of the Dawn and 27 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9228:obj:0": "For 27 Insignias of the Dawn and 27 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9228:details:0": "For 27 Insignias of the Dawn and 27 Insignias of the Crusade you may choose an item from the Argent Dawn's treasure cache.",
+  "quest:9228:progress:0": "Choose carefully. There are no refunds.",
+  "quest:9228:completion:0": "Good day, ⟦48⟧. It was a pleasure doing business with you.",
+  "quest:5152:obj:0": "Speak with Marlene, south of the Ruins of Andorhal.",
+  "quest:5152:details:0": "Oh, I'm so lonely! Where is my family? ⟦E40⟧ told me to stay here, but then she left and never came back! And my dad... have you seen him?",
+  "quest:5152:details:1": "Maybe ⟦E40⟧ knows where he is. She lives near Andorhal, in a house to the south. I think it was on a hill... she said it was on a hill.",
+  "quest:5152:details:2": "Please, ⟦49⟧. You're my new friend! Will you talk to my Auntie for me?",
+  "quest:5152:completion:0": "You saw Pamela? How is she? Is she alive?? Oh, no! Poor Pamela! She was so young, and such a happy child...",
+  "quest:5152:completion:1": "She doesn't know what happened to her father, does she? My brother, ⟦E41⟧?",
+  "quest:5152:completion:2": "No... she couldn't understand what happened to ⟦E41⟧. And even if she could, I don't have the heart to tell her...",
+  "quest:5153:obj:0": "Bring ⟦E42⟧ to ⟦E43⟧.",
+  "quest:5153:details:0": "I wish ⟦E41⟧ could again be with his daughter, but it cannot be so. His soul was twisted by the Scourge, and he became a monster. Oh, he is doomed!",
+  "quest:5153:details:1": "But perhaps we can change his fate.",
+  "quest:5153:details:2": "Search the graves outside for ⟦E41⟧'s monument. His body's not there, for it was trampled and destroyed years ago, but under the monument is his wedding ring. Take that ring to ⟦E43⟧... a strange gnome with very strange powers.",
+  "quest:5153:details:3": "⟦E43⟧ is staying in the ruined inn at the northwest corner of Andorhal.",
+  "quest:5153:progress:0": "There is something timely about your visit. You're not from the future, are you?",
+  "quest:5153:completion:0": "What is this? A wedding ring? Let me see...",
+  "quest:5153:completion:1": "Ah! This ring was once on the hand of a great man, but there is much tragedy in that man's past.",
+  "quest:5153:completion:2": "Are you here to help him? It's far too late for him now... but perhaps we can help him in the past!",
+  "quest:5168:obj:0": "Bring ⟦E44⟧ and ⟦E45⟧ to ⟦E14⟧.",
+  "quest:5168:details:0": "The heroes of Darrowshire hold a place in my heart, and the book you brought me, the ⟦E46⟧, tells their tales.",
+  "quest:5168:details:1": "It tells of the paladin Davil Lightfire and how the Crusade took his libram to the town hall of Hearthglen.",
+  "quest:5168:details:2": "Its passages also speak of my brother, Captain Redpath. After his betrayal, his shield was cracked and discarded and now lies in the most unlikely of places -- near the barn of Gahrron's Withering.",
+  "quest:5168:details:3": "Gather these relics, ⟦50⟧. For fate and tragedy surrounds them.",
+  "quest:5168:progress:0": "Do you have the relics, ⟦51⟧?",
+  "quest:5168:completion:0": "You have the libram and the shield!",
+  "quest:5168:completion:1": "Their history is entwined with the history of Darrowshire, and somehow, I know that fate will bring them together again.",
+  "quest:5210:obj:0": "Bring the ⟦E47⟧ to ⟦E14⟧ in ⟦E15⟧.",
+  "quest:5210:details:0": "⟦E48⟧, through my magic, has gained pages at its end, and now it extends its history beyond the battle. One of the extra passages tells of another Redpath, Carlin, who survived ⟦E41⟧'s betrayal. Carlin's now in the ⟦E6⟧ to the east, at the ⟦E23⟧.",
+  "quest:5210:details:1": "Take the book and speak with him.",
+  "quest:5210:progress:0": "You've come from the west? How fare the rest of Lordaeron? I know that Andorhal is lost, but has the Scourge yet reached fair Tirisfal?",
+  "quest:5210:completion:0": "What is this book? ⟦E48⟧? That was my home before the war... my home before the battle that destroyed it! Why did you bring me this book?",
+  "quest:5210:completion:1": "But look here! At the end there are pages that tell tales of the days beyond the battle! Here is a passage about me! And one about my brother ⟦E41⟧! Is this book true?",
+  "quest:5210:completion:2": "We must discover the truth!",
+  "quest:5241:obj:0": "Find ⟦E14⟧.",
+  "quest:5241:details:0": "Sometimes, when it's nighttime, I can hear my ⟦E49⟧ crying. It sounds like he's far away, to the east.",
+  "quest:5241:details:1": "I hope he's not crying for me! ⟦52⟧, will you find my uncle and tell him I'm alright?",
+  "quest:5241:details:2": "If you find him say I'm waiting for him, and I want to hear the story he used to tell... the one about the rabbits and the berry jam! That story's so funny!",
+  "quest:5241:completion:0": "You've seen Pamela? She's alive?",
+  "quest:5241:completion:1": "She's dead? No! Oh, Pamela! Why does your spirit still suffer in this world. Why are you perished, while fortune keeps me alive? In an instant I would switch places with you and wander dead Darrowshire, a ghost and alone!",
+  "quest:5241:completion:2": "Ah, but this news cannot change fate. Thank you, ⟦53⟧. Now my duty, my duty to revenge, burns hot as ever."
+ },
+ "context": {
+  "quest:5508": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)"
+  },
+  "quest:5509": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)"
+  },
+  "quest:5510": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)"
+  },
+  "quest:5142": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Marlene Redpath («مارلین ردپث»)",
+   "turner": "Pamela Redpath («پاملا ردپث»)"
+  },
+  "quest:5149": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Pamela Redpath («پاملا ردپث»)",
+   "turner": "Pamela Redpath («پاملا ردپث»)"
+  },
+  "quest:5211": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Carlin Redpath («کارلین ردپث»)",
+   "turner": "Carlin Redpath («کارلین ردپث»)"
+  },
+  "quest:5503": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)",
+   "turner": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)"
+  },
+  "quest:5601": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Jessica Redpath («جسیکا ردپث»)",
+   "turner": "Pamela Redpath («پاملا ردپث»)"
+  },
+  "quest:6021": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Caretaker Alen («سرپرست آلن»)",
+   "turner": "Caretaker Alen («سرپرست آلن»)"
+  },
+  "quest:6164": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "Augustus the Touched («آگوستوس دست‌خورده»)",
+   "turner": "Augustus the Touched («آگوستوس دست‌خورده»)"
+  },
+  "quest:9125": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Huntsman Leopold («شکارچی لئوپولد»)"
+  },
+  "quest:9127": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Rohan the Assassin («روهان آدم‌کش»)"
+  },
+  "quest:9129": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Archmage Angela Dosantos («ارشدجادوگر آنجلا دوسانتوس»)"
+  },
+  "quest:9132": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Korfax, Champion of the Light («کورفکس، قهرمان نور»)"
+  },
+  "quest:9137": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Rayne («رین»)"
+  },
+  "quest:9142": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Dispatch Commander Metz («فرمانده اعزام متز»)"
+  },
+  "quest:9165": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Dispatch Commander Metz («فرمانده اعزام متز»)"
+  },
+  "quest:9221": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9222": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9223": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9224": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9225": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9226": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9227": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:9228": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 55,
+   "side": "",
+   "giver": "",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:5152": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Pamela Redpath («پاملا ردپث»)",
+   "turner": "Marlene Redpath («مارلین ردپث»)"
+  },
+  "quest:5153": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Marlene Redpath («مارلین ردپث»)",
+   "turner": "Chromie («کرومی»)"
+  },
+  "quest:5168": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Carlin Redpath («کارلین ردپث»)",
+   "turner": "Carlin Redpath («کارلین ردپث»)"
+  },
+  "quest:5210": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Chromie («کرومی»)",
+   "turner": "Carlin Redpath («کارلین ردپث»)"
+  },
+  "quest:5241": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Pamela Redpath («پاملا ردپث»)",
+   "turner": "Carlin Redpath («کارلین ردپث»)"
+  }
+ },
+ "known": {
+  "quest:5142": {
+   "title": "پاملای کوچک"
+  },
+  "quest:5149": {
+   "title": "عروسک پاملا"
+  },
+  "quest:5211": {
+   "title": "مدافعان داروشایر"
+  },
+  "quest:5503": {
+   "title": "کمیسیون سپیدهٔ نقره‌ای"
+  },
+  "quest:5601": {
+   "title": "خواهر پاملا"
+  },
+  "quest:6021": {
+   "title": "زالدار تبعیدی"
+  },
+  "quest:6164": {
+   "title": "دفتر رسیدهای آگوستوس"
+  },
+  "quest:5152": {
+   "title": "خالهٔ مارلین"
+  },
+  "quest:5153": {
+   "title": "مورخی عجیب"
+  },
+  "quest:5168": {
+   "title": "قهرمانان داروشایر"
+  },
+  "quest:5210": {
+   "title": "برادر کارلین"
+  },
+  "quest:5241": {
+   "title": "دایی کارلین"
+  }
+ }
+}

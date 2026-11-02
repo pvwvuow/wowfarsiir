@@ -1,0 +1,963 @@
+{
+ "pack": "quest-orgrimmar-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-orgrimmar-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Red Wolf",
+   "fa": "گرگ سرخ",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Ug'thok",
+   "fa": "اوگ‌توک",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Lieutenant's Insignia",
+   "fa": "نشان سروان",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Thrall",
+   "fa": "ترال",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Skull Rock",
+   "fa": "صخرهٔ جمجمه",
+   "kind": "qs"
+  },
+  "E9": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Neeru Fireblade",
+   "fa": "نیرو آتش‌تیغ",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E14": {
+   "en": "Shadow Council",
+   "fa": "شورای سایه",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "Nazgrel",
+   "fa": "نازگرل",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Cairne Bloodhoof",
+   "fa": "کیرن سم‌خون",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Lady Sylvanas Windrunner",
+   "fa": "بانو سیلوانس بادپیما",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Journey to the Crossroads",
+   "fa": "سفر به تقاطع",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Thork",
+   "fa": "تهورک",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "The Barrens",
+   "fa": "دشت‌های بایر",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Ragefire Chasm",
+   "fa": "شکاف آتش‌خشم",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Bazzalan",
+   "fa": "بازالان",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Yelmak",
+   "fa": "یلمک",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Kor'geld",
+   "fa": "کورگلد",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Alchemy",
+   "fa": "کیمیاگری",
+   "kind": "sp"
+  },
+  "E29": {
+   "en": "Handful of Cattails",
+   "fa": "مقداری نی‌دم‌گربه‌ای",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Speargrass Cuttings",
+   "fa": "قلمه‌های علف نیزه‌ای",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Whuut",
+   "fa": "ووت",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Borstan",
+   "fa": "بورستان",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Thatog",
+   "fa": "تاتوگ",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Migi",
+   "fa": "میگی",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Migi's Lunch",
+   "fa": "ناهار میگی",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Yelmak's Potion",
+   "fa": "معجون یلماک",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Black Lotus",
+   "fa": "نیلوفر سیاه",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Mountain Silversage",
+   "fa": "مریم‌گلیِ نقره‌ایِ کوهستان",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Thra",
+   "fa": "ترا",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Smooth Boulder",
+   "fa": "تخته‌سنگ صاف",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Searing Blade",
+   "fa": "تیغهٔ سوزان",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Senani Thunderheart",
+   "fa": "سنانی قلب رعد",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Keldran",
+   "fa": "کلدران",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Takata Steelblade",
+   "fa": "تاکاتا تیغهٔ فولادی",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E52": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E54": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E59": {
+   "en": "Thicket Raptor Meat",
+   "fa": "گوشت رپتور بیشه‌زار",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Zamja",
+   "fa": "زامجا",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E62": {
+   "en": "Belgrom's Sealed Note",
+   "fa": "یادداشتِ مهرشدهٔ بلگروم",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Moktar Krin",
+   "fa": "موکتار کرین",
+   "kind": "npc"
+  },
+  "E64": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E65": {
+   "en": "Korran",
+   "fa": "کوران",
+   "kind": "npc"
+  },
+  "E67": {
+   "en": "Maurin Bonesplitter",
+   "fa": "ماورین استخوان‌شکاف",
+   "kind": "npc"
+  },
+  "E68": {
+   "en": "Hatefury Felsworn",
+   "fa": "فل‌سوگندی خشم‌نفرت",
+   "kind": "npc"
+  },
+  "E69": {
+   "en": "Burning Gem",
+   "fa": "گوهر سوزان",
+   "kind": "it"
+  },
+  "E73": {
+   "en": "Brilliant Gold Ring",
+   "fa": "انگشترِ طلای درخشان",
+   "kind": "it"
+  },
+  "E74": {
+   "en": "Silver Bar",
+   "fa": "شمش نقره",
+   "kind": "it"
+  },
+  "E75": {
+   "en": "Moss Agate",
+   "fa": "عقیق خزه‌ای",
+   "kind": "it"
+  },
+  "E76": {
+   "en": "Nogg",
+   "fa": "ناگ",
+   "kind": "npc"
+  },
+  "E77": {
+   "en": "Belgrom Rockmaul",
+   "fa": "بلگروم صخره‌کوب",
+   "kind": "npc"
+  },
+  "E78": {
+   "en": "Rok Orhan",
+   "fa": "روک اورهان",
+   "kind": "npc"
+  },
+  "E79": {
+   "en": "Camp Mojache",
+   "fa": "اردوگاه موجاچه",
+   "kind": "qs"
+  },
+  "E80": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E81": {
+   "en": "Dran Droffers",
+   "fa": "دران دروفرز",
+   "kind": "npc"
+  },
+  "E83": {
+   "en": "Hinterlands Honey Ripple",
+   "fa": "شراب عسلی هینترلندز",
+   "kind": "it"
+  },
+  "E84": {
+   "en": "Malton Droffers",
+   "fa": "مالتون درافرز",
+   "kind": "npc"
+  },
+  "E85": {
+   "en": "Gilveradin Sunchaser",
+   "fa": "گیلوراندین خورشیددنبال",
+   "kind": "npc"
+  },
+  "E86": {
+   "en": "Arch Druid Hamuul Runetotem",
+   "fa": "دروید اعظم هاموول رون‌توتم",
+   "kind": "npc"
+  },
+  "E87": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E89": {
+   "en": "Hamuul Runetotem",
+   "fa": "هامول رون‌توتوم",
+   "kind": "qs"
+  },
+  "E90": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Red Wolf": "گرگ سرخ",
+  "Ug'thok": "اوگ‌توک",
+  "Orgrimmar": "اورگریمار",
+  "Lieutenant's Insignia": "نشان سروان",
+  "Thrall": "ترال",
+  "Skull Rock": "صخرهٔ جمجمه",
+  "Horde": "هورد",
+  "Neeru Fireblade": "نیرو آتش‌تیغ",
+  "Shadow": "سایه",
+  "Shadow Council": "شورای سایه",
+  "Durotar": "دوروتار",
+  "Nazgrel": "نازگرل",
+  "Cairne Bloodhoof": "کیرن سم‌خون",
+  "Lady Sylvanas Windrunner": "بانو سیلوانس بادپیما",
+  "Journey to the Crossroads": "سفر به تقاطع",
+  "Thork": "تهورک",
+  "The Barrens": "دشت‌های بایر",
+  "Ragefire Chasm": "شکاف آتش‌خشم",
+  "Bazzalan": "بازالان",
+  "Yelmak": "یلمک",
+  "Kor'geld": "کورگلد",
+  "Alchemy": "کیمیاگری",
+  "Handful of Cattails": "مقداری نی‌دم‌گربه‌ای",
+  "Speargrass Cuttings": "قلمه‌های علف نیزه‌ای",
+  "Whuut": "ووت",
+  "Azshara": "آزشارا",
+  "Borstan": "بورستان",
+  "Thatog": "تاتوگ",
+  "Migi": "میگی",
+  "Migi's Lunch": "ناهار میگی",
+  "Yelmak's Potion": "معجون یلماک",
+  "Black Lotus": "نیلوفر سیاه",
+  "Mountain Silversage": "مریم‌گلیِ نقره‌ایِ کوهستان",
+  "Thra": "ترا",
+  "Smooth Boulder": "تخته‌سنگ صاف",
+  "Searing Blade": "تیغهٔ سوزان",
+  "Barrens": "بارنز",
+  "Ashenvale": "اَشِن‌ویل",
+  "Senani Thunderheart": "سنانی قلب رعد",
+  "Keldran": "کلدران",
+  "Takata Steelblade": "تاکاتا تیغهٔ فولادی",
+  "Desolace": "دزوله‌یس",
+  "Alliance": "اتحاد",
+  "Kalimdor": "کالیمدور",
+  "Burning Legion": "لژیون سوزان",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Thicket Raptor Meat": "گوشت رپتور بیشه‌زار",
+  "Zamja": "زامجا",
+  "Wetlands": "تالاب‌ها",
+  "Belgrom's Sealed Note": "یادداشتِ مهرشدهٔ بلگروم",
+  "Moktar Krin": "موکتار کرین",
+  "Thousand Needles": "هزار سوزن",
+  "Korran": "کوران",
+  "Maurin Bonesplitter": "ماورین استخوان‌شکاف",
+  "Hatefury Felsworn": "فل‌سوگندی خشم‌نفرت",
+  "Burning Gem": "گوهر سوزان",
+  "Brilliant Gold Ring": "انگشترِ طلای درخشان",
+  "Silver Bar": "شمش نقره",
+  "Moss Agate": "عقیق خزه‌ای",
+  "Nogg": "ناگ",
+  "Belgrom Rockmaul": "بلگروم صخره‌کوب",
+  "Rok Orhan": "روک اورهان",
+  "Camp Mojache": "اردوگاه موجاچه",
+  "Feralas": "فرالاس",
+  "Dran Droffers": "دران دروفرز",
+  "Hinterlands Honey Ripple": "شراب عسلی هینترلندز",
+  "Malton Droffers": "مالتون درافرز",
+  "Gilveradin Sunchaser": "گیلوراندین خورشیددنبال",
+  "Arch Druid Hamuul Runetotem": "دروید اعظم هاموول رون‌توتم",
+  "Thunder Bluff": "تاندر بلاف",
+  "Hamuul Runetotem": "هامول رون‌توتوم",
+  "Runecloth": "پارچهٔ رونی"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$N",
+  "8": "$c",
+  "9": "$B",
+  "10": "$B",
+  "11": "$C",
+  "12": "$C",
+  "13": "$c",
+  "14": "$N",
+  "15": "$N",
+  "16": "$C",
+  "17": "$c",
+  "18": "$N",
+  "19": "$C",
+  "20": "$N",
+  "21": "$C",
+  "22": "$C",
+  "23": "$C",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$c",
+  "29": "$C",
+  "30": "$N",
+  "31": "$N",
+  "32": "$c",
+  "33": "$Ghimself:herself;",
+  "34": "$R",
+  "35": "$c",
+  "36": "$C",
+  "37": "$N",
+  "38": "$B",
+  "39": "$B",
+  "40": "$N"
+ },
+ "rows": {
+  "quest:7660:title": "Wolf Swapping - Arctic Wolf",
+  "quest:7660:progress:0": "If you bring me your old fast wolf, I will trade it in for one from the new pack.   The new wolf will be just as fast as your old one, but have a different look to it.   You can look at the swift wolves we already have around the yard here to see what it will look like.",
+  "quest:7661:title": "Wolf Swapping - ⟦E1⟧",
+  "quest:7661:progress:0": "If you bring me your old fast wolf, I will trade it in for one from the new pack.   The new wolf will be just as fast as your old one, but have a different look to it.   You can look at the swift wolves we already have around the yard here to see what it will look like.",
+  "quest:96874:title": "This Is Spinal Axe",
+  "quest:96874:obj:0": "⟦E3⟧ in ⟦E4⟧ wants you to collect 5 Weathered Spines from beasts in Thunder Ridge, along with 5 Rough Grinding Stones.",
+  "quest:5726:obj:0": "Bring a ⟦E5⟧ to ⟦E6⟧ in ⟦E4⟧.",
+  "quest:5726:details:0": "One thing I will not tolerate are traitors in our midst, ⟦1⟧. But I would be a fool to play my hand so early--it would not sufficiently cut the corruption out of our lands and only cause the infection to grow worse.",
+  "quest:5726:details:1": "But you, a young adventurer, could go places my agents could not... could learn the truth... could find the true head of the beast.",
+  "quest:5726:details:2": "If you are brave enough, then enter ⟦E7⟧ to the east of ⟦E4⟧, find a lieutenant's insignia off one of the Burning Blade there, and return to me.",
+  "quest:5726:progress:0": "Do you have the insignia yet, ⟦2⟧?⟦3⟧⟦4⟧It will be a vital tool in you infiltrating what I believe is the greatest threat to the ⟦E9⟧ and us finally finding peace in our new home.⟦5⟧⟦6⟧You will learn how intricate a web men and orcs alike can weave when they are motivated by greed and power. The hidden agendas, the corruption, all of it will become clear. You will find yourself in the midst of a war you never knew existed.",
+  "quest:5726:completion:0": "Good, ⟦7⟧! The spirits be praised, perhaps you are the one who will finally put my greatest fears to rest! Who would suspect someone so young and so brave would rise up and champion our cause? You remind me of myself when I was younger. I will ensure that you are justly rewarded for your efforts if we both survive the coming storm.",
+  "quest:5726:completion:1": "But there is time for more praise later. You've not accomplished anything in comparison to what you will face... but this is a good start.",
+  "quest:5727:obj:0": "Take the ⟦E5⟧ to ⟦E10⟧ and speak to him. Gauge if he believes you are a member of the Burning Blade and then return to ⟦E6⟧ in ⟦E4⟧.",
+  "quest:5727:details:0": "Now let us see if this insignia you found is worth the effort.",
+  "quest:5727:details:1": "There is a warlock within the city who believes he has my trust. He does not know that I realize where his true loyalties lie. He is in fact the leader of the Burning Blade. But do not rush off to do battle with him; he has a purpose, and we shall use him against our enemies.",
+  "quest:5727:details:2": "Take this insignia to him in the Cleft of ⟦E13⟧ here in ⟦E4⟧, speak to him and see if he believes you are one of his own, then return to me here.",
+  "quest:5727:progress:0": "Well, ⟦8⟧? Does he believe our ploy, or are things worse than I had first estimated?⟦9⟧⟦10⟧Proving valuable to Neeru will make our infiltration of the ⟦E14⟧ much easier. He will have plenty of information that we can use to route out those who would destroy all we have built in ⟦E15⟧.",
+  "quest:5727:completion:0": "Excellent! Most excellent, ⟦11⟧!",
+  "quest:5727:completion:1": "What you have done this day is only the first step in a much broader foundation--a foundation that we will build the destruction of the ⟦E14⟧ on, once and for all.",
+  "quest:5727:completion:2": "Tell me all he said... and leave not one word out--it may be more important than you realize.",
+  "quest:93739:title": "Exploring the ⟦E9⟧",
+  "quest:93739:obj:0": "Speak with ⟦E16⟧ in Grommash Hold to receive further instructions. Use the instructions received to locate and speak with Vol'jin, ⟦E18⟧, and ⟦E19⟧.",
+  "quest:98024:title": "⟦E20⟧",
+  "quest:98024:obj:0": "Report To ⟦E21⟧ at The Crossroads in ⟦E22⟧.",
+  "quest:5729:obj:0": "Speak to ⟦E10⟧ in ⟦E4⟧.",
+  "quest:5729:details:0": "I think our next step should be to have you placed close to Neeru. If he is as agitated as reports suggest, then we may accomplish two things. One, you may be able to gain some greater knowledge about the Council or at least the Burning Blade, and two, he may just begin to trust you enough that he asks you to start to aid him. He may very well look at you as someone who can fill the void now that some of the leadership is in turmoil.",
+  "quest:5729:details:1": "Return to the Cleft and speak to him again, but do not be too overt.",
+  "quest:5729:completion:0": "What is it?! Oh, you, ⟦12⟧... my apologies. My anger rivals that of a rabid kodo bull... but perhaps it is my own fault. In sending travelers into ⟦E23⟧, I should have seen the possibility that some harm would come from it. It seems both ⟦E24⟧ and Jergosh were taken unaware and slain by some of ⟦E6⟧'s do-gooders. A most inopportune time, but there is nothing that can be done about it now.",
+  "quest:97242:title": "⟦E25⟧'s Medley",
+  "quest:97242:obj:0": "Take some cuttings from the Cattails and Speargrass growing around the water flows in the Valley of Honor and return to ⟦E26⟧ in ⟦E25⟧'s ⟦E27⟧ and Potions.",
+  "quest:97242:obj:1": "*⟦E29⟧ (2)",
+  "quest:97242:obj:2": "*⟦E30⟧ (4)",
+  "quest:97242:details:0": "⟦E25⟧ doesn't want his apprentice breaking anything. Well, anything more than he already has.",
+  "quest:97242:details:1": "He told me the young mixer in training has too much pride to ask for help when he really needs it. ⟦E25⟧ wants to give him a taste of a particular home-brewed recipe.",
+  "quest:97242:details:2": "Gather a mix of cattail and speargrass cuttings taken from the plants growing around the water in the Valley of Honor. I'd get them myself, but if I left the shop, ⟦E31⟧ would surely know we're catering to his mood.",
+  "quest:97242:progress:0": "We discover formulations and recipes by showing old ingredients to new generations, who experiment with it in their own way.",
+  "quest:97242:completion:0": "This type of cattail and speargrass is unique to ⟦E4⟧. Drinking from ⟦E32⟧ mountain spring water, and nourished by the sweat and blood soaked mineral dust of our rocky land, these herbs contain potent powers locked within.",
+  "quest:97242:completion:1": "I'll give these to ⟦E25⟧, who may be able to win back ⟦E31⟧'s ear with a hands-on lesson.",
+  "quest:97246:title": "Meal Appeal",
+  "quest:97246:obj:0": "Visit ⟦E33⟧'s Firepit and tell him ⟦E34⟧ wants you to deliver ⟦E35⟧'s lunch to him personally.",
+  "quest:97246:details:0": "My son, ⟦E35⟧, always takes off to play with his friends all day. I tell him to pick up a lunch at ⟦E33⟧'s, but I know he almost never does, because he comes home starving. These kids think their games are more important than their own bodies!",
+  "quest:97246:details:1": "Please, stop at ⟦E33⟧'s Firepit and tell him you're there to deliver ⟦E35⟧'s lunch. You can almost certainly find ⟦E35⟧ behind Grommash Hold with the rest of his friends.",
+  "quest:97246:details:2": "Duties keep me here during the day and I can't watch over his every meal.",
+  "quest:97249:title": "Favorite Food",
+  "quest:97249:obj:0": "Bring ⟦E36⟧ to him behind Grommash Hold.",
+  "quest:97249:obj:1": "*⟦E36⟧ (provided)",
+  "quest:97249:details:0": "Now that I know his parents worry about how much he's actually filling that belly, I've got an idea.",
+  "quest:97249:details:1": "They made me promise not to pack the same meal every day, so ⟦E35⟧ grows a taste for more than one thing. Still, whenever the smoker's full and we're making sweetglazed hog belly sandwiches, he always shows up for lunch. We've started crumbling the leftover crispy glazed bits as a topping--something we can add daily.",
+  "quest:97249:details:2": "Take this to him. Maybe he'll start showing up early and bringing friends!",
+  "quest:97249:progress:0": "I think we can win this one...",
+  "quest:97275:title": "⟦E31⟧'s the Rush",
+  "quest:97275:obj:0": "Give ⟦E37⟧ to ⟦E31⟧.",
+  "quest:97275:obj:1": "*⟦E37⟧ (provided)",
+  "quest:97275:details:0": "⟦E31⟧ is a prodigy. That much is true. But he doesn't yet have the experience, wisdom, and time on the stirring rod to know how to respect alchemical processes.",
+  "quest:97275:details:1": "He is exhausting all of the rarest and most exotic reagents we have available without pausing to practice and refine his basic skills.",
+  "quest:97275:details:2": "Give him this potion I've brewed with a quick tonic method. He'll reconsider everything he's doing when he learns how local remedies and careful touch are the first true mastery.",
+  "quest:97275:progress:0": "Alright, what's next... ⟦E38⟧, ⟦E39⟧...",
+  "quest:97275:completion:0": "Grorru--whaa?",
+  "quest:97275:completion:1": "You say ⟦E25⟧ made this potion from speargrass and cattail with no other reagents? I didn't know chemists had any real need for these common plants we see every day.",
+  "quest:97275:completion:2": "Maybe he's right. There could be a lot I'm missing out on by skipping to the most rare and least-studied flora first.",
+  "quest:97275:completion:3": "<Name>, take your pick from one of these potions I brewed earlier. I appreciate you taking the time to visit our shop.",
+  "quest:97326:title": "Rocks to Rests",
+  "quest:97326:obj:0": "Return 8 Smooth Boulders to ⟦E40⟧ behind Grommash Hold.",
+  "quest:97326:obj:1": "*⟦E41⟧ (8)",
+  "quest:97326:details:0": "Hey! You've got time to help us out! I know you do, I can tell by the way you smiled watching the game we're playing.",
+  "quest:97326:details:1": "This spot behind Grommash Hold is nice because it's clear enough for us to set up our figures. But what stinks is we don't have enough rocks for chairs or tables.",
+  "quest:97326:details:2": "You're big and strong... d'ya think you could carry back some medium-sized rocks, smooth enough to sit on if we need a rest?",
+  "quest:97326:progress:0": "It's nice to not have to always sit in the dirt!",
+  "quest:5730:obj:0": "Speak to ⟦E6⟧ in ⟦E4⟧ and tell him what you've learned.",
+  "quest:5730:details:0": "You are one of my lieutenants! Prepare yourself, ⟦13⟧. I will call upon you soon.",
+  "quest:5730:details:1": "My time spent on the ⟦E42⟧ may be all but wasted now, but that does not mean that the ⟦E14⟧'s schemes elsewhere must suffer. I will do what I can to minimize the damage here in ⟦E23⟧. In the meantime, I will have my agents in the ⟦E44⟧ and ⟦E45⟧ begin work on our newest agenda. Return to me soon.",
+  "quest:5730:completion:0": "⟦E45⟧? Hmm, I had not heard of any presence of the Council or the Burning Blade in ⟦E45⟧. My spies will investigate, ⟦14⟧. You have done well.",
+  "quest:5730:completion:1": "For now, rest, and keep yourself occupied with other tasks. I will call upon you again soon.",
+  "quest:5730:completion:2": "Lok-Tar Ogar!",
+  "quest:235:obj:0": "Speak with ⟦E46⟧ at Splintertree Post, ⟦E45⟧.",
+  "quest:235:details:0": "Attention, young adventurers! The wilds of ⟦E45⟧ await you!",
+  "quest:235:details:1": "The ⟦E9⟧ has established a strong presence in the lands north of the ⟦E44⟧. Our two outposts - Splintertree Post and the Zoram Strand Outpost - strive to bring glory to the ⟦E9⟧! Those who would prove themselves should seek out guidance there. Of note: ⟦E46⟧ in Splintertree Post, directly north of the ⟦E44⟧, seeks adventurers willing to take part in a great hunt of ⟦E45⟧!",
+  "quest:235:completion:0": "Welcome to the new frontier, ⟦15⟧. ⟦E45⟧ is a land of opportunity, one where a young ⟦16⟧ like yourself is able to find boundless chances to prove their mettle. Look around the outpost here, and be sure to travel out to the Zoram Strand, as the ⟦E9⟧ has another outpost there as well.",
+  "quest:235:completion:1": "Your presence here tells me that you've come to learn more about the hunt. Listen close, and I will gladly share with you what you need to know.",
+  "quest:1431:obj:0": "Speak to ⟦E47⟧ in ⟦E4⟧.",
+  "quest:1431:details:0": "Be still, ⟦17⟧, and allow me to share with you something important to our people, but far from obvious.",
+  "quest:1431:details:1": "We are a proud race, and the war with the humans tried even ⟦E6⟧'s great patience. You see, our Warchief is wise and prudent, and he continues to put his people first. Ultimately, he is a diplomat, and in his time with the humans he learned much of their ways.",
+  "quest:1431:details:2": "If the tale I've started piques your interest, then find ⟦E47⟧ near the western exit of the city. His hovel is there.",
+  "quest:1431:completion:0": "⟦18⟧, noble ⟦19⟧. I am ⟦E47⟧, student of magic... and other mystical arts.",
+  "quest:1431:completion:1": "The business Craven sent you here to speak to me about requires a touch more subtlety than you've previously needed, but that does not mean you can not still aid our cause.",
+  "quest:1431:completion:2": "Please, make yourself comfortable, and I shall tell you why the Warchief has need of my aid... and yours.",
+  "quest:1431:completion:3": "It starts with appearances, ⟦20⟧. How the ⟦E9⟧ sees itself. How our allies see us. And most importantly, how our enemies see us.",
+  "quest:1432:obj:0": "Speak to ⟦E50⟧ in ⟦E51⟧.",
+  "quest:1432:details:0": "As the ⟦E52⟧ progresses deeper and deeper into ⟦E53⟧, incorrect conclusions may be drawn about the ⟦E9⟧ making pacts with the ⟦E54⟧. The Warchief cannot allow that to happen. And with his blessing, I am taking control of overseeing them removed.",
+  "quest:1432:details:1": "I have agents in the area of ⟦E51⟧ at the Ghost Walker Post north of the great Kodo Graveyard. Head south of the Charred Vale in the ⟦E57⟧ and you shall come across it. When you arrive, seek out ⟦E50⟧.",
+  "quest:1432:completion:0": "Greetings, ⟦21⟧. You bring news from ⟦E4⟧; that is good.",
+  "quest:1432:completion:1": "The demon infestation overwhelms this area even more than the smell of centaur dung. The horse-men claim this land as their own, but clearly there are influences out of their control that will crush them if not kept in check.",
+  "quest:1432:completion:2": "It does not please me that we aid the centaur indirectly, but it is for the good of the ⟦E9⟧, so I do my duty for the Warchief, even if it means helping the warlocks within the ⟦E9⟧.",
+  "quest:95697:title": "Changing Tastes",
+  "quest:95697:obj:0": "Enter the Excavation Sites in the and bring back ⟦E59⟧.",
+  "quest:95697:obj:1": "*⟦E59⟧ (4)",
+  "quest:95697:details:0": "⟦E60⟧ tells me we need more homestyle cooking.",
+  "quest:95697:details:1": "If we start selling raptor, she thinks it'll draw in customers who don't usually visit ⟦E33⟧'s Firepit.",
+  "quest:95697:details:2": "Her idea is not so bad. But I want something that rises above the smells of our birth villages. We're in ⟦E4⟧! ⟦E33⟧ should serve a grand take on their familiar favorites.",
+  "quest:95697:details:3": "A hunter recently came back from the ⟦E61⟧ with a giant talon from the thicket raptors in the Excavation Sites.",
+  "quest:95697:details:4": "Up for a job?",
+  "quest:95697:progress:0": "Farm-raised boar, farm-raised crawler... what's next, farm-raised raptor?",
+  "quest:1146:obj:0": "Deliver ⟦E62⟧ to ⟦E63⟧ in ⟦E64⟧.",
+  "quest:1146:details:0": "So, ⟦E65⟧ has come to a similar conclusion about these insects--they seem to be a larger threat than we assumed.",
+  "quest:1146:details:1": "BA few days ago a hunter returned to me from ⟦E64⟧ nearly dead. He was with a raiding party sent to drive a dwarven excavation team out of the Shimmering Flats. During the attack, more of these insects erupted from a cave in the dig site and nearly killed the party.",
+  "quest:1146:details:2": "They were led by ⟦E63⟧, and they've taken refuge on the border of the Shimmering Flats. Bring him this note.",
+  "quest:1146:progress:0": "War brings my group and I to the Shimmering Flats, ⟦22⟧. What brings you here?",
+  "quest:1146:completion:0": "Don't mind the thundering echoes off the mountains' walls. The goblins and gnomes are out among the Flats racing one another in atrocities created by what they call science. There are bigger threats here in ⟦E64⟧, one of which killed more than half my war party.",
+  "quest:1146:completion:1": "But we remain here until we hear word from Belgrom in ⟦E4⟧. Until then, we hold our position here, and stay vigilant.",
+  "quest:1433:obj:0": "Speak to ⟦E67⟧ in ⟦E51⟧.",
+  "quest:1433:details:0": "The Burning Blade have many agendas, but know that they are evil to their core, their spirits corrupted, and their destruction is the only way to thwart their objectives.",
+  "quest:1433:details:1": "⟦E47⟧ sent Maurin with me because of his knowledge of the Blade and their warlock ways.",
+  "quest:1433:details:2": "He has control of our plots against the Blade while I deal with the other demonic threats here in ⟦E51⟧.",
+  "quest:1433:details:3": "Speak to him, and he will guide you in his designs.",
+  "quest:1433:completion:0": "Ah, yes. Aid from those loyal to the Warchief is always appreciated.",
+  "quest:1433:completion:1": "My name is Maurin. I am here at the behest of ⟦E47⟧ and the Warchief cub ⟦E6⟧. It is my desire to aid the youngling leader against the evils that threaten his rule.",
+  "quest:1433:completion:2": "Come, come closer, ⟦23⟧. I shall explain to you my plan for removing the festering boil that is the Burning Blade.",
+  "quest:1434:obj:0": "Slay 7 Hatefury Rogues, 7 ⟦E68⟧, 7 Hatefury Betrayers, and 7 Hatefury Hellcallers, and return to ⟦E50⟧ in ⟦E51⟧.",
+  "quest:1434:details:0": "A demon infestation does not occur without other influences--something else allows evil to gain a foothold.",
+  "quest:1434:details:1": "It may start with a weakened spirit, a needless desire for power; perhaps it's a thirst for revenge, or the appeal for final justice. When we are beset by pain, evil takes advantage of us--evil such as the satyr.",
+  "quest:1434:details:2": "Ties have been made between them and the Burning Blade, and ⟦E6⟧ would have them slain. Seek them out to the northeast of here, and return to me when you've driven them back.",
+  "quest:1434:progress:0": "I was warned by a tauren companion that the satyr are not all they appear to be. He believes there is something more to them, that their evil is a twisting of their true nature. But I have not seen such things.⟦24⟧⟦25⟧I see only the ruthless slaughter of the weak and the corruption of those who seek dark power.⟦26⟧⟦27⟧I will continue in my duty of annihilating them until the Warchief directs me otherwise. Until then, I take no pity on them.",
+  "quest:1434:completion:0": "You have done well, ⟦28⟧. You have shown honor and dedication.",
+  "quest:1434:completion:1": "When our campaign in ⟦E51⟧ is done, the Warchief will know that you aided us in our actions here, and that you helped make his will manifest.",
+  "quest:1434:completion:2": "I thank you.",
+  "quest:1435:obj:0": "Return the ⟦E69⟧ and 15 Infused Burning Gems to ⟦E67⟧ in ⟦E51⟧.",
+  "quest:1435:details:0": "Death is most desirable for those despicable creatures that turn their back on their liege for such selfish reasons. But death is not enough when dealing with those that have given themselves over to the darkness.",
+  "quest:1435:details:1": "Take this gem. When one of the Burning Blade's near death, activate its magic. The spell shall pull the corrupted spirit out of its victim, leaving an infused gem behind.",
+  "quest:1435:details:2": "Bring me these infused gems so I may dispose of them properly.",
+  "quest:1435:details:3": "Go now, and may you elude death.",
+  "quest:1435:progress:0": "I have tried to make the magics as simple as possible. Drawing the spirit of your victim out of its injured form should be child's play. Do not rely on the gem's power to slay your foe completely. You must only activate the gem when they are close to death, or it will be useless.",
+  "quest:1435:completion:0": "Ah, you've returned successful. That is good. Give me the gems and I shall put them someplace safe....",
+  "quest:1435:completion:1": "My tasks for you are complete, ⟦29⟧. Speak to Takata when you are rested. He may have other tasks for you, or perhaps needs you to return to ⟦E4⟧ to inform ⟦E47⟧ of our progress here in ⟦E51⟧.",
+  "quest:1436:obj:0": "Speak to ⟦E47⟧ in ⟦E4⟧.",
+  "quest:1436:details:0": "The fight goes well, ⟦30⟧. Perhaps the Warchief will allow us to return to our homes before the seasons change if we continue to make such great strides in our battle against the demons and their underlings.",
+  "quest:1436:details:1": "Return to ⟦E47⟧ and let him know what we have done. I am sure he will reward you for your efforts here. His cause is important to him, and he will take pride in knowing that the Warchief respects his concerns.",
+  "quest:1436:completion:0": "You have returned from ⟦E51⟧ more than successful, ⟦31⟧. Thank you.",
+  "quest:1436:completion:1": "Thank you for your efforts, your time, and your understanding to my plea. ⟦E6⟧ understands and desires peace between the ⟦E9⟧ and ⟦E52⟧, and by taking measures to insure our appearance is acceptable, we will not provoke any further threats of unnecessary violence.",
+  "quest:1436:completion:2": "I am indebted to you.",
+  "quest:2950:obj:0": "Bring the ⟦E73⟧, a ⟦E74⟧, a ⟦E75⟧, and 30 silver coins to ⟦E76⟧ in ⟦E4⟧.",
+  "quest:2950:details:0": "No, no, no - I'm not all of the sudden saying that the ring is mine. I normally don't do this, but your information about the Dark Irons was very useful. I'll improve your ring for you, better than whomever made this simple little thing could have ever done. Probably some gnome...",
+  "quest:2950:details:1": "If you bring me a bar of silver, a moss agate, and thirty silver coins for my trouble, I'll add a silver and agate lattice to the ring that will strengthen the magic inside of it. Interested?",
+  "quest:2950:progress:0": "Do you have the materials I need?  I can't improve on this design without everything I asked for.",
+  "quest:2950:completion:0": "Here's your ring, better than before. Thanks again for the information about those Dark Iron dwarves. This seems like a reasonable lead as to how those gnomes suddenly were struck with goblin-like inspiration.",
+  "quest:2981:obj:0": "⟦E77⟧ wants you to speak with ⟦E78⟧ in ⟦E79⟧.",
+  "quest:2981:details:0": "⟦E80⟧ is an ideal location for an accomplished ⟦32⟧ to prove ⟦33⟧. A tribe of ogres called the Gordunni are the dominant military force there, and their numbers are growing. They must be stopped before they threaten our presence in ⟦E80⟧.",
+  "quest:2981:details:1": "BA warrior I know of named ⟦E78⟧ resides at ⟦E79⟧ in ⟦E80⟧; go to her. She will tell you more of the situation when you arrive.",
+  "quest:2981:completion:0": "So, Belgrom sent you. You are just in time, ⟦34⟧.",
+  "quest:2981:completion:1": "Let me explain the situation, and then you can decide if you are up to the challenge... But if Belgrom sent you, I am sure your courage is unquestionable.",
+  "quest:81:obj:0": "Deliver the barrel to ⟦E81⟧ in ⟦E4⟧.",
+  "quest:81:details:0": "I have taken the extra step of securing not only Dran's packaged ripple in the barrel, but also the extra bottles of ripple he is purloining. While I may not hold Dran very highly, there is nothing worse than jostled ripple. You're welcome.",
+  "quest:81:details:1": "Now, deliver yon barrel to ⟦E81⟧ in his salvage emporium in ⟦E4⟧. Pray tell, please extend my warmest greetings to Malton; let him know that should he ever thirst for fine drink and finer drinking companions, we would be honored with his visit.",
+  "quest:81:progress:0": "If you're not here to buy anything, and you're not here to deliver anything, then you're wasting my time! You better have that ripple!",
+  "quest:81:completion:0": "Well, let's see what's in this barrel!",
+  "quest:81:completion:1": "Yes, yes, it looks as though it is all here. Here's your fee for the package, good job on that. I stand to make five times that fee when I sell it to the tavern! Har har!",
+  "quest:81:completion:2": "These extra bottles of ⟦E83⟧ are going to be set for a special occasion. I think I'll drink some with champagne. I'll call it... champipple.",
+  "quest:649:obj:0": "Talk to ⟦E84⟧ in ⟦E4⟧.",
+  "quest:649:details:0": "I've got some salvage work for you, and if you're an aficionado of fine ripple like I am, then you'll love this task. Ripple!",
+  "quest:649:details:1": "It's a drink, you dummy.",
+  "quest:649:details:2": "An abandoned ⟦E9⟧ outpost has a stash of ⟦E83⟧ from when they were in business. You can't get fine ripple like that anymore! One of Malton's dummy associates knows the shot, so you'll go out there and bring me a case of packaged ripple, and two for my own collection! Talk to Malton, he'll fill you in on the details.",
+  "quest:649:completion:0": "Oh yeah, about the ripple dad wants! He wants to sell the ripple to a tavern here in ⟦E4⟧, but we'll get more money if it is in its original packaging. I know someone who can do that, and he's in the Hinterlands where the ripple is. But he's, um, a high elf.",
+  "quest:649:completion:1": "Well, he's a good high elf, as he's not a part of the ⟦E52⟧. Well, he's not so much a good high elf as he is a drunken high elf. He loves, and I mean LOVES the hooch.",
+  "quest:650:obj:0": "Talk to ⟦E85⟧; his camp is located in the Hinterlands.",
+  "quest:650:details:0": "The elf you will need to talk to is ⟦E85⟧. He can name any wine, vintage and all, just by smell alone! He can package up the ripple we need, so you'll need to talk with him. We need six bottles for packaging, two for dad, and how ever many he'll want... and believe me, he'll want some. When you've packaged the ripple and got dad's two bottles, come back here!",
+  "quest:650:details:1": "Gilveradin's camp is near some high elf lodge in the Hinterlands, and those high elves are not good. Trust me.",
+  "quest:650:completion:0": "Ah, so you know Malton? He is an old drinking companion of mine. You see, I have found something that transcends the boundaries of artificial treaties and alliances - alcohol. Were we all to slake our thirsts on its blissful qualities, we all would be in a much better place spiritually.",
+  "quest:650:completion:1": "Alas, something tells me that your visit here is not to learn of alcohol's redeeming values, now is it.",
+  "quest:936:obj:0": "Speak with ⟦E86⟧ in ⟦E87⟧.",
+  "quest:936:details:0": "Excuse me ⟦35⟧, but I'd like just a moment of your time if possible.",
+  "quest:936:details:1": "The Cenarion Circle in ⟦E87⟧ is most interested in seasoned adventurers such as yourself to lend them aid in a vital research project. While I do not know the specifics, I can inform you that none other than ⟦E89⟧ is spearheading this research.",
+  "quest:936:details:2": "Please - if you are interested, speak with him directly on the Elder Rise within ⟦E87⟧ proper.",
+  "quest:936:completion:0": "Greetings, ⟦36⟧; I am glad you are interested in assisting our research. There is much to do, and I would be doing you a disservice if I informed you that the work this entails is not dangerous. Hopefully this will not scare you off... but from the looks of you, I take it that danger is something that you have dealt with before.",
+  "quest:7832:title": "Additional ⟦E90⟧",
+  "quest:7832:progress:0": "Greetings once again, ⟦37⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional stack of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of ⟦E4⟧.⟦38⟧⟦39⟧Whenever you are ready to hand in the stack of runecloth, I'll accept it.",
+  "quest:7832:completion:0": "⟦40⟧ - without heroes like you working on behalf of ⟦E4⟧, we'd surely suffer. Thank you for your continued efforts!"
+ },
+ "context": {
+  "quest:7660": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 1,
+   "side": "horde",
+   "giver": "Ogunaro Wolfrunner («اوگونارو گرگ‌دو»)",
+   "turner": "Ogunaro Wolfrunner («اوگونارو گرگ‌دو»)"
+  },
+  "quest:7661": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 1,
+   "side": "horde",
+   "giver": "Ogunaro Wolfrunner («اوگونارو گرگ‌دو»)",
+   "turner": "Ogunaro Wolfrunner («اوگونارو گرگ‌دو»)"
+  },
+  "quest:96874": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 10,
+   "side": "horde",
+   "giver": "Ug'thok («اوگ‌توک»)",
+   "turner": "Ug'thok («اوگ‌توک»)"
+  },
+  "quest:5726": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Thrall («ترال»)",
+   "turner": "Thrall («ترال»)"
+  },
+  "quest:5727": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 12,
+   "side": "horde",
+   "giver": "Thrall («ترال»)",
+   "turner": "Thrall («ترال»)"
+  },
+  "quest:93739": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 13,
+   "side": "horde",
+   "giver": "Thrall («ترال»)",
+   "turner": ""
+  },
+  "quest:98024": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 13,
+   "side": "horde",
+   "giver": "Thrall («ترال»)",
+   "turner": "Thork («تهورک»)"
+  },
+  "quest:5729": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 15,
+   "side": "horde",
+   "giver": "Thrall («ترال»)",
+   "turner": "Neeru Fireblade («نیرو آتش‌تیغ»)"
+  },
+  "quest:97242": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 15,
+   "side": "horde",
+   "giver": "Kor'geld («کورگلد»)",
+   "turner": "Kor'geld («کورگلد»)"
+  },
+  "quest:97246": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 15,
+   "side": "horde",
+   "giver": "Thatog («تاتوگ»)",
+   "turner": "Borstan («بورستان»)"
+  },
+  "quest:97249": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 15,
+   "side": "horde",
+   "giver": "Borstan («بورستان»)",
+   "turner": "Migi («میگی»)"
+  },
+  "quest:97275": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 15,
+   "side": "horde",
+   "giver": "Yelmak («یلمک»)",
+   "turner": "Whuut («ووت»)"
+  },
+  "quest:97326": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 15,
+   "side": "horde",
+   "giver": "Thra («ترا»)",
+   "turner": "Thra («ترا»)"
+  },
+  "quest:5730": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 16,
+   "side": "horde",
+   "giver": "Neeru Fireblade («نیرو آتش‌تیغ»)",
+   "turner": "Thrall («ترال»)"
+  },
+  "quest:235": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 20,
+   "side": "horde",
+   "giver": "Warcaller Gorlach («جنگ‌خوان گورلک»)",
+   "turner": "Senani Thunderheart («سنانی قلب رعد»)"
+  },
+  "quest:1431": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 30,
+   "side": "horde",
+   "giver": "Craven Drok («دروک ترسو»)",
+   "turner": "Keldran («کلدران»)"
+  },
+  "quest:1432": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 30,
+   "side": "horde",
+   "giver": "Keldran («کلدران»)",
+   "turner": "Takata Steelblade («تاکاتا تیغهٔ فولادی»)"
+  },
+  "quest:95697": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 31,
+   "side": "horde",
+   "giver": "Borstan («بورستان»)",
+   "turner": "Borstan («بورستان»)"
+  },
+  "quest:1146": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 33,
+   "side": "horde",
+   "giver": "Belgrom Rockmaul («بلگروم صخره‌کوب»)",
+   "turner": "Moktar Krin («موکتار کرین»)"
+  },
+  "quest:1433": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 33,
+   "side": "horde",
+   "giver": "Takata Steelblade («تاکاتا تیغهٔ فولادی»)",
+   "turner": "Maurin Bonesplitter («ماورین استخوان‌شکاف»)"
+  },
+  "quest:1434": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 33,
+   "side": "horde",
+   "giver": "Takata Steelblade («تاکاتا تیغهٔ فولادی»)",
+   "turner": "Takata Steelblade («تاکاتا تیغهٔ فولادی»)"
+  },
+  "quest:1435": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 33,
+   "side": "horde",
+   "giver": "Maurin Bonesplitter («ماورین استخوان‌شکاف»)",
+   "turner": "Maurin Bonesplitter («ماورین استخوان‌شکاف»)"
+  },
+  "quest:1436": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 33,
+   "side": "horde",
+   "giver": "Takata Steelblade («تاکاتا تیغهٔ فولادی»)",
+   "turner": "Keldran («کلدران»)"
+  },
+  "quest:2950": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 35,
+   "side": "horde",
+   "giver": "Nogg («ناگ»)",
+   "turner": "Nogg («ناگ»)"
+  },
+  "quest:2981": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 43,
+   "side": "horde",
+   "giver": "Belgrom Rockmaul («بلگروم صخره‌کوب»)",
+   "turner": "Rok Orhan («روک اورهان»)"
+  },
+  "quest:81": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 48,
+   "side": "horde",
+   "giver": "Gilveradin Sunchaser («گیلوراندین خورشیددنبال»)",
+   "turner": "Dran Droffers («دران دروفرز»)"
+  },
+  "quest:649": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 48,
+   "side": "horde",
+   "giver": "Dran Droffers («دران دروفرز»)",
+   "turner": "Malton Droffers («مالتون درافرز»)"
+  },
+  "quest:650": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 48,
+   "side": "horde",
+   "giver": "Malton Droffers («مالتون درافرز»)",
+   "turner": "Gilveradin Sunchaser («گیلوراندین خورشیددنبال»)"
+  },
+  "quest:936": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 50,
+   "side": "horde",
+   "giver": "Innkeeper Gryshka («مهمان‌دار گریشکا»)",
+   "turner": "Arch Druid Hamuul Runetotem («دروید اعظم هاموول رون‌توتم»)"
+  },
+  "quest:7832": {
+   "zone_en": "Orgrimmar",
+   "zone_fa": "اورگیمار",
+   "level": 50,
+   "side": "horde",
+   "giver": "",
+   "turner": "Rashona Straglash («راشونا استرگلاش»)"
+  }
+ },
+ "known": {
+  "quest:5726": {
+   "title": "دشمنان پنهان"
+  },
+  "quest:5727": {
+   "title": "دشمنان پنهان"
+  },
+  "quest:5729": {
+   "title": "دشمنان پنهان"
+  },
+  "quest:5730": {
+   "title": "دشمنان پنهان"
+  },
+  "quest:235": {
+   "title": "شکار اشن‌وِیل"
+  },
+  "quest:1431": {
+   "title": "روابط اتحاد"
+  },
+  "quest:1432": {
+   "title": "روابط اتحاد"
+  },
+  "quest:1146": {
+   "title": "توده بزرگ‌تر می‌شود"
+  },
+  "quest:1433": {
+   "title": "روابط اتحاد"
+  },
+  "quest:1434": {
+   "title": "آلوده به ساتیر"
+  },
+  "quest:1435": {
+   "title": "سوزاندن ارواح"
+  },
+  "quest:1436": {
+   "title": "روابط اتحاد"
+  },
+  "quest:2950": {
+   "title": "انگشتر ناگ از نو"
+  },
+  "quest:2981": {
+   "title": "خطر در فرالاس"
+  },
+  "quest:81": {
+   "title": "تحویل موجی"
+  },
+  "quest:649": {
+   "title": "بازیابی موجی"
+  },
+  "quest:650": {
+   "title": "بازیابی موجی"
+  },
+  "quest:936": {
+   "title": "همیاری با دروئید اعظم رون‌توتِم"
+  }
+ }
+}

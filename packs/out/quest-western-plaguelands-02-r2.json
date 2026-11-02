@@ -1,0 +1,885 @@
+{
+ "pack": "quest-western-plaguelands-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-western-plaguelands-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Empty Dalson's Tears Bottle",
+   "fa": "بطری خالیِ اشک‌های دالسون",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Shadow Priestess Vandis",
+   "fa": "واندیس",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Filled Dalson's Tears Bottle",
+   "fa": "بطری پُرشدهٔ اشک‌های دالسون",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Apothecary Dithers",
+   "fa": "داروساز دیترز",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Empty Writhing Haunt Bottle",
+   "fa": "بطری خالیِ مزرعهٔ ریتینگ",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Filled Writhing Haunt Bottle",
+   "fa": "شیشهٔ پُرشدهٔ مزرعهٔ ریتینگ",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Argent Dawn Valor Token",
+   "fa": "توکن دلاوری سپیدهٔ نقره‌ای",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Minion's Scourgestone",
+   "fa": "سنگ طاعونِ خدمتکار",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Invader's Scourgestone",
+   "fa": "سنگ طاعونِ مهاجم",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Corruptor's Scourgestone",
+   "fa": "سنگ طاعون فسادگر",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Alchemist Arbington",
+   "fa": "کیمیاگر آربینگتون",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Chillwind Point",
+   "fa": "نقطهٔ چیل‌ویند",
+   "kind": "qs"
+  },
+  "E23": {
+   "en": "Caer Darrow",
+   "fa": "کائِر دارو",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "Empty Termite Jar",
+   "fa": "شیشهٔ موریانه خالی",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Plagueland Termites",
+   "fa": "موریانهٔ طاعون‌زمین",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Nathaniel Dumah",
+   "fa": "ناتانیل دوماه",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Barrel of Plagueland Termites",
+   "fa": "بشکهٔ موریانه‌های سرزمینِ طاعون",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Mickey Levine",
+   "fa": "میکی لوین",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Temporal Displacer",
+   "fa": "جابه‌جاکنندهٔ زمانی",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Chromie",
+   "fa": "کرومی",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Mulgris Deepriver",
+   "fa": "مولگریس رودژرف",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Glyphed Oaken Branch",
+   "fa": "شاخهٔ بلوطِ حروف‌نگارش‌شده",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E47": {
+   "en": "Beacon Torch",
+   "fa": "مشعلِ راهنما",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Commander Ashlam Valorfist",
+   "fa": "فرمانده اشلام مشت‌دلاور",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "High Executor Derrington",
+   "fa": "مأمور اجرای عالی درینگتون",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Annals of Darrowshire",
+   "fa": "سالنامه‌های داروشیر",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Joseph Redpath",
+   "fa": "جوزف ردپث",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Joseph",
+   "fa": "جوزف",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "The Annals of Darrowshire",
+   "fa": "سالنامه‌های داروشایر",
+   "kind": "qs"
+  },
+  "E57": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E58": {
+   "en": "Kirsta Deepshadow",
+   "fa": "کیرستا سایه‌ژرف",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E60": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Skeletal Fragments",
+   "fa": "خرده‌استخوان‌ها",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Skeleton Key",
+   "fa": "کلیدِ اسکلت",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E64": {
+   "en": "Imbued Skeletal Fragments",
+   "fa": "خرده‌استخوانِ سرشته",
+   "kind": "it"
+  },
+  "E65": {
+   "en": "Krinkle Goodsteel",
+   "fa": "کرینکل فولادخوب",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Empty Dalson's Tears Bottle": "بطری خالیِ اشک‌های دالسون",
+  "Shadow Priestess Vandis": "واندیس",
+  "Filled Dalson's Tears Bottle": "بطری پُرشدهٔ اشک‌های دالسون",
+  "Apothecary Dithers": "داروساز دیترز",
+  "Empty Writhing Haunt Bottle": "بطری خالیِ مزرعهٔ ریتینگ",
+  "Filled Writhing Haunt Bottle": "شیشهٔ پُرشدهٔ مزرعهٔ ریتینگ",
+  "Argent Dawn Valor Token": "توکن دلاوری سپیدهٔ نقره‌ای",
+  "Minion's Scourgestone": "سنگ طاعونِ خدمتکار",
+  "Plaguelands": "طاعون‌زار",
+  "Invader's Scourgestone": "سنگ طاعونِ مهاجم",
+  "Corruptor's Scourgestone": "سنگ طاعون فسادگر",
+  "Alchemist Arbington": "کیمیاگر آربینگتون",
+  "Chillwind Point": "نقطهٔ چیل‌ویند",
+  "Caer Darrow": "کائِر دارو",
+  "Scholomance": "شولومانس",
+  "Empty Termite Jar": "شیشهٔ موریانه خالی",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Plagueland Termites": "موریانهٔ طاعون‌زمین",
+  "Nathaniel Dumah": "ناتانیل دوماه",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Stratholme": "استراتهولم",
+  "Barrel of Plagueland Termites": "بشکهٔ موریانه‌های سرزمینِ طاعون",
+  "Mickey Levine": "میکی لوین",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Temporal Displacer": "جابه‌جاکنندهٔ زمانی",
+  "Chromie": "کرومی",
+  "Mulgris Deepriver": "مولگریس رودژرف",
+  "Glyphed Oaken Branch": "شاخهٔ بلوطِ حروف‌نگارش‌شده",
+  "Darnassus": "دارناسوس",
+  "Teldrassil": "تلدراسیل",
+  "Thunder Bluff": "تاندر بلاف",
+  "Mulgore": "مولگر",
+  "Beacon Torch": "مشعلِ راهنما",
+  "Commander Ashlam Valorfist": "فرمانده اشلام مشت‌دلاور",
+  "High Executor Derrington": "مأمور اجرای عالی درینگتون",
+  "Annals of Darrowshire": "سالنامه‌های داروشیر",
+  "Joseph Redpath": "جوزف ردپث",
+  "Joseph": "جوزف",
+  "The Annals of Darrowshire": "سالنامه‌های داروشایر",
+  "Scarlet": "سرخ‌پوشان",
+  "Kirsta Deepshadow": "کیرستا سایه‌ژرف",
+  "Alliance": "اتحاد",
+  "Stormwind": "استورم‌ویند",
+  "Skeletal Fragments": "خرده‌استخوان‌ها",
+  "Skeleton Key": "کلیدِ اسکلت",
+  "Tanaris": "تاناریس",
+  "Imbued Skeletal Fragments": "خرده‌استخوانِ سرشته",
+  "Krinkle Goodsteel": "کرینکل فولادخوب"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$c",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$Gbrother:sister;",
+  "27": "$C",
+  "28": "$B",
+  "29": "$B",
+  "30": "$N",
+  "31": "$N",
+  "32": "$B",
+  "33": "$B",
+  "34": "$B",
+  "35": "$B",
+  "36": "$Gbrother:sister;",
+  "37": "$B",
+  "38": "$B",
+  "39": "$N",
+  "40": "$B",
+  "41": "$B",
+  "42": "$B",
+  "43": "$B",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$B",
+  "49": "$C",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N",
+  "53": "$N",
+  "54": "$N",
+  "55": "$N",
+  "56": "$B",
+  "57": "$B",
+  "58": "$N",
+  "59": "$N",
+  "60": "$B",
+  "61": "$B",
+  "62": "$N",
+  "63": "$N",
+  "64": "$B",
+  "65": "$B",
+  "66": "$N",
+  "67": "$N",
+  "68": "$C",
+  "69": "$R",
+  "70": "$C",
+  "71": "$B",
+  "72": "$B",
+  "73": "$N",
+  "74": "$B",
+  "75": "$B",
+  "76": "$N",
+  "77": "$N",
+  "78": "$N",
+  "79": "$N",
+  "80": "$N",
+  "81": "$C",
+  "82": "$N",
+  "83": "$B",
+  "84": "$B",
+  "85": "$B",
+  "86": "$B",
+  "87": "$N",
+  "88": "$N",
+  "89": "$b",
+  "90": "$b",
+  "91": "$b",
+  "92": "$b",
+  "93": "$b",
+  "94": "$b"
+ },
+ "rows": {
+  "quest:5231:obj:0": "Go to Dalson's Tears in ⟦E1⟧ to locate and defeat the Cauldron Lord present there, and use its key to gain access to the cauldron. You must have the ⟦E2⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5231:details:0": "One of the plague cauldrons is located in the field of a former farmhouse now referred to as Dalson's Tears. No tears will be shed this day, ⟦1⟧; we must strike at this cauldron and gain access to it!",
+  "quest:5231:details:1": "Go to Dalson's Tears, almost due north of Andorhal, and eliminate the cauldron lord there. It should have a key like the last one did, allowing you inside the cauldron's innards. Use this bottle to obtain a sample from inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
+  "quest:5231:progress:0": "An access panel to the cauldron remains securely fastened. In order to open it, you will need to find the key.",
+  "quest:5231:completion:0": "The skeletal key found on the cauldron lord easily slides into a keyhole and then disappears, allowing you permanent access to it. Crude, viscous ichors pulsate through twisted tubes within the cauldrons underpinnings.",
+  "quest:5231:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for ⟦E5⟧ back at the Bulwark.",
+  "quest:5232:obj:0": "Bring the ⟦E6⟧ to ⟦E5⟧ at the Bulwark, ⟦E1⟧.",
+  "quest:5232:details:0": "You carefully fill the bottle with enough of the cauldron's ichors for what you consider to be suitably sized sample.",
+  "quest:5232:details:1": "With the poison in hand, it is time to return to ⟦E5⟧ at the Bulwark to complete the mission.",
+  "quest:5232:progress:0": "We know that each cauldron employs a different mix of reagents to generate its plague-inducing toxin; likewise, we know that we will need to develop a counter agent that is unique for each cauldron. Your sample from Dalson's Tears will be the key to figure out that cauldron's distinct reagent requirement.",
+  "quest:5232:completion:0": "Ah, there is plenty in here for study. Well done, ⟦2⟧!",
+  "quest:5232:completion:1": "For now, the next step is in our hands. We'll need to produce a list of reagents that, when combined with what is already in the cauldron, will act as its counter.",
+  "quest:5232:completion:2": "The only way we will be able to introduce this is by placing the reagents into the cauldron directly. ⟦E7⟧ will have more information on that, so be sure to speak with him as soon as possible.",
+  "quest:5233:obj:0": "Go to the Writhing Haunt in ⟦E1⟧ to locate and defeat the Cauldron Lord present there, and use its key to gain access to the cauldron. You must have the ⟦E8⟧ with you to secure a sample of the poisons used inside the cauldron.",
+  "quest:5233:details:0": "Two cauldrons have been successfully opened; while you'll be able to access them indefinitely, we still want to open up the other two that remain. This will provide all of us with more options to introduce the counter agent!",
+  "quest:5233:details:1": "This time, you'll be hitting the Writhing Haunt's cauldron. It is almost due east of Andorhal, relatively close to the ruined city walls; again, eliminate the cauldron lord present there for its key. Use this bottle to obtain the sample from the cauldron.",
+  "quest:5233:details:2": "Good hunting, ⟦3⟧!",
+  "quest:5233:progress:0": "An access panel to the cauldron remains securely fastened.  In order to open it, you will need to find the key. ",
+  "quest:5233:completion:0": "The cauldron lord's key unlocks the access panel to this cauldron and then disappears, much like the other keys have for the previous ones you've dealt of. A putrid smelling substance churns violently beneath the platform of the cauldron.",
+  "quest:5233:completion:1": "There is a small spigot that the bottle fits well enough under, allowing you to draw a sample for ⟦E5⟧ back at the Bulwark.",
+  "quest:5234:obj:0": "Bring the ⟦E9⟧ to ⟦E5⟧ at The Bulwark, ⟦E1⟧.",
+  "quest:5234:details:0": "You delicately top off the empty bottle; a sample of the foul substance that churns under the platform of the cauldron now oozes back and forth inside the fragile glass container.",
+  "quest:5234:details:1": "With the poison in hand, it is time to return to ⟦E5⟧ at the Bulwark to complete the mission.",
+  "quest:5234:progress:0": "Once we successfully analysis the sample drawn from the Writhing Haunt's cauldron, it will provide us with a third avenue to deliver a devastating counter agent against the Scourge!",
+  "quest:5234:completion:0": "Another finely executed mission, ⟦4⟧! This makes three cauldrons available to us to turn against the Scourge. If Kel'Thuzad's necromantic dominance over these lands wasn't as strong as it currently is, I'd dare say you'd shut them down completely!",
+  "quest:5234:completion:1": "⟦E7⟧ will have a report on what this cauldron - as well as the other cauldrons subverted - will require to deliver our counter agent to the plague. With that, the time has come to bring the last cauldron of the west under our influence!",
+  "quest:5401:completion:0": "All who fight evil on behalf of the Argent Dawn must don our commission. Wearing such will earn your right to claim rewards our quartermasters have to offer.",
+  "quest:5401:completion:1": "While under commission, you'll be able to acquire Scourgestones from slain Scourge; these are marks of insignia that they sometimes possess. Procure these insignia and bring them to me. For each set you turn in, you will receive our marker of heroism - the ⟦E11⟧.",
+  "quest:5401:completion:2": "Achieve your destiny, ⟦5⟧ - join the fight today!",
+  "quest:5402:title": "Minion's Scourgestones",
+  "quest:5402:progress:0": "A ⟦E12⟧ is the insignia of the Scourge rank and file.  These are sometimes found on the weaker of their troops positioned in the ⟦E14⟧, though the term \"weaker\" is certainly to be considered in context.  The Scourge, no matter where they are, should never be underestimated.⟦6⟧⟦7⟧The Argent Dawn currently offers a valor token in exchange for twenty of these insignia - an exchange I'm happy to do, provided you have earned enough scourgestones!",
+  "quest:5402:completion:0": "Congratulations, ⟦8⟧ - I am pleased to award you with an Argent Dawn valor token!⟦9⟧⟦10⟧The tokens serve two purposes. One - they can be used to further your standing within the Argent Dawn; to do so may avail you options and rewards that are reserved for our honored and revered allies. Two - they can be given to our quartermasters, along with coin, as payment for some of the Dawn's more prized items.⟦11⟧⟦12⟧Whatever you decide, know that you are earning your commission. Well done!",
+  "quest:5403:title": "Invader's Scourgestones",
+  "quest:5403:progress:0": "An ⟦E18⟧ is the insignia of the Scourge's elite troops.  These are sometimes found on the stronger of the troops positioned in the ⟦E14⟧.  Slaying such a creature is indeed a challenge, but one that should be relished with a commission to vanquish evil.⟦13⟧⟦14⟧The Argent Dawn currently offers a valor token in exchange for ten of these insignia.  Bring them to me here, and I will make sure you receive your just reward.",
+  "quest:5403:completion:0": "Congratulations, ⟦15⟧ - I am pleased to award you with an Argent Dawn valor token!⟦16⟧⟦17⟧Each valor token handed out to worthy recipients is a sign of the tide turning against the Scourge. With more and more heroes fighting the Scourge in their own lands, the Argent Dawn will assuredly be at the forefront when the time comes to wage war on the ultimate evil of the Scourge. I hope that the valor you've shown what it took to acquiring your token will carry the day then as well!",
+  "quest:5404:title": "Corruptor's Scourgestones",
+  "quest:5404:progress:0": "A ⟦E19⟧ is the insignia of the Scourge's overlords.  A powerful being that holds a position of authority over the Scourge will always possess one.  To slay such a malevolent creature would surely advance the cause of the Argent Dawn, and all good causes!⟦18⟧⟦19⟧On behalf of the Argent Dawn, I will give you a valor token in exchange for just a single one these insignia.  Use caution in acquiring one, ⟦20⟧ - such powerful beings are not to be trifled with.",
+  "quest:5404:completion:0": "Congratulations, ⟦21⟧ - I am pleased to award you with an Argent Dawn valor token!⟦22⟧⟦23⟧To acquire a valor token in such a manner indicates that you are a true hero in the cause of good. We value all effort brought to bear against the Scourge, but to take down one of their leaders is to truly deliver onto them a crushing defeat!⟦24⟧⟦25⟧For the Dawn, my ⟦26⟧!",
+  "quest:5405:completion:0": "All who fight evil on behalf of the Argent Dawn must don our commission. Wearing such will earn your right to claim rewards our quartermasters have to offer.",
+  "quest:5405:completion:1": "While under commission, you'll be able to acquire Scourgestones from slain Scourge; these are marks of insignia that they sometimes possess. Procure these insignia and bring them to me. For each set you turn in, you will receive our marker of heroism - the ⟦E11⟧.",
+  "quest:5405:completion:2": "Achieve your destiny, ⟦27⟧ join the fight today!",
+  "quest:5406:title": "Corruptor's Scourgestones",
+  "quest:5406:progress:0": "A ⟦E19⟧ is the insignia of the Scourge's overlords.  A powerful being that holds a position of authority over the Scourge will always possess one.  To slay such a malevolent creature would surely advance the cause of the Argent Dawn, and all good causes!⟦28⟧⟦29⟧On behalf of the Argent Dawn, I will give you a valor token in exchange for just a single one these insignia.  Use caution in acquiring one, ⟦30⟧ - such powerful beings are not to be trifled with.",
+  "quest:5406:completion:0": "Congratulations, ⟦31⟧ - I am pleased to award you with an Argent Dawn valor token!⟦32⟧⟦33⟧To acquire a valor token in such a manner indicates that you are a true hero in the cause of good. We value all effort brought to bear against the Scourge, but to take down one of their leaders is to truly deliver onto them a crushing defeat!⟦34⟧⟦35⟧For the Dawn, my ⟦36⟧!",
+  "quest:5407:title": "Invader's Scourgestones",
+  "quest:5407:progress:0": "An ⟦E18⟧ is the insignia of the Scourge's elite troops.  These are sometimes found on the stronger of the troops positioned in the ⟦E14⟧.  Slaying such a creature is indeed a challenge, but one that should be relished with a commission to vanquish evil.⟦37⟧⟦38⟧The Argent Dawn currently offers a valor token in exchange for ten of these insignia.  Bring them to me here, and I will make sure you receive your just reward.",
+  "quest:5407:completion:0": "Congratulations, ⟦39⟧ - I am pleased to award you with an Argent Dawn valor token!⟦40⟧⟦41⟧Each valor token handed out to worthy recipients is a sign of the tide turning against the Scourge. With more and more heroes fighting the Scourge in their own lands, the Argent Dawn will assuredly be at the forefront when the time comes to wage war on the ultimate evil of the Scourge. I hope that the valor you've shown what it took to acquiring your token will carry the day then as well!",
+  "quest:5408:title": "Minion's Scourgestones",
+  "quest:5408:progress:0": "A ⟦E12⟧ is the insignia of the Scourge rank and file.  These are sometimes found on the weaker of their troops positioned in the ⟦E14⟧, though the term \"weaker\" is certainly to be considered in context.  The Scourge, no matter where they are, should never be underestimated.⟦42⟧⟦43⟧The Argent Dawn currently offers a valor token in exchange for twenty of these insignia - an exchange I'm happy to do, provided you have earned enough scourgestones!",
+  "quest:5408:completion:0": "Congratulations, ⟦44⟧ - I am pleased to award you with an Argent Dawn valor token!⟦45⟧⟦46⟧The tokens serve two purposes. One - they can be used to further your standing within the Argent Dawn; to do so may avail you options and rewards that are reserved for our honored and revered allies. Two - they can be given to our quartermasters, along with coin, as payment for some of the Dawn's more prized items.⟦47⟧⟦48⟧Whatever you decide, know that you are earning your commission. Well done!",
+  "quest:5533:obj:0": "Speak with ⟦E21⟧ at ⟦E22⟧, ⟦E1⟧.",
+  "quest:5533:details:0": "On the island of ⟦E23⟧ lies ⟦E24⟧ - a wretched center of Scourge necromancy and evil. Our enemy dwells within, conducting unspeakable acts of depravity on unwitting victims... at least, we surmise as much. A door bars the way, and try as we might no entry is to be had without a proper key.",
+  "quest:5533:details:1": "⟦E21⟧ is well versed on ⟦E24⟧, and has an idea how to obtain a key. You have proved your worth to me, and now I entrust this task to you. Speak with him on this matter.",
+  "quest:5533:completion:0": "Well met, ⟦49⟧. I've dedicated a fair portion of my recent studies to the ⟦E24⟧, and I believe I know a means by which you can acquire a key... one that will let you past the front door.",
+  "quest:5533:completion:1": "I can only imagine what horrid sights are to be seen inside, ⟦50⟧. I don't know how you heroic types do it sometimes...",
+  "quest:5903:obj:0": "Use the ⟦E26⟧ on the Termite Mounds in ⟦E27⟧. After you've gathered 100 ⟦E28⟧, return to ⟦E29⟧ at Chillwind Camp in ⟦E1⟧.",
+  "quest:5903:details:0": "I've tried many times to rout out the ⟦E30⟧ through force alone, but to no avail. So, as an alternative, I've decided to make their lives more difficult.",
+  "quest:5903:details:1": "If you are willing to help, I want to infest that lumber mill with the most terrible species of termites ever found.",
+  "quest:5903:details:2": "In Plaguewood, near the once-great ⟦E31⟧, there is a breed that survived the plague and the Scourge combined. Find their mounds and fill this jar with them, so we can prepare them to be unleashed on the Crusade.",
+  "quest:5903:progress:0": "Did you find the termite mounds, ⟦51⟧? I've heard they are all over Plaguewood.",
+  "quest:5903:completion:0": "These will do nicely, ⟦52⟧. Thank you.",
+  "quest:5903:completion:1": "If you're ready, we can get on with the next step.",
+  "quest:5904:obj:0": "Find someplace suitable in the center of the Northridge Lumber Mill in ⟦E1⟧ to place the ⟦E32⟧.",
+  "quest:5904:details:0": "Now that we have the termites, take this steel reinforced barrel to the Northridge Lumber Mill south of Hearthglen--you'll find it to the west of the road that leads you up to the town.",
+  "quest:5904:details:1": "Once there, place the barrel in the center of the lumber mill; find someplace suitable, like on a crate and then open it. The termites should do their work from there and make the mill useless to the Crusade.",
+  "quest:5904:completion:0": "The termites are obviously getting restless as you place the barrel on top of the crate.",
+  "quest:6389:obj:0": "Release the ⟦E28⟧ in the Northridge Lumber Mill, then return with the ⟦E32⟧ to ⟦E29⟧ at Chillwind Camp in ⟦E1⟧.",
+  "quest:6389:details:0": "You look around the lumber mill for something suitable to open the barrel with. You find a crowbar that looks like it will do the trick.",
+  "quest:6389:details:1": "You set your feet and pray that you'll be able to get out of the mill before the termites get to you.",
+  "quest:6389:progress:0": "Have you done it, ⟦53⟧? Have you released the termites? The Light help us if the ⟦E30⟧ were able to hold onto both the mill and Hearthglen. They should have neither. They're just capitalizing on the victims of the last war and should be put down like rabid animals!",
+  "quest:6389:completion:0": "Haha! Thank you, ⟦54⟧! You've done it! My father's spirit can now rest and I can live in peace.",
+  "quest:6389:completion:1": "Thank you again. If there is anything I can do for you, please, just ask.",
+  "quest:6390:obj:0": "Release the ⟦E28⟧ in the Northridge Lumber Mill, then return with the ⟦E32⟧ to ⟦E33⟧ at the Bulwark in ⟦E34⟧.",
+  "quest:6390:details:0": "You look around the lumber mill for something suitable to open the barrel with. You find a crowbar that looks like it will do the trick.",
+  "quest:6390:details:1": "You set your feet and pray that you'll be able to get out of the mill before the termites get to you.",
+  "quest:6390:progress:0": "Have you done it, ⟦55⟧? Have you released the termites in the lumber mill?⟦56⟧⟦57⟧It was bad enough that my family lost their jobs and lives, but then to see the place where my childhood was spent taken over by those disgusting so-called holy men... pfah!!",
+  "quest:6390:completion:0": "Thank you, ⟦58⟧. Here, take this coin. I'm sorry it's not more, but try to take some joy in helping destroy the ⟦E30⟧'s efforts!",
+  "quest:4971:obj:0": "Use the ⟦E35⟧ near one of Andorhal's silos and uncover Temporal Parasites.",
+  "quest:4971:obj:1": "Slay 10 Temporal Parasites, and then return the ⟦E35⟧ to ⟦E36⟧ in the Andorhal Inn, ⟦E1⟧.",
+  "quest:4971:details:0": "Tampering of the timeline by a sinister force - most likely the Scourge - has occurred in Andorhal! I can try to keep the passage of time here intact and mend what has been damaged, but I'll need your help to do so uninterrupted.",
+  "quest:4971:details:1": "Temporal parasites - carrion that feed on the strands of time's altered flow - now infest the silos of Andorhal. A blue pulse of distortion is their only visual marker. They slow my auguries; please ⟦59⟧, help me by using this temporal displacer to root out these parasites.",
+  "quest:4971:progress:0": "Temporal parasites are a common malady present wherever the flow of time has been tampered with.  I sense that many are present, and this is disturbing.⟦60⟧⟦61⟧Rooting out whatever ones you can find will help me be able to take a better hold on the deteriorating temporal situation here.  I will be able to sense when this has been achieved.",
+  "quest:4971:completion:0": "Time feels easier to mend now, thank you ⟦62⟧. While you might not understand fully the consequences of a fractured timeline, I appreciate that you understand the urgency of countering what I suspect more and more to be a Scourge-driven malfeasance.",
+  "quest:4971:completion:1": "I see no harm in rewarding you for your assistance, mortal. Your greatest feats are to come, and the awarding of a bauble will certainly not alter your future destiny. Your continued aid, however, is something that I and the dragonflight could use...",
+  "quest:4972:obj:0": "Locate 5 Andorhal Watches, found in lockboxes amongst the rubble of the city. Return with them to ⟦E36⟧ in the Andorhal Inn, ⟦E1⟧.",
+  "quest:4972:details:0": "I need you to reach into the world beyond this room, ⟦63⟧. Allow me to explain.",
+  "quest:4972:details:1": "You see the difference in this room compared to the rest of Andorhal. My dragonflight works in many different ways and in many different timelines. To mend Andorhal's damage, I now act from a different timeline as not to overly contaminate it. To continue this though I need time trinkets, ones trapped from when the plague hit. Find them in lockboxes found in the ruined buildings that make up this once proud city.",
+  "quest:4972:progress:0": "The time trinkets I seek are simple devices. They are watches mainly, and their hands are trapped forever when the plague first ravaged Andorhal.⟦64⟧⟦65⟧Time is never ending, and the watches you bring to me will invariably find themselves counted out back to their homes... that is, so long as the disturbances continue here.",
+  "quest:4972:completion:0": "These are exactly what I need, ⟦66⟧. Thank you.",
+  "quest:4972:completion:1": "Allow me to suitably reward you with this. You may not understand what you would need with such a device. You might not even know quite what it really is. Alas, I cannot tell you when you will find it most useful; just know that at some point in the future, you may find this item to have extreme utility and function when consumed. Whether or not you choose to hold on to it until then... this, my friend, is up to you.",
+  "quest:4985:obj:0": "Destroy 8 Diseased Grizzlies, and then return to ⟦E40⟧ at the Writhing Haunt, ⟦E1⟧.",
+  "quest:4985:details:0": "To the east of where we are, near where the ⟦E27⟧ begin, once proud and majestic grizzlies roamed the countryside. The plague released by the Scourge has sundered these beasts too. They wander the countryside, agonized by the stiffening of their muscles and the rotting of their fur and flesh.",
+  "quest:4985:details:1": "I ask of you to end their misery as well. The only cure for their suffering is a swift death, one that must be ministered by your hand.",
+  "quest:4985:progress:0": "I hear your footsteps, ⟦67⟧. My vision has faded from me, but I still am able to sense things around me. Have you ended the misery of the disease-ridden grizzlies?",
+  "quest:4985:completion:0": "\"I know that the grizzles have been put down, their torment at an end. I... I have one more thing for you. I wrote it down on... on this branch, sensing that my time in this realm had come to an end.",
+  "quest:4985:completion:1": "Indeed... I am at that end. Thank you again friend... the creatures of this accursed land may rest... and now shall I.\"",
+  "quest:4985:completion:2": "With that, a heavy sigh is uttered by the druid, followed by what sounds like a death rattle. His body lies motionless on the cottage floor.",
+  "quest:4986:obj:0": "Based on the magic enchanted within the ⟦E41⟧, its delivery to the Cenarion Circle in ⟦E43⟧ is the next step the tauren druid sought. Seek one of the druids there for assistance.",
+  "quest:4986:details:0": "The lifeless hand of the tauren druid clutches a surprisingly healthy looking oaken branch. Examining the branch reveals glyphs of a druidic nature carved into the bark.",
+  "quest:4986:details:1": "As you grasp the branch, you notice it is warm to the touch, more than it should be. The image of the ⟦E44⟧ tree enters your mind - ⟦E43⟧ specifically - and the words \"Cenarion Circle\" are on the tip of your tongue. It would appear that the suggestion of where to take the branch has been placed within it.",
+  "quest:4986:progress:0": "On behalf of the Cenarion Circle, I bid you welcome to this enclave, ⟦68⟧.  What business do you have with us?",
+  "quest:4986:completion:0": "This... this is quite strange. This druid - this tauren druid no less - entrusted you with a great deal of valuable information on the extent of the Scourge's plague. I am surprised a tauren would give a ⟦69⟧ such information, and freely at that if what you say is true. We will make good use of this, I promise you. Perhaps the tauren have not fallen as far from Cenarius as Fandral would believe...",
+  "quest:4986:completion:1": "Erm, anyway, please - accept this as a token of thanks from the Cenarion Circle.",
+  "quest:4987:obj:0": "Based on the magic enchanted within the ⟦E41⟧, its delivery to the Cenarion Circle in ⟦E45⟧ is the next step the tauren druid sought. Seek one of the druids there for assistance.",
+  "quest:4987:details:0": "The lifeless hand of the tauren druid clutches a surprisingly healthy looking oaken branch. Examining the branch reveals glyphs of a druidic nature carved into the bark.",
+  "quest:4987:details:1": "As you grasp the branch, you notice it is warm to the touch, more than it should be. The image of ⟦E45⟧ in ⟦E46⟧ enters your mind - Elder Rise specifically - and the words \"Cenarion Circle\" are on the tip of your tongue. It would appear that the suggestion of where to take the branch has been placed within it.",
+  "quest:4987:progress:0": "On behalf of the Cenarion Circle, I bid you welcome to this enclave, ⟦70⟧. What business do you have with us?",
+  "quest:4987:completion:0": "This is from Mulgris, you say? We had heard he sought to minister to the creatures suffering in the ⟦E14⟧, but this is most unexpected... and most saddening. Mulgris is... was a good friend. I will mourn his passing deeply.",
+  "quest:4987:completion:1": "His efforts have not gone in vain, thanks to your diligence. In this branch, much lore is stored about the plague the Scourge propagates upon the land. We will study it diligently. As for you, please accept this. It is the least we can do for your noble efforts.",
+  "quest:5097:obj:0": "Using the ⟦E47⟧, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.",
+  "quest:5097:obj:1": "Once all four towers are marked, return the ⟦E47⟧ to ⟦E48⟧ in Chillwind Camp, ⟦E1⟧.",
+  "quest:5097:details:0": "Through the use of a magical device known as a beacon torch, we can mark targets of our choosing for future actions by our troops. To that end, we think the Scourge are using Andorhal's watchtowers as a means to control their troop movements.",
+  "quest:5097:details:1": "Your mission: breach Andorhal's defenses to plant beacons at all four watchtowers. You'll need to be in the doorway of each tower to plant the beacon; it will then proceed to mark the tower. There are only five charges on the beacon torch, so use them wisely!",
+  "quest:5097:progress:0": "Once the towers are marked, they'll become top priority targets for our attack on Andorhal. I suspect that once we neutralize the towers, the main threat of Andorhal will emerge. From that point on, we'll have a straight-up fight for control of the city!⟦71⟧⟦72⟧you're back to report success, yes? Don't forget the beacon torch as well; we must maintain control of our materiel.",
+  "quest:5097:completion:0": "My priests are reporting that our beacon trackers are picking up extremely strong signals on all four towers! Dare I say it, but I believe you've executed another mission with complete and total success! Well played once again, ⟦73⟧!",
+  "quest:5097:completion:1": "With the towers marked, our preparations for the attack are now in place. The time has come to take the fight to the Scourge!",
+  "quest:5098:obj:0": "Using the ⟦E47⟧, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.",
+  "quest:5098:obj:1": "Once all four towers are marked, return the ⟦E47⟧ to ⟦E51⟧ at the Bulwark, ⟦E1⟧.",
+  "quest:5098:details:0": "Through the use of a magical device known as a beacon torch, we can mark targets of our choosing for future actions by our troops. To that end, we think the Scourge are using Andorhal's watchtowers as a means to control their troop movements.",
+  "quest:5098:details:1": "Your mission: breach Andorhal's defenses to plant beacons at all four watchtowers. You'll need to be in the doorway of each tower to plant the beacon; it will then proceed to mark the tower. There are only five charges on the beacon torch, so use them wisely!",
+  "quest:5098:progress:0": "Once the towers are marked, they'll become top priority targets for our attack on Andorhal. I suspect that once we neutralize the towers, the main threat of Andorhal will emerge. From that point on, we'll have a straight-up fight for control of the city!⟦74⟧⟦75⟧You're back to report success, yes? Don't forget the beacon torch as well; we must maintain control of our materiel.",
+  "quest:5098:completion:0": "My priests are reporting that our beacon trackers are picking up extremely strong signals on all four towers! Dare I say it, but I believe you've executed another mission with complete and total success! Well played once again, ⟦76⟧!",
+  "quest:5098:completion:1": "With the towers marked, our preparations for the attack are now in place. The time has come to take the fight to the Scourge!",
+  "quest:5154:obj:0": "Bring the ⟦E52⟧ to ⟦E36⟧ in Andorhal.",
+  "quest:5154:details:0": "To save ⟦E53⟧, we must first discover his past. We can learn this in the ⟦E52⟧, a book held in the city hall of Andorhal.",
+  "quest:5154:details:1": "Bring me that book. We can then learn ⟦E54⟧'s fate, and with luck... change it!",
+  "quest:5154:progress:0": "Did you find the book, ⟦77⟧?",
+  "quest:5154:completion:0": "Well done, you found it!",
+  "quest:5154:completion:1": "Did you read it? Is ⟦E53⟧ mentioned? If he is, then perhaps we can save him!",
+  "quest:5154:completion:2": "Ah. ⟦E55⟧ tell a very unsettling tale. It says that during the battle, ⟦E53⟧ was corrupted and joined the ranks of the Scourge! He then betrayed the defenders of Darrowshire.",
+  "quest:5154:completion:3": "That is an ill fate. If we can, we should try to change that fate, don't you think?",
+  "quest:6004:obj:0": "Kill 2 ⟦E57⟧ Medics, 2 ⟦E57⟧ Hunters, 2 ⟦E57⟧ Magi and 2 ⟦E57⟧ Knights before returning to ⟦E58⟧ in ⟦E1⟧.",
+  "quest:6004:details:0": "I was sent as a scout to do some damage and gauge the strength of Hearthglen's defenses. Some people in the ⟦E59⟧ feel the little town has more than historical importance. It's not my job to question what that importance is, but regardless, I'm in no shape to continue until I rest up.",
+  "quest:6004:details:1": "If you're willing, I'd pay handsomely for some help. Start south of here at their camp near the small bulwark they've set up. If you prove strong enough, maybe I could get your help with my main goal.",
+  "quest:6004:progress:0": "How is it going, ⟦78⟧? Are they stronger than you thought? I hope not. If I'm going to follow through here, then it's going to require a heck of a lot more strength than what I've already asked you to do.",
+  "quest:6004:completion:0": "Well done, ⟦79⟧. I'm amazed you dealt with them so quickly. Thank you.",
+  "quest:6004:completion:1": "I have yet to meet anyone that approves of the ⟦E30⟧ and their methods. I believe in the Light as much as anyone else in ⟦E60⟧, but they've demonstrated that they only want to kill anyone not loyal to their movement... even innocents.",
+  "quest:964:obj:0": "Bring 15 ⟦E61⟧ to ⟦E7⟧ at the Bulwark, ⟦E1⟧.",
+  "quest:964:details:0": "The key to ⟦E24⟧ is called a ⟦E62⟧. It must be forged from the remains of a skeleton - several actually - and hardened by only the strongest of metals within a suitable mold. A signet of power from a being who naturally can open the portal to ⟦E24⟧ will make the key ultimately function.",
+  "quest:964:details:1": "First thing's first though, ⟦80⟧. We'll need skeletal fragments for the key's forging. Skeletons inside Andorhal should yield what we need, but the ones outside the walls might work too.",
+  "quest:964:progress:0": "Kill many and kill often, ⟦81⟧ - we'll need a decent supply of suitable skeletal fragments to make up the outer layer of the key. They don't call it a ⟦E62⟧ for nothing, you know.",
+  "quest:964:completion:0": "This'll work, ⟦82⟧! My turn now - I will imbue these with a suitable temper that will allow them to survive the intense forging process they will eventually go through.",
+  "quest:964:completion:1": "The next step will be to get an appropriate mold for the key. I know a goblin blacksmith in ⟦E63⟧ that has in the past made molds for similarly macabre items. He works for whom goblins usually work for - the highest bidder.",
+  "quest:5514:obj:0": "Bring the ⟦E64⟧ and 15 gold coins to ⟦E65⟧ in Gadgetzan.",
+  "quest:5514:details:0": "The goblin you will need to speak with is ⟦E65⟧. He peddles his skills to the highest bidder in Gadgetzan, within the ⟦E63⟧ desert. He'll likely be the only one who can produce the mold we need, and his services won't come cheap. We now ask for you to dig deep by footing whatever fee he will charge.",
+  "quest:5514:details:1": "I'm an apothecary, not a banker. If I had gold lying around, I certainly wouldn't be here.",
+  "quest:5514:details:2": "I guess I said the quiet part out loud again. Oops.",
+  "quest:5514:details:3": "Gadgetzan awaits you! Good luck!",
+  "quest:5514:progress:0": "Yeah, I know who you are, and I know why you're here. Dithers sent word to me before you arrived. Let's cut to deal at hand, now shall we?⟦83⟧⟦84⟧I've got a mold you can use for the skeleton key, but it will cost you - fifteen gold, up front, no negotiation. I'll pack the skeletal fragments into the mold for you, and I'll also teach you on how to forge the stem of the key without any knowledge of blacksmithing... all free of charge no less.⟦85⟧⟦86⟧Who says mercenaries don't offer competitive deals!",
+  "quest:5514:completion:0": "Dithers said you'd deliver the goods, and deliver you have! A deal is a deal; let me pack the fragments into the mold for you.",
+  "quest:5514:completion:1": "Did Dithers imbue them already? Excellent... otherwise, it would have been a long trip back to the Bulwark for you.",
+  "quest:5537:obj:0": "Bring 15 ⟦E61⟧ to ⟦E21⟧ at ⟦E22⟧, ⟦E1⟧.",
+  "quest:5537:details:0": "The key to ⟦E24⟧ is called a ⟦E62⟧. It must be forged from the remains of a skeleton - several actually - and hardened by only the strongest of metals within a suitable mold. A signet of power from a being who naturally can open the portal to ⟦E24⟧ will make the key ultimately function.",
+  "quest:5537:details:1": "First thing's first though, ⟦87⟧. We'll need skeletal fragments for the key's forging. Skeletons inside Andorhal should yield what we need, but the ones outside the walls might work too.",
+  "quest:5537:progress:0": "As morbid as it sounds, we'll need a decent supply of suitable skeletal fragments to make up the outer layer of the key.  They don't call it a ⟦E62⟧ for nothing, you know.",
+  "quest:5537:completion:0": "This'll work, ⟦88⟧! My turn now - I will imbue these with a suitable temper that will allow them to survive the intense forging process they will eventually go through.",
+  "quest:5537:completion:1": "The next step will be to get an appropriate mold for the key. I know a goblin blacksmith in ⟦E63⟧ that has in the past made molds for similarly macabre items. He works for whom goblins usually work for - the highest bidder.",
+  "quest:5538:obj:0": "Bring the ⟦E64⟧ and 15 gold coins to ⟦E65⟧ in Gadgetzan.",
+  "quest:5538:details:0": "The goblin you will need to speak with is ⟦E65⟧. He peddles his skills to the highest bidder in Gadgetzan, within the ⟦E63⟧ desert. He'll likely be the only one who can produce the mold we need, and his services won't come cheap. We now ask for you to dig deep by footing whatever fee he will charge.",
+  "quest:5538:details:1": "I'm an alchemist, not a banker. If I had gold lying around, I certainly wouldn't be here.",
+  "quest:5538:details:2": "I guess I said the quiet part out loud again. Oops.",
+  "quest:5538:details:3": "Gadgetzan awaits you! Good luck!",
+  "quest:5538:progress:0": "Yeah, I know who you are, and I know why you're here. Arbington sent word to me before you arrived. Let's cut to deal at hand, now shall we?⟦89⟧⟦90⟧I've got a mold you can use for the skeleton key, but it will cost you - fifteen gold, up front, no negotiation. I'll pack the skeletal fragments into the mold for you, and I'll also teach you on how to forge the stem of the key without any knowledge of blacksmithing... all free of charge no less.⟦91⟧⟦92⟧Who says mercenaries don't offer competitive deals!",
+  "quest:5538:completion:0": "Arbington said you'd deliver the goods, and deliver you have! A deal is a deal; let me pack the fragments into the mold for you.⟦93⟧⟦94⟧Did Arbington imbue them already? Excellent... otherwise, it would have been a long trip back to the ⟦E22⟧ for you."
+ },
+ "context": {
+  "quest:5231": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Shadow Priestess Vandis («واندیس»)",
+   "turner": "Scourge Cauldron («دیگ اسکورج»)"
+  },
+  "quest:5232": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Scourge Cauldron («دیگ اسکورج»)",
+   "turner": "Shadow Priestess Vandis («واندیس»)"
+  },
+  "quest:5233": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Shadow Priestess Vandis («واندیس»)",
+   "turner": "Scourge Cauldron («دیگ اسکورج»)"
+  },
+  "quest:5234": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Scourge Cauldron («دیگ اسکورج»)",
+   "turner": "Shadow Priestess Vandis («واندیس»)"
+  },
+  "quest:5401": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)",
+   "turner": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)"
+  },
+  "quest:5402": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)",
+   "turner": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)"
+  },
+  "quest:5403": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)",
+   "turner": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)"
+  },
+  "quest:5404": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)",
+   "turner": "Argent Officer Pureheart («افسر سپیدهٔ نقره‌ای پیورهارت»)"
+  },
+  "quest:5405": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)",
+   "turner": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)"
+  },
+  "quest:5406": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)",
+   "turner": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)"
+  },
+  "quest:5407": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)",
+   "turner": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)"
+  },
+  "quest:5408": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)",
+   "turner": "Argent Officer Garush («افسر سپیدهٔ نقره‌ای گاروش»)"
+  },
+  "quest:5533": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)",
+   "turner": "Alchemist Arbington («کیمیاگر آربینگتون»)"
+  },
+  "quest:5903": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Nathaniel Dumah («ناتانیل دوماه»)",
+   "turner": "Nathaniel Dumah («ناتانیل دوماه»)"
+  },
+  "quest:5904": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Nathaniel Dumah («ناتانیل دوماه»)",
+   "turner": "Termite Barrel («بشکهٔ موریانه»)"
+  },
+  "quest:6389": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Termite Barrel («بشکهٔ موریانه»)",
+   "turner": "Nathaniel Dumah («ناتانیل دوماه»)"
+  },
+  "quest:6390": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 55,
+   "side": "horde",
+   "giver": "Termite Barrel («بشکهٔ موریانه»)",
+   "turner": "Mickey Levine («میکی لوین»)"
+  },
+  "quest:4971": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "",
+   "giver": "Chromie («کرومی»)",
+   "turner": "Chromie («کرومی»)"
+  },
+  "quest:4972": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "",
+   "giver": "Chromie («کرومی»)",
+   "turner": "Chromie («کرومی»)"
+  },
+  "quest:4985": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "",
+   "giver": "Mulgris Deepriver («مولگریس رودژرف»)",
+   "turner": "Mulgris Deepriver («مولگریس رودژرف»)"
+  },
+  "quest:4986": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "alliance",
+   "giver": "Mulgris Deepriver («مولگریس رودژرف»)",
+   "turner": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)"
+  },
+  "quest:4987": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "horde",
+   "giver": "Mulgris Deepriver («مولگریس رودژرف»)",
+   "turner": "Nara Wildmane («نارا وحشی‌یال»)"
+  },
+  "quest:5097": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)",
+   "turner": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)"
+  },
+  "quest:5098": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "horde",
+   "giver": "High Executor Derrington («مأمور اجرای عالی درینگتون»)",
+   "turner": "High Executor Derrington («مأمور اجرای عالی درینگتون»)"
+  },
+  "quest:5154": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "",
+   "giver": "Chromie («کرومی»)",
+   "turner": "Chromie («کرومی»)"
+  },
+  "quest:6004": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 56,
+   "side": "",
+   "giver": "Kirsta Deepshadow («کیرستا سایه‌ژرف»)",
+   "turner": "Kirsta Deepshadow («کیرستا سایه‌ژرف»)"
+  },
+  "quest:964": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 57,
+   "side": "horde",
+   "giver": "Apothecary Dithers («داروساز دیترز»)",
+   "turner": "Apothecary Dithers («داروساز دیترز»)"
+  },
+  "quest:5514": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 57,
+   "side": "horde",
+   "giver": "Apothecary Dithers («داروساز دیترز»)",
+   "turner": "Krinkle Goodsteel («کرینکل فولادخوب»)"
+  },
+  "quest:5537": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Alchemist Arbington («کیمیاگر آربینگتون»)",
+   "turner": "Alchemist Arbington («کیمیاگر آربینگتون»)"
+  },
+  "quest:5538": {
+   "zone_en": "Western Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ غربی",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Alchemist Arbington («کیمیاگر آربینگتون»)",
+   "turner": "Krinkle Goodsteel («کرینکل فولادخوب»)"
+  }
+ },
+ "known": {
+  "quest:5231": {
+   "title": "هدف: اشک‌های دالسون"
+  },
+  "quest:5232": {
+   "title": "بازگشت به بارویل"
+  },
+  "quest:5233": {
+   "title": "هدف: مزرعهٔ ریتینگ"
+  },
+  "quest:5234": {
+   "title": "بازگشت به بارویل"
+  },
+  "quest:5401": {
+   "title": "کمیسیون سپیدهٔ نقره‌ای"
+  },
+  "quest:5405": {
+   "title": "کمیسیون سپیدهٔ نقره‌ای"
+  },
+  "quest:5533": {
+   "title": "شولومانس"
+  },
+  "quest:5903": {
+   "title": "طاعونی برای تو"
+  },
+  "quest:5904": {
+   "title": "طاعونی برای تو"
+  },
+  "quest:6389": {
+   "title": "طاعونی برای تو"
+  },
+  "quest:6390": {
+   "title": "طاعونی برای تو"
+  },
+  "quest:4971": {
+   "title": "مسئله‌ای از جنس زمان"
+  },
+  "quest:4972": {
+   "title": "شمارش زمان"
+  },
+  "quest:4985": {
+   "title": "حیات‌وحش هم رنج می‌برد"
+  },
+  "quest:4986": {
+   "title": "شاخهٔ بلوط رونی‌شده"
+  },
+  "quest:4987": {
+   "title": "شاخهٔ بلوط رونی‌شده"
+  },
+  "quest:5097": {
+   "title": "در امتداد برج‌های دیده‌بانی"
+  },
+  "quest:5098": {
+   "title": "در امتداد برج‌های دیده‌بانی"
+  },
+  "quest:5154": {
+   "title": "سالنامه‌های داروشایر"
+  },
+  "quest:6004": {
+   "title": "کار نیمه‌تمام"
+  },
+  "quest:964": {
+   "title": "خرده‌استخوان‌ها"
+  },
+  "quest:5514": {
+   "title": "قالب با چه می‌آید..."
+  },
+  "quest:5537": {
+   "title": "خرده‌استخوان‌ها"
+  },
+  "quest:5538": {
+   "title": "قالب با چه می‌آید..."
+  }
+ }
+}

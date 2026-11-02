@@ -1,0 +1,685 @@
+{
+ "pack": "quest-dun-morogh-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-dun-morogh-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Frostmane Hold",
+   "fa": "دژ فراست‌من",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Senir Whitebeard",
+   "fa": "سنیر ریش‌سفید",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Rejold Barleybrew",
+   "fa": "رجولد جوآب‌ساز",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Shimmerweed",
+   "fa": "علف سیم‌تاب",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Foreman Stonebrow",
+   "fa": "سرکارگر ابرو‌سنگ",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Sack of Fish",
+   "fa": "کیسهٔ ماهی",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Gretta Ganter",
+   "fa": "گرتا گانتر",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Senator Barin Redstone",
+   "fa": "سناتور بارین سنگ سرخ",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Razzle Sprysprocket",
+   "fa": "رازل فنرچابک",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Gnomeregan",
+   "fa": "گنومریگان",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Barrel of Shimmer Stout",
+   "fa": "بشکهٔ آبجوی درخشان",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Mountaineer Barleybrew",
+   "fa": "کوه‌نورد جوآب‌ساز",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Shimmer Stout",
+   "fa": "استوت سیم‌تاب",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Cask of Shimmer Stout",
+   "fa": "چلیک آبجوی درخشان",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Mountaineer Kadrell",
+   "fa": "کوه‌نورد کادرل",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Stolen Blasting Powder",
+   "fa": "باروت انفجاری دزدیده‌شده",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Empty Powder Keg",
+   "fa": "بشکهٔ باروتِ خالی",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Quarrymaster Thesten",
+   "fa": "سرکارگر معدن، ثستن",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Mangeclaw",
+   "fa": "چنگال‌جرب",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Mangy Claw",
+   "fa": "چنگال ژولیده",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Hildelve's Journal",
+   "fa": "دفترچهٔ هیلدلو",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Pilot Hammerfoot",
+   "fa": "خلبان پای‌چکشی",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Ice Claw Bear",
+   "fa": "خرس چنگال‌یخ",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Revenge",
+   "fa": "انتقام",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Senator Mehr Stonehallow",
+   "fa": "سناتور مهر سنگ‌مقدس",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Tundra MacGrann",
+   "fa": "توندرا مک‌گران",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Old Icebeard",
+   "fa": "ریش‌یخی پیر",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Rudra Amberstill",
+   "fa": "رودرا امبرستیلل",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Vagash",
+   "fa": "واگاش",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Dark Iron Spy",
+   "fa": "جاسوس آهن‌سیاه",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Ironband's Compound",
+   "fa": "مجتمع آیرون‌بند",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Earthseer Farsen",
+   "fa": "زمین‌بین فارسن",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Dark Iron Dwarf",
+   "fa": "دورف آهن‌سیاه",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Dark Iron Map",
+   "fa": "نقشهٔ آهن سیاه",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Durgen Dirgehammer's Head",
+   "fa": "سر دورگن چکش‌مرثیه",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "King Magni Bronzebeard",
+   "fa": "شاه مگنی ریش‌مفرغی",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Incendicite Ore",
+   "fa": "کانهٔ اینسندیسیت",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Pilot Stonegear",
+   "fa": "خلبان چرخ‌سنگی",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Frostmane Hold": "دژ فراست‌من",
+  "Senir Whitebeard": "سنیر ریش‌سفید",
+  "Rejold Barleybrew": "رجولد جوآب‌ساز",
+  "Shimmerweed": "علف سیم‌تاب",
+  "Foreman Stonebrow": "سرکارگر ابرو‌سنگ",
+  "Sack of Fish": "کیسهٔ ماهی",
+  "Gretta Ganter": "گرتا گانتر",
+  "Senator Barin Redstone": "سناتور بارین سنگ سرخ",
+  "Ironforge": "آیرون‌فورج",
+  "Razzle Sprysprocket": "رازل فنرچابک",
+  "Gnomeregan": "گنومریگان",
+  "Barrel of Shimmer Stout": "بشکهٔ آبجوی درخشان",
+  "Mountaineer Barleybrew": "کوه‌نورد جوآب‌ساز",
+  "Shimmer Stout": "استوت سیم‌تاب",
+  "Loch Modan": "لوک مودان",
+  "Cask of Shimmer Stout": "چلیک آبجوی درخشان",
+  "Mountaineer Kadrell": "کوه‌نورد کادرل",
+  "Stolen Blasting Powder": "باروت انفجاری دزدیده‌شده",
+  "Empty Powder Keg": "بشکهٔ باروتِ خالی",
+  "Quarrymaster Thesten": "سرکارگر معدن، ثستن",
+  "Mangeclaw": "چنگال‌جرب",
+  "Mangy Claw": "چنگال ژولیده",
+  "Hildelve's Journal": "دفترچهٔ هیلدلو",
+  "Pilot Hammerfoot": "خلبان پای‌چکشی",
+  "Ice Claw Bear": "خرس چنگال‌یخ",
+  "Revenge": "انتقام",
+  "Senator Mehr Stonehallow": "سناتور مهر سنگ‌مقدس",
+  "Tundra MacGrann": "توندرا مک‌گران",
+  "Old Icebeard": "ریش‌یخی پیر",
+  "Rudra Amberstill": "رودرا امبرستیلل",
+  "Vagash": "واگاش",
+  "Alliance": "اتحاد",
+  "Dark Iron Spy": "جاسوس آهن‌سیاه",
+  "Dun Morogh": "دون موروغ",
+  "Ironband's Compound": "مجتمع آیرون‌بند",
+  "Earthseer Farsen": "زمین‌بین فارسن",
+  "Dark Iron Dwarf": "دورف آهن‌سیاه",
+  "Dark Iron Map": "نقشهٔ آهن سیاه",
+  "Durgen Dirgehammer's Head": "سر دورگن چکش‌مرثیه",
+  "King Magni Bronzebeard": "شاه مگنی ریش‌مفرغی",
+  "Incendicite Ore": "کانهٔ اینسندیسیت",
+  "Pilot Stonegear": "خلبان چرخ‌سنگی",
+  "Wetlands": "تالاب‌ها"
+ },
+ "tokens": {
+  "1": "$n",
+  "2": "$N",
+  "3": "$N",
+  "4": "$C",
+  "5": "$B",
+  "6": "$B",
+  "7": "$C",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "<class>",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$R"
+ },
+ "rows": {
+  "quest:99162:title": "Treacherous Cold",
+  "quest:99162:obj:0": "Collect the rifles of fallen mountaineers.",
+  "quest:287:obj:0": "Explore ⟦E1⟧, and kill 5 Frostmane Headhunters for ⟦E2⟧ in Kharanos.",
+  "quest:287:details:0": "I'm behind on my report, and could use your help, ⟦1⟧. I just managed to find where the trolls are holed up, but I saw so many trolls, I was afraid to go in.",
+  "quest:287:details:1": "Here's what I need... Go down to the cave, poke around inside, kill a few of the trolls, then come back here.",
+  "quest:287:details:2": "Take the road north out of Kharanos, when you get to the bridge, follow the frozen river west until you reach Iceflow Lake. You'll find Brewnall Village on the west bank. The Hold is southwest of the village.",
+  "quest:287:progress:0": "You can't find it? My directions were very clear! We don't have much time, you've got to hurry! Don't come back until you've found the cave.",
+  "quest:287:completion:0": "Ah, ⟦2⟧! I didn't think you'd have much trouble finding the place, my directions are excellent, you know...",
+  "quest:287:completion:1": "Let me just finish up my report then.",
+  "quest:287:completion:2": "B<He brings out some paper and scribbles on it momentarily.>",
+  "quest:287:completion:3": "There! Well, haha, now this certainly is funny... I don't suppose, ⟦3⟧, that you would mind doing one last favor for me?",
+  "quest:315:obj:0": "Bring 6 Shimmerweeds to ⟦E3⟧ in the Brewnall Village.",
+  "quest:315:details:0": "I'm on a quest, a quest to make the perfect stout. I know I can do it -- brewing's in my blood. I just need to find the right recipe...",
+  "quest:315:details:1": "The Frostmane trolls grow a plant, shimmerweed, high up in the hills to the east. They use it in their strange, tribal rituals. We dwarves haven't found much use for it, but it has a unique taste...and I want to experiment with it in my brews!",
+  "quest:315:details:2": "Get me some shimmerweed from Frostmane seers, or swipe it from the trolls' shimmerweed baskets.",
+  "quest:315:progress:0": "Do you have that ⟦E4⟧? I almost have a batch of stout ready to brew, and I want to try throwing the weed in with this mixture.",
+  "quest:315:completion:0": "Great! I can't wait to use these in some of my recipes. There's one in particular I think it'll work great in...",
+  "quest:432:obj:0": "Kill 6 Rockjaw Skullthumpers for ⟦E5⟧ at the Gol'Bolar quarry.",
+  "quest:432:details:0": "Those Light-blasted troggs, turning my work site into a wreck! Look at that, there goes another barrel of powder!",
+  "quest:432:details:1": "Ohhh, I wish I could go down there and wring every one of their scrawny little necks! I want to kill them all!",
+  "quest:432:details:2": "This can't be good for my health, all this stress and anger... What have they left me with? Nothing!",
+  "quest:432:details:3": "I'd kill them myself, but my aim's no good anymore! You go into the quarry and kill some of the filthy buggers! I'll pay you! Just hurt them, kill them!",
+  "quest:432:progress:0": "It makes me so mad! Grrr...",
+  "quest:432:completion:0": "Well, that makes me feel a little better...",
+  "quest:432:completion:1": "But I won't be happy until they're all dead! All of them!",
+  "quest:98326:title": "Frosthowl",
+  "quest:98326:obj:0": "Slay Frosthowl and collect the ⟦E6⟧ for ⟦E7⟧ in Brewnall Village.",
+  "quest:291:obj:0": "Deliver Senir's report to ⟦E8⟧ in ⟦E9⟧.",
+  "quest:291:details:0": "Excellent! Take my report to ⟦E8⟧. He's a sour type, so don't let his less-than-sunny disposition get to you. He's in ⟦E9⟧, in the chamber where King Magni holds court.",
+  "quest:291:details:1": "Don't know the way to ⟦E9⟧? Take the road out of Kharanos north, cross the bridge, then follow the road east--there are large banners flanking the road--up the mountainside.",
+  "quest:291:details:2": "By the way, if you might avoid mentioning how you assisted me? Can't let them think I'm not working hard out here, you know?",
+  "quest:291:progress:0": "Hmm... it would seem that my guards are becoming less discriminatory with petitioners. Well, what do you want? Make it quick.",
+  "quest:291:completion:0": "<He quickly peruses the report.>",
+  "quest:291:completion:1": "Authority of the KING!? Has Magni taken complete leave of his senses! And that damnable Whitebeard... Taken matters into his own hands, has he? The Senate will not be pleased to hear about this, not one bit.",
+  "quest:291:completion:2": "What, are you still here? Go, before I call the guards!",
+  "quest:412:obj:0": "Bring ⟦E10⟧ in Kharanos 8 Restabilization Cogs and 8 Gyromechanic Gears.",
+  "quest:412:details:0": "Upon further analysis of the ⟦E11⟧ situation, it would appear as though we not only failed to eradicate the troggs but we also happened to turn most of the gnomish race into horrific, mindless, evil-doing leper gnomes.",
+  "quest:412:details:1": "Ozzie and I plan to reverse the horrible leper effect with our latest invention: The Recombobulator. The machine is almost complete but we are in dire need of some Restabilization Cogs and Gyromechanic Gears. Retrieve some from the leper gnomes out front of ⟦E11⟧ for us.",
+  "quest:412:progress:0": "The Recombobulator will be up and running as soon as we have sufficient Restabilization Cogs and Gyromechanic Gears.",
+  "quest:412:completion:0": "These Gyromechanic Gears and Restabilization Cogs are in perfect accordance with Ozzie's schematics for the Recombobulation Device. Once I add some hyrdolubricant to the inner combustion pistons, adjust the crank-o-ratchet and increase of the viscosity of the electrogum gel, the gnomish race will be as good as new.",
+  "quest:413:obj:0": "Take the ⟦E13⟧ to ⟦E14⟧.",
+  "quest:413:details:0": "I'd like my brother Wellart to try my new ⟦E15⟧. He's a Mountaineer stationed in the southern guard tower, one of two towers on the border to ⟦E16⟧.",
+  "quest:413:details:1": "He may not be a brewer like the rest of us Barleybrews, but he loves his drinks and I know he'll like this one.",
+  "quest:413:details:2": "Can you bring him this ⟦E13⟧ for me?",
+  "quest:413:progress:0": "Hello, ⟦4⟧! And what business takes you all the way out here?⟦5⟧⟦6⟧Something exciting, I hope. I haven't been in a good fight in days, and this barrel of ale is almost dry...",
+  "quest:413:completion:0": "<⟦E14⟧ tastes the ⟦E15⟧...>",
+  "quest:413:completion:1": "Oh. Whoa! This stuff really puts a shine in your eyes. I feel like I can see in the dark!",
+  "quest:414:obj:0": "Take the ⟦E17⟧ to ⟦E18⟧.",
+  "quest:414:details:0": "I've been drinking more of that ⟦E15⟧ my brother made - it's great stuff! I want a fellow Mountaineer to try it. His name's Kadrell, and he's usually patrolling the road through Thelsamar in ⟦E16⟧.",
+  "quest:414:details:1": "To get to Thelsamar, go southeast through the tunnel, then turn northeast when the path forks into a road. Follow that road straight into Thelsamar.",
+  "quest:414:details:2": "Give ⟦E18⟧ this cask of ⟦E15⟧ and see what he thinks!",
+  "quest:414:progress:0": "Greetings, ⟦7⟧, and welcome to Thelsamar!",
+  "quest:414:completion:0": "Now, let me have a taste...",
+  "quest:414:completion:1": "Magni's Beard! This stuff gets your head turning! And it lightens the limbs, too.",
+  "quest:414:completion:2": "I feel like I can fly!",
+  "quest:415:obj:0": "Speak with ⟦E3⟧.",
+  "quest:415:details:0": "⟦E3⟧ at Brewnall Village has been asking for you.",
+  "quest:415:details:1": "He wants to talk to you about a new drink he's been brewing...said something about you helping him with it. You might want to head back to Brewnall Village and see what he has to say.",
+  "quest:415:details:2": "There could be some free booze in it for you...",
+  "quest:415:completion:0": "⟦8⟧! You know that ⟦E4⟧ you brought me? Well I used it in a few recipes I've been working on, and one of them turned out great!",
+  "quest:415:completion:1": "Here, try it out and tell me what you think...",
+  "quest:419:obj:0": "Find Pilot Hildelve.",
+  "quest:419:details:0": "My friend and fellow Siege Engine pilot, Mori Hildelve, is lost in the hills. We were looking for a rare ore that's needed for a high-grade blastpowder, and during our search he drove his engine up a steep hill and busted it!",
+  "quest:419:details:1": "Still convinced that ore was in these mountains, Hildelve charged me to guard our engines while he continued on foot, searching.",
+  "quest:419:details:2": "It's been days, and I've heard some beastly growls in the hills at night. Mori's tough as nails, but I'm worried.",
+  "quest:419:details:3": "Please, ⟦9⟧. Find him.",
+  "quest:419:completion:0": "Here is the corpse of a dwarf -- mauled, frozen, and picked clean by mountain scavengers. Clutched in its hand is a book containing the roughly scribbled notes of Mori Hildelve. And around its frame, still in superior condition, is a Brigadier's Vest.",
+  "quest:419:completion:1": "This grisly scene must have been where the Siege Engine pilot met his end.",
+  "quest:95212:title": "Never Saddle on Quality",
+  "quest:95212:obj:0": "Collect 6 Pristine Leopard Pelts and deliver them to Amberstill Ranch.",
+  "quest:95213:title": "⟦E19⟧",
+  "quest:95213:obj:0": "Bring the ⟦E20⟧ to ⟦E21⟧ at Gol'Bolar Quarry.",
+  "quest:95214:title": "⟦E19⟧",
+  "quest:95214:obj:0": "Recover 16 ⟦E19⟧ from the troggs east of Gol'Bolar Quarry, then return to ⟦E21⟧.",
+  "quest:417:obj:0": "Kill ⟦E22⟧.",
+  "quest:417:obj:1": "Bring his ⟦E23⟧ and ⟦E24⟧ to ⟦E25⟧.",
+  "quest:417:details:0": "Hildelve wrote in his journal that he was attacked by ⟦E22⟧, a \"huge ⟦E26⟧.\" He drove off the beast, but not before it mauled him savagely.",
+  "quest:417:details:1": "Judging from the state of Hildelve's body, ⟦E22⟧ must have later returned and killed him.",
+  "quest:417:details:2": "However, Hildelve wrote in his journal his one, final wish:",
+  "quest:417:details:3": "⟦E27⟧ against ⟦E22⟧.",
+  "quest:417:progress:0": "Hello, ⟦10⟧. Do you have word of my friend Hildelve?",
+  "quest:417:completion:0": "This is grim news, for Hildelve was a good friend. And I wish I could have been there with you when you found the beast, ⟦E22⟧!",
+  "quest:417:completion:1": "Thank you, ⟦11⟧. Your deed will be remembered by the pilots of the ⟦E9⟧ Siege Brigade.",
+  "quest:433:obj:0": "Kill 10 Rockjaw Bonesnappers for ⟦E28⟧ at the Gol'Bolar quarry.",
+  "quest:433:details:0": "As a member of the Senate and the Explorers' League, I've taken it upon myself to take care of this part of the trogg infestation that has gripped our lands.",
+  "quest:433:details:1": "They've certainly made a mess of Gol'Bolar quarry, and for no reason. As we dug deep into the earth, they poured out, destroying our equipment and driving the miners out. There's not much for us to do but to exterminate the lot of them, rebuild, then get back to work.",
+  "quest:433:details:2": "If you help me with the troggs, I'll gladly recompense you for your time.",
+  "quest:433:progress:0": "If we can remove the troggs from Gol'Bolar quarry, it will be the first step of many that we will have to undertake to rid ourselves of this menace.",
+  "quest:433:completion:0": "It is a start. Hopefully we can take advantage of it, and move some Mountaineers in to secure the area. Then we can begin to restore our infrastructure and get the miners back to work.",
+  "quest:433:completion:1": "Thank you for your assistance, ⟦12⟧.",
+  "quest:312:obj:0": "Retrieve ⟦E29⟧'s dried meats from the stolen meat locker in ⟦E30⟧'s cave.",
+  "quest:312:details:0": "I had a month's worth of dried meats salted and locked away for the cold season. Kept it locked so the bears wouldn't get it! But while I was off hunting deer, that beast, ⟦E30⟧, made off with the meat locker. He won't be able to smash through that Thorium though. But I'll starve if I can't get my meats back.",
+  "quest:312:details:1": "You seem a bit more stealthy than me. Perhaps you can retrieve my stash? I'll never make it in and out of that cave fast enough with this bum leg of mine.",
+  "quest:312:progress:0": "Were you able to get into my meat locker, ⟦13⟧?",
+  "quest:312:completion:0": "What a kind soul you are, ⟦14⟧! Thanks to your bravery I won't find myself starving when the cold season flurries blow in.",
+  "quest:314:obj:0": "⟦E31⟧ wants you to slay ⟦E32⟧ and bring his fang to her at the Ram ranch.",
+  "quest:314:details:0": "We heard the cries in the middle of the night. Then this morning, sure enough, the herd was missing two rams. That dastardly beast known as ⟦E32⟧ has been preying on our livelihood. With most of King Magni's army off in distant lands fighting with the ⟦E33⟧, there is no one to keep ⟦E32⟧ at bay.",
+  "quest:314:details:1": "Perhaps you are brave enough to seek out the beast and slay him. Bring me one of his fangs and I will reward you. ⟦E32⟧ lurks just above the ranch here, but be warned, he is deadly.",
+  "quest:314:progress:0": "⟦E32⟧ still terrorizes the herd! Please help us by killing the wretched beast.",
+  "quest:314:completion:0": "Very well done! Veron will be so happy when he hears the good news. To kill ⟦E32⟧ is no easy task. I imagine one day you'll be fighting alongside King Magni's men on the ⟦E33⟧ Front.",
+  "quest:96390:title": "Nip 'Em in the Bud",
+  "quest:96390:obj:0": "Slay 10 Dark Iron Spies in .",
+  "quest:96390:obj:1": "* ⟦E34⟧ slain (10)",
+  "quest:96390:details:0": "Dark Iron spies have infiltrated ⟦E35⟧. To what end I canna' not sure, but this is a problem we need to nip in the bud before it is allowed to grow.",
+  "quest:96390:details:1": "Head eastward to ⟦E37⟧ and kill the Dark Iron spies that you find there.",
+  "quest:96390:completion:0": "These Dark Irons may be our cousins but they ain't family, that's for sure. I shed no tears for any misfortune that befalls them that stray too far from that accursed mountain o' theirs.",
+  "quest:96390:completion:1": "Hopefully this is enough to put 'em off of further incursions into these lands.",
+  "quest:96392:title": "Farsen's Watch",
+  "quest:96392:obj:0": "Speak with ⟦E38⟧ and ask him to lend you his farsight to observe the Dark Iron threat.",
+  "quest:96392:obj:1": "*Use Farsen's Farsight",
+  "quest:96392:details:0": "Greetings to ye, friend. My name is ⟦E38⟧ and I'm visiting ⟦E35⟧ from Aerie Peak. As I was travelin', I couldn't help but notice that we have, well... a bit o' a ⟦E41⟧ problem.",
+  "quest:96392:details:1": "If ye have a moment, I can show ye what I mean. I've got a bit o' magic that should do the trick.",
+  "quest:96392:progress:0": "Farsight can show ye a great many things, even things ye'd rather not see.",
+  "quest:96392:completion:0": "So ye see now, ⟦15⟧? Thick as cockroaches they are, and that's just the ones we can see from the sky.",
+  "quest:96392:completion:1": "Ye look like a sturdy enough sort. Hows about a bit o' violence?",
+  "quest:96408:title": "A Visitor to ⟦E35⟧",
+  "quest:96408:obj:0": "Investigate the campsite overlooking the Gol'Bolar Quarry.",
+  "quest:96408:details:0": "Last night one of our mountaineers spotted a campfire on a hillside to the east. It looks to be pretty high up, overlooking the Gol'Bolar Quarry.",
+  "quest:96408:details:1": "It's probably nothing, but I'd like you to go check on that camp. If they are friendly, no harm done. If they aren't friendly... well, you know what to do.",
+  "quest:96391:title": "Underground Map",
+  "quest:96391:obj:0": "Deliver the ⟦E43⟧ to ⟦E38⟧ in .",
+  "quest:96391:obj:1": "* ⟦E43⟧ (provided)",
+  "quest:96391:details:0": "<The map you are holding seems to show a complex series of underground tunnels and highways that all seem to converge on a point underneath ⟦E9⟧ itself.",
+  "quest:96391:details:1": "You can't be sure what the runes say as they are written in the ugly jagged rune language of the Dark Iron dwarves, but you can guess at the purpose of these tunnels. As you are reading the map, a gust of wind washes over you and you can faintly hear a dwarven voice carried on it. ⟦E38⟧ needs to see this.>",
+  "quest:96391:progress:0": "Oh what's this, then?",
+  "quest:96393:title": "Old ⟦E9⟧ Incursion",
+  "quest:96393:obj:0": "Enter the Hall of Thanes beneath Old ⟦E9⟧ and claim the Head of Durgen Dirgehammer.",
+  "quest:96393:obj:1": "*⟦E44⟧",
+  "quest:96393:details:0": "Gather some allies and head down into the caverns beneath Old ⟦E9⟧. Enter the Hall of Thanes there and push to the lower vaults.",
+  "quest:96393:details:1": "My Dark Iron is a bit rusty, but I can make out a name--one Durgen Dirgehammer. It's likely that he's the commander. Take his head and deliver it to ⟦E46⟧.",
+  "quest:96393:details:2": "Oh, and when you do, tell him his old friend Farsen sends his regards!",
+  "quest:96393:progress:0": "What do ye need, citizen?",
+  "quest:466:obj:0": "Bring 6 loads of ⟦E47⟧ to ⟦E48⟧ in ⟦E35⟧.",
+  "quest:466:details:0": "I heard that a rare ore, incendicite, was found in the ⟦E49⟧, in a cave northwest of Algaz Gate. Incendicite is volatile stuff and hard to use without blowing yourself up, but I'm sure if it's smelted the right way it could make cannon shells that pack a mighty punch!",
+  "quest:466:details:1": "Get me incendicite ore and I'll find someone brave enough to experiment with it.",
+  "quest:466:details:2": "Oh, and to extract that ore from a vein you'll need skill in mining. If you don't have it, then ... bring a friend who does to that cave!",
+  "quest:466:progress:0": "Where is that ore, ⟦16⟧?!",
+  "quest:466:completion:0": "You got the ore! Well done, ⟦17⟧! I'll get someone to work with this right away. Let's hope he doesn't blow himself up!",
+  "quest:467:obj:0": "Speak with ⟦E48⟧.",
+  "quest:467:details:0": "⟦E48⟧ loves his siege engine, as every pilot should! And he's always eager to find new ways to improve his tank's firepower!",
+  "quest:467:details:1": "He heard rumors of a rare ore and is looking for someone to hunt it down for him. If your boots are starting to itch, then find Stonegear at Steelgrill's Depot in ⟦E35⟧ and see what he wants.",
+  "quest:467:completion:0": "Hello ⟦18⟧. You're here about the task I have, eh? It's good to see a young ⟦19⟧ like yourself whose blood burns at the prospect of adventure!"
+ },
+ "context": {
+  "quest:99162": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 8,
+   "side": "alliance",
+   "giver": "Father Gavin («کشیش گاوین»)",
+   "turner": "Father Gavin («کشیش گاوین»)"
+  },
+  "quest:287": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Senir Whitebeard («سنیر ریش‌سفید»)",
+   "turner": "Senir Whitebeard («سنیر ریش‌سفید»)"
+  },
+  "quest:315": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Rejold Barleybrew («رجولد جوآب‌ساز»)",
+   "turner": "Rejold Barleybrew («رجولد جوآب‌ساز»)"
+  },
+  "quest:432": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Foreman Stonebrow («سرکارگر ابرو‌سنگ»)",
+   "turner": "Foreman Stonebrow («سرکارگر ابرو‌سنگ»)"
+  },
+  "quest:98326": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 9,
+   "side": "alliance",
+   "giver": "Gretta Ganter («گرتا گانتر»)",
+   "turner": "Gretta Ganter («گرتا گانتر»)"
+  },
+  "quest:291": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Senir Whitebeard («سنیر ریش‌سفید»)",
+   "turner": "Senator Barin Redstone («سناتور بارین سنگ سرخ»)"
+  },
+  "quest:412": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Razzle Sprysprocket («رازل فنرچابک»)",
+   "turner": "Razzle Sprysprocket («رازل فنرچابک»)"
+  },
+  "quest:413": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Rejold Barleybrew («رجولد جوآب‌ساز»)",
+   "turner": "Mountaineer Barleybrew («کوه‌نورد جوآب‌ساز»)"
+  },
+  "quest:414": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Mountaineer Barleybrew («کوه‌نورد جوآب‌ساز»)",
+   "turner": "Mountaineer Kadrell («کوه‌نورد کادرل»)"
+  },
+  "quest:415": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Pilot Bellowfiz («خلبان بلوفیز»)، Tharek Blackstone («تارک سنگ سیاه»)",
+   "turner": "Rejold Barleybrew («رجولد جوآب‌ساز»)"
+  },
+  "quest:419": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Pilot Hammerfoot («خلبان پای‌چکشی»)",
+   "turner": "A Dwarven Corpse («جسد یک دورف»)"
+  },
+  "quest:95212": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Rudra Amberstill («رودرا امبرستیلل»)",
+   "turner": ""
+  },
+  "quest:95213": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Quarrymaster Thesten («سرکارگر معدن، ثستن»)"
+  },
+  "quest:95214": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Quarrymaster Thesten («سرکارگر معدن، ثستن»)",
+   "turner": ""
+  },
+  "quest:417": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 11,
+   "side": "alliance",
+   "giver": "A Dwarven Corpse («جسد یک دورف»)",
+   "turner": "Pilot Hammerfoot («خلبان پای‌چکشی»)"
+  },
+  "quest:433": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 11,
+   "side": "alliance",
+   "giver": "Senator Mehr Stonehallow («سناتور مهر سنگ‌مقدس»)",
+   "turner": "Senator Mehr Stonehallow («سناتور مهر سنگ‌مقدس»)"
+  },
+  "quest:312": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Tundra MacGrann («توندرا مک‌گران»)",
+   "turner": "Tundra MacGrann («توندرا مک‌گران»)"
+  },
+  "quest:314": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Rudra Amberstill («رودرا امبرستیلل»)",
+   "turner": "Rudra Amberstill («رودرا امبرستیلل»)"
+  },
+  "quest:96390": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Earthseer Farsen («زمین‌بین فارسن»)",
+   "turner": "Earthseer Farsen («زمین‌بین فارسن»)"
+  },
+  "quest:96392": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Earthseer Farsen («زمین‌بین فارسن»)",
+   "turner": "Earthseer Farsen («زمین‌بین فارسن»)"
+  },
+  "quest:96408": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 13,
+   "side": "alliance",
+   "giver": "Beldin Steelgrill («بلدین کباب‌پز فولادی»)",
+   "turner": "Earthseer Farsen («زمین‌بین فارسن»)"
+  },
+  "quest:96391": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 15,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Earthseer Farsen («زمین‌بین فارسن»)"
+  },
+  "quest:96393": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Earthseer Farsen («زمین‌بین فارسن»)",
+   "turner": ""
+  },
+  "quest:466": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Pilot Stonegear («خلبان چرخ‌سنگی»)",
+   "turner": "Pilot Stonegear («خلبان چرخ‌سنگی»)"
+  },
+  "quest:467": {
+   "zone_en": "Dun Morogh",
+   "zone_fa": "دون موروغ",
+   "level": 23,
+   "side": "alliance",
+   "giver": "Mountaineer Kadrell («کوه‌نورد کادرل»)",
+   "turner": "Pilot Stonegear («خلبان چرخ‌سنگی»)"
+  }
+ },
+ "known": {
+  "quest:287": {
+   "title": "دژ فراست‌من"
+  },
+  "quest:315": {
+   "title": "استوت بی‌نقص"
+  },
+  "quest:432": {
+   "title": "تراگ‌های لعنتی!"
+  },
+  "quest:291": {
+   "title": "گزارش‌ها"
+  },
+  "quest:412": {
+   "title": "عملیات بازآرایی"
+  },
+  "quest:413": {
+   "title": "استوت سیم‌تاب"
+  },
+  "quest:414": {
+   "title": "استوت برای کادرل"
+  },
+  "quest:415": {
+   "title": "آبجوی تازهٔ رجولد"
+  },
+  "quest:419": {
+   "title": "خلبان گمشده"
+  },
+  "quest:417": {
+   "title": "انتقام خلبان"
+  },
+  "quest:433": {
+   "title": "خدمتگزار مردم"
+  },
+  "quest:312": {
+   "title": "ذخیرهٔ دزدیده‌شدهٔ تاندرا مک‌گرن"
+  },
+  "quest:314": {
+   "title": "حفاظت از گله"
+  },
+  "quest:466": {
+   "title": "جست‌وجوی اینسندیسیت"
+  },
+  "quest:467": {
+   "title": "جست‌وجوی استون‌گیر"
+  }
+ }
+}

@@ -1,0 +1,650 @@
+{
+ "pack": "quest-sort:paladin-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:paladin-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Duthorian Rall",
+   "fa": "دوتوریان رال",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "High Priest Thel'danis",
+   "fa": "کاهن اعظم تل‌دانیس",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Argent Dawn Commission",
+   "fa": "حکم سپیدهٔ نقره‌ای",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Commander Ashlam Valorfist",
+   "fa": "فرمانده اشلام مشت‌دلاور",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Inert Scourgestone",
+   "fa": "سنگ طاعونِ بی‌اثر",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Chillwind Point",
+   "fa": "نقطهٔ چیل‌ویند",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Holy",
+   "fa": "مقدس",
+   "kind": "cls"
+  },
+  "E15": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "High Priest Rohan",
+   "fa": "کاهن اعظم روهان",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Exorcism Censer",
+   "fa": "بخوردانِ جن‌گیری",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Priest",
+   "fa": "روحانی",
+   "kind": "cls"
+  },
+  "E20": {
+   "en": "Lord Grayson Shadowbreaker",
+   "fa": "لرد گریسون شادوبرِیکر",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Paladin",
+   "fa": "پالادین",
+   "kind": "cls"
+  },
+  "E22": {
+   "en": "Sacrifice",
+   "fa": "قربانی‌کردن",
+   "kind": "sp"
+  },
+  "E23": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Death Knight",
+   "fa": "شوالیهٔ مرگ",
+   "kind": "cls"
+  },
+  "E25": {
+   "en": "Grimand Elmore",
+   "fa": "گریماند المور",
+   "kind": "qs"
+  },
+  "E26": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Arcanite",
+   "fa": "آرکانیت",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Arthas' Tears",
+   "fa": "اشک‌های آرتاس",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Stratholme Holy Water",
+   "fa": "آب متبرک استرات‌هولم",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Merideth Carlson",
+   "fa": "مریدث کارلسون",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Southshore",
+   "fa": "ساحل جنوبی",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Ancient Equine Spirit",
+   "fa": "روح اسب کهن",
+   "kind": "qs"
+  },
+  "E37": {
+   "en": "Arcanite Barding",
+   "fa": "زین‌افزارِ آکانیت",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "treant",
+   "fa": "ترنت",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Manna-Enriched Horse Feed",
+   "fa": "خوراک اسبِ تقویت‌شده با مَنّ",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Blessed Arcanite Barding",
+   "fa": "زین‌پوشِ آرکانیت مبارک",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Azerothian Diamond",
+   "fa": "الماس اززیروتی",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Pristine Black Diamond",
+   "fa": "الماس سیاه بی‌نقص",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Divination Scryer",
+   "fa": "فال‌بین پیشگویی",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Death Knight Darkreaver",
+   "fa": "شوالیهٔ مرگ تاریک‌تاراج",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Charger's Redeemed Soul",
+   "fa": "روحِ رستگاریافتهٔ اسب رزمی",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Darkreaver's Fallen Charger",
+   "fa": "اسب جنگی سقوط‌کرده تاریک‌تاراج",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Duthorian Rall": "دوتوریان رال",
+  "Stormwind": "استورم‌ویند",
+  "High Priest Thel'danis": "کاهن اعظم تل‌دانیس",
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Argent Dawn Commission": "حکم سپیدهٔ نقره‌ای",
+  "Commander Ashlam Valorfist": "فرمانده اشلام مشت‌دلاور",
+  "Inert Scourgestone": "سنگ طاعونِ بی‌اثر",
+  "Chillwind Point": "نقطهٔ چیل‌ویند",
+  "Holy": "مقدس",
+  "Travel": "سفر",
+  "Ironforge": "آیرون‌فورج",
+  "High Priest Rohan": "کاهن اعظم روهان",
+  "Exorcism Censer": "بخوردانِ جن‌گیری",
+  "Priest": "روحانی",
+  "Lord Grayson Shadowbreaker": "لرد گریسون شادوبرِیکر",
+  "Paladin": "پالادین",
+  "Sacrifice": "قربانی‌کردن",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Death Knight": "شوالیهٔ مرگ",
+  "Grimand Elmore": "گریماند المور",
+  "Azeroth": "آزروت",
+  "Runecloth": "پارچهٔ رونی",
+  "Arcanite": "آرکانیت",
+  "Arthas' Tears": "اشک‌های آرتاس",
+  "Stratholme Holy Water": "آب متبرک استرات‌هولم",
+  "Stratholme": "استراتهولم",
+  "Merideth Carlson": "مریدث کارلسون",
+  "Southshore": "ساحل جنوبی",
+  "Dire Maul": "دایر مول",
+  "Feralas": "فرالاس",
+  "Ancient Equine Spirit": "روح اسب کهن",
+  "Arcanite Barding": "زین‌افزارِ آکانیت",
+  "treant": "ترنت",
+  "Manna-Enriched Horse Feed": "خوراک اسبِ تقویت‌شده با مَنّ",
+  "Blessed Arcanite Barding": "زین‌پوشِ آرکانیت مبارک",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Azerothian Diamond": "الماس اززیروتی",
+  "Pristine Black Diamond": "الماس سیاه بی‌نقص",
+  "Divination Scryer": "فال‌بین پیشگویی",
+  "Scholomance": "شولومانس",
+  "Death Knight Darkreaver": "شوالیهٔ مرگ تاریک‌تاراج",
+  "Charger's Redeemed Soul": "روحِ رستگاریافتهٔ اسب رزمی",
+  "Darkreaver's Fallen Charger": "اسب جنگی سقوط‌کرده تاریک‌تاراج"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$g brother:sister;",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$B",
+  "7": "$ghis:her;",
+  "8": "$N",
+  "9": "$N",
+  "10": "$B",
+  "11": "$c",
+  "12": "$N",
+  "13": "$n",
+  "14": "$C",
+  "15": "$n",
+  "16": "$N",
+  "17": "$n",
+  "18": "$N",
+  "19": "$N",
+  "20": "$C",
+  "21": "$C",
+  "22": "$N",
+  "23": "$G brother : sister;",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$C",
+  "32": "$C",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$C",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$C",
+  "43": "$N",
+  "44": "$C"
+ },
+ "rows": {
+  "quest:1661:obj:0": "Speak to ⟦E1⟧ in ⟦E2⟧.",
+  "quest:1661:details:0": "I greet you once again, ⟦1⟧. I am more proud to call you ⟦2⟧ than ever before--your dedication is a tribute to us all.",
+  "quest:1661:details:1": "The time has come for me to bestow a great gift upon you. But know this, for now I give you this freely, but later, when time permits, this will be a much greater challenge to all paladins who choose to undertake my quest.",
+  "quest:1661:details:2": "Speak to me again and I shall grant you a great boon.",
+  "quest:1661:completion:0": "Congratulations, and may the Light protect you.",
+  "quest:4485:obj:0": "Speak to ⟦E1⟧ in ⟦E2⟧.",
+  "quest:4485:details:0": "Hello, ⟦3⟧. I see your dedication remains strong, as does your faith.",
+  "quest:4485:details:1": "I think it is time you spoke with ⟦E1⟧ in ⟦E2⟧. There are some more lessons for you to learn, and I feel you are prepared.",
+  "quest:4485:details:2": "Seek him out in the Cathedral of Light, and ⟦4⟧, take these lessons seriously. You've attained your status through humility and hard work, do not disappoint us by becoming arrogant.",
+  "quest:4485:details:3": "Be well.",
+  "quest:4485:completion:0": "Ah, you've returned to the Cathedral, ⟦5⟧ . Good. A lot has happened recently, and I would seek your aid if you prove worthy. ⟦6⟧ Many treacherous enemies are about. I will need your help to stop them.",
+  "quest:4486:obj:0": "Speak to ⟦E1⟧ in ⟦E2⟧.",
+  "quest:4486:details:0": "Well, well, well, look at the mighty paladin in all ⟦7⟧ regality.",
+  "quest:4486:details:1": "Sorry, ⟦8⟧, I meant no offense... I just get a little jealous sometimes when I see some of the feats you've accomplished. Tiza tells me it's my weakness, and I swore to her I'd work on it. It's just hard sometimes, you know?",
+  "quest:4486:details:2": "But the reason I wanted to talk to you was because ⟦E1⟧ in ⟦E2⟧ sent word for you to meet him in the Cathedral of Light when you're ready. Sounded important. Sounded like something's going on.",
+  "quest:4486:completion:0": "Ah, you've returned to the Cathedral, ⟦9⟧ . Good. A lot has happened recently, and I would seek your aid if you prove worthy. ⟦10⟧ Many treacherous enemies are about. I will need your help to stop them.",
+  "quest:8414:obj:0": "Collect 20 Minion's Scourgestones and bring them to ⟦E4⟧ in the ⟦E5⟧.",
+  "quest:8414:details:0": "Greetings, ⟦11⟧. Crusaders like you are a welcome sight in these desolate reaches.",
+  "quest:8414:details:1": "Your holy strength is needed to help fight the endless undead here. We need you to collect a large number of scourgestones and bring them to ⟦E4⟧. The high priest can be found guarding Uther's Tomb in Sorrow Hill, not far from here.",
+  "quest:8414:details:2": "Only one with an ⟦E7⟧ can hope to find scourgestones, so speak to Officer Pureheart if you haven't already.",
+  "quest:8414:progress:0": "What evil have you brought me?",
+  "quest:8414:completion:0": "There is risk in dispelling the evil from a scourgestone, for it attracts the attention of undead for countless miles. But you are strong in the Light, ⟦12⟧, and I do not fear for you...",
+  "quest:8415:obj:0": "Speak to ⟦E10⟧ at Chillwind Camp.",
+  "quest:8415:details:0": "⟦E10⟧ has sent out a call for a paladin of your purity and valor, ⟦13⟧. You can find him at Chillwind Camp in the southern part of the ⟦E5⟧. Seek him and aid in his cause for the Light!",
+  "quest:8415:completion:0": "Very well, ⟦14⟧! Let's see what you're made of.",
+  "quest:8416:obj:0": "Bring the ⟦E11⟧ to Commander Ashlan Valorfist in ⟦E12⟧.",
+  "quest:8416:details:0": "The evil has been purged from the stones, ⟦15⟧.",
+  "quest:8416:details:1": "I am aware of Commander Ashlam's plans, and he will require only a single inert stone. Bring it to him so we may bathe the Scourge in righteous fire.",
+  "quest:8416:progress:0": "Was Thal'danis able to cleanse the scourgestones?",
+  "quest:8416:completion:0": "You have done as I asked without question, ⟦16⟧.",
+  "quest:8416:completion:1": "Trust is achieved, it seems. Perhaps I can reveal our plan in more detail to you now.",
+  "quest:8418:obj:0": "Bring the voodoo feathers to Ashlam Valorfist.",
+  "quest:8418:details:0": "Now we must combine the inert scourgestones and create a weapon to shatter the ranks of undead. This is no trivial task, ⟦17⟧. Only the trolls of the sunken temple carry the kind of rare magic able to turn the evil of something against itself.",
+  "quest:8418:details:1": "In the temple, the trolls are known as Gasher, Mijan, Zolo, Hukku, Zul'lor, and Loro. Do not feel remorse for their corrupt souls... they are not without evil.",
+  "quest:8418:progress:0": "Have you slain the wretched trolls?",
+  "quest:8418:completion:0": "This is excellent, ⟦18⟧. I would say I am surprised, but I knew without question that you wouldn't let us down.",
+  "quest:8418:completion:1": "It is my honor to bestow one of the ⟦E13⟧ Mightstones to you. Use it well.",
+  "quest:7637:obj:0": "⟦E15⟧ to ⟦E16⟧ and get ⟦E17⟧'s ⟦E18⟧. You will need to make a donation of 150 gold in order to secure it.",
+  "quest:7637:details:0": "In order to prepare yourself for this task, you must first show due sacrifice and judgment... with an emphasis on sacrifice.",
+  "quest:7637:details:1": "You must acquire ⟦E17⟧'s exorcism censer for your task. Even though its use will be for good and just reasons, due compensation must be given for it.",
+  "quest:7637:details:2": "Proceed to ⟦E16⟧ and speak with the High ⟦E19⟧. By bringing ample coin with you to help offset the loss of his censer, it will show your due sacrifice.",
+  "quest:7637:details:3": "Go now ⟦19⟧, time is of the essence.",
+  "quest:7637:progress:0": "Greetings, noble ⟦20⟧! I have prepared my trusted censer with the freshest of incense and blessed it thrice for your use. Your donation will help us in ⟦E16⟧ not only create a new censer, but also to bolster sagging reserves of food for our needy.",
+  "quest:7637:completion:0": "Blessings onto you, friend ⟦21⟧! Your donation goes far beyond what was needed. Your sacrifice will not only help us recover what we have lost, but also help us to help those most in need here in ⟦E16⟧.",
+  "quest:7637:completion:1": "Now, let me make sure I've suitably prepared this censer for your future needs...",
+  "quest:7638:obj:0": "Speak with ⟦E20⟧ in ⟦E2⟧'s Cathedral District.",
+  "quest:7638:details:0": "The time has come, ⟦22⟧, for you to learn about what it will take for you to acquire something you have no doubt waited on for some time... your charger.",
+  "quest:7638:details:1": "Speak with ⟦E20⟧ here in ⟦E2⟧'s Cathedral District. It is he who will guide you not only though the legerdemain of a ⟦E21⟧'s most trusted mount, but the tasks before you to acquire one of your own.",
+  "quest:7638:details:2": "I wish you the best in this trial. For the Light, noble ⟦23⟧!",
+  "quest:7638:completion:0": "I am glad to see you ⟦24⟧. I know that you have awaited word as to how to acquire your charger, and now that time has come.",
+  "quest:7638:completion:1": "You will be surely tested in many different ways, but most importantly in your willingness to rise above numerous obstacles thrust before you. These are not done as a learning exercise - your stature is beyond simple educational tests. You must save your future companion from the clutches of the evil you have spent your life fighting.",
+  "quest:7638:completion:2": "Take heed, your time has come!",
+  "quest:7639:obj:0": "Return the ⟦E18⟧ to ⟦E20⟧ in the Cathedral District of ⟦E2⟧.",
+  "quest:7639:details:0": "With my blessings, take the censer. I myself have used it in several exorcisms, and it should serve you well for the arduous tasks that lie ahead.",
+  "quest:7639:details:1": "Return now to ⟦E20⟧ in ⟦E2⟧, ⟦25⟧. Your quest continues with him.",
+  "quest:7639:progress:0": "Welcome back, ⟦26⟧. Have you acquired the exorcism censer?",
+  "quest:7639:completion:0": "Yes, this will do. You will be called upon more than once during this process to make acts of sacrifice; I am glad to see that you are willing to do just that. ⟦E22⟧ is a key component in what it takes to uphold the duties of being a ⟦E21⟧... but I don't have to lecture you on that.",
+  "quest:7639:completion:1": "Now ⟦27⟧, you will need to show due judgment in your actions. To that end, this censer will act as your vessel to dispense such judgment on tortured spirits of lands lost to us.",
+  "quest:7640:obj:0": "Use the ⟦E18⟧ to drive out the spirits that torment Terrordale. When you have slain 25 Terrordale Spirits, return to ⟦E20⟧ in the Cathedral District of ⟦E2⟧.",
+  "quest:7640:details:0": "I have added a pinch of dirt from the tainted ground of Terrordale in the ⟦E23⟧ to the censer. You will now use this censer to find areas there that show signs of spiritual turmoil and disturbance. Look for green auras that permeate the ground as the physical world buckles under the torment of the spirit realm and use the censer to drive out the evil spirits.",
+  "quest:7640:details:1": "When you have passed sufficient judgment on the spirits there, you will be ready to proceed.",
+  "quest:7640:progress:0": "It is good to see you again ⟦28⟧. Is your work done in Terrordale?",
+  "quest:7640:completion:0": "Well done, ⟦29⟧. To render the judgment of the Light on those that dwell in darkness is a task we must approach with vim and zeal; you have done just that with your sacrifice in ⟦E16⟧ and your judgments of the spirits in Terrordale.",
+  "quest:7640:completion:1": "Your next steps will call on both sacrifice and judgment again as you now strive to reclaim the spirit of a fallen charger who now serves a ⟦E24⟧ known as Darkreaver.",
+  "quest:7641:obj:0": "Speak with ⟦E25⟧ in ⟦E2⟧'s Dwarven District.",
+  "quest:7641:details:0": "A paladin's charger is nothing more than a pack animal without proper barding for it. The barding used by your charger not only needs to be of the finest materials possible, but because of the circumstances involved it must also be sufficiently attuned to the spirit realm.",
+  "quest:7641:details:1": "First things first, ⟦30⟧ - let's get your barding made. In ⟦E2⟧'s Dwarven District is one of the finest craftsmen living today, ⟦E25⟧. His work will not be cheap, but his quality is what we seek. Speak with him.",
+  "quest:7641:completion:0": "Hello there - Lord Shadowbreaker sent me word ahead of time that you'd be coming around this way to see me. I'm willing to make the barding you need, but it won't be either cheap or easy; let's get that out in the open first and foremost.",
+  "quest:7641:completion:1": "I will say this much, and Grayson will back me up when I make this claim... you'll not find better barding made anywhere in all of ⟦E26⟧ than right here.",
+  "quest:7642:obj:0": "Bring 40 ⟦E27⟧, 6 ⟦E28⟧ Bars, 10 ⟦E29⟧, 5 ⟦E30⟧ vials, and 150 gold to ⟦E25⟧ in the Dwarven District of ⟦E2⟧.",
+  "quest:7642:details:0": "You'll need four things for the barding - runecloth for the lining, arcanite bars for the plating, ⟦E29⟧ for the spiritual attunement, and ⟦E31⟧ holy water for the spiritual imbuement. Actually, you need five things... gold for my fee. That fee includes all labor as well as a handcrafted saddle and stirrups.",
+  "quest:7642:details:1": "Once you've got all that, I'll be able to finish your barding. Until then, there are some things I can get started on for you while you assemble your collection of goods.",
+  "quest:7642:progress:0": "Ah, ⟦31⟧. I won't be able to finish your barding without the things I mentioned. Have you gotten everything together?",
+  "quest:7642:completion:0": "This... well, this is exactly what I needed. You're quite the resourceful ⟦32⟧, aren't you?",
+  "quest:7642:completion:1": "All right then, let's get this barding finished up for you!",
+  "quest:7643:obj:0": "Acquire special horse feed used for feeding a spirit horse. ⟦E32⟧ in ⟦E33⟧ apparently is the source for such food.",
+  "quest:7643:obj:1": "⟦E15⟧ to the ⟦E34⟧ dungeon in ⟦E35⟧ and slay Tendris Warpwood. Doing so will free the ⟦E36⟧. Feed it the special horse feed, thereby soothing the spirit. Finally, give it the ⟦E37⟧ so it may bless it.",
+  "quest:7643:details:0": "Your barding needs a special form of blessing, one from an appropriate spirit. In ⟦E34⟧ is such a spirit, the ⟦E36⟧. It is currently held by a corrupt ⟦E40⟧, Tendris Warpwood. Pass judgment upon this foul beast, ⟦33⟧.",
+  "quest:7643:details:1": "Know this - freedom alone is not enough. You must soothe the spirit before receiving its blessing. For that, special horse feed is needed. ⟦E15⟧ to ⟦E33⟧ first and speak with ⟦E32⟧ on this... and prepare for more sacrifice.",
+  "quest:7643:progress:0": "The ⟦E36⟧ looks at you expectantly, as though it wants something from you.",
+  "quest:7643:completion:0": "The ⟦E36⟧ accepts the offering of the ⟦E41⟧, nuzzling the container as it helps itself to the special oats and grains. After it has eaten a little, it looks at the barding you possess and positions itself as though it wants you to place it upon its back...",
+  "quest:7644:obj:0": "Return with the ⟦E42⟧ to ⟦E20⟧ in the Cathedral District of ⟦E2⟧.",
+  "quest:7644:details:0": "As the barding rests on the back of the ⟦E36⟧, it glows ever so slightly. The air is thick with power for a brief moment, and then the barding disappears from the back of the horse and is now secure in your backpack.",
+  "quest:7644:details:1": "It would seem that the barding has been blessed. As per Lord Shadowbreaker's instructions, you should now return with it to him in ⟦E2⟧.",
+  "quest:7644:progress:0": "⟦34⟧, you're back! Were you able to successfully deal with ⟦E32⟧ and Tendris Warpwood?  Honestly, I'm not sure which one is a greater threat at times...",
+  "quest:7644:completion:0": "You've come far, my friend. Your barding is now suitably prepared for the last task at hand.",
+  "quest:7644:completion:1": "You will be using this barding to harness your charger once the task of redemption is complete. Before that, however, you will have a monumental struggle to overcome. Your time draws near - huzzah!",
+  "quest:7644:completion:2": "There is one last item that needs to be made before we begin this, ⟦35⟧. Hopefully your resourcefulness has not departed you since you had your barding made...",
+  "quest:7645:obj:0": "Retrieve 20 Enriched Manna Biscuits - the key ingredient in making ⟦E41⟧ - for ⟦E32⟧ at ⟦E33⟧ in the ⟦E44⟧. The Argent Dawn is known as the sole purveyor of the biscuits.",
+  "quest:7645:obj:1": "You also need to give her 50 gold to soothe her ruffled sensibilities.",
+  "quest:7645:details:0": "The Silver Hand thought me MAD when I told them that I could make a special horse feed that could nourish spiritual horses. EVERYONE thought I was mad! Well, now it's payback time!",
+  "quest:7645:details:1": "I'll make what you need, PALADIN... so-called CHAMPION... but it will cost you. I need special biscuits - Enriched Manna Biscuits sold only by the Argent Dawn - for this blend. I also demand, yes DEMAND gold as compensation for the misery I have endured!",
+  "quest:7645:details:2": "Show me the sacrifice you tout so much, PALADIN.",
+  "quest:7645:progress:0": "Yes, I've proved you wrong now, haven't I? I've proved them all wrong! I WAS RIGHT ALL ALONG!!!",
+  "quest:7645:completion:0": "YES, NOW WHO - wait - you're giving me the gold too? You weren't the one who called me mad (actually they called me a fruitcake nut-job)... still, you're willing to show sacrifice even for wrongs you've not committed?",
+  "quest:7645:completion:1": "I... I misjudged you, ⟦36⟧. Should you need more horse feed, come see me. I will give it to you free of charge. Thank you... noble ⟦37⟧.",
+  "quest:7645:completion:2": "I am going to keep the money though - I'm not that much of a nut-job as to give up a fortune.",
+  "quest:7646:obj:0": "Bring an ⟦E46⟧ and a ⟦E47⟧ to ⟦E20⟧ in the Cathedral District of ⟦E2⟧.",
+  "quest:7646:details:0": "We now must assemble a ⟦E48⟧ - this will begin the trial that will allow you to redeem the fallen charger. Your scryer, actually, is almost done. The exorcism censer used in Terrordale is the catalyst for it, and I will fashion a suitable housing for the device.",
+  "quest:7646:details:1": "The last components needed, though, are two diamonds. They must be as juxtaposed in brilliance as they are in purpose - an Azerothian and a Pristine Black. These two will be the beacon by which the scryer will pierce the shadows!",
+  "quest:7646:progress:0": "You have come so very far, ⟦38⟧. Your final act of worldly-item sacrifice will be the genesis for one of your greatest accomplishments. I can feel it in the very fiber of my being!",
+  "quest:7646:completion:0": "These are fine specimens, ⟦39⟧ - the final pieces are now in place. At long last, your time has come!",
+  "quest:7646:completion:1": "In the depths of the Great Ossuary of ⟦E49⟧ are the skeletal remains of many beings. Amongst them is a once-noble charger. The hollowed soul of this charger now serves as the steed for ⟦E50⟧. It is he whom you will face, and it is this steed that you will pass judgment upon. Only you, ⟦40⟧, can redeem its soul and save it from the torment of its servitude.",
+  "quest:7647:obj:0": "Use the ⟦E48⟧ in the heart of the Great Ossuary's basement in the ⟦E49⟧. Doing so will bring forth the spirits you must judge. Defeating these spirits will summon forth ⟦E50⟧. Defeat him and reclaim the lost soul of the fallen charger.",
+  "quest:7647:obj:1": "Give the ⟦E51⟧ and the Blessed Enchanted Barding to ⟦E52⟧.",
+  "quest:7647:details:0": "Take this satchel - in it are the items you will need for your task.",
+  "quest:7647:details:1": "Use the divination scryer in the heart of the Great Ossuary's basement to bring forth accursed spirits that must be judged. Use your judgments wisely during this trial - they will prove more potent than you realize. After the spirits, the death knight will appear; defeat him and reclaim the lost soul of the charger. Only then ⟦41⟧, will you be able to redeem it and place your barding upon your new steed!",
+  "quest:7647:details:2": "Good luck!",
+  "quest:7647:progress:0": "The spirit of the fallen charger looks upon you with a mournful gaze. Sad, almost hollow eyes look at you as though all hope was lost to it.",
+  "quest:7647:completion:0": "A glimmer of life - long vacant from the poor beast - shines in its eyes as you hand its judged soul back to it. You feel a holy rush of power surge around you as you place the barding on its back, having judged the charger redeemed. The charger nuzzles your hand as the burdens of the past are lifted from the beast. You now feel as though you could call upon this beast to serve as your steed, should the need arise.",
+  "quest:7647:completion:1": "You have claimed your epic charger, ⟦42⟧! Congratulations!",
+  "quest:7648:obj:0": "Take the ⟦E37⟧ to ⟦E20⟧ in ⟦E2⟧'s Cathedral District for his inspection.",
+  "quest:7648:details:0": "<Grimand wipes sweat from his brow, beaming with a sense of pride.>",
+  "quest:7648:details:1": "There you are, my friend. This is some of my finest work - as good as the barding I personally made for Lord Shadowbreaker when he went for his own charger. I thank you for your trust in me to provide for you the best.",
+  "quest:7648:details:2": "No doubt Grayson will want to see the work for himself as well. Take your barding to him, and give him my thanks for his honorable business.",
+  "quest:7648:progress:0": "You're progressing along nicely, ⟦43⟧. Once you have made your barding, you'll be well on your way to the next task.",
+  "quest:7648:completion:0": "This is most impressive work. It seems that as Grimand gets older, his craftsmanship continues to improve. That's quite the feat when his work was already some of the finest you'd find anywhere when he made my barding back in the day.",
+  "quest:7648:completion:1": "While this barding would be a fine addition to any normal steed, we are not dealing with such a mundane beast. You'll need this barding blessed by an appropriate source for it to be worthy of resting on a ⟦44⟧'s charger. I'll hold onto it for you until then."
+ },
+ "context": {
+  "quest:1661": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Duthorian Rall («دوتوریان رال»)",
+   "turner": "Duthorian Rall («دوتوریان رال»)"
+  },
+  "quest:4485": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Arthur the Faithful («آرتور وفادار»)",
+   "turner": "Duthorian Rall («دوتوریان رال»)"
+  },
+  "quest:4486": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Brandur Ironhammer («برندور چکش‌آهنین»)",
+   "turner": "Duthorian Rall («دوتوریان رال»)"
+  },
+  "quest:8414": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)",
+   "turner": "High Priest Thel'danis («کاهن اعظم تل‌دانیس»)"
+  },
+  "quest:8415": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)"
+  },
+  "quest:8416": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 52,
+   "side": "alliance",
+   "giver": "High Priest Thel'danis («کاهن اعظم تل‌دانیس»)",
+   "turner": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)"
+  },
+  "quest:8418": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)",
+   "turner": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)"
+  },
+  "quest:7637": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "High Priest Rohan («کاهن اعظم روهان»)"
+  },
+  "quest:7638": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Duthorian Rall («دوتوریان رال»)",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  },
+  "quest:7639": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "High Priest Rohan («کاهن اعظم روهان»)",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  },
+  "quest:7640": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  },
+  "quest:7641": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:7642": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Grimand Elmore («گریماند المور»)",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:7643": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Ancient Equine Spirit («روح اسب کهن»)"
+  },
+  "quest:7644": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Ancient Equine Spirit («روح اسب کهن»)",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  },
+  "quest:7645": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Merideth Carlson («مریدث کارلسون»)",
+   "turner": "Merideth Carlson («مریدث کارلسون»)"
+  },
+  "quest:7646": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  },
+  "quest:7647": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)",
+   "turner": "Darkreaver's Fallen Charger («اسب جنگی سقوط‌کرده تاریک‌تاراج»)"
+  },
+  "quest:7648": {
+   "zone_en": "Paladin",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Grimand Elmore («گریماند المور»)",
+   "turner": "Lord Grayson Shadowbreaker («لرد گریسون شادوبرِیکر»)"
+  }
+ },
+ "known": {
+  "quest:1661": {
+   "title": "کتاب بزرگِ نجابت"
+  },
+  "quest:4485": {
+   "title": "کتاب بزرگِ نجابت"
+  },
+  "quest:4486": {
+   "title": "کتاب بزرگِ نجابت"
+  },
+  "quest:8414": {
+   "title": "خنثی‌سازی شرّ"
+  },
+  "quest:8415": {
+   "title": "نقطهٔ چیل‌ویند"
+  },
+  "quest:8416": {
+   "title": "سنگ‌های طاعونِ بی‌اثر"
+  },
+  "quest:8418": {
+   "title": "آهنگری سنگ توانمندی"
+  },
+  "quest:7637": {
+   "title": "تأکید بر فداکاری"
+  },
+  "quest:7638": {
+   "title": "لرد گریسون شادوبرِیکر"
+  },
+  "quest:7639": {
+   "title": "نشان‌دادن داوریِ شایسته"
+  },
+  "quest:7640": {
+   "title": "جن‌گیری تروردیل"
+  },
+  "quest:7641": {
+   "title": "کار گریمند المر"
+  },
+  "quest:7642": {
+   "title": "گردآوری کالاها"
+  },
+  "quest:7643": {
+   "title": "روح اسب کهن"
+  },
+  "quest:7644": {
+   "title": "زره اسبِ آرکانیتِ مبارک"
+  },
+  "quest:7645": {
+   "title": "خوراک اسبِ تقویت‌شده با مَنّ"
+  },
+  "quest:7646": {
+   "title": "اسکرایر پیشگویی"
+  },
+  "quest:7647": {
+   "title": "داوری و رستگاری"
+  },
+  "quest:7648": {
+   "title": "بهترین کار گریمند"
+  }
+ }
+}

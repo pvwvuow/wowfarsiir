@@ -1,0 +1,855 @@
+{
+ "pack": "quest-loch-modan-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-loch-modan-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Brock's List",
+   "fa": "فهرست براک",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Thorgrum Borrelson",
+   "fa": "تورگروم بورلسون",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Golnir Bouldertoe",
+   "fa": "گولنیر شست‌سنگ",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Honorary Picks",
+   "fa": "کلنگ افتخاری",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Gryth Thurden",
+   "fa": "گریت تردن",
+   "kind": "qs"
+  },
+  "E7": {
+   "en": "Mining",
+   "fa": "معدن‌کاری",
+   "kind": "sp"
+  },
+  "E8": {
+   "en": "Brock Stoneseeker",
+   "fa": "براک سنگ‌جو",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Mountaineer Kadrell",
+   "fa": "کوه‌نورد کادرل",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Bear Meat",
+   "fa": "گوشت خرس",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Boar Intestines",
+   "fa": "رودهٔ گراز",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Spider Ichor",
+   "fa": "چرک عنکبوت",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Vidra Hearthstove",
+   "fa": "ویدرا هارث‌استوو",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Mountaineer Cobbleflint",
+   "fa": "کوه‌نورد سنگ‌چخماق",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Mountaineer Gravelgaw",
+   "fa": "کوه‌نورد شن‌سنگ",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Captain Rugelfuss",
+   "fa": "کاپیتان روگل‌فاس",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "King Magni Bronzebeard",
+   "fa": "شاه مگنی ریش‌مفرغی",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Stormpike's Request",
+   "fa": "درخواست استورم‌پایک",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Furen Longbeard",
+   "fa": "فورن ریش‌دراز",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Mountaineer Stormpike",
+   "fa": "کوه‌نورد نیزهٔ توفان",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Mountaineer Wallbang",
+   "fa": "کوه‌نورد دیوارکوب",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Stonesplinter Shaman",
+   "fa": "شمن سنگ‌تراشه",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Huldar",
+   "fa": "هولدار",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Miran",
+   "fa": "میران",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Ironband's Progress Report",
+   "fa": "گزارش پیشرفت آهن‌بند",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Jern Hornhelm",
+   "fa": "جرن هورن‌هلم",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Ironband",
+   "fa": "آیرون‌بند",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Prospector Stormpike",
+   "fa": "جویندهٔ رگه نیزهٔ توفان",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Miners' Gear",
+   "fa": "وسایل معدن‌کاران",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Prospector Ironband",
+   "fa": "جویندهٔ رگه، گروه‌آهن",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Crocolisk Meat",
+   "fa": "گوشت کروکولیسک",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Marek Ironheart",
+   "fa": "مارک دل‌آهنین",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Bingles' Wrench",
+   "fa": "آچار بینگلز",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Bingles' Screwdriver",
+   "fa": "پیچ‌گشتی بینگلز",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Bingles' Hammer",
+   "fa": "چکش بینگلز",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Bingles' Blastencapper",
+   "fa": "بلاستن‌کپر بینگلز",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Gnomeregan",
+   "fa": "گنومریگان",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Daryl the Youngling",
+   "fa": "دریل نوجوان",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Grawmug",
+   "fa": "گراومگ",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Gnasher",
+   "fa": "دندان‌ساب",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Brawler",
+   "fa": "مشت‌زن",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "Coldridge Valley",
+   "fa": "درهٔ کولدریج",
+   "kind": "zn"
+  },
+  "E56": {
+   "en": "Ashlan Stonesmirk",
+   "fa": "آشلان استون‌اسمرک",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E58": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Brock's List": "فهرست براک",
+  "Thorgrum Borrelson": "تورگروم بورلسون",
+  "Golnir Bouldertoe": "گولنیر شست‌سنگ",
+  "Ironforge": "آیرون‌فورج",
+  "Honorary Picks": "کلنگ افتخاری",
+  "Gryth Thurden": "گریت تردن",
+  "Mining": "معدن‌کاری",
+  "Brock Stoneseeker": "براک سنگ‌جو",
+  "Loch Modan": "لوک مودان",
+  "Mountaineer Kadrell": "کوه‌نورد کادرل",
+  "Bear Meat": "گوشت خرس",
+  "Boar Intestines": "رودهٔ گراز",
+  "Spider Ichor": "چرک عنکبوت",
+  "Vidra Hearthstove": "ویدرا هارث‌استوو",
+  "Mountaineer Cobbleflint": "کوه‌نورد سنگ‌چخماق",
+  "Alliance": "اتحاد",
+  "Mountaineer Gravelgaw": "کوه‌نورد شن‌سنگ",
+  "Captain Rugelfuss": "کاپیتان روگل‌فاس",
+  "King Magni Bronzebeard": "شاه مگنی ریش‌مفرغی",
+  "Stormpike's Request": "درخواست استورم‌پایک",
+  "Furen Longbeard": "فورن ریش‌دراز",
+  "Stormwind": "استورم‌ویند",
+  "Mountaineer Stormpike": "کوه‌نورد نیزهٔ توفان",
+  "Mountaineer Wallbang": "کوه‌نورد دیوارکوب",
+  "Stonesplinter Shaman": "شمن سنگ‌تراشه",
+  "Huldar": "هولدار",
+  "Miran": "میران",
+  "Ironband's Progress Report": "گزارش پیشرفت آهن‌بند",
+  "Jern Hornhelm": "جرن هورن‌هلم",
+  "Ironband": "آیرون‌بند",
+  "Prospector Stormpike": "جویندهٔ رگه نیزهٔ توفان",
+  "Miners' Gear": "وسایل معدن‌کاران",
+  "Prospector Ironband": "جویندهٔ رگه، گروه‌آهن",
+  "Crocolisk Meat": "گوشت کروکولیسک",
+  "Marek Ironheart": "مارک دل‌آهنین",
+  "Bingles' Wrench": "آچار بینگلز",
+  "Bingles' Screwdriver": "پیچ‌گشتی بینگلز",
+  "Bingles' Hammer": "چکش بینگلز",
+  "Bingles' Blastencapper": "بلاستن‌کپر بینگلز",
+  "Gnomeregan": "گنومریگان",
+  "Daryl the Youngling": "دریل نوجوان",
+  "Grawmug": "گراومگ",
+  "Gnasher": "دندان‌ساب",
+  "Brawler": "مشت‌زن",
+  "Coldridge Valley": "درهٔ کولدریج",
+  "Ashlan Stonesmirk": "آشلان استون‌اسمرک",
+  "Travel": "سفر",
+  "Wetlands": "تالاب‌ها"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$c",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$C",
+  "10": "$N",
+  "11": "$N",
+  "12": "$B",
+  "13": "$B",
+  "14": "$N",
+  "15": "$r",
+  "16": "$r",
+  "17": "$R",
+  "18": "$N",
+  "19": "$r",
+  "20": "$c",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$C",
+  "25": "$N",
+  "26": "$n",
+  "27": "$N",
+  "28": "$N",
+  "29": "$C",
+  "30": "$r",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$n",
+  "43": "$N",
+  "44": "$B",
+  "45": "$B",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N"
+ },
+ "rows": {
+  "quest:6387:obj:0": "Bring ⟦E1⟧ to ⟦E2⟧ in Thelsamar.",
+  "quest:6387:details:0": "I see a lot of young dwarves at my door, eager to learn the trade of mining. And if there's one thing a miner needs more than anything, it's a pick!",
+  "quest:6387:details:1": "I have a list of mining students who scored high in their lessons and earned an honorary pick. Take my list to ⟦E3⟧ in ⟦E4⟧. He'll get the picks ready.",
+  "quest:6387:details:2": "The fastest way to ⟦E4⟧ is on a gryphon, so bring the list to our gryphon master, ⟦E2⟧, and speak with him about transport to ⟦E4⟧.",
+  "quest:6387:progress:0": "Have you had your fill of Thelsamar so soon? Are you ready to leave for another city?",
+  "quest:6387:completion:0": "You have to get this to ⟦E4⟧, eh? For a small fee I can put you on the back of one of my gryphons, and it'll take you there. How does that sound?",
+  "quest:6388:obj:0": "Bring the ⟦E5⟧ to ⟦E6⟧ in ⟦E4⟧.",
+  "quest:6388:details:0": "Here are the honorary picks for Brock's students. If you've already been to Thelsamar, then you should fly a gryphon back there!",
+  "quest:6388:details:1": "Take the picks to our gryphon master, ⟦E6⟧, and speak with him about a ride back to Thelsamar.",
+  "quest:6388:progress:0": "You look like you have somewhere to go. Need one of my gryphons?",
+  "quest:6388:completion:0": "You have to get these to Thelsamar, eh? That won't be a problem. As long as you've already been to Thelsamar and spoken to ⟦E2⟧, then you can take one of my gryphons back to him.",
+  "quest:6391:obj:0": "Buy a gryphon to ⟦E4⟧ from the gryphon master ⟦E2⟧, then bring ⟦E1⟧ to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:6391:details:0": "For just a few coins, one of my gryphons will take you to ⟦E4⟧. From there, deliver Brock's list to ⟦E3⟧. You'll find him in the Deep Mountain ⟦E7⟧ Guild. That's in the Great Forge District of ⟦E4⟧, which is right where my gryphon will drop you off!",
+  "quest:6391:details:1": "Speak to me again when you're ready for the journey.",
+  "quest:6391:progress:0": "What can I do for you, sir?",
+  "quest:6391:completion:0": "Ah, the lastest list of Brock's best pupils. I have a batch of honorary picks ready to go. I just need to chisel in the names of the students...",
+  "quest:6392:obj:0": "Buy a gryphon to Thelsamar from the gryphon master ⟦E6⟧, then bring the ⟦E5⟧ to ⟦E8⟧ in Thelsamar.",
+  "quest:6392:details:0": "For a small fee you can buy a gryphon ride to Thelsamar... as long as you've already been there. Gryphons will only fly you to places you've already been, so be sure to speak with every gryphon master you see so you can fly to him later.",
+  "quest:6392:details:1": "You've already been to Thorgrum, the gryphon master of Thelsamar, so now you can return to him. And once in Thelsamar, you can deliver the picks to ⟦E8⟧.",
+  "quest:6392:details:2": "Speak with me when you're ready to go.",
+  "quest:6392:progress:0": "Ah, ⟦1⟧. Have you returned from ⟦E4⟧?",
+  "quest:6392:completion:0": "You brought the picks. Great! I'll get these to my mining students. I'm sure they're eager to use them on the ore deposits of ⟦E9⟧.",
+  "quest:6392:completion:1": "Thank you for your help, ⟦2⟧. I am in your debt, but I hope this money will at least cover your travel costs.",
+  "quest:86667:title": "Snowbound",
+  "quest:416:obj:0": "Bring 12 Tunnel Rat Ears to ⟦E10⟧ in Thelsamar.",
+  "quest:416:details:0": "We have a real infestation problem to the west. Tunnel rat kobolds have moved into the foothills, setting up dens and fouling our land with their filth!",
+  "quest:416:details:1": "We want them eliminated. Hunt them, bring me their ears and earn their bounty.",
+  "quest:416:details:2": "You can find tunnel rat kobolds and their dens west of Thelsamar, littered along the mountainside.",
+  "quest:416:progress:0": "Hail, ⟦3⟧. How goes the rat catching?",
+  "quest:416:completion:0": "Ugh! When I asked for those ears I didn't realize they'd smell so bad!",
+  "quest:416:completion:1": "Here's your reward, ⟦4⟧. Well done.",
+  "quest:418:obj:0": "Bring 3 pieces of ⟦E11⟧, 3 ⟦E12⟧, and 3 ⟦E13⟧ to ⟦E14⟧ in Thelsamar.",
+  "quest:418:details:0": "There's never a shortage of empty bellies here in Thelsamar, kids running in and out, workers from the excavation coming in after a hard day's work. We're famous for our blood sausages, I don't suppose you've ever tried them?",
+  "quest:418:details:1": "No? Well, around here you've got to work for your meals, and don't think just because you're a fancy ⟦5⟧, you'll be any exception.",
+  "quest:418:details:2": "I'll need bear meat, boar intestines for the casings, and spider ichor for spice. You get me some of those, and leave the cooking to Vidra!",
+  "quest:418:progress:0": "I'm all ready to start cooking, do you have the ingredients for me?",
+  "quest:418:completion:0": "Trust me, it seems a lot harder than it looks, but...",
+  "quest:418:completion:1": "Oh, I've never known someone to take much interest in the making of sausages, but I'll give you the recipe just in case. Here you go, mind you eat them fresh!",
+  "quest:224:obj:0": "⟦E15⟧ of the southern guard tower wants you to kill 10 Stonesplinter Troggs and 10 Stonesplinter Scouts.",
+  "quest:224:details:0": "We need to protect the Loch, ⟦6⟧! With so many of the King's soldiers fighting valiantly on remote battlefields, we've become overwhelmed on the home front. Troggs are tunneling up from every crevice! The Trogg infestation poses the largest threat to ⟦E4⟧. These disgusting mutants must be destroyed.",
+  "quest:224:details:1": "We need you, brave adventurer, to venture forth and lay waste to the Trogg threat. Slay 10 Stonesplinter Troggs and 10 Stonesplinter Scouts and report back.",
+  "quest:224:progress:0": "⟦E9⟧ is under siege, ⟦7⟧! We need every able-bodied member of the ⟦E17⟧ to aid our cause. Have you killed 10 Stonesplinter Troggs and 10 Stonesplinter Scouts yet?",
+  "quest:224:completion:0": "Well done, ⟦8⟧! You demonstrated uncanny courage on the battlefield. Our war against the Troggs will be won with efforts such as yours. You have served King Magni well.",
+  "quest:224:completion:1": "If you fancy yourself well-suited for this kind of adventuring, I suggest you speak with ⟦E18⟧. The Captain has him assigned to a rough patrol that I am sure he can use some help with. Check with Gravelgaw just inside the tower.",
+  "quest:267:obj:0": "Bring 8 Trogg Stone Teeth to ⟦E19⟧ in the southern guard tower.",
+  "quest:267:details:0": "⟦9⟧, you may or may not be aware of the Trogg threat looming over Dwarven lands. With the ⟦E4⟧ Reserve called up to the ⟦E17⟧ Front, we are left with a fraction of the defense forces needed to keep these lands safe. My regiment is assigned to watch over the Gate here and we cannot leave our post for fear of invasion.",
+  "quest:267:details:1": "But we need some pressure put on those damned Troggs lurking in the hills. If you're up to the task, wage an assault on the Troggs. Bring me back 8 Trogg Stone Teeth as proof.",
+  "quest:267:progress:0": "Do you have 8 Trogg Stone Teeth to show me? If not, there is still work to be done, ⟦10⟧.",
+  "quest:267:completion:0": "I am quite impressed, ⟦11⟧. You have done the Dwarven race a great favor by defending our lands. ⟦E21⟧ himself would be proud!",
+  "quest:1338:obj:0": "Bring ⟦E22⟧ to ⟦E23⟧ in ⟦E24⟧.",
+  "quest:1338:details:0": "There is a dwarven armorsmith whose work I admire greatly. His name is ⟦E23⟧, and his skill is unmatched. I need a new shield, and I must have one of his!",
+  "quest:1338:details:1": "The problem is... Furen is far to the south, in the dwarven district within ⟦E24⟧. In human lands! I can't imagine why he would live there, so far from ⟦E4⟧. The humans must pay him a king's ransom to keep him there!",
+  "quest:1338:details:2": "So, if you want to travel and don't mind making some money, then will you send Furen my request for a shield?",
+  "quest:1338:progress:0": "A letter from the dwarven lands? I wonder who would call from so far to the north...⟦12⟧⟦13⟧Please, let me see the order.",
+  "quest:1338:completion:0": "Ah, a request from one of the Stormpikes. That's a proud clan, full of quality dwarves. Rich ones, too.",
+  "quest:1338:completion:1": "Thank you, ⟦14⟧. I'll get to work on ⟦E25⟧'s shield by the end of the day.",
+  "quest:237:obj:0": "⟦E18⟧ in the southern guard tower wants you to kill 10 Stonesplinter Skullthumpers and 10 Stonesplinter Seers and report back to him.",
+  "quest:237:details:0": "⟦E15⟧ had nothing but good things to say about you, ⟦15⟧. For that reason I am going to entrust upon you a mission of utmost importance. We need to keep pressure on the invading Trogg forces until our Dwarven brethren return from the ⟦E17⟧ front.",
+  "quest:237:details:1": "Set forth into the southern hills and kill 10 Stonesplinter Skullthumpers and 10 Stonesplinter Seers. Your attacks will buy us some time. Report back when your mission is complete.",
+  "quest:237:progress:0": "We need more time, ⟦16⟧. Your orders are to kill 10 Stonesplinter Skullthumpers and 10 Stonesplinter Seers. Keep the enemy under pressure until we are granted reinforcements. This is no time for idle behavior.",
+  "quest:237:completion:0": "You accomplished your mission well, ⟦17⟧. The King himself would be proud.",
+  "quest:237:completion:1": "The reinforcements promised to us never showed, however. Apparently the ⟦E17⟧ front is a sea of crimson from the blood of our fallen brethren. The news of the losses leaves a bitter taste in one's mouth. But we must not let their deaths go for naught. We must rally in these grim times and bring glory back to the ⟦E17⟧.",
+  "quest:237:completion:2": "Speak with ⟦E28⟧ for reassignment. You're needed now more than ever.",
+  "quest:263:obj:0": "⟦E28⟧ in the southern guard tower wants you to kill 10 ⟦E29⟧ and 10 Stonesplinter Bonesnappers.",
+  "quest:263:details:0": "The Mountaineers tell me you are quite brave and capable, ⟦18⟧. We need a ⟦19⟧ like you around here. The Trogg problem isn't getting any better. The reserves have been called to the front and we're all alone out here. But now that we have a seasoned ⟦20⟧ here, let's see what you can do.",
+  "quest:263:details:1": "Go out and kill 10 ⟦E29⟧ and 10 Stonesplinter Bonesnappers. Let's see if you live up to your reputation, Trogg-Slayer.",
+  "quest:263:progress:0": "Back so soon? In case I didn't make myself clear we need you to kill 10 ⟦E29⟧ and 10 Stonesplinter Bonesnappers, ⟦21⟧. Now go get 'em, Trogg-Slayer!",
+  "quest:263:completion:0": "I knew the second I laid eyes on you, ⟦22⟧, that you would make ⟦E4⟧ proud. You have served King Magni well. Now that you've proven yourself to be such a loyal aid to the Kingdom, perhaps you should talk with the Captain to see if he'll entrust you with a higher detail.",
+  "quest:263:completion:1": "I salute you, ⟦23⟧.",
+  "quest:273:obj:0": "Speak with ⟦E31⟧.",
+  "quest:273:details:0": "It's not too late though, you're welcome to go look for ⟦E31⟧. He can't have made it very far, strong as they are, ⟦E32⟧ and Saean can only move so fast laden down with those barrels.",
+  "quest:273:details:1": "They're taking the normal route to the site, leaving south out of town and following the curve of the Loch.",
+  "quest:273:details:2": "Shouldn't have a problem finding them unless they've already gotten there.",
+  "quest:273:completion:0": "Hmph, it'll take more than a Dark Iron ambush to stop the deliveries!",
+  "quest:273:completion:1": "But Saean... I would never have suspected him to be one of their sympathizers. We've been working with him for almost a year now... maybe I missed the signs.",
+  "quest:273:completion:2": "Well, I'll consider that later.",
+  "quest:298:obj:0": "Bring ⟦E33⟧ to ⟦E34⟧ in Thelsamar.",
+  "quest:298:details:0": "I need a progress report sent to Thelsamar - a progress report, and a restatement of my request for more blastpowder! Here's the report. Take it to ⟦E34⟧. He's our local contact in Thelsamar.",
+  "quest:298:details:1": "It's not a difficult task, but it must be done.",
+  "quest:298:progress:0": "Oh, a progress report from the site? Very good!",
+  "quest:298:completion:0": "Bah! ⟦E35⟧'s having trouble with the Troggs. I wonder if he wants that blastpowder to aid his digging, or to aid his efforts against the Trogg beasts...",
+  "quest:298:completion:1": "Well, either way it's powder well spent!",
+  "quest:298:completion:2": "But what's strange is, I sent him plenty of blastpowder weeks ago. I wonder where it went...",
+  "quest:301:obj:0": "Take ⟦E33⟧ to ⟦E36⟧.",
+  "quest:301:details:0": "We'll need approval to get ⟦E35⟧ more blastpowder. You'll have to take his report to the Explorers' League headquarters in ⟦E4⟧.",
+  "quest:301:details:1": "Here's the report. Give it to ⟦E36⟧, and don't forget to duck after you deliver it. Stormpike is hotheaded, and he won't be happy to hear of ⟦E35⟧'s slow progress at the site.",
+  "quest:301:details:2": "You'll find Stormpike in the Assembly of Explorers.",
+  "quest:301:progress:0": "We Stormpikes don't like being bothered with trivial matters, ⟦24⟧. I hope you brought news worthy of my valuable attention.",
+  "quest:301:completion:0": "Curse that ⟦E35⟧! I sent him a load of blastpowder weeks ago, but he's made no mention of it in this report.",
+  "quest:301:completion:1": "So...where did the blastpowder go?!?",
+  "quest:302:obj:0": "Speak with ⟦E34⟧ in Thelsamar.",
+  "quest:302:details:0": "If ⟦E35⟧ still needs blastpowder, then by Magni he'll have it! I sent the approval on ahead with a messenger to ⟦E34⟧ in Thelsamar. He'll prepare the powder and other supplies to take to ⟦E35⟧.",
+  "quest:302:details:1": "And one more thing: I want you to personally see that the shipment of powder reaches its destination. The last one didn't, so keep your mind sharp and your eyes open.",
+  "quest:302:completion:0": "What? Stormpike wants you to personally see the shipment to ⟦E35⟧?",
+  "quest:302:completion:1": "I... suppose that's fine, the only problem is, I've already sent ⟦E31⟧ with the porters, ⟦E32⟧ and Saean. You just missed them, they left just a short while ago.",
+  "quest:307:obj:0": "Go to the Silver Stream Mine and collect 4 loads of ⟦E38⟧.",
+  "quest:307:obj:1": "Return to ⟦E25⟧.",
+  "quest:307:details:0": "The Silver Stream Mine to the east ran dry long ago. It was converted by the Miners' League into a storage depot, but now Kobolds have moved in, putting their filthy paws on good, Dwarven tools!",
+  "quest:307:details:1": "We'll root out those vermin soon enough, but the League wants someone to get their gear out of the mine before we warriors tromp in there and break things. It'll be a tough delve - you might want cohorts at your side.",
+  "quest:307:details:2": "The gear is stored in Miners' League Crates throughout the mine. Good luck.",
+  "quest:307:progress:0": "Do you have that ⟦E38⟧, ⟦25⟧?",
+  "quest:307:completion:0": "Did you see a lot of Kobolds in there? I can't wait for the order to clear them out of the mine. The thought of their grimy hands clawing around our mine makes my stomach rumble!",
+  "quest:309:obj:0": "Ensure ⟦E32⟧ and the shipment arrive at the excavation site, then inform ⟦E40⟧.",
+  "quest:309:details:0": "Ready to go, ⟦26⟧?",
+  "quest:309:details:1": "First, we need to get this powder to ⟦E35⟧. It'll be a lot for me to carry, and these parts can get dangerous -- and who knows what else the Dark Irons might have in store for me.",
+  "quest:309:details:2": "I'll feel a lot better with you coming along.",
+  "quest:309:progress:0": "Where is my powder, ⟦27⟧? My need grows more desperate every day.",
+  "quest:309:completion:0": "Oh, thank the Light the powder is here. But it is troubling news that you bring as well. To think that the Dark Irons have sympathizers able to procure this sort of material for their dastardly plans.",
+  "quest:309:completion:1": "That's a matter for someone else to consider, some other time. I must put this powder to good use.",
+  "quest:385:obj:0": "Get 5 pieces of ⟦E41⟧ and 6 Crocolisk Skins for ⟦E42⟧ at the Farstrider Lodge.",
+  "quest:385:details:0": "Many a hunter is attracted to ⟦E9⟧ to hunt our famous crocs. There are always merchants who seek out crocolisk skins for clothing items or armor, and there are also some who enjoy the taste of their meat.",
+  "quest:385:details:1": "We do some trade in this, but not a huge amount, as the crocolisks are ferocious and have entrenched themselves on the islands in the Loch. But don't let me dissuade you, it's quite an experience, wrestling with the jaws of the beasts.",
+  "quest:385:details:2": "Why, this one time...",
+  "quest:385:progress:0": "Did I tell you about the time I almost lost my hand to one of the crocs? Nasty bugger it was, teeth like knives. But I was lucky... Jammed the brute's jaw shut with my knife. Still have the knife around here somewhere...",
+  "quest:385:completion:0": "Well now, these are excellent specimens you collected, ⟦28⟧. Good money for high quality materials, that's for sure.",
+  "quest:454:obj:0": "Speak with ⟦E32⟧.",
+  "quest:454:details:0": "We'd been hauling the barrels of powder back and forth in trips before this... business. Now we have to split up the work, ⟦E32⟧'s taking the barrels and I'm watching over the other ones.",
+  "quest:454:details:1": "I don't feel safe letting ⟦E32⟧ haul the rest of the shipment by himself. When he's ready to go, maybe you could escort him on his next trip?",
+  "quest:454:completion:0": "Hello, ⟦29⟧.",
+  "quest:454:completion:1": "You'll be escorting me to the excavation site? That's good to hear... After Saean and his cronies, who knows what else the Dark Irons might have up their sleeves?",
+  "quest:454:completion:2": "Anyways, let me just make some final checks. Talk to me again when you're ready to go.",
+  "quest:1339:obj:0": "Speak with ⟦E25⟧.",
+  "quest:1339:details:0": "I hear ⟦E25⟧ is looking for a runner. Someone to do a little traveling for him. How about it? Are you the ⟦30⟧ for the job?",
+  "quest:1339:details:1": "If so, then you'll find Stormpike at the top of the northern guard tower.",
+  "quest:1339:completion:0": "That's right. I have a task that I can't do while I'm guarding. In fact, it'll take you far from ⟦E9⟧.",
+  "quest:1339:completion:1": "Your perfect chance for adventure!",
+  "quest:2038:obj:0": "Find and return Bingles' supplies:",
+  "quest:2038:obj:1": "⟦E45⟧, ⟦E46⟧, ⟦E47⟧, and ⟦E48⟧.",
+  "quest:2038:details:0": "As if crashing into the Loch wasn't bad enough, troggs from the nearby island attacked me and stole my tools and special Blastenheimer Blastencapper explosives. With no gyrocopter and no explosives, the movement has no chance!",
+  "quest:2038:details:1": "Get my tools back and find my Blastencapper explosives, ⟦31⟧. For ⟦E50⟧!",
+  "quest:2038:progress:0": "⟦32⟧! Where are my things?!",
+  "quest:2038:completion:0": "You've done the movement a great service, ⟦33⟧. The troggs and leper gnomes infesting ⟦E50⟧ will soon feel the brunt of a gnomish air assault!",
+  "quest:257:obj:0": "Kill 6 Mountain Buzzards and return to ⟦E51⟧ in the Farstrider Lodge within 15 minutes.",
+  "quest:257:details:0": "Think you can match wits with Daryl the Bold, huh? I should think not! Of course, you're more than welcome to try. Here's a challenge that should prove to be above your abilities, so don't feel too bad if you can't face up to it.",
+  "quest:257:details:1": "BA flock of buzzards has nested here in ⟦E9⟧. Why don't you try to take down some of the beasts? Tell you what, if you meet my challenge in fifteen minutes, I'll give you my bow or gun.",
+  "quest:257:details:2": "B<He looks you over dismissively.>",
+  "quest:257:details:3": "It seems you haven't much to lose, anyways.",
+  "quest:257:progress:0": "No luck? Don't feel too bad, ⟦34⟧...⟦35⟧⟦36⟧Not everyone can be me.",
+  "quest:257:completion:0": "What? Success?",
+  "quest:257:completion:1": "Take it from me, ⟦37⟧ama, you don't let it get to your head. I mean, any unshaven boy with a bow could have killed such... small specimens. And I hope you don't enjoy killing the buzzards so much, yes? We wouldn't want them to become extinct.",
+  "quest:257:completion:2": "Well, err... Never let it be said that Daryl the Bold would not hold to his word.",
+  "quest:217:obj:0": "Kill the Trogg leader, ⟦E52⟧, and his two guards, ⟦E53⟧ and ⟦E54⟧ then report back to ⟦E19⟧ in the southern guard tower.",
+  "quest:217:details:0": "⟦38⟧, our scouts have identified the leader of this recent Trogg incursion. It appears that these beasts in ⟦E9⟧ are following the lead of a chieftain named ⟦E52⟧. ⟦E52⟧ is heavily guarded, however. Two of his most elite guards, ⟦E53⟧ and ⟦E54⟧, never leave his side.",
+  "quest:217:details:1": "If you feel yourself worthy, ⟦39⟧, I want you to lead the assassination mission on ⟦E52⟧ and his two thugs. With the Trogg leadership dead, we just might stand a chance at pushing these beasts back into the ground.",
+  "quest:217:progress:0": "⟦E52⟧ and his two guards, ⟦E53⟧ and ⟦E54⟧, are still alive. Your mission is not complete until all 3 have been brought to death. The Dwarven empire is counting on you, ⟦40⟧.",
+  "quest:217:completion:0": "Most excellent, ⟦41⟧! You have brought hope to ⟦E9⟧. With ⟦E52⟧ dead, we stand a better chance of seeing the Troggs eliminated from the land.",
+  "quest:258:obj:0": "Kill 5 Elder Mountain Boars and return to ⟦E51⟧ in the Farstrider Lodge within 12 minutes.",
+  "quest:258:details:0": "⟦42⟧ath, is it? I can tell you're bursting with pride over completing the first test, hm? As I told you before, it's no large feat.",
+  "quest:258:details:1": "You should try your hand at boar hunting. Trust me, this is no ⟦E55⟧ boar hunt, so you'd best have a care with them. I'll give you just twelve minutes this time.",
+  "quest:258:details:2": "Don't feel bad if you fail. I'd give you the shirt off my back if you succeeded!",
+  "quest:258:details:3": "Have I ever related to you the story of how I received my famous scar? No? It was two years ago...",
+  "quest:258:progress:0": "It's only natural to feel sorry for yourself when shown up by someone so new to this world. You shouldn't feel bad, ⟦43⟧.⟦44⟧⟦45⟧Hm? Did I get your name wrong?",
+  "quest:258:completion:0": "You seem a bit worse for wear. No doubt the boars gave you some trouble, hm? No worries, I will be discreet about your struggle, I can imagine how hard it must be for you without the accusations of wagging tongues.",
+  "quest:258:completion:1": "Oh! You managed to kill the boars? I... well, that is... that is to say, I'm not surprised! Any child could have--bet?",
+  "quest:258:completion:2": "What bet?",
+  "quest:86585:title": "Banner of the Fallen",
+  "quest:161:obj:0": "Chief Engineer Hinderweir wants you to take the strange smelling powder to ⟦E56⟧, the explosives expert in Dun Modr.",
+  "quest:161:details:0": "If my suspicions are correct, this is some type of explosive powder. This must be analyzed by an explosives expert so we know just what we're dealing with here. ⟦E56⟧ was assigned to the regiment guarding Dun Modr and the Thandol Span. I need you to make a grave and perilous journey, ⟦46⟧.",
+  "quest:161:details:1": "⟦E57⟧ through the Algaz Gate, follow the road through the ⟦E58⟧ and seek out Stonesmirk in Dun Modr. Heed my advice: stick to the roads and stop for nothing!",
+  "quest:161:progress:0": "You say somethin', sonny? Can't hear a bloody thing besides the ringin' in me ears. Say, what's that you got there?",
+  "quest:161:completion:0": "Ah, well Ol' Hinderweir is wise to be worried.",
+  "quest:199:obj:0": "Return to Chief Engineer Hinderweir and show him the clue that you discovered.",
+  "quest:199:details:0": "You take a sample of the strange smelling powder.",
+  "quest:199:progress:0": "Did you happen to discover any clues, ⟦47⟧?",
+  "quest:199:completion:0": "This is an alarming discovery, to say the least!",
+  "quest:250:obj:0": "Investigate the area near the eastern ramp of the Dam and bring Chief Engineer Hinderweir a clue that might reveal what the Dark Iron Dwarves are up to.",
+  "quest:250:details:0": "Thank the stars someone is concerned about the well-being of the Dam. First the destruction of the Thandol Span and then the pillaging of Dun Modr! I have no doubt that the Dam will be the target of the next Dark Iron threat. Most of the security detail here was reassigned to the ⟦E17⟧ Front, including my top inspector.",
+  "quest:250:details:1": "That's why I need you, ⟦48⟧. I spotted some Dark Iron Sappers milling about the eastern ramp of the Dam. Investigate the area and bring back a clue.",
+  "quest:250:completion:0": "The suspicious looking barrel contains a strange smelling powder.",
+  "quest:274:obj:0": "⟦E56⟧ wants you to return to Chief Engineer Hinderweir and inform him of the new discovery.",
+  "quest:274:details:0": "This ain't no ordinary blast powder. Look at the tiny silver crystals. And the distinct smell! Why it's clear as daylight that this is Seaforium Powder. Seaforium is harmless enough. But once it's wet it could blow ⟦E4⟧ out of the mountain.",
+  "quest:274:details:1": "The chemical reaction can be defused by mixing four components: lurker venom, crushed Mo'Grosh crystal, a crocolisk tear and this disarming colloid. Now tell Hinderweir before it's too late!",
+  "quest:274:progress:0": "What is that you bring from Ashlan?",
+  "quest:274:completion:0": "A disarming colloid? For Seaforium? Oh heavens!"
+ },
+ "context": {
+  "quest:6387": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Brock Stoneseeker («براک سنگ‌جو»)",
+   "turner": "Thorgrum Borrelson («تورگروم بورلسون»)"
+  },
+  "quest:6388": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Golnir Bouldertoe («گولنیر شست‌سنگ»)",
+   "turner": "Gryth Thurden («گریت تردن»)"
+  },
+  "quest:6391": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Thorgrum Borrelson («تورگروم بورلسون»)",
+   "turner": "Golnir Bouldertoe («گولنیر شست‌سنگ»)"
+  },
+  "quest:6392": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Gryth Thurden («گریت تردن»)",
+   "turner": "Brock Stoneseeker («براک سنگ‌جو»)"
+  },
+  "quest:86667": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:416": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 11,
+   "side": "alliance",
+   "giver": "Mountaineer Kadrell («کوه‌نورد کادرل»)",
+   "turner": "Mountaineer Kadrell («کوه‌نورد کادرل»)"
+  },
+  "quest:418": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 11,
+   "side": "alliance",
+   "giver": "Vidra Hearthstove («ویدرا هارث‌استوو»)",
+   "turner": "Vidra Hearthstove («ویدرا هارث‌استوو»)"
+  },
+  "quest:224": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Mountaineer Cobbleflint («کوه‌نورد سنگ‌چخماق»)",
+   "turner": "Mountaineer Cobbleflint («کوه‌نورد سنگ‌چخماق»)"
+  },
+  "quest:267": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Captain Rugelfuss («کاپیتان روگل‌فاس»)",
+   "turner": "Captain Rugelfuss («کاپیتان روگل‌فاس»)"
+  },
+  "quest:1338": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Mountaineer Stormpike («کوه‌نورد نیزهٔ توفان»)",
+   "turner": "Furen Longbeard («فورن ریش‌دراز»)"
+  },
+  "quest:237": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Mountaineer Gravelgaw («کوه‌نورد شن‌سنگ»)",
+   "turner": "Mountaineer Gravelgaw («کوه‌نورد شن‌سنگ»)"
+  },
+  "quest:263": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Mountaineer Wallbang («کوه‌نورد دیوارکوب»)",
+   "turner": "Mountaineer Wallbang («کوه‌نورد دیوارکوب»)"
+  },
+  "quest:273": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Jern Hornhelm («جرن هورن‌هلم»)",
+   "turner": "Huldar («هولدار»)"
+  },
+  "quest:298": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Prospector Ironband («جویندهٔ رگه، گروه‌آهن»)",
+   "turner": "Jern Hornhelm («جرن هورن‌هلم»)"
+  },
+  "quest:301": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Jern Hornhelm («جرن هورن‌هلم»)",
+   "turner": "Prospector Stormpike («جویندهٔ رگه نیزهٔ توفان»)"
+  },
+  "quest:302": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Prospector Stormpike («جویندهٔ رگه نیزهٔ توفان»)",
+   "turner": "Jern Hornhelm («جرن هورن‌هلم»)"
+  },
+  "quest:307": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Mountaineer Stormpike («کوه‌نورد نیزهٔ توفان»)",
+   "turner": "Mountaineer Stormpike («کوه‌نورد نیزهٔ توفان»)"
+  },
+  "quest:309": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Miran («میران»)",
+   "turner": "Prospector Ironband («جویندهٔ رگه، گروه‌آهن»)"
+  },
+  "quest:385": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Marek Ironheart («مارک دل‌آهنین»)",
+   "turner": "Marek Ironheart («مارک دل‌آهنین»)"
+  },
+  "quest:454": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Huldar («هولدار»)",
+   "turner": "Miran («میران»)"
+  },
+  "quest:1339": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Mountaineer Kadrell («کوه‌نورد کادرل»)",
+   "turner": "Mountaineer Stormpike («کوه‌نورد نیزهٔ توفان»)"
+  },
+  "quest:2038": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Bingles Blastenheimer («بینگلز بلاستن‌هایمر»)",
+   "turner": "Bingles Blastenheimer («بینگلز بلاستن‌هایمر»)"
+  },
+  "quest:257": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Daryl the Youngling («دریل نوجوان»)",
+   "turner": "Daryl the Youngling («دریل نوجوان»)"
+  },
+  "quest:217": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Captain Rugelfuss («کاپیتان روگل‌فاس»)",
+   "turner": "Captain Rugelfuss («کاپیتان روگل‌فاس»)"
+  },
+  "quest:258": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Daryl the Youngling («دریل نوجوان»)",
+   "turner": "Daryl the Youngling («دریل نوجوان»)"
+  },
+  "quest:86585": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 17,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:161": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Chief Engineer Hinderweir VII («سرمهندس هیندروایر هفتم»)",
+   "turner": "Ashlan Stonesmirk («آشلان استون‌اسمرک»)"
+  },
+  "quest:199": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Suspicious Barrel («بشکهٔ مشکوک»)",
+   "turner": "Chief Engineer Hinderweir VII («سرمهندس هیندروایر هفتم»)"
+  },
+  "quest:250": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Chief Engineer Hinderweir VII («سرمهندس هیندروایر هفتم»)",
+   "turner": "Suspicious Barrel («بشکهٔ مشکوک»)"
+  },
+  "quest:274": {
+   "zone_en": "Loch Modan",
+   "zone_fa": "لوک مودان",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Ashlan Stonesmirk («آشلان استون‌اسمرک»)",
+   "turner": "Chief Engineer Hinderweir VII («سرمهندس هیندروایر هفتم»)"
+  }
+ },
+ "known": {
+  "quest:6387": {
+   "title": "شاگردان ممتاز"
+  },
+  "quest:6388": {
+   "title": "گریت تردن"
+  },
+  "quest:6391": {
+   "title": "سفر به ایرون‌فورج"
+  },
+  "quest:6392": {
+   "title": "بازگشت به براک"
+  },
+  "quest:416": {
+   "title": "موش‌گیری"
+  },
+  "quest:418": {
+   "title": "سوسیس‌های خونی تلسامار"
+  },
+  "quest:224": {
+   "title": "در دفاع از سرزمین‌های پادشاه"
+  },
+  "quest:267": {
+   "title": "تهدید تراگ‌ها"
+  },
+  "quest:1338": {
+   "title": "حکم استورم‌پایک"
+  },
+  "quest:237": {
+   "title": "در دفاع از سرزمین‌های پادشاه"
+  },
+  "quest:263": {
+   "title": "در دفاع از سرزمین‌های پادشاه"
+  },
+  "quest:273": {
+   "title": "تدارک دوبارهٔ حفاری"
+  },
+  "quest:298": {
+   "title": "گزارش پیشرفت حفاری"
+  },
+  "quest:301": {
+   "title": "گزارش به ایرون‌فورج"
+  },
+  "quest:302": {
+   "title": "باروت برای آهن‌بند"
+  },
+  "quest:307": {
+   "title": "پنجه‌های کثیف"
+  },
+  "quest:309": {
+   "title": "پاسداری از محموله"
+  },
+  "quest:385": {
+   "title": "شکار کروکولیسک"
+  },
+  "quest:454": {
+   "title": "پس از کمین"
+  },
+  "quest:1339": {
+   "title": "مأموریت کوه‌نورد استورم‌پایک"
+  },
+  "quest:2038": {
+   "title": "لوازم گم‌شدهٔ بینگلز"
+  },
+  "quest:257": {
+   "title": "لاف شکارچی"
+  },
+  "quest:217": {
+   "title": "در دفاع از سرزمین‌های پادشاه"
+  },
+  "quest:258": {
+   "title": "چالش شکارچی"
+  },
+  "quest:161": {
+   "title": "تهدید تاریکی در کمین است"
+  },
+  "quest:199": {
+   "title": "تهدید تاریکی در کمین است"
+  },
+  "quest:250": {
+   "title": "تهدید تاریکی در کمین است"
+  },
+  "quest:274": {
+   "title": "تهدید تاریکی در کمین است"
+  }
+ }
+}

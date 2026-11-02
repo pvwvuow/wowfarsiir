@@ -1,0 +1,680 @@
+{
+ "pack": "quest-dustwallow-marsh-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-dustwallow-marsh-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Captain Garran Vimes",
+   "fa": "کاپیتان گاران ویمز",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Theramore",
+   "fa": "ترمور",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Lieutenant Paval Reethe",
+   "fa": "سروان پاول ریته",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Balos Jacken",
+   "fa": "بالوس جکن",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Reethe's Badge",
+   "fa": "نشانِ ریتی",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Morgan Stern",
+   "fa": "مورگان استرن",
+   "kind": "qs"
+  },
+  "E12": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Adjutant Tesoran",
+   "fa": "آجودان تسوران",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Jeweled Pendant",
+   "fa": "گردن‌آویز جواهرنشان",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Zor Lonetree",
+   "fa": "زور تک‌درخت",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Overlord Mok'Morokk",
+   "fa": "سالار موک‌مورک",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Bow",
+   "fa": "کمان",
+   "kind": "sp"
+  },
+  "E21": {
+   "en": "Rexxar",
+   "fa": "رککسار",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Tharg",
+   "fa": "تهارگ",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Draz'Zilb",
+   "fa": "دراززیلب",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Onyxia",
+   "fa": "اونیکسیا",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Deathwing",
+   "fa": "بال مرگ",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Deadmire's Tooth",
+   "fa": "دندان گِل‌آلودِ مرده",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Deadmire",
+   "fa": "باتلاق مُرد",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E32": {
+   "en": "Emberstrife",
+   "fa": "امبرست‌رایف",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Amulet of Draconic Subversion",
+   "fa": "طلسمِ خرابکاریِ اژدهایی",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Nefarian",
+   "fa": "نفاریان",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Axtroz",
+   "fa": "آکستروز",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Myranda the Hag",
+   "fa": "میراندا، جادوگر پیر",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Dull Drakefire Amulet",
+   "fa": "تعویذِ آتشِ اژدهای جوان کُند",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "General Drakkisath",
+   "fa": "ژنرال دراکیساث",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Guardian",
+   "fa": "نگهبان",
+   "kind": "cls"
+  }
+ },
+ "glossary": {
+  "Captain Garran Vimes": "کاپیتان گاران ویمز",
+  "Theramore": "ترمور",
+  "Lieutenant Paval Reethe": "سروان پاول ریته",
+  "Alliance": "اتحاد",
+  "Balos Jacken": "بالوس جکن",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "Reethe's Badge": "نشانِ ریتی",
+  "Morgan Stern": "مورگان استرن",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Adjutant Tesoran": "آجودان تسوران",
+  "Jeweled Pendant": "گردن‌آویز جواهرنشان",
+  "Stormwind": "استورم‌ویند",
+  "Horde": "هورد",
+  "Zor Lonetree": "زور تک‌درخت",
+  "Orgrimmar": "اورگریمار",
+  "Overlord Mok'Morokk": "سالار موک‌مورک",
+  "Bow": "کمان",
+  "Rexxar": "رککسار",
+  "Tharg": "تهارگ",
+  "Draz'Zilb": "دراززیلب",
+  "Onyxia": "اونیکسیا",
+  "Deathwing": "بال مرگ",
+  "Deadmire's Tooth": "دندان گِل‌آلودِ مرده",
+  "Thunder Bluff": "تاندر بلاف",
+  "Deadmire": "باتلاق مُرد",
+  "Travel": "سفر",
+  "Emberstrife": "امبرست‌رایف",
+  "Amulet of Draconic Subversion": "طلسمِ خرابکاریِ اژدهایی",
+  "Nefarian": "نفاریان",
+  "Winterspring": "وینتراسپرینگ",
+  "Tanaris": "تاناریس",
+  "Axtroz": "آکستروز",
+  "Myranda the Hag": "میراندا، جادوگر پیر",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Dull Drakefire Amulet": "تعویذِ آتشِ اژدهای جوان کُند",
+  "General Drakkisath": "ژنرال دراکیساث",
+  "Guardian": "نگهبان"
+ },
+ "tokens": {
+  "1": "$n",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$r",
+  "11": "$B",
+  "12": "$B",
+  "13": "$r",
+  "14": "$B",
+  "15": "$B",
+  "16": "$r",
+  "17": "$n",
+  "18": "$B",
+  "19": "$B",
+  "20": "$n",
+  "21": "$B",
+  "22": "$B",
+  "23": "$n",
+  "24": "$r",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$N",
+  "33": "$N"
+ },
+ "rows": {
+  "quest:1285:obj:0": "Return the information about Reethe to ⟦E1⟧ in ⟦E2⟧.",
+  "quest:1285:details:0": "Reddon... Redpath... Ah, here it is! ⟦E3⟧.",
+  "quest:1285:details:1": "Joined the ⟦E2⟧ guard along with most of the recruits that came across the sea with Lady Proudmoore. Enlisted with the marines of Kul Tiras at the age of sixteen. Distinguished service, promotions...",
+  "quest:1285:details:2": "Listed as missing.",
+  "quest:1285:completion:0": "Missing? That would be Tesoran's kind way of saying traitor.",
+  "quest:1285:completion:1": "No doubt he's one of those fools so blindly loyal to Admiral Daelin that he turned traitor. Isn't that a delicious irony? The deserters accuse us of betraying the ⟦E4⟧.",
+  "quest:1286:obj:0": "Get information about Reethe from ⟦E5⟧ and the deserters in ⟦E6⟧.",
+  "quest:1286:details:0": "It has been a struggle maintaining a presence in the marsh, but through strength of our resolve, we have been able to maintain several defensive watchtowers throughout the area.",
+  "quest:1286:details:1": "The latest information and scouting reports I have received indicate that a group of deserters has squatted in our abandoned tower at Lost Point, southeast of the inn.",
+  "quest:1286:details:2": "The local lieutenant seems to be ⟦E5⟧. See if you can get some information out of him.",
+  "quest:1286:details:3": "Be warned, ⟦1⟧. He may be a tough nut to crack.",
+  "quest:1286:completion:0": "Did Vimes send you? Couldn't do his dirty work himself, could he...",
+  "quest:1287:obj:0": "Speak with ⟦E1⟧ in ⟦E2⟧ about Reethe.",
+  "quest:1287:details:0": "Reethe? That coward?",
+  "quest:1287:details:1": "We threw him out of camp because he insisted on raiding the supplies of the ogres up at Brackenwall Village. We're not so many in number that we could stand up to those mindless brutes.",
+  "quest:1287:details:2": "He crossed the line one too many times, so we left him to fend for himself.",
+  "quest:1287:details:3": "Now, I helped you out... So, why don't you help us out and forget you bumped into us?",
+  "quest:1287:completion:0": "I will send Lieutenant Caldwell to deal with the deserters at Lost Point. In addition, I will instruct him to find Reethe. The marsh is not so big and trackless that he should be unable to find him.",
+  "quest:1252:obj:0": "Bring ⟦E7⟧ to ⟦E1⟧ in ⟦E2⟧.",
+  "quest:1252:details:0": "A glint of light on the ground catches your eye from underneath the rubble. Brushing away debris and ash caked onto the object reveals the insignia of a gold anchor on white enameled on the surface: the sign of ⟦E2⟧.",
+  "quest:1252:details:1": "Underneath the anchor is embossed the name \"⟦E3⟧\".",
+  "quest:1252:progress:0": "Have you found anything of interest at the Shady Rest Inn?",
+  "quest:1252:completion:0": "It's never good news when a guard's badge is brought to me.",
+  "quest:1252:completion:1": "Sometimes it's a man or woman who's fallen in battle, and I'm left to bring the news to the grieving family. Other times we never find out what happened to them. And other times it's even worse than that.",
+  "quest:1258:obj:0": "Bring 12 Pristine Crawler Legs to ⟦E11⟧ in ⟦E2⟧.",
+  "quest:1258:details:0": "Another component of my new recipe is the shelled leg of a giant crab. And the crabs they have in Dustwallow -- Muckshells they call them -- just won't do! I'm afraid the only suitable crabs live far away, in the ⟦E12⟧.",
+  "quest:1258:details:1": "The shell of the crab leg is a key element of the dish's presentation so I need pristine, unscarred legs. An adult crab might only have one or two such legs, and I need a lot in order to research my dish.",
+  "quest:1258:details:2": "So, ⟦2⟧... are you willing to travel?",
+  "quest:1258:progress:0": "My research with the Mudrock tongues is progressing nicely. I trust your crab hunt goes well?",
+  "quest:1258:completion:0": "These are wonderful specimens, ⟦3⟧! The shells are in perfect condition, and the meat is pink and tender. The blood of a chef is in your veins, I'm sure of it!",
+  "quest:1259:obj:0": "Find out more about Reethe from ⟦E13⟧ in ⟦E2⟧.",
+  "quest:1259:details:0": "I don't recognize the name of ⟦E3⟧. Your best bet would be to check with ⟦E13⟧. He keeps track of all the records for the ⟦E2⟧ guard, from personnel to their equipment.",
+  "quest:1259:details:1": "He should be able to tell you who this Reethe is with a quick check of his books.",
+  "quest:1259:completion:0": "Hello, ⟦4⟧. You'd like information about a specific member of the ⟦E2⟧ guard? Reethe, was it?",
+  "quest:1259:completion:1": "Just give me a moment to find the right book.",
+  "quest:1261:obj:0": "Bring the ⟦E14⟧ to Nazeer in Brackenwall Village.",
+  "quest:1261:details:0": "Cursed muckshell! You can't kill Marg! Ah, but I am dead. So it must have slain me...",
+  "quest:1261:details:1": "But my mission! My mission! You, ⟦5⟧, must complete it.",
+  "quest:1261:details:2": "While near ⟦E2⟧, I spied a group of ⟦E4⟧ soldiers camped on the beach. And one soldier wore a pendant... a pendant laden with more gems than any soldier could afford!",
+  "quest:1261:details:3": "That night I snuck into their camp and stole the pendant, but on my return to base a muckshell crab-man killed me!",
+  "quest:1261:details:4": "B⟦6⟧, you must find that muckshell and recover the pendant!",
+  "quest:1261:progress:0": "⟦7⟧, did you discover Marg's fate?",
+  "quest:1261:completion:0": "This pendant was worn by a soldier of ⟦E15⟧??",
+  "quest:1261:completion:1": "Thank you, ⟦8⟧. You have revealed the secret of Marg's death. But this pendant is a new mystery to solve, one that may have dire effects on the ⟦E4⟧, and the ⟦E16⟧.",
+  "quest:1262:obj:0": "Bring the ⟦E14⟧ to ⟦E17⟧ in ⟦E18⟧.",
+  "quest:1262:details:0": "It is strange that the pendant Marg stole was in the hands of common soldiers. Perhaps its owner was in disguise, or perhaps the soldiers themselves stole it!",
+  "quest:1262:details:1": "Regardless of which is true, this is a noble's pendant and we must discover its true owner if we are to unravel its mystery.",
+  "quest:1262:details:2": "Take the pendant to ⟦E17⟧ in ⟦E18⟧. He is well schooled in ⟦E4⟧ politics, and will know if this pendant has a history among the nobles of ⟦E15⟧.",
+  "quest:1262:progress:0": "You traveled from Brackenwall Village in Dustwallow? How fares Nazeer, and how fare his efforts in the marsh?",
+  "quest:1262:completion:0": "This pendant was crafted with great skill and precision, ⟦9⟧. No orc would covet such a jewel...",
+  "quest:1262:completion:1": "But many humans would.",
+  "quest:1262:completion:2": "I will have this pendant studied. In time let us hope that its mysteries will be revealed to us.",
+  "quest:1166:obj:0": "⟦E19⟧ in Brackenwall Village wants you to retrieve his grog, snuff and strongbox in Dustwallow Swamp.",
+  "quest:1166:details:0": "⟦E20⟧ before ⟦E19⟧!",
+  "quest:1166:details:1": "⟦E21⟧ make me mighty leader of Stonemaul Clan!",
+  "quest:1166:details:2": "Me good leader. Me keep clan safe.",
+  "quest:1166:details:3": "Big dragons come and make fire at old home. Me smart ogre. Find new home for clan here.",
+  "quest:1166:details:4": "Leave old home so fast, me forget stuff. Tiny ⟦10⟧, go get my things. Go south and find my yummy grog, my snuff and my strongbox. Me like you after you do that. You look in Den of Flame and Stonemaul Ruins... they be there, me sure!",
+  "quest:1166:progress:0": "Me thirsty for grog. Me miss snuff too. Where is strongbox? You go get for ⟦E19⟧.⟦11⟧⟦12⟧Go find south in old home. Me too busy leading ogres to get.",
+  "quest:1166:completion:0": "You good ⟦13⟧. Me miss things very much. Me like you now.",
+  "quest:1168:obj:0": "⟦E23⟧ in Brackenwall Village wants you to kill 10 Firemane Scouts, 10 Firemane Ash Tails, and 5 Firemane Scalebanes.",
+  "quest:1168:details:0": "Mok'Morokk was made Overlord by ⟦E21⟧. He care more for power than he care for ogres.",
+  "quest:1168:details:1": "Black dragons kill many ogre. Kill ⟦E23⟧'s wife. Mok'Morokk tell us to run. Make us come here.",
+  "quest:1168:details:2": "Ogre should fight. Ogres not good at running. Mok'Morokk care only about Mok'Morokk.",
+  "quest:1168:details:3": "Me call Stonemaul Ruins home. Me like it in the south. This place not home.",
+  "quest:1168:details:4": "Help ogres fight army of the black dragon. Me want revenge. Me want to go home.",
+  "quest:1168:progress:0": "Mok'Morokk tell all ogres to stay and keep this place safe. Me think ogres need to kill black dragon army and get old home back.⟦14⟧⟦15⟧You help ogres get home back. Help ogres get revenge.",
+  "quest:1168:completion:0": "You kill many of the black dragon army. You brave ⟦16⟧.",
+  "quest:1168:completion:1": "Make ⟦E23⟧ happy.",
+  "quest:1169:obj:0": "⟦E24⟧ in Brackenwall Village would like you to bring him 15 Searing Tongues and 15 Searing Hearts.",
+  "quest:1169:details:0": "Whilst that craven fool, Mok'Morokk, wallows in power and ⟦E23⟧ wrestles the demons of sorrow and vengeance and vies for leadership of the clan, I seem to be the only one concerned with identifying the source of aggression on our old home.",
+  "quest:1169:details:1": "Why the puzzled stare, ⟦17⟧? Expecting me to speak like an uncouth ruffian merely because I am an ogre?",
+  "quest:1169:details:2": "Now back to business, bring to me the hearts and tongues from the whelps and hatchlings. I shall trace the root of this evil...",
+  "quest:1169:progress:0": "With the hearts and tongues of scorched offspring of the black dragon army, I can decipher what wretched beast introduced her spawn into our home. Perhaps with a greater knowledge of our aggressors, we can seek to destroy them once and for all and reclaim Stonemaul Village from ruin.⟦18⟧⟦19⟧Of course, convincing Mok'Morokk to move his lethargic, fat mass out of this muck hole is going to be an epic quest in and of itself...",
+  "quest:1169:completion:0": "'Twas a perilous affair, no doubt, collecting all of these hearts and tongues. I shall delve into the depths of the arcane to trace the origin of the black menace which has descended upon our former home.",
+  "quest:1170:obj:0": "Speak with ⟦E19⟧ in Brackenwall Village.",
+  "quest:1170:details:0": "Stonemaul Village was invaded by the brood of ⟦E26⟧. But why would the daughter of the black dragonlord, ⟦E27⟧, descend upon our lands?",
+  "quest:1170:details:1": "This is most troubling. Surely, ⟦E26⟧ was driven here for a purpose beyond laying siege to a small band of ogres.",
+  "quest:1170:details:2": "Notify Mok'Morokk at once! Action must be taken.",
+  "quest:1170:completion:0": "Why you tell me 'bout dragons? Me no like dragons. Me like it here. No dragons here.",
+  "quest:1171:obj:0": "Speak with ⟦E24⟧ in Brackenwall Village.",
+  "quest:1171:details:0": "You leave me alone now. Go tell ⟦E24⟧ we stay here. No black dragon here.",
+  "quest:1171:completion:0": "That lazy coward!",
+  "quest:1171:completion:1": "Mok'Morokk displayed strength when ⟦E21⟧ was our leader. But soon after ⟦E21⟧'s departure Mok'Morokk fell prey to temptations of power. Rather than lead, he demanded. He does not serve his people but rather expects us to serve him.",
+  "quest:1171:completion:2": "Something must be done.",
+  "quest:1172:obj:0": "⟦E24⟧ in Brackenwall Village wants you to destroy 5 Eggs of ⟦E26⟧.",
+  "quest:1172:details:0": "⟦E26⟧'s brood has been scattered across the Dragonmurk. It is imperative that no more whelps be permitted to hatch.",
+  "quest:1172:details:1": "Make haste to Wyrmbog in the south of ⟦E6⟧. Surely, she has made her lair there. Track down the evil dragon's eggs and destroy them.",
+  "quest:1172:details:2": "We will never reclaim Stonemaul Village if the surrounding area remains a breeding ground.",
+  "quest:1172:details:3": "As for Mok'Morokk... I have other plans for the sod.",
+  "quest:1172:progress:0": "You must hurry to the Dragonmurk, ⟦20⟧. With ⟦E26⟧'s eggs riddled around the Wyrmbog, we face overwhelming numbers unless something is done quickly.⟦21⟧⟦22⟧Destroy her eggs! Don't let the black dragon plague spread across our homeland!",
+  "quest:1172:completion:0": "Splendid! It will be sometime before ⟦E26⟧ can produce more eggs.",
+  "quest:1172:completion:1": "On behalf of my people, I thank you, ⟦23⟧.",
+  "quest:1172:completion:2": "I have asked much of you so far. Perhaps you can do the Stonemaul Clan one last service.",
+  "quest:1172:completion:3": "Mok'Morokk is not fit to lead us. ⟦E23⟧ would make an excellent leader but is hindered by his injuries and age. Drive Mok'Morokk from this place by force. Only then can we appoint a new leader to return us to our proper home in the south.",
+  "quest:1173:obj:0": "Defeat Mok'Morokk and report the news to ⟦E24⟧ in Brackenwall Village.",
+  "quest:1173:details:0": "You dare challenge ⟦E19⟧?",
+  "quest:1173:details:1": "Haw!",
+  "quest:1173:details:2": "Me crush tiny ⟦24⟧!",
+  "quest:1173:details:3": "You tell me when ready for good beating.",
+  "quest:1173:progress:0": "I thought you were going to attempt to drive Mok'Morokk out of the village. Instead you have come to me to chat?",
+  "quest:1173:completion:0": "That cowardly fat mass Mok'Morokk fled like a scared child. You have done a great service, ⟦25⟧.",
+  "quest:1173:completion:1": "Now my people can appoint a new leader, one who will help us reclaim our old home once and for all.",
+  "quest:1205:obj:0": "Bring ⟦E28⟧ to Melor in ⟦E29⟧.",
+  "quest:1205:details:0": "⟦E30⟧ is an ancient crocolisk in Dustwallow marsh. And it is his time to die.",
+  "quest:1205:details:1": "Old bones grind as he pulls his huge body through the swamp, and although he still moves with the strength and speed of youth, his aging body tortures the great spirit within it, a spirit whose flame will not waver.",
+  "quest:1205:details:2": "Yet now he lives in constant, maddening pain. You must end the life of this noble creature, ⟦26⟧. You must lead ⟦E30⟧ to peace.",
+  "quest:1205:progress:0": "Do you have the tooth of ⟦E30⟧, ⟦27⟧?  Have you ended the creature's suffering?",
+  "quest:1205:completion:0": "Very good, ⟦28⟧.",
+  "quest:1205:completion:1": "I am sure the hunt was not easy, but it is good to know the beast's pain has finally ended.",
+  "quest:7541:completion:0": "It will take time for our scholars to study the pendant you brought us. But for your service to the ⟦E16⟧ I would like to offer you a small token.",
+  "quest:7541:completion:1": "Thank you, ⟦29⟧. Your acts bring honor to you, and to us.",
+  "quest:6570:obj:0": "⟦E31⟧ to the Wyrmbog in ⟦E6⟧ and seek out ⟦E32⟧'s Den. Once inside, wear the ⟦E33⟧ and speak with ⟦E32⟧.⟦30⟧",
+  "quest:6570:details:0": "I have attuned this medallion with the magic necessary to create and maintain an illusion within the bounds of the den of ⟦E32⟧.",
+  "quest:6570:details:1": "⟦E32⟧ is an ancient drake; an old gatekeeper of ⟦E34⟧, burdened with the duty to test those dragonspawn that would ascend to the rank of elite guard to ⟦E26⟧.",
+  "quest:6570:details:2": "⟦E31⟧ to the Wyrmbog of ⟦E6⟧ and enter the lair of ⟦E32⟧. Once there, put on the amulet and follow where your destiny may lead!⟦31⟧",
+  "quest:6570:completion:0": "Have we run so low on able soldiers that ⟦E34⟧ is sending me whelps? You will never pass my tests, broodling.",
+  "quest:6582:obj:0": "You must find the blue dragonflight drake champion, Scryer, and slay him. Pry his skull from his corpse and return it to ⟦E32⟧.",
+  "quest:6582:obj:1": "You know that Scryer can be found in ⟦E36⟧.",
+  "quest:6582:details:0": "We are ⟦E27⟧'s children, whelp. Our dominance over the lesser Aspects must be enforced.",
+  "quest:6582:details:1": "If you are truly worthy of ascension, the lesser dragonflight will wilt in your presence.",
+  "quest:6582:details:2": "Find their champions and lay waste to them in the name of our Father!",
+  "quest:6582:details:3": "⟦E31⟧ to ⟦E36⟧ and track down the mighty blue drake, Scryer. Crush him and any of the Blue Flight that stand in your path. Tear out his skull and return it to me.",
+  "quest:6582:progress:0": "<⟦E32⟧ hisses.>",
+  "quest:6582:completion:0": "One of ssseveral complete...",
+  "quest:6583:obj:0": "Destroy the drake champion of the Green Flight, Somnus. Take his skull and return it to ⟦E32⟧.",
+  "quest:6583:details:0": "Just as our Father crushes the Aspects themselves, so too must we strive to bring chaos and destruction to their children.",
+  "quest:6583:details:1": "You must test your battle prowess against the sleepless dreamers: The children of the Green Flight.",
+  "quest:6583:details:2": "⟦E31⟧ to the ⟦E12⟧ and track down Somnus, drake champion of the Green Flight. Let flow your hatred; dominate the insect... Return to me with his skull...",
+  "quest:6583:progress:0": "Do not return here until you have bathed in the blood of our enemies and drank in their suffering.",
+  "quest:6583:completion:0": "Another complete...",
+  "quest:6584:obj:0": "Guarding the Caverns of Time in the ⟦E38⟧ Desert is Chronalis, child of Nozdormu. Destroy him and return his skull to ⟦E32⟧.",
+  "quest:6584:details:0": "The time watchers, children of Nozdormu - Lord of the Centuriesss...",
+  "quest:6584:details:1": "It is three that guard the Caverns of Time, but only one that holds the interests of the Black Flight: The Time Shifter, Chronalis, favored drakeling of Nozdormu.",
+  "quest:6584:details:2": "Ssstrike at this champion, a blow to make even the stoic sands of time weep. Return to me with his skull.",
+  "quest:6584:progress:0": "Ironically, whelp, time is of the essencccce.",
+  "quest:6584:completion:0": "The most hated remainsss...",
+  "quest:6585:obj:0": "⟦E31⟧ to Grim Batol and track down ⟦E39⟧, drake champion of the Red Flight. Destroy him and take his skull. Return the skull to ⟦E32⟧.",
+  "quest:6585:details:0": "It was over the mountains of Grim Batol that our Father raged against the combined might of the Aspects. The cowardly act of the betrayer, Alexstrasza, bought the other Aspects enough time to escape from Father's wrath.",
+  "quest:6585:details:1": "Sssuch a shameful act...",
+  "quest:6585:details:2": "The Red Flight now guards Grim Batol, their lieutenant, ⟦E39⟧, must be destroyed. Return the skull of ⟦E39⟧ to me. For Father, whelp!",
+  "quest:6585:progress:0": "Changesss... I sense them taking place in you, whelp. Pass this test and only ceremony remains.",
+  "quest:6585:completion:0": "I had doubted your dedication, whelp. You persisted, dominating our enemies, bringing honor to our flight.",
+  "quest:6585:completion:1": "I must now prepare the skulls for your ascension.",
+  "quest:6601:obj:0": "It would appear as if the charade is over. You know that the ⟦E33⟧ that ⟦E40⟧ created for you will not function inside ⟦E41⟧. Perhaps you should find ⟦E21⟧ and explain your predicament. Show him the ⟦E42⟧. Hopefully he will know what to do next.",
+  "quest:6601:details:0": "From the skulls of our enemies is shaped a medallion. You know this medallion, yesss? You have no doubt seen it worn by your elders.",
+  "quest:6601:details:1": "Take it, whelp. Return to the Spire and present it to ⟦E43⟧. The General will place the final enchantment upon the medallion, attuning the trinket to your spirit.",
+  "quest:6601:details:2": "You will wear the finished medallion as a badge of honor, symbolizing your ascension to one of our most guarded ranks: ⟦E44⟧ to the brood mother.",
+  "quest:6601:details:3": "Go!",
+  "quest:6601:progress:0": "Do not panic, ⟦32⟧!",
+  "quest:6601:completion:0": "It is merely dragon-talk, ⟦33⟧ - more hot air than actual substantive information. Pompous, aggressive behavior is to be expected from their kind."
+ },
+ "context": {
+  "quest:1285": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Adjutant Tesoran («آجودان تسوران»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1286": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Captain Garran Vimes («کاپیتان گاران ویمز»)",
+   "turner": "Balos Jacken («بالوس جکن»)"
+  },
+  "quest:1287": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Balos Jacken («بالوس جکن»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1252": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Theramore Guard Badge («نشان نگهبان ترامور»)",
+   "turner": "Captain Garran Vimes («کاپیتان گاران ویمز»)"
+  },
+  "quest:1258": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Morgan Stern («مورگان استرن»)",
+   "turner": "Morgan Stern («مورگان استرن»)"
+  },
+  "quest:1259": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Captain Garran Vimes («کاپیتان گاران ویمز»)",
+   "turner": "Adjutant Tesoran («آجودان تسوران»)"
+  },
+  "quest:1261": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 40,
+   "side": "horde",
+   "giver": "Bubbling Cauldron («دیگ جوشان»)",
+   "turner": "Nazeer Bloodpike («نظیر نیزه‌خون»)"
+  },
+  "quest:1262": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 40,
+   "side": "horde",
+   "giver": "Nazeer Bloodpike («نظیر نیزه‌خون»)",
+   "turner": "Zor Lonetree («زور تک‌درخت»)"
+  },
+  "quest:1166": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 43,
+   "side": "horde",
+   "giver": "Overlord Mok'Morokk («سالار موک‌مورک»)",
+   "turner": "Overlord Mok'Morokk («سالار موک‌مورک»)"
+  },
+  "quest:1168": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 43,
+   "side": "horde",
+   "giver": "Tharg («تهارگ»)",
+   "turner": "Tharg («تهارگ»)"
+  },
+  "quest:1169": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 43,
+   "side": "horde",
+   "giver": "Draz'Zilb («دراززیلب»)",
+   "turner": "Draz'Zilb («دراززیلب»)"
+  },
+  "quest:1170": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 43,
+   "side": "horde",
+   "giver": "Draz'Zilb («دراززیلب»)",
+   "turner": "Overlord Mok'Morokk («سالار موک‌مورک»)"
+  },
+  "quest:1171": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 43,
+   "side": "horde",
+   "giver": "Overlord Mok'Morokk («سالار موک‌مورک»)",
+   "turner": "Draz'Zilb («دراززیلب»)"
+  },
+  "quest:1172": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 45,
+   "side": "horde",
+   "giver": "Draz'Zilb («دراززیلب»)",
+   "turner": "Draz'Zilb («دراززیلب»)"
+  },
+  "quest:1173": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 45,
+   "side": "horde",
+   "giver": "Overlord Mok'Morokk («سالار موک‌مورک»)",
+   "turner": "Draz'Zilb («دراززیلب»)"
+  },
+  "quest:1205": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 45,
+   "side": "horde",
+   "giver": "Melor Stonehoof («ملور سم‌سنگی»)",
+   "turner": "Melor Stonehoof («ملور سم‌سنگی»)"
+  },
+  "quest:7541": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 45,
+   "side": "horde",
+   "giver": "Zor Lonetree («زور تک‌درخت»)",
+   "turner": "Zor Lonetree («زور تک‌درخت»)"
+  },
+  "quest:6570": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 60,
+   "side": "horde",
+   "giver": "Myranda the Hag («میراندا، جادوگر پیر»)",
+   "turner": "Emberstrife («امبرست‌رایف»)"
+  },
+  "quest:6582": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 60,
+   "side": "horde",
+   "giver": "Emberstrife («امبرست‌رایف»)",
+   "turner": "Emberstrife («امبرست‌رایف»)"
+  },
+  "quest:6583": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 60,
+   "side": "horde",
+   "giver": "Emberstrife («امبرست‌رایف»)",
+   "turner": "Emberstrife («امبرست‌رایف»)"
+  },
+  "quest:6584": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 60,
+   "side": "horde",
+   "giver": "Emberstrife («امبرست‌رایف»)",
+   "turner": "Emberstrife («امبرست‌رایف»)"
+  },
+  "quest:6585": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 60,
+   "side": "horde",
+   "giver": "Emberstrife («امبرست‌رایف»)",
+   "turner": "Emberstrife («امبرست‌رایف»)"
+  },
+  "quest:6601": {
+   "zone_en": "Dustwallow Marsh",
+   "zone_fa": "باتلاق داست‌والو",
+   "level": 60,
+   "side": "horde",
+   "giver": "Emberstrife («امبرست‌رایف»)",
+   "turner": "Rexxar («رککسار»)"
+  }
+ },
+ "known": {
+  "quest:1285": {
+   "title": "مردان دالین"
+  },
+  "quest:1286": {
+   "title": "فراری‌ها"
+  },
+  "quest:1287": {
+   "title": "فراری‌ها"
+  },
+  "quest:1252": {
+   "title": "سروان پاول ریته"
+  },
+  "quest:1258": {
+   "title": "... و حشرات"
+  },
+  "quest:1259": {
+   "title": "سروان پاول ریته"
+  },
+  "quest:1261": {
+   "title": "مارگ حرف می‌زند"
+  },
+  "quest:1262": {
+   "title": "گزارش به زور"
+  },
+  "quest:1166": {
+   "title": "دغدغهٔ اُورلرد موک‌موروک"
+  },
+  "quest:1168": {
+   "title": "ارتش اژدهای سیاه"
+  },
+  "quest:1169": {
+   "title": "شناسایی نسل"
+  },
+  "quest:1170": {
+   "title": "نسل اونکسیا"
+  },
+  "quest:1171": {
+   "title": "نسل اونکسیا"
+  },
+  "quest:1172": {
+   "title": "نسل اونکسیا"
+  },
+  "quest:1173": {
+   "title": "به چالش کشیدن اُورلرد موک‌موروک"
+  },
+  "quest:1205": {
+   "title": "باتلاق مُرد"
+  },
+  "quest:7541": {
+   "title": "خدمت به اردو"
+  },
+  "quest:6570": {
+   "title": "امبرست‌رایف"
+  },
+  "quest:6582": {
+   "title": "آزمون جمجمه‌ها، اسکرایر"
+  },
+  "quest:6583": {
+   "title": "آزمون جمجمه‌ها، سومنوس"
+  },
+  "quest:6584": {
+   "title": "آزمون جمجمه‌ها، کرونالیس"
+  },
+  "quest:6585": {
+   "title": "آزمون جمجمه‌ها، اکس‌تروز"
+  },
+  "quest:6601": {
+   "title": "عروج..."
+  }
+ }
+}

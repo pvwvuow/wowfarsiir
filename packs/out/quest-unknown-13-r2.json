@@ -1,0 +1,546 @@
+{
+ "pack": "quest-unknown-13-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-13-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Syndicate",
+   "fa": "سندیکا",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Arcane Mote",
+   "fa": "ذرهٔ رازآمیز",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Magus Wordeen Voidglare",
+   "fa": "جادوگر ووردین خیره‌به‌خلأ",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Dalaran Sewer Key",
+   "fa": "کلید فاضلاب دالاران",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Tor",
+   "fa": "تور",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Archmage Celindra",
+   "fa": "ارشدجادوگر سلیندرا",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Titan Relic",
+   "fa": "یادگار تایتان",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "High Explorer Magellas",
+   "fa": "کاشف عالی ماژلاس",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Prospector Whelgar",
+   "fa": "جویندهٔ رگه ولگار",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Lunar Festival",
+   "fa": "جشن ماه",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Grant's Shield",
+   "fa": "سپرِ گرانت",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Grant's Mace",
+   "fa": "گرز گرنت",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Raven Hill",
+   "fa": "تپهٔ کلاغ",
+   "kind": "qs"
+  },
+  "E21": {
+   "en": "Stolen Freewind Supplies",
+   "fa": "تدارکات دزدیده‌شدهٔ بادآزاد",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Silvia's Sword",
+   "fa": "شمشیر سیلویا",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Sirra Von'Indi",
+   "fa": "سیررا وونیندی",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Mooncloth",
+   "fa": "پارچهٔ ماه",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Fallen Sky Lake",
+   "fa": "دریاچهٔ آسمان‌فروافتاده",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Alliance Commendation Signet",
+   "fa": "نشانِ تقدیرِ اتحادیه",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Horde Commendation Signet",
+   "fa": "نشانِ تقدیرِ هورد",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Essence of the Exile",
+   "fa": "جوهرِ تبعیدی",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Murloc",
+   "fa": "مورلاک",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Syndicate": "سندیکا",
+  "Horde": "هورد",
+  "Arcane Mote": "ذرهٔ رازآمیز",
+  "Dalaran": "دالاران",
+  "Magus Wordeen Voidglare": "جادوگر ووردین خیره‌به‌خلأ",
+  "Dalaran Sewer Key": "کلید فاضلاب دالاران",
+  "Undercity": "آندر‌سیتی",
+  "Tor": "تور",
+  "Archmage Celindra": "ارشدجادوگر سلیندرا",
+  "Azeroth": "آزروت",
+  "Ironforge": "آیرون‌فورج",
+  "Titan Relic": "یادگار تایتان",
+  "High Explorer Magellas": "کاشف عالی ماژلاس",
+  "Prospector Whelgar": "جویندهٔ رگه ولگار",
+  "Lunar Festival": "جشن ماه",
+  "Elune": "الون",
+  "Grant's Shield": "سپرِ گرانت",
+  "Grant's Mace": "گرز گرنت",
+  "Raven Hill": "تپهٔ کلاغ",
+  "Stolen Freewind Supplies": "تدارکات دزدیده‌شدهٔ بادآزاد",
+  "Badlands": "بیابان",
+  "Silvia's Sword": "شمشیر سیلویا",
+  "Sirra Von'Indi": "سیررا وونیندی",
+  "Mooncloth": "پارچهٔ ماه",
+  "Ashenvale": "اَشِن‌ویل",
+  "Fallen Sky Lake": "دریاچهٔ آسمان‌فروافتاده",
+  "Alliance Commendation Signet": "نشانِ تقدیرِ اتحادیه",
+  "Horde Commendation Signet": "نشانِ تقدیرِ هورد",
+  "Essence of the Exile": "جوهرِ تبعیدی",
+  "Murloc": "مورلاک"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$N",
+  "3": "$N",
+  "4": "$B",
+  "5": "$N",
+  "6": "$B",
+  "7": "$C",
+  "8": "$B",
+  "9": "$N",
+  "10": "$B",
+  "11": "$C",
+  "12": "$B",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$B",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$N"
+ },
+ "rows": {
+  "quest:96784:title": "Master of Disguise",
+  "quest:96785:title": "Ain't No Telling",
+  "quest:96786:title": "The ⟦E1⟧ Sting",
+  "quest:96984:title": "Heart of Disruption [⟦E2⟧]",
+  "quest:96984:obj:0": "Collect the ⟦E3⟧ in the City of ⟦E4⟧ for ⟦E5⟧ in Tarren Mill.",
+  "quest:96984:obj:1": "* ⟦E3⟧",
+  "quest:96984:obj:2": "* ⟦E6⟧ (provided)",
+  "quest:96984:details:0": "You may not have our best interests at heart, but I won't deny an extra pair of hands. And if ⟦E4⟧ falls, it takes everything with it--including your ⟦E7⟧.",
+  "quest:96984:details:1": "So, your benefactor wants in? Fine. I'll imbue your key to work past my wards so you can enter the city. Once you're in, meet me at the Violet Citadel where this all began. With everything going on the Kirin ⟦E8⟧ will be too busy to stop you.",
+  "quest:96984:details:2": "Scavenge what you will, but whatever happens, our first priority is to prevent a catastrophe.",
+  "quest:97287:title": "Shrewd Negotiations",
+  "quest:97287:obj:0": "Speak with ⟦E9⟧ in the City of ⟦E4⟧.",
+  "quest:97287:obj:1": "*⟦E3⟧ (provided)",
+  "quest:97287:details:0": "You have done well to infiltrate the city of mages, but I believe it is time for us to be more... negotiatory.",
+  "quest:97287:details:1": "As much as it pains me to admit, there is no other place on ⟦E10⟧ with such a vast knowledge of the arcane. My brilliant work still pales in comparison to the ancient wisdom the Kirin ⟦E8⟧ have amassed over the years. I think it's high time we are granted access to this exclusive order, don't you think?",
+  "quest:97287:details:2": "Take the mote you acquired. They will surely give anything to get it back. Anything.",
+  "quest:98155:title": "Pristine Pesterhide Pelts",
+  "quest:98300:title": "Word to ⟦E11⟧",
+  "quest:98824:title": "Prehistoric Prism",
+  "quest:98824:obj:0": "Bring the ⟦E12⟧ to ⟦E13⟧ in ⟦E11⟧'s Hall of Explorers.",
+  "quest:98824:obj:1": "*⟦E12⟧ (Forever) (provided)",
+  "quest:98824:details:0": "With titan-like inscriptions like that on its facets, nothing less than ⟦E11⟧'s Hall of Explorers is the right place to bring it.",
+  "quest:98824:details:1": "I'd like to think that you'll be noted in the history for it in the catalogue -- \"Recovered by ! Authenticated by ⟦E14⟧...\" Ah, I'm gettin' meself carried away.",
+  "quest:98824:details:2": "⟦E13⟧ will receive you, and given the exquisite nature of what you carry, will surely be most generously appreciative should you donate it to the museum.",
+  "quest:98824:details:3": "Good find!",
+  "quest:98824:progress:0": "Have a look at our gallery, but please, don't touch the artifacts, unless it's one you're here to donate to the library.",
+  "quest:8876:title": "Small Rockets",
+  "quest:8876:progress:0": "I hold the secrets to creating ⟦E15⟧ rockets, and I am happy to share my knowledge with the honored.⟦1⟧In exchange for coins of ancestry, I can offer you the recipe to make a small rocket...",
+  "quest:8876:completion:0": "Ah, very well. Here are your recipes, ⟦2⟧, and my ⟦E17⟧ bless you.",
+  "quest:79362:title": "⟦E18⟧",
+  "quest:79362:obj:0": "Find ⟦E19⟧ on one of the skeletons in ⟦E20⟧ Cemetery then return to Sirra Von'Indie in Darkshire for more information.",
+  "quest:93176:title": "My Little Friends",
+  "quest:95036:title": "A Moon-Kissed Blade",
+  "quest:95534:title": "Strahnbrad Mystery",
+  "quest:98069:title": "⟦E21⟧",
+  "quest:98070:title": "Stop the Screeching",
+  "quest:78830:title": "Terror of the Desert Skies",
+  "quest:78830:details:0": "This drawing reminds me of a story I'd heard on another expedition, not long ago. I was told of a great bird, Gharrik, who reigns over the ⟦E22⟧ as an apex predator.\n\nShe was last spotted northeast of Camp Cagg. Perhaps her nest is somewhere nearby?\n\nYou'll need live bait to draw her out. I'll lend you a cage to catch some. Small wildlife is scarce in the ⟦E22⟧, so you'll need to find your bait elsewhere.\n\nA quill from Gharrik would make a fine prize. You'd certainly be the talk of the camp.",
+  "quest:78830:progress:0": "How goes the hunt? Surely the bird hasn't got you beat!",
+  "quest:78830:completion:0": "Now there's a feather for your cap! Nicely done, ⟦3⟧ . ⟦4⟧ You can rest here for a while, if you like. I'm sure your trek through the desert was arduous.",
+  "quest:79363:title": "⟦E24⟧",
+  "quest:79363:obj:0": "Defeat 7 Defias Night Blades and 7 Defias Enchanters in Addle's Stead then return to ⟦E25⟧ in Darkshire for more information.",
+  "quest:65610:title": "Wish You Were Here",
+  "quest:65610:details:0": "I met Krilge while making ⟦E26⟧ in ⟦E27⟧. He was stationed there to protect civilians from danger, until he disappeared...\n\nThey've stopped looking for him and consider him a deserter, but I don't believe it.\n\nWe would often meet at ⟦E28⟧ before it became overrun by those aggressive bog beasts.\n\nI'm not typically one to ask favors, but if you could go to ⟦E27⟧ and look for any sign of him, I'd appreciate it.",
+  "quest:65610:progress:0": "Yes, what is it?",
+  "quest:65610:completion:0": "What is it you have there, ⟦5⟧ ? A scarf made of... ⟦E26⟧? You best not be seeking to romance me.",
+  "quest:87491:title": "Spark of Freedom",
+  "quest:98156:title": "Packaged Pristine Pelts",
+  "quest:97265:title": "Hate the Hatefury",
+  "quest:98463:title": "Talk of the Town",
+  "quest:8847:title": "Ten Signets for War Supplies",
+  "quest:8847:progress:0": "Ah, here for additional supplies for yourself, are you? Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦6⟧ I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange. You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when battle is finally upon us.\n⟦E30⟧ ( 10 )",
+  "quest:8847:completion:0": "Well then, it's settled; here are your supplies, ⟦7⟧ . If you wish to do an additional exchange, then I am prepared to authorize it. Just give me the word and I'll make it happen. ⟦8⟧ Keep up the good work, ⟦9⟧ . We need all the materiel we can muster if we're going to win this thing. If we all do our part, then victory shall be ours for the taking!",
+  "quest:8852:title": "Ten Signets for War Supplies",
+  "quest:8852:progress:0": "Ah, here for additional supplies for yourself, are you? Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦10⟧ I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange. You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when battle is finally upon us.\n⟦E31⟧ ( 10 )",
+  "quest:8852:completion:0": "Well then, it's settled; here are your supplies, ⟦11⟧ . If you wish to do an additional exchange, then I am prepared to authorize it. Just give me the word and I'll make it happen. ⟦12⟧ Keep up the good work, ⟦13⟧ . We need all the materiel we can muster if we're going to win this thing. If we all do our part, then victory shall be ours for the taking!",
+  "quest:1714:title": "⟦E32⟧",
+  "quest:1714:progress:0": "The cauldron bubbles. Its vapors beckon...",
+  "quest:1714:completion:0": "The charms sink slowly into the cauldron's depths...⟦14⟧⟦15⟧A large bubble rises to the surface of the liquid and breaks...⟦16⟧⟦17⟧...And a churning lump of molten rock is revealed.",
+  "quest:3644:title": "Membership Card Renewal",
+  "quest:3644:progress:0": "In order to renew your membership card, you will need to pay the renewal fee of two gold pieces.",
+  "quest:3644:completion:0": "Since you're a practitioner of Goblin engineering and are in good standing, I am able to renew a lapsed membership card for the fee of two gold pieces. Once this fee is paid, you will be reissued a new membership card. This will allow access to Goblin engineering schemata from appropriate trainers.⟦18⟧⟦19⟧This card will last for two weeks of activity, at the end of which your membership fees will become due again! If you want to access schemata, you'll need to bring your dues out of arrears.",
+  "quest:3645:title": "Membership Card Renewal",
+  "quest:3645:progress:0": "In order to renew your membership card, you will need to pay the renewal fee of two gold pieces.",
+  "quest:3645:completion:0": "Since you're a practitioner of Gnomish engineering and are in good standing, I am able to renew a lapsed membership card for the fee of two gold pieces. Once this fee is paid, you will be reissued a new membership card. This will allow access to Gnomish engineering schemata from appropriate trainers.⟦20⟧⟦21⟧This card will last for two weeks of activity, at the end of which your membership fees will become due again! If you want to access schemata, you'll need to bring your dues out of arrears.",
+  "quest:3646:title": "Membership Card Renewal",
+  "quest:3646:details:0": "⟦22⟧",
+  "quest:3646:progress:0": "In order to renew your membership card, you will need to pay the renewal fee of two gold pieces.",
+  "quest:3646:completion:0": "Since you're a practitioner of Goblin engineering and are in good standing, I am able to renew a lapsed membership card for the fee of two gold pieces. Once this fee is paid, you will be reissued a new membership card. This will allow access to Goblin engineering schemata from appropriate trainers.⟦23⟧⟦24⟧This card will last for two weeks of activity, at the end of which your membership fees will become due again! If you want to access schemata, you'll need to bring your dues out of arrears.",
+  "quest:3647:title": "Membership Card Renewal",
+  "quest:3647:progress:0": "In order to renew your membership card, you will need to pay the renewal fee of two gold pieces.",
+  "quest:3647:completion:0": "Since you're a practitioner of Gnomish engineering and are in good standing, I am able to renew a lapsed membership card for the fee of two gold pieces. Once this fee is paid, you will be reissued a new membership card. This will allow access to Gnomish engineering schemata from appropriate trainers.⟦25⟧⟦26⟧This card will last for two weeks of activity, at the end of which your membership fees will become due again! If you want to access schemata, you'll need to bring your dues out of arrears.",
+  "quest:7884:title": "Crocolisk Boy and the Bearded ⟦E33⟧",
+  "quest:7884:progress:0": "Yebb is working on other attractions for his zoo, including wet, swampy abodes for a boy raised by crocolisks, and perhaps for a murloc. We will need nice, water-tight leggings so we won't get waterlogged during prop-ups and tear-downs. For that job, I think turtlescale leggings will do the trick.⟦27⟧⟦28⟧⟦29⟧, can you make those leggings? If you do, then a fat stack of Darkmoon Faire tickets will be your reward...",
+  "quest:7884:completion:0": "Great, you made them!  These will do nicely... I just hope I won't be the one to clean the crocolisk cage when the time comes.  Those beasts can be rather beastly, don't you think?⟦30⟧⟦31⟧Here are your tickets, ⟦32⟧.  Enjoy them, and enjoy your stay at the Darkmoon Faire!"
+ },
+ "context": {
+  "quest:96784": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:96785": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:96786": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:96984": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "horde",
+   "giver": "Image of Archmage Modera («تصویر ارشدجادوگر مودرا»)",
+   "turner": ""
+  },
+  "quest:97287": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "horde",
+   "giver": "Magus Wordeen Voidglare («جادوگر ووردین خیره‌به‌خلأ»)",
+   "turner": ""
+  },
+  "quest:98155": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98300": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Howin Kindfeather («هاوین پرمهربان»)",
+   "turner": ""
+  },
+  "quest:98824": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 24,
+   "side": "alliance",
+   "giver": "Prospector Whelgar («جویندهٔ رگه ولگار»)",
+   "turner": ""
+  },
+  "quest:8876": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "",
+   "turner": "Fariel Starsong («فاریل آواز ستاره»)"
+  },
+  "quest:79362": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "",
+   "turner": "Sirra Von'Indi («سیررا وونیندی»)"
+  },
+  "quest:93176": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95036": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:95534": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98069": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98070": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 25,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:78830": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 26,
+   "side": "",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:79363": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 26,
+   "side": "",
+   "giver": "",
+   "turner": "Sirra Von'Indi («سیررا وونیندی»)"
+  },
+  "quest:65610": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 27,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:87491": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 27,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98156": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 27,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:97265": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 28,
+   "side": "horde",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:98463": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8847": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Field Marshal Snowfall («مارشال میدان اسنوفال»)",
+   "turner": ""
+  },
+  "quest:8852": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 29,
+   "side": "horde",
+   "giver": "Warlord Gorchuk («سالار جنگ گورچوک»)",
+   "turner": ""
+  },
+  "quest:1714": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "Bath'rah's Cauldron («دیگ باث‌را»)",
+   "turner": "Bath'rah's Cauldron («دیگ باث‌را»)"
+  },
+  "quest:3644": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "",
+   "turner": "Nixx Sprocketspring («نیکس فنرچرخ‌دنده»)"
+  },
+  "quest:3645": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "",
+   "turner": "Tinkmaster Overspark («تینک‌مستر اورسپارک»)"
+  },
+  "quest:3646": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "",
+   "turner": "Vazario Linkgrease («وازاریو لینک‌گریس»)"
+  },
+  "quest:3647": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Tinkmaster Overspark («تینک‌مستر اورسپارک»)",
+   "turner": "Oglethorpe Obnoticus («اگل‌ثورپ آبناتیکوس»)"
+  },
+  "quest:7884": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "",
+   "turner": "Chronos («کرونوس»)"
+  }
+ }
+}

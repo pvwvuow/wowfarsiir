@@ -1,0 +1,528 @@
+{
+ "pack": "quest-sort:midsummer-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:midsummer-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Festival Flamekeeper",
+   "fa": "شعله‌دار جشنواره",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Glaive",
+   "fa": "گلیو",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Silverpine Forest",
+   "fa": "جنگل سیلورپاین",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Midsummer",
+   "fa": "میان‌تابستان",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Fire",
+   "fa": "آتش",
+   "kind": "sp"
+  },
+  "E15": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Un'Goro Crater",
+   "fa": "دهانهٔ اون‌گورو",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E24": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Searing Gorge",
+   "fa": "تنگهٔ سوزان",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Flame of Orgrimmar",
+   "fa": "شعلهٔ اورگیمار",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Festival Loremaster",
+   "fa": "دانشمند جشنواره",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Flame of Thunder Bluff",
+   "fa": "شعلهٔ تاندر بلوف",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Flame of the Undercity",
+   "fa": "شعلهٔ شهر زیرین",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Flame of Stormwind",
+   "fa": "شعلهٔ استورم‌ویند",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Festival Talespinner",
+   "fa": "قصه‌گوی جشنواره",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Flame of Ironforge",
+   "fa": "شعلهٔ ایرون‌فورج",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Flame of Darnassus",
+   "fa": "شعلهٔ دارناسوس",
+   "kind": "it"
+  },
+  "E44": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "Ashenvale": "اَشِن‌ویل",
+  "Barrens": "بارنز",
+  "Darkshore": "کرانهٔ تاریک",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Festival Flamekeeper": "شعله‌دار جشنواره",
+  "Kalimdor": "کالیمدور",
+  "Glaive": "گلیو",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Silverpine Forest": "جنگل سیلورپاین",
+  "Westfall": "وستفال",
+  "Wetlands": "تالاب‌ها",
+  "Midsummer": "میان‌تابستان",
+  "Fire": "آتش",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Dire Maul": "دایر مول",
+  "Scholomance": "شولومانس",
+  "Stratholme": "استراتهولم",
+  "Azshara": "آزشارا",
+  "Silithus": "سیلیتوس",
+  "Un'Goro Crater": "دهانهٔ اون‌گورو",
+  "Winterspring": "وینتراسپرینگ",
+  "Azeroth": "آزروت",
+  "Blasted Lands": "اراضی ویران",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Searing Gorge": "تنگهٔ سوزان",
+  "Flame of Orgrimmar": "شعلهٔ اورگیمار",
+  "Festival Loremaster": "دانشمند جشنواره",
+  "Orgrimmar": "اورگریمار",
+  "Flame of Thunder Bluff": "شعلهٔ تاندر بلوف",
+  "Thunder Bluff": "تاندر بلاف",
+  "Flame of the Undercity": "شعلهٔ شهر زیرین",
+  "Undercity": "آندر‌سیتی",
+  "Flame of Stormwind": "شعلهٔ استورم‌ویند",
+  "Festival Talespinner": "قصه‌گوی جشنواره",
+  "Stormwind": "استورم‌ویند",
+  "Flame of Ironforge": "شعلهٔ ایرون‌فورج",
+  "Ironforge": "آیرون‌فورج",
+  "Flame of Darnassus": "شعلهٔ دارناسوس",
+  "Teldrassil": "تلدراسیل",
+  "Darnassus": "دارناسوس",
+  "Travel": "سفر"
+ },
+ "tokens": {
+  "1": "$n",
+  "2": "$N",
+  "3": "$n",
+  "4": "$c",
+  "5": "$N",
+  "6": "$R",
+  "7": "$R",
+  "8": "$N",
+  "9": "$R",
+  "10": "$R",
+  "11": "$R",
+  "12": "$N",
+  "13": "$R",
+  "14": "$N",
+  "15": "$n",
+  "16": "$b",
+  "17": "$b",
+  "18": "$n",
+  "19": "$b",
+  "20": "$b",
+  "21": "$N",
+  "22": "$N"
+ },
+ "rows": {
+  "quest:9388:obj:0": "Visit the bonfires within ⟦E1⟧, the ⟦E2⟧, ⟦E3⟧, and ⟦E4⟧, then speak with the ⟦E5⟧.",
+  "quest:9388:details:0": "There are many flames burning throughout the world today, ⟦1⟧. The trickiest fires to tend are those that burn green; they do not stay lit long without supervision. Make certain the emerald fires still burn on ⟦E6⟧ for our Flamekeeper, eh?",
+  "quest:9388:details:1": "You will find them near Ratchet in the ⟦E2⟧, close to the Master's ⟦E7⟧ in ⟦E3⟧, in the forest of ⟦E1⟧ by the bridge near Silverwing Outpost, and near the road to Windshear Crag along the main road in ⟦E4⟧.",
+  "quest:9388:progress:0": "The fires cannot die until the festival is done!",
+  "quest:9388:completion:0": "Ahhh, so they do still burn. I am glad; it would not do for those fires to burn out before their time. You have done well, ⟦2⟧. Take this with my blessing.",
+  "quest:9389:obj:0": "Visit the bonfires within ⟦E9⟧, ⟦E10⟧, ⟦E11⟧, and the ⟦E12⟧, then speak with the ⟦E5⟧.",
+  "quest:9389:details:0": "The ⟦E13⟧ ⟦E14⟧ Festival traditionally lights up the land with a myriad of flames. Some argue that the green fires are the finest, as they are the hardest to maintain and have such a distinctive hue.",
+  "quest:9389:details:1": "Make sure they still burn in the ⟦E15⟧ for our Flamekeeper. They sit near Dun Modr in the ⟦E12⟧, close to Pyrewood Village within ⟦E10⟧, on the cliffs overlooking the lighthouse in ⟦E11⟧, and by the ruined tower in ⟦E9⟧.",
+  "quest:9389:progress:0": "Have you seen to your task?",
+  "quest:9389:completion:0": "So you've returned, and you've seen to the emerald flames of the continent. What do you think, mm? A rare and wonderful sight, to be certain. I am aware, however, that tangible rewards are better appreciated... so please, take this for your trouble.",
+  "quest:9319:obj:0": "Find and touch the bonfires located within ⟦E16⟧, ⟦E17⟧, ⟦E18⟧, and ⟦E19⟧, then return to the ⟦E5⟧.",
+  "quest:9319:details:0": "We are not the only ones who celebrate this holiday, ⟦3⟧. All creatures, all cultures, are touched by the flame. Even in the darkest places, the fires are being lit.",
+  "quest:9319:details:1": "If you wish to see them for yourself, travel into the depths. Seek out the bonfires burning within ⟦E19⟧, ⟦E18⟧, among the ogres of ⟦E17⟧, and the halls of ⟦E16⟧ itself; I will await your return.",
+  "quest:9319:progress:0": "Have you found your way through the dark?",
+  "quest:9319:completion:0": "You have proven that you are not entirely useless, mortal.",
+  "quest:9322:obj:0": "Visit the ⟦E13⟧ camps located in ⟦E20⟧, ⟦E21⟧, ⟦E22⟧, and ⟦E23⟧, then return to the ⟦E5⟧.",
+  "quest:9322:details:0": "The ⟦E13⟧ ⟦E14⟧ Festival is celebrated everywhere in ⟦E24⟧, and the diverse land of ⟦E6⟧ is no exception. You look fit to travel -- perhaps a journey is in order.",
+  "quest:9322:details:1": "⟦E13⟧ cannot be truly appreciated unless you've seen the blistering blue fires abroad. The celebrants have lit fires in chilly western ⟦E23⟧, northeastern ⟦E20⟧, near Valor's Rest in the wastes of ⟦E21⟧, and by the entrance to lush Un'Goro. Return once your journey is complete.",
+  "quest:9322:progress:0": "Are the flames of ⟦E6⟧ burning brightly?",
+  "quest:9322:completion:0": "Your spirit glows with the warmth of the ⟦E6⟧ fires, friend. Is the heat not invigorating? Once the power fades from you, perhaps these will help rekindle the feeling.",
+  "quest:9323:obj:0": "Visit the ⟦E14⟧ Festival camps located in ⟦E25⟧, ⟦E26⟧, the Hinterlands and ⟦E27⟧, then speak with the ⟦E5⟧.",
+  "quest:9323:details:0": "Our celebration of the flame is spread throughout the land, ⟦4⟧. Not a single place remains untouched by the heat of this holiday, and the strongest fires burn a brilliant blue. Seek them out.",
+  "quest:9323:details:1": "You'll find one just north of ⟦E16⟧. The others are located deep within the ⟦E26⟧ near a decrepit town, along the road to the cliffs within the mountainous Hinterlands, and on the way to the Dark Portal within the ⟦E25⟧.",
+  "quest:9323:details:2": "B Return once your journey is done.",
+  "quest:9323:progress:0": "It will take time to prevail against this threat. How have you fared, ⟦5⟧?",
+  "quest:9323:completion:0": "Ah, here you are. A little wearier, a bit dustier, but enlightened! The heat touches us all during this season and unites us; your very being glows with the power of the fires you touched. Ah, but these days enlightenment is taken as a rather poor reward for being sent on a task, I suppose. Take these, then, and enjoy the celebration.",
+  "quest:9324:obj:0": "Return the ⟦E29⟧ to the ⟦E30⟧.",
+  "quest:9324:details:0": "This flame, stolen from the heart of ⟦E31⟧ itself, floods you with warmth. This raw power is foreign to you, but the Loremaster might know more...",
+  "quest:9324:progress:0": "You're practically glowing, ⟦6⟧. What do you have there?",
+  "quest:9324:completion:0": "What's this? Unless I'm mistaken, this flame has been taken from the heart of ⟦E31⟧ itself! The fierce hearts of the orcs and trolls are reflected in its searing heat. What a fine addition to our collection--how brave you are, stealing into the enemy's lair to retrieve the sacred flame!",
+  "quest:9325:obj:0": "Return the ⟦E33⟧ to the ⟦E30⟧.",
+  "quest:9325:details:0": "This flame, stolen from the shaman of ⟦E34⟧, floods you with warmth. This raw power is foreign to you, but the Loremaster might know more...",
+  "quest:9325:progress:0": "You're practically glowing, ⟦7⟧. What do you have there?",
+  "quest:9325:completion:0": "Unless I miss my guess, this fire has been taken from the cliffs of ⟦E34⟧! How it sings with the power of the spirits! You are quite the thief, ⟦8⟧. Take this as just payment for your skill. Now, if only we had the flames of all three cities...",
+  "quest:9326:obj:0": "Return the ⟦E36⟧ to the ⟦E30⟧.",
+  "quest:9326:details:0": "This flame, stolen from the ruins above the ⟦E37⟧, floods you with warmth. This raw power is foreign to you, but the Loremaster might know more...",
+  "quest:9326:progress:0": "You're practically glowing, ⟦9⟧. What do you have there?",
+  "quest:9326:completion:0": "Hm... what a strange fire! It is subdued, nearly smoldering, but the heat is intense. And you received this from the ⟦E37⟧, you say? Fascinating. With the flames of all three cities, who knows what we could accomplish?",
+  "quest:9330:obj:0": "Return the ⟦E38⟧ to the ⟦E39⟧.",
+  "quest:9330:details:0": "This flame, stolen from the heart of ⟦E40⟧ itself, floods you with warmth. This raw power is foreign to you, but the Talespinner might know more...",
+  "quest:9330:progress:0": "You're practically glowing, ⟦10⟧. What do you have there?",
+  "quest:9330:completion:0": "And this brightly-burning fire... you say it came from ⟦E40⟧? Remarkable! That must have been quite an adventure! I'll pay you for this, of course. If you find anything else like this, be sure to speak with me again.",
+  "quest:9331:obj:0": "Return the ⟦E41⟧ to the ⟦E39⟧.",
+  "quest:9331:details:0": "This flame, stolen from the heart of ⟦E42⟧ itself, floods you with warmth. This raw power is foreign to you, but the Talespinner might know more...",
+  "quest:9331:progress:0": "You're practically glowing, ⟦11⟧. What do you have there?",
+  "quest:9331:completion:0": "This hearty flame must be from the halls of ⟦E42⟧; it's as stalwart as the dwarves themselves. A fine catch, ⟦12⟧. If I had the fires of the other cities... ah, but never mind. Here is your payment.",
+  "quest:9332:obj:0": "Return the ⟦E43⟧ to the ⟦E39⟧.",
+  "quest:9332:details:0": "This flame, stolen from the shores of ⟦E44⟧, floods you with warmth. This raw power is foreign to you, but the Talespinner might know more...",
+  "quest:9332:progress:0": "You're practically glowing, ⟦13⟧. What do you have there?",
+  "quest:9332:completion:0": "This fire aches of ancient sorrow, ⟦14⟧. You pulled this from the roots of ⟦E44⟧, you say? Fascinating! Here is a reward for your skill. Return to me should you find anything else like this; I may have a use for it.",
+  "quest:9339:obj:0": "Return the ⟦E38⟧ to (NAME).",
+  "quest:9339:details:0": "This flame, stolen from the heart of ⟦E40⟧ itself, floods you with warmth. This raw power is foreign to you, but the (NAME) might know more...",
+  "quest:9339:completion:0": "You've proven yourself, today, ⟦15⟧.⟦16⟧⟦17⟧While I have little else to give you, I do have this crown; a fitting gift for a conqueror. May it light your way.",
+  "quest:9365:obj:0": "Return the ⟦E38⟧ to (NAME).",
+  "quest:9365:details:0": "This flame, stolen from the heart of ⟦E40⟧ itself, floods you with warmth. This raw power is foreign to you, but the (NAME) might know more...",
+  "quest:9365:completion:0": "You've proven yourself, today, ⟦18⟧.⟦19⟧⟦20⟧While I have little else to give you, I do have this crown; a fitting gift for a conqueror. May it light your way.",
+  "quest:9367:obj:0": "Touch the bonfires within ⟦E40⟧, ⟦E42⟧, and ⟦E45⟧, then speak to a ⟦E30⟧ within the capital cities.",
+  "quest:9367:details:0": "⟦E13⟧ is upon us once again!",
+  "quest:9367:details:1": "Each year, as tradition dictates, Flamekeepers are chosen to tend the bonfires within our capitals. While fires are burning throughout ⟦E24⟧, it is imperative that ours be the hottest and brightest, to properly pay homage to the season.",
+  "quest:9367:details:2": "In fact, I have a task for you, if you don't mind. I've not yet heard if the fires in all capitals are properly burning. ⟦E46⟧ there yourself and warm yourself by the fires--make sure they're hot!",
+  "quest:9367:progress:0": "Are the fires burning?",
+  "quest:9367:completion:0": "Excellent! It seems we've appointed dutiful Flamekeepers this year if the bonfires are as well-kept as you claim. Thank you for inspecting them for me; here, take this as a small token of my esteem.",
+  "quest:9368:obj:0": "Touch the bonfires within ⟦E31⟧, ⟦E34⟧, and the ⟦E37⟧, then speak to a ⟦E39⟧ within the capital cities.",
+  "quest:9368:details:0": "⟦E13⟧ is upon us once again!",
+  "quest:9368:details:1": "Each year, as tradition dictates, Flamekeepers are chosen to tend the bonfires within our capitals. While fires are burning throughout ⟦E24⟧, it is imperative that ours be the hottest and brightest, to properly pay homage to the season.",
+  "quest:9368:details:2": "In fact, I have a task for you, if you don't mind. I've not yet heard if the fires in all capitals are properly burning. ⟦E46⟧ there yourself and warm yourself by the fires--make sure they're hot!",
+  "quest:9368:progress:0": "Have you had any luck, ⟦21⟧?",
+  "quest:9368:completion:0": "Excellent work, ⟦22⟧. With the shadows destroyed, it can only be a matter of time before the Lich King decides to recall his necropolises and leave us in peace."
+ },
+ "context": {
+  "quest:9388": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "Festival Loremaster («دانشمند جشنواره»)، Festival Talespinner («قصه‌گوی جشنواره»)",
+   "turner": "Festival Flamekeeper («شعله‌دار جشنواره»)"
+  },
+  "quest:9389": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 25,
+   "side": "",
+   "giver": "Festival Loremaster («دانشمند جشنواره»)، Festival Talespinner («قصه‌گوی جشنواره»)",
+   "turner": "Festival Flamekeeper («شعله‌دار جشنواره»)"
+  },
+  "quest:9319": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Festival Flamekeeper («شعله‌دار جشنواره»)",
+   "turner": "Festival Flamekeeper («شعله‌دار جشنواره»)"
+  },
+  "quest:9322": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Festival Flamekeeper («شعله‌دار جشنواره»)",
+   "turner": "Festival Flamekeeper («شعله‌دار جشنواره»)"
+  },
+  "quest:9323": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Festival Flamekeeper («شعله‌دار جشنواره»)",
+   "turner": "Festival Flamekeeper («شعله‌دار جشنواره»)"
+  },
+  "quest:9324": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Festival Loremaster («دانشمند جشنواره»)"
+  },
+  "quest:9325": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Festival Loremaster («دانشمند جشنواره»)"
+  },
+  "quest:9326": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Festival Loremaster («دانشمند جشنواره»)"
+  },
+  "quest:9330": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Festival Talespinner («قصه‌گوی جشنواره»)"
+  },
+  "quest:9331": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Festival Talespinner («قصه‌گوی جشنواره»)"
+  },
+  "quest:9332": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Festival Talespinner («قصه‌گوی جشنواره»)"
+  },
+  "quest:9339": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Festival Talespinner («قصه‌گوی جشنواره»)",
+   "turner": "Festival Talespinner («قصه‌گوی جشنواره»)"
+  },
+  "quest:9365": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Festival Loremaster («دانشمند جشنواره»)",
+   "turner": "Festival Loremaster («دانشمند جشنواره»)"
+  },
+  "quest:9367": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Festival Loremaster («دانشمند جشنواره»)",
+   "turner": "Festival Loremaster («دانشمند جشنواره»)"
+  },
+  "quest:9368": {
+   "zone_en": "Midsummer",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Festival Talespinner («قصه‌گوی جشنواره»)",
+   "turner": "Festival Talespinner («قصه‌گوی جشنواره»)"
+  }
+ },
+ "known": {
+  "quest:9388": {
+   "title": "شعله‌های سوسوزن در کالیم‌دور"
+  },
+  "quest:9389": {
+   "title": "شعله‌های سوسوزن در قلمروهای شرقی"
+  },
+  "quest:9319": {
+   "title": "نوری در مکان‌های تاریک"
+  },
+  "quest:9322": {
+   "title": "آتش‌های بی‌مهار در کالیم‌دور"
+  },
+  "quest:9323": {
+   "title": "آتش‌های بی‌مهار در قلمروهای شرقی"
+  },
+  "quest:9324": {
+   "title": "دزدیدن شعلهٔ اورگیمار"
+  },
+  "quest:9325": {
+   "title": "دزدیدن شعلهٔ تاندر بلوف"
+  },
+  "quest:9326": {
+   "title": "دزدیدن شعلهٔ شهر زیرین"
+  },
+  "quest:9330": {
+   "title": "دزدیدن شعلهٔ استورم‌ویند"
+  },
+  "quest:9331": {
+   "title": "دزدیدن شعلهٔ ایرون‌فورج"
+  },
+  "quest:9332": {
+   "title": "دزدیدن شعلهٔ دارناسوس"
+  },
+  "quest:9339": {
+   "title": "پاداش دزد"
+  },
+  "quest:9365": {
+   "title": "پاداش دزد"
+  },
+  "quest:9367": {
+   "title": "جشن آتش"
+  },
+  "quest:9368": {
+   "title": "جشن آتش"
+  }
+ }
+}

@@ -1,0 +1,926 @@
+{
+ "pack": "quest-ironforge-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-ironforge-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Gnomeregan Archival Data",
+   "fa": "دادهٔ بایگانیِ نومریگان",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Gnomeregan",
+   "fa": "گنومریگان",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Jemma Quikswitch",
+   "fa": "جما کویک‌سوییچ",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Find Bingles",
+   "fa": "بینگلز را پیدا کن",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Gnoarn",
+   "fa": "گنوآرن",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Speak with Shoni",
+   "fa": "با شونی صحبت کن",
+   "kind": "qs"
+  },
+  "E9": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Shoni the Shilent",
+   "fa": "شونی خاموش",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Sully Balloo's Letter",
+   "fa": "نامهٔ سالی بالو",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Sara Balloo",
+   "fa": "سارا باللو",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "King Magni Bronzebeard",
+   "fa": "شاه مگنی ریش‌مفرغی",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Grand Mason Marblesten",
+   "fa": "استاد بنای اعظم ماربل‌استن",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Twisting Nether",
+   "fa": "خلأ پیچان",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Alterac Granite",
+   "fa": "گرانیت آلتراک",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E20": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E21": {
+   "en": "Kreldig Ungor",
+   "fa": "کرلدیگ آنگور",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Brilliant Gold Ring",
+   "fa": "انگشترِ طلای درخشان",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Silver Bar",
+   "fa": "شمش نقره",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Moss Agate",
+   "fa": "عقیق خزه‌ای",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Talvash del Kissel",
+   "fa": "تالواش دل کیسسل",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Prospector Ironband",
+   "fa": "جویندهٔ رگه، گروه‌آهن",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Ironband's Excavation",
+   "fa": "حفاری آهن‌بند",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Ironband",
+   "fa": "آیرون‌بند",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Signal for Pickup",
+   "fa": "علامت برای تحویل",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Dinita Stonemantle",
+   "fa": "دینیتا شنل‌سنگی",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Proof of Deed",
+   "fa": "گواهِ کردار",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Mountaineer Pebblebitty",
+   "fa": "کوه‌نورد ریگ‌ریزه",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Curator Thorius",
+   "fa": "متصدی توریوس",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E41": {
+   "en": "Uldaman",
+   "fa": "اولدامان",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Historian Karnik",
+   "fa": "تاریخ‌نگار کارنیک",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "The Discs of Norgannon",
+   "fa": "دیسک‌های نورگانون",
+   "kind": "ob"
+  },
+  "E45": {
+   "en": "High Explorer Magellas",
+   "fa": "کاشف عالی ماژلاس",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Arch Druid Fandral Staghelm",
+   "fa": "دروید اعظم فاندرال گوزن‌کلاه",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Commander Ashlam Valorfist",
+   "fa": "فرمانده اشلام مشت‌دلاور",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E52": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E53": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E54": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Concerted Efforts",
+   "fa": "تلاش‌های هماهنگ",
+   "kind": "qs"
+  },
+  "E57": {
+   "en": "Alterac Valley Mark of Honor",
+   "fa": "نشان افتخار درهٔ آلتراک",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Arathi Basin Mark of Honor",
+   "fa": "نشان افتخار حوضهٔ آراتی",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "Warsong Gulch Mark of Honor",
+   "fa": "نشان افتخار درهٔ وارسونگ",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Alliance Brigadier General",
+   "fa": "سرتیپ ائتلاف",
+   "kind": "npc"
+  },
+  "E62": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E63": {
+   "en": "Tymor",
+   "fa": "تایمور",
+   "kind": "npc"
+  },
+  "E64": {
+   "en": "Drawing Kit",
+   "fa": "کیتِ نقاشی",
+   "kind": "it"
+  },
+  "E65": {
+   "en": "Pilot Xiggs Fuselighter",
+   "fa": "خلبان زیگز فوزلایتر",
+   "kind": "npc"
+  },
+  "E67": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E68": {
+   "en": "Xiggs Fuselighter",
+   "fa": "زیگز فیوزلایتر",
+   "kind": "npc"
+  },
+  "E69": {
+   "en": "Standard Issue Flare Gun",
+   "fa": "تفنگِ پرتوِ هشدار اداری",
+   "kind": "it"
+  },
+  "E71": {
+   "en": "Cursed Ooze",
+   "fa": "لجن نفرین‌شده",
+   "kind": "npc"
+  },
+  "E72": {
+   "en": "Laris Geardawdle",
+   "fa": "لاریس گیردادل",
+   "kind": "npc"
+  },
+  "E73": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E74": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Gnomeregan Archival Data": "دادهٔ بایگانیِ نومریگان",
+  "Gnomeregan": "گنومریگان",
+  "Jemma Quikswitch": "جما کویک‌سوییچ",
+  "Ironforge": "آیرون‌فورج",
+  "Find Bingles": "بینگلز را پیدا کن",
+  "Loch Modan": "لوک مودان",
+  "Gnoarn": "گنوآرن",
+  "Speak with Shoni": "با شونی صحبت کن",
+  "Stormwind": "استورم‌ویند",
+  "Shoni the Shilent": "شونی خاموش",
+  "Sully Balloo's Letter": "نامهٔ سالی بالو",
+  "Sara Balloo": "سارا باللو",
+  "King Magni Bronzebeard": "شاه مگنی ریش‌مفرغی",
+  "Alliance": "اتحاد",
+  "Grand Mason Marblesten": "استاد بنای اعظم ماربل‌استن",
+  "Twisting Nether": "خلأ پیچان",
+  "Alterac Granite": "گرانیت آلتراک",
+  "Azeroth": "آزروت",
+  "Travel": "سفر",
+  "Kreldig Ungor": "کرلدیگ آنگور",
+  "Desolace": "دزوله‌یس",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Brilliant Gold Ring": "انگشترِ طلای درخشان",
+  "Silver Bar": "شمش نقره",
+  "Moss Agate": "عقیق خزه‌ای",
+  "Talvash del Kissel": "تالواش دل کیسسل",
+  "Prospector Ironband": "جویندهٔ رگه، گروه‌آهن",
+  "Ironband's Excavation": "حفاری آهن‌بند",
+  "Ironband": "آیرون‌بند",
+  "Signal for Pickup": "علامت برای تحویل",
+  "Azshara": "آزشارا",
+  "Dinita Stonemantle": "دینیتا شنل‌سنگی",
+  "Proof of Deed": "گواهِ کردار",
+  "Mountaineer Pebblebitty": "کوه‌نورد ریگ‌ریزه",
+  "Curator Thorius": "متصدی توریوس",
+  "Tanaris": "تاناریس",
+  "Uldaman": "اولدامان",
+  "Historian Karnik": "تاریخ‌نگار کارنیک",
+  "The Discs of Norgannon": "دیسک‌های نورگانون",
+  "High Explorer Magellas": "کاشف عالی ماژلاس",
+  "Arch Druid Fandral Staghelm": "دروید اعظم فاندرال گوزن‌کلاه",
+  "Darnassus": "دارناسوس",
+  "Commander Ashlam Valorfist": "فرمانده اشلام مشت‌دلاور",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Plaguelands": "طاعون‌زار",
+  "Runecloth": "پارچهٔ رونی",
+  "Concerted Efforts": "تلاش‌های هماهنگ",
+  "Alterac Valley Mark of Honor": "نشان افتخار درهٔ آلتراک",
+  "Arathi Basin Mark of Honor": "نشان افتخار حوضهٔ آراتی",
+  "Warsong Gulch Mark of Honor": "نشان افتخار درهٔ وارسونگ",
+  "Alliance Brigadier General": "سرتیپ ائتلاف",
+  "Horde": "هورد",
+  "Tymor": "تایمور",
+  "Drawing Kit": "کیتِ نقاشی",
+  "Pilot Xiggs Fuselighter": "خلبان زیگز فوزلایتر",
+  "Elune": "الون",
+  "Xiggs Fuselighter": "زیگز فیوزلایتر",
+  "Standard Issue Flare Gun": "تفنگِ پرتوِ هشدار اداری",
+  "Cursed Ooze": "لجن نفرین‌شده",
+  "Laris Geardawdle": "لاریس گیردادل",
+  "Undercity": "آندر‌سیتی",
+  "Felwood": "فل‌وود"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$C",
+  "4": "$n",
+  "5": "$N",
+  "6": "$C",
+  "7": "$B",
+  "8": "$B",
+  "9": "$c",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$n",
+  "16": "$N",
+  "17": "$B",
+  "18": "$B",
+  "19": "$c",
+  "20": "$N",
+  "21": "$n",
+  "22": "$N",
+  "23": "$n",
+  "24": "$n",
+  "25": "$N",
+  "26": "$N",
+  "27": "$c",
+  "28": "$C",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$N",
+  "33": "$N",
+  "34": "$B",
+  "35": "$B",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$B",
+  "41": "$B",
+  "42": "$N",
+  "43": "$N",
+  "44": "$B",
+  "45": "$B",
+  "46": "$B",
+  "47": "$B",
+  "48": "$N"
+ },
+ "rows": {
+  "quest:97263:title": "Your Package Has Arrived",
+  "quest:97263:obj:0": "Deliver Eldrun's misplaced package.",
+  "quest:95041:title": "Data Hoarders",
+  "quest:95041:obj:0": "Collect 7 ⟦E1⟧ cards from around ⟦E2⟧, then deliver them to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:2039:obj:0": "⟦E5⟧ Blastenheimer in ⟦E6⟧.",
+  "quest:2039:details:0": "We've lost contact with Bingles! He was sent on a reconnaissance mission over ⟦E2⟧ and hasn't reported back in over a week. I just know he's gone and blown himself up.",
+  "quest:2039:details:1": "He was last seen flying over the Loch. Perhaps you can investigate, ⟦1⟧.",
+  "quest:2039:completion:0": "So ⟦E7⟧ doesn't trust my reconnaissance abilities? I wonder why...",
+  "quest:2039:completion:1": "Nevermind that, I need your assistance! Nay! The movement needs your assistance!",
+  "quest:2041:obj:0": "⟦E8⟧ the Shilent in ⟦E9⟧.",
+  "quest:2041:details:0": "Perhaps... Perhaps you can help us in the battle for ⟦E2⟧.",
+  "quest:2041:details:1": "In ⟦E9⟧ you will find the commander of our underground assault crew, ⟦E11⟧. Shoni needs assistance with her gyrodrillmatic excavationators.",
+  "quest:2041:details:2": "You will probably find her amongst the dwarves in ⟦E9⟧.",
+  "quest:2041:details:3": "Good luck, ⟦2⟧.",
+  "quest:2041:completion:0": "Do you bring word from central command?",
+  "quest:637:obj:0": "Deliver ⟦E12⟧ to ⟦E13⟧.",
+  "quest:637:details:0": "The waterlogged and war-torn envelope dissolves in your hands, leaving you with a few pages of a letter in your grasp, written with painstaking care.",
+  "quest:637:details:1": "The letter is addressed to a Mrs. ⟦E13⟧ of ⟦E4⟧ and begins, \"My dear Sara....\"",
+  "quest:637:progress:0": "You look as though you have traveled a great distance and seen much turmoil in your time, ⟦3⟧. These times we live in are trying on the soul. What news do you bring to me now?",
+  "quest:637:completion:0": "You say you saw my Sully pinned beneath the icy waters? Say it isn't so!",
+  "quest:637:completion:1": "Let me read what he wrote....",
+  "quest:683:obj:0": "Take ⟦E13⟧'s note to ⟦E14⟧ of ⟦E4⟧.",
+  "quest:683:details:0": "⟦4⟧, I have but a small request to ask of you.",
+  "quest:683:details:1": "Take this note I have prepared to our great monarch of ⟦E4⟧, ⟦E14⟧. 'Tis a small task to ask of one such as yourself, someone who has shown great valor to the cause of the ⟦E15⟧ thus far.",
+  "quest:683:details:2": "For me to go before the King in my grief-ridden state would not serve the purpose of my cause. Surely you understand.",
+  "quest:683:progress:0": "So you are ⟦5⟧ the ⟦6⟧? News of your contributions to the ⟦E15⟧ has traveled quite far, you know?⟦7⟧⟦8⟧On what business do you come before me today?",
+  "quest:683:completion:0": "It will take but a moment for me to peruse this letter...",
+  "quest:686:obj:0": "⟦E14⟧ wants you to speak with ⟦E16⟧.",
+  "quest:686:details:0": "I do not expect good dwarves like Mrs. Balloo to understand why the travesties of war must be endured for the greater good of our people. The loss of her husband, and the loss of every dwarf that fights in the name of the ⟦E15⟧, weighs heavy on my soul.",
+  "quest:686:details:1": "While I cannot bring her husband back from the ⟦E17⟧, I can pay tribute to him.",
+  "quest:686:details:2": "I am going to commission a memorial to Sully Balloo to be built by ⟦E16⟧.",
+  "quest:686:details:3": "Send word to him now, ⟦9⟧. You shall be custodian of my bidding.",
+  "quest:686:completion:0": "So ⟦E14⟧ himself sent ye?",
+  "quest:686:completion:1": "My, my! This must be important!",
+  "quest:689:obj:0": "⟦E16⟧ of ⟦E4⟧ wants 5 pieces of ⟦E18⟧.",
+  "quest:689:details:0": "So our good King would like a memorial built in honor of a soldier named Sully Balloo? And you say the poor chap died during the Thandol Span tragedy?",
+  "quest:689:details:1": "Bah, will there ever be peace on ⟦E19⟧?",
+  "quest:689:details:2": "Nonetheless, any commission from the King is of utmost importance. To build a truly epic and lasting piece I want to work with one of the finest stones available. ⟦E20⟧ to Darrow Hill in Hillsbrad and gather for me some ⟦E18⟧.",
+  "quest:689:progress:0": "⟦10⟧, ⟦11⟧, ⟦12⟧! Tell me you have enough ⟦E18⟧ for me to begin my masterpiece in honor of Sully Balloo.",
+  "quest:689:completion:0": "Perfect! Better than I could have imagined!",
+  "quest:689:completion:1": "And I have quite an imagination you know...",
+  "quest:700:obj:0": "Report to ⟦E14⟧.",
+  "quest:700:details:0": "Ah, such fine stone comes from Lordaeron. Such a shame the land is in such shambles.",
+  "quest:700:details:1": "But the Memorial came out quite well! I should think the King will be most pleased with it.",
+  "quest:700:details:2": "Now if you will, please send word to His Majesty that the Memorial is complete as requested.",
+  "quest:700:completion:0": "The granite seems but a small token compared to a great dwarf's life. But no dwarf shall last on this planet for eternity.",
+  "quest:700:completion:1": "Let us just hope that the memorial stands as a reminder to those who will trod the great ⟦E19⟧ of the future. Lest we not forget it is for them that brave soldiers such as Sully Balloo so valiantly gave their lives.",
+  "quest:1453:obj:0": "Speak to ⟦E21⟧ in ⟦E22⟧.",
+  "quest:1453:details:0": "There's work to be done in ⟦E22⟧, ⟦13⟧. It's an atrocious place, befouled by centaur and other nasties. But if you're looking for a good week's honest work, then head there, meet with ⟦E21⟧, and tell him I sentcha.",
+  "quest:1453:details:1": "You can find him holed up at Nijel's Point--it's a little cozy camp hidden in the mountains of northern ⟦E22⟧. Just head east if you enter from the ⟦E23⟧. It's easy to miss, so be on the lookout.",
+  "quest:1453:completion:0": "Glad to see the Reclaimers aren't in short supply of work, or adventurers willing to help out.",
+  "quest:1453:completion:1": "I'm Kreldig, ⟦14⟧. You've made a smart move helpin' out the Reclaimers. Everyone needs something these days: they've lost a family heirloom, a magic item, a loved one. You never can tell. But with the Reclaimers around, there's no reason, for the right price, everyone can't find what they've lost.",
+  "quest:2948:obj:0": "Bring the ⟦E25⟧, a ⟦E26⟧, a ⟦E27⟧, and 30 silver coins to ⟦E28⟧ in ⟦E4⟧.",
+  "quest:2948:details:0": "Listen ⟦15⟧, that ring is yours, sure... but I can make you a better one! That design, like I said, is really simple. I am a lot more skilled now, and for the mere fee of thirty silver coins I'll spruce it up for you! Well, a little more than thirty, actually...",
+  "quest:2948:details:1": "I'm in a tight spot right now; all my material stock is all dried up. If you bring me a bar of silver and a moss agate, I'll add a silver and agate lattice to the ring that will give it a little more pizzazz!",
+  "quest:2948:details:2": "Trust me!",
+  "quest:2948:progress:0": "Do you have the materials I need?  I wouldn't ask you for them if I wasn't down on my luck...",
+  "quest:2948:completion:0": "Ah, exactly what I needed! Someday, when I find myself out of this hole that I am unjustly in, I will make for you, for EVERYONE the finest trinkets in all of ⟦E19⟧! Until then, thanks for being a sport about the reagents. I'd normally charge ten times what I have charged you for a ring of this quality...",
+  "quest:2948:completion:1": "Speaking of rings, here's your new one!",
+  "quest:707:obj:0": "Speak with ⟦E29⟧ at ⟦E30⟧ Site in ⟦E6⟧.",
+  "quest:707:details:0": "⟦16⟧. I received reports from ⟦E29⟧ at his excavation site in ⟦E6⟧--he needs some legwork done concerning another of our excavations.",
+  "quest:707:details:1": "I don't have more details than that, but if you want to stretch your legs then go speak with ⟦E31⟧.",
+  "quest:707:completion:0": "So Stormpike sent you, did he? Good.",
+  "quest:707:completion:1": "I have a big task for you...",
+  "quest:3483:title": "⟦E32⟧",
+  "quest:3483:completion:0": "Ah, another flare gun, huh? That I can do.⟦17⟧⟦18⟧And don't forget, southern tip of ⟦E33⟧. It's a small little island that's been turned into a landing pad. You can't miss it if you're in the right spot.",
+  "quest:2439:obj:0": "Take your reward voucher to ⟦E34⟧ in the Vault of ⟦E4⟧.",
+  "quest:2439:details:0": "This object is an incredible find. The ancient Titans, or the Creators as these discs refer to them as, are the link to our enchanted creation, if the lore stored in here is correct! We'll need to invest as much research time into this as possible.",
+  "quest:2439:details:1": "As for you, heroic ⟦19⟧, take this voucher to ⟦E34⟧ at the vault. It grants you what I think is a fitting for such a tremendous find!",
+  "quest:2439:details:2": "Return to me directly when you are ready; there is much more to do for the Explorers' League!",
+  "quest:2439:progress:0": "Welcome to the Vault of ⟦E4⟧, ⟦20⟧.  What may I do for you today?",
+  "quest:2439:completion:0": "As yes, a voucher from the Explorers' League... and quite the valuable one, might I add.",
+  "quest:2439:completion:1": "The Explorers' League lends me the authority to offer you a choice in your compensation directly from their vault. You are to receive this item, and you may choose between five superior healing potions or five greater mana potions as your reward.",
+  "quest:3201:obj:0": "Take the ⟦E37⟧ back to ⟦E38⟧.",
+  "quest:3201:details:0": "I can't believe Pebblebitty doubted the authenticity of the horn. Between you and me, I think she's just jealous. I know she really wanted to kill that beast herself, what with the 'incident' and all.",
+  "quest:3201:details:1": "So you need a proof of deed? After the contribution you just made to the museum, it won't be a problem.",
+  "quest:3201:details:2": "B<⟦E39⟧ begins to fill out a large document.>",
+  "quest:3201:details:3": "There we go! You can take that back to Pebblebitty.",
+  "quest:3201:progress:0": "I don't believe it.",
+  "quest:3201:completion:0": "I don't know how someone as weak as you overcame Margol, but a deal is a deal. Here is the key.",
+  "quest:3201:completion:1": "If anything happens to you after this, it will be your own fault.",
+  "quest:2946:obj:0": "Bring the miniature platinum discs to the gates of Uldum in ⟦E40⟧ and look for clues as to the connection between the two.",
+  "quest:2946:details:0": "We want you to take the miniature discs you found to the sealed gates of Uldum. We... we aren't sure what will happen when you do this.",
+  "quest:2946:details:1": "This sounds risky, sure, we acknowledge that. It might, however, do nothing. You might need to use the discs on something. Perhaps the doors unlock when you have the discs in your possession. Be open to try anything, and be ready for anything to happen.",
+  "quest:2946:details:2": "When you've found out what happens, return to ⟦E4⟧. We'll have a lot to analyze when you're done!",
+  "quest:2946:progress:0": "This familiar looking pedestal sticks out of the hot sand. Perhaps there is something to its presence here...",
+  "quest:2946:completion:0": "As you touch the pedestal, the miniature discs from ⟦E41⟧ hum and glow in your backpack. A familiar feeling tingle washes over your hands, as the image of another Stone Watcher springs to life in front of the gates of Uldum.",
+  "quest:2946:completion:1": "B\"Salutations. I am a guardian of entry. The discs that have been used for access are missing the correct entry discs, the Plates of Uldum. Please incorporate these plates with the disc structure and repeat your access sequencing. Thank you.\"",
+  "quest:2963:obj:0": "Speak with ⟦E42⟧ in the Hall of Explorers within ⟦E4⟧.",
+  "quest:2963:details:0": "Greetings once again, ⟦21⟧! Your discovery inside ⟦E41⟧ has set the Explorers' League abuzz with excitement. The League has been working to unlock the secrets of the miniature platinum discs you found. Your fortuitous arrival here in the Hall allows me to share with you that we are quite possibly on to something!",
+  "quest:2963:details:1": "⟦E42⟧ has uncovered some important clues as to the true origins of the Valley of the Watchers in the ⟦E40⟧ desert. He would like to speak with you as soon as possible!",
+  "quest:2963:completion:0": "I am glad you're maintaining your interest in exploration, ⟦22⟧! With your natural talent and moxie, we could crack open secrets that we never thought were possible!",
+  "quest:2963:completion:1": "⟦E44⟧ in ⟦E41⟧ were a repository of vast information; you were only permitted to access the top layers, as it were, of the information stored there. The Creators were rumored to have more repositories located throughout ⟦E19⟧. This now brings us to Uldum...",
+  "quest:2964:obj:0": "Speak with ⟦E45⟧ in ⟦E4⟧.",
+  "quest:2964:details:0": "Well ⟦23⟧... we seem to be at a temporary dead end here. We know what we need - the Plates of Uldum - but we have no idea where they might be. We'll need to do quite a bit of research on this to come up with a solid plan of attack. I have a couple ideas where to start looking; I have high hopes that soon, we'll be asking you to head out and recover them.",
+  "quest:2964:details:1": "The High Explorer needs to be informed on this, ⟦24⟧; no doubt, he also wants to thank you personally for once again aiding the League.",
+  "quest:2964:completion:0": "We're all in agreement then - the best plan of attack is putting this on hold until we can narrow down the areas where these plates might lie hidden. You've brought us this far ⟦25⟧, and I hope you will be the one to head back in to the field to unlock Uldum for us all!",
+  "quest:2964:completion:1": "Allow me to give you this honorarium in the meantime; this should cover any expenses you've encountered in assisting us, and a little something extra. Be sure to check back with us soon... Uldum beckons!",
+  "quest:2977:obj:0": "Speak with ⟦E42⟧ in ⟦E4⟧.",
+  "quest:2977:details:0": "You access the pedestal again; the platinum discs suddenly appear once more in your backpack.",
+  "quest:2977:details:1": "With the knowledge of the stone watcher learned and the discs returned to your possession, the time has come to return to ⟦E4⟧ and inform the Explorers' League of your discovery.",
+  "quest:2977:progress:0": "Welcome back ⟦26⟧.  Were you able to use the discs to your advantage, or did it end up being a wild goose chase?",
+  "quest:2977:completion:0": "You were missing some discs? Interestingly enough, it seems that the discs of Norgannon are only parts of the complete set - like keys on a key ring, if you will.",
+  "quest:2977:completion:1": "If we can find the Plates of Uldum, then we could actually access the Uldum complex itself! Imagine actually exploring the place where the Creators worked without having to bring a huge shovel!",
+  "quest:2977:completion:2": "Not that there's anything wrong with shovels... or digging...",
+  "quest:3790:obj:0": "Speak with ⟦E46⟧ in ⟦E47⟧.",
+  "quest:3790:details:0": "Excuse me ⟦27⟧, but I'd like just a moment of your time if possible.",
+  "quest:3790:details:1": "The Cenarion Circle in ⟦E47⟧ is looking for seasoned adventurers such as yourself to lend them aid in a vital research project. While I do not know the specifics, I can inform you that none other than ⟦E46⟧ is spearheading this research.",
+  "quest:3790:details:2": "Please - if you are interested, speak with him directly in the Cenarion Enclave within ⟦E47⟧ proper.",
+  "quest:3790:completion:0": "Well now, ⟦28⟧... since you were informed that I was leading this research myself, you obviously came as quickly as you could.",
+  "quest:3790:completion:1": "Now that you are here, be sure to pay attention the first time I tell you the details; I have no desire to repeat myself.",
+  "quest:5090:obj:0": "Seek out ⟦E49⟧. His base camp is located at Chillwind Camp, north of the ⟦E50⟧.",
+  "quest:5090:details:0": "Hear ye, hear ye! All heroes are called upon to heed these words!",
+  "quest:5090:details:1": "BA call to arms has been issued by the Kingdom of ⟦E9⟧! All able bodied individuals are entreated to take up arms against the dark threat of the Scourge in the northern lands of the ⟦E52⟧! Rumors fly of new threats rising from the ruins of the ⟦E53⟧!",
+  "quest:5090:details:2": "Heroes of the realm - seek out ⟦E49⟧ who has set up his base camp in Chillwind Camp, north of the ⟦E50⟧!",
+  "quest:5090:completion:0": "Welcome to the ⟦E53⟧, hero. This is one of most dangerous frontiers in ⟦E19⟧, especially with the looming threat of the Scourge to our north and northeast. I am glad to hear that the clarion call of duty and service to the greater good did not fall on deaf ears with you!",
+  "quest:5090:completion:1": "If you are ready to get your hands dirty, then there is plenty for willing and able heroes to do here on the edge of the ⟦E53⟧.",
+  "quest:7806:title": "Additional ⟦E54⟧",
+  "quest:7806:progress:0": "Greetings once again, ⟦29⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional stack of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of ⟦E4⟧.⟦30⟧⟦31⟧Whenever you are ready to hand in the stack of runecloth, I'll accept it.",
+  "quest:7806:completion:0": "⟦32⟧ - without heroes like you working on behalf of ⟦E4⟧, we'd surely suffer. Thank you for your continued efforts!",
+  "quest:7812:title": "Additional ⟦E54⟧",
+  "quest:7812:progress:0": "Greetings once again, ⟦33⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional stack of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of the ⟦E2⟧ Exiles.⟦34⟧⟦35⟧Whenever you are ready to hand in the stack of runecloth, I'll accept it.",
+  "quest:7812:completion:0": "⟦36⟧ - without heroes like you working on behalf of the gnomes, we'd surely suffer. Thank you for your continued efforts!",
+  "quest:8385:title": "⟦E56⟧",
+  "quest:8385:desc:0": "Bring 3 ⟦E57⟧, 3 ⟦E58⟧ and 3 ⟦E59⟧ to an ⟦E60⟧ outside the battlegrounds.",
+  "quest:8385:obj:0": "Bring 3 ⟦E57⟧, 3 ⟦E58⟧ and 3 ⟦E59⟧ to an ⟦E60⟧ outside the battlegrounds.",
+  "quest:8385:details:0": "Bring 3 ⟦E57⟧, 3 ⟦E58⟧ and 3 ⟦E59⟧ to an ⟦E60⟧ outside the battlegrounds.",
+  "quest:8385:progress:0": "Ah, ⟦37⟧. I hope you continue to lend your experience to the different battlefronts. A lot of our lads and lasses in the field look up to seasoned veterans like you.",
+  "quest:8385:completion:0": "You live up to yer reputation, ⟦38⟧. Without people like you, the ⟦E15⟧ wouldn't stand a chance against the savage forces of the ⟦E62⟧.",
+  "quest:3448:obj:0": "Speak to ⟦E63⟧ in ⟦E4⟧.",
+  "quest:3448:details:0": "I've recently been handed the responsibility of investigating ⟦E33⟧--a once beautiful area the elves called home. This would be back when they practiced magic. It's now a more dangerous place than it is beautiful, but that doesn't stop us from turning over every stone for answers to our past.",
+  "quest:3448:details:1": "BA companion of mine named ⟦E63⟧ offered to help me investigate the area since he takes a particular interest in such things.",
+  "quest:3448:details:2": "He owns a small place to the right of the Hall of Mysteries here in the city.",
+  "quest:3448:completion:0": "Ah, Karnik sent you, did he? I expected to hear from him soon. I've discovered such wonderful things about ⟦E33⟧.. I know night elves have incredible life spans, but everyone forgets some of the more... unfortunate events in their lives sometimes. That's not meant as a criticism, just an observation.",
+  "quest:3448:completion:1": "Long ago, there were cities created by the elves filled with knowledge about magic and other lost arts. Being a student of such things, I started my investigation. What I found was quite thrilling.",
+  "quest:3449:obj:0": "Using the ⟦E64⟧, make rubbings of the Rune of Beth'Amara, the Rune of Jin'yael, the Rune of Markri, and the Rune of Sael'hai before heading to the small island off of the southern peninsula of ⟦E33⟧ and signaling ⟦E65⟧ to pick them up.",
+  "quest:3449:details:0": "Magic was once as revered as ⟦E67⟧ herself to some elves. Some of their most powerful mages created runes and tablets citing rules of the arcane and insights into their findings. They would leave these for all to ponder in public places.",
+  "quest:3449:details:1": "I would very much like rubbings of these runes from the Ruins of Eldarath. I have a kit for you to make the rubbings with, but it will be up to you to find them. Be careful though, the Explorer's League isn't the only one interested in Eldarath.",
+  "quest:3449:progress:0": "Well, well, well, glad to see you made it out here, ⟦39⟧. Did you get the rubbings for ⟦E63⟧?⟦40⟧⟦41⟧As dangerous as this place is, there hasn't been too much action along the coast. That might be on account of the naga swimming underwater, but that's not my problem... I patrol the skies.",
+  "quest:3449:completion:0": "Good to see you safe and sound, ⟦42⟧. I hope things weren't too tough for you.",
+  "quest:3449:completion:1": "I'll get these to ⟦E63⟧ right away. He'll be thrilled to take a look at these things.",
+  "quest:3449:completion:2": "Go ahead and toss the flare gun... probably won't be any good to you anymore anyway, and I already got a new one.",
+  "quest:3450:obj:0": "Speak to ⟦E68⟧ in ⟦E4⟧.",
+  "quest:3450:details:0": "I want the rubbings delivered to my tower, but there's no need to have you go all the way there. I'll just have them air-lifted out of ⟦E33⟧.",
+  "quest:3450:details:1": "⟦E68⟧ owes me a favor or two and will be in the area soon--he's signed on to patrol the coast. Speak to him before you leave. He can give you a flare gun to signal him with. When you have the rubbings, just head to wherever he tells you and then give them to him so he can get them to my tower safely. He should be in the hangar in the Military Ward.",
+  "quest:3450:completion:0": "What can I do for you, ⟦43⟧? Kinda busy at the moment preparing my ship for a long trip. I just came over to see some of the tank pilots--I need some wendigo manes to line my cockpit and they usually have extra.",
+  "quest:3450:completion:1": "I can give you a minute if you're brief... one of the boys just took off to Steelgrill's Depot to see if the pilots down there have extra manes for me.",
+  "quest:3451:obj:0": "Speak to ⟦E68⟧ and get a ⟦E69⟧ from him in ⟦E4⟧.",
+  "quest:3451:details:0": "Ah, so ⟦E63⟧ sent you, huh? Yeah, I owe him a favor or two. What's that? Why, that little devil. Yeah, I can help him out with that. So you'll need a flare gun and a location... easy enough.",
+  "quest:3451:details:1": "There's a small island off the southern peninsula of ⟦E33⟧ that we've made a landing pad on. You take this flare gun, and use it there. I'll see your signal and come by to pick up this... whatever it is he wants.",
+  "quest:3451:completion:0": "Here's my standard issue flare gun, and be patient after you fire off the gun--there are only a couple charges in one of these, and it might take me a minute to get to you depending on how far out to sea I am. Just look out to sea after you fire off the flare.",
+  "quest:3461:obj:0": "Return ⟦E63⟧'s ⟦E64⟧ to him in ⟦E4⟧.",
+  "quest:3461:details:0": "⟦E63⟧ didn't give me anything to pay you with, so I suggest you take it up with him when you get back to ⟦E4⟧. I'm sure he'll still be in his place in the Mystic Ward. Just go knockin' and make sure he pays you good. This place ain't no picnic... that's for sure.",
+  "quest:3461:details:1": "Thanks again for helping him out though, and good luck.",
+  "quest:3461:details:2": "Oh, and I don't need the drawing kit. Why don't you just bring it back to ⟦E63⟧ when you go to see him?",
+  "quest:3461:progress:0": "You're back! Excellent. Do you have my drawing kit also?",
+  "quest:3461:completion:0": "Wonderful! I'm so glad to hear it.",
+  "quest:3461:completion:1": "I'm really excited to get to my tower and go over those rubbings. I'm so envious of you... going to a place like ⟦E33⟧. That's any student of the arcane's dream, I would guess.",
+  "quest:3461:completion:2": "Well, we never spoke about any kind of reward since you were just working for the Explorer's League, but you deserve something.",
+  "quest:4512:obj:0": "Bring 6 Filled ⟦E71⟧ Jars and 6 Filled Tainted Ooze Jars to ⟦E72⟧ in ⟦E4⟧.",
+  "quest:4512:details:0": "But the thing I've studied most is ooze. I know it sounds odd, but they're all over!",
+  "quest:4512:details:1": "I helped a lady in Menethil find her bag not too long ago--it was eaten by oozes. I've seen members of the Royal Apothecary Society from ⟦E73⟧ collecting samples of the stuff. I want to know why! Where does it come from?",
+  "quest:4512:details:2": "I've heard of more in ⟦E74⟧. What I need are samples of the oozes there so I can further my research. I'll give you containers, you use them to collect a sample from the deceased creatures.",
+  "quest:4512:progress:0": "Some of the experiments I've done are fascinating. I think with a little more work, I'll be able to figure out the nature of these creatures and how they play into how life developed on ⟦E19⟧... if they even have anything to do with it to begin with.⟦44⟧⟦45⟧One of my biggest theories that isn't well liked is the idea that oozes and slimes are tied to the creation of this planet... almost like they're a secretion of it.⟦46⟧⟦47⟧But I can't prove or disprove it until I get more samples.",
+  "quest:4512:completion:0": "Amazing results, ⟦48⟧! You got close enough to take a sample of the corrupted things, and managed to look no worse for wear! Thank you. Oh, these samples will be perfect. I can't wait to start testing on them.",
+  "quest:4512:completion:1": "If I'm right, I could be one of the Explorers' Leagues greatest scientists!",
+  "quest:4512:completion:2": "That'll prove to all the dwarves that it wasn't a mistake to allow us gnomes into ⟦E4⟧ after the ⟦E2⟧ incident."
+ },
+ "context": {
+  "quest:97263": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 2,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Eldrun Stormbreaker («الدرون طوفان‌شکن»)"
+  },
+  "quest:95041": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Jemma Quikswitch («جما کویک‌سوییچ»)",
+   "turner": "Jemma Quikswitch («جما کویک‌سوییچ»)"
+  },
+  "quest:2039": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Gnoarn («گنوآرن»)",
+   "turner": "Bingles Blastenheimer («بینگلز بلاستن‌هایمر»)"
+  },
+  "quest:2041": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Gnoarn («گنوآرن»)",
+   "turner": "Shoni the Shilent («شونی خاموش»)"
+  },
+  "quest:637": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 30,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Sara Balloo («سارا باللو»)"
+  },
+  "quest:683": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Sara Balloo («سارا باللو»)",
+   "turner": "King Magni Bronzebeard («شاه مگنی ریش‌مفرغی»)"
+  },
+  "quest:686": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 30,
+   "side": "alliance",
+   "giver": "King Magni Bronzebeard («شاه مگنی ریش‌مفرغی»)",
+   "turner": "Grand Mason Marblesten («استاد بنای اعظم ماربل‌استن»)"
+  },
+  "quest:689": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Grand Mason Marblesten («استاد بنای اعظم ماربل‌استن»)",
+   "turner": "Grand Mason Marblesten («استاد بنای اعظم ماربل‌استن»)"
+  },
+  "quest:700": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 31,
+   "side": "alliance",
+   "giver": "Grand Mason Marblesten («استاد بنای اعظم ماربل‌استن»)",
+   "turner": "King Magni Bronzebeard («شاه مگنی ریش‌مفرغی»)"
+  },
+  "quest:1453": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Roetten Stonehammer («روتتن چکش‌سنگی»)",
+   "turner": "Kreldig Ungor («کرلدیگ آنگور»)"
+  },
+  "quest:2948": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Talvash del Kissel («تالواش دل کیسسل»)",
+   "turner": "Talvash del Kissel («تالواش دل کیسسل»)"
+  },
+  "quest:707": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Prospector Stormpike («جویندهٔ رگه نیزهٔ توفان»)",
+   "turner": "Prospector Ironband («جویندهٔ رگه، گروه‌آهن»)"
+  },
+  "quest:3483": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 45,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Xiggs Fuselighter («زیگز فیوزلایتر»)"
+  },
+  "quest:2439": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 47,
+   "side": "alliance",
+   "giver": "High Explorer Magellas («کاشف عالی ماژلاس»)",
+   "turner": "Dinita Stonemantle («دینیتا شنل‌سنگی»)"
+  },
+  "quest:3201": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 48,
+   "side": "alliance",
+   "giver": "Curator Thorius («متصدی توریوس»)",
+   "turner": "Mountaineer Pebblebitty («کوه‌نورد ریگ‌ریزه»)"
+  },
+  "quest:2946": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Historian Karnik («تاریخ‌نگار کارنیک»)",
+   "turner": "Uldum Pedestal («پایهٔ اولدوم»)"
+  },
+  "quest:2963": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "High Explorer Magellas («کاشف عالی ماژلاس»)",
+   "turner": "Historian Karnik («تاریخ‌نگار کارنیک»)"
+  },
+  "quest:2964": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Historian Karnik («تاریخ‌نگار کارنیک»)",
+   "turner": "High Explorer Magellas («کاشف عالی ماژلاس»)"
+  },
+  "quest:2977": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Uldum Pedestal («پایهٔ اولدوم»)",
+   "turner": "Historian Karnik («تاریخ‌نگار کارنیک»)"
+  },
+  "quest:3790": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Innkeeper Firebrew («مهمان‌دار آتش‌دم»)",
+   "turner": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)"
+  },
+  "quest:5090": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Courier Hammerfall («پیک همرفال»)",
+   "turner": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)"
+  },
+  "quest:7806": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Mistina Steelshield («میستینا سپرفولادی»)"
+  },
+  "quest:7812": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 50,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Bubulo Acerbus («بوبولو آسربوس»)"
+  },
+  "quest:8385": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 51,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Alliance Brigadier General («سرتیپ ائتلاف»)"
+  },
+  "quest:3448": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Historian Karnik («تاریخ‌نگار کارنیک»)",
+   "turner": "Tymor («تایمور»)"
+  },
+  "quest:3449": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Tymor («تایمور»)",
+   "turner": "Pilot Xiggs Fuselighter («خلبان زیگز فوزلایتر»)"
+  },
+  "quest:3450": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Tymor («تایمور»)",
+   "turner": "Xiggs Fuselighter («زیگز فیوزلایتر»)"
+  },
+  "quest:3451": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Xiggs Fuselighter («زیگز فیوزلایتر»)",
+   "turner": "Xiggs Fuselighter («زیگز فیوزلایتر»)"
+  },
+  "quest:3461": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Pilot Xiggs Fuselighter («خلبان زیگز فوزلایتر»)",
+   "turner": "Tymor («تایمور»)"
+  },
+  "quest:4512": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Laris Geardawdle («لاریس گیردادل»)",
+   "turner": "Laris Geardawdle («لاریس گیردادل»)"
+  }
+ },
+ "known": {
+  "quest:2039": {
+   "title": "بینگلز را پیدا کن"
+  },
+  "quest:2041": {
+   "title": "با شونی صحبت کن"
+  },
+  "quest:637": {
+   "title": "نامهٔ سالی بالو"
+  },
+  "quest:683": {
+   "title": "التجای سارا بالو"
+  },
+  "quest:686": {
+   "title": "پیشکش پادشاه"
+  },
+  "quest:689": {
+   "title": "پیشکش پادشاه"
+  },
+  "quest:700": {
+   "title": "پیشکش پادشاه"
+  },
+  "quest:1453": {
+   "title": "کار پس‌گیرندگان در دزوله‌یس"
+  },
+  "quest:2948": {
+   "title": "بهبود نوم"
+  },
+  "quest:707": {
+   "title": "آیرون‌بند تو را می‌خواهد!"
+  },
+  "quest:2439": {
+   "title": "دیسک‌های پلاتینی"
+  },
+  "quest:3201": {
+   "title": "بالاخره!"
+  },
+  "quest:2946": {
+   "title": "دیدن اینکه چه می‌شود"
+  },
+  "quest:2963": {
+   "title": "نشانه‌های اولدوم"
+  },
+  "quest:2964": {
+   "title": "کاری برای آینده"
+  },
+  "quest:2977": {
+   "title": "بازگشت به ایرون‌فورج"
+  },
+  "quest:3790": {
+   "title": "همیاری با دروئید اعظم استَگهِلم"
+  },
+  "quest:5090": {
+   "title": "فراخوان به سلاح: اراضی طاعون‌زده!"
+  },
+  "quest:3448": {
+   "title": "انتقال بار"
+  },
+  "quest:3449": {
+   "title": "رون‌های جادویی"
+  },
+  "quest:3450": {
+   "title": "تحویلی آسان"
+  },
+  "quest:3451": {
+   "title": "علامت برای تحویل"
+  },
+  "quest:3461": {
+   "title": "بازگشت به تایمور"
+  },
+  "quest:4512": {
+   "title": "کمی لجن، خیلی فایده"
+  }
+ }
+}

@@ -1,0 +1,896 @@
+{
+ "pack": "quest-badlands-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-badlands-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Ryedol's Lucky Pick",
+   "fa": "کلنگ شانس رایدول",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Prospector Ryedol",
+   "fa": "جویندهٔ رگه رای‌دول",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Hammertoe Grez",
+   "fa": "چکش‌انگشت گرز",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Uldaman",
+   "fa": "اولدامان",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Rigglefuzz",
+   "fa": "ریگل‌فاز",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Lotwil Veriatus",
+   "fa": "لوتویل وریاتوس",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Frost Oil",
+   "fa": "روغن یخ",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Gyrochronatom",
+   "fa": "ژیروکروناتوم",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Healing Potion",
+   "fa": "معجون شفا",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Lesser Invisibility Potion",
+   "fa": "معجون نامرئی ضعیف",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Lucien Tosselwrench",
+   "fa": "لوسین تاسل‌رنچ",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "invisibility",
+   "fa": "نامرئی‌شدن",
+   "kind": "sp"
+  },
+  "E15": {
+   "en": "Supply Crate",
+   "fa": "صندوق تدارکات",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Sigrun Ironhew",
+   "fa": "سیگرون آهن‌تراش",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Find Agmond",
+   "fa": "یافتن اگموند",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "Buzzard",
+   "fa": "کرکس",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Crag Coyote",
+   "fa": "کایوت صخره",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Rock Elemental",
+   "fa": "عنصر سنگی",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Jarkal Mossmeld",
+   "fa": "جارکال ماس‌ملد",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Corroded Black Box",
+   "fa": "جعبهٔ سیاه خورده‌شده",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Arms",
+   "fa": "سلاح‌ها",
+   "kind": "sp"
+  },
+  "E24": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Hammertoe's Amulet",
+   "fa": "گردن‌آویز هامرتُو",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Historian Karnik",
+   "fa": "تاریخ‌نگار کارنیک",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Advisor Belgrum",
+   "fa": "مشاور بلگروم",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Sigil of the Hammer",
+   "fa": "مهر پتک",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Gerrig Bonegrip",
+   "fa": "گریگ استخوان‌چنگ",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Yagyin's Digest",
+   "fa": "چکیدهٔ یاگین",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Keeper Bel'dugur",
+   "fa": "نگهبان بل‌دوگور",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Scrap Metal",
+   "fa": "قراضهٔ فلز",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Seal of the Earth",
+   "fa": "مهر زمین",
+   "kind": "ob"
+  },
+  "E37": {
+   "en": "Amethyst Runestone",
+   "fa": "سنگ‌رونِ امیتیست",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Opal Runestone",
+   "fa": "سنگ‌رونِ اوپال",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Diamond Runestone",
+   "fa": "سنگ‌رونِ الماس",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Neeka Bloodscar",
+   "fa": "نیکا بلاداسکار",
+   "kind": "qs"
+  },
+  "E42": {
+   "en": "Neeka's Report",
+   "fa": "گزارش نیکا",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Helgrum the Swift",
+   "fa": "هلگروم تند",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Torn Scroll Fragment",
+   "fa": "تکهٔ طومار پاره",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Crumpled Scroll Fragment",
+   "fa": "تکهٔ طومار مچاله",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Singed Scroll Fragment",
+   "fa": "تکهٔ طومار سوخته",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Theldurin the Lost",
+   "fa": "تِلدورین گم‌شده",
+   "kind": "qs"
+  },
+  "E51": {
+   "en": "Scroll of Myzrael",
+   "fa": "طومارِ میزرائل",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Myzrael",
+   "fa": "مایزرائل",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Bracers of Rock Binding",
+   "fa": "مچ‌بند پیوند سنگ",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Patterned Bronze Bracers",
+   "fa": "مچ‌بند برنزی الگودار",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Cog #5",
+   "fa": "چرخ‌دندهٔ شمارهٔ ۵",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Ryedol's Lucky Pick": "کلنگ شانس رایدول",
+  "Prospector Ryedol": "جویندهٔ رگه رای‌دول",
+  "Hammertoe Grez": "چکش‌انگشت گرز",
+  "Uldaman": "اولدامان",
+  "Rigglefuzz": "ریگل‌فاز",
+  "Badlands": "بیابان",
+  "Lotwil Veriatus": "لوتویل وریاتوس",
+  "Frost Oil": "روغن یخ",
+  "Gyrochronatom": "ژیروکروناتوم",
+  "Healing Potion": "معجون شفا",
+  "Lesser Invisibility Potion": "معجون نامرئی ضعیف",
+  "Lucien Tosselwrench": "لوسین تاسل‌رنچ",
+  "invisibility": "نامرئی‌شدن",
+  "Supply Crate": "صندوق تدارکات",
+  "Sigrun Ironhew": "سیگرون آهن‌تراش",
+  "Find Agmond": "یافتن اگموند",
+  "Buzzard": "کرکس",
+  "Crag Coyote": "کایوت صخره",
+  "Rock Elemental": "عنصر سنگی",
+  "Jarkal Mossmeld": "جارکال ماس‌ملد",
+  "Corroded Black Box": "جعبهٔ سیاه خورده‌شده",
+  "Arms": "سلاح‌ها",
+  "Ironforge": "آیرون‌فورج",
+  "Hammertoe's Amulet": "گردن‌آویز هامرتُو",
+  "Historian Karnik": "تاریخ‌نگار کارنیک",
+  "Advisor Belgrum": "مشاور بلگروم",
+  "Sigil of the Hammer": "مهر پتک",
+  "Gerrig Bonegrip": "گریگ استخوان‌چنگ",
+  "Yagyin's Digest": "چکیدهٔ یاگین",
+  "Keeper Bel'dugur": "نگهبان بل‌دوگور",
+  "Undercity": "آندر‌سیتی",
+  "Scrap Metal": "قراضهٔ فلز",
+  "Seal of the Earth": "مهر زمین",
+  "Amethyst Runestone": "سنگ‌رونِ امیتیست",
+  "Opal Runestone": "سنگ‌رونِ اوپال",
+  "Diamond Runestone": "سنگ‌رونِ الماس",
+  "Neeka Bloodscar": "نیکا بلاداسکار",
+  "Neeka's Report": "گزارش نیکا",
+  "Helgrum the Swift": "هلگروم تند",
+  "Alliance": "اتحاد",
+  "Torn Scroll Fragment": "تکهٔ طومار پاره",
+  "Crumpled Scroll Fragment": "تکهٔ طومار مچاله",
+  "Singed Scroll Fragment": "تکهٔ طومار سوخته",
+  "Theldurin the Lost": "تِلدورین گم‌شده",
+  "Scroll of Myzrael": "طومارِ میزرائل",
+  "Myzrael": "مایزرائل",
+  "Bracers of Rock Binding": "مچ‌بند پیوند سنگ",
+  "Patterned Bronze Bracers": "مچ‌بند برنزی الگودار",
+  "Cog #5": "چرخ‌دندهٔ شمارهٔ ۵"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$C",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$B",
+  "17": "$B",
+  "18": "$N",
+  "19": "$N",
+  "20": "$B",
+  "21": "$B",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "<cough cough>",
+  "30": "<cough>",
+  "31": "<cough>",
+  "32": "<cough>",
+  "33": "$B",
+  "34": "$B",
+  "35": "$N",
+  "36": "$C",
+  "37": "$N",
+  "38": "$N",
+  "39": "$B",
+  "40": "$B",
+  "41": "$C",
+  "42": "$B",
+  "43": "$B",
+  "44": "$C",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$c",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N",
+  "53": "$N",
+  "54": "$N",
+  "55": "$B",
+  "56": "$B",
+  "57": "$N",
+  "58": "$N",
+  "59": "$N",
+  "60": "$B",
+  "61": "$B",
+  "62": "$N",
+  "63": "$N"
+ },
+ "rows": {
+  "quest:719:obj:0": "Find ⟦E1⟧ and return it to ⟦E2⟧ south of Hammertoe's Dig Site.",
+  "quest:719:details:0": "Hey, ⟦1⟧. Be careful 'round here. There be Dark Iron dwarves all around--looked like the Shadowforge clan.",
+  "quest:719:details:1": "They just attacked the excavation site I was workin' at--killed nearly everyone there, including my boss Hammertoe. I barely escaped with me life.",
+  "quest:719:details:2": "The site's just to the north of here, and I'm tryin' to plan a way to get some of our supplies back, especially me lucky pick.",
+  "quest:719:details:3": "Think you'd be up to helpin' me out some? One of those damned Dark Iron must have my pick! Could be anyone of them.",
+  "quest:719:progress:0": "Not sure what the Shadowforge were lookin' for, but they definitely had a purpose.",
+  "quest:719:completion:0": "Ye're me savior, ⟦2⟧. I'm glad someone could teach those Shadowforge a lesson or two. Thanks for yer help.",
+  "quest:720:obj:0": "Find ⟦E2⟧ and let him know ⟦E3⟧ is alive.",
+  "quest:720:details:0": "<There is text roughly scribbled in chalk on the map.>",
+  "quest:720:details:1": "B\"Ryedol, ⟦3⟧They're taking me to ⟦E4⟧. Send help.⟦4⟧-Hammertoe\"",
+  "quest:720:completion:0": "Hammertoe's alive?! This is amazin', ⟦5⟧!",
+  "quest:9439:title": "Unclaimed Baggage",
+  "quest:9439:obj:0": "Retrieve the Advisor's Pack and Advisor's Rapier from their holding places in the Angor Fortress and return them to Advisor Sarophas at Kargath.",
+  "quest:9439:details:0": "This is Kargath? Oh, dear. I expected a, a... well, some kind of settlement, some sign of civilization here in the wilderness.⟦6⟧⟦7⟧There must be a mistake; surely this hovel full of uncouth, unwashed, sniggering savages can't be the headquarters of the Expeditionary Force. The loutish barbarians had the gall to laugh at me when I told them about how the Dark Iron dwarves robbed me and then disappeared into the Angor Fortress. I can count on you to help me recover my possessions and my dignity, can't I?",
+  "quest:9439:progress:0": "For Sunstrider's sake, don't stare at me! It's bad enough I'm forced to endure out here in my soiled clothing! After all I've been through, the last thing I need is to be gawked at. Did you manage to collect my possessions from that hole-in-the-ground those Dark Irons call a fortress?",
+  "quest:9439:completion:0": "You're a miracle worker, ⟦8⟧! I tell you, I've never been so eager for a change of clothes in my life.⟦9⟧⟦10⟧And my rapier! I felt positively naked without my blade.⟦11⟧⟦12⟧You are to be commended and rewarded for your efforts. Never let it be said that Sarophas failed to acknowledge the little people who've helped him along the way!",
+  "quest:705:obj:0": "Bring 9 Blue Pearls to ⟦E5⟧ in the ⟦E6⟧.",
+  "quest:705:details:0": "The ⟦E6⟧ is a harsh place, filled with vicious predators and bold scavengers. Scary, especially for a short little goblin. To survive, I have to be tricky!",
+  "quest:705:details:1": "I know the recipe for flash bombs. I use those to scare away wildlife. But I'm running low on one of the ingredients: crushed blue pearl powder. Get me some and I'll make it worth your efforts.",
+  "quest:705:details:2": "Heh, and I hope you have good boots on. The Blue Pearls I need are found from clams at the Vile Reef.",
+  "quest:705:details:3": "Yep, the Vile Reef in Stranglethorn!",
+  "quest:705:progress:0": "Did you get my pearls?  I'm almost out of flash bombs!",
+  "quest:705:completion:0": "These will work great! I just need to smash them into powder...then mix them with a little of this and a little of that.",
+  "quest:705:completion:1": "Watch out, scavengers! Prepare to be flashed!",
+  "quest:710:obj:0": "Find 10 Small Stone Shards and bring them to ⟦E7⟧ in the ⟦E6⟧.",
+  "quest:710:details:0": "Here in the ⟦E6⟧ I've stopped to work on my latest project: my shackles of elemental binding.",
+  "quest:710:details:1": "When complete, they will allow mages to summon even more powerful elementals for use in even greater capacities. To start things off, I need small stone shards to test some of my newest offensive spells along with a few gizmos I've pieced together.",
+  "quest:710:details:2": "The shards are easily collected from the lesser rock elementals to the west of here. Could you bring me some?",
+  "quest:710:progress:0": "This area's perfect for-- Could you hold these in place for a moment? Yes, just like that, along the vector normal. Now, what was I... Right. Perfect for testing my latest project. The raw materials, the open space... what more could an intelligent and enlightened practitioner of the arts ask for?",
+  "quest:710:completion:0": "These shall do nicely, ⟦13⟧. Thank you. Hmm, a bit more sand than I'd anticipated. Have to adjust the coefficient of friction. No, wait; it should still be negligible with the frost oil.",
+  "quest:710:completion:1": "B<Mumbling to himself, Lotwil puts one fist into the palm of his other hand and stares at them as if fascinated.>",
+  "quest:713:obj:0": "Find ⟦E8⟧ and bring it to ⟦E7⟧ in ⟦E6⟧.",
+  "quest:713:details:0": "Let me tell you something about ⟦E8⟧: nothing can keep an engine or gears from overheating quite like it.",
+  "quest:713:details:1": "Its cooling properties are extraordinary, and its longevity as a lubricant without equal. That's not all: it also aids in retaining enchantments on magical items.",
+  "quest:713:details:2": "I need a vial of it to increase the magical capacity of my shackles and make them powerful enough to stop our summoned friend from killing us all.",
+  "quest:713:details:3": "Bro'kin, a goblin friend of mine, can teach you to make it. He's in Alterac.",
+  "quest:713:progress:0": "Have you found the oil I need? It would be so helpful if you were able to find some.",
+  "quest:713:completion:0": "Stupendous! This should be the perfect coolant for my new bracers. If the enchantments don't last a century, then I'll give all my belongings to Servo.",
+  "quest:713:completion:1": "All the mages of the Assembly will be in such awe after I finish this, ⟦14⟧. You just wait and see.",
+  "quest:714:obj:0": "Bring a ⟦E9⟧ to ⟦E7⟧ in the ⟦E6⟧.",
+  "quest:714:details:0": "⟦15⟧, you've done your job well beyond all standards.",
+  "quest:714:details:1": "B<Lotwil's obviously distracted by his work.>",
+  "quest:714:details:2": "If we ever meet in Kharanos, feel free to come apply for work.",
+  "quest:714:details:3": "Whoops! Quick, grab the... yes, that. Thanks.",
+  "quest:714:details:4": "Now I just need one more thing. It's a small part, but rather crucial, I'm afraid: a gyrochronatom.",
+  "quest:714:details:5": "If you could just go grab one and bring it to me, I should be ready to complete this.",
+  "quest:714:progress:0": "Yes, yes, yes. Just a moment.⟦16⟧⟦17⟧",
+  "quest:714:completion:0": "HA!",
+  "quest:714:completion:1": "B<Lotwil grabs the gyrochronatom from you.>",
+  "quest:714:completion:2": "Perfect... just about done. No, really. I AM almost done now. This project is my top priority... at the moment. Let me pop this into place, and you can see for yourself what you've helped me create. It'll just take me a few more minutes... maybe... possibly longer. Well, maybe a lot longer. We'll see...",
+  "quest:715:obj:0": "Bring a ⟦E10⟧ and a ⟦E11⟧ to ⟦E12⟧ in the ⟦E6⟧.",
+  "quest:715:details:0": "I'm thinking those items you acquired for Lotwil are going to be the least of our worries, ⟦18⟧. On the other hand, you've proven more than adept at the sciences Lotwil holds sacred, so how about helping me out?",
+  "quest:715:details:1": "I need an ⟦E13⟧ potion and a healing potion; both might come in handy real soon if he pulls this off.",
+  "quest:715:details:2": "In return, I'll give you this recipe for a potion I've been developing while learning from Lotwil. It's based on some of the research he's been doing here in the ⟦E6⟧.",
+  "quest:715:progress:0": "He's getting closer to finishing. How are things going on your end?",
+  "quest:715:completion:0": "YES!",
+  "quest:715:completion:1": "I mean, thank you, ⟦19⟧. These will be helpful while traveling through the ⟦E6⟧.",
+  "quest:718:obj:0": "Retrieve the ⟦E15⟧ for ⟦E16⟧.",
+  "quest:718:details:0": "In our hurry to leave the ⟦E4⟧ excavation site, we were forced to abandon many wagons and crates of supplies along the way. The local ogres from Camp Kosh have been on our abandoned equipment like vultures on a rotting corpse. Don't smell much better, either. Than the corpses, I mean.",
+  "quest:718:details:1": "Anyways, they took the cart that was carrying all our weapons and such... so--well, this is a bit embarrassing--we haven't been able to get any food.",
+  "quest:718:details:2": "We're in a bit of a pickle here, suppose you could help us out?",
+  "quest:718:progress:0": "The desert's a bad place to be hungry, my friend, let me tell you that.⟦20⟧⟦21⟧Hey... what's that over there...",
+  "quest:718:completion:0": "Thanks so much, ⟦22⟧. While you were gone, I... er... swallowed a mouthful of sand. It...",
+  "quest:718:completion:1": "Well, enough of that, we'll go out and get some food tonight. Eat like kings!",
+  "quest:738:obj:0": "⟦E17⟧.",
+  "quest:738:details:0": "Prospector Agmond was in charge of our excavation sites in the ⟦E6⟧, to the southwest. I say \"was\" because...well, I haven't heard from him in weeks. I need you to find Agmond so I can get his report.",
+  "quest:738:details:1": "Last I heard Agmond was at the southernmost dig site in the ⟦E6⟧--a tiny operation past the Angor Fortress. I'd start your search for him there.",
+  "quest:738:completion:0": "This skeleton must be the unfortunate remains of Agmond. His body is broken and battered, and his bones picked clean.",
+  "quest:711:obj:0": "Bring 3 Large Stone Slabs to ⟦E7⟧ in the ⟦E6⟧.",
+  "quest:711:details:0": "⟦23⟧, you've already proven more able than all my apprentices combined.",
+  "quest:711:details:1": "The next parts I need require a little more strength. Large stone slabs can be found on rock elementals if you're careful enough. Their bodies are stronger and larger, and therefore more prone to having pieces large enough for my tests. You can find them further west of here or southeast along the mountains' edges.",
+  "quest:711:details:2": "Take your time; I'll need a while to test these smaller pieces you brought me.",
+  "quest:711:progress:0": "I'm most pleased, ⟦24⟧. My spells affected the smaller pieces just as I predicted. If this experiment is as successful as I foresee, then the elementals I'll be able to control will put anything summoned prior to this to shame.",
+  "quest:711:completion:0": "⟦25⟧, simply amazing! I would have thought it'd take half a dozen tauren to bring all these to me.",
+  "quest:2258:obj:0": "Bring 5 ⟦E18⟧ Gizzards, 10 ⟦E19⟧ Fangs, and 5 ⟦E20⟧ Shards to ⟦E21⟧ in Kargath, ⟦E6⟧.",
+  "quest:2258:details:0": "⟦26⟧, I could use your aid if you're up for it. I am an alchemist of some note, and I seek your aid in acquiring some reagents found out in the ⟦E6⟧.",
+  "quest:2258:details:1": "I need the following items to replenish my stocks: five buzzard gizzards, ten crag coyote fangs, and five rock elemental shards. Obviously, you can get them off of the beasties themselves; if you're not the fighting type, then find friends who are.",
+  "quest:2258:details:2": "Acquire these items for me, you'll get some coin out of the deal. Watcha wanna do?",
+  "quest:2258:progress:0": "Have you gotten the things I need yet? You won't get paid unless you bring me those reagents.",
+  "quest:2258:completion:0": "Ah, well done! These should last me for a little while, at least. Here is your pay as promised.",
+  "quest:2258:completion:1": "If you're interested, I have some more reagents I could use. These, however, are only found in the depths of the ⟦E4⟧ excavation. They will not be easy to get, but I will make it worth your while if you are interested in helping me again.",
+  "quest:2258:completion:2": "Perhaps something more than some shiny coins, yes?",
+  "quest:703:obj:0": "Bring 4 ⟦E18⟧ Wings to ⟦E5⟧.",
+  "quest:703:details:0": "Oh yes, my barbecued buzzard wings are a favorite! The sauce is rich and the meat is tangy. And the smell will bring the hungry running from miles away!",
+  "quest:703:details:1": "I have everything I need to cook up a batch. Everything...except the buzzard wings!",
+  "quest:703:details:2": "If you want some then get me the buzzard wings. Bring me enough, and I might even share the recipe with you!",
+  "quest:703:progress:0": "Hello, ⟦27⟧. Did you bring me my wings?",
+  "quest:703:completion:0": "Ah, I'll get started on those wings right away. I can almost taste them already!",
+  "quest:703:completion:1": "And here's the recipe in case you want to make them yourself!",
+  "quest:708:obj:0": "Take the ⟦E22⟧ to the Hall of ⟦E23⟧ in ⟦E24⟧.",
+  "quest:708:details:0": "The surface of this metallic black box is heavily pitted, as if it had been immersed in acid - it must have been sitting in the giant condor's stomach for a long time.",
+  "quest:708:details:1": "Turning the box over, a symbol is found stamped on its bottom. Below the symbol are the words:",
+  "quest:708:details:2": "B\"Engine #19 - ⟦E24⟧ Siege Brigade\"",
+  "quest:723:obj:0": "Take ⟦E25⟧ to ⟦E2⟧ in the ⟦E6⟧.",
+  "quest:723:details:0": "<Hammertoe holds his wounds and takes a moment to regain his composure before speaking again.>",
+  "quest:723:details:1": "Find Ryedol, ⟦28⟧. Bring 'im me amulet. ⟦29⟧ He'll... ⟦30⟧ figure out what to do. He knows I was seeking the origins of our people, and he... ⟦31⟧... knows it was also my mission to stop the Shadowforge clan. They must not be allowed to find the scrolls... ⟦32⟧",
+  "quest:723:progress:0": "I'd say it was a bad day, but this is the ⟦E6⟧: every day's a bad day.",
+  "quest:723:completion:0": "Hammertoe's amulet? I think my spirits were higher when I thought he was dead. Knowin' fer sure only makes the pain worse. This amulet was his life's work. I can't let his death be in vain.",
+  "quest:724:obj:0": "Take ⟦E25⟧ to ⟦E27⟧ in ⟦E24⟧.",
+  "quest:724:details:0": "Okay, okay... who would know what to do?",
+  "quest:724:details:1": "⟦E27⟧! That's it!",
+  "quest:724:details:2": "He's in ⟦E24⟧. He'll be able to help. He and Hammertoe were workin' together to find the lost artifacts in ⟦E4⟧.",
+  "quest:724:details:3": "Guess the Shadowforge found out the two of them knew more than they were lettin' on.",
+  "quest:724:details:4": "Tell Karnik what's happened to Hammertoe and give him the amulet--he'll tell you what needs to be done next.",
+  "quest:724:progress:0": "Ah, yes. Another traveler seeking something from the dwarves.⟦33⟧⟦34⟧Ma'am, I'm truly sorry, but I've no time to answer meaningless questions right now.",
+  "quest:724:completion:0": "Oh! Well, this is a different matter entirely. You probably don't realize the gravity of this matter yet, do you?",
+  "quest:724:completion:1": "I care deeply about Hammertoe's demise, but if he sent you here with his amulet, then he understood what's at stake.",
+  "quest:724:completion:2": "We will have to take time to mourn his death later.",
+  "quest:724:completion:3": "Let me show you one of the reasons this amulet is so valuable.",
+  "quest:725:obj:0": "Find ⟦E28⟧ and give him his note.",
+  "quest:725:details:0": "⟦35⟧, run and find ⟦E28⟧ as quickly as you can. Tell him what you've witnessed and ask him how he wants us to proceed. This note will explain more to him.",
+  "quest:725:details:1": "In the meantime, I will take the time to speak to Hammertoe's spirit. Maybe he knows something that will help us put a stop to those Shadowforge cretins' activities in the ⟦E6⟧. We can only pray.",
+  "quest:725:progress:0": "Hmm? Yes, ⟦36⟧.",
+  "quest:725:completion:0": "Ah, word from ⟦E27⟧. Excellent.",
+  "quest:725:completion:1": "I always have time for his business.",
+  "quest:725:completion:2": "B<⟦E28⟧ opens the note and begins to read.>",
+  "quest:726:obj:0": "Speak to ⟦E27⟧.",
+  "quest:726:details:0": "<⟦E28⟧ reaches the end of the note, and his eyes widen for a moment.>",
+  "quest:726:details:1": "Och, these are evil tidings.",
+  "quest:726:details:2": "B⟦37⟧, please return to ⟦E27⟧ and tell him on the king's authority to act on this information swiftly and decisively. He must halt the Shadowforge's activities in the ⟦E6⟧.",
+  "quest:726:completion:0": "You're treating this matter with an urgency I'd expect from the king himself, ⟦38⟧.",
+  "quest:726:completion:1": "All right, then. I know what'll bring the Shadowforge down.",
+  "quest:726:completion:2": "Their presence in ⟦E4⟧ can be slowed if we strike them at their base of operations: Angor Fortress.",
+  "quest:727:obj:0": "Give the ⟦E30⟧ to ⟦E31⟧ in the Forlorn Cavern of ⟦E24⟧.",
+  "quest:727:details:0": "The Tablet tells much. But not enough! Not nearly enough!",
+  "quest:727:details:1": "There is a book, a digest that Yagyin wrote in ages past. The ... people I fled ... they keep this book in many places. And their most learned study it. It holds vast knowledge. Knowledge to protect us!",
+  "quest:727:details:2": "Go to ⟦E31⟧. He is in a shop in ⟦E24⟧, in the Forlorn Cavern. Show him this sigil and he'll think you one of them. Ask him for ⟦E32⟧ ... and bring it to me!",
+  "quest:727:progress:0": "Hello. Welcome to my shop, but watch what you touch.⟦39⟧⟦40⟧Knowledge can be deadly.",
+  "quest:727:completion:0": "Oh. Greetings, brother.",
+  "quest:727:completion:1": "And praise to the dwellers beneath.",
+  "quest:728:obj:0": "Bring the ⟦E30⟧ to ⟦E33⟧ in the ⟦E34⟧.",
+  "quest:728:details:0": "The tablet tells much. But not enough! Not nearly enough!",
+  "quest:728:details:1": "There is a book, a digest that Yagyin wrote in ages past. The... people I fled from... they keep this book in many places. And their most learned study it. It holds vast knowledge. Knowledge to protect us!",
+  "quest:728:details:2": "Go to ⟦E33⟧ in the ⟦E34⟧ of Lordaeron. Show him this sigil and he'll think you one of them. Ask him for Yagin's Digest...and bring it to me!",
+  "quest:728:progress:0": "Ah, we have an eager ⟦41⟧, I see. Are you here to learn from my collection? Good!⟦42⟧⟦43⟧But be warned: just as knowledge gives power to the strong...it will drive the weak mad.",
+  "quest:728:completion:0": "Be discrete with your signs, ⟦44⟧. There are those who do not believe the righteousness of our pledge.",
+  "quest:728:completion:1": "And there are those who would see us fail if they knew of us.",
+  "quest:728:completion:2": "We must always be careful. And watchful. And patient.",
+  "quest:733:obj:0": "Get 7 pieces of ⟦E35⟧ for Sigrun.",
+  "quest:733:details:0": "It's going to be tough going here if I can't manage to scrounge up some materials to construct some defenses and other necessities. I've noticed that the ogres in the area seem to be well equipped with scrap metal. Maybe the stories of siege engines in the ⟦E6⟧ weren't so far off after all...",
+  "quest:733:details:1": "Anyways, the Prospector's been getting worried about the state of our little camp, so I'd like to get working soon if I can.",
+  "quest:733:details:2": "The main ogre camp is at Dustbelch Grotto, a good trek to the west of here.",
+  "quest:733:progress:0": "Well, I've made do with what I could, but... it's not much. Have you found any more supplies?",
+  "quest:733:completion:0": "It's a start, ⟦45⟧, and it'll have to do until we hear word from ⟦E24⟧ or the Explorers' League.",
+  "quest:733:completion:1": "Now, if only I could find some salt somewhere for my quenching barrel...",
+  "quest:737:obj:0": "Bring ⟦E32⟧ to Theldurin.",
+  "quest:737:details:0": "I have the digest for you, ⟦46⟧. I need not tell you to take great care with it. And to keep it far from unfriendly hands.",
+  "quest:737:details:1": "This book holds many truths...",
+  "quest:737:details:2": "B...And the truth can burn.",
+  "quest:737:progress:0": "Ho! You were gone a long time. Did you get the digest?",
+  "quest:737:completion:0": "You got it! Oh, hope glimmers!",
+  "quest:737:completion:1": "Your efforts may yet save us, ⟦47⟧. A monument they should make of you! A shrine they should build! May your name be praised until your grandchildren have grandchildren!",
+  "quest:737:completion:2": "Unless...THEY are freed and rise to the surface. If that happens then you can forget about children.",
+  "quest:737:completion:3": "If THEY are freed, then we're all worm food.",
+  "quest:779:title": "⟦E36⟧",
+  "quest:779:progress:0": "The ⟦E36⟧ lies here, with three recessed alcoves for the ⟦E37⟧, the ⟦E38⟧, and the ⟦E39⟧.",
+  "quest:779:completion:0": "As you place the Runestones into the matching recesses, a violent rumbling shakes the earth as the Seal is broken.",
+  "quest:795:title": "⟦E36⟧",
+  "quest:795:progress:0": "The ⟦E36⟧ lies here, with three recessed alcoves for the ⟦E37⟧, the ⟦E38⟧, and the ⟦E39⟧.",
+  "quest:795:completion:0": "As you place the Runestones into the matching recesses, a violent rumbling shakes the earth as the Seal is broken.",
+  "quest:1419:obj:0": "Bring 30 Coyote Jawbones to ⟦E41⟧ in Kargath.",
+  "quest:1419:details:0": "Have you spent many days in the ⟦E6⟧, ⟦48⟧? Have you felt its heat? Have you faced the beasts that wander its dusty plains? It's time you did.",
+  "quest:1419:details:1": "Crag coyotes are a tough breed. Tough, and bold enough to creep into Kargath and steal from our food supplies. Help rid the outpost of these thieves!",
+  "quest:1419:details:2": "Hunt crag coyotes, ⟦49⟧. Hunt them and bring me their jawbones. Bring me enough, and maybe I'll believe it when you say you know the ⟦E6⟧.",
+  "quest:1419:progress:0": "Do you have the jawbones?",
+  "quest:1419:completion:0": "That's a nice collection of jawbones, ⟦50⟧. Now those coyotes won't be tearing through our supplies for scraps.",
+  "quest:1419:completion:1": "Well done. The coyotes of the ⟦E6⟧ aren't easy prey. Your deed shows me that you might just survive here.",
+  "quest:1420:obj:0": "Bring ⟦E42⟧ to ⟦E43⟧ in Stonard.",
+  "quest:1420:details:0": "I wrote a fresh report for Helgrum in Stonard. Bring it to him.",
+  "quest:1420:details:1": "And if you consider yourself an outrunner, then don't lose your way. Or fall to an enemy.",
+  "quest:1420:progress:0": "You returned. You have a report?",
+  "quest:1420:completion:0": "Thank you, ⟦51⟧. From Neeka's report, I see the ⟦E45⟧ is not without its own problems. And we may find that some enemies are shared between us.",
+  "quest:692:obj:0": "Bring the ⟦E47⟧, the ⟦E48⟧ and the ⟦E49⟧ to ⟦E50⟧.",
+  "quest:692:details:0": "The ⟦E51⟧...the ⟦E51⟧?! You don't want that! Its magic can pull ⟦E52⟧ to the surface world and if you do that, we are in trouble!",
+  "quest:692:details:1": "Or...maybe it's too late. Maybe she already is free. Maybe she's just gathering strength before unleashing herself upon us. If so, then you'll NEED the scroll!",
+  "quest:692:details:2": "B...too bad it's destroyed. Enraged elementals stole it and tore it up and now fight over the fragments.",
+  "quest:692:details:3": "But if you can gather those fragments, maybe we can fix it...",
+  "quest:692:progress:0": "Did you find those fragments?!?! You'll need the ⟦E51⟧ if you want to trap her again, before it's too late!",
+  "quest:692:completion:0": "Ah, you found them! Good work, ⟦52⟧! These might be the only chance we have against the evil of ⟦E52⟧!",
+  "quest:692:completion:1": "Just let me find my scrap-ratchet and see if I can re-attach these fragments...",
+  "quest:712:obj:0": "Bring 5 ⟦E54⟧ to ⟦E7⟧ in the ⟦E6⟧.",
+  "quest:712:details:0": "⟦53⟧, there's one more part I need from the elementals here in the ⟦E6⟧: the bracers of rock binding from the greater rock elementals. By my calculations, those bracers should be enough to gauge the strength of my own shackles.",
+  "quest:712:details:1": "My attempts at scrying the greater rock elementals showed a group of them southwest of here, near some ogres if I recall.",
+  "quest:712:details:2": "Bring me 5 of their bracers just so I have extras. Servo's notorious for misplacing my reagents and research.",
+  "quest:712:progress:0": "The stone slabs you found were ideal, ⟦54⟧. Lucien will be taking the extra ones back to Kharanos when we're done here. After all, they could prove useful again.⟦55⟧⟦56⟧For instance, they'd be a nice basis for a handy little shelter once I start looking into a multidisciplinary approach to high-yield explosives...",
+  "quest:712:completion:0": "⟦57⟧, have you ever considered becoming a research assistant? No? I'm not sure what I'll do without your abilities here. Intelligence, curiosity, and strength--all combined into one package.",
+  "quest:716:obj:0": "Bring some ⟦E55⟧ to ⟦E12⟧ in the ⟦E6⟧.",
+  "quest:716:details:0": "I know how cheap Lotwil can be, ⟦58⟧, so let me make you something for all your troubles. Maybe it'll even help protect you from the coming atrocity that is Lotwil's newest invention.",
+  "quest:716:details:1": "I've been working with all the extra stones you collected for him, and I can make some nice bracers that you might want to use. They're enchanted, of course.",
+  "quest:716:details:2": "I'll just need patterned bronze bracers crafted by a blacksmith so I can complete the bracers I'm making for you.",
+  "quest:716:progress:0": "I wouldn't wait too long to get that bracer, ⟦59⟧.⟦60⟧⟦61⟧Who knows what's going to happen next?",
+  "quest:716:completion:0": "Here you go, ⟦62⟧. Try these on.",
+  "quest:734:obj:0": "Speak to ⟦E12⟧ in the ⟦E6⟧.",
+  "quest:734:details:0": "Wonderful, wonderful.",
+  "quest:734:details:1": "B<Lotwil looks up at you for a moment before going back to his shackles.>",
+  "quest:734:details:2": "Go speak to Lucien, ⟦63⟧. I need a cog #5. Bring it to me, will you?",
+  "quest:734:completion:0": "⟦E56⟧, huh? Yeah, this isn't going to be good."
+ },
+ "context": {
+  "quest:719": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Prospector Ryedol («جویندهٔ رگه رای‌دول»)",
+   "turner": "Prospector Ryedol («جویندهٔ رگه رای‌دول»)"
+  },
+  "quest:720": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Crumpled Map («نقشهٔ مچاله»)",
+   "turner": "Prospector Ryedol («جویندهٔ رگه رای‌دول»)"
+  },
+  "quest:9439": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 36,
+   "side": "horde",
+   "giver": "",
+   "turner": "Advisor Sarophas"
+  },
+  "quest:705": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 37,
+   "side": "",
+   "giver": "Rigglefuzz («ریگل‌فاز»)",
+   "turner": "Rigglefuzz («ریگل‌فاز»)"
+  },
+  "quest:710": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 37,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:713": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 37,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:714": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 37,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:715": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 37,
+   "side": "",
+   "giver": "Lucien Tosselwrench («لوسین تاسل‌رنچ»)",
+   "turner": "Lucien Tosselwrench («لوسین تاسل‌رنچ»)"
+  },
+  "quest:718": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Sigrun Ironhew («سیگرون آهن‌تراش»)",
+   "turner": "Sigrun Ironhew («سیگرون آهن‌تراش»)"
+  },
+  "quest:738": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Prospector Ironband («جویندهٔ رگه، گروه‌آهن»)",
+   "turner": "Battered Dwarven Skeleton («اسکلت داغان یک دورف»)"
+  },
+  "quest:711": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 39,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:2258": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 39,
+   "side": "horde",
+   "giver": "Jarkal Mossmeld («جارکال ماس‌ملد»)",
+   "turner": "Jarkal Mossmeld («جارکال ماس‌ملد»)"
+  },
+  "quest:703": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "",
+   "giver": "Rigglefuzz («ریگل‌فاز»)",
+   "turner": "Rigglefuzz («ریگل‌فاز»)"
+  },
+  "quest:708": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Pilot Longbeard («خلبان ریش‌بلند»)"
+  },
+  "quest:723": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Hammertoe Grez («چکش‌انگشت گرز»)",
+   "turner": "Prospector Ryedol («جویندهٔ رگه رای‌دول»)"
+  },
+  "quest:724": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Prospector Ryedol («جویندهٔ رگه رای‌دول»)",
+   "turner": "Historian Karnik («تاریخ‌نگار کارنیک»)"
+  },
+  "quest:725": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Historian Karnik («تاریخ‌نگار کارنیک»)",
+   "turner": "Advisor Belgrum («مشاور بلگروم»)"
+  },
+  "quest:726": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Advisor Belgrum («مشاور بلگروم»)",
+   "turner": "Historian Karnik («تاریخ‌نگار کارنیک»)"
+  },
+  "quest:727": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Theldurin the Lost («تِلدورین گم‌شده»)",
+   "turner": "Gerrig Bonegrip («گریگ استخوان‌چنگ»)"
+  },
+  "quest:728": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "horde",
+   "giver": "Theldurin the Lost («تِلدورین گم‌شده»)",
+   "turner": "Keeper Bel'dugur («نگهبان بل‌دوگور»)"
+  },
+  "quest:733": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Sigrun Ironhew («سیگرون آهن‌تراش»)",
+   "turner": "Sigrun Ironhew («سیگرون آهن‌تراش»)"
+  },
+  "quest:737": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "",
+   "giver": "Gerrig Bonegrip («گریگ استخوان‌چنگ»)، Keeper Bel'dugur («نگهبان بل‌دوگور»)",
+   "turner": "Theldurin the Lost («تِلدورین گم‌شده»)"
+  },
+  "quest:779": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Seal of the Earth («مهر زمین»)",
+   "turner": "Seal of the Earth («مهر زمین»)"
+  },
+  "quest:795": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "horde",
+   "giver": "Seal of the Earth («مهر زمین»)",
+   "turner": "Seal of the Earth («مهر زمین»)"
+  },
+  "quest:1419": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "horde",
+   "giver": "Neeka Bloodscar («نیکا بلاداسکار»)",
+   "turner": "Neeka Bloodscar («نیکا بلاداسکار»)"
+  },
+  "quest:1420": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 40,
+   "side": "horde",
+   "giver": "Neeka Bloodscar («نیکا بلاداسکار»)",
+   "turner": "Helgrum the Swift («هلگروم تند»)"
+  },
+  "quest:692": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 41,
+   "side": "",
+   "giver": "Theldurin the Lost («تِلدورین گم‌شده»)",
+   "turner": "Theldurin the Lost («تِلدورین گم‌شده»)"
+  },
+  "quest:712": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 42,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lotwil Veriatus («لوتویل وریاتوس»)"
+  },
+  "quest:716": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 42,
+   "side": "",
+   "giver": "Lucien Tosselwrench («لوسین تاسل‌رنچ»)",
+   "turner": "Lucien Tosselwrench («لوسین تاسل‌رنچ»)"
+  },
+  "quest:734": {
+   "zone_en": "Badlands",
+   "zone_fa": "بیابان",
+   "level": 42,
+   "side": "",
+   "giver": "Lotwil Veriatus («لوتویل وریاتوس»)",
+   "turner": "Lucien Tosselwrench («لوسین تاسل‌رنچ»)"
+  }
+ },
+ "known": {
+  "quest:719": {
+   "title": "یک دورف و ابزارش"
+  },
+  "quest:720": {
+   "title": "نشانه‌ای از امید"
+  },
+  "quest:705": {
+   "title": "غواصی مروارید"
+  },
+  "quest:710": {
+   "title": "مطالعهٔ المان‌ها: سنگ"
+  },
+  "quest:713": {
+   "title": "خنک‌کننده اول است"
+  },
+  "quest:714": {
+   "title": "ژیرو... چی؟"
+  },
+  "quest:715": {
+   "title": "سنگ مایع"
+  },
+  "quest:718": {
+   "title": "سراب‌ها"
+  },
+  "quest:738": {
+   "title": "یافتن اگموند"
+  },
+  "quest:711": {
+   "title": "مطالعهٔ المان‌ها: سنگ"
+  },
+  "quest:2258": {
+   "title": "گردآوری مواد جادویی بیابان"
+  },
+  "quest:703": {
+   "title": "بال‌های کرکس کبابی"
+  },
+  "quest:708": {
+   "title": "جعبهٔ سیاه"
+  },
+  "quest:723": {
+   "title": "چشم‌انداز ایمان"
+  },
+  "quest:724": {
+   "title": "چشم‌انداز ایمان"
+  },
+  "quest:725": {
+   "title": "رساندن خبر تهدید"
+  },
+  "quest:726": {
+   "title": "رساندن خبر تهدید"
+  },
+  "quest:727": {
+   "title": "به ایرون‌فورج برای چکیدهٔ یاگین"
+  },
+  "quest:728": {
+   "title": "به شهر زیرین برای چکیدهٔ یاگین"
+  },
+  "quest:733": {
+   "title": "قراضه‌جویی"
+  },
+  "quest:737": {
+   "title": "دانش ممنوع"
+  },
+  "quest:1419": {
+   "title": "دزدان کایوت"
+  },
+  "quest:1420": {
+   "title": "گزارش به هلگروم"
+  },
+  "quest:692": {
+   "title": "تکه‌های گم‌شده"
+  },
+  "quest:712": {
+   "title": "مطالعهٔ المان‌ها: سنگ"
+  },
+  "quest:716": {
+   "title": "سنگ بهتر از پارچه است"
+  },
+  "quest:734": {
+   "title": "این کار سخت خواهد بود"
+  }
+ }
+}

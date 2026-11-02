@@ -1,0 +1,762 @@
+{
+ "pack": "quest-ironforge-03-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-ironforge-03-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Shadowcraft Belt",
+   "fa": "کمربند سایه‌ساز",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Shadowcraft Gloves",
+   "fa": "دستکش‌های سایه‌ساخت",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Deliana",
+   "fa": "دلیانا",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Dreadmist Belt",
+   "fa": "کمربند مه هراس",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Dreadmist Wraps",
+   "fa": "دست‌پیچ مه هراس",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Belt of Valor",
+   "fa": "کمربند دلاوری",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Gauntlets of Valor",
+   "fa": "دستکش شجاعت",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Return to Deliana",
+   "fa": "بازگشت به دلیانا",
+   "kind": "qs"
+  },
+  "E10": {
+   "en": "Wildheart Boots",
+   "fa": "چکمهٔ دل وحشی",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Wildheart Kilt",
+   "fa": "دامنک دل وحشی",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Wildheart Spaulders",
+   "fa": "سرشانه‌های قلب وحشی",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Bodley",
+   "fa": "بادلی",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Beaststalker's Boots",
+   "fa": "چکمهٔ شکارچی جانوران",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Beaststalker's Pants",
+   "fa": "شلوار غول‌شکار",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Beaststalker's Mantle",
+   "fa": "شنل سرشانهٔ شکارچی جانوران",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Magister's Boots",
+   "fa": "چکمه‌های جادوگر اعظم",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Magister's Leggings",
+   "fa": "شلوار مجستر",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Magister's Mantle",
+   "fa": "شنل سرشانهٔ مجستر",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Lightforge Boots",
+   "fa": "چکمهٔ آهنگری نور",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Lightforge Legplates",
+   "fa": "ساق‌زره‌های نورآهنگر",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Lightforge Spaulders",
+   "fa": "سرشانه‌پوش آهنگری نور",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Devout Sandals",
+   "fa": "صندل زاهدانه",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Devout Skirt",
+   "fa": "دامن پارسا",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Devout Mantle",
+   "fa": "شنل سرشانهٔ زاهدانه",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Shadowcraft Boots",
+   "fa": "چکمهٔ سایه‌ساز",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Shadowcraft Pants",
+   "fa": "شلوار سایه‌ساز",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Shadowcraft Spaulders",
+   "fa": "سرشانه‌های سایه‌ساخت",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Dreadmist Sandals",
+   "fa": "صندل‌های مه هراس",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Dreadmist Leggings",
+   "fa": "شلوار مه هراس",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Dreadmist Mantle",
+   "fa": "شنل سرشانهٔ مه هراس",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Boots of Valor",
+   "fa": "چکمه‌های دلاوری",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Legplates of Valor",
+   "fa": "ساق‌زره‌های دلاوری",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Spaulders of Valor",
+   "fa": "سرشانه‌پوش شجاعت",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Extra-Dimensional Ghost Revealer",
+   "fa": "آشکارسازِ ارواحِ فرابُعدی",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Wildheart Cowl",
+   "fa": "کلاه قلب وحشی",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Wildheart Vest",
+   "fa": "جلیقهٔ قلب وحشی",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Feralheart Cowl",
+   "fa": "کلاه‌شنلِ دلِ وحشی",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Beaststalker's Cap",
+   "fa": "کلاه شکارچی جانوران",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Beaststalker's Tunic",
+   "fa": "تن‌پوش غول‌شکار",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Beastmaster's Cap",
+   "fa": "کلاهِ استاد جانوران",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Magister's Crown",
+   "fa": "تاج جادوگر اعظم",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Magister's Robes",
+   "fa": "ردای جادوگر اعظم",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Sorcerer's Crown",
+   "fa": "تاجِ جادوپیشه",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Lightforge Helm",
+   "fa": "کلاه‌خود آهنگری نور",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Lightforge Breastplate",
+   "fa": "زره سینهٔ نورآهنگر",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Devout Crown",
+   "fa": "تاج زاهدانه",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Devout Robe",
+   "fa": "ردای پارسا",
+   "kind": "it"
+  },
+  "E55": {
+   "en": "Virtuous Crown",
+   "fa": "تاجِ نیک‌منش",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Shadowcraft Cap",
+   "fa": "کلاه سایه‌ساز",
+   "kind": "it"
+  },
+  "E57": {
+   "en": "Shadowcraft Tunic",
+   "fa": "تونیک سایه‌ساز",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Darkmantle Cap",
+   "fa": "کلاهِ تیرشنل",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "Dreadmist Mask",
+   "fa": "نقاب مه هراس",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Dreadmist Robe",
+   "fa": "ردای مه هراس",
+   "kind": "it"
+  },
+  "E61": {
+   "en": "Deathmist Mask",
+   "fa": "نقابِ مرگ‌مه",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Helm of Valor",
+   "fa": "کلاه‌خود شجاعت",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Breastplate of Valor",
+   "fa": "زره سینهٔ دلاوری",
+   "kind": "it"
+  },
+  "E64": {
+   "en": "Breastplate of Heroism",
+   "fa": "سینه‌پوشِ قهرمانی",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Shadowcraft Belt": "کمربند سایه‌ساز",
+  "Shadowcraft Gloves": "دستکش‌های سایه‌ساخت",
+  "Deliana": "دلیانا",
+  "Ironforge": "آیرون‌فورج",
+  "Dreadmist Belt": "کمربند مه هراس",
+  "Dreadmist Wraps": "دست‌پیچ مه هراس",
+  "Belt of Valor": "کمربند دلاوری",
+  "Gauntlets of Valor": "دستکش شجاعت",
+  "Return to Deliana": "بازگشت به دلیانا",
+  "Wildheart Boots": "چکمهٔ دل وحشی",
+  "Wildheart Kilt": "دامنک دل وحشی",
+  "Wildheart Spaulders": "سرشانه‌های قلب وحشی",
+  "Bodley": "بادلی",
+  "Beaststalker's Boots": "چکمهٔ شکارچی جانوران",
+  "Beaststalker's Pants": "شلوار غول‌شکار",
+  "Beaststalker's Mantle": "شنل سرشانهٔ شکارچی جانوران",
+  "Magister's Boots": "چکمه‌های جادوگر اعظم",
+  "Magister's Leggings": "شلوار مجستر",
+  "Magister's Mantle": "شنل سرشانهٔ مجستر",
+  "Lightforge Boots": "چکمهٔ آهنگری نور",
+  "Lightforge Legplates": "ساق‌زره‌های نورآهنگر",
+  "Lightforge Spaulders": "سرشانه‌پوش آهنگری نور",
+  "Devout Sandals": "صندل زاهدانه",
+  "Devout Skirt": "دامن پارسا",
+  "Devout Mantle": "شنل سرشانهٔ زاهدانه",
+  "Shadowcraft Boots": "چکمهٔ سایه‌ساز",
+  "Shadowcraft Pants": "شلوار سایه‌ساز",
+  "Shadowcraft Spaulders": "سرشانه‌های سایه‌ساخت",
+  "Dreadmist Sandals": "صندل‌های مه هراس",
+  "Dreadmist Leggings": "شلوار مه هراس",
+  "Dreadmist Mantle": "شنل سرشانهٔ مه هراس",
+  "Boots of Valor": "چکمه‌های دلاوری",
+  "Legplates of Valor": "ساق‌زره‌های دلاوری",
+  "Spaulders of Valor": "سرشانه‌پوش شجاعت",
+  "Extra-Dimensional Ghost Revealer": "آشکارسازِ ارواحِ فرابُعدی",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Wildheart Cowl": "کلاه قلب وحشی",
+  "Wildheart Vest": "جلیقهٔ قلب وحشی",
+  "Feralheart Cowl": "کلاه‌شنلِ دلِ وحشی",
+  "Beaststalker's Cap": "کلاه شکارچی جانوران",
+  "Beaststalker's Tunic": "تن‌پوش غول‌شکار",
+  "Beastmaster's Cap": "کلاهِ استاد جانوران",
+  "Magister's Crown": "تاج جادوگر اعظم",
+  "Magister's Robes": "ردای جادوگر اعظم",
+  "Sorcerer's Crown": "تاجِ جادوپیشه",
+  "Lightforge Helm": "کلاه‌خود آهنگری نور",
+  "Lightforge Breastplate": "زره سینهٔ نورآهنگر",
+  "Devout Crown": "تاج زاهدانه",
+  "Devout Robe": "ردای پارسا",
+  "Virtuous Crown": "تاجِ نیک‌منش",
+  "Shadowcraft Cap": "کلاه سایه‌ساز",
+  "Shadowcraft Tunic": "تونیک سایه‌ساز",
+  "Darkmantle Cap": "کلاهِ تیرشنل",
+  "Dreadmist Mask": "نقاب مه هراس",
+  "Dreadmist Robe": "ردای مه هراس",
+  "Deathmist Mask": "نقابِ مرگ‌مه",
+  "Helm of Valor": "کلاه‌خود شجاعت",
+  "Breastplate of Valor": "زره سینهٔ دلاوری",
+  "Breastplate of Heroism": "سینه‌پوشِ قهرمانی"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N"
+ },
+ "rows": {
+  "quest:8935:obj:0": "Bring a ⟦E1⟧ and a set of ⟦E2⟧ to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:8935:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me the belt and set of gloves that you wish to upgrade. I promise the ones I give you in return will be far superior.",
+  "quest:8935:progress:0": "You're ready to perform the trade?",
+  "quest:8935:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8935:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8936:obj:0": "Bring a ⟦E5⟧ and a set of ⟦E6⟧ to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:8936:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me the belt and set of gloves that you wish to upgrade. I promise the ones I give you in return will be far superior.",
+  "quest:8936:progress:0": "You're ready to perform the trade?",
+  "quest:8936:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8936:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8937:obj:0": "Bring a ⟦E7⟧ and a set of ⟦E8⟧ to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:8937:details:0": "You kept your word and brought the device built by Mux. I believe a reward is in order if I'm to keep you interested in saving my skin. Bring me the belt and set of gauntlets that you wish to upgrade. I promise the ones I give you in return will be far superior.",
+  "quest:8937:progress:0": "You're ready to perform the trade?",
+  "quest:8937:completion:0": "You've kept your end of the bargain, I shall keep mine.",
+  "quest:8937:completion:1": "Just remember that I'm holding on to the best pieces until your work is finished.",
+  "quest:8951:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E10⟧, a ⟦E11⟧ and ⟦E12⟧.",
+  "quest:8951:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8951:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8951:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8951:progress:0": "You're back, ⟦1⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8951:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8951:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8952:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E16⟧, ⟦E17⟧ and ⟦E18⟧.",
+  "quest:8952:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8952:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8952:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8952:progress:0": "You're back, ⟦2⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8952:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8952:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8953:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E19⟧, ⟦E20⟧ and ⟦E21⟧.",
+  "quest:8953:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8953:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8953:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8953:progress:0": "You're back, ⟦3⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8953:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8953:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8954:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E22⟧, ⟦E23⟧ and ⟦E24⟧.",
+  "quest:8954:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8954:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8954:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8954:progress:0": "You're back, ⟦4⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8954:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8954:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8955:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E25⟧, ⟦E26⟧ and ⟦E27⟧.",
+  "quest:8955:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8955:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8955:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8955:progress:0": "You're back, ⟦5⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8955:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8955:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8956:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E28⟧, ⟦E29⟧ and ⟦E30⟧.",
+  "quest:8956:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8956:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8956:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8956:progress:0": "You're back, ⟦6⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8956:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8956:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8958:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E31⟧, ⟦E32⟧ and ⟦E33⟧.",
+  "quest:8958:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8958:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8958:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8958:progress:0": "You're back, ⟦7⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8958:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8958:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8959:obj:0": "⟦E9⟧ in ⟦E4⟧ with a set of ⟦E34⟧, ⟦E35⟧ and ⟦E36⟧.",
+  "quest:8959:details:0": "Valthalak's soul was stored in this amulet. In our greed we foolishly split it into three parts, not knowing the curse that would await us.",
+  "quest:8959:details:1": "The only way to stop Valthalak's spell is to put the medallion back together. ⟦E9⟧ and tell her that ⟦E15⟧ is her only hope for finding the remaining pieces. Speak to her about any rewards you've arranged for.",
+  "quest:8959:details:2": "I, for once, shall rest in peace. I wish you the best of luck; you shall need every bit of it!",
+  "quest:8959:progress:0": "You're back, ⟦8⟧. You must tell me all about what you've found out. But first let us arrange for your reward.",
+  "quest:8959:completion:0": "I can't believe our lives are all but forfeit all because of a stupid medallion! And you're sure Anthion mentioned ⟦E15⟧?",
+  "quest:8959:completion:1": "Well, you've done your job so let's get your reward out of the way.",
+  "quest:8977:obj:0": "Bring the ⟦E37⟧ to ⟦E3⟧ in ⟦E4⟧.",
+  "quest:8977:details:0": "It's been great working with you, ⟦9⟧. Here is the finished product.",
+  "quest:8977:details:1": "I hope it helps you in your current endeavors. And hey, if you don't mind, help spread the word. I wouldn't mind having more customers!",
+  "quest:8977:progress:0": "You've returned?",
+  "quest:8977:completion:0": "Excellent! You've done well, ⟦10⟧. I'm not sure I trust the goblin's craftsmanship, but I'm left with no other choice.",
+  "quest:8997:obj:0": "Speak with ⟦E3⟧ at The High Seat in ⟦E4⟧.",
+  "quest:8997:details:0": "I suppose that this is goodbye then, my friend. But, I'll always be here if you want to come back and talk with me from time to time. Probably while you're loitering around waiting for your buddies to join you for a raid on ⟦E39⟧.",
+  "quest:8997:details:1": "Go, before I start to cry. Go back to ⟦E3⟧ in ⟦E4⟧ and tell her what's happened.",
+  "quest:8997:completion:0": "I am very happy to see you return to me safely, ⟦11⟧. You look well, if not a bit worse for the wear.",
+  "quest:8997:completion:1": "Come, tell me of all that has transpired.",
+  "quest:8999:obj:0": "Give ⟦E3⟧ your ⟦E40⟧ and ⟦E41⟧.",
+  "quest:8999:details:0": "That's an amazing story, ⟦12⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:8999:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:8999:progress:0": "As per our deal, are you ready to hand over your Wildheart pieces in exchange for your new ⟦E42⟧ and Vest?",
+  "quest:8999:completion:0": "I'm going to miss you, ⟦13⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:8999:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9000:obj:0": "Give ⟦E3⟧ your ⟦E45⟧ and ⟦E46⟧.",
+  "quest:9000:details:0": "That's an amazing story, ⟦14⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9000:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9000:progress:0": "As per our deal, are you ready to hand over your Beaststalker pieces in exchange for your new ⟦E47⟧ and Tunic?",
+  "quest:9000:completion:0": "I'm going to miss you, ⟦15⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9000:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9001:obj:0": "Give ⟦E3⟧ your ⟦E48⟧ and ⟦E49⟧.",
+  "quest:9001:details:0": "That's an amazing story, ⟦16⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9001:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9001:progress:0": "As per our deal, are you ready to hand over your Magister's pieces in exchange for your new ⟦E50⟧ and Robes?",
+  "quest:9001:completion:0": "I'm going to miss you, ⟦17⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9001:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9002:obj:0": "Give ⟦E3⟧ your ⟦E51⟧ and ⟦E52⟧.",
+  "quest:9002:details:0": "That's an amazing story, ⟦18⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9002:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9002:progress:0": "As per our deal, are you ready to hand over your Lightforge pieces in exchange for your new Soulforge Helmet and Breastplate?",
+  "quest:9002:completion:0": "I'm going to miss you, ⟦19⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9002:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9003:obj:0": "Give ⟦E3⟧ your ⟦E53⟧ and ⟦E54⟧.",
+  "quest:9003:details:0": "That's an amazing story, ⟦20⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9003:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9003:progress:0": "As per our deal, are you ready to hand over your Devout pieces in exchange for your new ⟦E55⟧ and Robe?",
+  "quest:9003:completion:0": "I'm going to miss you, ⟦21⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9003:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9004:obj:0": "Give ⟦E3⟧ your ⟦E56⟧ and ⟦E57⟧.",
+  "quest:9004:details:0": "That's an amazing story, ⟦22⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9004:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9004:progress:0": "As per our deal, are you ready to hand over your Shadowcraft pieces in exchange for your new ⟦E58⟧ and Tunic?",
+  "quest:9004:completion:0": "I'm going to miss you, ⟦23⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9004:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9005:obj:0": "Give ⟦E3⟧ your ⟦E59⟧ and ⟦E60⟧.",
+  "quest:9005:details:0": "That's an amazing story, ⟦24⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9005:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9005:progress:0": "As per our deal, are you ready to hand over your Dreadmist pieces in exchange for your new ⟦E61⟧ and Robe?",
+  "quest:9005:completion:0": "I'm going to miss you, ⟦25⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9005:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come.",
+  "quest:9006:obj:0": "Give ⟦E3⟧ your ⟦E62⟧ and ⟦E63⟧.",
+  "quest:9006:details:0": "That's an amazing story, ⟦26⟧! You have my thanks, and the heartfelt gratitude of all who were involved. Now maybe I'll be able to sleep at night with both eyes shut.",
+  "quest:9006:details:1": "As to your reward, I believe I have a few things that you'll really enjoy.",
+  "quest:9006:progress:0": "As per our deal, are you ready to hand over your Valor pieces in exchange for your new Helm and ⟦E64⟧?",
+  "quest:9006:completion:0": "I'm going to miss you, ⟦27⟧. I owe you such a debt of gratitude; I think I'll never be able to repay it.",
+  "quest:9006:completion:1": "I hope that you enjoy your new head and chest armor, and that it protects you for a long time to come."
+ },
+ "context": {
+  "quest:8935": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8936": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8937": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8951": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8952": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8953": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8954": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8955": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8956": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8958": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8959": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Anthion Harmon («آنتیون هارمون»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8977": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Mux Manascrambler («ماکس آشوبگر مانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8997": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:8999": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9000": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9001": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9002": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9003": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9004": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9005": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  },
+  "quest:9006": {
+   "zone_en": "Ironforge",
+   "zone_fa": "ایرون‌فورج",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Deliana («دلیانا»)"
+  }
+ },
+ "known": {
+  "quest:8935": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8936": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8937": {
+   "title": "جبران عادلانه"
+  },
+  "quest:8951": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8952": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8953": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8954": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8955": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8956": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8958": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8959": {
+   "title": "آخرین کلمات آنتیون"
+  },
+  "quest:8977": {
+   "title": "بازگشت به دلیانا"
+  },
+  "quest:8997": {
+   "title": "بازگشت به آغاز"
+  },
+  "quest:8999": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9000": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9001": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9002": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9003": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9004": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9005": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  },
+  "quest:9006": {
+   "title": "بهترین را برای آخر نگه داشته‌ایم"
+  }
+ }
+}

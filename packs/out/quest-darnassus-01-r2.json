@@ -1,0 +1,714 @@
+{
+ "pack": "quest-darnassus-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-darnassus-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Nightsaber",
+   "fa": "شب‌دندان",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Sister Aquinne",
+   "fa": "خواهر اکوینن",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Priestess A'moora",
+   "fa": "کاهنهٔ آمورا",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Nessa Shadowsong",
+   "fa": "نسا شدوسانگ",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Rut'theran Village",
+   "fa": "روستای روت‌تران",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Sentinel Dalia Sunblade",
+   "fa": "دالیا تیغهٔ خورشید",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Lady Sathrah",
+   "fa": "بانو ساثرا",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Silvery Spinnerets",
+   "fa": "بافنده‌های نقره‌ای",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E15": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Onu",
+   "fa": "اونو",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Grove of the Ancients",
+   "fa": "بستان باستانیان",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Druid",
+   "fa": "دروئید",
+   "kind": "sp"
+  },
+  "E21": {
+   "en": "Morrowgrain",
+   "fa": "موروگرین",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Arch Druid Fandral Staghelm",
+   "fa": "دروید اعظم فاندرال گوزن‌کلاه",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Un'Goro Soil",
+   "fa": "خاک اون‌گورو",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Jenal",
+   "fa": "جنال",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Un'Goro Crater",
+   "fa": "دهانهٔ اون‌گورو",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Herbalism",
+   "fa": "گیاه‌شناسی",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Seed Voucher",
+   "fa": "سندِ بذر",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Mathrengyl Bearwalker",
+   "fa": "ماترنگیل خرس‌رو",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Evergreen Pouch",
+   "fa": "کیسهٔ همیشه‌سبز",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Commander Ashlam Valorfist",
+   "fa": "فرمانده اشلام مشت‌دلاور",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Eastern Kingdoms",
+   "fa": "قلمرو شرقی",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Alchemist Pestlezugg",
+   "fa": "کیمیاگر پستل‌زاگ",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Bank Voucher",
+   "fa": "سندِ بانک",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Idriana",
+   "fa": "ایدریانا",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Gracina Spiritmight",
+   "fa": "گراسینا روح‌توان",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Keeper Remulos",
+   "fa": "نگهبان رمولوس",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Rabine Saturna",
+   "fa": "رابین ساتورنا",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E55": {
+   "en": "wool",
+   "fa": "پشم",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Nightsaber": "شب‌دندان",
+  "Sister Aquinne": "خواهر اکوینن",
+  "Priestess A'moora": "کاهنهٔ آمورا",
+  "Nessa Shadowsong": "نسا شدوسانگ",
+  "Rut'theran Village": "روستای روت‌تران",
+  "Darkshore": "کرانهٔ تاریک",
+  "Darnassus": "دارناسوس",
+  "Sentinel Dalia Sunblade": "دالیا تیغهٔ خورشید",
+  "Lady Sathrah": "بانو ساثرا",
+  "Silvery Spinnerets": "بافنده‌های نقره‌ای",
+  "Elune": "الون",
+  "Teldrassil": "تلدراسیل",
+  "Travel": "سفر",
+  "Alliance": "اتحاد",
+  "Azeroth": "آزروت",
+  "Kalimdor": "کالیمدور",
+  "Onu": "اونو",
+  "Grove of the Ancients": "بستان باستانیان",
+  "Druid": "دروئید",
+  "Morrowgrain": "موروگرین",
+  "Arch Druid Fandral Staghelm": "دروید اعظم فاندرال گوزن‌کلاه",
+  "Un'Goro Soil": "خاک اون‌گورو",
+  "Jenal": "جنال",
+  "Un'Goro Crater": "دهانهٔ اون‌گورو",
+  "Herbalism": "گیاه‌شناسی",
+  "Seed Voucher": "سندِ بذر",
+  "Mathrengyl Bearwalker": "ماترنگیل خرس‌رو",
+  "Evergreen Pouch": "کیسهٔ همیشه‌سبز",
+  "Commander Ashlam Valorfist": "فرمانده اشلام مشت‌دلاور",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "Stormwind": "استورم‌ویند",
+  "Eastern Kingdoms": "قلمرو شرقی",
+  "Plaguelands": "طاعون‌زار",
+  "Runecloth": "پارچهٔ رونی",
+  "Alchemist Pestlezugg": "کیمیاگر پستل‌زاگ",
+  "Tanaris": "تاناریس",
+  "Bank Voucher": "سندِ بانک",
+  "Idriana": "ایدریانا",
+  "Gracina Spiritmight": "گراسینا روح‌توان",
+  "Moonglade": "بیشهٔ مهتابی",
+  "Keeper Remulos": "نگهبان رمولوس",
+  "Rabine Saturna": "رابین ساتورنا",
+  "Felwood": "فل‌وود",
+  "Winterspring": "وینتراسپرینگ",
+  "wool": "پشم",
+  "silk": "ابریشم"
+ },
+ "tokens": {
+  "1": "$r",
+  "2": "$N",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$n",
+  "7": "$c",
+  "8": "$C",
+  "9": "$N",
+  "10": "$B",
+  "11": "$B",
+  "12": "$N",
+  "13": "$c",
+  "14": "$c",
+  "15": "$C",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$B",
+  "21": "$B",
+  "22": "$N",
+  "23": "$N",
+  "24": "$c",
+  "25": "$C",
+  "26": "$C",
+  "27": "$C",
+  "28": "$N",
+  "29": "$B",
+  "30": "$B",
+  "31": "$N",
+  "32": "$B",
+  "33": "$B",
+  "34": "$N",
+  "35": "$B",
+  "36": "$B",
+  "37": "$N",
+  "38": "$n",
+  "39": "$B",
+  "40": "$B"
+ },
+ "rows": {
+  "quest:7671:title": "Frostsaber Replacement",
+  "quest:7671:progress:0": "[PH] If you bring me your old frostsaber, I will trade it in for one from the new pack.   The new swift saber will be just as fast as your old one, but have a different look to it.   You can look at the swift sabers we already have around the yard here to see what it will look like.",
+  "quest:7672:title": "⟦E1⟧ Replacement",
+  "quest:7672:progress:0": "[PH] If you bring me your old nightsaber, I will trade it in for one from the new pack.   The new swift saber will be just as fast as your old one, but have a different look to it.   You can look at the swift sabers we already have around the yard here to see what it will look like.",
+  "quest:2519:obj:0": "⟦E2⟧ wants you to speak with ⟦E3⟧ in the Temple of the Moon.",
+  "quest:2519:details:0": "A once great creature of the forest is in need of help, ⟦1⟧.",
+  "quest:2519:details:1": "There is a difficult task that must be done.",
+  "quest:2519:details:2": "Please seek out ⟦E3⟧; she will explain things to you. Find her to the southeast of here, inside the Temple of the Moon.",
+  "quest:2519:completion:0": "So, ⟦E2⟧ sent you?",
+  "quest:6344:obj:0": "Speak with ⟦E4⟧.",
+  "quest:6344:details:0": "A friend of mine, ⟦E4⟧, is a fishing merchant in ⟦E5⟧. She needs a parcel taken to ⟦E6⟧, and is looking for someone to help her.",
+  "quest:6344:details:1": "If you're interested, then to reach Nessa you must take the portal in ⟦E7⟧ to ⟦E5⟧. You will find the portal west of the Temple Gardens.",
+  "quest:6344:completion:0": "Yes, I have need of a courier who will take a package to ⟦E6⟧. Will you help me?",
+  "quest:98067:title": "Eyes of the Sentinels",
+  "quest:98067:obj:0": "Place Sentinel Owls at the entrance to the Cenarion Hold depths, the ⟦E7⟧ Bank, the Craftsman's Terrace Inn, and the City Gate for ⟦E8⟧ in the Temple of the Moon in ⟦E7⟧.",
+  "quest:2518:obj:0": "⟦E3⟧ in the Temple of the Moon at ⟦E7⟧ wants you to bring her ⟦E9⟧'s ⟦E10⟧.",
+  "quest:2518:details:0": "⟦E9⟧ was once beloved of ⟦E11⟧. Graceful and pure, the spider spun her silver threads through the moonlight, catching the evening mist. The silvery dew had strong healing powers and was kept here in the temple.",
+  "quest:2518:details:1": "But of late, Sathrah has descended into madness. Her future generations are now threatened as well.",
+  "quest:2518:details:2": "Find ⟦E9⟧, ⟦2⟧, and end her suffering. She dwells along the northern borders of ⟦E13⟧, near Wellspring Lake. Gather her silvery spinnerets and bring them back to me.",
+  "quest:2518:progress:0": "I regret the task that I have asked you to carry out; but ⟦E9⟧ is beyond hope.⟦3⟧⟦4⟧It is our hope to offer the sacrifice of the spinnerets to ⟦E11⟧. With this sacrifice, ⟦E11⟧ will bless Sathrah so that she might be reborn, and at peace.",
+  "quest:2518:completion:0": "The forest mourns for ⟦E9⟧, but it was something that had to be done.",
+  "quest:2518:completion:1": "Thank you, ⟦5⟧.",
+  "quest:2520:obj:0": "⟦E3⟧ wants you to place ⟦E9⟧'s silvery spinnerets at the fountain inside the temple, and then return to her.",
+  "quest:2520:details:0": "Now you must finish the task to which you have been appointed. Take the spinnerets and offer ⟦E9⟧'s sacrifice to ⟦E11⟧; lay the great spider to rest.",
+  "quest:2520:details:1": "Inside this temple, find the central fountain. There is where you may leave the sacrifice. The holy waters will purify and cleanse the corruption that drove Sathrah mad.",
+  "quest:2520:details:2": "When you have completed this, return to me.",
+  "quest:2520:progress:0": "Have you placed the sacrifice at the fountain, ⟦6⟧?",
+  "quest:2520:completion:0": "The loss of ⟦E9⟧ is distressing, but in this way only may she be reborn with a renewed spirit.",
+  "quest:2520:completion:1": "May ⟦E11⟧ willingly accept the sacrifice that you have offered her.",
+  "quest:730:obj:0": "⟦E14⟧ to Auberdine and look for signs of the dwarven excavation team.",
+  "quest:730:details:0": "How nice it is to see a ⟦7⟧ interested in the great archeological wonders of our world.",
+  "quest:730:details:1": "Oftentimes our work is dismissed as mere hobby by our friends in the ⟦E15⟧. But what many fail to realize is that recent discoveries in Khaz Modan have proven that a great and powerful force threatens all of ⟦E16⟧, from Lordaeron to ⟦E17⟧.",
+  "quest:730:details:2": "I am most worried about my crew that I sent to ⟦E6⟧. They haven't sent word in weeks.",
+  "quest:730:details:3": "⟦E14⟧ to Auberdine and look for a clue as to their whereabouts.",
+  "quest:730:completion:0": "I'm so glad Chief Archeologist Greywhisker sent for us....",
+  "quest:952:obj:0": "Deliver Fandral's message to ⟦E18⟧ in the ⟦E19⟧ in ⟦E6⟧, south of Auberdine.",
+  "quest:952:details:0": "If you had enough time to run messages for the Oracle Tree, then I'm sure that I can press you into service to deliver a message to the ⟦E19⟧ in ⟦E6⟧, due south of Auberdine.",
+  "quest:952:details:1": "You will most likely have to secure transport on a hippogryph, but I have faith enough in you that you can manage that. Take this to ⟦E18⟧, the Ancient of Lore. He has been awaiting word from me, even as I waited for news from the Oracle Glade.",
+  "quest:952:progress:0": "Ah. ⟦8⟧. How may ⟦E18⟧ assist you?",
+  "quest:952:completion:0": "Ah. Thank you, ⟦9⟧. It is strange, though. The Arch ⟦E20⟧ always seems in such a hurry. The forest knows that all shall come to pass in the appointed time. Shan'do Stormrage understood that.",
+  "quest:3803:title": "⟦E21⟧ to ⟦E7⟧",
+  "quest:3803:progress:0": "The Arch ⟦E20⟧ is always looking for additional morrowgrain for the Cenarion Circle's continued research. We take them in increments of ten, and award you with a cache of goods you should find useful. When you have ten, let me know and I will reward you accordingly.",
+  "quest:3803:completion:0": "Excellent - this morrowgrain will no doubt please the Arch ⟦E20⟧.  I must admit though... just being near them makes me feel a little uncomfortable.  I can only imagine how difficult it is for the Arch ⟦E20⟧ to tolerate them in such large numbers!⟦10⟧⟦11⟧This is for you, ⟦12⟧.  The Cenarion Circle thanks you for your continued support.",
+  "quest:3763:obj:0": "Speak with ⟦E23⟧ in ⟦E7⟧.",
+  "quest:3763:details:0": "Excuse me ⟦13⟧, but I'd like just a moment of your time if possible.",
+  "quest:3763:details:1": "The Cenarion Circle in ⟦E7⟧ is looking for seasoned adventurers such as yourself to lend them aid in a vital research project. While I do not know the specifics, I can inform you that none other than ⟦E23⟧ is spearheading this research.",
+  "quest:3763:details:2": "Please - if you are interested, speak with him directly in the Cenarion Enclave within ⟦E7⟧ proper.",
+  "quest:3763:completion:0": "Well now, ⟦14⟧... since you were informed that I was leading this research myself, you obviously came as quickly as you could.",
+  "quest:3763:completion:1": "Now that you are here, be sure to pay attention the first time I tell you the details; I have no desire to repeat myself.",
+  "quest:3764:obj:0": "Bring 20 ⟦E24⟧ samples to ⟦E25⟧ at the Cenarion Enclave in ⟦E7⟧.",
+  "quest:3764:details:0": "The soil of ⟦E26⟧ is reportedly enriched with potent magical qualities. I want to know facts from falsehoods; go into the wilds of Un'Goro and acquire enough quality samples of soil for our continued study.",
+  "quest:3764:details:1": "You may think that collection tasks are beneath you; that sort of attitude does not endear yourself to me or the Cenarion Circle. Bring the samples to ⟦E25⟧, who is no doubt wasting time outside behind this tree; just look for the piles of dirt. He will handle the logistics - not I.",
+  "quest:3764:progress:0": "Ah yes, the dirt. The Arch ⟦E20⟧ wants twenty loads per adventurer, and twenty loads he shall get. Let those who conspire against us fall to the wayside!",
+  "quest:3764:completion:0": "Unload your precious cargo here, noble ⟦15⟧. It must have been quite the burden... not unlike the burden I carry being a visionary. Here is an honorarium for your work, as dictated by the Arch ⟦E20⟧ himself.",
+  "quest:3764:completion:1": "Arch ⟦E20⟧ Staghelm wants to speak with you again ⟦16⟧, but for his next task you will be aided if you have a journeyman's understanding of ⟦E27⟧. If you don't know it though, you will still be able to aid the Circle!",
+  "quest:3781:obj:0": "Take the Arch ⟦E20⟧'s ⟦E28⟧ to ⟦E29⟧ in the Cenarion Enclave of ⟦E7⟧.",
+  "quest:3781:details:0": "With what we call an ⟦E30⟧, we have cultivated Tharlendris seeds in the soil from ⟦E26⟧. These seeds blossom into an array of random, potent herbs. One result is morrowgrain, a mysterious herb we know little about; I intend to unravel this mystery.",
+  "quest:3781:details:1": "Take this to Mathrengyl downstairs, and he will give you some seeds so you can get started. If you run out, you will need to purchase more from him.",
+  "quest:3781:progress:0": "Peace and serenity be yours, friend. You are here on business from the Arch ⟦E20⟧ himself, yes?",
+  "quest:3781:completion:0": "Yes, this voucher is good for twenty packets of seeds. If you run out, we have more that can be provided. Unfortunately though, Tharlendris seeds are quite costly to produce in significant numbers. This is why the Cenarion Circle asks that those who are assisting us help out by offsetting some of the cost.",
+  "quest:3781:completion:1": "Those who return with morrowgrain find that the reward the Arch ⟦E20⟧ offers far makes up for the cost.",
+  "quest:3785:obj:0": "Use an ⟦E30⟧ with a Packet of Tharlendis Seeds and two ⟦E24⟧ samples to try and cultivate samples of ⟦E21⟧.",
+  "quest:3785:obj:1": "Bring 10 ⟦E21⟧ to ⟦E29⟧ in ⟦E7⟧.",
+  "quest:3785:details:0": "Here's your ⟦E30⟧ that you'll need to use the Tharlendis seeds with. You also need to have Un'Goro soil samples on hand to use as fertilizer for the seeds. Just use the pouch when you have everything; the pouch will take care of the rest.",
+  "quest:3785:details:1": "When you have enough morrowgrain, bring them here to me in the enclave. Please don't bother the Arch ⟦E20⟧; he's a very busy man, and he doesn't need to be disturbed every time someone returns with another batch of morrowgrain!",
+  "quest:3785:progress:0": "Yes ⟦17⟧, have you grown some morrowgrain for the Arch ⟦E20⟧'s important research? The mysterious properties of ⟦E26⟧ become clearer with each passing day, thanks to the help you are giving us.",
+  "quest:3785:completion:0": "Well done ⟦18⟧, I will be sure to give these to the Arch ⟦E20⟧ himself when he has need of them. Meanwhile, please accept this as a token of the Cenarion Circle's appreciation.",
+  "quest:3785:completion:1": "Our need for morrowgrain, for now, is constant; if you wish to continue aiding us, then please return when you have cultivated more of it.",
+  "quest:5091:obj:0": "Seek out ⟦E32⟧. His base camp is located at Chillwind Camp, north of the ⟦E33⟧.",
+  "quest:5091:details:0": "Hear ye, hear ye! All heroes are called upon to heed these words!",
+  "quest:5091:details:1": "BA call to arms has been issued by the Kingdom of ⟦E34⟧! All able bodied individuals are entreated to take up arms against the dark threat of the Scourge in the northern lands of the ⟦E36⟧! Rumors fly of new threats rising from the ruins of the ⟦E37⟧!",
+  "quest:5091:details:2": "Heroes of the realm - seek out ⟦E32⟧ who has set up his base camp in Chillwind Camp, north of the ⟦E33⟧!",
+  "quest:5091:completion:0": "Welcome to the ⟦E37⟧, hero. This is one of the most dangerous frontiers in ⟦E16⟧, especially with the looming threat of the Scourge to our north and northeast. I am glad to hear that the clarion call of duty and service to the greater good did not fall on deaf ears with you!",
+  "quest:5091:completion:1": "If you are ready to get your hands dirty, then there is plenty for willing and able heroes to do here on the edge of the ⟦E37⟧.",
+  "quest:7801:title": "Additional ⟦E38⟧",
+  "quest:7801:progress:0": "Greetings once again, ⟦19⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional stack of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of ⟦E7⟧.⟦20⟧⟦21⟧Whenever you are ready to hand in the stack of runecloth, I'll accept it.",
+  "quest:7801:completion:0": "⟦22⟧ - without heroes like you working on behalf of ⟦E7⟧, we'd surely suffer. Thank you for your continued efforts!",
+  "quest:4493:obj:0": "Speak to ⟦E40⟧ in Gadgetzan.",
+  "quest:4493:details:0": "It would seem that the silithid's intent, nay - reason for being, is to devour everything in their path that is not of their ecology. Their focus is singular, and it is for this reason they are a grave threat to all life on ⟦E16⟧.",
+  "quest:4493:details:1": "What we've seen to date is but the first stages. I suspect that their strength comes from deeper in ⟦E17⟧: ⟦E26⟧. Go to Gadgetzan in the ⟦E41⟧ desert and speak to ⟦E40⟧. Tell him of my theory; he will surely aid us in fighting the silithid.",
+  "quest:4493:completion:0": "Yes, I gathered that Gracina sent you to me. Your experience in fighting these beasties is priceless; no one to my knowledge has ever dealt with their kind before. As for Gracina's idea that ⟦E26⟧ is their heart... perhaps it is. Un'Goro is a mysterious and dangerous jungle to the west of here. Perhaps it is also one step closer to figuring out what the silithid are all about.",
+  "quest:4510:obj:0": "Bring the ⟦E42⟧ to ⟦E43⟧ in the bank of ⟦E7⟧.",
+  "quest:4510:details:0": "⟦23⟧, your help has been immeasurable. The time will come, no doubt, when I'll ask for your assistance against the silithid once more. We must absorb what we have learned in Un'Goro; I fear that my assumptions that the silithid originated from Un'Goro are now wrong... that indeed there is a far stronger presence somewhere.",
+  "quest:4510:details:1": "Take this note to ⟦E43⟧ at the bank. She'll give you something from my vault that should be viewed as a token of my gratitude. Thank you for your assistance, brave ⟦24⟧.",
+  "quest:4510:progress:0": "⟦E11⟧'adore, ⟦25⟧.  What may I do for you today?",
+  "quest:4510:completion:0": "This bank voucher authorizes me to withdraw an item from ⟦E45⟧'s account with us and present it to you. Congratulations would seem to be in order!",
+  "quest:1047:obj:0": "Speak with ⟦E23⟧ at the Cenarion Enclave of ⟦E7⟧ about the Cenarion Circle's call to explore the frontiers of ⟦E17⟧.",
+  "quest:1047:details:0": "Attention, heroes!",
+  "quest:1047:details:1": "The Cenarion Circle seeks able bodied individuals to assist them in exploring the vast new frontiers of ⟦E17⟧! A forbidden wasteland of unimaginable dangers lies far to the west of ⟦E41⟧ and Gadgetzan, and the Circle needs willing and honorable proxies to act in their stead.",
+  "quest:1047:details:2": "All interested individuals should seek audience with the Cenarion Circle. Speak with the Arch ⟦E20⟧ in ⟦E7⟧, Fandral Staghelm, for more information!",
+  "quest:1047:completion:0": "What makes you think I wish to be pestered by the likes of you, ⟦26⟧? Wait - let me stop the important duties I attend to on a daily basis so I can help you locate a doodad somewhere. By all means, the welfare of ⟦E7⟧ - nay, all of ⟦E13⟧ - should come second to the acquisition of a bauble for your collection.",
+  "quest:1047:completion:1": "The fools in ⟦E46⟧ waste my time with their call for assistance, and now I must endure this?",
+  "quest:6761:obj:0": "Speak with ⟦E29⟧ at the Cenarion Enclave of ⟦E7⟧.",
+  "quest:6761:details:0": "I have relegated my second, ⟦E29⟧, to deal with ⟦E46⟧'s call for aid. Speak to him on this matter - NOT me.",
+  "quest:6761:details:1": "Let me give you some... friendly... advice. It is I who led us out of the darkness - NOT the Cenarion Circle in ⟦E46⟧ - when all was lost for our race. ⟦E13⟧ gives us all new life! They would have you believe otherwise, and to believe their propaganda would be a fool's task.",
+  "quest:6761:details:2": "I'll leave it to you to decide whether or not you're a fool.",
+  "quest:6761:completion:0": "Yes ⟦27⟧, thank you for coming. I apologize about the misunderstanding... the air is thick with mistrust between the Arch ⟦E20⟧ here and ⟦E48⟧ in ⟦E46⟧. Each suspect the other of chicanery, and the fact that strange corruptions of ⟦E13⟧ continue unabated are still an issue here. It does little to quell mistrust.",
+  "quest:6761:completion:1": "Regardless, our duty to the Cenarion Circle remains... even if those who lead it may disagree with one another.",
+  "quest:6762:obj:0": "Speak with ⟦E49⟧ in the village of Nighthaven, ⟦E46⟧. ⟦E46⟧ lies between ⟦E50⟧ and ⟦E51⟧, accessible through a path out of Timbermaw Hold.",
+  "quest:6762:details:0": "For this task, ⟦E48⟧' majordomo in ⟦E46⟧ - ⟦E49⟧ - seeks aid in exploring the vast wastelands far to the west of ⟦E41⟧... and even further west of Un'Goro. You should find him in Nighthaven, the main village of ⟦E46⟧.",
+  "quest:6762:details:1": "While your work will no doubt be of tremendous benefit to us all, I advise you to tread gingerly. There are tensions between ⟦E7⟧ and ⟦E46⟧... ones that may grow over the course of time.",
+  "quest:6762:completion:0": "I am ⟦E49⟧, and on behalf of ⟦E48⟧ and all of the denizens of this sacred glade I bid you welcome.",
+  "quest:6762:completion:1": "I appreciate your interest and eagerness to assist the Cenarion Circle. I also know that Arch ⟦E20⟧ of ⟦E7⟧ expressed his displeasure to you in your lending us aid. Rest assured that it is for the greater good, and that you will be safe from any ill-conceived repercussions you may be the target of.",
+  "quest:6762:completion:2": "You are among friends here, ⟦28⟧.",
+  "quest:7792:obj:0": "{'type': 'item', 'id': 2592, 'target': 'Wool Cloth', 'text': None}",
+  "quest:7792:progress:0": "We are currently gathering ⟦E55⟧. A donation of sixty pieces of ⟦E55⟧ cloth will net you full recognition by our people for your generous actions.⟦29⟧⟦30⟧If you currently have sixty pieces, you may donate them now.",
+  "quest:7792:completion:0": "Wonderful! We thank you for your generous donation, ⟦31⟧!",
+  "quest:7798:obj:0": "{'type': 'item', 'id': 4306, 'target': 'Silk Cloth', 'text': None}",
+  "quest:7798:progress:0": "We are currently gathering ⟦E56⟧. A donation of sixty pieces of ⟦E56⟧ cloth will net you full recognition by our people for your generous actions⟦32⟧⟦33⟧If you currently have sixty pieces, you may donate them now.",
+  "quest:7798:completion:0": "Wonderful! We thank you for your generous donation, ⟦34⟧!",
+  "quest:7799:obj:0": "{'type': 'item', 'id': 4338, 'target': 'Mageweave Cloth', 'text': None}",
+  "quest:7799:progress:0": "Mageweave is running low, and we could use your help to replenish our stocks! By counting on the community as a whole, we would only need a donation of 60 pieces of mageweave cloth from you to enable us to reach our goal. Such generosity would not go unnoticed ⟦E7⟧, I assure you!⟦35⟧⟦36⟧If you have the sixty pieces of mageweave cloth on you and are ready to donate them, I'm able to take them from you now.",
+  "quest:7799:completion:0": "Wonderful! We thank you for your generous donation, ⟦37⟧!",
+  "quest:7800:obj:0": "{'type': 'item', 'id': 14047, 'target': 'Runecloth', 'text': None}",
+  "quest:7800:progress:0": "⟦38⟧, you've been a tremendous contributor to our cloth drive. As we work hard to replenish our reserves, one form of cloth remains critically low - runecloth. We are in absolutely dire need of runecloth, and we hope that you will be able to help us as you have in the past.⟦39⟧⟦40⟧If you are willing, please bring me what runecloth you can spare. We'll initially accept a single donation of sixty, and then we'll go from there.",
+  "quest:7800:completion:0": "Fantastic - these will go right to use, I assure you. Thank you again for your assistance! We'd certainly be lost without you.",
+  "quest:7800:completion:1": "With all the donations you've made, I would certainly process any additional runecloth donations you care to make in the future. Just be sure to check in with me, and I'll personally make sure that your good deeds won't go unrecognized!"
+ },
+ "context": {
+  "quest:7671": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Lelanai («لیلانای»)",
+   "turner": "Lelanai («لیلانای»)"
+  },
+  "quest:7672": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Lelanai («لیلانای»)",
+   "turner": "Lelanai («لیلانای»)"
+  },
+  "quest:2519": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Sister Aquinne («خواهر اکوینن»)",
+   "turner": "Priestess A'moora («کاهنهٔ آمورا»)"
+  },
+  "quest:6344": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 10,
+   "side": "alliance",
+   "giver": "Mydrannul («میدرانول»)",
+   "turner": "Nessa Shadowsong («نسا شدوسانگ»)"
+  },
+  "quest:98067": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 11,
+   "side": "alliance",
+   "giver": "Sentinel Dalia Sunblade («دالیا تیغهٔ خورشید»)",
+   "turner": "Sentinel Dalia Sunblade («دالیا تیغهٔ خورشید»)"
+  },
+  "quest:2518": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Priestess A'moora («کاهنهٔ آمورا»)",
+   "turner": "Priestess A'moora («کاهنهٔ آمورا»)"
+  },
+  "quest:2520": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Priestess A'moora («کاهنهٔ آمورا»)",
+   "turner": "Priestess A'moora («کاهنهٔ آمورا»)"
+  },
+  "quest:730": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 14,
+   "side": "alliance",
+   "giver": "Chief Archaeologist Greywhisker («سرباستان‌شناس سبیل‌خاکستری»)",
+   "turner": "Archaeologist Hollee («باستان‌شناس هولی»)"
+  },
+  "quest:952": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)",
+   "turner": "Onu («اونو»)"
+  },
+  "quest:3803": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 47,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)"
+  },
+  "quest:3763": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Innkeeper Saelienne («مهمان‌دار سائلین»)",
+   "turner": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)"
+  },
+  "quest:3764": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)",
+   "turner": "Jenal («جنال»)"
+  },
+  "quest:3781": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)",
+   "turner": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)"
+  },
+  "quest:3785": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)",
+   "turner": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)"
+  },
+  "quest:5091": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "Herald Moonstalker («منادی ماه‌شکار»)",
+   "turner": "Commander Ashlam Valorfist («فرمانده اشلام مشت‌دلاور»)"
+  },
+  "quest:7801": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 50,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Raedon Duskstriker («رایدون غروب‌زن»)"
+  },
+  "quest:4493": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 53,
+   "side": "alliance",
+   "giver": "Gracina Spiritmight («گراسینا روح‌توان»)",
+   "turner": "Alchemist Pestlezugg («کیمیاگر پستل‌زاگ»)"
+  },
+  "quest:4510": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Gracina Spiritmight («گراسینا روح‌توان»)",
+   "turner": "Idriana («ایدریانا»)"
+  },
+  "quest:1047": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Herald Moonstalker («منادی ماه‌شکار»)",
+   "turner": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)"
+  },
+  "quest:6761": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Arch Druid Fandral Staghelm («دروید اعظم فاندرال گوزن‌کلاه»)",
+   "turner": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)"
+  },
+  "quest:6762": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 55,
+   "side": "alliance",
+   "giver": "Mathrengyl Bearwalker («ماترنگیل خرس‌رو»)",
+   "turner": "Rabine Saturna («رابین ساتورنا»)"
+  },
+  "quest:7792": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Raedon Duskstriker («رایدون غروب‌زن»)",
+   "turner": "Raedon Duskstriker («رایدون غروب‌زن»)"
+  },
+  "quest:7798": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Raedon Duskstriker («رایدون غروب‌زن»)",
+   "turner": "Raedon Duskstriker («رایدون غروب‌زن»)"
+  },
+  "quest:7799": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Raedon Duskstriker («رایدون غروب‌زن»)",
+   "turner": "Raedon Duskstriker («رایدون غروب‌زن»)"
+  },
+  "quest:7800": {
+   "zone_en": "Darnassus",
+   "zone_fa": "دارناسوس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Raedon Duskstriker («رایدون غروب‌زن»)",
+   "turner": "Raedon Duskstriker («رایدون غروب‌زن»)"
+  }
+ },
+ "known": {
+  "quest:2519": {
+   "title": "معبد ماه"
+  },
+  "quest:6344": {
+   "title": "نسا شدوسانگ"
+  },
+  "quest:2518": {
+   "title": "اشک‌های ماه"
+  },
+  "quest:2520": {
+   "title": "قربانی ساترا"
+  },
+  "quest:730": {
+   "title": "دردسری در کرانهٔ تاریک؟"
+  },
+  "quest:952": {
+   "title": "بستان باستانیان"
+  },
+  "quest:3763": {
+   "title": "همیاری با دروئید اعظم استَگهِلم"
+  },
+  "quest:3764": {
+   "title": "خاک اون‌گورو"
+  },
+  "quest:3781": {
+   "title": "پژوهش موروگرین"
+  },
+  "quest:3785": {
+   "title": "پژوهش موروگرین"
+  },
+  "quest:5091": {
+   "title": "فراخوان به سلاح: اراضی طاعون‌زده!"
+  },
+  "quest:4493": {
+   "title": "پیشروی سیلیتیدها"
+  },
+  "quest:4510": {
+   "title": "آرامش پیش از توفان"
+  },
+  "quest:1047": {
+   "title": "مرزهای تازه"
+  },
+  "quest:6761": {
+   "title": "مرزهای تازه"
+  },
+  "quest:6762": {
+   "title": "رابین ساتورنا"
+  },
+  "quest:7792": {
+   "title": "اهدای پشم"
+  },
+  "quest:7798": {
+   "title": "اهدای ابریشم"
+  },
+  "quest:7799": {
+   "title": "اهدای مگ‌ویو"
+  },
+  "quest:7800": {
+   "title": "اهدای رون‌کلاث"
+  }
+ }
+}

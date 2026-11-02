@@ -1,0 +1,484 @@
+{
+ "pack": "quest-the-hinterlands-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-the-hinterlands-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Mystic Yayo'jin",
+   "fa": "عارف یایوجین",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Lard",
+   "fa": "لارد",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Lard's Lunch",
+   "fa": "ناهار پیه",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Ancient Egg",
+   "fa": "تخم باستانی",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Yeh'kinya",
+   "fa": "یه‌کینیا",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "The Prophecy of Mosh'aru",
+   "fa": "پیشگویی موش‌آرو",
+   "kind": "qs"
+  },
+  "E10": {
+   "en": "Katoom the Angler",
+   "fa": "کاتوم ماهیگیر",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Saltwater Snapjaw",
+   "fa": "آرواره‌گیر آب‌شور",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Otho Moji'ko",
+   "fa": "اوتو موجیکو",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Final Message to the Wildhammer",
+   "fa": "پیامِ نهایی به وایلدهامر",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Huntsman Markhor",
+   "fa": "شکارچی مارخور",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Huntsman Malkhor's Skull",
+   "fa": "جمجمهٔ هانتس‌من مالکور",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Huntsman Malkhor's Bones",
+   "fa": "استخوان‌های هانتس‌من مالکور",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Primal Torntusk",
+   "fa": "تورن‌تاسک نخستین",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Tainted Blood",
+   "fa": "خون آلوده",
+   "kind": "sp"
+  },
+  "E22": {
+   "en": "Return to Primal Torntusk",
+   "fa": "بازگشت به پریمال تورنتاسک",
+   "kind": "qs"
+  },
+  "E23": {
+   "en": "Vile Priestess Hexx",
+   "fa": "کاهنهٔ پلید هکس",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Elder Torntusk",
+   "fa": "ریش‌سفید نیش‌دریده",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Hitah'ya the Keeper",
+   "fa": "هیتایا نگهبان",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Shackle Key",
+   "fa": "کلید زنجیر",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E30": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E31": {
+   "en": "Sharpbeak",
+   "fa": "منقار تیز",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Swiftwind",
+   "fa": "بادتند",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Shadra",
+   "fa": "شادرا",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Apothecary Lydon",
+   "fa": "داروساز لیدون",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Faranell's Parcel",
+   "fa": "بستهٔ فارنل",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Master Apothecary Faranell",
+   "fa": "داروساز ارشد فارانل",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Mystic Yayo'jin": "عارف یایوجین",
+  "Lard": "لارد",
+  "Lard's Lunch": "ناهار پیه",
+  "Ancient Egg": "تخم باستانی",
+  "Yeh'kinya": "یه‌کینیا",
+  "Tanaris": "تاناریس",
+  "The Prophecy of Mosh'aru": "پیشگویی موش‌آرو",
+  "Katoom the Angler": "کاتوم ماهیگیر",
+  "Saltwater Snapjaw": "آرواره‌گیر آب‌شور",
+  "Otho Moji'ko": "اوتو موجیکو",
+  "Final Message to the Wildhammer": "پیامِ نهایی به وایلدهامر",
+  "Alliance": "اتحاد",
+  "Huntsman Markhor": "شکارچی مارخور",
+  "Huntsman Malkhor's Skull": "جمجمهٔ هانتس‌من مالکور",
+  "Huntsman Malkhor's Bones": "استخوان‌های هانتس‌من مالکور",
+  "Primal Torntusk": "تورن‌تاسک نخستین",
+  "Tainted Blood": "خون آلوده",
+  "Return to Primal Torntusk": "بازگشت به پریمال تورنتاسک",
+  "Vile Priestess Hexx": "کاهنهٔ پلید هکس",
+  "Elder Torntusk": "ریش‌سفید نیش‌دریده",
+  "Hitah'ya the Keeper": "هیتایا نگهبان",
+  "Shackle Key": "کلید زنجیر",
+  "Shadow": "سایه",
+  "Blood": "خون",
+  "Sharpbeak": "منقار تیز",
+  "Swiftwind": "بادتند",
+  "Shadra": "شادرا",
+  "Apothecary Lydon": "داروساز لیدون",
+  "Faranell's Parcel": "بستهٔ فارنل",
+  "Master Apothecary Faranell": "داروساز ارشد فارانل",
+  "Undercity": "آندر‌سیتی"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$C",
+  "3": "$B",
+  "4": "$B",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$c",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N"
+ },
+ "rows": {
+  "quest:7844:obj:0": "⟦E1⟧ at Revantusk Village in the Hinterlands wants you to kill 30 Vilebranch Scalpers and 15 Vilebranch Soothsayers. Return to her when this task is complete.",
+  "quest:7844:obj:1": "Yayo'jin indicated that these trolls could be found near the Shaol'watha and Agol'watha temples in the north by northeastern region of the Hinterlands.",
+  "quest:7844:details:0": "Three different tribes of trolls inhabit the Hinterlands, ⟦1⟧. That is about as far as the similarities between the tribes extends: We are all trolls and we live in the Hinterlands.",
+  "quest:7844:details:1": "The Vilebranch - aptly named - are a depraved lot; feeding on other trolls and humanoids.",
+  "quest:7844:details:2": "If Zul'jin were here, he would have destroyed the whole lot of them with a flick of his wrist - alas, Zul'jin has not yet returned and we are left to our own devices.",
+  "quest:7844:details:3": "It is up to you to destroy the filth of the region!",
+  "quest:7844:progress:0": "The Vilebranch Soothsayers and Scalpers inhabit the north by northeast region of the Hinterlands.",
+  "quest:7844:completion:0": "Well done, ⟦2⟧. Zul'jin himself could not have done a better job!",
+  "quest:7840:obj:0": "⟦E2⟧ at Revantusk Village in the Hinterlands wants you to find ⟦E3⟧. Return to him when this task is complete.",
+  "quest:7840:obj:1": "⟦E2⟧ mentioned that he left it on the island to the north. Watch out for Vilebranch trolls.",
+  "quest:7840:details:0": "⟦E2⟧ was at secret special spot having picnic when ugly mean Vilebranch hit ⟦E2⟧ wit da big stick. ⟦E2⟧ run back to Revantusk but forget ⟦E2⟧ lunch. ⟦E2⟧ hungry. Maybe you go back to secret special spot and get ⟦E2⟧ lunch? ⟦E2⟧ scared. Go nort! Island der to da nort is da secret special spot.",
+  "quest:7840:progress:0": "<⟦E2⟧ rubs his enormous belly.>⟦3⟧⟦4⟧⟦E2⟧ so hungry.",
+  "quest:7840:completion:0": "<⟦E2⟧ takes the huge haunch of meat from you and stuffs it in his face.>",
+  "quest:7840:completion:1": "Dis hit da spot! Tanks little one.",
+  "quest:7840:completion:2": "⟦E2⟧ make you special picnic basket for help ⟦E2⟧.",
+  "quest:4787:obj:0": "Bring the ⟦E5⟧ to ⟦E6⟧ in ⟦E7⟧.",
+  "quest:4787:details:0": "⟦E8⟧ speaks of an ancient egg. It is a relic of a time when trolls ruled vast empires, and it has the power to hold the essence of Hakkar. It may be the only way to keep our world safe from his evil.",
+  "quest:4787:details:1": "Bring me the ancient egg, ⟦5⟧. It is said to lay hidden deep within Jintha'Alor in the Hinterlands, in a cave behind the amphitheater at the top of the city.",
+  "quest:4787:progress:0": "Do you have the ancient egg? I sense great forces stirring, and I fear that time grows short.",
+  "quest:4787:completion:0": "Ah, you have the egg! I bow to you, ⟦6⟧. Your strength and bravery will be long remembered.",
+  "quest:7815:obj:0": "⟦E10⟧ at Revantusk Village in the Hinterlands wants you to kill 15 ⟦E11⟧ turtles. Return to him when you have completed this task.",
+  "quest:7815:details:0": "Don't let their big eyes fool you, mon! Those saltwater snapjaws be a menace. I can't fish for five minutes without getting a broken line from one of those oversized fish vacuums stealing my bait.",
+  "quest:7815:details:1": "Do me and the people of Revantusk Village a service and kill em, mon.",
+  "quest:7815:details:2": "Kill the whole lot of em!",
+  "quest:7815:progress:0": "How goes the hunt?",
+  "quest:7815:completion:0": "Oh, mon! I can't thank you enough! Hopefully this here fishing pole will be reward enough for the job.",
+  "quest:7843:obj:0": "⟦E12⟧ at Revantusk Village in the Hinterlands wants you to travel to Aerie Peak in the western region of the Hinterlands and place the ⟦E13⟧ by the well in the center of town. Return to him once this task is complete.",
+  "quest:7843:obj:1": "Beware of angry Wildhammer dwarves and unruly members of the ⟦E14⟧.",
+  "quest:7843:details:0": "<Otho hands you a long, blood drenched spear, wrapped in several gryphon feathers.>",
+  "quest:7843:details:1": "You take this, mon. You take this to Aerie Peak, dead center of town by the well. You plant it! Drive it right into the ground! Show those dwarves that troll mean business! Come back when you do this. Hopefully you come back alive.",
+  "quest:7843:progress:0": "What's the hold up, mon?",
+  "quest:7843:completion:0": "I wish I coulda been there to see the look on their faces, mon. Are they packing up their bags? Leavin' town?",
+  "quest:7843:completion:1": "You done good, ⟦7⟧. Real good. Otho reward you with the big mojo.",
+  "quest:7849:obj:0": "⟦E15⟧ at Revantusk Village in the Hinterlands wants you to recover his twin brother's remains. Find and return ⟦E16⟧ and ⟦E17⟧ to ⟦E15⟧.",
+  "quest:7849:obj:1": "Markhor mentioned that his brother's remains were fed to the oozes and wolves of the Vilebranch. He also mentioned that there is a refuse pit filled with oozes in Jintha'alor as well as a wolf den. Both of these places are near the top of the temple.",
+  "quest:7849:details:0": "Like many in our village, I too have lost a loved one to the wilds. Alas, it was my twin brother Malkhor - taken in the same raid as Torntusk's mate by the Vilebranch.",
+  "quest:7849:details:1": "Sadly, he was not fated to live and was given a swift, brutal execution; his remains fed to the oozes and wolves of the Vilebranch.",
+  "quest:7849:details:2": "It is too late to save his life but not too late to save his soul. Recover his remains, ⟦8⟧.",
+  "quest:7849:progress:0": "When I have his remains, I shall take them to Yayo'jin and have them prepared for a proper burial.",
+  "quest:7849:completion:0": "My dearest brother, how I will miss you...",
+  "quest:7849:completion:1": "Thank you for your assistance, ⟦9⟧. You are truly a hero in my eyes.",
+  "quest:7850:obj:0": "⟦E20⟧ at Revantusk Village in the Hinterlands wants you to recover 10 Vessels of ⟦E21⟧ from Jintha'alor. ⟦E22⟧ when this task is complete.",
+  "quest:7850:details:0": "The Vilebranch fight with supernatural ferocity. This is due to the foul magical weavings of the ⟦E23⟧.",
+  "quest:7850:details:1": "Throughout Jintha'alor you will find dark vessels of tainted blood. The vessels radiate the foul magic of the faceless blood God, empowering the Vilebranch and also driving them to madness.",
+  "quest:7850:details:2": "Steal those vessels and return them to me so that I may remove the taint and ultimately loosen the grip of the blood God.",
+  "quest:7850:progress:0": "Be cautious in battling the Vilebranch, ⟦10⟧. Their minds are clouded - they fight to the death.",
+  "quest:7850:completion:0": "The dark energy that compels the Vilebranch has been lifted - for now. We must remain ever vigilant in our battle against evil, as even if the Vile Priestess is destroyed, another soon takes her place.",
+  "quest:7845:obj:0": "⟦E20⟧ at Revantusk Village in the Hinterlands wants you to rescue her mate, ⟦E25⟧, from Jintha'alor.",
+  "quest:7845:obj:1": "You have been told that he is being held prisoner atop Jintha'alor, the Vilebranch capital city located in the southern region of the Hinterlands.",
+  "quest:7845:details:0": "My mate was taken by Vilebranch savages in a bold midnight raid on our village. Our spies have told me that he is still alive and being held prisoner atop Jintha'alor. The ⟦E23⟧ is said to be preparing him for a sacrifice to the faceless blood God, Hakkar.",
+  "quest:7845:details:1": "You must save him, ⟦11⟧! Our village could not stand a loss this great.",
+  "quest:7845:completion:0": "You must act quickly, ⟦12⟧. Surely the guards have been alerted to your presence.",
+  "quest:7846:obj:0": "⟦E25⟧ at Jintha'alor wants you to kill ⟦E26⟧ to get the ⟦E27⟧ to his bindings. Return to ⟦E25⟧ when you have recovered the key.",
+  "quest:7846:details:0": "The key to my bindings is held by ⟦E26⟧. She is in the nearby cave. Be careful, ⟦13⟧, for she is guarded well.",
+  "quest:7846:details:1": "Kill her and bring the key back to loosen my shackles. Only then will I be free to return home.",
+  "quest:7846:progress:0": "You must hurry!",
+  "quest:7846:completion:0": "Freedom at last! Thank you, ⟦14⟧. Revantusk will know your deeds!",
+  "quest:7847:obj:0": "⟦E25⟧ at Jintha'alor wants you to return to ⟦E20⟧ at Revantusk Village with news of his rescue.",
+  "quest:7847:details:0": "Return to my mate, ⟦E20⟧ at Revantusk Village. Tell her that I am coming home! She is sure to reward you.",
+  "quest:7847:completion:0": "You have done the Revantusk a great service, ⟦15⟧! We owe you a great debt of gratitude.",
+  "quest:7861:obj:0": "You have been ordered to slay ⟦E23⟧ and 20 Vilebranch Aman'zasi Guards. See ⟦E20⟧ at Revantusk Village in the Hinterlands once this task is complete.",
+  "quest:7861:obj:1": "⟦E23⟧ and the Aman'zasi Guards can be found atop Jintha'alor in the Hinterlands.",
+  "quest:7861:details:0": "By order of ⟦E20⟧, ⟦E23⟧ and her minions are to be brought to justice!",
+  "quest:7861:details:1": "BA grand reward is offered for any that slay the ⟦E23⟧ and all of her Aman'zasi elite guard.",
+  "quest:7861:progress:0": "Do you bring news from Jintha'alor?",
+  "quest:7861:completion:0": "A crippling blow to the Vilebranch, indeed. You shall be richly rewarded, ⟦16⟧.",
+  "quest:7862:obj:0": "You have been tasked with the decimation of 20 Vilebranch Berserkers, 20 Vilebranch ⟦E29⟧ Hunters, 20 Vilebranch ⟦E30⟧ Drinkers, and 20 Vilebranch Soul Eaters.",
+  "quest:7862:obj:1": "Should you complete this task, return to ⟦E20⟧ at Revantusk Village in the Hinterlands.",
+  "quest:7862:details:0": "With the loss of Guard Captain Malkhor, the position of Guard Captain of Revantusk is once again open. If you are interested in becoming Captain of the Guard for Revantusk, complete the following tasks and submit your application to ⟦E20⟧:",
+  "quest:7862:details:1": "Exterminate Vilebranch Berserkers.",
+  "quest:7862:details:2": "Exterminate Vilebranch ⟦E29⟧ Hunters.",
+  "quest:7862:details:3": "Exterminate Vilebranch ⟦E30⟧ Drinkers.",
+  "quest:7862:details:4": "Exterminate Vilebranch Soul Eaters.",
+  "quest:7862:progress:0": "Are you here about the job opening?",
+  "quest:7862:completion:0": "You are indeed a worthy candidate for the new position, ⟦17⟧. Accept this trinket as a token of our appreciation for your hard work. I will be reviewing all applications next year.",
+  "quest:2994:obj:0": "Fight to the top of Jintha'Alor, kill ⟦E23⟧ for the key to ⟦E31⟧'s cage, and save ⟦E31⟧.",
+  "quest:2994:details:0": "We must save ⟦E31⟧!",
+  "quest:2994:details:1": "Fight your way to the top of Jintha'Alor in the heart of Vilebranch territory, gain the key to ⟦E31⟧'s cage from the vile Priestess Hexx, and then find and save ⟦E31⟧!",
+  "quest:2994:progress:0": "Save ⟦E31⟧!",
+  "quest:2994:completion:0": "⟦E32⟧ and Keenclaw returned with their child moments ago, and are fussing over him like new parents. Seeing them together again is enough to give even this old dwarf mist in the eyes...",
+  "quest:2994:completion:1": "We cannot repay you enough for what you have done, ⟦18⟧. The gryphons of Aerie peak, and their riders, will sing your name for a long, long time.",
+  "quest:2937:obj:0": "Defeat ⟦E33⟧ at the altar of ⟦E33⟧'Alor, then bring her venom to ⟦E34⟧ in Tarren Mill.",
+  "quest:2937:details:0": "Take his parchment, and read it at the altar of ⟦E33⟧'Alor, deep within the witherbark realm in the Hinterlands. This will summon ⟦E33⟧ the spider god.",
+  "quest:2937:progress:0": "Did you get the venom?",
+  "quest:2937:completion:0": "Sweet, you got it!",
+  "quest:2938:obj:0": "Bring ⟦E35⟧ to ⟦E36⟧ in the ⟦E37⟧.",
+  "quest:2938:details:0": "The venom you gathered from the Witherbark's spider god is quite a find! I've been able to kill nearly two dozen rabbits with just a drop of the stuff. Granted, some of those rabbits were very young and small enough to fit in the palm of one's hand so I'm certain their resistance to toxins was low, but it can't be denied that this poison is powerful!",
+  "quest:2938:details:1": "I'd like a sample sent to my superior, Apothecary Faranell in the Apothecarium of the ⟦E37⟧. I am positive he would want to test this himself.",
+  "quest:2938:progress:0": "Word was sent of your coming, ⟦19⟧. You have a parcel for me?",
+  "quest:2938:completion:0": "Ah, very good. Lydon mentioned the poison in this parcel is the most potent he has come in contact with, and is busy working on new applications with it.",
+  "quest:2938:completion:1": "With luck, we will find many.",
+  "quest:2938:completion:2": "Thank you, ⟦20⟧. Your service to the Royal Apothecary Society is undeniable."
+ },
+ "context": {
+  "quest:7844": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 48,
+   "side": "horde",
+   "giver": "Mystic Yayo'jin («عارف یایوجین»)",
+   "turner": "Mystic Yayo'jin («عارف یایوجین»)"
+  },
+  "quest:7840": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 49,
+   "side": "horde",
+   "giver": "Lard («لارد»)",
+   "turner": "Lard («لارد»)"
+  },
+  "quest:4787": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 50,
+   "side": "",
+   "giver": "Yeh'kinya («یه‌کینیا»)",
+   "turner": "Yeh'kinya («یه‌کینیا»)"
+  },
+  "quest:7815": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 50,
+   "side": "horde",
+   "giver": "Katoom the Angler («کاتوم ماهیگیر»)",
+   "turner": "Katoom the Angler («کاتوم ماهیگیر»)"
+  },
+  "quest:7843": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 50,
+   "side": "horde",
+   "giver": "Otho Moji'ko («اوتو موجیکو»)",
+   "turner": "Otho Moji'ko («اوتو موجیکو»)"
+  },
+  "quest:7849": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 50,
+   "side": "horde",
+   "giver": "Huntsman Markhor («شکارچی مارخور»)",
+   "turner": "Huntsman Markhor («شکارچی مارخور»)"
+  },
+  "quest:7850": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 50,
+   "side": "horde",
+   "giver": "Primal Torntusk («تورن‌تاسک نخستین»)",
+   "turner": "Primal Torntusk («تورن‌تاسک نخستین»)"
+  },
+  "quest:7845": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 51,
+   "side": "horde",
+   "giver": "Primal Torntusk («تورن‌تاسک نخستین»)",
+   "turner": "Elder Torntusk («ریش‌سفید نیش‌دریده»)"
+  },
+  "quest:7846": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 51,
+   "side": "horde",
+   "giver": "Elder Torntusk («ریش‌سفید نیش‌دریده»)",
+   "turner": "Elder Torntusk («ریش‌سفید نیش‌دریده»)"
+  },
+  "quest:7847": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 51,
+   "side": "horde",
+   "giver": "Elder Torntusk («ریش‌سفید نیش‌دریده»)",
+   "turner": "Primal Torntusk («تورن‌تاسک نخستین»)"
+  },
+  "quest:7861": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 51,
+   "side": "horde",
+   "giver": "Call to Arms! («فراخوان جنگ!»)",
+   "turner": "Primal Torntusk («تورن‌تاسک نخستین»)"
+  },
+  "quest:7862": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 51,
+   "side": "horde",
+   "giver": "Call to Arms! («فراخوان جنگ!»)",
+   "turner": "Primal Torntusk («تورن‌تاسک نخستین»)"
+  },
+  "quest:2994": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 53,
+   "side": "alliance",
+   "giver": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)",
+   "turner": "Gryphon Master Talonaxe («استاد گریفون تالون‌اکس»)"
+  },
+  "quest:2937": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 55,
+   "side": "horde",
+   "giver": "Master Gadrin («استاد گادرین»)",
+   "turner": "Apothecary Lydon («داروساز لیدون»)"
+  },
+  "quest:2938": {
+   "zone_en": "The Hinterlands",
+   "zone_fa": "هینترلندز",
+   "level": 55,
+   "side": "horde",
+   "giver": "Apothecary Lydon («داروساز لیدون»)",
+   "turner": "Master Apothecary Faranell («داروساز ارشد فارانل»)"
+  }
+ },
+ "known": {
+  "quest:7844": {
+   "title": "خویشاوندان آدم‌خوار"
+  },
+  "quest:7840": {
+   "title": "لارد ناهارش را گم کرد"
+  },
+  "quest:4787": {
+   "title": "تخم باستانی"
+  },
+  "quest:7815": {
+   "title": "اسنپ‌جاها، مون!"
+  },
+  "quest:7843": {
+   "title": "پیام نهایی به وایلدهامرها"
+  },
+  "quest:7849": {
+   "title": "دلتنگی جدایی"
+  },
+  "quest:7850": {
+   "title": "ظرف‌های تاریک"
+  },
+  "quest:7845": {
+   "title": "رئیس سالخوردهٔ تورنتاسک ربوده شد!"
+  },
+  "quest:7846": {
+   "title": "کلید را بازیابی کنید!"
+  },
+  "quest:7847": {
+   "title": "بازگشت به پریمال تورنتاسک"
+  },
+  "quest:7861": {
+   "title": "مطلوب: کاهنهٔ پلید هکس و اطرافیانش"
+  },
+  "quest:7862": {
+   "title": "آگهی استخدام: ناخدای گارد دهکدهٔ روِنتاسک"
+  },
+  "quest:2994": {
+   "title": "نجات شارپ‌بیک"
+  },
+  "quest:2937": {
+   "title": "احضار شادرا"
+  },
+  "quest:2938": {
+   "title": "زهر برای شهر زیرین"
+  }
+ }
+}

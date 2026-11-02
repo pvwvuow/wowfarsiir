@@ -1,0 +1,780 @@
+{
+ "pack": "quest-burning-steppes-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-burning-steppes-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Tablet Transcript",
+   "fa": "رونوشت لوح",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Maxwort Uberglint",
+   "fa": "مکس‌وورت اوبرگلینت",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Tablet of the Seven",
+   "fa": "لوح هفت",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Libram of Rumination",
+   "fa": "لیبرامِ تأمل",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Libram of Constitution",
+   "fa": "لیبرامِ تندرستی",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Libram of Tenacity",
+   "fa": "لیبرامِ سرسختی",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Libram of Resilience",
+   "fa": "لیبرامِ تاب‌آوری",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Libram of Voracity",
+   "fa": "لیبرامِ ولع",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Firegut Ogre",
+   "fa": "اوگر روده‌آتش",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Oralius",
+   "fa": "اورالیوس",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Dreadmaul Rock",
+   "fa": "صخرهٔ دردمال",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Broodling Essence",
+   "fa": "گوهر بچه‌اژدها",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Draco-Incarcinatrix 900",
+   "fa": "دراکو-اینکارسیناتریکس ۹۰۰",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Tinkee Steamboil",
+   "fa": "تینکی استیم‌بویل",
+   "kind": "qs"
+  },
+  "E23": {
+   "en": "Sha'ni's Nose-Ring",
+   "fa": "حلقهٔ بینی شانی",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Krom'Grul",
+   "fa": "کروم‌گرول",
+   "kind": "qs"
+  },
+  "E25": {
+   "en": "Gor'tesh",
+   "fa": "گورتش",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Gor'tesh's Lopped Off Head",
+   "fa": "سر بریدهٔ گورِتش",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Cyrus Therepentous",
+   "fa": "سایروس ترپنتوس",
+   "kind": "npc"
+  },
+  "E28": {
+   "en": "Black Dragonflight Molt",
+   "fa": "پوست‌اندازی نژادِ اژدهای سیاه",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Kalaran Windblade",
+   "fa": "کالاران تیغ‌باد",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Searing Gorge",
+   "fa": "تنگهٔ سوزان",
+   "kind": "zn"
+  },
+  "E31": {
+   "en": "Elemental",
+   "fa": "بنیادی",
+   "kind": "cls"
+  },
+  "E32": {
+   "en": "Hierophant Theodora Mulvadania",
+   "fa": "روحانی اعظم تئودورا مولوادانیا",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Blackrock Depths",
+   "fa": "اعماق بلک‌راک",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Black Dragonspawn",
+   "fa": "اژدهازادهٔ سیاه",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Black Wyrmkin",
+   "fa": "اژدهاتبار سیاه",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Black Drake",
+   "fa": "دریک سیاه",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Helendis Riverhorn",
+   "fa": "هلندیس شاخ‌رود",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E39": {
+   "en": "Helendis Riverhorn's Letter",
+   "fa": "نامهٔ هلندیس ریورهورن",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Magistrate Solomon",
+   "fa": "قاضی سالومون",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Solomon",
+   "fa": "سولومون",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Highlord Bolvar Fordragon",
+   "fa": "لرد اعظم بولوار فوردراگون",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Lady Katrana Prestor",
+   "fa": "بانو کاترانا پرستور",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Bolvar's Decree",
+   "fa": "فرمانِ بولوار",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Marshal Maxwell",
+   "fa": "مارشال مکسول",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Ragged John",
+   "fa": "جان ژنده‌پوش",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Marshal Windsor",
+   "fa": "مارشال ویندزر",
+   "kind": "qs"
+  },
+  "E52": {
+   "en": "Tinkee's Letter",
+   "fa": "نامهٔ تینکی",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Felnok Steelspring",
+   "fa": "فلنوک استیل‌اسپرینگ",
+   "kind": "qs"
+  },
+  "E54": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E55": {
+   "en": "Everlook",
+   "fa": "ایورلوک",
+   "kind": "zn"
+  },
+  "E57": {
+   "en": "Frozen Eggs",
+   "fa": "تخم‌های یخ‌زده",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Leonid Barthalomew",
+   "fa": "لئونید بارتالومیو",
+   "kind": "qs"
+  },
+  "E59": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E60": {
+   "en": "Vectus",
+   "fa": "وکتوس",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E62": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Tablet Transcript": "رونوشت لوح",
+  "Maxwort Uberglint": "مکس‌وورت اوبرگلینت",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Tablet of the Seven": "لوح هفت",
+  "Libram of Rumination": "لیبرامِ تأمل",
+  "Libram of Constitution": "لیبرامِ تندرستی",
+  "Libram of Tenacity": "لیبرامِ سرسختی",
+  "Libram of Resilience": "لیبرامِ تاب‌آوری",
+  "Libram of Voracity": "لیبرامِ ولع",
+  "Firegut Ogre": "اوگر روده‌آتش",
+  "Oralius": "اورالیوس",
+  "Dreadmaul Rock": "صخرهٔ دردمال",
+  "Broodling Essence": "گوهر بچه‌اژدها",
+  "Draco-Incarcinatrix 900": "دراکو-اینکارسیناتریکس ۹۰۰",
+  "Tinkee Steamboil": "تینکی استیم‌بویل",
+  "Sha'ni's Nose-Ring": "حلقهٔ بینی شانی",
+  "Krom'Grul": "کروم‌گرول",
+  "Gor'tesh": "گورتش",
+  "Gor'tesh's Lopped Off Head": "سر بریدهٔ گورِتش",
+  "Cyrus Therepentous": "سایروس ترپنتوس",
+  "Black Dragonflight Molt": "پوست‌اندازی نژادِ اژدهای سیاه",
+  "Kalaran Windblade": "کالاران تیغ‌باد",
+  "Searing Gorge": "تنگهٔ سوزان",
+  "Elemental": "بنیادی",
+  "Hierophant Theodora Mulvadania": "روحانی اعظم تئودورا مولوادانیا",
+  "Blackrock Depths": "اعماق بلک‌راک",
+  "Black Dragonspawn": "اژدهازادهٔ سیاه",
+  "Black Wyrmkin": "اژدهاتبار سیاه",
+  "Black Drake": "دریک سیاه",
+  "Helendis Riverhorn": "هلندیس شاخ‌رود",
+  "Travel": "سفر",
+  "Helendis Riverhorn's Letter": "نامهٔ هلندیس ریورهورن",
+  "Magistrate Solomon": "قاضی سالومون",
+  "Stormwind": "استورم‌ویند",
+  "Solomon": "سولومون",
+  "Highlord Bolvar Fordragon": "لرد اعظم بولوار فوردراگون",
+  "Lady Katrana Prestor": "بانو کاترانا پرستور",
+  "Bolvar's Decree": "فرمانِ بولوار",
+  "Marshal Maxwell": "مارشال مکسول",
+  "Ragged John": "جان ژنده‌پوش",
+  "Marshal Windsor": "مارشال ویندزر",
+  "Tinkee's Letter": "نامهٔ تینکی",
+  "Felnok Steelspring": "فلنوک استیل‌اسپرینگ",
+  "Winterspring": "وینتراسپرینگ",
+  "Everlook": "ایورلوک",
+  "Frozen Eggs": "تخم‌های یخ‌زده",
+  "Leonid Barthalomew": "لئونید بارتالومیو",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Vectus": "وکتوس",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "Blackrock Spire": "برج بلک‌راک"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$C",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$R",
+  "11": "$R",
+  "12": "$B",
+  "13": "$B",
+  "14": "$B",
+  "15": "$B",
+  "16": "$R",
+  "17": "$B",
+  "18": "$B",
+  "19": "$N",
+  "20": "$N",
+  "21": "$B",
+  "22": "$B",
+  "23": "$N",
+  "24": "$B",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$B",
+  "29": "$B",
+  "30": "$r",
+  "31": "$N",
+  "32": "$B",
+  "33": "$N",
+  "34": "$N",
+  "35": "$B",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$B",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$B",
+  "47": "$B"
+ },
+ "rows": {
+  "quest:4296:obj:0": "Bring the ⟦E1⟧ to ⟦E2⟧ in the ⟦E3⟧.",
+  "quest:4296:details:0": "I came to the ⟦E3⟧, following the legends of the Seven. They were dwarves of great knowledge and power, and if you have knowledge and power, then wealth is sure to follow.",
+  "quest:4296:details:1": "That's what I want. Wealth!",
+  "quest:4296:details:2": "If we can learn more of the Seven, then maybe we can get rich together. The ruins of Thaurissan is rumored to keep the ⟦E4⟧, which holds knowledge of the ancient dwarves. Find this tablet, copy its text and bring it to me. Let's discover its secrets together!",
+  "quest:4296:progress:0": "Do you have the writings of the Seven, ⟦1⟧? Have you learned the secrets from their tablet?",
+  "quest:4296:completion:0": "Ah, you found the tablet! And your transcription is superb! Are you sure you're a ⟦2⟧ and not a scribe?",
+  "quest:4296:completion:1": "Here you are, ⟦3⟧. Here is the payment I promised.",
+  "quest:4463:title": "⟦E5⟧",
+  "quest:4463:progress:0": "Present the components, mortal.⟦4⟧⟦5⟧I will also require payment in the form of thirty gold pieces for this creation.",
+  "quest:4463:completion:0": "Take your trinket, fool. Leave me to my studies!",
+  "quest:4481:title": "⟦E7⟧",
+  "quest:4481:progress:0": "There is a price to pay for all things in this world. The price for the specific item that you seek is thirty gold pieces.⟦6⟧⟦7⟧Naturally, I shall retain the majority of the components which you collected. But worry not, you shall have your trinket.",
+  "quest:4481:completion:0": "It is disgrace to his memory... a mortal, such as yourself, finishing his life's work.⟦8⟧⟦9⟧Take your amalgamation and be gone!",
+  "quest:4482:title": "⟦E8⟧",
+  "quest:4482:progress:0": "Thirty gold, ⟦10⟧. Thirty gold and the required components.",
+  "quest:4482:completion:0": "It took Kariel what would amount to several of your lifetimes to complete the libram that you now hold, ⟦11⟧. All for what? So that his disciple could stand in the ⟦E3⟧ and bastardize his research in order to satiate a never ending arcane craving... Curse this foul addiction.⟦12⟧⟦13⟧I am disgusted with your lack of compassion and insatiable greed. Be gone!",
+  "quest:4483:title": "⟦E10⟧",
+  "quest:4483:progress:0": "If it is resilience you desire, thirty gold I require.",
+  "quest:4483:completion:0": "Other librams are lost in this world. Lost in places you would not dare enter. Places you would pray did not exist.⟦14⟧⟦15⟧I will drink in the energies of these components. You shall be given the residual waste...",
+  "quest:4484:title": "⟦E12⟧",
+  "quest:4484:progress:0": "Do not waste my time, ⟦16⟧. Give me what I require. Thirty gold and the components.",
+  "quest:4484:completion:0": "My head throbs... The energies of the vast expanses that makes up our universe... ARGGH!⟦17⟧⟦18⟧Take what you desire and leave!",
+  "quest:3823:obj:0": "Slay 15 ⟦E13⟧-Mages, 7 Firegut Ogres, and 7 ⟦E13⟧ Brutes, and return to ⟦E14⟧ when you are finished.",
+  "quest:3823:details:0": "We must strike at our enemies before they strike at us!",
+  "quest:3823:details:1": "I'll make this brief, soldier.",
+  "quest:3823:details:2": "The Firegut ogres of the ⟦E3⟧ are allies of the Blackrock orcs. They work closely with those vile orcs, keeping the mineral rich ⟦E18⟧ guarded and the supply lines open at all times.",
+  "quest:3823:details:3": "Leave your mark, ⟦19⟧. Cripple their forces and return to me when the job is done.",
+  "quest:3823:details:4": "B<⟦E14⟧ grabs at the air and makes a choking motion.>",
+  "quest:3823:details:5": "I WILL KILL YOU, WINKY!",
+  "quest:3823:progress:0": "There is not nearly enough blood on your uniform, soldier!",
+  "quest:3823:completion:0": "Outstanding, soldier! The orcs and ogres will be reeling from this blow for minutes, maybe even hours!",
+  "quest:4726:obj:0": "Bring 8 ⟦E19⟧ and the ⟦E20⟧ to ⟦E21⟧ at the Flame Crest in the ⟦E3⟧.",
+  "quest:4726:details:0": "I have been studying the dragonkin of the ⟦E3⟧ for weeks, and I think I've finally had a breakthrough! I created a device--I call it the Draco Incarcinatrix 900. It can capture the essence of dragon whelp broodlings!",
+  "quest:4726:details:1": "Or, at least I think it can.",
+  "quest:4726:details:2": "Here, take the device and zap a broodling in the ⟦E3⟧ with it. While it's under the device's effects, defeat the broodling and its essence should be released.",
+  "quest:4726:details:3": "If it is, then splendid! Bring me back samples so I can study them!",
+  "quest:4726:progress:0": "Do you have the broodling essence, ⟦20⟧? I can't wait to study it.⟦21⟧⟦22⟧And besides that... my patron is not the type of person you want to disappoint.",
+  "quest:4726:completion:0": "It worked! You got the essence! Well done, ⟦23⟧! Well done!",
+  "quest:4726:completion:1": "This essence will be invaluable in my research. I hope to one day learn how to capture living dragons whelps, or perhaps capture their eggs. If I could find a way to do that, then I would be the envy of dragon scholars around the world!",
+  "quest:4726:completion:2": "My employer would also be happy, and as I said before, he's someone you want to keep happy...",
+  "quest:3822:obj:0": "Recover ⟦E23⟧ from ⟦E24⟧ and return it to Thal'trak in Kargath. Search the various caves and mines in ⟦E18⟧.⟦24⟧",
+  "quest:3822:details:0": "My whole platoon was captured, ⟦25⟧. All were slain - except me.",
+  "quest:3822:details:1": "Their leader, ⟦E24⟧, wanted to save me for some sort of ritual.",
+  "quest:3822:details:2": "I was chained to this altar and brutalized by the beast. My physical being ceased functioning after an hour of this torture. The beast then ripped my wedding nose-ring off of my face and stuck it on his finger. I had never seen such savagery!",
+  "quest:3822:details:3": "Find ⟦E24⟧ and kill him! Take my ring back to Thal'trak.",
+  "quest:3822:details:4": "And ⟦26⟧, tell him that we will meet again... in another life.",
+  "quest:3822:progress:0": "Did you find Sha'ni? Is she ok?",
+  "quest:3822:completion:0": "<Thal'trak collapses.>",
+  "quest:3822:completion:1": "We were going to move to the Hinterlands. Did she tell you? This was going to be her last mission.",
+  "quest:3822:completion:2": "B<Thal'trak sobs.>",
+  "quest:3822:completion:3": "I don't want it, ⟦27⟧. Keep it, throw it away, I don't care! The ring means nothing to me now. Not without her...",
+  "quest:3824:obj:0": "Find ⟦E25⟧, somewhere to the west of ⟦E18⟧. Kill ⟦E25⟧ and then take ⟦E26⟧ back to ⟦E14⟧ in ⟦E3⟧.⟦28⟧",
+  "quest:3824:details:0": "They're reeling I tell you! Our next strike must be decisive.",
+  "quest:3824:details:1": "The brute lord, ⟦E25⟧, must be slain. More importantly, his head must be returned to me so that I may prepare the third phase of our attack on the Firegut ogres.",
+  "quest:3824:details:2": "Be warned, soldier, ⟦E25⟧ rules not from ⟦E18⟧ but from a Blackrock orc structure to the west of ⟦E18⟧.",
+  "quest:3824:details:3": "Your orders, then, are simple. Find ⟦E25⟧ and chop off his fat head. Return to me when the job is done.",
+  "quest:3824:details:4": "BSHUT UP, WINKY!",
+  "quest:3824:progress:0": "Oh glorious day! Have you returned with the head?",
+  "quest:3824:completion:0": "Just look at it, soldier. Disgusting! When the remaining Firegut ogres see this fat mug stuck on a pike sitting at the top of their mountain, mass hysteria will ensue!",
+  "quest:3824:completion:1": "B<⟦E14⟧ cackles wildly.>",
+  "quest:3825:obj:0": "Take ⟦E26⟧ and place it at the top of ⟦E18⟧. Look for a soft dirt mound to plant the pike.",
+  "quest:3825:details:0": "Just one last thing you must do, soldier.",
+  "quest:3825:details:1": "I've taken the liberty of putting ⟦E25⟧'s head on a pike. Now all you have to do is take this head to the top of ⟦E18⟧ and stick it into the ground. Once you do that, watch as those cowardly ogres run for their lives! After you've had your fun, come back to me and I'll reward you for all of your hard work.",
+  "quest:3825:details:2": "B<⟦E14⟧ seems to be losing touch with reality.>",
+  "quest:3825:progress:0": "So? Did you paint any pictures of the event?",
+  "quest:3825:completion:0": "Outstanding work, soldier! Simply amazing! Oh I'll get the medal of bravery for this, er, I mean you'll be rewarded handsomely for this!",
+  "quest:4022:obj:0": "Show ⟦E27⟧ the ⟦E28⟧ you received from ⟦E29⟧.⟦29⟧",
+  "quest:4022:details:0": "The flight is aware of your work in the ⟦E30⟧.",
+  "quest:4022:details:1": "Show it to me, ⟦30⟧. The molt, imbecile.",
+  "quest:4022:progress:0": "<Cyrus's eyes form two blazing spheres.>",
+  "quest:4022:completion:0": "<Cyrus examines the molt.>",
+  "quest:4022:completion:1": "You have proven that you are not entirely useless, mortal.",
+  "quest:4023:obj:0": "Show ⟦E27⟧ proof of your worth.",
+  "quest:4023:obj:1": "You have a feeling that Cyrus already knows that you are unworthy.",
+  "quest:4023:details:0": "You seek out the Flight? Present to me proof of your worth, mortal.",
+  "quest:4023:progress:0": "<Cyrus's eyes form two blazing spheres.>",
+  "quest:4023:completion:0": "<Cyrus examines the molt.>",
+  "quest:4023:completion:1": "You have proven that you are not entirely useless, mortal.",
+  "quest:4061:obj:0": "Venture to the ⟦E3⟧ and recover 10 Fractured ⟦E31⟧ Shards for ⟦E32⟧.",
+  "quest:4061:obj:1": "You recall Theodora mentioning the golems and elementals of that region as being a source for these shards.",
+  "quest:4061:details:0": "The machines made themselves known to us during our initial forays into the ⟦E30⟧. Upon further investigation we discovered that they were being imported from ⟦E3⟧, possibly ⟦E33⟧. That is what we need you for, ⟦31⟧.",
+  "quest:4061:details:1": "Your first task is to venture to the ⟦E3⟧ and recover elemental shards from the rock automatons and lesser rock creations of the region. Once you have collected a sufficient amount, return to me and I shall determine their source of origin.⟦32⟧",
+  "quest:4061:progress:0": "Do not take this task lightly, ⟦33⟧!",
+  "quest:4061:completion:0": "<Theodora lays the fragments out before her.>",
+  "quest:4061:completion:1": "B<Theodora carefully examines the fragments with an enormous monocle.>",
+  "quest:4061:completion:2": "Interesting. Etched into the structural foundation of each of these fragments are... initials.",
+  "quest:4061:completion:3": "B",
+  "quest:4182:obj:0": "Slay 15 Black Broodlings, 10 ⟦E34⟧, 4 ⟦E35⟧ and 1 ⟦E36⟧. Return to ⟦E37⟧ when the task is complete.",
+  "quest:4182:details:0": "Life in the ⟦E3⟧ is rife with conflict.",
+  "quest:4182:details:1": "Just look at this place! We know very little of what happened to these buildings, but we do know that at one time, before the great explosion, this was all part of the Redridge mountain range.",
+  "quest:4182:details:2": "Enough lamenting! We have a problem, ⟦34⟧. You may have noticed the dragonkin below this ridge. We need assistance in pushing them back. Kill as many as you can and return to me. Succeed and perhaps we can talk of other things.⟦35⟧",
+  "quest:4182:progress:0": "How goes the dragon hunt?",
+  "quest:4182:completion:0": "Superb slaying, ⟦36⟧. Now that we know you can handle yourself around dragonkin, we can talk of more pressing matters.",
+  "quest:4183:obj:0": "⟦E38⟧ to Lakeshire and deliver ⟦E39⟧ to ⟦E40⟧.",
+  "quest:4183:details:0": "We had always assumed that the Blackrock orcs were a product of their savage upbringing. What we have found here, in their homeland, tells us another story.",
+  "quest:4183:details:1": "Indeed, it is bloodlust and thirst for conflict that empowers them, but the black dragonflight are the beings whom control the orcs of Blackrock. We suspect that it is the black dragonflight that fuels them with rage and hostility.",
+  "quest:4183:details:2": "Take this letter to ⟦E40⟧. He will know what must be done.",
+  "quest:4183:details:3": "B<Helendis hands you a sealed letter.>",
+  "quest:4183:progress:0": "Greetings, ⟦37⟧. Have we met before? You look vaguely familiar.",
+  "quest:4183:completion:0": "<⟦E40⟧ opens the sealed letter from Helendis and begins reading.>",
+  "quest:4184:obj:0": "⟦E38⟧ to ⟦E41⟧ and deliver ⟦E42⟧'s Plea to ⟦E43⟧.",
+  "quest:4184:obj:1": "Bolvar resides in ⟦E41⟧ Keep.",
+  "quest:4184:details:0": "This is grim news, ⟦38⟧. To discover that our mortal enemies are merely pawns of a much greater threat is disheartening. There is no possible way that Lakeshire could survive an attack from both the Blackrock orcs and the black dragonflight. Should Lakeshire fall to this menace, Darkshire would fall next, and then what? Goldshire? ⟦E41⟧ itself?",
+  "quest:4184:details:1": "You must take this information to ⟦E43⟧ in ⟦E41⟧ at once! If this does not merit the aid of ⟦E41⟧, nothing will and all is lost.⟦39⟧",
+  "quest:4184:progress:0": "What brings you to ⟦E41⟧ Keep?",
+  "quest:4184:completion:0": "Dragons? Impossible!",
+  "quest:4185:obj:0": "Speak with ⟦E43⟧ after speaking with ⟦E45⟧.",
+  "quest:4185:details:0": "⟦E42⟧ paints a dreary picture. Still, we cannot afford to send our thinly spread troops to the aid of Lakeshire on speculation. I will need proof of these claims before I can act.",
+  "quest:4185:details:1": "Speak with Lady Prestor, ⟦40⟧. She is a learned woman and knows much of dragons and dragonkin. She may be able to shed some light on this situation.⟦41⟧",
+  "quest:4185:progress:0": "<Bolvar watches you intently.>",
+  "quest:4185:completion:0": "<Bolvar cups his chin as if in deep thought.>",
+  "quest:4185:completion:1": "While I respect Lady Prestor's stance, I believe that there is a solution to this dilemma that may put all of our concerns to rest.",
+  "quest:4186:obj:0": "Take ⟦E47⟧ to ⟦E40⟧ in Lakeshire.⟦42⟧",
+  "quest:4186:details:0": "I am going to empower you as an acting deputy of ⟦E41⟧, ⟦43⟧.",
+  "quest:4186:details:1": "Return to ⟦E40⟧ in Lakeshire and deliver this decree.",
+  "quest:4186:progress:0": "Any news from Bolvar?",
+  "quest:4186:completion:0": "It could have been worse, I suppose...",
+  "quest:4186:completion:1": "B<⟦E40⟧ looks you over.>",
+  "quest:4186:completion:2": "It appears as if the fate of Lakeshire rests squarely on your shoulders.",
+  "quest:4186:completion:3": "B<You notice ⟦E40⟧ blinking rapidly. He appears to be crying.>",
+  "quest:4223:obj:0": "Speak with ⟦E48⟧ in the ⟦E3⟧.",
+  "quest:4223:details:0": "<⟦E40⟧ sighs.>",
+  "quest:4223:details:1": "You must return to the ⟦E3⟧, ⟦44⟧. As a deputy of ⟦E41⟧, you will be required to report to ⟦E48⟧. Good luck.",
+  "quest:4223:completion:0": "<⟦E48⟧ laughs.>",
+  "quest:4224:obj:0": "Speak with ⟦E49⟧ to learn of ⟦E50⟧'s fate and return to ⟦E48⟧ when you have completed this task.",
+  "quest:4224:obj:1": "You recall ⟦E48⟧ telling you to search for him in a cave to the north.",
+  "quest:4224:details:0": "What? You thought you were the first? How many soldiers must we lose before ⟦E41⟧ acts?",
+  "quest:4224:details:1": "We had accumulated enormous amounts of intelligence pertaining to the Blackrock menace before we lost our commanding officer, ⟦E50⟧. With ⟦E50⟧ went all of our precious information.",
+  "quest:4224:details:2": "What we need is that documentation. Speak with ⟦E49⟧, ⟦45⟧. He was with Windsor when they were attacked by a Blackrock raiding party. He was last seen in a cave to the north.",
+  "quest:4224:progress:0": "Have you spoken with John yet?",
+  "quest:4224:completion:0": "I could have warned you, but what fun is that?",
+  "quest:4808:obj:0": "Give ⟦E52⟧ to ⟦E53⟧.",
+  "quest:4808:details:0": "I have another favor to ask of you.",
+  "quest:4808:details:1": "My initial study of the essence you collected shows that it might be possible to freeze dragon whelp eggs and preserve them! I want to test this theory, but first I need specially made engineering components. My colleague, ⟦E53⟧, can make them.",
+  "quest:4808:details:2": "Here, take this letter to Felnok. It tells him what I need. You'll find Felnok in ⟦E54⟧, in the town of ⟦E55⟧.",
+  "quest:4808:progress:0": "It's cold up here! I hope you brought me a blanket!",
+  "quest:4808:completion:0": "That's no blanket! But what have we here? I letter from Tinkee? I wonder what she has to say...",
+  "quest:4808:completion:1": "Ah, she's studying in the ⟦E3⟧. That makes sense--that's a good source for dragonkin. Oh, but look! It says here that she needs some parts for a device she wants to build. I guess that's where I come in, eh?",
+  "quest:4283:obj:0": "⟦E14⟧ wants 50 Blackrock Medallions. Chances are high that these medallions can be found on the orcs in the ⟦E3⟧.",
+  "quest:4283:details:0": "I'm going to let you in on a little secret, soldier. Come a little closer.",
+  "quest:4283:details:1": "I'M THE ONLY SANE ONE HERE!",
+  "quest:4283:details:2": "Look at these people! Would you believe that they're all insane!? Well they are! NUTS! CRAZY!",
+  "quest:4283:details:3": "B<⟦E14⟧ lowers his voice.>",
+  "quest:4283:details:4": "Let's just keep that between me, you, and my pal Captain Winky.",
+  "quest:4283:details:5": "B<⟦E14⟧ grabs at the air and squeezes.>",
+  "quest:4283:details:6": "Anyhooooo... I'm collecting badges to go along with my ogre ear collection. Orc is the flavor of the day. Fifty. GO!",
+  "quest:4283:details:7": "B<⟦E14⟧ blows into a horn.>",
+  "quest:4283:details:8": "BSHIP IT!",
+  "quest:4283:progress:0": "<⟦E14⟧ is talking into a rather large, severed ogre ear.>⟦46⟧⟦47⟧⟦E3⟧ to control, come in control.",
+  "quest:4283:completion:0": "You've done it! Your reward is: RUB MY BELLY! GO ON! RUB IT!",
+  "quest:5522:obj:0": "Bring the ⟦E57⟧ to ⟦E58⟧ in the ⟦E59⟧.",
+  "quest:5522:details:0": "I received a message from my master, ⟦E60⟧. Well, the message wasn't really from ⟦E60⟧...it was from someone named ⟦E58⟧. I don't know Leonid, but he knew my master, and no one knows my master unless he allows it.",
+  "quest:5522:details:1": "Leonid says ⟦E60⟧ wants the dragon eggs. He wants you to deliver them to him at the ⟦E61⟧ in the ⟦E59⟧.",
+  "quest:5522:details:2": "That hurts! Why you? Doesn't ⟦E60⟧ trust me? Oh, never mind... just take the eggs and tell Leonid that I did what our master commanded.",
+  "quest:5522:progress:0": "You are the one up to mischief in ⟦E62⟧, yes? Do you have what I asked for?",
+  "quest:5522:completion:0": "Ah, very good. You do not know the evil power for whom you have labored, but now you will know the truth. And fear not--I am no servant of that master. I am ⟦E58⟧, known as \"the Revered\" to my brethren in the Argent Dawn.",
+  "quest:5522:completion:1": "I tricked Tinkee into sending you and the dragon eggs to me. And it is good that my trick was successful, for had these eggs reached their intended destination, a great power would have fallen into the hands of the enemy."
+ },
+ "context": {
+  "quest:4296": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "Maxwort Uberglint («مکس‌وورت اوبرگلینت»)",
+   "turner": "Maxwort Uberglint («مکس‌وورت اوبرگلینت»)"
+  },
+  "quest:4463": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Mathredis Firestar («ماتردیس ستاره‌آتش»)"
+  },
+  "quest:4481": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Mathredis Firestar («ماتردیس ستاره‌آتش»)"
+  },
+  "quest:4482": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Mathredis Firestar («ماتردیس ستاره‌آتش»)"
+  },
+  "quest:4483": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Mathredis Firestar («ماتردیس ستاره‌آتش»)"
+  },
+  "quest:4484": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 50,
+   "side": "",
+   "giver": "",
+   "turner": "Mathredis Firestar («ماتردیس ستاره‌آتش»)"
+  },
+  "quest:3823": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Oralius («اورالیوس»)",
+   "turner": "Oralius («اورالیوس»)"
+  },
+  "quest:4726": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 52,
+   "side": "",
+   "giver": "Tinkee Steamboil («تینکی استیم‌بویل»)",
+   "turner": "Tinkee Steamboil («تینکی استیم‌بویل»)"
+  },
+  "quest:3822": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 53,
+   "side": "horde",
+   "giver": "Sha'ni Proudtusk («شانی عاج‌مغرور»)",
+   "turner": "Thal'trak Proudtusk («تالتراک عاج‌مغرور»)"
+  },
+  "quest:3824": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 53,
+   "side": "alliance",
+   "giver": "Oralius («اورالیوس»)",
+   "turner": "Oralius («اورالیوس»)"
+  },
+  "quest:3825": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 53,
+   "side": "alliance",
+   "giver": "Oralius («اورالیوس»)",
+   "turner": "Oralius («اورالیوس»)"
+  },
+  "quest:4022": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "",
+   "giver": "Cyrus Therepentous («سایروس ترپنتوس»)",
+   "turner": "Cyrus Therepentous («سایروس ترپنتوس»)"
+  },
+  "quest:4023": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "",
+   "giver": "Cyrus Therepentous («سایروس ترپنتوس»)",
+   "turner": "Cyrus Therepentous («سایروس ترپنتوس»)"
+  },
+  "quest:4061": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "horde",
+   "giver": "Hierophant Theodora Mulvadania («روحانی اعظم تئودورا مولوادانیا»)",
+   "turner": "Hierophant Theodora Mulvadania («روحانی اعظم تئودورا مولوادانیا»)"
+  },
+  "quest:4182": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Helendis Riverhorn («هلندیس شاخ‌رود»)",
+   "turner": "Helendis Riverhorn («هلندیس شاخ‌رود»)"
+  },
+  "quest:4183": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Helendis Riverhorn («هلندیس شاخ‌رود»)",
+   "turner": "Magistrate Solomon («قاضی سالومون»)"
+  },
+  "quest:4184": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Magistrate Solomon («قاضی سالومون»)",
+   "turner": "Highlord Bolvar Fordragon («لرد اعظم بولوار فوردراگون»)"
+  },
+  "quest:4185": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon («لرد اعظم بولوار فوردراگون»)",
+   "turner": "Highlord Bolvar Fordragon («لرد اعظم بولوار فوردراگون»)"
+  },
+  "quest:4186": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Highlord Bolvar Fordragon («لرد اعظم بولوار فوردراگون»)",
+   "turner": "Magistrate Solomon («قاضی سالومون»)"
+  },
+  "quest:4223": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Magistrate Solomon («قاضی سالومون»)",
+   "turner": "Marshal Maxwell («مارشال مکسول»)"
+  },
+  "quest:4224": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "alliance",
+   "giver": "Marshal Maxwell («مارشال مکسول»)",
+   "turner": "Marshal Maxwell («مارشال مکسول»)"
+  },
+  "quest:4808": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 54,
+   "side": "",
+   "giver": "Tinkee Steamboil («تینکی استیم‌بویل»)",
+   "turner": "Felnok Steelspring («فلنوک استیل‌اسپرینگ»)"
+  },
+  "quest:4283": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 56,
+   "side": "alliance",
+   "giver": "Oralius («اورالیوس»)",
+   "turner": "Oralius («اورالیوس»)"
+  },
+  "quest:5522": {
+   "zone_en": "Burning Steppes",
+   "zone_fa": "استپ‌های سوزان",
+   "level": 60,
+   "side": "",
+   "giver": "Tinkee Steamboil («تینکی استیم‌بویل»)",
+   "turner": "Leonid Barthalomew the Revered («لئونید بارتولومیو گرامی»)"
+  }
+ },
+ "known": {
+  "quest:4296": {
+   "title": "لوح هفت"
+  },
+  "quest:3823": {
+   "title": "خاموش‌کردن آتش‌دل‌ها"
+  },
+  "quest:4726": {
+   "title": "گوهر بچه‌اژدها"
+  },
+  "quest:3822": {
+   "title": "کروم‌گرول"
+  },
+  "quest:3824": {
+   "title": "گرتش، ارباب قلدرها"
+  },
+  "quest:3825": {
+   "title": "سر اغوا روی چوب = مهمانی"
+  },
+  "quest:4022": {
+   "title": "مزه‌ای از شعله"
+  },
+  "quest:4023": {
+   "title": "مزه‌ای از شعله"
+  },
+  "quest:4061": {
+   "title": "برآمدن ماشین‌ها"
+  },
+  "quest:4182": {
+   "title": "تهدید اژدهازادگان"
+  },
+  "quest:4183": {
+   "title": "استادان راستین"
+  },
+  "quest:4184": {
+   "title": "استادان راستین"
+  },
+  "quest:4185": {
+   "title": "استادان راستین"
+  },
+  "quest:4186": {
+   "title": "استادان راستین"
+  },
+  "quest:4223": {
+   "title": "استادان راستین"
+  },
+  "quest:4224": {
+   "title": "استادان راستین"
+  },
+  "quest:4808": {
+   "title": "فلنوک استیل‌اسپرینگ"
+  },
+  "quest:4283": {
+   "title": "پنجاه! آره!"
+  },
+  "quest:5522": {
+   "title": "لئونید بارتالومیو"
+  }
+ }
+}

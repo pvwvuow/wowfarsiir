@@ -1,0 +1,659 @@
+{
+ "pack": "quest-elwynn-forest-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-elwynn-forest-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "White Stallion",
+   "fa": "نریان سفید",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Palomino",
+   "fa": "اسب زرین",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Nibbled-On Book",
+   "fa": "کتاب جویده‌شده",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Brother Paxton",
+   "fa": "برادر پکستون",
+   "kind": "qs"
+  },
+  "E6": {
+   "en": "Northshire Valley",
+   "fa": "درهٔ نورث‌شایر",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Daniel",
+   "fa": "دانیل",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Elwynn Forest",
+   "fa": "جنگل الزوین",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Mining",
+   "fa": "معدن‌کاری",
+   "kind": "sp"
+  },
+  "E10": {
+   "en": "Kelsey Fargo",
+   "fa": "کلزی فارگو",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Marshal McBride",
+   "fa": "مارشال مک‌براید",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Sack of \"Picture\" Books",
+   "fa": "کیسهٔ کتاب‌های «تصویری»",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Northshire",
+   "fa": "نورث‌شایر",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Tordrin Sternblade",
+   "fa": "توردین تیغهٔ سخت",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Marshal Dughan",
+   "fa": "مارشال داگان",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Kobold Tracking Kit",
+   "fa": "بستهٔ ردیابی کوبولد",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Innkeeper Farley",
+   "fa": "مهمان‌دار فارلی",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Pork Belly Pie",
+   "fa": "پایِ شکمِ خوک",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Billy Maclure",
+   "fa": "بیلی مک‌لیور",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Maybell's Love Letter",
+   "fa": "نامهٔ عاشقانهٔ میبل",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Tommy Joe Stonefield",
+   "fa": "توممی جو دشت‌سنگ",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Gramma Stonefield's Note",
+   "fa": "یادداشتِ مادربزرگ استون‌فیلد",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "William Pestle",
+   "fa": "ویلیام پستل",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Speak with Gramma",
+   "fa": "با مادربزرگ صحبت کن",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Cooking",
+   "fa": "آشپزی",
+   "kind": "sp"
+  },
+  "E29": {
+   "en": "Tomas",
+   "fa": "تومس",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Fishing",
+   "fa": "ماهیگیری",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "Lee Brown",
+   "fa": "لی براون",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Leatherworking",
+   "fa": "چرم‌دوزی",
+   "kind": "sp"
+  },
+  "E33": {
+   "en": "Gelman Stonehand",
+   "fa": "گلمن دست‌سنگ",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Skinning",
+   "fa": "پوست‌کنی",
+   "kind": "sp"
+  },
+  "E36": {
+   "en": "Helene Peltskinner",
+   "fa": "هلن پوست‌فروش",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Gold Dust",
+   "fa": "غبار طلا",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Remy \"Two Times\"",
+   "fa": "رمی «دو بار»",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "William's Shipment",
+   "fa": "محولهٔ ویلیام",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Morgan Pestle",
+   "fa": "مورگان هاون",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "invisibility",
+   "fa": "نامرئی‌شدن",
+   "kind": "sp"
+  }
+ },
+ "glossary": {
+  "White Stallion": "نریان سفید",
+  "Palomino": "اسب زرین",
+  "Nibbled-On Book": "کتاب جویده‌شده",
+  "Brother Paxton": "برادر پکستون",
+  "Northshire Valley": "درهٔ نورث‌شایر",
+  "Daniel": "دانیل",
+  "Elwynn Forest": "جنگل الزوین",
+  "Mining": "معدن‌کاری",
+  "Kelsey Fargo": "کلزی فارگو",
+  "Marshal McBride": "مارشال مک‌براید",
+  "Sack of \"Picture\" Books": "کیسهٔ کتاب‌های «تصویری»",
+  "Northshire": "نورث‌شایر",
+  "Tordrin Sternblade": "توردین تیغهٔ سخت",
+  "Marshal Dughan": "مارشال داگان",
+  "Kobold Tracking Kit": "بستهٔ ردیابی کوبولد",
+  "Innkeeper Farley": "مهمان‌دار فارلی",
+  "Pork Belly Pie": "پایِ شکمِ خوک",
+  "Billy Maclure": "بیلی مک‌لیور",
+  "Maybell's Love Letter": "نامهٔ عاشقانهٔ میبل",
+  "Tommy Joe Stonefield": "توممی جو دشت‌سنگ",
+  "Gramma Stonefield's Note": "یادداشتِ مادربزرگ استون‌فیلد",
+  "William Pestle": "ویلیام پستل",
+  "Speak with Gramma": "با مادربزرگ صحبت کن",
+  "Cooking": "آشپزی",
+  "Tomas": "تومس",
+  "Fishing": "ماهیگیری",
+  "Lee Brown": "لی براون",
+  "Leatherworking": "چرم‌دوزی",
+  "Gelman Stonehand": "گلمن دست‌سنگ",
+  "Stormwind": "استورم‌ویند",
+  "Skinning": "پوست‌کنی",
+  "Helene Peltskinner": "هلن پوست‌فروش",
+  "Gold Dust": "غبار طلا",
+  "Remy \"Two Times\"": "رمی «دو بار»",
+  "William's Shipment": "محولهٔ ویلیام",
+  "Morgan Pestle": "مورگان هاون",
+  "invisibility": "نامرئی‌شدن"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "<grin>",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$B",
+  "12": "$B",
+  "13": "$N",
+  "14": "$ggood sir:my lady;",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N"
+ },
+ "rows": {
+  "quest:16:title": "Give Gerard a Drink",
+  "quest:16:progress:0": "Farming is thirsty work, and I'm always looking for refreshing spring water.⟦1⟧⟦2⟧If you have any, then I'm willing to make a trade.",
+  "quest:16:completion:0": "Thanks, ⟦3⟧! And come back if you want to trade again.",
+  "quest:7677:title": "⟦E1⟧ Exchange",
+  "quest:7677:desc:0": "If you bring me your white stallion, I'll trade you for one from the new herd. The new horse will be just as fast as your old one, but have a different look to it. You can look at the swift steeds here to see what it will look like.",
+  "quest:7677:desc:1": "MUST PAY 500 Gold too....",
+  "quest:7677:obj:0": "If you bring me your white stallion, I'll trade you for one from the new herd. The new horse will be just as fast as your old one, but have a different look to it. You can look at the swift steeds here to see what it will look like.⟦4⟧⟦5⟧MUST PAY 500 Gold too....",
+  "quest:7677:progress:0": "If you bring me your white stallion, I'll trade you for one from the new herd. The new horse will be just as fast as your old one, but have a different look to it. You can look at the swift steeds here to see what it will look like.",
+  "quest:7678:title": "⟦E2⟧ Exchange",
+  "quest:7678:progress:0": "[PH] If you bring me your palomino, I'll trade it in for one from the new herd. The new horse will be just as fast as your old one, but have a different look to it. You can look at the swift steeds here to see what it will look like.",
+  "quest:91741:title": "⟦E3⟧",
+  "quest:91741:obj:0": "Return the book to ⟦E4⟧.",
+  "quest:91743:title": "Rascally Rodents",
+  "quest:91743:obj:0": "Retrieve 8 Stolen Books from kobolds in ⟦E6⟧ and return them to ⟦E4⟧.",
+  "quest:92124:title": "Book Inventory",
+  "quest:92124:obj:0": "Speak to ⟦E7⟧, ⟦E4⟧'s assistant in the library.",
+  "quest:92124:details:0": "We need to take stock of how many books are missing!",
+  "quest:92124:details:1": "Go talk to my useless assistant, ⟦E7⟧. He can do a quick inventory and let us know how serious the problem is.",
+  "quest:92124:details:2": "He's obsessed with the various trade professions in ⟦E8⟧. The boy keeps focusing on those instead of his important work helping me.",
+  "quest:92124:details:3": "Don't let him prattle on about tradeskills, and find out what's happened to my books!",
+  "quest:91745:title": "⟦E9⟧ Consultant",
+  "quest:91745:desc:0": "Go talk to the new mining apprentice, ⟦E10⟧. She works right outside the mine and has probably seen what the kobolds are up to. Maybe she can teach you a thing or two about mining while you're at it.",
+  "quest:91745:obj:0": "Talk to ⟦E10⟧ outside the Echo Ridge Mine in ⟦E6⟧.",
+  "quest:91745:details:0": "Go talk to the new mining apprentice, ⟦E10⟧. She works right outside the mine and has probably seen what the kobolds are up to. Maybe she can teach you a thing or two about mining while you're at it.",
+  "quest:91752:title": "The Big Picture",
+  "quest:91752:desc:0": "Every once in a while, a kobold comes through yelling \"Picture for Narf!\" I don't know who Narf is. Maybe one of the head kobolds at the back of the mine? I bet he has a whole sack of books by now.\nGo get those books and bring them to our local law enforcement, ⟦E11⟧. ...",
+  "quest:91752:obj:0": "Retrieve a ⟦E12⟧ from Shinyfinder Narf. Bring the sack to ⟦E11⟧ just inside ⟦E13⟧'s Abbey.",
+  "quest:91752:details:0": "Every once in a while, a kobold comes through yelling \"Picture for Narf!\" I don't know who Narf is. Maybe one of the head kobolds at the back of the mine? I bet he has a whole sack of books by now.\nGo get those books and bring them to our local law enforcement, ⟦E11⟧. ...",
+  "quest:91758:title": "Follow That Kobold!",
+  "quest:91758:desc:0": "You're not done with those kobolds yet. We just got word from Kelsey that a kobold left the mine carrying a large sack of books. I need you to track down this kobold so we can retrieve the books for ⟦E4⟧.\nGo talk to ⟦E14⟧. ...",
+  "quest:91758:obj:0": "Speak to ⟦E14⟧ near the stable behind ⟦E13⟧'s Abbey.",
+  "quest:91758:details:0": "You're not done with those kobolds yet. We just got word from Kelsey that a kobold left the mine carrying a large sack of books. I need you to track down this kobold so we can retrieve the books for ⟦E4⟧.\nGo talk to ⟦E14⟧. ...",
+  "quest:91772:title": "Shhh! We're Hunting Kobolds",
+  "quest:91772:desc:0": "Alright. Take this kobold tracking kit. It'll let ye' track the kobold that ⟦E11⟧ is concerned with.\nFollow the tracks and bring what ye' find to ⟦E15⟧ in Goldshire.\nI have a feelin' these varmints are up to somethin' outside ⟦E13⟧. So ye'll be needin' Dughan's help.",
+  "quest:91772:obj:0": "Follow the kobold tracks and report to ⟦E15⟧ in Goldshire with your findings and the ⟦E16⟧.",
+  "quest:91772:details:0": "Alright. Take this kobold tracking kit. It'll let ye' track the kobold that ⟦E11⟧ is concerned with.\nFollow the tracks and bring what ye' find to ⟦E15⟧ in Goldshire.\nI have a feelin' these varmints are up to somethin' outside ⟦E13⟧. So ye'll be needin' Dughan's help.",
+  "quest:2158:obj:0": "Speak with ⟦E17⟧ at the Lion's Pride Inn.",
+  "quest:2158:details:0": "Every adventurer should rest when exhaustion sets in - and there is no finer place to get rest and relaxation than at the Lion's Pride Inn!",
+  "quest:2158:details:1": "My best friend, ⟦E17⟧, runs the Lion's Pride. If you tell him I sent you, he may give you the special discounted rates on food and drink.",
+  "quest:2158:details:2": "To find the Lion's Pride Inn, travel south along the road from here -- you can't miss it!",
+  "quest:2158:completion:0": "Rest and relaxation for the tired and cold -- that's our motto! Please, take a seat by the fire and rest your weary bones.",
+  "quest:2158:completion:1": "Would you like to try a sampling of some of our fine food and drink?",
+  "quest:84:obj:0": "Bring the ⟦E19⟧ to ⟦E20⟧ at the Maclure Vineyards.",
+  "quest:84:details:0": "Here you go. And when you give this pie to that Billy, you tell him I hope he chokes on it!",
+  "quest:84:progress:0": "Ugh... I'm starving! Do you have that pie for me, ⟦6⟧?",
+  "quest:84:completion:0": "Mm, yum! This pie is the best!",
+  "quest:84:completion:1": "I think my memory is coming back to me...",
+  "quest:85:obj:0": "Speak with ⟦E20⟧.",
+  "quest:85:details:0": "I lost my necklace, and think that guttersnipe ⟦E20⟧ took it! He's usually scuttling like a rat around the Maclure vineyards east of here.",
+  "quest:85:details:1": "Get my necklace back for me, and you'll warm an old widow's heart.",
+  "quest:85:completion:0": "You lost a what? Well I didn't take no necklace, because I ain't no thief!",
+  "quest:85:completion:1": "I might know who did but...⟦7⟧...I'm too hungry to remember.",
+  "quest:86:obj:0": "Bring 4 Chunks of Boar Meat to Auntie Bernice Stonefield at the Stonefield's Farm.",
+  "quest:86:details:0": "Maybe if I got a pie, I could tell you who has that necklace. And you know, I think that old Bernice lady at that other farm makes great Pork Belly Pies...",
+  "quest:86:details:1": "Maybe if you gave her some chunks of boar meat from the boars that hang around our farms, and told her what it was for, she'd bake up a pie for you.",
+  "quest:86:progress:0": "I don't think it's right feeding the boy who stole my necklace in the first place, but if that's what it takes to get back what's mine, then so be it!⟦8⟧⟦9⟧Do you have that boar meat?",
+  "quest:86:completion:0": "Though this wild boar meat is tough, simmer it enough and it sure does make for some tasty pie!",
+  "quest:106:obj:0": "Give ⟦E22⟧ to ⟦E23⟧.",
+  "quest:106:details:0": "Oh, I'm cursed! My heart belongs to ⟦E23⟧, but our families are bitter enemies. So I can't see him, even though my eyes ache to gaze upon that handsome face!",
+  "quest:106:details:1": "Please, take this letter and give it to Tommy Joe. He's usually at the river to the west of the Stonefield Farm, which is due west of here.",
+  "quest:106:progress:0": "You have what?? Maybell is the light of my dull life. Hurry, let me see her letter!",
+  "quest:106:completion:0": "Ah! I can't stand us being apart. I have to see her!!",
+  "quest:107:obj:0": "Take ⟦E25⟧ to ⟦E26⟧.",
+  "quest:107:details:0": "I bet ⟦E26⟧ has a potion to unite our two young lovers!",
+  "quest:107:details:1": "Here, take this note to William. He's staying at the Lion's Pride Inn in Goldshire.",
+  "quest:107:progress:0": "You have a note from \"Gramma\" Stonefield, eh? I haven't seen Mildred in years! I wonder what she has to say...",
+  "quest:107:completion:0": "My heart goes out to those two poor souls, Maybell and Tommy Joe. I remember being young and in love, once.",
+  "quest:107:completion:1": "There must be something I can do to help them! Let me think...",
+  "quest:111:obj:0": "⟦E27⟧ Stonefield.",
+  "quest:111:details:0": "Please, ⟦10⟧, talk with my Gramma. If anyone can find a way to bring me together with Maybell, she can.",
+  "quest:111:details:1": "She's inside our house east of here.",
+  "quest:111:progress:0": "I can't wait to hear how my friends react!⟦11⟧⟦12⟧They'll never expect it",
+  "quest:111:completion:0": "While our families are feuding, Tommy Joe and Maybell don't have much of a future, but... maybe we can get them together for just a little while.",
+  "quest:111:completion:1": "Hm, what can we do...",
+  "quest:91775:title": "Book Return",
+  "quest:91775:desc:0": "While you're investigating the Fargodeep Mine, see if you can find any of ⟦E4⟧'s books to return. In particular, Paxton is very concerned about a book titled, \"Fun with Elementals\". He thinks even a kobold could use it to summon an elemental servant. ...",
+  "quest:91775:obj:0": "Find 6 Lost Books and \"Fun with Elementals\" and return them to ⟦E15⟧.",
+  "quest:91775:details:0": "While you're investigating the Fargodeep Mine, see if you can find any of ⟦E4⟧'s books to return. In particular, Paxton is very concerned about a book titled, \"Fun with Elementals\". He thinks even a kobold could use it to summon an elemental servant. ...",
+  "quest:95998:title": "The Great Outdoors",
+  "quest:95998:desc:0": "Well howdy there, class. I can see you've got the look of an adventurer about you. Good for you. The world needs more of us restless souls, seeking fortune and glory.\nIt's a big wide world out there and you'll need to learn to thrive in the wilds to be successful. ...",
+  "quest:95998:obj:0": "Sit near Sam's Basic Campfire and wait until you receive the Boosted Rest buff.",
+  "quest:95998:details:0": "Well howdy there, class. I can see you've got the look of an adventurer about you. Good for you. The world needs more of us restless souls, seeking fortune and glory.\nIt's a big wide world out there and you'll need to learn to thrive in the wilds to be successful. ...",
+  "quest:96626:title": "Camping 101: ⟦E28⟧",
+  "quest:96626:obj:0": "Speak with ⟦E29⟧ in Goldshire to learn to become a cook.",
+  "quest:96627:title": "The Adventurer",
+  "quest:96627:desc:0": "adventurer, you have proven your competence as a protector thus far. That is why I am now entrusting you with an unusual task.\nI've heard of a new adventurer down the road by Goldshire. Go and see what he's doing.",
+  "quest:96627:obj:0": "Speak to Sam Sarsparilla near Goldshire.",
+  "quest:96627:details:0": ", you have proven your competence as a protector thus far. That is why I am now entrusting you with an unusual task.",
+  "quest:96627:details:1": "I've heard of a new adventurer down the road by Goldshire. Go and see what he's doing.",
+  "quest:97920:title": "Camping 101: ⟦E30⟧",
+  "quest:97920:obj:0": "Speak with ⟦E31⟧ near Goldshire to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97922:title": "Camping 101: ⟦E32⟧",
+  "quest:97922:obj:0": "Speak with Adele Fielder in Goldshire to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97923:title": "Camping 101: ⟦E9⟧",
+  "quest:97923:obj:0": "Speak with ⟦E33⟧ in ⟦E34⟧ to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:97924:title": "Camping 101: ⟦E35⟧",
+  "quest:97924:obj:0": "Speak with ⟦E36⟧ in Goldshire to learn to craft a camping item for your profession once you have shown proficiency in your skill.",
+  "quest:47:obj:0": "Bring 10 ⟦E37⟧ to ⟦E38⟧ in Goldshire. ⟦E37⟧ is gathered from Kobolds in ⟦E8⟧.",
+  "quest:47:details:0": "The Kobolds in these parts sometimes carry ⟦E37⟧ on them. I could really use the stuff - bring me a load of it and I'll give you the best price in town...best price in town!",
+  "quest:47:details:1": "You can find kobolds in the Fargodeep Mine to the south, and around the Jasperlode Mine to the northeast.",
+  "quest:47:progress:0": "Psst! You have that ⟦E37⟧ for me...for me?",
+  "quest:47:completion:0": "Thanks for the dust, ⟦13⟧. Here's your cash, and...here is a token from associates of mine. You might find it useful...useful.",
+  "quest:60:obj:0": "Bring 8 Large Candles to ⟦E26⟧ in Goldshire.",
+  "quest:60:details:0": "Hello, ⟦14⟧! Do you have a moment?",
+  "quest:60:details:1": "My brother and I run an apothecary in ⟦E34⟧, and I'm here to gather large candles for their wax. Can you help me?",
+  "quest:60:details:2": "You can get large candles from kobolds, and I hear rumors that kobolds are infesting the Elwynn mines ... the Fargodeep mine to the south and Jasperlode Mine to the east. I suggest looking for candles in one of those places.",
+  "quest:60:progress:0": "Did you gather those candles yet?",
+  "quest:60:completion:0": "You were busy hunting kobolds, were you? Thanks for the candles, ⟦15⟧, and here's your reward...",
+  "quest:61:obj:0": "Bring ⟦E39⟧ to ⟦E40⟧ in the ⟦E34⟧ Trade District.",
+  "quest:61:details:0": "My brother Morgan is waiting in ⟦E34⟧ for my shipment of candles. I don't have enough time to make the trip myself, but if you'd like to take him the shipment, he'll pay you well.",
+  "quest:61:details:1": "I've packed up the candles, and you can find Morgan in our shop, Pestle's Apothecary, in the ⟦E34⟧ Trade District.",
+  "quest:61:progress:0": "Oh, a shipment from my brother? Splendid! Fortune truly shines on me today!",
+  "quest:61:completion:0": "Here is your payment ... and while you're here, take a look around! I'm sure we have a potion or other trinket you'd find useful.",
+  "quest:62:obj:0": "Explore the Fargodeep Mine, then return to ⟦E15⟧ in Goldshire.",
+  "quest:62:details:0": "The mine in ⟦E13⟧ isn't the only one with problems! I have reports that the Fargodeep Mine in Elwynn has also become a haven for Kobolds.",
+  "quest:62:details:1": "Explore the mine and confirm these reports, then return to me. The mine is almost due south of Goldshire, between the Stonefield and Maclure homesteads.",
+  "quest:62:progress:0": "What do you have to report, ⟦16⟧? Have you been to the Fargodeep Mine?",
+  "quest:62:completion:0": "This is bad news. What's next, dragons?!? We'll have to increase our patrols near that mine. Thanks for your efforts, ⟦17⟧. And hold a moment... I might have another task for you.",
+  "quest:112:obj:0": "Bring 4 Crystal Kelp Fronds to ⟦E26⟧ in Goldshire.",
+  "quest:112:details:0": "I can make an ⟦E41⟧ liquor for Maybell, so she can slip away from the Maclure Vineyards and go to Tommy Joe. But to make the Liquor, I need some crystal kelp.",
+  "quest:112:details:1": "Although the kelp usually grows in the ocean... sometimes murlocs collect it. See if the murlocs near Crystal Lake have any. Crystal Lake is just east of Goldshire.",
+  "quest:112:progress:0": "Do you have that crystal kelp? I'm sure Maybell is anxious to see her beau...",
+  "quest:112:completion:0": "You got them. Good show! Now, just one moment while I concoct the potion..."
+ },
+ "context": {
+  "quest:16": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 1,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Gerard Tiller («جرارد تیلر»)"
+  },
+  "quest:7677": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Katie Hunter («کیتی هانتر»)",
+   "turner": "Katie Hunter («کیتی هانتر»)"
+  },
+  "quest:7678": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 1,
+   "side": "alliance",
+   "giver": "Katie Hunter («کیتی هانتر»)",
+   "turner": "Katie Hunter («کیتی هانتر»)"
+  },
+  "quest:91741": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 2,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Brother Paxton («برادر پکستون»)"
+  },
+  "quest:91743": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 2,
+   "side": "alliance",
+   "giver": "Brother Paxton («برادر پکستون»)",
+   "turner": "Brother Paxton («برادر پکستون»)"
+  },
+  "quest:92124": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 2,
+   "side": "alliance",
+   "giver": "Brother Paxton («برادر پکستون»)",
+   "turner": "Daniel («دانیل»)"
+  },
+  "quest:91745": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 3,
+   "side": "alliance",
+   "giver": "Brother Paxton («برادر پکستون»)",
+   "turner": "Kelsey Fargo («کلزی فارگو»)"
+  },
+  "quest:91752": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 3,
+   "side": "alliance",
+   "giver": "Kelsey Fargo («کلزی فارگو»)",
+   "turner": "Marshal McBride («مارشال مک‌براید»)"
+  },
+  "quest:91758": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Marshal McBride («مارشال مک‌براید»)",
+   "turner": "Tordrin Sternblade («توردین تیغهٔ سخت»)"
+  },
+  "quest:91772": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 4,
+   "side": "alliance",
+   "giver": "Tordrin Sternblade («توردین تیغهٔ سخت»)",
+   "turner": "Marshal Dughan («مارشال داگان»)"
+  },
+  "quest:2158": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 5,
+   "side": "alliance",
+   "giver": "Falkhaan Isenstrider («فالخان ایزن‌گام»)",
+   "turner": "Innkeeper Farley («مهمان‌دار فارلی»)"
+  },
+  "quest:84": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "\"Auntie\" Bernice Stonefield (««عمه» برنیس استون‌فیلد»)",
+   "turner": "Billy Maclure («بیلی مک‌لیور»)"
+  },
+  "quest:85": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "\"Auntie\" Bernice Stonefield (««عمه» برنیس استون‌فیلد»)",
+   "turner": "Billy Maclure («بیلی مک‌لیور»)"
+  },
+  "quest:86": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Billy Maclure («بیلی مک‌لیور»)",
+   "turner": "\"Auntie\" Bernice Stonefield (««عمه» برنیس استون‌فیلد»)"
+  },
+  "quest:106": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Maybell Maclure («میبل مک‌لور»)",
+   "turner": "Tommy Joe Stonefield («توممی جو دشت‌سنگ»)"
+  },
+  "quest:107": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Gramma Stonefield («مادربزرگ استون‌فیلد»)",
+   "turner": "William Pestle («ویلیام پستل»)"
+  },
+  "quest:111": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Tommy Joe Stonefield («توممی جو دشت‌سنگ»)",
+   "turner": "Gramma Stonefield («مادربزرگ استون‌فیلد»)"
+  },
+  "quest:91775": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Marshal Dughan («مارشال داگان»)",
+   "turner": "Marshal Dughan («مارشال داگان»)"
+  },
+  "quest:95998": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Sam Sarsaparilla («سام ساساپاریلا»)",
+   "turner": "Sam Sarsaparilla («سام ساساپاریلا»)"
+  },
+  "quest:96626": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Sam Sarsaparilla («سام ساساپاریلا»)",
+   "turner": "Tomas («تومس»)"
+  },
+  "quest:96627": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Marshal McBride («مارشال مک‌براید»)",
+   "turner": "Sam Sarsaparilla («سام ساساپاریلا»)"
+  },
+  "quest:97920": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Sam Sarsaparilla («سام ساساپاریلا»)",
+   "turner": ""
+  },
+  "quest:97922": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Sam Sarsaparilla («سام ساساپاریلا»)",
+   "turner": ""
+  },
+  "quest:97923": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Sam Sarsaparilla («سام ساساپاریلا»)",
+   "turner": "Gelman Stonehand («گلمن دست‌سنگ»)"
+  },
+  "quest:97924": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 6,
+   "side": "alliance",
+   "giver": "Sam Sarsaparilla («سام ساساپاریلا»)",
+   "turner": "Helene Peltskinner («هلن پوست‌فروش»)"
+  },
+  "quest:47": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Remy \"Two Times\" («رمی «دو بار»»)",
+   "turner": "Remy \"Two Times\" («رمی «دو بار»»)"
+  },
+  "quest:60": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 7,
+   "side": "alliance",
+   "giver": "William Pestle («ویلیام پستل»)",
+   "turner": "William Pestle («ویلیام پستل»)"
+  },
+  "quest:61": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 7,
+   "side": "alliance",
+   "giver": "William Pestle («ویلیام پستل»)",
+   "turner": "Morgan Pestle («مورگان هاون»)"
+  },
+  "quest:62": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 7,
+   "side": "alliance",
+   "giver": "Marshal Dughan («مارشال داگان»)",
+   "turner": "Marshal Dughan («مارشال داگان»)"
+  },
+  "quest:112": {
+   "zone_en": "Elwynn Forest",
+   "zone_fa": "جنگل الزوین",
+   "level": 7,
+   "side": "alliance",
+   "giver": "William Pestle («ویلیام پستل»)",
+   "turner": "William Pestle («ویلیام پستل»)"
+  }
+ },
+ "known": {
+  "quest:2158": {
+   "title": "استراحت و تفریح"
+  },
+  "quest:84": {
+   "title": "بازگشت نزد بیلی"
+  },
+  "quest:85": {
+   "title": "گردنبند گم‌شده"
+  },
+  "quest:86": {
+   "title": "پای برای بیلی"
+  },
+  "quest:106": {
+   "title": "عاشقان جوان"
+  },
+  "quest:107": {
+   "title": "یادداشتی برای ویلیام"
+  },
+  "quest:111": {
+   "title": "با مادربزرگ صحبت کن"
+  },
+  "quest:47": {
+   "title": "مبادلهٔ غبار طلا"
+  },
+  "quest:60": {
+   "title": "شمع‌های کوبولد"
+  },
+  "quest:61": {
+   "title": "محموله‌ای به استورم‌ویند"
+  },
+  "quest:62": {
+   "title": "معدن فارگودیف"
+  },
+  "quest:112": {
+   "title": "جمع‌آوری جلبک"
+  }
+ }
+}

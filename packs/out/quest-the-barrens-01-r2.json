@@ -1,0 +1,827 @@
+{
+ "pack": "quest-the-barrens-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-the-barrens-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Sergra Darkthorn",
+   "fa": "سرگرا دارک‌تورن",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Tonga Runetotem",
+   "fa": "تونگا توتم‌رون",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Mulgore",
+   "fa": "مولگر",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E8": {
+   "en": "Bundle of Hides",
+   "fa": "بستهٔ چرم‌ها",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Devrak",
+   "fa": "دوراک",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Ahanu",
+   "fa": "آهانو",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Ahanu's Leather Goods",
+   "fa": "کالاهای چرمی آهانو",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Tal",
+   "fa": "تال",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Jahan Hawkwing",
+   "fa": "جهان بال‌شاهین",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Zargh's Meats",
+   "fa": "گوشت‌های زارغ",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Zargh",
+   "fa": "زارگ",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Gryshka's Letter",
+   "fa": "نامهٔ گریشکا",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Doras",
+   "fa": "دوراس",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "linen",
+   "fa": "پارچهٔ کتانی",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Chen's Empty Keg",
+   "fa": "چلیکِ خالیِ چِن",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Thunderhawk Saliva Gland",
+   "fa": "غدهٔ بزاقِ تندرباز",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Kodo Liver",
+   "fa": "جگرِ کودو",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Brewmaster Drohn",
+   "fa": "استاد آبجو درون",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Secure Crate",
+   "fa": "جعبهٔ امن",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Wharfmaster Dizzywig",
+   "fa": "لنگرگاه‌دار دیزی‌ویگ",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Plainstrider",
+   "fa": "دشت‌دو",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Thork",
+   "fa": "تهورک",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Zhevra Hooves",
+   "fa": "سم‌های ژورا",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Raptor",
+   "fa": "رپتور",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Gazrog",
+   "fa": "گازروگ",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Centaur Bracers",
+   "fa": "ساعدبندهای سانتور",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Regthar Deathgate",
+   "fa": "رگ‌ثار دِث‌گیت",
+   "kind": "qs"
+  },
+  "E42": {
+   "en": "Gazlowe",
+   "fa": "گازلو",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Southsea Freebooters",
+   "fa": "راهزنان ساوت‌سی",
+   "kind": "qs"
+  },
+  "E45": {
+   "en": "Mangletooth",
+   "fa": "دندان‌له‌کن",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Gazlowe's Ledger",
+   "fa": "دفتر حساب گزلو",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Console Key",
+   "fa": "کلید کنسول",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Tinkerer Sniggles",
+   "fa": "مخترع اسنیگلز",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Broken Samophlange",
+   "fa": "ساموفلنگ شکسته",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Wenikee Boltbucket",
+   "fa": "ونیکِی بولت‌باکت",
+   "kind": "qs"
+  },
+  "E53": {
+   "en": "Samophlange",
+   "fa": "سموفلانگ",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E55": {
+   "en": "Crossroads' Supply Crates",
+   "fa": "جعبه‌های لوازم تقاطع",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Sergra Darkthorn": "سرگرا دارک‌تورن",
+  "Barrens": "بارنز",
+  "Tonga Runetotem": "تونگا توتم‌رون",
+  "Thunder Bluff": "تاندر بلاف",
+  "Mulgore": "مولگر",
+  "Travel": "سفر",
+  "Bundle of Hides": "بستهٔ چرم‌ها",
+  "Devrak": "دوراک",
+  "Ahanu": "آهانو",
+  "Ahanu's Leather Goods": "کالاهای چرمی آهانو",
+  "Tal": "تال",
+  "Jahan Hawkwing": "جهان بال‌شاهین",
+  "Zargh's Meats": "گوشت‌های زارغ",
+  "Orgrimmar": "اورگریمار",
+  "Zargh": "زارگ",
+  "Gryshka's Letter": "نامهٔ گریشکا",
+  "Doras": "دوراس",
+  "linen": "پارچهٔ کتانی",
+  "Chen's Empty Keg": "چلیکِ خالیِ چِن",
+  "Thunderhawk Saliva Gland": "غدهٔ بزاقِ تندرباز",
+  "Kodo Liver": "جگرِ کودو",
+  "Brewmaster Drohn": "استاد آبجو درون",
+  "Secure Crate": "جعبهٔ امن",
+  "Wharfmaster Dizzywig": "لنگرگاه‌دار دیزی‌ویگ",
+  "Plainstrider": "دشت‌دو",
+  "Thork": "تهورک",
+  "Durotar": "دوروتار",
+  "Horde": "هورد",
+  "Zhevra Hooves": "سم‌های ژورا",
+  "Raptor": "رپتور",
+  "Gazrog": "گازروگ",
+  "Centaur Bracers": "ساعدبندهای سانتور",
+  "Regthar Deathgate": "رگ‌ثار دِث‌گیت",
+  "Gazlowe": "گازلو",
+  "Southsea Freebooters": "راهزنان ساوت‌سی",
+  "Mangletooth": "دندان‌له‌کن",
+  "Gazlowe's Ledger": "دفتر حساب گزلو",
+  "Booty Bay": "خلیج غنیمت",
+  "Console Key": "کلید کنسول",
+  "Tinkerer Sniggles": "مخترع اسنیگلز",
+  "Broken Samophlange": "ساموفلنگ شکسته",
+  "Wenikee Boltbucket": "ونیکِی بولت‌باکت",
+  "Samophlange": "سموفلانگ",
+  "Ashenvale": "اَشِن‌ویل",
+  "Crossroads' Supply Crates": "جعبه‌های لوازم تقاطع"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$C",
+  "3": "$C",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$n",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$Gmister:miss;",
+  "12": "$N",
+  "13": "$N",
+  "14": "$C",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$C",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$B",
+  "26": "$B",
+  "27": "$R",
+  "28": "$N",
+  "29": "$n",
+  "30": "$N",
+  "31": "$C",
+  "32": "$N",
+  "33": "$N",
+  "34": "$r",
+  "35": "$B",
+  "36": "$B",
+  "37": "<snort>",
+  "38": "$B",
+  "39": "$B",
+  "40": "<snort>",
+  "41": "$B",
+  "42": "$B",
+  "43": "<snort>",
+  "44": "<snort>",
+  "45": "$B",
+  "46": "$B",
+  "47": "$R",
+  "48": "$B",
+  "49": "$B",
+  "50": "<snort>",
+  "51": "<snort>"
+ },
+ "rows": {
+  "quest:860:obj:0": "Speak with ⟦E1⟧ at the Crossroads.",
+  "quest:860:details:0": "If you wish to walk the hunter's path, then your journey leads to the ⟦E2⟧. Its beasts are strong-willed and fierce. You will learn much by hunting there, and your spirit will grow.",
+  "quest:860:details:1": "Speak with ⟦E1⟧. She will be your first guide in the ⟦E2⟧.",
+  "quest:860:details:2": "Sergra is at the Crossroads. To reach her, travel east from Bloodhoof Village into the ⟦E2⟧, then north as the road forks. And have care as you travel--the ⟦E2⟧ holds great danger for the unprepared and unwary.",
+  "quest:860:completion:0": "You want to hunt in the ⟦E2⟧?",
+  "quest:860:completion:1": "Your eyes are eager, and young. They're not yet squinted from tracking your prey across this land's dry plains.",
+  "quest:860:completion:2": "But worry not. We'll toughen your body and your mind. And we'll teach you that there is more to hunting than finding and killing your quarry.",
+  "quest:860:completion:3": "Prepare yourself. Your journey begins. Now.",
+  "quest:886:obj:0": "Speak with ⟦E3⟧ at the Crossroads.",
+  "quest:886:details:0": "The druids of ⟦E4⟧ sense a strange power leaking into the ⟦E2⟧, east of ⟦E5⟧.",
+  "quest:886:details:1": "⟦E3⟧ was sent to discover the source of this power, but we fear he will need aid.",
+  "quest:886:details:2": "⟦E7⟧ to the ⟦E2⟧ and speak with Tonga. He will be at the Crossroads. To reach there, take the road east out of Bloodhoof village. Enter the ⟦E2⟧, then turn north when the road forks. Continue north and you will find the Crossroads.",
+  "quest:886:details:3": "And do not leave the road, ⟦1⟧, for the ⟦E2⟧ is a harsh land.",
+  "quest:886:completion:0": "My brethren in ⟦E4⟧ were wise to send you, young ⟦2⟧. For the mystery of the ⟦E2⟧ is one that I alone cannot unravel.",
+  "quest:886:completion:1": "With your aid, let us hope we can find answers to our questions.",
+  "quest:6361:obj:0": "Bring the ⟦E8⟧ to the wind rider master ⟦E9⟧ in the Crossroads.",
+  "quest:6361:details:0": "I have a bundle of hides from the animals of the ⟦E2⟧, and must get them to ⟦E4⟧. A colleague there, ⟦E10⟧, will use the hides to create leather goods.",
+  "quest:6361:details:1": "Will you take the hides to him for me?",
+  "quest:6361:details:2": "The quickest way to ⟦E4⟧ is on the back of a wind rider. Bring the bundle of hides to ⟦E9⟧, our wind rider master in the Crossroads, and speak to him about transport to ⟦E4⟧.",
+  "quest:6361:progress:0": "Are you here for a wind rider? You have something to transport?",
+  "quest:6361:completion:0": "If you must take these hides to ⟦E4⟧, then you are speaking to the right orc!",
+  "quest:6362:obj:0": "Buy a wind rider to ⟦E4⟧ from the wind rider master ⟦E9⟧, then bring the ⟦E8⟧ to ⟦E10⟧ in ⟦E4⟧.",
+  "quest:6362:details:0": "For a small fee, I will give you a wind rider to ⟦E4⟧. There's no faster way to the city!",
+  "quest:6362:details:1": "If that is acceptable, speak to me again when you are ready to go.",
+  "quest:6362:details:2": "If you're taking those hides to ⟦E10⟧, then I think he's at Hewa's Armory, at the base of the wind rider tower in ⟦E4⟧. And that's right where you'll land!",
+  "quest:6362:progress:0": "There is dust on your shoulders that must be from the ⟦E2⟧. You have spoken with my friend Jahan?",
+  "quest:6362:completion:0": "Ah, a new bundle of hides. I will get to work on these immediately!",
+  "quest:6362:completion:1": "Thank you, brother. You have done me a great service. Here are some coins to pay for your time and travel costs.",
+  "quest:6363:obj:0": "Bring ⟦E11⟧ to ⟦E12⟧ in ⟦E4⟧.",
+  "quest:6363:details:0": "I have prepared leather goods for Jahan to sell at the Crossroads. Will you bring them to him?",
+  "quest:6363:details:1": "If you have already been to the Crossroads and spoken to their wind rider master, then you can fly one of our ⟦E4⟧ wind riders back to him.",
+  "quest:6363:details:2": "Take the leather goods to ⟦E12⟧, our wind rider master in ⟦E4⟧, and speak with him to arrange transport to the Crossroads.",
+  "quest:6363:progress:0": "Greetings, ⟦3⟧. What can I do for you?",
+  "quest:6363:completion:0": "You need to take this to the Crossroads, eh? That's not a problem. If you've already been there and spoken to ⟦E9⟧, then you can take one of my wind riders back to him.",
+  "quest:6364:obj:0": "Buy a wind rider to the Crossroads from the wind rider master ⟦E12⟧, then bring ⟦E11⟧ to ⟦E13⟧.",
+  "quest:6364:details:0": "In order to fly to a town, you must have already been there and spoken with the wind rider master of that town. You have been to the Crossroads and spoken to their wind rider master ⟦E9⟧, so for a small fee you can take a wind rider to him from here.",
+  "quest:6364:details:1": "Speak with me again when you are ready. Once at the Crossroads, you can then deliver the leather goods to ⟦E13⟧.",
+  "quest:6364:progress:0": "⟦4⟧, you are back from ⟦E4⟧? Did you deliver the hides to ⟦E10⟧?",
+  "quest:6364:completion:0": "⟦E10⟧ sent me finished products? Very good. There are many hunters and adventurers in the Crossroads now and business is lively. I am sure I'll sell these goods very soon.",
+  "quest:6364:completion:1": "Thank you for all your efforts, ⟦5⟧. I am in your debt.",
+  "quest:6365:obj:0": "Bring ⟦E14⟧ to ⟦E9⟧ in the Crossroads.",
+  "quest:6365:details:0": "I have some choice cuts of meat that I want to send to a friend. Her name is Gryshka, the innkeeper in ⟦E15⟧. Will you deliver the meat for me?",
+  "quest:6365:details:1": "The fastest way to ⟦E15⟧ is on a wind rider. Take the meats to the Crossroads wind rider master, ⟦E9⟧, and speak with him about transport to ⟦E15⟧.",
+  "quest:6365:progress:0": "You need to get somewhere fast? Then you're talking to the right orc!",
+  "quest:6365:completion:0": "You have to get this meat to ⟦E15⟧? That is no problem. For a small fee, my wind rider can take you there.",
+  "quest:6384:obj:0": "Buy a wind rider to ⟦E15⟧ from the wind rider master ⟦E9⟧, then bring ⟦E14⟧ to Gryshka in ⟦E15⟧.",
+  "quest:6384:details:0": "For just a few coins I will have a wind rider bring you to ⟦E15⟧. When you get there, you can take ⟦E14⟧ to Gryshka. Her inn is in the Valley of Strength, not far from the Skytower, where my wind rider will drop you off.",
+  "quest:6384:details:1": "Speak with me again when you are ready for the journey.",
+  "quest:6384:progress:0": "Something smells good! You don't have raw meat on you, do you?",
+  "quest:6384:completion:0": "Oh, wonderful! Those are fine cuts! These are from ⟦E17⟧, are they? That orc sure knows his way into a lady's heart...",
+  "quest:6384:completion:1": "Oh, I can't wait to cook it. But not too much! Meat is best served rare, don't you think?",
+  "quest:6385:obj:0": "Bring ⟦E19⟧ to ⟦E20⟧ in ⟦E15⟧.",
+  "quest:6385:details:0": "I've written a letter of thanks to ⟦E17⟧. Will you deliver it for me? If you've already been to the Crossroads and spoken with their wind rider master, then you can fly a wind rider back there.",
+  "quest:6385:details:1": "Take my letter to ⟦E20⟧, the wind rider master of ⟦E15⟧, and speak with him about transport to the Crossroads.",
+  "quest:6385:progress:0": "Do you need one of my wind riders?",
+  "quest:6385:completion:0": "You have to get this to the Crossroads in the ⟦E2⟧? Yes, I can get you there...",
+  "quest:6386:obj:0": "Buy a wind rider to the Crossroads from the wind rider master ⟦E20⟧, then bring ⟦E19⟧ to ⟦E17⟧ at the Crossroads.",
+  "quest:6386:details:0": "My wind riders are trained to fly to many different places, as long as you have already been to that place and spoken with the wind rider master there.",
+  "quest:6386:details:1": "You have been to the Crossroads and spoken to their wind rider master ⟦E9⟧, so now you can fly directly to him from here. Once you're at the Crossroads, you can deliver Gryshka's letter to ⟦E17⟧.",
+  "quest:6386:details:2": "Speak with me when you are ready to go.",
+  "quest:6386:progress:0": "Have you returned from ⟦E15⟧? Did Gryshka like the meat I sent her?",
+  "quest:6386:completion:0": "Hah! I guess she liked it! Nothing brings red to a lady's cheeks like a big, juicy steak!",
+  "quest:6386:completion:1": "Thank you, ⟦6⟧. You've done me a great service. Here is some money for your trouble, and don't be surprised if I invite you to my wedding!",
+  "quest:9267:title": "Mending Old Wounds",
+  "quest:9267:progress:0": "You'd better think twice before setting foot in Ratchet, ⟦7⟧! Word's been getting around of your dirty deeds.⟦8⟧⟦9⟧You're in luck though, a ship just arrived with many wounded from an encounter with the Bloodsail Buccaneers. This is your chance to prove you're not a complete scoundrel. Lend us a hand by bringing ⟦E24⟧ cloth for bandages and empty vials for potions.",
+  "quest:9267:completion:0": "I'm happy you're seeing the error of your ways, ⟦10⟧. Keep the supplies coming; we're not going to forget about you so easily, ⟦11⟧!",
+  "quest:822:title": "⟦E25⟧",
+  "quest:822:desc:0": "Bring 5 Lightning Glands, 1 ⟦E26⟧ and 1 ⟦E27⟧ to ⟦E28⟧ in Ratchet.",
+  "quest:822:obj:0": "Bring 5 Lightning Glands, 1 ⟦E26⟧ and 1 ⟦E27⟧ to ⟦E28⟧ in Ratchet.",
+  "quest:822:details:0": "Bring 5 Lightning Glands, 1 ⟦E26⟧ and 1 ⟦E27⟧ to ⟦E28⟧ in Ratchet.",
+  "quest:822:progress:0": "You working hard at finding those ingredients, ⟦12⟧?",
+  "quest:822:completion:0": "Haha! I knew you couldn't resist some of this brew. Come back again anytime you want some more, ⟦13⟧. Just bring me more of the ingredients I had you collect.",
+  "quest:1492:obj:0": "Bring the ⟦E29⟧ to ⟦E30⟧ in Ratchet.",
+  "quest:1492:details:0": "I have need to send a crate of potions, reagents and other items to my associates in the Old World. Little time I have to actually see them to the dock at Ratchet, and the last caravan has already left.",
+  "quest:1492:details:1": "If you could, please take this to ⟦E30⟧. He will ensure that it is placed on the next boat to Blackwater Cove.",
+  "quest:1492:progress:0": "You seek passage on the next ship, or have some item you wish to send aboard it?",
+  "quest:1492:completion:0": "A small enough crate. Yes, I should be able to find room for this aboard the ship. It sails with the next tide, I trust this is soon enough? Excellent. Let me just enter it into my ledger.",
+  "quest:1492:completion:1": "All taken care of! Good day to you, ⟦14⟧.",
+  "quest:844:obj:0": "Collect 7 ⟦E31⟧ Beaks and return them to ⟦E1⟧ in the Crossroads.",
+  "quest:844:details:0": "Your first prey will be easy.",
+  "quest:844:details:1": "The plainstriders to the east have been harassing our food supplies and have become a nuisance.",
+  "quest:844:details:2": "Put down the plainstriders and return to me with their beaks.",
+  "quest:844:progress:0": "Have you collected the plainstrider beaks?",
+  "quest:844:completion:0": "Very good, ⟦15⟧. With the plainstriders gone we'll have an easier time keeping our supply chains intact. And I hope you learned a few tricks out there in the ⟦E2⟧, for your next prey has a little more fire in its blood than the plainstriders...",
+  "quest:871:obj:0": "Of the Razormane tribe, kill 8 Water Seekers, 8 Thornweavers and 3 Hunters, and then return to ⟦E32⟧ in the Crossroads.",
+  "quest:871:details:0": "All the quilboars are our enemies, ⟦16⟧. Some just prove to be more of a nuisance than others.",
+  "quest:871:details:1": "The Razormane tribe has been attacking our supply lines from ⟦E34⟧, causing us no end of annoyance. I have scouts seeking the leader of these raids, but until then, any losses you can inflict on the filthy pig men would aid us.",
+  "quest:871:details:2": "Start in the northeast towards ⟦E34⟧. You can always tell their dens from the huge thorny vines that come up from the earth. Seek them out, and slay them.",
+  "quest:871:progress:0": "The longer it takes to stop these attacks, the harder it will be to provide supplies for the people of the Crossroads.",
+  "quest:871:completion:0": "You have done well, ⟦17⟧. Those insolent quilboars will finally learn that the might of the ⟦E35⟧ is not to be ignored.",
+  "quest:845:obj:0": "Slay Zhevra Runners to collect 4 ⟦E36⟧ for ⟦E1⟧ in the Crossroads.",
+  "quest:845:details:0": "The zhevra, although not the fiercest beast in the ⟦E2⟧, are a shade tougher than the plainstriders. Don't worry -- we'll send you against bigger prey in good time, but for now your teeth could use a little more cutting.",
+  "quest:845:details:1": "Hunt the zhevra to the north and south, and collect their hooves. Bring them to me and perhaps we'll next send you against something tougher.",
+  "quest:845:progress:0": "How many zhevra have you slain?",
+  "quest:845:completion:0": "Not bad, ⟦18⟧. Those zhevra hold a lot of strength in their legs. A sharp kick from them can knock even a tauren on its haunches!",
+  "quest:845:completion:1": "It looks like you have some strength in you too. Are you ready for a real challenge?",
+  "quest:869:obj:0": "Bring 12 ⟦E37⟧ Heads to ⟦E38⟧ at the Crossroads.",
+  "quest:869:details:0": "Not long ago, a shipment of silver was stolen from our guard tower. It was meant as payroll to the Crossroads' guards, and we want that silver back.",
+  "quest:869:details:1": "The strange thing is... we caught one of the thieves on the night of the theft. And... it was a raptor! Unbelievable!",
+  "quest:869:details:2": "I don't know what raptors would want with silver. But I don't care -- I want the raptors dead so they won't steal from us again!",
+  "quest:869:details:3": "Hunt raptors in the ⟦E2⟧. Collect for me their heads!",
+  "quest:869:progress:0": "Do you have those heads, ⟦19⟧?",
+  "quest:869:completion:0": "You got rid of the raptors!",
+  "quest:869:completion:1": "Thank you, ⟦20⟧. You are a ⟦21⟧ of worth.",
+  "quest:870:obj:0": "Report back to ⟦E3⟧ with your findings.",
+  "quest:870:details:0": "Long ago, the ⟦E2⟧ was a lush place, teeming with life. But war and cataclysm raged across the land, scorching it and leaving a dry husk. Such is the way of things, and it saddens my heart.",
+  "quest:870:details:1": "But within the past few years, new oases have formed in the ⟦E2⟧, and life stirs. And deep down, we druids sense a power leaking its way to the surface.",
+  "quest:870:details:2": "We must find its source. ⟦E7⟧ to the Forgotten Pools, northwest of the Crossroads. Search its waters for a source of power, then return here.",
+  "quest:870:progress:0": "Have you been to the Forgotten Pools, ⟦22⟧?  Did you find anything?",
+  "quest:870:completion:0": "You found a fissure in the earth, with gases bubbling from it? Strange. This may be an answer to our questions, but we cannot yet be sure.",
+  "quest:870:completion:1": "But it is a clue. And I am grateful that you found it.",
+  "quest:855:obj:0": "Bring 15 ⟦E39⟧ to ⟦E40⟧, west of the Crossroads.",
+  "quest:855:details:0": "The Kolkar are a threat to the ⟦E35⟧'s claims in the ⟦E2⟧; we must reduce the numbers of their troops. And so, I have a bounty task for you.",
+  "quest:855:details:1": "While in Kolkar territories, slay their warriors and collect centaur bracers. Return when you have a heap of bracers and the ⟦E35⟧ will reward you well.",
+  "quest:855:progress:0": "How goes your hunting, ⟦23⟧?",
+  "quest:855:completion:0": "Nicely done. I'm sure you've struck fear into the surviving centaurs, ⟦24⟧. If they have sense, they'll now calm themselves and stop their advances.",
+  "quest:855:completion:1": "But I don't think they will, and that is unfortunate.",
+  "quest:855:completion:2": "Unfortunate...for them.",
+  "quest:887:obj:0": "Kill 12 Southsea Brigands and 6 Southsea Cannoneers for ⟦E42⟧ in Ratchet.",
+  "quest:887:details:0": "I sure wish Vice Admiral Grezzlik did a better job of keeping the seas safe for our trading vessels. With all the gold the trade princes have poured into the Trade Fleets, it ticks me off to see so many pirates running willy-nilly, raiding my ships and stealing my goods!",
+  "quest:887:details:1": "I heard that the ⟦E43⟧ have set up a camp just south of here. They've been a real thorn in my side and if Grezzlik won't take care of them, well, maybe you can help me get rid of them.",
+  "quest:887:progress:0": "I don't even want to think about the profits I've lost from pirate raiding, and now they set up camp on my doorstep? It's getting out of hand, Undermine's got to do something about it.",
+  "quest:887:completion:0": "You did good, kid. A little more work like that, and it'll be one less thing I'll have to worry about. Hopefully they'll be convinced that they should relocate their operation elsewhere.",
+  "quest:887:completion:1": "In the meantime, there is the small matter of getting back the goods they stole from me!",
+  "quest:889:title": "Spirit of the Wind",
+  "quest:889:progress:0": "Bring ⟦E45⟧ 10 blood shards and I will bless you with great speed. You will run with zhevra and the wind will be jealous of you.⟦25⟧⟦26⟧It will not last long, but it should be enough to help you travel throughout the ⟦E2⟧.",
+  "quest:889:completion:0": "Good. Go with Agamaggan's spirit as your guide, ⟦27⟧. Return to me if you desire more of Agamaggan's magics.",
+  "quest:890:obj:0": "Bring ⟦E46⟧ to ⟦E30⟧.",
+  "quest:890:details:0": "I've been waiting forever for my last shipment of goods from ⟦E47⟧! I'm pretty sure that it must have been stolen by the Freebooters, but just to make sure, will you go down to the dockside and ask Dizzywig if my goods were already put into my warehouse without my knowledge?",
+  "quest:890:details:1": "Here, take my ledger down to Dizzywig and have him double check my inventory records against his logs.",
+  "quest:890:progress:0": "Wares to send on the next ship, ⟦28⟧?",
+  "quest:890:completion:0": "Ah, ⟦E42⟧ sent you, did he? Just a moment, let me take a look here and check my own logs and make sure I didn't have ⟦E42⟧'s shipment sent to the wrong place.",
+  "quest:890:completion:1": "Bet he's waiting for those boots from Drizzlek...",
+  "quest:892:obj:0": "Return ⟦E46⟧ to ⟦E42⟧ in Ratchet.",
+  "quest:892:details:0": "Everything looks square from my records, ⟦29⟧. Go on back and tell ⟦E42⟧ he's out of luck. I wouldn't be surprised if it was the pirates that nabbed his goodies.",
+  "quest:892:details:1": "Nothing else I can do for him. Oh... though you could tell him that I've got some things from Undermine for him, when he has the time to come pick them up.",
+  "quest:892:progress:0": "So, what did Dizzywig have to say?",
+  "quest:892:completion:0": "No dice, eh? I guess it must have been the Freebooters then... Dizzywig's on the level, I'm sure he wouldn't cheat me like that. After all, he is on the payroll.",
+  "quest:892:completion:1": "Looks like I've got some goods to get back, ⟦30⟧. What do you say?",
+  "quest:894:obj:0": "Access the control console at the Venture Company research site.",
+  "quest:894:details:0": "The Venture Company set up a small research facility far to the north of here, southwest of the Sludge Fen. I don't know very much about what they're doing, but did manage to discover that they're experimenting with something called a \"samophlange\".",
+  "quest:894:details:1": "Now what the heck is a samophlange? Well, whatever it is, I want to examine it, so I need someone to go get it.",
+  "quest:894:details:2": "I obtained a copy of their control system operating manual, you should be able to figure out how to disengage the samophlange from it.",
+  "quest:894:completion:0": "A variety of buttons, levers and blinking lights are somewhat erratically arrayed on the face of the control console. A small gauge indicates that the apparatus is currently operating within optimal levels, and indicates that control valves one through three are currently open. There is a small keyhole set into the lower right side of the control panel.",
+  "quest:900:obj:0": "Close off the Fuel Control Valve, the Regulator Valve and the Main Control Valve then use the control console again.",
+  "quest:900:details:0": "The three control valves are currently opened. The various readings on the control panel lead you to presume that they must be shut off before the apparatus can be shut off.",
+  "quest:900:progress:0": "Blinking lights on the control console indicate that the main control valves have not been closed off.",
+  "quest:900:completion:0": "The lights indicating the three control valves dim as they are shut off. Green lights slowly fade into yellow, and the switch controlling the apparatus is now moveable, with the valves closed, it can be turned off.",
+  "quest:901:obj:0": "Get the ⟦E49⟧ from ⟦E50⟧ to use on the control console.",
+  "quest:901:details:0": "With the apparatus deactivated, the control panel can be opened up and the samophlange removed from the console. With everything else in place, all that is left is to acquire the key to unlock the console.",
+  "quest:901:progress:0": "The console lights are dimmed and the gauges and dials all read at their zero positions, everything idling.",
+  "quest:901:completion:0": "Turning the key in the lock, the control console unlocks. A red light at the top of the console turns off and all power drains from the terminal.",
+  "quest:3921:obj:0": "Bring the ⟦E51⟧ to ⟦E52⟧.",
+  "quest:3921:details:0": "I think I might have broken that ⟦E53⟧. That's not good, because I already told some colleagues in Undermine about it and they were very intrigued. We must find a way to fix it!",
+  "quest:3921:details:1": "Take the broken samophlange to ⟦E52⟧, just south of Mor'shan Rampart, the horde outpost between the ⟦E2⟧ and ⟦E54⟧. She is very clever and inquisitive. If you show her the samophlange I bet she'd jump at the chance to fix it.",
+  "quest:3921:progress:0": "I'm very busy with my work, ⟦31⟧. Unless you have something for me, it'd be best if you moved along...",
+  "quest:3921:completion:0": "Oh, what's this? A samophlange, you say? What's a samophlange??",
+  "quest:3921:completion:1": "Ah... but look at the way it moves when you handle it. And there's the sound of intricate gears inside. Oh my! I want to fix it and see what it does, don't you??",
+  "quest:5041:obj:0": "Find and return ⟦E55⟧ to ⟦E32⟧ in the ⟦E2⟧.",
+  "quest:5041:details:0": "That attack on the caravan contained supplies we desperately needed.",
+  "quest:5041:details:1": "You've been brave enough to take on the Razormane tribe so far, and I will ask you to do so again, but this time, I wonder if I could ask you to keep your eyes open for some of our lost supplies. You can probably find them throughout their camps, the quilboar getting fat off their dishonorable acts.",
+  "quest:5041:details:2": "The people of the Crossroads would be in your debt.",
+  "quest:5041:progress:0": "How goes your search for the supplies, ⟦32⟧? I trust the quilboar fall under your strength easily.",
+  "quest:5041:completion:0": "Haha! Thank you, ⟦33⟧! This will help us greatly. You're a boon to the Crossroads and to the ⟦E35⟧. If there is anything I can do for you, please, let me know.",
+  "quest:5042:title": "Agamaggan's Strength",
+  "quest:5042:progress:0": "I will need 4 blood shards if you wish Agamaggan's strength, ⟦34⟧.⟦35⟧⟦36⟧Your foes will cower before your strength were you to be given this blessing. ⟦37⟧⟦38⟧⟦39⟧The Razormane's greatest warriors are infused with such power!",
+  "quest:5042:completion:0": "If only ⟦E45⟧ were free to see you decimate those who betrayed him! ⟦40⟧⟦41⟧⟦42⟧I thank you for destroying more of the Bristleback by gathering these shards. Please, continue to do so, and I will continue to aid you. ⟦43⟧",
+  "quest:5043:title": "Agamaggan's Agility",
+  "quest:5043:progress:0": "My tribes greatest scouts are said to be unrivaled in their accuracy, and no rogue ⟦44⟧ could measure up to their quickness in battle.⟦45⟧⟦46⟧Bring me 4 blood shards and I will make you even more agile than any quilboar born.",
+  "quest:5043:completion:0": "May your aim be unerring, and the mark of your weapon be true, ⟦47⟧.⟦48⟧⟦49⟧Agamaggan's spirit is with you. Return ⟦50⟧ to me if you wish. ⟦E45⟧ will bless you again if the great boar god deems me worthy. ⟦51⟧"
+ },
+ "context": {
+  "quest:860": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Melor Stonehoof («ملور سم‌سنگی»)",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:886": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Arch Druid Hamuul Runetotem («دروید اعظم هاموول رون‌توتم»)",
+   "turner": "Tonga Runetotem («تونگا توتم‌رون»)"
+  },
+  "quest:6361": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Jahan Hawkwing («جهان بال‌شاهین»)",
+   "turner": "Devrak («دوراک»)"
+  },
+  "quest:6362": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Devrak («دوراک»)",
+   "turner": "Ahanu («آهانو»)"
+  },
+  "quest:6363": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Ahanu («آهانو»)",
+   "turner": "Tal («تال»)"
+  },
+  "quest:6364": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Tal («تال»)",
+   "turner": "Jahan Hawkwing («جهان بال‌شاهین»)"
+  },
+  "quest:6365": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Zargh («زارگ»)",
+   "turner": "Devrak («دوراک»)"
+  },
+  "quest:6384": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Devrak («دوراک»)",
+   "turner": "Innkeeper Gryshka («مهمان‌دار گریشکا»)"
+  },
+  "quest:6385": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Innkeeper Gryshka («مهمان‌دار گریشکا»)",
+   "turner": "Doras («دوراس»)"
+  },
+  "quest:6386": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "horde",
+   "giver": "Doras («دوراس»)",
+   "turner": "Zargh («زارگ»)"
+  },
+  "quest:9267": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 10,
+   "side": "",
+   "giver": "",
+   "turner": "Mupsi Shacklefridd («ماپسی شکل‌فرید»)"
+  },
+  "quest:822": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 11,
+   "side": "horde",
+   "giver": "Brewmaster Drohn («استاد آبجو درون»)",
+   "turner": "Brewmaster Drohn («استاد آبجو درون»)"
+  },
+  "quest:1492": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 11,
+   "side": "horde",
+   "giver": "Apothecary Helbrim («داروساز هلبریم»)",
+   "turner": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)"
+  },
+  "quest:844": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 12,
+   "side": "horde",
+   "giver": "Sergra Darkthorn («سرگرا دارک‌تورن»)",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:871": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 12,
+   "side": "horde",
+   "giver": "Thork («تهورک»)",
+   "turner": "Thork («تهورک»)"
+  },
+  "quest:845": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 13,
+   "side": "horde",
+   "giver": "Sergra Darkthorn («سرگرا دارک‌تورن»)",
+   "turner": "Sergra Darkthorn («سرگرا دارک‌تورن»)"
+  },
+  "quest:869": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 13,
+   "side": "horde",
+   "giver": "Gazrog («گازروگ»)",
+   "turner": "Gazrog («گازروگ»)"
+  },
+  "quest:870": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 13,
+   "side": "horde",
+   "giver": "Tonga Runetotem («تونگا توتم‌رون»)",
+   "turner": "Tonga Runetotem («تونگا توتم‌رون»)"
+  },
+  "quest:855": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)",
+   "turner": "Regthar Deathgate («رگ‌ثار دِث‌گیت»)"
+  },
+  "quest:887": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Gazlowe («گازلو»)",
+   "turner": "Gazlowe («گازلو»)"
+  },
+  "quest:889": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Mangletooth («دندان‌له‌کن»)",
+   "turner": "Mangletooth («دندان‌له‌کن»)"
+  },
+  "quest:890": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Gazlowe («گازلو»)",
+   "turner": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)"
+  },
+  "quest:892": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Wharfmaster Dizzywig («لنگرگاه‌دار دیزی‌ویگ»)",
+   "turner": "Gazlowe («گازلو»)"
+  },
+  "quest:894": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Sputtervalve («سپوتتروالو»)",
+   "turner": "Control Console («میز فرمان»)"
+  },
+  "quest:900": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Control Console («میز فرمان»)",
+   "turner": "Control Console («میز فرمان»)"
+  },
+  "quest:901": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "",
+   "giver": "Control Console («میز فرمان»)",
+   "turner": "Control Console («میز فرمان»)"
+  },
+  "quest:3921": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Sputtervalve («سپوتتروالو»)",
+   "turner": "Wenikee Boltbucket («ونیکِی بولت‌باکت»)"
+  },
+  "quest:5041": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Thork («تهورک»)",
+   "turner": "Thork («تهورک»)"
+  },
+  "quest:5042": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Mangletooth («دندان‌له‌کن»)",
+   "turner": "Mangletooth («دندان‌له‌کن»)"
+  },
+  "quest:5043": {
+   "zone_en": "The Barrens",
+   "zone_fa": "دشت‌های بایر",
+   "level": 14,
+   "side": "horde",
+   "giver": "Mangletooth («دندان‌له‌کن»)",
+   "turner": "Mangletooth («دندان‌له‌کن»)"
+  }
+ },
+ "known": {
+  "quest:860": {
+   "title": "سرگرا دارک‌تورن"
+  },
+  "quest:886": {
+   "title": "آبگیرهای دشت‌های بایر"
+  },
+  "quest:6361": {
+   "title": "دسته‌ای از پوست‌ها"
+  },
+  "quest:6362": {
+   "title": "سفر به تاندر بلوف"
+  },
+  "quest:6363": {
+   "title": "تال استاد بادسوار"
+  },
+  "quest:6364": {
+   "title": "بازگشت به جهان"
+  },
+  "quest:6365": {
+   "title": "گوشت برای اورگیمار"
+  },
+  "quest:6384": {
+   "title": "سفر به اورگیمار"
+  },
+  "quest:6385": {
+   "title": "دوراس استاد بادسوار"
+  },
+  "quest:6386": {
+   "title": "بازگشت به تقاطع"
+  },
+  "quest:1492": {
+   "title": "لنگرگاه‌دار دیزی‌ویگ"
+  },
+  "quest:844": {
+   "title": "خطر راه‌روها"
+  },
+  "quest:871": {
+   "title": "مختل کردن حملات"
+  },
+  "quest:845": {
+   "title": "ژورا"
+  },
+  "quest:869": {
+   "title": "دزدان رپتور"
+  },
+  "quest:870": {
+   "title": "آبگیرهای فراموش‌شده"
+  },
+  "quest:855": {
+   "title": "ساعدبندهای سانتور"
+  },
+  "quest:887": {
+   "title": "راهزنان ساوت‌سی"
+  },
+  "quest:890": {
+   "title": "مرسولهٔ گمشده"
+  },
+  "quest:892": {
+   "title": "مرسولهٔ گمشده"
+  },
+  "quest:894": {
+   "title": "سموفلانگ"
+  },
+  "quest:900": {
+   "title": "سموفلانگ"
+  },
+  "quest:901": {
+   "title": "سموفلانگ"
+  },
+  "quest:3921": {
+   "title": "ونیکِی بولت‌باکت"
+  },
+  "quest:5041": {
+   "title": "لوازم برای تقاطع"
+  }
+ }
+}

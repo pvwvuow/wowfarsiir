@@ -1,0 +1,745 @@
+{
+ "pack": "quest-tanaris-03-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-tanaris-03-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Narain Soothfancy",
+   "fa": "ناراین پیشگویی",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Ransom Letter",
+   "fa": "نامهٔ باج",
+   "kind": "it"
+  },
+  "E3": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Meridith's Love Letter",
+   "fa": "نامهٔ عاشقانهٔ مریدیت",
+   "kind": "it"
+  },
+  "E5": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Bag of Gold",
+   "fa": "کیفِ طلا",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Draconic for Dummies",
+   "fa": "اژدهایی برای مبتدی‌ها",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Magical Book Binding",
+   "fa": "جلدِ کتابِ جادویی",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Arcanite",
+   "fa": "آرکانیت",
+   "kind": "qs"
+  },
+  "E11": {
+   "en": "Elementium Ore",
+   "fa": "کانهٔ المنتیم",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "The Scepter of the Shifting Sands",
+   "fa": "عصای ماسه‌های متغیر",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Scarab",
+   "fa": "سوسک‌سرگین‌غلتان",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Ahn'Qiraj",
+   "fa": "آن‌کیراج",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Mux Manascrambler",
+   "fa": "ماکس آشوبگر مانا",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Delicate Arcanite Converter",
+   "fa": "مبدل آرکانیت ظریف",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Greater Eternal Essence",
+   "fa": "گوهر جاودان بزرگ",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Stonescale Oil",
+   "fa": "روغن استون‌اسکیل",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Volcanic Ash",
+   "fa": "خاکستر آتشفشانی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Sealed Blood Container",
+   "fa": "ظرفِ خونِ مهرشده",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Anthion Harmon",
+   "fa": "آنتیون هارمون",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Deliana",
+   "fa": "دلیانا",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Sealed Venom Container",
+   "fa": "ظرفِ زهرِ مهرشده",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Mokvar",
+   "fa": "موکوار",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Ectoplasmic Distiller",
+   "fa": "تقطیرکنندهٔ اکتوپلاسم",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Magma Lord Bokk",
+   "fa": "لرد گدازه، باک",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Magma Core",
+   "fa": "هستهٔ گدازه",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Blackrock Mountain",
+   "fa": "کوه بلک‌راک",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Narain Soothfancy": "ناراین پیشگویی",
+  "Ransom Letter": "نامهٔ باج",
+  "Tanaris": "تاناریس",
+  "Meridith's Love Letter": "نامهٔ عاشقانهٔ مریدیت",
+  "Winterspring": "وینتراسپرینگ",
+  "Bag of Gold": "کیفِ طلا",
+  "Draconic for Dummies": "اژدهایی برای مبتدی‌ها",
+  "Magical Book Binding": "جلدِ کتابِ جادویی",
+  "Arcanite": "آرکانیت",
+  "Elementium Ore": "کانهٔ المنتیم",
+  "Kalimdor": "کالیمدور",
+  "The Scepter of the Shifting Sands": "عصای ماسه‌های متغیر",
+  "Horde": "هورد",
+  "Alliance": "اتحاد",
+  "Silithus": "سیلیتوس",
+  "Scarab": "سوسک‌سرگین‌غلتان",
+  "Ahn'Qiraj": "آن‌کیراج",
+  "Mux Manascrambler": "ماکس آشوبگر مانا",
+  "Delicate Arcanite Converter": "مبدل آرکانیت ظریف",
+  "Greater Eternal Essence": "گوهر جاودان بزرگ",
+  "Stonescale Oil": "روغن استون‌اسکیل",
+  "Volcanic Ash": "خاکستر آتشفشانی",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Sealed Blood Container": "ظرفِ خونِ مهرشده",
+  "Anthion Harmon": "آنتیون هارمون",
+  "Deliana": "دلیانا",
+  "Sealed Venom Container": "ظرفِ زهرِ مهرشده",
+  "Mokvar": "موکوار",
+  "Ectoplasmic Distiller": "تقطیرکنندهٔ اکتوپلاسم",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Magma Lord Bokk": "لرد گدازه، باک",
+  "Magma Core": "هستهٔ گدازه",
+  "Blackrock Mountain": "کوه بلک‌راک"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$B",
+  "7": "$B",
+  "8": "$N",
+  "9": "$B",
+  "10": "$B",
+  "11": "$N",
+  "12": "$b",
+  "13": "$b",
+  "14": "$b",
+  "15": "$b",
+  "16": "$b",
+  "17": "$b",
+  "18": "$b",
+  "19": "$b",
+  "20": "$n",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$n",
+  "25": "$N",
+  "26": "$B",
+  "27": "$B",
+  "28": "$n",
+  "29": "$b",
+  "30": "$b",
+  "31": "$b",
+  "32": "$b",
+  "33": "$b",
+  "34": "$b",
+  "35": "$b",
+  "36": "$b",
+  "37": "$b",
+  "38": "$b",
+  "39": "$n",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$n",
+  "44": "$N",
+  "45": "$B",
+  "46": "$B",
+  "47": "$n",
+  "48": "$b",
+  "49": "$b",
+  "50": "$b",
+  "51": "$b",
+  "52": "$b",
+  "53": "$b",
+  "54": "$b",
+  "55": "$b",
+  "56": "$b",
+  "57": "$b",
+  "58": "$n",
+  "59": "$N",
+  "60": "$B",
+  "61": "$B",
+  "62": "$n",
+  "63": "$N",
+  "64": "$B",
+  "65": "$B",
+  "66": "$n",
+  "67": "$b",
+  "68": "$b",
+  "69": "$n",
+  "70": "$n",
+  "71": "$n",
+  "72": "$N",
+  "73": "$N",
+  "74": "$R",
+  "75": "$N"
+ },
+ "rows": {
+  "quest:8597:obj:0": "Find ⟦E1⟧'s book, buried on an island in the South Seas.",
+  "quest:8597:details:0": "I knew that book would come in handy some day! Thankfully, I had the wit and foresight to stow it somewhere safe.",
+  "quest:8597:details:1": "Don't worry, it's in a place that nobody could ever hope to find it! I needed a gyrocopter just to get there the first time. Unfortunately I crashed it on the beach on my way back. It was through that accident that I gained these super-gnomish psychic powers!",
+  "quest:8597:details:2": "Look for my crashed gyrocopter somewhere on Land's End Beach and swim south from there! You'll know the spot when you see it!",
+  "quest:8597:completion:0": "The book is gone! On top of the dirt mound is a note.",
+  "quest:8598:obj:0": "Return the ⟦E2⟧ to ⟦E1⟧ in ⟦E3⟧.⟦1⟧",
+  "quest:8598:details:0": "<The text on this note is made up of various typefaces glued onto the parchment's surface.>",
+  "quest:8598:details:1": "We've got your precious book, gnome. If you ever want to see it again, you'll do exactly as we ask.",
+  "quest:8598:details:2": "B<A detailed set of instructions is listed, spanning 3 pages.>",
+  "quest:8598:details:3": "Bring the money and come alone!",
+  "quest:8598:progress:0": "Say, what's the matter?",
+  "quest:8598:completion:0": "<Narain's face glows a bright red.>",
+  "quest:8598:completion:1": "Booknap my... book, will they!? I'll teach them what it means to mess with a psychic gnome!",
+  "quest:8599:obj:0": "Take ⟦E4⟧ to ⟦E1⟧ in ⟦E3⟧.",
+  "quest:8599:details:0": "It isn't often that I get visitors. As a matter of fact, the last time I had a visitor was when I rescued that dear, sweet gnome from the wreckage of the crashed flying machine.",
+  "quest:8599:details:1": "B<Meridith gazes into nothingness, lost in a memory.>",
+  "quest:8599:details:2": "Do you know him? Narain? ⟦E1⟧? Oh it would mean so much to me if somebody would deliver a message to him for me. I must tell him how I feel! I know it's love! I just know it!",
+  "quest:8599:details:3": "Could you possibly deliver a message to Narain? I would be forever indebted to you!",
+  "quest:8599:progress:0": "You smell like fish!",
+  "quest:8599:completion:0": "What!?",
+  "quest:8599:completion:1": "B<Narain starts to fidget.>",
+  "quest:8599:completion:2": "Well, um... What do you want me to do??? She's a fish! A FISH I tell you! And I'm a gnome. It could never work out.",
+  "quest:8606:obj:0": "⟦E1⟧ in ⟦E3⟧ wants you to travel to ⟦E5⟧ and place the ⟦E6⟧ at the drop off point documented by the booknappers.",
+  "quest:8606:details:0": "I've got it! Here's what we're going to do. I'm going to fill a sack up with rocks and you're going to make the drop. I know it said that I should make the delivery and I'm going to - sort of.",
+  "quest:8606:details:1": "B<Narain looks you up and down.>",
+  "quest:8606:details:2": "Yes, you will do just fine. Take this turban, robe, and sack of rocks and head to the drop off point in ⟦E5⟧.",
+  "quest:8606:details:3": "I've included everything you need in this special kit. When they show up to pick up the goods, snuff them out! That will teach them to mess with Narain!⟦2⟧",
+  "quest:8606:completion:0": "I think we may have underestimated these booknappers.",
+  "quest:8620:obj:0": "Recover the 8 lost chapters of ⟦E7⟧ and combine them with the ⟦E8⟧ and return the completed book of ⟦E7⟧: Volume II to ⟦E1⟧ in ⟦E3⟧.",
+  "quest:8620:details:0": "I should have known. My arch-enemy, Doctor Weavil, up to his old tricks! And now, thanks to your failure in ⟦E5⟧, Doctor Weavil has destroyed my book! How are you going to save the world now, hero?",
+  "quest:8620:details:1": "The note I received stated that the only known copy of \"⟦E7⟧: Volume II\" was ripped into 8 parts and scattered to the wind! If you somehow manage to find those missing chapters, use this magical binding to put them back together and return to me.",
+  "quest:8620:progress:0": "I put my pants on just like you - one leg at a time. Except when my pants are on, I make arcanite buoys. ⟦E10⟧ buoys, baby!",
+  "quest:8620:completion:0": "Fantastic! I can't believe you went through the hassle! Are you some kind of machine? If it were me, I would have probably just let the world implode.",
+  "quest:8620:completion:1": "I tip my turban to you, sir. And no good deed should go unrewarded.",
+  "quest:8728:obj:0": "⟦E1⟧ in ⟦E3⟧ wants you to bring him 20 ⟦E10⟧ Bars, 10 ⟦E11⟧, 10 Azerothian Diamonds, and 10 Blue Sapphires.",
+  "quest:8728:details:0": "Well that took a little longer than expected. Now let me see what this ledger says.",
+  "quest:8728:details:1": "B<Narain silently reads the ledger, periodically mumbling under his breath.>",
+  "quest:8728:details:2": "B The good news is that I am 99% certain that I am capable of creating an arcanite buoy that will function to your specifications. This is, of course, wholly dependant on the bad news.",
+  "quest:8728:details:3": "The bad news is that I'm going to need a lot of arcanite, elementium ore, and rare gemstones.",
+  "quest:8728:details:4": "Bring me what I need and I will craft the buoy.",
+  "quest:8728:progress:0": "⟦E10⟧ buoys don't just make themselves, ⟦3⟧. And NO, you cannot borrow some money.",
+  "quest:8728:completion:0": "A deal is a deal. I sure hope you know what you are getting yourself into, ⟦4⟧. This is an awful lot of trouble to go through to do some fishing.",
+  "quest:8742:details:0": "A thousand years has passed and just as it was fated, one stands before me. One who shall lead their people to a new age.",
+  "quest:8742:details:1": "The Old God trembles, ⟦5⟧. Oh yes, it fears your faith. Shatter the prophecy of C'Thun.",
+  "quest:8742:details:2": "It knows you come, champion - and with you comes the might of ⟦E12⟧. You have only to let me know when you are prepared and I shall grant you ⟦E13⟧.",
+  "quest:8742:progress:0": "A thousand years has passed and just as it was fated, one stands before me. One who shall lead their people to a new age.⟦6⟧⟦7⟧The Old God trembles, ⟦8⟧. Oh yes, it fears your faith. Shatter the prophecy of C'Thun.⟦9⟧⟦10⟧It knows you come, champion - and with you comes the might of ⟦E12⟧. You have only to let me know when you are prepared and I shall grant you the Scepter of the Shifting Sands.",
+  "quest:8742:completion:0": "⟦E13⟧ is whole once more, ⟦11⟧.",
+  "quest:8742:completion:1": "It must be you who uses the scepter. It must be you who heralds the next age of your people. You must wait for the armies of the ⟦E14⟧ and the ⟦E15⟧ to arrive in ⟦E16⟧ before you may ring the ⟦E17⟧ Gong.",
+  "quest:8747:progress:0": "Impressive, little one. You have gone through much trouble to gain the favor of the Bronze Flight. Your dedication is noted.⟦12⟧⟦13⟧The signet ring of the defender will offer superior protection against the forces of evil.⟦14⟧⟦15⟧Be warned, once you have chosen your path, you will have no recourse should you change your mind.",
+  "quest:8747:completion:0": "Impressive, little one. You have gone through much trouble to gain the favor of the Bronze Flight. Your dedication is noted.⟦16⟧⟦17⟧The signet ring of the protector will offer superior protection against the forces of evil.⟦18⟧⟦19⟧Be warned, once you have chosen your path, you will have no recourse should you change your mind.",
+  "quest:8748:obj:0": "{'type': 'item', 'id': 21196, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8748:progress:0": "Your continued defense of the children of ⟦E12⟧ has been acknowledged. Hand me your signet ring so that I may enhance its powers.",
+  "quest:8748:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦20⟧. May you never stray from the path of the protector!",
+  "quest:8749:obj:0": "{'type': 'item', 'id': 21197, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8749:progress:0": "You honor my kind, ⟦21⟧. Strike down the enemies of ⟦E12⟧! Show them what it means to deface the land of eternal starlight.⟦22⟧⟦23⟧You have earned another enhancement. Hand me your signet ring so that I may bolster its power.",
+  "quest:8749:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦24⟧. May you never stray from the path of the protector!",
+  "quest:8750:obj:0": "{'type': 'item', 'id': 21198, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8750:progress:0": "Dedication of this magnitude is a rarity. You have shown that your will is unfaltering, ⟦25⟧. You shall be greatly rewarded for your stalwart watch over our world.⟦26⟧⟦27⟧Hand me your signet ring so that I may strengthen its enchantment.",
+  "quest:8750:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦28⟧. May you never stray from the path of the protector!",
+  "quest:8751:obj:0": "{'type': 'item', 'id': 21199, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8751:progress:0": "Never have I seen such tenacity! The Bronze Flight grants you one final enchantment. The Timeless One himself has requested it so!⟦29⟧⟦30⟧Hand me your signet ring so that I may make the necessary adjustments.",
+  "quest:8751:completion:0": "Rise, Protector of ⟦E12⟧! Rise and be recognized!",
+  "quest:8752:progress:0": "Impressive, little one. You have gone through much trouble to gain the favor of the Bronze Flight. Your dedication is noted.⟦31⟧⟦32⟧The signet ring of the conqueror will greatly enhance your physical attacks.⟦33⟧⟦34⟧Be warned, once you have chosen your path, you will have no recourse should you change your mind.",
+  "quest:8752:completion:0": "Impressive, little one. You have gone through much trouble to gain the favor of the Bronze Flight. Your dedication is noted.⟦35⟧⟦36⟧The signet ring of the conqueror will greatly enhance your physical attacks.⟦37⟧⟦38⟧Be warned, once you have chosen your path, you will have no recourse should you change your mind.",
+  "quest:8753:obj:0": "{'type': 'item', 'id': 21201, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8753:progress:0": "Your continued defense of the children of ⟦E12⟧ has been acknowledged. Hand me your signet ring so that I may enhance its powers.",
+  "quest:8753:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦39⟧. May you never stray from the path of the conqueror!",
+  "quest:8754:obj:0": "{'type': 'item', 'id': 21202, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8754:progress:0": "You honor my kind, ⟦40⟧. Strike down the enemies of ⟦E12⟧! Show them what it means to deface the land of eternal starlight.⟦41⟧⟦42⟧You have earned another enhancement. Hand me your signet ring so that I may bolster its power.",
+  "quest:8754:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦43⟧. May you never stray from the path of the conqueror!",
+  "quest:8755:obj:0": "{'type': 'item', 'id': 21203, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8755:progress:0": "Dedication of this magnitude is a rarity. You have shown that your will is unfaltering, ⟦44⟧. You shall be greatly rewarded for your stalwart watch over our world.⟦45⟧⟦46⟧Hand me your signet ring so that I may strengthen its enchantment.",
+  "quest:8755:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦47⟧. May you never stray from the path of the conqueror!",
+  "quest:8756:obj:0": "{'type': 'item', 'id': 21204, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8756:progress:0": "Never have I seen such tenacity! The Bronze Flight grants you one final enchantment. The Timeless One himself has requested it so!⟦48⟧⟦49⟧Hand me your signet ring so that I may make the necessary adjustments.",
+  "quest:8756:completion:0": "Rise, Qiraji Conqueror! Rise and be recognized!",
+  "quest:8757:progress:0": "Impressive, little one. You have gone through much trouble to gain the favor of the Bronze Flight. Your dedication is noted.⟦50⟧⟦51⟧The signet ring of the invoker will greatly enhance your magical and natural abilities.⟦52⟧⟦53⟧Be warned, once you have chosen your path, you will have no recourse should you change your mind.",
+  "quest:8757:completion:0": "Impressive, little one. You have gone through much trouble to gain the favor of the Bronze Flight. Your dedication is noted.⟦54⟧⟦55⟧The signet ring of the invoker will greatly enhance your magical and natural abilities.⟦56⟧⟦57⟧Be warned, once you have chosen your path, you will have no recourse should you change your mind.",
+  "quest:8758:obj:0": "{'type': 'item', 'id': 21206, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8758:progress:0": "Your continued defense of the children of ⟦E12⟧ has been acknowledged. Hand me your signet ring so that I may enhance its powers.",
+  "quest:8758:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦58⟧. May you never stray from the path of the invoker!",
+  "quest:8759:obj:0": "{'type': 'item', 'id': 21207, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8759:progress:0": "You honor my kind, ⟦59⟧. Strike down the enemies of ⟦E12⟧! Show them what it means to deface the land of eternal starlight.⟦60⟧⟦61⟧You have earned another enhancement. Hand me your signet ring so that I may bolster its power.",
+  "quest:8759:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦62⟧. May you never stray from the path of the invoker!",
+  "quest:8760:obj:0": "{'type': 'item', 'id': 21208, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8760:progress:0": "Dedication of this magnitude is a rarity. You have shown that your will is unfaltering, ⟦63⟧. You shall be greatly rewarded for your stalwart watch over our world.⟦64⟧⟦65⟧Hand me your signet ring so that I may strengthen its enchantment.",
+  "quest:8760:completion:0": "Your rise amongst the rank of the Brood is most impressive, ⟦66⟧. May you never stray from the path of the invoker!",
+  "quest:8761:obj:0": "{'type': 'item', 'id': 21209, 'target': 'Signet Ring of the Bronze Dragonflight', 'text': None}",
+  "quest:8761:progress:0": "Never have I seen such tenacity! The Bronze Flight grants you one final enchantment. The Timeless One himself has requested it so!⟦67⟧⟦68⟧Hand me your signet ring so that I may make the necessary adjustments.",
+  "quest:8761:completion:0": "Rise, Grand Invoker! Rise and be recognized!",
+  "quest:8764:title": "The Changing of Paths - Protector No More",
+  "quest:8764:progress:0": "Champion, should you decide to walk another path, present me with your signet ring and a mountain of scarabs from our enemies in ⟦E22⟧.",
+  "quest:8764:completion:0": "Be well, ⟦69⟧. If you change your mind, I shall be here to assist you.",
+  "quest:8765:title": "The Changing of Paths - Invoker No More",
+  "quest:8765:progress:0": "Champion, should you decide to walk another path, present me with your signet ring and a mountain of scarabs from our enemies in ⟦E22⟧.",
+  "quest:8765:completion:0": "Be well, ⟦70⟧. If you change your mind, I shall be here to assist you.",
+  "quest:8766:title": "The Changing of Paths - Conqueror No More",
+  "quest:8766:progress:0": "Champion, should you decide to walk another path, present me with your signet ring and a mountain of scarabs from our enemies in ⟦E22⟧.",
+  "quest:8766:completion:0": "Be well, ⟦71⟧. If you change your mind, I shall be here to assist you.",
+  "quest:8921:obj:0": "Return to ⟦E23⟧ in Gadgetzan with 1 ⟦E24⟧, 4 ⟦E25⟧, 10 ⟦E26⟧, 25 ⟦E27⟧ and 40 gold.",
+  "quest:8921:details:0": "Ah, you're in need of my latest project... the extra-dimensional ghost revealer! Unfortunately I've run out of funds and manpower.",
+  "quest:8921:details:1": "You're willing to help? Excellent! Our first task is to build a device to harvest the very fabric of death! Building an ectoplasmic distiller won't be an easy task, ⟦72⟧.",
+  "quest:8921:details:2": "I'll need you to bring me an arcanite converter, some greater eternal essences and stonescale oil. I'll also need some volcanic ash from the lava pools in the ⟦E28⟧ to build a filter.",
+  "quest:8921:progress:0": "I understand the materials are a bit pricey... but I promise you every last one of them shall be necessary!",
+  "quest:8921:completion:0": "These are precisely the materials I needed. Quite timely too, ⟦73⟧!",
+  "quest:8921:completion:1": "In mere moments I will have your distiller ready to go! In the meantime, take this as a reward for aiding me in my project.",
+  "quest:8922:obj:0": "Bring the ⟦E29⟧ to ⟦E23⟧ inside Gadgetzan in ⟦E3⟧.",
+  "quest:8922:details:0": "I must find a way to speak with ⟦E30⟧... or more specifically, his ghost!",
+  "quest:8922:details:1": "I know of an engineer with a queer interest in the supernatural. He claims he can build a machine that allows him to speak with the dead!",
+  "quest:8922:details:2": "The blood you collected was intended for him; travel to Gadgetzan and bring it to him as payment for his services!",
+  "quest:8922:progress:0": "You've something for me?",
+  "quest:8922:completion:0": "Excellent! Just as I was running low!",
+  "quest:8922:completion:1": "You say ⟦E31⟧ sent you?",
+  "quest:8923:obj:0": "Take the ⟦E32⟧ to ⟦E23⟧ in Gadgetzan.",
+  "quest:8923:details:0": "You must be quite brave to have stuck around after that. That or I've piqued your interest with the piece of armor I gave you. There is more from where that came from, if you're still interested in aiding me.",
+  "quest:8923:details:1": "The venom samples you collected are for an acquaintance of mine, ⟦E23⟧, an engineer with an interest in the supernatural. His latest project consists of a device that allows you to communicate with the dead! My last hope is to contact Anthion and find out more about my situation.",
+  "quest:8923:progress:0": "You wish to speak to me?",
+  "quest:8923:completion:0": "Excellent! Just as I was running low!",
+  "quest:8923:completion:1": "You say ⟦E34⟧ sent you?",
+  "quest:8924:obj:0": "Use the ⟦E36⟧ near incorporeal undead to collect 12 Scorched Ectoplasms in ⟦E16⟧, 12 Frozen Ectoplasms in ⟦E5⟧ and 12 Stable Ectoplasms in the ⟦E38⟧. Bring them along with the ⟦E36⟧ back to ⟦E23⟧ in Gadgetzan.",
+  "quest:8924:details:0": "A fine piece of engineering, if I do say so myself! You will need to travel a bit, I'm afraid, in order to find the incorporeal undead we require.",
+  "quest:8924:details:1": "You see, different climates lend different consistencies to the spectral fabric of the dead. The tortured night elves of ⟦E16⟧, the spirits of the highborne from ⟦E5⟧ and the ghosts and banshees of the ⟦E38⟧ should give us the different types of ectoplasm we need. Be sure to place the distiller nearby before you harvest them!",
+  "quest:8924:progress:0": "Have you gathered the ectoplasm yet, ⟦74⟧?",
+  "quest:8924:completion:0": "Yes, these will do great!",
+  "quest:8924:completion:1": "By tapping into the otherworldly energies contained within these substances we'll be able to reach out to those whose souls haven't quite left this world yet!",
+  "quest:8925:obj:0": "Find ⟦E40⟧ in the ⟦E28⟧, obtain his ⟦E41⟧ and bring it to ⟦E23⟧ in Gadgetzan.",
+  "quest:8925:details:0": "Next we shall need to find a stable and portable source of energy to keep the ectoplasm active. I've heard rumors of a mighty elemental called ⟦E40⟧, whose heart is a powerful magma core - an endless supply of heat!",
+  "quest:8925:details:1": "It's said he can be found in the ⟦E28⟧, south of ⟦E42⟧. Bring the magma core to me and we shall have enough juice to power the extra-dimensional ghost revealer!",
+  "quest:8925:progress:0": "Have you found the Magma Lord, ⟦75⟧?",
+  "quest:8925:completion:0": "You've done it! This will certainly provide enough energy to power up the extra-dimensional ghost revealer!"
+ },
+ "context": {
+  "quest:8597": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy («ناراین پیشگویی»)",
+   "turner": "Freshly Dug Dirt («خاک تازه‌کنده»)"
+  },
+  "quest:8598": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Freshly Dug Dirt («خاک تازه‌کنده»)",
+   "turner": "Narain Soothfancy («ناراین پیشگویی»)"
+  },
+  "quest:8599": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Meridith the Mermaiden («مریدیت، پری‌دریایی»)",
+   "turner": "Narain Soothfancy («ناراین پیشگویی»)"
+  },
+  "quest:8606": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy («ناراین پیشگویی»)",
+   "turner": "Narain Soothfancy («ناراین پیشگویی»)"
+  },
+  "quest:8620": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy («ناراین پیشگویی»)",
+   "turner": "Narain Soothfancy («ناراین پیشگویی»)"
+  },
+  "quest:8728": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Narain Soothfancy («ناراین پیشگویی»)",
+   "turner": "Narain Soothfancy («ناراین پیشگویی»)"
+  },
+  "quest:8742": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8747": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8748": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8749": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8750": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8751": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8752": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8753": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8754": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8755": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8756": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8757": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8758": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8759": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8760": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8761": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8764": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8765": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8766": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Anachronos («آناکرونوس»)",
+   "turner": "Anachronos («آناکرونوس»)"
+  },
+  "quest:8921": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Mux Manascrambler («ماکس آشوبگر مانا»)",
+   "turner": "Mux Manascrambler («ماکس آشوبگر مانا»)"
+  },
+  "quest:8922": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Mux Manascrambler («ماکس آشوبگر مانا»)"
+  },
+  "quest:8923": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "horde",
+   "giver": "Mokvar («موکوار»)",
+   "turner": "Mux Manascrambler («ماکس آشوبگر مانا»)"
+  },
+  "quest:8924": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Mux Manascrambler («ماکس آشوبگر مانا»)",
+   "turner": "Mux Manascrambler («ماکس آشوبگر مانا»)"
+  },
+  "quest:8925": {
+   "zone_en": "Tanaris",
+   "zone_fa": "تاناریس",
+   "level": 60,
+   "side": "",
+   "giver": "Mux Manascrambler («ماکس آشوبگر مانا»)",
+   "turner": "Mux Manascrambler («ماکس آشوبگر مانا»)"
+  }
+ },
+ "known": {
+  "quest:8597": {
+   "title": "زبان اژدرا برای آدمیزاد"
+  },
+  "quest:8598": {
+   "title": "دُغدُغه"
+  },
+  "quest:8599": {
+   "title": "ترانهٔ عاشقانه برای نارین"
+  },
+  "quest:8606": {
+   "title": "طعمه!"
+  },
+  "quest:8620": {
+   "title": "نسخهٔ نهایی دوا"
+  },
+  "quest:8728": {
+   "title": "خبر خوب و خبر بد"
+  },
+  "quest:8742": {
+   "title": "قدرت کالیم‌دور"
+  },
+  "quest:8747": {
+   "title": "راه پاسدار"
+  },
+  "quest:8748": {
+   "title": "راه پاسدار"
+  },
+  "quest:8749": {
+   "title": "راه پاسدار"
+  },
+  "quest:8750": {
+   "title": "راه پاسدار"
+  },
+  "quest:8751": {
+   "title": "پاسدار کالیم‌دور"
+  },
+  "quest:8752": {
+   "title": "راه فاتح"
+  },
+  "quest:8753": {
+   "title": "راه فاتح"
+  },
+  "quest:8754": {
+   "title": "راه فاتح"
+  },
+  "quest:8755": {
+   "title": "راه فاتح"
+  },
+  "quest:8756": {
+   "title": "فاتح کیراجی"
+  },
+  "quest:8757": {
+   "title": "راه احضارکننده"
+  },
+  "quest:8758": {
+   "title": "راه احضارکننده"
+  },
+  "quest:8759": {
+   "title": "راه احضارکننده"
+  },
+  "quest:8760": {
+   "title": "راه احضارکننده"
+  },
+  "quest:8761": {
+   "title": "احضارکنندهٔ بزرگ"
+  },
+  "quest:8921": {
+   "title": "تقطیرکن اکتوپلاسم"
+  },
+  "quest:8922": {
+   "title": "ابزاری فراطبیعی"
+  },
+  "quest:8923": {
+   "title": "ابزاری فراطبیعی"
+  },
+  "quest:8924": {
+   "title": "شکار اکتوپلاسم"
+  },
+  "quest:8925": {
+   "title": "منبع انرژی قابل حمل"
+  }
+ }
+}

@@ -1,0 +1,866 @@
+{
+ "pack": "quest-stranglethorn-vale-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stranglethorn-vale-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Hemet Nesingwary",
+   "fa": "همت نسینگ‌وری",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Soul Gem",
+   "fa": "سنگ قیمتیِ روح",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "Yenniku",
+   "fa": "ینیکو",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Bloodsail Traitor",
+   "fa": "خائن بادبان خونین",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Ajeck Rouack",
+   "fa": "آجک روآک",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Sir S. J. Erlgadin",
+   "fa": "سر اس. جی. ارلگادین",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "River Crocolisk",
+   "fa": "کروکودیسک رودخانه‌ای",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Drizzlik",
+   "fa": "دریزلیک",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Excelsior",
+   "fa": "اِکسلسیور",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "Miscellaneous Goblin Supplies",
+   "fa": "آذوقهٔ متفرقهٔ گابلین",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Private Thorsen",
+   "fa": "سرباز ثورسن",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Lieutenant Doren",
+   "fa": "ستوان دورن",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E19": {
+   "en": "Krazek",
+   "fa": "کرازک",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Stranglethorn Fever",
+   "fa": "تب استرنگل‌تورن",
+   "kind": "qs"
+  },
+  "E22": {
+   "en": "Witch Doctor Unbagwa",
+   "fa": "جادوپزشک اونباگوا",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Mokk the Savage",
+   "fa": "موک، وحشی",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Gorilla Fang",
+   "fa": "نیشِ گوریل",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Sergeant Yohwa",
+   "fa": "گروهبان یوهوا",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Colonel Kurzen",
+   "fa": "سرهنگ کورزن",
+   "kind": "qs"
+  },
+  "E30": {
+   "en": "Venom Fern Extract",
+   "fa": "عصارهٔ سرخس زهرآگین",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Nimboya",
+   "fa": "نیمبویا",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Zul'Gurub",
+   "fa": "زول‌گوروب",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Darkspear",
+   "fa": "نیزه‌تیره",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Thrall",
+   "fa": "ترال",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Bloodscalp Ears",
+   "fa": "گوش‌های بلاداسکالپ",
+   "kind": "qs"
+  },
+  "E40": {
+   "en": "Kebok",
+   "fa": "کبوک",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Baron Revilgaz",
+   "fa": "بارون ریویلگاز",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Bookie Herod's Records",
+   "fa": "دفتر حساب بوکی هرود",
+   "kind": "ob"
+  },
+  "E43": {
+   "en": "Bookie Herod",
+   "fa": "دلال شرط‌بندی هرد",
+   "kind": "qs"
+  },
+  "E44": {
+   "en": "Herod",
+   "fa": "هرود",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Crank Fizzlebub",
+   "fa": "کرانک فیزلباب",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "The Singing Crystals",
+   "fa": "بلورهای آوازخوان",
+   "kind": "qs"
+  },
+  "E47": {
+   "en": "Negolash",
+   "fa": "نگولاش",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Revenge",
+   "fa": "انتقام",
+   "kind": "sp"
+  },
+  "E49": {
+   "en": "The Venture Co.",
+   "fa": "شرکت ونچر",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Commander Aggro'gosh",
+   "fa": "فرمانده اگرو‌گوش",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Sin'Dall",
+   "fa": "سیندالل",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Hunter",
+   "fa": "شکارچی",
+   "kind": "cls"
+  },
+  "E54": {
+   "en": "Krazek's Crock Pot",
+   "fa": "دیگِ خورش‌پز کرازیگ",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Small Brass Key",
+   "fa": "کلیدِ برنجِ کوچک",
+   "kind": "it"
+  },
+  "E57": {
+   "en": "Bookie Herod's Strongbox",
+   "fa": "صندوق محکم بوکی هرود",
+   "kind": "ob"
+  },
+  "E58": {
+   "en": "Muddy Note",
+   "fa": "یادداشتِ گلی",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Corporal Sethman",
+   "fa": "سرجوخه ست‌من",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Hemet Nesingwary": "همت نسینگ‌وری",
+  "Alliance": "اتحاد",
+  "Soul Gem": "سنگ قیمتیِ روح",
+  "Yenniku": "ینیکو",
+  "silk": "ابریشم",
+  "Bloodsail Traitor": "خائن بادبان خونین",
+  "Ajeck Rouack": "آجک روآک",
+  "Sir S. J. Erlgadin": "سر اس. جی. ارلگادین",
+  "River Crocolisk": "کروکودیسک رودخانه‌ای",
+  "Drizzlik": "دریزلیک",
+  "Booty Bay": "خلیج غنیمت",
+  "Excelsior": "اِکسلسیور",
+  "Miscellaneous Goblin Supplies": "آذوقهٔ متفرقهٔ گابلین",
+  "Private Thorsen": "سرباز ثورسن",
+  "Lieutenant Doren": "ستوان دورن",
+  "Duskwood": "جنگل تاریک",
+  "Krazek": "کرازک",
+  "Stranglethorn Fever": "تب استرنگل‌تورن",
+  "Witch Doctor Unbagwa": "جادوپزشک اونباگوا",
+  "Mokk the Savage": "موک، وحشی",
+  "Gorilla Fang": "نیشِ گوریل",
+  "Sergeant Yohwa": "گروهبان یوهوا",
+  "Colonel Kurzen": "سرهنگ کورزن",
+  "Venom Fern Extract": "عصارهٔ سرخس زهرآگین",
+  "Nimboya": "نیمبویا",
+  "Zul'Gurub": "زول‌گوروب",
+  "Darkspear": "نیزه‌تیره",
+  "Thrall": "ترال",
+  "Orgrimmar": "اورگریمار",
+  "Bloodscalp Ears": "گوش‌های بلاداسکالپ",
+  "Kebok": "کبوک",
+  "Baron Revilgaz": "بارون ریویلگاز",
+  "Bookie Herod's Records": "دفتر حساب بوکی هرود",
+  "Bookie Herod": "دلال شرط‌بندی هرد",
+  "Herod": "هرود",
+  "Crank Fizzlebub": "کرانک فیزلباب",
+  "The Singing Crystals": "بلورهای آوازخوان",
+  "Negolash": "نگولاش",
+  "Revenge": "انتقام",
+  "The Venture Co.": "شرکت ونچر",
+  "Commander Aggro'gosh": "فرمانده اگرو‌گوش",
+  "Horde": "هورد",
+  "Sin'Dall": "سیندالل",
+  "Hunter": "شکارچی",
+  "Krazek's Crock Pot": "دیگِ خورش‌پز کرازیگ",
+  "Small Brass Key": "کلیدِ برنجِ کوچک",
+  "Bookie Herod's Strongbox": "صندوق محکم بوکی هرود",
+  "Muddy Note": "یادداشتِ گلی",
+  "Corporal Sethman": "سرجوخه ست‌من"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$N",
+  "3": "$C",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$n",
+  "12": "$n",
+  "13": "$c",
+  "14": "$N",
+  "15": "$n",
+  "16": "$B",
+  "17": "$B",
+  "18": "$R",
+  "19": "$n",
+  "20": "$B",
+  "21": "$B",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$B",
+  "28": "$c",
+  "29": "$c",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$C",
+  "36": "$B",
+  "37": "$B",
+  "38": "$N",
+  "39": "$n",
+  "40": "$B",
+  "41": "$B",
+  "42": "$N",
+  "43": "$B",
+  "44": "$B",
+  "45": "$N",
+  "46": "$n",
+  "47": "$B",
+  "48": "$B",
+  "49": "$n",
+  "50": "$c",
+  "51": "$c",
+  "52": "$C",
+  "53": "$B",
+  "54": "$B",
+  "55": "$B",
+  "56": "$B",
+  "57": "$N",
+  "58": "$r",
+  "59": "$N",
+  "60": "$N"
+ },
+ "rows": {
+  "quest:583:obj:0": "Speak with ⟦E1⟧",
+  "quest:583:details:0": "Welcome to Stranglethorn!",
+  "quest:583:details:1": "Perhaps you're not aware of this, but that dwarf over there is the one and only ⟦E1⟧, renowned war hero of the ⟦E2⟧ and master big game hunter. He's not one for welcoming strangers into his camp, but you look like you've seen quite a bit of action in your day, ⟦1⟧.",
+  "quest:583:details:2": "Being a veteran of many battles himself, Master Nesingwary has a soft spot for fellow heroes.",
+  "quest:583:details:3": "Go and speak with him. Perhaps he can give you some hunting pointers.",
+  "quest:583:completion:0": "Jolly nice to make your acquaintance, ⟦2⟧. Haven't seen a ⟦3⟧ around these parts for some time.",
+  "quest:583:completion:1": "I situated myself with this expedition for one purpose: to hunt a great and elusive beast. Seeing that you're a hero of sorts I am willing to let you take part in the hunt, but you must first prove yourself.",
+  "quest:583:completion:2": "I shall teach the ways of raptor killing to you. Ajeck will train you with tiger hunting. And Sir Erlgadin is a master of panther tracking.",
+  "quest:583:completion:3": "Prove your skill and I'll let you in on the big hunt.",
+  "quest:593:title": "Filling the ⟦E3⟧",
+  "quest:593:progress:0": "⟦E4⟧ stands stunned before you, his mind in another place...",
+  "quest:593:completion:0": "You place the ⟦E3⟧ upon his forehead. He shudders as his soul is sucked in, leaving his body, a mindless husk, behind.",
+  "quest:9259:title": "Traitor to the Bloodsail",
+  "quest:9259:progress:0": "That mangy dog, Revilgaz, has offered to pardon any former Bloodsails willing to turn on their cap'n! That bilge sucker asked me to go an' off me ole' mates and to bring back their bandannas as proof.⟦4⟧⟦5⟧I don't have it in me heart to do that, nor will I ask ye to. Bring me some ⟦E5⟧ cloth and red dye and I'll make suitable replicas. I'll tell the Baron you went turncoat, but be warned... the Bloodsails are not gonna like it!",
+  "quest:9259:completion:0": "Let us observe a minute of silence for our fallen mates, ⟦6⟧.⟦7⟧⟦8⟧<The ⟦E7⟧ grins at you and winks.>⟦9⟧⟦10⟧Being a traitor is one thing, murdering yer own buckos... that'd be just downright despicable, aye!",
+  "quest:185:obj:0": "⟦E8⟧ of Nesingwary's Expedition wants you to kill 10 Young Stranglethorn Tigers.",
+  "quest:185:details:0": "When I was but a young girl, my father trained me in the art of tiger hunting.",
+  "quest:185:details:1": "You'll find the young felines much easier to track and slay. For this reason, we'll start you out easy. One can often find young tigers near the expedition camp.",
+  "quest:185:details:2": "Test your tracking skills and see if you can hunt some of the beasts down.",
+  "quest:185:progress:0": "I don't feel confident in training you further, ⟦11⟧, until you have proven yourself skilled in slaying the youngest of the tigers first.",
+  "quest:185:completion:0": "Nicely done, ⟦12⟧. You are ready to move on.",
+  "quest:190:obj:0": "⟦E10⟧ of Nesingwary's Expedition wants you to kill 10 Young Panthers.",
+  "quest:190:details:0": "If you want to be a part of the hunt with this crack group under Hemet's leadership, you're going to need to prove yourself an able panther hunter. We'll start you out easy -- don't you worry. Let's see you kill 10 young panthers to start.",
+  "quest:190:details:1": "Tracking them down is only half the challenge...",
+  "quest:190:progress:0": "A true panther hunter would be out in the fields, trying to stalk his prey. Show some commitment to your goal, ⟦13⟧, and get back out there.",
+  "quest:190:completion:0": "Off to a good start, ⟦14⟧!",
+  "quest:575:obj:0": "Bring 2 Large ⟦E11⟧ Skins to ⟦E12⟧ in ⟦E13⟧.",
+  "quest:575:details:0": "\"The finest leathercrafter of the South Seas and the worlds old and new.\" That's what they call me. Me! ⟦E12⟧! The finest lea... Ahem. Well.",
+  "quest:575:details:1": "My leather goods are known far and wide as the most exquisite, a connoisseur's choice!",
+  "quest:575:details:2": "I've just received an order from Director Riddlevox of the Tinkers' Union for a dozen of his favorite ⟦E14⟧-line boots. Our best sellers, actually.",
+  "quest:575:details:3": "To start on the basic shape, I'll need crocolisk skins from the crocs along the river in northern Stranglethorn.",
+  "quest:575:progress:0": "My equipment is all ready to go, ⟦15⟧, I just need those skins. We don't want to keep Riddlevox waiting, that's for sure.⟦16⟧⟦17⟧It's not a good idea for anyone to keep the chief inventor of the Tinkers' Union unsatisfied.",
+  "quest:575:completion:0": "These skins should do. Their quality isn't too important, given that they'll make up the inside layer of the boots, but it's still important that they're comfortable.",
+  "quest:575:completion:1": "If they're a bit too rigid, I'll use some tiger blood to soften it up. Tricks o' the trade, you know?",
+  "quest:198:obj:0": "Deliver the ⟦E15⟧ to ⟦E16⟧.",
+  "quest:198:details:0": "Hmm. Yes, I do have something you could do, actually. ⟦E17⟧ and his followers up in the north need their regular supplies from us.",
+  "quest:198:details:1": "They haven't been delivered, and with the trolls attacking, I'll need someone to do it. Doren's camp lies northwest of the road at the entrance to Stranglethorn from ⟦E18⟧. Give the supplies to ⟦E16⟧, if he's not in the camp, then he'll be patrolling south of it. He'll take care of them.",
+  "quest:198:details:2": "Mind you, if you fail, you'll owe me restitution.",
+  "quest:198:progress:0": "Yes? What do you want? Oh, supplies from the goblins. Strange seeing a ⟦18⟧ delivering them, usually they send their own. No matter... you didn't touch them did you? Good good... we wouldn't want anything to happen to our mines, oh no.",
+  "quest:198:completion:0": "These land mines will help us defend ourselves from that animal Kurzen and his men. Thank you for bringing them. If you need further work, I can probably find something for you to do. And you won't have to deal with those goblins, hm?",
+  "quest:201:obj:0": "Find the hunters' camp and report its location to ⟦E19⟧ in ⟦E13⟧.",
+  "quest:201:details:0": "I've gotten reports of a group of hunters that have set up camp upriver of the Venture Company mining camp on Lake Nazferiti. Now, normally I wouldn't care, but improbably, I heard that ⟦E1⟧ was one of the hunters there. He's certainly well-connected, if you catch my meaning, and you never can be too safe.",
+  "quest:201:details:1": "Why don't you go check out the camp, ⟦19⟧, see what they're about?",
+  "quest:201:progress:0": "Well?  Did you have any luck in locating the camp?",
+  "quest:201:completion:0": "Hmmm, so my information was correct, as usual. Interesting. Well, I don't suppose they pose any sort of threat of interference with our operation, but perhaps they have a need for some of our excellent manufactured products. Hmmm...",
+  "quest:349:title": "⟦E21⟧",
+  "quest:349:desc:0": "Speak with ⟦E22⟧.",
+  "quest:349:obj:0": "Speak with ⟦E22⟧.",
+  "quest:349:details:0": "Speak with ⟦E22⟧.",
+  "quest:349:progress:0": "⟦E22⟧ knows what ⟦E23⟧ like. Yes, yes!⟦20⟧⟦21⟧Me speak with spirits and make he come, I do.⟦22⟧⟦23⟧But other Gorilla-beast like spirit talkin' too. You protect ⟦E22⟧ and I make he come to you.⟦24⟧⟦25⟧⟦E22⟧ want something first. You bring a ⟦E24⟧ and me start spirit talking!",
+  "quest:349:completion:0": "⟦E22⟧ like Gorilla Fangs! For you I talk to spirits. Make ⟦E23⟧ come.⟦26⟧⟦27⟧You protect ⟦E22⟧ from other Gorilla-beast through or no Mokk for you!",
+  "quest:186:obj:0": "⟦E8⟧ of Nesingwary's Expedition wants you to kill 10 Stranglethorn Tigers.",
+  "quest:186:details:0": "You are learning, ⟦28⟧. Let us test your skills with the mature cats now. Kill 10 Stranglethorn Tigers this time out.",
+  "quest:186:progress:0": "If you strive for greater challenges you must first prove yourself with the task at hand. Return to me after you've killed 10 Stranglethorn Tigers.",
+  "quest:186:completion:0": "I am impressed, ⟦29⟧. You are progressing quite well.",
+  "quest:191:obj:0": "⟦E10⟧ of Nesingwary's Expedition wants you to kill 10 Panthers.",
+  "quest:191:details:0": "Now you're ready to turn it up a notch. If you want to prove yourself worthy of socializing with the likes of these big game hunters, you'll need to prove that you can kill 10 panthers.",
+  "quest:191:details:1": "Those big boys are tougher. They're not as easy as the young ones you were killing earlier.",
+  "quest:191:progress:0": "Go kill 10 panthers! Show us what you've got!",
+  "quest:191:completion:0": "Perfectly executed, ⟦30⟧!",
+  "quest:203:obj:0": "Kill 15 Kurzen Jungle Fighters.",
+  "quest:203:obj:1": "Return to ⟦E25⟧ at the Rebel Camp.",
+  "quest:203:details:0": "We're fighting a losing battle with ⟦E27⟧. Not only is he a brilliant tactician, he outnumbers us at least 10 to 1! To survive, we need to use his own, covert tactics against him.",
+  "quest:203:details:1": "Enter his camp to the east and kill his men. Lots of them. And get out before reinforcements can close on you.",
+  "quest:203:progress:0": "I hope you've been successful in your hunting, ⟦31⟧. We won't last long against him without your help.",
+  "quest:203:completion:0": "Well done. The loss of those Jungle Fighters will relieve some of the pressure on our camp.",
+  "quest:203:completion:1": "But now that you've had a taste of the forces we're up against, do you still want to throw your lot in with us??",
+  "quest:215:obj:0": "Speak with ⟦E17⟧ at the Rebel Camp.",
+  "quest:215:details:0": "Thank you for saving me, ⟦32⟧. I know how this looks, but...allow me to explain.",
+  "quest:215:details:1": "I was charged by ⟦E17⟧ to re-enlist with Kurzen's men, so that I might spy on them and bring sorely needed intelligence to the rebels. You saw here what I had thought would be my chance to infiltrate Kurzen's Compound. I was wrong, and again, thanks for saving me.",
+  "quest:215:details:2": "This was a top secret mission, so you must tell no one. But if you speak with Doren he will explain.",
+  "quest:215:completion:0": "Yes, what Thorsen told you is true. You must be discrete with this. At one time, we rebels were fiercely loyal to ⟦E27⟧. But such was Kurzen's corruption, our passion twisted into rage. If it was made known that ⟦E16⟧ has had recent dealings with Kurzen's men, then one night he would find himself with a slit throat.",
+  "quest:215:completion:1": "To my knowledge, only ⟦E25⟧, Thorsen and I were privy to Thorsen's mission. But there must be another. A traitor.",
+  "quest:194:obj:0": "⟦E1⟧ wants you to kill 10 Stranglethorn Raptors.",
+  "quest:194:details:0": "So you think your hunting skills are in tip-top shape? I can put them to the test in a jiffy. Head out into that jungle and kill 10 Stranglethorn Raptors. We'll see just how much of a big game hunter you are.",
+  "quest:194:details:1": "And no, I won't tell you where you can find them! Locating the beasts is half the challenge.",
+  "quest:194:progress:0": "I never met a hunter who got any kills by standing around the campfire. Were you planning on killing those Stranglethorn Raptors or were you hoping they would die of old age?",
+  "quest:194:completion:0": "Nicely done, old chap!",
+  "quest:204:obj:0": "Bring 7 Jungle Remedies and 1 ⟦E30⟧ to ⟦E25⟧ at the Rebel Camp.",
+  "quest:204:details:0": "To have a chance against Kurzen, we need his healing support neutralized. He has gathered a large number of Medicine Men who heal his forces with Jungle Remedies and poison our fighters with Venom Fern Extracts.",
+  "quest:204:details:1": "We need those remedies and extracts for our own. Search the Kurzen Compound - his Medicine Men and Jungle fighers will have the remedies, and the extracts are probably stowed in some of the camp's supply boxes.",
+  "quest:204:progress:0": "I'm waiting on those remedies and that extract, ⟦33⟧.",
+  "quest:204:completion:0": "Well done, ⟦34⟧. These remedies will keep more of us alive and in fighting shape. And the extracts will help us create our own remedies.",
+  "quest:581:obj:0": "Bring 9 Bloodscalp Tusks to ⟦E33⟧ at the Grom'gol Base Camp.",
+  "quest:581:details:0": "A doom, there is. A doom on my chief's youngest son, ⟦E4⟧. As is a custom with our people, he was given to the Gurubashi Trolls of ⟦E35⟧, but after my tribe, the ⟦E36⟧ tribe, left with the orc ⟦E37⟧, poor ⟦E4⟧ was lost to us. I was sent from distant ⟦E38⟧, back to Stranglethorn, to search for my chief's son.",
+  "quest:581:details:1": "And I believe the Bloodscalp tribe has him.",
+  "quest:581:details:2": "If you would help me, then hunt the Bloodscalps. You may find them to the north. Gather their tusks and return to me.",
+  "quest:581:progress:0": "⟦35⟧. Show me you have made prey of the Bloodscalp tribe.⟦36⟧⟦37⟧Show me your trophies.",
+  "quest:581:completion:0": "These are good tusks, ⟦38⟧. You prove that you have the strength to hunt the Bloodscalps.",
+  "quest:581:completion:1": "And that is good, because you are not done hunting them.",
+  "quest:187:obj:0": "⟦E8⟧ of Nesingwary's Expedition wants you to kill 10 Elder Stranglethorn Tigers.",
+  "quest:187:details:0": "Now I'm going to up the stakes on you and truly test your skill. Prove to me you can kill 10 Elder Stranglethorn Tigers. If you can do that, you will be ready for your final challenge before I declare you a master tiger hunter in Master Nesingwary's presence.",
+  "quest:187:details:1": "Elder Stranglethorn Tigers are not only the most difficult to find, they are also the fiercest to defeat.",
+  "quest:187:progress:0": "You must kill 10 Elder Stranglethorn Tigers before I give you the final challenge that will determine if you are a true tiger hunting master.",
+  "quest:187:completion:0": "Most impressive. I believe you are almost ready.",
+  "quest:189:obj:0": "Acquire 15 ⟦E39⟧ and return them to ⟦E40⟧ in ⟦E13⟧.",
+  "quest:189:details:0": "Damn trolls! They've been killing off our agents in the jungle! I've already lost a good number of my best guards to skirmishes with them. The costs are piling up! How will I explain this to ⟦E41⟧?",
+  "quest:189:details:1": "Decisive action... Think, ⟦E40⟧... you weren't assigned to the post you have today for sitting around... I've got it! You... ⟦39⟧, is it? You'll help me, won't you? There's money to be had!",
+  "quest:189:details:2": "Here's the deal... you bring me the ears of fifteen Bloodscalp Trolls, and I'll compensate you well.",
+  "quest:189:progress:0": "You've had success I hope? All over the place, those trolls. Filthy devils.⟦40⟧⟦41⟧Oh yes, that reminds me! Be sure to tell your friends, yes? We could use much assistance!",
+  "quest:189:completion:0": "Oh excellent, excellent. That'll help a little, for the present...",
+  "quest:189:completion:1": "B<He trails off, grumbling about profit margins and costs...>",
+  "quest:189:completion:2": "What? You're still here? Reward? Oh, right... of course, here, take this... it should be more than enough.",
+  "quest:200:obj:0": "Find ⟦E42⟧.",
+  "quest:200:details:0": "If Kurzen knows Thorsen's secret, then we have a spy in our midst. We must determine how the secret was leaked!",
+  "quest:200:details:1": "Thorsen's contact within Kurzen's camp was ⟦E43⟧. ⟦E44⟧ is Kurzen's logistics officer and knows everything about the running of Kurzen's Compound. If you can get ⟦E44⟧'s notes or records, maybe we can find out how Thorsen was discovered.",
+  "quest:200:details:2": "When we were still with Kurzen, Bookie's office was on the top floor of the camp's only two-story house. His records are probably still there.",
+  "quest:200:completion:0": "These are ⟦E43⟧'s notes and records.",
+  "quest:200:completion:1": "Among them are: a list of supplies within the camp, material requests from ⟦E27⟧, and various letters and correspondences.",
+  "quest:605:obj:0": "Bring 10 Singing Crystal Shards to ⟦E45⟧.",
+  "quest:605:details:0": "⟦E46⟧ are unique to Stranglethorn, and are very valuable to certain parties. I can move those crystals, but the cursed Venture Company makes it hard for an honest entrepreneur like myself to gather any!",
+  "quest:605:details:1": "I'd like to hire you.",
+  "quest:605:details:2": "The basilisks in Stranglethorn eat the crystal. This gives them their hardened skin, and sometimes decent quality crystal can be harvested from it.",
+  "quest:605:details:3": "You can get it from any basilisk, but the less nasty ones are along the shores south of Zul'Kunda, to the north.",
+  "quest:605:progress:0": "Do you have those shards yet?  I'll give you a decent cut from the profits!",
+  "quest:605:completion:0": "Aha! These will do nicely, ⟦42⟧. Yes, quite nicely!",
+  "quest:605:completion:1": "Here is your cut, and...it was a pleasure doing business with you.",
+  "quest:619:title": "Enticing ⟦E47⟧",
+  "quest:619:progress:0": "This is an abandoned lifeboat.  Printed along its side in scratched, faded paint are the words:⟦43⟧⟦44⟧\"Smotts' ⟦E48⟧\"",
+  "quest:619:completion:0": "You pile food and drink upon the raft...",
+  "quest:195:obj:0": "⟦E1⟧ wants you to kill 10 Lashtail Raptors.",
+  "quest:195:details:0": "Now let's step up the challenge and see if you're up to it. Venture into the jungle and bag yourself 10 of those bloody Lashtail Raptors. Let's see what you've got!",
+  "quest:195:progress:0": "A true hunter sets his focus on his prey. You, my friend, seem more concerned with chit-chatting around the campfire. Now get out there and kill 10 Lashtails before I go and rid the entire bloody jungle of them in one hunt.",
+  "quest:195:completion:0": "Now that's how you get a trophy or two over the ol' hearth! Nice killing, ⟦45⟧!",
+  "quest:213:obj:0": "Retrieve 8 Tumbled Crystals and return them to ⟦E40⟧ in ⟦E13⟧.",
+  "quest:213:details:0": "He's done it this time! Bad enough that Gelriz's muscling out the moguls who were appointed by the trade princes, now he tries to cut in on the most notorious pirate!",
+  "quest:213:details:1": "Revilgaz won't have it, and he's told me to take care of the problem in my own way.",
+  "quest:213:details:2": "My way? Theft. ⟦E49⟧ geologists near Lake Nazferiti are deeply interested in those strange blue crystals they have been finding in the mines. Bring me samples of the stone from their geologists, I don't care what you have to do to get them.",
+  "quest:213:progress:0": "I need those stones, ⟦46⟧. By whatever means necessary! Just do it, don't give me the details!⟦47⟧⟦48⟧It's about results, ⟦49⟧, nothing more, nothing less.",
+  "quest:213:completion:0": "Fascinating. That the crystals have been tumbled using this process can only indicate that they are planning to use them as some sort of fuel or other catalyst. I don't know much more than that. Samples will have to be dispatched to Head Chemist Gigglefont.",
+  "quest:568:obj:0": "⟦E50⟧ of the Grom'gol base camp wants you to kill 15 Lashtail Raptors.",
+  "quest:568:details:0": "Throm'ka, ⟦50⟧!",
+  "quest:568:details:1": "Your arrival at Grom'gol is timely, indeed. As commander of the Warchief's base camp here in the jungle I am bound by honor to ensure the safety of all members of the ⟦E51⟧. Our mission to provide a safe chain of supply to Stonard is being hampered by some of the local inhabitants.",
+  "quest:568:details:2": "I am putting you in charge of thinning out the raptor population outside of Grom'gol. Once you have made significant progress, report back to me for reassignment.",
+  "quest:568:progress:0": "Our supply efforts are still being hampered by the indigenous raptor population, ⟦51⟧.",
+  "quest:568:completion:0": "Your duty was performed with honor, ⟦52⟧.",
+  "quest:577:obj:0": "Bring 5 Snapjaw Crocolisks Skins to ⟦E12⟧ in ⟦E13⟧.",
+  "quest:577:details:0": "Well, I've got the basic shape of the boots worked out, and they're coming along fine, but the skins you brought aren't going to be quite enough for the inner layers.",
+  "quest:577:details:1": "B\"What are we going to do, ⟦E12⟧?\" No doubt the question on your lips, and well, isn't it lucky you're talking to ⟦E12⟧, because he's going to tell you what we're going to do!",
+  "quest:577:details:2": "The inner layers will never really be seen, so we'll just get some of the thicker, cheaper skins from the crocs around Lake Nazferiti to fill the boots out.",
+  "quest:577:progress:0": "⟦E12⟧'s ⟦E14⟧ leather boots, finest workmanship, one-hundred percent high quality saltwater crocilisk skin boots. None finer!⟦53⟧⟦54⟧Can't beat a glowing description like that, can you?⟦55⟧⟦56⟧Except, maybe, if you have those skins for me?",
+  "quest:577:completion:0": "My boots... they're like sausages, ⟦57⟧. Look great, taste great. I tell you they're filled with nothing but the finest ingredients and meats, and you eat it, and you love it.",
+  "quest:577:completion:1": "It's safer--and more enjoyable--if you just trust me, and don't ask too carefully what's really inside.",
+  "quest:188:obj:0": "⟦E8⟧ of Nesingwary's Expedition wants you to kill ⟦E52⟧ and return with her paw.",
+  "quest:188:details:0": "Here is the final challenge that I will put forth. We've been tracking an elusive tiger for weeks. We call the beast ⟦E52⟧. See if you can do what no ⟦58⟧ has done before: hunt down and kill ⟦E52⟧. Bring me her paw as proof of your accomplishment.",
+  "quest:188:details:1": "Tracking her down will be no easy task.",
+  "quest:188:progress:0": "How goes the hunt for ⟦E52⟧?",
+  "quest:188:completion:0": "Most impressive, I do say! You are a true Master Tiger ⟦E53⟧, ⟦59⟧!",
+  "quest:210:obj:0": "Bring ⟦E54⟧ to ⟦E19⟧ the goblin.",
+  "quest:210:details:0": "I do most of the cooking at the camp. And it used to be a lot of work, until I bought a mechanical cooking pot from a goblin merchant in ⟦E13⟧. The pot is a wonder! It saved me countless hours...until it broke!",
+  "quest:210:details:1": "Can you take the pot back to the goblin for me so he can fix it? His name is ⟦E19⟧.",
+  "quest:210:progress:0": "Hello! You brought me something?",
+  "quest:210:completion:0": "Oh I see, it's a ⟦E54⟧! An ingenious piece of work, but it can break a spring or throw a gear now and then. Let me see what's wrong with this one...",
+  "quest:210:completion:1": "Aha! Its steam charger is rusted out, it has a cracked knuckle-gasket and its fobulator is missing teeth. I'm surprised the pot could even boil a turnip in this state!",
+  "quest:210:completion:2": "Can I fix it? Of course I can fix it!",
+  "quest:210:completion:3": "But there's a price. Oh yes, there is always a price...",
+  "quest:328:obj:0": "Use the ⟦E56⟧ to open ⟦E57⟧.",
+  "quest:328:details:0": "Although no mention of ⟦E16⟧ is found in these records, hidden within the binding of one of ⟦E44⟧'s ledger books is a small, brass key.",
+  "quest:328:details:1": "And after further study of his notes, a few references to a \"secure strongbox\" are contained among various papers. The box is somewhere within the Stockpile - the cavern complex at the back of Kurzen's Compound.",
+  "quest:328:details:2": "If this secure strongbox is found, and the small brass key can open it, then perhaps the mystery behind Thorsen's detection will be revealed.",
+  "quest:328:progress:0": "The strongbox is bound in bronze, very sturdy, and very heavy.",
+  "quest:328:completion:0": "Opening the strongbox, it's clear that this is where ⟦E44⟧ keeps his more valuable coins and items.",
+  "quest:329:obj:0": "Take the ⟦E58⟧ to ⟦E17⟧ at the Rebel Camp.",
+  "quest:329:details:0": "Among the valuables of the strongbox is a muddy, scribbled note. Although barely legible, it looks to be an itinerary for ⟦E16⟧. It details his patrol routes, who he speaks with and how he spends his time with the rebels. It's signed with only one letter: -M.",
+  "quest:329:details:1": "But whoever wrote this note must have stayed very close to Thorsen. Whoever wrote this note is the traitor within the rebel camp.",
+  "quest:329:progress:0": "Did you discover who knew Thorsen's secret? Is there a traitor among us?",
+  "quest:329:completion:0": "Thank you, ⟦60⟧. This note is the clue we need to root out the traitor!",
+  "quest:330:obj:0": "Speak with ⟦E60⟧.",
+  "quest:330:details:0": "The note you gave me is signed with an \"-M\"...I don't know what that could mean.",
+  "quest:330:details:1": "But...the note also says this person shared patrol routes with Thorsen last week. So whoever shared patrol with Thorsen last week must be the traitor!",
+  "quest:330:details:2": "Go to ⟦E60⟧. He handles the patrol schedules and can tell you who was with Thorsen.",
+  "quest:330:completion:0": "Oh, yes I can check that for you. Let's see...last week it was...",
+  "quest:330:completion:1": "B...why, it was Private Merle scheduled with Thorsen. They had the same patrol times all of last week."
+ },
+ "context": {
+  "quest:583": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 30,
+   "side": "",
+   "giver": "Barnil Stonepot («بارنیل دیگ‌سنگ»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  },
+  "quest:593": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 30,
+   "side": "horde",
+   "giver": "",
+   "turner": "Yenniku («ینیکو»)"
+  },
+  "quest:9259": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 30,
+   "side": "",
+   "giver": "",
+   "turner": "Bloodsail Traitor («خائن بادبان خونین»)"
+  },
+  "quest:185": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 31,
+   "side": "",
+   "giver": "Ajeck Rouack («آجک روآک»)",
+   "turner": "Ajeck Rouack («آجک روآک»)"
+  },
+  "quest:190": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 31,
+   "side": "",
+   "giver": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)",
+   "turner": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)"
+  },
+  "quest:575": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 31,
+   "side": "",
+   "giver": "Drizzlik («دریزلیک»)",
+   "turner": "Drizzlik («دریزلیک»)"
+  },
+  "quest:198": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 32,
+   "side": "alliance",
+   "giver": "Krazek («کرازک»)",
+   "turner": "Private Thorsen («سرباز ثورسن»)"
+  },
+  "quest:201": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 32,
+   "side": "",
+   "giver": "Krazek («کرازک»)",
+   "turner": "Krazek («کرازک»)"
+  },
+  "quest:349": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 32,
+   "side": "",
+   "giver": "",
+   "turner": "Witch Doctor Unbagwa («جادوپزشک اونباگوا»)"
+  },
+  "quest:186": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 33,
+   "side": "",
+   "giver": "Ajeck Rouack («آجک روآک»)",
+   "turner": "Ajeck Rouack («آجک روآک»)"
+  },
+  "quest:191": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 33,
+   "side": "",
+   "giver": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)",
+   "turner": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)"
+  },
+  "quest:203": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Sergeant Yohwa («گروهبان یوهوا»)",
+   "turner": "Sergeant Yohwa («گروهبان یوهوا»)"
+  },
+  "quest:215": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 33,
+   "side": "alliance",
+   "giver": "Private Thorsen («سرباز ثورسن»)",
+   "turner": "Lieutenant Doren («ستوان دورن»)"
+  },
+  "quest:194": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 34,
+   "side": "",
+   "giver": "Hemet Nesingwary («همت نسینگ‌وری»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  },
+  "quest:204": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 34,
+   "side": "alliance",
+   "giver": "Sergeant Yohwa («گروهبان یوهوا»)",
+   "turner": "Sergeant Yohwa («گروهبان یوهوا»)"
+  },
+  "quest:581": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 34,
+   "side": "horde",
+   "giver": "Nimboya («نیمبویا»)",
+   "turner": "Nimboya («نیمبویا»)"
+  },
+  "quest:187": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 35,
+   "side": "",
+   "giver": "Ajeck Rouack («آجک روآک»)",
+   "turner": "Ajeck Rouack («آجک روآک»)"
+  },
+  "quest:189": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 35,
+   "side": "",
+   "giver": "Kebok («کبوک»)",
+   "turner": "Kebok («کبوک»)"
+  },
+  "quest:200": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 35,
+   "side": "alliance",
+   "giver": "Lieutenant Doren («ستوان دورن»)",
+   "turner": "Bookie Herod's Records («دفتر حساب بوکی هرود»)"
+  },
+  "quest:605": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 35,
+   "side": "",
+   "giver": "Crank Fizzlebub («کرانک فیزلباب»)",
+   "turner": "Crank Fizzlebub («کرانک فیزلباب»)"
+  },
+  "quest:619": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 35,
+   "side": "",
+   "giver": "Ruined Lifeboat («قایق نجات ویران»)",
+   "turner": "Ruined Lifeboat («قایق نجات ویران»)"
+  },
+  "quest:195": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 36,
+   "side": "",
+   "giver": "Hemet Nesingwary («همت نسینگ‌وری»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  },
+  "quest:213": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 36,
+   "side": "",
+   "giver": "Kebok («کبوک»)",
+   "turner": "Kebok («کبوک»)"
+  },
+  "quest:568": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 36,
+   "side": "horde",
+   "giver": "Commander Aggro'gosh («فرمانده اگرو‌گوش»)",
+   "turner": "Commander Aggro'gosh («فرمانده اگرو‌گوش»)"
+  },
+  "quest:577": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 36,
+   "side": "",
+   "giver": "Drizzlik («دریزلیک»)",
+   "turner": "Drizzlik («دریزلیک»)"
+  },
+  "quest:188": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "",
+   "giver": "Ajeck Rouack («آجک روآک»)",
+   "turner": "Ajeck Rouack («آجک روآک»)"
+  },
+  "quest:210": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Corporal Kaleb («سرجوخه کالب»)",
+   "turner": "Krazek («کرازک»)"
+  },
+  "quest:328": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Bookie Herod's Records («دفتر حساب بوکی هرود»)",
+   "turner": "Bookie Herod's Strongbox («صندوق محکم بوکی هرود»)"
+  },
+  "quest:329": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Bookie Herod's Strongbox («صندوق محکم بوکی هرود»)",
+   "turner": "Lieutenant Doren («ستوان دورن»)"
+  },
+  "quest:330": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Lieutenant Doren («ستوان دورن»)",
+   "turner": "Corporal Sethman («سرجوخه ست‌من»)"
+  }
+ },
+ "known": {
+  "quest:583": {
+   "title": "به جنگل خوش آمدید"
+  },
+  "quest:185": {
+   "title": "تسلط بر ببرها"
+  },
+  "quest:190": {
+   "title": "تسلط بر پلنگ‌ها"
+  },
+  "quest:575": {
+   "title": "عرضه و تقاضا"
+  },
+  "quest:198": {
+   "title": "لوازم برای سرباز ثورسن"
+  },
+  "quest:201": {
+   "title": "بررسی اردوگاه"
+  },
+  "quest:186": {
+   "title": "تسلط بر ببرها"
+  },
+  "quest:191": {
+   "title": "تسلط بر پلنگ‌ها"
+  },
+  "quest:203": {
+   "title": "شورش دوم"
+  },
+  "quest:215": {
+   "title": "رازهای جنگل"
+  },
+  "quest:194": {
+   "title": "تسلط بر رپتورها"
+  },
+  "quest:204": {
+   "title": "داروی بد"
+  },
+  "quest:581": {
+   "title": "شکار ینیکو"
+  },
+  "quest:187": {
+   "title": "تسلط بر ببرها"
+  },
+  "quest:189": {
+   "title": "گوش‌های بلاداسکالپ"
+  },
+  "quest:200": {
+   "title": "دلال شرط‌بندی هرد"
+  },
+  "quest:605": {
+   "title": "خرده‌سنگ‌های آوازخوان آبی"
+  },
+  "quest:195": {
+   "title": "تسلط بر رپتورها"
+  },
+  "quest:213": {
+   "title": "تصاحب خصمانه"
+  },
+  "quest:568": {
+   "title": "دفاع از گروم‌گول"
+  },
+  "quest:577": {
+   "title": "چیزی برای مونتاژ"
+  },
+  "quest:188": {
+   "title": "تسلط بر ببرها"
+  },
+  "quest:210": {
+   "title": "آشپزی کراژک"
+  },
+  "quest:328": {
+   "title": "کلید پنهان"
+  },
+  "quest:329": {
+   "title": "جاسوس افشا شد!"
+  },
+  "quest:330": {
+   "title": "برنامه‌های گشت‌زنی"
+  }
+ }
+}

@@ -1,0 +1,936 @@
+{
+ "pack": "quest-stranglethorn-vale-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stranglethorn-vale-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Lieutenant Doren",
+   "fa": "ستوان دورن",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Colonel Kurzen",
+   "fa": "سرهنگ کورزن",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Commander Aggro'gosh",
+   "fa": "فرمانده اگرو‌گوش",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E5": {
+   "en": "Baron Revilgaz",
+   "fa": "بارون ریویلگاز",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Stone of the Tides",
+   "fa": "سنگ جزر و مد",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Gazban",
+   "fa": "گازبان",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Nimboya",
+   "fa": "نیمبویا",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Yenniku",
+   "fa": "ینیکو",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Gan'zulah",
+   "fa": "گن‌زولا",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Bloody Bone Necklaces",
+   "fa": "گردنبندهای استخوان خونی",
+   "kind": "qs"
+  },
+  "E16": {
+   "en": "Kin'weelay",
+   "fa": "کین‌ویلی",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Water Elemental Bracers",
+   "fa": "ساعدبند ارواح آب",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Archmage Ansirem Runeweaver",
+   "fa": "ارشدجادوگر آنسیرم رون‌باف",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "The Stone of the Tides",
+   "fa": "سنگ جزر و مد",
+   "kind": "qs"
+  },
+  "E23": {
+   "en": "Krazek",
+   "fa": "کرازک",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Krazek's Fixed Pot",
+   "fa": "دیگِ تعمیرشدهٔ کرازیگ",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Corporal Kaleb",
+   "fa": "سرجوخه کالب",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Krazek's Crock Pot",
+   "fa": "دیگِ خورش‌پز کرازیگ",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Lesser Bloodstone Ore",
+   "fa": "کانهٔ سنگ‌خون جزئی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Arathi Highlands",
+   "fa": "ارتفاعات آراتی",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Tablet Shard",
+   "fa": "خرده‌سنگ لوح",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Darkspear",
+   "fa": "نیزه‌تیره",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Hammerfall",
+   "fa": "هامرفال",
+   "kind": "qs"
+  },
+  "E33": {
+   "en": "Zengu",
+   "fa": "زنگو",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Trollbane",
+   "fa": "ترالبِین",
+   "kind": "qs"
+  },
+  "E35": {
+   "en": "Trol'kalar",
+   "fa": "ترول‌کالار",
+   "kind": "qs"
+  },
+  "E36": {
+   "en": "Zul'Gurub",
+   "fa": "زول‌گوروب",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Sir S. J. Erlgadin",
+   "fa": "سر اس. جی. ارلگادین",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Brother Nimetz",
+   "fa": "برادر نیمتز",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Far Seer Mok'thardin",
+   "fa": "غیب‌بین دور موک‌تاردین",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Pristine Tigress Fang",
+   "fa": "نیش ببر مادهٔ بی‌نقص",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Shadowmaw Panther",
+   "fa": "پلنگ آرواره‌سایه",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Sergeant Yohwa",
+   "fa": "گروهبان یوهوا",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Elder Crocolisk Skin",
+   "fa": "پوست کروکولیسک کهنسال",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Drizzlik",
+   "fa": "دریزلیک",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Excelsior",
+   "fa": "اِکسلسیور",
+   "kind": "qs"
+  },
+  "E48": {
+   "en": "\"Pretty Boy\" Duncan",
+   "fa": "دانکن «پسر خوش‌سیما»",
+   "kind": "qs"
+  },
+  "E49": {
+   "en": "Fang of Bhag'thera",
+   "fa": "نیش باگ‌ترا",
+   "kind": "it"
+  },
+  "E50": {
+   "en": "Bhag'thera",
+   "fa": "باگ‌ترا",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Kurzen Elite",
+   "fa": "نخبهٔ کورزن",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Kurzen's Head",
+   "fa": "سر کورزن",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "salvation",
+   "fa": "رستگاری",
+   "kind": "sp"
+  },
+  "E55": {
+   "en": "Skullsplitter",
+   "fa": "اسکال‌اسپلیتر",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "The Green Hills of Stranglethorn",
+   "fa": "تپه‌های سبز استرنگل‌تورن",
+   "kind": "qs"
+  },
+  "E57": {
+   "en": "Barnil Stonepot",
+   "fa": "بارنیل دیگ‌سنگ",
+   "kind": "npc"
+  },
+  "E58": {
+   "en": "Chapter I",
+   "fa": "فصل ۱",
+   "kind": "qs"
+  },
+  "E59": {
+   "en": "Chapter II",
+   "fa": "فصل ۲",
+   "kind": "qs"
+  },
+  "E60": {
+   "en": "Chapter III",
+   "fa": "فصل ۳",
+   "kind": "qs"
+  },
+  "E61": {
+   "en": "Chapter IV",
+   "fa": "فصل ۴",
+   "kind": "qs"
+  },
+  "E62": {
+   "en": "Balia'mah Trophy",
+   "fa": "جام قبیلهٔ بالیاما",
+   "kind": "it"
+  },
+  "E63": {
+   "en": "Ziata'jai Trophy",
+   "fa": "جام قبیلهٔ زیاتاجای",
+   "kind": "it"
+  },
+  "E64": {
+   "en": "Zul'Mamwe Trophy",
+   "fa": "جام قبیلهٔ زول‌ماموه",
+   "kind": "it"
+  },
+  "E65": {
+   "en": "Bubbling Cauldron",
+   "fa": "دیگ جوشان",
+   "kind": "ob"
+  },
+  "E66": {
+   "en": "Catelyn's Blade",
+   "fa": "تیغهٔ کتِلین",
+   "kind": "it"
+  },
+  "E67": {
+   "en": "Hemet Nesingwary",
+   "fa": "همت نسینگ‌وری",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Lieutenant Doren": "ستوان دورن",
+  "Colonel Kurzen": "سرهنگ کورزن",
+  "Commander Aggro'gosh": "فرمانده اگرو‌گوش",
+  "Travel": "سفر",
+  "Baron Revilgaz": "بارون ریویلگاز",
+  "Booty Bay": "خلیج غنیمت",
+  "Stone of the Tides": "سنگ جزر و مد",
+  "Stormwind": "استورم‌ویند",
+  "Gazban": "گازبان",
+  "Nimboya": "نیمبویا",
+  "Yenniku": "ینیکو",
+  "Gan'zulah": "گن‌زولا",
+  "Bloody Bone Necklaces": "گردنبندهای استخوان خونی",
+  "Kin'weelay": "کین‌ویلی",
+  "Water Elemental Bracers": "ساعدبند ارواح آب",
+  "Dalaran": "دالاران",
+  "Archmage Ansirem Runeweaver": "ارشدجادوگر آنسیرم رون‌باف",
+  "The Stone of the Tides": "سنگ جزر و مد",
+  "Krazek": "کرازک",
+  "Krazek's Fixed Pot": "دیگِ تعمیرشدهٔ کرازیگ",
+  "Corporal Kaleb": "سرجوخه کالب",
+  "Krazek's Crock Pot": "دیگِ خورش‌پز کرازیگ",
+  "Lesser Bloodstone Ore": "کانهٔ سنگ‌خون جزئی",
+  "Arathi Highlands": "ارتفاعات آراتی",
+  "Tablet Shard": "خرده‌سنگ لوح",
+  "Darkspear": "نیزه‌تیره",
+  "Orgrimmar": "اورگریمار",
+  "Hammerfall": "هامرفال",
+  "Zengu": "زنگو",
+  "Trollbane": "ترالبِین",
+  "Trol'kalar": "ترول‌کالار",
+  "Zul'Gurub": "زول‌گوروب",
+  "Sir S. J. Erlgadin": "سر اس. جی. ارلگادین",
+  "Brother Nimetz": "برادر نیمتز",
+  "Far Seer Mok'thardin": "غیب‌بین دور موک‌تاردین",
+  "Pristine Tigress Fang": "نیش ببر مادهٔ بی‌نقص",
+  "Horde": "هورد",
+  "Shadowmaw Panther": "پلنگ آرواره‌سایه",
+  "Sergeant Yohwa": "گروهبان یوهوا",
+  "Elder Crocolisk Skin": "پوست کروکولیسک کهنسال",
+  "Drizzlik": "دریزلیک",
+  "Excelsior": "اِکسلسیور",
+  "\"Pretty Boy\" Duncan": "دانکن «پسر خوش‌سیما»",
+  "Fang of Bhag'thera": "نیش باگ‌ترا",
+  "Bhag'thera": "باگ‌ترا",
+  "Kurzen Elite": "نخبهٔ کورزن",
+  "Kurzen's Head": "سر کورزن",
+  "salvation": "رستگاری",
+  "Skullsplitter": "اسکال‌اسپلیتر",
+  "The Green Hills of Stranglethorn": "تپه‌های سبز استرنگل‌تورن",
+  "Barnil Stonepot": "بارنیل دیگ‌سنگ",
+  "Chapter I": "فصل ۱",
+  "Chapter II": "فصل ۲",
+  "Chapter III": "فصل ۳",
+  "Chapter IV": "فصل ۴",
+  "Balia'mah Trophy": "جام قبیلهٔ بالیاما",
+  "Ziata'jai Trophy": "جام قبیلهٔ زیاتاجای",
+  "Zul'Mamwe Trophy": "جام قبیلهٔ زول‌ماموه",
+  "Bubbling Cauldron": "دیگ جوشان",
+  "Catelyn's Blade": "تیغهٔ کتِلین",
+  "Hemet Nesingwary": "همت نسینگ‌وری"
+ },
+ "tokens": {
+  "1": "$C",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$C",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$c",
+  "19": "$N",
+  "20": "$N",
+  "21": "$C",
+  "22": "$N",
+  "23": "$B",
+  "24": "$B",
+  "25": "$N",
+  "26": "$B",
+  "27": "$B",
+  "28": "$N",
+  "29": "$C",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$R",
+  "39": "$N",
+  "40": "$N"
+ },
+ "rows": {
+  "quest:331:obj:0": "Speak with ⟦E1⟧.",
+  "quest:331:details:0": "Did ⟦E1⟧ want you to report back to him with that patrol information?",
+  "quest:331:completion:0": "It pains me to find out it was Merle who betrayed us. He has always been a brave soldier, and I had thought his heart was true. But it is a great relief to have found him out - with a spy like him among us...we would not last long against ⟦E2⟧.",
+  "quest:569:obj:0": "⟦E3⟧ of the Grom'gol base camp wants you to kill 10 Ogre Brutes and 5 Ogre Witch Doctors.",
+  "quest:569:details:0": "When we first arrived in this jungle we did not intend to wage war on the local tribes. Our mission to supply Stonard is of the highest priority. But complications have arisen. A local band of ogres has occupied the Mizjah Ruins to the southeast of Grom'gol. Despite warnings, they continue to ambush our supply caravans.",
+  "quest:569:details:1": "I am putting you in charge of dealing with these uncooperative ogres.",
+  "quest:569:details:2": "⟦E4⟧ to the ruins and attempt to drive them from the area. At the very least it will send a firm message.",
+  "quest:569:progress:0": "Have you made any progress with the ogres of the Mizjah Ruins yet, ⟦1⟧?",
+  "quest:569:completion:0": "Well done. You have served the Warchief with honor.",
+  "quest:578:obj:0": "Find the haunted island for ⟦E5⟧ in ⟦E6⟧.",
+  "quest:578:details:0": "If there is indeed a goblin mage and water elementals haunting the island, it could mean the ⟦E7⟧ can be mine!",
+  "quest:578:details:1": "I want you to locate this haunted island... find out what's going on. Oh, and if you perhaps want to find out more about the ⟦E7⟧, take this scrip to the ⟦E8⟧ Library, they should be able to find you a copy of the book I first came across the legend in.",
+  "quest:578:details:2": "Could it be that ⟦E9⟧ actually discovered the Stone...?",
+  "quest:578:progress:0": "The trolls truly possessed some amazing magical objects, ⟦2⟧. And now, perhaps, I have the opportunity to add one to my extensive collection. Did you have any luck finding the source of the rumor?",
+  "quest:578:completion:0": "So the stories were true! Incredible!",
+  "quest:578:completion:1": "However, we will need to figure out a way to defeat the curse of the ⟦E7⟧, if we are to retrieve it. The curse is magical business, we'll need one of those wizards to help us out.",
+  "quest:582:obj:0": "Bring 20 Shrunken Heads to ⟦E11⟧ at the Grom'gol Base Camp.",
+  "quest:582:details:0": "We must find if ⟦E12⟧ is dead.",
+  "quest:582:details:1": "Slay the Bloodscalp Headhunters and take from them their Shrunken Heads. You must gather many, many heads, and I will inspect them to make sure ⟦E12⟧'s head is not among them.",
+  "quest:582:details:2": "And if ⟦E12⟧ was killed by the Bloodscalps, then may a 600-year curse fall on the spirit of their chief, ⟦E13⟧!",
+  "quest:582:details:3": "Go, ⟦3⟧. You may find many Headhunters at the ruins of Zuuldaia and Zul'Kunda, along the coast to the north.",
+  "quest:582:progress:0": "⟦4⟧. I fear for our chief's son. Do you have the shrunken heads so I may inspect them?",
+  "quest:582:completion:0": "Thank you, ⟦5⟧. I will inspect these heads to ensure poor ⟦E12⟧ was spared the headhunter's axe.",
+  "quest:596:obj:0": "Bring 25 ⟦E15⟧ to ⟦E16⟧ at the Grom'gol Base Camp.",
+  "quest:596:details:0": "I was sent to Grom'gol to aid ⟦E11⟧ on his quest, but... I too have reasons for being here.",
+  "quest:596:details:1": "The Bloodscalp tribe is enemy to our tribe. Collecting trophies of our enemies gives us power over them. You may aid our tribe by hunting our enemies.",
+  "quest:596:details:2": "They dwell to the north. Slay Bloodscalp trolls and take from them their bloody bone necklaces. Collect many, and your reward will be great.",
+  "quest:596:progress:0": "The Bloodscalps will one day be crushed by the Darkspears! Do you have the necklaces of our doomed foe?",
+  "quest:596:completion:0": "Ah, very good. I will boil these, and leech them, and the spirits of their owners will weaken as I render their necklaces to paste!",
+  "quest:596:completion:1": "Here, ⟦6⟧. This will repay my debt to you.",
+  "quest:601:obj:0": "Acquire 6 ⟦E19⟧ for ⟦E5⟧ in ⟦E6⟧.",
+  "quest:601:details:0": "The water elementals were no doubt summoned by ⟦E9⟧, the goblin wizard rumored to have discovered the ⟦E7⟧. As you may know, the ⟦E7⟧ curses its bearer, causing him to fade in and out of existence...",
+  "quest:601:details:1": "Perhaps we can find a way to counteract the curse. We can have a mage of ⟦E20⟧ analyze the magical residue of one of the water elemental's bracers. I need you to go back to the island and retrieve a few specimens.",
+  "quest:601:progress:0": "Have you had any luck, ⟦7⟧?",
+  "quest:601:completion:0": "Hm, I haven't the eye to examine these bracers to see if any of them will be of any use, but I'm sure at least one of them will be able to help. Take them to ⟦E20⟧ and have a mage look at them.",
+  "quest:601:completion:1": "After all, I can't very well leave ⟦E6⟧ just to chat with those tiresome old mages.",
+  "quest:601:completion:2": "Not that I'm worried anyone would try to elbow their way into being the new baron. No one crosses Revilgaz and lives to tell of it.",
+  "quest:602:obj:0": "Bring the water elemental bracers to ⟦E21⟧ in ⟦E20⟧.",
+  "quest:602:details:0": "From what I've heard, the mages of ⟦E20⟧ are busy with the reconstruction of their destroyed city, I'm sure you can find one of them who will spare some time to look at the bracers. If there's anything I know about mages, they can't resist a magical puzzle.",
+  "quest:602:details:1": "Take the bag of water elemental bracers and see if they can shed any light on the Stone's curse. Look for the ⟦E21⟧ in particular. I've dealt with him before, and his knowledge is vast.",
+  "quest:602:progress:0": "If you wouldn't mind, I am rather busy right now.",
+  "quest:602:completion:0": "⟦E22⟧? Most interesting. It might surprise you to know that I wrote a tome - several years ago - pertaining to the legends of the Gurubashi Empire. I do know quite a bit about the Stone.",
+  "quest:602:completion:1": "At least one of these bracers appears to have some magical residue I can analyze.",
+  "quest:602:completion:2": "Let's see what I can see...",
+  "quest:603:obj:0": "Talk to Catelyn in ⟦E6⟧.",
+  "quest:603:details:0": "The mage that is in possession of the Stone is amplifying its power through some focal point... an altar of some sort. You should be able to disrupt it by overpowering it.",
+  "quest:603:details:1": "As it happens, I know just the thing: an ancient dagger, another troll relic. There's just one... little problem.",
+  "quest:603:details:2": "You see, I found the dagger while researching in Stranglethorn, but I gave it to my willful daughter, Catelyn, who ran off to ⟦E6⟧ to become a pirate.",
+  "quest:603:completion:0": "My dagger? What are you, some sort of comedian?",
+  "quest:603:completion:1": "What? Do you just want me to repeat the story of how I've gone from the best knife fighter in ⟦E6⟧ to the laughing stock of piratedom!",
+  "quest:603:completion:2": "I lost a knife fight to one of the Bloodsail Buccaneers--bunch of right bastards they are!--and he took my blade as spoils.",
+  "quest:603:completion:3": "It's not as though I can get by as a knife fighter with insults and a sharp tongue alone...",
+  "quest:616:obj:0": "Speak with ⟦E5⟧ in ⟦E6⟧.",
+  "quest:616:details:0": "⟦E5⟧ has had me keep an ear out for rumors of the strange and out-of-place in ⟦E6⟧ and Stranglethorn. I don't usually put much stock in ghost stories, but I heard some sailors in the tavern talking about a haunted island off the coast. Water elementals and a raving goblin ghost, they say.",
+  "quest:616:details:1": "If you're going to go talk to Revilgaz, could you relay that story to him?",
+  "quest:616:completion:0": "Interesting. Some time ago, I seem to remember reading a book once that suggested...",
+  "quest:616:completion:1": "Ah, of course, a troll legend it was. If what ⟦E23⟧ reports is true, perhaps I will soon be able to add the ⟦E7⟧ to my collection of ancient artifacts and relics.",
+  "quest:622:obj:0": "Bring ⟦E24⟧ to ⟦E25⟧ at the Rebel Camp.",
+  "quest:622:details:0": "While you were gone I fixed the pot you brought me. I even added an extra steam whistle, and look! There's a new chopper at the bottom that'll cut through leg bones!",
+  "quest:622:details:1": "Yes yes, ⟦E26⟧ is a 100% cook pleaser! I'm sure its owner will be satisfied.",
+  "quest:622:progress:0": "Hello, ⟦8⟧. Did you make it to ⟦E6⟧? Did the goblin ⟦E23⟧ fix my pot??",
+  "quest:622:completion:0": "It's fixed! This is great, now I can get dinner started! Thanks so much, ⟦9⟧.",
+  "quest:622:completion:1": "I hope you were okay in ⟦E6⟧. That place can get pretty rough, and... I heard rumors that the goblins will sometimes drag drunk sailors to their slave boats and take them to who-knows-where... to do who-knows-what...",
+  "quest:627:obj:0": "Bring 4 loads of ⟦E27⟧ to ⟦E23⟧ in ⟦E6⟧.",
+  "quest:627:details:0": "There is a mountain cave in Drywhisker Gorge, far to the north in the ⟦E28⟧. In that cave is rare ore: bloodstone. The bloodstone in this cave is not of the highest grade, but even low-quality bloodstone is valuable... to those with the knowledge to use it.",
+  "quest:627:details:1": "I would like some.",
+  "quest:627:details:2": "I will fix your crock pot, but while I work on it... bring me samples of bloodstone. Bring me enough, and I'll even give you a bonus.",
+  "quest:627:details:3": "Oh, and if you don't have the skill to mine it... find someone who does!",
+  "quest:627:progress:0": "Hello, ⟦10⟧. Did you have luck getting the bloodstone?",
+  "quest:627:completion:0": "Ah, splendid! That was a big favor you did for me.",
+  "quest:627:completion:1": "Here is your payment...",
+  "quest:629:obj:0": "Bring a ⟦E29⟧ to ⟦E16⟧ at the Grom'gol Base Camp.",
+  "quest:629:details:0": "Long ago, a great shudder of the earth sunk an old troll city beneath the waters of the Savage Coast to the northwest. We call that place the Vile Reef, for murlocs now reside in the ruins of the city, attacking any who draw close.",
+  "quest:629:details:1": "There is an old tablet among those ruins that tells the ancient tale of Gri'lek, a hero of troll legends. The tale is sacred to the ⟦E30⟧ tribe, and although the tablet is too large to move, I want a shard of it to enshrine in our new home in ⟦E31⟧.",
+  "quest:629:progress:0": "I await the ⟦E29⟧, ⟦11⟧.",
+  "quest:629:completion:0": "This is good. When I return to ⟦E31⟧ I will place this shard in a sacred place. It will remind us of the might and honor of Gri'lek.",
+  "quest:629:completion:1": "Thank you, ⟦12⟧. Your deeds mark a growing friendship with the ⟦E30⟧ tribe.",
+  "quest:638:obj:0": "⟦E4⟧ to ⟦E32⟧ in the ⟦E28⟧ and speak with ⟦E33⟧.",
+  "quest:638:details:0": "With Thoras ⟦E34⟧ dead and Stromgarde in ruins, Vol'jin has instructed that we make every effort to spirit the legendary sword ⟦E35⟧ from the humans' hands, so that we might use it in our coming battles against the trolls of ⟦E36⟧.",
+  "quest:638:details:1": "⟦E33⟧, one of our seasoned hunters, was dispatched to ⟦E32⟧ in northeastern ⟦E28⟧ to oversee its procurement.",
+  "quest:638:completion:0": "How you doing, ⟦13⟧? The task set before us by Vol'jin will be a difficult one, and any assistance you might provide will be appreciated and necessary.",
+  "quest:192:obj:0": "⟦E37⟧ of Nesingwary's Expedition wants you to kill 10 Shadowmaw Panthers.",
+  "quest:192:details:0": "Now the hard part. A true panther hunter can show skill by dropping Shadowmaw Panthers, the deadliest in Stranglethorn. Prove to us that you can slay 10 of these beasts.",
+  "quest:192:details:1": "If you think they are hard to track, wait until you attempt to slay one....",
+  "quest:192:progress:0": "What are you doing here, ⟦14⟧! You should be crawling through the brush, trying to kill 10 Shadowmaw Panthers. I thought you fancied yourself a big game hunter?",
+  "quest:192:completion:0": "You've done well, ⟦15⟧!",
+  "quest:207:obj:0": "Find the 4 tablets and bring their legends back to ⟦E38⟧.",
+  "quest:207:details:0": "⟦E2⟧ was once a great, noble man - I must find what caused his fall into depravity! He may be under the sway of troll magic. To confirm this, I must study some of their legends.",
+  "quest:207:details:1": "There are 4 tablets hidden within the troll ruins of Stranglethorn. I must see what is written on these tablets! Transcribe their markings and bring the transcriptions back to me.",
+  "quest:207:details:2": "The first tablet is in the Bal'lal Ruins, the second is in the Vile Reef, and the third and fourth are in the Ruins of Zul'Kunda.",
+  "quest:207:progress:0": "⟦16⟧! Do you have the troll legends? I must know their secrets!",
+  "quest:207:completion:0": "Thank you, ⟦17⟧. I will study these legends to see if there is some link between the trolls and the evil that has possessed ⟦E2⟧.",
+  "quest:570:obj:0": "⟦E39⟧ at the Grom'gol base camp wants 8 Shadowmaw Claws and a ⟦E40⟧.",
+  "quest:570:details:0": "The power of the jungle's magic must be realized and then harnessed by the ⟦E41⟧. My rituals have proven successful so far. I can cast very powerful enchantments. For you, brave ⟦18⟧, I shall make a special item indeed.",
+  "quest:570:details:1": "Bring to me some ⟦E42⟧ claws along with a Tigress fang. Not just any fang will do. It must be in pristine condition.",
+  "quest:570:details:2": "The beasts lurk throughout the jungle but you will find some close by, just across the river from Mizjah Ruins to the southeast.",
+  "quest:570:progress:0": "What news do you bring?",
+  "quest:570:completion:0": "Your knowledge of the jungle is strong, ⟦19⟧. These specimens will be perfect. I will thank the spirits for sacrificing such fine beasts for the cause of the ⟦E41⟧.",
+  "quest:574:obj:0": "Kill 10 Kurzen Commandoes and 6 Kurzen Headshrinkers.",
+  "quest:574:obj:1": "Report to ⟦E1⟧ at the Rebel Camp.",
+  "quest:574:details:0": "Now that many of his regular troops are reduced, you must face his highly trained forces. When they're not in the wilderness slaughtering our rebel soldiers, they are found deep in the back of the Kurzen Compound, in a cave they call the Stockpile.",
+  "quest:574:details:1": "I know many of Kurzen's troops personally, and I know they are skilled, loyal, and cruel. This is no easy task I set before you, ⟦20⟧.",
+  "quest:574:details:2": "After you defeat them, report to ⟦E1⟧, my commanding officer. He will want your report firsthand.",
+  "quest:574:progress:0": "⟦E44⟧ tells me you are skilled and brave, ⟦21⟧. Do you have something to report?",
+  "quest:574:completion:0": "⟦22⟧. ⟦E44⟧ trusted your abilities, and I trust her. The defeat you brought to Kurzen's forces is almost too much to hope for. I had feared we rebels were alone, and alone we could never stand up against the Colonel's brilliance.",
+  "quest:574:completion:1": "Perhaps hope of our survival yet remains.",
+  "quest:628:obj:0": "Bring an ⟦E45⟧ to ⟦E46⟧ in ⟦E6⟧.",
+  "quest:628:details:0": "With the inside finished, all that's left is to add the outer layer. For this, I use only the best elder croc skins. They are more durable and a better canvas--if you will--for adding the designs and accents that make ⟦E46⟧'s ⟦E47⟧ line.",
+  "quest:628:details:1": "It's hard to find that perfect skin though, the only one that fits my plan is the skin of an elder saltwater crocolisk. The elders only come out to defend the other saltwater crocs, so you might need to kill a few to draw one out.",
+  "quest:628:progress:0": "I read somewhere that the saltwater crocilisks are slowly dying out... bad news for my business, isn't it?⟦23⟧⟦24⟧Anyways, I hope you have that elder saltwater crocolisk skin for me!",
+  "quest:628:completion:0": "Great! Thanks to your help I'll have this order filled and sent off to Director Riddlevox on the next boat to Undermine. Ahead of schedule, even!",
+  "quest:628:completion:1": "For all your hard work, here, I made some extras, so take a pair. It's on ⟦E46⟧.",
+  "quest:628:completion:2": "And remember, there's no boot so fine as one of ⟦E46⟧'s ⟦E47⟧ line!",
+  "quest:610:obj:0": "Get Catelyn's dagger from ⟦E48⟧.",
+  "quest:610:details:0": "My FATHER sent you? I'd have thought that old codger would have given up on me by now.",
+  "quest:610:details:1": "It wasn't really his fault I ran off, he just shouldn't have expected I'd be willing to live a boring life, reading over musty books and associating with grey-haired, stiff-backed, stuffy mages!",
+  "quest:610:details:2": "If you need my dagger, you'll have to get it back from ⟦E48⟧, one of the Bloodsail Buccaneers. Put something 'tween his shoulders and I'm sure he'll give it up.",
+  "quest:610:progress:0": "I'd never been beat before, you know, ⟦25⟧? Sure I'd been cut, can't get in a knife fight without that, but he just smacked me on the side of the head, blacked me out. When I came to my blade was gone.⟦26⟧⟦27⟧As much as my nickname might indicate, I still need a knife to fight, and for me, it has to be that one.",
+  "quest:610:completion:0": "You beat Duncan? I guess you aren't as wet behind the ears as you looked at first glance.",
+  "quest:610:completion:1": "I suppose that also means I shouldn't challenge you to a fight any time soon!",
+  "quest:193:obj:0": "⟦E37⟧ of Nesingwary's Expedition wants you to bring him the ⟦E49⟧.",
+  "quest:193:details:0": "You've almost proven yourself to be a master hunter of panthers. A panther by the name of ⟦E50⟧ has been prowling the jungle. So far he's eluded our party. See if you can use your skills to kill the great ⟦E50⟧.",
+  "quest:193:details:1": "Bring me the ⟦E49⟧ and you'll have earned my respect!",
+  "quest:193:progress:0": "⟦E50⟧ can prove to be an elusive beast. How fares the hunt?",
+  "quest:193:completion:0": "So the great ⟦E50⟧ is dead! Cheers to you, ⟦28⟧. You are a mighty ⟦29⟧ indeed!",
+  "quest:202:obj:0": "Kill 6 ⟦E52⟧, 4 Kurzen Subchiefs, and bring ⟦E53⟧ to ⟦E1⟧ at the Rebel Camp.",
+  "quest:202:details:0": "You have proven yourself time and again, and your resourcefulness seems to rival even that of Kurzen himself. You may be the ⟦E54⟧ of our band of rebels...if you can pit yourself against Kurzen and prevail!",
+  "quest:202:details:1": "He commands his men from deep within the Stockpile. You must enter that cave, brave through his defenders, and face Kurzen and his leaders.",
+  "quest:202:details:2": "Farewell, ⟦30⟧. My hope, and the fate of my men, go with you.",
+  "quest:202:progress:0": "Dare I hope that Kurzen and his defenders are dead, ⟦31⟧?",
+  "quest:202:completion:0": "I dared not believe the reports, but you bring us proof that... Kurzen and his leaders are defeated. You have saved us!",
+  "quest:202:completion:1": "These jungles are filled with menaces of all types, but none had the cruel intellect of Kurzen. We may all breathe easier now that he is gone.",
+  "quest:205:obj:0": "Bring 4 ⟦E55⟧ Fetishes to ⟦E38⟧ at the Rebel Camp.",
+  "quest:205:details:0": "While I study those legends you acquired, gather for me implements of evil troll magic. Enter the territory of the ⟦E55⟧ trolls, a second tribe to the distant south, and acquire ⟦E55⟧ Fetishes from their Witchdoctors and Mystics.",
+  "quest:205:progress:0": "Do you have those fetishes, ⟦32⟧? They might hold the secret to Kurzen's degradation...I must know!",
+  "quest:205:completion:0": "Thank you. I will study these fetishes and see if they hold the secret of Kurzen's fall into evil.",
+  "quest:338:obj:0": "Collect the missing pages from ⟦E56⟧ manuscript. Once all four chapters are complete, return them to Barnil.",
+  "quest:338:details:0": "Master Nesingwary will be so upset if he finds out!",
+  "quest:338:details:1": "He trusted me to proofread the manuscript of his novel, ⟦E56⟧. Everything was going well, but a large gust of wind blew through the camp and scattered the pages everywhere!",
+  "quest:338:details:2": "I was able to gather most of the pages but many are still strewn about the jungle. Collect the pages to complete each of the four chapters.",
+  "quest:338:details:3": "I will help you organize them. Return the chapters to me once you have all four.",
+  "quest:338:progress:0": "Have you assembled the chapters yet, ⟦33⟧?",
+  "quest:338:completion:0": "You've certainly saved me a heap of trouble, ⟦34⟧! I can't thank you enough. It shouldn't be long now until we see Master Nesingwary's book in libraries throughout the world!",
+  "quest:339:obj:0": "Bring pages 1, 4, 6, and 8 of Nesingwary's ⟦E56⟧ to ⟦E57⟧ in order to complete ⟦E58⟧.",
+  "quest:339:details:0": "⟦E58⟧ was quite riveting! Master Nesingwary sets the backdrop for the story and makes mention of his hunting companions, including me!",
+  "quest:339:details:1": "But that's besides the point. Let me see which pages are still missing. It seems pages 1, 4, 6 and 8 are still out there somewhere in the jungle!",
+  "quest:339:progress:0": "I don't suppose you were able to track down pages 1, 4, 6 and 8?  Those four are all we need to piece ⟦E58⟧ back together.",
+  "quest:339:completion:0": "At last! ⟦E58⟧ is complete!",
+  "quest:340:obj:0": "Bring pages 10, 11, 14 and 16 of Nesingwary's ⟦E56⟧ to ⟦E57⟧ in order to complete ⟦E59⟧.",
+  "quest:340:details:0": "⟦E59⟧ was chock full of exciting tales of panther and tiger hunting. I could just kick myself for letting the pages blow away!",
+  "quest:340:details:1": "B It seems I was able to recover all of the pages with the exception of pages 10, 11, 14, and 16.",
+  "quest:340:progress:0": "We still need pages 10, 11, 14 and 16 to complete ⟦E59⟧, ⟦35⟧.",
+  "quest:340:completion:0": "⟦E59⟧ is finally complete! Well done!",
+  "quest:341:obj:0": "Bring pages 18, 20, 21 and 24 of Nesingwary's ⟦E56⟧ to ⟦E57⟧ in order to complete ⟦E60⟧.",
+  "quest:341:details:0": "⟦E60⟧ was my favorite. It tells of Sir Erlgadin and Lady Rouack's first kill with a dwarven rifle. And the end of ⟦E60⟧, why, such a cliffhanger!",
+  "quest:341:details:1": "Looks to me as though we still need pages 18, 20, 21 and 24 to finish the chapter. Those pages are out there somewhere. . .",
+  "quest:341:progress:0": "Any luck with pages 18, 20, 21 or 24?  Those are the only ones we need to piece together ⟦E60⟧.",
+  "quest:341:completion:0": "Phew! Good work, ⟦36⟧. ⟦E60⟧ is now back together in one piece!",
+  "quest:342:obj:0": "Bring pages 25, 26, and 27 of Nesingwary's ⟦E56⟧ to ⟦E57⟧ in order to complete ⟦E61⟧.",
+  "quest:342:details:0": "Ah ⟦E61⟧; the big finale! And what an ending it was!",
+  "quest:342:details:1": "We are only missing three pages for this chapter. We need pages 25, 26 and 27 to put ⟦E61⟧ back together.",
+  "quest:342:progress:0": "We just need three pages to finish off ⟦E61⟧, ⟦37⟧.  Do you have pages 25, 26 or 27 yet?",
+  "quest:342:completion:0": "Superb! We now have ⟦E61⟧ ready to go!",
+  "quest:585:obj:0": "Bring a ⟦E62⟧, a ⟦E63⟧ and a ⟦E64⟧ to the ⟦E65⟧ at the Grom'gol Base Camp.",
+  "quest:585:details:0": "<The head of Nezzliok speaks.>",
+  "quest:585:details:1": "It is true. I know where the child of the Darkspears was taken. You have bested me and bound my spirit, but I will say nothing without appeasement!",
+  "quest:585:details:2": "The Bloodscalps war with the Skullsplitters. To gain my favor, steal from the Skullsplitters 3 of their trophy skulls and place them here with us, so that my spirit will have slaves in the Nether. One skull must be from their trophy pile in Balia'mah, another from Ziata'jai, and the last from Zul'Mamwe.",
+  "quest:585:progress:0": "I await the skulls...",
+  "quest:585:completion:0": "Yes. These will serve me well. When my spirit is freed, I will enter the Nether with three fine servants!",
+  "quest:585:completion:1": "You are a credit to your ⟦38⟧ clan, and you have appeased me.",
+  "quest:611:obj:0": "Destroy the Altar of the Tides with ⟦E66⟧, kill ⟦E9⟧ and bring the ⟦E7⟧ and ⟦E66⟧ back to ⟦E5⟧.",
+  "quest:611:details:0": "So you're looking for an altar of some sort? Well, I'm no expert on troll ruins like my father, but I have heard about a sunken troll city out near that island you're looking for. Maybe you should try there.",
+  "quest:611:details:1": "You got my knife back for me, so I guess you can borrow it... but I want it back when you're done!",
+  "quest:611:progress:0": "Have you retrieved the ⟦E7⟧ for me, ⟦39⟧? I've already cleared out a space and purchased a fine stand for it.",
+  "quest:611:completion:0": "Amazing! The Stone of Tides! It shall have a place of prominence in my collection of ancient troll artifacts. Did you see how it almost seems as though a tide is trapped within its surface? Magnificent!",
+  "quest:196:obj:0": "⟦E67⟧ wants you to kill 10 Jungle Stalkers.",
+  "quest:196:details:0": "Let's see how you handle this next challenge. There is a cagey breed of raptor out there. We call them Jungle Stalkers. They are far more difficult to track down and kill than the other breeds you've been trying your luck at. Kill 10 Jungle Stalkers and I'll tip you off to the best hunting yet.",
+  "quest:196:progress:0": "Bah! What are you doing standing around, ⟦40⟧! A true big game hunter never gives up once his prey is in his sights. Those Jungle Stalkers aren't going to come running up to this campfire and throw themselves in it. Silly bloke.",
+  "quest:196:completion:0": "Ho ho!! We have ourselves a true raptor slayer! Nicely done, old chap!"
+ },
+ "context": {
+  "quest:331": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Corporal Sethman («سرجوخه ست‌من»)",
+   "turner": "Lieutenant Doren («ستوان دورن»)"
+  },
+  "quest:569": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "horde",
+   "giver": "Commander Aggro'gosh («فرمانده اگرو‌گوش»)",
+   "turner": "Commander Aggro'gosh («فرمانده اگرو‌گوش»)"
+  },
+  "quest:578": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Baron Revilgaz («بارون ریویلگاز»)",
+   "turner": "Baron Revilgaz («بارون ریویلگاز»)"
+  },
+  "quest:582": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "horde",
+   "giver": "Nimboya («نیمبویا»)",
+   "turner": "Nimboya («نیمبویا»)"
+  },
+  "quest:596": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "horde",
+   "giver": "Kin'weelay («کین‌ویلی»)",
+   "turner": "Kin'weelay («کین‌ویلی»)"
+  },
+  "quest:601": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Baron Revilgaz («بارون ریویلگاز»)",
+   "turner": "Baron Revilgaz («بارون ریویلگاز»)"
+  },
+  "quest:602": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Baron Revilgaz («بارون ریویلگاز»)",
+   "turner": "Archmage Ansirem Runeweaver («ارشدجادوگر آنسیرم رون‌باف»)"
+  },
+  "quest:603": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Archmage Ansirem Runeweaver («ارشدجادوگر آنسیرم رون‌باف»)",
+   "turner": "Catelyn the Blade («کاترین تیغ»)"
+  },
+  "quest:616": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Krazek («کرازک»)",
+   "turner": "Baron Revilgaz («بارون ریویلگاز»)"
+  },
+  "quest:622": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Krazek («کرازک»)",
+   "turner": "Corporal Kaleb («سرجوخه کالب»)"
+  },
+  "quest:627": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "alliance",
+   "giver": "Krazek («کرازک»)",
+   "turner": "Krazek («کرازک»)"
+  },
+  "quest:629": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "horde",
+   "giver": "Kin'weelay («کین‌ویلی»)",
+   "turner": "Kin'weelay («کین‌ویلی»)"
+  },
+  "quest:638": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 37,
+   "side": "horde",
+   "giver": "Nimboya («نیمبویا»)",
+   "turner": "Zengu («زنگو»)"
+  },
+  "quest:192": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 38,
+   "side": "",
+   "giver": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)",
+   "turner": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)"
+  },
+  "quest:207": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Brother Nimetz («برادر نیمتز»)",
+   "turner": "Brother Nimetz («برادر نیمتز»)"
+  },
+  "quest:570": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 38,
+   "side": "horde",
+   "giver": "Far Seer Mok'thardin («غیب‌بین دور موک‌تاردین»)",
+   "turner": "Far Seer Mok'thardin («غیب‌بین دور موک‌تاردین»)"
+  },
+  "quest:574": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 38,
+   "side": "alliance",
+   "giver": "Sergeant Yohwa («گروهبان یوهوا»)",
+   "turner": "Lieutenant Doren («ستوان دورن»)"
+  },
+  "quest:628": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 38,
+   "side": "",
+   "giver": "Drizzlik («دریزلیک»)",
+   "turner": "Drizzlik («دریزلیک»)"
+  },
+  "quest:610": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Catelyn the Blade («کاترین تیغ»)",
+   "turner": "Catelyn the Blade («کاترین تیغ»)"
+  },
+  "quest:193": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "",
+   "giver": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)",
+   "turner": "Sir S. J. Erlgadin («سر اس. جی. ارلگادین»)"
+  },
+  "quest:202": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Lieutenant Doren («ستوان دورن»)",
+   "turner": "Lieutenant Doren («ستوان دورن»)"
+  },
+  "quest:205": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Brother Nimetz («برادر نیمتز»)",
+   "turner": "Brother Nimetz («برادر نیمتز»)"
+  },
+  "quest:338": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "",
+   "giver": "Barnil Stonepot («بارنیل دیگ‌سنگ»)",
+   "turner": "Barnil Stonepot («بارنیل دیگ‌سنگ»)"
+  },
+  "quest:339": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "",
+   "giver": "Barnil Stonepot («بارنیل دیگ‌سنگ»)",
+   "turner": "Barnil Stonepot («بارنیل دیگ‌سنگ»)"
+  },
+  "quest:340": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "",
+   "giver": "Barnil Stonepot («بارنیل دیگ‌سنگ»)",
+   "turner": "Barnil Stonepot («بارنیل دیگ‌سنگ»)"
+  },
+  "quest:341": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "",
+   "giver": "Barnil Stonepot («بارنیل دیگ‌سنگ»)",
+   "turner": "Barnil Stonepot («بارنیل دیگ‌سنگ»)"
+  },
+  "quest:342": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "",
+   "giver": "Barnil Stonepot («بارنیل دیگ‌سنگ»)",
+   "turner": "Barnil Stonepot («بارنیل دیگ‌سنگ»)"
+  },
+  "quest:585": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "horde",
+   "giver": "Bubbling Cauldron («دیگ جوشان»)",
+   "turner": "Bubbling Cauldron («دیگ جوشان»)"
+  },
+  "quest:611": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Catelyn the Blade («کاترین تیغ»)",
+   "turner": "Baron Revilgaz («بارون ریویلگاز»)"
+  },
+  "quest:196": {
+   "zone_en": "Stranglethorn Vale",
+   "zone_fa": "درهٔ استرنگل‌تورن",
+   "level": 41,
+   "side": "",
+   "giver": "Hemet Nesingwary («همت نسینگ‌وری»)",
+   "turner": "Hemet Nesingwary («همت نسینگ‌وری»)"
+  }
+ },
+ "known": {
+  "quest:331": {
+   "title": "گزارش به دورن"
+  },
+  "quest:569": {
+   "title": "دفاع از گروم‌گول"
+  },
+  "quest:578": {
+   "title": "سنگ جزر و مد"
+  },
+  "quest:582": {
+   "title": "شکار سر"
+  },
+  "quest:596": {
+   "title": "گردنبندهای استخوان خونی"
+  },
+  "quest:601": {
+   "title": "ارواح آبی"
+  },
+  "quest:602": {
+   "title": "تحلیل جادویی"
+  },
+  "quest:603": {
+   "title": "کلید آنسیرم"
+  },
+  "quest:616": {
+   "title": "جزیرهٔ تسخیرشده"
+  },
+  "quest:622": {
+   "title": "بازگشت به گروهبان‌دوم کالب"
+  },
+  "quest:627": {
+   "title": "خدمتی به کراژک"
+  },
+  "quest:629": {
+   "title": "صخرهٔ شوم"
+  },
+  "quest:638": {
+   "title": "ترالبِین"
+  },
+  "quest:192": {
+   "title": "تسلط بر پلنگ‌ها"
+  },
+  "quest:207": {
+   "title": "راز کورزن"
+  },
+  "quest:570": {
+   "title": "افسون مُکتاردین"
+  },
+  "quest:574": {
+   "title": "نیروهای ویژه"
+  },
+  "quest:628": {
+   "title": "اِکسلسیور"
+  },
+  "quest:610": {
+   "title": "دانکن «پسر خوش‌سیما»"
+  },
+  "quest:193": {
+   "title": "تسلط بر پلنگ‌ها"
+  },
+  "quest:202": {
+   "title": "سرهنگ کورزن"
+  },
+  "quest:205": {
+   "title": "جادوی ترولی"
+  },
+  "quest:338": {
+   "title": "تپه‌های سبز استرنگل‌تورن"
+  },
+  "quest:339": {
+   "title": "فصل ۱"
+  },
+  "quest:340": {
+   "title": "فصل ۲"
+  },
+  "quest:341": {
+   "title": "فصل ۳"
+  },
+  "quest:342": {
+   "title": "فصل ۴"
+  },
+  "quest:585": {
+   "title": "گفت‌وگو با نزلیوک"
+  },
+  "quest:611": {
+   "title": "نفرین جزر و مد"
+  },
+  "quest:196": {
+   "title": "تسلط بر رپتورها"
+  }
+ }
+}

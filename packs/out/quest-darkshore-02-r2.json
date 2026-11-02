@@ -1,0 +1,980 @@
+{
+ "pack": "quest-darkshore-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-darkshore-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Thundris Windweaver",
+   "fa": "تاندریس ویند‌ویور",
+   "kind": "qs"
+  },
+  "E2": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E3": {
+   "en": "Cliffspring River Sample",
+   "fa": "نمونهٔ رودخانهٔ رودِ چشمهٔ پرتگاه",
+   "kind": "it"
+  },
+  "E4": {
+   "en": "The Cliffspring River",
+   "fa": "رودخانهٔ کلیف‌اسپرینگ",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Mist",
+   "fa": "میست",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Darkshore",
+   "fa": "کرانهٔ تاریک",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Sentinel Aynasha",
+   "fa": "یناشا",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Anaya Dawnrunner",
+   "fa": "آنایا سپیده‌دونده",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Cerellean Whiteclaw",
+   "fa": "سرلین پنجه‌سفید",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Well of Eternity",
+   "fa": "چشمهٔ ابدیت",
+   "kind": "zn"
+  },
+  "E16": {
+   "en": "hibernation",
+   "fa": "خواب زمستانی",
+   "kind": "sp"
+  },
+  "E17": {
+   "en": "Buzzbox 525",
+   "fa": "بازباکس ۵۲۵",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "thistle bear",
+   "fa": "خرس خاردرخت",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Cleanse",
+   "fa": "پاک‌سازی جادو",
+   "kind": "sp"
+  },
+  "E20": {
+   "en": "Tharnariun Treetender",
+   "fa": "تارناریون مراقب درخت",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Sea Creature Bones",
+   "fa": "استخوان‌های موجود دریایی",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Gwennyth Bly'Leggonde",
+   "fa": "گوئنیث بلی‌لگوند",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Teldrassil",
+   "fa": "تلدراسیل",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Phial of Scrying",
+   "fa": "شیشهٔ شهود",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Scrying Bowl",
+   "fa": "کاسهٔ غیب‌بینی",
+   "kind": "ob"
+  },
+  "E28": {
+   "en": "Onu",
+   "fa": "اونو",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E30": {
+   "en": "The Master's Glaive",
+   "fa": "نیزهٔ بزرگ استاد",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Glaive",
+   "fa": "گلیو",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Death Cap",
+   "fa": "قارچ مرگ",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Barithras Moonshade",
+   "fa": "باریتراس سایه‌ماه",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "mushrooms",
+   "fa": "قارچ‌ها",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Cliffspring Falls",
+   "fa": "آبشار چشمه‌صخره",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Grove of the Ancients",
+   "fa": "بستان باستانیان",
+   "kind": "qs"
+  },
+  "E39": {
+   "en": "Insane Scribbles",
+   "fa": "خط‌خطی‌های دیوانه‌وار",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Twilight Tome",
+   "fa": "کتاب گرگ‌ومیش",
+   "kind": "ob"
+  },
+  "E41": {
+   "en": "Silver Dawning's Lockbox",
+   "fa": "صندوقچهٔ سیلور داوینگ",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Mist Veil's Lockbox",
+   "fa": "صندوقچهٔ پردهٔ مه",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Gorbold Steelhand",
+   "fa": "گوربولد دست‌فولاد",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Fine Crab Chunks",
+   "fa": "تکهٔ خرچنگ مرغوب",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Gubber Blump",
+   "fa": "گابر بلامپ",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Therylune",
+   "fa": "تریلون",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Therysil",
+   "fa": "تریسیل",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Balthule Shadowstrike",
+   "fa": "بالتول ضربهٔ سایه",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Delgren the Purifier",
+   "fa": "دلگرن پاک‌ساز",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Holy Light",
+   "fa": "نور مقدس",
+   "kind": "sp"
+  },
+  "E56": {
+   "en": "Den Mother",
+   "fa": "مادر لانه",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Bashal'Aran",
+   "fa": "باشال‌آران",
+   "kind": "qs"
+  },
+  "E58": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Murkdeep",
+   "fa": "تاریک‌ژرف",
+   "kind": "npc"
+  },
+  "E60": {
+   "en": "Sentinel Glynda Nal'Shea",
+   "fa": "گلیندا نالشی",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Empty Cleansing Bowl",
+   "fa": "کاسهٔ تطهیرِ خالی",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Talisman of Corruption",
+   "fa": "تعویذ فساد",
+   "kind": "it"
+  },
+  "E64": {
+   "en": "salvation",
+   "fa": "رستگاری",
+   "kind": "sp"
+  },
+  "E65": {
+   "en": "Strangely Marked Box",
+   "fa": "جعبهٔ نشان‌دارِ عجیب",
+   "kind": "it"
+  },
+  "E66": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E67": {
+   "en": "Sea Turtle Remains",
+   "fa": "بقایای لاک‌پشت دریایی",
+   "kind": "it"
+  },
+  "E68": {
+   "en": "Shore",
+   "fa": "شور",
+   "kind": "npc"
+  },
+  "E69": {
+   "en": "The Temple of the Moon",
+   "fa": "معبد ماه",
+   "kind": "qs"
+  },
+  "E70": {
+   "en": "Prospector Remtravel",
+   "fa": "جویندهٔ رگه رم‌تراول",
+   "kind": "npc"
+  },
+  "E71": {
+   "en": "Archaeologist Hollee",
+   "fa": "باستان‌شناس هولی",
+   "kind": "npc"
+  },
+  "E72": {
+   "en": "Chief Archaeologist Greywhisker",
+   "fa": "سرباستان‌شناس سبیل‌خاکستری",
+   "kind": "npc"
+  },
+  "E73": {
+   "en": "Archaeologist Flagongut",
+   "fa": "باستان‌شناس فلگونگات",
+   "kind": "npc"
+  },
+  "E74": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E75": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E76": {
+   "en": "Mathystra Relics",
+   "fa": "یادگارهای ماتیسترا",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Thundris Windweaver": "تاندریس ویند‌ویور",
+  "Travel": "سفر",
+  "Cliffspring River Sample": "نمونهٔ رودخانهٔ رودِ چشمهٔ پرتگاه",
+  "The Cliffspring River": "رودخانهٔ کلیف‌اسپرینگ",
+  "Mist": "میست",
+  "Darkshore": "کرانهٔ تاریک",
+  "Felwood": "فل‌وود",
+  "Sentinel Aynasha": "یناشا",
+  "Ashenvale": "اَشِن‌ویل",
+  "Elune": "الون",
+  "Anaya Dawnrunner": "آنایا سپیده‌دونده",
+  "Cerellean Whiteclaw": "سرلین پنجه‌سفید",
+  "Well of Eternity": "چشمهٔ ابدیت",
+  "hibernation": "خواب زمستانی",
+  "Buzzbox 525": "بازباکس ۵۲۵",
+  "thistle bear": "خرس خاردرخت",
+  "Cleanse": "پاک‌سازی جادو",
+  "Tharnariun Treetender": "تارناریون مراقب درخت",
+  "Sea Creature Bones": "استخوان‌های موجود دریایی",
+  "Gwennyth Bly'Leggonde": "گوئنیث بلی‌لگوند",
+  "Teldrassil": "تلدراسیل",
+  "Phial of Scrying": "شیشهٔ شهود",
+  "Scrying Bowl": "کاسهٔ غیب‌بینی",
+  "Onu": "اونو",
+  "Hammer": "چکش",
+  "The Master's Glaive": "نیزهٔ بزرگ استاد",
+  "Glaive": "گلیو",
+  "Death Cap": "قارچ مرگ",
+  "Barithras Moonshade": "باریتراس سایه‌ماه",
+  "mushrooms": "قارچ‌ها",
+  "Cliffspring Falls": "آبشار چشمه‌صخره",
+  "Grove of the Ancients": "بستان باستانیان",
+  "Insane Scribbles": "خط‌خطی‌های دیوانه‌وار",
+  "Twilight Tome": "کتاب گرگ‌ومیش",
+  "Silver Dawning's Lockbox": "صندوقچهٔ سیلور داوینگ",
+  "Mist Veil's Lockbox": "صندوقچهٔ پردهٔ مه",
+  "Gorbold Steelhand": "گوربولد دست‌فولاد",
+  "Fine Crab Chunks": "تکهٔ خرچنگ مرغوب",
+  "Gubber Blump": "گابر بلامپ",
+  "Ironforge": "آیرون‌فورج",
+  "Therylune": "تریلون",
+  "Therysil": "تریسیل",
+  "Balthule Shadowstrike": "بالتول ضربهٔ سایه",
+  "Delgren the Purifier": "دلگرن پاک‌ساز",
+  "Holy Light": "نور مقدس",
+  "Den Mother": "مادر لانه",
+  "Bashal'Aran": "باشال‌آران",
+  "Alliance": "اتحاد",
+  "Murkdeep": "تاریک‌ژرف",
+  "Sentinel Glynda Nal'Shea": "گلیندا نالشی",
+  "Empty Cleansing Bowl": "کاسهٔ تطهیرِ خالی",
+  "Talisman of Corruption": "تعویذ فساد",
+  "salvation": "رستگاری",
+  "Strangely Marked Box": "جعبهٔ نشان‌دارِ عجیب",
+  "Darnassus": "دارناسوس",
+  "Sea Turtle Remains": "بقایای لاک‌پشت دریایی",
+  "Shore": "شور",
+  "The Temple of the Moon": "معبد ماه",
+  "Prospector Remtravel": "جویندهٔ رگه رم‌تراول",
+  "Archaeologist Hollee": "باستان‌شناس هولی",
+  "Chief Archaeologist Greywhisker": "سرباستان‌شناس سبیل‌خاکستری",
+  "Archaeologist Flagongut": "باستان‌شناس فلگونگات",
+  "Harbor": "بندر",
+  "Kalimdor": "کالیمدور",
+  "Mathystra Relics": "یادگارهای ماتیسترا"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$N",
+  "3": "$N",
+  "4": "$C",
+  "5": "$n",
+  "6": "$B",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$N",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$r",
+  "28": "$n",
+  "29": "$C",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$c",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$n",
+  "44": "$R",
+  "45": "$N",
+  "46": "$N"
+ },
+ "rows": {
+  "quest:4761:obj:0": "Speak with ⟦E1⟧ in Auberdine.",
+  "quest:4761:details:0": "Your scouting of the furbolg camp is information that ⟦E1⟧ should be made aware of. He graciously serves as the elder of Auberdine, offering sage and just stewardship of the day to day affairs of the village. Please - share with him your findings to date on the furbolg situation.",
+  "quest:4761:details:1": "I believe he has some ideas of his own on the reasons behind their corruption. Perhaps you can work with him to enact a plan to restore the balance of nature here!",
+  "quest:4761:completion:0": "Well met, ⟦1⟧. Your scouting of the furbolg situation comes at a fortuitous time for us in Auberdine. For some time we have dealt with not only forest dwellers who are now openly hostile to our presence, but also the outright corruption of the forest itself. Hopefully you might be able to lend Auberdine aid during these troubling times.",
+  "quest:4762:obj:0": "⟦E2⟧ north of Auberdine to the first waterfall along the Cliffspring River and draw a sample from the pool there.",
+  "quest:4762:obj:1": "Return to ⟦E1⟧ in Auberdine with the ⟦E3⟧.",
+  "quest:4762:details:0": "⟦E4⟧ has begun turning foul and corrupted. It empties into the ⟦E5⟧'s Edge, and I fear the wash will affect Auberdine soon. I suspect the Blackwood furbolgs up-river are the cause of the taint, but I also suspect that they aren't the true root of it.",
+  "quest:4762:details:1": "Take this sampling tube and go to the mouth of the river to our north. Proceed inland to the first waterfall and draw a sample from the pool there. You'll see a bridge overhead. Once you have a sample, return to me in Auberdine.",
+  "quest:4762:progress:0": "The pollution of the Cliffspring River is but the start of an alarming trend here in ⟦E8⟧.  The sample you provide will help us formalize a plan... a plan of attack, I am starting to suspect.",
+  "quest:4762:completion:0": "It's no surprise how tainted this water is, but just look at how putrid it is becoming! It would seem that action is needed sooner than later, eh ⟦2⟧?",
+  "quest:4762:completion:1": "To our east is ⟦E9⟧; it is the real source of this corruption, one that I have seen in times past. I predict this sample will confirm this. We might be able to enact a cure for it here, but in order to even try we will need assistance. When that time comes ⟦3⟧, I hope you will be able to give the aid we need.",
+  "quest:5713:obj:0": "Protect ⟦E10⟧, then speak with Onaeya at Maestra's Post in ⟦E11⟧.",
+  "quest:5713:details:0": "I was traveling to Auberdine with an important message when I was attacked by the furbolg Marosh and his trackers. During the attack I was poisoned, leaving me barely able to stand. I can make an antidote, but it will take time before it is ready.",
+  "quest:5713:details:1": "I would ask that you defend me until I can apply the antidote. I will aid you with my bow as best I can.",
+  "quest:5713:details:2": "Should we survive, I will be able deliver my message to Auberdine, while you speak with Onaeya at Maestra's Post to inform her of this incident.",
+  "quest:5713:progress:0": "Have you seen of ⟦E10⟧ on the road? She left on an important mission but she has not yet returned.",
+  "quest:5713:completion:0": "You bring most welcome news ⟦4⟧. It is good to hear that Aynasha is alive and well thanks to you. I would hope that you might accept a reward for your valor. May ⟦E12⟧ watch over you and light your path.",
+  "quest:963:obj:0": "Free the spirit of ⟦E13⟧ and bring her pendant back to ⟦E14⟧ in Auberdine.",
+  "quest:963:details:0": "In the aftermath of the battles at the ⟦E15⟧, I heard that Ameth'Aran had been destroyed, its people dead, including my love, Anaya.",
+  "quest:963:details:1": "I would never have thought, thousands of years later, that memories of Anaya would still haunt my dreams. Wandering the woods of ⟦E8⟧ in a stupor, I found myself in the ruins of Ameth'Aran... where I saw the haunted spirit of my beloved.",
+  "quest:963:details:2": "She must be freed, but I lack the heart to do it. Her spirit must be destroyed.",
+  "quest:963:progress:0": "With a great sorrow in my heart, I followed the Shan'do Stormrage into ⟦E16⟧, and took my sorrow to my dreams, sleeping for the passing of thousands of years.",
+  "quest:963:completion:0": "Thank you, ⟦5⟧. Perhaps it would have been better... if I had done it myself. But even after these thousands of years, I could not bear to raise my hand against my beloved.",
+  "quest:963:completion:1": "Please, I would be alone with my grief...",
+  "quest:1003:obj:0": "Collect 4 Grizzled Scalps from Grizzled Thistle Bears to the south of Auberdine and place them in ⟦E17⟧.",
+  "quest:1003:details:0": "Over the boiling noises and dripping sounds coming from the machine, you hear Wizbang's wavering voice call out.",
+  "quest:1003:details:1": "B\"Nexsht onesh far south down the road. Shouldn't be hard to find... jusht off to the shide... near a fensh. I think I hid it in shum bushesh... Bushessh. Hehehe... Yesh, ⟦E17⟧ takes grizzled scalps from thoshe grizzled thistle bears. Boy thash a mouthful. Grizzshled... Hehehe...\"",
+  "quest:1003:details:2": "You hear more gulping sounds as the machine cuts out. Then, suddenly, it bursts back to life.",
+  "quest:1003:details:3": "B\"4!\"",
+  "quest:1003:progress:0": "You hear singing coming from ⟦E17⟧.⟦6⟧⟦7⟧\"Though crawler wine's shweet, and thresher ale fine, and moonstalker moonshine ish grand. There's nothing sho dear, as a ⟦E18⟧ beer, and shoon I shall have shome on hand!\"⟦8⟧⟦9⟧The hatch is open and awaits the 4 grizzled scalps as you hear the song repeated over and over.",
+  "quest:1003:completion:0": "\"Sho yash gotsh the scalps in? That'sh sho great... Wha? Well, yesh I shuppose ya have realized that I can speaksh to ya without the materials in the machine. But I was telling the truth when I shaid they were broken!",
+  "quest:1003:completion:1": "See, in addition to being communimacation toolsh, the Buzzboxes also brew and distill fine liquor. Shorry for any deceptshion, but the nightelves do not apprecimerate my liquor trade in their townsh. I put shomething special in thish box to show my gratitude for yer effortsh. Enjoy!\"",
+  "quest:2138:obj:0": "⟦E19⟧ the forest of 20 Rabid Thistle Bears and return to ⟦E20⟧ in ⟦E8⟧.",
+  "quest:2138:details:0": "As I had feared, the cure does not work.",
+  "quest:2138:details:1": "It saddens me greatly to order the death of any of nature's beasts, but the sick and tainted thistle bears must be put down.",
+  "quest:2138:details:2": "Return to the forest and destroy 20 rabid thistle bears, ⟦10⟧. It will most certainly not put a stop to the plague but it will slow down the damage the animals are doing to our forest and its inhabitants for a short time.",
+  "quest:2138:progress:0": "Is your task complete?",
+  "quest:2138:completion:0": "You have done Auberdine a great service, ⟦11⟧, but your task is not yet complete.",
+  "quest:4730:obj:0": "Take the ⟦E22⟧ to ⟦E23⟧ in Auberdine.",
+  "quest:4730:details:0": "The half-devoured corpse of what might have been a giant sea mammal lies on the beach. A band of murlocs, stronger than those found closer to Auberdine, have taken up residence around the fallen creature. Enough of the creature remains that a suitable sample of its bones could be delivered to ⟦E23⟧ in Auberdine.",
+  "quest:4730:progress:0": "Hello again, ⟦12⟧!  Are you here to report on another discovery?",
+  "quest:4730:completion:0": "The bones you have are from gentle sea mammals that are known to inhabit the waters surrounding the base of ⟦E24⟧. They had never been known to violently beach themselves like the threshers had been known to. Why would these creatures do this, I wonder? Well, perhaps the study of their remains will bear the fruits of knowledge that we seek.",
+  "quest:4730:completion:1": "Again, thank you for your aid. Please accept this honorarium from the Temple of the Moon.",
+  "quest:944:obj:0": "Gather information, then use the ⟦E25⟧ to create a ⟦E26⟧. Use the bowl to speak with ⟦E28⟧.",
+  "quest:944:details:0": "It is strange that the naga are here, in ⟦E8⟧. But stranger still...are the Twilight's ⟦E29⟧. That cult worships the old, old lords of the earth. Lords defeated long ago.",
+  "quest:944:details:1": "⟦E30⟧, to the south, is a place where such an old lord fell.",
+  "quest:944:details:2": "Go there and look for more Twilight's ⟦E29⟧ cultists.",
+  "quest:944:details:3": "Take this phial of scrying. Use it to create a scrying bowl after searching the Master's ⟦E31⟧. Then speak to me through the bowl.",
+  "quest:944:progress:0": "⟦E30⟧, ⟦13⟧.⟦14⟧⟦15⟧Go there, then speak with me again.",
+  "quest:944:completion:0": "The Twilight's ⟦E29⟧ is at the Master's ⟦E31⟧?",
+  "quest:944:completion:1": "Unfortunate.",
+  "quest:944:completion:2": "The old lord impaled by the glaive is long dead, but that does not mean slivers of his power do not still remain.",
+  "quest:944:completion:3": "The Twilight's ⟦E29⟧ must be seeking this power.",
+  "quest:947:obj:0": "Bring 5 Scaber Stalks and 1 ⟦E32⟧ to ⟦E33⟧ in Auberdine.",
+  "quest:947:details:0": "I am devising a potion that requires rare ⟦E35⟧, ⟦E35⟧ that grow only in a certain cave. The cave lies behind ⟦E36⟧, to the east and slightly north along the mountains.",
+  "quest:947:details:1": "I would go there myself, but I was advised by the ⟦E37⟧ to stay away from that place. Our venerable allies sense that the cave is the hiding place for a new evil in ⟦E8⟧.",
+  "quest:947:details:2": "Please, ⟦16⟧, gather the ⟦E35⟧ for me. And while doing so, scout the cave to confirm the Ancients' fears.",
+  "quest:947:progress:0": "Do you have my ⟦E35⟧, ⟦17⟧? Have you been to the cave?",
+  "quest:947:completion:0": "Many thanks, ⟦18⟧. These ⟦E35⟧ are fine specimens!",
+  "quest:947:completion:1": "And when you were at ⟦E36⟧, did you find anything to confirm the warnings of the Ancients?",
+  "quest:947:completion:2": "The Ancients are wise, but I had hoped that, this time, they were wrong.",
+  "quest:948:obj:0": "Speak with ⟦E28⟧ at the ⟦E37⟧.",
+  "quest:948:details:0": "⟦E28⟧, an Ancient of Lore at the ⟦E37⟧, knows of your journey to Cliffwater Falls and wishes to speak with you. The grove lies to the south, nestled near the mountains.",
+  "quest:948:details:1": "The Ancients are patient and wise, ⟦19⟧. But if ⟦E28⟧ seeks your counsel concerning what you saw in the falls, then I fear it is urgent.",
+  "quest:948:completion:0": "⟦20⟧. You are here.",
+  "quest:948:completion:1": "Good.",
+  "quest:948:completion:2": "We have matters...to discuss. You and I.",
+  "quest:949:obj:0": "Find a clue in the Twilight's ⟦E29⟧ camp at the Master's ⟦E31⟧.",
+  "quest:949:details:0": "The Twilight's ⟦E29⟧'s purpose at the Master's ⟦E31⟧ is not known. But it must be dark.",
+  "quest:949:details:1": "Search through their camp at the ⟦E31⟧... Search for some thing that may teach us their intentions.",
+  "quest:949:details:2": "For we must learn their intentions before a plan is made.",
+  "quest:949:completion:0": "This book is hand printed in an ancient language, and illustrated by a master artist.",
+  "quest:950:obj:0": "Bring ⟦E28⟧ the recovered ⟦E39⟧.",
+  "quest:950:details:0": "Peering into the ⟦E40⟧ is maddening. Text begins to swim and dance after only a moment's glance, and once beautiful scrollwork twists into grotesque shapes.",
+  "quest:950:details:1": "Tearing away one page of insane scribbles is all that is possible before a swoon overtakes you.",
+  "quest:950:progress:0": "⟦21⟧. You return.",
+  "quest:950:completion:0": "A chaotic, primal magic surrounds this parchment of scribbles. I sense the work of the old ones in it.",
+  "quest:950:completion:1": "Let us hope it reveals the purpose of the Twilight's ⟦E29⟧ in ⟦E8⟧...",
+  "quest:982:obj:0": "Recover the ⟦E41⟧ and the ⟦E42⟧ for ⟦E43⟧ in Auberdine. Both items should be found aboard the wreckage of the ships to the north of the village.",
+  "quest:982:details:0": "Off the coast of ⟦E8⟧ to our north are two wrecked ships - the Silver Dawning and the ⟦E5⟧ Veil. Some time ago, both ships ran afoul of the blasted murlocs as they sailed across the vast sea into Auberdine. They now lie at the bottom of the ocean as trophies for those fiends.",
+  "quest:982:details:1": "Both captains didn't make it out that night, and their logs and other effects are still below in lockboxes. I'd like for you to recover them for us; it would mean a lot to the crew members still around these parts.",
+  "quest:982:progress:0": "The captains of those ships were good night elves, and they deserve a better fate than they were given. Perhaps tending to their personal effects will be the best way to put their spirits to rest.",
+  "quest:982:completion:0": "You've done us here in Auberdine a great service, lad. We'll make sure that their effects are properly taken care of.",
+  "quest:982:completion:1": "As for you, please have this. It is the least I can do for someone with the bravery to set things right.",
+  "quest:1138:obj:0": "Collect 6 ⟦E44⟧ for ⟦E45⟧ in Auberdine.",
+  "quest:1138:details:0": "I love crab. Crabs are the fruit of the sea! You can bake it, barbecue it, boil it, and broil it. They're pan fried, deep fried, and stir fried. There's crab salad, crab soup, crab stew, pepper crab, lemon crab, whipper root crab, and ⟦E46⟧ surprise crab. That's... that's about it.",
+  "quest:1138:details:1": "I'm here fishing right now, so I can't get any fine crab chunks. You can pick them out of reef crawlers and encrusted tide crawlers. You can make a lot with it. You can bake it, barbecue it, boil it...",
+  "quest:1138:progress:0": "...lemon crab, whipper root crab, and ⟦E46⟧ surprise crab.  That's about it.⟦22⟧⟦23⟧Oh, hello there ⟦24⟧.  Do you have them fine crab chunks I was telling you about?",
+  "quest:1138:completion:0": "Wow, these fine crab chunks are what I need. Thanks ⟦25⟧! I found this while I was fishing a while ago, and I have no use for it. Maybe you can do something with it. It sure don't make any good crab dishes.",
+  "quest:1138:completion:1": "I told you all about crabs, right?",
+  "quest:97894:title": "Business in Auberdine",
+  "quest:945:obj:0": "Help ⟦E47⟧ escape, then tell ⟦E48⟧ at the Shrine of Aessina that her sister is safe.",
+  "quest:945:details:0": "Help!",
+  "quest:945:details:1": "I was wandering around the Master's ⟦E31⟧, and these dirty cultists surrounded me. Lucky I'm good at hiding!!",
+  "quest:945:details:2": "Can you help me out of here? And I need to send word to my sister ⟦E48⟧ that I'm all right. She's in ⟦E11⟧ to the south, at the Shrine of Aessina.",
+  "quest:945:completion:0": "My sister was where?? ⟦E47⟧ doesn't mind getting herself dirty, but still! That's a long way to wander, and the Master's ⟦E31⟧ is an unwholesome place...",
+  "quest:945:completion:1": "Well thank you, ⟦26⟧. It was very nice of you to let me know she's all right.",
+  "quest:965:obj:0": "Find ⟦E49⟧ near the Tower of Althalaxx in ⟦E8⟧.",
+  "quest:965:details:0": "Hail, young ⟦27⟧. I am Elissa Starbreeze, and it is my charge to protect Auberdine from harm.",
+  "quest:965:details:1": "To this end, I sent ⟦E49⟧ to observe the strange happenings around the Tower of Althalaxx to the northeast.",
+  "quest:965:details:2": "It is past time that he should have returned. I worry that he has encountered some unforeseen danger in the forest. I would be most appreciative if you would find him and see that he is doing well.",
+  "quest:965:completion:0": "Elissa sent you? Then it is good tidings you bring. I have troubling news to report to her, and had no means with which to deliver it.",
+  "quest:966:obj:0": "Collect 4 Worn Parchments for ⟦E49⟧ near the Tower of Althalaxx.",
+  "quest:966:details:0": "A group of warlocks has taken up residence around and inside the tower. I would have returned to Auberdine to report to Elissa earlier, but I was afraid that I might miss something while I was away.",
+  "quest:966:details:1": "Delgren suspected such a company might be gathering at the tower, but did not know why.",
+  "quest:966:details:2": "BA few scraps of parchment that the warlocks carry have found their way to my hands, but I need more to complete the puzzle. I warn you not to venture into the tower, however, the warlocks there are much more powerful!",
+  "quest:966:progress:0": "Have you found any more of their scrolls? I should be able to piece together a larger picture of the cult if you can find them.",
+  "quest:966:completion:0": "Many thanks, ⟦28⟧. This should shed some light on this warlocks' gathering...",
+  "quest:966:completion:1": "Hmm... the Cult of the Dark Strand... I have never heard of this group before. Having no knowledge of their history, it is all but impossible to say what their plans must be.",
+  "quest:966:completion:2": "There is no more time to delay. Warning must be delivered to Delgren immediately.",
+  "quest:967:obj:0": "Deliver Balthule's letter to ⟦E51⟧ in ⟦E11⟧ Forest.",
+  "quest:967:details:0": "My master, ⟦E51⟧, is a paladin who has graciously offered his assistance in defending our forests from the forces of the demons and undead. He has taught me much about the ⟦E53⟧ and the art of battle.",
+  "quest:967:details:1": "Delgren must know of the cult's operations immediately.",
+  "quest:967:details:2": "You will find him far south of here at Maestra's Post in ⟦E11⟧ Forest. Be swift, I fear the Dark Strand's threat grows with each passing hour.",
+  "quest:967:progress:0": "You have some business with me, ⟦29⟧?",
+  "quest:967:completion:0": "If you don't mind my saying, you seem a bit well-equipped for a messenger, hm? I suppose Balthule wanted to be certain that his letter reached my hands. Let's see what he has to say...",
+  "quest:967:completion:1": "This is disturbing news. When undead or demonic forces are found, I help the Sentinels destroy them.",
+  "quest:967:completion:2": "At first I was unaccustomed to the manners of the night elves, but I have grown to respect them greatly as allies.",
+  "quest:2139:obj:0": "Find and kill the ⟦E56⟧.",
+  "quest:2139:details:0": "The survival of our people and lands comes at unfortunate costs, ⟦30⟧.",
+  "quest:2139:details:1": "You have spilled the blood of nature's servants; many sick animals you have felled. The people of Auberdine are indebted to you, for the forest's pain is eased - even if only for a moment.",
+  "quest:2139:details:2": "I have one final task for you, but be warned, you will have to kill again. It is my hope that this will be the last time I call upon you, ⟦31⟧.",
+  "quest:2139:details:3": "In a cave to the northeast, near ⟦E57⟧, resides the ⟦E56⟧. Slay her.",
+  "quest:2139:progress:0": "With the infected ⟦E56⟧ slain, the population of Rabid Thistle Bears entering our land is lessened. Waste no time, ⟦32⟧.",
+  "quest:2139:completion:0": "You have fought for Auberdine with bravery and honor, ⟦33⟧. In our war torn lands, death and despair are common. Many will not rise to meet the challenge of life in our new home, choosing instead to hide in their homes or escape to the more fortified lands of the ⟦E58⟧.",
+  "quest:2139:completion:1": "Thank you, ⟦34⟧. Perhaps someday soon we shall fight along side as comrades versus another foe.",
+  "quest:4740:obj:0": "Find and slay the murloc known as ⟦E59⟧. The creature is thought to be defending the murloc huts south of Auberdine along the water.",
+  "quest:4740:obj:1": "Report the death of ⟦E59⟧ to ⟦E60⟧ in Auberdine.",
+  "quest:4740:details:0": "Attention!",
+  "quest:4740:details:1": "BA reward is being offered for the death of the murloc \"⟦E59⟧\". This foul beast is known to be responsible for the death of at least one Sentinel, and is suspected of causing the sinking of at least two cargo vessels in the waters off ⟦E8⟧!",
+  "quest:4740:details:2": "⟦E59⟧ was last spotted at a hutted murloc camp south of Auberdine, and is thought to be protecting the huts there. Reward claims for this bounty should be claimed with ⟦E60⟧ in Auberdine.",
+  "quest:4740:details:3": "The Auberdine Village Council",
+  "quest:4740:progress:0": "Greetings ⟦35⟧ - what may the Sentinels assist you with today? Perhaps you are here to inquire about the bounty on ⟦E59⟧?",
+  "quest:4740:completion:0": "Well, looks like you're here to more than just inquire! The citizens will be delighted to know that tonight they will sleep a little bit more soundly and safer.",
+  "quest:4740:completion:1": "You've acted as the executioner of justice for the people of Auberdine today, ⟦36⟧. For that, I would like to offer you this as a suitable reward... for a true hero of the Auberdine people.",
+  "quest:4763:obj:0": "Fill the ⟦E61⟧ at the Auberdine Moonwell.",
+  "quest:4763:obj:1": "Gather a sample of fruit, nut, and grain from the northern Blackwood furbolg camps.",
+  "quest:4763:obj:2": "Mix the bowl and place it near the bonfire closest to the Cliffspring River at the northern camp, thus summoning the satyr corruptor.",
+  "quest:4763:obj:3": "Take the ⟦E62⟧ and bring it to ⟦E1⟧ in Auberdine.",
+  "quest:4763:details:0": "We've learned that a source of furbolg corruption is from the satyr. They hold sway via talismans that they channel magic through. If the furbolg have a chance at ⟦E64⟧, we must lure out the satyr corruptor and take that talisman!",
+  "quest:4763:details:1": "Fill this bowl at our moonwell and take samples of the furbolgs' food from their northern camp. Mix them and place it near the bonfire by the river; any furbolgs who eat will be cleansed just long enough to lure out the satyr corruptor... who then you must slay!",
+  "quest:4763:progress:0": "The ⟦E62⟧ is a sinister device that only serves to pervert the balance of nature. When you obtain this item from whatever satyr is tormenting the furbolgs and bring it to me for disposal, we will have won a great victory this day!",
+  "quest:4763:completion:0": "We have just begun this war to reclaim our forest from the forces of corruption, but a battle this day has been won! ⟦37⟧, the people of Auberdine owe you a debt of gratitude that will never be easily repaid. Please accept this along with our thanks. What we have learned here today may one day free our furbolg friends from the shackles of torment permanently.",
+  "quest:4731:obj:0": "Take the ⟦E65⟧ to ⟦E23⟧ in Auberdine.",
+  "quest:4731:details:0": "Another set of sea turtle remains lie beached on the coastline. This set of remains has an abandoned carriage half buckled to the turtle's shell. Perhaps this creature was driven to the shoreline by unknown beings rather than beaching itself as some of the other remains suggested. Powerful Greymist murlocs have made the carcass of this creature their current home.",
+  "quest:4731:details:1": "In the carriage, you find a box with strange markings on it; perhaps ⟦E23⟧ in Auberdine can make sense of it.",
+  "quest:4731:progress:0": "Hello again, ⟦38⟧.  The work you have done on behalf of the Temple of the Moon has been outstanding.  Are we to be blessed with more of your effort on our behalf?",
+  "quest:4731:completion:0": "I have heard of the kinds of carriages found on the back of that turtle. Those I do believe are naga carriages, used both in battle and in transportation of their supplies on to land. The markings on the box you found are of the naga; perhaps the creature you discovered was killed as it was heading further south... to ⟦E11⟧ maybe?",
+  "quest:4731:completion:1": "I will be sure to send this box to ⟦E66⟧ with the rest of your discoveries. This is for you - thank you again for your assistance.",
+  "quest:4732:obj:0": "Take the ⟦E67⟧ to ⟦E23⟧ in Auberdine.",
+  "quest:4732:details:0": "You find a corpse of a sea turtle that had beached itself on the coast of ⟦E8⟧ some time ago. It has been picked nearly clean by Greymist murlocs, the very ones who now have encamped themselves around the creature's remains. Still, there appear to be some suitable samples left on the creature's remains that ⟦E23⟧ in Auberdine might be able to make use of.",
+  "quest:4732:progress:0": "Greetings once again ⟦39⟧ - do you have any more discoveries to report to the Temple of the Moon?",
+  "quest:4732:completion:0": "You've found even more beached creatures, ⟦40⟧? Sea turtles were commonly found frolicking along the base of Nordrassil before it was destroyed. With the birth of ⟦E24⟧, however, these creatures have been seen in ever decreasing numbers. Some, as we have discovered, end their lives here for some unknown reason.",
+  "quest:4732:completion:1": "Your aid will perhaps unlock the mystery before us. Please accept this in exchange for the remains you have provided for our study.",
+  "quest:4733:obj:0": "Take the ⟦E22⟧ to ⟦E23⟧ in Auberdine.",
+  "quest:4733:details:0": "The remains of what appear to be a giant thresher have washed ashore on the rocky inlet of the Twilight ⟦E68⟧. The thresher is several times larger than any of the other threshers spotted in these parts. Wherever it came from, this creature would not seem to have been native to ⟦E8⟧.",
+  "quest:4733:details:1": "Though the creature has been picked apart in places, enough of it remains to gather a suitable sample for ⟦E23⟧ in Auberdine.",
+  "quest:4733:progress:0": "Thanks be to ⟦E12⟧ - I am glad to see you again, dear ⟦41⟧.  ⟦E69⟧'s work on the strange beaching phenomena continues here in ⟦E8⟧.  Might you have anything additional to offer us?",
+  "quest:4733:completion:0": "The dimensions of the thresher you mention are mind-boggling. Even the eldest of the threshers in this region grow to only a fraction of that size. While some larger ones were known to be close to ⟦E24⟧, their numbers have declined steadily. I cannot help but wonder if these creatures beaching themselves here are somehow related to this.",
+  "quest:4733:completion:1": "While we analyze the bones you have brought us, please accept this on behalf of the Temple of the Moon. Thank you, ⟦42⟧.",
+  "quest:729:obj:0": "⟦E2⟧ south and check on ⟦E70⟧.",
+  "quest:729:details:0": "What an honor it was when Master Greywhisker assigned me to work under the guidance of the great ⟦E70⟧. At the academy in ⟦E46⟧ everyone knew of Remtravel's great discoveries.",
+  "quest:729:details:1": "But the prospector is rather... um... oblivious ...to his surroundings.",
+  "quest:729:details:2": "We had uncovered evidence of a great society. Horrible golems sprang forth from the ground and overran the site. Remtravel never seemed to notice. I ran back to Auberdine for help.",
+  "quest:729:details:3": "Please travel south and see if the prospector is okay!",
+  "quest:729:completion:0": "Hollee. is that you? I need some help chiseling this stone. Hand me my stone brush, I think I see something.",
+  "quest:729:completion:1": "Hey, you're not Hollee! Don't suppose you've seen my stone brush?",
+  "quest:729:completion:2": "Never mind that now! I promised the League I'd send the mysterious fossil I found. Where did Hollee go?",
+  "quest:729:completion:3": "So much work to be done! Now where is that mysterious fossil... and my brush... and Hollee...",
+  "quest:729:completion:4": "And who are you... 'tis no matter, so long as you're here to help.",
+  "quest:729:completion:5": "Let me know when you're ready to start looking.",
+  "quest:731:obj:0": "Protect ⟦E70⟧ as he searches for the mysterious fossil, then return to ⟦E71⟧ in Auberdine.",
+  "quest:731:details:0": "So then, Hollee... oh that's right, you are not Hollee. Where's Hollee?",
+  "quest:731:details:1": "Bah, that's beside the point. We must find that stone brush... I mean the mysterious fossil! We must find that fossil. The Explorers' League in ⟦E66⟧ will want some indication as to what I've been doing.",
+  "quest:731:details:2": "Let me know when you are ready and we will hunt down that brush.... I mean fossil! We shall find something in writing to satisfy the League.",
+  "quest:731:details:3": "So are you ready yet?",
+  "quest:731:progress:0": "Is the prospector alive?",
+  "quest:731:completion:0": "Thank the stars ⟦E70⟧ is safe! I told you he was absent minded. I can't believe he insisted on staying there with all of those horrible creatures lurking about.",
+  "quest:741:obj:0": "Take the mysterious fossil to ⟦E72⟧ in ⟦E66⟧.",
+  "quest:741:details:0": "So the prospector wants to send the mysterious fossil to the Explorers' League in ⟦E66⟧? I don't feel right leaving ⟦E8⟧ without him.",
+  "quest:741:details:1": "Here, ⟦43⟧, deliver the mysterious fossil to ⟦E72⟧ in ⟦E66⟧.",
+  "quest:741:progress:0": "What can I do for you, ⟦44⟧?",
+  "quest:741:completion:0": "Oh my! Leave it to ⟦E70⟧ to discover such a find!",
+  "quest:942:obj:0": "Take the mysterious fossil to ⟦E73⟧ in Menethil ⟦E74⟧.",
+  "quest:942:details:0": "This fossil bears a striking resemblance to one I once saw in ⟦E46⟧. An archaeologist by the name of Flagongut brought it to our annual Explorers' League conference. He believed the fossil had a power which could be unlocked somehow.",
+  "quest:942:details:1": "Last I heard Flagongut had holed up in the Deepwater Tavern in Menethil ⟦E74⟧, awaiting escort to the Whelgar Excavation Site. Seek him out and show him Remtravel's fossil. Perhaps he can reveal the secrets of the past.",
+  "quest:942:details:2": "The ship to Menethil departs from Auberdine.",
+  "quest:942:progress:0": "What ya got there, friend?",
+  "quest:942:completion:0": "Oh my! You say this came from the distant lands of ⟦E75⟧?",
+  "quest:942:completion:1": "Amazing! Simply amazing!",
+  "quest:951:obj:0": "Bring 6 ⟦E76⟧ to ⟦E28⟧ at the ⟦E37⟧.",
+  "quest:951:details:0": "The parchment you found at the Master's ⟦E31⟧ is a page from an ancient text...written by elves! It is heavily cursed and tainted by the corruption of the Twilight's ⟦E29⟧, but it seems the cult is using ancient elven magic to bring their old masters back to our world.",
+  "quest:951:details:1": "⟦E2⟧ to the ruins of Mathystra to the northeast, and search for ancient relics among the grass and broken stones. Through their study, we may divine how the Twilight's ⟦E29⟧ intends to exploit the magic of the elves.",
+  "quest:951:progress:0": "⟦45⟧. Has your rooting through the Ruins of Mathystra been fruitful?",
+  "quest:951:completion:0": "Thank you. These relics are from a time when Mathystra shone. That once great bastion of the elves has faded, but shards of its magic remain. Let us hope we can unlock the secrets of that place before our enemies...",
+  "quest:951:completion:1": "Be vigilant, ⟦46⟧."
+ },
+ "context": {
+  "quest:4761": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Terenthis («ترنثیس»)",
+   "turner": "Thundris Windweaver («تاندریس ویند‌ویور»)"
+  },
+  "quest:4762": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Thundris Windweaver («تاندریس ویند‌ویور»)",
+   "turner": "Thundris Windweaver («تاندریس ویند‌ویور»)"
+  },
+  "quest:5713": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 15,
+   "side": "alliance",
+   "giver": "Sentinel Aynasha («یناشا»)",
+   "turner": "Sentinel Onaeya («اونایا»)"
+  },
+  "quest:963": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Cerellean Whiteclaw («سرلین پنجه‌سفید»)",
+   "turner": "Cerellean Whiteclaw («سرلین پنجه‌سفید»)"
+  },
+  "quest:1003": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Buzzbox 323 («بازباکس ۳۲۳»)",
+   "turner": "Buzzbox 525 («بازباکس ۵۲۵»)"
+  },
+  "quest:2138": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Tharnariun Treetender («تارناریون مراقب درخت»)",
+   "turner": "Tharnariun Treetender («تارناریون مراقب درخت»)"
+  },
+  "quest:4730": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Beached Sea Creature («موجود دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde («گوئنیث بلی‌لگوند»)"
+  },
+  "quest:944": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Onu («اونو»)",
+   "turner": "Scrying Bowl («کاسهٔ غیب‌بینی»)"
+  },
+  "quest:947": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Barithras Moonshade («باریتراس سایه‌ماه»)",
+   "turner": "Barithras Moonshade («باریتراس سایه‌ماه»)"
+  },
+  "quest:948": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Barithras Moonshade («باریتراس سایه‌ماه»)",
+   "turner": "Onu («اونو»)"
+  },
+  "quest:949": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Scrying Bowl («کاسهٔ غیب‌بینی»)",
+   "turner": "Twilight Tome («کتاب گرگ‌ومیش»)"
+  },
+  "quest:950": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Twilight Tome («کتاب گرگ‌ومیش»)",
+   "turner": "Onu («اونو»)"
+  },
+  "quest:982": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Gorbold Steelhand («گوربولد دست‌فولاد»)",
+   "turner": "Gorbold Steelhand («گوربولد دست‌فولاد»)"
+  },
+  "quest:1138": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "Gubber Blump («گابر بلامپ»)",
+   "turner": "Gubber Blump («گابر بلامپ»)"
+  },
+  "quest:97894": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 17,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Gorbold Steelhand («گوربولد دست‌فولاد»)"
+  },
+  "quest:945": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Therylune («تریلون»)",
+   "turner": "Therysil («تریسیل»)"
+  },
+  "quest:965": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Sentinel Elissa Starbreeze («لیسسا نسیم ستاره»)",
+   "turner": "Balthule Shadowstrike («بالتول ضربهٔ سایه»)"
+  },
+  "quest:966": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Balthule Shadowstrike («بالتول ضربهٔ سایه»)",
+   "turner": "Balthule Shadowstrike («بالتول ضربهٔ سایه»)"
+  },
+  "quest:967": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Balthule Shadowstrike («بالتول ضربهٔ سایه»)",
+   "turner": "Delgren the Purifier («دلگرن پاک‌ساز»)"
+  },
+  "quest:2139": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Tharnariun Treetender («تارناریون مراقب درخت»)",
+   "turner": "Tharnariun Treetender («تارناریون مراقب درخت»)"
+  },
+  "quest:4740": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "WANTED: Murkdeep! («مطلوب: مارک‌دیپ!»)",
+   "turner": "Sentinel Glynda Nal'Shea («گلیندا نالشی»)"
+  },
+  "quest:4763": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 18,
+   "side": "alliance",
+   "giver": "Thundris Windweaver («تاندریس ویند‌ویور»)",
+   "turner": "Thundris Windweaver («تاندریس ویند‌ویور»)"
+  },
+  "quest:4731": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 19,
+   "side": "alliance",
+   "giver": "Beached Sea Turtle («لاک‌پشت دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde («گوئنیث بلی‌لگوند»)"
+  },
+  "quest:4732": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 19,
+   "side": "alliance",
+   "giver": "Beached Sea Turtle («لاک‌پشت دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde («گوئنیث بلی‌لگوند»)"
+  },
+  "quest:4733": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 19,
+   "side": "alliance",
+   "giver": "Beached Sea Creature («موجود دریایی به‌کرانه‌رانده»)",
+   "turner": "Gwennyth Bly'Leggonde («گوئنیث بلی‌لگوند»)"
+  },
+  "quest:729": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Archaeologist Hollee («باستان‌شناس هولی»)",
+   "turner": "Prospector Remtravel («جویندهٔ رگه رم‌تراول»)"
+  },
+  "quest:731": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Prospector Remtravel («جویندهٔ رگه رم‌تراول»)",
+   "turner": "Archaeologist Hollee («باستان‌شناس هولی»)"
+  },
+  "quest:741": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Archaeologist Hollee («باستان‌شناس هولی»)",
+   "turner": "Chief Archaeologist Greywhisker («سرباستان‌شناس سبیل‌خاکستری»)"
+  },
+  "quest:942": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Chief Archaeologist Greywhisker («سرباستان‌شناس سبیل‌خاکستری»)",
+   "turner": "Archaeologist Flagongut («باستان‌شناس فلگونگات»)"
+  },
+  "quest:951": {
+   "zone_en": "Darkshore",
+   "zone_fa": "کرانهٔ تاریک",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Onu («اونو»)",
+   "turner": "Onu («اونو»)"
+  }
+ },
+ "known": {
+  "quest:4761": {
+   "title": "تاندریس ویند‌ویور"
+  },
+  "quest:4762": {
+   "title": "رودخانهٔ کلیف‌اسپرینگ"
+  },
+  "quest:5713": {
+   "title": "یک شلیک، یک کشتن"
+  },
+  "quest:963": {
+   "title": "به خاطر عشق ابدی"
+  },
+  "quest:1003": {
+   "title": "بازباکس ۵۲۵"
+  },
+  "quest:2138": {
+   "title": "پاک‌سازی آلودگان"
+  },
+  "quest:4730": {
+   "title": "موجود دریایی به‌کرانه‌رانده"
+  },
+  "quest:944": {
+   "title": "نیزهٔ بزرگ استاد"
+  },
+  "quest:947": {
+   "title": "قارچ‌های غار"
+  },
+  "quest:948": {
+   "title": "اونو"
+  },
+  "quest:949": {
+   "title": "اردوگاه گرگ‌وسازان"
+  },
+  "quest:950": {
+   "title": "بازگشت به اونو"
+  },
+  "quest:982": {
+   "title": "اقیانوس عمیق، دریای پهناور"
+  },
+  "quest:1138": {
+   "title": "میوهٔ دریا"
+  },
+  "quest:945": {
+   "title": "فرار تِری‌لون"
+  },
+  "quest:965": {
+   "title": "برج آلتالاکس"
+  },
+  "quest:966": {
+   "title": "برج آلتالاکس"
+  },
+  "quest:967": {
+   "title": "برج آلتالاکس"
+  },
+  "quest:2139": {
+   "title": "امید ترناریون"
+  },
+  "quest:4740": {
+   "title": "مطلوب: مارک‌دیپ!"
+  },
+  "quest:4763": {
+   "title": "بلک‌وودهای آلوده"
+  },
+  "quest:4731": {
+   "title": "لاک‌پشت دریایی به‌کرانه‌رانده"
+  },
+  "quest:4732": {
+   "title": "لاک‌پشت دریایی به‌کرانه‌رانده"
+  },
+  "quest:4733": {
+   "title": "موجود دریایی به‌کرانه‌رانده"
+  },
+  "quest:729": {
+   "title": "نقشه‌بردار حواس‌پرت"
+  },
+  "quest:731": {
+   "title": "نقشه‌بردار حواس‌پرت"
+  },
+  "quest:741": {
+   "title": "نقشه‌بردار حواس‌پرت"
+  },
+  "quest:942": {
+   "title": "نقشه‌بردار حواس‌پرت"
+  },
+  "quest:951": {
+   "title": "یادگارهای ماتیسترا"
+  }
+ }
+}

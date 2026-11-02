@@ -1,0 +1,878 @@
+{
+ "pack": "quest-stonetalon-mountains-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-stonetalon-mountains-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Seereth Stonebreak",
+   "fa": "سیرث سنگ‌شکن",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Tammra Windfield",
+   "fa": "تاممرا دشت باد",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Boulderslide Ravine",
+   "fa": "درهٔ ریزش سنگ",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Mor'rogal",
+   "fa": "مورروگال",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Kaya Flathoof",
+   "fa": "کایا سم‌پهن",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Makaba Flathoof",
+   "fa": "ماکابا سم‌پهن",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Mercenaries",
+   "fa": "مزدورها",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Kill Grundig Darkcloud",
+   "fa": "گراندینگ دارک‌کلاود را بکش",
+   "kind": "qs"
+  },
+  "E14": {
+   "en": "Grundig Darkcloud",
+   "fa": "گروندیگ ابرتیره",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Report to Kadrak",
+   "fa": "گزارش به کادراک",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Kadrak",
+   "fa": "کادراک",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Enchanted Resonite Crystal",
+   "fa": "بلور رزونیتِ افسون‌شده",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Goggeroc",
+   "fa": "گوگروک",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Gaxim Rustfizzle",
+   "fa": "گاکسیم زنگ‌فیزل",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Alchemy",
+   "fa": "کیمیاگری",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Engineering",
+   "fa": "مهندسی",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "Lomac Gearstrip",
+   "fa": "لوماک دنده‌برکن",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "NG-5",
+   "fa": "ان‌جی-۵",
+   "kind": "it"
+  },
+  "E37": {
+   "en": "Collin Mauren",
+   "fa": "کالین مورن",
+   "kind": "npc"
+  },
+  "E38": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Dust Devil Debris",
+   "fa": "آوار گردباد غبار",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "Scroll of Messaging",
+   "fa": "طومارِ پیام‌رسانی",
+   "kind": "it"
+  },
+  "E45": {
+   "en": "Super Reaper 6000 Blueprints",
+   "fa": "نقشه‌های سوپر ریپر ۶۰۰۰",
+   "kind": "it"
+  },
+  "E46": {
+   "en": "Ziz Fizziks",
+   "fa": "زیز فیزیکس",
+   "kind": "qs"
+  },
+  "E47": {
+   "en": "Sputtervalve",
+   "fa": "سپوتتروالو",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Sealed Envelope",
+   "fa": "پاکتِ مهرشده",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Super Reaper 6000",
+   "fa": "سوپر ریپر ۶۰۰۰",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Besseleth",
+   "fa": "بسلث",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Besseleth's Fang",
+   "fa": "نیش بسلت",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Maggran Earthbinder",
+   "fa": "مگران پیونددهندهٔ زمین",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Venture Co. Letters",
+   "fa": "نامه‌های شرکت ونچر",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Sentinel Thenysil",
+   "fa": "تنیسیل",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Piznik",
+   "fa": "پیزنیک",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Kaela Shadowspear",
+   "fa": "کایلا نیزه‌سایه",
+   "kind": "npc"
+  },
+  "E58": {
+   "en": "Unidentified Ore",
+   "fa": "کانهٔ ناشناس",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "XT:4",
+   "fa": "ایکس‌تی:4",
+   "kind": "npc"
+  },
+  "E60": {
+   "en": "XT:9",
+   "fa": "ایکس‌تی:9",
+   "kind": "npc"
+  },
+  "E62": {
+   "en": "Braelyn Firehand",
+   "fa": "برلین آتش‌دست",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Seereth Stonebreak": "سیرث سنگ‌شکن",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون",
+  "Horde": "هورد",
+  "Barrens": "بارنز",
+  "Thunder Bluff": "تاندر بلاف",
+  "Tammra Windfield": "تاممرا دشت باد",
+  "Boulderslide Ravine": "درهٔ ریزش سنگ",
+  "Mor'rogal": "مورروگال",
+  "Kaya Flathoof": "کایا سم‌پهن",
+  "Makaba Flathoof": "ماکابا سم‌پهن",
+  "Mercenaries": "مزدورها",
+  "Kill Grundig Darkcloud": "گراندینگ دارک‌کلاود را بکش",
+  "Grundig Darkcloud": "گروندیگ ابرتیره",
+  "Report to Kadrak": "گزارش به کادراک",
+  "Ashenvale": "اَشِن‌ویل",
+  "Kadrak": "کادراک",
+  "Enchanted Resonite Crystal": "بلور رزونیتِ افسون‌شده",
+  "Goggeroc": "گوگروک",
+  "Kalimdor": "کالیمدور",
+  "Gaxim Rustfizzle": "گاکسیم زنگ‌فیزل",
+  "Alchemy": "کیمیاگری",
+  "Engineering": "مهندسی",
+  "Lomac Gearstrip": "لوماک دنده‌برکن",
+  "Ironforge": "آیرون‌فورج",
+  "NG-5": "ان‌جی-۵",
+  "Collin Mauren": "کالین مورن",
+  "Stormwind": "استورم‌ویند",
+  "Dust Devil Debris": "آوار گردباد غبار",
+  "Westfall": "وستفال",
+  "Scroll of Messaging": "طومارِ پیام‌رسانی",
+  "Super Reaper 6000 Blueprints": "نقشه‌های سوپر ریپر ۶۰۰۰",
+  "Ziz Fizziks": "زیز فیزیکس",
+  "Sputtervalve": "سپوتتروالو",
+  "Sealed Envelope": "پاکتِ مهرشده",
+  "Super Reaper 6000": "سوپر ریپر ۶۰۰۰",
+  "Besseleth": "بسلث",
+  "Besseleth's Fang": "نیش بسلت",
+  "Maggran Earthbinder": "مگران پیونددهندهٔ زمین",
+  "Venture Co. Letters": "نامه‌های شرکت ونچر",
+  "Sentinel Thenysil": "تنیسیل",
+  "Piznik": "پیزنیک",
+  "Kaela Shadowspear": "کایلا نیزه‌سایه",
+  "Unidentified Ore": "کانهٔ ناشناس",
+  "XT:4": "ایکس‌تی:4",
+  "XT:9": "ایکس‌تی:9",
+  "Braelyn Firehand": "برلین آتش‌دست"
+ },
+ "tokens": {
+  "1": "$C",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$c",
+  "6": "$B",
+  "7": "$N",
+  "8": "$B",
+  "9": "$N",
+  "10": "$N",
+  "11": "$B",
+  "12": "$N",
+  "13": "$B",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$B",
+  "18": "$B",
+  "19": "$B",
+  "20": "$B",
+  "21": "$C",
+  "22": "$b",
+  "23": "$b",
+  "24": "$N",
+  "25": "$B",
+  "26": "$c",
+  "27": "$N",
+  "28": "$N",
+  "29": "$C",
+  "30": "$C",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$N",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N",
+  "53": "$C",
+  "54": "$N"
+ },
+ "rows": {
+  "quest:1061:obj:0": "Speak with ⟦E1⟧ in the ⟦E2⟧.",
+  "quest:1061:details:0": "The spirits of the ⟦E2⟧ are angered, for goblins and their servants are plundering and burning the land. So the land has cried out, and those who listen for such things... have heard.",
+  "quest:1061:details:1": "⟦E1⟧, a promising shaman of the ⟦E3⟧, was sent to Stonetalon. She reports massive deforestation at the hands of the goblins, and requests aid.",
+  "quest:1061:details:2": "Meet Seereth in Stonetalon. To reach her, follow the road west of the ⟦E4⟧' Crossroads. She is camped near the Greatwood Vale.",
+  "quest:1061:completion:0": "Ah, a ⟦1⟧. Very good. We will need your skills to deal with these plunderers!",
+  "quest:1063:obj:0": "Speak with Magatha in ⟦E5⟧.",
+  "quest:1063:details:0": "To truly tend the spirits of Stonetalon we must consult the tauren elders.",
+  "quest:1063:details:1": "I do not know many of their leaders' names, but I do know of one: Magatha. I have heard that she is very old, and she knows much. If anyone can marshal spiritual aid from the tauren, it is she.",
+  "quest:1063:details:2": "Magatha resides in the tauren capital of ⟦E5⟧, on Elder Rise -- the city's northeastern bluff. Speak with Magatha, and tell her of the peril of ⟦E2⟧.",
+  "quest:1063:completion:0": "I bid you greetings. You are here seeking council?",
+  "quest:6401:obj:0": "Tell ⟦E6⟧ in Sun Rock Retreat the good news.⟦2⟧",
+  "quest:6401:details:0": "Tell ⟦E6⟧, Kaya's aunt who's at Sun Rock Retreat, about the good news! Kaya is alive! We had thought she was lost after the brutal attack on our village. Follow the path to the west to get to Sun Rock Retreat.",
+  "quest:6401:details:1": "B",
+  "quest:6401:completion:0": "My goodness, my niece Kaya is alive! That is good news indeed. Thank you, ⟦3⟧.",
+  "quest:6421:obj:0": "Explore deep into the cave at ⟦E7⟧ and bring back 10 Resonite Crystals for ⟦E8⟧ at Sun Rock Retreat to investigate.",
+  "quest:6421:details:0": "Something is amiss here in Stonetalon. Can you feel the tension in the air, ⟦4⟧?",
+  "quest:6421:details:1": "Southeast of here lies a deep cave in ⟦E7⟧. The kobolds there are frantically mining a rare crystal called Resonite. I need you to bring back some ore samples so that I can understand what's happening in that cave. I also need you to investigate the depth of that cave.",
+  "quest:6421:details:2": "Go young ⟦5⟧, it's imperative I know what evil lurks under these mountains.",
+  "quest:6421:progress:0": "What news have you discovered from ⟦E7⟧? I recall some legend that deals with Resonite... I just cannot place my hoof on it. Perhaps knowing what lies at the bottom of the cave will illuminate their devious intentions.",
+  "quest:6421:completion:0": "Ah... Yes! That's it; the Resonite crystals have a trace of Earthen magic. The Kobolds must have dug deep uncovering an Earthen.",
+  "quest:6421:completion:1": "Legend states that the Earthen are creatures created by the Titans. They were used to create the land our feet walk on. This most definitely is a threat that cannot be ignored.",
+  "quest:6421:completion:2": "B<⟦E8⟧ shakes his head.>",
+  "quest:6421:completion:3": "Perhaps I can enchant these ore samples to use against this Kobold plot.",
+  "quest:6523:obj:0": "Escort ⟦E10⟧ to Camp Aparaje, and then return to ⟦E11⟧ near the southeastern edge of Stonetalon.⟦6⟧",
+  "quest:6523:details:0": "Thank you for rescuing me! We must leave quickly before they discover that I am free. Please escort me to Camp Aparaje. From there, I know my way.",
+  "quest:6523:details:1": "My father, ⟦E11⟧, will be desperate to know that I am safe.",
+  "quest:6523:completion:0": "Kaya is alive! ⟦7⟧, I have you to thank for rescuing her.",
+  "quest:6548:obj:0": "Kill 8 Grimtotem Ruffians and 6 Grimtotem ⟦E12⟧, and then return to ⟦E11⟧ near the southeastern edge of Stonetalon.⟦8⟧",
+  "quest:6548:details:0": "The Grimtotem Clan raided my village and killed most everyone. I killed all I could, but barely escaped with my life.",
+  "quest:6548:details:1": "B⟦9⟧, all I wish now is that more of them are dead. You will find them just to the west of here.",
+  "quest:6548:details:2": "B",
+  "quest:6548:progress:0": "Have you killed them yet?",
+  "quest:6548:completion:0": "⟦10⟧, I thank you... but I will never forget what the Grimtotem have done to my village.",
+  "quest:6629:obj:0": "⟦E13⟧ and 6 Grimtotem Brutes, and return to ⟦E11⟧ near the southeastern edge of Stonetalon.⟦11⟧",
+  "quest:6629:details:0": "⟦12⟧, you've done a fine job killing Grimtotem. If you dare, ⟦E14⟧ and his personal band of brutes is by far the worst of the lot. He was the one who led the brutal attack on my village.",
+  "quest:6629:details:1": "You will find him in Grimtotem Post a bit further up the path to the west. Kill him, and I will be forever grateful.⟦13⟧",
+  "quest:6629:progress:0": "Have you killed ⟦E14⟧ and his personal band of Brutes?",
+  "quest:6629:completion:0": "⟦E14⟧ is dead! ⟦14⟧, I will always be grateful for what you've done here today.",
+  "quest:1062:obj:0": "Kill 15 Venture Co. Loggers, then return to ⟦E1⟧ on the border of Stonetalon and the ⟦E4⟧.",
+  "quest:1062:details:0": "The goblin-run Venture Company moved into the ⟦E2⟧, chopping down trees and burning huge stretches of forest. The spirits of this place are nearly blind with pain and rage. We must stop the Venture Company!",
+  "quest:1062:details:1": "Head northwest, beyond the Greatwood Vale and into the Windshear Crag. You will find the goblins and their servants at work--show them the ⟦E3⟧ will not allow the exploitation of Stonetalon. Show them in the language they best understand...",
+  "quest:1062:details:2": "Violence.",
+  "quest:1062:progress:0": "The Greatwood Vale lies to the northwest, ⟦15⟧. Go. Strike fear into those who would pillage this land!",
+  "quest:1062:completion:0": "Bravely done, ⟦16⟧.",
+  "quest:1062:completion:1": "We may ultimately need the wisdom of tauren elders to calm the spirits of Stonetalon, but...",
+  "quest:1062:completion:2": "Ridding the Venture Company of its personnel is a good first move against them.",
+  "quest:6461:obj:0": "Xen'zilla at Malaka'Jin needs you to kill 10 Deepmoss Creepers and 7 Deepmoss Venomspitters.",
+  "quest:6461:details:0": "We Trolls here at Malaka'Jin have prospered from the land; Stonetalon Mountain offers great hunting for us to live on.",
+  "quest:6461:details:1": "Lately, we have attracted the wrong dinner guests... the spiders in these mountains have been raiding our camps at night looking to steal our hunt.",
+  "quest:6461:details:2": "If you were to help us kill off these ghastly beasts we at Malaka'Jin would be in your debt. Spiders are everywhere in Stonetalon - just head north from here and you will see what I am talking about.",
+  "quest:6461:progress:0": "Hey mon, have you slain the hairy blood feeders? I fear none here in Stonetalon but I don't go walking around here at night... if you know what I mean mon!⟦17⟧⟦18⟧As long as I stay off their dinner plate then all is well.⟦19⟧⟦20⟧Good luck to you, ⟦21⟧!",
+  "quest:6461:completion:0": "Sweet, mon! Good news, perhaps we will have fewer unwanted dinner guests tonight.⟦22⟧⟦23⟧Many thanks, ⟦24⟧. We are forever in your debt.",
+  "quest:6542:obj:0": "⟦E19⟧ at the watch tower in northern ⟦E4⟧.",
+  "quest:6542:details:0": "Have you ever been to ⟦E20⟧, to the north? The horde has recently set up an outpost on the Zoram Strand there, and we can always use some new recruits to help defend our new fronts.",
+  "quest:6542:details:1": "If you think you are up to it, see ⟦E21⟧ in the northern ⟦E4⟧, at the watch tower. He is heading up the ⟦E20⟧ campaign and can give you further orders.⟦25⟧",
+  "quest:6542:completion:0": "⟦E20⟧ is a divided land, but our most recent efforts have been very successful. We not only have an outpost at the Zoram Strand, but another just north of here called Splintertree.",
+  "quest:6481:obj:0": "Open the Resonite cask with the ⟦E22⟧, and then slay ⟦E23⟧. Return to ⟦E8⟧ with the news and ⟦E22⟧.",
+  "quest:6481:details:0": "You have uncovered a dark threat to the land, ⟦26⟧. The Resonite cask you have found in that cave houses a slumbering Earthen by the name of ⟦E23⟧.",
+  "quest:6481:details:1": "I have changed the mixture of the Resonite crystals that you gathered with my shamanistic powers. Take the enchanted Resonite crystal and smash open the Resonite cask, which houses the Earthen.",
+  "quest:6481:details:2": "When awakened, ⟦E23⟧ will be weakened... Slay him, ⟦27⟧!",
+  "quest:6481:progress:0": "I fear if we do not dispose of this threat immediately, all of Stonetalon will be lost. The might of an Earthen can not be matched by any means. When awakened, ⟦E23⟧ will be weak from his long slumber, this will be the opportunity that you must take advantage of... go now ⟦28⟧!",
+  "quest:6481:completion:0": "You bear good news, ⟦29⟧! I fear the possibilities of what an Earthen would mean to ⟦E24⟧.",
+  "quest:6481:completion:1": "Slaying ⟦E23⟧ was a task for no one less then a hero. You have done well; all of Stonetalon and ⟦E24⟧ are indebted to you, noble ⟦30⟧.",
+  "quest:6481:completion:2": "Accept this as your reward most honored one.",
+  "quest:1071:obj:0": "Kill 10 Venture Co. Loggers, and 10 Venture Co. Deforesters and return to ⟦E26⟧ in Stonetalon.",
+  "quest:1071:details:0": "You see, ⟦31⟧, I'm a member of the Enlightened Assembly of Arcanology, ⟦E27⟧ and ⟦E28⟧ Sciences, and it's my goal... nay, my DUTY! to show the night elves that a blend of magic, mixtures, and mechanisms can help save their forests.",
+  "quest:1071:details:1": "But it's a hard fought war, and the goblins reproduce like rabbits it seems. I haven't even had time to build my newest inventions!",
+  "quest:1071:details:2": "I need some time to plan and organize. But to do that, I need your help keeping the goblins at bay in Windshear Crag to the east...",
+  "quest:1071:progress:0": "How goes the battle on your end, ⟦32⟧?",
+  "quest:1071:completion:0": "Thanks so much for your help, ⟦33⟧. You're actually back just in time.",
+  "quest:1071:completion:1": "I think I've got the perfect plan. Explosives. No, that's not the plan, but it's part of the plan.",
+  "quest:1071:completion:2": "See, I've been using high explosives--don't worry, they're not as dangerous as everyone thinks--to scare the goblins back a bit. I can herd 'em pretty good with a few key detonations along the mountains' edges, but I've been low on supplies now for a few days.",
+  "quest:1072:obj:0": "Speak to ⟦E31⟧ in ⟦E32⟧.",
+  "quest:1072:details:0": "The device I'm thinking about is my most advanced version to date. But we'll need a special potion if it's to work. I'm thinking we might as well get the good stuff since this mission could be your last.",
+  "quest:1072:details:1": "And for that, we're going to need some potent explosives: Nitromirglyceronium.",
+  "quest:1072:details:2": "The only person who can make ⟦E33⟧ is an old friend of mine: ⟦E31⟧. Look for him in Tinker Town.",
+  "quest:1072:details:3": "You talk him into making us some ⟦E33⟧, I'll get to work on placement for my devices.",
+  "quest:1072:completion:0": "Ahhh. Gaxim sent you, huh? How do I know you're not lying to me?! Hmm? Hmm?",
+  "quest:1073:obj:0": "Bring 4 Minor Mana Potions and 2 Elixirs of Minor Fortitude to ⟦E31⟧ in ⟦E32⟧.",
+  "quest:1073:details:0": "Hahaha... you need Nitromirglyceronium to stop goblins from destroying a forest?!",
+  "quest:1073:details:1": "I don't care if you know Gaxim or not... I'll give you the stuff just to see you or them explode into itty bitty pieces.",
+  "quest:1073:details:2": "There's a problem though: I'm all out.",
+  "quest:1073:details:3": "But I'll tell you what, you bring me the correct potions, and I'll make some up for you right away.",
+  "quest:1073:details:4": "The least you can do is prove you've got some skill as an alchemist before I just give you a sample of my greatest creation.",
+  "quest:1073:progress:0": "I can't make any Nitromirglyceronium if I don't have the potions... they're vital to its creation.",
+  "quest:1073:completion:0": "This'll do nicely.",
+  "quest:1073:completion:1": "If I didn't know better, stranger, I'd say you knew somethin' about alchemy. Good, good... the world's not all about swords and sorcery, you know?",
+  "quest:1074:obj:0": "Bring the Nitromirglyceronium back to ⟦E26⟧ in Stonetalon.",
+  "quest:1074:details:0": "Here you go, stranger. Take heed with it though... it's volatile stuff.",
+  "quest:1074:details:1": "If you're really a friend of Gaxim's, then tell him I say hello. If you're not, then have fun blowin' yerself up.",
+  "quest:1074:progress:0": "Ah, goodie goodie, you're back.",
+  "quest:1074:completion:0": "Your task has been done flawlessly, ⟦34⟧.",
+  "quest:1074:completion:1": "BNG-5 is the unequivocal component in the recipe to ignite the wagons of dynamite.",
+  "quest:1074:completion:2": "What? Yes, dynamite... wagons of it. It's the perfect distraction, I tell you... just wait and see.",
+  "quest:1075:obj:0": "Find ⟦E37⟧ in ⟦E38⟧.",
+  "quest:1075:details:0": "Okay, now for the remote detonation part of my plan... oh, I haven't explained that yet, have I?",
+  "quest:1075:details:1": "Okay, so the short of it is this: with a little magic, I can make it so the explosives go off while you're not around. I'm putting together a device that'll allow you to push just one button and have the ⟦E33⟧ explode when you're ready.",
+  "quest:1075:details:2": "But I need a spell from a friend in ⟦E38⟧--⟦E37⟧ is his name. You can find him in the mage quarter there. He's human, so he shouldn't be hard to miss.",
+  "quest:1075:completion:0": "Now, this spell you need; one that will allow you detonate explosives from a distance... hmmm.",
+  "quest:1076:obj:0": "Bring ⟦E41⟧ to ⟦E37⟧ in ⟦E38⟧.",
+  "quest:1076:details:0": "Ah, I think I have it. A messaging spell... I believe that's the effect he's looking for.",
+  "quest:1076:details:1": "I'll have to create a scroll with the spell impressed upon it. To do that I'll need debris from a dust devil.",
+  "quest:1076:details:2": "While I gather the rest of the components, why don't you head to ⟦E43⟧ and find one of the foul creatures? They are dangerous, but I'm sure it's nothing you can't handle if you're willing to subject yourself to one of Gaxim's experiments.",
+  "quest:1076:details:3": "I'll be here when you return.",
+  "quest:1076:progress:0": "Hello, ⟦35⟧. Have you found the component I need?",
+  "quest:1076:completion:0": "Allow me just a few moments and I shall have your scroll ready for you.",
+  "quest:1077:obj:0": "Bring the ⟦E44⟧ to ⟦E26⟧ in Stonetalon.",
+  "quest:1077:details:0": "Here you are, ⟦36⟧. This should do nicely.",
+  "quest:1077:details:1": "Please give my regards to Gaxim when next you see him. I look forward to hearing about this adventure when it sees its completion.",
+  "quest:1077:details:2": "Fare well.",
+  "quest:1077:progress:0": "Haha! you're back! Do you have it? Do you have the spell?",
+  "quest:1077:completion:0": "This is perfect, ⟦37⟧! Well done.",
+  "quest:1077:completion:1": "This spell, mixed with the ⟦E33⟧, shall make the perfect remote explosive.",
+  "quest:1077:completion:2": "We'll be able to create the perfect distraction for you so you can sneak in and steal the Venture Co.'s letters and engineering plans.",
+  "quest:1077:completion:3": "That will surely slow down their deforestation acts.",
+  "quest:1093:obj:0": "Get the ⟦E45⟧ for ⟦E46⟧ in the ⟦E2⟧.",
+  "quest:1093:details:0": "Terrible what the Venture Company has done here, eh? What were they thinking? Goblin company hiring a gnome!",
+  "quest:1093:details:1": "Lucky for me, ⟦E47⟧ knows a genius when he sees one. Hired me just after I'd been kicked out!",
+  "quest:1093:details:2": "Tells me they built some enormous woodcutting machine, and Sput' wants me to steal the plans for him. Unfortunately, Gerenzo--bloody gnome--wants me dead on sight... maybe you could steal the plans for me? You should be able to find them on one of their operators.",
+  "quest:1093:progress:0": "Did you find those plans? I'm eager to impress the new boss. Hopefully, once he's convinced of my loyalty--well, as much as he can be convinced... goblin's honor, you know?--he'll feel comfortable making use of my rather impressive genius.",
+  "quest:1093:completion:0": "Hey, is that what I think it is? Great!",
+  "quest:1093:completion:1": "Now, let's see. Ugh... how am I supposed to understand this stuff... can't figure out the way gnomes think. Lemme tell you, I'm surprised they could build the wheel, let alone those flying machines they like so much.",
+  "quest:1094:obj:0": "Deliver the ⟦E48⟧ to ⟦E47⟧ in the ⟦E4⟧.",
+  "quest:1094:details:0": "This envelope has all the information I was able to snatch as they booted me out the door... Venture Company internal documents, some manuals, technical things... Oh, and of course the ⟦E49⟧ blueprints.",
+  "quest:1094:details:1": "⟦E47⟧ has taken up residence at Ratchet in the ⟦E4⟧. Shouldn't have much trouble finding him, he's a little green fellow.",
+  "quest:1094:progress:0": "Hello there! How can I help you?",
+  "quest:1094:completion:0": "Fizziks, eh? Can't say I trust him, but this information seems good enough. What I wouldn't give to have the Venture Company out of my hair.",
+  "quest:1094:completion:1": "They do come up with some good machines though... I can't deny that we've benefited from using some of the improvements they've devised.",
+  "quest:6284:obj:0": "Kill ⟦E50⟧ and bring ⟦E51⟧ to Maggran at Sun Rock Retreat.",
+  "quest:6284:details:0": "Warning: Proceed into Sishir Canyon west of here at your own risk.",
+  "quest:6284:details:1": "⟦E50⟧ and her eight-legged children of the forest have claimed this canyon as their webbed lair.",
+  "quest:6284:details:2": "⟦E52⟧ in Sun Rock Retreat has placed a bounty on ⟦E50⟧. Slay her and bring proof of your killing to Maggran; there you will receive your reward for disposing this eight-legged menace.",
+  "quest:6284:progress:0": "⟦E50⟧ is a ruthless predator... I fear for those that travel Webwinder Path at night. It's then that she and her children prey upon innocent travelers. I myself fell prey to her two-foot fang of death, but luckily I was able to fend her off and get to safety. I would give anything to see that monster destroyed.",
+  "quest:6284:completion:0": "Good hunting, ⟦38⟧! ⟦E50⟧ is an old predator in these parts... I will miss her not. Take this reward as a token for being the forest champion.",
+  "quest:6284:completion:1": "B<Maggran rubs the wound caused by ⟦E50⟧.>",
+  "quest:6284:completion:2": "Perhaps now many more will travel to Sun Rock Retreat without fearing what lurks in the dark.",
+  "quest:1079:obj:0": "Retrieve the Venture Co.'s ⟦E28⟧ Plans from the lumber mill in Windshear Crag.",
+  "quest:1079:details:0": "This is it, ⟦39⟧. Pay close attention. The devices are done, and ready to be used.",
+  "quest:1079:details:1": "Take these pages--they'll explain more about the detonators and explosives, and where you should place them.",
+  "quest:1079:details:2": "Remember, the success of your mission doesn't depend on how much destruction you cause. Plan Alpha's success depends on you bringing back the Venture Co.'s engineering plans from inside the lumber mill south of Cragpool Lake.",
+  "quest:1079:progress:0": "Did you get the plans, ⟦40⟧?",
+  "quest:1079:completion:0": "Truly amazing! This is a huge blow to the Venture Co.",
+  "quest:1079:completion:1": "We'll be able to find weaknesses in their machines and also incorporate their designs into our own creations. This is a wonderful day, indeed.",
+  "quest:1080:obj:0": "Retrieve the ⟦E53⟧ from Windshear Mine at the east end of Windshear Crag.",
+  "quest:1080:details:0": "Plan Beta's just like Plan Alpha, ⟦41⟧.",
+  "quest:1080:details:1": "We cause a distraction and then steal their precious letters.",
+  "quest:1080:details:2": "The key is to get their letters... remember that.",
+  "quest:1080:details:3": "The pages I gave you already will tell you where to plant the explosives. Just get back here alive and with those letters....",
+  "quest:1080:progress:0": "How'd it go, ⟦42⟧?",
+  "quest:1080:completion:0": "Incredible, ⟦43⟧! Kaela and the Sentinels will be so happy. With your skill and my creations, we're unstoppable.",
+  "quest:1082:obj:0": "Return to ⟦E54⟧ in ⟦E20⟧.",
+  "quest:1082:details:0": "⟦44⟧, you have done a great deed by lending a hand here.",
+  "quest:1082:details:1": "The Sentinels of ⟦E20⟧ will reward you well if you informed them that Gaxim and I are alive. Tell them we are well on our way to stopping the Venture Co. and healing the lands.",
+  "quest:1082:details:2": "Find Tara Thenysil in Astranaar; she will be pleased to see you've returned with good news.",
+  "quest:1082:completion:0": "Thank you, ⟦45⟧. You have done a service to the Sentinels.",
+  "quest:1082:completion:1": "I'm glad to see Kaela... and even Gaxim, are doing well.",
+  "quest:1082:completion:2": "You've earned our appreciation.",
+  "quest:1090:obj:0": "Get the mysterious ore from ⟦E56⟧ after he finishes mining it.",
+  "quest:1090:details:0": "You know, I was once the second most important person here at this site. That all changed when Gerenzo took over. Fired my boss, ⟦E46⟧, and sent me down to work in the mines. Ziz told me to stay here and gather information, though. His new boss will pay us well if we can find out what Gerenzo's plans are.",
+  "quest:1090:details:1": "Anyways, what I do know is that Gerenzo has ordered large amounts of this gold-green ore to be mined. I can get you a sample to bring to Ziz, but you'll have to watch for patrols while I get it.",
+  "quest:1090:completion:0": "Thanks, ⟦46⟧. It was looking a little dicey there for a second and we've probably drawn far too much attention to ourselves.",
+  "quest:1090:completion:1": "The important part is that we have the ore sample, though, and we should get it to Ziz as soon as possible.",
+  "quest:1091:obj:0": "Bring the ⟦E53⟧ to ⟦E57⟧.",
+  "quest:1091:details:0": "⟦47⟧, take these letters to Kaela. I'm sure she'll want to know about this. Or at least the Sentinels will.",
+  "quest:1091:details:1": "Make sure you tell her how successful we were and how we couldn't have done it without a little bit of magic.",
+  "quest:1091:progress:0": "Yes, ⟦48⟧? What can I do for you?",
+  "quest:1091:completion:0": "This is interesting indeed.",
+  "quest:1091:completion:1": "You and Gaxim have done very well, ⟦49⟧. Thank you.",
+  "quest:1092:obj:0": "Deliver the ⟦E58⟧ to ⟦E46⟧ in the ⟦E2⟧.",
+  "quest:1092:details:0": "I guess I'd better think about getting out of here, also. It won't take long for word of what happened here to spread to the higher ups, and I'm sure they wouldn't take too kindly to meeting me again.",
+  "quest:1092:details:1": "I'll sneak out and meet with Ziz. Hopefully, he'll be able to find me a new job!",
+  "quest:1092:details:2": "I'll try and clean up this mess a little, but you should take the ore sample to Ziz right away. He told me that he'd set up camp somewhere on the western side of Windshear Crag. Good luck.",
+  "quest:1092:progress:0": "Something I can help you with?",
+  "quest:1092:completion:0": "Ahhh, I knew that I did the right thing by telling ⟦E56⟧ to stay behind. I'm sure the engineers in Undermine will be most interested to look at this...",
+  "quest:1092:completion:1": "Of course I'll want to keep a little piece for myself, but what they don't know won't hurt them, yes?",
+  "quest:1068:obj:0": "Kill the shredders ⟦E59⟧ and ⟦E60⟧, then return to ⟦E1⟧ at the border of the ⟦E2⟧ and the ⟦E4⟧.",
+  "quest:1068:details:0": "There is a relation to the spiritual magic of shaman and the natural magic of druids. This is why we shaman can hear the plea of the spirits of Stonetalon. Many of their whisperings are lost to me, but one message, one vision, is clear...",
+  "quest:1068:details:1": "I saw a vision of two man-shaped machines in Windshear Crag, northwest of Greatwood Vale, felling trees with impossible speed. These metal beasts must be stopped!",
+  "quest:1068:details:2": "In my vision, the machines were marked with strange symbols:",
+  "quest:1068:details:3": "BXT:4 and ⟦E60⟧.",
+  "quest:1068:progress:0": "The tree spirits wail at the loss of their brethren, ⟦50⟧. You must destroy the shredders ⟦E59⟧ and ⟦E60⟧, or I fear Stonetalon will never be healed.",
+  "quest:1068:completion:0": "The destruction of the machines ⟦E59⟧ and ⟦E60⟧ have soothed many of the spirits of Stonetalon, ⟦51⟧. With their loss, let us hope the Venture Company will remove itself from these mountains.",
+  "quest:1068:completion:1": "For if they do not, then I fear the atrocities this place has suffered will pale to what lies ahead.",
+  "quest:6301:obj:0": "⟦E6⟧ at Sun Rock Retreat wants you to gather 10 Gaea Seeds.",
+  "quest:6301:details:0": "Industrial greed and continuous war have wrecked the lands of Stonetalon. Only the blessings of the Earthmother can cure such injury.",
+  "quest:6301:details:1": "B⟦52⟧, I will require you to seek a special seed, the Gaea seed. They are only found here in Stonetalon Mountain, north of Sun Rock Retreat at Mirkfallon Lake, near the water's edge.",
+  "quest:6301:details:2": "Once you bring me the seeds I will imbue them with shamanistic power to speed their growth.",
+  "quest:6301:progress:0": "The continuous destruction caused by war and those that seek a profit from lumber pains me deeply. The least I can do is perform the cycle of rebirth and sow the Gaea seeds to replenish the lands with a new forest. Do you have the required Gaea seeds, ⟦53⟧?",
+  "quest:6301:completion:0": "Ah? ⟦54⟧, you have the Gaea seeds. Watch and you shall see the power that these seeds will do for the land. Only those pure and true can heal the land?",
+  "quest:6301:completion:1": "B<Tammra begins to chant.>",
+  "quest:1087:obj:0": "Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for ⟦E62⟧ near Sun Rock Retreat.",
+  "quest:1087:details:0": "You cannot imagine the hatred I possess for this wretched land. The ilk of Cenarius and the kaldorei druids at the peak employ their pathetic powers to stifle the flow of magic, even so far south of their pathetic holdings... their beloved forests.",
+  "quest:1087:details:1": "Would that I could return to Jaedenar and exult in the flow of magic, but my master will not allow me to return until my work is done.",
+  "quest:1087:details:2": "I have no doubt you love the night elves and their allies as little as I. Aid me, and both our ends might be satisfied.",
+  "quest:1087:progress:0": "Here, channeling magic is like drawing water from a well with a bucket full of holes.",
+  "quest:1087:completion:0": "Already I can feel it... yes... power so sweet... the rushing flood. The kaldorei are foolish to spurn the gifts of this world, to reject the coursing of magic as it flows singing through your veins.",
+  "quest:1087:completion:1": "What a pale mockery life is without its burning embrace!"
+ },
+ "context": {
+  "quest:1061": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 17,
+   "side": "horde",
+   "giver": "Zor Lonetree («زور تک‌درخت»)",
+   "turner": "Seereth Stonebreak («سیرث سنگ‌شکن»)"
+  },
+  "quest:1063": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 18,
+   "side": "horde",
+   "giver": "Seereth Stonebreak («سیرث سنگ‌شکن»)",
+   "turner": "Magatha Grimtotem («ماگاتا گریم‌توتم»)"
+  },
+  "quest:6401": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 18,
+   "side": "horde",
+   "giver": "Makaba Flathoof («ماکابا سم‌پهن»)",
+   "turner": "Tammra Windfield («تاممرا دشت باد»)"
+  },
+  "quest:6421": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 18,
+   "side": "horde",
+   "giver": "Mor'rogal («مورروگال»)",
+   "turner": "Mor'rogal («مورروگال»)"
+  },
+  "quest:6523": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 18,
+   "side": "horde",
+   "giver": "Kaya Flathoof («کایا سم‌پهن»)",
+   "turner": "Makaba Flathoof («ماکابا سم‌پهن»)"
+  },
+  "quest:6548": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 18,
+   "side": "horde",
+   "giver": "Makaba Flathoof («ماکابا سم‌پهن»)",
+   "turner": "Makaba Flathoof («ماکابا سم‌پهن»)"
+  },
+  "quest:6629": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 18,
+   "side": "horde",
+   "giver": "Makaba Flathoof («ماکابا سم‌پهن»)",
+   "turner": "Makaba Flathoof («ماکابا سم‌پهن»)"
+  },
+  "quest:1062": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 19,
+   "side": "horde",
+   "giver": "Seereth Stonebreak («سیرث سنگ‌شکن»)",
+   "turner": "Seereth Stonebreak («سیرث سنگ‌شکن»)"
+  },
+  "quest:6461": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 19,
+   "side": "horde",
+   "giver": "Xen'Zilla («زن‌زیلا»)",
+   "turner": "Xen'Zilla («زن‌زیلا»)"
+  },
+  "quest:6542": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 19,
+   "side": "horde",
+   "giver": "Darn Talongrip («دارن چنگال‌پنجه»)",
+   "turner": "Kadrak («کادراک»)"
+  },
+  "quest:6481": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 20,
+   "side": "horde",
+   "giver": "Mor'rogal («مورروگال»)",
+   "turner": "Mor'rogal («مورروگال»)"
+  },
+  "quest:1071": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)",
+   "turner": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)"
+  },
+  "quest:1072": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)",
+   "turner": "Lomac Gearstrip («لوماک دنده‌برکن»)"
+  },
+  "quest:1073": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Lomac Gearstrip («لوماک دنده‌برکن»)",
+   "turner": "Lomac Gearstrip («لوماک دنده‌برکن»)"
+  },
+  "quest:1074": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Lomac Gearstrip («لوماک دنده‌برکن»)",
+   "turner": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)"
+  },
+  "quest:1075": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)",
+   "turner": "Collin Mauren («کالین مورن»)"
+  },
+  "quest:1076": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Collin Mauren («کالین مورن»)",
+   "turner": "Collin Mauren («کالین مورن»)"
+  },
+  "quest:1077": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "alliance",
+   "giver": "Collin Mauren («کالین مورن»)",
+   "turner": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)"
+  },
+  "quest:1093": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "",
+   "giver": "Ziz Fizziks («زیز فیزیکس»)",
+   "turner": "Ziz Fizziks («زیز فیزیکس»)"
+  },
+  "quest:1094": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "",
+   "giver": "Ziz Fizziks («زیز فیزیکس»)",
+   "turner": "Sputtervalve («سپوتتروالو»)"
+  },
+  "quest:6284": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 21,
+   "side": "horde",
+   "giver": "Wanted Poster: Besseleth («اعلان تحت تعقیب: بسلث»)",
+   "turner": "Maggran Earthbinder («مگران پیونددهندهٔ زمین»)"
+  },
+  "quest:1079": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)",
+   "turner": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)"
+  },
+  "quest:1080": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)",
+   "turner": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)"
+  },
+  "quest:1082": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Kaela Shadowspear («کایلا نیزه‌سایه»)",
+   "turner": "Sentinel Thenysil («تنیسیل»)"
+  },
+  "quest:1090": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 22,
+   "side": "",
+   "giver": "Piznik («پیزنیک»)",
+   "turner": "Piznik («پیزنیک»)"
+  },
+  "quest:1091": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Gaxim Rustfizzle («گاکسیم زنگ‌فیزل»)",
+   "turner": "Kaela Shadowspear («کایلا نیزه‌سایه»)"
+  },
+  "quest:1092": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 22,
+   "side": "",
+   "giver": "Piznik («پیزنیک»)",
+   "turner": "Ziz Fizziks («زیز فیزیکس»)"
+  },
+  "quest:1068": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 23,
+   "side": "horde",
+   "giver": "Seereth Stonebreak («سیرث سنگ‌شکن»)",
+   "turner": "Seereth Stonebreak («سیرث سنگ‌شکن»)"
+  },
+  "quest:6301": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 23,
+   "side": "horde",
+   "giver": "Tammra Windfield («تاممرا دشت باد»)",
+   "turner": "Tammra Windfield («تاممرا دشت باد»)"
+  },
+  "quest:1087": {
+   "zone_en": "Stonetalon Mountains",
+   "zone_fa": "کوه‌های استون‌تالون",
+   "level": 25,
+   "side": "horde",
+   "giver": "Braelyn Firehand («برلین آتش‌دست»)",
+   "turner": "Braelyn Firehand («برلین آتش‌دست»)"
+  }
+ },
+ "known": {
+  "quest:1061": {
+   "title": "ارواح استون‌تالون"
+  },
+  "quest:1063": {
+   "title": "پیرزن بزرگ"
+  },
+  "quest:6401": {
+   "title": "کایا زنده است"
+  },
+  "quest:6421": {
+   "title": "درهٔ ریزش سنگ"
+  },
+  "quest:6523": {
+   "title": "حفاظت از کایا"
+  },
+  "quest:6548": {
+   "title": "انتقام از روستایم"
+  },
+  "quest:6629": {
+   "title": "گراندینگ دارک‌کلاود را بکش"
+  },
+  "quest:1062": {
+   "title": "مهاجمان گابلینی"
+  },
+  "quest:6461": {
+   "title": "خون‌آشام‌ها"
+  },
+  "quest:6542": {
+   "title": "گزارش به کادراک"
+  },
+  "quest:6481": {
+   "title": "برخاستن خاکیان"
+  },
+  "quest:1071": {
+   "title": "استراحت یک نوم"
+  },
+  "quest:1072": {
+   "title": "همکار قدیمی"
+  },
+  "quest:1073": {
+   "title": "بی‌عرضگی + مواد شیمیایی = تفریح"
+  },
+  "quest:1074": {
+   "title": "بی‌عرضگی + مواد شیمیایی = تفریح"
+  },
+  "quest:1075": {
+   "title": "طوماری از مورن"
+  },
+  "quest:1076": {
+   "title": "شیاطین وست‌فال"
+  },
+  "quest:1077": {
+   "title": "مرسولهٔ ویژه برای گکسیم"
+  },
+  "quest:1093": {
+   "title": "سوپر ریپر ۶۰۰۰"
+  },
+  "quest:1094": {
+   "title": "دستورهای بیشتر"
+  },
+  "quest:6284": {
+   "title": "آراکنوفوبیا"
+  },
+  "quest:1079": {
+   "title": "عملیات پنهانی — آلفا"
+  },
+  "quest:1080": {
+   "title": "عملیات پنهانی — بتا"
+  },
+  "quest:1082": {
+   "title": "به‌روزرسانی برای نگهبان تنیسیل"
+  },
+  "quest:1090": {
+   "title": "دستورهای گرنزو"
+  },
+  "quest:1091": {
+   "title": "به‌روزرسانی کائلا"
+  },
+  "quest:1092": {
+   "title": "دستورهای گرنزو"
+  },
+  "quest:1068": {
+   "title": "ماشین‌های خردکن"
+  },
+  "quest:6301": {
+   "title": "چرخهٔ تولد دوباره"
+  },
+  "quest:1087": {
+   "title": "میراث سناریوس"
+  }
+ }
+}

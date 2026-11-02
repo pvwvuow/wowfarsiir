@@ -1,0 +1,897 @@
+{
+ "pack": "quest-sort:warlock-03-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:warlock-03-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Strahad Farsan",
+   "fa": "ستراهاد فارسان",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Demon of the Orb",
+   "fa": "دیو گوی",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Tabetha",
+   "fa": "تابثا",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Felhas Ruby",
+   "fa": "یاقوتِ فِل‌هاس",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Imprisoned Felhound Spirit",
+   "fa": "روح زندانی سگ فِل",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Menara Voidrender",
+   "fa": "منارا شکافندهٔ خلأ",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Infus Emerald",
+   "fa": "زمردِ اینفوس",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Imprisoned Infernal Spirit",
+   "fa": "روح زندانی اهریمنی",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Orb of Dar'Orahil",
+   "fa": "گویِ دار'اوراهیل",
+   "kind": "it"
+  },
+  "E19": {
+   "en": "Orb of Noh'Orahil",
+   "fa": "گویِ نو'اوراهیل",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Cleansed Infernal Orb",
+   "fa": "گویِ اهریمنیِ پاک‌شده",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Impsy",
+   "fa": "ایمپسی",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Kroshius",
+   "fa": "کروشیوس",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Rotting Wood",
+   "fa": "چوب پوسیده",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Bloodvenom Essence",
+   "fa": "جوهر خون‌زهر",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Voodoo Feathers",
+   "fa": "پرهای وودو",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Flawless Fel Essence",
+   "fa": "جوهر بی‌نقص فِل",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Felguard",
+   "fa": "نگهبان پلید",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Fel Fire",
+   "fa": "آتشِ فِل",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Kroshius' Infernal Core",
+   "fa": "هستهٔ اهریمنی کروشیوس",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Niby the Almighty",
+   "fa": "نیبی، قادر مطلق",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Mor'zul Bloodbringer",
+   "fa": "مورزول خون‌آور",
+   "kind": "qs"
+  },
+  "E37": {
+   "en": "Burning Steppes",
+   "fa": "استپ‌های سوزان",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Warlock",
+   "fa": "احضارکننده",
+   "kind": "cls"
+  },
+  "E40": {
+   "en": "Raging Beast's Blood",
+   "fa": "خون هیولای خشمگین",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E42": {
+   "en": "Case of Blood",
+   "fa": "جعبهٔ خون",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Gorzeeki Wildeyes",
+   "fa": "گورزیکی چشم‌وحشی",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Lord Banehollow",
+   "fa": "لرد بن‌هالو",
+   "kind": "qs"
+  },
+  "E47": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Shadow Council",
+   "fa": "شورای سایه",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Ulathek",
+   "fa": "اولاتک",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "The Traitor's Heart",
+   "fa": "قلب خیانتکار",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E53": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E54": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E55": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E56": {
+   "en": "Satyr Blood",
+   "fa": "خون ساتیر",
+   "kind": "it"
+  },
+  "E57": {
+   "en": "Tears of the Hederine",
+   "fa": "اشک هدرین",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Mount Hyjal",
+   "fa": "کوه هایجال",
+   "kind": "zn"
+  },
+  "E59": {
+   "en": "Doomguard Commander",
+   "fa": "فرمانده نگهبان عذاب",
+   "kind": "npc"
+  },
+  "E60": {
+   "en": "Glowing Crystal Prison",
+   "fa": "زندانِ بلوری درخشان",
+   "kind": "it"
+  },
+  "E61": {
+   "en": "Imprisoned Doomguard",
+   "fa": "دوم‌گارد زندانی",
+   "kind": "it"
+  },
+  "E62": {
+   "en": "Xorothian Stardust",
+   "fa": "غبار ستاره زوروثی",
+   "kind": "it"
+  },
+  "E64": {
+   "en": "Bell of Dethmoora",
+   "fa": "زنگ دث‌مورا",
+   "kind": "qs"
+  },
+  "E65": {
+   "en": "Dark Iron Ore",
+   "fa": "کانهٔ آهن سیاه",
+   "kind": "it"
+  },
+  "E66": {
+   "en": "Wheel of the Black March",
+   "fa": "چرخ مارش سیاه",
+   "kind": "qs"
+  },
+  "E67": {
+   "en": "Doomsday Candle",
+   "fa": "شمع روز جزا",
+   "kind": "qs"
+  }
+ },
+ "glossary": {
+  "Strahad Farsan": "ستراهاد فارسان",
+  "Barrens": "بارنز",
+  "Demon of the Orb": "دیو گوی",
+  "Tabetha": "تابثا",
+  "Felhas Ruby": "یاقوتِ فِل‌هاس",
+  "Desolace": "دزوله‌یس",
+  "Imprisoned Felhound Spirit": "روح زندانی سگ فِل",
+  "Menara Voidrender": "منارا شکافندهٔ خلأ",
+  "Infus Emerald": "زمردِ اینفوس",
+  "Imprisoned Infernal Spirit": "روح زندانی اهریمنی",
+  "Orb of Dar'Orahil": "گویِ دار'اوراهیل",
+  "Orb of Noh'Orahil": "گویِ نو'اوراهیل",
+  "Cleansed Infernal Orb": "گویِ اهریمنیِ پاک‌شده",
+  "Impsy": "ایمپسی",
+  "Felwood": "فل‌وود",
+  "Kroshius": "کروشیوس",
+  "Rotting Wood": "چوب پوسیده",
+  "Bloodvenom Essence": "جوهر خون‌زهر",
+  "Voodoo Feathers": "پرهای وودو",
+  "Azshara": "آزشارا",
+  "Flawless Fel Essence": "جوهر بی‌نقص فِل",
+  "Felguard": "نگهبان پلید",
+  "Blasted Lands": "اراضی ویران",
+  "Fel Fire": "آتشِ فِل",
+  "Kroshius' Infernal Core": "هستهٔ اهریمنی کروشیوس",
+  "Niby the Almighty": "نیبی، قادر مطلق",
+  "Mor'zul Bloodbringer": "مورزول خون‌آور",
+  "Burning Steppes": "استپ‌های سوزان",
+  "Warlock": "احضارکننده",
+  "Raging Beast's Blood": "خون هیولای خشمگین",
+  "Winterspring": "وینتراسپرینگ",
+  "Case of Blood": "جعبهٔ خون",
+  "Gorzeeki Wildeyes": "گورزیکی چشم‌وحشی",
+  "Lord Banehollow": "لرد بن‌هالو",
+  "Azeroth": "آزروت",
+  "Shadow Council": "شورای سایه",
+  "Ulathek": "اولاتک",
+  "The Traitor's Heart": "قلب خیانتکار",
+  "Shadow": "سایه",
+  "Travel": "سفر",
+  "Dire Maul": "دایر مول",
+  "Feralas": "فرالاس",
+  "Satyr Blood": "خون ساتیر",
+  "Tears of the Hederine": "اشک هدرین",
+  "Mount Hyjal": "کوه هایجال",
+  "Doomguard Commander": "فرمانده نگهبان عذاب",
+  "Glowing Crystal Prison": "زندانِ بلوری درخشان",
+  "Imprisoned Doomguard": "دوم‌گارد زندانی",
+  "Xorothian Stardust": "غبار ستاره زوروثی",
+  "Bell of Dethmoora": "زنگ دث‌مورا",
+  "Dark Iron Ore": "کانهٔ آهن سیاه",
+  "Wheel of the Black March": "چرخ مارش سیاه",
+  "Doomsday Candle": "شمع روز جزا"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$g succubus:infernal;",
+  "3": "$B",
+  "4": "$N",
+  "5": "$B",
+  "6": "$r",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$C",
+  "13": "$n",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$n",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$n",
+  "31": "$n",
+  "32": "$N",
+  "33": "$N",
+  "34": "$N",
+  "35": "$N",
+  "36": "$B",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N"
+ },
+ "rows": {
+  "quest:3631:obj:0": "Speak to ⟦E1⟧ in the ⟦E2⟧.",
+  "quest:3631:details:0": "Hmph. I say you're not prepared, but that is not my decision. Strahad feels otherwise, and it is his decision to make... this time.",
+  "quest:3631:details:1": "He wishes to speak to you, and quickly. You'll find him still above Ratchet in the ⟦E2⟧, at his little tower there with his acolytes.",
+  "quest:3631:details:2": "Do not dawdle long.",
+  "quest:3631:completion:0": "Good luck, ⟦1⟧. I look forward to seeing you in the future.",
+  "quest:4487:obj:0": "Speak to ⟦E1⟧ in Ratchet.",
+  "quest:4487:details:0": "Ah, good, you're here. I sent a ⟦2⟧ after you to get your attention, but it seems you were able to get here before it found you. No matter.",
+  "quest:4487:details:1": "There has been some talk lately of your growing power--that is good for you, possibly bad for others. But those are irrelevant points. The point is, I feel you've proven yourself and therefore are deserving of... hehe... a blessing of sorts.",
+  "quest:4487:details:2": "Above Ratchet in the ⟦E2⟧ you'll find a man named Strahad. I believe you've crossed paths before.",
+  "quest:4487:completion:0": "So, you've decided to grace my presence again. How kind of you. ⟦3⟧ My acolytes wondered if you'd ever show up. I told them there was no doubt. When power is concerned, you are drawn in like a moth to the flame.",
+  "quest:4488:obj:0": "Speak to ⟦E1⟧ in Ratchet.",
+  "quest:4488:details:0": "Ah, ⟦4⟧, you've seen fit to grace us with your presence. How wonderful!",
+  "quest:4488:details:1": "I hope you do not expect us to wait on you hand and foot also. You may be growing quickly in power, but you still are a pup when it comes to true knowledge and understanding. If you're not careful, corruption will overwhelm you and your weak will.",
+  "quest:4488:details:2": "But I should get to the point: Strahad wishes to speak to you. He is still residing in his tower overlooking Ratchet in the ⟦E2⟧. I suggest not taking too long.",
+  "quest:4488:completion:0": "So, you've decided to grace my presence again. How kind of you. ⟦5⟧ My acolytes wondered if you'd ever show up. I told them there was no doubt. When power is concerned, you are drawn in like a moth to the flame.",
+  "quest:4489:obj:0": "Speak to ⟦E1⟧ in Ratchet.",
+  "quest:4489:details:0": "You, ⟦6⟧! Come here!",
+  "quest:4489:details:1": "You're the one they call ⟦7⟧, yes?",
+  "quest:4489:details:2": "I thought as much. I will keep this short: you're growing in power, and it has been acknowledged. And now, the time has come that you are rewarded for your efforts.",
+  "quest:4489:details:3": "Go to the ⟦E2⟧. There, above Ratchet, you'll find ⟦E1⟧--perhaps you remember him? He would have words with you. I wouldn't take long.",
+  "quest:4489:completion:0": "So, you've decided to grace my presence again. How kind of you.",
+  "quest:4489:completion:1": "My acolytes wondered if you'd ever show up. I told them there was no doubt. When power is concerned, you are drawn in like a moth to the flame.",
+  "quest:4490:obj:0": "Speak to ⟦E1⟧ in Ratchet to learn the ability to summon a Felsteed.",
+  "quest:4490:details:0": "I would give you a reward for your patience and hard work. But know this, the ability to summon a Felsteed will be much more difficult in the future. You will have to earn it... and it will not be easy.",
+  "quest:4490:details:1": "For now, go with the power to summon such a creature and use it as you see fit.",
+  "quest:4490:completion:0": "Good luck, ⟦8⟧. I look forward to seeing you in the future.",
+  "quest:4961:obj:0": "Kill the ⟦E6⟧, then speak with ⟦E7⟧.",
+  "quest:4961:details:0": "Ah, a summoner's orb--this is where the taint must be coming from. We must exorcise the demon within it if you're to use it. That I can do easily.",
+  "quest:4961:details:1": "You're the one who has the hard job. You must kill the demon once I release it.",
+  "quest:4961:details:2": "And you'll have to be quick. If you take too long then he'll return to the orb and we'll have to start over!",
+  "quest:4961:details:3": "So get yourself ready, ⟦9⟧. Prepare your strongest spells and keep your potions handy, and go get a friend if you have one. Because this isn't going to be pretty.",
+  "quest:4961:progress:0": "You'll have to kill that demon to remove its presence permanently from the orb, ⟦10⟧.",
+  "quest:4961:completion:0": "Nicely done, ⟦11⟧! You gave that demon a lesson he won't soon forget. You've shown great power and skill. Now I suppose it's time you return to Menara with your cleansed orb so you can put it to good use.",
+  "quest:4961:completion:1": "Good luck, ⟦12⟧. Perhaps our paths will cross again.",
+  "quest:4962:obj:0": "Take the ⟦E9⟧ and use it on one of the Felhounds found in ⟦E10⟧. After successful, bring the ⟦E9⟧ and the ⟦E11⟧ back to ⟦E12⟧ in the ⟦E2⟧.",
+  "quest:4962:details:0": "So, you have chosen to capture the soul of a felhound, good.",
+  "quest:4962:details:1": "Take this ruby--with it, you will be able to capture the creature's soul. It works very similar to spells you already know: when the creature is close to dying, use the gem and it should do the rest of the work for you.",
+  "quest:4962:details:2": "I would suggest going to ⟦E10⟧ and trying your hand at any of the felhounds there. Those should do nicely.",
+  "quest:4962:details:3": "After you're successful, take both the captured spirit and your ruby to Menara.",
+  "quest:4962:progress:0": "Yes, ⟦13⟧? Have you chosen? Infernal or felhound?⟦14⟧⟦15⟧Each choice is personal and should reflect your strengths and weaknesses. It is not unheard of for a warlock to enhance themselves further instead of making up in areas they lack. Sometimes overpowering an enemy is just as strong a tactic than becoming a more balanced spell caster.",
+  "quest:4962:completion:0": "Ah, the spirit of a felhound. Well done, ⟦16⟧.",
+  "quest:4962:completion:1": "When I have both the spirit and the cleansed orb, I will merge the two for you, but not until then.",
+  "quest:4963:obj:0": "Take the ⟦E15⟧ and use it on one of the Infernals found in ⟦E10⟧. After successful, bring the ⟦E15⟧ and the ⟦E16⟧ back to ⟦E12⟧ in the ⟦E2⟧.",
+  "quest:4963:details:0": "So, you have chosen to capture the soul of an infernal, good.",
+  "quest:4963:details:1": "Take this emerald--with it, you will be able to capture the creature's soul. It works very similar to spells you already know: when the creature is close to dying, use the gem and it should do the rest of the work for you.",
+  "quest:4963:details:2": "I would suggest going to ⟦E10⟧ and trying your hand at any of the infernals there. Those should do nicely.",
+  "quest:4963:details:3": "After you're successful, take both the captured spirit and your emerald to Menara.",
+  "quest:4963:progress:0": "Yes, ⟦17⟧? Have you chosen? Infernal or felhound?⟦18⟧⟦19⟧Each choice is personal and should reflect your strengths and weaknesses. It is not unheard of for a warlock to enhance themselves further instead of making up in areas they lack. Sometimes overpowering an enemy is just as strong a tactic than becoming a more balanced spell caster.",
+  "quest:4963:completion:0": "Ah, the spirit of an infernal. Well done, ⟦20⟧.",
+  "quest:4963:completion:1": "When I have both the spirit and the cleansed orb, I will merge the two for you, but not until then.",
+  "quest:4964:obj:0": "Wait for ⟦E12⟧ to complete the ⟦E17⟧ and then speak to her again.",
+  "quest:4964:details:0": "I will get started immediately on crafting your orb and infusing your new demon into it. When done, you will have the choice of having it in the form of a staff or orb. I always felt it was important to cater to a warlock's chosen weapon... I see no reason not to continue that practice.",
+  "quest:4964:completion:0": "It is done, ⟦21⟧. Simply tell me which you'd prefer: a staff that would require you to use both hands, or an orb so you may use a dagger or sword as your weapon.",
+  "quest:4964:completion:1": "Tackling a felhound was a great feat on your part. I am sure your item will serve you well in the future. Continue to work hard in the arts, ⟦22⟧. I will be awaiting details of your exploits.",
+  "quest:4975:obj:0": "Wait for ⟦E12⟧ to complete the ⟦E19⟧ and then speak to her again.",
+  "quest:4975:details:0": "I will get started immediately on crafting your orb and infusing your new demon into it. When done, you will have the choice of having it in the form of a staff or orb. I always felt it was important to cater to a warlock's chosen weapon... I see no reason not to continue that practice.",
+  "quest:4975:completion:0": "It is done, ⟦23⟧. Simply tell me which you'd prefer: a staff that would require you to use both hands, or an orb so you may use a dagger or sword as your weapon.",
+  "quest:4975:completion:1": "Tackling the infernal was a great feat on your part and this reward will fit you nicely. I wish you further success in the arts, ⟦24⟧.",
+  "quest:4976:obj:0": "Return the ⟦E20⟧ to ⟦E12⟧ in the ⟦E2⟧.",
+  "quest:4976:details:0": "Take the cleansed orb back to Menara in Ratchet, ⟦25⟧. Give her my regards and be safe. I truly hope you are able to withstand the temptation and corruption that is sure to come as you follow your path.",
+  "quest:4976:details:1": "Good luck.",
+  "quest:4976:progress:0": "How goes your search for ⟦E7⟧ and the orb, ⟦26⟧?⟦27⟧⟦28⟧⟦E7⟧ has been more than useful when it comes to matters of the arcane. I'm sure she would have no problem aiding you if you're able to find her.",
+  "quest:4976:completion:0": "Well done, ⟦29⟧. This will do nicely.",
+  "quest:4976:completion:1": "The only thing left for you to do is to decide on which demon you want me to imprison within the cleansed orb. Do that, and you will have a magnificent new item to wield.",
+  "quest:7601:obj:0": "Speak with ⟦E21⟧ in ⟦E22⟧.",
+  "quest:7601:details:0": "If I am to teach you the secrets of summoning an infernal servant, you must destroy ⟦E23⟧ and bring me the infernal core from his burning remains. This, however, is not as easy as it sounds. ⟦E23⟧ has all but burned out completely. You must reignite his corpse and raise him from the rubble. To do this, however, you must gather some components from other demonic entities.",
+  "quest:7601:details:1": "My imp, ⟦E21⟧, shall set you on your way.",
+  "quest:7601:completion:0": "Oh boy, here we go again.",
+  "quest:8419:obj:0": "Bring a piece of felcloth to ⟦E21⟧ in ⟦E22⟧.",
+  "quest:8419:details:0": "⟦30⟧, an imp in ⟦E22⟧ by the name of ⟦E21⟧ has requested your presence. It is somewhat strange, as he has asked that you bring a piece of felcloth as a sign of good faith. Considering the power you already wield as a warlock, I can only assume you know the satyrs of ⟦E22⟧ carry this felcloth.",
+  "quest:8419:details:1": "You can find ⟦E21⟧ just north of the Bloodvenom Falls, which I've heard is quite lovely this time of year.",
+  "quest:8419:progress:0": "Do you have my felcloth?",
+  "quest:8419:completion:0": "What a splendid warlock you are!",
+  "quest:8419:completion:1": "B<⟦E21⟧ holds the felcloth to his face.>",
+  "quest:8419:completion:2": "Oh how I love the feel of it, the way it burns your skin and weaves evil thoughts through the mind...",
+  "quest:8420:obj:0": "Bring a piece of felcloth to ⟦E21⟧ in ⟦E22⟧.",
+  "quest:8420:details:0": "Maybe this sounds strange coming from an imp, but I'd like a pet of my own. I really would. It's just not fair that Niby gets me and I get nothing!",
+  "quest:8420:details:1": "In fact, it doesn't even need to be a living pet. I'd need something to start making it with, like some felcloth. The satyrs here in ⟦E22⟧ sometimes have felcloth, so you'd just have to kill enough of them until you find some. That doesn't sound so bad, does it?",
+  "quest:8420:progress:0": "Do you have my felcloth?",
+  "quest:8420:completion:0": "Wow! You are too kind. Especially for a warlock!",
+  "quest:8420:completion:1": "B<⟦E21⟧ holds the felcloth to his face.>",
+  "quest:8420:completion:2": "Oh how I love the feel of it, the way it burns your skin and weaves evil thoughts through the mind...",
+  "quest:8421:obj:0": "Bring 10 ⟦E25⟧ and 4 ⟦E26⟧ to ⟦E21⟧ in ⟦E22⟧.",
+  "quest:8421:details:0": "Now that I have my felcloth, I can really begin making *my* pet.",
+  "quest:8421:details:1": "It's going to need some eyes though. Perhaps you could rip some rotting wood from the irontree folk for me, so I can carve out some lovely eyes. They're up north in the Irontree Woods.",
+  "quest:8421:details:2": "I'll also need some bloodvenom essence to give it that new demon smell. The tainted oozes carry the essence, and they hang out right here near Niby and me.",
+  "quest:8421:progress:0": "Do you have the goods?",
+  "quest:8421:completion:0": "This will work so very well.",
+  "quest:8422:obj:0": "Bring a total of 6 ⟦E27⟧ from the trolls in sunken temple.",
+  "quest:8422:details:0": "My pet is almost done. Now I just need something to stuff it with.",
+  "quest:8422:details:1": "Only the voodoo feathers from the trolls in the sunken temple will do. They go by the names Gasher, Mijan, Zolo, Hukku, Zul'lor, and Loro. Kill them. Kill them all.",
+  "quest:8422:details:2": "This is no trivial task ⟦31⟧, so I'll make it worth your while by giving you something of Niby's -- he probably doesn't need it anyhow.",
+  "quest:8422:progress:0": "Did you bring the feathers? This doll needs stuffed!",
+  "quest:8422:completion:0": "Wonderful, now my pet is complete!",
+  "quest:8422:completion:1": "B<⟦E21⟧ quickly stuffs the doll and gives it a demonic hug.>",
+  "quest:8422:completion:2": "Oh, what an odd side effect these voodoo feathers have...",
+  "quest:7602:obj:0": "⟦E21⟧ in ⟦E22⟧ has asked that you bring him three Flawless Fel Essences originating from three distinct locations.",
+  "quest:7602:obj:1": "The Legashi Satyrs of ⟦E29⟧ hold the ⟦E30⟧ of their region. The Jaedenar Legionnaires of Jaedenar hold the ⟦E30⟧ of their region. The ⟦E31⟧ Sentries of the ⟦E32⟧ hold the ⟦E30⟧ of their region.",
+  "quest:7602:obj:2": "Recover the Flawless Fel Essences and return to ⟦E21⟧ in ⟦E22⟧.",
+  "quest:7602:details:0": "If you're going to reanimate ⟦E23⟧, you're going to need Fel fire. I can make Fel fire but it's going to require some components.",
+  "quest:7602:details:1": "You need to bring me flawless Fel essences from three distinct regions of the world.",
+  "quest:7602:details:2": "The Legashi Satyrs of ⟦E29⟧ will have the first essence type; the Jaedenar legionnaires of Jaedenar the second type and the felguard sentries of the ⟦E32⟧ the third.",
+  "quest:7602:details:3": "Bring me back one of each essence type and I will create the Fel fire, allowing you to reanimate ⟦E23⟧.",
+  "quest:7602:progress:0": "Don't tell anyone this but Niby is daft.",
+  "quest:7602:completion:0": "Give me a minute and I'll combine the essences into Fel fire.",
+  "quest:7603:obj:0": "Search Shatter Scar Vale in ⟦E22⟧ for the remains of ⟦E23⟧. When you locate the remains, use the ⟦E33⟧ near them and await ⟦E23⟧' return. When the infernal has awoken, slay him and take from his corpse ⟦E34⟧.",
+  "quest:7603:obj:1": "Return ⟦E34⟧ to ⟦E35⟧ in ⟦E22⟧.",
+  "quest:7603:details:0": "⟦E23⟧ lays in a heap to the northeast, in the Shatter Scar Vale. Take this Fel fire and use it on his remains. The fire should reanimate the fallen infernal.",
+  "quest:7603:details:1": "At this point, I fully expect him to kill you and your minion.",
+  "quest:7603:details:2": "If by some miracle you happen to kill ⟦E23⟧, take his infernal core and return it to Niby.",
+  "quest:7603:progress:0": "Did you get lost?",
+  "quest:7603:completion:0": "A deal is a deal! Quickly, take this and write this down. I don't have time! My greatest conjuration is upon us!",
+  "quest:7562:obj:0": "Speak with ⟦E36⟧ in the ⟦E37⟧.",
+  "quest:7562:details:0": "⟦32⟧, your delvings into the dark arts are deep. Your mastery over otherworldly denizens has grown so strong... perhaps you are ready to bind to you one of the infamous dreadsteeds.",
+  "quest:7562:details:1": "The ritual to summon the beast from its home requires great power and resources, but if you desire to dominate that epic mount, then speak with ⟦E36⟧. He is camped near the Altar of Storms in the ⟦E37⟧.",
+  "quest:7562:details:2": "Go, ⟦33⟧. This quest will be perilous, but a ⟦E39⟧ of your stature does not shy from danger!",
+  "quest:7562:completion:0": "Greetings, ⟦34⟧, and welcome. Are you here to study near the Altar of Storms as I am, perhaps to harness its energy for some hidden purpose...",
+  "quest:7562:completion:1": "Or... are you here to speak with me? Yes, I believe you are.",
+  "quest:7562:completion:2": "You want to master a dreadsteed? Such is no easy task. It will cost you no small amounts of blood, sweat... and of course gold. But a dreadsteed of Xoroth is a prize well worth winning so if interested, listen on...",
+  "quest:7563:obj:0": "Bring 30 bottles of ⟦E40⟧ to ⟦E36⟧ in the ⟦E37⟧.",
+  "quest:7563:details:0": "The dreadsteeds dwell on another world, on the fiery Plains of Xoroth, and to bind one of those famed beasts you must invoke powerful glyphs. I can scribe the glyphs on a parchment for you, but first I will need a special ink.",
+  "quest:7563:details:1": "In distant ⟦E41⟧ there dwells a race of owl beasts. Once pure creatures, they were turned mad by the demonic emanations of the Darkwhisper Gorge and now roam the snows in a frenzy.",
+  "quest:7563:details:2": "Their blood is what I need to ink your parchment. Bring it to me.",
+  "quest:7563:progress:0": "Have you seen the raging owl beasts, ⟦35⟧? The magic of those creatures is strong, and it concentrates in the blood that flows through their torturted forms.",
+  "quest:7563:completion:0": "Ah, very good. I will have this blood distilled into an ink and use it for the parchment I promised you. And perhaps I will save just a little for myself, as I hear its taste is quite euphoric...",
+  "quest:7564:obj:0": "Bring the ⟦E42⟧ to ⟦E43⟧ in the ⟦E37⟧.",
+  "quest:7564:details:0": "My servant, Gorzeeki, is an alchemist of some skill. He can prepare the ink I will need for your parchment. I gathered together the blood you acquired; take it to Gorzeeki so that he can begin his work.",
+  "quest:7564:progress:0": "You have something for me?  It's not a big, juicy spider, is it?  Or maybe a roach?  I hope it's still alive... I so love chewing on them when they're still alive...",
+  "quest:7564:completion:0": "Oh, it's blood. It must be from master Mor'zul then. He is so enamored with the stuff, and loves to see it spilled. I, however, prefer it coursing through the veins of a small rodent. It stays warm that way... until you want it.",
+  "quest:7564:completion:1": "This is powerful blood. Mor'zul must be making another parchment to summon a dreadsteed! How exciting!",
+  "quest:7564:completion:2": "If that's true, and you're going to perform the ritual, then... you're going to need a lot more than blood, my friend.",
+  "quest:7623:obj:0": "Purchase Shadowy Potions from Gorzeeki in the ⟦E37⟧.",
+  "quest:7623:obj:1": "Use the potions to travel through Jaedenar, and speak with ⟦E46⟧.",
+  "quest:7623:details:0": "Mor'zul says that you want to open a portal to Xoroth. To do that, you'll need Xorothian stardust. That's not easy to find on ⟦E47⟧!",
+  "quest:7623:details:1": "There is one being who might have some: ⟦E46⟧ in Jaedenar, the seat of the ⟦E48⟧! Speak with him and he might part with the stardust.",
+  "quest:7623:details:2": "But if you're going to Jaedenar, then you'll need to cloak yourself in the ⟦E48⟧'s own flavor of evil. That will require some of my shadowy potions, and that will cost you...",
+  "quest:7623:completion:0": "My patience spans the millenia, warlock. But do not think that allows you more than an instant of my time...",
+  "quest:7624:obj:0": "Confront ⟦E49⟧, then bring ⟦E50⟧ to ⟦E46⟧ in Jaedenar.",
+  "quest:7624:details:0": "You wish to enter my good graces? Then kill for me.",
+  "quest:7624:details:1": "My servant, ⟦E49⟧, is pathetic how he grovels before me, all the while plotting with Lord Hel'nurath on Xoroth. Hel'nurath plans to usurp my power here, and ⟦E49⟧ is his spy...",
+  "quest:7624:details:2": "Prove that you serve me and not my rivals. Confront ⟦E49⟧ in his quarters, in the ⟦E51⟧ Hold to the west. Tell him that I know his secret and watch as fear grips him. Then, bring me the traitor's heart!",
+  "quest:7624:progress:0": "I can already taste the heart of ⟦E49⟧ on my lips. So sweet is the flesh of a traitor...",
+  "quest:7624:completion:0": "Ah, how splendid! After rotting a week, this heart will prove a succulent treat! Perhaps I will send for ⟦E49⟧'s head and place it before me as I eat...",
+  "quest:7624:completion:1": "You have done me a service, warlock, and so my patience for you has grown. Marginally.",
+  "quest:7581:obj:0": "⟦E53⟧ to ⟦E54⟧ in ⟦E55⟧ and recover 15 ⟦E56⟧ from the Wildspawn Satyr that inhabit the Warpwood Quarter. Return to Daio in the Tainted Scar when this is done.⟦36⟧",
+  "quest:7581:details:0": "You must retrieve bindings for the prison of the Doomguard from lesser demons.",
+  "quest:7581:details:1": "The blood of the Wildspawn satyr that occupy ⟦E54⟧ should do nicely. The coagulated blood will bond the Hederine shards and power the crystal prison.",
+  "quest:7581:progress:0": "Only the blood of Wildspawn satyr will suffice.",
+  "quest:7581:completion:0": "Ah, a most excellent recovery. The blood will suppress the Doomguard's magical defenses.",
+  "quest:7582:obj:0": "⟦E53⟧ to Darkwhisper Gorge in ⟦E41⟧ and recover 5 ⟦E57⟧ from the Hederine demons that occupy the gorge. Return to Daio in the Tainted Scar when you have completed this task.",
+  "quest:7582:details:0": "The Hederine demons that occupy the foothills of ⟦E58⟧ secrete powerful fel poisons, which if left to mature, harden into a dense anti-magic crystal. These crystals have come to be known as ⟦E57⟧.",
+  "quest:7582:details:1": "Not even the immense power of a Doomguard could break the walls of a prison constructed from this material.",
+  "quest:7582:details:2": "⟦E53⟧ to Darkwhisper Gorge in ⟦E41⟧ and recover the Tears.",
+  "quest:7582:progress:0": "The Hederine will not give up their precious gems without a fight, ⟦37⟧.",
+  "quest:7582:completion:0": "I merely need to combine the blood of the Wildspawn with these crystals and the prison shall be ready for use.",
+  "quest:7583:obj:0": "Venture forth into the Tainted Scar and locate a ⟦E59⟧.",
+  "quest:7583:obj:1": "Use the ⟦E60⟧ on the ⟦E59⟧. Be prepared for a ferocious onslaught of attacks, as the demon attempts to escape capture.",
+  "quest:7583:obj:2": "Should you succeed, return the ⟦E61⟧ to Daio in the Tainted Scar.",
+  "quest:7583:details:0": "The prison is ready. Now for the most difficult portion of this task.",
+  "quest:7583:details:1": "You must find and capture a ⟦E59⟧ within the Tainted Scar using this crystal prison.",
+  "quest:7583:details:2": "Be warned! A Doomguard is a cunning and lethal adversary and will seek to destroy you as you begin the ritual of imprisonment. It will flail wildly in its attempts to escape imprisonment.",
+  "quest:7583:details:3": "It will focus on nothing but you, ⟦38⟧. Because of this, I must recommend that you take companions capable of keeping you alive!",
+  "quest:7583:progress:0": "Hrm? Well?",
+  "quest:7583:completion:0": "You have done as I have asked. You are ready to be given the knowledge to conjure and control the beast.",
+  "quest:7625:obj:0": "Purchase ⟦E62⟧ from Ur'dan. Bring it to ⟦E43⟧ in the ⟦E37⟧.",
+  "quest:7625:details:0": "So you come to me seeking Xorothian stardust? You wish to open a portal to Xoroth, the domain of Hel'nurath my rival? Perhaps you plan to steal from him one of his precious dreadsteeds?",
+  "quest:7625:details:1": "Very well. My servant Ur'dan has a supply of Xorothian stardust. You may obtain it from him... if you can pay the price.",
+  "quest:7625:progress:0": "Have you been to Jaedenar, ⟦39⟧? Did you get the stardust from ⟦E46⟧?",
+  "quest:7625:completion:0": "There it is! I can hardly believe you got it! You must have struck a big deal with that Dreadlord or else paid a large sum, or both!",
+  "quest:7625:completion:1": "Mor'zul will have his ink very soon and then he can finally make the glyph parchment, so you can open a portal to Xoroth and pull through it one of the famed dreadsteeds!",
+  "quest:7626:obj:0": "Bring 10 Elixirs of ⟦E51⟧ Power to ⟦E43⟧ in the ⟦E37⟧.",
+  "quest:7626:details:0": "A ⟦E64⟧, named after the late warlock Dethmoora Darkeyes, is one of the three tools needed to create a Circle of Greater Summoning. When properly atuned with the Wheel and the Candle, these items conduct vast stores of arcane power.",
+  "quest:7626:details:1": "My servant Gorzeeki can construct such a bell, but to do so he will need a large supply of elixirs of shadow power. Procure the elixirs from an alchemist and bring them to Gorzeeki.",
+  "quest:7626:progress:0": "You have those elixirs, ⟦40⟧? Mor'zul told me you need a ⟦E64⟧, and making one of those takes a lot of shadow power!",
+  "quest:7626:completion:0": "Very good! I hope these elixirs weren't too hard to get. Sometimes alchemists can be so miserly with their creations...",
+  "quest:7626:completion:1": "I'll make the bell and keep it until you're ready for your ritual.",
+  "quest:7627:obj:0": "Bring 6 Large Brilliant Shards and 25 ⟦E65⟧ to Gorzeeki in the ⟦E37⟧.",
+  "quest:7627:details:0": "A ⟦E66⟧ contains and directs the violent energies required for the Circle of Greater Summoning. For Gozeeki to construct a wheel, he will need both large brilliant shards from an enchanter, and dark iron ore from a master miner.",
+  "quest:7627:details:1": "Acquire these and bring them to my servant.",
+  "quest:7627:progress:0": "The ⟦E66⟧ isn't easy to make, and takes a lot of materials. Have you gathered them yet?",
+  "quest:7627:completion:0": "There they are! I hear that dark iron ore is only found in the depths of Blackrock, and I'm sure these shards weren't easy to find either. I am often awed at the dedication you warlocks have. If you instead bent all that energy into the art of bug catching, oh... such a feast you would enjoy!",
+  "quest:7627:completion:1": "Sorry, a small digression. I'll create the wheel and keep it for you until you're ready for your ritual.",
+  "quest:7628:obj:0": "Bring 35 Black Dragonscales to ⟦E43⟧ in the ⟦E37⟧.",
+  "quest:7628:details:0": "A ⟦E67⟧ stores fire and directs it at those who would disrupt your ritual. When creating your Circle of Greater Summoning, if your candle is lit then any wayward demons will be burned by its flames!",
+  "quest:7628:details:1": "Containing that fire is not easy, and requires the essence within the scales of a black dragon. Acquire those scales from a skinner and bring them to ⟦E43⟧.",
+  "quest:7628:progress:0": "Did you bring the dragonscales, ⟦41⟧? I don't want to start on the candle until I have them... or I might blow up the whole camp!",
+  "quest:7628:completion:0": "Ah, very good. I'll need these to contain the fires of the candle. Now that I have the scales, I'll make the candle and hold onto it until you're ready to begin your ritual for the Circle of Greater Summoning."
+ },
+ "context": {
+  "quest:3631": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "horde",
+   "giver": "Zevrost («زوروست»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:4487": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Briarthorn («خارشاخ»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:4488": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Demisette Cloyce («دمیزت کلویس»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:4489": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "horde",
+   "giver": "Kaal Soulreaper («کال روح‌درو»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:4490": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Strahad Farsan («ستراهاد فارسان»)",
+   "turner": "Strahad Farsan («ستراهاد فارسان»)"
+  },
+  "quest:4961": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha («تابثا»)",
+   "turner": "Tabetha («تابثا»)"
+  },
+  "quest:4962": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Acolyte Wytula («مرید ویتولا»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4963": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Acolyte Magaz («مرید ماگاز»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4964": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4975": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Menara Voidrender («منارا شکافندهٔ خلأ»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:4976": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "Tabetha («تابثا»)",
+   "turner": "Menara Voidrender («منارا شکافندهٔ خلأ»)"
+  },
+  "quest:7601": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 50,
+   "side": "",
+   "giver": "Niby the Almighty («نیبی، قادر مطلق»)",
+   "turner": "Impsy («ایمپسی»)"
+  },
+  "quest:8419": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 52,
+   "side": "horde",
+   "giver": "Demisette Cloyce («دمیزت کلویس»)، Kartosh («کارتوش»)",
+   "turner": "Impsy («ایمپسی»)"
+  },
+  "quest:8420": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Impsy («ایمپسی»)",
+   "turner": "Impsy («ایمپسی»)"
+  },
+  "quest:8421": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Impsy («ایمپسی»)",
+   "turner": "Impsy («ایمپسی»)"
+  },
+  "quest:8422": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 52,
+   "side": "",
+   "giver": "Impsy («ایمپسی»)",
+   "turner": "Impsy («ایمپسی»)"
+  },
+  "quest:7602": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 55,
+   "side": "",
+   "giver": "Impsy («ایمپسی»)",
+   "turner": "Impsy («ایمپسی»)"
+  },
+  "quest:7603": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 55,
+   "side": "",
+   "giver": "Impsy («ایمپسی»)",
+   "turner": "Niby the Almighty («نیبی، قادر مطلق»)"
+  },
+  "quest:7562": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 58,
+   "side": "",
+   "giver": "Spackle Thornberry («سپاکل توت‌خار»)، Kurgul («کورگول»)",
+   "turner": "Mor'zul Bloodbringer («مورزول خون‌آور»)"
+  },
+  "quest:7563": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 58,
+   "side": "",
+   "giver": "Mor'zul Bloodbringer («مورزول خون‌آور»)",
+   "turner": "Mor'zul Bloodbringer («مورزول خون‌آور»)"
+  },
+  "quest:7564": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 58,
+   "side": "",
+   "giver": "Mor'zul Bloodbringer («مورزول خون‌آور»)",
+   "turner": "Gorzeeki Wildeyes («گورزیکی چشم‌وحشی»)"
+  },
+  "quest:7623": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 58,
+   "side": "",
+   "giver": "Gorzeeki Wildeyes («گورزیکی چشم‌وحشی»)",
+   "turner": "Lord Banehollow («لرد بن‌هالو»)"
+  },
+  "quest:7624": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 58,
+   "side": "",
+   "giver": "Lord Banehollow («لرد بن‌هالو»)",
+   "turner": "Lord Banehollow («لرد بن‌هالو»)"
+  },
+  "quest:7581": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Daio the Decrepit («دایو فرتوت»)",
+   "turner": "Daio the Decrepit («دایو فرتوت»)"
+  },
+  "quest:7582": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Daio the Decrepit («دایو فرتوت»)",
+   "turner": "Daio the Decrepit («دایو فرتوت»)"
+  },
+  "quest:7583": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Daio the Decrepit («دایو فرتوت»)",
+   "turner": "Daio the Decrepit («دایو فرتوت»)"
+  },
+  "quest:7625": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lord Banehollow («لرد بن‌هالو»)",
+   "turner": "Gorzeeki Wildeyes («گورزیکی چشم‌وحشی»)"
+  },
+  "quest:7626": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mor'zul Bloodbringer («مورزول خون‌آور»)",
+   "turner": "Gorzeeki Wildeyes («گورزیکی چشم‌وحشی»)"
+  },
+  "quest:7627": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mor'zul Bloodbringer («مورزول خون‌آور»)",
+   "turner": "Gorzeeki Wildeyes («گورزیکی چشم‌وحشی»)"
+  },
+  "quest:7628": {
+   "zone_en": "Warlock",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Mor'zul Bloodbringer («مورزول خون‌آور»)",
+   "turner": "Gorzeeki Wildeyes («گورزیکی چشم‌وحشی»)"
+  }
+ },
+ "known": {
+  "quest:3631": {
+   "title": "احضار فِل‌رهواره"
+  },
+  "quest:4487": {
+   "title": "احضار فِل‌رهواره"
+  },
+  "quest:4488": {
+   "title": "احضار فِل‌رهواره"
+  },
+  "quest:4489": {
+   "title": "احضار فِل‌رهواره"
+  },
+  "quest:4490": {
+   "title": "احضار فِل‌رهواره"
+  },
+  "quest:4961": {
+   "title": "پاک‌سازی گوی اوراهیل"
+  },
+  "quest:4962": {
+   "title": "تراشهٔ سگ فِل"
+  },
+  "quest:4963": {
+   "title": "تراشهٔ اهریمنی"
+  },
+  "quest:4964": {
+   "title": "گوی کامل‌شدهٔ داراوراهیل"
+  },
+  "quest:4975": {
+   "title": "گوی کامل‌شدهٔ نوهاوراهیل"
+  },
+  "quest:4976": {
+   "title": "بازگرداندن گوی پاک‌شده"
+  },
+  "quest:7601": {
+   "title": "فرمان نیبی"
+  },
+  "quest:8419": {
+   "title": "خواهش اِمپ"
+  },
+  "quest:8420": {
+   "title": "داغ و خارش‌دار"
+  },
+  "quest:8421": {
+   "title": "جنس اشتباه"
+  },
+  "quest:8422": {
+   "title": "ترول‌های هم‌پر"
+  },
+  "quest:7602": {
+   "title": "جوهر بی‌نقص فِل"
+  },
+  "quest:7603": {
+   "title": "هستهٔ اهریمنی کروشیوس"
+  },
+  "quest:7562": {
+   "title": "مورزول خون‌آور"
+  },
+  "quest:7563": {
+   "title": "خشم خون"
+  },
+  "quest:7564": {
+   "title": "چشم‌وحشی"
+  },
+  "quest:7623": {
+   "title": "لرد بن‌هالو"
+  },
+  "quest:7624": {
+   "title": "اولاتک خیانتکار"
+  },
+  "quest:7581": {
+   "title": "پیوندهای زندان"
+  },
+  "quest:7582": {
+   "title": "پوستهٔ زندان"
+  },
+  "quest:7583": {
+   "title": "سرکوب"
+  },
+  "quest:7625": {
+   "title": "غبار ستاره زوروثی"
+  },
+  "quest:7626": {
+   "title": "زنگ دث‌مورا"
+  },
+  "quest:7627": {
+   "title": "چرخ مارش سیاه"
+  },
+  "quest:7628": {
+   "title": "شمع روز جزا"
+  }
+ }
+}

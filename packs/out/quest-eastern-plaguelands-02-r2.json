@@ -1,0 +1,962 @@
+{
+ "pack": "quest-eastern-plaguelands-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-eastern-plaguelands-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Sacred Highborne Writings",
+   "fa": "نوشته‌های مقدس های‌بورن",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Aurora Skycaller",
+   "fa": "آئورورا آسمان‌خوان",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Crystal of Zin-Malor",
+   "fa": "بلورِ زین‌مالور",
+   "kind": "it"
+  },
+  "E6": {
+   "en": "Plaguehound",
+   "fa": "سگ شکاری طاعونی",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Tirion Fordring",
+   "fa": "تیریون فوردرینگ",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Plaguelands",
+   "fa": "طاعون‌زار",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Skull of Horgus",
+   "fa": "جمجمهٔ هورگوس",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Shattered Sword of Marduk",
+   "fa": "شمشیر شکستهٔ ماردوک",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Carlin Redpath",
+   "fa": "کارلین ردپث",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Light's Hope Chapel",
+   "fa": "کلیسای امید نور",
+   "kind": "qs"
+  },
+  "E18": {
+   "en": "The Annals of Darrowshire",
+   "fa": "سالنامه‌های داروشایر",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Ravager",
+   "fa": "ویرانگر جنگی",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Marduk",
+   "fa": "ماردوک",
+   "kind": "npc"
+  },
+  "E23": {
+   "en": "Enchanted Thorium Bar",
+   "fa": "شمش آتوریوم افسون‌شده",
+   "kind": "it"
+  },
+  "E24": {
+   "en": "Crystal Restore",
+   "fa": "بازساز بلور",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Vial of Dire Water",
+   "fa": "شیشهٔ آب شوم",
+   "kind": "it"
+  },
+  "E27": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E31": {
+   "en": "Taelan's Hammer",
+   "fa": "پتک تیلان",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Prospector Ironboot",
+   "fa": "جویندهٔ رگه، چکمه‌آهن",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E36": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Symbol of Lost Honor",
+   "fa": "نماد افتخار گم‌شده",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Caer Darrow",
+   "fa": "کائِر دارو",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Living Rot",
+   "fa": "پوسیدگیِ زنده",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Mortar and Pestle",
+   "fa": "هاون و دستهٔ هاون",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Coagulated Rot",
+   "fa": "پوسیدگی منعقد",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Nathanos",
+   "fa": "ناتانوس",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Smokey LaRue",
+   "fa": "سموکی لارو",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Golden Rod",
+   "fa": "عصای طلایی",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Smokey's Special Compound",
+   "fa": "ترکیبِ ویژهٔ دودی",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Return to Nathanos",
+   "fa": "بازگشت به ناتانوس",
+   "kind": "qs"
+  },
+  "E50": {
+   "en": "Mystic Crystal",
+   "fa": "بلورِ اسرارآمیز",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Chromie",
+   "fa": "کرومی",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Lord Maxwell Tyrosus",
+   "fa": "لرد ماکسول تیروسوس",
+   "kind": "qs"
+  },
+  "E55": {
+   "en": "The Argent Hold",
+   "fa": "نگاهبان سپیدهٔ نقره‌ای",
+   "kind": "qs"
+  },
+  "E56": {
+   "en": "Egan",
+   "fa": "ایگن",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E58": {
+   "en": "Soulbound Keepsake",
+   "fa": "یادگارِ روح‌بسته",
+   "kind": "it"
+  },
+  "E59": {
+   "en": "Leonid Barthalomew",
+   "fa": "لئونید بارتالومیو",
+   "kind": "qs"
+  },
+  "E63": {
+   "en": "Mantles of the Dawn",
+   "fa": "شانه‌پوش‌های سپیدهٔ دم",
+   "kind": "qs"
+  },
+  "E64": {
+   "en": "Chromatic Mantle of the Dawn",
+   "fa": "شنل‌شانهٔ رنگینِ سپیده",
+   "kind": "it"
+  },
+  "E66": {
+   "en": "Relic Bundle",
+   "fa": "بستهٔ یادگارها",
+   "kind": "it"
+  },
+  "E67": {
+   "en": "Joseph Redpath",
+   "fa": "جوزف ردپث",
+   "kind": "npc"
+  },
+  "E68": {
+   "en": "Bundle of Relics",
+   "fa": "بستهٔ یادگارها",
+   "kind": "it"
+  },
+  "E69": {
+   "en": "Joseph's Key",
+   "fa": "کلیدِ یوسف",
+   "kind": "it"
+  },
+  "E70": {
+   "en": "Joseph's Chest",
+   "fa": "صندوق جوزف",
+   "kind": "ob"
+  },
+  "E71": {
+   "en": "Infiltrator Hameya",
+   "fa": "نفوذی هامیا",
+   "kind": "npc"
+  },
+  "E72": {
+   "en": "Mound of Dirt",
+   "fa": "تودهٔ خاک",
+   "kind": "ob"
+  },
+  "E73": {
+   "en": "Quel'Thalas Registry",
+   "fa": "دفتر ثبت کوئل‌تالاس",
+   "kind": "it"
+  },
+  "E74": {
+   "en": "Duskwing",
+   "fa": "بال‌شفق",
+   "kind": "npc"
+  },
+  "E75": {
+   "en": "Patch of Duskwing's Fur",
+   "fa": "تکهٔ پوست شفق‌بال",
+   "kind": "it"
+  },
+  "E76": {
+   "en": "Nathanos Blightcaller",
+   "fa": "ناتانوس طاعون‌خوان",
+   "kind": "npc"
+  },
+  "E77": {
+   "en": "Borelgore",
+   "fa": "بورلگور",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Sacred Highborne Writings": "نوشته‌های مقدس های‌بورن",
+  "Azshara": "آزشارا",
+  "Aurora Skycaller": "آئورورا آسمان‌خوان",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Crystal of Zin-Malor": "بلورِ زین‌مالور",
+  "Plaguehound": "سگ شکاری طاعونی",
+  "Tirion Fordring": "تیریون فوردرینگ",
+  "Plaguelands": "طاعون‌زار",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Skull of Horgus": "جمجمهٔ هورگوس",
+  "Shattered Sword of Marduk": "شمشیر شکستهٔ ماردوک",
+  "Carlin Redpath": "کارلین ردپث",
+  "Light's Hope Chapel": "کلیسای امید نور",
+  "The Annals of Darrowshire": "سالنامه‌های داروشایر",
+  "Ravager": "ویرانگر جنگی",
+  "Alliance": "اتحاد",
+  "Marduk": "ماردوک",
+  "Enchanted Thorium Bar": "شمش آتوریوم افسون‌شده",
+  "Crystal Restore": "بازساز بلور",
+  "Vial of Dire Water": "شیشهٔ آب شوم",
+  "Dire Maul": "دایر مول",
+  "Feralas": "فرالاس",
+  "Travel": "سفر",
+  "Taelan's Hammer": "پتک تیلان",
+  "Prospector Ironboot": "جویندهٔ رگه، چکمه‌آهن",
+  "Tanaris": "تاناریس",
+  "Winterspring": "وینتراسپرینگ",
+  "Symbol of Lost Honor": "نماد افتخار گم‌شده",
+  "Caer Darrow": "کائِر دارو",
+  "Living Rot": "پوسیدگیِ زنده",
+  "Mortar and Pestle": "هاون و دستهٔ هاون",
+  "Coagulated Rot": "پوسیدگی منعقد",
+  "Nathanos": "ناتانوس",
+  "Smokey LaRue": "سموکی لارو",
+  "Golden Rod": "عصای طلایی",
+  "Hope": "امید",
+  "Smokey's Special Compound": "ترکیبِ ویژهٔ دودی",
+  "Return to Nathanos": "بازگشت به ناتانوس",
+  "Mystic Crystal": "بلورِ اسرارآمیز",
+  "Chromie": "کرومی",
+  "Lord Maxwell Tyrosus": "لرد ماکسول تیروسوس",
+  "The Argent Hold": "نگاهبان سپیدهٔ نقره‌ای",
+  "Egan": "ایگن",
+  "Stratholme": "استراتهولم",
+  "Soulbound Keepsake": "یادگارِ روح‌بسته",
+  "Leonid Barthalomew": "لئونید بارتالومیو",
+  "Mantles of the Dawn": "شانه‌پوش‌های سپیدهٔ دم",
+  "Chromatic Mantle of the Dawn": "شنل‌شانهٔ رنگینِ سپیده",
+  "Relic Bundle": "بستهٔ یادگارها",
+  "Joseph Redpath": "جوزف ردپث",
+  "Bundle of Relics": "بستهٔ یادگارها",
+  "Joseph's Key": "کلیدِ یوسف",
+  "Joseph's Chest": "صندوق جوزف",
+  "Infiltrator Hameya": "نفوذی هامیا",
+  "Mound of Dirt": "تودهٔ خاک",
+  "Quel'Thalas Registry": "دفتر ثبت کوئل‌تالاس",
+  "Duskwing": "بال‌شفق",
+  "Patch of Duskwing's Fur": "تکهٔ پوست شفق‌بال",
+  "Nathanos Blightcaller": "ناتانوس طاعون‌خوان",
+  "Borelgore": "بورلگور"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$r",
+  "3": "$N",
+  "4": "$r",
+  "5": "$R",
+  "6": "$B",
+  "7": "$r",
+  "8": "$r",
+  "9": "$B",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$r",
+  "21": "$B",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$B",
+  "27": "$N",
+  "28": "$N",
+  "29": "$B",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$N",
+  "34": "$C",
+  "35": "$N",
+  "36": "$Gbrother:sister;",
+  "37": "$G Brother : Sister;",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$B",
+  "42": "$B",
+  "43": "$N",
+  "44": "$N",
+  "45": "$gman:lady;",
+  "46": "$c",
+  "47": "$C",
+  "48": "$B",
+  "49": "$c"
+ },
+ "rows": {
+  "quest:5246:obj:0": "Find the ⟦E1⟧ in the Temple of Zin-Malor in ⟦E2⟧, and bring them to ⟦E3⟧ near the Northpass Tower in ⟦E4⟧.",
+  "quest:5246:details:0": "I did not realize... Forgive my callous words, ⟦1⟧.",
+  "quest:5246:details:1": "The mistakes of my ancestors are not what I wish to dwell on, but if your request is truly genuine, then I will help you.",
+  "quest:5246:details:2": "B<Aurora examines the fragments.>",
+  "quest:5246:details:3": "I believe this is the ⟦E5⟧, an artifact that can contain and control strong arcane forces. It could have been used for good, but the evil intentions of those that stole it caused it to shatter.",
+  "quest:5246:details:4": "Go to the Temple of Zin-Malor in ⟦E2⟧ - I can only hope the book is still there.",
+  "quest:5246:progress:0": "It is only in the pages of the sacred writings that I will be able to discern whether or not I can help you...",
+  "quest:5246:completion:0": "The pages have gone untouched for many many years...",
+  "quest:5542:obj:0": "Slay 20 ⟦E6⟧ Runts, 5 Plaguehounds and 5 Frenzied Plaguehounds. Return to ⟦E7⟧ when the task is complete.",
+  "quest:5542:details:0": "If you are going to remain here, I ask only that you earn your keep. We have many nuisances that could use some 'discipline.'",
+  "quest:5542:details:1": "You can start with the Plaguehounds and their runts.",
+  "quest:5542:details:2": "I cannot offer much in return, but you are guaranteed a warm meal and some conversation should you succeed.",
+  "quest:5542:progress:0": "Do not pity the demon dogs, ⟦2⟧. They are abominations!",
+  "quest:5542:completion:0": "Well done, ⟦3⟧. Come. Rest. Let us eat and talk of days long past!",
+  "quest:5543:obj:0": "Slay 30 Plaguebats and return to ⟦E7⟧.",
+  "quest:5543:details:0": "Woe to those that foolishly wander into the ⟦E9⟧. All manner of foulness inhabit these woods - from the fanatical ⟦E10⟧, who will kill any that do not bear the mark of the Crusade, to the murderous Scourge, who only look to bolster their numbers by adding more undead to their ranks.",
+  "quest:5543:details:1": "Even the wildlife have been transformed into rapacious, man eating beasts. I ask that you destroy those that would strike from the skies: The Plaguebats.",
+  "quest:5543:progress:0": "Do not underestimate the winged vermin, ⟦4⟧. The Plague has given them supernatural abilities.",
+  "quest:5543:completion:0": "You are a shining example of decency, ⟦5⟧! It has been long since I have felt the blood of heroes pump through my veins. Your acts of bravery are uplifting!",
+  "quest:5544:obj:0": "Seek out the Carrion Grubs and Devourers of the region. Slay them and harvest their meat. Return to ⟦E7⟧ when you have gathered 15 Slabs of Carrion Worm Meat.⟦6⟧",
+  "quest:5544:details:0": "My food supplies are running low, ⟦7⟧. I am ashamed to admit that I might not have enough food to share with you.",
+  "quest:5544:details:1": "Could you assist an old man with a simple task? Around here, the only manner of beast unaffected by the ravages of the Plague are the Carrion worms. While rather bland in taste, the meat of the worms can easily be preserved to last for months. I will need several hundred pounds to restock for the coming winter!",
+  "quest:5544:progress:0": "You will grow to tolerate the taste, ⟦8⟧.",
+  "quest:5544:completion:0": "May the Light watch over you! Bless you, young one.",
+  "quest:5742:obj:0": "Listen to what ⟦E7⟧ has to say.",
+  "quest:5742:details:0": "You have worked hard, friend. Rest your weary bones and allow me to properly introduce myself.⟦9⟧",
+  "quest:5742:progress:0": "Please, friend; sit and hear my tale.",
+  "quest:5742:completion:0": "The Fordring redemption will be a difficult task. Are you prepared?",
+  "quest:5181:obj:0": "Bring the ⟦E14⟧ and the ⟦E15⟧ to ⟦E16⟧ at ⟦E17⟧.",
+  "quest:5181:details:0": "⟦E18⟧ tells of the villains of that battle. It tells how the ghoul lord Horgus the ⟦E20⟧ was destroyed by ⟦E21⟧ forces during the battle. His body was cast into a lake, northwest of Corin's Crossing, and his skull remains there.",
+  "quest:5181:details:1": "⟦E22⟧ the Black was never defeated, but his fabled sword was shattered and lost. It lies at the bottom of the gorge west of Corin's Crossing.",
+  "quest:5181:details:2": "Retrieve these items, ⟦10⟧. I know not why, but I am certain their fate lies with you.",
+  "quest:5181:progress:0": "Did you find the skull and the sword, ⟦11⟧?",
+  "quest:5181:completion:0": "You found them! Well done, ⟦12⟧! These relics hold a power I do not fully understand, a power you will one day harness.",
+  "quest:5181:completion:1": "They also bring dark memories to my mind, memories death and treachery, and of the last night of Darrowshire...",
+  "quest:5247:obj:0": "Bring an ⟦E23⟧, 5 ⟦E24⟧, and a ⟦E25⟧ to ⟦E3⟧ near the Northpass Tower in ⟦E4⟧.",
+  "quest:5247:details:0": "I will be able to help you, if recreating the artifact is truly what you wish to do.",
+  "quest:5247:details:1": "To seal the pieces back together, I will need items with strong magical qualities. An enchanted thorium bar and five crystal restore... You'll also need to collect some water from what might seem an unlikely place... Find the dire pool along Eldreth Row at ⟦E27⟧ in ⟦E28⟧, and fill this vial.",
+  "quest:5247:details:2": "While you are gone, I will attempt to glean from these pages the knowledge I need to repair the damage done to the relic.",
+  "quest:5247:progress:0": "The relic must be placed in the hands of only the most trustworthy. It can not be stolen again...",
+  "quest:5247:completion:0": "Using these elements, I can fuse the fragments together... to hopefully what they once were.",
+  "quest:5781:obj:0": "⟦E30⟧ to the Undercroft - at the southernmost section of the ⟦E4⟧ - and recover ⟦E31⟧. Return to ⟦E7⟧ upon completion of your objective.",
+  "quest:5781:details:0": "To help Taelan regain what he has lost, you must gather items from his past.",
+  "quest:5781:details:1": "The first such item is a toy that I gave to him on his 7th birthday. It was his most cherished possession: A miniature war hammer; an exact replica of my very own.",
+  "quest:5781:details:2": "After I was banished for treason, his mother told him that I had died. He was taken to my false grave at the Undercroft, where he buried the hammer along with my memory - forever.",
+  "quest:5781:details:3": "You must venture to the Undercroft and recover Taelan's hammer.",
+  "quest:5781:progress:0": "He must be redeemed.",
+  "quest:5781:completion:0": "<Tirion blinks to hold back tears.>",
+  "quest:5781:completion:1": "It was destiny that we meet, ⟦13⟧. You have blessed me with your kindness.",
+  "quest:5065:obj:0": "Bring the Third and Fourth Mosh'aru Tablets to ⟦E32⟧ in ⟦E33⟧.",
+  "quest:5065:details:0": "The troll with whom you spoke did not tell the truth. The two tablets you gained for him spoke of containing the essence of Hakkar, but there is more to that legend. I have studied long, and found that there are six Tablets of Mosh'aru, not two! Six!",
+  "quest:5065:details:1": "And I fear that we will not like what secrets the others hold..",
+  "quest:5065:details:2": "Find the third and fourth tablets of Mosh'aru. They're in the ⟦E4⟧, held by the mossflayer trolls. Find them, and bring them to me.",
+  "quest:5065:progress:0": "Do you have the tablets?  I fear their texts will reveal a great threat to our world.",
+  "quest:5065:completion:0": "You found them! Great!",
+  "quest:5065:completion:1": "Thank you, ⟦14⟧. I will pour over these texts and decipher their meaning.",
+  "quest:5065:completion:2": "You, however, have another task...",
+  "quest:5248:obj:0": "Take the ⟦E5⟧ to Lake Kel'Theril in ⟦E36⟧ and find a highborne spirit that will speak to you.",
+  "quest:5248:details:0": "⟦15⟧, I weep for what has happened in the past. Like this crystal, the elves, as a race, have been shattered. I do not know if the pieces will ever again be reunited into one, but my sorrow has been eased by being able to help you with this one small task.",
+  "quest:5248:details:1": "We must not forget the past, ⟦16⟧...",
+  "quest:5248:details:2": "Please take the ⟦E5⟧ back to Lake Kel'Theril. You must find a highborne spirit that realizes the error of what was done so long ago. Show the spirit that we have made things right again.",
+  "quest:5248:progress:0": "Currrrrsed... Forevvvverrrr...",
+  "quest:5248:completion:0": "Pleeease, leeeave meeeeee...",
+  "quest:5845:obj:0": "⟦E30⟧ to Northdale, in the northeastern region of the ⟦E4⟧, and recover the ⟦E37⟧. Return to ⟦E7⟧ upon completion of your objective.",
+  "quest:5845:details:0": "The Order of the Silver Hand was utterly decimated when Uther was slain.",
+  "quest:5845:details:1": "The boy held out for as long as he could. Pushed to the war torn hamlet of Northdale, he made his final stand.",
+  "quest:5845:details:2": "Were any of the Order left alive, he thought - and did it matter?",
+  "quest:5845:details:3": "It was with that thought that Taelan threw down the standard of the Order and renounced all that he had known. His honor left upon the blood soaked ground of Northdale.",
+  "quest:5845:details:4": "You must travel to Northdale and recover that symbol of lost honor.",
+  "quest:5845:progress:0": "My faith will guide you, ⟦17⟧. The Light knows no bounds.",
+  "quest:5845:completion:0": "It is as glorious now - even in its tattered state - as the day I looked upon it and took my oath of allegiance.",
+  "quest:5845:completion:1": "His redemption comes and perhaps mine with it...",
+  "quest:5846:obj:0": "⟦E30⟧ to island of ⟦E38⟧, in the south-central region of the ⟦E9⟧, and look for any clues as to the whereabouts of the painting.",
+  "quest:5846:details:0": "When Taelan was a child, we would oft visit ⟦E38⟧ on family excursions. On our last visit, an artist by the name of Renfray painted a portrait of us poised along the beachside. It is my fondest memory of both Taelan and Karandra. For it was at that moment, with my wife and son in my arms, that I felt a bond of love and family that I would never know again.",
+  "quest:5846:details:1": "If this painting still exists, you must find it.",
+  "quest:5846:details:2": "⟦E30⟧ to the ruined island of ⟦E38⟧ and see if the painting or the artist remain.",
+  "quest:5846:completion:0": "How could I forget? Many of the spirits on this island are cursed to relive their last happy memory before they met their tragic end.",
+  "quest:5846:completion:1": "I too am cursed, but not as they - I am one of the few that remembers all...",
+  "quest:5846:completion:2": "Perhaps this thing that you ask me is why I haunt these ruins. Perhaps this thing I tell you shall set me free.",
+  "quest:6022:obj:0": "⟦E30⟧ to Corin's Crossing to the east and slaughter the Scourge that inhabit the town. Collect 7 pieces of ⟦E39⟧ in under 10 minutes. Use the ⟦E41⟧ to grind the ⟦E39⟧ into ⟦E42⟧.",
+  "quest:6022:details:0": "You kill with purpose while you remain on my stead.",
+  "quest:6022:details:1": "Your first task is to feed my hounds.",
+  "quest:6022:details:2": "Take this mortar and pestle and travel to Corin's Crossing. Once there, you will find a robust selection of Scourge to slaughter. From their fresh carcasses I need living rot. Take that living rot and grind it up in the mortar, then let it sit to coagulate. Bring the coagulated rot back here.",
+  "quest:6022:details:3": "And imbecile, realize that living rot from the undead doesn't remain 'living' for very long. You must kill quickly!",
+  "quest:6022:progress:0": "Are you crying? If this is too 'tedious' for you, 'hero,' I recommend that you head back to the Dark Lady and inform her of the horrible mistreatment you received at my farmstead.⟦18⟧⟦19⟧Now get out of my sight!",
+  "quest:6022:completion:0": "Disappointing. I was hoping that I'd be feeding you to my hounds, instead.",
+  "quest:6022:completion:1": "B<⟦E43⟧ sighs.>",
+  "quest:6022:completion:2": "Well, at least you they'll have something to eat.",
+  "quest:6026:obj:0": "⟦E44⟧ wants you to get 2 Thorium Bars, 1 ⟦E45⟧, 8 Hi-Explosive Bombs, and 8 Unstable Triggers.",
+  "quest:6026:obj:1": "You will have to find a blacksmith and an engineer for these items.",
+  "quest:6026:details:0": "These here Argent Dawn people commissioned ol' Smokey to do a little demolition work for 'em. Smokey's mammy ain't raised no dummy. When gold coin is slapped on the table, Smokey's services are available. That's my motto!",
+  "quest:6026:details:1": "Now I'd be willing to split the commission with you if you're willing to do a little legwork. Here's the deal: I'm going to head over to Plaguewood and mark the buildings we need destroyed. You gather the components for the bombs. Meet back here when you've got everything. Deal?",
+  "quest:6026:progress:0": "Trust ol' Smokey, ⟦20⟧. The reward will be worth it. These Argent Dawn folk don't mess around when it comes to payment.⟦21⟧⟦22⟧",
+  "quest:6026:completion:0": "I can pay you half up front and half when the job is done.",
+  "quest:6041:obj:0": "⟦E30⟧ to Plaguewood, northwest of Light's ⟦E47⟧. Destroy 8 Scourge Structures by using ⟦E48⟧ at the Mark of Detonation planted inside each building. Smokey has had the Ziggurats and Slaughterhouses marked.",
+  "quest:6041:obj:1": "Once you plant the bomb, leave the building and marvel at your handiwork.",
+  "quest:6041:obj:2": "By the way, ⟦E48⟧ is rather... unstable.",
+  "quest:6041:details:0": "While you were gathering the supplies, I had some of my people handle marking the Scourge buildings we need demolished.",
+  "quest:6041:details:1": "Here's the plan: I'm going to give you ten sticks of my special compound. You're going to take them over to Plaguewood and plant them inside the Scourge structures that I've had marked for detonation.",
+  "quest:6041:details:2": "B<Smokey snaps his fingers.>",
+  "quest:6041:details:3": "Bing! It's just that easy.",
+  "quest:6041:progress:0": "I got supplies left over to make a few more sticks of the special compound. Just let ol' Smokey know if you need more.",
+  "quest:6041:completion:0": "You're much darker than I remember. You got that look going for you; the look that says, 'I've been charred by a high explosive bomb.'",
+  "quest:6041:completion:1": "B<Smokey laughs.>",
+  "quest:6041:completion:2": "Anyhow! Here's your cut of the loot. I've thrown in a little something extra to help soothe the burns.",
+  "quest:6042:obj:0": "Slay 20 Noxious Plaguebats and 10 Monstrous Plaguebats. ⟦E49⟧ Blightcaller when you are finished.",
+  "quest:6042:details:0": "You cannot take two steps off of this farm without running into one of those obnoxious bats. I want to be able to take the hounds out and slaughter Scourge without being accosted by any damned, dirty bats. Obviously, I have better things to do with my time than mindlessly kill bats day in and day out. You, however, do not.",
+  "quest:6042:details:1": "What? Your training? This is your training! Now get out of my sight and don't come back until you've killed a fair number of those winged demons. Don't disappoint me.",
+  "quest:6042:progress:0": "It could have been worse. I could have had you collecting bat guano.⟦23⟧⟦24⟧<⟦E43⟧ stares at you in contemplation.>⟦25⟧⟦26⟧Hrm... Hey! Wait a minute. Where are you going?",
+  "quest:6042:completion:0": "It's incredible what a little anger and rage can get accomplished.",
+  "quest:5206:obj:0": "Bring 5 Resonating Skulls and the ⟦E50⟧ to ⟦E16⟧ in ⟦E4⟧.",
+  "quest:5206:details:0": "⟦E51⟧ said the relics you gathered are reagents to a powerful spell, and one more is required: skulls from the scourge who took part in the battle of Darrowshire.",
+  "quest:5206:details:1": "Take this crystal and hunt scourge champions for their skulls. The crystal is enchanted; if a champion took part in the battle, then when you pass the crystal over its skull it will resonate. Bring me those resonating skulls.",
+  "quest:5206:details:2": "Go, ⟦27⟧. You'll find scourge champions in the Noxious Glade to the north and the Fungal Vale to the west.",
+  "quest:5206:progress:0": "Do you have the skulls? ⟦E51⟧ said they will be critical for her spell, and that spell will give us the chance to save Darrowshire.",
+  "quest:5206:completion:0": "You found them! Wonderful!",
+  "quest:5206:completion:1": "Although I don't fully understand how they can help us, I feel their power and I know in my bones that they are linked to my home village of Darrowshire.",
+  "quest:5264:obj:0": "Speak with ⟦E54⟧. He is inside the church.",
+  "quest:5264:details:0": "I am about to bestow a great honor upon you, ⟦28⟧.",
+  "quest:5264:details:1": "Lord Maxwell wishes to reward you for your service to the Argent Dawn!",
+  "quest:5264:details:2": "It has been years since Maxwell has granted audience to outsiders.⟦29⟧",
+  "quest:5264:completion:0": "You are a worthy ally, ⟦30⟧. You shall reap the rewards of your stalwart dedication.",
+  "quest:5265:obj:0": "Open the Argent Hold and claim your reward.",
+  "quest:5265:details:0": "Through the years the Argent Hold has remained locked. None have been worthy to reach inside and take from it the power of the Argent Dawn - until today.",
+  "quest:5265:details:1": "⟦E55⟧ is now open to you, ⟦31⟧.",
+  "quest:5265:completion:0": "Whoa...",
+  "quest:5281:obj:0": "Find ⟦E56⟧. You only know that he was last seen around ⟦E57⟧.",
+  "quest:5281:details:0": "There are those that died tragically in the fall of ⟦E57⟧. Many took their own lives, opting to hurl themselves into the myriad flames of the smoldering city rather than become one of the Scourge.",
+  "quest:5281:details:1": "They now walk the streets of ⟦E57⟧ as restless spirits.",
+  "quest:5281:details:2": "We must aid them, ⟦32⟧!",
+  "quest:5281:details:3": "I have an associate named ⟦E56⟧ who has been doing miraculous work with ghosts and souls. Seek him out. He walks the eastern ⟦E9⟧, near ⟦E57⟧, testing his innovations.",
+  "quest:5281:completion:0": "Alen has finally found someone brave enough, eh?",
+  "quest:5464:obj:0": "Take the ⟦E58⟧ to ⟦E59⟧ in ⟦E4⟧.",
+  "quest:5464:details:0": "The soul of the fallen clings to that which represents its former life and transforms the item into a soulbound keepsake. You pick the item up and place it in your pack.",
+  "quest:5464:progress:0": "<Leonid shudders.>",
+  "quest:5464:completion:0": "As the soul clung to the keepsake, so shall it cling to the physical form of Ras Frostwhisper.",
+  "quest:5513:obj:0": "Bring 10 Argent Dawn Valor Tokens to Quartermaster Breechlock at ⟦E17⟧, ⟦E4⟧.",
+  "quest:5513:details:0": "Your service to the Argent Dawn is to be commended, ⟦33⟧. You are truly revered amongst us. I have been authorized to make available for you to purchase one of the Dawn's most valued items - our magic resistance mantles.",
+  "quest:5513:details:1": "Application of a mantle to your existing shoulder piece will enhance your resistance to the powers of magic in one of five potential ways. As a sign of continued dedication to our cause, I ask for no less than ten of our valor tokens in exchange for access to these mantles.",
+  "quest:5513:progress:0": "Ah, noble ⟦34⟧! Have you brought the valor tokens requested of you? Once you hand them to me, I will make our various mantles available to you for purchase.",
+  "quest:5513:completion:0": "Outstanding - your tribute to the Dawn is duly noted, ⟦35⟧. With this accomplished, I am delighted to make our mantles available to you for purchase. So long as you maintain your current status with us, these mantles will be purchasable from any authorized quartermaster of the Argent Dawn.",
+  "quest:5513:completion:1": "For the Dawn, my ⟦36⟧!",
+  "quest:5517:obj:0": "Bring 25 Argent Dawn Valor Tokens to Quartermaster Breechlock at ⟦E17⟧, ⟦E4⟧.",
+  "quest:5517:details:0": "⟦37⟧ ⟦38⟧ - your deeds on behalf of the Argent Dawn are far too numerous to be recounted easily. As a fitting tribute, I'll part with one of our special Chromatic ⟦E63⟧ - a version that protects the wearer from all forms of resistible magic simultaneously. Chromatic ⟦E63⟧ are reserved for only the mightiest of the Dawn's heroes!",
+  "quest:5517:details:1": "Bring to me twenty-five valor tokens as a sign of tribute, and I'll give you the finest of all our mantles.",
+  "quest:5517:progress:0": "Salutations, mighty priest! Have you brought the valor tokens I asked of you? Once you hand them to me, I will issue you your own ⟦E64⟧.",
+  "quest:5517:completion:0": "Most impressive, ⟦39⟧ - the ⟦E64⟧ is now yours!",
+  "quest:5517:completion:1": "As long as you maintain Exalted status with the Argent Dawn, you will be able to purchase additional Chromatic Mantles. They will be made available to you immediately from any of the Dawn's quartermasters.",
+  "quest:5721:obj:0": "Place the ⟦E66⟧ at the Darrowshire town square.",
+  "quest:5721:obj:1": "Prevent Davil Lightfire's death until the death of Horgus.",
+  "quest:5721:obj:2": "Prevent Captain Redpath's death until Redpath the Corrupted appears.",
+  "quest:5721:obj:3": "Defeat Redpath the Corrupted.",
+  "quest:5721:obj:4": "Speak with the spirit of ⟦E67⟧ when he appears at the town square, then speak with Pamela at her home.",
+  "quest:5721:details:0": "Now, ⟦40⟧, you will take part in battle of Darrowshire, and you will save ⟦E67⟧.",
+  "quest:5721:details:1": "Place this relic bundle in the Darrowshire town square, and the spirits of Darrowshire will rise. Join their battle and assure that these two things come to pass: Davil must survive beyond the death of Horgus, and Redpath must survive to be corrupted, then defeated.",
+  "quest:5721:details:2": "After defeating the corrupted Redpath, his spirit will be saved. Speak with him, then return to his daughter Pamela.",
+  "quest:5721:progress:0": "I think I heard ghosts outside. They whisper scary things to me...",
+  "quest:5721:completion:0": "The fighting is over! I heard my daddy whisper to me. He scared away all the ghosts and he says he's coming home! I'm so happy!",
+  "quest:5721:completion:1": "He also said I should welcome you if came to our house, so I made some tea!",
+  "quest:5721:completion:2": "I hope you like lots of sugar!",
+  "quest:5941:obj:0": "Take the ⟦E68⟧ to ⟦E51⟧ in Andorhal.",
+  "quest:5941:details:0": "You have gathered many relics of the battle of Darrowshire. Each time you returned with more, my heart yearned for my village... yearned to protect it from its fate.",
+  "quest:5941:details:1": "I know that cannot be, but ⟦E51⟧, that strange gnome in Andorhal, tells me it is possible. She says you can save Darrowshire!",
+  "quest:5941:details:2": "She asked me to gather together the relics, and to have you bring them to her. She said that she awaits you in the ruined inn of Andorhal.",
+  "quest:5941:progress:0": "I have been in contact with your friend Carlin. He feels great pain for the doom of his village, but he speaks very highly of you and knows that you can set things right.⟦41⟧⟦42⟧Oh, but I'm drifting from the subject at hand... ⟦43⟧, do you have the relics I asked for?",
+  "quest:5941:completion:0": "Ah yes, there they are. Together they weave a powerful spell, one that will raise the spirits of Darrowshire.",
+  "quest:5941:completion:1": "With that spell, and with a little luck, we can save ⟦E67⟧!",
+  "quest:5942:obj:0": "Bring ⟦E69⟧ to ⟦E70⟧.",
+  "quest:5942:details:0": "Daddy told me to give you this key. He said it opens a chest out back behind the house.",
+  "quest:5942:details:1": "He also wanted me to thank you. Did you do a favor for him? Did you tell him you found my doll?",
+  "quest:5942:details:2": "Well here's the key. And thank you ⟦44⟧. Thank you! You're a very nice ⟦45⟧!",
+  "quest:5942:progress:0": "This chest is old and covered in grime.",
+  "quest:5942:completion:0": "The key fits the lock, and the chest opens...",
+  "quest:6024:obj:0": "Kill ⟦E71⟧. Use his key on the ⟦E72⟧ behind the Undercroft.",
+  "quest:6024:details:0": "Kill me. Before it's too late.",
+  "quest:6024:details:1": "I am Hameya. While traveling to Zul'Mashar, my brethren and I ate some bad meat... and we changed. We are infected.",
+  "quest:6024:details:2": "I can feel the lich's words now, urging me to reach Zul'Mashar and infect more of my people. I cannot resist, and so I wrote this scroll before my will left me.",
+  "quest:6024:details:3": "I buried a chest in dirt next to a wagon behind this crypt, but only my key will open it. I have the key. If you want my treasure, then find me.",
+  "quest:6024:details:4": "Kill me. Before it's too late.",
+  "quest:6024:progress:0": "This chest buried here is securely locked.",
+  "quest:6024:completion:0": "Hameya's chest is opened!!",
+  "quest:6133:obj:0": "⟦E30⟧ to the northern borders of the ⟦E4⟧ and recover the ⟦E73⟧. The item is somewhere in the Quel'Lithien lodge.",
+  "quest:6133:obj:1": "You must also slay 8 Rangers, 8 Pathstriders, and 8 Woodsmen.",
+  "quest:6133:details:0": "The high elves of the Quel'Lithien lodge possesses something that belongs to me, ⟦46⟧: A document detailing my life as a mortal.",
+  "quest:6133:details:1": "Before you ask; no, you most certainly are not privy to such information. Just do as I tell you, worm: Recover the registry.",
+  "quest:6133:details:2": "And imbecile, be sure to leave as much strife and grief as possible in your wake. Leave them suffering...",
+  "quest:6133:progress:0": "Do not leave me waiting, ⟦47⟧.",
+  "quest:6133:completion:0": "I trust you did not read the registry. Not even you would do something that idiotic...",
+  "quest:6135:obj:0": "Find ⟦E74⟧ and slay him. From the corpse, recover a ⟦E75⟧ and return it to ⟦E76⟧.",
+  "quest:6135:obj:1": "It is said that ⟦E74⟧ roams the countryside to the north of Marris Stead.",
+  "quest:6135:details:0": "Up until now, you have completed the missions I have assigned; even if not in the most timely manner.",
+  "quest:6135:details:1": "I suppose you think that you are ready for a challenge. Yes... Yes, imbecile, perhaps you are ready for a more involved set of missions.",
+  "quest:6135:details:2": "The albino demon bat, ⟦E74⟧, roams the countryside just north of here. Track him down and destroy him. Return to me with a patch of his white fur and you shall be rewarded.⟦48⟧",
+  "quest:6135:progress:0": "I would not recommend that you take on this challenge alone, ⟦49⟧.",
+  "quest:6135:completion:0": "Excellent work, imbecile. I shall fashion this fur into something you can use.",
+  "quest:6135:completion:1": "B",
+  "quest:6136:obj:0": "Find ⟦E77⟧ in the northern wastes of ⟦E4⟧ and destroy him. ⟦E49⟧ Blightcaller when the mission is complete.",
+  "quest:6136:details:0": "Past the Argent Dawn encampment of Light's ⟦E47⟧ and west of Northdale, you will find the corpulent maggot beast, ⟦E77⟧.",
+  "quest:6136:details:1": "I've lost entire regiments to that monster. His size knows no bounds! The more he eats the greater his girth becomes...",
+  "quest:6136:details:2": "While I would not suffer any emotional harm should the beast devour you, I would prefer that you were the victor. ⟦E77⟧ has been known to devour others who tried to hunt him.",
+  "quest:6136:progress:0": "Have I told you lately that I hate you?",
+  "quest:6136:completion:0": "Keep this up and I may have to promote you from imbecile to mental deficient, first class."
+ },
+ "context": {
+  "quest:5246": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "alliance",
+   "giver": "Aurora Skycaller («آئورورا آسمان‌خوان»)",
+   "turner": "Aurora Skycaller («آئورورا آسمان‌خوان»)"
+  },
+  "quest:5542": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Tirion Fordring («تیریون فوردرینگ»)"
+  },
+  "quest:5543": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Tirion Fordring («تیریون فوردرینگ»)"
+  },
+  "quest:5544": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Tirion Fordring («تیریون فوردرینگ»)"
+  },
+  "quest:5742": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 56,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Tirion Fordring («تیریون فوردرینگ»)"
+  },
+  "quest:5181": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 57,
+   "side": "",
+   "giver": "Carlin Redpath («کارلین ردپث»)",
+   "turner": "Carlin Redpath («کارلین ردپث»)"
+  },
+  "quest:5247": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 57,
+   "side": "alliance",
+   "giver": "Aurora Skycaller («آئورورا آسمان‌خوان»)",
+   "turner": "Aurora Skycaller («آئورورا آسمان‌خوان»)"
+  },
+  "quest:5781": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 57,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Tirion Fordring («تیریون فوردرینگ»)"
+  },
+  "quest:5065": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "",
+   "giver": "Prospector Ironboot («جویندهٔ رگه، چکمه‌آهن»)",
+   "turner": "Prospector Ironboot («جویندهٔ رگه، چکمه‌آهن»)"
+  },
+  "quest:5248": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "alliance",
+   "giver": "Aurora Skycaller («آئورورا آسمان‌خوان»)",
+   "turner": "Remorseful Highborne («های‌بورن پشیمان»)"
+  },
+  "quest:5845": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Tirion Fordring («تیریون فوردرینگ»)"
+  },
+  "quest:5846": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "",
+   "giver": "Tirion Fordring («تیریون فوردرینگ»)",
+   "turner": "Artist Renfray («نقاش رنفری»)"
+  },
+  "quest:6022": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "horde",
+   "giver": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)",
+   "turner": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)"
+  },
+  "quest:6026": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "",
+   "giver": "Smokey LaRue («سموکی لارو»)",
+   "turner": "Smokey LaRue («سموکی لارو»)"
+  },
+  "quest:6041": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "",
+   "giver": "Smokey LaRue («سموکی لارو»)",
+   "turner": "Smokey LaRue («سموکی لارو»)"
+  },
+  "quest:6042": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 58,
+   "side": "horde",
+   "giver": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)",
+   "turner": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)"
+  },
+  "quest:5206": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Carlin Redpath («کارلین ردپث»)",
+   "turner": "Carlin Redpath («کارلین ردپث»)"
+  },
+  "quest:5264": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Duke Nicholas Zverenhoff («دوک نیکلاس زورنهوف»)",
+   "turner": "Lord Maxwell Tyrosus («لرد ماکسول تیروسوس»)"
+  },
+  "quest:5265": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Lord Maxwell Tyrosus («لرد ماکسول تیروسوس»)",
+   "turner": "The Argent Hold («نگاهبان سپیدهٔ نقره‌ای»)"
+  },
+  "quest:5281": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Caretaker Alen («سرپرست آلن»)",
+   "turner": "Egan («ایگن»)"
+  },
+  "quest:5464": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Menethil's Gift («هدیهٔ منتیل»)",
+   "turner": "Leonid Barthalomew the Revered («لئونید بارتولومیو گرامی»)"
+  },
+  "quest:5513": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:5517": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)",
+   "turner": "Quartermaster Miranda Breechlock («تدارکات‌چی میراندا بریچ‌لاک»)"
+  },
+  "quest:5721": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Chromie («کرومی»)",
+   "turner": "Pamela Redpath («پاملا ردپث»)"
+  },
+  "quest:5941": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Carlin Redpath («کارلین ردپث»)",
+   "turner": "Chromie («کرومی»)"
+  },
+  "quest:5942": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Pamela Redpath («پاملا ردپث»)",
+   "turner": "Joseph's Chest («صندوق جوزف»)"
+  },
+  "quest:6024": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "",
+   "giver": "Torn Scroll («طومار پاره»)",
+   "turner": "Mound of Dirt («تودهٔ خاک»)"
+  },
+  "quest:6133": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)",
+   "turner": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)"
+  },
+  "quest:6135": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)",
+   "turner": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)"
+  },
+  "quest:6136": {
+   "zone_en": "Eastern Plaguelands",
+   "zone_fa": "اراضی طاعون‌زدهٔ شرقی",
+   "level": 60,
+   "side": "horde",
+   "giver": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)",
+   "turner": "Nathanos Blightcaller («ناتانوس طاعون‌خوان»)"
+  }
+ },
+ "known": {
+  "quest:5246": {
+   "title": "خرده‌های گذشته"
+  },
+  "quest:5542": {
+   "title": "سگ‌های شیطانی"
+  },
+  "quest:5543": {
+   "title": "آسمان‌های خونین"
+  },
+  "quest:5544": {
+   "title": "کرم‌های لاشه"
+  },
+  "quest:5742": {
+   "title": "شست‌وشو"
+  },
+  "quest:5181": {
+   "title": "شروران داروشایر"
+  },
+  "quest:5247": {
+   "title": "خرده‌های گذشته"
+  },
+  "quest:5781": {
+   "title": "خاطرات فراموش‌شده"
+  },
+  "quest:5065": {
+   "title": "لوح‌های گم‌شدهٔ موش‌آرو"
+  },
+  "quest:5248": {
+   "title": "آزار گذشته"
+  },
+  "quest:5845": {
+   "title": "افتخاری گم‌شده"
+  },
+  "quest:5846": {
+   "title": "عشق و خانواده"
+  },
+  "quest:6022": {
+   "title": "کشتن با هدف"
+  },
+  "quest:6026": {
+   "title": "این تقاضای زیادی است"
+  },
+  "quest:6041": {
+   "title": "وقتی اسموکی می‌خواند، خشمناک می‌شوم"
+  },
+  "quest:6042": {
+   "title": "زحمات کوچکِ زندگی مُرده"
+  },
+  "quest:5206": {
+   "title": "تاراجگران داروشایر"
+  },
+  "quest:5264": {
+   "title": "لرد ماکسول تیروسوس"
+  },
+  "quest:5265": {
+   "title": "نگاهبان سپیدهٔ نقره‌ای"
+  },
+  "quest:5281": {
+   "title": "روان‌های بی‌قرار"
+  },
+  "quest:5464": {
+   "title": "هدیهٔ منتیل"
+  },
+  "quest:5513": {
+   "title": "شانه‌پوش‌های سپیدهٔ دم"
+  },
+  "quest:5517": {
+   "title": "شانه‌پوش رنگین‌پرندهٔ سپیدهٔ دم"
+  },
+  "quest:5721": {
+   "title": "نبرد داروشایر"
+  },
+  "quest:5941": {
+   "title": "بازگشت به کرومی"
+  },
+  "quest:5942": {
+   "title": "گنج‌های پنهان"
+  },
+  "quest:6024": {
+   "title": "التجای هامیا"
+  },
+  "quest:6133": {
+   "title": "فرمان سردارِ نگهبانان"
+  },
+  "quest:6135": {
+   "title": "داکس‌وینگ، چقدر از تو متنفرم..."
+  },
+  "quest:6136": {
+   "title": "تنومند"
+  }
+ }
+}

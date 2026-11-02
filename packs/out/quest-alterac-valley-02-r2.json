@@ -1,0 +1,859 @@
+{
+ "pack": "quest-alterac-valley-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-alterac-valley-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Stormpike Quartermaster",
+   "fa": "تدارکات‌چی طوفان‌نیزه",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Sergeant Durgen Stormpike",
+   "fa": "گروهبان دورگن طوفان‌نیزه",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Alterac Valley",
+   "fa": "درهٔ آلتراک",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "Frostwolf",
+   "fa": "گرگ یخی",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Frostwolf Quartermaster",
+   "fa": "تدارکاتچی گرگ‌یخ",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Corporal Teeka Bloodsnarl",
+   "fa": "سرجوخه تیکا خون‌غرش",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Prospector Stonehewer",
+   "fa": "جویندهٔ رگه سنگ‌تراش",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Drek'Thar",
+   "fa": "درک‌تار",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Vanndar Stormpike",
+   "fa": "واندار استورم‌پایک",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Voggah Deathgrip",
+   "fa": "ووگاه دث‌گریپ",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E16": {
+   "en": "Frostwolf Banner",
+   "fa": "پرچم فراست‌ولف",
+   "kind": "it"
+  },
+  "E17": {
+   "en": "Warmaster Laggrond",
+   "fa": "ارباب جنگ لگ‌راند",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Stormpike Banner",
+   "fa": "پرچم استورم‌پایک",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Lieutenant Haggerdin",
+   "fa": "ستوان هاگردین",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E30": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E32": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Korrak the Bloodrager",
+   "fa": "کوراک خون‌خروشان",
+   "kind": "qs"
+  },
+  "E36": {
+   "en": "Speak with Prospector Stonehewer",
+   "fa": "با نقشه‌بردار استون‌هیور صحبت کن",
+   "kind": "qs"
+  },
+  "E37": {
+   "en": "Speak with Voggah Deathgrip",
+   "fa": "با ووگا دث‌گریپ صحبت کن",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Armor Scraps",
+   "fa": "خرده‌زره",
+   "kind": "it"
+  },
+  "E39": {
+   "en": "Murgot Deepforge",
+   "fa": "مورگات ژرف‌آهنگر",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Smith Regzar",
+   "fa": "آهنگر رگزار",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "King Magni Bronzebeard",
+   "fa": "شاه مگنی ریش‌مفرغی",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Commander Karl Philips",
+   "fa": "فرمانده کارل فیلیپس",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Commander Louis Philips",
+   "fa": "فرمانده لوئیس فیلیپس",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Wing Commander Slidore",
+   "fa": "فرماندهٔ بال هوایی اسلایدور",
+   "kind": "npc"
+  },
+  "E49": {
+   "en": "Wing Commander Vipore",
+   "fa": "فرماندهٔ بال هوایی وایپور",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Wing Commander Ichman",
+   "fa": "فرماندهٔ بال هوایی ایچمن",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Commander Duffy",
+   "fa": "فرمانده داف",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Wing Commander Guse",
+   "fa": "فرماندهٔ بال هوایی گوس",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Wing Commander Jeztor",
+   "fa": "فرماندهٔ بال هوایی جستور",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Wing Commander Mulverick",
+   "fa": "فرماندهٔ بال هوایی مولوریک",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "Commander Mulfort",
+   "fa": "فرمانده مولفورت",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Guse",
+   "fa": "گوس",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Stormpike Quartermaster": "تدارکات‌چی طوفان‌نیزه",
+  "Sergeant Durgen Stormpike": "گروهبان دورگن طوفان‌نیزه",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "Alterac Valley": "درهٔ آلتراک",
+  "Frostwolf": "گرگ یخی",
+  "Frostwolf Quartermaster": "تدارکاتچی گرگ‌یخ",
+  "Horde": "هورد",
+  "Corporal Teeka Bloodsnarl": "سرجوخه تیکا خون‌غرش",
+  "Prospector Stonehewer": "جویندهٔ رگه سنگ‌تراش",
+  "Drek'Thar": "درک‌تار",
+  "Vanndar Stormpike": "واندار استورم‌پایک",
+  "Voggah Deathgrip": "ووگاه دث‌گریپ",
+  "Travel": "سفر",
+  "Frostwolf Banner": "پرچم فراست‌ولف",
+  "Warmaster Laggrond": "ارباب جنگ لگ‌راند",
+  "Stormpike Banner": "پرچم استورم‌پایک",
+  "Lieutenant Haggerdin": "ستوان هاگردین",
+  "Blood": "خون",
+  "Kalimdor": "کالیمدور",
+  "Alliance": "اتحاد",
+  "Korrak the Bloodrager": "کوراک خون‌خروشان",
+  "Speak with Prospector Stonehewer": "با نقشه‌بردار استون‌هیور صحبت کن",
+  "Speak with Voggah Deathgrip": "با ووگا دث‌گریپ صحبت کن",
+  "Armor Scraps": "خرده‌زره",
+  "Murgot Deepforge": "مورگات ژرف‌آهنگر",
+  "Ironforge": "آیرون‌فورج",
+  "Smith Regzar": "آهنگر رگزار",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "King Magni Bronzebeard": "شاه مگنی ریش‌مفرغی",
+  "Commander Karl Philips": "فرمانده کارل فیلیپس",
+  "Commander Louis Philips": "فرمانده لوئیس فیلیپس",
+  "Wing Commander Slidore": "فرماندهٔ بال هوایی اسلایدور",
+  "Wing Commander Vipore": "فرماندهٔ بال هوایی وایپور",
+  "Wing Commander Ichman": "فرماندهٔ بال هوایی ایچمن",
+  "Commander Duffy": "فرمانده داف",
+  "Wing Commander Guse": "فرماندهٔ بال هوایی گوس",
+  "Wing Commander Jeztor": "فرماندهٔ بال هوایی جستور",
+  "Wing Commander Mulverick": "فرماندهٔ بال هوایی مولوریک",
+  "Commander Mulfort": "فرمانده مولفورت",
+  "Guse": "گوس"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$C",
+  "10": "$N",
+  "11": "$N",
+  "12": "$N",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$c",
+  "18": "$N",
+  "19": "$N",
+  "20": "$c",
+  "21": "$C",
+  "22": "$N",
+  "23": "$N",
+  "24": "$B",
+  "25": "$b",
+  "26": "$b",
+  "27": "$N",
+  "28": "$b",
+  "29": "$b",
+  "30": "$b",
+  "31": "$b",
+  "32": "$c",
+  "33": "$C",
+  "34": "$N",
+  "35": "$c",
+  "36": "$b",
+  "37": "$b",
+  "38": "$N",
+  "39": "$b",
+  "40": "$b",
+  "41": "$N",
+  "42": "$N",
+  "43": "$b",
+  "44": "$b",
+  "45": "$b",
+  "46": "$b",
+  "47": "$c",
+  "48": "$b",
+  "49": "$b",
+  "50": "$b",
+  "51": "$b",
+  "52": "$N",
+  "53": "$b",
+  "54": "$b",
+  "55": "$b",
+  "56": "$b",
+  "57": "$N",
+  "58": "$C",
+  "59": "$c",
+  "60": "$b",
+  "61": "$b",
+  "62": "$b",
+  "63": "$b",
+  "64": "$C",
+  "65": "$N",
+  "66": "$N",
+  "67": "$b",
+  "68": "$b",
+  "69": "$b",
+  "70": "$b",
+  "71": "$b",
+  "72": "$b",
+  "73": "$b",
+  "74": "$b",
+  "75": "$C",
+  "76": "$N",
+  "77": "$N",
+  "78": "$b",
+  "79": "$b",
+  "80": "$N",
+  "81": "$c",
+  "82": "$ghis:her;",
+  "83": "$c",
+  "84": "$N",
+  "85": "$N",
+  "86": "$N",
+  "87": "$N",
+  "88": "$N",
+  "89": "$c",
+  "90": "$c",
+  "91": "$B",
+  "92": "$N",
+  "93": "$B",
+  "94": "$r",
+  "95": "$N"
+ },
+ "rows": {
+  "quest:7121:obj:0": "Speak with the ⟦E1⟧.",
+  "quest:7121:details:0": "⟦1⟧, our quartermaster charged me to direct new recruits to him. He needs supplies from caches stored in the mines of Alterac, and he'll probably send you to get them.",
+  "quest:7121:details:1": "Follow the road. You'll find our quartermaster to the west.",
+  "quest:7121:completion:0": "It's good to see fresh troops here, ⟦2⟧, but with a little luck you'll get into some action and won't be fresh for long!",
+  "quest:7121:completion:1": "Speak with me again. I have tasks I must discuss with you....",
+  "quest:7122:obj:0": "Capture a mine that the Stormpike does not control, then return to ⟦E2⟧ in the ⟦E3⟧.",
+  "quest:7122:details:0": "The mines in ⟦E4⟧ hold more than just minerals. Both the ⟦E5⟧ and Stormpike have cached excess supplies in the Irondeep and Coldtooth mines... that's not a bad idea, if we could only maintain control of them!",
+  "quest:7122:details:1": "Capture a mine, then return to me. To capture a mine, enter one that we do not control and kill its leader. When you do that, the mine will be ours, and we'll send troops to protect it!",
+  "quest:7122:progress:0": "You haven't captured the mine yet, ⟦3⟧!⟦4⟧⟦5⟧After we control a mine, it will be much easier to gather minerals and supplies from it.",
+  "quest:7122:completion:0": "You did it! Well done, ⟦6⟧!",
+  "quest:7122:completion:1": "When we control a mine and have troops stationed there, it's much easier to gather minerals and supplies from it.",
+  "quest:7123:obj:0": "Speak with the ⟦E6⟧.",
+  "quest:7123:details:0": "⟦7⟧, the ⟦E6⟧ is looking for recruits, for tasks that lead into the mines of ⟦E4⟧. Speak with him; he will tell you more.",
+  "quest:7123:details:1": "Follow the road west into the bunker, then take the west exit and you'll find our quartermaster.",
+  "quest:7123:completion:0": "Hail, ⟦8⟧! It is good to see a ⟦9⟧ like yourself, eager to do his part for the ⟦E7⟧. Speak with me again, for I have vital tasks for you...",
+  "quest:7124:obj:0": "Capture a mine, then return to ⟦E8⟧ in the ⟦E3⟧.",
+  "quest:7124:details:0": "As battle rages over the landscape of ⟦E4⟧, so too does it rage through the Coldtooth and Irondeep mines. Both are rich sources of minerals and both are used to store supplies; it's no wonder they are so highly valued!",
+  "quest:7124:details:1": "Help our war effort, ⟦10⟧! Capture one of the mines for the ⟦E7⟧! To capture a mine, enter one that we do not control and kill its leader. When that is done, the mine will be ours and we'll send troops to protect it!",
+  "quest:7124:progress:0": "You haven't yet captured a mine, ⟦11⟧! Find one that we do not control and defeat it's leader! ",
+  "quest:7124:completion:0": "You captured a mine! With our own warriors protecting it, it will be much simpler to extract minerals from its depths, or gather supplies that have been cached there.",
+  "quest:7124:completion:1": "Well done, ⟦12⟧>. The deed you have done is a great boon to our battle efforts.",
+  "quest:7141:obj:0": "Enter ⟦E4⟧, defeat the ⟦E7⟧ general Drek'thar, and then return to ⟦E10⟧ in the ⟦E3⟧.",
+  "quest:7141:details:0": "The Explorers' League believes there are artifacts in ⟦E4⟧, but the ⟦E5⟧ orcs won't let us explore. We can't allow the ⟦E7⟧ to stop our scholarly pursuits! Defeat the ⟦E5⟧ general, ⟦E11⟧. With him dead, the orcs will lose their edge.",
+  "quest:7141:details:1": "⟦E11⟧ is in ⟦E5⟧ Keep, in the south of ⟦E4⟧. Vanquish him, and then return to me.",
+  "quest:7141:progress:0": "Go, ⟦13⟧.  Go to ⟦E4⟧ and defeat the orc general!",
+  "quest:7141:completion:0": "Well done, ⟦14⟧! With the ⟦E7⟧'s nose bloodied after the death of their general, we'll have the breathing room we need to explore!",
+  "quest:7142:obj:0": "Enter ⟦E4⟧ and defeat the dwarven general, ⟦E12⟧. Then, return to ⟦E13⟧ in the ⟦E3⟧.",
+  "quest:7142:details:0": "The Stormpike dwarves and their allies have invaded ⟦E4⟧, and we must drive them out! To win the battle for Alterac, we must defeat their general, ⟦E12⟧!",
+  "quest:7142:details:1": "You will find Vanndar in Dun Baldar, in the north of ⟦E4⟧.",
+  "quest:7142:details:2": "Destroy him, ⟦15⟧, and then return to me.",
+  "quest:7142:completion:0": "Well done, ⟦16⟧! Stormpikes have no hope in this foolish invasion.",
+  "quest:7142:completion:1": "Hah! So far, all they've done is get their general killed!",
+  "quest:7161:obj:0": "⟦E15⟧ to the Wildpaw cavern located southeast of the main base in ⟦E4⟧ and find the ⟦E16⟧. Return the ⟦E16⟧ to ⟦E17⟧.",
+  "quest:7161:details:0": "Hail, ⟦17⟧. It has been a long time since we have had the chance to answer the call of battle. The old feelings are slow to rise but once awakened, the blood does rush. The battle rage returns...",
+  "quest:7161:details:1": "All newcomers to the Valley must first complete the rite of battle.",
+  "quest:7161:details:2": "Deep within the Wildpaw gnoll cave is a banner of the ⟦E5⟧. Venture forth and recover the banner. Return it to me and I shall grant you the ⟦E5⟧ initiate's insignia.",
+  "quest:7161:progress:0": "Wake up! Wake up, ⟦18⟧! This is not a dream. You really are entrenched in the midst of a raging battle!",
+  "quest:7161:completion:0": "That burning sensation you feel is your soul being awakened. Your spirit has accepted the call to arms.",
+  "quest:7161:completion:1": "You are now one of the ⟦E5⟧, ⟦19⟧. Congratulations.",
+  "quest:7161:completion:2": "Carry this insignia with you at all times. As you advance among the ranks of ⟦E5⟧, I will replace the insignia with other, more powerful insignias.",
+  "quest:7161:completion:3": "Perhaps someday you will be exalted among the ⟦E5⟧ Clan. Should that day ever come, you will be granted the Eye of Command.",
+  "quest:7162:obj:0": "⟦E15⟧ to the Icewing Caverns located southwest of Dun Baldar in ⟦E4⟧ and recover the ⟦E20⟧. Return the ⟦E20⟧ to ⟦E21⟧ in the ⟦E3⟧.",
+  "quest:7162:details:0": "You've arrived just in time, ⟦20⟧. These ⟦E5⟧ savages just won't give up! We must show them the might of the Stormpike. They must bow to our superiority.",
+  "quest:7162:details:1": "Before you make your way to the field of battle, you will want to join the rank of Stormpike.",
+  "quest:7162:details:2": "Southwest of Dun Baldar, you will find the Icewing Caverns. Planted deep within the caverns is a ⟦E20⟧. Venture forth and recover that banner. Return it to me, and you will have earned a Stormpike initiate's insignia.",
+  "quest:7162:progress:0": "Beware the harpies of the region, ⟦21⟧. They'll not think twice to rip out your throat!",
+  "quest:7162:completion:0": "Take and wear this insignia with pride, ⟦22⟧. As your rank among the Stormpike grows, so too will the insignia. Return to me as you gain honor with Stormpike, and I shall replace your insignia with other, more powerful insignias.",
+  "quest:7162:completion:1": "Perhaps someday you will grow to be a legend on this field of battle. Should that day ever come, you will be granted the Eye of Command.",
+  "quest:7163:obj:0": "{'type': 'item', 'id': 17690, 'target': 'Frostwolf Insignia Rank 1', 'text': None}",
+  "quest:7163:details:0": "<⟦E17⟧ salutes you.>",
+  "quest:7163:details:1": "It is your time, ⟦23⟧. You have done much for the ⟦E5⟧ Clan and in doing so, earned a place as not only a soldier of ⟦E5⟧ but also as a friend.",
+  "quest:7163:details:2": "Well done! Present your initiate's insignia.⟦24⟧",
+  "quest:7163:progress:0": "<⟦E17⟧ salutes you.>⟦25⟧⟦26⟧It is your time, ⟦27⟧. You have done much for the ⟦E5⟧ Clan and in doing so, earned a place as not only a soldier of ⟦E5⟧ but also as a friend.⟦28⟧⟦29⟧Well done! Present your initiate's insignia.",
+  "quest:7163:completion:0": "This new insignia reflects your rank amongst the ⟦E5⟧. Keep it on you at all times.⟦30⟧⟦31⟧And ⟦32⟧... Die with honor!",
+  "quest:7164:obj:0": "{'type': 'item', 'id': 17905, 'target': 'Frostwolf Insignia Rank 2', 'text': None}",
+  "quest:7164:details:0": "It is good to see you again, ⟦33⟧. I had not expected you to return. Alas, you have proven yourself a brave and honorable soldier of the ⟦E5⟧.",
+  "quest:7164:details:1": "Your time has come again, ⟦34⟧. You have earned a new ranking and as such, a new insignia denoting this rise in stature.",
+  "quest:7164:details:2": "Present your insignia.",
+  "quest:7164:progress:0": "It is good to see you again, ⟦35⟧. I had not expected you to return. Alas, you have proven yourself a brave and honorable soldier of the ⟦E5⟧.⟦36⟧⟦37⟧Your time has come again, ⟦38⟧. You have earned a new ranking and as such, a new insignia denoting this rise in stature.⟦39⟧⟦40⟧Present your insignia.",
+  "quest:7164:completion:0": "<⟦E17⟧ salutes.>",
+  "quest:7164:completion:1": "Go, ⟦41⟧! Continue your defense of the ⟦E5⟧. This war must be won! For ⟦E11⟧! For the Warchief!",
+  "quest:7165:obj:0": "{'type': 'item', 'id': 17906, 'target': 'Frostwolf Insignia Rank 3', 'text': None}",
+  "quest:7165:details:0": "I must know, ⟦42⟧. When you look directly into the eyes of the enemy, do you see fear? Do they now cower in your presence? They must realize that they are defeated!",
+  "quest:7165:details:1": "You have earned reverence among the Guard.",
+  "quest:7165:details:2": "Present your insignia!",
+  "quest:7165:progress:0": "So many slain. ⟦E27⟧ drenches the fields. Yet... You live... You have persevered. You have led our armies to many victories. For this, then, soldier, you have earned a new rank.⟦43⟧⟦44⟧Present your insignia.",
+  "quest:7165:completion:0": "<⟦E17⟧ roars.>⟦45⟧⟦46⟧They have already begun telling tales of your deeds, soldier. The Stormpike shakes in fear when your name is uttered. Carry on!",
+  "quest:7166:obj:0": "{'type': 'item', 'id': 17907, 'target': 'Frostwolf Insignia Rank 4', 'text': None}",
+  "quest:7166:details:0": "Your radiate command and power, shaman. Exalted in the eyes of ⟦E5⟧ - the enemy cowers at the mention of your name.",
+  "quest:7166:details:1": "Rise, Hero of ⟦E5⟧. Rise and be honored!",
+  "quest:7166:details:2": "Present your insignia.",
+  "quest:7166:progress:0": "Your radiate command and power, ⟦47⟧. Exalted in the eyes of ⟦E5⟧ - the enemy cowers at the mention of your name.⟦48⟧⟦49⟧Rise, Hero of ⟦E5⟧. Rise and be honored!⟦50⟧⟦51⟧Present your insignia.",
+  "quest:7166:completion:0": "Soon, all on the field of battle will be under your watchful eye. Command of the Valley and its troops will be yours!",
+  "quest:7167:obj:0": "{'type': 'item', 'id': 17908, 'target': 'Frostwolf Insignia Rank 5', 'text': None}",
+  "quest:7167:details:0": "⟦E11⟧ sings your praises. ⟦E30⟧ is abuzz with tales of your heroics. The Warchief glows - your stalwart defense of our clan has pleased him greatly.",
+  "quest:7167:details:1": "You have earned the Eye of Command.",
+  "quest:7167:details:2": "Present your insignia, Commander ⟦52⟧.",
+  "quest:7167:details:3": "B<⟦E17⟧ salutes>",
+  "quest:7167:progress:0": "⟦E11⟧ sings your praises. ⟦E30⟧ is abuzz with tales of your heroics. The Warchief glows - your stalwart defense of our clan has pleased him greatly.⟦53⟧⟦54⟧You have earned the Eye of Command.⟦55⟧⟦56⟧Present your insignia, Commander ⟦57⟧.",
+  "quest:7167:completion:0": "Channel the power of the insignia. Let the enemy hear your words. The might of the ⟦E7⟧ is unquestionable!",
+  "quest:7168:obj:0": "{'type': 'item', 'id': 17691, 'target': 'Stormpike Insignia Rank 1', 'text': None}",
+  "quest:7168:details:0": "Most do not live long enough to rise above their own mediocrity. You have proven yourself to be an exemplary soldier, ⟦58⟧. The time has come.",
+  "quest:7168:details:1": "Present your insignia.",
+  "quest:7168:progress:0": "Most do not live long enough to rise above their own mediocrity. You have proven yourself to be an exemplary soldier, ⟦59⟧. The time has come.⟦60⟧⟦61⟧Present your insignia.",
+  "quest:7168:completion:0": "Let our enemies see that a soldier of rank has struck them down! Fight for the glory of Stormpike!",
+  "quest:7169:obj:0": "{'type': 'item', 'id': 17900, 'target': 'Stormpike Insignia Rank 2', 'text': None}",
+  "quest:7169:details:0": "The base buzzes with news of your exploits in the Field of Strife! You have struck mighty blows against our enemy - crushing their morale! For this, you have earned a rank of honor among the Stormpike.",
+  "quest:7169:details:1": "Present your insignia.",
+  "quest:7169:progress:0": "The base buzzes with news of your exploits in the Field of Strife! You have struck mighty blows against our enemy - crushing their morale! For this, you have earned a rank of honor among the Stormpike.⟦62⟧⟦63⟧Present your insignia.",
+  "quest:7169:completion:0": "The king has been made aware of your battlefront heroics, ⟦64⟧. Continue in your stalwart defense of the Stormpike Guard!",
+  "quest:7170:obj:0": "{'type': 'item', 'id': 17901, 'target': 'Stormpike Insignia Rank 3', 'text': None}",
+  "quest:7170:details:0": "I must know, ⟦65⟧. When you look directly into the eyes of the enemy, do you see fear? Do they now cower in your presence? They must realize that they are defeated!",
+  "quest:7170:details:1": "You have earned reverence among the Guard.",
+  "quest:7170:details:2": "Present your insignia!",
+  "quest:7170:progress:0": "I must know, ⟦66⟧. When you look directly into the eyes of the enemy, do you see fear? Do they now cower in your presence? They must realize that they are defeated!⟦67⟧⟦68⟧You have earned reverence among the Guard. Present your insignia!",
+  "quest:7170:completion:0": "When we first met, I would have never guessed that a hero was in the making. Carry on, soldier!",
+  "quest:7171:obj:0": "{'type': 'item', 'id': 17902, 'target': 'Stormpike Insignia Rank 4', 'text': None}",
+  "quest:7171:details:0": "Your radiate command and power, shaman. Exalted in the eyes of ⟦E5⟧ - the enemy cowers at the mention of your name.",
+  "quest:7171:details:1": "Rise, Hero of ⟦E5⟧. Rise and be honored!",
+  "quest:7171:details:2": "Present your insignia.",
+  "quest:7171:progress:0": "Before me stands an exalted hero of the ⟦E32⟧.⟦69⟧⟦70⟧<⟦E21⟧ salutes.>⟦71⟧⟦72⟧Few have earned such a rank among the Stormpike. I have watched the enemy fall before you. I have seen their resolve crumble in your presence. When you enter the fray, you become the beacon of hope for our forces!⟦73⟧⟦74⟧Present your insignia.",
+  "quest:7171:completion:0": "Surely it will be you who carries the Eye of Command!",
+  "quest:7172:obj:0": "{'type': 'item', 'id': 17903, 'target': 'Stormpike Insignia Rank 5', 'text': None}",
+  "quest:7172:details:0": "It is good to see you again, ⟦75⟧. I had not expected you to return. Alas, you have proven yourself a brave and honorable soldier of the ⟦E5⟧.",
+  "quest:7172:details:1": "Your time has come again, ⟦76⟧. You have earned a new ranking and as such, a new insignia denoting this rise in stature.",
+  "quest:7172:details:2": "Present your insignia.",
+  "quest:7172:progress:0": "Let them hear your voice, Commander ⟦77⟧! Let them know fear. Show them what power the Stormpike holds in their rank!⟦78⟧⟦79⟧Present your insignia.",
+  "quest:7172:completion:0": "It is you who must lead our troops to victory, Commander! The soldiers are under your command. They will follow your direct orders. Lead them.... Crush the ⟦E5⟧.",
+  "quest:7181:obj:0": "According to legend, the leader of the mighty Winterax trolls appears at will to wreak havoc on the denizens of ⟦E4⟧.",
+  "quest:7181:obj:1": "Should Korrak make himself known, destroy him and return to ⟦E17⟧.",
+  "quest:7181:details:0": "The invading Stormpike are not the only threat in the region, soldier. The war in the Valley is waged on two fronts. The cannibal Winterax trolls also vie for power.",
+  "quest:7181:details:1": "They are lead by ⟦E34⟧ - a cruel and cunning beast.",
+  "quest:7181:details:2": "BA strike against Korrak could prove to be a crushing blow to the Winterax clan. Slay the beast and be rewarded!",
+  "quest:7202:obj:0": "According to legend, the leader of the mighty Winterax trolls appears at will to wreak havoc on the denizens of ⟦E4⟧.",
+  "quest:7202:obj:1": "Should Korrak make himself known, destroy him and return to ⟦E21⟧ in the ⟦E3⟧.",
+  "quest:7202:details:0": "The indigenous Winterax trolls of the region are ruthless savages that would love nothing more than to have our bones added to their foul stew.",
+  "quest:7202:details:1": "We must show them our might!",
+  "quest:7202:details:2": "We have recovered tomes from their caves that detail their leadership hierarchy. The artifacts indicate that their leader, ⟦E34⟧, tends to remain hidden until given a reason to make his presence known.",
+  "quest:7202:details:3": "Death to Korrak would mean death to Winterax Clan! Slay him and return.",
+  "quest:7221:obj:0": "⟦E36⟧ in the Dun Baldar garrison.",
+  "quest:7221:details:0": "Ah, ⟦80⟧, reporting for duty are you? Great, the Stormpikes can use everyone we can muster!",
+  "quest:7221:details:1": "⟦E36⟧ in Dun Baldar. She's recruiting for a vital mission into enemy territory. You'll find Stonehewer in the bottom of the Dun Baldar garrison.",
+  "quest:7221:details:2": "And keep an eye out as you go through Dun Baldar. There's plenty to do for a hardworking ⟦81⟧ who's not afraid to get ⟦82⟧ hands dirty.",
+  "quest:7222:obj:0": "Speak with Voggah in ⟦E5⟧ Keep.",
+  "quest:7222:details:0": "A ⟦83⟧? Good! We are glad to see you in Alterac, ⟦84⟧. Interloping dwarves and their allies invade our valley, and we welcome all in the ⟦E7⟧ to join us in righteous slaughter!",
+  "quest:7222:details:1": "⟦E37⟧. He is looking for agents for an important mission into the ⟦E32⟧'s stronghold in ⟦E4⟧!",
+  "quest:7222:details:2": "You will find Voggah in ⟦E5⟧ Keep.",
+  "quest:7223:obj:0": "Bring 20 ⟦E38⟧ to ⟦E39⟧ in Dun Baldar.",
+  "quest:7223:details:0": "Battles rage constantly in ⟦E4⟧, and the supplies we get from ⟦E40⟧ are not enough to outfit our experienced troops.",
+  "quest:7223:details:1": "If you find armor scraps from the battlefield, aid the war effort and bring those scraps to me!",
+  "quest:7223:progress:0": "Did you bring any armor scraps, ⟦85⟧?",
+  "quest:7223:completion:0": "These are some good pieces, ⟦86⟧. I can use them to fashion new equipment for our troops.",
+  "quest:7223:completion:1": "If my supply level gets high enough, then maybe our seasoned fighting units will enter the field!",
+  "quest:7224:obj:0": "Bring 20 ⟦E38⟧ to ⟦E43⟧ in ⟦E5⟧ Village.",
+  "quest:7224:details:0": "When you fight the enemy, gather the scraps of their armor and bring them to me. I'll use those scraps to make armor for our own troops!",
+  "quest:7224:progress:0": "How goes the hunting, ⟦87⟧. Do you have any armor scraps for me?",
+  "quest:7224:completion:0": "These will do nicely. I'll melt them down and patch them up and you'll never know they came from those Stormpike cowards!",
+  "quest:7224:completion:1": "Thanks, ⟦88⟧. And let me polish up that armor of yours...",
+  "quest:7241:obj:0": "Venture to ⟦E4⟧, located in the ⟦E3⟧. Find and speak with ⟦E17⟧ - who stands outside the tunnel entrance - to begin your career as a soldier of ⟦E5⟧. You will find ⟦E4⟧ north of Tarren Mill at the base of the ⟦E3⟧.",
+  "quest:7241:details:0": "The drums of war sound off in a distant land, ⟦89⟧. The favored clan of your Warchief is under attack from the nefarious Stormpike Guard of ⟦E40⟧.",
+  "quest:7241:details:1": "By the looks of you, I can discern that you are indeed battle hardy and prepared to take on the cause of the ⟦E5⟧.",
+  "quest:7241:details:2": "It is you who must now take the next step in your evolution.",
+  "quest:7241:details:3": "North of Tarren Mill, in Alterac, you will find the entrance to ⟦E4⟧. It is there that you will find ⟦E17⟧. Hurry ⟦90⟧, for the battle is upon us!",
+  "quest:7241:completion:0": "To become a soldier of ⟦E5⟧, one must first be tested...",
+  "quest:7261:obj:0": "⟦E15⟧ to ⟦E4⟧ in the ⟦E44⟧. Outside of the entrance tunnel, find and speak with ⟦E21⟧.",
+  "quest:7261:obj:1": "For the glory of Bronzebeard!",
+  "quest:7261:details:0": "We are fighting a brutal battle in the valleys of Alterac. The cannibalistic Winterax trolls attack us from one side and the savage ⟦E5⟧ Clan from the other. Both must be exterminated in the name of ⟦E45⟧! The taking, culling, and turning of that land is a sovereign and territorial imperative to the kingdom of ⟦E40⟧.",
+  "quest:7261:details:1": "Alas, soldiers do not grow on trees! Report to ⟦E21⟧ outside ⟦E4⟧ to begin your tour of duty and honor amongst the Stormpike.",
+  "quest:7261:completion:0": "Let's get to work!",
+  "quest:7281:obj:0": "⟦E15⟧ into Stormpike territory and slay ⟦E46⟧. Return to ⟦E47⟧ when the task is complete.⟦91⟧",
+  "quest:7281:details:0": "Tragic... My brother faces me on the field of battle: A commander for the Stormpike.",
+  "quest:7281:details:1": "Of the four Stormpike Commanders, he is undoubtedly the most dangerous. Perhaps if he is slain, the Banshee Queen could turn him as she did me - show him the error of his ways...",
+  "quest:7281:details:2": "Deep within enemy territory you will find my brother. Slay him and return to me. I trust that you are capable of completing this mission, soldier.",
+  "quest:7281:details:3": "And soldier, do not go alone.",
+  "quest:7281:progress:0": "How it must pain him to remain as one of the living while his beloved brother has ascended to perfection.",
+  "quest:7281:completion:0": "Your heroics will not go unnoticed, ⟦92⟧.",
+  "quest:7281:completion:1": "I must waste no time if he is to be saved. Sylvanas must be contacted!",
+  "quest:7282:obj:0": "⟦E15⟧ into ⟦E5⟧ territory and slay ⟦E47⟧. Return to ⟦E46⟧ when the task is complete.⟦93⟧",
+  "quest:7282:details:0": "He must be put out of his misery, soldier! He knows not what he does. He has become a mindless servant of the dreaded Banshee Queen.",
+  "quest:7282:details:1": "Venture forth, across the Field of Strife, to the depths of ⟦E5⟧ territory. Find my brother and destroy him. His torment must come to an end.",
+  "quest:7282:progress:0": "It is with heavy heart that I give such an order, soldier.",
+  "quest:7282:completion:0": "You did remember to burn the corpse, didn't you?",
+  "quest:7301:obj:0": "⟦E15⟧ to ⟦E5⟧ territory and search for ⟦E48⟧, ⟦E49⟧, and ⟦E50⟧. Return to ⟦E51⟧ should you complete your mission.",
+  "quest:7301:details:0": "We got them held prisoner, ⟦94⟧. I'm talking about their Wing Commanders. It was a furious battle in the skies but they finally fell! Unfortunately, our best pilots were shot down in a counterattack against ⟦E5⟧ Keep. You gotta find out what happened to them.",
+  "quest:7301:details:1": "Search Tower Point West and ⟦E5⟧ Keep. These were their last known locations. Search these areas thoroughly.",
+  "quest:7301:progress:0": "Anything I would care to hear?",
+  "quest:7301:completion:0": "Unbelievable! You did free them, right? Right??? Well at the very least we know where they were held.",
+  "quest:7302:obj:0": "Find out what became of ⟦E52⟧, ⟦E53⟧, and ⟦E54⟧. Return to ⟦E55⟧ should you complete your mission.",
+  "quest:7302:details:0": "Our air support is in shambles, ⟦95⟧. The Wing Commanders were shot down over enemy territory. You must find out what became of them so that we can attempt a rescue!",
+  "quest:7302:details:1": "⟦E56⟧ was last seen flying over the Icewing Bunker. Jeztor's War Rider was spotted near the Stormpike lumber mill. Mulverick... that reckless fool was seen crashing near the Dun'Baldar North Bunker.",
+  "quest:7302:details:2": "That's all the information I have. Move out! Search through the areas thoroughly.",
+  "quest:7302:progress:0": "Status of the hunt, soldier?",
+  "quest:7302:completion:0": "Well done! The information you recovered will be invaluable to our cause."
+ },
+ "context": {
+  "quest:7121": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Mountaineer Boombellow («کوه‌نورد بانگ‌غران»)",
+   "turner": "Stormpike Quartermaster («تدارکات‌چی طوفان‌نیزه»)"
+  },
+  "quest:7122": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sergeant Durgen Stormpike («گروهبان دورگن طوفان‌نیزه»)",
+   "turner": "Sergeant Durgen Stormpike («گروهبان دورگن طوفان‌نیزه»)"
+  },
+  "quest:7123": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Jotek («جوتک»)",
+   "turner": "Frostwolf Quartermaster («تدارکاتچی گرگ‌یخ»)"
+  },
+  "quest:7124": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Corporal Teeka Bloodsnarl («سرجوخه تیکا خون‌غرش»)",
+   "turner": "Corporal Teeka Bloodsnarl («سرجوخه تیکا خون‌غرش»)"
+  },
+  "quest:7141": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Prospector Stonehewer («جویندهٔ رگه سنگ‌تراش»)",
+   "turner": "Prospector Stonehewer («جویندهٔ رگه سنگ‌تراش»)"
+  },
+  "quest:7142": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Voggah Deathgrip («ووگاه دث‌گریپ»)",
+   "turner": "Voggah Deathgrip («ووگاه دث‌گریپ»)"
+  },
+  "quest:7161": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7162": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Haggerdin («ستوان هاگردین»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7163": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7164": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7165": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7166": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7167": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7168": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Haggerdin («ستوان هاگردین»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7169": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Haggerdin («ستوان هاگردین»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7170": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Haggerdin («ستوان هاگردین»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7171": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Haggerdin («ستوان هاگردین»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7172": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Haggerdin («ستوان هاگردین»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7181": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7202": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7221": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Prospector Stonehewer («جویندهٔ رگه سنگ‌تراش»)"
+  },
+  "quest:7222": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "",
+   "turner": "Voggah Deathgrip («ووگاه دث‌گریپ»)"
+  },
+  "quest:7223": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Murgot Deepforge («مورگات ژرف‌آهنگر»)",
+   "turner": "Murgot Deepforge («مورگات ژرف‌آهنگر»)"
+  },
+  "quest:7224": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Smith Regzar («آهنگر رگزار»)",
+   "turner": "Smith Regzar («آهنگر رگزار»)"
+  },
+  "quest:7241": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Frostwolf Ambassador Rokhstrom («سفیر گرگ‌یخ راک‌استروم»)",
+   "turner": "Warmaster Laggrond («ارباب جنگ لگ‌راند»)"
+  },
+  "quest:7261": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Lieutenant Rotimer («ستوان روتیمر»)",
+   "turner": "Lieutenant Haggerdin («ستوان هاگردین»)"
+  },
+  "quest:7281": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Commander Louis Philips («فرمانده لوئیس فیلیپس»)",
+   "turner": "Commander Louis Philips («فرمانده لوئیس فیلیپس»)"
+  },
+  "quest:7282": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Commander Karl Philips («فرمانده کارل فیلیپس»)",
+   "turner": "Commander Karl Philips («فرمانده کارل فیلیپس»)"
+  },
+  "quest:7301": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Commander Duffy («فرمانده داف»)",
+   "turner": "Commander Duffy («فرمانده داف»)"
+  },
+  "quest:7302": {
+   "zone_en": "Alterac Valley",
+   "zone_fa": "درهٔ آلتراک",
+   "level": 60,
+   "side": "horde",
+   "giver": "Commander Mulfort («فرمانده مولفورت»)",
+   "turner": "Commander Mulfort («فرمانده مولفورت»)"
+  }
+ },
+ "known": {
+  "quest:7121": {
+   "title": "کوارت‌رمستر"
+  },
+  "quest:7122": {
+   "title": "تصرف یک معدن"
+  },
+  "quest:7123": {
+   "title": "با کوارت‌رمسترمان صحبت کن"
+  },
+  "quest:7124": {
+   "title": "تصرف یک معدن"
+  },
+  "quest:7141": {
+   "title": "نبرد آلتراک"
+  },
+  "quest:7142": {
+   "title": "نبرد آلتراک"
+  },
+  "quest:7161": {
+   "title": "زمین‌های اثبات"
+  },
+  "quest:7162": {
+   "title": "زمین‌های اثبات"
+  },
+  "quest:7163": {
+   "title": "برخیز و شناخته شو"
+  },
+  "quest:7164": {
+   "title": "گرامی در میان قبیله"
+  },
+  "quest:7165": {
+   "title": "احترام کسب‌شده"
+  },
+  "quest:7166": {
+   "title": "قهرمانان افسانه‌ای"
+  },
+  "quest:7167": {
+   "title": "چشم فرماندهی"
+  },
+  "quest:7168": {
+   "title": "برخیز و شناخته شو"
+  },
+  "quest:7169": {
+   "title": "گرامی در میان گارد"
+  },
+  "quest:7170": {
+   "title": "احترام کسب‌شده"
+  },
+  "quest:7171": {
+   "title": "قهرمانان افسانه‌ای"
+  },
+  "quest:7172": {
+   "title": "چشم فرماندهی"
+  },
+  "quest:7181": {
+   "title": "افسانهٔ کوراک"
+  },
+  "quest:7202": {
+   "title": "کوراک خون‌خروشان"
+  },
+  "quest:7221": {
+   "title": "با نقشه‌بردار استون‌هیور صحبت کن"
+  },
+  "quest:7222": {
+   "title": "با ووگا دث‌گریپ صحبت کن"
+  },
+  "quest:7223": {
+   "title": "خرده‌های زره"
+  },
+  "quest:7224": {
+   "title": "غنیمت دشمن"
+  },
+  "quest:7241": {
+   "title": "در دفاع از فراست‌وولف"
+  },
+  "quest:7261": {
+   "title": "فرمان حاکمیت"
+  },
+  "quest:7281": {
+   "title": "عشق برادری"
+  },
+  "quest:7282": {
+   "title": "عشق برادری"
+  },
+  "quest:7301": {
+   "title": "لردهای آسمانِ سقوط‌کرده"
+  },
+  "quest:7302": {
+   "title": "لردهای آسمانِ سقوط‌کرده"
+  }
+ }
+}

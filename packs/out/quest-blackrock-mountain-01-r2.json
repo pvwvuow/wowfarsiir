@@ -1,0 +1,557 @@
+{
+ "pack": "quest-blackrock-mountain-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-blackrock-mountain-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E2": {
+   "en": "Blackrock Mountain",
+   "fa": "کوه بلک‌راک",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "Overmaster Pyron",
+   "fa": "ارباب‌فرمان پیرون",
+   "kind": "qs"
+  },
+  "E4": {
+   "en": "Thunderheart",
+   "fa": "قلب رعد",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Jalinda Sprig",
+   "fa": "جالیندا جوانه",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Blackrock Depths",
+   "fa": "اعماق بلک‌راک",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Extra-Dimensional Ghost Revealer",
+   "fa": "آشکارسازِ ارواحِ فرابُعدی",
+   "kind": "it"
+  },
+  "E8": {
+   "en": "Bodley",
+   "fa": "بادلی",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E11": {
+   "en": "Top Piece of Lord Valthalak's Amulet",
+   "fa": "تکهٔ بالای گردن‌آویز لرد وال‌تالاک",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Incendicite of Incendius",
+   "fa": "اینسندیسایتِ اینسندیوس",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Ember of Emberseer",
+   "fa": "اخگرِ امبرسیر",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Cinder of Cynders",
+   "fa": "آتش‌اختهٔ سیندرز",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Hallowed Brazier",
+   "fa": "آتشدان متبرک",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Lord Valthalak",
+   "fa": "لرد والثالاک",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "The Duke of Cynders",
+   "fa": "دوک خاکسترها",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Druidical Remains",
+   "fa": "بازمانده‌های دروئیدی",
+   "kind": "it"
+  },
+  "E22": {
+   "en": "Mor Grayhoof",
+   "fa": "مور سم‌خاکستری",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "War Master Voone",
+   "fa": "استاد جنگ وون",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Starbreeze Village Relic",
+   "fa": "یادگار دهکدهٔ نسیمِ ستاره",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Isalien",
+   "fa": "ایزالین",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "Winterspring",
+   "fa": "وینتراسپرینگ",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Brilliant Sword of Zealotry",
+   "fa": "شمشیر درخشان تعصب",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Jarien",
+   "fa": "جاریین",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Sothos",
+   "fa": "سوثوس",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E34": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Soul Ashes of the Banished",
+   "fa": "خاکسترهای روح تبعیدیان",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Kormok",
+   "fa": "کورموک",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E41": {
+   "en": "Flask of Supreme Power",
+   "fa": "فلاسک قدرتِ برتر",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Return to Bodley",
+   "fa": "بازگشت نزد بودلی",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Brazier of Beckoning",
+   "fa": "آتشدان فراخوان",
+   "kind": "it"
+  }
+ },
+ "glossary": {
+  "Travel": "سفر",
+  "Blackrock Mountain": "کوه بلک‌راک",
+  "Overmaster Pyron": "ارباب‌فرمان پیرون",
+  "Thunderheart": "قلب رعد",
+  "Jalinda Sprig": "جالیندا جوانه",
+  "Blackrock Depths": "اعماق بلک‌راک",
+  "Extra-Dimensional Ghost Revealer": "آشکارسازِ ارواحِ فرابُعدی",
+  "Bodley": "بادلی",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Top Piece of Lord Valthalak's Amulet": "تکهٔ بالای گردن‌آویز لرد وال‌تالاک",
+  "Incendicite of Incendius": "اینسندیسایتِ اینسندیوس",
+  "Ember of Emberseer": "اخگرِ امبرسیر",
+  "Cinder of Cynders": "آتش‌اختهٔ سیندرز",
+  "Hallowed Brazier": "آتشدان متبرک",
+  "Lord Valthalak": "لرد والثالاک",
+  "The Duke of Cynders": "دوک خاکسترها",
+  "Silithus": "سیلیتوس",
+  "Druidical Remains": "بازمانده‌های دروئیدی",
+  "Mor Grayhoof": "مور سم‌خاکستری",
+  "War Master Voone": "استاد جنگ وون",
+  "Starbreeze Village Relic": "یادگار دهکدهٔ نسیمِ ستاره",
+  "Isalien": "ایزالین",
+  "Winterspring": "وینتراسپرینگ",
+  "Dire Maul": "دایر مول",
+  "Brilliant Sword of Zealotry": "شمشیر درخشان تعصب",
+  "Jarien": "جاریین",
+  "Sothos": "سوثوس",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "Scarlet": "سرخ‌پوشان",
+  "Stratholme": "استراتهولم",
+  "Soul Ashes of the Banished": "خاکسترهای روح تبعیدیان",
+  "Kormok": "کورموک",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Scholomance": "شولومانس",
+  "Flask of Supreme Power": "فلاسک قدرتِ برتر",
+  "Return to Bodley": "بازگشت نزد بودلی",
+  "Brazier of Beckoning": "آتشدان فراخوان"
+ },
+ "tokens": {
+  "1": "$B",
+  "2": "$N",
+  "3": "$N",
+  "4": "$B",
+  "5": "$B",
+  "6": "$N",
+  "7": "$C",
+  "8": "$C",
+  "9": "$C",
+  "10": "$N",
+  "11": "$C",
+  "12": "$C",
+  "13": "$N",
+  "14": "$C",
+  "15": "$C",
+  "16": "$N",
+  "17": "$C",
+  "18": "$C",
+  "19": "$N",
+  "20": "$C",
+  "21": "$C",
+  "22": "$N",
+  "23": "$C",
+  "24": "$C",
+  "25": "$N",
+  "26": "$C",
+  "27": "$B",
+  "28": "$C",
+  "29": "$N",
+  "30": "$C",
+  "31": "$C",
+  "32": "$N",
+  "33": "$c",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$c",
+  "38": "$r",
+  "39": "$N",
+  "40": "$B",
+  "41": "$B",
+  "42": "$N",
+  "43": "$N"
+ },
+ "rows": {
+  "quest:3906:obj:0": "⟦E1⟧ to the quarry in ⟦E2⟧ and slay ⟦E3⟧. Return to ⟦E4⟧ when you have completed this assignment.⟦1⟧",
+  "quest:3906:details:0": "The elders have felt a disturbance amongst the elements. The Dark Iron dwarves have summoned a foul spirit into our world that threatens to plague our lands with an eternal draught. This disharmony of flame must be investigated.",
+  "quest:3906:details:1": "⟦E1⟧ to ⟦E2⟧, through the Chasm of Flame, into the quarry. It is there that you shall find this lord of fire: ⟦E3⟧.",
+  "quest:3906:details:2": "End the disruption and return to me.",
+  "quest:3906:progress:0": "The elements are still in disarray, ⟦2⟧.",
+  "quest:3906:completion:0": "This cannot be... it must not be. The destruction of Pyron has merely lifted a veil. Within the depths of Blackrock is a much more insidious source of corruption.",
+  "quest:3906:completion:1": "B",
+  "quest:4262:obj:0": "Slay ⟦E3⟧ and return to ⟦E5⟧.",
+  "quest:4262:obj:1": "You recall Jalinda talking about Pyron guarding the quarry. Perhaps you should search there?",
+  "quest:4262:details:0": "The last five of my mages that went snooping around in ⟦E2⟧ came back extra crispy with a permanent orange gnomefro - or worse.",
+  "quest:4262:details:1": "B<Jalinda picks up some ashes from the ground and releases them into the air.>",
+  "quest:4262:details:2": "One nasty bugger in particular, ⟦E3⟧, seems to be causing quite a bit of trouble. We need that elemental terminated so that our expedition crew can make its way into ⟦E6⟧!",
+  "quest:4262:details:3": "He guards the entrance at the Blackrock Quarry.",
+  "quest:4262:progress:0": "<Jalinda appears to be staring at your head.>",
+  "quest:4262:completion:0": "Incendius? Oh dear...",
+  "quest:8960:obj:0": "⟦E1⟧ to ⟦E2⟧ and use the ⟦E7⟧ to find ⟦E8⟧ near ⟦E9⟧.",
+  "quest:8960:details:0": "So we need to recover the rest of the medallion? Finding ⟦E8⟧'s going to be a bit of a headache. He went back to ⟦E2⟧ to attempt to re-enter ⟦E9⟧ and never came back.",
+  "quest:8960:details:1": "I'd suggest taking the goblin's ghost revealing device with you, as I fear the worst might have happened.",
+  "quest:8960:completion:0": "I am so glad that you can see me. Finally someone to talk to!",
+  "quest:8960:completion:1": "Will you help us, ⟦3⟧? Help to undo the wrong that we perpetrated and put things to right? If it's true that you already have the ⟦E11⟧, then I think I can point you in the right direction to acquire the other two parts, reunite them and put an end to all of this.",
+  "quest:8960:completion:2": "Oh, by the way, hello, my name is ⟦E8⟧. Nice to meet you!",
+  "quest:8961:obj:0": "Gather the ⟦E12⟧, the ⟦E13⟧ and the ⟦E14⟧, along with a ⟦E15⟧, and return them to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8961:details:0": "In order to summon ⟦E16⟧ we're first going to need to gather the other two-thirds of the amulet. To do that we need to get a brazier and some special coals to burn in it.",
+  "quest:8961:details:1": "There are three nobles of fire, Lord Incedius in ⟦E6⟧, Pyroguard Emberseer in ⟦E9⟧ and ⟦E17⟧ in ⟦E18⟧, with what we need. Collect from each a piece of their remains, and then return to me with a ⟦E15⟧, which can be purchased from the Argent Dawn if you are honored by them.",
+  "quest:8961:progress:0": "It was our folly... our doom that we took that last job. If only we hadn't inadvertently stolen ⟦E16⟧'s spirit, which was contained in the amulet; if only there weren't those in our mercenary group that had been so greedy and divided it up amongst themselves. I'd be alive today, maybe tossing back a beer, or tossing one of my kids into the air.⟦4⟧⟦5⟧⟦6⟧, don't let the avarice of the ignoble in our old mercenary company be your doom as well.",
+  "quest:8961:completion:0": "I'm impressed, ⟦7⟧, but there's no time to lose. I will give you your next task, because you will still need to acquire a few more important components before we can proceed.",
+  "quest:8961:completion:1": "Speak to me again when you feel that you are ready for the challenge that lies ahead.",
+  "quest:8962:obj:0": "Acquire ⟦E21⟧ and return them to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8962:details:0": "⟦8⟧, listen closely. Now that we have the brazier, and the means to light it, we still need another component to suffuse it with; something that will provide a focus strong enough to entice the spirit of my deceased, former comrade.",
+  "quest:8962:details:1": "⟦E22⟧, our most prominent druid, had many close friends amongst the Cenarion Circle, some of which have fallen to the silithid. I need you to retrieve some ⟦E21⟧ from the silithid that inhabit the environs of Hive'Regal in southeastern ⟦E18⟧.",
+  "quest:8962:progress:0": "Have you returned already then, ⟦9⟧, with what I sent you out to gather?",
+  "quest:8962:completion:0": "A job well done, ⟦10⟧. I will imbue the essence of the remains into the brazier.",
+  "quest:8962:completion:1": "Now all that is left is to go to the lower portion of ⟦E9⟧, to the chamber where ⟦E24⟧ resides in Tazz'Alaor, and use the brazier to summon forth the corrupted spirit of my former cohort, ⟦E22⟧. He cannot rest until the amulet piece is taken from him.",
+  "quest:8963:obj:0": "Acquire a ⟦E25⟧ and return it to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8963:details:0": "⟦11⟧, listen closely. Now that we have the brazier, and the means to light it, we still need another component to suffuse it with; something that will provide a focus strong enough to entice the spirit of my deceased, former comrade.",
+  "quest:8963:details:1": "⟦E26⟧, our priestess, grew up in ⟦E27⟧ at Starbreeze Village. I need you to gather a ⟦E25⟧ from the Frostmaul giants of Frostwhisper Gorge in southern ⟦E27⟧, who are known for raiding to the north from time to time.",
+  "quest:8963:progress:0": "Have you returned already then, ⟦12⟧, with what I sent you out to gather?",
+  "quest:8963:completion:0": "A job well done, ⟦13⟧. I will imbue the essence of the relic into the brazier.",
+  "quest:8963:completion:1": "Now all that is left is to go to the Shrine of Eldretharr in the east wing of ⟦E29⟧, and use the brazier to summon forth the spirit of my former cohort, ⟦E26⟧. Her spirit has been corrupted by her possession of the piece of Valthalak's amulet, and the portion of his soul within it.",
+  "quest:8964:obj:0": "Retrieve a ⟦E30⟧ and return it to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8964:details:0": "⟦14⟧, listen closely. Now that we have the brazier, and the means to light it, we still need another component to suffuse it with; something that will provide a focus strong enough to summon the remains of my deceased, former comrades.",
+  "quest:8964:details:1": "The siblings, ⟦E31⟧ and ⟦E32⟧, were believers in the way of the ⟦E33⟧. They aspired to knighthood within that vile organization. Go to Tyr's Hand in ⟦E34⟧ and retrieve a ⟦E30⟧ from the praetorians there.",
+  "quest:8964:progress:0": "Have you returned already then, ⟦15⟧, with what I sent you out to gather?",
+  "quest:8964:completion:0": "A job well done, ⟦16⟧. I will imbue the essence of the sword into the brazier.",
+  "quest:8964:completion:1": "Now all that is left is to get into The Crimson Throne inside The ⟦E35⟧ Bastion at ⟦E36⟧, and use the brazier to summon forth the remains of my former cohorts, ⟦E31⟧ and ⟦E32⟧. Their souls have been twisted further by their possession of Valthalak's amulet piece and his spirit within.",
+  "quest:8965:obj:0": "Obtain ⟦E37⟧ and return them to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8965:details:0": "⟦17⟧, listen closely. Now that we have the brazier, and the means to light it, we still need another component to suffuse it with; something that will provide a focus strong enough to entice the spirit of my deceased, former comrade.",
+  "quest:8965:details:1": "An ogre necromancer that traveled with us, ⟦E38⟧, delighted in summoning forth the souls of the banished dead of Purgation Isle, off the south coast of the ⟦E39⟧. Go there and retrieve some ⟦E37⟧ from their remains.",
+  "quest:8965:progress:0": "Have you returned already then, ⟦18⟧, with what I sent you out to gather?",
+  "quest:8965:completion:0": "A job well done, ⟦19⟧. I will imbue the essence of the ashes into the brazier.",
+  "quest:8965:completion:1": "Now all that is left is to get into ⟦E40⟧, to Ras Frostwhisper's chamber, and use the brazier to summon forth the spirit of my former cohort, ⟦E38⟧. The amulet piece, and Valthalak's spirit within, has corrupted him even further, and he will not rest until you forcibly take it from him.",
+  "quest:8985:obj:0": "Acquire a ⟦E25⟧ and return it to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8985:details:0": "⟦20⟧, listen closely. Now that we have the location of the last amulet piece, we still need another component to suffuse the brazier with; something that will provide a focus strong enough to entice the spirit of my deceased, former comrade.",
+  "quest:8985:details:1": "⟦E26⟧, our priestess, grew up in ⟦E27⟧ at Starbreeze Village. I need you to gather a ⟦E25⟧ from the Frostmaul giants of Frostwhisper Gorge in southern ⟦E27⟧, who are known for raiding to the north from time to time.",
+  "quest:8985:progress:0": "Have you returned already then, ⟦21⟧, with what I sent you out to gather?",
+  "quest:8985:completion:0": "A job well done, ⟦22⟧. I will imbue the essence of the relic into the brazier.",
+  "quest:8985:completion:1": "Now all that is left is to go to the Shrine of Eldretharr in the east wing of ⟦E29⟧, and use the brazier to summon forth the spirit of my former cohort, ⟦E26⟧. Her spirit has been corrupted by her possession of the piece of Valthalak's amulet, and the portion of his soul within it.",
+  "quest:8985:completion:2": "Oh, by the way, I had some leftover bloodkelp from your trip to Alcaz Isle, so I made it into some potions for you. Take your pick!",
+  "quest:8986:obj:0": "Acquire ⟦E21⟧ and return them to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8986:details:0": "⟦23⟧, listen closely. Now that we have the location of the last amulet piece, we still need another component to suffuse the brazier with; something that will provide a focus strong enough to entice the spirit of my deceased, former comrade.",
+  "quest:8986:details:1": "⟦E22⟧, our most prominent druid, had many close friends amongst the Cenarion Circle, some of which have fallen to the silithid. I need you to retrieve some ⟦E21⟧ from the silithid that inhabit the environs of Hive'Regal in southeastern ⟦E18⟧.",
+  "quest:8986:progress:0": "Have you returned already then, ⟦24⟧, with what I sent you out to gather?",
+  "quest:8986:completion:0": "A job well done, ⟦25⟧. I will imbue the essence of the remains into the brazier.",
+  "quest:8986:completion:1": "Now all that is left is to go to the lower portion of ⟦E9⟧, to the chamber where ⟦E24⟧ resides in Tazz'Alaor, and use the brazier to summon forth the corrupted spirit of my former cohort, ⟦E22⟧. He cannot rest until the amulet piece is taken from him.",
+  "quest:8986:completion:2": "Oh, by the way, I had some leftover bloodkelp from your trip to Alcaz Isle, so I made it into some potions for you. Take your pick!",
+  "quest:8987:obj:0": "Retrieve a ⟦E30⟧ and return it to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8987:details:0": "⟦26⟧, listen closely. Now that we have the location of the last amulet piece, we still need another component to suffuse the brazier with; something that will provide a focus strong enough to summon the remains of my deceased, former comrades.",
+  "quest:8987:details:1": "The siblings, ⟦E31⟧ and ⟦E32⟧, were believers in the way of the ⟦E33⟧. They aspired to knighthood within that vile organization. Go to Tyr's Hand in ⟦E34⟧ and retrieve a ⟦E30⟧ from the praetorians there.⟦27⟧",
+  "quest:8987:progress:0": "Have you returned already then, ⟦28⟧, with what I sent you out to gather?",
+  "quest:8987:completion:0": "A job well done, ⟦29⟧. I will imbue the essence of the sword into the brazier.",
+  "quest:8987:completion:1": "Now all that is left is to get into The Crimson Throne inside The ⟦E35⟧ Bastion at ⟦E36⟧, and use the brazier to summon forth the remains of my former cohorts, ⟦E31⟧ and ⟦E32⟧. Their souls have been twisted further by their possession of Valthalak's amulet piece and his spirit within.",
+  "quest:8987:completion:2": "Oh, by the way, I had some leftover bloodkelp from your trip to Alcaz Isle, so I made it into some potions for you. Take your pick!",
+  "quest:8988:obj:0": "Obtain ⟦E37⟧ and return them to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8988:details:0": "⟦30⟧, listen closely. Now that we have the location of the last amulet piece, we still need another component to suffuse the brazier with; something that will provide a focus strong enough to entice the spirit of my deceased, former comrade.",
+  "quest:8988:details:1": "An ogre necromancer that traveled with us, ⟦E38⟧, delighted in summoning forth the souls of the banished dead of Purgation Isle, off the south coast of the ⟦E39⟧. Go there and retrieve some ⟦E37⟧ from their remains.",
+  "quest:8988:progress:0": "Have you returned already then, ⟦31⟧, with what I sent you out to gather?",
+  "quest:8988:completion:0": "A job well done, ⟦32⟧. I will imbue the essence of the ashes into the brazier.",
+  "quest:8988:completion:1": "Now all that is left is to get into ⟦E40⟧, to Ras Frostwhisper's chamber, and use the brazier to summon forth the spirit of my former cohort, ⟦E38⟧. The amulet piece, and Valthalak's spirit within, has corrupted him even further, and he will not rest until you forcibly take it from him.",
+  "quest:8988:completion:2": "Oh, by the way, I had some leftover bloodkelp from your trip to Alcaz Isle, so I made it into some potions for you. Take your pick!",
+  "quest:8994:obj:0": "Gather 40 Blackrock Bracers and acquire a ⟦E41⟧. Return them to ⟦E8⟧ inside ⟦E2⟧.",
+  "quest:8994:details:0": "We're nearly there, ⟦33⟧. All that is left is to retrieve a few more components so that I can attune the brazier and enable it to beckon forth ⟦E16⟧.",
+  "quest:8994:details:1": "To begin I must ask you to journey forth into ⟦E9⟧ and slay the orcs therein. They wear bracers that contain trace metals that I will need, so I'll need more than a few to extract the right amount out of them. Then, to complete the imbuing process, you'll need to bring me a ⟦E41⟧.",
+  "quest:8994:details:2": "Good luck, ⟦34⟧!",
+  "quest:8994:progress:0": "We've come a long way, ⟦35⟧, and I just wanted to say that no matter what happens, thank you! You've put yourself in mortal danger to try to help the surviving members of our mercenary company, The Veiled Blade, and as far as I'm concerned, you're one of us now.",
+  "quest:8994:completion:0": "That's it then. I'll extract the metal from the bracers and imbue the brazier with these final components. Then it will be ready for you to summon ⟦E16⟧, and finally return his spirit amulet to him.",
+  "quest:8994:completion:1": "You've come quite a distance, ⟦36⟧, don't falter now that the end is in sight!",
+  "quest:8996:obj:0": "⟦E42⟧ inside ⟦E2⟧ and give him the ⟦E43⟧.",
+  "quest:8996:details:0": "I will ignore your impertinence this time, ⟦37⟧, because you have done a noble thing today; returning the rest of my stolen spirit to me. Despite your obviously weak nature, ⟦38⟧, you have shown courage where those that stole from me did not, and probably never could!",
+  "quest:8996:details:1": "Return to them, before I change my mind and slay you where you stand. Go back and tell them that they are safe... for now.",
+  "quest:8996:progress:0": "⟦39⟧, you're back and still alive! Well, at least that makes one of us.⟦40⟧⟦41⟧You're going to have to tell me all about it!",
+  "quest:8996:completion:0": "He really said all of that? Wow, I can't believe he's going to call off the spectral assassins and stalkers, even if he did hint at causing my living companions further harm in the future.",
+  "quest:8996:completion:1": "This is a great day, ⟦42⟧! You've accomplished what few ever could, and absolved us, at least in part, of some of our past sins.",
+  "quest:8996:completion:2": "Thank you! As a sign of appreciation, I'd like to give you this. You can use it to summon forth spirits at the same haunted locations that you already have, and a few others, too.",
+  "quest:9032:obj:0": "⟦E1⟧ to ⟦E2⟧ and use the ⟦E7⟧ to find ⟦E8⟧ near ⟦E9⟧.",
+  "quest:9032:details:0": "The medallion contained Valthalak's soul? It's no surprise it was guarded by such a powerful curse.",
+  "quest:9032:details:1": "Locating ⟦E8⟧ presents a bit of a problem. Last time I heard of him, he was preparing to venture back into ⟦E9⟧. He was never heard of again.",
+  "quest:9032:details:2": "Seek him out in ⟦E2⟧, though I'm afraid to say he's probably dead by now. I suggest taking the goblin's device with you, friend.",
+  "quest:9032:completion:0": "I am so glad that you can see me. Finally someone to talk to!",
+  "quest:9032:completion:1": "Will you help us, ⟦43⟧? Help to undo the wrong that we perpetrated and put things to right? If it's true that you already have the ⟦E11⟧, then I think I can point you in the right direction to acquire the other two parts, reunite them and put an end to all of this.",
+  "quest:9032:completion:2": "Oh, by the way, hello, my name is ⟦E8⟧. Nice to meet you!"
+ },
+ "context": {
+  "quest:3906": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 52,
+   "side": "horde",
+   "giver": "Thunderheart («قلب رعد»)",
+   "turner": "Thunderheart («قلب رعد»)"
+  },
+  "quest:4262": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 52,
+   "side": "alliance",
+   "giver": "Jalinda Sprig («جالیندا جوانه»)",
+   "turner": "Jalinda Sprig («جالیندا جوانه»)"
+  },
+  "quest:8960": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Deliana («دلیانا»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8961": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8962": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8963": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8964": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8965": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8985": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8986": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8987": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8988": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8994": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bodley («بادلی»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:8996": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Spirit of Lord Valthalak («روح لرد والثالاک»)",
+   "turner": "Bodley («بادلی»)"
+  },
+  "quest:9032": {
+   "zone_en": "Blackrock Mountain",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Mokvar («موکوار»)",
+   "turner": "Bodley («بادلی»)"
+  }
+ },
+ "known": {
+  "quest:3906": {
+   "title": "ناهماهنگی شعله"
+  },
+  "quest:4262": {
+   "title": "ارباب‌فرمان پیرون"
+  },
+  "quest:8960": {
+   "title": "سرنوشت تلخ بودلی"
+  },
+  "quest:8961": {
+   "title": "سه شاه شعله"
+  },
+  "quest:8962": {
+   "title": "اجزای مهم"
+  },
+  "quest:8963": {
+   "title": "اجزای مهم"
+  },
+  "quest:8964": {
+   "title": "اجزای مهم"
+  },
+  "quest:8965": {
+   "title": "اجزای مهم"
+  },
+  "quest:8985": {
+   "title": "اجزای مهم بیشتر"
+  },
+  "quest:8986": {
+   "title": "اجزای مهم بیشتر"
+  },
+  "quest:8987": {
+   "title": "اجزای مهم بیشتر"
+  },
+  "quest:8988": {
+   "title": "اجزای مهم بیشتر"
+  },
+  "quest:8994": {
+   "title": "آماده‌سازی‌های نهایی"
+  },
+  "quest:8996": {
+   "title": "بازگشت نزد بودلی"
+  },
+  "quest:9032": {
+   "title": "سرنوشت تلخ بودلی"
+  }
+ }
+}

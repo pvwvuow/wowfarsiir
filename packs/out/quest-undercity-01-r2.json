@@ -1,0 +1,927 @@
+{
+ "pack": "quest-undercity-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-undercity-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Bethor Iceshard",
+   "fa": "بتور تکه‌یخ",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Gunther Arcanus",
+   "fa": "گونتر آرکانوس",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Wolf Heart Sample",
+   "fa": "نمونهٔ قلبِ گرگ",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "Apothecary Helbrim",
+   "fa": "داروساز هلبریم",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Kalimdor",
+   "fa": "کالیمدور",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E11": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Wolf Heart Samples",
+   "fa": "نمونه‌های قلبِ گرگ",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Apothecary Zinge",
+   "fa": "داروساز زینگ",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Unstable Potion",
+   "fa": "معجون ناپایدار",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Doctor Martin Felben",
+   "fa": "دکتر مارتین فلبن",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "Torment",
+   "fa": "عذاب",
+   "kind": "sp"
+  },
+  "E19": {
+   "en": "Head of the Baron",
+   "fa": "سرِ بارون",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Master Apothecary Faranell",
+   "fa": "داروساز ارشد فارانل",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Toxic Skullcap",
+   "fa": "کلاهک جمجمهٔ سمی",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Tawny Grisette",
+   "fa": "حنایی گریستت",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Blisterweed",
+   "fa": "علفِ تاول",
+   "kind": "it"
+  },
+  "E25": {
+   "en": "Herbalism",
+   "fa": "گیاه‌شناسی",
+   "kind": "sp"
+  },
+  "E27": {
+   "en": "Essence of Agony",
+   "fa": "گوهرِ شکنجه",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Hissing Serum",
+   "fa": "سرمِ فیس‌فیس‌کننده",
+   "kind": "it"
+  },
+  "E30": {
+   "en": "Arthas",
+   "fa": "آرتاس",
+   "kind": "npc"
+  },
+  "E31": {
+   "en": "Intact Limbs",
+   "fa": "اندام‌های سالم",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Morbin Lightbane",
+   "fa": "مروبین نورشکن",
+   "kind": "npc"
+  },
+  "E33": {
+   "en": "Garek",
+   "fa": "گارک",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Highly Toxic Strain",
+   "fa": "سویهٔ بسیار سمی",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Theodore Griffs",
+   "fa": "تودور گریففس",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E40": {
+   "en": "Cracked Sentry Core",
+   "fa": "هستهٔ نگهبان ترک‌خورده",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Stormheart's Still-beating Heart",
+   "fa": "قلب هنوزتپندهٔ استورم‌هارت",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E43": {
+   "en": "Genavie Callow",
+   "fa": "جنویو کالو",
+   "kind": "npc"
+  },
+  "E44": {
+   "en": "Melisara",
+   "fa": "ملی‌سارا",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Hillsbrad Foothills",
+   "fa": "دامنهٔ هیلزبراد",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Crown of Will",
+   "fa": "تاج اراده",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "The Crown of Will",
+   "fa": "تاج اراده",
+   "kind": "qs"
+  },
+  "E48": {
+   "en": "Bel'dugur's Note",
+   "fa": "یادداشت بلدوگور",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Keeper Bel'dugur",
+   "fa": "نگهبان بل‌دوگور",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Yagyin's Digest",
+   "fa": "چکیدهٔ یاگین",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Alessandro Luca",
+   "fa": "آلساندرو لوکا",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Sealed Field Testing Kit",
+   "fa": "کیتِ آزمونِ میدانیِ مهرشده",
+   "kind": "it"
+  },
+  "E53": {
+   "en": "Hope",
+   "fa": "امید",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Oran Snakewrithe",
+   "fa": "اوران مارپیچ",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Un'Goro Crater",
+   "fa": "دهانهٔ اون‌گورو",
+   "kind": "zn"
+  },
+  "E57": {
+   "en": "Chemist Fuely",
+   "fa": "شیمیدان فیولی",
+   "kind": "npc"
+  },
+  "E58": {
+   "en": "Corruption",
+   "fa": "فساد",
+   "kind": "sp"
+  },
+  "E59": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E60": {
+   "en": "Arch Druid Hamuul Runetotem",
+   "fa": "دروید اعظم هاموول رون‌توتم",
+   "kind": "npc"
+  },
+  "E61": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E63": {
+   "en": "Hamuul Runetotem",
+   "fa": "هامول رون‌توتوم",
+   "kind": "qs"
+  },
+  "E64": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E66": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E67": {
+   "en": "Chemist Cuely",
+   "fa": "شیمیدان کیولی",
+   "kind": "npc"
+  },
+  "E68": {
+   "en": "Cuely's Elixir",
+   "fa": "اکسیر کولی",
+   "kind": "it"
+  },
+  "E69": {
+   "en": "Thersa Windsong",
+   "fa": "ترسا آواز باد",
+   "kind": "npc"
+  },
+  "E70": {
+   "en": "Testing Equipment",
+   "fa": "تجهیزات آزمایش",
+   "kind": "ob"
+  },
+  "E71": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E72": {
+   "en": "Jeremiah Payson",
+   "fa": "ارمیا پیسون",
+   "kind": "npc"
+  },
+  "E73": {
+   "en": "Janice Felstone",
+   "fa": "جنیس فل‌استون",
+   "kind": "npc"
+  },
+  "E74": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E75": {
+   "en": "Moonglade",
+   "fa": "بیشهٔ مهتابی",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Bethor Iceshard": "بتور تکه‌یخ",
+  "Undercity": "آندر‌سیتی",
+  "Forsaken": "مطرودان",
+  "Gunther Arcanus": "گونتر آرکانوس",
+  "Wolf Heart Sample": "نمونهٔ قلبِ گرگ",
+  "Apothecary Helbrim": "داروساز هلبریم",
+  "Barrens": "بارنز",
+  "Kalimdor": "کالیمدور",
+  "Orgrimmar": "اورگریمار",
+  "Durotar": "دوروتار",
+  "Wolf Heart Samples": "نمونه‌های قلبِ گرگ",
+  "Apothecary Zinge": "داروساز زینگ",
+  "Unstable Potion": "معجون ناپایدار",
+  "Doctor Martin Felben": "دکتر مارتین فلبن",
+  "Torment": "عذاب",
+  "Head of the Baron": "سرِ بارون",
+  "Alliance": "اتحاد",
+  "Master Apothecary Faranell": "داروساز ارشد فارانل",
+  "Toxic Skullcap": "کلاهک جمجمهٔ سمی",
+  "Tawny Grisette": "حنایی گریستت",
+  "Blisterweed": "علفِ تاول",
+  "Herbalism": "گیاه‌شناسی",
+  "Essence of Agony": "گوهرِ شکنجه",
+  "Hissing Serum": "سرمِ فیس‌فیس‌کننده",
+  "Arthas": "آرتاس",
+  "Intact Limbs": "اندام‌های سالم",
+  "Morbin Lightbane": "مروبین نورشکن",
+  "Garek": "گارک",
+  "Highly Toxic Strain": "سویهٔ بسیار سمی",
+  "Theodore Griffs": "تودور گریففس",
+  "Azeroth": "آزروت",
+  "Dalaran": "دالاران",
+  "Cracked Sentry Core": "هستهٔ نگهبان ترک‌خورده",
+  "Stormheart's Still-beating Heart": "قلب هنوزتپندهٔ استورم‌هارت",
+  "Thousand Needles": "هزار سوزن",
+  "Genavie Callow": "جنویو کالو",
+  "Melisara": "ملی‌سارا",
+  "Hillsbrad Foothills": "دامنهٔ هیلزبراد",
+  "Crown of Will": "تاج اراده",
+  "The Crown of Will": "تاج اراده",
+  "Bel'dugur's Note": "یادداشت بلدوگور",
+  "Keeper Bel'dugur": "نگهبان بل‌دوگور",
+  "Yagyin's Digest": "چکیدهٔ یاگین",
+  "Alessandro Luca": "آلساندرو لوکا",
+  "Sealed Field Testing Kit": "کیتِ آزمونِ میدانیِ مهرشده",
+  "Hope": "امید",
+  "Oran Snakewrithe": "اوران مارپیچ",
+  "Un'Goro Crater": "دهانهٔ اون‌گورو",
+  "Chemist Fuely": "شیمیدان فیولی",
+  "Corruption": "فساد",
+  "Felwood": "فل‌وود",
+  "Arch Druid Hamuul Runetotem": "دروید اعظم هاموول رون‌توتم",
+  "Thunder Bluff": "تاندر بلاف",
+  "Hamuul Runetotem": "هامول رون‌توتوم",
+  "Runecloth": "پارچهٔ رونی",
+  "Azshara": "آزشارا",
+  "Chemist Cuely": "شیمیدان کیولی",
+  "Cuely's Elixir": "اکسیر کولی",
+  "Thersa Windsong": "ترسا آواز باد",
+  "Testing Equipment": "تجهیزات آزمایش",
+  "Ashenvale": "اَشِن‌ویل",
+  "Jeremiah Payson": "ارمیا پیسون",
+  "Janice Felstone": "جنیس فل‌استون",
+  "Tanaris": "تاناریس",
+  "Moonglade": "بیشهٔ مهتابی"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$gbrother:sister;",
+  "5": "$c",
+  "6": "$n",
+  "7": "$B",
+  "8": "$B",
+  "9": "$N",
+  "10": "$N",
+  "11": "$c",
+  "12": "$C",
+  "13": "$N",
+  "14": "$B",
+  "15": "$B",
+  "16": "$N",
+  "17": "$N",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$n",
+  "22": "$N",
+  "23": "$c",
+  "24": "$C"
+ },
+ "rows": {
+  "quest:357:obj:0": "Bring the Lich's Spellbook to ⟦E1⟧ in the ⟦E2⟧.",
+  "quest:357:details:0": "There is a lich who dwells on the island in Brightwater Lake to the north. Although he is a free-willed ⟦E3⟧, he believes all other Undead are Scourge slaves and has his minions attack anyone who approaches him.",
+  "quest:357:details:1": "But because he is ⟦E3⟧, the Queen will want him. And if he is skilled in Necromancy, then his knowledge would be...quite useful to us.",
+  "quest:357:details:2": "To discover his identity and his talents, I must see his spellbook. Steal into his camp and acquire it, then return to me.",
+  "quest:357:progress:0": "⟦1⟧, have you acquired the book?",
+  "quest:357:completion:0": "Very good, ⟦2⟧. I will study this book and determine the identity of that lich. You have served your Queen well.",
+  "quest:357:completion:1": "B<Bethor opens the book and stares intently at its glowing pages...>",
+  "quest:357:completion:2": "Astonishing! The book you retrieved belongs to no one other than ⟦E5⟧!",
+  "quest:357:completion:3": "Gunther was a skilled Necromancer in life; he and I were friends and comrades-in-arms, before the Plague. And judging from his book he has grown even more powerful in death.",
+  "quest:357:completion:4": "His skills would be a great boon to us.",
+  "quest:1358:obj:0": "Bring the ⟦E6⟧ to ⟦E7⟧ in the ⟦E8⟧.",
+  "quest:1358:details:0": "A colleague in ⟦E9⟧, ⟦E7⟧, is researching the effects of Lordaeron toxins on the beasts of ⟦E9⟧. He would be very interested in a sample of the wolf hearts Renferrel sent me.",
+  "quest:1358:details:1": "Helbrim is stationed in the ⟦E8⟧, in a village known as the Crossroads. To reach him, you must travel via zeppelin to the orc capital of ⟦E10⟧, then travel south, by foot, to ⟦E11⟧. Head west into the ⟦E8⟧, and you will soon reach the Crossroads.",
+  "quest:1358:progress:0": "You have a package for me?",
+  "quest:1358:completion:0": "Ah, very good. If initial reports are true, then the toxicity of these hearts could lead to further advances in our knowledge of poisons.",
+  "quest:1358:completion:1": "This is a welcome delivery, ⟦3⟧. Your reward is well earned.",
+  "quest:1359:obj:0": "Bring the ⟦E13⟧ to ⟦E14⟧ in the ⟦E2⟧.",
+  "quest:1359:details:0": "The wolf hearts you acquired possess a quality unseen in similar specimens. There is a toxicity to them that should be deadly to the very wolves in which the hearts beat!",
+  "quest:1359:details:1": "It's quite incredible, and we must study it further. I kept a few samples of the hearts acquired. Take them to my colleague, ⟦E14⟧. You will find her in our headquarters in the ⟦E2⟧.",
+  "quest:1359:progress:0": "You have something for me?",
+  "quest:1359:completion:0": "Ah yes, the heart samples of which Renferrel spoke. I am eager to experiment with these... it is always of interest to the Royal Apothecary Society when new forms of toxins are discovered.",
+  "quest:97891:title": "Prompt Potion Runner",
+  "quest:97891:obj:0": "Bring the ⟦E15⟧ to ⟦E16⟧ in the Apothecarium within the time limit.",
+  "quest:97891:obj:1": "*Speak to ⟦E16⟧",
+  "quest:97891:obj:2": "*⟦E15⟧ (provided)",
+  "quest:97891:obj:3": "*Time Remaining: 5 minutes",
+  "quest:97891:details:0": "You! Quickly, I need you to bring this potion across the slime canal to ⟦E16⟧ in the Apothecarium!",
+  "quest:97891:details:1": "It has a very limited shelf life, and no I can't go myself, my knees rattle and pop out if I attempt to run.",
+  "quest:97891:details:2": "Just another lovely side effect of undeath, apparently.",
+  "quest:97891:details:3": "But we're wasting time! Here, take this and go!",
+  "quest:97289:title": "Unending ⟦E18⟧",
+  "quest:97289:obj:0": "Bring the ⟦E19⟧ to the body of Othmar in the ⟦E2⟧.",
+  "quest:97289:obj:1": "* ⟦E19⟧ (provided)",
+  "quest:97289:details:0": "We craft abomination heads all the time, but this one is special. It belonged to a Grand Marshal of the ⟦E20⟧ once. A particularly unpleasant one. Othmar, I believe its name was. The Dark Lady had the pleasure of dispatching this one herself.",
+  "quest:97289:details:1": "Ooh the secrets it could tell if it could talk. And it can! If we reattach it to an appropriate host.",
+  "quest:97289:details:2": "Go ahead and place it next to the available body in the next room. But don't attach it. Not yet.",
+  "quest:97289:progress:0": "<The abomination remains lifeless without a head to control it.>",
+  "quest:97290:title": "Unending ⟦E18⟧",
+  "quest:97290:obj:0": "Report your findings to ⟦E21⟧ in ⟦E2⟧.",
+  "quest:97290:details:0": "You... abomination...",
+  "quest:97290:details:1": "Why should... help you...",
+  "quest:97290:details:2": "Be gone...",
+  "quest:97291:title": "Unending ⟦E18⟧",
+  "quest:97291:obj:0": "Collect a ⟦E22⟧ from ⟦E23⟧ in the Trade Quarter, ⟦E24⟧ near the ⟦E25⟧ Trainer, and ⟦E27⟧ from the poison vendor in the Rogues' Quarter for ⟦E21⟧ in ⟦E2⟧.",
+  "quest:97291:obj:1": "* ⟦E22⟧",
+  "quest:97291:obj:2": "* ⟦E24⟧",
+  "quest:97291:obj:3": "* ⟦E27⟧",
+  "quest:97291:details:0": "With the head reattached, all we need now is to bind it to the Dark Lady's will. This should not be a problem. The beast barely has brains left as it is after all the beatings it's taken.",
+  "quest:97291:details:1": "We simply need to motivate it.",
+  "quest:97291:details:2": "Fetch me a ⟦E22⟧ from Miss Grisette in the Trade Quarter. Oh, and some ⟦E24⟧ from our local herbalist trainers, the Alliestars. Feel free to just take some, they owe me. And lastly a bit of ⟦E27⟧. Any old poison vendor should do.",
+  "quest:97291:details:3": "We have a potion to make!",
+  "quest:97291:progress:0": "It will be ever so lovely to have our lost sheep returned to the fold, don't you think?",
+  "quest:97292:title": "Unending ⟦E18⟧",
+  "quest:97292:obj:0": "Inject the ⟦E29⟧ into the system above Othmar's body for ⟦E21⟧.",
+  "quest:97292:obj:1": "* ⟦E29⟧ administered",
+  "quest:97292:obj:2": "* ⟦E29⟧ (provided)",
+  "quest:97292:details:0": "I have concocted a lovely serum that our new guest is sure to find quite... stimulating.",
+  "quest:97292:details:1": "Take this. Feed it into the workings dripping from above him. Let's see if we can't show him why it's in his best interest to serve loyally.",
+  "quest:97292:details:2": "And try not to drop it. I can't afford a new assistant.",
+  "quest:97292:progress:0": "For Othmar's crimes against the Dark Lady, placing him under that oozing specimen is the least he deserves.",
+  "quest:97292:progress:1": "And it's funny...",
+  "quest:92401:title": "A Frightened Request",
+  "quest:92401:obj:0": "Investigate the disappearance of Edward Heartweaver in the Ruins of Lordaeron.",
+  "quest:92401:obj:1": "*Investigate the disappearance of Edward Heartweaver in the Ruins of Lordaeron.",
+  "quest:92401:details:0": "It's my husband Edward...",
+  "quest:92401:details:1": "He has not returned from his weekly journey to the graveyard in the Lordaeron ruins. Our son was lost when ⟦E30⟧ razed the city, and my dear Edward is still filled with guilt and sorrow that we never found his body. I've tried to warn him against searching those overrun ruins, but he refuses to give up. I try not worry, but it's been days.",
+  "quest:92401:details:2": "There are things there I cannot contend with but if you are willing, I need to know the fate of my husband.",
+  "quest:92401:progress:0": "First my son and now sweet Edward...",
+  "quest:92421:title": "Light's Justice",
+  "quest:92421:obj:0": "Collect 25 ⟦E31⟧ within The  for ⟦E32⟧ in the ⟦E2⟧.",
+  "quest:92421:obj:1": "*⟦E31⟧ (25)",
+  "quest:92421:details:0": "As a paladin of the ⟦E3⟧, it is my duty to exact the will of our Dark Lady while tending to our people's needs. We are fortunate with an opportunity to accomplish both.",
+  "quest:92421:details:1": "Above the ⟦E2⟧, the scourge still roam unchecked in great numbers. Our forces dwindle trying to reclaim our land, and decaying flesh cannot be reknit. Not without replacements.",
+  "quest:92421:details:2": "Would that our glorious captain ⟦E33⟧ Bandarion still be with us, I know what he would wish. To finish what he started and heal our kin. For Lordaeron!",
+  "quest:92421:progress:0": "What remains of the invading scourge? Have you managed to find suitable replacement parts?",
+  "quest:92421:completion:0": "Let those who fall from the Banshee Queen's grace meet our justice!",
+  "quest:92421:completion:1": "With these parts, our brothers and sisters have hope to see another day. You do Captain Bandarion proud.",
+  "quest:95216:title": "The New Plague",
+  "quest:95216:obj:0": "Collect the ⟦E35⟧ from Witherfang in Ruins of Lordaeron for ⟦E36⟧ in ⟦E2⟧.",
+  "quest:95216:obj:1": "*⟦E35⟧",
+  "quest:95216:details:0": "Welcome to the most vital organ of the ⟦E2⟧: The Apothecarium! Here we experiment on the most virulent of ⟦E37⟧'s exotic specimens.",
+  "quest:95216:details:1": "You've caught me in a good mood, so I will let you in on my latest investigation. It appears there is a particularly venomous arthropod stalking the ruins above our fair city. Its toxins are said to eat through even undead flesh. How exhilarating!",
+  "quest:95216:details:2": "I wish to validate these claims. Should you find yourself withering away from its bite, I should love a sample.",
+  "quest:95216:progress:0": "Any fool can tell you the most potent transmission method will always be through the blood.",
+  "quest:95216:progress:1": "I must see this strain for myself!",
+  "quest:96988:title": "Source of Power",
+  "quest:96988:obj:0": "Collect 6 Cracked Sentry Cores in the City of ⟦E39⟧ for ⟦E16⟧ in ⟦E2⟧.",
+  "quest:96988:obj:1": "* ⟦E40⟧ (6)",
+  "quest:96988:details:0": "With the city of ⟦E39⟧ under siege by their own constructs, this is the perfect opportunity to, let's say, borrow a few samples.",
+  "quest:96988:details:1": "Imagine an army of arcane-powered abominations. The Dark Lady would have no choice but to recognize my alchemical prowess. Maybe even grant me head of the Royal Apothecary Society?",
+  "quest:96988:details:2": "Go to the city and find the constructs' cores. They are unlikely to give them willingly, so do what you must.",
+  "quest:97985:title": "Thundering Hearts",
+  "quest:97985:obj:0": "Slay Stormheart in and acquire its heart.",
+  "quest:97985:obj:1": "*⟦E41⟧",
+  "quest:97985:details:0": "Fascinating, aren't they? This is the first time I have ever been privy to the secrets of abomination creation.",
+  "quest:97985:details:1": "I have been studying these notes, and it appears we need a heart. A massive one!",
+  "quest:97985:details:2": "I hear there is a thunder lizard there of impressive size called Stormheart, that patrols along the canyon edge in ⟦E42⟧. With a name like that it must have the perfect heart. I must have that heart!",
+  "quest:97985:details:3": "Oh, also I suggest you bring friends. Stormheart isn't known for being docile.",
+  "quest:97985:progress:0": "...",
+  "quest:1164:obj:0": "Bring Kenata, Fardel, and Marcel Dabyrie's Heads to ⟦E43⟧ in ⟦E2⟧.",
+  "quest:1164:details:0": "The harlot! The swine! Kenata still lives; her family healthy and prospering while I suffer. ⟦E3⟧ indeed!",
+  "quest:1164:details:1": "My family is gone, taken by the plague. Our estate also forfeit; looted and burned during the war. And after all that, her and her lousy children had the audacity to steal the only precious belongings I had left.",
+  "quest:1164:details:2": "I don't care about the things they stole any more. What I want now are their heads!",
+  "quest:1164:details:3": "Kill them for me! Go to the Dabyrie Farmstead in Arathi, northeast of Refuge Point.",
+  "quest:1164:progress:0": "Kill them all and bring me their heads!",
+  "quest:1164:completion:0": "You stand before me as a figure of vengeance, and I bow down before you in thanks.",
+  "quest:1164:completion:1": "With that cow's death, and knowing that their seed will no longer spread over the face of ⟦E37⟧, I can put my energy into something more lucrative. I hope you looted their farmstead after you finished them off.",
+  "quest:495:obj:0": "Report to ⟦E44⟧ at Tarren Mill in the ⟦E45⟧.",
+  "quest:495:details:0": "Mug'Thol and his ogre warband was sent to Alterac to retrieve the ⟦E46⟧ for Lady Sylvanas. Unfortunately, instead of returning it, the idiot decided to try it on... I suppose ogres can't resist anything bright and shiny.",
+  "quest:495:details:1": "His bumbling actions have become something of a problem, however. ⟦E47⟧ enabled him to resist the possession placed upon him to serve Lady Sylvanas.",
+  "quest:495:details:2": "The Dark Lady wants an example made, travel to Tarren Mill in Hillsbrad and report to ⟦E44⟧, my lieutenant.",
+  "quest:495:completion:0": "You were sent by Shalindra? Very well then, you'll find I don't waste much time with idle chatter.",
+  "quest:495:completion:1": "Mug'Thol is an irritant, and we will deal with him quickly, thoroughly, and without incident.",
+  "quest:736:obj:0": "Bring the items on ⟦E48⟧ to ⟦E49⟧ in the ⟦E2⟧.",
+  "quest:736:details:0": "You need ⟦E50⟧? Your plan, then, is to gather another flock? Of course it is...and of course I will help you, ⟦4⟧.",
+  "quest:736:details:1": "But you must help me too.",
+  "quest:736:details:2": "I require three items of power. Bring me these and the digest will be yours.",
+  "quest:736:details:3": "I cannot utter the names of these items, but I will write them down.",
+  "quest:736:details:4": "Get me the items on this list. If you can do that, then you are truly worthy of opening your own chapter of our order.",
+  "quest:736:progress:0": "How goes your mission, ⟦5⟧.",
+  "quest:736:completion:0": "I am impressed! You possess great skill, or great fortune, to have gained these relics. Either way, you are an asset to us.",
+  "quest:232:obj:0": "Take the purchase order to ⟦E51⟧ in the ⟦E2⟧.",
+  "quest:232:details:0": "The Royal Apothecary Society needs your assistance. Listen closely, and both of us may profit from my plan.",
+  "quest:232:details:1": "Apothecary Keever in the next room may be... touched... but his research does potentially bear fruit if it were pursued by a clever researcher. Fortunately, I am such a researcher. I want you to take this purchase order to ⟦E51⟧, the proprietor of Blue Moon Odds and Ends; he'll give you a testing kit. When you have it, bring it back to me and I'll outline your task in detail.",
+  "quest:232:progress:0": "Yes, and what may I assist you with?  Are you here on business for the Royal Apothecary Society, or have you arrived here merely to brighten my day?",
+  "quest:232:completion:0": "Ah, Zinge needs a kit, does she? It saddens me that Zinge does not choose to grace myself with her sweet presence.",
+  "quest:232:completion:1": "Very well, let me procure a kit for you.",
+  "quest:238:obj:0": "Bring the Field Sampling Kit to ⟦E14⟧ in the ⟦E2⟧.",
+  "quest:238:details:0": "The kit is ready, ⟦6⟧. No doubt that ⟦E14⟧ will want this as soon as possible. Take it to her without delay, and let her know that I will add the cost of the kit to the Society's tab. Also, please extend to her my warmest salutations.",
+  "quest:238:details:1": "Well, don't just stand there. Such is the life of a simple courier, yes?",
+  "quest:238:progress:0": "Yes, I think Luca is as disturbing as you do. It matters not - hand me the field sampling kit. I will need to make some adjustments to it in order to survey for the proper base materials.⟦7⟧⟦8⟧You have the kit, don't you?",
+  "quest:238:completion:0": "Good - it pleases me to be working with someone who takes pride in not wasting my time.",
+  "quest:238:completion:1": "After I make some adjustments to this kit, you'll be ready to head out into the field. You'll be using it to collect some vital data to the task at hand.",
+  "quest:238:completion:2": "It will take just a moment for me to finish the modifications. While you are waiting, you should probably start thinking about what you'd like to bring to the desert with you.",
+  "quest:238:completion:3": "Yes, I said the desert.",
+  "quest:864:obj:0": "Bring the ⟦E52⟧ to ⟦E14⟧ in the ⟦E2⟧.",
+  "quest:864:details:0": "\"Here you go, the power source is safely removed and the data is preserved. Well, safe journeys and all that. ⟦E53⟧ the nefarious science experiment worked out for you and all.\"",
+  "quest:864:details:1": "The goblin turns away from you to attend to the demands of the Gadgetzan Water Company. You secure the sealed testing kit for the journey back to the ⟦E2⟧. ⟦E14⟧ waits for you and the sealed field testing kit there.",
+  "quest:864:progress:0": "Welcome back. At least, welcome back if you have returned with a sealed testing kit. Otherwise, I will pretend not to notice your utter incompetence and spare my wrath from you until you do as you have been tasked and accomplish my task.",
+  "quest:864:completion:0": "I will analyze this data immediately. Perhaps Keever's insanity will prove to be my genius after all.",
+  "quest:864:completion:1": "As for you... you are useful to me, and I reward quite well those who remain useful. Take this item, this coin, and most importantly my thanks along with them.",
+  "quest:864:completion:2": "Check back with me from time to time - I wager that our working together on this project is not at an end.",
+  "quest:2995:obj:0": "⟦E54⟧ in ⟦E2⟧ wants you to travel to the Hinterlands and burn the Highvale Records, Highvale Report, and Highvale Notes.",
+  "quest:2995:details:0": "The Quel'Danil Lodge is a center of communication for the high elves of the Hinterlands. Their ambassadors are working to establish relationships with other races, with whom they share their knowledge of the Witherbark trolls that inhabit the area in the southern Hinterlands. All of the documents regarding the communications are kept at the lodge.",
+  "quest:2995:details:1": "We don't need the Highvale building alliances with others, ⟦9⟧.",
+  "quest:2995:details:2": "Destroy the Highvale documents. We need to burn their lines of communication... literally.",
+  "quest:2995:progress:0": "Keeping the Highvale elves isolated is the key. Have you found the lodge?",
+  "quest:2995:completion:0": "Perfect, ⟦10⟧. While the Highvale work to recover their lost information, we will be able to seal off the lines even further...",
+  "quest:4561:title": "Testing for Impurities - ⟦E56⟧",
+  "quest:4561:progress:0": "You take a sample of slime from ⟦E56⟧ and place some of it into the various tubes and beakers on the table. As things begin to boil and spurt, the slime changes colors. When the process slows down and the liquids calm, you see a small petri dish with your purified Un'Goro slime samples in it along with some other remnants.",
+  "quest:4561:completion:0": "You pick up the petri dish with the slime sample in it. The only way to discern if the samples is pure enough is to open it and examine the contents yourself. Ideally you'll find a sample that fits ⟦E57⟧'s criteria.",
+  "quest:4661:title": "Testing for ⟦E58⟧ - ⟦E59⟧",
+  "quest:4661:progress:0": "You take a sample of slime from ⟦E59⟧ and place some of it into the various tubes and beakers on the table. As things begin to boil and spurt, the slime changes colors. When the process slows down and the liquids calm, you see a small petri dish with your altered ⟦E59⟧ slime samples in it along with some other remnants.",
+  "quest:4661:completion:0": "You pick up the petri dish with the slime sample in it. The only way to discern if the samples is pure enough is to open it and examine the contents yourself. Ideally you'll find a sample that fits ⟦E57⟧'s criteria.",
+  "quest:3784:obj:0": "Speak with ⟦E60⟧ in ⟦E61⟧.",
+  "quest:3784:details:0": "Excuse me ⟦11⟧, but I'd like just a moment of your time if possible.",
+  "quest:3784:details:1": "The Cenarion Circle in ⟦E61⟧ is most interested in seasoned adventurers such as yourself to lend them aid in a vital research project. While I do not know the specifics, I can inform you that none other than ⟦E63⟧ is spearheading this research.",
+  "quest:3784:details:2": "Please - if you are interested, speak with him directly on the Elder Rise within ⟦E61⟧ proper.",
+  "quest:3784:completion:0": "Greetings, ⟦12⟧; I am glad you are interested in assisting our research. There is much to do, and I would be doing you a disservice if I informed you that the work this entails is not dangerous. Hopefully this will not scare you off... but from the looks of you, I take it that danger is something that you have dealt with before.",
+  "quest:7819:title": "Additional ⟦E64⟧",
+  "quest:7819:progress:0": "Greetings once again, ⟦13⟧! Our need for runecloth is constant, and we can always use additional resources if you are willing to part with them. For an additional stack of twenty runecloth, I will make sure that you are recognized for your continuing efforts on behalf of the ⟦E2⟧.⟦14⟧⟦15⟧Whenever you are ready to hand in the stack of runecloth, I'll accept it.",
+  "quest:7819:completion:0": "⟦16⟧ - without heroes like you working on behalf of the ⟦E3⟧, we'd surely suffer. Thank you for your continued efforts!",
+  "quest:3568:obj:0": "Fill all 4 Empty Vials at the tide pools along the coast of the Ruins of Eldarath in ⟦E66⟧ before returning to ⟦E67⟧.",
+  "quest:3568:details:0": "See that tauren behind me--the one who looks like she's going to be ill at any moment? She was in ⟦E66⟧ recently. She claims she was wounded by some naga while making her way through the Ruins of Eldarath.",
+  "quest:3568:details:1": "After fighting off a few of them, she took a break on the beach and drank from one of the tide pools. Now she's feeling nauseous... among other things.",
+  "quest:3568:details:2": "I'd like to find out what she drank. Take this box, in it are some empty vials I labeled. Fill each at different pools and come back.",
+  "quest:3568:progress:0": "You know where this is leading, don't you, ⟦17⟧? There's no way she can survive... look at her. The best thing for her now is to aid us in finding a cure for the plague. This water she drank might have a clue that helps us figure out how. She's going to die anyway--she might as well die doing something noble for our people before she does. Don't you agree?",
+  "quest:3568:completion:0": "Wonderful. You're back before she died. Good, good.",
+  "quest:3568:completion:1": "Let's get started on this then, shall we?",
+  "quest:3568:completion:2": "I've been studying her symptoms for some time now, and it's quite ugly. I'm surprised she's still standing. She's vomited three or four times all over the place... quite a pleasant odor.",
+  "quest:3568:completion:3": "Give me just a moment to put something together to test on our... friend.",
+  "quest:3569:obj:0": "Give ⟦E68⟧ to ⟦E69⟧ in ⟦E2⟧.",
+  "quest:3569:details:0": "Give this to Thersa. Perhaps it will cure her... perhaps not. We really won't know until after she drinks it.",
+  "quest:3569:progress:0": "I've come to ⟦E2⟧ because I heard their alchemists have been studying long and hard on how to find a cure for their own illness. It was suggested that perhaps they could help me too.⟦18⟧⟦19⟧Although this place makes me feel far from welcome, I had no choice--the sickness that found me is tearing me up inside and I needed their help immediately.",
+  "quest:3569:completion:0": "⟦E67⟧ has been very accommodating... disturbingly so. But if he says this will help me, then I have no other choice. I don't have time to find any other solution. I've already spoken to priests and shamans, none of which could help me.",
+  "quest:3569:completion:1": "Let us hope that the Earthmother watches over my spirit.",
+  "quest:3570:progress:0": "You know where this is leading, don't you, ⟦20⟧? There's no way she can survive... look at her. The best thing for her now is to aid us in finding a cure for the plague. This water she drank might have a clue that helps us figure out how. She's going to die anyway--she might as well die doing something noble for our people before she does. Don't you agree?",
+  "quest:3570:completion:0": "I never dreamed the elixir would take hold that quickly. Thank you, ⟦21⟧. I will get to work on the rest of these samples right away. I'm sure they'll be usable by the Lady Sylvanas and the ⟦E3⟧ soon enough.",
+  "quest:4293:obj:0": "Gather ⟦E59⟧ Slime Samples from any of the slimes in ⟦E59⟧. Then, using the ⟦E70⟧ next to ⟦E57⟧ in ⟦E2⟧, see which of your samples are the most corrupt. Bring 5 of the Corrupted ⟦E59⟧ Samples you find to ⟦E57⟧.",
+  "quest:4293:details:0": "⟦E59⟧ is a forest far north of the ⟦E8⟧, even farther than ⟦E71⟧. There, slimes are found all around pools of water blessed by the touch of Fel. The Scourge decimated the area with attacks of Infernals and other demonic magics--the slimes supposedly crept up through the earth during these attacks.",
+  "quest:4293:details:1": "Gather samples of ⟦E59⟧ slimes and we will use the testing equipment next to me to create a control group for our tests against other samples you gather.",
+  "quest:4293:progress:0": "I will need at least five corrupted samples for our control group, ⟦22⟧. Continue to gather ⟦E59⟧ slime samples until you're able to give me that which we'll need. The Lady Sylvanas decrees it...",
+  "quest:4293:completion:0": "Ah, excellent. These samples will do nicely. I thank you for your help.",
+  "quest:4293:completion:1": "Once we've gathered all the samples of slimes, we'll be able to determine more. I am beginning to suspect that Lady Sylvanas' hunch was not only correct, but more insightful than even she could have predicted. These samples are very interesting. Just seeing how they've reacted with my compounds... hmm, yes, we'll definitely need to investigate further.",
+  "quest:5049:obj:0": "Find ⟦E72⟧ in the ⟦E2⟧ and see if he is in fact Jeremiah Felstone. If he is, then perhaps he'd like the package ⟦E73⟧ made for him.",
+  "quest:5049:details:0": "From the evidence I am able to muster, the person you seek - and the intended recipient of the parcel - is ⟦E72⟧, the ⟦E2⟧ cockroach vendor.",
+  "quest:5049:details:1": "I've always been of the opinion that it takes a special gift to sell... cockroaches. No doubt you are on quite the epic sojourn now, mighty ⟦23⟧. I will leave you to your world-shaping endeavors. Allow me, however, to be a part of your magnum opus and reveal that he is located near the bank, suitably groveling under one of the walkways.",
+  "quest:5049:progress:0": "Every time someone steps on a cockroach, I cry. Please don't make me cry.",
+  "quest:5049:completion:0": "I haven't used that name in years... but yes, at one point in my life - before this glorious unlife - that was my last name.",
+  "quest:5049:completion:1": "You claim to have known my sister... or rather, have recently spoken to my sister.",
+  "quest:5049:completion:2": "Who's been dead.",
+  "quest:5049:completion:3": "For four years.",
+  "quest:5049:completion:4": "You know, if my bones weren't already brittle enough, I'd be tempted to break my foot off on your posterior. You're quite the vulture, aren't you?",
+  "quest:5049:completion:5": "B What... you have a package for me from my sister?",
+  "quest:1004:obj:0": "Speak with ⟦E60⟧ on the Elder Rise of ⟦E61⟧ about the Cenarion Circle's call to explore the frontiers of ⟦E9⟧.",
+  "quest:1004:details:0": "Attention, heroes!",
+  "quest:1004:details:1": "The Cenarion Circle seeks able bodied individuals to assist them in exploring the vast new frontiers of ⟦E9⟧! A forbidden wasteland of unimaginable dangers lies far to the west of ⟦E74⟧ and Gadgetzan, and the Circle needs willing and honorable proxies to act in their stead.",
+  "quest:1004:details:2": "All interested individuals should seek audience with the Cenarion Circle. Speak with the ⟦E60⟧ on the Elder's Rise of ⟦E61⟧ for more information!",
+  "quest:1004:completion:0": "Greetings, ⟦24⟧.",
+  "quest:1004:completion:1": "I am pleased to see the likes of you taking an interest in the well being of nature; tales of your mighty deeds precede you, and you are welcomed here. Seeing you before me instills the feeling of confidence that the Cenarion Circle will get the proper aid it needs.",
+  "quest:1004:completion:2": "Our connection with the Cenarion Circle in ⟦E75⟧ transcends racial and political divides. Remember this as you work on behalf of the Circle, and you will do well."
+ },
+ "context": {
+  "quest:357": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 8,
+   "side": "horde",
+   "giver": "Bethor Iceshard («بتور تکه‌یخ»)",
+   "turner": "Bethor Iceshard («بتور تکه‌یخ»)"
+  },
+  "quest:1358": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 15,
+   "side": "horde",
+   "giver": "Apothecary Zinge («داروساز زینگ»)",
+   "turner": "Apothecary Helbrim («داروساز هلبریم»)"
+  },
+  "quest:1359": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 15,
+   "side": "horde",
+   "giver": "Apothecary Renferrel («داروساز رنفرل»)",
+   "turner": "Apothecary Zinge («داروساز زینگ»)"
+  },
+  "quest:97891": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 16,
+   "side": "horde",
+   "giver": "Alessandro Luca («آلساندرو لوکا»)",
+   "turner": "Doctor Martin Felben («دکتر مارتین فلبن»)"
+  },
+  "quest:97289": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 21,
+   "side": "horde",
+   "giver": "Master Apothecary Faranell («داروساز ارشد فارانل»)",
+   "turner": "Unfinished Abomination («نفرت نیمه‌تمام»)"
+  },
+  "quest:97290": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 21,
+   "side": "horde",
+   "giver": "Unfinished Abomination («نفرت نیمه‌تمام»)",
+   "turner": "Master Apothecary Faranell («داروساز ارشد فارانل»)"
+  },
+  "quest:97291": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 21,
+   "side": "horde",
+   "giver": "Master Apothecary Faranell («داروساز ارشد فارانل»)",
+   "turner": "Master Apothecary Faranell («داروساز ارشد فارانل»)"
+  },
+  "quest:97292": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 21,
+   "side": "horde",
+   "giver": "Master Apothecary Faranell («داروساز ارشد فارانل»)",
+   "turner": "Master Apothecary Faranell («داروساز ارشد فارانل»)"
+  },
+  "quest:92401": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 22,
+   "side": "horde",
+   "giver": "Tabitha Heartweaver («تابیثا بافندهٔ دل»)",
+   "turner": "Tabitha Heartweaver («تابیثا بافندهٔ دل»)"
+  },
+  "quest:92421": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 22,
+   "side": "horde",
+   "giver": "Morbin Lightbane («مروبین نورشکن»)",
+   "turner": "Morbin Lightbane («مروبین نورشکن»)"
+  },
+  "quest:95216": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 22,
+   "side": "horde",
+   "giver": "Theodore Griffs («تودور گریففس»)",
+   "turner": "Theodore Griffs («تودور گریففس»)"
+  },
+  "quest:96988": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 33,
+   "side": "horde",
+   "giver": "Doctor Martin Felben («دکتر مارتین فلبن»)",
+   "turner": ""
+  },
+  "quest:97985": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 33,
+   "side": "horde",
+   "giver": "Calder Gray («کالدر خاکستری»)",
+   "turner": ""
+  },
+  "quest:1164": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 36,
+   "side": "horde",
+   "giver": "Genavie Callow («جنویو کالو»)",
+   "turner": "Genavie Callow («جنویو کالو»)"
+  },
+  "quest:495": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 39,
+   "side": "horde",
+   "giver": "Sharlindra («شارلیندرا»)",
+   "turner": "Melisara («ملی‌سارا»)"
+  },
+  "quest:736": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 44,
+   "side": "horde",
+   "giver": "Keeper Bel'dugur («نگهبان بل‌دوگور»)",
+   "turner": "Keeper Bel'dugur («نگهبان بل‌دوگور»)"
+  },
+  "quest:232": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 45,
+   "side": "horde",
+   "giver": "Apothecary Zinge («داروساز زینگ»)",
+   "turner": "Alessandro Luca («آلساندرو لوکا»)"
+  },
+  "quest:238": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 45,
+   "side": "horde",
+   "giver": "Alessandro Luca («آلساندرو لوکا»)",
+   "turner": "Apothecary Zinge («داروساز زینگ»)"
+  },
+  "quest:864": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 46,
+   "side": "horde",
+   "giver": "Chief Engineer Bilgewhizzle («سرمهندس بیلج‌ویزل»)",
+   "turner": "Apothecary Zinge («داروساز زینگ»)"
+  },
+  "quest:2995": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 47,
+   "side": "horde",
+   "giver": "Oran Snakewrithe («اوران مارپیچ»)",
+   "turner": "Oran Snakewrithe («اوران مارپیچ»)"
+  },
+  "quest:4561": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 48,
+   "side": "horde",
+   "giver": "Testing Equipment («تجهیزات آزمایش»)",
+   "turner": "Testing Equipment («تجهیزات آزمایش»)"
+  },
+  "quest:4661": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 48,
+   "side": "horde",
+   "giver": "Testing Equipment («تجهیزات آزمایش»)",
+   "turner": "Testing Equipment («تجهیزات آزمایش»)"
+  },
+  "quest:3784": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 50,
+   "side": "horde",
+   "giver": "Innkeeper Norman («مهمان‌دار نورمن»)",
+   "turner": "Arch Druid Hamuul Runetotem («دروید اعظم هاموول رون‌توتم»)"
+  },
+  "quest:7819": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 50,
+   "side": "horde",
+   "giver": "Ralston Farnsley («رالستون فارنزلی»)",
+   "turner": "Ralston Farnsley («رالستون فارنزلی»)"
+  },
+  "quest:3568": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 52,
+   "side": "horde",
+   "giver": "Chemist Cuely («شیمیدان کیولی»)",
+   "turner": "Chemist Cuely («شیمیدان کیولی»)"
+  },
+  "quest:3569": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 52,
+   "side": "horde",
+   "giver": "Chemist Cuely («شیمیدان کیولی»)",
+   "turner": "Thersa Windsong («ترسا آواز باد»)"
+  },
+  "quest:3570": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 52,
+   "side": "horde",
+   "giver": "Chemist Cuely («شیمیدان کیولی»)",
+   "turner": "Chemist Cuely («شیمیدان کیولی»)"
+  },
+  "quest:4293": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 52,
+   "side": "horde",
+   "giver": "Chemist Fuely («شیمیدان فیولی»)",
+   "turner": "Chemist Fuely («شیمیدان فیولی»)"
+  },
+  "quest:5049": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 52,
+   "side": "horde",
+   "giver": "Royal Overseer Bauhaus («باوهاوس»)",
+   "turner": "Jeremiah Payson («ارمیا پیسون»)"
+  },
+  "quest:1004": {
+   "zone_en": "Undercity",
+   "zone_fa": "شهر زیرین",
+   "level": 55,
+   "side": "horde",
+   "giver": "Harbinger Balthazad («پیش‌آهنگ بالتازاد»)",
+   "turner": "Arch Druid Hamuul Runetotem («دروید اعظم هاموول رون‌توتم»)"
+  }
+ },
+ "known": {
+  "quest:357": {
+   "title": "هویت لیچ"
+  },
+  "quest:1358": {
+   "title": "نمونه برای هیلبریم"
+  },
+  "quest:1359": {
+   "title": "مرسولهٔ زینگ"
+  },
+  "quest:1164": {
+   "title": "دزدیدن از دزدها"
+  },
+  "quest:495": {
+   "title": "تاج اراده"
+  },
+  "quest:736": {
+   "title": "ستاره، دست و قلب"
+  },
+  "quest:232": {
+   "title": "کاری برای داروساز زینگ"
+  },
+  "quest:238": {
+   "title": "کاری برای داروساز زینگ"
+  },
+  "quest:864": {
+   "title": "بازگشت به داروساز زینگ"
+  },
+  "quest:2995": {
+   "title": "خطوط ارتباطی"
+  },
+  "quest:3784": {
+   "title": "همیاری با دروئید اعظم رون‌توتوم"
+  },
+  "quest:3568": {
+   "title": "فساد نفوذی"
+  },
+  "quest:3569": {
+   "title": "فساد نفوذی"
+  },
+  "quest:3570": {
+   "title": "فساد نفوذی"
+  },
+  "quest:4293": {
+   "title": "نمونه‌ای از لجن..."
+  },
+  "quest:5049": {
+   "title": "غم‌های جرمایا"
+  },
+  "quest:1004": {
+   "title": "مرزهای تازه"
+  }
+ }
+}
