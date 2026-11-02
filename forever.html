@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="assets/css/fantasy.css?v=20261025a">
 <link rel="stylesheet" href="assets/css/support.css?v=20261031a">
 <link rel="stylesheet" href="assets/css/forever.css?v=20261028c">
-<link rel="stylesheet" href="assets/css/forever-hub.css?v=20261201i">
+<link rel="stylesheet" href="assets/css/forever-hub.css?v=20261201j">
 </head>
 <body>
 
@@ -71,15 +71,14 @@
     </p>
   </section>
 
-  <!-- ================= hub ================= -->
+  <!-- ================= hub (v6: every door is a piece of the game's own UI) ================= -->
   <section class="fh-sec" id="hub">
     <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کجا می‌خواهی بری؟</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Choose your path</p></div>
 
-    <!-- classes: a row of the 9 classes; a tap opens a small strip with that class's talents and spellbook (forever-hub.js) -->
+    <!-- classes: a character-creation stage; the rail picks a class, the stage shows its crest, trees, talents and spellbook (forever-hub.js) -->
     <div class="fh-grp">
-      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کلاس‌ها</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Classes</p></div>
-      <div class="fh-cls" id="fh-cls"></div>
-      <p class="fh-clinks"><a class="btn btn-stone btn-sm" href="forever-talents.html">ماشین‌حساب تلنت</a><a class="btn btn-stone btn-sm" href="spellbook.html">کتاب اسپل‌ها</a></p>
+      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کلاس‌ها</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Choose your class</p></div>
+      <div class="fh-cls" id="fh-cls"><p class="fh-clinks"><a class="btn btn-stone btn-sm" href="forever-talents.html">ماشین‌حساب تلنت</a><a class="btn btn-stone btn-sm" href="spellbook.html">کتاب اسپل‌ها</a></p></div>
     </div>
 
     <!-- dungeons + raids: faded slideshow -->
@@ -91,31 +90,51 @@
       </div>
     </div>
 
-    <!-- quests: search + preview, and the rest of the world -->
+    <!-- the world: three frames straight out of the game UI (target, loot, minimap) -->
     <div class="fh-grp">
-      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کوئست‌ها و جهان</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Quests &amp; world</p></div>
-      <div class="fh-row2">
-        <div class="fh-card fh-wide"><i class="fh-dia"></i>
-          <em class="fh-en" dir="ltr">Quest database</em>
-          <b>پایگاه کوئست</b>
-          <span class="fh-d">اسم یا شناسه بنویس؛ نتیجه همان‌جا دیده می‌شود. برای فیلتر با سطح و منطقه وارد خود صفحه بشو.</span>
-          <form class="fh-qf" id="fh-qf" action="quest.html" method="get" role="search"><input class="fh-qi" id="fh-qs" type="search" autocomplete="off" placeholder="جست‌وجوی کوئست…" aria-label="جست‌وجوی کوئست"></form>
-          <p class="fh-qnote" id="fh-qnote"></p>
-          <div class="fh-qres" id="fh-qres"></div>
-          <div class="fh-wfoot"><span class="fh-n" data-c="quests" data-u="کوئست"></span><a class="btn btn-stone btn-sm" href="quest.html">ورود به پایگاه</a></div>
+      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>جهان Forever</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">The world</p></div>
+      <div class="fh-frames">
+        <div class="fh-fr fh-tgt">
+          <div class="fh-frh"><b>NPC‌ها و موجودات</b><em class="fh-en" dir="ltr">Target</em></div>
+          <div class="fh-frb" id="fh-tf"></div>
+          <div class="fh-frf"><span class="fh-n" data-c="npcs" data-u="NPC"></span><a class="btn btn-stone btn-sm" href="npc.html">همهٔ NPC‌ها</a></div>
         </div>
-        <div class="fh-stack">
-          <a class="fh-card fh-mini" href="npc.html"><i class="fh-dia"></i><em class="fh-en" dir="ltr">NPCs &amp; creatures</em><b>NPC‌ها و موجودات</b><em class="fh-n" data-c="npcs" data-u="NPC"></em><span class="btn btn-stone btn-sm">ورود</span></a>
-          <a class="fh-card fh-mini" href="item.html?ver=forever"><i class="fh-dia"></i><em class="fh-en" dir="ltr">Items</em><b>آیتم‌ها</b><em class="fh-n" data-c="items" data-u="آیتم"></em><span class="btn btn-stone btn-sm">ورود</span></a>
-          <a class="fh-card fh-mini" href="#maps"><i class="fh-dia"></i><em class="fh-en" dir="ltr">World map</em><b>نقشهٔ زندهٔ جهان</b><em class="fh-n">۵۶ نقشه</em><span class="btn btn-stone btn-sm">مشاهده</span></a>
+        <div class="fh-fr fh-lt">
+          <div class="fh-frh"><b>آیتم‌ها</b><em class="fh-en" dir="ltr">Loot</em></div>
+          <div class="fh-frb" id="fh-loot"></div>
+          <div class="fh-frf"><span class="fh-n" data-c="items" data-u="آیتم"></span><a class="btn btn-stone btn-sm" href="item.html?ver=forever">پایگاه آیتم</a></div>
+        </div>
+        <div class="fh-fr fh-mmw">
+          <div class="fh-frh"><b>نقشهٔ زندهٔ جهان</b><em class="fh-en" dir="ltr">Minimap</em></div>
+          <span class="fh-mmz" id="fh-mmz">آزرُث</span>
+          <a class="fh-mm" id="fh-mm" href="#maps" aria-label="نقشهٔ زندهٔ جهان"><span class="fh-mmn"><span>N</span></span><span class="fh-mmc"><span class="fh-mmi"></span><span class="fh-mmp"></span></span></a>
+          <span class="fh-mmxy" id="fh-mmxy" dir="ltr"></span>
+          <div class="fh-frf"><span class="fh-n">۵۶ نقشه</span><a class="btn btn-stone btn-sm" href="#maps">باز کردن نقشه</a></div>
         </div>
       </div>
     </div>
 
-    <!-- coming soon -->
+    <!-- quest log: search + featured quests ("!" turns gold when the quest has Persian) -->
     <div class="fh-grp">
-      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>در راه</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Coming soon</p></div>
-      <div class="fh-soonrow"><span class="fh-n">صفحهٔ هر زون</span><span class="fh-n">فکشن‌ها و ریپیوتیشن</span><span class="fh-n">ست‌های آیتم</span><span class="fh-n">حرفه‌ها و دستورها</span></div>
+      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>دفترچهٔ کوئست</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Quest log</p></div>
+      <div class="fh-card fh-wide">
+        <div class="fh-qhead"><div><b>پایگاه کوئست</b><span class="fh-d">اسم یا شناسه بنویس؛ نتیجه همین‌جا دیده می‌شود.</span></div>
+          <form class="fh-qf" id="fh-qf" action="quest.html" method="get" role="search"><input class="fh-qi" id="fh-qs" type="search" autocomplete="off" placeholder="جست‌وجوی کوئست…" aria-label="جست‌وجوی کوئست"></form></div>
+        <p class="fh-qnote" id="fh-qnote"></p>
+        <div class="fh-qres" id="fh-qres"></div>
+        <div class="fh-wfoot"><span class="fh-n" data-c="quests" data-u="کوئست"></span><a class="btn btn-stone btn-sm" href="quest.html">ورود به پایگاه</a></div>
+      </div>
+    </div>
+
+    <!-- coming soon: locked achievements -->
+    <div class="fh-grp">
+      <div class="sect-head"><div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>در راه</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div><p class="sect-en font-cinzel" dir="ltr">Locked</p></div>
+      <div class="fh-soon">
+        <div class="fh-lock"><i><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7zm1.5 0h3V5a1.5 1.5 0 0 0-3 0z"/></svg></i><span><b>صفحهٔ هر زون</b><small>به‌زودی</small></span></div>
+        <div class="fh-lock"><i><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7zm1.5 0h3V5a1.5 1.5 0 0 0-3 0z"/></svg></i><span><b>فکشن‌ها و ریپیوتیشن</b><small>به‌زودی</small></span></div>
+        <div class="fh-lock"><i><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7zm1.5 0h3V5a1.5 1.5 0 0 0-3 0z"/></svg></i><span><b>ست‌های آیتم</b><small>به‌زودی</small></span></div>
+        <div class="fh-lock"><i><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7zm1.5 0h3V5a1.5 1.5 0 0 0-3 0z"/></svg></i><span><b>حرفه‌ها و دستورها</b><small>به‌زودی</small></span></div>
+      </div>
     </div>
 
     <!-- site + game -->
@@ -196,7 +215,7 @@
   </div>
 </footer>
 
-<script src="assets/js/forever-hub.js?v=20261201i"></script>
+<script src="assets/js/forever-hub.js?v=20261201j"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
 <script src="assets/js/nav-menu.js?v=20261201a"></script>
 <script src="assets/js/forever.js?v=20261028c"></script>
