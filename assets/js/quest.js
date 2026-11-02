@@ -17,7 +17,7 @@
    and the «translation not ready» note keeps saying so. Nothing is invented. */
 (function () {
   'use strict';
-  var V = '20261102v', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102w', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
@@ -136,7 +136,9 @@
     return { fa: has ? 'full' : 'none', faNote: has ? '\u0639\u0646\u0648\u0627\u0646 \u0641\u0627\u0631\u0633\u06cc \u062f\u0627\u0631\u062f' : '\u0639\u0646\u0648\u0627\u0646 \u0641\u0627\u0631\u0633\u06cc \u0647\u0646\u0648\u0632 \u0646\u06cc\u0633\u062a', sw: 'off', key: 'namesQuest',
       swNote: '\u0628\u0647 \u06a9\u0644\u06cc\u062f \u00ab' + swl('namesQuest') + '\u00bb \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a\u061b \u0641\u0642\u0637 \u062f\u06a9\u0645\u0647\u0654 \u0641\u0627\u0631\u0633\u06cc/English \u0647\u0645\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0639\u0648\u0636\u0634 \u0645\u06cc\u200c\u06a9\u0646\u062f' };
   }
-  /* parts: [{has, k, ok}] has = Persian exists, k = the switch that owns it, ok = this page reads that switch */
+  /* parts: [{has, k, ok}] has = Persian exists, k = the switch that owns it, ok = this page reads that switch.
+     key = the switch the diamond flashes: the CONNECTED one for on/part (toggling it visibly changes the
+     section), the missing one only when nothing is connected (owner: half diamond -> drawer -> nothing changed). */
   function partsB(parts, unit) {
     var tot = parts.length, have = 0, okN = 0, miss = '', k0 = '', offNow = '', i, p, o, sw;
     if (!tot) return null;
@@ -150,9 +152,9 @@
       } else if (!miss) miss = p.k;
     }
     sw = okN === tot ? 'on' : (okN ? 'part' : 'off');
-    o = { fa: fas(have, tot), faNote: nOf(have, tot, unit), sw: sw, key: miss || k0 };
+    o = { fa: fas(have, tot), faNote: nOf(have, tot, unit), sw: sw, key: sw === 'off' ? miss : k0 };
     o.swNote = sw === 'on' ? '\u0627\u0632 \u06a9\u0644\u06cc\u062f \u00ab' + swl(k0) + '\u00bb \u067e\u06cc\u0631\u0648\u06cc \u0645\u06cc\u200c\u06a9\u0646\u062f'
-      : (sw === 'part' ? '\u0628\u062e\u0634\u06cc \u0648\u0635\u0644 \u0627\u0633\u062a\u061b \u00ab' + swl(miss) + '\u00bb \u0647\u0646\u0648\u0632 \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a' : '\u0628\u0647 \u06a9\u0644\u06cc\u062f \u00ab' + swl(miss) + '\u00bb \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a');
+      : (sw === 'part' ? '\u0628\u062e\u0634\u06cc \u0648\u0635\u0644 \u0627\u0633\u062a (\u00ab' + swl(k0) + '\u00bb)\u061b \u00ab' + swl(miss) + '\u00bb \u0647\u0646\u0648\u0632 \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a' : '\u0628\u0647 \u06a9\u0644\u06cc\u062f \u00ab' + swl(miss) + '\u00bb \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a');
     if (offNow) o.faNote += ' (\u06a9\u0644\u06cc\u062f \u00ab' + swl(offNow) + '\u00bb \u062f\u0631 \u0633\u0628\u06a9 \u0641\u0639\u0644\u06cc \u062a\u0648 \u062e\u0627\u0645\u0648\u0634 \u0627\u0633\u062a\u060c \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc)';
     return o;
   }
@@ -175,7 +177,7 @@
     return partsB(parts, '\u0627\u0633\u0645');
   }
   function factsB(q, ck, side) {
-    var parts = [{ has: true, k: 'uiLabels', ok: true }], z;
+    var parts = [], z;
     if (ck) parts.push({ has: true, k: 'uiLabels', ok: true });
     else if (q.zone || q.zoneKey) {
       z = q.zone ? ZBYNAME[q.zone] : ZBYKEY[q.zoneKey];
@@ -184,14 +186,15 @@
     if (side) parts.push({ has: !!trEnt('faction', side), k: 'namesNpc', ok: true });
     arr(q.reqRaces).forEach(function () { parts.push({ has: false, k: 'textReq', ok: false }); });
     arr(q.reqClasses).forEach(function (c) { parts.push({ has: !!(WF && WF.CLASSES && WF.CLASSES[c]), k: 'namesClass', ok: false }); });
+    parts.push({ has: true, k: 'uiLabels', ok: true });
     return partsB(parts, '\u0645\u0648\u0631\u062f');
   }
   function rewardsB(q) {
-    var parts = [{ has: true, k: 'uiLabels', ok: true }], ids = [];
+    var parts = [], ids = [];
     arr(q.rewRep).forEach(function () { parts.push({ has: false, k: 'namesNpc', ok: false }); });
     arr(q.rewItems).concat(arr(q.rewChoice)).forEach(function (x) { ids.push(x[0]); });
     if (!ids.length) ids = S.rw.slice();
-    return partsB(parts.concat(itemParts(ids)), '\u0645\u0648\u0631\u062f');
+    return partsB(parts.concat(itemParts(ids)).concat([{ has: true, k: 'uiLabels', ok: true }]), '\u0645\u0648\u0631\u062f');
   }
 
   /* game text -> safe html. Markers {{npc:EN|FA}}, colour codes, $N $B $g a:b; */
