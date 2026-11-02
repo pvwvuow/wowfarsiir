@@ -3,16 +3,17 @@
    Data: quest-index.json [name, zoneKey, level, forever, fnew], quest-fa-titles.json, zones-meta.json.
    Index keys that start with "sort:" are CATEGORIES (class / profession / seasonal quests), not zones: they get their own
    "category" filter (quest-cats.js) and stay out of the zone list.
-   URL state: ?q= name/id, z= zone, c= category (sort:hunter), lo/hi = level, t= fa|en (translated / not), s= name|fa (sort). */
+   URL state: ?q= name/id, z= zone, c= category (sort:hunter), lo/hi = level, t= fa|en (translated / not), s= name|fa (sort).
+   Quest parity (v20261102b): titles follow the global namesQuest switch; the old local فارسی/English button is replaced
+   by the global quick bar (tr-prof.js: English · فارسی · saved styles). */
 (function () {
   'use strict';
-  var V = '20261102a', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102b', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var root = document.getElementById('quest-list-root');
   if (!root) return;
   var WF = window.WFTR || null;
-  var cache = {}, META = {}, ZBYKEY = {}, IDX = null, FT = {}, LANG = 'fa', S = null;
+  var cache = {}, META = {}, ZBYKEY = {}, IDX = null, FT = {}, S = null;
   var BANDS = [[1, 10], [11, 20], [21, 30], [31, 40], [41, 50], [51, 60]];
-  try { if (localStorage.getItem('wfq-lang') === 'en') LANG = 'en'; } catch (e) { /* ignore */ }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -127,7 +128,7 @@
 
   /* ---------- paint ---------- */
   function rowHtml(a) {
-    var fa = a[4] && LANG === 'fa';
+    var fa = a[4] && on('namesQuest');
     return '<a class="ql-row" href="quest.html?id=' + esc(a[0]) + '"><i class="ql-d' + (a[4] ? ' on' : '') + '" aria-hidden="true"></i>'
       + '<span class="ql-lv">' + (a[3] ? num(a[3]) : '–') + '</span>'
       + '<span class="ql-t">' + (fa ? '<b>' + esc(FT[a[0]]) + '</b><small class="rt-en" dir="ltr">' + esc(a[1]) + '</small>'
@@ -153,11 +154,13 @@
     Array.prototype.forEach.call(root.querySelectorAll('button[data-t]'), function (b) {
       b.classList.toggle('on', b.getAttribute('data-t') === S.tr);
     });
-    Array.prototype.forEach.call(root.querySelectorAll('button[data-l]'), function (b) {
-      b.classList.toggle('on', b.getAttribute('data-l') === LANG);
-    });
   }
   function update() { S.shown = 80; writeUrl(); sync(); rows(); }
+  /* the global quick bar (tr-prof.js): English · فارسی · saved styles */
+  function styleBar() {
+    var P = window.WFTRP;
+    return P && P.bar ? P.bar('q-lang') : '';
+  }
 
   function paint() {
     var zopts = '<option value="">' + (on('uiLabels') ? 'همهٔ مناطق' : 'All zones') + '</option>' + S.zones.map(function (z) {
@@ -183,7 +186,7 @@
       + '<span class="fex-chip">' + lbl('دسته', 'Categories') + ' <b>' + big(S.cats.length) + '</b></span></div></div></header>'
       + '<section class="fex-sec fFade ql-panel"><div class="ql-top">'
       + '<div class="q-lang ql-seg" role="group" aria-label="نمایش"><button type="button" data-t="all">' + lbl('همه', 'All') + '</button><button type="button" data-t="fa">' + lbl('ترجمه‌شده', 'Translated') + '</button><button type="button" data-t="en">' + lbl('ترجمه‌نشده', 'Untranslated') + '</button></div>'
-      + '<div class="q-lang" role="group" aria-label="زبان عنوان"><button type="button" data-l="fa">فارسی</button><button type="button" data-l="en" dir="ltr">English</button></div></div>'
+      + styleBar() + '</div>'
       + '<div class="ql-bar"><div class="npcl-f"><label for="ql-q">' + lbl('نام یا شناسه', 'Name or ID') + '</label><input id="ql-q" class="npcl-in" type="search" autocomplete="off" value="' + esc(S.q) + '"></div>'
       + '<div class="npcl-f"><label for="ql-z">' + lbl('منطقه', 'Zone') + '</label><select id="ql-z" class="npcl-in">' + zopts + '</select></div>'
       + '<div class="npcl-f"><label for="ql-c">' + lbl('دسته (کلاس، حرفه …)', 'Category (class, profession …)') + '</label><select id="ql-c" class="npcl-in">' + copts + '</select></div>'
@@ -226,14 +229,11 @@
     paint();
   }
 
+  /* the style bar's clicks are handled by tr-prof.js (delegated) */
   root.addEventListener('click', function (ev) {
     var b = ev.target && ev.target.closest ? ev.target.closest('button') : null, lo, hi;
     if (!b || !S) return;
-    if (b.hasAttribute('data-l')) {
-      LANG = b.getAttribute('data-l') === 'en' ? 'en' : 'fa';
-      try { localStorage.setItem('wfq-lang', LANG); } catch (e) { /* ignore */ }
-      sync(); rows();
-    } else if (b.hasAttribute('data-t')) {
+    if (b.hasAttribute('data-t')) {
       S.tr = b.getAttribute('data-t');
       update();
     } else if (b.hasAttribute('data-lo')) {

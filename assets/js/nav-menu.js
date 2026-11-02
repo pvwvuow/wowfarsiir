@@ -75,7 +75,16 @@
   if (!document.querySelector('script[src*="tr.js"]')) {
     var trLoader = document.createElement("script");
     trLoader.src = BASE + "assets/js/tr.js"; /* versionless: tr.js bumps its own tags; Pages max-age=600 keeps staleness ≤10min */
+    trLoader.async = false; /* ordered: tr-prof.js below needs WFTR first */
     document.head.appendChild(trLoader);
+  }
+  /* saved translation styles (tr-prof.js: «سبک‌های من» in the drawer + the quick bar English · فارسی · سبک ۱/۲/۳)
+     ride along on every page; it waits for WFTR itself if tr.js is still loading */
+  if (!document.querySelector('script[src*="tr-prof.js"]')) {
+    var profLoader = document.createElement("script");
+    profLoader.src = BASE + "assets/js/tr-prof.js";
+    profLoader.async = false;
+    document.head.appendChild(profLoader);
   }
   /* the ONE class/spec name table (assets/js/clsnames.js, WFCLS) rides along
      with tr.js on every page; it patches WFTR whichever of the two loads first */

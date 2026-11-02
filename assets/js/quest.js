@@ -14,18 +14,23 @@
    startPoi / endPoi [{map,x,y,…}] (Forever uiMap ids — coordinates, no image guess).
    quest-hunt v2 also stores killTargets / collectItems on the record (shown later).
    English text is always the fallback when no Persian exists (rt-en, dir=ltr),
-   and the «translation not ready» note keeps saying so. Nothing is invented. */
+   and the «translation not ready» note keeps saying so. Nothing is invented.
+   Quest parity (v20261102x): the page has NO language button of its own any more. Every part obeys the global
+   translation-style switches (tr.js): titles + chain titles namesQuest, quest texts textDesc, markers inside the
+   Persian text their own family switch, items namesItem, objects namesObj, classes namesClass, NPCs namesNpc,
+   zones namesZone, labels uiLabels. The quick bar English / فارسی / saved styles is tr-prof.js (WFTRP.bar). */
 (function () {
   'use strict';
-  var V = '20261102w', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102x', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
   var WF = window.WFTR || null;
   var cache = {};
   var META = {}, ZBYNAME = {}, ZBYKEY = {}, DUNG = {}, ENT = {};
-  var IDX = null, FAT = null, S = null, LANG = 'fa';
-  try { if (localStorage.getItem('wfq-lang') === 'en') LANG = 'en'; } catch (e) { /* ignore */ }
+  var IDX = null, FAT = null, S = null;
+  /* marker family inside the Persian quest text -> the switch that owns it (tr.js MK) */
+  var MKSW = { npc: 'namesNpc', zn: 'namesZone', it: 'namesItem', sp: 'namesSpell', ob: 'namesObj', qs: 'namesQuest', cls: 'namesClass', tm: 'terms' };
 
   /* ---------- helpers ---------- */
   function esc(s) {
@@ -73,6 +78,9 @@
     return typeof v === 'string' ? v : '';
   }
   function npcFa(en) { return on('namesNpc') ? (trEnt('npc', en) || trEnt('creature', en)) : ''; }
+  function itemFa(en) { return en && on('namesItem') ? (trEnt('item_ref', en) || trEnt('item', en)) : ''; }
+  function objFa(en) { return en && on('namesObj') ? (trEnt('object', en) || trEnt('gameobject', en)) : ''; }
+  function clsFa(en) { return on('namesClass') && WF && WF.CLASSES && typeof WF.CLASSES[en] === 'string' ? WF.CLASSES[en] : ''; }
   function zoneOf(z) {
     if (!z) return '';
     return on('namesZone') && z.fa ? esc(z.fa) : enSpan(z.name);
@@ -113,8 +121,8 @@
 
   /* ---------- translation badges (tr-badge.js, the owner's two stars) ----------
      fa = does Persian EXIST for this section; sw = does the section obey the translation-style switches.
-     HONEST current state: quest texts/titles still follow the page's own fa/en button
-     (LANG), not WFTR, so they report sw off until the quest-parity step wires them. */
+     Since quest parity every quest part reads its switch (ok:true). Still NOT connected, honestly:
+     race names (no Persian race table in the data yet) and reputation factions (ids / names without a map). */
   var TB = window.WFTRB || null, BL = [];
   function bd(o) { if (!TB || !o) return ''; BL.push(o); return TB.badge(o); }
   function swl(k) { return TB ? TB.label(k) : k; }
@@ -123,18 +131,21 @@
   function swOff(k) { return !!(WF && WF.on && !WF.on(k)); }
   function npcHas(nm) { return !!(trEnt('npc', nm) || trEnt('creature', nm)); }
   function itemHas(nm) { return !!(trEnt('item_ref', nm) || trEnt('item', nm)); }
+  function onNote(k) { return '\u0627\u0632 \u06a9\u0644\u06cc\u062f \u00ab' + swl(k) + '\u00bb \u067e\u06cc\u0631\u0648\u06cc \u0645\u06cc\u200c\u06a9\u0646\u062f'; }
+  function offNote(k) { return ' (\u06a9\u0644\u06cc\u062f \u00ab' + swl(k) + '\u00bb \u062f\u0631 \u0633\u0628\u06a9 \u0641\u0639\u0644\u06cc \u062a\u0648 \u062e\u0627\u0645\u0648\u0634 \u0627\u0633\u062a\u060c \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc)'; }
   function txtB(en, fa) {
-    var a = arr(en), f = arr(fa), n = Math.max(a.length, f.length), i, tot = 0, have = 0, hp;
+    var a = arr(en), f = arr(fa), n = Math.max(a.length, f.length), i, parts = [], hp;
     for (i = 0; i < n; i++) {
       hp = typeof f[i] === 'string' && !!f[i].trim();
-      if (hp || !junk(a[i])) { tot++; if (hp) have++; }
+      if (hp || !junk(a[i])) parts.push({ has: hp, k: 'textDesc', ok: true });
     }
-    return { fa: fas(have, tot), faNote: nOf(have, tot, '\u067e\u0627\u0631\u0627\u06af\u0631\u0627\u0641'), sw: 'off', key: 'textDesc',
-      swNote: '\u0628\u0647 \u06a9\u0644\u06cc\u062f \u00ab' + swl('textDesc') + '\u00bb \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a\u061b \u0641\u0642\u0637 \u062f\u06a9\u0645\u0647\u0654 \u0641\u0627\u0631\u0633\u06cc/English \u0647\u0645\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0639\u0648\u0636\u0634 \u0645\u06cc\u200c\u06a9\u0646\u062f' };
+    return partsB(parts, '\u067e\u0627\u0631\u0627\u06af\u0631\u0627\u0641');
   }
   function titleB(has) {
-    return { fa: has ? 'full' : 'none', faNote: has ? '\u0639\u0646\u0648\u0627\u0646 \u0641\u0627\u0631\u0633\u06cc \u062f\u0627\u0631\u062f' : '\u0639\u0646\u0648\u0627\u0646 \u0641\u0627\u0631\u0633\u06cc \u0647\u0646\u0648\u0632 \u0646\u06cc\u0633\u062a', sw: 'off', key: 'namesQuest',
-      swNote: '\u0628\u0647 \u06a9\u0644\u06cc\u062f \u00ab' + swl('namesQuest') + '\u00bb \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a\u061b \u0641\u0642\u0637 \u062f\u06a9\u0645\u0647\u0654 \u0641\u0627\u0631\u0633\u06cc/English \u0647\u0645\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0639\u0648\u0636\u0634 \u0645\u06cc\u200c\u06a9\u0646\u062f' };
+    var o = { fa: has ? 'full' : 'none', faNote: has ? '\u0639\u0646\u0648\u0627\u0646 \u0641\u0627\u0631\u0633\u06cc \u062f\u0627\u0631\u062f' : '\u0639\u0646\u0648\u0627\u0646 \u0641\u0627\u0631\u0633\u06cc \u0647\u0646\u0648\u0632 \u0646\u06cc\u0633\u062a', sw: 'on', key: 'namesQuest',
+      swNote: onNote('namesQuest') };
+    if (has && swOff('namesQuest')) o.faNote += offNote('namesQuest');
+    return o;
   }
   /* parts: [{has, k, ok}] has = Persian exists, k = the switch that owns it, ok = this page reads that switch.
      key = the switch the diamond flashes: the CONNECTED one for on/part (toggling it visibly changes the
@@ -153,26 +164,26 @@
     }
     sw = okN === tot ? 'on' : (okN ? 'part' : 'off');
     o = { fa: fas(have, tot), faNote: nOf(have, tot, unit), sw: sw, key: sw === 'off' ? miss : k0 };
-    o.swNote = sw === 'on' ? '\u0627\u0632 \u06a9\u0644\u06cc\u062f \u00ab' + swl(k0) + '\u00bb \u067e\u06cc\u0631\u0648\u06cc \u0645\u06cc\u200c\u06a9\u0646\u062f'
+    o.swNote = sw === 'on' ? onNote(k0)
       : (sw === 'part' ? '\u0628\u062e\u0634\u06cc \u0648\u0635\u0644 \u0627\u0633\u062a (\u00ab' + swl(k0) + '\u00bb)\u061b \u00ab' + swl(miss) + '\u00bb \u0647\u0646\u0648\u0632 \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a' : '\u0628\u0647 \u06a9\u0644\u06cc\u062f \u00ab' + swl(miss) + '\u00bb \u0648\u0635\u0644 \u0646\u06cc\u0633\u062a');
-    if (offNow) o.faNote += ' (\u06a9\u0644\u06cc\u062f \u00ab' + swl(offNow) + '\u00bb \u062f\u0631 \u0633\u0628\u06a9 \u0641\u0639\u0644\u06cc \u062a\u0648 \u062e\u0627\u0645\u0648\u0634 \u0627\u0633\u062a\u060c \u0628\u0631\u0627\u06cc \u0647\u0645\u06cc\u0646 \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc)';
+    if (offNow) o.faNote += offNote(offNow);
     return o;
   }
   function qParts(ids) {
-    return ids.map(function (id) { return { has: !!(FAT && FAT.t && FAT.t[id]), k: 'namesQuest', ok: false }; });
+    return ids.map(function (id) { return { has: !!(FAT && FAT.t && FAT.t[id]), k: 'namesQuest', ok: true }; });
   }
   function itemParts(list) {
     return list.map(function (x) {
       var it = S.items[x], nm = it && it[0] ? it[0] : '';
-      return { has: !!nm && itemHas(nm), k: 'namesItem', ok: false };
+      return { has: !!nm && itemHas(nm), k: 'namesItem', ok: true };
     });
   }
   function actorB(a) {
     var parts = [];
     a = a || {};
     arr(a.npcs).forEach(function (n) { parts.push({ has: npcHas(n.name), k: 'namesNpc', ok: true }); });
-    arr(a.objects).forEach(function (o) { parts.push({ has: !!(trEnt('object', o.name) || trEnt('gameobject', o.name)), k: 'namesObj', ok: false }); });
-    arr(a.items).forEach(function (it) { parts.push({ has: itemHas(it.name), k: 'namesItem', ok: false }); });
+    arr(a.objects).forEach(function (o) { parts.push({ has: !!(trEnt('object', o.name) || trEnt('gameobject', o.name)), k: 'namesObj', ok: true }); });
+    arr(a.items).forEach(function (it) { parts.push({ has: itemHas(it.name), k: 'namesItem', ok: true }); });
     if (!parts.length) parts.push({ has: true, k: 'uiLabels', ok: true });
     return partsB(parts, '\u0627\u0633\u0645');
   }
@@ -185,7 +196,7 @@
     }
     if (side) parts.push({ has: !!trEnt('faction', side), k: 'namesNpc', ok: true });
     arr(q.reqRaces).forEach(function () { parts.push({ has: false, k: 'textReq', ok: false }); });
-    arr(q.reqClasses).forEach(function (c) { parts.push({ has: !!(WF && WF.CLASSES && WF.CLASSES[c]), k: 'namesClass', ok: false }); });
+    arr(q.reqClasses).forEach(function (c) { parts.push({ has: !!(WF && WF.CLASSES && WF.CLASSES[c]), k: 'namesClass', ok: true }); });
     parts.push({ has: true, k: 'uiLabels', ok: true });
     return partsB(parts, '\u0645\u0648\u0631\u062f');
   }
@@ -210,7 +221,11 @@
   }
   function fmt(t, isFa) {
     var s = esc(isFa ? t : String(t).replace(LEAD_B, ''));
-    s = s.replace(/[{][{](?:npc|zn|it|sp):([^|{}]*)[|]([^|{}]*)[}][}]/g, function (m, en, fa) { return isFa ? fa : en; });
+    /* a marker inside the Persian text follows ITS OWN switch (npc -> namesNpc, it -> namesItem ...) */
+    s = s.replace(/[{][{](npc|zn|it|sp|ob|qs|cls|tm):([^|{}]*)[|]([^|{}]*)[}][}]/g, function (m, mk, en, fa) {
+      if (!isFa) return en;
+      return on(MKSW[mk]) ? fa : '<span class="rt-en" dir="ltr">' + en + '</span>';
+    });
     s = s.replace(/[|]c[0-9a-fA-F]{2}([0-9a-fA-F]{6})(.*?)[|]r/g, '<span style="color:#$1">$2</span>');
     s = s.replace(/[|]r/g, '');
     s = s.replace(/[$][Gg]([^;$:]*):([^;$]*);/g, function (m, a, b) { return a.trim() + ' / ' + b.trim(); });
@@ -223,13 +238,13 @@
   }
   function paras(en, fa) {
     var a = arr(en).filter(function (x) { return !junk(x); });
-    var f = arr(fa), n = Math.max(arr(en).length, f.length), i, h = '', e, p;
+    var f = arr(fa), n = Math.max(arr(en).length, f.length), i, h = '', e, p, faOn = on('textDesc');
     if (!a.length && !f.length) return '';
     for (i = 0; i < n; i++) {
       e = arr(en)[i];
       p = f[i];
       if (junk(e)) e = null;
-      if (LANG === 'fa' && typeof p === 'string' && p.trim()) h += '<p class="q-p">' + fmt(p, true) + '</p>';
+      if (faOn && typeof p === 'string' && p.trim()) h += '<p class="q-p">' + fmt(p, true) + '</p>';
       else if (typeof e === 'string') h += '<p class="q-p rt-en" dir="ltr">' + fmt(e, false) + '</p>';
     }
     return h;
@@ -250,14 +265,19 @@
     if (!ic) return '<i class="fex-med" aria-hidden="true"></i>';
     return '<img class="npc-ic" src="icons/large/' + esc(ic) + '.jpg" data-ic="' + esc(ic) + '" alt="" loading="lazy">';
   }
+  /* a name cell: Persian (with the English below) when the switch is on and Persian exists, else English */
+  function nmCell(fa, en, cls) {
+    return '<span class="fex-npc-nm' + (cls ? ' ' + cls : '') + (fa ? '' : ' rt-en') + '"' + (fa ? '' : ' dir="ltr"') + '>' + esc(fa || en) + '</span>'
+      + (fa ? '<span class="fex-sub rt-en" dir="ltr">' + esc(en) + '</span>' : '');
+  }
   function itemRow(id, it, extra) {
     var q = it && it[2] != null ? it[2] : 1, nm = it && it[0] ? it[0] : '#' + id;
     return '<a class="fex-npc q' + q + '" href="item.html?ver=forever&amp;id=' + esc(id) + '">' + icon(it && it[1])
-      + '<span class="fex-npc-nm npc-qn rt-en" dir="ltr">' + esc(nm) + '</span>' + (extra || '') + '</a>';
+      + nmCell(it && it[0] ? itemFa(it[0]) : '', nm, 'npc-qn') + (extra || '') + '</a>';
   }
-  function extRow(href, nm) {
+  function extRow(href, nm, fa) {
     return '<a class="fex-npc" href="' + esc(href) + '" target="_blank" rel="noopener"><i class="fex-med fex-objd" aria-hidden="true"></i>'
-      + '<span class="fex-npc-nm rt-en" dir="ltr">' + esc(nm) + '</span></a>';
+      + nmCell(fa, nm) + '</a>';
   }
   function npcLink(id, name) {
     var fa = npcFa(name);
@@ -271,7 +291,7 @@
   }
   function ftitle(id, en) {
     var t = FAT && FAT.t && FAT.t[id];
-    return LANG === 'fa' && t ? { fa: true, t: t } : { fa: false, t: en };
+    return on('namesQuest') && t ? { fa: true, t: t } : { fa: false, t: en };
   }
   function qLink(id) {
     var e = IDX && IDX.quests && IDX.quests[id], nm = e && e[0] ? e[0] : '#' + id, t = ftitle(id, nm);
@@ -279,10 +299,10 @@
       + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</span>'
       + (e && e[2] ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + num(e[2]) + '</span>' : '') + '</a>';
   }
-  function langBar(show) {
-    if (!show) return '';
-    return '<div class="q-lang" role="group" aria-label="زبان متن کوئست"><button type="button" data-l="fa" class="' + (LANG === 'fa' ? 'on' : '') + '">فارسی</button>'
-      + '<button type="button" data-l="en" dir="ltr" class="' + (LANG === 'en' ? 'on' : '') + '">English</button></div>';
+  /* the global quick bar (tr-prof.js): English · فارسی · saved styles */
+  function styleBar() {
+    var P = window.WFTRP;
+    return P && P.bar ? P.bar('q-lang') : '';
   }
 
   /* ---------- data ---------- */
@@ -383,9 +403,9 @@
     var rows = '', sp = S.sp[key], map = '', sx;
     a = a || {};
     arr(a.npcs).forEach(function (n) { rows += npcLink(n.id, n.name); });
-    arr(a.objects).forEach(function (o) { rows += extRow('https://www.wowhead.com/classic/object=' + o.id, o.name); });
+    arr(a.objects).forEach(function (o) { rows += extRow('https://www.wowhead.com/classic/object=' + o.id, o.name, objFa(o.name)); });
     arr(a.items).forEach(function (it) {
-      rows += '<a class="fex-npc" href="item.html?ver=forever&amp;id=' + esc(it.id) + '"><i class="fex-med fex-objd" aria-hidden="true"></i><span class="fex-npc-nm rt-en" dir="ltr">' + esc(it.name) + '</span></a>';
+      rows += '<a class="fex-npc" href="item.html?ver=forever&amp;id=' + esc(it.id) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>' + nmCell(itemFa(it.name), it.name) + '</a>';
     });
     if (!rows && !arr(poi).length) return '';
     if (sp) {
@@ -439,7 +459,8 @@
   }
   function paint() {
     var q = S.q, f = S.fa || {}, hasFa = !!(f.t || f.desc || f.obj || f.details || f.progress || f.completion);
-    var fa = LANG === 'fa' && f.t ? f.t : '';
+    var faT = f.t || (FAT && FAT.t && FAT.t[q.id]) || '';
+    var fa = on('namesQuest') && faT ? faT : '';
     var ck = catKey(q);
     var side = q.faction === 'horde' ? 'Horde' : (q.faction === 'alliance' ? 'Alliance' : '');
     var sideFa = side && on('namesNpc') ? trEnt('faction', side) : '';
@@ -451,7 +472,7 @@
 
     BL = [];
     document.title = title + ' — ' + (on('uiLabels') ? 'کوئست' : 'Quest') + ' — wowfarsi';
-    hb = bd(titleB(!!(f.t || (FAT && FAT.t && FAT.t[q.id]))));
+    hb = bd(titleB(!!faT));
     /* the title dot sits inside the h1; the legend is filled into <!--trb-leg--> once every section is known */
     hero = '<header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>QUEST' + (q.repeatable ? ' · REPEATABLE' : '') + '<i></i></p>'
       + '<h1' + (fa ? '>' : ' class="rt-en" dir="ltr">') + esc(title) + hb + '</h1>'
@@ -470,9 +491,9 @@
       /* the DB often stores the objectives sentence as `desc` too: then it is ONE block (هدف), and its
          Persian may live in fa.obj OR fa.desc (owner: شرح showed the Persian of هدف next to the English هدف) */
       var same = !!enKey(q.objectives) && enKey(q.objectives) === enKey(q.desc);
-      var objFa = arr(f.obj).length ? f.obj : (same ? f.desc : f.obj);
-      var objHtml = paras(q.objectives, objFa), sumHtml = paras(q.desc, f.desc);
-      texts += sec(lbl('هدف', 'Objectives'), null, objHtml, txtB(q.objectives, objFa));
+      var objFaTxt = arr(f.obj).length ? f.obj : (same ? f.desc : f.obj);
+      var objHtml = paras(q.objectives, objFaTxt), sumHtml = paras(q.desc, f.desc);
+      texts += sec(lbl('هدف', 'Objectives'), null, objHtml, txtB(q.objectives, objFaTxt));
       if (!same && sumHtml !== objHtml) texts += sec(lbl('شرح', 'Summary'), null, sumHtml, txtB(q.desc, f.desc));
     } else {
       texts += sec(lbl('هدف', 'Objectives'), null, paras(q.desc, f.desc), txtB(q.desc, f.desc));
@@ -513,14 +534,14 @@
       + frow(zl, zoneHtml)
       + frow(lbl('طرف', 'Side'), sideHtml)
       + frow(lbl('نژاد', 'Races'), arr(q.reqRaces).length ? q.reqRaces.map(enSpan).join('، ') : '')
-      + frow(lbl('کلاس', 'Classes'), arr(q.reqClasses).length ? q.reqClasses.map(enSpan).join('، ') : '')
+      + frow(lbl('کلاس', 'Classes'), arr(q.reqClasses).length ? q.reqClasses.map(function (c) { var cf = clsFa(c); return cf ? esc(cf) : enSpan(c); }).join('، ') : '')
       + frow(lbl('شناسه', 'ID'), '<span dir="ltr">' + esc(q.id) + '</span>'), factsB(q, ck, side));
     B += panel(lbl('پاداش', 'Rewards'), rewardsHtml(q), rewardsB(q));
     B += actorBlock(lbl('شروع از', 'Started by'), q.startedBy, 's', q.startPoi);
     B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy, 'e', q.endPoi);
 
     root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="quest.html">' + lbl('پایگاه کوئست', 'Quest database') + '</a><i></i><span>' + esc(title) + '</span></nav>'
-      + '<div class="fex">' + hero.replace('<!--trb-leg-->', TB && TB.legend ? TB.legend(BL) : '') + langBar(hasFa) + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
+      + '<div class="fex">' + hero.replace('<!--trb-leg-->', TB && TB.legend ? TB.legend(BL) : '') + styleBar() + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
       + '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="quest.html">' + lbl('همهٔ کوئست‌ها', 'All quests') + '</a>'
       + '<a class="btn btn-stone btn-sm" href="https://www.wowhead.com/classic/quest=' + esc(q.id) + '" target="_blank" rel="noopener">Wowhead</a></div></div>';
   }
@@ -566,14 +587,11 @@
       m = t.closest('.npc-map'); if (m) m.classList.add('nomap');
     }
   }, true);
+  /* the style bar's clicks are handled by tr-prof.js (delegated); only the map chips live here */
   root.addEventListener('click', function (ev) {
     var b = ev.target && ev.target.closest ? ev.target.closest('button') : null, wrap, key, sp, i;
     if (!b) return;
-    if (b.parentNode && b.parentNode.classList.contains('q-lang')) {
-      LANG = b.getAttribute('data-l') === 'en' ? 'en' : 'fa';
-      try { localStorage.setItem('wfq-lang', LANG); } catch (e) { /* ignore */ }
-      if (S) paint();
-    } else if (b.classList.contains('fsrc-mchip') && S) {
+    if (b.classList.contains('fsrc-mchip') && S) {
       wrap = b.closest('.npc-map');
       if (!wrap) return;
       key = wrap.getAttribute('data-k');
