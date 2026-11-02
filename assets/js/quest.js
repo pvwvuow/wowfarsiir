@@ -9,11 +9,15 @@
    the English word as `zone`, so the category is read from the quest INDEX entry.
    Fields that the source data does not have (reward XP / money / reputation,
    race / class limits) are drawn ONLY when a quest record carries them:
-   rewXp, rewMoney, rewItems [[id,n]], rewChoice [[id,n]], rewRep [[name,n]],
-   reqRaces [name], reqClasses [name]. Nothing is invented. */
+   rewXp, rewMoney, rewItems [[id,n]], rewChoice [[id,n]], rewRep [[factionId|name,n]],
+   reqRaces [name], reqClasses [name], faction 'horde'|'alliance' (side chip),
+   startPoi / endPoi [{map,x,y,…}] (Forever uiMap ids — coordinates, no image guess).
+   quest-hunt v2 also stores killTargets / collectItems on the record (shown later).
+   English text is always the fallback when no Persian exists (rt-en, dir=ltr),
+   and the «translation not ready» note keeps saying so. Nothing is invented. */
 (function () {
   'use strict';
-  var V = '20261201c', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261201d', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
@@ -165,6 +169,10 @@
   }
   function npcLink(id, name) {
     var fa = npcFa(name);
+    /* quest-hunt v2 carries a few name-only npc rows (no id) — render plain, no dead link */
+    if (id == null) return '<div class="fex-npc"><i class="fex-med fex-rk0" aria-hidden="true"></i>'
+      + '<span class="fex-npc-nm' + (fa ? '' : ' rt-en') + '"' + (fa ? '' : ' dir="ltr"') + '>' + esc(fa || name) + '</span>'
+      + (fa ? '<span class="fex-sub rt-en" dir="ltr">' + esc(name) + '</span>' : '') + '</div>';
     return '<a class="fex-npc" href="npc.html?id=' + esc(id) + '"><i class="fex-med fex-rk0" aria-hidden="true"></i>'
       + '<span class="fex-npc-nm' + (fa ? '' : ' rt-en') + '"' + (fa ? '' : ' dir="ltr"') + '>' + esc(fa || name) + '</span>'
       + (fa ? '<span class="fex-sub rt-en" dir="ltr">' + esc(name) + '</span>' : '') + '</a>';
@@ -259,7 +267,27 @@
         + esc(d ? d.name : x.slug) + '</span><span class="fex-z">' + lbl(d && d.type === 'raid' ? 'ریید' : 'دانجن', 'Dungeon') + '</span></div>';
     }).join('');
   }
-  function actorBlock(role, a, key) {
+  /* startPoi / endPoi: additive quest-level points; `map` is a Forever uiMap id — a DIFFERENT
+     id space than the site's zone images, so no image/zone name is guessed: coordinates per map id. */
+  function poiHtml(poi) {
+    var by = {}, ks, h = '';
+    arr(poi).forEach(function (p) {
+      if (!p || typeof p.x !== 'number' || typeof p.y !== 'number') return;
+      var m = p.map != null ? p.map : '?';
+      (by[m] = by[m] || []).push(p);
+    });
+    ks = Object.keys(by);
+    if (!ks.length) return '';
+    ks.forEach(function (m) {
+      h += '<p class="q-maplb">' + lbl('مختصات (٪ از نقشهٔ', 'Coordinates (% of map')
+        + ' <span dir="ltr">' + esc(m) + '</span>' + lbl(' — شناسهٔ نقشهٔ Forever)', ' — Forever uiMap id)') + '</p>'
+        + '<div class="fex-hchips">' + by[m].slice(0, 16).map(function (p) {
+            return '<span class="fex-chip">' + num(p.x.toFixed(1)) + ' ، ' + num(p.y.toFixed(1)) + '</span>';
+          }).join('') + '</div>';
+    });
+    return h;
+  }
+  function actorBlock(role, a, key, poi) {
     var rows = '', sp = S.sp[key], map = '', sx;
     a = a || {};
     arr(a.npcs).forEach(function (n) { rows += npcLink(n.id, n.name); });
@@ -267,12 +295,13 @@
     arr(a.items).forEach(function (it) {
       rows += '<a class="fex-npc" href="item.html?ver=forever&amp;id=' + esc(it.id) + '"><i class="fex-med fex-objd" aria-hidden="true"></i><span class="fex-npc-nm rt-en" dir="ltr">' + esc(it.name) + '</span></a>';
     });
-    if (!rows) return '';
+    if (!rows && !arr(poi).length) return '';
     if (sp) {
       sx = spawnSplit(sp.sp);
       if (sx.zones.length) map = '<p class="q-maplb">' + lbl('موقعیت', 'Location') + ': ' + esc(npcFa(sp.name) || sp.name) + '</p>' + mapHtml(sx.zones, 0, key);
       else if (sx.dungeons.length) map = '<p class="q-maplb">' + lbl('موقعیت', 'Location') + ': ' + esc(npcFa(sp.name) || sp.name) + '</p><div class="npc-dg">' + dungeonRows(sx.dungeons) + '</div>';
     }
+    if (!map) map = poiHtml(poi);
     return sec(role, null, rows + map);
   }
 
@@ -284,7 +313,12 @@
     if (money2(q)) { h += frow(lbl('پول', 'Money'), '<b>' + esc(money(money2(q))) + '</b>'); hasAny = true; }
     rep = arr(q.rewRep);
     if (rep.length) {
-      h += rep.map(function (r) { return frow(enSpan(r[0]), (r[1] > 0 ? '+' : '') + num(r[1])); }).join('');
+      /* quest-hunt v2: reputation may carry the faction ID (no offline name map;
+         shown as-is, never guessed) or the name as before */
+      h += rep.map(function (r) {
+        var fn = typeof r[0] === 'number' ? 'Faction #' + r[0] : r[0];
+        return frow(enSpan(fn), (r[1] > 0 ? '+' : '') + num(r[1]));
+      }).join('');
       hasAny = true;
     }
     ch = arr(q.rewChoice);
@@ -315,6 +349,9 @@
     var q = S.q, f = S.fa || {}, hasFa = !!(f.t || f.desc || f.obj || f.details || f.progress || f.completion);
     var fa = LANG === 'fa' && f.t ? f.t : '';
     var ck = catKey(q);
+    var side = q.faction === 'horde' ? 'Horde' : (q.faction === 'alliance' ? 'Alliance' : '');
+    var sideFa = side && on('namesNpc') ? trEnt('faction', side) : '';
+    var sideHtml = side ? (sideFa ? esc(sideFa) : enSpan(side)) : '';
     var title = fa || q.name || ('#' + q.id);
     var zoneHtml = ck ? esc(QC.name(ck)) : (q.zone ? zoneByName(q.zone) : (q.zoneKey ? zoneByKey(q.zoneKey) : ''));
     var zl = ck ? lbl(QC.groupName(ck), 'Category') : lbl('منطقه', 'Zone');
@@ -328,20 +365,36 @@
       + (q.questLevel ? chip(lbl('سطح کوئست', 'Quest level'), num(q.questLevel)) : '')
       + (q.requiredLevel ? chip(lbl('حداقل سطح', 'Required level'), num(q.requiredLevel)) : '')
       + (zoneHtml ? chip(zl, zoneHtml) : '')
+      + (sideHtml ? chip(lbl('طرف', 'Side'), sideHtml) : '')
       + (q.repeatable ? chip(lbl('نوع', 'Type'), lbl('تکرارشدنی', 'Repeatable')) : '')
       + '</div></div></header>';
 
     /* texts */
     texts = '';
     if (arr(q.objectives).length || arr(f.obj).length) {
-      texts += sec(lbl('هدف', 'Objectives'), null, paras(q.objectives, f.obj));
-      texts += sec(lbl('شرح', 'Summary'), null, paras(q.desc, f.desc));
+      var objHtml = paras(q.objectives, f.obj), sumHtml = paras(q.desc, f.desc);
+      texts += sec(lbl('هدف', 'Objectives'), null, objHtml);
+      /* the DB often stores the objectives text as `desc` too — never show شرح
+         when it is byte-identical to هدف (quest-merge.md, the three text blocks) */
+      if (sumHtml !== objHtml) texts += sec(lbl('شرح', 'Summary'), null, sumHtml);
     } else {
       texts += sec(lbl('هدف', 'Objectives'), null, paras(q.desc, f.desc));
     }
     texts += sec(lbl('توضیح', 'Description'), null, paras(q.details, f.details));
     texts += sec(lbl('پیشرفت', 'Progress'), null, paras(q.progress, f.progress));
     texts += sec(lbl('تحویل', 'Completion'), null, paras(q.completion, f.completion));
+    /* quest-hunt v2 targets: creatures to kill / items to collect */
+    if (arr(q.killTargets).length) {
+      texts += sec(lbl('شکار', 'Kill targets'), q.killTargets.length,
+        q.killTargets.map(function (k) { return k && k.id ? npcLink(k.id, k.name) : ''; }).join(''));
+    }
+    if (arr(q.collectItems).length) {
+      texts += sec(lbl('جمع‌آوری', 'Collect'), q.collectItems.length,
+        q.collectItems.map(function (c) {
+          if (!c || c.id == null) return '';
+          return itemRow(c.id, S.items[c.id], c.count > 1 ? '<span class="fex-ch">×' + num(c.count) + '</span>' : '');
+        }).join(''));
+    }
     if (!texts) texts = '<p class="npc-none">' + lbl('متن این کوئست در دیتای منبع نیست.', 'The source data has no text for this quest.') + '</p>';
     A += (hasFa ? '' : '<p class="str-note npc-note">' + lbl('ترجمهٔ فارسی این کوئست هنوز آماده نیست؛ متن انگلیسی نشان داده می‌شود.', 'The Persian translation of this quest is not ready yet; English text is shown.') + '</p>') + texts;
 
@@ -349,6 +402,8 @@
     pre = arr(q.preQuestSingle).concat(arr(q.preQuestGroup));
     if (pre.length) ch += sec(lbl('پیش‌نیاز', 'Requires'), pre.length, pre.map(qLink).join(''));
     if (q.nextQuestInChain) ch += sec(lbl('کوئست بعدی', 'Next in chain'), 1, qLink(q.nextQuestInChain));
+    /* branching forks (quest-hunt v2): several successors, kept as a list */
+    if (arr(q.nextQuests).length) ch += sec(lbl('کوئست‌های بعدی', 'Next quests'), q.nextQuests.length, q.nextQuests.map(qLink).join(''));
     if (arr(q.exclusiveTo).length) ch += sec(lbl('ناسازگار با', 'Exclusive with'), q.exclusiveTo.length, q.exclusiveTo.map(qLink).join(''));
     A += ch;
 
@@ -357,12 +412,13 @@
       frow(lbl('سطح کوئست', 'Quest level'), q.questLevel ? num(q.questLevel) : '')
       + frow(lbl('حداقل سطح', 'Required level'), q.requiredLevel ? num(q.requiredLevel) : '')
       + frow(zl, zoneHtml)
+      + frow(lbl('طرف', 'Side'), sideHtml)
       + frow(lbl('نژاد', 'Races'), arr(q.reqRaces).length ? q.reqRaces.map(enSpan).join('، ') : '')
       + frow(lbl('کلاس', 'Classes'), arr(q.reqClasses).length ? q.reqClasses.map(enSpan).join('، ') : '')
       + frow(lbl('شناسه', 'ID'), '<span dir="ltr">' + esc(q.id) + '</span>'));
     B += panel(lbl('پاداش', 'Rewards'), rewardsHtml(q));
-    B += actorBlock(lbl('شروع از', 'Started by'), q.startedBy, 's');
-    B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy, 'e');
+    B += actorBlock(lbl('شروع از', 'Started by'), q.startedBy, 's', q.startPoi);
+    B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy, 'e', q.endPoi);
 
     root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="quest.html">' + lbl('پایگاه کوئست', 'Quest database') + '</a><i></i><span>' + esc(title) + '</span></nav>'
       + '<div class="fex">' + hero + langBar(hasFa) + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
@@ -388,6 +444,7 @@
       arr(q.startedBy && q.startedBy.npcs).slice(0, 4).concat(arr(q.finishedBy && q.finishedBy.npcs).slice(0, 4)).forEach(function (x) { need[+x.id % 24] = 1; });
       ids = rw.slice();
       arr(q.rewItems).concat(arr(q.rewChoice)).forEach(function (x) { ids.push(x[0]); });
+      arr(q.collectItems).forEach(function (c) { if (c && c.id != null) ids.push(c.id); });
       return Promise.all([Promise.all(Object.keys(need).map(function (k) { return opt(DB + 'spawn-' + k + '.json'); })), loadItems(ids)]).then(function (r2) {
         var shards = {}, ks = Object.keys(need), s, e;
         ks.forEach(function (k, i) { shards[k] = r2[0][i]; });
