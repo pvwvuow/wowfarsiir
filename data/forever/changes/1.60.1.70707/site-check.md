@@ -1,264 +1,21 @@
 # Forever site check: 1.60.1.70707 (changes vs 1.60.1.70634)
 
-Site spellbook + talent trees vs the client data (tools/forever_check.py). Rules: raw client DB2, no hotfixes; talents matched by name, else same position with similar text, else near-identical text; site pos = [TierID+1, ColumnIndex+1]; talent text = rank 1; spellbook text = the site rank; queue = only texts the site had right for the previous build and this build changed.
+Site spellbook + talent trees vs the client data (tools/forever_check.py). Rules: raw client DB2, no hotfixes; talent trees from the Trait tables; talents matched by name, else same position with similar text, else near-identical text; site pos = [TierID+1, ColumnIndex+1]; talent text = rank 1; spellbook text = the site rank; queue = only texts the site had right for the previous build and this build changed.
 
 | part | total | same | text | unverifiable | other | changed in this build |
 |---|---|---|---|---|---|---|
-| talents | 552 | 57 | 229 | 21 | 399 | 8 |
+| talents | 467 | 124 | 311 | 29 | 3 | 10 |
 | spellbook | 504 | 391 | 77 | 35 | 3 | 13 |
 | spells_json | 514 | 390 | 83 | 35 | 9 | 13 |
 
 Queue (EN texts the site had right for the previous build and this build changed; review, then `--apply`): **0**
 
 
-## Talents missing on the site (88)
+## Talents missing on the site (3)
 
-- warrior Arms: site `None` game `Improved Thunder Clap` missing_on_site pos None/[2, 4] ranks None/3
-- warrior Arms: site `None` game `Weaponmaster` missing_on_site pos None/[5, 3] ranks None/5
-- warrior Arms: site `None` game `Weaponmaster` missing_on_site pos None/[5, 4] ranks None/5
-- warrior Arms: site `None` game `` missing_on_site pos None/[6, 1] ranks None/5
-- warrior Fury: site `None` game `Improved Demoralizing Shout` missing_on_site pos None/[2, 2] ranks None/5
-- warrior Fury: site `None` game `Improved Battle Shout` missing_on_site pos None/[3, 4] ranks None/5
-- warrior Fury: site `None` game `Improved Slam` missing_on_site pos None/[5, 1] ranks None/5
-- warrior Protection: site `None` game `Toughness` missing_on_site pos None/[2, 3] ranks None/5
-- warrior Protection: site `None` game `` missing_on_site pos None/[2, 4] ranks None/5
-- warrior Protection: site `None` game `Improved Shield Block` missing_on_site pos None/[3, 2] ranks None/3
-- warrior Protection: site `None` game `` missing_on_site pos None/[3, 4] ranks None/5
-- warrior Protection: site `None` game `Improved Taunt` missing_on_site pos None/[4, 3] ranks None/2
-- paladin Holy: site `None` game `Consecration` missing_on_site pos None/[3, 2] ranks None/1
-- paladin Holy: site `None` game `` missing_on_site pos None/[3, 3] ranks None/2
-- paladin Holy: site `None` game `Improved Blessing of Wisdom` missing_on_site pos None/[4, 3] ranks None/2
-- paladin Holy: site `None` game `Lasting Judgement` missing_on_site pos None/[5, 3] ranks None/3
-- paladin Protection: site `None` game `Improved Devotion Aura` missing_on_site pos None/[1, 2] ranks None/5
-- paladin Protection: site `None` game `Blessing of Kings` missing_on_site pos None/[3, 1] ranks None/1
-- paladin Protection: site `None` game `Improved Concentration Aura` missing_on_site pos None/[4, 3] ranks None/3
-- paladin Protection: site `None` game `` missing_on_site pos None/[5, 2] ranks None/1
-- paladin Retribution: site `None` game `Improved Blessing of Might` missing_on_site pos None/[1, 2] ranks None/5
-- paladin Retribution: site `None` game `Improved Seal of the Crusader` missing_on_site pos None/[2, 2] ranks None/3
-- paladin Retribution: site `None` game `Improved Retribution Aura` missing_on_site pos None/[4, 3] ranks None/2
-- paladin Retribution: site `None` game `Sanctity Aura` missing_on_site pos None/[5, 3] ranks None/1
-- hunter Beast Mastery: site `None` game `Improved Eyes of the Beast` missing_on_site pos None/[2, 1] ranks None/2
-- hunter Beast Mastery: site `None` game `Thick Hide` missing_on_site pos None/[2, 3] ranks None/3
-- hunter Marksmanship: site `None` game `Improved Hunter's Mark` missing_on_site pos None/[2, 2] ranks None/5
-- hunter Marksmanship: site `None` game `Aimed Shot` missing_on_site pos None/[3, 1] ranks None/1
-- hunter Marksmanship: site `None` game `Improved Serpent Sting` missing_on_site pos None/[4, 2] ranks None/5
-- hunter Marksmanship: site `None` game `` missing_on_site pos None/[5, 3] ranks None/3
-- hunter Survival: site `None` game `Humanoid Slaying` missing_on_site pos None/[1, 2] ranks None/3
-- hunter Survival: site `None` game `Improved Feign Death` missing_on_site pos None/[4, 4] ranks None/2
-- hunter Survival: site `None` game `Killer Instinct` missing_on_site pos None/[5, 2] ranks None/3
-- hunter Survival: site `None` game `` missing_on_site pos None/[7, 2] ranks None/1
-- rogue Combat: site `None` game `` missing_on_site pos None/[2, 1] ranks None/3
-- rogue Combat: site `None` game `Hack and Slash` missing_on_site pos None/[5, 1] ranks None/5
-- rogue Combat: site `None` game `Hack and Slash` missing_on_site pos None/[5, 3] ranks None/5
-- rogue Combat: site `None` game `Fist Weapon Specialization` missing_on_site pos None/[5, 4] ranks None/5
-- rogue Subtlety: site `None` game `Sleight of Hand` missing_on_site pos None/[2, 1] ranks None/2
-- rogue Subtlety: site `None` game `Improved Sap` missing_on_site pos None/[4, 2] ranks None/3
-- rogue Subtlety: site `None` game `Deadliness` missing_on_site pos None/[6, 3] ranks None/5
-- priest Discipline: site `None` game `Unbreakable Will` missing_on_site pos None/[1, 2] ranks None/5
-- priest Discipline: site `None` game `Improved Power Word: Fortitude` missing_on_site pos None/[2, 2] ranks None/2
-- priest Discipline: site `None` game `Divine Spirit` missing_on_site pos None/[5, 3] ranks None/1
-- priest Discipline: site `None` game `Force of Will` missing_on_site pos None/[6, 3] ranks None/5
-- priest Holy: site `None` game `` missing_on_site pos None/[5, 1] ranks None/2
-- priest Holy: site `None` game `Lightwell` missing_on_site pos None/[7, 2] ranks None/1
-- priest Shadow: site `None` game `Shadow Affinity` missing_on_site pos None/[2, 1] ranks None/3
-- priest Shadow: site `None` game `Improved Fade` missing_on_site pos None/[4, 2] ranks None/2
-- priest Shadow: site `None` game `Improved Vampiric Embrace` missing_on_site pos None/[5, 3] ranks None/2
-- shaman Elemental: site `None` game `Earth's Grasp` missing_on_site pos None/[2, 1] ranks None/2
-- shaman Elemental: site `None` game `` missing_on_site pos None/[3, 3] ranks None/5
-- shaman Enhancement: site `None` game `Shield Specialization` missing_on_site pos None/[1, 3] ranks None/5
-- shaman Enhancement: site `None` game `Enhancing Totems` missing_on_site pos None/[3, 1] ranks None/2
-- shaman Enhancement: site `None` game `Two-Handed Axes and Maces` missing_on_site pos None/[3, 3] ranks None/1
-- shaman Enhancement: site `None` game `Improved Weapon Totems` missing_on_site pos None/[5, 1] ranks None/2
-- shaman Enhancement: site `None` game `Weapon Mastery` missing_on_site pos None/[6, 3] ranks None/5
-- shaman Restoration: site `None` game `Nature's Guidance` missing_on_site pos None/[3, 1] ranks None/3
-- shaman Restoration: site `None` game `Totemic Mastery` missing_on_site pos None/[3, 3] ranks None/1
-- mage Arcane: site `None` game `Arcane Focus` missing_on_site pos None/[1, 2] ranks None/5
-- mage Frost: site `None` game `Piercing Ice` missing_on_site pos None/[3, 1] ranks None/3
-- warlock Affliction: site `None` game `Improved Curse of Weakness` missing_on_site pos None/[2, 1] ranks None/3
-- warlock Affliction: site `None` game `` missing_on_site pos None/[2, 2] ranks None/2
-- warlock Affliction: site `None` game `` missing_on_site pos None/[4, 4] ranks None/2
-- warlock Affliction: site `None` game `Improved Curse of Exhaustion` missing_on_site pos None/[5, 4] ranks None/4
-- warlock Affliction: site `None` game `` missing_on_site pos None/[7, 2] ranks None/1
-- warlock Demonology: site `None` game `Improved Healthstone` missing_on_site pos None/[1, 1] ranks None/2
-- warlock Demonology: site `None` game `` missing_on_site pos None/[3, 3] ranks None/5
-- warlock Demonology: site `None` game `Improved Subjugate Demon` missing_on_site pos None/[5, 1] ranks None/5
-- warlock Demonology: site `None` game `Improved Firestone` missing_on_site pos None/[5, 4] ranks None/2
-- warlock Demonology: site `None` game `Improved Spellstone` missing_on_site pos None/[7, 3] ranks None/2
-- warlock Destruction: site `None` game `Improved Firebolt` missing_on_site pos None/[3, 1] ranks None/2
-- warlock Destruction: site `None` game `Improved Lash of Pain` missing_on_site pos None/[3, 2] ranks None/2
-- warlock Destruction: site `None` game `Apocalypse` missing_on_site pos None/[5, 1] ranks None/2
-- warlock Destruction: site `None` game `Improved Immolate` missing_on_site pos None/[5, 2] ranks None/5
-- warlock Destruction: site `None` game `Emberstorm` missing_on_site pos None/[6, 3] ranks None/5
-- druid Balance: site `None` game `Nature's Grasp` missing_on_site pos None/[1, 2] ranks None/1
-- druid Balance: site `None` game `Natural Weapons` missing_on_site pos None/[2, 3] ranks None/5
-- druid Balance: site `None` game `Natural Shapeshifter` missing_on_site pos None/[2, 4] ranks None/3
-- druid Balance: site `None` game `Improved Thorns` missing_on_site pos None/[3, 1] ranks None/3
-
-## Site talents not in the game (120)
-
-- warrior Arms: site `Spearing Strike` game `None` not_in_game pos [4, 1]/None ranks 1/None
-- warrior Arms: site `Bloodthrill` game `None` not_in_game pos [5, 1]/None ranks 5/None
-- warrior Arms: site `Improved Slam` game `None` not_in_game pos [6, 1]/None ranks 2/None
-- warrior Fury: site `Lingering Rage` game `None` not_in_game pos [2, 2]/None ranks 5/None
-- warrior Fury: site `Furious Precision` game `None` not_in_game pos [3, 1]/None ranks 3/None
-- warrior Fury: site `Gore Drinker` game `None` not_in_game pos [6, 3]/None ranks 2/None
-- warrior Protection: site `Iron Will` game `None` not_in_game pos [1, 3]/None ranks 5/None
-- warrior Protection: site `Improved Thunder Clap` game `None` not_in_game pos [2, 4]/None ranks 3/None
-- warrior Protection: site `Master of Defense` game `None` not_in_game pos [3, 2]/None ranks 2/None
-- warrior Protection: site `Defiance` game `None` not_in_game pos [3, 4]/None ranks 3/None
-- warrior Protection: site `Vanguard` game `None` not_in_game pos [4, 2]/None ranks 1/None
-- warrior Protection: site `Focused Rage` game `None` not_in_game pos [5, 3]/None ranks 3/None
-- paladin Holy: site `Voice of Truth` game `None` not_in_game pos [3, 1]/None ranks 1/None
-- paladin Holy: site `Reverence` game `None` not_in_game pos [3, 2]/None ranks 3/None
-- paladin Holy: site `Purifying Power` game `None` not_in_game pos [3, 3]/None ranks 2/None
-- paladin Holy: site `Infusion of Light` game `None` not_in_game pos [4, 1]/None ranks 2/None
-- paladin Holy: site `Divine Precision` game `None` not_in_game pos [5, 1]/None ranks 3/None
-- paladin Holy: site `Consecrated Ground` game `None` not_in_game pos [5, 3]/None ranks 2/None
-- paladin Holy: site `Light's Vigil` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- paladin Protection: site `Improved Seal of Fury` game `None` not_in_game pos [3, 1]/None ranks 1/None
-- paladin Protection: site `Sacred Duty` game `None` not_in_game pos [3, 4]/None ranks 2/None
-- paladin Protection: site `Swift Judgement` game `None` not_in_game pos [4, 1]/None ranks 1/None
-- paladin Protection: site `Templar's Bulwark` game `None` not_in_game pos [5, 2]/None ranks 1/None
-- paladin Protection: site `Iron Creed` game `None` not_in_game pos [6, 3]/None ranks 5/None
-- paladin Retribution: site `Holy Conduit` game `None` not_in_game pos [2, 2]/None ranks 2/None
-- paladin Retribution: site `Sanctified Judgement` game `None` not_in_game pos [3, 2]/None ranks 3/None
-- paladin Retribution: site `Sacred Arbiter` game `None` not_in_game pos [4, 3]/None ranks 1/None
-- paladin Retribution: site `Champion of the Light` game `None` not_in_game pos [6, 2]/None ranks 3/None
-- paladin Retribution: site `Instrument of Law` game `None` not_in_game pos [6, 3]/None ranks 2/None
-- paladin Retribution: site `Twist of Light` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- hunter Beast Mastery: site `Focused Fire` game `None` not_in_game pos [2, 1]/None ranks 2/None
-- hunter Beast Mastery: site `Summon Hawk` game `None` not_in_game pos [4, 4]/None ranks 1/None
-- hunter Marksmanship: site `Improved Stings` game `None` not_in_game pos [2, 1]/None ranks 3/None
-- hunter Marksmanship: site `Careful Aim` game `None` not_in_game pos [2, 3]/None ranks 5/None
-- hunter Marksmanship: site `Rapid Killing` game `None` not_in_game pos [3, 1]/None ranks 2/None
-- hunter Marksmanship: site `Lone Wolf` game `None` not_in_game pos [3, 4]/None ranks 1/None
-- hunter Marksmanship: site `Rapid Recuperation` game `None` not_in_game pos [5, 1]/None ranks 2/None
-- hunter Marksmanship: site `Sniper Shot` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- hunter Survival: site `Predator's Edge` game `None` not_in_game pos [4, 2]/None ranks 5/None
-- hunter Survival: site `Resourcefulness` game `None` not_in_game pos [5, 1]/None ranks 2/None
-- hunter Survival: site `Expose Prey` game `None` not_in_game pos [5, 2]/None ranks 2/None
-- hunter Survival: site `Survivalist's Discipline` game `None` not_in_game pos [5, 3]/None ranks 2/None
-- hunter Survival: site `Strider Kick` game `None` not_in_game pos [5, 4]/None ranks 1/None
-- hunter Survival: site `Lacerating Strikes` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- rogue Assassination: site `Mutilate` game `None` not_in_game pos [5, 2]/None ranks 1/None
-- rogue Assassination: site `Venom` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- rogue Combat: site `Puncturing Wounds` game `None` not_in_game pos [2, 1]/None ranks 3/None
-- rogue Combat: site `Flawless Execution` game `None` not_in_game pos [4, 2]/None ranks 1/None
-- rogue Subtlety: site `Dirty Tricks` game `None` not_in_game pos [2, 3]/None ranks 2/None
-- rogue Subtlety: site `Improved Distract` game `None` not_in_game pos [3, 3]/None ranks 2/None
-- rogue Subtlety: site `Quietus` game `None` not_in_game pos [6, 1]/None ranks 5/None
-- rogue Subtlety: site `Cutthroat` game `None` not_in_game pos [6, 3]/None ranks 5/None
-- rogue Subtlety: site `Thousand Cuts` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- priest Discipline: site `Power in Light` game `None` not_in_game pos [1, 1]/None ranks 5/None
-- priest Discipline: site `Twin Disciplines` game `None` not_in_game pos [1, 3]/None ranks 5/None
-- priest Discipline: site `Holy Precision` game `None` not_in_game pos [2, 2]/None ranks 3/None
-- priest Discipline: site `Soul Warding` game `None` not_in_game pos [4, 3]/None ranks 1/None
-- priest Discipline: site `Penance` game `None` not_in_game pos [5, 2]/None ranks 1/None
-- priest Discipline: site `Renewed Hope` game `None` not_in_game pos [5, 3]/None ranks 5/None
-- priest Discipline: site `Divine Aegis` game `None` not_in_game pos [6, 3]/None ranks 3/None
-- priest Holy: site `Binding Heal` game `None` not_in_game pos [4, 4]/None ranks 1/None
-- priest Holy: site `Litany of Light` game `None` not_in_game pos [5, 1]/None ranks 2/None
-- priest Holy: site `Prayer of Mending` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- priest Shadow: site `Improved Mind Flay` game `None` not_in_game pos [3, 4]/None ranks 2/None
-- priest Shadow: site `Dark Inspiration` game `None` not_in_game pos [4, 1]/None ranks 5/None
-- priest Shadow: site `Devouring Contagion` game `None` not_in_game pos [5, 3]/None ranks 2/None
-- priest Shadow: site `Early Demise` game `None` not_in_game pos [6, 1]/None ranks 2/None
-- shaman Elemental: site `Earthbound` game `None` not_in_game pos [4, 4]/None ranks 1/None
-- shaman Elemental: site `Lava Burst` game `None` not_in_game pos [5, 2]/None ranks 1/None
-- shaman Elemental: site `Lightning Overload` game `None` not_in_game pos [5, 3]/None ranks 3/None
-- shaman Enhancement: site `Earth's Grasp` game `None` not_in_game pos [1, 1]/None ranks 2/None
-- shaman Enhancement: site `Mental Dexterity` game `None` not_in_game pos [2, 2]/None ranks 3/None
-- shaman Enhancement: site `Shamanistic Focus` game `None` not_in_game pos [3, 3]/None ranks 1/None
-- shaman Enhancement: site `Mental Quickness` game `None` not_in_game pos [5, 2]/None ranks 2/None
-- shaman Enhancement: site `Improved Stormstrike` game `None` not_in_game pos [5, 3]/None ranks 2/None
-- shaman Enhancement: site `Maelstrom Weapon` game `None` not_in_game pos [6, 3]/None ranks 5/None
-- shaman Enhancement: site `Rage of the Farseer` game `None` not_in_game pos [7, 2]/None ranks 1/None
-- shaman Restoration: site `Mindfulness` game `None` not_in_game pos [2, 1]/None ranks 3/None
-- shaman Restoration: site `Water Shield` game `None` not_in_game pos [3, 3]/None ranks 1/None
-- shaman Restoration: site `Riptide` game `None` not_in_game pos [7, 2]/None ranks 1/None
-
-## Talent name / rank / position differences (160)
-
-- warrior Arms: site `Improved Overpower` game `Improved Overpower` pos pos [2, 4]/[3, 1] ranks 2/2
-- warrior Arms: site `Two-Handed Weapon Specialization` game `Two-Handed Weapon Specialization` ranks pos [4, 2]/[4, 2] ranks 3/5
-- warrior Arms: site `Weaponmaster` game `Weaponmaster` pos, text pos [5, 3]/[5, 1] ranks 5/5
-- warrior Fury: site `Raging Blows` game `Improved Cleave` name, ranks, pos, text pos [4, 2]/[3, 1] ranks 1/3
-- warrior Fury: site `Improved Execute` game `Improved Execute` pos, text pos [4, 4]/[4, 2] ranks 2/2
-- warrior Fury: site `Improved Berserker Rage` game `Improved Berserker Rage` pos, text pos [5, 1]/[6, 1] ranks 2/2
-- warrior Fury: site `Flurry` game `Flurry` pos, text pos [6, 2]/[6, 3] ranks 5/5
-- warrior Protection: site `Anticipation` game `Anticipation` pos, text pos [2, 1]/[1, 3] ranks 5/5
-- warrior Protection: site `Improved Bloodrage` game `Improved Bloodrage` pos, text pos [1, 1]/[2, 1] ranks 2/2
-- warrior Protection: site `Improved Revenge` game `Improved Revenge` pos, text pos [2, 3]/[3, 3] ranks 3/3
-- warrior Protection: site `Improved Disarm` game `Improved Disarm` pos, text pos [3, 3]/[4, 2] ranks 3/3
-- warrior Protection: site `Improved Shield Bash` game `Improved Shield Bash` pos, text pos [4, 3]/[5, 3] ranks 2/2
-- paladin Holy: site `Spiritual Focus` game `Spiritual Focus` ranks pos [2, 2]/[2, 2] ranks 2/5
-- paladin Holy: site `Improved Seals` game `Improved Seals` ranks, unverifiable pos [2, 3]/[2, 3] ranks 3/5
-- paladin Holy: site `Healing Light` game `Healing Light` pos pos [2, 1]/[3, 1] ranks 3/3
-- paladin Holy: site `Unyielding Faith` game `Unyielding Faith` pos, text pos [2, 4]/[3, 4] ranks 2/2
-- paladin Holy: site `Divine Favor` game `Divine Favor` pos pos [4, 3]/[5, 2] ranks 1/1
-- paladin Holy: site `Holy Shock` game `Holy Shock` pos, text pos [5, 2]/[7, 2] ranks 1/1
-- paladin Protection: site `Toughness` game `Toughness` pos pos [1, 2]/[2, 4] ranks 5/5
-- paladin Protection: site `Anticipation` game `Anticipation` pos, text pos [2, 4]/[3, 4] ranks 5/5
-- paladin Protection: site `Improved Hammer of Justice` game `Improved Hammer of Justice` pos, text pos [4, 3]/[4, 2] ranks 3/3
-- paladin Protection: site `One-Handed Weapon Specialization` game `One-Handed Weapon Specialization` ranks, pos, text pos [4, 2]/[6, 3] ranks 3/5
-- paladin Retribution: site `Deflection` game `Deflection` pos pos [1, 2]/[2, 3] ranks 5/5
-- paladin Retribution: site `Conviction` game `Conviction` pos, text pos [2, 3]/[3, 2] ranks 5/5
-- paladin Retribution: site `Vengeance` game `Vengeance` ranks, pos, text pos [5, 2]/[6, 2] ranks 3/5
-- paladin Retribution: site `Repentance` game `Repentance` pos pos [5, 3]/[7, 2] ranks 1/1
-- hunter Beast Mastery: site `Improved Aspect of the Monkey` game `Improved Aspect of the Monkey` ranks, text pos [2, 2]/[2, 2] ranks 3/5
-- hunter Beast Mastery: site `Pathfinding` game `Pathfinding` pos, text pos [2, 3]/[3, 1] ranks 2/2
-- hunter Beast Mastery: site `Improved Mend Pet` game `Improved Mend Pet` pos, text pos [4, 1]/[4, 2] ranks 2/2
-- hunter Marksmanship: site `Efficiency` game `Efficiency` pos, text pos [2, 2]/[1, 3] ranks 5/5
-- hunter Marksmanship: site `Lethal Attacks` game `Lethal Attacks` pos pos [1, 3]/[2, 3] ranks 5/5
-- hunter Marksmanship: site `Hawk Eye` game `Hawk Eye` pos, text pos [1, 1]/[3, 4] ranks 3/3
-- hunter Marksmanship: site `Scatter Shot` game `Scatter Shot` pos pos [5, 4]/[5, 1] ranks 1/1
-- hunter Marksmanship: site `Barrage` game `Barrage` pos, text pos [5, 3]/[5, 2] ranks 3/3
-- hunter Marksmanship: site `Trueshot Aura` game `Trueshot Aura` pos, text pos [4, 2]/[7, 2] ranks 1/1
-- hunter Survival: site `Improved Tracking` game `Improved Tracking` ranks, pos, text pos [1, 2]/[1, 1] ranks 5/3
-- hunter Survival: site `Improved Wing Clip` game `Improved Wing Clip` ranks, pos, text pos [2, 4]/[2, 3] ranks 3/5
-- hunter Survival: site `Survivalist` game `Survivalist` pos, text pos [2, 3]/[3, 2] ranks 5/5
-- hunter Survival: site `Surefooted` game `Surefooted` pos, text pos [3, 2]/[4, 2] ranks 3/3
-- hunter Survival: site `Counterattack` game `Counterattack` pos pos [4, 3]/[5, 3] ranks 1/1
-- rogue Assassination: site `Improved Gouge` game `Improved Eviscerate` name, text pos [1, 1]/[1, 1] ranks 3/3
-- rogue Assassination: site `Vile Poisons` game `Vile Poisons` pos, text pos [4, 1]/[4, 2] ranks 5/5
-- rogue Assassination: site `Cold Blood` game `Cold Blood` pos pos [4, 2]/[5, 2] ranks 1/1
-- rogue Assassination: site `Improved Kidney Shot` game `Improved Kidney Shot` ranks, text pos [5, 3]/[5, 3] ranks 2/3
-- rogue Assassination: site `Seal Fate` game `Seal Fate` pos, text pos [6, 3]/[6, 2] ranks 5/5
-- rogue Assassination: site `Vigor` game `Vigor` ranks, pos, text pos [5, 1]/[7, 2] ranks 2/1
-- rogue Combat: site `Improved Eviscerate` game `Improved Gouge` name, text pos [1, 1]/[1, 1] ranks 3/3
-- rogue Combat: site `Deflection` game `Deflection` ranks, text pos [2, 2]/[2, 2] ranks 3/5
-- rogue Combat: site `Precision` game `Precision` ranks pos [2, 3]/[2, 3] ranks 3/5
-- rogue Combat: site `Hack and Slash` game `Hack and Slash` pos, text pos [5, 3]/[4, 2] ranks 5/5
-- rogue Subtlety: site `Master of Deception` game `Master of Deception` ranks, text pos [1, 2]/[1, 2] ranks 3/5
-- rogue Subtlety: site `Opportunity` game `Opportunity` ranks, text pos [1, 3]/[1, 3] ranks 2/5
-- rogue Subtlety: site `Camouflage` game `Camouflage` pos, text pos [1, 1]/[2, 3] ranks 5/5
-- rogue Subtlety: site `Improved Ambush` game `Improved Ambush` pos, text pos [2, 4]/[3, 3] ranks 3/3
-- rogue Subtlety: site `Setup` game `Setup` pos, unverifiable pos [2, 1]/[4, 1] ranks 3/3
-- rogue Subtlety: site `Heightened Senses` game `Heightened Senses` pos, text pos [4, 1]/[5, 1] ranks 2/2
-- rogue Subtlety: site `Dirty Deeds` game `Dirty Deeds` pos, text pos [5, 1]/[5, 3] ranks 2/2
-- rogue Subtlety: site `Hemorrhage` game `Hemorrhage` pos, text pos [5, 3]/[5, 4] ranks 1/1
-- rogue Subtlety: site `Premeditation` game `Premeditation` pos pos [4, 2]/[7, 2] ranks 1/1
-- priest Discipline: site `Wand Specialization` game `Wand Specialization` ranks, pos, text pos [1, 2]/[1, 3] ranks 2/5
-- priest Discipline: site `Silent Resolve` game `Silent Resolve` ranks, text pos [2, 1]/[2, 1] ranks 3/5
-- priest Discipline: site `Improved Power Word: Shield` game `Improved Power Word: Shield` pos, text pos [3, 3]/[2, 3] ranks 3/3
-- priest Discipline: site `Meditation` game `Meditation` pos, text pos [3, 4]/[3, 3] ranks 3/3
-- priest Discipline: site `Mental Agility` game `Mental Agility` ranks, pos, text pos [3, 1]/[4, 2] ranks 3/5
-- priest Discipline: site `Improved Mana Burn` game `Improved Mana Burn` pos, text pos [4, 2]/[4, 4] ranks 2/2
-- priest Discipline: site `Mental Strength` game `Mental Strength` pos, text pos [2, 3]/[5, 2] ranks 5/5
-- priest Holy: site `Twilight Focus` game `Twilight Focus` ranks, text pos [1, 1]/[1, 1] ranks 3/2
-- priest Holy: site `Spiritual Healing` game `Spiritual Healing` ranks, text pos [6, 3]/[6, 3] ranks 3/5
-- priest Shadow: site `Spirit Tap` game `Spirit Tap` pos, unverifiable pos [1, 3]/[1, 2] ranks 5/5
-- priest Shadow: site `Blackout` game `Blackout` pos pos [1, 2]/[1, 3] ranks 5/5
-- priest Shadow: site `Improved Shadow Word: Pain` game `Improved Shadow Word: Pain` pos, text pos [2, 3]/[2, 2] ranks 2/2
-- priest Shadow: site `Shadow Focus` game `Shadow Focus` pos, text pos [1, 1]/[2, 3] ranks 5/5
-- priest Shadow: site `Improved Psychic Scream` game `Improved Psychic Scream` pos, text pos [3, 2]/[3, 1] ranks 2/2
-- priest Shadow: site `Improved Mind Blast` game `Improved Mind Blast` pos, text pos [2, 1]/[3, 2] ranks 5/5
-- priest Shadow: site `Shadow Reach` game `Shadow Reach` ranks, pos, text pos [2, 4]/[4, 3] ranks 2/3
-- priest Shadow: site `Shadow Weaving` game `Shadow Weaving` ranks, pos, text pos [4, 3]/[4, 4] ranks 3/5
-- priest Shadow: site `Vampiric Embrace` game `Vampiric Embrace` pos pos [4, 2]/[5, 2] ranks 1/1
-- shaman Elemental: site `Elemental Warding` game `Elemental Warding` pos, text pos [3, 2]/[2, 2] ranks 3/3
-- shaman Elemental: site `Call of Flame` game `Call of Flame` pos, text pos [2, 4]/[2, 3] ranks 3/3
-- shaman Elemental: site `Reverberation` game `Reverberation` pos pos [2, 2]/[3, 2] ranks 5/5
+- hunter Tree 2: site `None` game `Improved Serpent Sting` missing_on_site pos None/[63, 4] ranks None/5
+- hunter Tree 4: site `None` game `Lightning Reflexes` missing_on_site pos None/[1, 1] ranks None/5
+- priest Shadow: site `None` game `Holy Specialization` missing_on_site pos None/[33, 1] ranks None/5
 
 ## spells.json spells not found in the client (6)
 
@@ -269,16 +26,184 @@ Queue (EN texts the site had right for the previous build and this build changed
 - druid : site `Faerie Fire (Feral)` game `None` not_found
 - shaman : site `Tranquil Air Totem` game `None` not_found
 
-## Changed in this build (34)
+## Talent text differences (sample) (120 of 311)
+
+- warrior Arms `Improved Heroic Strike`: site: Reduces the cost of your Heroic Strike ability by 1 Rage. || game: Reduces the cost of your Heroic Strike ability by -1 Rage.
+- warrior Arms `Improved Rend`: site: Increases the Bleed damage done by your Rend ability by 12%. || game: Increases the Bleed damage done by your Rend ability by 15%.
+- warrior Arms `Improved Tactical Mastery`: site: Tactical Mastery lets you retain up to an additional 3 Rage when you change stances. || game: Tactical Mastery lets you retain up to an additional 15 Rage when you change stances.
+- warrior Arms `Deep Wounds`: site: Your critical strikes cause your opponent to Bleed, dealing 20% of your melee weapon's average damage over 12 sec. || game: Your critical strikes cause your opponent to Bleed, dealing 0% of your melee weapon's average damage over 12 sec.
+- warrior Arms `Bloodthrill`: site: Grants your Main Hand melee attacks against enemies afflicted by your Rend a 4% chance to allow an activation of Overpower. || game: Grants your Main Hand melee attacks against enemies afflicted by your Rend a 15% chance to allow an activation of Overpower.
+- warrior Arms `Weaponmaster`: site: Gives your melee weapon attacks a benefit depending on the weapon. Axe/Polearm: Increases your critical strike chance by 1%. Mace/Staff: Your attacks ignore 3% of your target's armor. Sword: Your successful melee atta... || game: Gives your melee weapon attacks a benefit depending on the weapon.   |CFFFFFFFFAxe/Polearm:|R Increases your  critical strike chance by 5%.   |CFFFFFFFFMace/Staff:|R Your attacks ignore  15% of your target's armor.   ...
+- warrior Arms `Improved Slam`: site: Reduces the global cooldown and cast time of your Slam ability by 0.25 sec. In addition, Slam no longer interrupts or delays your melee swing and Slam's cooldown is reduced by 3.0 sec. || game: Reduces the global cooldown and cast time of your Slam ability by 0.5 sec. In addition, Slam no longer interrupts or delays your melee swing and Slam's cooldown is reduced by 3 sec.
+- warrior Arms `Improved Hamstring`: site: Gives your Hamstring ability a 5% chance to immobilize the target for 5 sec. || game: Gives your Hamstring ability a 0% chance to immobilize the target for 5 sec.
+- warrior Fury `Booming Voice`: site: Increases the area of effect of your Shouts by 10% and reduces their Rage cost by 5%. || game: Increases the area of effect of your Shouts by 50% and reduces their Rage cost by 25%.
+- warrior Fury `Cruelty`: site: Improves your chance to get a critical strike with melee attacks by 1%. || game: Improves your chance to get a critical strike with melee attacks by 5%.
+- warrior Fury `Lingering Rage`: site: Increases the time before your Rage begins to decay after leaving combat by 2 sec. || game: Increases the time before your Rage begins to decay after leaving combat by 0 sec.
+- warrior Fury `Unbridled Wrath`: site: Gives you a 12% chance to generate 1 additional Rage when you deal melee damage with a weapon. || game: Gives you a 0% chance to generate 1 additional Rage when you deal melee damage with a weapon.
+- warrior Fury `Furious Precision`: site: Increases your chance to hit with off-hand attacks by 4%. || game: Increases your chance to hit with off-hand attacks by 10%.
+- warrior Fury `Blood Craze`: site: Regenerates 1% of your total Health over 6 sec after being the victim of a critical strike or suffering more than 20% of your maximum Health from a single attack. || game: Regenerates 3% of your total Health over 6 sec after being the victim of a critical strike or suffering more than 20% of your maximum Health from a single attack.
+- warrior Fury `Dual Wield Specialization`: site: Increases the damage done by your off-hand weapon by 5% and the Rage generated by your off-hand attacks by 10%. || game: Increases the damage done by your off-hand weapon by 5% and the Rage generated by your off-hand attacks by 5%.
+- warrior Fury `Enrage`: site: Gives you a 30% chance to deal 2% increased Physical damage for 12 sec after being the victim of any damaging attack. || game: Gives you a 30% chance to deal 0% increased Physical damage for 12 sec after being the victim of any damaging attack.
+- warrior Fury `Improved Execute`: site: Reduces the Rage cost of your Execute ability by 3. || game: Reduces the Rage cost of your Execute ability by -5.
+- warrior Fury `Improved Berserker Rage`: site: Your Berserker Rage ability will instantly generate 5 Rage and has a 50% chance to remove all movement impairing effects when activated. || game: Your Berserker Rage ability will instantly generate 10 Rage and has a 100% chance to remove all movement impairing effects when activated.
+- warrior Fury `Improved Intercept`: site: Reduces the cooldown of your Intercept ability by 5 sec. || game: Reduces the cooldown of your Intercept ability by -10 sec.
+- warrior Fury `Flurry`: site: Increases your melee attack speed by 5% for your next 3 swings after dealing a melee critical strike. || game: Increases your melee attack speed by 1% for your next 3 swings after dealing a melee critical strike.
+- warrior Fury `Gore Drinker`: site: Your Enrage, Berserker Rage, Bloodrage, Death Wish, and Bloodthirst abilities cause your next 3 melee attacks to restore 0.5% of your maximum Health. || game: Your Enrage, Berserker Rage, Bloodrage, Death Wish, and Bloodthirst abilities cause your next 3 melee attacks to restore 1% of your maximum Health.
+- warrior Protection `Improved Bloodrage`: site: Increases all the Rage generated by your Bloodrage ability by 25%. || game: Increases all the Rage generated by your Bloodrage ability by 50%.
+- warrior Protection `Shield Specialization`: site: Increases your chance to Block attacks with your shield by 1% and grants you a 20% chance to generate 5 Rage when you Block. || game: Increases your chance to Block attacks with your shield by 5% and grants you a 100% chance to generate 5 Rage when you Block.
+- warrior Protection `Iron Will`: site: Reduces the duration of Stun and Fear effects inflicted on you by 3%. || game: Reduces the duration of Stun and Fear effects inflicted on you by 15%.
+- warrior Protection `Anticipation`: site: Increases your Defense Skill by 4. || game: Increases your Defense Skill by 20.
+- warrior Protection `Improved Revenge`: site: Increases damage dealt by your Revenge ability by 20%. || game: Increases damage dealt by your Revenge ability by 60%.
+- warrior Protection `Improved Thunder Clap`: site: Reduces the Rage cost of your Thunder Clap ability by 2. || game: Reduces the Rage cost of your Thunder Clap ability by -6.
+- warrior Protection `Master of Defense`: site: Grants you a 50% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped. || game: Grants you a 0% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped.
+- warrior Protection `Improved Disarm`: site: Reduces the cooldown of your Disarm ability by 7 secs. || game: Reduces the cooldown of your Disarm ability by -20 secs.
+- warrior Protection `Defiance`: site: Increases all threat generated in Defensive stance by an additional 5% while a shield is equipped. || game: Increases all threat generated in Defensive stance by an additional 15% while a shield is equipped.
+- warrior Protection `Improved Sunder Armor`: site: Reduces the Rage cost of your Sunder Armor ability by 1. || game: Reduces the Rage cost of your Sunder Armor ability by -3.
+- warrior Protection `Improved Shield Bash`: site: Gives your Shield Bash ability a 50% chance to Silence the target for 3 sec. || game: Gives your Shield Bash ability a 100% chance to Silence the target for 3 sec.
+- warrior Protection `Improved Shield Wall`: site: Reduces the cooldown of your Shield Wall ability by 5.5 min. || game: Reduces the cooldown of your Shield Wall ability by 11 min.
+- warrior Protection `Focused Rage`: site: Reduces the Rage cost of your offensive abilities by 1. || game: Reduces the Rage cost of your offensive abilities by -3.
+- warrior Protection `Bastion`: site: Increases all damage you deal by 2% while a shield is equipped. || game: Increases all damage you deal by 10% while a shield is equipped.
+- paladin Holy `Unyielding Faith`: site: Reduces the duration of Fear and Disorient effects on you by 15%. || game: Reduces the duration of Fear and Disorient effects on you by 30%.
+- paladin Holy `Reverence`: site: Allows 15% of your Mana regeneration to continue while casting. || game: Allows 30% of your Mana regeneration to continue while casting.
+- paladin Holy `Purifying Power`: site: Reduces the mana cost of your Cleanse and Purify spells by 10% and reduces the cooldown of your Exorcism and Holy Wrath spells by 17%. || game: Reduces the mana cost of your Cleanse and Purify spells by 20% and reduces the cooldown of your Exorcism and Holy Wrath spells by 50%.
+- paladin Holy `Infusion of Light`: site: Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 0.5 sec. || game: Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within 15 sec by 1 sec.
+- paladin Holy `Divine Precision`: site: Improves your chance to hit with Holy spells by 4%, and reduces the duration of Silence effects on you by 10%. || game: Improves your chance to hit with Holy spells by 18%.
+- paladin Holy `Consecrated Ground`: site: Gives your Holy spells 5% increased damage against the first 4 enemies that enter your Consecration. || game: Gives your Holy spells 10% increased damage against the first 4 enemies that enter your Consecration.
+- paladin Holy `Holy Power`: site: Increases the critical strike healing bonus of your Holy spells by 10%. || game: Increases the critical strike chance of your Holy Shock and Holy Strike spells by 15%, and all other spells by 5%.
+- paladin Holy `Light's Vigil`: site: Applies Light's Vigil to a friendly target for 30 sec. The caster's next Holy Shock on the target incurs no cooldown and heals the target and their party for 326 to 344. Only one Vigil per Paladin may be active in eac... || game: Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost, or allied t...
+- paladin Protection `Guardian's Favor`: site: Reduces the cooldown of your Blessing of Protection by 1 min and increases the duration of your Blessing of Freedom by 3 sec. || game: Reduces the cooldown of your Blessing of Protection by -1 min and increases the duration of your Blessing of Freedom by 3 sec.
+- paladin Protection `Anticipation`: site: Increases your Defense Skill by 4. || game: Increases your Defense Skill by 20.
+- paladin Protection `Improved Righteous Fury`: site: While Righteous Fury is active, all damage taken is reduced by 3%. || game: While Righteous Fury is active, all damage taken is reduced by 6%.
+- paladin Protection `Sacred Duty`: site: Reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by 30 sec, and reduces the duration of Forbearance by 5 sec. || game: Increases your total Stamina by 4% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by 60 sec.
+- paladin Protection `Swift Judgement`: site: Unleash the energy of a Seal spell upon an enemy. Does not consume the Seal. Refer to individual Seals for Judgement effect. Does not share a cooldown with your Judgement ability. || game: Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by 100%.
+- paladin Protection `One-Handed Weapon Specialization`: site: Increases the damage you deal with one-handed melee weapons by 3%. || game: Increases the damage you deal with one-handed melee weapons by 2%.
+- paladin Protection `Improved Hammer of Justice`: site: Decreases the cooldown of your Hammer of Justice spell by 5 sec. || game: Decreases the cooldown of your Hammer of Justice spell by -5 sec.
+- paladin Protection `Iron Creed`: site: Increases the threat generated by your Holy Strike ability by 10%. While Righteous Fury is active, Holy Strike also reduces your damage taken by 2% for 6 sec. || game: Increases the threat generated by your Holy Strike ability by 30%. While Righteous Fury is active, Holy Strike also reduces your damage taken by 15% for 6 sec.
+- paladin Protection `Holy Shield`: site: Increases chance to block by 30% for 10 sec, and deals 75 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges. || game: Increases chance to block by 30% for 10 sec, and deals 110 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.
+- paladin Retribution `Benediction`: site: Reduces the Mana cost of all instant cast spells and abilities by 2%. || game: Reduces the Mana cost of all instant cast spells and abilities by 10%.
+- paladin Retribution `Improved Judgement`: site: Decreases the cooldown of your Judgement ability by 1 sec. || game: Decreases the cooldown of your Judgement ability by -1 sec.
+- paladin Retribution `Holy Conduit`: site: Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 20%. || game: Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by 40%.
+- paladin Retribution `Conviction`: site: Improves your chance to get a critical strike with all spells and attacks by 2%. || game: Improves your chance to get a critical strike with melee attacks by 5%.
+- paladin Retribution `Sanctified Judgement`: site: Gives your Judgement ability a 33% chance to return 20% of the Mana cost of the judged seal. || game: Gives your Judgement ability a 100% chance to return 60% of the Mana cost of the judged seal.
+- paladin Retribution `Seal of Command`: site: Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec. Unleashing this Seal's energy will judge an ene... || game: Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.  Unleashing this Seal's energy will judge an en...
+- paladin Retribution `Pursuit of Justice`: site: Increases movement speed and mounted movement speed by 8%. This does not stack with other movement speed increasing effects. || game: Increases movement speed and mounted movement speed by 15%. This does not stack with other movement speed increasing effects.
+- paladin Retribution `Eye for an Eye`: site: All critical strikes against you cause 5% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health. || game: All critical strikes against you cause 15% of the damage taken to the attacker as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.
+- paladin Retribution `Two-Handed Weapon Specialization`: site: Increases the physical damage you deal by 2%, and reduces all threat you generate by 7% while a two-handed melee weapon is equipped. || game: Increases the damage you deal with two-handed melee weapons by 2%.
+- paladin Retribution `Vengeance`: site: Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a non-periodic critical strike. Stacks up to 3 times. || game: Increases your Physical and Holy damage dealt by 5% for 30 sec after landing a non-periodic critical strike. Stacks up to 3 times.
+- paladin Retribution `Champion of the Light`: site: Increases your spell damage by up to 12% of your Intellect, and reduces the cast time of your Hammer of Wrath by 0.2 sec. || game: Increases your spell damage by up to 100% of your Intellect.
+- paladin Retribution `Instrument of Law`: site: Reduces the cast time of your Hammer of Wrath by 0.5 sec, and reduces all threat you generate by 10% while Righteous Fury is not active. || game: Reduces the cast time of your Hammer of Wrath by 1 sec, and reduces all threat you generate by 20% while Righteous Fury is not active.
+- hunter Tree 1 `Deadly Aspects`: site: While Aspect of the Hawk is active, Auto Shot has a 2% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 2% chance of increasing melee attac... || game: While Aspect of the Hawk is active, Auto Shot has a 10% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 10% chance of increasing melee att...
+- hunter Tree 1 `Endurance Training`: site: Increases the Health and Armor of your pets by 3%. || game: Increases the Health and Armor of your pets by 15%.
+- hunter Tree 1 `Focused Fire`: site: Increases all damage you and your pet deal by 1% while your pet is active. || game: Increases all damage you and your pet deal by 2% while your pet is active.
+- hunter Tree 1 `Improved Aspect of the Monkey`: site: Increases the Dodge bonus of your Aspect of the Monkey by 2%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability. || game: Increases the Dodge bonus of your Aspect of the Monkey by 4%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.
+- hunter Tree 1 `Pathfinding`: site: Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 3%. || game: Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 6%.
+- hunter Tree 1 `Improved Revive Pet`: site: Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%. || game: Revive Pet's casting time is reduced by -6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.
+- hunter Tree 1 `Unleashed Fury`: site: Increases the damage done by your pets and hawks by 3%. || game: Increases the damage done by your pets and hawks by 20%.
+- hunter Tree 1 `Improved Mend Pet`: site: Gives your Mend Pet spell a 15% chance of cleansing 1 Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by 10%. || game: Gives your Mend Pet spell a 50% chance of cleansing 1 Curse, Disease, Magic, or Poison effect from your pet each time it heals and reduces the Mana cost by 20%.
+- hunter Tree 1 `Ferocity`: site: Increases the critical strike chance of your pets and hawks by 2%. || game: Increases the critical strike chance of your pets and hawks by 16%.
+- hunter Tree 1 `Spirit Bond`: site: While your pet is active, you and your pet will regenerate 1% of total health every 10 sec. || game: While your pet is active, you and your pet will regenerate 1% of total health every 5 sec.
+- hunter Tree 1 `Bestial Discipline`: site: Increases the Focus regeneration of your pets by 10% and allows 25% of your Mana regeneration to continue while casting. || game: Increases the Focus regeneration of your pets by 100% and allows 50% of your Mana regeneration to continue while casting.
+- hunter Tree 2 `Hawk Eye`: site: Increases the range of your ranged weapons by 2 yards. || game: Increases the range of your ranged weapons by 6 yards.
+- hunter Tree 2 `Improved Stings`: site: Increases the damage of your Serpent Sting ability by 6%, reduces the cooldown of your Viper Sting ability by 2 sec, and increases the duration of your Scorpid Sting ability by 15 sec. || game: Increases the damage of your Serpent Sting ability by 20%, reduces the cooldown of your Viper Sting ability by 6 sec, and increases the duration of your Scorpid Sting ability by 45 sec.
+- hunter Tree 2 `Efficiency`: site: Reduces the Mana cost of your Shots, Stings, and melee abilities by 3%. || game: Reduces the Mana cost of your Shots, Stings, and melee abilities by 15%.
+- hunter Tree 2 `Careful Aim`: site: Increases your Attack Power by 20% of your Intellect. || game: Increases your Attack Power by 100% of your Intellect.
+- hunter Tree 2 `Rapid Killing`: site: Reduces the cooldown on your Rapid Fire ability by 1 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Sho... || game: Reduces the cooldown on your Rapid Fire ability by 2 min. In addition, when you kill a non-trivial enemy or it dies while afflicted by your Serpent Sting, you gain Rapid Killing, increasing the damage of your next Sho...
+- hunter Tree 2 `Improved Arcane Shot`: site: Reduces the cooldown of your Arcane Shot by 0.3 sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot. || game: Reduces the cooldown of your Arcane Shot by -1.5 sec. Does not affect the cooldown of abilities which share a cooldown with Arcane Shot.
+- hunter Tree 2 `Mortal Shots`: site: Increases the critical strike damage bonus on all ranged abilities by 6%. || game: Increases the critical strike damage bonus on all ranged abilities by 30%.
+- hunter Tree 2 `Rapid Recuperation`: site: Afflicting a target with Serpent Sting allows 25% of your Mana Regeneration to continue while casting for 15 sec, increased to 50% when Rapid Killing is consumed. || game: Afflicting a target with Serpent Sting allows 50% of your Mana Regeneration to continue while casting for 15 sec, increased to 100% when Rapid Killing is consumed.
+- hunter Tree 2 `Barrage`: site: Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by 3%. || game: Increases the damage done by your Multi-Shot, Aimed Shot, and Volley abilities by 15%.
+- hunter Tree 2 `Ranged Weapon Specialization`: site: Increases the damage you deal with ranged weapons by 1%. || game: Increases the damage you deal with ranged weapons by 5%.
+- hunter Tree 3 `Improved Tracking`: site: While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 1%. || game: While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 5%.
+- hunter Tree 3 `Deflection`: site: Increases your Parry chance by 1%. || game: Increases your Parry chance by 5%.
+- hunter Tree 3 `Entrapment`: site: When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 1 sec. || game: When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 5 sec.
+- hunter Tree 3 `Savage Strikes`: site: Increases the critical strike chance of all your melee abilities by 2%. || game: Increases the critical strike chance of all your melee abilities by 20%.
+- hunter Tree 3 `Survivalist`: site: Increases your total Health by 2%. || game: Increases your total Health by 10%.
+- hunter Tree 3 `Improved Wing Clip`: site: Gives your Wing Clip ability a 7% chance to immobilize the target for 5 sec. || game: Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.
+- hunter Tree 3 `Clever Traps`: site: Increases the duration of Freezing and Frost trap effects by 15% and the damage of Immolation and Explosive trap effects by 15%. || game: Increases the duration of Freezing and Frost trap effects by 30% and the damage of Immolation and Explosive trap effects by 30%.
+- hunter Tree 3 `Surefooted`: site: Increases your hit chance by 1% and reduces the duration of movement impairing effects on you by 10%. || game: Increases your hit chance by 3% and reduces the duration of movement impairing effects on you by 30%.
+- hunter Tree 3 `Survival Tactics`: site: Increases your chance to hit with your Trap and Feign Death abilities by 5%. || game: Increases your chance to hit with your Trap and Feign Death abilities by 17%.
+- hunter Tree 3 `Predator's Edge`: site: Increases your melee ability critical strike damage by 6% and your Off Hand weapon damage by 10%. || game: Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%.
+- hunter Tree 3 `Resourcefulness`: site: Reduces the Mana cost of your Trap and melee abilities by 30%, and grants your melee and ranged ability Critical Strikes a 50% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec. || game: Reduces the Mana cost of your Trap and melee abilities by 60%, and grants your melee and ranged ability Critical Strikes a 100% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec.
+- hunter Tree 3 `Expose Prey`: site: Grants your melee and ranged attacks against enemies afflicted by Hunter's Mark a 5% chance to allow an activation of Mongoose Bite. Lasts 10 sec. || game: Grants your melee and ranged attacks against enemies afflicted by Hunter's Mark a 10% chance to allow an activation of Mongoose Bite. Lasts 10 sec.
+- hunter Tree 3 `Survivalist's Discipline`: site: Reduces the cooldown of your Trap and Deterrence abilities by 20%. || game: Reduces the cooldown of your Trap and Deterrence abilities by 40%.
+- hunter Tree 3 `Lightning Reflexes`: site: Increases your Agility by 2%. || game: Increases your Agility by 15%.
+- rogue Assassination `Improved Gouge`: site: Increases the duration of your Gouge ability by 0.5 sec. || game: Increases the duration of your Gouge ability by 1.5 sec.
+- rogue Assassination `Malice`: site: Increases your critical strike chance with all attacks and Poisons by 1%. || game: Increases your critical strike chance with all attacks and Poisons by 5%.
+- rogue Assassination `Ruthlessness`: site: Gives your finishing moves a 20% chance to add a Combo Point to your target. || game: Gives your finishing moves a 60% chance to add a Combo Point to your target.
+- rogue Assassination `Murder`: site: Increases all damage dealt by 2% against Humanoid and Giant targets. || game: Increases all damage dealt by 4% against Humanoid and Giant targets.
+- rogue Assassination `Improved Expose Armor`: site: Reduces the Energy cost of your Expose Armor ability by 5, and refunds 1 Combo Points when cast with 5 Combo Points. || game: Reduces the Energy cost of your Expose Armor ability by 10, and refunds 2 Combo Points when cast with 5 Combo Points.
+- rogue Assassination `Lethality`: site: Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 4%. || game: Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 6%.
+- rogue Assassination `Vile Poisons`: site: Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects. || game: Increases the damage dealt by your poisons by 20% and gives your poisons an additional 40% chance to resist dispel effects.
+- rogue Assassination `Improved Poisons`: site: Increases the chance to apply Poisons to your target by 2%, and gives Poison applications a 10% chance to not consume a charge. || game: Increases the chance to apply Poisons to your target by 10%, and gives Poison applications a 50% chance to not consume a charge.
+- rogue Assassination `Vigor`: site: Increases your maximum Energy by 5. || game: Increases your maximum Energy by 10.
+- rogue Assassination `Mutilate`: site: Instantly attacks with both weapons for 75% weapon damage plus an additional 17 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points. || game: Instantly attacks with both weapons for 75% weapon damage plus an additional 17.25 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.
+- rogue Assassination `Improved Kidney Shot`: site: Enemies Stunned by your Kidney Shot ability take 5% increased damage from your poisons and attacks. || game: Enemies Stunned by your Kidney Shot ability take 10% increased damage from your poisons and attacks.
+- rogue Assassination `Seal Fate`: site: Your critical strikes from abilities that add Combo Points have a 20% chance to add an additional Combo Point. || game: Your critical strikes from abilities that add Combo Points have a 0% chance to add an additional Combo Point.
+- rogue Combat `Improved Eviscerate`: site: Increases the damage done by your Eviscerate ability by 7%. || game: Increases the damage done by your Eviscerate ability by 20%.
+- rogue Combat `Improved Sinister Strike`: site: Reduces the Energy cost of your Sinister Strike ability by 3. || game: Reduces the Energy cost of your Sinister Strike ability by 5.
+- rogue Combat `Lightning Reflexes`: site: Increases your Dodge chance by 1%. || game: Increases your Dodge chance by 5%.
+- rogue Combat `Puncturing Wounds`: site: Increases the critical strike chance of your Backstab by 10% and your Mutilate by 5%, and gives Backstab a 15% chance to add an additional Combo Point. || game: Increases the critical strike chance of your Backstab by 30% and your Mutilate by 15%, and gives Backstab a 45% chance to add an additional Combo Point.
+- rogue Combat `Deflection`: site: Increases your Parry chance by 2%. || game: Increases your Parry chance by 1%.
+- rogue Combat `Endurance`: site: Reduces the cooldown of your Sprint and Evasion abilities by 30%. || game: Reduces the cooldown of your Sprint and Evasion abilities by 60%.
+- rogue Combat `Improved Sprint`: site: Gives a 50% chance to remove all movement impairing effects when you activate your Sprint ability. || game: Gives a 100% chance to remove all movement impairing effects when you activate your Sprint ability.
+- rogue Combat `Improved Kick`: site: Gives your Kick ability a 50% chance to Silence the target for 2 sec. || game: Gives your Kick ability a 100% chance to Silence the target for 2 sec.
+- rogue Combat `Dual Wield Specialization`: site: Increases the damage done by your off-hand weapon by 5%. || game: Increases the damage done by your off-hand weapon by 50%.
+
+## Spellbook text differences (sample) (40 of 77)
+
+- warrior  `Demoralizing Shout`: site: Reduces the melee attack power of all enemies within 10 yards by 204 for 45 sec. || game: Reduces the melee attack power of all enemies within 10 yards by 196 for 45 sec.
+- warrior  `Slam`: site: Slams the opponent, causing weapon damage plus 68. || game: Slams the opponent, causing weapon damage plus 87.
+- paladin  `Flash of Light`: site: Heals a friendly target for 292 to 325. || game: Heals a friendly target for 286 to 320.
+- paladin  `Holy Shock`: site: Blasts the target with Holy energy, causing 248 to 268 Holy damage to an enemy, or 221 to 239 healing to an ally. || game: Deals 334 to 362 Holy damage.
+- paladin  `Righteous Fury`: site: Increases all threat generated by 33%, and all threat generated by your Holy attacks by an additional 90%. Lasts 30 min. || game: Increases the threat generated by your Holy attacks by 90%. Lasts 30 min.
+- paladin  `Seal of Fury`: site: Fills the Paladin with divine fury for 30 sec, causing melee attacks to deal an additional 35 Holy damage. While a shield is equipped, each attack also grants an absorb shield equal to 50% of the Holy damage dealt. On... || game: Fills the Paladin with divine fury for 30 sec, causing melee attacks to deal an additional 35 Holy damage. While a shield is equipped, each attack also grants an absorb shield equal to 50% of the Holy damage dealt. On...
+- paladin  `Seal of the Crusader`: site: Fills the Paladin with the spirit of a crusader for 30 sec, granting 325 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at a... || game: Fills the Paladin with the spirit of a crusader for 30 sec, granting 306 melee attack power. The Paladin also attacks 40% faster, but deals less damage with each attack. Only one Seal can be active on the Paladin at a...
+- paladin  `Seal of Command`: site: Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.  Unleashing this Seal's energy will judge an en... || game: Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.  Unleashing this Seal's energy will judge an en...
+- hunter  `Tame Beast`: site:  || game: Begins taming a beast to be your companion. Your armor is reduced by 100% while you focus on taming the beast for 20 sec. If you lose the beast's attention for any reason, the taming process will fail. Once tamed, the...
+- hunter  `Aspect of the Hawk`: site: The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 55. Only one Aspect can be active at a time. || game: The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 120. Only one Aspect can be active at a time.
+- hunter  `Aspect of the Beast`: site: The hunter takes on the aspects of a beast, becoming untrackable and increasing Melee Attack Power by 50. Only one Aspect can be active at a time. || game: You take on the aspects of a beast, becoming untrackable and increasing Melee Attack Power by 110. Only one Aspect can be active at a time.
+- hunter  `Trueshot Aura`: site: Increases the Ranged Attack Power of party or raid members within 45 yards by 30. Lasts 30 min. || game: Increases the Ranged Attack Power of party or raid members within 45 yards by 50. Lasts 30 min.
+- hunter  `Immolation Trap`: site: Place a Fire trap that will burn the first enemy to approach for 690 Fire damage over 15 sec. Trap will exist for 1 min. Only one Fire trap can be active at a time. || game: Inflict 138 Fire damage every 3 seconds.
+- hunter  `Counterattack`: site: A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 70 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried. || game: A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 110 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.
+- hunter  `Explosive Trap`: site: Place a Fire trap that explodes when an enemy approaches, causing 208 to 264 Fire damage and 330 additional Fire damage over 20 sec to all within 10 yards. Trap will exist for 1 min. Only one Fire trap can be active a... || game: Place a Fire trap that explodes when an enemy approaches, causing 201 to 257 Fire damage and 330 additional Fire damage over 20 sec to all within 10 yards. Trap will exist for 1 min. Only one Fire trap can be active a...
+- rogue  `Garrote`: site: Garrote the enemy, causing 552 damage over 18 sec, increased by your Attack Power. Must be stealthed and behind the target. Awards 1 combo points. || game: Garrote the enemy, causing 552 damage over 18 sec, increased by your Attack Power. Must be stealthed and behind the target. Awards 1 combo point.
+- rogue  `Ambush`: site: Ambush the target, causing 250% weapon damage plus 290 to the target. Must be stealthed and behind the target. Requires a dagger in the main hand. Awards 1 combo points. || game: Ambush the target, causing 250% weapon damage plus 290 to the target. Must be stealthed and behind the target. Requires a dagger in the main hand. Awards 1 combo point.
+- rogue  `Mutilate`: site: Instantly attacks with both weapons for 75% weapon damage plus an additional 50 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points. || game: Instantly attacks with both weapons for 75% weapon damage plus an additional 50.25 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.
+- rogue  `Sinister Strike`: site: An instant strike that causes 68 damage in addition to your normal weapon damage. Awards 1 combo points. || game: An instant strike that causes 68 damage in addition to your normal weapon damage. Awards 1 combo point.
+- rogue  `Backstab`: site: Backstab the target, causing 150% weapon damage plus 150 to the target. Must be behind the target. Requires a dagger in the main hand. Awards 1 combo points. || game: Backstab the target, causing 150% weapon damage plus 150 to the target. Must be behind the target. Requires a dagger in the main hand. Awards 1 combo point.
+- rogue  `Gouge`: site: Causes 75 damage, stops your attack, and incapacitates the target for 4 sec. The target must be facing you. Any damage taken will break the effect. Awards 1 combo points. || game: Causes 75 damage, stops your attack, and incapacitates the target for 4 sec. The target must be facing you. Any damage taken will break the effect. Awards 1 combo point.
+- rogue  `Ghostly Strike`: site: A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo points. || game: A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.
+- rogue  `Hemorrhage`: site: An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture damage from the Rogue. Lasts 15 sec. Awards 1 Combo Points. || game: An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.
+- priest  `Mana Burn`: site: Drains 746 to 788 mana from a target. For each mana drained in this way, the target takes 0.5 Shadow damage. || game: Drains 738 to 780 mana from a target. For each mana drained in this way, the target takes 0.5 Shadow damage.
+- priest  `Penance`: site: Launches a volley of holy light at the target, causing 92 Holy damage to an enemy, or 425 healing to an ally, instantly and every 1 sec for 2 sec. || game: Healing for 425 every 1 sec for 2 sec.
+- priest  `Lesser Heal`: site: Heal your target for 157 to 181. || game: Heal your target for 151 to 175.
+- priest  `Smite`: site: Smite an enemy for 167 to 186 Holy damage. || game: Smite an enemy for 160 to 180 Holy damage.
+- priest  `Desperate Prayer`: site: Instantly heals the caster for 1285 to 1513. || game: Instantly heals the caster for 1269 to 1497.
+- priest  `Divine Grace`: site: Instantly heals a friendly target below 50% Health for 1285 to 1513 and removes Weakened Soul from that target. Cannot be cast on self. || game: Instantly heals a friendly target below 50% Health for 1269 to 1497 and removes Weakened Soul from that target. Cannot be cast on self.
+- priest  `Heal`: site: Heal your target for 634 to 713. || game: Heal your target for 611 to 691.
+- priest  `Flash Heal`: site: Heals a friendly target for 774 to 910. || game: Heals a friendly target for 757 to 893.
+- priest  `Binding Heal`: site: Heal yourself and a friendly target for 774 to 910. This causes low threat. || game: Heal yourself and a friendly target for 757 to 893. This causes low threat.
+- priest  `Mind Blast`: site: Blasts the target for 477 to 503 Shadow damage, but causes a high amount of threat. || game: Blasts the target for 472 to 498 Shadow damage, but causes a high amount of threat.
+- priest  `Mind Control`: site: Controls a humanoid mind up to level 64, but increases the time between attacks by 25%. Lasts up to 1 min. || game: Controls a humanoid mind up to level 62, but increases the time between attacks by 25%. Lasts up to 1 min.
+- shaman  `Lightning Bolt`: site: Casts a bolt of lightning at the target for 190 to 211 Nature damage. || game: Casts a bolt of lightning at the target for 185 to 207 Nature damage.
+- shaman  `Fire Nova`: site: Instantly inflicts 232 to 259 fire damage to enemies within 10 yd of your active Fire totem. || game: Instantly inflicts 226 to 252 fire damage to enemies within 10 yd of your active Fire totem.
+- shaman  `Frost Shock`: site: Instantly shocks the target with frost, causing 279 to 295 Frost damage and slowing movement speed by 50%. Lasts 8 sec. || game: Instantly shocks the target with frost, causing 275 to 291 Frost damage and slowing movement speed by 50%. Lasts 8 sec.
+- shaman  `Chain Lightning`: site: Hurls a lightning bolt at the enemy, dealing 119 to 133 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets. || game: Hurls a lightning bolt at the enemy, dealing 116 to 130 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets.
+- shaman  `Rockbiter Weapon`: site: Imbue the Shaman's weapon, increasing melee attack power by 653 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes. || game: Imbue the Shaman's weapon, increasing melee attack power by 554 and allowing melee attacks to cause additional threat when using that weapon. Lasts for 60 minutes.
+- shaman  `Flametongue Weapon`: site: Imbue the Shaman's weapon with fire. Each hit causes 35 to 112 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. When applied to main hand, disables any benefit... || game: Imbue the Shaman's weapon with fire. Each hit causes (31.442 + (10% of Spell Power)) to (99.92 + (10% of Spell Power)) additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage pe...
+
+## Changed in this build (36)
 
 - warrior `Improved Hamstring` (text): ref 23694 SpellCategories.DiminishType: 0 -> 1024
-- hunter `Efficiency` (pos, text): SpellEffect#0.EffectSpellClassMask_2: 8192 -> 2105344
-- hunter `Trueshot Aura` (pos, text): SpellEffect#0.EffectBasePointsF: 50 -> 30
-- hunter `Improved Wing Clip` (ranks, pos, text): ref 19229 SpellCategories.DiminishType: 0 -> 1024
-- hunter `Counterattack` (pos): SpellCategories.DiminishType: 0 -> 1024
-- mage `Accelerant` (pos, text): SpellEffect#0.EffectSpellClassMask_1: 4096 -> 36864; description: Reduces the casting time of your Fireball and Frostfire Bolt spells... -> Reduces the casting time of your Fireball, Frostfire Bolt, and Arca...; name: Improved Fireball -> Accelerant
+- hunter `Efficiency` (text): SpellEffect#0.EffectSpellClassMask_2: 8192 -> 2105344
+- hunter `Trueshot Aura` (same): SpellEffect#0.EffectBasePointsF: 30 -> 15
+- hunter `Improved Wing Clip` (text): ref 19229 SpellCategories.DiminishType: 0 -> 1024
+- hunter `Counterattack` (same): SpellCategories.DiminishType: 0 -> 1024
+- mage `Missile Barrage` (text): ref 400589 SpellEffect#1.EffectAura: 107 -> 4; ref 400589 SpellEffect#1.EffectMiscValue_0: 19 -> 0; ref 400589 SpellEffect#1.EffectSpellClassMask_0: 2048 -> 0
+- mage `Accelerant` (text): SpellEffect#0.EffectSpellClassMask_1: 4096 -> 36864; description: Reduces the casting time of your Fireball and Frostfire Bolt spells... -> Reduces the casting time of your Fireball, Frostfire Bolt, and Arca...; name: Improved Fireball -> Accelerant
 - mage `Precision` (text): SpellEffect#0.EffectAura: 107 -> 55; SpellEffect#0.EffectMiscValue_0: 16 -> 0; SpellEffect#0.EffectSpellClassMask_0: 12714743 -> 0; SpellEffect#0.EffectSpellClassMask_1: 4096 -> 0
 - mage `Frostbite` (text): ref 12494 SpellCategories.DiminishType: 0 -> 1024
+- mage `Ice Lance` (text): SpellCategories.Category: 0 -> 19; SpellCooldowns.CategoryRecoveryTime: 0 -> 8000
 - warrior `Victory Rush` (unverifiable): description: Instantly attack the target causing ${1+$AP*$m3/100} damage and hea... -> Instantly attack the target causing ${1+$apm*$m3/100} damage and he...
 - warrior `Revenge` (unverifiable): description: Instantly counterattack an enemy for $s1 damage and a high amount o... -> Instantly counterattack an enemy for ${$m1+($<APRatio>*$apm)} to ${...
 - paladin `Righteous Fury` (text): SpellLevels.BaseLevel: 16 -> 10; SpellLevels.SpellLevel: 16 -> 10
