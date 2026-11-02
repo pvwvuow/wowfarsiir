@@ -17,7 +17,7 @@
    and the «translation not ready» note keeps saying so. Nothing is invented. */
 (function () {
   'use strict';
-  var V = '20261102t', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102u', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
@@ -443,17 +443,17 @@
     BL = [];
     document.title = title + ' — ' + (on('uiLabels') ? 'کوئست' : 'Quest') + ' — wowfarsi';
     hb = bd(titleB(!!(f.t || (FAT && FAT.t && FAT.t[q.id]))));
+    /* the title dot sits inside the h1; the legend is filled into <!--trb-leg--> once every section is known */
     hero = '<header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>QUEST' + (q.repeatable ? ' · REPEATABLE' : '') + '<i></i></p>'
-      + '<h1' + (fa ? '>' : ' class="rt-en" dir="ltr">') + esc(title) + '</h1>'
+      + '<h1' + (fa ? '>' : ' class="rt-en" dir="ltr">') + esc(title) + hb + '</h1>'
       + (fa && q.name ? '<p class="fx-ensub rt-en" dir="ltr">' + esc(q.name) + '</p>' : '')
-      + (hb ? '<div class="trb-hero">' + hb + '</div>' : '')
       + '<div class="fex-hchips">'
       + (q.questLevel ? chip(lbl('سطح کوئست', 'Quest level'), num(q.questLevel)) : '')
       + (q.requiredLevel ? chip(lbl('حداقل سطح', 'Required level'), num(q.requiredLevel)) : '')
       + (zoneHtml ? chip(zl, zoneHtml) : '')
       + (sideHtml ? chip(lbl('طرف', 'Side'), sideHtml) : '')
       + (q.repeatable ? chip(lbl('نوع', 'Type'), lbl('تکرارشدنی', 'Repeatable')) : '')
-      + '</div></div></header>';
+      + '</div><!--trb-leg--></div></header>';
 
     /* texts */
     texts = '';
@@ -509,7 +509,7 @@
     B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy, 'e', q.endPoi);
 
     root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="quest.html">' + lbl('پایگاه کوئست', 'Quest database') + '</a><i></i><span>' + esc(title) + '</span></nav>'
-      + '<div class="fex">' + hero + (TB ? TB.summary(BL) : '') + langBar(hasFa) + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
+      + '<div class="fex">' + hero.replace('<!--trb-leg-->', TB && TB.legend ? TB.legend(BL) : '') + langBar(hasFa) + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
       + '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="quest.html">' + lbl('همهٔ کوئست‌ها', 'All quests') + '</a>'
       + '<a class="btn btn-stone btn-sm" href="https://www.wowhead.com/classic/quest=' + esc(q.id) + '" target="_blank" rel="noopener">Wowhead</a></div></div>';
   }
