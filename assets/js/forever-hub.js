@@ -7,12 +7,12 @@
    4. classes: a character-creation stage (db/classes.json + db/<class>.json trees): the crest on a turning circle,
       class-colour aura, the three talent trees, talent / spell counts, the way into talents and spellbook; a rail of
       round medallions picks the class (click, arrow keys); the pick is remembered (wf-hub-cls)
-   5. the world as game frames: TARGET (a world or raid boss from db/dungeon/<slug>.json, Tab = next target), its LOOT
+   5. the world as game frames: TARGET (a bestiary plate: a world or raid boss from db/dungeon/<slug>.json, arrows = next target), its LOOT
       (itemlite shards, quality colours) and the MINIMAP of the zone it stands in (entrance point pinging)
    Everything comes from the same JSON the database pages use; a failed fetch just leaves that block quiet. */
 (function () {
   'use strict';
-  var V = '20261201j', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102k', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var Z = String.fromCharCode(0x200c);
   function zw(s) { return String(s).split('~').join(Z); }
@@ -22,6 +22,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  function faInt(v) { var n = Number(v); return isNaN(n) ? faNum(v) : faNum(n.toLocaleString('en-US')).replace(/,/g, '\u066c'); }
   function faNum(v) { return String(v).replace(/[0-9]/g, function (d) { return '\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'.charAt(+d); }); }
   function nz(s) {
     var o = '', i, c;
@@ -67,7 +68,7 @@
     m = { npcs: w.npcs && w.npcs.count, quests: w.quests && w.quests.count, dungeons: w.dungeons && w.dungeons.count, items: j.count };
     Array.prototype.forEach.call(document.querySelectorAll('[data-c]'), function (e) {
       var v = m[e.getAttribute('data-c')];
-      if (v) e.textContent = faNum(String(v)) + ' ' + e.getAttribute('data-u');
+      if (v) e.textContent = faInt(v) + ' ' + e.getAttribute('data-u');
     });
   });
 
@@ -127,7 +128,7 @@
       var c, k = t[0];
       c = open.filter(function (d) { return k === 'new' ? !!d.isNew : (!k || d.type === k); }).length;
       if (!c) return '';
-      return '<button type="button" class="fh-tab' + (k === '' ? ' on' : '') + '" role="tab" data-t="' + k + '">' + esc(t[1]) + '<small>' + faNum(c) + '</small></button>';
+      return '<button type="button" class="fh-tab' + (k === '' ? ' on' : '') + '" role="tab" data-t="' + k + '"><span>' + esc(t[1]) + '</span><small>' + faNum(c) + '</small></button>';
     }).join('');
     wrap.insertBefore(tabsEl, box);
 
@@ -431,6 +432,7 @@
 
   /* ---------- 5. the world: target \u00b7 loot \u00b7 minimap ---------- */
   var QC = ['#9d9d9d', '#ffffff', '#1eff00', '#0070dd', '#a335ee', '#ff8000', '#e6cc80'];
+  var CHEV = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var SKULL = '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.2C4.6 1.2 2.3 3.6 2.3 6.6c0 1.9.9 3.2 2 4v1.8c0 .5.4.9.9.9h.6v-1.3h.9v1.3h1.6v-1.3h.9v1.3h.6c.5 0 .9-.4.9-.9v-1.8c1.1-.8 2-2.1 2-4 0-3-2.3-5.4-5.7-5.4zM5.6 8.9a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm4.8 0a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z"/></svg>';
   function initWorld(dlist, dfa, zones) {
     var tf = $('fh-tf'), lt = $('fh-loot'), mmw = $('fh-mm'), pool, i, ZB = {}, ZN = {}, IL = {}, cache = {}, busy = false, last = null;
@@ -453,7 +455,7 @@
       }));
     }
     function draw(d, x) {
-      var boss = d.type === 'raid' ? x.bosses[x.bosses.length - 1] : x.bosses[0], f, nmMain, nmEn, ent = x.entrance || {}, lv, loot, loc;
+      var boss = d.type === 'raid' ? x.bosses[x.bosses.length - 1] : x.bosses[0], f, nmMain, nmEn, ent = x.entrance || {}, lv, loot, loc, art, kd, lvn, href;
       if (!boss) return;
       last = { d: d, x: x };
       f = d.type === 'worldboss' && sw('namesNpc') ? dfaName(d.slug) : '';
@@ -461,14 +463,26 @@
       nmEn = f ? boss.name : '';
       lv = boss.level || [];
       loc = d.type === 'raid' ? (sw('namesZone') && dfaName(d.slug) ? dfaName(d.slug) : d.name) : zoneFa(ent.zoneName, ent.zoneId);
-      tf.innerHTML = '<div class="fh-tf"><a class="fh-tport" href="npc.html?id=' + esc(boss.npcId) + '" aria-label="' + esc(boss.name) + '"><i>'
-        + (boss.imageUrl ? '<img src="' + esc(boss.imageUrl) + '" alt="" loading="lazy">' : '') + '</i>'
-        + '<span class="fh-tlv" title="' + zw('\u0633\u0637\u062d') + ' ' + faNum(lv[1] || lv[0] || '??') + '">' + (boss.rank === 'boss' ? SKULL : '<b>' + esc(lv[0] || '') + '</b>') + '</span></a>'
-        + '<div><a class="fh-tnm" href="npc.html?id=' + esc(boss.npcId) + '"><b' + (f ? '' : ' dir="ltr"') + '>' + esc(nmMain) + '</b>' + (nmEn ? '<small dir="ltr">' + esc(nmEn) + '</small>' : '') + '</a>'
-        + '<div class="fh-bar fh-hp"><i></i><span dir="ltr">' + (lv[1] || lv[0] ? 'Lv ' + esc(lv[1] || lv[0]) + (boss.rank === 'boss' ? ' Boss' : '') : '') + '</span></div><div class="fh-bar fh-mp"><i></i></div>'
-        + '<div class="fh-tmeta"><span>' + esc((KIND[d.type] || ['', ''])[0]) + '</span><span><em>' + esc(loc) + '</em></span></div></div></div>'
-        + '<p class="fh-frf" style="margin-top:1rem"><button type="button" class="fh-tabk" id="fh-tabk"><kbd>Tab</kbd>' + zw('\u0647\u062f\u0641 \u0628\u0639\u062f\u06cc') + '</button>'
-        + '<span class="fh-n">' + faNum(i + 1) + ' / ' + faNum(pool.length) + '</span></p>';
+      art = x.images && x.images.art ? String(x.images.art).replace(/^\//, '') : '';
+      kd = (KIND[d.type] || ['', ''])[0];
+      lvn = lv[1] || lv[0];
+      href = 'npc.html?id=' + esc(boss.npcId);
+      /* bestiary plate: the instance's own loading art, the boss model breathing out of it, name engraved below */
+      tf.innerHTML = '<div class="fh-bst">'
+        + '<a class="fh-bpl" href="' + href + '" aria-label="' + esc(nmMain) + '">'
+        + (art ? '<span class="fh-bart" style="background-image:url(&quot;' + esc(art) + '&quot;)"></span>' : '<span class="fh-bart fh-bart0"></span>')
+        + (boss.imageUrl ? '<img class="fh-bmod" src="' + esc(boss.imageUrl) + '" alt="" loading="lazy">' : '')
+        + '<span class="fh-bkind">' + esc(kd) + '</span>'
+        + (boss.rank === 'boss' ? '<span class="fh-bsk" title="' + zw('\u0631\u0626\u06cc\u0633') + '">' + SKULL + '</span>' : '')
+        + '</a>'
+        + '<a class="fh-bnm" href="' + href + '"><b' + (f ? '' : ' dir="ltr" class="fh-lat"') + '>' + esc(nmMain) + '</b>'
+        + (nmEn ? '<small dir="ltr">' + esc(nmEn) + '</small>' : '') + '</a>'
+        + '<p class="fh-bmeta">' + (lvn ? '<span>' + zw('\u0633\u0637\u062d') + ' ' + faNum(lvn) + '</span><i aria-hidden="true"></i>' : '')
+        + '<bdi>' + esc(loc) + '</bdi></p>'
+        + '<div class="fh-bnav"><button type="button" class="fh-bnv" data-s="-1" aria-label="' + zw('\u0647\u062f\u0641 \u0642\u0628\u0644\u06cc') + '">' + CHEV + '</button>'
+        + '<span class="fh-bct" aria-live="polite">' + faNum(i + 1) + '<i>/</i>' + faNum(pool.length) + '</span>'
+        + '<button type="button" class="fh-bnv fh-bnx" data-s="1" aria-label="' + zw('\u0647\u062f\u0641 \u0628\u0639\u062f\u06cc') + '">' + CHEV + '</button></div>'
+        + '</div>';
       tf.classList.remove('sw'); void tf.offsetWidth; tf.classList.add('sw');
       /* loot */
       loot = (boss.loot || []).slice().sort(function (a, b) { return (b.chance || 0) - (a.chance || 0); }).slice(0, 6);
@@ -521,18 +535,24 @@
         draw(d, x);
       });
     }
-    tf.addEventListener('click', function (ev) {
-      var b = ev.target && ev.target.closest ? ev.target.closest('.fh-tabk') : null;
-      if (!b || busy) return;
-      b.classList.add('hit');
-      setTimeout(function () { b.classList.remove('hit'); }, 140);
-      i = (i + 1) % pool.length;
+    function step(n) {
+      if (busy) return;
+      i = (i + n + pool.length) % pool.length;
       load(i);
+    }
+    tf.addEventListener('click', function (ev) {
+      var b = ev.target && ev.target.closest ? ev.target.closest('.fh-bnv') : null;
+      if (b) step(+b.getAttribute('data-s'));
+    });
+    /* arrows cycle targets while the frame has focus (RTL: left = next) */
+    tf.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowLeft') step(1); else if (ev.key === 'ArrowRight') step(-1); else return;
+      ev.preventDefault();
     });
     document.addEventListener('error', function (ev) {
       var t = ev.target;
       if (!t || t.tagName !== 'IMG') return;
-      if (t.closest && t.closest('.fh-tport')) t.closest('.fh-tport').classList.add('bad');
+      if (t.classList && t.classList.contains('fh-bmod')) t.parentNode.classList.add('nomod');
       else if (t.getAttribute('data-ic') && !t.getAttribute('data-f')) { t.setAttribute('data-f', '1'); t.src = ZAM + t.getAttribute('data-ic') + '.jpg'; }
     }, true);
     onTr(function () { if (last) draw(last.d, last.x); });
