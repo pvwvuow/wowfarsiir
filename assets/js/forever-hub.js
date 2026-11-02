@@ -4,10 +4,11 @@
       art-6.webp); boss counts come from the audited list (db/boss-audit.json)
    2. quest search with a few preview quests (quest-index + Persian titles), Enter opens the full database
    3. live counts on the panels (data/forever/db/index.json)
+   4. the Classes row (db/classes.json): tap a class, a small strip opens with its talents and spellbook
    Everything comes from the same JSON the database pages use; a failed fetch just leaves that block quiet. */
 (function () {
   'use strict';
-  var V = '20261201h', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261201i', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var Z = String.fromCharCode(0x200c);
   function zw(s) { return String(s).split('~').join(Z); }
   function $(id) { return document.getElementById(id); }
@@ -282,4 +283,82 @@
   Promise.all([opt(DB + 'quest-index.json'), opt(I18N + 'quest-fa-titles.json'), opt(DB + 'zones-meta.json')]).then(function (r) {
     initQuests(r[0], r[1], r[2]);
   });
+
+  /* ---------- 4. classes ----------
+     A row of the 9 classes at the top of the hub. A tap opens a small strip under the row with the way into that
+     class's talent tree (forever-talents.html?class=<slug>) and its spellbook (spellbook.html#<slug>); a second tap,
+     Esc or a tap outside closes it. Names answer the namesClass switch of the translation style (WFTR) and the one
+     class-name table (WFCLS) when the page has it. Colours and counts come from data/forever/db/classes.json; the
+     built-in list keeps the row alive if that fetch fails. */
+  var CLS0 = [['warrior', 'Warrior', '\u062c\u0646\u06af\u0627\u0648\u0631', '#C69B6D'], ['paladin', 'Paladin', '\u067e\u0627\u0644\u0627\u062f\u06cc\u0646', '#F48CBA'],
+    ['hunter', 'Hunter', '\u0634\u06a9\u0627\u0631\u0686\u06cc', '#AAD372'], ['rogue', 'Rogue', '\u0631\u0627\u0647\u0632\u0646', '#FFF468'], ['priest', 'Priest', '\u0631\u0648\u062d\u0627\u0646\u06cc', '#FFFFFF'],
+    ['shaman', 'Shaman', '\u0634\u0645\u0646', '#0070DD'], ['mage', 'Mage', '\u062c\u0627\u062f\u0648\u06af\u0631', '#3FC7EB'], ['warlock', 'Warlock', '\u0627\u062d\u0636\u0627\u0631\u06a9\u0646\u0646\u062f\u0647', '#8788EE'],
+    ['druid', 'Druid', '\u062f\u0631\u0648\u0626\u06cc\u062f', '#FF7C0A']];
+  function initClasses(cj) {
+    var box = $('fh-cls'), list, open = '', row, pan, tries = 0;
+    if (!box) return;
+    list = (cj && cj.classes && cj.classes.length) ? cj.classes : CLS0.map(function (c) { return { slug: c[0], name: c[1], fa: c[2], color: c[3] }; });
+    function faOn() { return !(window.WFTR && WFTR.on) || WFTR.on('namesClass') !== false; }
+    function main(c) { return faOn() && c.fa ? (window.WFCLS && WFCLS.name ? WFCLS.name(c.name, c.fa) : c.fa) : c.name; }
+    function alt(c) { return faOn() && c.fa ? c.name : ''; }
+    function col(c) { return /^#[0-9a-f]{3,8}$/i.test(c.color || '') ? c.color : '#d8bf80'; }
+    function find(s) { var k; for (k = 0; k < list.length; k++) if (list[k].slug === s) return list[k]; return null; }
+    function btn(c) {
+      var on = open === c.slug;
+      return '<button type="button" class="fh-cb' + (on ? ' on' : '') + '" data-cls="' + esc(c.slug) + '" aria-expanded="' + on + '" aria-controls="fh-cpan" style="--cc:' + col(c) + '">'
+        + '<span class="fh-ci"><img src="icons/large/class_' + esc(c.slug) + '.jpg" alt="" width="46" height="46" loading="lazy"></span>'
+        + '<b>' + esc(main(c)) + '</b>' + (alt(c) ? '<small class="font-cinzel" dir="ltr">' + esc(alt(c)) + '</small>' : '') + '</button>';
+    }
+    function go(href, en, t, n, u) {
+      return '<a class="fh-cgo" href="' + href + '"><em class="fh-en" dir="ltr">' + en + '</em><b>' + zw(t) + '</b>'
+        + (n ? '<span class="fh-n">' + faNum(n) + ' ' + zw(u) + '</span>' : '') + '<span class="btn btn-stone btn-sm">' + zw('\u0648\u0631\u0648\u062f') + '</span></a>';
+    }
+    function strip(c) {
+      var s = encodeURIComponent(c.slug);
+      return '<div class="fh-cpi"><span class="fh-cpn"><b>' + esc(main(c)) + '</b>' + (alt(c) ? '<small class="font-cinzel" dir="ltr">' + esc(alt(c)) + '</small>' : '') + '</span>'
+        + go('forever-talents.html?class=' + s, 'Talents', '\u062f\u0631\u062e\u062a \u062a\u0644\u0646\u062a', c.talents, '\u062a\u0644\u0646\u062a')
+        + go('spellbook.html#' + s, 'Spellbook', '\u0627\u0633\u067e\u0644~\u0647\u0627', c.spells, '\u0627\u0633\u067e\u0644') + '</div>';
+    }
+    function caret() {
+      var b = open && row.querySelector('.fh-cb.on');
+      if (b) pan.style.setProperty('--x', (b.offsetLeft + b.offsetWidth / 2) + 'px');
+    }
+    function setOpen(sl) {
+      var c = sl ? find(sl) : null;
+      open = c ? sl : '';
+      Array.prototype.forEach.call(row.children, function (b) {
+        var on = b.getAttribute('data-cls') === open;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+      pan.classList.toggle('open', !!c);
+      pan.setAttribute('aria-hidden', c ? 'false' : 'true');
+      if (c) { pan.style.setProperty('--cc', col(c)); pan.innerHTML = '<div class="fh-cpw">' + strip(c) + '</div>'; caret(); }
+    }
+    function render() {
+      row.innerHTML = list.map(btn).join('');
+      setOpen(open);
+    }
+    box.innerHTML = '<div class="fh-crow" role="group" aria-label="' + zw('\u06a9\u0644\u0627\u0633~\u0647\u0627') + '"></div><div class="fh-cpan" id="fh-cpan" aria-hidden="true"></div>';
+    row = box.firstChild;
+    pan = box.lastChild;
+    row.addEventListener('click', function (ev) {
+      var b = ev.target && ev.target.closest ? ev.target.closest('.fh-cb') : null;
+      if (!b) return;
+      setOpen(open === b.getAttribute('data-cls') ? '' : b.getAttribute('data-cls'));
+    });
+    row.addEventListener('error', function (ev) {
+      var t = ev.target;
+      if (t && t.tagName === 'IMG' && t.parentNode) t.parentNode.classList.add('fh-cbad');
+    }, true);
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && open) setOpen(''); });
+    document.addEventListener('click', function (ev) { if (open && ev.target && !box.contains(ev.target)) setOpen(''); });
+    window.addEventListener('resize', caret);
+    render();
+    (function hook() {
+      if (window.WFTR && WFTR.onChange) { WFTR.onChange(render); render(); return; }
+      if (++tries < 30) setTimeout(hook, 200);
+    })();
+  }
+  opt(DB + 'classes.json').then(initClasses);
 })();
