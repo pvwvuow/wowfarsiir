@@ -1,0 +1,24 @@
+{
+ "source": "fc-cache (gap-hunt-v1)",
+ "url": "pvwvuow/wowfa data/forever/quests/foreverchanges-quests.json (format foreverchanges-quests/1)",
+ "upstream": {
+  "fdb_cache": "foreverdb-addon cache (https://foreverdb.net, GPL-3.0 + credit 'Data from ForeverDB.net', build 1.60.1.70707)",
+  "fdb_guide": "foreverdb-addon guide (https://foreverdb.net, GPL-3.0 + credit)",
+  "fdb_classic": "foreverdb-addon classic-module capture (https://foreverdb.net, GPL-3.0 + credit)",
+  "fdb_xp": "foreverdb-addon xp captures (https://foreverdb.net, GPL-3.0 + credit)",
+  "questie": "questie-forever (https://github.com/Questie/QuestieDB data/Forever, GPLv3)",
+  "att": "dondata ATT (https://github.com/WoW-Forever-Addons/dondata, MIT)",
+  "dondata": "dondata (https://github.com/WoW-Forever-Addons/dondata, GPL-3.0)"
+ },
+ "generator": "tools/build_fc_cache_part.py --wowfa /path/to/wowfa",
+ "method": "structured addon data only, no scraping; fill-plan computed against the live db shards: a field is emitted only when the db slot is empty; xp kept only when the capture says src=measured (curve-derived estimates and guide claims dropped); coordinates are Forever uiMap percent (quest.js contract); race masks decoded via the vanilla race-bit table; mask 255 (all races) not emitted; ids <= 0 dropped",
+ "none_marker_policy": "gap-hunt-v1: a real fc-cache value supersedes the v3 known-empty marker (cmangos template zero) for the same key; merge_quest_hunt.py releases the key from the record's none list when it fills it (Forever live capture beats the classic template per prompts/gap-hunt-v1.md)",
+ "date": "2026-11-02",
+ "records": 832,
+ "fill_plan": {
+  "startPoi": 812,
+  "endPoi": 345,
+  "prev": 1,
+  "note": "fill_plan printed by the generator at build time. The cache's exclusiveTo carries [0] (no-exclusive sentinel) on 3,232 quests and real ids on exactly the 262 quests the db already covers — the x>0 filter drops the sentinels, so chain/reward/exclusive fields add nothing new; the fills are the remaining quest POIs. none_marker_policy stays in merge_quest_hunt.py for future parts."
+ }
+}
