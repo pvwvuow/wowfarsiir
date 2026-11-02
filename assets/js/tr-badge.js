@@ -4,7 +4,7 @@
      diamond = does the section obey the translation-style (tr.js) switches? on (blue) / part (half amber) / off (coral ring)
                audit mode only: ?tr-audit=1 turns it on, ?tr-audit=0 off; stored in localStorage wf-tr-audit.
                Clicking the diamond opens the drawer and flashes the switch that owns (or should own) the section.
-   The legend + per-page counts live INSIDE the page hero, bottom-left (WFTRB.legend(list)).
+   The legend + per-page counts live INSIDE the page hero, pinned bottom-left (WFTRB.legend(list)); v2.1.
    Hover a dot for the detail (title attribute). Planned third state: source text changed (Watchtower class B). */
 (function () {
   'use strict';
@@ -64,18 +64,18 @@
         + item('trb-kd trb-s-on', SW_S.on, cnt(list, 'sw', 'on'))
         + item('trb-kd trb-s-part', SW_S.part, cnt(list, 'sw', 'part'))
         + item('trb-kd trb-s-off', SW_S.off, cnt(list, 'sw', 'off'))
-        + '<a class="trb-x" href="' + esc(url) + '">\u0628\u0633\u062a\u0646</a></div>';
+        + '<a class="trb-x" href="' + esc(url) + '">\u062d\u0627\u0644\u062a \u0639\u0627\u062f\u06cc</a></div>';
     }
     return h + '</div>';
   }
 
-  var G = '#5fd39a', A = '#e8c069', N = '#9aa3b5', BLU = '#7cc4ff', R = '#ff8a7a';
+  var G = '#5fd39a', A = '#e8c069', N = '#b4bccb', BLU = '#7cc4ff', R = '#ff8a7a';
   var CSS = ''
     + '.trb{display:inline-flex;align-items:center;gap:3px;margin-inline-start:8px;vertical-align:middle;line-height:1}'
     + '.trb-d{display:inline-block;width:9px;height:9px;border-radius:50%;flex:0 0 auto;cursor:help}'
     + '.trb-f-full{background:' + G + ';box-shadow:0 0 6px rgba(95,211,154,.5)}'
     + '.trb-f-part{background:linear-gradient(90deg,' + A + ' 50%,transparent 50%);box-shadow:inset 0 0 0 1.5px ' + A + '}'
-    + '.trb-f-none{box-shadow:inset 0 0 0 1.5px ' + N + '}'
+    + '.trb-f-none{box-shadow:inset 0 0 0 1.5px ' + N + ';background:rgba(180,188,203,.12)}'
     + '.trb-k{display:inline-grid;place-items:center;width:16px;height:16px;padding:0;margin:0;border:0;background:none;cursor:pointer}'
     + '.trb-k::after,.trb-kd{content:"";display:inline-block;width:7px;height:7px;border-radius:1px;transform:rotate(45deg);flex:0 0 auto}'
     + '.trb-k.trb-s-on::after,.trb-kd.trb-s-on{background:' + BLU + ';box-shadow:0 0 6px rgba(124,196,255,.55)}'
@@ -83,8 +83,10 @@
     + '.trb-k.trb-s-off::after,.trb-kd.trb-s-off{box-shadow:inset 0 0 0 1.5px ' + R + '}'
     + '.trb-k:hover::after{filter:brightness(1.25)}.trb-k:focus-visible{outline:1px solid ' + BLU + ';outline-offset:1px;border-radius:3px}'
     + '.trb-leg{display:flex;flex-direction:column;align-items:flex-end;gap:4px;margin-top:12px;font-size:12px;line-height:1.6;color:#a9a392}'
-    + '.trb-lr{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:2px 12px}'
-    + '.trb-lt{color:#cfc8b4}'
+    + '.fex-hero:has(.trb-leg){position:relative}'
+    + '@media (min-width:760px){.trb-leg{position:absolute;inset-inline-end:22px;bottom:16px;margin:0;max-width:46%;z-index:2}}'
+    + '.trb-lr{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:2px 14px}'
+    + '.trb-lt{color:#cfc8b4;margin-inline-end:2px}'
     + '.trb-li{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}.trb-li .trb-d{cursor:default}'
     + '.trb-li b{font-weight:500;color:#8e8877}'
     + '.trb-x{color:#8e97ab;text-decoration:none;border-bottom:1px dotted currentColor}.trb-x:hover{color:#cfc8b4}';

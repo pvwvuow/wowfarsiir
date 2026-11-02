@@ -17,7 +17,7 @@
    and the «translation not ready» note keeps saying so. Nothing is invented. */
 (function () {
   'use strict';
-  var V = '20261102u', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261102v', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
@@ -199,6 +199,12 @@
      ('BBring me...', 'BI shall...'). Same safe rule as tools/fa_missing.py: strip one 'B' only when a real word follows. */
   var LEAD_B = /^B(?=[A-Z][a-z]|[AI](?![A-Za-z0-9_])|<|[$]|[{][{])/;
   function junk(x) { return typeof x !== 'string' || !x.trim() || x.trim() === 'NULL' || /^[Bb]$/.test(x.trim()); }
+  /* comparable English of a text block (objectives vs desc are often the same sentence) */
+  function enKey(v) {
+    return arr(v).filter(function (x) { return !junk(x); }).map(function (x) {
+      return String(x).replace(LEAD_B, '').replace(/\s+/g, ' ').trim();
+    }).join('\n');
+  }
   function fmt(t, isFa) {
     var s = esc(isFa ? t : String(t).replace(LEAD_B, ''));
     s = s.replace(/[{][{](?:npc|zn|it|sp):([^|{}]*)[|]([^|{}]*)[}][}]/g, function (m, en, fa) { return isFa ? fa : en; });
@@ -458,11 +464,13 @@
     /* texts */
     texts = '';
     if (arr(q.objectives).length || arr(f.obj).length) {
-      var objHtml = paras(q.objectives, f.obj), sumHtml = paras(q.desc, f.desc);
-      texts += sec(lbl('هدف', 'Objectives'), null, objHtml, txtB(q.objectives, f.obj));
-      /* the DB often stores the objectives text as `desc` too — never show شرح
-         when it is byte-identical to هدف (quest-merge.md, the three text blocks) */
-      if (sumHtml !== objHtml) texts += sec(lbl('شرح', 'Summary'), null, sumHtml, txtB(q.desc, f.desc));
+      /* the DB often stores the objectives sentence as `desc` too: then it is ONE block (هدف), and its
+         Persian may live in fa.obj OR fa.desc (owner: شرح showed the Persian of هدف next to the English هدف) */
+      var same = !!enKey(q.objectives) && enKey(q.objectives) === enKey(q.desc);
+      var objFa = arr(f.obj).length ? f.obj : (same ? f.desc : f.obj);
+      var objHtml = paras(q.objectives, objFa), sumHtml = paras(q.desc, f.desc);
+      texts += sec(lbl('هدف', 'Objectives'), null, objHtml, txtB(q.objectives, objFa));
+      if (!same && sumHtml !== objHtml) texts += sec(lbl('شرح', 'Summary'), null, sumHtml, txtB(q.desc, f.desc));
     } else {
       texts += sec(lbl('هدف', 'Objectives'), null, paras(q.desc, f.desc), txtB(q.desc, f.desc));
     }
