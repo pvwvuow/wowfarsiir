@@ -26,6 +26,16 @@
   function num(v) { return on('uiLabels') ? faNum(v) : String(v); }
   function lbl(fa, en) { return on('uiLabels') ? esc(fa) : '<span class="rt-en" dir="ltr">' + esc(en) + '</span>'; }
   function enSpan(t) { return '<span class="rt-en" dir="ltr">' + esc(t) + '</span>'; }
+  /* quest titles can quote a name: {{fam:EN|FA}}. Each marker follows ITS switch (like the text body); plain text for
+     document.title and search */
+  var MKSW = { npc: 'namesNpc', zn: 'namesZone', it: 'namesItem', sp: 'namesSpell', ob: 'namesObj', qs: 'namesQuest', cls: 'namesClass', tm: 'terms' };
+  var TMK = /\{\{(npc|zn|it|sp|ob|qs|cls|tm):([^|{}]*)\|([^|{}]*)\}\}/g;
+  function tt(t) {
+    return esc(t).replace(TMK, function (m, mk, en, fa) {
+      return on(MKSW[mk]) ? fa : '<span class="rt-en" dir="ltr">' + en + '</span>';
+    });
+  }
+  function tplain(t) { return String(t == null ? '' : t).replace(TMK, '$3'); }
   function nz(s) {
     var o = '', i, c;
     s = String(s == null ? '' : s);
@@ -118,7 +128,7 @@
       if (S.tr === 'en' && a[4]) return;
       if (q) {
         if (isId) { if (String(a[0]).indexOf(q) !== 0) return; }
-        else if (fa) { t = FT[a[0]]; if (!t || nz(t).indexOf(q) < 0) return; }
+        else if (fa) { t = FT[a[0]]; if (!t || nz(tplain(t)).indexOf(q) < 0) return; }
         else if (a[1].toLowerCase().indexOf(q) < 0) return;
       }
       out.push(a);
@@ -131,7 +141,7 @@
     var fa = a[4] && on('namesQuest');
     return '<a class="ql-row" href="quest.html?id=' + esc(a[0]) + '"><i class="ql-d' + (a[4] ? ' on' : '') + '" aria-hidden="true"></i>'
       + '<span class="ql-lv">' + (a[3] ? num(a[3]) : '–') + '</span>'
-      + '<span class="ql-t">' + (fa ? '<b>' + esc(FT[a[0]]) + '</b><small class="rt-en" dir="ltr">' + esc(a[1]) + '</small>'
+      + '<span class="ql-t">' + (fa ? '<b>' + tt(FT[a[0]]) + '</b><small class="rt-en" dir="ltr">' + esc(a[1]) + '</small>'
         : '<b class="rt-en" dir="ltr">' + esc(a[1]) + '</b>')
       + (a[6] ? '<span class="fex-newq">' + lbl('جدید', 'New') + '</span>' : '') + '</span>'
       + '<span class="ql-z">' + (a[2] ? zoneHtml(a[2]) : '') + '</span></a>';

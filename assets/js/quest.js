@@ -43,6 +43,15 @@
   function num(v) { return on('uiLabels') ? faNum(v) : String(v); }
   function lbl(fa, en) { return on('uiLabels') ? esc(fa) : '<span class="rt-en" dir="ltr">' + esc(en) + '</span>'; }
   function enSpan(t) { return '<span class="rt-en" dir="ltr">' + esc(t) + '</span>'; }
+  /* quest titles can quote a name: {{fam:EN|FA}}. Each marker follows ITS switch (like the text body); plain text for
+     document.title and search */
+  var TMK = /\{\{(npc|zn|it|sp|ob|qs|cls|tm):([^|{}]*)\|([^|{}]*)\}\}/g;
+  function tt(t) {
+    return esc(t).replace(TMK, function (m, mk, en, fa) {
+      return on(MKSW[mk]) ? fa : '<span class="rt-en" dir="ltr">' + en + '</span>';
+    });
+  }
+  function tplain(t) { return String(t == null ? '' : t).replace(TMK, '$3'); }
   function slug(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function cap(s) { return String(s || '').replace(/-/g, ' ').replace(/(^| )[a-z]/g, function (c) { return c.toUpperCase(); }); }
   var QC = window.WFQCAT || {
@@ -297,7 +306,7 @@
   function qLink(id) {
     var e = IDX && IDX.quests && IDX.quests[id], nm = e && e[0] ? e[0] : '#' + id, t = ftitle(id, nm);
     return '<a class="fex-npc" href="quest.html?id=' + esc(id) + '"><i class="q-bang" aria-hidden="true">!</i>'
-      + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</span>'
+      + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + (t.fa ? tt(t.t) : esc(t.t)) + '</span>'
       + (e && e[2] ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + num(e[2]) + '</span>' : '') + '</a>';
   }
   /* the global quick bar (tr-prof.js): English · فارسی · saved styles */
@@ -475,11 +484,11 @@
     var hero, A = '', B = '', texts, ch = '', pre, hb;
 
     BL = [];
-    document.title = title + ' — ' + (on('uiLabels') ? 'کوئست' : 'Quest') + ' — wowfarsi';
+    document.title = tplain(title) + ' — ' + (on('uiLabels') ? 'کوئست' : 'Quest') + ' — wowfarsi';
     hb = bd(titleB(!!faT));
     /* the title dot sits inside the h1; the legend is filled into <!--trb-leg--> once every section is known */
     hero = '<header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>QUEST' + (q.repeatable ? ' · REPEATABLE' : '') + '<i></i></p>'
-      + '<h1' + (fa ? '>' : ' class="rt-en" dir="ltr">') + esc(title) + hb + '</h1>'
+      + '<h1' + (fa ? '>' : ' class="rt-en" dir="ltr">') + (fa ? tt(title) : esc(title)) + hb + '</h1>'
       + (fa && q.name ? '<p class="fx-ensub rt-en" dir="ltr">' + esc(q.name) + '</p>' : '')
       + '<div class="fex-hchips">'
       + (q.questLevel ? chip(lbl('سطح کوئست', 'Quest level'), num(q.questLevel)) : '')
@@ -544,7 +553,7 @@
     B += actorBlock(lbl('شروع از', 'Started by'), q.startedBy, 's', q.startPoi);
     B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy, 'e', q.endPoi);
 
-    root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="quest.html">' + lbl('پایگاه کوئست', 'Quest database') + '</a><i></i><span>' + esc(title) + '</span></nav>'
+    root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="quest.html">' + lbl('پایگاه کوئست', 'Quest database') + '</a><i></i><span>' + (fa ? tt(title) : esc(title)) + '</span></nav>'
       + '<div class="fex">' + hero.replace('<!--trb-leg-->', TB && TB.legend ? TB.legend(BL) : '') + styleBar() + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
       + '<div class="rt-tools"><a class="btn btn-stone btn-sm" href="quest.html">' + lbl('همهٔ کوئست‌ها', 'All quests') + '</a>'
       + '<a class="btn btn-stone btn-sm" href="https://www.wowhead.com/classic/quest=' + esc(q.id) + '" target="_blank" rel="noopener">Wowhead</a></div></div>';
