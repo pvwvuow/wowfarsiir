@@ -21,7 +21,7 @@
    zones namesZone, labels uiLabels. The quick bar English / فارسی / saved styles is tr-prof.js (WFTRP.bar). */
 (function () {
   'use strict';
-  var V = '20261102x', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261103a', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
@@ -275,9 +275,10 @@
     return '<a class="fex-npc q' + q + '" href="item.html?ver=forever&amp;id=' + esc(id) + '">' + icon(it && it[1])
       + nmCell(it && it[0] ? itemFa(it[0]) : '', nm, 'npc-qn') + (extra || '') + '</a>';
   }
+  /* objects have no page on the site: a plain row, no Wowhead link */
   function extRow(href, nm, fa) {
-    return '<a class="fex-npc" href="' + esc(href) + '" target="_blank" rel="noopener"><i class="fex-med fex-objd" aria-hidden="true"></i>'
-      + nmCell(fa, nm) + '</a>';
+    return '<div class="fex-npc"><i class="fex-med fex-objd" aria-hidden="true"></i>'
+      + nmCell(fa, nm) + '</div>';
   }
   function npcLink(id, name) {
     var fa = npcFa(name);
@@ -295,7 +296,7 @@
   }
   function qLink(id) {
     var e = IDX && IDX.quests && IDX.quests[id], nm = e && e[0] ? e[0] : '#' + id, t = ftitle(id, nm);
-    return '<a class="fex-npc" href="quest.html?id=' + esc(id) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>'
+    return '<a class="fex-npc" href="quest.html?id=' + esc(id) + '"><i class="q-bang" aria-hidden="true">!</i>'
       + '<span class="fex-npc-nm' + (t.fa ? '' : ' rt-en') + '"' + (t.fa ? '' : ' dir="ltr"') + '>' + esc(t.t) + '</span>'
       + (e && e[2] ? '<span class="fex-lv">' + lbl('سطح', 'Lv') + ' ' + num(e[2]) + '</span>' : '') + '</a>';
   }
@@ -434,7 +435,10 @@
       hasAny = true;
     }
     ch = arr(q.rewChoice);
-    it = arr(q.rewItems);
+    /* the source repeats choice items inside rewItems: show them only under "choose one" */
+    it = arr(q.rewItems).filter(function (x) {
+      return !ch.some(function (c) { return c[0] === x[0]; });
+    });
     if (it.length) {
       h += '<p class="q-sub">' + (ch.length ? lbl('پاداش قطعی', 'You will receive') : lbl('آیتم‌های پاداش (قطعی یا انتخابی؛ منبع جدایشان نمی‌کند)', 'Reward items (fixed or choice; the source does not separate them)')) + '</p>' + it.map(function (x) { return itemRow(x[0], S.items[x[0]], x[1] > 1 ? '<span class="fex-ch">×' + num(x[1]) + '</span>' : ''); }).join('');
       hasAny = true;
