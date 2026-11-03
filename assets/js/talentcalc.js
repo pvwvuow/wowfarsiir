@@ -28,6 +28,12 @@
 
   var ZAM = "https://wow.zamimg.com/images/wow/icons/large/";
   var ST_FA = { same: "همان کلاسیک", changed: "تغییرکرده", new: "جدید در Forever", earlier: "زودتر از کلاسیک", was_talent: "قبلاً تلنت بود", talent: "همراه تلنت", moved: "جابه‌جاشده" };
+  /* unconfirmed server-hotfix overlay: nodes whose numbers the 3 Nov realm hotfix changed
+     carry node.hf; the badge vanishes by itself once overlay_sync confirms the numbers */
+  var HF_BADGE = "\u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u06f3 \u0646\u0648\u0627\u0645\u0628\u0631 \u00b7 \u062a\u0627\u06cc\u06cc\u062f\u0646\u0634\u062f\u0647";
+  var HF_TITLE = "\u0645\u0646\u0628\u0639: \u0641\u0646\u200c\u0633\u0627\u06cc\u062a \u2014 \u0628\u0644\u06cc\u0632\u0627\u0631\u062f \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u0645\u0646\u062a\u0634\u0631 \u0646\u06a9\u0631\u062f\u0647 \u0627\u0633\u062a";
+  var HF_LINE = "\u0627\u06cc\u0646 \u0627\u0639\u062f\u0627\u062f \u0628\u0627 \u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u0633\u0631\u0648\u0631 \u062f\u0631 \u06f3 \u0646\u0648\u0627\u0645\u0628\u0631 \u0639\u0648\u0636 \u0634\u062f\u0647\u200c\u0627\u0646\u062f \u2014 \u0627\u0632 \u06cc\u06a9 \u0641\u0646\u200c\u0633\u0627\u06cc\u062a\u061b \u0628\u0644\u06cc\u0632\u0627\u0631\u062f \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u0631\u0633\u0645\u06cc \u0645\u0646\u062a\u0634\u0631 \u0646\u06a9\u0631\u062f\u0647 \u0627\u0633\u062a.";
+  function hfOn(x) { return !!(x && x.hf && x.hf.status === "unconfirmed"); }
   var PIP = { new: "#8fd4a4", moved: "#c9a2e8", was_talent: "#c9a2e8" }; /* "changed" lives in the tooltip only (most nodes are) */
   var SAVE_KEY = "wf-forever-builds";
   var MAXPTS = 51;
@@ -528,8 +534,10 @@
       '<span class="fs-chip ' + esc(x.st || "same") + '" data-tk="uiLabels">' + esc(ui ? (ST_FA[x.st] || x.st || "") : (ST_EN[x.st] || x.st || "")) + "</span>" +
       '<span class="ttip-badge b-rank" data-tk="uiLabels">' + (ui ? "\u0631\u0646\u06a9 " + faNum(have) + "/" + faNum(max) : "Rank " + have + "/" + max) + "</span>" +
       (isActive(x) ? '<span class="ttip-badge" data-tk="uiLabels">' + lb("\u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0641\u0639\u0627\u0644", "Active ability") + "</span>" : "") +
+      (hfOn(x) ? '<span class="ttip-badge hf-un" title="' + HF_TITLE + '" style="color:#3a2703;background:linear-gradient(135deg,#f8dd8f,#d9a53a);border-color:#b8860b;font-weight:800" data-tk="uiLabels">' + HF_BADGE + "</span>" : "") +
       '<span class="ttip-badge" data-tk="uiLabels">' + (ui ? "\u0631\u062f\u06cc\u0641 " + faNum(nd.ti + 1) : "Row " + (nd.ti + 1)) + "</span></div>" +
       reqLine + desc +
+      (hfOn(x) ? '<p class="ttip-hf" dir="' + dirU + '" style="margin:.35rem 0 0;font-size:.78rem;color:#8a6d1a" data-tk="uiLabels">\u26a0 ' + HF_LINE + "</p>" : "") +
       (pinnedKey ? '<div class="ttip-act" dir="ltr">' +
         '<button type="button" class="ttip-btn" data-act="minus">\u2212</button>' +
         '<button type="button" class="ttip-btn ttip-plus" data-act="plus">' + lb("+\u06f1", "+1") + '</button>' +

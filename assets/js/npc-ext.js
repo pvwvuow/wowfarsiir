@@ -8,7 +8,16 @@
   var root = document.getElementById('npc-root');
   if (!root) return;
   var WF = window.WFTR || null;
-  var SPV = '20261115c', QV = '20261103d';
+  var SPV = '20261103a', QV = '20261103d';
+  /* unconfirmed server-hotfix overlay (spells.json rows carry row.hf): gold badge on the
+     trainer-spell row + a line in the hover tooltip; disappears by itself on retirement */
+  var HF_BADGE = '\u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u06f3 \u0646\u0648\u0627\u0645\u0628\u0631 \u00b7 \u062a\u0627\u06cc\u06cc\u062f\u0646\u0634\u062f\u0647';
+  var HF_TITLE = '\u0645\u0646\u0628\u0639: \u0641\u0646\u200c\u0633\u0627\u06cc\u062a \u2014 \u0628\u0644\u06cc\u0632\u0627\u0631\u062f \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u0645\u0646\u062a\u0634\u0631 \u0646\u06a9\u0631\u062f\u0647 \u0627\u0633\u062a';
+  var HF_LINE = '\u0627\u06cc\u0646 \u0627\u0639\u062f\u0627\u062f \u0628\u0627 \u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u0633\u0631\u0648\u0631 \u062f\u0631 \u06f3 \u0646\u0648\u0627\u0645\u0628\u0631 \u0639\u0648\u0636 \u0634\u062f\u0647\u200c\u0627\u0646\u062f \u2014 \u0627\u0632 \u06cc\u06a9 \u0641\u0646\u200c\u0633\u0627\u06cc\u062a\u061b \u0628\u0644\u06cc\u0632\u0627\u0631\u062f \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u0631\u0633\u0645\u06cc \u0645\u0646\u062a\u0634\u0631 \u0646\u06a9\u0631\u062f\u0647 \u0627\u0633\u062a.';
+  function hfOn(s) { return !!(s && s.hf && s.hf.status === 'unconfirmed'); }
+  function hfBadge() {
+    return '<span class="hf-un" title="' + HF_TITLE + '" style="direction:rtl;display:inline-block;margin-inline-start:.35rem;padding:0 7px;border-radius:999px;font-size:.62rem;font-weight:800;line-height:1.7;vertical-align:middle;color:#3a2703;background:linear-gradient(135deg,#f8dd8f,#d9a53a);border:1px solid #b8860b;white-space:nowrap">' + HF_BADGE + '</span>';
+  }
   var SPD = null, FAT = null, loading = null, timer = 0, tip = null, cur = null;
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var CSS = 'html body .npc-sp .npc-ic{width:30px;height:30px;border-radius:6px;border:1px solid rgba(240,199,94,.35);flex:0 0 auto}'
@@ -82,7 +91,8 @@
       lv = d.s.lv != null ? '<span class="fex-lv">' + (on('uiLabels') ? '\u0633\u0637\u062d ' + faNum(d.s.lv) : 'Lv ' + d.s.lv) + '</span>' : '';
       h = '<img class="npc-ic" src="icons/large/' + esc(d.s.icon) + '.jpg" data-ic="' + esc(d.s.icon) + '" alt="" loading="lazy">'
         + '<span class="fex-npc-nm' + (on('namesSpell') && d.s.fn ? '' : ' rt-en') + '"' + (on('namesSpell') && d.s.fn ? '' : ' dir="ltr"') + '>' + esc(p.main) + '</span>'
-        + (p.sub ? '<span class="fex-sub rt-en" dir="ltr">' + esc(p.sub) + '</span>' : '') + lv;
+        + (p.sub ? '<span class="fex-sub rt-en" dir="ltr">' + esc(p.sub) + '</span>' : '') + lv
+        + (hfOn(d.s) ? hfBadge() : '');
       a.setAttribute('href', 'spellbook.html#' + d.cls);
       a.classList.add('npc-sp');
       a.setAttribute('data-sp', name);
@@ -131,6 +141,7 @@
     } else if (s.tip) {
       h += '<p class="tb rt-en" dir="ltr">' + esc(s.tip) + '</p>';
     }
+    if (hfOn(s)) h += '<p class="tb" style="margin:.3rem 0 0;font-size:.74rem;color:#f0cf7a">\u26a0 ' + HF_LINE + '</p>';
     return h;
   }
   function place(x, y) {

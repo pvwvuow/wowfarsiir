@@ -5,7 +5,18 @@
    ========================================================= */
 (function () {
   "use strict";
-  var DATA_V = "20261115c"; /* spells.json fetch bust — bump when the data changes */
+  var DATA_V = "20261103a"; /* spells.json fetch bust — bump when the data changes */
+  /* unconfirmed server-hotfix overlay (data/forever/db/hotfix-overlay.json, applied to
+     spells.json rows as row.hf): badge + hover line; the badge disappears by itself when
+     overlay_sync retires the item (a client build confirms the numbers). */
+  var HF_BADGE = "\u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u06f3 \u0646\u0648\u0627\u0645\u0628\u0631 \u00b7 \u062a\u0627\u06cc\u06cc\u062f\u0646\u0634\u062f\u0647";
+  var HF_TITLE = "\u0645\u0646\u0628\u0639: \u0641\u0646\u200c\u0633\u0627\u06cc\u062a \u2014 \u0628\u0644\u06cc\u0632\u0627\u0631\u062f \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u0645\u0646\u062a\u0634\u0631 \u0646\u06a9\u0631\u062f\u0647 \u0627\u0633\u062a";
+  var HF_LINE = "\u0627\u06cc\u0646 \u0627\u0639\u062f\u0627\u062f \u0628\u0627 \u0647\u0627\u062a\u200c\u0641\u06cc\u06a9\u0633 \u0633\u0631\u0648\u0631 \u062f\u0631 \u06f3 \u0646\u0648\u0627\u0645\u0628\u0631 \u0639\u0648\u0636 \u0634\u062f\u0647\u200c\u0627\u0646\u062f \u2014 \u0627\u0632 \u06cc\u06a9 \u0641\u0646\u200c\u0633\u0627\u06cc\u062a\u061b \u0628\u0644\u06cc\u0632\u0627\u0631\u062f \u06cc\u0627\u062f\u062f\u0627\u0634\u062a \u0631\u0633\u0645\u06cc \u0645\u0646\u062a\u0634\u0631 \u0646\u06a9\u0631\u062f\u0647 \u0627\u0633\u062a.";
+  function hfOn(s) { return !!(s && s.hf && s.hf.status === "unconfirmed"); }
+  function hfBadge(s) {
+    if (!hfOn(s)) return "";
+    return '<span class="hf-un" title="' + HF_TITLE + '" style="direction:rtl;display:inline-block;margin-inline-start:.4rem;padding:1px 8px;border-radius:999px;font-size:.66rem;font-weight:800;line-height:1.7;vertical-align:middle;color:#3a2703;background:linear-gradient(135deg,#f8dd8f,#d9a53a);border:1px solid #b8860b;white-space:nowrap">' + HF_BADGE + "</span>";
+  }
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var FA = "۰۱۲۳۴۵۶۷۸۹";
@@ -200,7 +211,7 @@
     var st = ST[s.s] || ST.same;
     return '<div class="sb-row' + (s.s === "removed" ? " st-removed-row" : "") + '" data-n="' + esc(s.n) + '" tabindex="0" role="button">' +
       '<img class="sb-ico" loading="lazy" src="' + iconSrc(s.icon) + '" onerror="this.src=\'icons/large/inv_misc_questionmark.jpg\';this.onerror=null" alt="">' +
-      '<div class="sb-main"><div class="sb-name">' + spellNameHTML(s) + "</div>" +
+      '<div class="sb-main"><div class="sb-name">' + spellNameHTML(s) + hfBadge(s) + "</div>" +
       '<div class="sb-meta"><span class="sb-tag">' + esc(tabFA(s.t)) + "</span>" +
       (s.r ? '<span class="sb-tag">' + fa(s.r) + " رده</span>" : "") +
       (s.lv != null ? '<span class="sb-lv">سطح ' + fa(s.lv) + "</span>" : "") +
@@ -246,7 +257,7 @@
     DETAIL = name;
     var st = ST[s.s] || ST.same;
     var h = '<div class="sb-dtitle"><img src="' + iconSrc(s.icon) + '" onerror="this.src=\'icons/large/inv_misc_questionmark.jpg\';this.onerror=null" alt="">' +
-      "<div><h3>" + spellNameHTML(s) + "</h3></div></div>" +
+      "<div><h3>" + spellNameHTML(s) + hfBadge(s) + "</h3></div></div>" +
       '<div class="sb-dmeta"><span class="sb-tag">' + esc(tabFA(s.t)) + "</span>" +
       (s.r ? '<span class="sb-tag">' + fa(s.r) + " رده</span>" : "") +
       (s.lv != null ? '<span class="sb-lv">آموزش از سطح ' + fa(s.lv) + "</span>" : '<span class="sb-lv">با نقطهٔ تلنت</span>') +
@@ -259,6 +270,7 @@
       h += '<div class="sb-note">توضیحی در داده‌های کلاینت ثبت نشده است.</div>';
     }
     if (s.chg) h += '<div class="sb-block"><div class="sb-chg">✦ تغییر نسبت به کلاسیک: ' + chgHTML(s) + "</div></div>";
+    if (hfOn(s)) h += '<div class="sb-block"><div class="sb-hf" style="font-size:.82rem;line-height:1.9;color:#8a6d1a;background:#fdf6e3;border:1px solid #ecd9a0;border-radius:8px;padding:6px 10px">⚠ ' + HF_LINE + "</div></div>";
     h += '<div class="sb-src">منبع: کلاینت بتای فورور ۱٫۶۰٫۱٫۷۰۶۸۵ در برابر Classic Era ۱٫۱۵٫۹ · مقادیر پایهٔ کلاینت، پیش از تلنت و تجهیز</div>';
     $("sb-detail").innerHTML = h;
     $("sb-drawer").hidden = false;
