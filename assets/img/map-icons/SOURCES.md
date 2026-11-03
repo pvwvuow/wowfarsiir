@@ -60,3 +60,5 @@ NEAREST for the pixel-art atlases. No icon is drawn.
 | spirit-healer.png (+@2x) | 03-quest-markers/gossip-service/HealerGossipIcon.PNG | 16 |
 | guild-master.png (+@2x) | 03-quest-markers/gossip-service/PetitionGossipIcon.PNG | 16 |
 | tabard.png (+@2x) | 03-quest-markers/gossip-service/TabardGossipIcon.PNG | 16 |
+| quest-turnin.png (+@2x) | 03-quest-markers/gossip-service/ActiveQuestIcon.PNG | 16 |
+| npc-pin.png (+@2x) | 07-player-group/Minimap-Waypoint-MapPin-Untracked.PNG | 32 |

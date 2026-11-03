@@ -21,14 +21,16 @@
    zones namesZone, labels uiLabels. The quick bar English / فارسی / saved styles is tr-prof.js (WFTRP.bar). */
 (function () {
   'use strict';
-  var V = '20261103a', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
+  var V = '20261103d', DB = 'data/forever/db/', I18N = 'data/forever/i18n/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('quest-root');
   if (!root) return;
   var WF = window.WFTR || null;
   var cache = {};
   var META = {}, ZBYNAME = {}, ZBYKEY = {}, DUNG = {}, ENT = {};
-  var IDX = null, FAT = null, S = null;
+  var IDX = null, FAT = null, UIM = null, S = null;
+  /* game map icons (map-poi pack): "!" pickup, "?" turn-in, used on the quest map pins */
+  var MICON = { s: 'assets/img/map-icons/questgiver.png', e: 'assets/img/map-icons/quest-turnin.png' };
   /* marker family inside the Persian quest text -> the switch that owns it (tr.js MK) */
   var MKSW = { npc: 'namesNpc', zn: 'namesZone', it: 'namesItem', sp: 'namesSpell', ob: 'namesObj', qs: 'namesQuest', cls: 'namesClass', tm: 'terms' };
 
@@ -88,6 +90,7 @@
   }
   function npcFa(en) { return on('namesNpc') ? (trEnt('npc', en) || trEnt('creature', en)) : ''; }
   function itemFa(en) { return en && on('namesItem') ? (trEnt('item_ref', en) || trEnt('item', en)) : ''; }
+  function itemFaOf(it, en) { return on('namesItem') ? ((it && it[3]) || itemFa(en)) : ''; }
   function objFa(en) { return en && on('namesObj') ? (trEnt('object', en) || trEnt('gameobject', en)) : ''; }
   function clsFa(en) { return on('namesClass') && WF && WF.CLASSES && typeof WF.CLASSES[en] === 'string' ? WF.CLASSES[en] : ''; }
   function zoneOf(z) {
@@ -184,7 +187,7 @@
   function itemParts(list) {
     return list.map(function (x) {
       var it = S.items[x], nm = it && it[0] ? it[0] : '';
-      return { has: !!nm && itemHas(nm), k: 'namesItem', ok: true };
+      return { has: (!!nm && itemHas(nm)) || !!(it && it[3]), k: 'namesItem', ok: true };
     });
   }
   function actorB(a) {
@@ -282,7 +285,7 @@
   function itemRow(id, it, extra) {
     var q = it && it[2] != null ? it[2] : 1, nm = it && it[0] ? it[0] : '#' + id;
     return '<a class="fex-npc q' + q + '" href="item.html?ver=forever&amp;id=' + esc(id) + '">' + icon(it && it[1])
-      + nmCell(it && it[0] ? itemFa(it[0]) : '', nm, 'npc-qn') + (extra || '') + '</a>';
+      + nmCell(it && it[0] ? itemFaOf(it, it[0]) : '', nm, 'npc-qn') + (extra || '') + '</a>';
   }
   /* objects have no page on the site: a plain row, no Wowhead link */
   function extRow(href, nm, fa) {
@@ -318,7 +321,7 @@
   /* ---------- data ---------- */
   function loadCommon() {
     return Promise.all([opt(DB + 'zones-meta.json'), opt(DB + 'dungeons.json'), opt(I18N + 'entities.json'),
-      opt(DB + 'quest-index.json'), opt(I18N + 'quest-fa-titles.json')])
+      opt(DB + 'quest-index.json'), opt(I18N + 'quest-fa-titles.json'), opt(DB + 'uimap-zones.json')])
       .then(function (r) {
         var zs = r[0] && r[0].zones;
         if (zs) (Array.isArray(zs) ? zs : Object.keys(zs).map(function (k) { return zs[k]; })).forEach(function (z) {
@@ -330,6 +333,7 @@
         ENT = (r[2] && r[2].types) || {};
         IDX = r[3] || null;
         FAT = r[4] || null;
+        UIM = (r[5] && r[5].map) || null;
       });
   }
   function loadItems(ids) {
@@ -362,25 +366,108 @@
     zs.sort(function (a, b) { return b.pts.length - a.pts.length; });
     return { zones: zs, dungeons: dg };
   }
-  function mapHtml(zs, idx, key) {
-    var z = zs[idx], meta = META[z.id], pts = z.pts, h, coords;
-    var zn = meta ? zoneOf(meta) : enSpan('Zone ' + z.id);
-    coords = pts.slice(0, 16).map(function (p) { return '<span class="fex-chip">' + num(p[0].toFixed(1)) + ' ، ' + num(p[1].toFixed(1)) + '</span>'; }).join('');
-    h = '<div class="fsrc-map npc-map" data-k="' + esc(key) + '" data-i="' + idx + '"><div class="fsrc-mimg">'
-      + '<img class="npc-mimg-img" src="data/forever/img/zones/' + z.id + '.jpg" alt="" loading="lazy">'
-      + pts.slice(0, 150).map(function (p) {
-        return '<i class="fsrc-pin" style="left:' + p[0] + '%;top:' + p[1] + '%" title="' + esc(p[0] + ' ، ' + p[1]) + '"></i>';
-      }).join('') + '</div>'
-      + '<div class="npc-nomap"><p>' + lbl('تصویر نقشهٔ این منطقه هنوز روی سایت نیست؛ مختصات (٪ از نقشه):', 'The map image for this zone is not on the site yet. Coordinates (% of map):') + '</p><div class="fex-hchips">' + coords + '</div></div>'
-      + '<div class="fsrc-mcap"><b>' + zn + '</b><span>' + num(pts.length) + ' ' + lbl('نقطه', 'spawns') + '</span></div>';
-    if (zs.length > 1) {
-      h += '<div class="fsrc-mchips">' + zs.map(function (q, i) {
-        var m = META[q.id];
-        return '<button type="button" class="fsrc-mchip' + (i === idx ? ' on' : '') + '" data-i="' + i + '"' + (m && on('namesZone') && m.fa ? '' : ' dir="ltr"') + '>'
-          + (m ? (on('namesZone') && m.fa ? esc(m.fa) : esc(m.name)) : 'Zone ' + q.id) + '</button>';
+  /* ---- ONE map section (map v2): start (!) and end (?) positions, grouped by zone image ----
+     Pins are the game's own icons: questgiver.png (AvailableQuest "!") and quest-turnin.png
+     (ActiveQuest "?"). poi positions resolve their Forever uiMap id through uimap-zones.json
+     (DB2 UiMapAssignment + empirical npc votes); a poi with no mapped zone image stays a
+     coordinate chip labelled with the right icon. Same NPC at the same point for start and
+     end renders only the "?" pin. */
+  function npcNameOf(id) {
+    var a = arr(S.q.startedBy && S.q.startedBy.npcs).concat(arr(S.q.finishedBy && S.q.finishedBy.npcs)), i;
+    for (i = 0; i < a.length; i++) if (a[i] && a[i].id === id) return a[i].name;
+    return null;
+  }
+  function mapPins() {
+    var byZone = {}, order = [];
+    function add(role, zone, x, y, name, nid) {
+      if (!zone || !META[zone] || typeof x !== 'number' || typeof y !== 'number') return;
+      if (!byZone[zone]) { byZone[zone] = []; order.push(zone); }
+      byZone[zone].push({ role: role, x: x, y: y, name: name, nid: nid });
+    }
+    ['s', 'e'].forEach(function (key) {
+      var sp = S.sp[key], sx;
+      if (sp) {
+        sx = spawnSplit(sp.sp);
+        sx.zones.forEach(function (z) {
+          z.pts.slice(0, 150).forEach(function (pt) { add(key, z.id, pt[0], pt[1], npcFa(sp.name) || sp.name, sp.id); });
+        });
+      }
+    });
+    [['startPoi', 's'], ['endPoi', 'e']].forEach(function (kv) {
+      arr(S.q[kv[0]]).forEach(function (p) {
+        if (!p || p.map == null) return;
+        var mv = UIM && UIM[String(p.map)];
+        if (mv && mv.zone && META[mv.zone]) add(kv[1], mv.zone, p.x, p.y, npcNameOf(p.npcId), p.npcId);
+      });
+    });
+    order.forEach(function (z) {
+      var pts = byZone[z], eAt = {};
+      pts.forEach(function (p) { if (p.role === 'e') eAt[p.x.toFixed(1) + ':' + p.y.toFixed(1)] = p.nid; });
+      byZone[z] = pts.filter(function (p) {
+        return !(p.role === 's' && eAt[p.x.toFixed(1) + ':' + p.y.toFixed(1)] === p.nid);
+      });
+    });
+    order = order.filter(function (z) { return byZone[z].length; });
+    return { order: order, byZone: byZone };
+  }
+  function mapZoneHtml(i) {
+    var z = S.mpin.order[i], pts = S.mpin.byZone[z], meta = META[z], h, zn;
+    zn = meta ? zoneOf(meta) : enSpan('Zone ' + z);
+    h = '<div class="fsrc-map npc-map"><div class="fsrc-mimg">'
+      + '<img class="npc-mimg-img" src="data/forever/img/zones/' + z + '.jpg" alt="" loading="lazy">'
+      + pts.map(function (p) {
+          return '<img class="fsrc-gpin fsrc-gpin-' + p.role + '" src="' + MICON[p.role] + '" style="left:' + p.x + '%;top:' + p.y + '%"'
+            + ' title="' + esc((p.name || lbl('NPC', 'NPC')) + ' (' + p.x.toFixed(1) + '، ' + p.y.toFixed(1) + ')') + '" alt="">';
+        }).join('') + '</div>'
+      + '<div class="fsrc-mcap"><b>' + zn + '</b><span dir="ltr">' + num(pts.filter(function (p) { return p.role === 's'; }).length)
+      + ' ! · ' + num(pts.filter(function (p) { return p.role === 'e'; }).length) + ' ?</span></div>';
+    if (S.mpin.order.length > 1) {
+      h += '<div class="fsrc-mchips">' + S.mpin.order.map(function (q, i2) {
+        var m = META[q];
+        return '<button type="button" class="fsrc-mchip' + (i2 === i ? ' on' : '') + '" data-i="' + i2 + '"' + (m && on('namesZone') && m.fa ? '' : ' dir="ltr"') + '>'
+          + (m ? (on('namesZone') && m.fa ? esc(m.fa) : esc(m.name)) : 'Zone ' + q) + '</button>';
       }).join('') + '</div>';
     }
     return h + '</div>';
+  }
+  function poiChips() {
+    /* poi with no mapped zone image: coordinate chips, labelled with the right icon(s) */
+    var by = {}, ks, h = '';
+    [['startPoi', 's'], ['endPoi', 'e']].forEach(function (kv) {
+      arr(S.q[kv[0]]).forEach(function (p) {
+        if (!p || p.map == null || typeof p.x !== 'number' || typeof p.y !== 'number') return;
+        var mv = UIM && UIM[String(p.map)];
+        if (mv && mv.zone && META[mv.zone]) return;
+        (by[p.map] = by[p.map] || {})[kv[1]] = (by[p.map][kv[1]] || []).concat([p]);
+      });
+    });
+    ks = Object.keys(by);
+    ks.forEach(function (m) {
+      var ico = (by[m].s ? '<img class="q-lgico" src="' + MICON.s + '" alt="">' : '')
+        + (by[m].e ? '<img class="q-lgico" src="' + MICON.e + '" alt="">' : '');
+      h += '<p class="q-maplb">' + ico + lbl('مختصات (٪ از نقشهٔ', 'Coordinates (% of map')
+        + ' <span dir="ltr">' + esc(m) + '</span>' + lbl(' — شناسهٔ نقشهٔ Forever)', ' — Forever uiMap id)') + '</p>'
+        + '<div class="fex-hchips">' + by[m].s.concat(by[m].e || []).slice(0, 16).map(function (p) {
+            return '<span class="fex-chip">' + num(p.x.toFixed(1)) + ' ، ' + num(p.y.toFixed(1)) + '</span>';
+          }).join('') + '</div>';
+    });
+    return h;
+  }
+  function mapSection() {
+    var h, lb, dgn = {};
+    S.mpin = mapPins();
+    ['s', 'e'].forEach(function (k) {
+      var sp = S.sp[k];
+      if (sp) spawnSplit(sp.sp).dungeons.forEach(function (d) { dgn[d.slug] = 1; });
+    });
+    if (!S.mpin.order.length && !Object.keys(dgn).length) return poiChips();
+    lb = '<p class="q-maplb q-maplegend"><img class="q-lgico" src="' + MICON.s + '" alt=""> ' + lbl('شروع کوئست', 'Take the quest')
+      + ' · <img class="q-lgico" src="' + MICON.e + '" alt=""> ' + lbl('تحویل کوئست', 'Turn in') + '</p>';
+    h = lb;
+    if (S.mpin.order.length) h += mapZoneHtml(0) + poiChips();
+    else h += poiChips();
+    if (Object.keys(dgn).length) h += '<div class="npc-dg">' + dungeonRows(Object.keys(dgn).map(function (s) { return { slug: s, n: 0 }; })) + '</div>';
+    return sec(lbl('نقشه', 'Map'), null, h, null);
   }
   function dungeonRows(dg) {
     return dg.map(function (x) {
@@ -389,42 +476,18 @@
         + esc(d ? d.name : x.slug) + '</span><span class="fex-z">' + lbl(d && d.type === 'raid' ? 'ریید' : 'دانجن', 'Dungeon') + '</span></div>';
     }).join('');
   }
-  /* startPoi / endPoi: additive quest-level points; `map` is a Forever uiMap id — a DIFFERENT
-     id space than the site's zone images, so no image/zone name is guessed: coordinates per map id. */
-  function poiHtml(poi) {
-    var by = {}, ks, h = '';
-    arr(poi).forEach(function (p) {
-      if (!p || typeof p.x !== 'number' || typeof p.y !== 'number') return;
-      var m = p.map != null ? p.map : '?';
-      (by[m] = by[m] || []).push(p);
-    });
-    ks = Object.keys(by);
-    if (!ks.length) return '';
-    ks.forEach(function (m) {
-      h += '<p class="q-maplb">' + lbl('مختصات (٪ از نقشهٔ', 'Coordinates (% of map')
-        + ' <span dir="ltr">' + esc(m) + '</span>' + lbl(' — شناسهٔ نقشهٔ Forever)', ' — Forever uiMap id)') + '</p>'
-        + '<div class="fex-hchips">' + by[m].slice(0, 16).map(function (p) {
-            return '<span class="fex-chip">' + num(p.x.toFixed(1)) + ' ، ' + num(p.y.toFixed(1)) + '</span>';
-          }).join('') + '</div>';
-    });
-    return h;
-  }
-  function actorBlock(role, a, key, poi) {
-    var rows = '', sp = S.sp[key], map = '', sx;
+  /* startPoi / endPoi are handled by the unified map section (mapSection / poiChips). */
+  function actorBlock(role, a) {
+    var rows = '';
     a = a || {};
     arr(a.npcs).forEach(function (n) { rows += npcLink(n.id, n.name); });
     arr(a.objects).forEach(function (o) { rows += extRow('https://www.wowhead.com/classic/object=' + o.id, o.name, objFa(o.name)); });
     arr(a.items).forEach(function (it) {
-      rows += '<a class="fex-npc" href="item.html?ver=forever&amp;id=' + esc(it.id) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>' + nmCell(itemFa(it.name), it.name) + '</a>';
+      var lit = S.items[it.id];
+      rows += '<a class="fex-npc" href="item.html?ver=forever&amp;id=' + esc(it.id) + '"><i class="fex-med fex-objd" aria-hidden="true"></i>' + nmCell(itemFaOf(lit, it.name), it.name) + '</a>';
     });
-    if (!rows && !arr(poi).length) return '';
-    if (sp) {
-      sx = spawnSplit(sp.sp);
-      if (sx.zones.length) map = '<p class="q-maplb">' + lbl('موقعیت', 'Location') + ': ' + esc(npcFa(sp.name) || sp.name) + '</p>' + mapHtml(sx.zones, 0, key);
-      else if (sx.dungeons.length) map = '<p class="q-maplb">' + lbl('موقعیت', 'Location') + ': ' + esc(npcFa(sp.name) || sp.name) + '</p><div class="npc-dg">' + dungeonRows(sx.dungeons) + '</div>';
-    }
-    if (!map) map = poiHtml(poi);
-    return sec(role, null, rows + map, actorB(a));
+    if (!rows) return '';
+    return sec(role, null, rows, actorB(a));
   }
 
   /* ---------- detail page ---------- */
@@ -550,8 +613,9 @@
       + frow(lbl('کلاس', 'Classes'), arr(q.reqClasses).length ? q.reqClasses.map(function (c) { var cf = clsFa(c); return cf ? esc(cf) : enSpan(c); }).join('، ') : '')
       + frow(lbl('شناسه', 'ID'), '<span dir="ltr">' + esc(q.id) + '</span>'), factsB(q, ck, side));
     B += panel(lbl('پاداش', 'Rewards'), rewardsHtml(q), rewardsB(q));
-    B += actorBlock(lbl('شروع از', 'Started by'), q.startedBy, 's', q.startPoi);
-    B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy, 'e', q.endPoi);
+    B += actorBlock(lbl('شروع از', 'Started by'), q.startedBy);
+    B += actorBlock(lbl('تحویل به', 'Turn in to'), q.finishedBy);
+    B += mapSection();
 
     root.innerHTML = '<nav class="rt-crumb"><a href="forever.html">Forever</a><i></i><a href="quest.html">' + lbl('پایگاه کوئست', 'Quest database') + '</a><i></i><span>' + (fa ? tt(title) : esc(title)) + '</span></nav>'
       + '<div class="fex">' + hero.replace('<!--trb-leg-->', TB && TB.legend ? TB.legend(BL) : '') + styleBar() + '<div class="fex-grid"><div class="fex-colA">' + A + '</div><div class="fex-colB">' + B + '</div></div>'
@@ -578,12 +642,12 @@
       ids = rw.slice();
       arr(q.rewItems).concat(arr(q.rewChoice)).forEach(function (x) { ids.push(x[0]); });
       arr(q.collectItems).forEach(function (c) { if (c && c.id != null) ids.push(c.id); });
+      arr((q.startedBy || {}).items).concat(arr((q.finishedBy || {}).items)).forEach(function (x) { if (x && x.id != null) ids.push(x.id); });
       return Promise.all([Promise.all(Object.keys(need).map(function (k) { return opt(DB + 'spawn-' + k + '.json'); })), loadItems(ids)]).then(function (r2) {
         var shards = {}, ks = Object.keys(need), s, e;
         ks.forEach(function (k, i) { shards[k] = r2[0][i]; });
         s = firstSpawn(q.startedBy, shards);
         e = firstSpawn(q.finishedBy, shards);
-        if (s && e && s.id === e.id) e = null;
         S = { id: id, q: q, fa: fa, rw: rw, items: r2[1], sp: { s: s, e: e } };
         paint();
       });
@@ -602,15 +666,13 @@
   }, true);
   /* the style bar's clicks are handled by tr-prof.js (delegated); only the map chips live here */
   root.addEventListener('click', function (ev) {
-    var b = ev.target && ev.target.closest ? ev.target.closest('button') : null, wrap, key, sp, i;
+    var b = ev.target && ev.target.closest ? ev.target.closest('button') : null, wrap, i;
     if (!b) return;
-    if (b.classList.contains('fsrc-mchip') && S) {
+    if (b.classList.contains('fsrc-mchip') && S && S.mpin) {
       wrap = b.closest('.npc-map');
       if (!wrap) return;
-      key = wrap.getAttribute('data-k');
-      sp = S.sp[key];
       i = +b.getAttribute('data-i');
-      if (sp) wrap.outerHTML = mapHtml(spawnSplit(sp.sp).zones, i, key);
+      if (S.mpin.order[i] != null) wrap.outerHTML = mapZoneHtml(i);
     }
   });
 

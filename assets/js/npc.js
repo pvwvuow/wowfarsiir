@@ -11,7 +11,7 @@
    without that image show the coordinates instead of a pin on a wrong map. */
 (function () {
   'use strict';
-  var V = '20261116b', DB = 'data/forever/db/';
+  var V = '20261116c', DB = 'data/forever/db/';
   var ZAM = 'https://wow.zamimg.com/images/wow/icons/large/';
   var root = document.getElementById('npc-root');
   if (!root) return;
@@ -176,7 +176,7 @@
     h = '<div class="fsrc-map npc-map" data-i="' + idx + '"><div class="fsrc-mimg">'
       + '<img class="npc-mimg-img" src="data/forever/img/zones/' + z.id + '.jpg" alt="" loading="lazy">'
       + pts.slice(0, 150).map(function (p) {
-        return '<i class="fsrc-pin" style="left:' + p[0] + '%;top:' + p[1] + '%" title="' + esc(p[0] + ' ، ' + p[1]) + '"></i>';
+        return '<img class="fsrc-gpin fsrc-gpin-n" src="assets/img/map-icons/npc-pin.png" style="left:' + p[0] + '%;top:' + p[1] + '%" title="' + esc(p[0] + ' ، ' + p[1]) + '" alt="">';
       }).join('') + '</div>'
       + '<div class="npc-nomap"><p>' + lbl('تصویر نقشهٔ این منطقه هنوز روی سایت نیست؛ مختصات (٪ از نقشه):', 'The map image for this zone is not on the site yet. Coordinates (% of map):') + '</p><div class="fex-hchips">' + coords + '</div></div>'
       + '<div class="fsrc-mcap"><b>' + zn + '</b><span>' + num(pts.length) + ' ' + lbl('نقطه', 'spawns') + '</span></div>';
