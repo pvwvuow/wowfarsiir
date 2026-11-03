@@ -79,7 +79,7 @@
   function iconUrl(ic) { return ic ? "icons/large/" + ic + ".jpg" : null; }
   function key(t, name) { return t + "|" + name; }
   function spentIn(t) { return state.spent[t] || 0; }
-  function totalSpent() { return state.spent[0] + state.spent[1] + state.spent[2]; }
+  function totalSpent() { return state.spent.reduce(function (a, b) { return a + (b || 0); }, 0); }
   function budget() { return MAXPTS + (state.legacy ? 5 : 0); }
   function tierReq(ti) { return ti * 5; }
   function f3(n) { return (+n).toFixed(3); }
@@ -297,7 +297,7 @@
     return '<div class="fc-sum" style="--cc:' + c.color + '">' +
       '<p class="fc-eyebrow font-cinzel" dir="ltr"><span></span>Forever · ' + esc(c.name || "") + ' · Talent Build<span></span></p>' +
       '<div class="fc-split" dir="ltr">' + DATA.trees.map(function (t, i) {
-        return '<b class="' + (state.spent[i] ? "on" : "") + '" title="' + esc(treeLabel(t)) + '">' + state.spent[i] + "</b>";
+        return '<b class="' + (state.spent[i] ? "on" : "") + '" title="' + esc(treeLabel(t)) + '">' + (state.spent[i] || 0) + "</b>";
       }).join('<i aria-hidden="true"></i>') + "</div>" +
       '<div class="fc-stats">' +
       '<div><b>' + faNum(left) + "</b><span>امتیاز مانده</span></div>" +
@@ -309,7 +309,7 @@
   function treeChips() {
     return '<div class="fc-trees" role="tablist">' + DATA.trees.map(function (t, i) {
       return '<button type="button" class="tt-chip fc-tree-chip" data-tree="' + i + '" data-active="' + (i === state.tree) + '">' +
-        esc(treeLabel(t)) + ' <span class="pts">' + state.spent[i] + "</span></button>";
+        esc(treeLabel(t)) + ' <span class="pts">' + (state.spent[i] || 0) + "</span></button>";
     }).join("") + "</div>";
   }
 
@@ -425,7 +425,8 @@
     }
     return true;
   }
-  function reset() { state.pts = {}; state.spent = [0, 0, 0]; state.order = []; pinnedKey = null; }
+  function zeros() { return (DATA && DATA.trees ? DATA.trees : [0, 0, 0]).map(function () { return 0; }); }
+  function reset() { state.pts = {}; state.spent = zeros(); state.order = []; pinnedKey = null; }
   /* order for builds that arrive without one (link / popular / saved) */
   function synthOrder() {
     state.order = [];
@@ -463,6 +464,7 @@
     reset();
     pts.forEach(function (P, t) {
       var tr = DATA.trees[t], left = P;
+      if (!tr) return;
       function take(x, cap) {
         if (left <= 0 || (x.req && spentOn(t, x.req) < maxRanks(t, x.req))) return;
         var have = spentOn(t, x.n), n = Math.min((x.r || 1) - have, left, cap);
@@ -759,12 +761,12 @@
       var lines = DATA.trees.map(function (t, i) {
         var picked = [];
         eachNode(i, function (x) { if (spentOn(i, x.n) > 0) picked.push(nm(x) + " " + spentOn(i, x.n) + "/" + (x.r || 1)); });
-        return treeLabel(t) + " (" + state.spent[i] + "): " + (picked.join("، ") || "-");
+        return treeLabel(t) + " (" + (state.spent[i] || 0) + "): " + (picked.join("، ") || "-");
       }).join("\n");
       copy(lines, "بیلد متنی کپی شد", "بیلد متنی:"); return;
     }
     if (id === "fc-save") {
-      var nm2 = prompt("نام بیلد:", "بیلد " + DATA.trees.map(function (_, i) { return state.spent[i]; }).join("/"));
+      var nm2 = prompt("نام بیلد:", "بیلد " + DATA.trees.map(function (_, i) { return state.spent[i] || 0; }).join("/"));
       if (nm2 != null) { saveBuild(nm2); state.saves = true; render(true); flash("بیلد ذخیره شد"); }
       return;
     }
@@ -829,6 +831,13 @@
     loading();
     getJSON("data/forever/db/" + cls + ".json").then(function (d) {
       DATA = d;
+      /* a class file can carry an empty placeholder tree (Hunter "Tree 4", the pet-training tab):
+         no tiers and no Persian name, so it printed "undefined" in the split and made a dead chip.
+         Only real trees (at least one talent) reach the calculator. */
+      DATA.trees = (d.trees || []).filter(function (t) {
+        return t && t.tiers && t.tiers.some(function (r) { return r && r.length; });
+      });
+      state.spent = zeros();
       enterAnim = true;
       ACTIVE = {};
       (d.spells || []).forEach(function (s) { if (s.st === "talent") ACTIVE[s.n] = 1; });
