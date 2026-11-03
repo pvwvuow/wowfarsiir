@@ -1,0 +1,9 @@
+/* wowfarsi: quest / NPC map pins (the game's own icons) at a fixed size.
+   retail.css gives every ".fsrc-mimg img" the full width of the map (that is for the zone picture),
+   which blew the "!" and "?" pins up to a giant yellow square. */
+html body .fsrc-mimg img:not(.npc-mimg-img) {
+  position: absolute; width: 26px; height: 26px; max-width: none; aspect-ratio: auto; object-fit: contain;
+  margin: -13px 0 0 -13px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .75)); }
+html body .fsrc-mimg img.fsrc-gpin-s { z-index: 3; }
+html body .fsrc-mimg img.fsrc-gpin-e { z-index: 4; }
+html body .fsrc-mimg img:not(.npc-mimg-img):hover { z-index: 6; }
