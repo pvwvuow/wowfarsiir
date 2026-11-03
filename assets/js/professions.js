@@ -1,6 +1,8 @@
 /* wowfarsi - Forever professions: hub (professions.html) + detail (profession.html?p=slug).
    Data: data/forever/db/prof-index.json and prof-<slug>.json (see docs/PROFESSIONS_DATA.md). Icons: icons/large/<name>.jpg
-   Every UI string is Persian via \u escapes; names follow data/forever/glossary.json. Item/recipe names show Persian when the data has it, else English. */
+   UI strings are Persian via \u escapes; names follow data/forever/glossary.json.
+   NAMES FOLLOW THE TRANSLATION-STYLE SWITCHES (tr.js WFTR): profession + recipe-spell names = namesSpell,
+   created items + reagents = namesItem, gathering nodes = namesObj, trainers = namesNpc. Switch off = English. */
 "use strict";
 (function () {
   var FA = {"hubTitle": "\u067e\u0631\u0648\u0641\u0634\u0646\u200c\u0647\u0627", "hubSub": "\u0647\u0645\u0647\u0654 \u067e\u0631\u0648\u0641\u0634\u0646\u200c\u0647\u0627\u06cc \u0641\u0648\u0631\u0648\u0631: \u062f\u0633\u062a\u0648\u0631\u0627\u0644\u0639\u0645\u0644\u200c\u0647\u0627\u060c \u0645\u0648\u0627\u062f\u060c \u0622\u06cc\u062a\u0645\u200c\u0647\u0627 \u0648 \u0645\u0633\u06cc\u0631 \u0644\u0650\u0648\u0650\u0644\u200c\u0622\u067e\u060c \u0628\u0627 \u0622\u06cc\u06a9\u0648\u0646", "hubHint": "\u06cc\u06a9 \u067e\u0631\u0648\u0641\u0634\u0646 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646 \u062a\u0627 \u062f\u0633\u062a\u0648\u0631\u0627\u0644\u0639\u0645\u0644\u200c\u0647\u0627 \u0648 \u0645\u0648\u0627\u062f \u0648 \u0645\u0633\u06cc\u0631 \u0627\u0631\u062a\u0642\u0627\u06cc\u0634 \u0631\u0627 \u0628\u0628\u06cc\u0646\u06cc.", "crafting": "\u067e\u0631\u0648\u0641\u0634\u0646\u200c\u0647\u0627\u06cc \u0633\u0627\u062e\u062a", "gathering": "\u062c\u0645\u0639\u200c\u0622\u0648\u0631\u06cc", "secondary": "\u0641\u0631\u0639\u06cc", "recipes": "\u062f\u0633\u062a\u0648\u0631\u0627\u0644\u0639\u0645\u0644\u200c\u0647\u0627", "leveling": "\u0645\u0633\u06cc\u0631 \u0644\u0650\u0648\u0650\u0644\u200c\u0622\u067e", "sources": "\u0645\u0646\u0627\u0628\u0639 \u0648 \u0646\u0648\u062f\u0647\u0627", "trainers": "\u0645\u0631\u0628\u06cc\u200c\u0647\u0627", "search": "\u062c\u0633\u062a\u200c\u0648\u062c\u0648\u06cc \u062f\u0633\u062a\u0648\u0631\u0627\u0644\u0639\u0645\u0644\u060c \u0622\u06cc\u062a\u0645 \u06cc\u0627 \u0645\u0627\u062f\u0647\u2026", "all": "\u0647\u0645\u0647", "rank": "\u0631\u0646\u06a9", "source": "\u0645\u0646\u0628\u0639", "quality": "\u06a9\u06cc\u0641\u06cc\u062a", "sort": "\u0645\u0631\u062a\u0628\u200c\u0633\u0627\u0632\u06cc", "sortSkill": "\u0645\u0647\u0627\u0631\u062a", "sortName": "\u0646\u0627\u0645", "sortQ": "\u06a9\u06cc\u0641\u06cc\u062a", "grid": "\u06a9\u0627\u0631\u062a", "table": "\u062c\u062f\u0648\u0644", "trainer": "\u0645\u0631\u0628\u06cc", "vendor": "\u0641\u0631\u0648\u0634\u0646\u062f\u0647", "drop": "\u062f\u0631\u0627\u067e", "quest": "\u06a9\u0648\u0626\u0633\u062a", "world": "\u062f\u0646\u06cc\u0627\u06cc \u0628\u0627\u0632\u06cc", "discovery": "\u06a9\u0634\u0641", "unknown": "\u0646\u0627\u0645\u0634\u062e\u0635", "r1": "\u0634\u0627\u06af\u0631\u062f", "r2": "\u06a9\u0627\u0631\u062f\u0627\u0646", "r3": "\u0645\u0627\u0647\u0631", "r4": "\u0627\u0633\u062a\u0627\u062f", "cOrange": "\u0646\u0627\u0631\u0646\u062c\u06cc: \u0627\u0631\u062a\u0642\u0627\u06cc \u062a\u0636\u0645\u06cc\u0646\u06cc", "cYellow": "\u0632\u0631\u062f: \u0627\u062d\u062a\u0645\u0627\u0644 \u0628\u0627\u0644\u0627", "cGreen": "\u0633\u0628\u0632: \u0627\u062d\u062a\u0645\u0627\u0644 \u06a9\u0645", "cGray": "\u062e\u0627\u06a9\u0633\u062a\u0631\u06cc: \u0628\u062f\u0648\u0646 \u0627\u0631\u062a\u0642\u0627", "recipeWord": "\u062f\u0633\u062a\u0648\u0631\u0627\u0644\u0639\u0645\u0644", "back": "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u067e\u0631\u0648\u0641\u0634\u0646\u200c\u0647\u0627", "loading": "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc\u2026", "noData": "\u062f\u06cc\u062a\u0627\u06cc \u0627\u06cc\u0646 \u067e\u0631\u0648\u0641\u0634\u0646 \u0647\u0646\u0648\u0632 \u0631\u0648\u06cc \u0633\u0627\u06cc\u062a \u0646\u06cc\u0627\u0645\u062f\u0647. \u0628\u0647\u200c\u0632\u0648\u062f\u06cc.", "none": "\u0686\u06cc\u0632\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f.", "curSkill": "\u0645\u0647\u0627\u0631\u062a \u0641\u0639\u0644\u06cc", "goal": "\u0647\u062f\u0641", "plan": "\u0633\u0627\u062e\u062a \u0645\u0633\u06cc\u0631", "craft": "\u0628\u0633\u0627\u0632", "from": "\u0627\u0632", "to": "\u062a\u0627", "total": "\u0645\u0648\u0627\u062f \u0644\u0627\u0632\u0645 (\u062c\u0645\u0639 \u06a9\u0644)", "levelNote": "\u0645\u0633\u06cc\u0631 \u0628\u0631 \u067e\u0627\u06cc\u0647\u0654 \u0645\u0648\u0627\u062f \u0627\u0633\u062a\u060c \u0646\u0647 \u0642\u06cc\u0645\u062a. \u062f\u0631 \u0628\u0627\u0632\u0647\u0654 \u0632\u0631\u062f \u06af\u0627\u0647\u06cc \u0686\u0646\u062f \u0628\u0627\u0631 \u0628\u06cc\u0634\u062a\u0631 \u0644\u0627\u0632\u0645 \u0645\u06cc\u200c\u0634\u0648\u062f.", "credit": "\u062f\u0627\u062f\u0647 \u0627\u0632 ForeverDB.net", "build": "\u0628\u06cc\u0644\u062f", "needSkill": "\u0646\u06cc\u0627\u0632 \u0628\u0647 \u0645\u0647\u0627\u0631\u062a", "reagents": "\u0645\u0648\u0627\u062f \u0644\u0627\u0632\u0645", "creates": "\u0645\u06cc\u200c\u0633\u0627\u0632\u062f", "zones": "\u0632\u0648\u0646\u200c\u0647\u0627", "skillNeeded": "\u0645\u0647\u0627\u0631\u062a \u0644\u0627\u0632\u0645", "nodes": "\u0646\u0648\u062f\u0647\u0627", "noNodes": "\u0646\u0648\u062f\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u067e\u0631\u0648\u0641\u0634\u0646 \u062b\u0628\u062a \u0646\u0634\u062f\u0647.", "noTrainers": "\u0645\u0631\u0628\u06cc\u200c\u0627\u06cc \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646 \u067e\u0631\u0648\u0641\u0634\u0646 \u062b\u0628\u062a \u0646\u0634\u062f\u0647.", "ranksTitle": "\u0631\u0646\u06a9\u200c\u0647\u0627\u06cc \u0645\u0647\u0627\u0631\u062a", "shown": "\u0646\u0645\u0627\u06cc\u0634", "of": "\u0627\u0632", "metaTitle": "\u067e\u0631\u0648\u0641\u0634\u0646\u200c\u0647\u0627\u06cc \u0641\u0648\u0631\u0648\u0631 \u2014 wowfarsi"};
@@ -27,6 +29,26 @@
   var DEF_RANKS = [{ n: FA.r1, lo: 1, hi: 75 }, { n: FA.r2, lo: 75, hi: 150 }, { n: FA.r3, lo: 150, hi: 225 }, { n: FA.r4, lo: 225, hi: 300 }];
   var root = document.getElementById("pf-root");
   if (!root) return;
+  var MODE = root.getAttribute("data-mode") === "detail" ? "detail" : "hub";
+
+  /* ---- translation-style switches (tr.js WFTR). No WFTR yet = Persian (the original look). ---- */
+  function sw(k) {
+    var W = window.WFTR;
+    return !W || typeof W.on !== "function" || !!W.on(k);
+  }
+  function pname(slug, en) { return sw("namesSpell") ? PN[slug] : en; }
+  var hooked = false;
+  function hookSwitch(fn) {
+    var tries = 0, ready = !!(window.WFTR && window.WFTR.onChange);
+    (function wait() {
+      var W = window.WFTR;
+      if (W && typeof W.onChange === "function") {
+        if (!hooked) { hooked = true; W.onChange(fn); if (!ready) fn(); }
+        return;
+      }
+      if (tries++ < 40) setTimeout(wait, 250);
+    })();
+  }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -48,24 +70,27 @@
     if (!/\.(jpg|png|webp)$/.test(n)) n += ".jpg";
     return '<span class="' + c + '"><img src="' + ICON + n + '" alt="" loading="lazy" decoding="async" onerror="this.parentNode.className+=\' pf-ic-miss\';this.remove()">' + badge + "</span>";
   }
-  function nm(o) {
+  /* name object: key = the WFTR switch that owns this kind of name; off = English only (ltr) */
+  function nm(o, key) {
     var fa = o && o.fa ? o.fa : "", en = o && o.n ? o.n : "";
-    return { main: fa || en, sub: fa && en && fa !== en ? en : "" };
+    if (key && !sw(key)) return { main: en || fa, sub: "", ltr: !!en };
+    return { main: fa || en, sub: fa && en && fa !== en ? en : "", ltr: false };
   }
+  function dirAttr(n) { return n.ltr ? ' dir="ltr"' : ""; }
   function setBuild(b, obs) {
     var el = document.getElementById("pf-build");
     if (el && b) el.textContent = b;
     var cr = document.getElementById("pf-credit");
-    if (cr && obs) cr.innerHTML = '<span class="pf-credit"><a href="https://foreverdb.net" target="_blank" rel="noopener">' + FA.credit + "</a></span>";
+    if (cr) cr.innerHTML = obs ? '<span class="pf-credit"><a href="https://foreverdb.net" target="_blank" rel="noopener">' + FA.credit + "</a></span>" : "";
   }
   function orn() { return '<div class="pf-orn"><i></i><b></b><i></i></div>'; }
 
   /* ---------------- hub ---------------- */
+  var idxCache;
   function renderHub() {
     document.title = FA.metaTitle;
-    root.innerHTML = '<p class="pf-load">' + FA.loading + "</p>";
-    getJSON(DB + "prof-index.json").catch(function () { return null; }).then(function (idx) {
-      var meta = {};
+    var go = function (idx) {
+      var meta = {}, faOn = sw("namesSpell");
       ((idx && idx.profs) || []).forEach(function (p) { meta[p.slug] = p; });
       var groups = [["crafting", FA.crafting, "Crafting"], ["gathering", FA.gathering, "Gathering"], ["secondary", FA.secondary, "Secondary"]];
       var h = '<div class="pf-title"><p class="pf-en font-cinzel" dir="ltr">WoW Forever \u00b7 Professions</p>' + orn() +
@@ -78,14 +103,18 @@
           if (m.count) chips += '<span class="pf-chip">' + (+m.count) + " " + FA.recipeWord + "</span>";
           if (m.max) chips += '<span class="pf-chip">' + (+m.max) + "</span>";
           h += '<a class="pf-card" style="--ac:' + p[4] + '" href="profession.html?p=' + p[0] + '"><span class="pf-emb">' + icn(m.icon || p[3], "", "pf-ic-lg") + "</span>" +
-            "<b>" + PN[p[0]] + '</b><span class="pf-en font-cinzel" dir="ltr">' + p[1] + "</span>" + (chips ? '<span class="pf-meta">' + chips + "</span>" : "") + "</a>";
+            (faOn ? "<b>" + PN[p[0]] + '</b><span class="pf-en font-cinzel" dir="ltr">' + p[1] + "</span>" : '<b dir="ltr">' + p[1] + "</b>") +
+            (chips ? '<span class="pf-meta">' + chips + "</span>" : "") + "</a>";
         });
         h += "</div></section>";
       });
       h += '<p class="pf-empty">' + FA.hubHint + "</p>";
       root.innerHTML = h;
       setBuild(idx && idx.build, false);
-    });
+    };
+    if (idxCache !== undefined) { go(idxCache); return; }
+    root.innerHTML = '<p class="pf-load">' + FA.loading + "</p>";
+    getJSON(DB + "prof-index.json").catch(function () { return null; }).then(function (idx) { idxCache = idx; go(idx); });
   }
 
   /* ---------------- detail ---------------- */
@@ -111,14 +140,18 @@
   }
   function reagentsHTML(r) {
     return (r.re || []).map(function (g) {
-      var n = nm(g);
+      var n = nm(g, "namesItem");
       return '<a class="pf-rg" href="item.html?id=' + (+g.id) + '" title="' + esc(n.main) + '">' + icn(g.ic, g.q, "", g.c) + "</a>";
     }).join("");
   }
+  /* a recipe row is named after its created item (namesItem); enchants have no item, so the spell name (namesSpell) */
+  function recipeNm(r) {
+    var it = r.it || null, isItem = !!(it && (it.n || it.fa));
+    return nm(isItem ? it : r, isItem ? "namesItem" : "namesSpell");
+  }
   function recipeName(r) {
-    var it = r.it || null;
-    var n = nm(it && (it.n || it.fa) ? it : r);
-    var main = it && it.id ? '<a href="item.html?id=' + (+it.id) + '">' + esc(n.main) + "</a>" : '<span class="pf-n1">' + esc(n.main) + "</span>";
+    var it = r.it || null, n = recipeNm(r), d = dirAttr(n);
+    var main = it && it.id ? '<a href="item.html?id=' + (+it.id) + '"' + d + ">" + esc(n.main) + "</a>" : '<span class="pf-n1"' + d + ">" + esc(n.main) + "</span>";
     return '<span class="pf-nm">' + main + (n.sub ? "<small>" + esc(n.sub) + "</small>" : "") + "</span>";
   }
   function recipeIcon(r) {
@@ -133,6 +166,7 @@
     return '<tr data-id="' + (+r.id) + '"><td><div class="pf-rt">' + recipeIcon(r) + recipeName(r) + "</div></td><td>" + chips(r.th) + '</td><td><div class="pf-re">' + reagentsHTML(r) + "</div></td><td>" + srcBadge(r) + "</td></tr>";
   }
 
+  /* search always matches BOTH languages, whatever the switches show */
   function haystack(r) {
     var a = [r.n, r.fa, r.it && r.it.n, r.it && r.it.fa];
     (r.re || []).forEach(function (g) { a.push(g.n, g.fa); });
@@ -148,7 +182,7 @@
       return true;
     });
     list.sort(function (a, b) {
-      if (S.sort === "name") return String(nm(a.it && a.it.n ? a.it : a).main).localeCompare(String(nm(b.it && b.it.n ? b.it : b).main));
+      if (S.sort === "name") return String(recipeNm(a).main).localeCompare(String(recipeNm(b).main));
       if (S.sort === "q") return ((b.it && b.it.q) || 0) - ((a.it && a.it.q) || 0) || (a.rk || 0) - (b.rk || 0);
       return (a.rk || 0) - (b.rk || 0) || (a.th ? a.th[1] : 0) - (b.th ? b.th[1] : 0);
     });
@@ -237,12 +271,13 @@
   }
   function levelingTab(pane) {
     var top = S.ranks.length ? S.ranks[S.ranks.length - 1].hi : 300;
-    pane.innerHTML = '<div class="pf-bar"><label>' + FA.curSkill + ' <input type="number" id="pf-from" min="1" max="' + (top - 1) + '" value="1"></label>' +
-      '<label>' + FA.goal + ' <input type="number" id="pf-to" min="2" max="' + top + '" value="' + top + '"></label>' +
+    pane.innerHTML = '<div class="pf-bar"><label>' + FA.curSkill + ' <input type="number" id="pf-from" min="1" max="' + (top - 1) + '" value="' + (S.lvFrom || 1) + '"></label>' +
+      '<label>' + FA.goal + ' <input type="number" id="pf-to" min="2" max="' + top + '" value="' + (S.lvTo || top) + '"></label>' +
       '<button type="button" class="pf-btn" id="pf-go">' + FA.plan + '</button></div><div id="pf-plan"></div><p class="pf-note">' + FA.levelNote + "</p>";
     function go() {
       var a = Math.max(1, +document.getElementById("pf-from").value || 1);
       var b = Math.min(top, +document.getElementById("pf-to").value || top);
+      S.lvFrom = a; S.lvTo = b;
       var steps = plan(a, b), tot = {}, h = '<div class="pf-steps">';
       steps.forEach(function (st) {
         if (st.gap != null) { h += '<div class="pf-step"><span class="pf-gap">' + FA.from + " " + st.gap + " \u2192 ?</span></div>"; return; }
@@ -251,7 +286,7 @@
           '<span class="pf-range"><span>' + st.from + " \u2192 " + st.to + '</span><span class="pf-ch ' + st.k + '">\u00d7' + cnt + "</span></span>" +
           '<div class="pf-re" style="flex-basis:100%">' + (r.re || []).map(function (g) {
             var key = g.id; tot[key] = tot[key] || { g: g, c: 0 }; tot[key].c += cnt * (+g.c || 1);
-            return '<a class="pf-rg" href="item.html?id=' + (+g.id) + '" title="' + esc(nm(g).main) + '">' + icn(g.ic, g.q, "", (+g.c || 1) * cnt) + "</a>";
+            return '<a class="pf-rg" href="item.html?id=' + (+g.id) + '" title="' + esc(nm(g, "namesItem").main) + '">' + icn(g.ic, g.q, "", (+g.c || 1) * cnt) + "</a>";
           }).join("") + "</div></div>";
       });
       h += "</div>";
@@ -259,7 +294,7 @@
       if (keys.length) {
         h += '<div class="pf-tot"><h4>' + FA.total + '</h4><div class="pf-re">' + keys.map(function (k) {
           var t = tot[k];
-          return '<a class="pf-rg" href="item.html?id=' + (+t.g.id) + '" title="' + esc(nm(t.g).main) + " \u00d7" + t.c + '">' + icn(t.g.ic, t.g.q, "", t.c) + "</a>";
+          return '<a class="pf-rg" href="item.html?id=' + (+t.g.id) + '" title="' + esc(nm(t.g, "namesItem").main) + " \u00d7" + t.c + '">' + icn(t.g.ic, t.g.q, "", t.c) + "</a>";
         }).join("") + "</div></div>";
       }
       document.getElementById("pf-plan").innerHTML = h;
@@ -272,8 +307,8 @@
     var nodes = S.data.nodes || [];
     if (!nodes.length) { pane.innerHTML = '<p class="pf-empty">' + FA.noNodes + "</p>"; return; }
     pane.innerHTML = '<div class="pf-nodes">' + nodes.map(function (n) {
-      var x = nm(n);
-      return '<div class="pf-nd">' + icn(n.ic, n.q, "") + "<div><b>" + esc(x.main) + "</b>" + (x.sub ? '<small dir="ltr">' + esc(x.sub) + "</small>" : "") +
+      var x = nm(n, "namesObj");
+      return '<div class="pf-nd">' + icn(n.ic, n.q, "") + "<div><b" + dirAttr(x) + ">" + esc(x.main) + "</b>" + (x.sub ? '<small dir="ltr">' + esc(x.sub) + "</small>" : "") +
         (n.skill ? "<small>" + FA.skillNeeded + ": " + (+n.skill) + "</small>" : "") +
         (n.zones && n.zones.length ? "<small>" + FA.zones + ": " + esc(n.zones.join("\u060c ")) + "</small>" : "") + "</div></div>";
     }).join("") + "</div>";
@@ -282,8 +317,8 @@
     var tr = S.data.trainers || [];
     if (!tr.length) { pane.innerHTML = '<p class="pf-empty">' + FA.noTrainers + "</p>"; return; }
     pane.innerHTML = '<div class="pf-nodes">' + tr.map(function (t) {
-      var x = nm(t);
-      return '<div class="pf-nd">' + icn("", "", "") + "<div><b>" + esc(x.main) + "</b>" + (x.sub ? '<small dir="ltr">' + esc(x.sub) + "</small>" : "") +
+      var x = nm(t, "namesNpc");
+      return '<div class="pf-nd">' + icn("", "", "") + "<div><b" + dirAttr(x) + ">" + esc(x.main) + "</b>" + (x.sub ? '<small dir="ltr">' + esc(x.sub) + "</small>" : "") +
         (t.zone ? "<small>" + esc(t.zone) + "</small>" : "") + (t.rank ? "<small>" + esc(t.rank) + "</small>" : "") + "</div></div>";
     }).join("") + "</div>";
   }
@@ -296,13 +331,13 @@
     return tip;
   }
   function tipHTML(r) {
-    var it = r.it || null, n = nm(it && (it.n || it.fa) ? it : r);
+    var it = r.it || null, n = recipeNm(r);
     var qc = QC[it && it.q != null ? +it.q : 1] || QC[1];
-    var h = '<b style="color:' + qc + '">' + esc(n.main) + "</b>";
+    var h = '<b style="color:' + qc + '"' + dirAttr(n) + ">" + esc(n.main) + "</b>";
     if (n.sub) h += '<div dir="ltr" style="color:#8f8571;text-align:right">' + esc(n.sub) + "</div>";
     h += '<div class="pf-tl"><span>' + FA.needSkill + "</span><span>" + (+r.rk || 0) + "</span></div>";
     if (r.th && r.th.length >= 4) h += chips(r.th);
-    if (r.re && r.re.length) h += '<div style="margin-top:.4rem">' + FA.reagents + ":</div>" + r.re.map(function (g) { return "<div>" + (+g.c || 1) + "\u00d7 " + esc(nm(g).main) + "</div>"; }).join("");
+    if (r.re && r.re.length) h += '<div style="margin-top:.4rem">' + FA.reagents + ":</div>" + r.re.map(function (g) { var x = nm(g, "namesItem"); return "<div" + dirAttr(x) + ">" + (+g.c || 1) + "\u00d7 " + esc(x.main) + "</div>"; }).join("");
     return h;
   }
   function bindTip(pane) {
@@ -341,24 +376,37 @@
 
   function heroHTML(p, d) {
     var ranks = (d && d.ranks && d.ranks.length ? d.ranks : DEF_RANKS);
-    var meta = "";
+    var meta = "", faOn = sw("namesSpell");
     if (d && d.recipes && d.recipes.length) meta += '<span class="pf-chip">' + d.recipes.length + " " + FA.recipeWord + "</span>";
     if (d && d.build) meta += '<span class="pf-chip" dir="ltr">' + FA.build + " " + esc(d.build) + "</span>";
     return '<a class="pf-back" href="professions.html">\u2192 ' + FA.back + '</a><section class="pf-hero" style="--ac:' + p[4] + '"><span class="pf-emb">' + icn((d && d.icon) || p[3], "", "pf-ic-lg") + "</span>" +
-      '<div><h1>' + PN[p[0]] + '</h1><div class="pf-en font-cinzel" dir="ltr">' + p[1] + '</div><div class="pf-meta">' + meta + "</div></div>" +
+      "<div>" + (faOn ? "<h1>" + PN[p[0]] + '</h1><div class="pf-en font-cinzel" dir="ltr">' + p[1] + "</div>" : '<h1 dir="ltr">' + p[1] + "</h1>") + '<div class="pf-meta">' + meta + "</div></div>" +
       '<div style="flex-basis:100%"><div class="pf-ranks" aria-label="' + esc(FA.ranksTitle) + '">' + ranks.map(function (r) {
         return '<div class="pf-md"><span class="pf-md-c">' + (+r.hi) + "</span><b>" + esc(r.n) + '</b><i dir="ltr">' + (+r.lo) + " - " + (+r.hi) + "</i></div>";
       }).join("") + "</div></div></section>";
   }
 
+  /* full repaint of the detail page from S (also used when a switch flips: filters and tab are kept) */
+  function paintDetail() {
+    var d = S.data, p = S.p;
+    document.title = pname(S.slug, p[1]) + " \u2014 wowfarsi";
+    root.innerHTML = heroHTML(p, d) + '<div class="pf-tabs" role="tablist">' + S.tabs.map(function (t) { return '<button type="button" class="pf-tab" role="tab" data-t="' + t[0] + '">' + t[1] + "</button>"; }).join("") + '</div><div id="pf-pane"></div>';
+    root.style.setProperty("--ac", p[4]);
+    Array.prototype.forEach.call(root.querySelectorAll(".pf-tab"), function (b) { b.addEventListener("click", function () { showTab(b.getAttribute("data-t")); }); });
+    bindTip(document.getElementById("pf-pane"));
+    showTab(S.tab || S.tabs[0][0]);
+  }
+
+  var detailLoaded = false;
   function renderDetail() {
     var qs = new URLSearchParams(location.search);
     var slug = qs.get("p") || "";
     var p = info(slug);
     if (!p) { location.replace("professions.html"); return; }
-    document.title = PN[slug] + " \u2014 wowfarsi";
+    document.title = pname(slug, p[1]) + " \u2014 wowfarsi";
     root.innerHTML = heroHTML(p, null) + '<p class="pf-load">' + FA.loading + "</p>";
     getJSON(DB + "prof-" + slug + ".json").then(function (d) { return d; }, function () { return null; }).then(function (d) {
+      detailLoaded = true;
       if (!d || !(d.recipes || d.nodes || d.trainers)) {
         root.innerHTML = heroHTML(p, null) + '<p class="pf-empty">' + FA.noData + "</p>";
         return;
@@ -366,21 +414,24 @@
       d.recipes = d.recipes || [];
       d.recipes.forEach(function (r) { r._h = haystack(r); });
       var ranks = d.ranks && d.ranks.length ? d.ranks : DEF_RANKS;
-      S = { slug: slug, p: p, data: d, ranks: ranks, q: qs.get("q") || "", rank: "", src: "", qual: "", sort: "skill", view: "grid", limit: PAGE, focus: qs.get("r"), tab: "" };
       var tabs = [];
       if (d.recipes.length) { tabs.push(["recipes", FA.recipes]); tabs.push(["leveling", FA.leveling]); }
       if ((d.nodes || []).length) tabs.push(["sources", FA.sources]);
       if ((d.trainers || []).length) tabs.push(["trainers", FA.trainers]);
       if (!tabs.length) { root.innerHTML = heroHTML(p, d) + '<p class="pf-empty">' + FA.noData + "</p>"; return; }
-      root.innerHTML = heroHTML(p, d) + '<div class="pf-tabs" role="tablist">' + tabs.map(function (t) { return '<button type="button" class="pf-tab" role="tab" data-t="' + t[0] + '">' + t[1] + "</button>"; }).join("") + '</div><div id="pf-pane"></div>';
-      root.style.setProperty("--ac", p[4]);
-      Array.prototype.forEach.call(root.querySelectorAll(".pf-tab"), function (b) { b.addEventListener("click", function () { showTab(b.getAttribute("data-t")); }); });
-      bindTip(document.getElementById("pf-pane"));
+      S = { slug: slug, p: p, data: d, ranks: ranks, tabs: tabs, q: qs.get("q") || "", rank: "", src: "", qual: "", sort: "skill", view: "grid", limit: PAGE, focus: qs.get("r"), tab: "" };
       var obs = d.recipes.some(function (r) { return r.obs; }) || (d.nodes || []).some(function (n) { return n.obs; }) || (d.trainers || []).some(function (t) { return t.obs; });
       setBuild(d.build, obs);
-      showTab(tabs[0][0]);
+      paintDetail();
     });
   }
 
-  if (root.getAttribute("data-mode") === "detail") renderDetail(); else renderHub();
+  function onSwitch() {
+    if (MODE === "hub") renderHub();
+    else if (S) paintDetail();
+    else if (detailLoaded) renderDetail();
+  }
+
+  if (MODE === "detail") renderDetail(); else renderHub();
+  hookSwitch(onSwitch);
 })();
