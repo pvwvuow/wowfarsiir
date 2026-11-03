@@ -62,7 +62,7 @@
 
 /* the pin layer follows the map image's transform; pins keep a constant screen size (--inv = 1 / zoom) */
 .fpoi-layer {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3;
   transform-origin: 0 0; will-change: transform; pointer-events: none; --inv: 1; }
 .fpoi-p {
   position: absolute; width: 24px; height: 24px; pointer-events: auto; cursor: help;
@@ -94,7 +94,12 @@
 .fpoi-z:hover, .fpoi-z:focus-visible {
   z-index: 3; color: #fff; background: rgba(11, 15, 26, .88); border-color: var(--gold-2); outline: none;
   transform: translate(-50%, -50%) scale(calc(var(--inv) * 1.12)); }
-.fpoi-z.city { color: #e8dfc8; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.fpoi-z.city { color: #e8dfc8; font-size: 0; letter-spacing: .1em; text-transform: uppercase; padding: 4px; background: none; }
 .fpoi-z.city::before {
-  content: ""; display: inline-block; width: 5px; height: 5px; margin-inline-end: 4px; vertical-align: 1px;
-  transform: rotate(45deg); background: var(--gold-2); }
+  content: ""; display: inline-block; width: 7px; height: 7px; vertical-align: middle;
+  transform: rotate(45deg); background: var(--gold-2); border: 1px solid #1a1306; }
+.fpoi-z.city:hover, .fpoi-z.city:focus-visible { font-size: 10px; padding: 1px 6px; background: rgba(11, 15, 26, .88); }
+.fpoi-z.city:hover::before, .fpoi-z.city:focus-visible::before { width: 5px; height: 5px; margin-inline-end: 4px; vertical-align: 1px; border: 0; }
+
+/* the loading veil is invisible once the map is up: it must not swallow clicks meant for the layers */
+.fmap .fmap-load.off { pointer-events: none; }

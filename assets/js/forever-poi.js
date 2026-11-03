@@ -17,7 +17,7 @@
   var box = document.getElementById("fmap");
   var cv = box && box.querySelector(".fmap-cv");
   if (!box || !cv) return;
-  var V = "20261103b", DB = "data/forever/db/poi/", IC = "assets/img/map-icons/", KEY = "wf_poi_sel_v1";
+  var V = "20261103c", DB = "data/forever/db/poi/", IC = "assets/img/map-icons/", KEY = "wf_poi_sel_v1";
   var CONT = { "kalimdor": 1, "eastern-kingdoms": 1 };
   var SMALL = { "herb": 1, "ore": 1, "fishing-hole": 1, "chest": 1, "rare": 1, "cooking-fire": 1, "forge-anvil": 1 };
   var ZL = null, IDX = null, CATS = {}, DATA = {}, OPEN = { services: 1 }, SEL = {}, cur = "", failed = false;
@@ -192,6 +192,7 @@
         b.style.left = z[2] + "%";
         b.style.top = z[3] + "%";
         b.textContent = z[1];
+        if (z[4] === "c") { b.title = z[1]; b.setAttribute("aria-label", z[1]); }   /* a city is a marker; its name shows on hover */
         f.appendChild(b);
       });
     }
