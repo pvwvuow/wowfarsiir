@@ -1,0 +1,671 @@
+{
+ "pack": "dungeon-text-01",
+ "kind": "dungeon-text",
+ "spec": 3,
+ "build": "",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-dungeon-text-01.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Ahn'Qiraj",
+   "fa": "آن‌کیراج",
+   "kind": "zn"
+  },
+  "E2": {
+   "en": "raid",
+   "fa": "رید",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "Alcaz Island",
+   "fa": "جزیرهٔ آلکاز",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Dustwallow Marsh",
+   "fa": "باتلاق داست‌والو",
+   "kind": "zn"
+  },
+  "E5": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "Nefarian",
+   "fa": "نفاریان",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E8": {
+   "en": "Blackfathom Deeps",
+   "fa": "ژرفای سیاه‌ژرف",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E10": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Azshara",
+   "fa": "آزشارا",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "Blackrock Depths",
+   "fa": "اعماق بلک‌راک",
+   "kind": "zn"
+  },
+  "E13": {
+   "en": "Blackrock Mountain",
+   "fa": "کوه بلک‌راک",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "Emperor Dagran Thaurissan",
+   "fa": "امپراتور داگران تاوریسان",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Firelord",
+   "fa": "لرد آتش",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E17": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E18": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Deathwing",
+   "fa": "بال مرگ",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "Blackwing Lair",
+   "fa": "لانهٔ بلک‌وینگ",
+   "kind": "zn"
+  },
+  "E21": {
+   "en": "Dalaran",
+   "fa": "دالاران",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E23": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "The Deadmines",
+   "fa": "معدن‌های مرگ",
+   "kind": "zn"
+  },
+  "E25": {
+   "en": "Westfall",
+   "fa": "وستفال",
+   "kind": "zn"
+  },
+  "E26": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E27": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E28": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E29": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "form",
+   "fa": "شکل",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Shadow",
+   "fa": "سایه",
+   "kind": "cls"
+  },
+  "E32": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E33": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Gnomeregan",
+   "fa": "گنومریگان",
+   "kind": "zn"
+  },
+  "E35": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Riverglades",
+   "fa": "ریورگلیدز",
+   "kind": "zn"
+  },
+  "E38": {
+   "en": "Hammer",
+   "fa": "چکش",
+   "kind": "sp"
+  },
+  "E39": {
+   "en": "Blizzard",
+   "fa": "بوران",
+   "kind": "sp"
+  },
+  "E40": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E41": {
+   "en": "Burning Legion",
+   "fa": "لژیون سوزان",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Blasted Lands",
+   "fa": "اراضی ویران",
+   "kind": "zn"
+  },
+  "E43": {
+   "en": "Maraudon",
+   "fa": "ماراودون",
+   "kind": "zn"
+  },
+  "E44": {
+   "en": "Desolace",
+   "fa": "دزوله‌یس",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "The Molten Core",
+   "fa": "هم‌کور گداخته",
+   "kind": "qs"
+  },
+  "E46": {
+   "en": "Onyxia's Lair",
+   "fa": "لانهٔ اونیکسیا",
+   "kind": "zn"
+  },
+  "E47": {
+   "en": "Molten Core",
+   "fa": "هستهٔ مذاب",
+   "kind": "zn"
+  },
+  "E48": {
+   "en": "Naxxramas",
+   "fa": "ناکس‌راماس",
+   "kind": "zn"
+  },
+  "E49": {
+   "en": "Eastern Plaguelands",
+   "fa": "طاعون‌زار شرقی",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E51": {
+   "en": "Onyxia",
+   "fa": "اونیکسیا",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Ragefire Chasm",
+   "fa": "شکاف آتش‌خشم",
+   "kind": "zn"
+  },
+  "E53": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E54": {
+   "en": "Neeru Fireblade",
+   "fa": "نیرو آتش‌تیغ",
+   "kind": "qs"
+  },
+  "E55": {
+   "en": "Razorfen Downs",
+   "fa": "تپه‌های ریزرفن",
+   "kind": "zn"
+  },
+  "E56": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E57": {
+   "en": "Razorfen Kraul",
+   "fa": "کرال ریزرفن",
+   "kind": "zn"
+  },
+  "E58": {
+   "en": "Ruins of Ahn'Qiraj",
+   "fa": "ویرانه‌های آن‌کیراج",
+   "kind": "zn"
+  },
+  "E59": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E60": {
+   "en": "Tirisfal Glades",
+   "fa": "بیشه‌های تیریس‌فال",
+   "kind": "zn"
+  },
+  "E61": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E62": {
+   "en": "Scarlet Monastery",
+   "fa": "صومعهٔ اسکارلت",
+   "kind": "zn"
+  },
+  "E63": {
+   "en": "Holy Light",
+   "fa": "نور مقدس",
+   "kind": "sp"
+  },
+  "E64": {
+   "en": "Scarlet Crusade",
+   "fa": "صلیبیون سرخ",
+   "kind": "npc"
+  },
+  "E65": {
+   "en": "Forsaken",
+   "fa": "مطرودان",
+   "kind": "npc"
+  },
+  "E66": {
+   "en": "Scholomance",
+   "fa": "شولومانس",
+   "kind": "qs"
+  },
+  "E67": {
+   "en": "Barov",
+   "fa": "باروف",
+   "kind": "npc"
+  },
+  "E68": {
+   "en": "Caer Darrow",
+   "fa": "کائِر دارو",
+   "kind": "zn"
+  },
+  "E69": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E70": {
+   "en": "Shadowfang Keep",
+   "fa": "دژ نیش‌سایه",
+   "kind": "zn"
+  },
+  "E71": {
+   "en": "Silverpine Forest",
+   "fa": "جنگل سیلورپاین",
+   "kind": "zn"
+  },
+  "E72": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E73": {
+   "en": "The Stockade",
+   "fa": "زندان استاکید",
+   "kind": "zn"
+  },
+  "E74": {
+   "en": "Stormwind City",
+   "fa": "شهر استورم‌ویند",
+   "kind": "zn"
+  },
+  "E75": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E76": {
+   "en": "Sunken Temple",
+   "fa": "معبد غرق‌شده",
+   "kind": "zn"
+  },
+  "E77": {
+   "en": "Jammal'an the Prophet",
+   "fa": "جمالان پیشگو",
+   "kind": "qs"
+  },
+  "E78": {
+   "en": "Blood",
+   "fa": "خون",
+   "kind": "cls"
+  },
+  "E79": {
+   "en": "Ysera",
+   "fa": "یسرا",
+   "kind": "npc"
+  },
+  "E80": {
+   "en": "Swamp of Sorrows",
+   "fa": "باتلاق اندوه",
+   "kind": "zn"
+  },
+  "E81": {
+   "en": "Uldaman",
+   "fa": "اولدامان",
+   "kind": "zn"
+  },
+  "E82": {
+   "en": "Badlands",
+   "fa": "بیابان",
+   "kind": "zn"
+  },
+  "E83": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E84": {
+   "en": "Wailing Caverns",
+   "fa": "غارهای ناله",
+   "kind": "zn"
+  },
+  "E85": {
+   "en": "Zul'Farrak",
+   "fa": "زول‌فراک",
+   "kind": "zn"
+  },
+  "E86": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E87": {
+   "en": "Zul'Gurub",
+   "fa": "زول‌گوروب",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Ahn'Qiraj": "آن‌کیراج",
+  "raid": "رید",
+  "Alcaz Island": "جزیرهٔ آلکاز",
+  "Dustwallow Marsh": "باتلاق داست‌والو",
+  "level": "لِوِل",
+  "Nefarian": "نفاریان",
+  "Azeroth": "آزروت",
+  "Blackfathom Deeps": "ژرفای سیاه‌ژرف",
+  "Ashenvale": "اَشِن‌ویل",
+  "requires": "نیازمند",
+  "Azshara": "آزشارا",
+  "Blackrock Depths": "اعماق بلک‌راک",
+  "Blackrock Mountain": "کوه بلک‌راک",
+  "Emperor Dagran Thaurissan": "امپراتور داگران تاوریسان",
+  "Firelord": "لرد آتش",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Horde": "هورد",
+  "allies": "متحدان",
+  "Deathwing": "بال مرگ",
+  "Blackwing Lair": "لانهٔ بلک‌وینگ",
+  "Dalaran": "دالاران",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "Alliance": "اتحاد",
+  "The Deadmines": "معدن‌های مرگ",
+  "Westfall": "وستفال",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "Dire Maul": "دایر مول",
+  "Feralas": "فرالاس",
+  "undead": "مرده‌متحرک",
+  "form": "شکل",
+  "Shadow": "سایه",
+  "Duskwood": "جنگل تاریک",
+  "Wetlands": "تالاب‌ها",
+  "Gnomeregan": "گنومریگان",
+  "Ironforge": "آیرون‌فورج",
+  "Dun Morogh": "دون موروغ",
+  "Riverglades": "ریورگلیدز",
+  "Hammer": "چکش",
+  "Blizzard": "بوران",
+  "battle": "نبرد",
+  "Burning Legion": "لژیون سوزان",
+  "Blasted Lands": "اراضی ویران",
+  "Maraudon": "ماراودون",
+  "Desolace": "دزوله‌یس",
+  "The Molten Core": "هم‌کور گداخته",
+  "Onyxia's Lair": "لانهٔ اونیکسیا",
+  "Molten Core": "هستهٔ مذاب",
+  "Naxxramas": "ناکس‌راماس",
+  "Eastern Plaguelands": "طاعون‌زار شرقی",
+  "armor": "زره",
+  "Onyxia": "اونیکسیا",
+  "Ragefire Chasm": "شکاف آتش‌خشم",
+  "Orgrimmar": "اورگریمار",
+  "Neeru Fireblade": "نیرو آتش‌تیغ",
+  "Razorfen Downs": "تپه‌های ریزرفن",
+  "Barrens": "بارنز",
+  "Razorfen Kraul": "کرال ریزرفن",
+  "Ruins of Ahn'Qiraj": "ویرانه‌های آن‌کیراج",
+  "Silithus": "سیلیتوس",
+  "Tirisfal Glades": "بیشه‌های تیریس‌فال",
+  "Undercity": "آندر‌سیتی",
+  "Scarlet Monastery": "صومعهٔ اسکارلت",
+  "Holy Light": "نور مقدس",
+  "Scarlet Crusade": "صلیبیون سرخ",
+  "Forsaken": "مطرودان",
+  "Scholomance": "شولومانس",
+  "Barov": "باروف",
+  "Caer Darrow": "کائِر دارو",
+  "enemy": "دشمن",
+  "Shadowfang Keep": "دژ نیش‌سایه",
+  "Silverpine Forest": "جنگل سیلورپاین",
+  "Stormwind": "استورم‌ویند",
+  "The Stockade": "زندان استاکید",
+  "Stormwind City": "شهر استورم‌ویند",
+  "Stratholme": "استراتهولم",
+  "Sunken Temple": "معبد غرق‌شده",
+  "Jammal'an the Prophet": "جمالان پیشگو",
+  "Blood": "خون",
+  "Ysera": "یسرا",
+  "Swamp of Sorrows": "باتلاق اندوه",
+  "Uldaman": "اولدامان",
+  "Badlands": "بیابان",
+  "Loch Modan": "لوک مودان",
+  "Wailing Caverns": "غارهای ناله",
+  "Zul'Farrak": "زول‌فراک",
+  "Tanaris": "تاناریس",
+  "Zul'Gurub": "زول‌گوروب"
+ },
+ "tokens": {},
+ "rows": {
+  "ddesc:ahn-qiraj-temple": "The Temple of ⟦E1⟧ (displayed as just ⟦E1⟧) is a 40-man ⟦E2⟧ dungeon located in ⟦E1⟧: The Fallen Kingdom. It was released with patch 1.9 during a massive server-dependent event called the Gates of ⟦E1⟧.",
+  "dloc:alcaz-prison": "⟦E3⟧, ⟦E4⟧",
+  "ddesc:alcaz-prison": "Alcaz Prison, new ⟦E5⟧ 48–53 dungeon of WoW Forever. The beta client names no boss for it yet.",
+  "ddesc:azuregos": "Azuregos is a powerful blue dragon who was trusted by Malygos with the safekeeping of the blue dragonflight's most precious artifacts. He, like ⟦E6⟧, has a sense of humor, and is well-known among the adventurers of ⟦E7⟧ for his many eccentricities.",
+  "ddesc:blackfathom-deeps": "⟦E8⟧ (also known as: BFD) is a partially underwater dungeon in northwestern ⟦E9⟧. It is accessed by a stair-lined shaft that ⟦E10⟧ one to swim through an underwater entrance. The deeps are comprised of a series of watery caverns leading deep to a temple devoted to the Old Gods.",
+  "dloc:blackmaw-hold": "Behind the gate in ⟦E11⟧",
+  "ddesc:blackmaw-hold": "Blackmaw Hold, new ⟦E5⟧ 55–60 dungeon of WoW Forever. The beta client names no boss for it yet.",
+  "ddesc:blackrock-depths": "⟦E12⟧ is the deepest part of ⟦E13⟧, ruled by the Dark Iron dwarves who were led by ⟦E14⟧. Several minions of the ⟦E15⟧ Ragnaros also made their home in these lava-lined depths. The ⟦E12⟧ was introduced as a for WoW's 20th Anniversary.",
+  "ddesc:blackrock-spire": "⟦E16⟧ is a Dark Iron fortress located in the upper levels of ⟦E13⟧. It is also a dungeon hub divided into two large sections, Lower and Upper ⟦E16⟧. The lower spire is inhabited by the Dark ⟦E17⟧ - orcs, ogres and forest trolls and their ⟦E18⟧, the black dragonflight led once by the son of ⟦E19⟧, ⟦E6⟧.",
+  "ddesc:blackwing-lair": "⟦E20⟧ is a 40-man ⟦E2⟧ dungeon located in the ⟦E16⟧ section of the ⟦E13⟧ and is the home to ⟦E6⟧. It was implemented in patch 1.6.",
+  "dloc:city-of-dalaran": "In ⟦E21⟧, ⟦E22⟧: through the city's sewers, to a portal at the end of a long pipe. One member of the group who has done the attunement quests is enough for the whole group to go in.",
+  "ddesc:city-of-dalaran": "City of ⟦E21⟧, a new ⟦E5⟧ 28–33 dungeon of WoW Forever. Location: ⟦E22⟧. 8 bosses, 4 ⟦E23⟧ quests and 4 ⟦E17⟧ quests, 35 drops with their drop rates, the map.",
+  "ddesc:deadmines": "⟦E24⟧ are expansive, winding tunnels dug out under ⟦E25⟧ and part of northwestern ⟦E26⟧. ⟦E24⟧ are the center of the Defias Brotherhood operation, led by the ambitious Edwin VanCleef, who is constructing a juggernaught at the bottom of the mines with the aid of the goblins.",
+  "ddesc:dire-maul-east": "⟦E27⟧ is a three-wing instance found in north-central ⟦E28⟧. It was once a proud Highborne city called Eldre'Thalas (or Eldre'thalas), but now lies in ruins, overrun by ogres, satyrs, and ⟦E29⟧. Only a tiny remnant of the original Highborne population remains in the ⟦E30⟧ of a murderous sect called the Shen'dralar.",
+  "ddesc:dire-maul-north": "⟦E27⟧ is a three-wing instance found in north-central ⟦E28⟧. It was once a proud Highborne city called Eldre'Thalas (or Eldre'thalas), but now lies in ruins, overrun by ogres, satyrs, and ⟦E29⟧. Only a tiny remnant of the original Highborne population remains in the ⟦E30⟧ of a murderous sect called the Shen'dralar.",
+  "ddesc:dire-maul-west": "⟦E27⟧ is a three-wing instance found in north-central ⟦E28⟧. It was once a proud Highborne city called Eldre'Thalas (or Eldre'thalas), but now lies in ruins, overrun by ogres, satyrs, and ⟦E29⟧. Only a tiny remnant of the original Highborne population remains in the ⟦E30⟧ of a murderous sect called the Shen'dralar.",
+  "dloc:emeriss": "Bough ⟦E31⟧ (⟦E9⟧), Dream Bough (⟦E28⟧), Twilight Grove (⟦E32⟧), Seradane (Hinterlands) — rotates",
+  "ddesc:emeriss": "Emeriss was one of the four Dragons of Nightmare. Since WoW's 13th Anniversary, Emeriss is available during the anniversary event.",
+  "dloc:excavation-site": "⟦E33⟧, above Whelgar's Excavation",
+  "ddesc:excavation-site": "Excavation Site: ⟦E33⟧, a new ⟦E5⟧ 26–31 dungeon of WoW Forever. Location: ⟦E33⟧, above Whelgar's Excavation. 4 bosses, 7 ⟦E23⟧ quests and 4 ⟦E17⟧ quests, 15 drops, the map.",
+  "ddesc:gnomeregan": "⟦E34⟧ is the subterranean capital city of the eponymous kingdom of ⟦E34⟧ and the wrought-iron evidence of gnomish brilliance, ambition, and ingenuity. During the Third War, a trogg invasion led to its tragic downfall, pulled from their sleep by the upheaval of titan sites.",
+  "dloc:hall-of-thanes": "Beneath ⟦E35⟧, ⟦E36⟧",
+  "ddesc:hall-of-thanes": "Hall of Thanes, a new ⟦E5⟧ 13–18 dungeon of WoW Forever. Location: Beneath ⟦E35⟧, ⟦E36⟧. 4 bosses, 5 ⟦E23⟧ quests and 2 ⟦E17⟧ quests, 13 drops, the map.",
+  "dloc:kroldok-stronghold": "⟦E37⟧, a new zone (~48.6, 26.3)",
+  "ddesc:kroldok-stronghold": "Krol'dok Stronghold, a new ⟦E5⟧ 40–45 dungeon of WoW Forever: a Twilight's ⟦E38⟧ ogre fortress on a hill in the ⟦E37⟧, shown by ⟦E39⟧ at PAX Australia on October 9, 2026, with its five bosses and the hole in its bridge.",
+  "dloc:lethon": "Bough ⟦E31⟧ (⟦E9⟧), Dream Bough (⟦E28⟧), Twilight Grove (⟦E32⟧), Seradane (Hinterlands) — rotates",
+  "ddesc:lethon": "Lethon was one of the four Dragons of Nightmare. Since WoW's 13th Anniversary, Lethon is available during the anniversary event.",
+  "ddesc:lord-kazzak": "Kazzak is a ⟦E40⟧-hardened doomlord and commander of ⟦E41⟧ forces. After the Third War, he remained on ⟦E7⟧ in the ⟦E42⟧ as Lord Kazzak, and later took part in the reopening of the Dark Portal, marking the beginning of the invasion of Outland.",
+  "ddesc:maraudon": "⟦E43⟧ is a 5-player dungeon, consisting of three wings (the Wicked Grotto, Foulspore Cavern, and Earth Song Falls), located in the Valley of Spears in ⟦E44⟧. It is a combination of ancient centaur burial grounds, as well as a primal temple dedicated to the elemental earth.",
+  "ddesc:molten-core": "⟦E45⟧ is a ⟦E2⟧ dungeon located within ⟦E13⟧, home and seat of power to Ragnaros the ⟦E15⟧. It was one of two forty (40) player ⟦E2⟧ dungeons available upon release of World of Warcraft, the other being ⟦E46⟧. Considered the pinnacle of raiding achievement at the time, the ⟦E47⟧ enticed adventurers to enter the instance in search of realm glory.",
+  "ddesc:naxxramas": "⟦E48⟧ was a 40-man ⟦E2⟧ added in patch 1.11. Originally floating above the ⟦E49⟧, it was a massive necropolis and had the honor of serving as the seat of one of the Lich King's most powerful officers, the lich Kel'Thuzad. The ⟦E2⟧ was regarded as the most difficult before the release of The Burning Crusade, and required 40 well-equipped (preferably Tier 2 or Tier 2.5 ⟦E50⟧) players.",
+  "dloc:onyxia-s-lair": "Dustwallow",
+  "ddesc:onyxia-s-lair": "⟦E46⟧ was a ⟦E5⟧ 60, 40-man ⟦E2⟧ dungeon located in ⟦E4⟧, home to ⟦E51⟧. The original incarnation of the instance was one of two ⟦E2⟧ dungeons available upon release of World of Warcraft, the other being ⟦E47⟧. In patch 3.2.2 the instance was retuned as a ⟦E2⟧ dungeon for ⟦E5⟧ 80 players in honor of the World of Warcraft 5-year anniversary.",
+  "ddesc:ragefire-chasm": "⟦E52⟧ is an instance dungeon located in ⟦E53⟧. The entry portal is in the Cleft of ⟦E31⟧, next to ⟦E54⟧'s tent. The lava-filled chasm is home to many hostile troggs, and followers of the Burning Blade have also recently begun poking around the area.",
+  "ddesc:razorfen-downs": "⟦E55⟧ are the ancestral burial grounds of the quilboar, nestled amid huge brambles in the ⟦E56⟧, on the east side of the far southern edge. The Scourge have taken over much of the downs, and infest the burial grounds with the reawakened dead. It is also known as RFD, not to be confused with RFK or BFD.",
+  "ddesc:razorfen-kraul": "⟦E57⟧ is the ancestral home of the quilboar, heavily entrenched within the thorns that supposedly sprang from the corpse of the demigod Agamaggan. It is found in the Southern ⟦E56⟧, at the far southern edge, west side.",
+  "ddesc:ruins-of-ahn-qiraj": "The ⟦E58⟧ is a 10-man (20-man before ) outdoor ⟦E2⟧ dungeon located in southern ⟦E59⟧, released with patch 1.9. Its release was joined by a massive server-dependent event called the Gates of ⟦E1⟧. It can be found by entering the main ⟦E1⟧ Gate and continuing on the left path.",
+  "dloc:ruins-of-lordaeron": "In ⟦E60⟧, among the ruins of Lordaeron's capital, above the ⟦E61⟧",
+  "ddesc:ruins-of-lordaeron": "Ruins of Lordaeron, a new ⟦E5⟧ 15–20 dungeon of WoW Forever. Location: The ruined city of Lordaeron. 6 bosses, 4 ⟦E23⟧ quests and 6 ⟦E17⟧ quests, 25 drops, the map.",
+  "dloc:scarlet-monastery-armory": "Tirisfal",
+  "ddesc:scarlet-monastery-armory": "The ⟦E62⟧, once known as the Old Monastery, is a fortified monastery located in the northeast corner of the blighted ⟦E60⟧. Once a cathedral of the Church of the ⟦E63⟧, it fell under the control of the ⟦E64⟧ after the Third War, becoming a major base of operations in their war against the Scourge and the ⟦E65⟧.",
+  "dloc:scarlet-monastery-cathedral": "Tirisfal",
+  "ddesc:scarlet-monastery-cathedral": "The ⟦E62⟧, once known as the Old Monastery, is a fortified monastery located in the northeast corner of the blighted ⟦E60⟧. Once a cathedral of the Church of the ⟦E63⟧, it fell under the control of the ⟦E64⟧ after the Third War, becoming a major base of operations in their war against the Scourge and the ⟦E65⟧.",
+  "dloc:scarlet-monastery-graveyard": "Tirisfal",
+  "ddesc:scarlet-monastery-graveyard": "The ⟦E62⟧, once known as the Old Monastery, is a fortified monastery located in the northeast corner of the blighted ⟦E60⟧. Once a cathedral of the Church of the ⟦E63⟧, it fell under the control of the ⟦E64⟧ after the Third War, becoming a major base of operations in their war against the Scourge and the ⟦E65⟧.",
+  "dloc:scarlet-monastery-library": "Tirisfal",
+  "ddesc:scarlet-monastery-library": "The ⟦E62⟧, once known as the Old Monastery, is a fortified monastery located in the northeast corner of the blighted ⟦E60⟧. Once a cathedral of the Church of the ⟦E63⟧, it fell under the control of the ⟦E64⟧ after the Third War, becoming a major base of operations in their war against the Scourge and the ⟦E65⟧.",
+  "ddesc:scholomance": "The ⟦E66⟧ , a vile academy for prospective necromancers of the Scourge, is located in the ruins of the palatial House of ⟦E67⟧, on a rise overlooking the abandoned city of ⟦E68⟧. The ⟦E69⟧ ⟦E5⟧ range is 57-62.",
+  "dloc:shadowfang-keep": "Silverpine",
+  "ddesc:shadowfang-keep": "⟦E70⟧ is a haunted keep in southern ⟦E71⟧, near Pyrewood Village. It is the base of operations for the evil archmage Arugal and his worgen progeny.",
+  "ddesc:shapers-terrace": "Shaper's Terrace, new ⟦E5⟧ 58–60 dungeon of WoW Forever. The beta client names no boss for it yet.",
+  "ddesc:stormwind-stockade": "⟦E72⟧ Stockade, aka ⟦E73⟧, is a heavily guarded prison in the middle of ⟦E74⟧. A large number of dangerous criminals, including some criminal masterminds and Defias mercenaries, are currently being held in the stockade. However, not so long ago, there was a revolt inside the dungeon, and the prisoners now keep the Stockade under their control.",
+  "ddesc:stratholme": "The city of ⟦E75⟧ (pronounced ˈstrathːhɔlm or STRATH-olm) was the northernmost and second most populous city of the kingdom of Lordaeron, and is the city where the Order of the Silver Hand was founded. Today, ⟦E75⟧ is the Scourge's capital in Lordaeron.",
+  "ddesc:sunken-temple": "Temple of Atal'Hakkar (also known as ⟦E76⟧ and more rarely, Lost Temple) is a shrine erected by the Atal'ai trolls, led by their master ⟦E77⟧, to the nefarious ⟦E78⟧ God — Hakkar the Soulflayer. Believing that this was the intended site for Hakkar's reentry into ⟦E7⟧, the great Dragon Aspect, ⟦E79⟧, and her green dragonflight sunk the temple into the depths of the ⟦E80⟧...but the dragons did not realize that it was the wrong location until it was too late.",
+  "dloc:taerar": "Bough ⟦E31⟧ (⟦E9⟧), Dream Bough (⟦E28⟧), Twilight Grove (⟦E32⟧), Seradane (Hinterlands) — rotates",
+  "ddesc:taerar": "Taerar was one of the four Dragons of Nightmare. Since WoW's 13th Anniversary, Taerar is available during the anniversary event.",
+  "dloc:the-drowned-city": "Gillijim's Isle, in the sea southwest of ⟦E26⟧. The portal is in Sunken Hollow, a cave on the island; explorers found it in the beta, not working yet.",
+  "ddesc:the-drowned-city": "The Drowned City, a new ⟦E5⟧ 35–40 dungeon of WoW Forever: where it is (Gillijim's Isle, southwest of ⟦E26⟧), what explorers found there in the beta, its likely bosses and its story.",
+  "ddesc:uldaman": "⟦E81⟧ is a huge and ancient, massive vault created by the titan keepers, buried deep within mountains of Khaz Modan. It is located in the ⟦E82⟧, west of what was once the entrance to ⟦E83⟧. Prior to the Third War, it was partially excavated by the dwarves from ⟦E35⟧, but has since fallen into the hands of the troggs and Dark Irons, who find the place ideal to dig for earthly riches.",
+  "ddesc:wailing-caverns": "The ⟦E84⟧ is in the Northern ⟦E56⟧, to the south of Crossroads, on the north side of the Lushwater Oasis.",
+  "dloc:ysondre": "Bough ⟦E31⟧ (⟦E9⟧), Dream Bough (⟦E28⟧), Twilight Grove (⟦E32⟧), Seradane (Hinterlands) — rotates",
+  "ddesc:ysondre": "Ysondre was one of the four Dragons of Nightmare. Since WoW's 13th Anniversary, Ysondre is available during the anniversary event.",
+  "ddesc:zul-farrak": "⟦E85⟧ , or Zul'farrak, is a Sandfury troll city located in northwestern ⟦E86⟧.",
+  "dloc:zul-gurub": "Stranglethorn",
+  "ddesc:zul-gurub": "⟦E87⟧ is a 20-man ⟦E2⟧ instance located in northeastern ⟦E26⟧, released in patch 1.7. Like ⟦E85⟧, it counts as an outdoors zone, and riding on mounts is possible. ⟦E87⟧ is the capital of the jungle troll tribes, led by the Gurubashi, worshippers of the terrible god, Hakkar the Soulflayer, who personally inhabits a temple in the deepest parts of the city."
+ },
+ "context": {
+  "ddesc:ahn-qiraj-temple": "description of Ahn'Qiraj Temple (raid)",
+  "dloc:alcaz-prison": "location of Alcaz Prison (dungeon)",
+  "ddesc:alcaz-prison": "description of Alcaz Prison (dungeon)",
+  "ddesc:azuregos": "description of Azuregos (worldboss)",
+  "ddesc:blackfathom-deeps": "description of Blackfathom Deeps (dungeon)",
+  "dloc:blackmaw-hold": "location of Blackmaw Hold (dungeon)",
+  "ddesc:blackmaw-hold": "description of Blackmaw Hold (dungeon)",
+  "ddesc:blackrock-depths": "description of Blackrock Depths (dungeon)",
+  "ddesc:blackrock-spire": "description of Blackrock Spire (dungeon)",
+  "ddesc:blackwing-lair": "description of Blackwing Lair (raid)",
+  "dloc:city-of-dalaran": "location of City of Dalaran (dungeon)",
+  "ddesc:city-of-dalaran": "description of City of Dalaran (dungeon)",
+  "ddesc:deadmines": "description of Deadmines (dungeon)",
+  "ddesc:dire-maul-east": "description of Dire Maul: East (dungeon)",
+  "ddesc:dire-maul-north": "description of Dire Maul: North (dungeon)",
+  "ddesc:dire-maul-west": "description of Dire Maul: West (dungeon)",
+  "dloc:emeriss": "location of Emeriss (worldboss)",
+  "ddesc:emeriss": "description of Emeriss (worldboss)",
+  "dloc:excavation-site": "location of Excavation Site: Wetlands (dungeon)",
+  "ddesc:excavation-site": "description of Excavation Site: Wetlands (dungeon)",
+  "ddesc:gnomeregan": "description of Gnomeregan (dungeon)",
+  "dloc:hall-of-thanes": "location of Hall of Thanes (dungeon)",
+  "ddesc:hall-of-thanes": "description of Hall of Thanes (dungeon)",
+  "dloc:kroldok-stronghold": "location of Krol'dok Stronghold (dungeon)",
+  "ddesc:kroldok-stronghold": "description of Krol'dok Stronghold (dungeon)",
+  "dloc:lethon": "location of Lethon (worldboss)",
+  "ddesc:lethon": "description of Lethon (worldboss)",
+  "ddesc:lord-kazzak": "description of Lord Kazzak (worldboss)",
+  "ddesc:maraudon": "description of Maraudon (dungeon)",
+  "ddesc:molten-core": "description of Molten Core (raid)",
+  "ddesc:naxxramas": "description of Naxxramas (raid)",
+  "dloc:onyxia-s-lair": "location of Onyxia's Lair (raid)",
+  "ddesc:onyxia-s-lair": "description of Onyxia's Lair (raid)",
+  "ddesc:ragefire-chasm": "description of Ragefire Chasm (dungeon)",
+  "ddesc:razorfen-downs": "description of Razorfen Downs (dungeon)",
+  "ddesc:razorfen-kraul": "description of Razorfen Kraul (dungeon)",
+  "ddesc:ruins-of-ahn-qiraj": "description of Ruins of Ahn'Qiraj (raid)",
+  "dloc:ruins-of-lordaeron": "location of Ruins of Lordaeron (dungeon)",
+  "ddesc:ruins-of-lordaeron": "description of Ruins of Lordaeron (dungeon)",
+  "dloc:scarlet-monastery-armory": "location of Scarlet Monastery: Armory (dungeon)",
+  "ddesc:scarlet-monastery-armory": "description of Scarlet Monastery: Armory (dungeon)",
+  "dloc:scarlet-monastery-cathedral": "location of Scarlet Monastery: Cathedral (dungeon)",
+  "ddesc:scarlet-monastery-cathedral": "description of Scarlet Monastery: Cathedral (dungeon)",
+  "dloc:scarlet-monastery-graveyard": "location of Scarlet Monastery: Graveyard (dungeon)",
+  "ddesc:scarlet-monastery-graveyard": "description of Scarlet Monastery: Graveyard (dungeon)",
+  "dloc:scarlet-monastery-library": "location of Scarlet Monastery: Library (dungeon)",
+  "ddesc:scarlet-monastery-library": "description of Scarlet Monastery: Library (dungeon)",
+  "ddesc:scholomance": "description of Scholomance (dungeon)",
+  "dloc:shadowfang-keep": "location of Shadowfang Keep (dungeon)",
+  "ddesc:shadowfang-keep": "description of Shadowfang Keep (dungeon)",
+  "ddesc:shapers-terrace": "description of Shaper's Terrace (dungeon)",
+  "ddesc:stormwind-stockade": "description of Stormwind Stockade (dungeon)",
+  "ddesc:stratholme": "description of Stratholme (dungeon)",
+  "ddesc:sunken-temple": "description of Sunken Temple (dungeon)",
+  "dloc:taerar": "location of Taerar (worldboss)",
+  "ddesc:taerar": "description of Taerar (worldboss)",
+  "dloc:the-drowned-city": "location of The Drowned City (dungeon)",
+  "ddesc:the-drowned-city": "description of The Drowned City (dungeon)",
+  "ddesc:uldaman": "description of Uldaman (dungeon)",
+  "ddesc:wailing-caverns": "description of Wailing Caverns (dungeon)",
+  "dloc:ysondre": "location of Ysondre (worldboss)",
+  "ddesc:ysondre": "description of Ysondre (worldboss)",
+  "ddesc:zul-farrak": "description of Zul'Farrak (dungeon)",
+  "dloc:zul-gurub": "location of Zul'Gurub (raid)",
+  "ddesc:zul-gurub": "description of Zul'Gurub (raid)"
+ },
+ "note": "dgn:/dfl:/dch:/bsub:/bname: rows are NAMES — translate the name only. dloc:/ddesc: rows are short texts; keep every ⟦..⟧ token untouched."
+}
