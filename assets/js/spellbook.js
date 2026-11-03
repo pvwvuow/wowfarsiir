@@ -5,7 +5,7 @@
    ========================================================= */
 (function () {
   "use strict";
-  var DATA_V = "20261103b"; /* spells.json fetch bust — bump when the data changes */
+  var DATA_V = "20261103c"; /* spells.json fetch bust — bump when the data changes */
   /* unconfirmed server-hotfix overlay (data/forever/db/hotfix-overlay.json, applied to
      spells.json rows as row.hf): badge + hover line; the badge disappears by itself when
      overlay_sync retires the item (a client build confirms the numbers). */

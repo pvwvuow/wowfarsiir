@@ -54,7 +54,7 @@
 
   <div class="sb-head reveal">
     <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کتاب اسپل‌های فورور</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
-    <p class="sect-en font-cinzel" dir="ltr">Forever Spellbook · Build 1.60.1.70685 vs Classic 1.15.9</p>
+    <p class="sect-en font-cinzel" dir="ltr">Forever Spellbook · Build <span data-build-stamp="spells">…</span> vs Classic 1.15.9</p>
     <p class="sb-sub">همهٔ اسپل‌ها و تلنت‌های ۹ کلاس، همان‌طور که در کلاینت بتای فورور آموزش داده می‌شوند — رده‌به‌رده، کنار نسخهٔ کلاسیک. روی هر اسپل بزنید تا جزئیات و مقایسه را ببینید.</p>
   </div>
 
@@ -119,5 +119,6 @@
 <script src="assets/js/tr.js?v=20261115c"></script>
 <script src="assets/js/spellbook.js?v=20261115c"></script>
 <script src="assets/js/nav-menu.js?v=20261115b"></script>
+<script>fetch("data/forever/db/index.json").then(function(r){return r.json();}).then(function(ix){var s=(ix.sections||{})[document.querySelector("[data-build-stamp]").getAttribute("data-build-stamp")];if(s&&/^1\.60/.test(s.build))document.querySelector("[data-build-stamp]").textContent=s.build;}).catch(function(){});</script>
 </body>
 </html>

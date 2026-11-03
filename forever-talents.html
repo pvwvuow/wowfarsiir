@@ -68,7 +68,7 @@
     <span>✦</span>
     <a href="index.html">خانه</a>
     <span>✦</span>
-    <span class="font-cinzel" dir="ltr">WoW Forever · build 1.60.1.70685</span>
+    <span class="font-cinzel" dir="ltr">WoW Forever · build <span data-build-stamp="talents">…</span></span>
   </div>
   <p class="footer-note">World of Warcraft and Warcraft are trademarks of Blizzard Entertainment, Inc. — این سایت وابسته به بلیزارد نیست.</p>
 </footer>
@@ -77,5 +77,6 @@
 <script>document.addEventListener("DOMContentLoaded", function(){ if (typeof setupReveals === "function") setupReveals(); });</script>
 <script src="assets/js/nav-menu.js?v=20261115b"></script>
 <script src="assets/js/talentcalc.js?v=20261103a"></script>
+<script>fetch("data/forever/db/index.json").then(function(r){return r.json();}).then(function(ix){var s=(ix.sections||{})[document.querySelector("[data-build-stamp]").getAttribute("data-build-stamp")];if(s&&/^1\.60/.test(s.build))document.querySelector("[data-build-stamp]").textContent=s.build;}).catch(function(){});</script>
 </body>
 </html>
