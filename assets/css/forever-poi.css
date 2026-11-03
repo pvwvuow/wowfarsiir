@@ -60,20 +60,21 @@
 .fpoi-clr:hover:not(:disabled) { border-color: var(--gold-2); color: var(--gold-1); }
 .fpoi-clr:disabled { opacity: .4; cursor: default; }
 
-/* the pin layer follows the map image's transform; pins keep a constant screen size (--inv = 1 / zoom) */
+/* the layer is as big as the zoomed map and only translated (forever-poi.js), never scaled:
+   pins and names stay crisp and keep their size at any zoom */
 .fpoi-layer {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3;
-  transform-origin: 0 0; will-change: transform; pointer-events: none; --inv: 1; }
+  transform-origin: 0 0; pointer-events: none; }
 .fpoi-p {
   position: absolute; width: 24px; height: 24px; pointer-events: auto; cursor: help;
-  transform: translate(-50%, -50%) scale(var(--inv));
+  transform: translate(-50%, -50%);
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .85)); }
 .fpoi-p.sm { width: 18px; height: 18px; }
 .fpoi-p.dm {
   width: 11px; height: 11px; background: var(--gold-2); border: 1px solid #1a1306;
-  transform: translate(-50%, -50%) rotate(45deg) scale(var(--inv)); }
-.fpoi-p:hover { z-index: 2; transform: translate(-50%, -50%) scale(calc(var(--inv) * 1.3)); }
-.fpoi-p.dm:hover { transform: translate(-50%, -50%) rotate(45deg) scale(calc(var(--inv) * 1.3)); }
+  transform: translate(-50%, -50%) rotate(45deg); }
+.fpoi-p:hover { z-index: 2; transform: translate(-50%, -50%) scale(1.25); }
+.fpoi-p.dm:hover { transform: translate(-50%, -50%) rotate(45deg) scale(1.25); }
 
 @media (max-width: 640px) {
   .fpoi-ui { top: 8px; right: 8px; }
@@ -90,10 +91,9 @@
   font-family: "Cinzel", Georgia, serif; font-size: 11px; font-weight: 600; letter-spacing: .06em; line-height: 1.2;
   color: #f4dc9c; background: rgba(6, 9, 16, .5); border: 1px solid transparent; border-radius: 3px; padding: 1px 5px;
   text-shadow: 0 1px 2px #000, 0 0 4px #000;
-  transform: translate(-50%, -50%) scale(var(--inv)); transition: background .15s, border-color .15s, color .15s; }
+  transform: translate(-50%, -50%); transition: background .15s, border-color .15s, color .15s; }
 .fpoi-z:hover, .fpoi-z:focus-visible {
-  z-index: 3; color: #fff; background: rgba(11, 15, 26, .88); border-color: var(--gold-2); outline: none;
-  transform: translate(-50%, -50%) scale(calc(var(--inv) * 1.12)); }
+  z-index: 3; color: #fff; background: rgba(11, 15, 26, .88); border-color: var(--gold-2); outline: none; }
 .fpoi-z.city { color: #e8dfc8; font-size: 0; letter-spacing: .1em; text-transform: uppercase; padding: 4px; background: none; }
 .fpoi-z.city::before {
   content: ""; display: inline-block; width: 7px; height: 7px; vertical-align: middle;

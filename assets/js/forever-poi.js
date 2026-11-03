@@ -10,14 +10,16 @@
    On a continent map the same layer shows the English name of every zone / city at its exact
    position (data/forever/db/poi/zone-labels.json); a click opens that zone's map.
    forever.js is untouched: this file watches the map image (src, transform,
-   class) and lays one layer over it that follows the same pan / zoom.
+   class) and lays one layer over it that follows the same pan / zoom. The layer is NOT scaled with
+   the map (that would blur pins and names): it is made as big as the zoomed map and only translated,
+   so every pin and name keeps its own crisp size at any zoom.
    ========================================================= */
 "use strict";
 (function () {
   var box = document.getElementById("fmap");
   var cv = box && box.querySelector(".fmap-cv");
   if (!box || !cv) return;
-  var V = "20261103c", DB = "data/forever/db/poi/", IC = "assets/img/map-icons/", KEY = "wf_poi_sel_v1";
+  var V = "20261103d", DB = "data/forever/db/poi/", IC = "assets/img/map-icons/", KEY = "wf_poi_sel_v1";
   var CONT = { "kalimdor": 1, "eastern-kingdoms": 1 };
   var SMALL = { "herb": 1, "ore": 1, "fishing-hole": 1, "chest": 1, "rare": 1, "cooking-fire": 1, "forge-anvil": 1 };
   var ZL = null, IDX = null, CATS = {}, DATA = {}, OPEN = { services: 1 }, SEL = {}, cur = "", failed = false;
@@ -232,16 +234,18 @@
   /* ---------- follow the map (pan / zoom / which map) ---------- */
   var lastT = "";
   function sync() {
-    var t = cv.style.transform || "", m;
+    var t = cv.style.transform || "", m, k, tr;
     if (t === lastT) return;
     lastT = t;
-    layer.style.transform = t;
-    zl.style.transform = t;
-    m = t.match(/scale\(([^)]+)\)/);
-    if (m && +m[1] > 0) {
-      layer.style.setProperty("--inv", (1 / +m[1]).toFixed(4));
-      zl.style.setProperty("--inv", (1 / +m[1]).toFixed(4));
-    }
+    m = t.match(/translate3d\(\s*(-?[0-9.e+-]+)px\s*,\s*(-?[0-9.e+-]+)px/);
+    k = t.match(/scale\(([^)]+)\)/);
+    if (!m || !k || !(+k[1] > 0)) return;
+    tr = "translate(" + Math.round(+m[1]) + "px," + Math.round(+m[2]) + "px)";
+    [layer, zl].forEach(function (L) {
+      L.style.transform = tr;
+      L.style.width = (+k[1] * 100).toFixed(3) + "%";
+      L.style.height = (+k[1] * 100).toFixed(3) + "%";
+    });
   }
   function refresh() {
     var slug = cur;
