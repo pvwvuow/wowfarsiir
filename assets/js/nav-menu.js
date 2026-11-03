@@ -106,7 +106,9 @@
               onPage("item.html") || /^\/item\//.test(path) || /^\/guides\//.test(path);
   var M_FVR = onPage("forever.html") || onPage("forever-talents.html") ||
               onPage("spellbook.html") || onPage("patch-notes.html") || onPage("items.html") ||
-              onPage("quest.html") || onPage("quests.html") || onPage("npc.html") || onPage("dungeon.html");
+              onPage("quest.html") || onPage("quests.html") || onPage("npc.html") || onPage("dungeon.html") ||
+              onPage("professions.html") || onPage("profession.html");
+  var M_PROF = onPage("professions.html") || onPage("profession.html");
   var M_NEWS = onPage("news.html") || onPage("article.html") || onPage("news-translate.html") || /^\/news\//.test(path);
   var ON_INDEX = /\/(?:index\.html)?$/.test(path) && !M_MID && !M_FVR && !M_NEWS;
   var ACT = " is-active";
@@ -155,7 +157,8 @@
   var html =
     '<a href="' + (ON_INDEX ? "#top" : BASE + "index.html") + '">خانه</a>' +
     '<span class="rtx-wrap" data-dd="midnight"></span>' +
-    '<a href="' + BASE + 'forever.html"' + (M_FVR ? ' class="is-active"' : "") + '>Forever</a>' +
+    '<a href="' + BASE + 'forever.html"' + (M_FVR && !M_PROF ? ' class="is-active"' : "") + '>Forever</a>' +
+    '<a href="' + BASE + 'professions.html"' + (M_PROF ? ' class="is-active"' : "") + '>حرفه‌ها</a>' +
     '<a href="' + BASE + 'news.html"' + (M_NEWS ? ' class="is-active"' : "") + '>wowheadFA</a>' +
     '<a href="' + BASE + 'item.html"' + (onPage("item.html") || onPage("db.html") ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
     '<a href="' + BASE + 'addon.html"' + (onPage("addon.html") ? ' class="is-active"' : "") + '>افزونه</a>' +
