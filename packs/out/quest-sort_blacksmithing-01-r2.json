@@ -1,0 +1,873 @@
+{
+ "pack": "quest-sort:blacksmithing-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:blacksmithing-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E2": {
+   "en": "Loch Modan",
+   "fa": "لوک مودان",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Tormus Deepforge",
+   "fa": "تورموس ژرف‌کوره",
+   "kind": "qs"
+  },
+  "E5": {
+   "en": "Verner Osgood",
+   "fa": "ورنر آزگود",
+   "kind": "npc"
+  },
+  "E7": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Patterned Bronze Bracers",
+   "fa": "مچ‌بند برنزی الگودار",
+   "kind": "it"
+  },
+  "E9": {
+   "en": "Orokk Omosh",
+   "fa": "اورک اوموش",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Green Iron Bracers",
+   "fa": "ساعدبندِ آهنِ سبز",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Green Iron Leggings",
+   "fa": "پاافزارِ آهنِ سبز",
+   "kind": "it"
+  },
+  "E14": {
+   "en": "Silvered Bronze Boots",
+   "fa": "چکمهٔ برنزِ نقره‌اندود",
+   "kind": "it"
+  },
+  "E15": {
+   "en": "Silvered Bronze Gauntlets",
+   "fa": "دستکش زرهیِ برنزِ نقره‌اندود",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Aturk the Anvil",
+   "fa": "آتورک سندان",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "Thrall",
+   "fa": "ترال",
+   "kind": "npc"
+  },
+  "E20": {
+   "en": "McGavan",
+   "fa": "مک‌گاون",
+   "kind": "npc"
+  },
+  "E21": {
+   "en": "Booty Bay",
+   "fa": "خلیج غنیمت",
+   "kind": "zn"
+  },
+  "E22": {
+   "en": "Golden Scale Bracers",
+   "fa": "ساعدبندِ فلسِ طلایی",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Hank the Hammer",
+   "fa": "هنک چکش",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Blacksmithing",
+   "fa": "آهنگری",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Galvan the Ancient",
+   "fa": "گالوان باستانی",
+   "kind": "npc"
+  },
+  "E29": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E30": {
+   "en": "Ornate Mithril Boots",
+   "fa": "چکمهٔ میتریلِ مزین",
+   "kind": "it"
+  },
+  "E31": {
+   "en": "Ornate Mithril Breastplate",
+   "fa": "سینه‌پوشِ میتریلِ مزین",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Trenton Lighthammer",
+   "fa": "ترنتون چکش نور",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Tanaris",
+   "fa": "تاناریس",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Ornate Mithril Shoulder",
+   "fa": "سرشانهٔ آراستهٔ میتریل",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Heavy Mithril Boots",
+   "fa": "چکمهٔ میتریلِ سنگین",
+   "kind": "it"
+  },
+  "E41": {
+   "en": "Ornate Mithril Pants",
+   "fa": "شلوارِ میتریلِ مزین",
+   "kind": "it"
+  },
+  "E42": {
+   "en": "Ornate Mithril Gloves",
+   "fa": "دستکشِ میتریلِ مزین",
+   "kind": "it"
+  },
+  "E43": {
+   "en": "Travel",
+   "fa": "سفر",
+   "kind": "sp"
+  },
+  "E44": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  },
+  "E45": {
+   "en": "Crimson Hammersmith",
+   "fa": "چکش‌ساز ارغوانی",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Crimson Hammersmith's Apron",
+   "fa": "پیش‌بندِ پتک‌زن سرخ",
+   "kind": "it"
+  },
+  "E47": {
+   "en": "Scarlet",
+   "fa": "سرخ‌پوشان",
+   "kind": "npc"
+  },
+  "E48": {
+   "en": "Serenity",
+   "fa": "آرامش",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Blackrock Spire",
+   "fa": "برج بلک‌راک",
+   "kind": "zn"
+  },
+  "E50": {
+   "en": "Shadow Hunter Vosh'gajin",
+   "fa": "ووشگاجین",
+   "kind": "npc"
+  },
+  "E51": {
+   "en": "Vosh'gajin's Snakestone",
+   "fa": "سنگ‌مارِ ووش‌گاجین",
+   "kind": "it"
+  },
+  "E52": {
+   "en": "Kilram",
+   "fa": "کیلرام",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Dawn's Edge",
+   "fa": "تیغِ سپیده",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Black Guard Swordsmith",
+   "fa": "شمشیرساز نگهبان سیاه",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "Insignia of the Black Guard",
+   "fa": "نشانِ سیاه نگهبان",
+   "kind": "it"
+  },
+  "E56": {
+   "en": "Seril Scourgebane",
+   "fa": "سریل دافع آفت",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Corruption",
+   "fa": "فساد",
+   "kind": "sp"
+  },
+  "E58": {
+   "en": "Lorekeeper Lydros",
+   "fa": "حافظ دانش لیدروس",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Loch Modan": "لوک مودان",
+  "Tormus Deepforge": "تورموس ژرف‌کوره",
+  "Verner Osgood": "ورنر آزگود",
+  "Ironforge": "آیرون‌فورج",
+  "Patterned Bronze Bracers": "مچ‌بند برنزی الگودار",
+  "Orokk Omosh": "اورک اوموش",
+  "Orgrimmar": "اورگریمار",
+  "Green Iron Bracers": "ساعدبندِ آهنِ سبز",
+  "Green Iron Leggings": "پاافزارِ آهنِ سبز",
+  "Silvered Bronze Boots": "چکمهٔ برنزِ نقره‌اندود",
+  "Silvered Bronze Gauntlets": "دستکش زرهیِ برنزِ نقره‌اندود",
+  "Aturk the Anvil": "آتورک سندان",
+  "Thrall": "ترال",
+  "McGavan": "مک‌گاون",
+  "Booty Bay": "خلیج غنیمت",
+  "Golden Scale Bracers": "ساعدبندِ فلسِ طلایی",
+  "Hank the Hammer": "هنک چکش",
+  "Stormwind": "استورم‌ویند",
+  "Blacksmithing": "آهنگری",
+  "Galvan the Ancient": "گالوان باستانی",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "Ornate Mithril Boots": "چکمهٔ میتریلِ مزین",
+  "Ornate Mithril Breastplate": "سینه‌پوشِ میتریلِ مزین",
+  "Horde": "هورد",
+  "Trenton Lighthammer": "ترنتون چکش نور",
+  "Tanaris": "تاناریس",
+  "Ornate Mithril Shoulder": "سرشانهٔ آراستهٔ میتریل",
+  "Heavy Mithril Boots": "چکمهٔ میتریلِ سنگین",
+  "Ornate Mithril Pants": "شلوارِ میتریلِ مزین",
+  "Ornate Mithril Gloves": "دستکشِ میتریلِ مزین",
+  "Travel": "سفر",
+  "Stratholme": "استراتهولم",
+  "Crimson Hammersmith": "چکش‌ساز ارغوانی",
+  "Crimson Hammersmith's Apron": "پیش‌بندِ پتک‌زن سرخ",
+  "Scarlet": "سرخ‌پوشان",
+  "Serenity": "آرامش",
+  "Blackrock Spire": "برج بلک‌راک",
+  "Shadow Hunter Vosh'gajin": "ووشگاجین",
+  "Vosh'gajin's Snakestone": "سنگ‌مارِ ووش‌گاجین",
+  "Kilram": "کیلرام",
+  "Dawn's Edge": "تیغِ سپیده",
+  "Black Guard Swordsmith": "شمشیرساز نگهبان سیاه",
+  "Insignia of the Black Guard": "نشانِ سیاه نگهبان",
+  "Seril Scourgebane": "سریل دافع آفت",
+  "Corruption": "فساد",
+  "Lorekeeper Lydros": "حافظ دانش لیدروس"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$R",
+  "9": "$N",
+  "10": "$N",
+  "11": "$N",
+  "12": "$B",
+  "13": "$N",
+  "14": "$N",
+  "15": "$N",
+  "16": "$N",
+  "17": "$B",
+  "18": "$N",
+  "19": "$B",
+  "20": "$r",
+  "21": "$N",
+  "22": "$N",
+  "23": "$N",
+  "24": "$N",
+  "25": "$N",
+  "26": "$B",
+  "27": "$N",
+  "28": "$B",
+  "29": "$N",
+  "30": "$B",
+  "31": "$N",
+  "32": "$g guy:girl;",
+  "33": "$N",
+  "34": "$N",
+  "35": "$B",
+  "36": "$N",
+  "37": "$N",
+  "38": "$N",
+  "39": "$N",
+  "40": "$N",
+  "41": "$N",
+  "42": "$N",
+  "43": "$N",
+  "44": "$N",
+  "45": "$N",
+  "46": "$N",
+  "47": "$N",
+  "48": "$N",
+  "49": "$B",
+  "50": "$N",
+  "51": "$N",
+  "52": "$N",
+  "53": "$N",
+  "54": "$N",
+  "55": "$N",
+  "56": "$N",
+  "57": "$B",
+  "58": "$N",
+  "59": "$c",
+  "60": "$N"
+ },
+ "rows": {
+  "quest:1578:obj:0": "Bring 6 Copper Axes and 6 Copper Chain Belts to Thorvald in the southern guard tower of ⟦E2⟧.",
+  "quest:1578:details:0": "The mountaineers of ⟦E2⟧ are fighting troggs, and having a busy time of it! They need constant supplies of new armor and weapons if we're ever to get a handle on those troggs.",
+  "quest:1578:details:1": "That's why my colleague Thorvald is there, trying to keep the mountaineers in good gear. So if you were to make some copper axes and copper chain belts and bring them to Thorvald, he would be obliged. He might even share his knowledge with you.",
+  "quest:1578:details:2": "Thorvald is in ⟦E2⟧'s southern guard tower.",
+  "quest:1578:progress:0": "I have no time to chat. Do you have business with me?",
+  "quest:1578:completion:0": "Ah, apologies! I didn't realize you were here to help resupply our troops. The stuff you made will be a big help!",
+  "quest:1578:completion:1": "Here are plans for some armor. I hope you find them useful.",
+  "quest:1618:obj:0": "⟦E4⟧ wants you to bring 4 Runed Copper Belts and 4 Heavy Copper Mauls to ⟦E5⟧ in Redridge.",
+  "quest:1618:details:0": "We dwarves aren't the only ones fighting. Our human allies have their hands full too!",
+  "quest:1618:details:1": "Redridge is under periodic attack from blackrock orcs, and their supply of equipment is always low. If you were to help them out, I'm sure their resident blacksmith, ⟦E5⟧, would teach you a trick or two.",
+  "quest:1618:progress:0": "I hope you're here with good news from ⟦E7⟧. Because I'm at my wit's end!",
+  "quest:1618:completion:0": "Thank you, ⟦1⟧. This will help me out tremendously. With the Blackrock orcs attacking from Stonewatch Keep and the Redridge gnolls lurking in the foothills to the north, I'm always fixing armor and making new weapons for our troops.",
+  "quest:1618:completion:1": "The supplies you brought will give me a moment's peace. I will have enough time to teach you something...",
+  "quest:2751:obj:0": "Bring two ⟦E8⟧, two Bronze Greatswords, and two Sharp Claws to ⟦E9⟧ in ⟦E10⟧.⟦2⟧",
+  "quest:2751:details:0": "Twenty generations of Omosh have held this hammer, ⟦3⟧. A hundred thousand tons of metal we have molded. Tragically, it all ends at Orokk, failure of the Omosh: Without kin and incapable of producing offspring.",
+  "quest:2751:details:1": "I cannot let the secret recipes of Omosh die with me! Someone must continue the legacy, Omosh or not!",
+  "quest:2751:details:2": "Prove to Orokk you are capable, ⟦4⟧. Bring for Orokk the following: Two patterned bronze bracers, two bronze greatswords, and two sharp claws. Bring them for Orokk and we shall continue.",
+  "quest:2751:progress:0": "Bronze, ⟦5⟧! More bronze!!",
+  "quest:2751:completion:0": "The bloodline will fade but perhaps the legend of Omosh will continue!",
+  "quest:2751:completion:1": "You have proven that you are a blacksmith, ⟦6⟧. For the blacksmith the reward is the satisfaction of seeing their weapons and armors coated in the blood of their enemies!",
+  "quest:2751:completion:2": "May the breastplates you create for the generations ahead be drenched in the blood of your enemies!",
+  "quest:2752:obj:0": "Bring four Bronze Battleaxes and four Bronze Warhammers to ⟦E9⟧ in ⟦E10⟧.",
+  "quest:2752:details:0": "Orokk sees the eagerness in your eyes, ⟦7⟧. Like a sponge you soak in the wisdom of the Omosh.",
+  "quest:2752:details:1": "Three lessons I shall teach!",
+  "quest:2752:details:2": "Return to the anvil, soak in the heat of the forge, create for Orokk four bronze battleaxes and four bronze warhammers. Only then will you learn of the iron pauldron.",
+  "quest:2752:progress:0": "Show me your dedication, ⟦8⟧.",
+  "quest:2752:completion:0": "You do Orokk proud, ⟦9⟧. Read, learn of iron shoulders!",
+  "quest:2753:obj:0": "Bring four Green Iron Helms, four ⟦E12⟧, and two ⟦E13⟧ to ⟦E9⟧ in ⟦E10⟧.",
+  "quest:2753:details:0": "Only two more lessons Orokk will teach, ⟦10⟧. Your muscles ache, I know, but continue on for the Omosh!",
+  "quest:2753:details:1": "Bring to Orokk four green iron helms, four green iron bracers, and two green iron leggings - for this you learn and your enemies suffer!",
+  "quest:2753:progress:0": "Their skulls will crack under the pressure of your boots!",
+  "quest:2753:completion:0": "You remind Orokk of his grandfather, Chief Gorokk of Omosh! Read, learn of the iron boot.",
+  "quest:2754:obj:0": "Bring two Solid Iron Mauls, two ⟦E14⟧, and two ⟦E15⟧ to ⟦E9⟧ in ⟦E10⟧.",
+  "quest:2754:details:0": "The final lesson Orokk teaches you, ⟦11⟧. To the sacred anvil and forge you return! Bring for Orokk two solid iron mauls, two silvered bronze boots, and two silvered bronze gauntlets.",
+  "quest:2754:details:1": "See the fear in their eyes as you approach!⟦12⟧",
+  "quest:2754:progress:0": "Show the iron who is in charge, ⟦13⟧!",
+  "quest:2754:completion:0": "Astounding! You have learned the way of the Omosh, ⟦14⟧!",
+  "quest:2755:obj:0": "Watch and learn the Omosh Dance of Joy.",
+  "quest:2755:details:0": "Orokk is not crying, ⟦15⟧. Soot is in eye.",
+  "quest:2755:details:1": "B<Orokk wipes a tear away.>",
+  "quest:2755:details:2": "There is one last Omosh family secret Orokk will teach you. Orokk will die happy, thanks to ⟦16⟧.",
+  "quest:2755:details:3": "Learn Omosh dance of joy and then you learn fist of iron!⟦17⟧",
+  "quest:2755:completion:0": "<Orokk pants.>",
+  "quest:2755:completion:1": "It has been a very long time since Orokk has done the Omosh dance of joy. Learn now, ⟦18⟧!",
+  "quest:2756:obj:0": "Bring four Steel Breastplates and four Steel Plate Helms to ⟦E18⟧ in ⟦E10⟧.⟦19⟧",
+  "quest:2756:details:0": "In the time of legends, Aturk would crush the skulls of his enemies and grind the bone into a fine powder for use in filament. Long gone are those days, ⟦20⟧. The Warchief calls for peace among the clans. Old enemies are now only watched with weary eyes!",
+  "quest:2756:details:1": "Unbelievable, I know, but such is the will of ⟦E19⟧.",
+  "quest:2756:details:2": "Enough lamenting! You are here to learn, and learn you will! Bring me four steel breastplates and four steel helms and you will gain a taste of war!",
+  "quest:2756:progress:0": "Aturk, like time, waits for no one! Hurry up fool!",
+  "quest:2756:completion:0": "It seems you are but another complacent lemming of the Warchief, ⟦21⟧. How disappointing.",
+  "quest:2756:completion:1": "How I long for a glorious death upon the battlefield. Instead, I am stuck here, by order of ⟦E19⟧, to teach infants how to craft! Watch and learn, child!",
+  "quest:2757:obj:0": "Speak with ⟦E20⟧ in ⟦E21⟧.",
+  "quest:2757:details:0": "Listen, kid, you're not gonna learn anything hanging around here.",
+  "quest:2757:details:1": "I know a guy who knows a guy. He hangs around the smithy in ⟦E21⟧. If you show him this insignia, he'll tell you all about mithril.",
+  "quest:2757:details:2": "So whadd'ya say? Leave this kid stuff to the babies in diapers, ⟦22⟧ -- it's time to move on.",
+  "quest:2757:details:3": "If you're interested, his name's ⟦E20⟧. Show him this trinket and he'll recognize your commitment.",
+  "quest:2757:progress:0": "A rare breed your kind be, matey. Let me see that insignia.",
+  "quest:2757:completion:0": "By Blackhoof's back hair -- finally, one worthy of the Mithril Order!",
+  "quest:2757:completion:1": "B",
+  "quest:2758:obj:0": "Bring six ⟦E22⟧ to ⟦E23⟧ in ⟦E24⟧.",
+  "quest:2758:details:0": "When I was about your age, a dwarf by the name of Galvan took me under his wing and trained me in the ways of the armorsmith. Before he left for ⟦E21⟧, he made me promise to train all those with the desire and determination to advance in the craft of blacksmithing -- so here I am -- all these years later.",
+  "quest:2758:details:1": "So, now it's time for you to learn a little something. Make me six golden scale bracers and you will learn where smithing comes from, ⟦23⟧.",
+  "quest:2758:progress:0": "Could you be the next Galvan protege?",
+  "quest:2758:completion:0": "Very good, ⟦24⟧! Listen and learn.",
+  "quest:2758:completion:1": "⟦E26⟧ never comes from here! <Hank points to his hammer.>",
+  "quest:2758:completion:2": "⟦E26⟧ never comes from here! <Hank points to the anvil.>",
+  "quest:2758:completion:3": "⟦E26⟧ only comes from here! <Hank points to his heart.>",
+  "quest:2758:completion:4": "And now you know the origin of blacksmithing.",
+  "quest:2759:obj:0": "Speak with ⟦E20⟧ in ⟦E21⟧.",
+  "quest:2759:details:0": "Although Galvan left ⟦E21⟧ many years ago, members of the order still remain in town, hoping to one day find another worthy of Galvan's tutelage.",
+  "quest:2759:details:1": "Take this insignia and present it to ⟦E20⟧ in ⟦E21⟧.",
+  "quest:2759:details:2": "If you actually make it that far, he'll know that you are worthy. I have faith, ⟦25⟧!",
+  "quest:2759:progress:0": "A rare breed your kind be, matey. Let me see that insignia.",
+  "quest:2759:completion:0": "By Blackhoof's back hair -- finally, one worthy of the Mithril Order!",
+  "quest:2760:obj:0": "Speak with ⟦E28⟧ in ⟦E29⟧.⟦26⟧",
+  "quest:2760:details:0": "Most of our recruits never make it to ⟦E21⟧, ⟦27⟧. The shine of the insignia is enough to trigger the loot lust in even the staunchest of blacksmiths. Fools they be, as the insignia is a drop in the bucket compared to the wealth of items you'll see!",
+  "quest:2760:details:1": "Find ⟦E28⟧ and show him this pin. His residence is far to the north, between Zul Gurub and the Mosh'Ogg ogre mound.⟦28⟧",
+  "quest:2760:progress:0": "Hail! Come closer; show Galvan what you have.",
+  "quest:2760:completion:0": "Ah, many years it has been since one has been worthy of the mithril order's initiation. We will start now!",
+  "quest:5283:obj:0": "To become an Armorsmith, you must make the following items and return them to Grumnus: 4 Ornate Mithril Helms, 2 ⟦E30⟧, 1 ⟦E31⟧.",
+  "quest:5283:details:0": "So ye made the smart decision.",
+  "quest:5283:details:1": "There ain't no love lost betwixt me an old Ironus here. That good for nothing toy maker knows who the true craftsmen round here be.",
+  "quest:5283:details:2": "The truly great wars are won with a good defense. When it be go time, no offense is gonna be helping ye out.",
+  "quest:5283:details:3": "Right, so let's get to work. All ye need to do is show me that ye've got some raw talent. After that, I'll yank whatever impurities be left in ye and mold ye into an armorsmith. Ye do know how to make ornate mithril, don't ye?",
+  "quest:5283:progress:0": "Ah, ain't nothing like a good forge tan. Ye can tell who's got the really good tans by their apron lines.",
+  "quest:5283:completion:0": "This be it, ⟦29⟧. After this, there ain't no way to turn back. It's not too late to become a toy maker, er, weaponsmith.",
+  "quest:5283:completion:1": "I trust ye'll make the right decision.",
+  "quest:5284:obj:0": "To become a Weaponsmith, you must make the following items and return them to Ironus: 4 Moonsteel Broadswords, 4 Massive Iron Axes, 2 Heavy Mithril Axes, and 2 Big Black Maces.⟦30⟧",
+  "quest:5284:details:0": "As a weaponsmith you'll find that more often than not, heroes and adventurers will be coming to you for gear. While the workload can be unbearable at times, the riches more than make up for the back strain and ash lung.",
+  "quest:5284:details:1": "Oh yes, ⟦31⟧, weaponsmiths are the ones with all the gold!",
+  "quest:5284:details:2": "If you wish to join our ranks, you'll need to show me that you can make me a silver or two - I mean, show me that you've got what it takes to be the go to ⟦32⟧ when people need superior quality weapons. Get to work!",
+  "quest:5284:progress:0": "<Ironus is busy stacking gold coins into neat little piles.>",
+  "quest:5284:completion:0": "About time! I've got customers waiting.",
+  "quest:5284:completion:1": "Give those here and pay attention. You're going to take the first step in your career as a weaponsmith.",
+  "quest:5301:obj:0": "To become an armorsmith, you must make the following items and return them to Okothos: 4 Ornate Mithril Helms, 2 ⟦E30⟧, 1 ⟦E31⟧.",
+  "quest:5301:details:0": "Satisfaction. It is what I draw from the hammer and the anvil. To see a proud ⟦E34⟧ warrior protected under my steel reminds me of what it is to be alive. It is an addiction that I dare never give up, ⟦33⟧.",
+  "quest:5301:details:1": "I can not grant you this satisfaction, merely set you upon the path. As with all of life's endeavors, the path of the armorsmith is a journey.",
+  "quest:5301:details:2": "If you wish to be one of the select few, you need only to ask and I shall train, but, a task you must first complete.",
+  "quest:5301:progress:0": "I will pound the steel until the breath itself has been taken from me.",
+  "quest:5301:completion:0": "This is the final step before you begin your new career as an armorsmith, ⟦34⟧. Should you choose to back out, now would be your last chance. Otherwise, prepare yourself for a lifetime of glory.",
+  "quest:5302:obj:0": "To become a Weaponsmith, you must make the following items and return them to Borgosh: 4 Moonsteel Broadswords, 4 Massive Iron Axes, 2 Heavy Mithril Axes, and 2 Big Black Maces.⟦35⟧",
+  "quest:5302:details:0": "One day, I will create a legendary hammer. A hammer fit for a Warchief!",
+  "quest:5302:details:1": "It is my life's work, ⟦36⟧. My passion. I recognize that you have the potential to be among us, one of us - a weaponsmith. I am the one that can help you harness that potential.",
+  "quest:5302:details:2": "BA simple task is all that you must complete. Simple for one of your exceptional skill.",
+  "quest:5302:progress:0": "For the glory of the ⟦E34⟧!",
+  "quest:5302:completion:0": "This is the final step before you begin your new career as a weaponsmith, ⟦37⟧. Should you choose to back out, now would be your last chance. Otherwise, prepare to be consumed by knowledge!",
+  "quest:2761:obj:0": "Bring forty Mithril Bars and forty Iron Bars to ⟦E28⟧ in Stranglethorn.",
+  "quest:2761:details:0": "Many blacksmiths believe that mining and smithing are separate, independent jobs; but can there be blacksmithing without mining? Ah ha -- it is an impossibility! The accomplished blacksmith must also be an accomplished miner.",
+  "quest:2761:details:1": "Show Galvan that you are capable, ⟦38⟧. Bring me forty bars of iron and forty bars of mithril. For this, Galvan will teach you the ways of the ornate mithril pants!",
+  "quest:2761:progress:0": "After such mining, your muscles bulge and your body aches!",
+  "quest:2761:completion:0": "Your work ethic is impeccable, ⟦39⟧! You are starting to understand the ways of Galvan mineralogy! Take this and learn from it all that you can.",
+  "quest:2762:obj:0": "Bring forty Mithril Bars and five Truesilver Bars to ⟦E28⟧ in Stranglethorn.",
+  "quest:2762:details:0": "It is said that truesilver is stronger and more durable than mithril. Galvan does not disagree with this assessment of the minerals, but contrary to its name, truesilver is not true! Mithril is a far nobler mineral! HAH! Regardless, for this lesson you will need to find the great silver deceiver, ⟦40⟧.",
+  "quest:2762:details:1": "Bring me forty bars of mithril and five bars of truesilver. In exchange, you will be taught the secret of ornate mithril gloves and more importantly, learn that truesilver is a liar!",
+  "quest:2762:progress:0": "After such mining, your muscles bulge and your body aches!",
+  "quest:2762:completion:0": "She's a cruel mistress, is she not, ⟦41⟧? I'm speaking of truesilver, naturally. Aye, Galvan spent over a decade in the mountains of Alterac learning this lesson. Take this and learn from it all that you can!",
+  "quest:2763:obj:0": "Bring forty Mithril Bars and four Citrines to ⟦E28⟧ in Stranglethorn.",
+  "quest:2763:details:0": "The harvesting of precious gems is of utmost importance to our craft, ⟦42⟧. Few gems are more precious than the citrine. The magical properties we imbue into our goods are amplified greatly by the presence of citrine.",
+  "quest:2763:details:1": "For this lesson, we will fortify forty bars of mithril with four citrines. The result will be a better understanding of magical gemology and the knowledge to create ornate mithril shoulders.",
+  "quest:2763:progress:0": "After such mining, your muscles bulge and your body aches!",
+  "quest:2763:completion:0": "One can barely keep their eyes from leaving its splendor, ⟦43⟧. Aye, citrine is a glorious gem.",
+  "quest:2763:completion:1": "Pay attention and learn what such a discovery may teach us!",
+  "quest:2764:obj:0": "Speak with ⟦E36⟧ in Gadgetzan.",
+  "quest:2764:details:0": "If you are ready to conclude your training with Galvan, you should journey to Gadgetzan.",
+  "quest:2764:details:1": "There, you will find my finest pupil: ⟦E36⟧. He has much to teach you in the ways of ornate mithril. Otherwise, remain here and learn!",
+  "quest:2764:details:2": "Oh, Gadgetzan is in ⟦E37⟧, of course!",
+  "quest:2764:completion:0": "⟦E28⟧ sent you??",
+  "quest:2764:completion:1": "B<Trenton bows.>",
+  "quest:2764:completion:2": "It is a great honor to meet another of the master's pupils!",
+  "quest:2765:obj:0": "Claim your reward from ⟦E28⟧!",
+  "quest:2765:details:0": "When you first came to me, I knew that you would turn out to be one of my finest pupils! It was without hesitancy that you gave up a trinket of some power to ⟦E20⟧. You did this only so that you could meet me. Such blind faith and devotion to the craft should be rewarded.",
+  "quest:2765:details:1": "You have attained expertise over blacksmithing, ⟦44⟧. Reap the rewards!",
+  "quest:2765:completion:0": "It is only fitting that you receive a trinket of far greater power than the one you sacrificed to get here. Use it in good health, ⟦45⟧.",
+  "quest:2771:obj:0": "Bring two Mithril Coifs and one ⟦E39⟧ to ⟦E36⟧.",
+  "quest:2771:details:0": "It seems as if master had this planned from the start. I was not taught to create the items which you learned to create and you were not taught the items which I learned to create.",
+  "quest:2771:details:1": "The master is wise, ⟦46⟧. We shall teach each other!",
+  "quest:2771:details:2": "Show me how to make a mithril coif and ornate mithril shoulders and I shall show you how to create an ornate mithril helm.",
+  "quest:2771:progress:0": "Have you completed the crafting of the items, ⟦47⟧?",
+  "quest:2771:completion:0": "Excellent! A fair tradeoff, if I do say so myself. Watch and learn, ⟦48⟧!",
+  "quest:2772:obj:0": "Bring two ⟦E40⟧ and one ⟦E41⟧ to ⟦E36⟧.⟦49⟧",
+  "quest:2772:details:0": "At last year's All-Valley ⟦E26⟧ Championship, all those who watched saw my leg get swept from under me by a cowardly dog from the Venture Co. Foundry. What they didn't know, however, was the reason I was able to continue and ultimately win the tournament: That's right, ornate mithril boots!",
+  "quest:2772:details:1": "I will need to learn how to craft ornate mithril pants for this year's tournament, however, as a Venture Co. shredder is an entrant! Teach me the way of the pants and learn the way of the boot!",
+  "quest:2772:progress:0": "Have you completed the crafting of the items, ⟦50⟧?",
+  "quest:2772:completion:0": "The world will be at your feet, ⟦51⟧! Let them all come at your legs, for you are now unsweepable!",
+  "quest:2773:obj:0": "Bring two Heavy Mithril Breastplates and one ⟦E42⟧ to ⟦E36⟧.",
+  "quest:2773:details:0": "Around these parts I am known as the Mithril Kid. I supply ornate mithril to adventurers from around the world.",
+  "quest:2773:details:1": "B<Trenton whispers.>",
+  "quest:2773:details:2": "Little do they know that I do not know the technique to fashion ornate mithril gloves. Shhhh! This will be our little secret.",
+  "quest:2773:details:3": "Teach me the technique to create ornate mithril gloves, ⟦52⟧, and in exchange, I will show you the resultant of the culmination of my training under Galvan: the ornate mithril breastplate.",
+  "quest:2773:progress:0": "Have you completed the crafting of the items, ⟦53⟧?",
+  "quest:2773:completion:0": "Thank you for all that you have taught me, ⟦54⟧. The master and commander of the ornate mithril set will soon be in your possession.",
+  "quest:2773:completion:1": "Behold!",
+  "quest:3321:obj:0": "Wait for Trenton to finish his work.",
+  "quest:3321:details:0": "You have done much for the Order, ⟦55⟧. The sheer dedication it takes to get this far would have turned away any ordinary person. There is no doubt in my mind, or in the mind of Galvan, that you are one of us.",
+  "quest:3321:details:1": "Which is why I think you deserve a little reward. It is nothing really, just a trinket. You may be familiar with its properties, as I do believe it is what brought you to us in the first place.",
+  "quest:3321:progress:0": "Today we finalize our celebration of your commitment to the Order.",
+  "quest:3321:completion:0": "Rise and be recognized, ⟦56⟧, blacksmith of the Mithril Order.",
+  "quest:5103:obj:0": "Someone in this world must know what to do with these gauntlets. Good luck!",
+  "quest:5103:details:0": "The only thing that remains of this human are some charred bones. He seems to have died within arms reach of what he was after - unfired plate gauntlets.",
+  "quest:5103:details:1": "Perhaps you should grab the gauntlets and get out of the fire?",
+  "quest:5103:completion:0": "What the...",
+  "quest:5305:obj:0": "⟦E43⟧ to ⟦E44⟧ and kill the ⟦E45⟧. Recover the ⟦E46⟧ and return to Lilith.⟦57⟧",
+  "quest:5305:details:0": "Within the confines of the ⟦E47⟧ Bastion lies sweet ⟦E48⟧. The ⟦E45⟧ guards the recipe with his life. Defeat him and bring me his apron. For that, I shall reward you with the knowledge required to create an enchanted battlehammer!",
+  "quest:5305:progress:0": "His apron! Where is it?",
+  "quest:5305:completion:0": "May you bash in many a brain, ⟦58⟧!",
+  "quest:5306:obj:0": "⟦E43⟧ to ⟦E49⟧ and slay ⟦E50⟧. Recover ⟦E51⟧ and return to ⟦E52⟧.",
+  "quest:5306:details:0": "Don't let her beauty fool you, ⟦59⟧. The shadow huntress, Vosh'gajin is deadly and deranged.",
+  "quest:5306:details:1": "B<⟦E52⟧ points to the scar on his face.>",
+  "quest:5306:details:2": "Aye, she gave me that - a love tap, she called it.",
+  "quest:5306:details:3": "The time for vengeance has finally come.",
+  "quest:5306:details:4": "You can find Vosh'gajin in ⟦E49⟧. Slay her and return to me with her snakestone. Do this and I will teach you the secret to crafting ⟦E53⟧!",
+  "quest:5306:progress:0": "Legend states that one use of Vosh'gajin's snakestone will keep an axe razor sharp for a 1000 years!",
+  "quest:5306:completion:0": "Knowledge is power!",
+  "quest:5307:obj:0": "Find the ⟦E54⟧ in ⟦E44⟧ and destroy him. Recover the ⟦E55⟧ and return to ⟦E56⟧.",
+  "quest:5307:details:0": "If I am short with you, it is for a reason. The plans for the creation of the great blade, ⟦E57⟧, have been stolen by the Black Guard: Elite skeletal units of Baron Rivendare.",
+  "quest:5307:details:1": "Yes, Baron Rivendare of ⟦E44⟧.",
+  "quest:5307:details:2": "The Black Guard swordsmith now guards those plans with his... undeath.",
+  "quest:5307:details:3": "Slay him and return proof of this deed and I shall grant you the knowledge required to create a blazing rapier!",
+  "quest:5307:progress:0": "Have you forgotten what it is that you were tasked with, ⟦60⟧?",
+  "quest:5307:completion:0": "It should be obvious that a sword is always the best choice.",
+  "quest:7649:obj:0": "Return the book to its rightful owners.",
+  "quest:7649:details:0": "The tome carries the mark of the Athenaeum.",
+  "quest:7649:progress:0": "You have recovered a tome!",
+  "quest:7649:completion:0": "Well done, my boy.",
+  "quest:7649:completion:1": "B<⟦E58⟧ tears out a page from the book.>",
+  "quest:7649:completion:2": "I am sure you can make use of this recipe."
+ },
+ "context": {
+  "quest:1578": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 12,
+   "side": "alliance",
+   "giver": "Tormus Deepforge («تورموس ژرف‌کوره»)",
+   "turner": "Thorvald Deepforge («توروالد آهنگری ژرف»)"
+  },
+  "quest:1618": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 16,
+   "side": "alliance",
+   "giver": "Tormus Deepforge («تورموس ژرف‌کوره»)",
+   "turner": "Verner Osgood («ورنر آزگود»)"
+  },
+  "quest:2751": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 32,
+   "side": "horde",
+   "giver": "Orokk Omosh («اورک اوموش»)",
+   "turner": "Orokk Omosh («اورک اوموش»)"
+  },
+  "quest:2752": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 32,
+   "side": "horde",
+   "giver": "Orokk Omosh («اورک اوموش»)",
+   "turner": "Orokk Omosh («اورک اوموش»)"
+  },
+  "quest:2753": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 36,
+   "side": "horde",
+   "giver": "Orokk Omosh («اورک اوموش»)",
+   "turner": "Orokk Omosh («اورک اوموش»)"
+  },
+  "quest:2754": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 36,
+   "side": "horde",
+   "giver": "Orokk Omosh («اورک اوموش»)",
+   "turner": "Orokk Omosh («اورک اوموش»)"
+  },
+  "quest:2755": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 36,
+   "side": "horde",
+   "giver": "Orokk Omosh («اورک اوموش»)",
+   "turner": "Orokk Omosh («اورک اوموش»)"
+  },
+  "quest:2756": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "horde",
+   "giver": "Aturk the Anvil («آتورک سندان»)",
+   "turner": "Aturk the Anvil («آتورک سندان»)"
+  },
+  "quest:2757": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "horde",
+   "giver": "Ox",
+   "turner": "McGavan («مک‌گاون»)"
+  },
+  "quest:2758": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Hank the Hammer («هنک چکش»)",
+   "turner": "Hank the Hammer («هنک چکش»)"
+  },
+  "quest:2759": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Hank the Hammer («هنک چکش»)",
+   "turner": "McGavan («مک‌گاون»)"
+  },
+  "quest:2760": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "",
+   "giver": "McGavan («مک‌گاون»)",
+   "turner": "Galvan the Ancient («گالوان باستانی»)"
+  },
+  "quest:5283": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Grumnus Steelshaper («گرومنوس فولادگر»)",
+   "turner": "Grumnus Steelshaper («گرومنوس فولادگر»)"
+  },
+  "quest:5284": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "alliance",
+   "giver": "Ironus Coldsteel («آیرونوس فولادسرد»)",
+   "turner": "Ironus Coldsteel («آیرونوس فولادسرد»)"
+  },
+  "quest:5301": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "horde",
+   "giver": "Okothos Ironrager («اوکوتوس خشم‌آهن»)",
+   "turner": "Okothos Ironrager («اوکوتوس خشم‌آهن»)"
+  },
+  "quest:5302": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 40,
+   "side": "horde",
+   "giver": "Borgosh Corebender («بورگوش هسته‌خم‌کن»)",
+   "turner": "Borgosh Corebender («بورگوش هسته‌خم‌کن»)"
+  },
+  "quest:2761": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Galvan the Ancient («گالوان باستانی»)",
+   "turner": "Galvan the Ancient («گالوان باستانی»)"
+  },
+  "quest:2762": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Galvan the Ancient («گالوان باستانی»)",
+   "turner": "Galvan the Ancient («گالوان باستانی»)"
+  },
+  "quest:2763": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Galvan the Ancient («گالوان باستانی»)",
+   "turner": "Galvan the Ancient («گالوان باستانی»)"
+  },
+  "quest:2764": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Galvan the Ancient («گالوان باستانی»)",
+   "turner": "Trenton Lighthammer («ترنتون چکش نور»)"
+  },
+  "quest:2765": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Galvan the Ancient («گالوان باستانی»)",
+   "turner": "Galvan the Ancient («گالوان باستانی»)"
+  },
+  "quest:2771": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Trenton Lighthammer («ترنتون چکش نور»)",
+   "turner": "Trenton Lighthammer («ترنتون چکش نور»)"
+  },
+  "quest:2772": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Trenton Lighthammer («ترنتون چکش نور»)",
+   "turner": "Trenton Lighthammer («ترنتون چکش نور»)"
+  },
+  "quest:2773": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 45,
+   "side": "",
+   "giver": "Trenton Lighthammer («ترنتون چکش نور»)",
+   "turner": "Trenton Lighthammer («ترنتون چکش نور»)"
+  },
+  "quest:3321": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 50,
+   "side": "",
+   "giver": "Trenton Lighthammer («ترنتون چکش نور»)",
+   "turner": "Trenton Lighthammer («ترنتون چکش نور»)"
+  },
+  "quest:5103": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Human Remains («بقایای انسان»)",
+   "turner": "Malyfous Darkhammer («مالیفوس چکش‌تاریک»)"
+  },
+  "quest:5305": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lilith the Lithe («لیلیث چابک»)",
+   "turner": "Lilith the Lithe («لیلیث چابک»)"
+  },
+  "quest:5306": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Kilram («کیلرام»)",
+   "turner": "Kilram («کیلرام»)"
+  },
+  "quest:5307": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Seril Scourgebane («سریل دافع آفت»)",
+   "turner": "Seril Scourgebane («سریل دافع آفت»)"
+  },
+  "quest:7649": {
+   "zone_en": "Blacksmithing",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "",
+   "turner": "Lorekeeper Lydros («حافظ دانش لیدروس»)"
+  }
+ },
+ "known": {
+  "quest:1578": {
+   "title": "تدارک جبهه"
+  },
+  "quest:1618": {
+   "title": "تجهیز ردریج"
+  },
+  "quest:2751": {
+   "title": "دیوارک‌های وحشی"
+  },
+  "quest:2752": {
+   "title": "دربارهٔ شانه‌فولاد آهنی"
+  },
+  "quest:2753": {
+   "title": "له‌شده زیر پا"
+  },
+  "quest:2754": {
+   "title": "شاخ‌های جنون"
+  },
+  "quest:2755": {
+   "title": "شادی‌های اوموش"
+  },
+  "quest:2756": {
+   "title": "شیوه‌های کهن"
+  },
+  "quest:2757": {
+   "title": "بوتی‌بی یا هیچ!"
+  },
+  "quest:2758": {
+   "title": "ریشه‌های آهنگری"
+  },
+  "quest:2759": {
+   "title": "در جست‌وجوی گالوان"
+  },
+  "quest:2760": {
+   "title": "حلقهٔ میتریل"
+  },
+  "quest:5283": {
+   "title": "هنرِ زره‌سازی"
+  },
+  "quest:5284": {
+   "title": "راهِ سلاح‌سازی"
+  },
+  "quest:5301": {
+   "title": "هنرِ زره‌سازی"
+  },
+  "quest:5302": {
+   "title": "راهِ سلاح‌سازی"
+  },
+  "quest:2761": {
+   "title": "گداختن روشن، گداختن خاموش"
+  },
+  "quest:2762": {
+   "title": "فریب‌گر بزرگ نقره"
+  },
+  "quest:2763": {
+   "title": "هنرِ جان‌بخشی"
+  },
+  "quest:2764": {
+   "title": "بهترین شاگردِ گالوان"
+  },
+  "quest:2765": {
+   "title": "آهنگر چیره‌دست!"
+  },
+  "quest:2771": {
+   "title": "سرِ خوب بر دوش‌هایتان"
+  },
+  "quest:2772": {
+   "title": "جهان زیر پای‌تان"
+  },
+  "quest:2773": {
+   "title": "بچهٔ میتریل"
+  },
+  "quest:3321": {
+   "title": "این را گم کرده‌ای؟"
+  },
+  "quest:5103": {
+   "title": "مرگ داغ آتشین"
+  },
+  "quest:5305": {
+   "title": "آرامش شیرین"
+  },
+  "quest:5306": {
+   "title": "سنگ‌مارِ شکارچی زن سایه"
+  },
+  "quest:5307": {
+   "title": "فساد"
+  },
+  "quest:7649": {
+   "title": "زره‌صفحهٔ توریم افسون‌شده: جلد I"
+  }
+ }
+}

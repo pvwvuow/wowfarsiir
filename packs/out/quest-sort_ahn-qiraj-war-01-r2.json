@@ -1,0 +1,939 @@
+{
+ "pack": "quest-sort:ahn-qiraj-war-01-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:ahn-qiraj-war-01-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Sergeant Stonebrow",
+   "fa": "گروهبان ابروسنگی",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E3": {
+   "en": "Ahn'Qiraj War",
+   "fa": "جنگ آن‌کیراج",
+   "kind": "zn"
+  },
+  "E4": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Corporal Carnes",
+   "fa": "سرجوخه کارنز",
+   "kind": "npc"
+  },
+  "E6": {
+   "en": "Ahn'Qiraj",
+   "fa": "آن‌کیراج",
+   "kind": "zn"
+  },
+  "E7": {
+   "en": "Dame Twinbraid",
+   "fa": "بانو دوقلوبافت",
+   "kind": "npc"
+  },
+  "E8": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E9": {
+   "en": "Gnoarn",
+   "fa": "گنوآرن",
+   "kind": "npc"
+  },
+  "E10": {
+   "en": "Stranglekelp",
+   "fa": "جلبک خفه‌گر",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Private Draxlegauge",
+   "fa": "سرباز درکسل‌گیج",
+   "kind": "npc"
+  },
+  "E12": {
+   "en": "Purple Lotus",
+   "fa": "نیلوفر بنفش",
+   "kind": "it"
+  },
+  "E13": {
+   "en": "Master Nightsong",
+   "fa": "استاد نغمهٔ شب",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E15": {
+   "en": "Arthas' Tears",
+   "fa": "اشک‌های آرتاس",
+   "kind": "it"
+  },
+  "E16": {
+   "en": "Sergeant Major Germaine",
+   "fa": "گروهبان ارشد گرماین",
+   "kind": "npc"
+  },
+  "E17": {
+   "en": "Light Leather",
+   "fa": "چرمِ سبک",
+   "kind": "it"
+  },
+  "E18": {
+   "en": "Bonnie Stoneflayer",
+   "fa": "بانی سنگ‌پوست‌کن",
+   "kind": "npc"
+  },
+  "E19": {
+   "en": "light leather",
+   "fa": "چرم سبک",
+   "kind": "it"
+  },
+  "E20": {
+   "en": "Medium Leather",
+   "fa": "چرمِ متوسط",
+   "kind": "it"
+  },
+  "E21": {
+   "en": "Private Porter",
+   "fa": "سرباز پورتر",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Thick Leather",
+   "fa": "چرم ضخیم",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Marta Finespindle",
+   "fa": "مارتا نخ‌ظریف",
+   "kind": "npc"
+  },
+  "E26": {
+   "en": "Sentinel Silversky",
+   "fa": "آسمان نقره‌ای",
+   "kind": "npc"
+  },
+  "E27": {
+   "en": "linen",
+   "fa": "پارچهٔ کتانی",
+   "kind": "it"
+  },
+  "E28": {
+   "en": "Light of Elune",
+   "fa": "نورِ الون",
+   "kind": "it"
+  },
+  "E29": {
+   "en": "Nurse Stonefield",
+   "fa": "پرستار سنگ‌مزارع",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "silk",
+   "fa": "ابریشم",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Runecloth",
+   "fa": "پارچهٔ رونی",
+   "kind": "it"
+  },
+  "E34": {
+   "en": "Keeper Moonshade",
+   "fa": "نگهبان سایه‌ماه",
+   "kind": "npc"
+  },
+  "E35": {
+   "en": "Rainbow Fin Albacore",
+   "fa": "الباکورِ بالهٔ رنگین",
+   "kind": "it"
+  },
+  "E36": {
+   "en": "Slicky Gastronome",
+   "fa": "سلیکی خوراک‌شناس",
+   "kind": "npc"
+  },
+  "E37": {
+   "en": "Roast Raptor",
+   "fa": "رپتور کبابی",
+   "kind": "it"
+  },
+  "E38": {
+   "en": "Sarah Sadwhistle",
+   "fa": "ساراه سوت غمگین",
+   "kind": "npc"
+  },
+  "E39": {
+   "en": "Spotted Yellowtail",
+   "fa": "دم‌زرد خالدار",
+   "kind": "it"
+  },
+  "E40": {
+   "en": "Huntress Swiftriver",
+   "fa": "شکارچی زن رودتند",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "Miner Cromwell",
+   "fa": "معدنچی کرامول",
+   "kind": "npc"
+  },
+  "E42": {
+   "en": "Orgrimmar",
+   "fa": "اورگریمار",
+   "kind": "npc"
+  },
+  "E43": {
+   "en": "Grunt Maug",
+   "fa": "گرانت ماوگ",
+   "kind": "npc"
+  },
+  "E46": {
+   "en": "Senior Sergeant T'kelah",
+   "fa": "تکلاه",
+   "kind": "npc"
+  },
+  "E47": {
+   "en": "Peacebloom",
+   "fa": "گلِ آرامش",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Herbalist Proudfeather",
+   "fa": "گیاه‌شناس پرمغرور",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Firebloom",
+   "fa": "شکوفهٔ آتش",
+   "kind": "it"
+  },
+  "E51": {
+   "en": "Batrider Pele'keiki",
+   "fa": "بت‌رایدر پله‌کی‌کی",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Apothecary Jezel",
+   "fa": "داروساز جزل",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Heavy Leather",
+   "fa": "چرمِ سنگین",
+   "kind": "it"
+  },
+  "E54": {
+   "en": "Skinner Jamani",
+   "fa": "پوست‌کن جامانی",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E56": {
+   "en": "Sergeant Umala",
+   "fa": "گروهبان ومالا",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Rugged Leather",
+   "fa": "چرمِ بادوام",
+   "kind": "it"
+  },
+  "E58": {
+   "en": "Doctor Serratus",
+   "fa": "دکتر سراتوس",
+   "kind": "npc"
+  },
+  "E59": {
+   "en": "Healer Longrunner",
+   "fa": "شفادهنده دوندهٔ بلند",
+   "kind": "npc"
+  },
+  "E60": {
+   "en": "wool",
+   "fa": "پشم",
+   "kind": "it"
+  },
+  "E61": {
+   "en": "Lady Callow",
+   "fa": "بانو کالو",
+   "kind": "npc"
+  },
+  "E62": {
+   "en": "Stoneguard Clayhoof",
+   "fa": "کلیهوف",
+   "kind": "npc"
+  },
+  "E63": {
+   "en": "Bloodguard Rawtar",
+   "fa": "نگهبان خون راوتار",
+   "kind": "npc"
+  },
+  "E64": {
+   "en": "Feralas",
+   "fa": "فرالاس",
+   "kind": "zn"
+  },
+  "E65": {
+   "en": "Fisherman Lin'do",
+   "fa": "ماهیگیر لین‌دو",
+   "kind": "npc"
+  },
+  "E67": {
+   "en": "Baked Salmon",
+   "fa": "سالمون کبابی",
+   "kind": "it"
+  },
+  "E68": {
+   "en": "Chief Sharpclaw",
+   "fa": "رئیس پنجه‌تیز",
+   "kind": "npc"
+  }
+ },
+ "glossary": {
+  "Sergeant Stonebrow": "گروهبان ابروسنگی",
+  "Ironforge": "آیرون‌فورج",
+  "Ahn'Qiraj War": "جنگ آن‌کیراج",
+  "Alliance": "اتحاد",
+  "Corporal Carnes": "سرجوخه کارنز",
+  "Ahn'Qiraj": "آن‌کیراج",
+  "Dame Twinbraid": "بانو دوقلوبافت",
+  "Silithus": "سیلیتوس",
+  "Gnoarn": "گنوآرن",
+  "Stranglekelp": "جلبک خفه‌گر",
+  "Private Draxlegauge": "سرباز درکسل‌گیج",
+  "Purple Lotus": "نیلوفر بنفش",
+  "Master Nightsong": "استاد نغمهٔ شب",
+  "Horde": "هورد",
+  "Arthas' Tears": "اشک‌های آرتاس",
+  "Sergeant Major Germaine": "گروهبان ارشد گرماین",
+  "Light Leather": "چرمِ سبک",
+  "Bonnie Stoneflayer": "بانی سنگ‌پوست‌کن",
+  "light leather": "چرم سبک",
+  "Medium Leather": "چرمِ متوسط",
+  "Private Porter": "سرباز پورتر",
+  "Thick Leather": "چرم ضخیم",
+  "Marta Finespindle": "مارتا نخ‌ظریف",
+  "Sentinel Silversky": "آسمان نقره‌ای",
+  "linen": "پارچهٔ کتانی",
+  "Light of Elune": "نورِ الون",
+  "Nurse Stonefield": "پرستار سنگ‌مزارع",
+  "silk": "ابریشم",
+  "Runecloth": "پارچهٔ رونی",
+  "Keeper Moonshade": "نگهبان سایه‌ماه",
+  "Rainbow Fin Albacore": "الباکورِ بالهٔ رنگین",
+  "Slicky Gastronome": "سلیکی خوراک‌شناس",
+  "Roast Raptor": "رپتور کبابی",
+  "Sarah Sadwhistle": "ساراه سوت غمگین",
+  "Spotted Yellowtail": "دم‌زرد خالدار",
+  "Huntress Swiftriver": "شکارچی زن رودتند",
+  "Miner Cromwell": "معدنچی کرامول",
+  "Orgrimmar": "اورگریمار",
+  "Grunt Maug": "گرانت ماوگ",
+  "Senior Sergeant T'kelah": "تکلاه",
+  "Peacebloom": "گلِ آرامش",
+  "Herbalist Proudfeather": "گیاه‌شناس پرمغرور",
+  "Firebloom": "شکوفهٔ آتش",
+  "Batrider Pele'keiki": "بت‌رایدر پله‌کی‌کی",
+  "Apothecary Jezel": "داروساز جزل",
+  "Heavy Leather": "چرمِ سنگین",
+  "Skinner Jamani": "پوست‌کن جامانی",
+  "Azeroth": "آزروت",
+  "Sergeant Umala": "گروهبان ومالا",
+  "Rugged Leather": "چرمِ بادوام",
+  "Doctor Serratus": "دکتر سراتوس",
+  "Healer Longrunner": "شفادهنده دوندهٔ بلند",
+  "wool": "پشم",
+  "Lady Callow": "بانو کالو",
+  "Stoneguard Clayhoof": "کلیهوف",
+  "Bloodguard Rawtar": "نگهبان خون راوتار",
+  "Feralas": "فرالاس",
+  "Fisherman Lin'do": "ماهیگیر لین‌دو",
+  "Baked Salmon": "سالمون کبابی",
+  "Chief Sharpclaw": "رئیس پنجه‌تیز"
+ },
+ "tokens": {
+  "1": "$c",
+  "2": "$g Mr. : Ms.;",
+  "3": "$c",
+  "4": "$N",
+  "5": "$c",
+  "6": "$c",
+  "7": "$C",
+  "8": "$C",
+  "9": "$c",
+  "10": "$c",
+  "11": "$C",
+  "12": "$C",
+  "13": "$c",
+  "14": "$g lad : lass;",
+  "15": "$C",
+  "16": "$C",
+  "17": "$g sir : ma'am;",
+  "18": "$C",
+  "19": "$C",
+  "20": "$C",
+  "21": "$c",
+  "22": "$C",
+  "23": "$C",
+  "24": "$R",
+  "25": "$c",
+  "26": "$B",
+  "27": "$B",
+  "28": "$N",
+  "29": "$c",
+  "30": "$C",
+  "31": "$C",
+  "32": "$C",
+  "33": "$c",
+  "34": "$C",
+  "35": "$c",
+  "36": "$C",
+  "37": "$c",
+  "38": "$C",
+  "39": "$r",
+  "40": "$B",
+  "41": "$C",
+  "42": "$C",
+  "43": "$c",
+  "44": "$C",
+  "45": "$N",
+  "46": "$N",
+  "47": "$c",
+  "48": "$c",
+  "49": "$c",
+  "50": "$c",
+  "51": "$c",
+  "52": "$C",
+  "53": "$c",
+  "54": "$C",
+  "55": "$C",
+  "56": "$c",
+  "57": "$c",
+  "58": "$c",
+  "59": "$C",
+  "60": "$C",
+  "61": "$c",
+  "62": "$B",
+  "63": "$c",
+  "64": "$C",
+  "65": "$B",
+  "66": "$B",
+  "67": "$C",
+  "68": "$C",
+  "69": "$c",
+  "70": "$C",
+  "71": "$c",
+  "72": "$c",
+  "73": "$C",
+  "74": "$B",
+  "75": "$B",
+  "76": "$C",
+  "77": "$C"
+ },
+ "rows": {
+  "quest:8492:obj:0": "Bring 20 Copper Bars to ⟦E1⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8492:details:0": "Hey there, ⟦1⟧, you look fit enough to contribute to the war effort! We need all of the help that we can get here to put together the materiel needed for the ⟦E3⟧ and it's your lucky day.",
+  "quest:8492:details:1": "I'm collecting copper bars in stacks of twenty. It's for a worthy cause, what do you say? Do you think you could help out the ⟦E4⟧?",
+  "quest:8492:progress:0": "Have you collected those twenty bars of copper yet, trooper?",
+  "quest:8492:completion:0": "You did it, lad! We'll get those copper bars onto the pile and put them to good use making the war materiel right away. It's the efforts of people like you that make me proud to serve the ⟦E4⟧. Good work, soldier!",
+  "quest:8492:completion:1": "And if you should happen to come across more copper bars, make sure that they find their way to me.",
+  "quest:8494:obj:0": "Bring 20 Iron Bars to ⟦E5⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8494:details:0": "Well hello there, ⟦2⟧ Fancypants, aren't you a sight for sore eyes. In case you hadn't heard while you were out there \"adventuring\", the ⟦E4⟧ has been gearing up for a war in ⟦E6⟧ and is in need of iron bars... a whole mess of 'em. Bring them to me in stacks of twenty. We can count on you, right, ⟦3⟧?",
+  "quest:8494:progress:0": "If you have those twenty bars of iron, I don't want to know where you have them hidden!",
+  "quest:8494:completion:0": "Well, well, if it isn't ⟦4⟧. And you pulled through. I guess now I'll have to keep my eye on you. It hurts me to say this, but thanks for your efforts. The ⟦E4⟧ won't forget, and neither will I. Now get out there and bust your hump on whatever else needs collecting.",
+  "quest:8499:obj:0": "Bring 20 Thorium Bars to ⟦E7⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8499:details:0": "It is very kind of you to inquire about the needs that the ⟦E4⟧ has. In addition to all of the other collection efforts underway, we are in need of a great quantity of thorium bars, which is the task that I am in charge of. The thorium will be used in the creation of many different things for the war, foremost of which is the construction of a battalion of steam tanks to be airlifted into ⟦E8⟧ as soon as they are completed. Can you aid us in this endeavor, ⟦5⟧?",
+  "quest:8499:progress:0": "Oh, a shipment from my brother? Splendid! Fortune truly shines on me today!",
+  "quest:8499:completion:0": "So ⟦E9⟧ doesn't trust my reconnaissance abilities? I wonder why...",
+  "quest:8503:obj:0": "Bring 20 ⟦E10⟧ to ⟦E11⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8503:details:0": "So, ⟦6⟧, did I already tell you about all of the fabulous uses stranglekelp has? I did? Oh well... in any case we need a lot of it, and when I say a lot, I mean A LOT! Do you think that you could help us out? I know that it means going without all of those wonderful things that you can make with it, but it's for a good cause!",
+  "quest:8503:progress:0": "It's not true! I'd never skim any stranglekelp off the top of the stacks here. One might be tempted to though considering that it's practically a panacea of utilitarian usefulness. *cough* You don't happen to have that stranglekelp we discussed earlier?",
+  "quest:8503:completion:0": "Hooray! That's another twenty down. You're the best. I suppose that I should get these all packed away before they wither. So much stranglekelp, so little time!",
+  "quest:8503:completion:1": "Thanks again, ⟦7⟧!",
+  "quest:8505:obj:0": "Bring 20 ⟦E12⟧ to ⟦E13⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8505:details:0": "⟦8⟧, the purple lotus is a flower with a plentitude of uses. I am here at the request of the ⟦E4⟧ as an authority on those applications, to preserve the herbs collected and to ensure that their war effort acquires enough purple lotus to sustain whatever function they plan for it.",
+  "quest:8505:details:1": "I would like for you to travel out into the world and return to me with some of these flowers. Is that something that you can do?",
+  "quest:8505:progress:0": "Do you have the purple lotus herbs that I requested?",
+  "quest:8505:completion:0": "Your contribution is greatly appreciated, ⟦9⟧. It is only through the combined efforts of all that we shall be able to repel the ruthless advance of the silithid and whatever force is driving them forth. Even the ⟦E14⟧ is amassing their own collection of purple lotus. Should you come across more, please return to me here.",
+  "quest:8509:obj:0": "Bring 20 ⟦E15⟧ to ⟦E16⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8509:details:0": "I'll keep it simple and to the point, ⟦10⟧. The ⟦E4⟧ needs to collect a large quantity of ⟦E15⟧ for the ⟦E6⟧ war effort. Don't ask me what for; I'm just following orders. But I'd like you to gather up as many of the herbs as you can and bring them back to me here. Are you willing to do that?",
+  "quest:8509:progress:0": "What's that? Speak up, ⟦11⟧! Have you got that shipment of ⟦E15⟧ I asked for?",
+  "quest:8509:completion:0": "Good work, ⟦12⟧. I must say that I'm pleasantly surprised. You would not believe the number of people that have come by, offering to help, but never returning. Let me just get those into a crate and tallied with your name on it, and then we can talk again about whether I need anymore of those plants.",
+  "quest:8511:obj:0": "Bring 10 ⟦E17⟧ to ⟦E18⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8511:details:0": "We Stoneflayers have a long history of being skinners, ⟦13⟧. That's why the ⟦E4⟧ has asked my family to help out with the collection of ⟦E19⟧ for the ⟦E6⟧ war effort. I'm here to see to it that the leather is tanned correctly for whatever they want to put it to use for. But we need your help.",
+  "quest:8511:details:1": "Since I have to be here doing that, I need you to go out and collect the skins, returning them to me here. What do you say, ⟦14⟧, will you give it a go?",
+  "quest:8511:progress:0": "⟦15⟧, I do so hope that's the ⟦E19⟧ you promised.",
+  "quest:8511:completion:0": "I dare say the ⟦E4⟧ is going to be very happy with your skins here, ⟦16⟧. I'll make sure that not a one goes to waste. Thank you, and make sure that you check back in with me once I've counted them up to see if we need more.",
+  "quest:8513:obj:0": "Bring 10 ⟦E20⟧ to ⟦E21⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8513:details:0": "Yes ⟦17⟧, I have been charged with collecting and tracking all of the medium leather gathered for the war effort. If you have the wherewithal to gather medium leather, from whatever source, then please bring them to me here. I sure would appreciate a hand with this if you can spare the time.",
+  "quest:8513:progress:0": "Yes sir, I remember you. Is that the medium leather you have with you there?",
+  "quest:8513:completion:0": "Wow! Seems like you were just here volunteering to help. Thank you very much for the donation. I'll just get those all packed up and counted. You sure do know how to brighten a fella's day.",
+  "quest:8515:obj:0": "Bring 10 ⟦E22⟧ to ⟦E23⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8515:details:0": "Oh boy, this is going to be great! ⟦18⟧, the ⟦E6⟧ war effort is in full swing, and I've been put in charge of keeping track of all of the thick leather that comes in. We'll make tons of things with it, but first we need to get a ton of it. And I mean that literally! That's where you come in.",
+  "quest:8515:details:1": "So, do you think you can go out there and bring me back a nice, fat stack of thick leather? Do yah, do yah?!",
+  "quest:8515:progress:0": "Is that the thick leather you have there in your pack, ⟦19⟧? Is it? I can't wait for you to hand it over! Everyone is going to be so pleased with us don't you think?",
+  "quest:8515:completion:0": "Oh, I knew you could do it, ⟦20⟧, I just knew it! I'll get these into the right hands as soon as I can. Now, let's see here. Hmm, looks like our tally is coming along rather nicely. You should check back with me in just a moment once I'm done counting to see if we need more. Cuz if we do, you're the one I want out there gathering it up for me!",
+  "quest:8517:obj:0": "Bring 20 Linen Bandages to ⟦E26⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8517:details:0": "The war at ⟦E6⟧ is going to be long and bloody. It is a very wise thing that the ⟦E4⟧ is doing by enlisting the aid of you, and those like you, to build up the materiel necessary before plunging headlong into conflict.",
+  "quest:8517:details:1": "I have been asked to head up the collection of ⟦E27⟧ bandages for the war, and I am hoping that you are going to assist me in amassing as many as we need. It is no light matter, but at least the ⟦E27⟧ bandages are the least difficult to create. Are you with us, ⟦21⟧?",
+  "quest:8517:progress:0": "Do you have the twenty ⟦E27⟧ bandages that I require, ⟦22⟧?",
+  "quest:8517:completion:0": "Many are the soldiers that will benefit from your contribution here today, ⟦23⟧. I shall see to it personally that the ⟦E4⟧ is made aware of your efforts. Allow me a moment to store these bandages properly and update my count, and then you should check back with me to see if I am in need of more.",
+  "quest:8517:completion:1": "May the ⟦E28⟧ shine upon you, ⟦24⟧!",
+  "quest:8520:obj:0": "Bring 20 Silk Bandages to ⟦E29⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8520:details:0": "With the ⟦E3⟧ looming we need to do everything that we can to see to it that our soldiers have everything that they need. We're doing just that right here. For my part I've been placed in charge of seeing to it that we collect enough ⟦E30⟧ bandages.",
+  "quest:8520:details:1": "Do you think you can help me out, ⟦25⟧?",
+  "quest:8520:progress:0": "I need those tunics and headbands made, and I also need that piece of wildvine before I will share with you the knowledge of Wild Leather helmets.⟦26⟧⟦27⟧Head gear is highly coveted amongst adventurers, whether it be a disarmingly simple headband or a full-covering helmet. The fundamentals of creating valued head gear remain constant, no matter what the cosmetic appearance of the gear is.",
+  "quest:8520:completion:0": "This Nightscape equipment you have supplied fills the order perfectly, ⟦28⟧. I expect no less from a leatherworker of your caliber.",
+  "quest:8520:completion:1": "You have definitely earned this pattern. I give it to you freely, and hope you will profit from it accordingly.",
+  "quest:8522:obj:0": "Bring 20 ⟦E33⟧ Bandages to ⟦E34⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8522:details:0": "Argue the merits of the war if you will, ⟦29⟧, but it has already been set in motion. Look around you at your family and friends, and then ask yourself what it is that you can do to see to it that if they are involved, they will have every advantage to survive the conflagration.",
+  "quest:8522:details:1": "To that end, I am collecting runecloth bandages here from whatever source. Would you like to make a donation?",
+  "quest:8522:progress:0": "The days pass one after the other, and still we go on. ⟦30⟧, have you those runecloth bandages?",
+  "quest:8522:completion:0": "You are to be commended, ⟦31⟧, for your perseverance in this task. I shall put these bandages away, and then I should like to talk to you again about the possibility of your collecting even more runecloth bandages.",
+  "quest:8524:obj:0": "Bring 20 ⟦E35⟧ to ⟦E36⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8524:details:0": "Hey there, friend! If I were to say to you, 'Don't you think that soldiers should have food to eat like anyone else?', you would of course reply, 'yes'. I agree with you 110%! I'm glad we're in accord. All I need for you to do is to head out there, fish up a whole bunch of raw rainbow fin albacore, and then cook it all up and bring it back to me right here. Mmm, mmm, I can taste it already.",
+  "quest:8524:progress:0": "I'm willing to lay odds that you've returned with all of that rainbow fin albacore we were talking about before, right, ⟦32⟧?",
+  "quest:8524:completion:0": "Two for the ⟦E4⟧, one for me, two for the ⟦E4⟧, one for me. Hey there, fishmonger, excellent work. I can see that you're going to be a real credit to the club. Looks to me like we probably need more of that albacore though. Why don't you head on out and rustle up a mite more. I can hear my stomach rumbling already.",
+  "quest:8526:obj:0": "Bring 20 ⟦E37⟧ to ⟦E38⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8526:details:0": "Oh, how's it going, ⟦33⟧? I see that you're interested in maybe gathering up food for the coming war at ⟦E6⟧? Somehow my dad thought that it would be a good learning experience for me if I were to volunteer to help out here. Big mistake. I don't even like to eat meat.",
+  "quest:8526:details:1": "Anyway, if you feel like it, you could bring me back a lot of roast raptor. Apparently that's what all of the soldiers are going to want.",
+  "quest:8526:progress:0": "So do you have all of that roast raptor yet?",
+  "quest:8526:completion:0": "Gee, that's swell. Thanks for bringing me all of this burnt animal flesh, ⟦34⟧. I'll just put it onto the pile over there. I'm sure that someone will take care of it. I suppose if you have some time on your hands that you might want to bring me more?",
+  "quest:8528:obj:0": "Bring 20 ⟦E39⟧ to ⟦E40⟧ at the Military Ward in ⟦E2⟧.",
+  "quest:8528:details:0": "It may not seem heroic to gather up cooked fish, but do not underestimate the value of preparation, young ⟦35⟧. Soldiers need to eat like anyone else, and we're here to do our part to make sure they have what they need once the war in ⟦E6⟧ commences.",
+  "quest:8528:details:1": "Accordingly, I am stockpiling spotted yellowtail, a versatile source of sustenance that stores well and can be used in many different dishes. It also doesn't have the odor of some other saltwater fish. Are you willing to aid me in this endeavor?",
+  "quest:8528:progress:0": "I am confident that you are returning so soon with the spotted yellowtail we discussed.",
+  "quest:8528:completion:0": "Thank you for this gift, ⟦36⟧, and in such a timely manner as well. Our soldiers will surely not lack for something to eat. Just let me get these fish stored away properly and then you and I can discuss a second haul if you're willing.",
+  "quest:8532:obj:0": "Bring 20 Copper Bars to ⟦E41⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8532:details:0": "So glad that you've decided to help out here. Not everyone would, so I need to make sure you understand what it is that I need. Copper bars, not copper ore. We don't have the time or people to do all of the smelting ourselves, so if you would be so kind as to take care of that, your efforts will be duly noted. Is that something that you can handle, ⟦37⟧?",
+  "quest:8532:progress:0": "I hope that's the twenty copper bars you have there with you, ⟦38⟧.",
+  "quest:8532:completion:0": "These bars will do, and thanks for not shining them. No sense in making them pretty when they're going to be mangled for whatever materiel needs to be built for the war. I'll take care of putting them on the stacks, and I'll make sure that they are put to proper use. Speak to me again if you're interested in bringing in another twenty.",
+  "quest:8542:obj:0": "Bring 20 Tin Bars to ⟦E43⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8542:details:0": "Lok'tar, ⟦39⟧, I'm sure you already know that we're going to war at ⟦E6⟧ with the insects. But first the Warchief has decided that we're going to do something called 'prepare'. Though I'd rather be sharpening weapons and hammering armor into shape, I'm proud to have been chosen to be in charge of tin bar collection here. But I cannot do that without your help.",
+  "quest:8542:details:1": "So I need you to go out and make tin bars and bring them back to me here. I think I'm going to need more than I can count.⟦40⟧",
+  "quest:8542:progress:0": "The dredge strikers are a serious threat and must be dealt with quickly!",
+  "quest:8542:completion:0": "You have my sincere gratitude. Your efforts in helping Cenarion Hold have shown true courage.",
+  "quest:8545:obj:0": "Bring 20 Mithril Bars to ⟦E46⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8545:details:0": "⟦41⟧, the war it is comin' and the only thing we can do is prepare for it. That be where you and I can help each other, mon. Ya see, they put me in charge of collectin' all the mithril bars we be needin' ta build for all the things we gonna need. An I still be needin' more!",
+  "quest:8545:details:1": "So, I be hopin' that you can get out there an mine us up some mithril, then smelt it into bars. Sound like something you can do for us?",
+  "quest:8545:progress:0": "It sure would be nice to be havin' all of the mithril bars that we be needin' for the ⟦E6⟧ war effort. Is that why you be back, mon? You got my bars?",
+  "quest:8545:completion:0": "This be a good start for you an me, ⟦42⟧. That be another twenty mithril bars that I can be puttin' on the stacks an checkin' off of the list. It all gonna be put to good use makin' the war materiel.",
+  "quest:8545:completion:1": "Be makin' sure that you check back in with me 'cuz you know it be lookin' like we gonna need even more of those mithril bars.",
+  "quest:8549:obj:0": "Bring 20 ⟦E47⟧ to ⟦E48⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8549:details:0": "It is said that every generation must face a defining trial. I fear the ⟦E3⟧ will be the crucible in which our mettle is tested. So we prepare, and in so doing find what we are made of.",
+  "quest:8549:details:1": "I have volunteered to help the ⟦E14⟧ by gathering as much peacebloom as possible, so that it can be made into potions for the war. I hope that you are here to lend me your aid. If so, then I need you to bring back to me a good quantity of the herb. Will you assist me, ⟦43⟧?",
+  "quest:8549:progress:0": "Go now, ⟦44⟧. Seek out ⟦45⟧.",
+  "quest:8549:completion:0": "This was no easy task, yet you have excelled. But do not be too quick to think you have impressed me, ⟦46⟧.",
+  "quest:8580:obj:0": "Bring 20 ⟦E50⟧ to ⟦E51⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8580:details:0": "Hey, ⟦47⟧. Ya you, mon! There be a whole mess of firebloom the ⟦E14⟧ thinkin' they need for this ⟦E6⟧ war effort. Maybe they put it in nice things that go boom? Maybe they give it to the ⟦E4⟧ as fuel for their steam tanks? Who knows? Not Pele'keiki!",
+  "quest:8580:details:1": "Pele'keiki know this though... he know you gonna help him out and bring back lots of the firebloom, right, mon?",
+  "quest:8580:progress:0": "Are you done collecting those samples? We could lose Noggle any minute now!",
+  "quest:8580:completion:0": "Cross your fingers, friend! Here's to hoping we can save Noggle!",
+  "quest:8582:obj:0": "Bring 20 ⟦E12⟧ to ⟦E52⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8582:details:0": "The purple lotus, ⟦48⟧, is a reagent in a great many potions, elixirs and oils, some of which will be of use to us at ⟦E6⟧. We're going to need to create an immense number of those potions for the war effort. And I'm going to experiment to find more uses for the lotus as well. But to do all of that I'm going to need a great quantity of the flower.",
+  "quest:8582:details:1": "That's where you come in. Go out into the field and collect up as many purple lotuses as you can. Is this something that you are willing to do for us?",
+  "quest:8582:progress:0": "Returned already with the purple lotus that I have requested, ⟦49⟧? It is critical that you do so in as timely as fashion as possible lest all that I am attempting here come to naught.",
+  "quest:8582:completion:0": "A commendable effort, ⟦50⟧. I will measure these specimens for their appropriate usage and note your contribution. The purple lotus will then need to be properly stored until I am ready for them. As for you, if you are still available I should imagine that I'll still need more purple lotus. Please check back with me in a moment.",
+  "quest:8588:obj:0": "Bring 10 ⟦E53⟧ to ⟦E54⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8588:details:0": "Since we're preparing for war, it might be best if we get all of the goods we need first, don't you think, mon? One of the staples of the war materiel that we're producing is heavy leather. We'll use it for just about everything, from reinforcement to armor, and good old plain tarps too.",
+  "quest:8588:details:1": "But first we need to get our hands on more of it. That's your job, ⟦51⟧. Sharpen your knife and bring me back a bundle. Then we'll talk further.",
+  "quest:8588:progress:0": "I've got no time for games if you're just here to jibber-jabber, ⟦52⟧. There are too many stacks of heavy leather that need curing. Come back when you have at least ten for me.",
+  "quest:8588:completion:0": "Simply amazing... look at the purity of these samples. Hmm, I wonder what it could mean. They seem to be elemental in nature, but... something more. They remind me of... of the Old Gods. We've found traces of them throughout ⟦E55⟧, and now I wonder if these creatures aren't related to them somehow.",
+  "quest:8588:completion:1": "We shall have to test further.",
+  "quest:8590:obj:0": "Bring 10 ⟦E22⟧ to ⟦E56⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8590:details:0": "I'm glad that you decided to speak to me about this, ⟦53⟧. It looks like the ⟦E14⟧'s preparations for the upcoming ⟦E3⟧ are in full swing. But you and I still need to do our part.",
+  "quest:8590:details:1": "I've been asked to collect a great number of thick leather skins for use in all manner of war materiel, and I need you to help me by going out there and gathering them up. There's honor and the gratitude of the ⟦E14⟧ in it for you should you decide to help. Will you?",
+  "quest:8590:progress:0": "⟦54⟧, have you returned so soon with the ten thick leather that we discussed?",
+  "quest:8590:completion:0": "Good work, ⟦55⟧. I'm sure that these thick leather skins will be put to use reinforcing zeppelins and making all manner of armor and weaponry. You have my thanks, and that of the ⟦E14⟧. Come back again if you come across more thick leather in your travels, and luck be with you.",
+  "quest:8600:obj:0": "Bring 10 ⟦E57⟧ to ⟦E58⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8600:details:0": "I find that the fit of the knife in your palm is more important than the edge on it. Even the dullest blade can be made to cut if pressure is being properly applied through it, wouldn't you agree, ⟦56⟧? But you and I don't have such problems as we maintain the sharpest of edges, yes?",
+  "quest:8600:details:1": "Well, no matter, I have a task for you. In service to the ⟦E14⟧, and to do your part for the ⟦E6⟧ war effort, I want you to return to me with a number of rugged leather skins. This is something that you will do, no?",
+  "quest:8600:progress:0": "It couldn't possibly be taking you this long to slice off ten rugged leather for me! Perhaps you should sharpen your skinning knife? Or, perhaps I am mistaken and you have them there in your pack?",
+  "quest:8600:completion:0": "Very well, it appears you've done a fairly decent job of it, though some of those skins look a bit ragged about the edges. No matter, the task is completed, and you have earned your reward. Should you come across another stack of rugged leather, be sure to bring them to me posthaste.",
+  "quest:8604:obj:0": "Bring 20 Wool Bandages to ⟦E59⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8604:details:0": "Greetings, ⟦57⟧. In preparation for the war at ⟦E6⟧, I am here coordinating the ⟦E14⟧'s efforts at gathering ⟦E60⟧ bandages. Unfortunately, out in the field, our soldiers cannot afford to rely upon the presence of a healer to keep them alive. Trust me, I know first hand. Thus, we're putting together all of these first aid kits for them.",
+  "quest:8604:details:1": "If you have the time, I need many ⟦E60⟧ bandages. Return them to me here and I will see to it that you are properly rewarded.",
+  "quest:8604:progress:0": "The dredge strikers are a serious threat and must be dealt with quickly!",
+  "quest:8604:completion:0": "You have my sincere gratitude. Your efforts in helping Cenarion Hold have shown true courage.",
+  "quest:8607:obj:0": "Bring 20 Mageweave Bandages to ⟦E61⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8607:details:0": "I trust that you are speaking to me because you are going to help with the collection I have been entrusted to? Good! By whatever means, and I do mean whatever, I wish for you to gather up a good number of mageweave bandages. Fresh would be nice, but not absolutely necessary. Return them to me here, ⟦58⟧, and I will personally see to it that you are properly rewarded.",
+  "quest:8607:progress:0": "Do not fail and make me look bad, ⟦59⟧! Return here as quickly as possible with the mageweave bandages we discussed.",
+  "quest:8607:completion:0": "Surprising, yet acceptable. Perhaps I underestimated your 'abilities', ⟦60⟧. Perhaps. You completed a very simple task, and for doing so you are to be rewarded out of proportion. But don't let it go to your head. If you really want to prove yourself you should get out there and bring me another bundle of mageweave bandages.",
+  "quest:8609:obj:0": "Bring 20 ⟦E33⟧ Bandages to ⟦E62⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8609:details:0": "It appears inevitable that the ⟦E14⟧ and ⟦E4⟧ are on a collision course for war at ⟦E6⟧. Surprisingly, it is not a war with each other, but rather with the silithid, and whatever force controls them. Also surprisingly, both sides are doing their part to gather the resources necessary to wage a successful war.",
+  "quest:8609:details:1": "I am collecting runecloth bandages to distribute to the soldiers, but I won't be successful without assistance, hopefully yours. Is this something that you can aid me with, ⟦61⟧?⟦62⟧",
+  "quest:8609:progress:0": "Did you get the venom?",
+  "quest:8609:completion:0": "Sweet, you got it!",
+  "quest:8611:obj:0": "Bring 20 Lean Wolf Steaks to ⟦E63⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8611:details:0": "I'm not standing here just to get a nice tan, ⟦63⟧. There are war preparations to be made. If we're going to crush those bugs at ⟦E6⟧ then we need to be ready, and that includes food too!",
+  "quest:8611:details:1": "They have me gathering and salting lean wolf steaks here for the upcoming war. But since I need to stay here to take care of all of this, I need you to go out, kill some wolves and then cook up the meat into lean wolf steaks and bring them back to me here. You got all that?",
+  "quest:8611:progress:0": "The sprite darters can be dangerous critters when provoked. Be careful when dealing with them, ⟦64⟧. And be even more careful of any night elves in the area. The pestering fools tend to hold up in the forests also.⟦65⟧⟦66⟧When you've gotten enough of the wings, let me know, I'll be sure to reward you well!",
+  "quest:8611:completion:0": "Wonderful, ⟦67⟧! These will do nicely. There are enough here to make a cloak for Korrin, and possibly even more! Thank you.",
+  "quest:8611:completion:1": "I hope the trip wasn't too dangerous? The area of ⟦E64⟧ is not known for being forgiving, but you've obviously done well enough.",
+  "quest:8611:completion:2": "Thank you again, ⟦68⟧.",
+  "quest:8613:obj:0": "Bring 20 ⟦E39⟧ to ⟦E65⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8613:details:0": "It be a nice day for fishin', don't'cha think mon? Good thing, cuz I be needin' a lot of fish it lookin' like. The ⟦E14⟧, they askin' me to be in charge of collectin' a ton of the spotted yellowtail for them. They say they needin' it for the war they getting' ready for at ⟦E6⟧. I say to them I do the best I can. So I be needin' to get some help. You gonna be helpin' me, ⟦69⟧?",
+  "quest:8613:progress:0": "Back so soon with the spotted yellowtail, ⟦70⟧? You rememba' to cook it up nice? We not servin' raw fish to the soldiers out in the hot desert sun, to be sure.",
+  "quest:8613:completion:0": "Oh ya, this be the good stuff. I pack it up real nice so it not go to waste. Thanks be to you for helpin' me out like this. I'm thinkin' you an A-number-one fisherman for all this spotted yellowtail. An if you happen to fish up and cook even more, you bring it to me here; I make sure everyone know you did!",
+  "quest:8615:obj:0": "Bring 20 ⟦E67⟧ to ⟦E68⟧ at the Valley of Spirits in ⟦E42⟧.",
+  "quest:8615:details:0": "The ⟦E6⟧ war effort is an immense undertaking, ⟦71⟧. All of the materials being gathered here, whether it is metal for weapons, or food to eat, are all as important as the other. For, if you haven't eaten in days you will not have the strength to lift your axe when it matters.",
+  "quest:8615:details:1": "Thus, we gather what food we can. I am collecting baked salmon, a dish that was chosen both for its sustenance and its ability to keep well. Can you aid me with this task, ⟦72⟧?",
+  "quest:8615:progress:0": "The sprite darters can be dangerous critters when provoked. Be careful when dealing with them, ⟦73⟧. And be even more careful of any night elves in the area. The pestering fools tend to hold up in the forests also.⟦74⟧⟦75⟧When you've gotten enough of the wings, let me know, I'll be sure to reward you well!",
+  "quest:8615:completion:0": "Wonderful, ⟦76⟧! These will do nicely. There are enough here to make a cloak for Korrin, and possibly even more! Thank you.",
+  "quest:8615:completion:1": "I hope the trip wasn't too dangerous? The area of ⟦E64⟧ is not known for being forgiving, but you've obviously done well enough.",
+  "quest:8615:completion:2": "Thank you again, ⟦77⟧."
+ },
+ "context": {
+  "quest:8492": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sergeant Stonebrow («گروهبان ابروسنگی»)",
+   "turner": "Sergeant Stonebrow («گروهبان ابروسنگی»)"
+  },
+  "quest:8494": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Corporal Carnes («سرجوخه کارنز»)",
+   "turner": "Corporal Carnes («سرجوخه کارنز»)"
+  },
+  "quest:8499": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Dame Twinbraid («بانو دوقلوبافت»)",
+   "turner": "Dame Twinbraid («بانو دوقلوبافت»)"
+  },
+  "quest:8503": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Private Draxlegauge («سرباز درکسل‌گیج»)",
+   "turner": "Private Draxlegauge («سرباز درکسل‌گیج»)"
+  },
+  "quest:8505": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Master Nightsong («استاد نغمهٔ شب»)",
+   "turner": "Master Nightsong («استاد نغمهٔ شب»)"
+  },
+  "quest:8509": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sergeant Major Germaine («گروهبان ارشد گرماین»)",
+   "turner": "Sergeant Major Germaine («گروهبان ارشد گرماین»)"
+  },
+  "quest:8511": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bonnie Stoneflayer («بانی سنگ‌پوست‌کن»)",
+   "turner": "Bonnie Stoneflayer («بانی سنگ‌پوست‌کن»)"
+  },
+  "quest:8513": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Private Porter («سرباز پورتر»)",
+   "turner": "Private Porter («سرباز پورتر»)"
+  },
+  "quest:8515": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Marta Finespindle («مارتا نخ‌ظریف»)",
+   "turner": "Marta Finespindle («مارتا نخ‌ظریف»)"
+  },
+  "quest:8517": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sentinel Silversky («آسمان نقره‌ای»)",
+   "turner": "Sentinel Silversky («آسمان نقره‌ای»)"
+  },
+  "quest:8520": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Nurse Stonefield («پرستار سنگ‌مزارع»)",
+   "turner": "Nurse Stonefield («پرستار سنگ‌مزارع»)"
+  },
+  "quest:8522": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Keeper Moonshade («نگهبان سایه‌ماه»)",
+   "turner": "Keeper Moonshade («نگهبان سایه‌ماه»)"
+  },
+  "quest:8524": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Slicky Gastronome («سلیکی خوراک‌شناس»)",
+   "turner": "Slicky Gastronome («سلیکی خوراک‌شناس»)"
+  },
+  "quest:8526": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sarah Sadwhistle («ساراه سوت غمگین»)",
+   "turner": "Sarah Sadwhistle («ساراه سوت غمگین»)"
+  },
+  "quest:8528": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Huntress Swiftriver («شکارچی زن رودتند»)",
+   "turner": "Huntress Swiftriver («شکارچی زن رودتند»)"
+  },
+  "quest:8532": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Miner Cromwell («معدنچی کرامول»)",
+   "turner": "Miner Cromwell («معدنچی کرامول»)"
+  },
+  "quest:8542": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Grunt Maug («گرانت ماوگ»)",
+   "turner": "Grunt Maug («گرانت ماوگ»)"
+  },
+  "quest:8545": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Senior Sergeant T'kelah («تکلاه»)",
+   "turner": "Senior Sergeant T'kelah («تکلاه»)"
+  },
+  "quest:8549": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Herbalist Proudfeather («گیاه‌شناس پرمغرور»)",
+   "turner": "Herbalist Proudfeather («گیاه‌شناس پرمغرور»)"
+  },
+  "quest:8580": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Batrider Pele'keiki («بت‌رایدر پله‌کی‌کی»)",
+   "turner": "Batrider Pele'keiki («بت‌رایدر پله‌کی‌کی»)"
+  },
+  "quest:8582": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Apothecary Jezel («داروساز جزل»)",
+   "turner": "Apothecary Jezel («داروساز جزل»)"
+  },
+  "quest:8588": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Skinner Jamani («پوست‌کن جامانی»)",
+   "turner": "Skinner Jamani («پوست‌کن جامانی»)"
+  },
+  "quest:8590": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sergeant Umala («گروهبان ومالا»)",
+   "turner": "Sergeant Umala («گروهبان ومالا»)"
+  },
+  "quest:8600": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Doctor Serratus («دکتر سراتوس»)",
+   "turner": "Doctor Serratus («دکتر سراتوس»)"
+  },
+  "quest:8604": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Healer Longrunner («شفادهنده دوندهٔ بلند»)",
+   "turner": "Healer Longrunner («شفادهنده دوندهٔ بلند»)"
+  },
+  "quest:8607": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lady Callow («بانو کالو»)",
+   "turner": "Lady Callow («بانو کالو»)"
+  },
+  "quest:8609": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Stoneguard Clayhoof («کلیهوف»)",
+   "turner": "Stoneguard Clayhoof («کلیهوف»)"
+  },
+  "quest:8611": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bloodguard Rawtar («نگهبان خون راوتار»)",
+   "turner": "Bloodguard Rawtar («نگهبان خون راوتار»)"
+  },
+  "quest:8613": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Fisherman Lin'do («ماهیگیر لین‌دو»)",
+   "turner": "Fisherman Lin'do («ماهیگیر لین‌دو»)"
+  },
+  "quest:8615": {
+   "zone_en": "Ahn'Qiraj War",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Chief Sharpclaw («رئیس پنجه‌تیز»)",
+   "turner": "Chief Sharpclaw («رئیس پنجه‌تیز»)"
+  }
+ },
+ "known": {
+  "quest:8492": {
+   "title": "اتحادیه به شمشِ مس نیاز دارد!"
+  },
+  "quest:8494": {
+   "title": "اتحادیه به شمشِ آهن نیاز دارد!"
+  },
+  "quest:8499": {
+   "title": "اتحادیه به شمش آتوریوم نیاز دارد!"
+  },
+  "quest:8503": {
+   "title": "اتحادیه به جلبک خفه‌گر نیاز دارد!"
+  },
+  "quest:8505": {
+   "title": "اتحادیه به نیلوفر بنفش نیاز دارد!"
+  },
+  "quest:8509": {
+   "title": "اتحادیه به اشک‌های آرتاس نیاز دارد!"
+  },
+  "quest:8511": {
+   "title": "اتحادیه به چرمِ سبک نیاز دارد!"
+  },
+  "quest:8513": {
+   "title": "اتحادیه به چرمِ متوسط نیاز دارد!"
+  },
+  "quest:8515": {
+   "title": "اتحادیه به چرمِ ضخیم نیاز دارد!"
+  },
+  "quest:8517": {
+   "title": "اتحادیه به باندِ کتان نیاز دارد!"
+  },
+  "quest:8520": {
+   "title": "اتحادیه به باندِ ابریشم نیاز دارد!"
+  },
+  "quest:8522": {
+   "title": "اتحادیه به باندِ پارچهٔ رونی نیاز دارد!"
+  },
+  "quest:8524": {
+   "title": "اتحادیه به الباکورِ بالهٔ رنگین نیاز دارد!"
+  },
+  "quest:8526": {
+   "title": "اتحادیه به رپتور کبابی نیاز دارد!"
+  },
+  "quest:8528": {
+   "title": "اتحادیه به دم‌زرد خالدار نیاز دارد!"
+  },
+  "quest:8532": {
+   "title": "هورد به شمشِ مس نیاز دارد!"
+  },
+  "quest:8542": {
+   "title": "هورد به شمشِ قلع نیاز دارد!"
+  },
+  "quest:8545": {
+   "title": "هورد به شمشِ میتریل نیاز دارد!"
+  },
+  "quest:8549": {
+   "title": "هورد به گلِ آرامش نیاز دارد!"
+  },
+  "quest:8580": {
+   "title": "هورد به شکوفهٔ آتش نیاز دارد!"
+  },
+  "quest:8582": {
+   "title": "هورد به نیلوفر بنفش نیاز دارد!"
+  },
+  "quest:8588": {
+   "title": "هورد به چرمِ سنگین نیاز دارد!"
+  },
+  "quest:8590": {
+   "title": "هورد به چرمِ ضخیم نیاز دارد!"
+  },
+  "quest:8600": {
+   "title": "هورد به چرمِ بادوام نیاز دارد!"
+  },
+  "quest:8604": {
+   "title": "هورد به باندِ پشم نیاز دارد!"
+  },
+  "quest:8607": {
+   "title": "هورد به باندِ ماگوویو نیاز دارد!"
+  },
+  "quest:8609": {
+   "title": "هورد به باندِ پارچهٔ رونی نیاز دارد!"
+  },
+  "quest:8611": {
+   "title": "هورد به بیف‌استیکِ گرگِ لاغر نیاز دارد!"
+  },
+  "quest:8613": {
+   "title": "هورد به دم‌زرد خالدار نیاز دارد!"
+  },
+  "quest:8615": {
+   "title": "هورد به سالمون کبابی نیاز دارد!"
+  }
+ }
+}

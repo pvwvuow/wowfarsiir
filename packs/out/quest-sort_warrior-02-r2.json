@@ -1,0 +1,861 @@
+{
+ "pack": "quest-sort:warrior-02-r2",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70634",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-sort:warrior-02-r2.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Umbral Ore",
+   "fa": "کانهٔ سایه‌گون",
+   "kind": "it"
+  },
+  "E2": {
+   "en": "Tormus Deepforge",
+   "fa": "تورموس ژرف‌کوره",
+   "kind": "qs"
+  },
+  "E3": {
+   "en": "Ironforge",
+   "fa": "آیرون‌فورج",
+   "kind": "npc"
+  },
+  "E4": {
+   "en": "Ironband",
+   "fa": "آیرون‌بند",
+   "kind": "npc"
+  },
+  "E5": {
+   "en": "Dun Morogh",
+   "fa": "دون موروغ",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Ironband's Compound",
+   "fa": "مجتمع آیرون‌بند",
+   "kind": "qs"
+  },
+  "E8": {
+   "en": "Coleman Farthing",
+   "fa": "کولمن فارثینگ",
+   "kind": "npc"
+  },
+  "E9": {
+   "en": "Agamand Family Axe",
+   "fa": "تبرِ خاندان آگاماند",
+   "kind": "it"
+  },
+  "E10": {
+   "en": "Agamand Family Sword",
+   "fa": "شمشیرِ خاندان آگاماند",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Agamand Family Mace",
+   "fa": "گرزِ خاندان آگاماند",
+   "kind": "it"
+  },
+  "E12": {
+   "en": "Yorus Barleybrew",
+   "fa": "یوروس بارلی‌برو",
+   "kind": "qs"
+  },
+  "E13": {
+   "en": "Alliance",
+   "fa": "اتحاد",
+   "kind": "npc"
+  },
+  "E14": {
+   "en": "Speak with Ruga",
+   "fa": "گفت‌وگو با روگا",
+   "kind": "qs"
+  },
+  "E15": {
+   "en": "Ruga Ragetotem",
+   "fa": "روگا توتم‌خشم",
+   "kind": "npc"
+  },
+  "E16": {
+   "en": "Barrens",
+   "fa": "بارنز",
+   "kind": "zn"
+  },
+  "E18": {
+   "en": "Speak with Thun'grim",
+   "fa": "گفت‌وگو با تان‌گریم",
+   "kind": "qs"
+  },
+  "E19": {
+   "en": "Thun'grim Firegaze",
+   "fa": "تان‌گریم آتش‌نگاه",
+   "kind": "qs"
+  },
+  "E20": {
+   "en": "Horde",
+   "fa": "هورد",
+   "kind": "npc"
+  },
+  "E22": {
+   "en": "Cask of Scalder",
+   "fa": "چلیکِ اسکالدر",
+   "kind": "it"
+  },
+  "E23": {
+   "en": "Furen Longbeard",
+   "fa": "فورن ریش‌دراز",
+   "kind": "npc"
+  },
+  "E24": {
+   "en": "Stormwind",
+   "fa": "استورم‌ویند",
+   "kind": "npc"
+  },
+  "E25": {
+   "en": "Furen's Notes",
+   "fa": "یادداشت‌های فورن",
+   "kind": "it"
+  },
+  "E26": {
+   "en": "Grimand Elmore",
+   "fa": "گریماند المور",
+   "kind": "qs"
+  },
+  "E28": {
+   "en": "Mathiel",
+   "fa": "ماتیِل",
+   "kind": "qs"
+  },
+  "E29": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "npc"
+  },
+  "E30": {
+   "en": "Klockmort Spannerspan",
+   "fa": "کلاک‌مورت اسپانرسپن",
+   "kind": "qs"
+  },
+  "E31": {
+   "en": "Burning Blood",
+   "fa": "خونِ سوزان",
+   "kind": "it"
+  },
+  "E32": {
+   "en": "Burning Rock",
+   "fa": "سنگِ سوزان",
+   "kind": "it"
+  },
+  "E33": {
+   "en": "Duskwood",
+   "fa": "جنگل تاریک",
+   "kind": "zn"
+  },
+  "E34": {
+   "en": "Searing Coral",
+   "fa": "مرجانِ سوزان",
+   "kind": "it"
+  },
+  "E35": {
+   "en": "Harbor",
+   "fa": "بندر",
+   "kind": "npc"
+  },
+  "E36": {
+   "en": "Wetlands",
+   "fa": "تالاب‌ها",
+   "kind": "zn"
+  },
+  "E37": {
+   "en": "Sunscorched Shells",
+   "fa": "صدف‌های آفتاب‌سوخته",
+   "kind": "qs"
+  },
+  "E38": {
+   "en": "Thousand Needles",
+   "fa": "هزار سوزن",
+   "kind": "zn"
+  },
+  "E39": {
+   "en": "Klannoc Macleod",
+   "fa": "کلانوک مک‌لئود",
+   "kind": "npc"
+  },
+  "E40": {
+   "en": "Big Will",
+   "fa": "ویل بزرگ",
+   "kind": "npc"
+  },
+  "E41": {
+   "en": "The Affray",
+   "fa": "نزاع",
+   "kind": "qs"
+  },
+  "E43": {
+   "en": "Bath'rah the Windwatcher",
+   "fa": "باث‌را بادنگر",
+   "kind": "npc"
+  },
+  "E45": {
+   "en": "Alterac Mountains",
+   "fa": "کوه‌های آلتراک",
+   "kind": "zn"
+  },
+  "E46": {
+   "en": "Western Plaguelands",
+   "fa": "اراضی طاعون‌زدهٔ غربی",
+   "kind": "zn"
+  },
+  "E47": {
+   "en": "Powdered Azurite",
+   "fa": "پودر آزوریت",
+   "kind": "it"
+  },
+  "E48": {
+   "en": "Vial of Phlogiston",
+   "fa": "شیشهٔ فلوژیستون",
+   "kind": "it"
+  },
+  "E49": {
+   "en": "Ula'elek",
+   "fa": "اولاالک",
+   "kind": "npc"
+  },
+  "E50": {
+   "en": "Durotar",
+   "fa": "دوروتار",
+   "kind": "zn"
+  },
+  "E51": {
+   "en": "Darkspear",
+   "fa": "نیزه‌تیره",
+   "kind": "npc"
+  },
+  "E52": {
+   "en": "Orm Stonehoof",
+   "fa": "اورم سم‌سنگی",
+   "kind": "npc"
+  },
+  "E53": {
+   "en": "Thunder Bluff",
+   "fa": "تاندر بلاف",
+   "kind": "npc"
+  },
+  "E55": {
+   "en": "Velora Nitely",
+   "fa": "ولورا نایتلی",
+   "kind": "npc"
+  },
+  "E56": {
+   "en": "Undercity",
+   "fa": "آندر‌سیتی",
+   "kind": "npc"
+  },
+  "E57": {
+   "en": "Satyr Hooves",
+   "fa": "سُم‌های ساتیر",
+   "kind": "qs"
+  },
+  "E58": {
+   "en": "Ashenvale",
+   "fa": "اَشِن‌ویل",
+   "kind": "zn"
+  },
+  "E59": {
+   "en": "Galvanized Horn",
+   "fa": "شاخِ گالوانیزه",
+   "kind": "it"
+  },
+  "E60": {
+   "en": "Stonetalon Mountains",
+   "fa": "کوه‌های استون‌تالون",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Umbral Ore": "کانهٔ سایه‌گون",
+  "Tormus Deepforge": "تورموس ژرف‌کوره",
+  "Ironforge": "آیرون‌فورج",
+  "Ironband": "آیرون‌بند",
+  "Dun Morogh": "دون موروغ",
+  "Ironband's Compound": "مجتمع آیرون‌بند",
+  "Coleman Farthing": "کولمن فارثینگ",
+  "Agamand Family Axe": "تبرِ خاندان آگاماند",
+  "Agamand Family Sword": "شمشیرِ خاندان آگاماند",
+  "Agamand Family Mace": "گرزِ خاندان آگاماند",
+  "Yorus Barleybrew": "یوروس بارلی‌برو",
+  "Alliance": "اتحاد",
+  "Speak with Ruga": "گفت‌وگو با روگا",
+  "Ruga Ragetotem": "روگا توتم‌خشم",
+  "Barrens": "بارنز",
+  "Speak with Thun'grim": "گفت‌وگو با تان‌گریم",
+  "Thun'grim Firegaze": "تان‌گریم آتش‌نگاه",
+  "Horde": "هورد",
+  "Cask of Scalder": "چلیکِ اسکالدر",
+  "Furen Longbeard": "فورن ریش‌دراز",
+  "Stormwind": "استورم‌ویند",
+  "Furen's Notes": "یادداشت‌های فورن",
+  "Grimand Elmore": "گریماند المور",
+  "Mathiel": "ماتیِل",
+  "Darnassus": "دارناسوس",
+  "Klockmort Spannerspan": "کلاک‌مورت اسپانرسپن",
+  "Burning Blood": "خونِ سوزان",
+  "Burning Rock": "سنگِ سوزان",
+  "Duskwood": "جنگل تاریک",
+  "Searing Coral": "مرجانِ سوزان",
+  "Harbor": "بندر",
+  "Wetlands": "تالاب‌ها",
+  "Sunscorched Shells": "صدف‌های آفتاب‌سوخته",
+  "Thousand Needles": "هزار سوزن",
+  "Klannoc Macleod": "کلانوک مک‌لئود",
+  "Big Will": "ویل بزرگ",
+  "The Affray": "نزاع",
+  "Bath'rah the Windwatcher": "باث‌را بادنگر",
+  "Alterac Mountains": "کوه‌های آلتراک",
+  "Western Plaguelands": "اراضی طاعون‌زدهٔ غربی",
+  "Powdered Azurite": "پودر آزوریت",
+  "Vial of Phlogiston": "شیشهٔ فلوژیستون",
+  "Ula'elek": "اولاالک",
+  "Durotar": "دوروتار",
+  "Darkspear": "نیزه‌تیره",
+  "Orm Stonehoof": "اورم سم‌سنگی",
+  "Thunder Bluff": "تاندر بلاف",
+  "Velora Nitely": "ولورا نایتلی",
+  "Undercity": "آندر‌سیتی",
+  "Satyr Hooves": "سُم‌های ساتیر",
+  "Ashenvale": "اَشِن‌ویل",
+  "Galvanized Horn": "شاخِ گالوانیزه",
+  "Stonetalon Mountains": "کوه‌های استون‌تالون"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$N",
+  "3": "$N",
+  "4": "$N",
+  "5": "$N",
+  "6": "$N",
+  "7": "$N",
+  "8": "$N",
+  "9": "$N",
+  "10": "$N",
+  "11": "$gsir:ma'am;",
+  "12": "$N",
+  "13": "$N",
+  "14": "$C",
+  "15": "$N",
+  "16": "$N",
+  "17": "$N",
+  "18": "$N",
+  "19": "$B",
+  "20": "$B",
+  "21": "$N",
+  "22": "$N",
+  "23": "$B",
+  "24": "$N",
+  "25": "$N",
+  "26": "$N",
+  "27": "$N",
+  "28": "$N",
+  "29": "$N",
+  "30": "$N",
+  "31": "$N",
+  "32": "$N",
+  "33": "$n",
+  "34": "$N",
+  "35": "$N",
+  "36": "$N",
+  "37": "$N"
+ },
+ "rows": {
+  "quest:1681:obj:0": "Bring a load of ⟦E1⟧ to ⟦E2⟧ in ⟦E3⟧.",
+  "quest:1681:details:0": "My mentor, Sturgy ⟦E4⟧, had a compound south of Helm's Bed Lake in eastern ⟦E5⟧. There he taught blacksmithing and he was the best.",
+  "quest:1681:details:1": "But one day, one of his students brought him a load of strange ore. Master ⟦E4⟧ called it umbral ore and was eager to work with it, but soon after it arrived... a band of Dark Iron dwarves attacked his compound. They killed everyone!",
+  "quest:1681:details:2": "Enter ⟦E4⟧'s compound, ⟦1⟧, and avenge my master's death. And bring me the load of umbral ore that caused it.",
+  "quest:1681:progress:0": "Have you entered ⟦E6⟧? Did you find the umbral ore?",
+  "quest:1681:completion:0": "You found it! Well done!",
+  "quest:1681:completion:1": "I hope you killed a host of Dark Iron dwarves while searching. I fear that ⟦E4⟧'s compound won't be the last place we see them.",
+  "quest:1681:completion:2": "But thank you for the ore, ⟦2⟧. I'm eager to work it and find its properties.",
+  "quest:1821:obj:0": "Bring ⟦E8⟧ the ⟦E9⟧, the ⟦E10⟧, the ⟦E11⟧ and the Agamand Family dagger.",
+  "quest:1821:details:0": "The Agamand family were my employers in life, and they were the cause of my death! It is fitting that the Agamands are now mindless minions of the Lich King.",
+  "quest:1821:details:1": "Now I would have their last vestiges of honor. Go into their family crypt and rob them of their family heirlooms: a sword, an axe, a dagger and a mace. Bring them to me!",
+  "quest:1821:details:2": "The Agamand family crypt is at the north end of the Agamand mills, protected by lurking scourge and dead Agamands.",
+  "quest:1821:progress:0": "Do you have the heirlooms, ⟦3⟧?",
+  "quest:1821:completion:0": "Ah! You retrieved them! Now the last semblance of honor and memory is stripped from the cursed Agamand lands. The family truly is no more!",
+  "quest:1822:completion:0": "I will keep three of the weapons you returned to me, as mementos of my pain and loss. But please, ⟦4⟧, choose your favorite of the heirlooms and keep it for yourself.",
+  "quest:1822:completion:1": "May it serve you greater than it served its cursed, former owners.",
+  "quest:1698:obj:0": "Speak with ⟦E12⟧.",
+  "quest:1698:details:0": "⟦E12⟧ has issued a challenge to all able warriors of the ⟦E13⟧. He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to pass his trial.",
+  "quest:1698:completion:0": "Hah! So you heard of my challenge, did you?",
+  "quest:1698:completion:1": "Well sit down and listen. Have a drink, and savor it... because it might be your last.",
+  "quest:1823:obj:0": "⟦E14⟧ Ragetotem.",
+  "quest:1823:details:0": "You are a warrior of skill and growing renown. Perhaps you are ready for ⟦E15⟧'s trial? If so, then find Ruga in Camp Taurajo in the ⟦E16⟧.",
+  "quest:1823:details:1": "He awaits those warriors who answer his call.",
+  "quest:1823:completion:0": "You are here for my trial, ⟦5⟧?",
+  "quest:1824:obj:0": "Bring 5 twitching antennae to ⟦E15⟧ at Camp Taurajo",
+  "quest:1824:details:0": "To pass this trial, you must travel south to the Field of Giants. There you will find a host of crawling, insect creatures. They are new to the ⟦E16⟧ and I do not like what they herald.",
+  "quest:1824:details:1": "Bring me their still-twitching antennae, and waste no time, ⟦6⟧, for harvested antennae will not twitch for long. Bring me the antennae in the time allowed, and you will pass the trial.",
+  "quest:1824:progress:0": "Do you have the antennae? If so then give them to me quickly, for twitching antennae do not twitch forever...",
+  "quest:1824:completion:0": "Nicely done, ⟦7⟧! In passing the trial at the Field of Giants, you take one more step down the warrior's path.",
+  "quest:1825:obj:0": "⟦E18⟧ Firegaze in the ⟦E16⟧.",
+  "quest:1825:details:0": "⟦E19⟧, an orc blacksmith of renown, has heard of your continued deeds of valor in service of the ⟦E20⟧. He would like to fashion for you a suit of armor, and bids you speak with him immediately.",
+  "quest:1825:details:1": "Thun'grim is camped east of the Crossroads in the ⟦E16⟧.",
+  "quest:1825:completion:0": "Yes, you have come. This is good, for we have much to discuss, you and I.",
+  "quest:1699:obj:0": "Enter the Rethban Caverns, reach the first fork, and return to ⟦E12⟧ within the time allowed.",
+  "quest:1699:obj:1": "You must not die and release your spirit.",
+  "quest:1699:details:0": "I call my challenge the Rethban Gauntlet. To pass the trial, all you must do is enter the Rethban Caverns, to the first fork, then return here. Easy! Except there are a few wrinkles...",
+  "quest:1699:details:1": "You have to return within an hour.",
+  "quest:1699:details:2": "There are whole heaps of Redridge Gnolls in the way.",
+  "quest:1699:details:3": "Before you start, you have to take a swig of my family's signature drink: Barleybrew Scalder!",
+  "quest:1699:details:4": "So what do you say? The Rethban Caverns are in the foothills north of Lakeshire. Are you ready to run the Rethban Gauntlet?",
+  "quest:1699:progress:0": "Time is wasting, ⟦8⟧.  If I were you, I'd get going...",
+  "quest:1699:completion:0": "You made it! Well done! Three cheers for ⟦9⟧!",
+  "quest:1702:obj:0": "Bring the ⟦E22⟧ to ⟦E23⟧.",
+  "quest:1702:details:0": "You really showed what you were made of when you ran the Rethban Gauntlet, ⟦10⟧. And I'm true to my word. I'll get you the reward I promised...",
+  "quest:1702:details:1": "Except it's in ⟦E24⟧.",
+  "quest:1702:details:2": "Talk to my friend, ⟦E23⟧, in the Dwarven District of ⟦E24⟧. He's the best shieldsmith you'll ever meet, and he owes me a big favor.",
+  "quest:1702:details:3": "Here, take Furen this cask of Barleybrew Scalder and ask him for a shield. He'll give you a nice one.",
+  "quest:1702:progress:0": "Hello! Dry times, don't you think?",
+  "quest:1702:completion:0": "Ah, Barleybrew Scalder. Great stuff! So you've been to see Yorus, eh?",
+  "quest:1702:completion:1": "I can get you a shield, yes ⟦11⟧! You won't find a better one, and that's no lying!",
+  "quest:1700:obj:0": "Bring ⟦E25⟧ to ⟦E26⟧.",
+  "quest:1700:details:0": "I made a copy of my notes on the techniques I learned while making your armor, and I need them sent to ⟦E26⟧. He's here in the Dwarven District, in the weapon shop.",
+  "quest:1700:details:1": "And duck when you give these to him. He's fiercely proud of his skills, and won't like the idea of learning something from me...",
+  "quest:1700:progress:0": "Hello, and well met. How might I be of service to you?",
+  "quest:1700:completion:0": "Furen wrote this? How dare he! Why, I taught him everything he knows! To think he could teach me something is outrageous! Outrageous!",
+  "quest:1700:completion:1": "Hm... but there is something in his notes that I'd like to try...",
+  "quest:1701:obj:0": "Gather the materials ⟦E23⟧ requires, and bring them to him in ⟦E24⟧.",
+  "quest:1701:details:0": "So I gave you a nice shield, but we don't have to stop there. I know the secrets to make extremely hard mail armor. It's not easy and it takes very rare materials, but if you're willing to do the legwork then I'll make a piece for you.",
+  "quest:1701:details:1": "What do you say, ⟦12⟧? If you're up for the challenge, then I'll give you a list of what to get and where to get them.",
+  "quest:1701:progress:0": "How goes the scavenger hunt, ⟦13⟧? Do you have the materials?",
+  "quest:1701:completion:0": "You got it all? Amazing! I was afraid those chimaeras would eat you up for sure!",
+  "quest:1701:completion:1": "Well let's get started on that armor...",
+  "quest:1703:obj:0": "Bring ⟦E25⟧ to ⟦E28⟧.",
+  "quest:1703:details:0": "I made a copy of my notes on the techniques I learned while making your armor, and need them sent to the blacksmith ⟦E28⟧. He lives in ⟦E29⟧ which is quite a long way off, but I'm sure he'll be very grateful to learn what I've learned.",
+  "quest:1703:progress:0": "I bid you greetings, ⟦14⟧.",
+  "quest:1703:completion:0": "I bid you greetings, warrior.",
+  "quest:1704:obj:0": "Bring ⟦E25⟧ to ⟦E30⟧.",
+  "quest:1704:details:0": "I made a copy of my notes on the techniques I learned while making your armor, and need someone to take them to ⟦E30⟧. He's a gnomish blacksmith in ⟦E3⟧ and when he learns what I've learned... I bet he'll pull off his own beard in excitement.",
+  "quest:1704:progress:0": "Good day, or morning or evening. I can't tell from way down here. So do you have business for me?",
+  "quest:1704:completion:0": "Oh my! These notes are amazing! And what's more... they're incredible and they're stupendous and they make my knees go all a-wobbly!",
+  "quest:1704:completion:1": "Furen had a breakthrough! A real breakthrough! I can't wait to try out his new technique!",
+  "quest:1705:obj:0": "Bring 20 vials of ⟦E31⟧ and 1 ⟦E32⟧ to ⟦E26⟧ in ⟦E24⟧.",
+  "quest:1705:details:0": "I hate to admit that Furen might have really found something. But to be sure I'll need to try his techniques on a new piece of armor. If you help me with the materials, ⟦15⟧, then you can have the armor.",
+  "quest:1705:details:1": "To make this armor, I need samples of burning blood and a burning rock.",
+  "quest:1705:details:2": "The only place I know to get them is ⟦E33⟧. The Nightbane worgen based in the Roland's Doom mine have burning blood, and their leader Gutspill will have the rock.",
+  "quest:1705:details:3": "May fortune grant you speed, ⟦16⟧.",
+  "quest:1705:progress:0": "⟦17⟧, do you have the burning blood and rock? I'll need them to complete the armor.",
+  "quest:1705:completion:0": "Nice work! Now if you'll excuse me, I have some work to do myself...",
+  "quest:1782:completion:0": "Here's your armor, ⟦18⟧. This will stand up to the strongest assaults or my name isn't ⟦E23⟧!",
+  "quest:1782:completion:1": "And I have to thank you. I learned a lot while working with the materials⟦19⟧you brought me. I think I'll have another breakthrough one day!",
+  "quest:1782:completion:2": "I'm going to send what I learned to other⟦20⟧blacksmiths of the ⟦E13⟧.",
+  "quest:1782:completion:3": "I'll tell them you were a big help, and maybe they'll want to return the favor.",
+  "quest:1708:obj:0": "Bring 20 loads of ⟦E34⟧ to ⟦E30⟧ in ⟦E3⟧.",
+  "quest:1708:details:0": "I want to try ⟦E23⟧'s new techniques on my own piece of armor. And because you helped Furen and he helped me, you're welcome to the armor after I make it!",
+  "quest:1708:details:1": "To finish the piece, I need a special coral, searing coral. It grows in only one place--along the coast south of Menethil ⟦E35⟧ in the ⟦E36⟧.",
+  "quest:1708:details:2": "Bring me enough searing coral and I'll get right to work on the armor. And hurry, ⟦21⟧. I'm so eager to get started it's making my toes twist!",
+  "quest:1708:progress:0": "Hello hello, ⟦22⟧! Do you have the searing coral? I can't wait to get to work!",
+  "quest:1708:completion:0": "That's the stuff! Well done! Now let me get this smelted and hammered so I can apply Furen's technique with my own and then we can see what happens!",
+  "quest:1708:completion:1": "Oh my, oh my! I just know the armor will be very very very tough!",
+  "quest:1706:completion:0": "I can barely believe it! Furen's technique was a success, and this armor should withstand tremendous levels of stress. ⟦23⟧ Here you are, ⟦24⟧ . And thank you. I wouldn't have believed Furen's discovery if you hadn't gathered the materials I needed to test it myself.",
+  "quest:1709:completion:0": "Here's your armor, ⟦25⟧. Furen's process worked brilliantly! Perfectly! Marvelously, truly!",
+  "quest:1709:completion:1": "You could run this armor over with a siege engine and it would spring right back into shape!",
+  "quest:1710:obj:0": "Bring 20 ⟦E37⟧ to ⟦E28⟧ in ⟦E29⟧.",
+  "quest:1710:details:0": "My colleague, ⟦E23⟧, made a discovery which I am eager to test. I wish to try it on a new armor that I am researching, for I believe Furen's techniques will produce superior results.",
+  "quest:1710:details:1": "Will you help me? If you gather what I need to make the armor, then I will make an extra piece for you.",
+  "quest:1710:details:2": "I need the sunscorched egg shells of the Highperch Wyverns who dwell at Highperch, in ⟦E38⟧. Search for the shells below their nests, and return to me when you have a sufficient amount.",
+  "quest:1710:progress:0": "Do you have the shells, ⟦26⟧? They are quite strong, and can be rendered into a lacquer I will use to coat the links of my new mail armor.",
+  "quest:1710:completion:0": "Ah, thank you. These will work splendidly!",
+  "quest:1710:completion:1": "I will begin fashioning the armor immediately...",
+  "quest:1711:completion:0": "I have finished with your piece of armor, and I am quite pleased. Furen's new techniques meshed perfectly with my own and I am sure this armor will prove to be quite resilient.",
+  "quest:1711:completion:1": "Thank you, ⟦27⟧. And may this serve you well in future battles.",
+  "quest:1718:obj:0": "Speak with ⟦E39⟧.",
+  "quest:1718:details:0": "Your renown as a warrior grows, ⟦28⟧. Now it is time to pit yourself against your peers and see where you stand.",
+  "quest:1718:details:1": "There is an island off the coast of the ⟦E16⟧, south of Ratchet. It is called Fray Island and it is a place where warriors meet.",
+  "quest:1718:details:2": "Meet, and fight.",
+  "quest:1718:details:3": "Speak with the chief warrior of Fray Island, ⟦E39⟧. If he finds you worthy, then Klannoc will lead you further down the warrior's path.",
+  "quest:1718:details:4": "To reach Fray Island, search for the sand bar shallows along the Merchant Coast.",
+  "quest:1718:completion:0": "Hello, ⟦29⟧. It's good to see you made it to Fray Island. I hope you find it to your liking...",
+  "quest:1719:obj:0": "Kill ⟦E40⟧, then speak to ⟦E39⟧ on Fray Island.",
+  "quest:1719:details:0": "If you want to learn from me, then you must first pass ⟦E41⟧. It is a challenge we on Fray Island like to offer rising warriors who think they're tough, and if you can pass this test then I'll know you are.",
+  "quest:1719:details:1": "To begin, walk into the middle of that crowd yonder and step on the grate. That'll tell Twiggy Flathead you're ready, and he'll send challengers against you.",
+  "quest:1719:details:2": "Beat all the challengers and he'll call out ⟦E40⟧. Kill ⟦E40⟧, and return to me in the time we allow.",
+  "quest:1719:progress:0": "Have you completed your challenge?",
+  "quest:1719:completion:0": "Well done, ⟦30⟧. You have passed ⟦E41⟧!",
+  "quest:1719:completion:1": "You are a worthy warrior, and I am honored to teach you...",
+  "quest:1791:obj:0": "Speak with ⟦E43⟧.",
+  "quest:1791:details:0": "Now that you've learned your berserker's stance, you'll want a nice weapon to use it with.",
+  "quest:1791:details:1": "Talk to ⟦E43⟧, a troll hermit who lives between the ⟦E45⟧ and the ⟦E46⟧. He is a skilled weapon maker and a powerful shaman.",
+  "quest:1791:details:2": "To find Bath'rah, go to the river that flows along Tarren Mill's eastern flank. Follow it north--Bath'rah is camped near ruins that rest along the river's eastern bank.",
+  "quest:1791:completion:0": "You have traveled far, young warrior. I see fire in your eyes. You seek a weapon of great power, yes?",
+  "quest:1791:completion:1": "I can help you with your quest. And you can help me with mine.",
+  "quest:1838:obj:0": "Bring to ⟦E19⟧ 15 Smoky Iron Ingots, 10 ⟦E47⟧, 10 Iron Bars and a ⟦E48⟧.",
+  "quest:1838:details:0": "I have heard tales of your strength and valor, and wish to make for you a suit of armor, a companion to aid you as tales of your great deeds grow.",
+  "quest:1838:details:1": "But the fashioning of this armor will be a quest unto itself, ⟦31⟧. I will need your help, and the help of other smiths of the ⟦E20⟧.",
+  "quest:1838:details:2": "Here, take this scroll. I spent many nights, struggling with near-blind eyes, writing that which I need for the armor. Bring me the items on this scroll and I will create for you the first piece of the suit.",
+  "quest:1838:progress:0": "Do you have the items on my scroll, ⟦32⟧?",
+  "quest:1838:completion:0": "You brought all that I asked. Now, I will do my part...",
+  "quest:1839:obj:0": "Speak with ⟦E49⟧ in ⟦E50⟧.",
+  "quest:1839:details:0": "The troll smith ⟦E49⟧ will craft for you the brutal gauntlets. He dwells in ⟦E50⟧, in Sen'jin Village with his ⟦E51⟧ brethren, and he awaits your coming.",
+  "quest:1839:completion:0": "Greetings, ⟦33⟧. Old Thun'grim sent word to me of your coming, but had he kept silent your presence here would not have surprised me.",
+  "quest:1839:completion:1": "The spirits follow your progress, young warrior, and they tell me that many foes have fallen before you.",
+  "quest:1840:obj:0": "Speak with ⟦E52⟧ in ⟦E53⟧.",
+  "quest:1840:details:0": "⟦E52⟧ is respected greatly for his skill. He will make for you the brutal helm.",
+  "quest:1840:details:1": "Seek him out in ⟦E53⟧, near the pool by the city's great, central totem.",
+  "quest:1840:completion:0": "Greetings, warrior. I am Orm, and Thun'grim tells me you wish a helm made?",
+  "quest:1841:obj:0": "Speak with ⟦E55⟧ in the ⟦E56⟧.",
+  "quest:1841:details:0": "It is said that, before her death, ⟦E55⟧ was one of the finest armorsmiths in Lordaeron. Death, it seems, has not decreased her talents. Speak with Velora--she will make your brutal legguards.",
+  "quest:1841:details:1": "Velora plies her trade in the ⟦E56⟧ of Lordaeron, in the trade quarter.",
+  "quest:1841:completion:0": "You are here for leg armor? Great!",
+  "quest:1841:completion:1": "Um... am I making the armor for you, or are you making it for me?",
+  "quest:1841:completion:2": "That was joke. Was it funny? I can't tell... I lost my sense of humor the same time I lost my sense of smell. Which was about the same time I stopped breathing.",
+  "quest:1842:obj:0": "Bring 7 Uncloven ⟦E57⟧ to ⟦E49⟧ at Sen'jin Village in ⟦E50⟧.",
+  "quest:1842:details:0": "I can make you a pair of brutal gauntlets, and great magic will they hold. But first, you must collect this magic and bring it to me.",
+  "quest:1842:details:1": "The satyrs dwell in northeastern ⟦E58⟧ because of the forest's power. They feed off its purity, leeching and corrupting. You can tell which satyrs have drawn the most of ⟦E58⟧'s magic by their swollen, uncloven hooves.",
+  "quest:1842:details:2": "These hooves hold great power. I will need them for your gauntlets' crafting.",
+  "quest:1842:progress:0": "Do you have the hooves, ⟦34⟧? The magic within them is strong.",
+  "quest:1842:completion:0": "Ah, you have them! Now, just as the Satyrs leeched the strength of ⟦E58⟧, I will leech the power held within these hooves and harness it into my crafting...",
+  "quest:1843:completion:0": "Thank you, ⟦35⟧. These gauntlets are my best work. Take them. In wearing them, you bring honor to me and my ancestors.",
+  "quest:1844:obj:0": "Bring a ⟦E59⟧ to ⟦E52⟧ in ⟦E53⟧.",
+  "quest:1844:details:0": "I will make you the helm, but you must show me you are worthy of it.",
+  "quest:1844:details:1": "Nestled in the northwestern reaches of the ⟦E60⟧ there lies the Charred Vale. It was once a verdant place, but is now defiled and ashen, and what creatures remain there are mad with pain and despair.",
+  "quest:1844:details:2": "That place is where I send you, ⟦36⟧.",
+  "quest:1844:details:3": "You must go to the Charred Vale and find a chimaera matriarch. Slay her, free her of her misery. Bring me her galvanized horn as proof, and I shall make for you the helm.",
+  "quest:1844:progress:0": "Do you have the horn? Is the matriarch free of pain?",
+  "quest:1844:completion:0": "You have completed your task, ⟦37⟧, and shown me your worth and resolve. The helm will be yours..."
+ },
+ "context": {
+  "quest:1681": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 11,
+   "side": "alliance",
+   "giver": "Tormus Deepforge («تورموس ژرف‌کوره»)",
+   "turner": "Tormus Deepforge («تورموس ژرف‌کوره»)"
+  },
+  "quest:1821": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 11,
+   "side": "horde",
+   "giver": "Coleman Farthing («کولمن فارثینگ»)",
+   "turner": "Coleman Farthing («کولمن فارثینگ»)"
+  },
+  "quest:1822": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 11,
+   "side": "horde",
+   "giver": "Coleman Farthing («کولمن فارثینگ»)",
+   "turner": "Coleman Farthing («کولمن فارثینگ»)"
+  },
+  "quest:1698": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "Wu Shen («وو شن»)",
+   "turner": "Yorus Barleybrew («یوروس بارلی‌برو»)"
+  },
+  "quest:1823": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Sorek («سورک»)",
+   "turner": "Ruga Ragetotem («روگا توتم‌خشم»)"
+  },
+  "quest:1824": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Ruga Ragetotem («روگا توتم‌خشم»)",
+   "turner": "Ruga Ragetotem («روگا توتم‌خشم»)"
+  },
+  "quest:1825": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 20,
+   "side": "horde",
+   "giver": "Ruga Ragetotem («روگا توتم‌خشم»)",
+   "turner": "Thun'grim Firegaze («تان‌گریم آتش‌نگاه»)"
+  },
+  "quest:1699": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Yorus Barleybrew («یوروس بارلی‌برو»)",
+   "turner": "Yorus Barleybrew («یوروس بارلی‌برو»)"
+  },
+  "quest:1702": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 22,
+   "side": "alliance",
+   "giver": "Yorus Barleybrew («یوروس بارلی‌برو»)",
+   "turner": "Furen Longbeard («فورن ریش‌دراز»)"
+  },
+  "quest:1700": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Furen Longbeard («فورن ریش‌دراز»)",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:1701": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Furen Longbeard («فورن ریش‌دراز»)",
+   "turner": "Furen Longbeard («فورن ریش‌دراز»)"
+  },
+  "quest:1703": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Furen Longbeard («فورن ریش‌دراز»)",
+   "turner": "Mathiel («ماتیِل»)"
+  },
+  "quest:1704": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Furen Longbeard («فورن ریش‌دراز»)",
+   "turner": "Klockmort Spannerspan («کلاک‌مورت اسپانرسپن»)"
+  },
+  "quest:1705": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Grimand Elmore («گریماند المور»)",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:1782": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 28,
+   "side": "alliance",
+   "giver": "Furen Longbeard («فورن ریش‌دراز»)",
+   "turner": "Furen Longbeard («فورن ریش‌دراز»)"
+  },
+  "quest:1708": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Klockmort Spannerspan («کلاک‌مورت اسپانرسپن»)",
+   "turner": "Klockmort Spannerspan («کلاک‌مورت اسپانرسپن»)"
+  },
+  "quest:1706": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Grimand Elmore («گریماند المور»)",
+   "turner": "Grimand Elmore («گریماند المور»)"
+  },
+  "quest:1709": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Klockmort Spannerspan («کلاک‌مورت اسپانرسپن»)",
+   "turner": "Klockmort Spannerspan («کلاک‌مورت اسپانرسپن»)"
+  },
+  "quest:1710": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Mathiel («ماتیِل»)",
+   "turner": "Mathiel («ماتیِل»)"
+  },
+  "quest:1711": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "alliance",
+   "giver": "Mathiel («ماتیِل»)",
+   "turner": "Mathiel («ماتیِل»)"
+  },
+  "quest:1718": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "Torm Ragetotem («تورم توتم‌خشم»)، Sorek («سورک»)",
+   "turner": "Klannoc Macleod («کلانوک مک‌لئود»)"
+  },
+  "quest:1719": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "Klannoc Macleod («کلانوک مک‌لئود»)",
+   "turner": "Klannoc Macleod («کلانوک مک‌لئود»)"
+  },
+  "quest:1791": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "",
+   "giver": "Klannoc Macleod («کلانوک مک‌لئود»)",
+   "turner": "Bath'rah the Windwatcher («باث‌را بادنگر»)"
+  },
+  "quest:1838": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Thun'grim Firegaze («تان‌گریم آتش‌نگاه»)",
+   "turner": "Thun'grim Firegaze («تان‌گریم آتش‌نگاه»)"
+  },
+  "quest:1839": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Thun'grim Firegaze («تان‌گریم آتش‌نگاه»)",
+   "turner": "Ula'elek («اولاالک»)"
+  },
+  "quest:1840": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Thun'grim Firegaze («تان‌گریم آتش‌نگاه»)",
+   "turner": "Orm Stonehoof («اورم سم‌سنگی»)"
+  },
+  "quest:1841": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Thun'grim Firegaze («تان‌گریم آتش‌نگاه»)",
+   "turner": "Velora Nitely («ولورا نایتلی»)"
+  },
+  "quest:1842": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Ula'elek («اولاالک»)",
+   "turner": "Ula'elek («اولاالک»)"
+  },
+  "quest:1843": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Ula'elek («اولاالک»)",
+   "turner": "Ula'elek («اولاالک»)"
+  },
+  "quest:1844": {
+   "zone_en": "Warrior",
+   "zone_fa": "",
+   "level": 30,
+   "side": "horde",
+   "giver": "Orm Stonehoof («اورم سم‌سنگی»)",
+   "turner": "Orm Stonehoof («اورم سم‌سنگی»)"
+  }
+ },
+ "known": {
+  "quest:1681": {
+   "title": "مجتمع آیرون‌بند"
+  },
+  "quest:1821": {
+   "title": "یادگارهای آگاماند"
+  },
+  "quest:1822": {
+   "title": "سلاحِ یادگاری"
+  },
+  "quest:1698": {
+   "title": "یوروس بارلی‌برو"
+  },
+  "quest:1823": {
+   "title": "گفت‌وگو با روگا"
+  },
+  "quest:1824": {
+   "title": "آزمون در میدان غول‌ها"
+  },
+  "quest:1825": {
+   "title": "گفت‌وگو با تان‌گریم"
+  },
+  "quest:1699": {
+   "title": "گذرگاه رث‌بن"
+  },
+  "quest:1702": {
+   "title": "سپرساز"
+  },
+  "quest:1700": {
+   "title": "گریماند المور"
+  },
+  "quest:1701": {
+   "title": "زره‌پوش آتش‌سخت"
+  },
+  "quest:1703": {
+   "title": "ماتیِل"
+  },
+  "quest:1704": {
+   "title": "کلاک‌مورت اسپانرسپن"
+  },
+  "quest:1705": {
+   "title": "خونِ سوزان"
+  },
+  "quest:1782": {
+   "title": "زرهٔ فیورن"
+  },
+  "quest:1708": {
+   "title": "مرجان آهنی"
+  },
+  "quest:1706": {
+   "title": "زرهٔ گریماند"
+  },
+  "quest:1709": {
+   "title": "مصنوعهٔ کلاک‌مورت"
+  },
+  "quest:1710": {
+   "title": "صدف‌های آفتاب‌سوخته"
+  },
+  "quest:1711": {
+   "title": "زرهٔ ماتیِل"
+  },
+  "quest:1718": {
+   "title": "جزیره‌نشین"
+  },
+  "quest:1719": {
+   "title": "نزاع"
+  },
+  "quest:1791": {
+   "title": "نگاهبان باد"
+  },
+  "quest:1838": {
+   "title": "زرهٔ بی‌رحم"
+  },
+  "quest:1839": {
+   "title": "اولا‌الک و دستکش‌های بی‌رحم"
+  },
+  "quest:1840": {
+   "title": "اورم سنگ‌سُم و کلاه‌خودِ بی‌رحم"
+  },
+  "quest:1841": {
+   "title": "ولورا نایتلی و ساق‌پوش‌های بی‌رحم"
+  },
+  "quest:1842": {
+   "title": "سُم‌های ساتیر"
+  },
+  "quest:1843": {
+   "title": "دستکش‌های بی‌رحم"
+  },
+  "quest:1844": {
+   "title": "شاخ کیمرایی"
+  }
+ }
+}
