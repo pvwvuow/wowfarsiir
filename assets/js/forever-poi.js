@@ -5,8 +5,10 @@
    world); the visitor ticks what he wants. Default: nothing.
    Points: data/forever/db/poi/map-<slug>.json  [cat, x%, y%, ref, name, fac, lvl, cl]
    Categories + counts: data/forever/db/poi/index.json. Icons: the game's own
-   (assets/img/map-icons). Continent maps show nothing: points appear only
+   (assets/img/map-icons). Continent maps show zone names instead of points: points appear only
    on a zone / city / battleground map.
+   On a continent map the same layer shows the English name of every zone / city at its exact
+   position (data/forever/db/poi/zone-labels.json); a click opens that zone's map.
    forever.js is untouched: this file watches the map image (src, transform,
    class) and lays one layer over it that follows the same pan / zoom.
    ========================================================= */
@@ -15,10 +17,10 @@
   var box = document.getElementById("fmap");
   var cv = box && box.querySelector(".fmap-cv");
   if (!box || !cv) return;
-  var V = "20261103a", DB = "data/forever/db/poi/", IC = "assets/img/map-icons/", KEY = "wf_poi_sel_v1";
+  var V = "20261103b", DB = "data/forever/db/poi/", IC = "assets/img/map-icons/", KEY = "wf_poi_sel_v1";
   var CONT = { "kalimdor": 1, "eastern-kingdoms": 1 };
   var SMALL = { "herb": 1, "ore": 1, "fishing-hole": 1, "chest": 1, "rare": 1, "cooking-fire": 1, "forge-anvil": 1 };
-  var IDX = null, CATS = {}, DATA = {}, OPEN = { services: 1 }, SEL = {}, cur = "", failed = false;
+  var ZL = null, IDX = null, CATS = {}, DATA = {}, OPEN = { services: 1 }, SEL = {}, cur = "", failed = false;
 
   function fa(n) { return Number(n).toLocaleString("fa-IR"); }
   function esc(s) {
@@ -35,6 +37,10 @@
   layer.className = "fpoi-layer";
   layer.hidden = true;
   box.insertBefore(layer, cv.nextSibling);
+  var zl = document.createElement("div");
+  zl.className = "fpoi-layer fpoi-zl";
+  zl.hidden = true;
+  box.insertBefore(zl, layer.nextSibling);
 
   var ui = document.createElement("div");
   ui.className = "fpoi-ui";
@@ -93,7 +99,7 @@
     if (failed) { menu.innerHTML = '<p class="fpoi-note">لایه‌ها بارگذاری نشد؛ بعداً دوباره امتحان کن.</p>'; return; }
     if (!IDX) { menu.innerHTML = '<p class="fpoi-note">در حال بارگذاری…</p>'; return; }
     if (CONT[cur]) {
-      menu.innerHTML = '<p class="fpoi-note">نقاط فقط روی نقشهٔ هر زون یا شهر نشان داده می‌شود؛ روی قاره نه. یک زون را باز کن.</p>';
+      menu.innerHTML = '<p class="fpoi-note">نقاط فقط روی نقشهٔ هر زون یا شهر نشان داده می‌شود؛ روی قاره نه. روی نام یک زون کلیک کن تا باز شود.</p>';
       return;
     }
     n = counts();
@@ -106,10 +112,10 @@
         if (SEL[c.key]) on++;
         rows += '<label class="fpoi-r"><input type="checkbox" data-k="' + esc(c.key) + '"' + (SEL[c.key] ? " checked" : "") + '>'
           + '<span class="fpoi-ic">' + (c.icon ? '<img src="' + IC + esc(c.icon) + '" srcset="' + IC + esc(c.icon) + " 1x, " + IC + esc(icon2x(c.icon)) + ' 2x" alt="" width="20" height="20">' : "<i></i>") + "</span>"
-          + "<b>" + esc(c.fa) + '</b><small>' + fa(n[c.key]) + "</small></label>";
+          + "<b>" + esc(c.fa) + '<i dir="ltr">' + esc(c.en) + '</i></b><small>' + fa(n[c.key]) + "</small></label>";
       });
       if (!have) return;
-      h += '<details class="fpoi-g" data-g="' + esc(g.key) + '"' + (OPEN[g.key] ? " open" : "") + '><summary><span>' + esc(g.fa) + "</span><em>"
+      h += '<details class="fpoi-g" data-g="' + esc(g.key) + '"' + (OPEN[g.key] ? " open" : "") + '><summary><span>' + esc(g.fa) + ' <i dir="ltr">' + esc(g.en) + "</i></span><em>"
         + fa(on) + "/" + fa(have) + '</em></summary><div class="fpoi-gb"><button type="button" class="fpoi-all" data-g="' + esc(g.key) + '">'
         + (on === have ? "هیچ‌کدام" : "همه") + "</button>" + rows + "</div></details>";
     });
@@ -167,8 +173,60 @@
     updateVis();
   }
   function updateVis() {
-    layer.hidden = !!CONT[cur] || !cv.classList.contains("ld") || !layer.firstChild;
+    var ld = cv.classList.contains("ld");
+    layer.hidden = !!CONT[cur] || !ld || !layer.firstChild;
+    zl.hidden = !CONT[cur] || !ld || !zl.firstChild;
   }
+
+  /* ---------- zone names on a continent map ---------- */
+  function renderZones() {
+    var f = document.createDocumentFragment();
+    zl.textContent = "";
+    if (CONT[cur] && ZL && ZL[cur]) {
+      ZL[cur].forEach(function (z) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "fpoi-z" + (z[4] === "c" ? " city" : "");
+        b.setAttribute("data-s", z[0]);
+        b.setAttribute("dir", "ltr");
+        b.style.left = z[2] + "%";
+        b.style.top = z[3] + "%";
+        b.textContent = z[1];
+        f.appendChild(b);
+      });
+    }
+    zl.appendChild(f);
+    updateVis();
+  }
+  function loadZones() {
+    if (ZL) { renderZones(); return; }
+    fetch(DB + "zone-labels.json?v=" + V)
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { ZL = j || {}; renderZones(); })
+      .catch(function () { ZL = {}; });
+  }
+  function goZone(slug) {
+    var b = document.querySelector('#fmap-menu .fmap-mi[data-slug="' + slug + '"]');
+    if (b) b.click();
+  }
+  /* a click on a name: the map frame captures the pointer for dragging, so a plain click event never reaches the
+     button. Remember where the press started and open the zone when it ends within a few pixels. */
+  var dn = null, lastGo = 0;
+  box.addEventListener("pointerdown", function (e) {
+    var t = e.target && e.target.closest ? e.target.closest(".fpoi-z") : null;
+    dn = t ? { x: e.clientX, y: e.clientY, t: t } : null;
+  }, true);
+  box.addEventListener("pointerup", function (e) {
+    var d = dn;
+    dn = null;
+    if (!d || Math.hypot(e.clientX - d.x, e.clientY - d.y) > 6) return;
+    lastGo = Date.now();
+    goZone(d.t.getAttribute("data-s"));
+  }, true);
+  zl.addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest(".fpoi-z") : null;
+    if (t && Date.now() - lastGo > 500) goZone(t.getAttribute("data-s"));   /* keyboard (Enter / Space) */
+  });
 
   /* ---------- follow the map (pan / zoom / which map) ---------- */
   var lastT = "";
@@ -177,13 +235,17 @@
     if (t === lastT) return;
     lastT = t;
     layer.style.transform = t;
+    zl.style.transform = t;
     m = t.match(/scale\(([^)]+)\)/);
-    if (m && +m[1] > 0) layer.style.setProperty("--inv", (1 / +m[1]).toFixed(4));
+    if (m && +m[1] > 0) {
+      layer.style.setProperty("--inv", (1 / +m[1]).toFixed(4));
+      zl.style.setProperty("--inv", (1 / +m[1]).toFixed(4));
+    }
   }
   function refresh() {
     var slug = cur;
     if (!slug) return;
-    if (CONT[slug]) { renderMenu(); renderPins(); return; }
+    if (CONT[slug]) { renderMenu(); renderPins(); loadZones(); return; }
     loadMap(slug).then(function () {
       if (cur !== slug) return;
       renderMenu(); renderPins();
@@ -195,8 +257,11 @@
     cur = s;
     layer.textContent = "";
     layer.hidden = true;
+    zl.textContent = "";
+    zl.hidden = true;
     renderMenu();
     if (IDX) refresh();
+    else if (CONT[s]) loadZones();
   }
   new MutationObserver(function () { slugCheck(); sync(); updateVis(); })
     .observe(cv, { attributes: true, attributeFilter: ["src", "style", "class"] });
