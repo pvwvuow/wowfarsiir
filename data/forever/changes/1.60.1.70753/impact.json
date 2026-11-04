@@ -1,0 +1,348 @@
+{
+ "v": 1,
+ "product": "forever",
+ "build": "1.60.1.70753",
+ "previous_build": "1.60.1.70707",
+ "generated": "2026-11-04T15:08:29Z",
+ "source": "wow-raw manifests/forever/changes/1.60.1.70753.json",
+ "totals": {
+  "added": 420,
+  "removed": 107,
+  "changed": 1687,
+  "tables": 30
+ },
+ "domains": {
+  "world": {
+   "added": 1,
+   "removed": 1,
+   "changed": 0,
+   "tables": [
+    "Achievement",
+    "Holidays"
+   ],
+   "label": "دستاورد، ارز، فکشن، عنوان، رویداد"
+  },
+  "classes": {
+   "added": 0,
+   "removed": 0,
+   "changed": 9,
+   "tables": [
+    "ChrRaces"
+   ],
+   "label": "کلاس و نژاد"
+  },
+  "dungeons": {
+   "added": 0,
+   "removed": 0,
+   "changed": 3,
+   "tables": [
+    "DungeonEncounter",
+    "Map"
+   ],
+   "label": "دانجن و ریید"
+  },
+  "items": {
+   "added": 49,
+   "removed": 0,
+   "changed": 8,
+   "tables": [
+    "Item",
+    "ItemEffect",
+    "ItemSearchName",
+    "ItemSparse",
+    "SpellItemEnchantment"
+   ],
+   "label": "آیتم‌ها"
+  },
+  "spells": {
+   "added": 370,
+   "removed": 104,
+   "changed": 1667,
+   "tables": [
+    "SkillLineAbility",
+    "Spell",
+    "SpellAuraOptions",
+    "SpellAuraRestrictions",
+    "SpellCategories",
+    "SpellClassOptions",
+    "SpellCooldowns",
+    "SpellDuration",
+    "SpellEffect",
+    "SpellEquippedItems",
+    "SpellInterrupts",
+    "SpellLevels",
+    "SpellMisc",
+    "SpellName",
+    "SpellPower",
+    "SpellReagents",
+    "SpellShapeshift",
+    "SpellTargetRestrictions",
+    "SpellTotems"
+   ],
+   "label": "اسپل و تلنت"
+  },
+  "zones": {
+   "added": 0,
+   "removed": 2,
+   "changed": 0,
+   "tables": [
+    "TaxiPath"
+   ],
+   "label": "منطقه و نقشه"
+  }
+ },
+ "actions": [
+  {
+   "kind": "review",
+   "domain": "classes",
+   "title": "تغییر کلاس یا نژاد",
+   "how": "روی صفحهٔ کلاس‌ها، فیلترها و آدان اثر دارد",
+   "count": 9,
+   "examples": [
+    "Blood Elf (10)",
+    "Draenei (11)",
+    "Worgen (22)",
+    "Pandaren (24)",
+    "Pandaren (25)",
+    "Pandaren (26)",
+    "Nightborne (27)",
+    "Lightforged Draenei (30)",
+    "Vulpera (35)"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "dungeons",
+   "title": "ترتیب یا فیلد دانجن/باس عوض شد",
+   "how": "با dungeons-final و صفحهٔ دانجن مقایسه کن",
+   "count": 3,
+   "examples": [
+    "Shade of the Archmage (3303): OrderIndex",
+    "Rath'mael (3354): OrderIndex",
+    "Razorfen Kraul (47): Flags_2"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "items",
+   "title": "استت/قیمت/بایند آیتم قدیمی عوض شد",
+   "how": "تولتیپ این‌ها از اسنپ‌شات 70658 است و شاید الان غلط باشد",
+   "count": 4,
+   "examples": [
+    "Recipe: Transmute Earth to Water (13484): SellPrice",
+    "Toughened Leather Armor (2314): Bonding, OverallQualityID, StatModifier_bonusStat_0, StatModifier_bonusStat_1, StatPercentEditor_0",
+    "Recipe: Minor Spellblasting Potion (250976): BuyPrice, SellPrice",
+    "Gift of Galloping (271871): SellPrice"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "items",
+   "title": "عدد/فیلد عوض شد (Item)",
+   "how": "بازبینی",
+   "count": 1,
+   "examples": [
+    "id (277277): ItemPetFoodID"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "items",
+   "title": "عدد/فیلد عوض شد (ItemSearchName)",
+   "how": "بازبینی",
+   "count": 1,
+   "examples": [
+    "Toughened Leather Armor (2314): OverallQualityID"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "world",
+   "title": "ردیف حذف‌شده در Achievement",
+   "how": "از سایت پاک نمی‌شود؛ فقط علامت و بازبینی",
+   "count": 1,
+   "examples": [
+    "id 64283"
+   ]
+  },
+  {
+   "kind": "translate",
+   "domain": "items",
+   "title": "اسم آیتم تازه",
+   "how": "translation-auto پک item-name می‌سازد و issue «پک جدید» خبر می‌دهد",
+   "count": 40,
+   "examples": [
+    "Scorched Rocket Boots (7190)",
+    "Formula: Frozen Heart of the Mountain (249519)",
+    "Formula: Molten Heart of the Mountain (249520)",
+    "Formula: Dormant Heart of the Mountain (249521)",
+    "Plans: Veteran's Chain Shirt (251340)",
+    "Plans: Protector's Chain Shirt (251342)",
+    "Plans: Acolyte's Chain Shirt (251343)",
+    "Plans: Crusader's Chain Shirt (251344)",
+    "Plans: Veteran's Chain Leggings (251345)",
+    "Plans: Guard's Chain Leggings (251346)",
+    "Plans: Protector's Chain Leggings (251347)",
+    "Plans: Acolyte's Chain Leggings (251348)",
+    "Plans: Crusader's Chain Leggings (251349)",
+    "Plans: Veteran's Chain Helm (251350)",
+    "Plans: Guard's Chain Helm (251351)"
+   ]
+  },
+  {
+   "kind": "translate",
+   "domain": "items",
+   "title": "متن انگلیسی عوض شد (SpellItemEnchantment)",
+   "how": "فارسی قبلی کهنه است",
+   "count": 1,
+   "examples": [
+    "Defense +$k1 (8214)"
+   ]
+  },
+  {
+   "kind": "check",
+   "domain": "spells",
+   "title": "اسپل/تلنت عوض شد",
+   "how": "forever_check همین بیلد را می‌سنجد: site-check.md و queue.json کنار همین فایل",
+   "count": 2141,
+   "examples": [
+    "SkillLineAbility",
+    "Spell",
+    "SpellAuraOptions",
+    "SpellAuraRestrictions",
+    "SpellCategories",
+    "SpellClassOptions",
+    "SpellCooldowns",
+    "SpellDuration",
+    "SpellEffect",
+    "SpellEquippedItems",
+    "SpellInterrupts",
+    "SpellLevels",
+    "SpellMisc",
+    "SpellName",
+    "SpellPower"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "items",
+   "title": "آیتم تازه وارد بانک می‌شود",
+   "how": "forever_new_items با تولتیپ کامل از بیلد خام",
+   "count": 40,
+   "examples": [
+    "Scorched Rocket Boots (7190)",
+    "Formula: Frozen Heart of the Mountain (249519)",
+    "Formula: Molten Heart of the Mountain (249520)",
+    "Formula: Dormant Heart of the Mountain (249521)",
+    "Plans: Veteran's Chain Shirt (251340)",
+    "Plans: Protector's Chain Shirt (251342)",
+    "Plans: Acolyte's Chain Shirt (251343)",
+    "Plans: Crusader's Chain Shirt (251344)",
+    "Plans: Veteran's Chain Leggings (251345)",
+    "Plans: Guard's Chain Leggings (251346)",
+    "Plans: Protector's Chain Leggings (251347)",
+    "Plans: Acolyte's Chain Leggings (251348)",
+    "Plans: Crusader's Chain Leggings (251349)",
+    "Plans: Veteran's Chain Helm (251350)",
+    "Plans: Guard's Chain Helm (251351)"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "items",
+   "title": "ردیف تازه در Item",
+   "how": "سازنده‌ها در سینک بعدی برمی‌دارند",
+   "count": 3,
+   "examples": [
+    "id (289439)",
+    "id (289559)",
+    "id (289560)"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "items",
+   "title": "ردیف تازه در SpellItemEnchantment",
+   "how": "سازنده‌ها در سینک بعدی برمی‌دارند",
+   "count": 1,
+   "examples": [
+    "Speed Increase (8737)"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "spells",
+   "title": "جدول تازه آرشیو شد (تغییر بازی نیست)",
+   "how": "فقط از این بیلد بایگانی می‌شود",
+   "count": 16,
+   "examples": [
+    "ChrSpecialization",
+    "SkillLineXTraitTree",
+    "TraitCond",
+    "TraitCost",
+    "TraitCurrency",
+    "TraitDefinition",
+    "TraitEdge",
+    "TraitNode",
+    "TraitNodeEntry",
+    "TraitNodeGroup",
+    "TraitNodeGroupXTraitCond",
+    "TraitNodeGroupXTraitNode",
+    "TraitNodeXTraitCond",
+    "TraitNodeXTraitNodeEntry",
+    "TraitTree"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "world",
+   "title": "ردیف تازه در Holidays",
+   "how": "سازنده‌ها در سینک بعدی برمی‌دارند",
+   "count": 1,
+   "examples": [
+    "id (1896)"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "zones",
+   "title": "پین/پرواز/نقشه عوض شد (TaxiPath)",
+   "how": "export فایل csv را کپی می‌کند و sync-forever-db پین‌ها را می‌سازد",
+   "count": 2,
+   "examples": []
+  }
+ ],
+ "action_counts": {
+  "page": 0,
+  "review": 6,
+  "translate": 2,
+  "server": 0,
+  "check": 1,
+  "auto": 6
+ },
+ "alarms": [],
+ "details": {
+  "world": [
+   "- Achievement id (64283) −",
+   "- Holidays id (1896) +"
+  ],
+  "items": [
+   "- Item id (289439) +",
+   "- Item id (289559) +",
+   "- Item id (289560) +",
+   "- Item id (277277): ItemPetFoodID 1→0",
+   "- ItemSearchName Toughened Leather Armor (2314): OverallQualityID 1→2",
+   "- ItemSparse Scorched Rocket Boots (7190) +",
+   "- ItemSparse Formula: Frozen Heart of the Mountain (249519) +",
+   "- ItemSparse Formula: Molten Heart of the Mountain (249520) +",
+   "- ItemSparse Formula: Dormant Heart of the Mountain (249521) +",
+   "- ItemSparse Plans: Veteran's Chain Shirt (251340) +",
+   "- ItemSparse Recipe: Transmute Earth to Water (13484): SellPrice 0→3000",
+   "- ItemSparse Toughened Leather Armor (2314): Bonding 0→2, OverallQualityID 1→2, StatModifier_bonusStat_0 -1→7, StatModifier_bonusStat_1 -1→6",
+   "- ItemSparse Recipe: Minor Spellblasting Potion (250976): BuyPrice 0→500, SellPrice 0→100",
+   "- ItemSparse Gift of Galloping (271871): SellPrice 1→0",
+   "- SpellItemEnchantment Speed Increase (8737) +",
+   "- SpellItemEnchantment Defense +$k1 (8214): EffectPointsMin_1 6→0, Name_lang Defense +$k2→Defense +$k1"
+  ]
+ }
+}
