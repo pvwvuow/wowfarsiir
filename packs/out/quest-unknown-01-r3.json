@@ -1,0 +1,716 @@
+{
+ "pack": "quest-unknown-01-r3",
+ "kind": "quest",
+ "spec": 3,
+ "build": "1.60.1.70790",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-quest-unknown-01-r3.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Elune",
+   "fa": "الون",
+   "kind": "npc"
+  },
+  "E2": {
+   "en": "Darnassus",
+   "fa": "دارناسوس",
+   "kind": "zn"
+  },
+  "E3": {
+   "en": "battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Ahn'Qiraj",
+   "fa": "آن‌کیراج",
+   "kind": "zn"
+  },
+  "E6": {
+   "en": "Arthas' Tears",
+   "fa": "اشک‌های آرتاس",
+   "kind": "it"
+  },
+  "E7": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "causes",
+   "fa": "ایجاد می‌کند",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "stack",
+   "fa": "استک",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "wool",
+   "fa": "پشم",
+   "kind": "it"
+  },
+  "E11": {
+   "en": "Ahn'Qiraj War",
+   "fa": "جنگ آن‌کیراج",
+   "kind": "zn"
+  },
+  "E12": {
+   "en": "C'Thun",
+   "fa": "سی‌تون",
+   "kind": "npc"
+  },
+  "E13": {
+   "en": "Azeroth",
+   "fa": "آزروت",
+   "kind": "zn"
+  },
+  "E14": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "fear",
+   "fa": "ترس",
+   "kind": "tm"
+  }
+ },
+ "glossary": {
+  "Elune": "الون",
+  "Darnassus": "دارناسوس",
+  "battle": "نبرد",
+  "armor": "زره",
+  "Ahn'Qiraj": "آن‌کیراج",
+  "Arthas' Tears": "اشک‌های آرتاس",
+  "hit": "اصابت",
+  "causes": "ایجاد می‌کند",
+  "stack": "استک",
+  "wool": "پشم",
+  "Ahn'Qiraj War": "جنگ آن‌کیراج",
+  "C'Thun": "سی‌تون",
+  "Azeroth": "آزروت",
+  "strike": "ضربه",
+  "fear": "ترس"
+ },
+ "tokens": {
+  "1": "$N",
+  "2": "$B",
+  "3": "$B",
+  "4": "$B",
+  "5": "$B",
+  "6": "<name>",
+  "7": "$B",
+  "8": "$B",
+  "9": "$B",
+  "10": "$B",
+  "11": "$C",
+  "12": "$B",
+  "13": "$B",
+  "14": "$N",
+  "15": "$B",
+  "16": "$B",
+  "17": "$C",
+  "18": "$B",
+  "19": "$B",
+  "20": "$N",
+  "21": "$N",
+  "22": "$B",
+  "23": "$B",
+  "24": "$B",
+  "25": "$B",
+  "26": "$C",
+  "27": "$B",
+  "28": "$B",
+  "29": "$N",
+  "30": "$B",
+  "31": "$B",
+  "32": "$C",
+  "33": "$B",
+  "34": "$B",
+  "35": "$N",
+  "36": "$B",
+  "37": "$B",
+  "38": "$C",
+  "39": "$B",
+  "40": "$B",
+  "41": "$N",
+  "42": "$B",
+  "43": "$B",
+  "44": "$C",
+  "45": "$B",
+  "46": "$B",
+  "47": "$N",
+  "48": "$B",
+  "49": "$B",
+  "50": "$C",
+  "51": "$B",
+  "52": "$B",
+  "53": "$N",
+  "54": "$B",
+  "55": "$B",
+  "56": "$C",
+  "57": "$B",
+  "58": "$B",
+  "59": "$N",
+  "60": "$N",
+  "61": "$N",
+  "62": "$c",
+  "63": "$N",
+  "64": "$B",
+  "65": "$B",
+  "66": "$c",
+  "67": "$N",
+  "68": "$c",
+  "69": "$B",
+  "70": "$B",
+  "71": "$C",
+  "72": "$B",
+  "73": "$B",
+  "74": "$c",
+  "75": "$B",
+  "76": "$B",
+  "77": "$c",
+  "78": "$B",
+  "79": "$B",
+  "80": "$n",
+  "81": "$c",
+  "82": "$B",
+  "83": "$B",
+  "84": "$C",
+  "85": "$N",
+  "86": "$C",
+  "87": "$C",
+  "88": "$B",
+  "89": "$B",
+  "90": "$C",
+  "91": "$N",
+  "92": "$B",
+  "93": "$B",
+  "94": "$C",
+  "95": "$n",
+  "96": "$N",
+  "97": "$B",
+  "98": "$B",
+  "99": "$N",
+  "100": "$B",
+  "101": "$B",
+  "102": "$B",
+  "103": "$B",
+  "104": "$B",
+  "105": "$B",
+  "106": "$B",
+  "107": "$B",
+  "108": "$B",
+  "109": "$B",
+  "110": "$N",
+  "111": "$B",
+  "112": "$B",
+  "113": "$B",
+  "114": "$B",
+  "115": "$B",
+  "116": "$B",
+  "117": "$B",
+  "118": "$B",
+  "119": "$B",
+  "120": "$B",
+  "121": "$C",
+  "122": "$B",
+  "123": "$B",
+  "124": "$N",
+  "125": "$B",
+  "126": "$B",
+  "127": "$C",
+  "128": "$B",
+  "129": "$B",
+  "130": "$N"
+ },
+ "rows": {
+  "quest:5640:details:0": "Praise be to ⟦E1⟧, and to your Light, ⟦1⟧.⟦2⟧⟦3⟧About this time, many of our order learn abilities reflecting their faith in ⟦E1⟧. If knowledge serves me, I believe the same holds true for your order also.⟦4⟧⟦5⟧When your business in ⟦E2⟧ is complete, I would seek out one of your High Priestesses for further training.",
+  "quest:5640:completion:0": "I'm glad you've arrived, ⟦6⟧. There are many things we will have to discuss, but more importantly is your training in the ways of the Light.⟦7⟧⟦8⟧There are lessons all servants of the Light must learn. If you are ready, we'll begin discussing some of those now.",
+  "quest:8846:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦9⟧⟦10⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8846:completion:0": "Well then, it's settled; here are your supplies, ⟦11⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦12⟧⟦13⟧Keep up the good work, ⟦14⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8851:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦15⟧⟦16⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8851:completion:0": "Well then, it's settled; here are your supplies, ⟦17⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦18⟧⟦19⟧Keep up the good work, ⟦20⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:1794:completion:0": "It has been proven that the Light is with you, ⟦21⟧, but as times grow more dangerous, it becomes important to know what strength lies beneath the flesh. When demons, dragons, or any other evil set foot in your lands, your mettle will be tested. Will you be strong enough?⟦22⟧⟦23⟧Bravery, regardless of the situation, is as much a part of paladinhood as the Light, your ⟦E4⟧, and your weapon. Protecting the weak, and not losing faith are two more lessons you must master while you study in the Cathedral of Light.",
+  "quest:8847:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦24⟧⟦25⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8847:completion:0": "Well then, it's settled; here are your supplies, ⟦26⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦27⟧⟦28⟧Keep up the good work, ⟦29⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8852:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦30⟧⟦31⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8852:completion:0": "Well then, it's settled; here are your supplies, ⟦32⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦33⟧⟦34⟧Keep up the good work, ⟦35⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8848:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦36⟧⟦37⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8848:completion:0": "Well then, it's settled; here are your supplies, ⟦38⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦39⟧⟦40⟧Keep up the good work, ⟦41⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8853:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦42⟧⟦43⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8853:completion:0": "Well then, it's settled; here are your supplies, ⟦44⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦45⟧⟦46⟧Keep up the good work, ⟦47⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8849:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦48⟧⟦49⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8849:completion:0": "Well then, it's settled; here are your supplies, ⟦50⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦51⟧⟦52⟧Keep up the good work, ⟦53⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8854:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦54⟧⟦55⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8854:completion:0": "Well then, it's settled; here are your supplies, ⟦56⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦57⟧⟦58⟧Keep up the good work, ⟦59⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8504:progress:0": "Well hello again there... what was it? Ah yes, ⟦60⟧! Come to see if I still need more stranglekelp have you? Well, it's your lucky day, because the answer to that very important question is a very affirmative YES! Think you could gather up twenty more?",
+  "quest:8504:completion:0": "Oh goodness that's a quite a load of stranglekelp you have there. Quick, let's get that into a box to keep it fresh. You've done me... us, the Alliance a great favor by bringing that batch in. I'll make sure that everyone knows that it was you, the great ⟦61⟧, that helped to tip the scales in the ⟦E5⟧ war effort with your contribution of stranglekelp!",
+  "quest:8506:progress:0": "Welcome back ⟦62⟧. Our collection grows, but even now we have a need for additional purple lotus. If it is still within your power to gather more of the herb, I entreat you to do so and return them to me here.",
+  "quest:8506:completion:0": "I gladly accept your contribution on behalf of the Alliance, ⟦63⟧. Your efforts will directly lead to the creation of several potions and oils in support of our men and women in the field. Thank you, and should come across more, please consider returning to me.",
+  "quest:8510:progress:0": "Ok, so it looks like I still need more ⟦E6⟧. I would imagine that you will be able to find them in the general location that you gathered them up for me last time. The quicker we get these, the faster we can start up the offensive against the forces at ⟦E5⟧.⟦64⟧⟦65⟧You gonna help us out again ⟦66⟧?",
+  "quest:8510:completion:0": "Simply outstanding, ⟦67⟧! You're a real credit to the Alliance. I'll make sure to get these herbs packed away until someone comes to make them into something useful for the war. Feel free to come back around anytime, especially if you have more ⟦E6⟧ for me.",
+  "quest:8527:progress:0": "Hi again ⟦68⟧. I can tell you're very excited about all of this. So I suppose you want to bring me another twenty roast raptor. Great. Well you do that. I guess I'll see you when you get back.",
+  "quest:8546:progress:0": "Yup, I be glad you're here, mon. You helped me before, and now I need your help again. We still lookin' ta bring in more mithril bars for the war effort; gonna build lots of ⟦E4⟧ and weapons and things to go squish them bugs at ⟦E5⟧.⟦69⟧⟦70⟧So if you be a true friend, you bring me back more stacks of mithril bars. I take all you got until we ⟦E7⟧ our quota. You have some for me now?",
+  "quest:8581:progress:0": "Pele'keiki know you come to help. Bring many firebloom and make him very happy. Pele'keiki might make big bombs with firebloom. Drop them on insects from his bat over ⟦E5⟧ when war come. But Pele'keiki need more firebloom, ⟦71⟧!⟦72⟧⟦73⟧You gonna bring Pele'keiki that firebloom, real quick now. Come back with at least as much as last time, and Pele'keiki be pleased.",
+  "quest:8583:progress:0": "In fact it does appear that we are in need of even more purple lotus, ⟦74⟧. While my own studies have yet to determine a new useful application for the herb, there are tried and true methodologies yet to be employed.⟦75⟧⟦76⟧I need you to once again go out into the field and collect at least twenty purple lotus samples. Return them to me here.",
+  "quest:8589:progress:0": "It's true, ⟦77⟧, I still need more heavy leather. The requests from the generals and their quartermasters seem endless. And that's nothing compared to what the zeppelin masters are asking for!⟦78⟧⟦79⟧I need to get my quota collected on the double. ⟦80⟧, bring me more stacks of heavy leather as soon as you can!",
+  "quest:8591:progress:0": "⟦81⟧, as you can see I still need to gather up more thick leather. Once again I ask your help with this task, and promise that if you complete it, you will be recognized for your efforts.⟦82⟧⟦83⟧Time is of the essence! Return to me with the thick leather so that we can finish our preparations and go to war, hero!",
+  "quest:8601:progress:0": "Preparations for the impending war at ⟦E5⟧ are proceeding, ⟦84⟧. However, to ensure that we do not fall behind, or at least that I am not the one that ⟦E8⟧ us to fall behind, I want for you to bring back another ⟦E9⟧ of rugged leather. Your prompt attention to this matter will be greatly appreciated, ⟦85⟧.",
+  "quest:8605:progress:0": "Good to see you again, ⟦86⟧. We are still working on preparations here for the war effort, and I can still use all of the help that you can give in gathering up ⟦E10⟧ bandaging. Any assistance at all will be greatly appreciated. I only hope that our efforts will be good enough. I've lost too many noble souls on the battlefields of yesterday to not do everything in my power to see to it that doesn't happen again.",
+  "quest:8608:progress:0": "You returned? Interesting. As you can see I am still collecting for the ⟦E5⟧ 'war effort'. Which means that I need you to once again go out and collect a ⟦E9⟧ of mageweave bandages for me. I look forward to your return, ⟦87⟧.",
+  "quest:8610:progress:0": "Ever does the time grow nearer when we shall launch ourselves headlong into the conflagration at ⟦E5⟧, priest. But first we must gather our strength and prepare so that we can survive the onslaught of the insects and their masters.⟦88⟧⟦89⟧If you are here again, then surely you wish to make another contribution of runecloth bandages to the war effort? Please do so as soon as you can and return to me once more.",
+  "quest:8612:progress:0": "As you can see, ⟦90⟧, we still need to pack away more food for the soldiers. I don't know if you've ever been in a war before, but once you get past the initial shock of the battlefield, you can get pretty hungry. You did a good job last time, so I expect that you'll do as well, if not a little quicker, in getting me another ⟦E9⟧ of those lean wolf steaks.",
+  "quest:8612:completion:0": "Smells like you, or someone you know, are quite the cook, ⟦91⟧. Those lean wolf steaks are making my mouth water; I suppose a few going missing won't be noticed. Anyway, good work. I'll make sure someone packs them away right so that they don't spoil too much. ⟦92⟧⟦93⟧If you come across more, you know where to find me.",
+  "quest:8614:progress:0": "So as you can see, we still be needin' a lot of the fishies. The combatants in the upcomin' ⟦E11⟧ gonna be needin' a lot to eat, so I needin' to get all the spotted yellowtail that I can. You catch 'em, cook 'em, and bringin' 'em back to me here, and I be givin' you thanks, and the thanks of the Horde.",
+  "quest:8616:progress:0": "The last batch of baked salmon that you donated to the war effort looked very delicious, ⟦94⟧. I must admit that I was tempted to take a few for myself. As you can tell, we have not yet reached our quota here. I am hoping you have returned because you have another ⟦E9⟧ of baked salmon with you.",
+  "quest:8616:completion:0": "Your donation of time and energy to the war effort goes above and beyond, ⟦95⟧. I assure you that your labors have not gone unnoticed. You have my thanks, and the gratitude of the Horde. Please return to me again should you bake up another batch.",
+  "quest:8621:completion:0": "You've done well, ⟦96⟧. You've proven you're no ordinary mortal.⟦97⟧⟦98⟧I give you these with the confidence they'll aid you in crushing the vile qiraji.",
+  "quest:8622:completion:0": "I did not expect you to return from your attempt, ⟦99⟧.⟦100⟧⟦101⟧You've fulfilled a destiny greater than that of most immortal beings.⟦102⟧⟦103⟧By slaying ⟦E12⟧ you've not only saved all of ⟦E13⟧, you've also tipped the scales of cosmic events beyond your comprehension.⟦104⟧⟦105⟧Accept this breastplate as a symbol of the glory and burden that will come as a consequence of your actions.⟦106⟧⟦107⟧May its power aid you in the challenges that await you, god-slayer!",
+  "quest:8623:completion:0": "You've succeeded! The whispers from the Twin Emperors have ceased.⟦108⟧⟦109⟧Take this as a reward. The mere sight of it will ⟦E14⟧ ⟦E15⟧ in the hearts of the Qiraji... it shall remind them of their fallen leaders and of the mortal that slew them.",
+  "quest:8661:completion:0": "I did not expect you to return from your attempt, ⟦110⟧.⟦111⟧⟦112⟧You've fulfilled a destiny greater than that of most immortal beings.⟦113⟧⟦114⟧By slaying ⟦E12⟧ you've not only saved all of ⟦E13⟧, you've also tipped the scales of cosmic events beyond your comprehension.⟦115⟧⟦116⟧Accept these robes as a symbol of the glory and burden that will come as a consequence of your actions.⟦117⟧⟦118⟧May their power aid you in the challenges that await you, god-slayer!",
+  "quest:8850:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦119⟧⟦120⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8850:completion:0": "Well then, it's settled; here are your supplies, ⟦121⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦122⟧⟦123⟧Keep up the good work, ⟦124⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!",
+  "quest:8855:progress:0": "Ah, here for additional supplies for yourself, are you?  Well, I can certainly understand the need for additional materiel... just take a look around if you need any proof. ⟦125⟧⟦126⟧I'll issue you some additional supplies, but you'll need to give me an appropriate number of commendation signets in exchange.  You won't receive any recognition for surrendering the signets in this manner, but you might find something useful that will help keep you alive when ⟦E3⟧ is finally upon us.",
+  "quest:8855:completion:0": "Well then, it's settled; here are your supplies, ⟦127⟧.  If you wish to do an additional exchange, then I am prepared to authorize it.  Just give me the word and I'll make it happen. ⟦128⟧⟦129⟧Keep up the good work, ⟦130⟧.  We need all the materiel we can muster if we're going to win this thing.  If we all do our part, then victory shall be ours for the taking!"
+ },
+ "context": {
+  "quest:5640": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 10,
+   "side": "alliance",
+   "giver": "",
+   "turner": ""
+  },
+  "quest:8846": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 19,
+   "side": "alliance",
+   "giver": "Field Marshal Snowfall («مارشال میدان اسنوفال»)",
+   "turner": "Field Marshal Snowfall («مارشال میدان اسنوفال»)"
+  },
+  "quest:8851": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 19,
+   "side": "horde",
+   "giver": "Warlord Gorchuk («سالار جنگ گورچوک»)",
+   "turner": ""
+  },
+  "quest:1794": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 20,
+   "side": "alliance",
+   "giver": "",
+   "turner": "Brandur Ironhammer («برندور چکش‌آهنین»)"
+  },
+  "quest:8847": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 29,
+   "side": "alliance",
+   "giver": "Field Marshal Snowfall («مارشال میدان اسنوفال»)",
+   "turner": ""
+  },
+  "quest:8852": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 29,
+   "side": "horde",
+   "giver": "Warlord Gorchuk («سالار جنگ گورچوک»)",
+   "turner": ""
+  },
+  "quest:8848": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 39,
+   "side": "alliance",
+   "giver": "Field Marshal Snowfall («مارشال میدان اسنوفال»)",
+   "turner": ""
+  },
+  "quest:8853": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 39,
+   "side": "horde",
+   "giver": "Warlord Gorchuk («سالار جنگ گورچوک»)",
+   "turner": ""
+  },
+  "quest:8849": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 49,
+   "side": "alliance",
+   "giver": "Field Marshal Snowfall («مارشال میدان اسنوفال»)",
+   "turner": ""
+  },
+  "quest:8854": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 49,
+   "side": "horde",
+   "giver": "Warlord Gorchuk («سالار جنگ گورچوک»)",
+   "turner": ""
+  },
+  "quest:8504": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Private Draxlegauge («سرباز درکسل‌گیج»)",
+   "turner": "Private Draxlegauge («سرباز درکسل‌گیج»)"
+  },
+  "quest:8506": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Master Nightsong («استاد نغمهٔ شب»)",
+   "turner": "Master Nightsong («استاد نغمهٔ شب»)"
+  },
+  "quest:8510": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sergeant Major Germaine («گروهبان ارشد گرماین»)",
+   "turner": "Sergeant Major Germaine («گروهبان ارشد گرماین»)"
+  },
+  "quest:8527": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Sarah Sadwhistle («ساراه سوت غمگین»)",
+   "turner": "Sarah Sadwhistle («ساراه سوت غمگین»)"
+  },
+  "quest:8546": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Senior Sergeant T'kelah («تکلاه»)",
+   "turner": "Senior Sergeant T'kelah («تکلاه»)"
+  },
+  "quest:8581": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Batrider Pele'keiki («بت‌رایدر پله‌کی‌کی»)",
+   "turner": "Batrider Pele'keiki («بت‌رایدر پله‌کی‌کی»)"
+  },
+  "quest:8583": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Apothecary Jezel («داروساز جزل»)",
+   "turner": "Apothecary Jezel («داروساز جزل»)"
+  },
+  "quest:8589": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Skinner Jamani («پوست‌کن جامانی»)",
+   "turner": "Skinner Jamani («پوست‌کن جامانی»)"
+  },
+  "quest:8591": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Sergeant Umala («گروهبان ومالا»)",
+   "turner": "Sergeant Umala («گروهبان ومالا»)"
+  },
+  "quest:8601": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Doctor Serratus («دکتر سراتوس»)",
+   "turner": "Doctor Serratus («دکتر سراتوس»)"
+  },
+  "quest:8605": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Healer Longrunner («شفادهنده دوندهٔ بلند»)",
+   "turner": "Healer Longrunner («شفادهنده دوندهٔ بلند»)"
+  },
+  "quest:8608": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Lady Callow («بانو کالو»)",
+   "turner": "Lady Callow («بانو کالو»)"
+  },
+  "quest:8610": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Stoneguard Clayhoof («کلیهوف»)",
+   "turner": "Stoneguard Clayhoof («کلیهوف»)"
+  },
+  "quest:8612": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Bloodguard Rawtar («نگهبان خون راوتار»)",
+   "turner": "Bloodguard Rawtar («نگهبان خون راوتار»)"
+  },
+  "quest:8614": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Fisherman Lin'do («ماهیگیر لین‌دو»)",
+   "turner": "Fisherman Lin'do («ماهیگیر لین‌دو»)"
+  },
+  "quest:8616": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Chief Sharpclaw («رئیس پنجه‌تیز»)",
+   "turner": "Chief Sharpclaw («رئیس پنجه‌تیز»)"
+  },
+  "quest:8621": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Kandrostrasz («کاندروسترز»)",
+   "turner": "Kandrostrasz («کاندروسترز»)"
+  },
+  "quest:8622": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Vethsera («وتسرا»)",
+   "turner": "Vethsera («وتسرا»)"
+  },
+  "quest:8623": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Andorgos («آندورگوس»)",
+   "turner": "Andorgos («آندورگوس»)"
+  },
+  "quest:8661": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "",
+   "giver": "Vethsera («وتسرا»)",
+   "turner": "Vethsera («وتسرا»)"
+  },
+  "quest:8850": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "alliance",
+   "giver": "Field Marshal Snowfall («مارشال میدان اسنوفال»)",
+   "turner": "Field Marshal Snowfall («مارشال میدان اسنوفال»)"
+  },
+  "quest:8855": {
+   "zone_en": "؟",
+   "zone_fa": "",
+   "level": 60,
+   "side": "horde",
+   "giver": "Warlord Gorchuk («سالار جنگ گورچوک»)",
+   "turner": ""
+  }
+ },
+ "known": {
+  "quest:5640": {
+   "title": "{{qs:Desperate Prayer|دعای مأجورانه}}",
+   "objectives": [
+    "با {{npc:High Priestess Laurena|کاهنهٔ اعظم لورنا}} در {{zn:Stormwind City|شهر استورم‌ویند}} صحبت کن."
+   ]
+  },
+  "quest:8846": {
+   "title": "پنج نشان برای تدارکات جنگی"
+  },
+  "quest:8851": {
+   "title": "پنج نشان برای تدارکات جنگی"
+  },
+  "quest:1794": {
+   "title": "{{qs:The Tome of Valor|کتاب بزرگِ شجاعت}}"
+  },
+  "quest:8847": {
+   "title": "ده نشان برای تدارکات جنگ"
+  },
+  "quest:8852": {
+   "title": "ده نشان برای تدارکات جنگ"
+  },
+  "quest:8848": {
+   "title": "پانزده نشان برای تدارکات جنگ"
+  },
+  "quest:8853": {
+   "title": "پانزده نشان برای تدارکات جنگ"
+  },
+  "quest:8849": {
+   "title": "بیست نشان برای تدارکات جنگ"
+  },
+  "quest:8854": {
+   "title": "بیست نشان برای تدارکات جنگ"
+  },
+  "quest:8504": {
+   "title": "اتحاد به {{it:Stranglekelp|جلبک خفه‌گر}} بیشتری نیاز دارد!",
+   "objectives": [
+    "20 جلبک خفه‌گر را در فرودگاهِ {{zn:Dun Morogh|دون موروغ}} به {{npc:Private Draxlegauge|سرباز درکسل‌گیج}} برسان."
+   ]
+  },
+  "quest:8506": {
+   "title": "اتحاد به {{it:Purple Lotus|نیلوفر بنفش}} بیشتری نیاز دارد!",
+   "objectives": [
+    "20 نیلوفر بنفش را در فرودگاهِ {{zn:Dun Morogh|دون موروغ}} به {{npc:Master Nightsong|استاد نغمهٔ شب}} برسان."
+   ]
+  },
+  "quest:8510": {
+   "title": "اتحاد به {{it:Arthas' Tears|اشک‌های آرتاس}} بیشتری نیاز دارد!",
+   "objectives": [
+    "20 {{it:Arthas' Tears|اشک‌های آرتاس}} را در فرودگاهِ {{zn:Dun Morogh|دون موروغ}} به {{npc:Sergeant Major Germaine|گروهبان ارشد گرماین}} برسان."
+   ]
+  },
+  "quest:8527": {
+   "title": "اتحاد به {{it:Roast Raptor|رپتور کبابی}} بیشتری نیاز دارد!",
+   "objectives": [
+    "20 رپتور کبابی را در فرودگاهِ {{zn:Dun Morogh|دون موروغ}} به {{npc:Sarah Sadwhistle|ساراه سوت غمگین}} برسان."
+   ]
+  },
+  "quest:8546": {
+   "title": "هورد به شمش میتریل بیشتری نیاز دارد!",
+   "objectives": [
+    "20 شمش میتریل را در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} به {{npc:Senior Sergeant T'kelah|تکلاه}} برسان."
+   ]
+  },
+  "quest:8581": {
+   "title": "هورد به {{it:Firebloom|شکوفهٔ آتش}} بیشتری نیاز دارد!",
+   "objectives": [
+    "20 {{it:Firebloom|شکوفهٔ آتش}} را در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} به {{npc:Batrider Pele'keiki|بت‌رایدر پله‌کی‌کی}} برسان."
+   ]
+  },
+  "quest:8583": {
+   "title": "هورد به {{it:Purple Lotus|نیلوفر بنفش}} بیشتری نیاز دارد!",
+   "objectives": [
+    "20 {{it:Purple Lotus|نیلوفر بنفش}} را در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} به {{npc:Apothecary Jezel|داروساز جزل}} برسان."
+   ]
+  },
+  "quest:8589": {
+   "title": "هورد به {{it:Heavy Leather|چرمِ سنگین}} بیشتری نیاز دارد!",
+   "objectives": [
+    "10 {{it:Heavy Leather|چرمِ سنگین}} را در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} به {{npc:Skinner Jamani|پوست‌کن جامانی}} برسان."
+   ]
+  },
+  "quest:8591": {
+   "title": "هورد به {{it:Thick Leather|چرم ضخیم}} بیشتری نیاز دارد!",
+   "objectives": [
+    "10 {{it:Thick Leather|چرم ضخیم}} را در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} به {{npc:Sergeant Umala|گروهبان ومالا}} برسان."
+   ]
+  },
+  "quest:8601": {
+   "title": "هورد به {{it:Rugged Leather|چرمِ بادوام}} بیشتری نیاز دارد!",
+   "objectives": [
+    "10 {{it:Rugged Leather|چرمِ بادوام}} را در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} به {{npc:Doctor Serratus|دکتر سراتوس}} برسان."
+   ]
+  },
+  "quest:8605": {
+   "title": "هورد به باندِ پشم بیشتری نیاز دارد!",
+   "objectives": [
+    "۲۰ عدد باندِ پشم را به {{npc:Healer Longrunner|شفادهنده دوندهٔ بلند}} در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} بیاور."
+   ]
+  },
+  "quest:8608": {
+   "title": "هورد به باندِ ماگوویو بیشتری نیاز دارد!",
+   "objectives": [
+    "۲۰ عدد باندِ ماگوویو را به {{npc:Lady Callow|بانو کالو}} در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} بیاور."
+   ]
+  },
+  "quest:8610": {
+   "title": "هورد به باندهای بیشتری از {{it:Runecloth|پارچهٔ رونی}} نیاز دارد!",
+   "objectives": [
+    "۲۰ عدد باندِ ساخته‌شده از {{it:Runecloth|پارچهٔ رونی}} را به {{npc:Stoneguard Clayhoof|کلیهوف}} در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} بیاور."
+   ]
+  },
+  "quest:8612": {
+   "title": "هورد به بیف‌استیکِ گرگِ لاغر بیشتری نیاز دارد!",
+   "objectives": [
+    "۲۰ عدد بیف‌استیکِ گرگِ لاغر را به {{npc:Bloodguard Rawtar|نگهبان خون راوتار}} در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} بیاور."
+   ]
+  },
+  "quest:8614": {
+   "title": "هورد به {{it:Spotted Yellowtail|دم‌زرد خالدار}} بیشتری نیاز دارد!",
+   "objectives": [
+    "۲۰ عدد {{it:Spotted Yellowtail|دم‌زرد خالدار}} را به {{npc:Fisherman Lin'do|ماهیگیر لین‌دو}} در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} بیاور."
+   ]
+  },
+  "quest:8616": {
+   "title": "هورد به {{it:Baked Salmon|سالمون کبابی}} بیشتری نیاز دارد!",
+   "objectives": [
+    "۲۰ عدد {{it:Baked Salmon|سالمون کبابی}} را به {{npc:Chief Sharpclaw|رئیس پنجه‌تیز}} در درهٔ ارواحِ {{zn:Orgrimmar|اورگیمار}} بیاور."
+   ]
+  },
+  "quest:8621": {
+   "title": "{{it:Stormcaller's Footguards|محافظِ پایِ توفان‌خوان}}",
+   "objectives": [
+    "این موارد را به {{npc:Kandrostrasz|کاندروسترز}} در {{zn:Ahn'Qiraj|آن‌کیراج}} بیاور: {{it:Qiraji Bindings of Dominance|ساعدبندهایِ قیراجیِ سلطه}}، ۲ بتِ فرزانگی، ۵ سوسکِ مفرغی و ۵ سوسکِ رسی. این مأموریت همچنین مستلزم داشتن جایگاهِ «بی‌طرف» نزد تبار نوزدورمو است."
+   ]
+  },
+  "quest:8622": {
+   "title": "{{it:Stormcaller's Hauberk|زره‌برجدِ توفان‌خوان}}",
+   "objectives": [
+    "این موارد را به {{npc:Vethsera|وتسرا}} درون {{zn:Ahn'Qiraj|آن‌کیراج}} بیاور: {{it:Carapace of the Old God|پوستهٔ خدای کهن}}، ۲ بتِ فرزانگی، ۵ سوسکِ نقره‌ای و ۵ سوسکِ استخوانی. همچنین برای تکمیل این مأموریت باید نزد تبار نوزدورمو به جایگاهِ «محترم» برسی."
+   ]
+  },
+  "quest:8623": {
+   "title": "{{it:Stormcaller's Diadem|دیادمِ توفان‌خوان}}",
+   "objectives": [
+    "این موارد را به {{npc:Andorgos|آندورگوس}} در {{zn:Ahn'Qiraj|آن‌کیراج}} بیاور: {{it:Vek'lor's Diadem|دیادمِ وک‌لور}}، ۲ بتِ رستاخیز، ۵ سوسکِ سنگی و ۵ سوسکِ کریستالی. همچنین برای تکمیل این مأموریت باید نزد تبار نوزدورمو به جایگاهِ «دوستانه» برسی."
+   ]
+  },
+  "quest:8661": {
+   "title": "{{it:Doomcaller's Robes|ردای شوم‌خوان}}",
+   "objectives": [
+    "{{it:Husk of the Old God|پوستهٔ خدای کهن}}، 2 بتِ شب، 5 سوسک سنگی و 5 سوسک بلورین را در {{zn:Ahn'Qiraj|آن‌کیراج}} به {{npc:Vethsera|وتسرا}} برسان. برای تکمیل این مأموریت باید نزد گروه نوزدورمو به اعتبار ارجمند برسی."
+   ]
+  },
+  "quest:8850": {
+   "title": "سی نشان در برابر تدارکات جنگی"
+  },
+  "quest:8855": {
+   "title": "سی نشان در برابر تدارکات جنگی"
+  }
+ },
+ "name_hints": {
+  "When": "Who, What, Where, When, and Die! Five Keys to a Good Inquisition «چه کسی، چه چیزی، کجا، چه زمانی و بمیر! پنج کلیدِ بازجوییِ خوب»",
+  "Keep": "Farholde Keep Tabard «شنل‌نشانهٔ دژ فار‌هولد»، Shadowfang Keep «دژ نیش‌سایه»، Shipment to Farholde Keep «محموله به دژ فرهولد»",
+  "Protecting": "Thorn Protecting Girdle «کمربند محافظ خار»",
+  "Quick": "Quick Strike Ring «انگشتر ضربهٔ سریع»، Rune of Quick Draw «رونِ کشیدن سریع»، Rune of Quick Strike «رونِ ضربهٔ سریع»",
+  "Your": "A Luddite's Guide to Caring for Your Demonic Pet «راهنمایِ سنت‌گرا برای نگهداریِ حیوانِ خانگیِ اهریمنی»",
+  "Pele'keiki": "Batrider Pele'keiki «بت‌رایدر پله‌کی‌کی»",
+  "Drop": "Drop of Stolen Life «قطره‌ای از زندگی دزدیده‌شده»",
+  "Once": "Once Used Shoe «کفشِ یک‌بار استفاده‌شده»",
+  "Time": "Spell Notes: Rewind Time «یادداشت‌های اسپل: بازگرداندنِ زمان»"
+ },
+ "name_hints_note": "نام‌هایی که در متن هست ولی ⟦E⟧ نشده (جمع یا تکه‌ای از یک نام مصوب). همین فارسی مصوب را به کار ببر تا نام‌ها همه‌جا یکسان بمانند؛ این‌ها را در خروجی ننویس."
+}
