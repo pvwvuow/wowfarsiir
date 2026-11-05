@@ -1334,7 +1334,42 @@
         E: (rs[2] && rs[2].items && rs[2].items[String(id)]) || null };
       FFA = (rs[3] && rs[3][String(id)]) || null;
       paintForeverItem(FSTATE);
+      wfPhaseFor(FSTATE.S);
     }).catch(function () { fail(); });
+  }
+  /* W7 raid unlock label on forever item pages: the item's drop rows (src-<id>.json)
+     name the instance (d row[6] = place name, d row[5] = zone slug). Locked-raid mapIds
+     and dates come only from dungeons.json + data/forever/phases.json — no dates here. */
+  function wfPhaseFor(S) {
+    if (!window.wfPhase || !S || !S.d || !S.d.length) return;
+    Promise.all([
+      getJSON("data/forever/db/dungeons.json").catch(function () { return null; }),
+      getJSON("data/forever/phases.json").catch(function () { return null; })
+    ]).then(function (rs) {
+      var dj = rs[0], ph = rs[1];
+      if (!dj || !dj.dungeons || !ph || !ph.phases) return;
+      var today = new Date(); today.setHours(0, 0, 0, 0);
+      var locked = {};
+      ph.phases.forEach(function (p) {
+        if (!p || !p.unlock) return;
+        var u = new Date(p.unlock + "T00:00:00");
+        if (isNaN(u) || u <= today) return;
+        (p.instances || []).forEach(function (m) { locked[+m] = true; });
+      });
+      var names = {}, slugs = {};
+      dj.dungeons.forEach(function (d) {
+        if (d.type === "raid" && locked[+d.mapId]) { names[d.name] = +d.mapId; slugs[d.slug] = +d.mapId; }
+      });
+      for (var i = 0; i < S.d.length; i++) {
+        var r = S.d[i] || [];
+        var m = names[r[6]] != null ? names[r[6]] : (slugs[r[5]] != null ? slugs[r[5]] : null);
+        if (m != null) {
+          var hid = document.querySelector("#rt-root .fex-hero .fex-hid");
+          if (hid) window.wfPhase.mount(hid, m, { prepend: true });
+          return;
+        }
+      }
+    });
   }
   function paintForeverItem(st) {
     var rec = st.rec, S = st.S, E = st.E;

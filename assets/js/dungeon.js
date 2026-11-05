@@ -14,7 +14,7 @@
   var root = document.getElementById('dg-root');
   if (!root) return;
   var WF = window.WFTR || null;
-  var cache = {}, ZBYNAME = {}, ENT = {}, FA = null, LIST = null, S = null, LS = null, AU = null, LANG = 'fa';
+  var cache = {}, ZBYNAME = {}, ENT = {}, FA = null, LIST = null, S = null, LS = null, AU = null, LANG = 'fa', PH = null;
   try { if (localStorage.getItem('wfq-lang') === 'en') LANG = 'en'; } catch (e) { /* ignore */ }
 
   function esc(s) {
@@ -168,11 +168,31 @@
     root.innerHTML = '<p class="npc-loading">' + esc(msg || 'بارگذاری نشد.') + ' <a href="dungeon.html">' + esc('همهٔ دانجن‌ها') + '</a></p>';
   }
   function status(d) {
+    var ph = phaseOf(d);
+    if (ph) return phaseLbl(ph);
     if (d.notOpen) return lbl('هنوز باز نشده', 'Not open yet');
     if (!bossN(d)) return lbl('بدون دیتای باس', 'No boss data');
     if (d.isNew) return lbl('جدید در Forever', 'New in Forever');
     return '';
   }
+
+  /* ---------- phases (W7) ---------- */
+  /* unlock dates come from data/forever/phases.json only; no dates in code.
+     The label disappears automatically when today >= unlock. */
+  function phaseOf(d) {
+    if (!PH || !PH.phases || !d || d.mapId == null) return null;
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var best = null, bestD = null;
+    for (var i = 0; i < PH.phases.length; i++) {
+      var p = PH.phases[i];
+      if (!p || !p.unlock || (p.instances || []).indexOf(+d.mapId) === -1) continue;
+      var u = new Date(p.unlock + 'T00:00:00');
+      if (isNaN(u) || u <= today) continue;
+      if (!bestD || u < bestD) { best = p; bestD = u; }
+    }
+    return best;
+  }
+  function phaseLbl(p) { return lbl('از ' + (p.unlockFa || p.unlock) + ' باز می‌شود', 'Opens ' + (p.unlock || '')); }
 
   /* ---------- maps ---------- */
   function mapImg(f) {
@@ -424,13 +444,14 @@
 
   /* ---------- boot ---------- */
   var slug = new URLSearchParams(location.search).get('d');
-  Promise.all([opt(DB + 'zones-meta.json'), opt(I18N + 'entities.json'), opt(I18N + 'dungeon-fa.json'), getJSON(DB + 'dungeons.json').catch(function () { return null; }), opt(DB + 'boss-audit.json')]).then(function (r) {
+  Promise.all([opt(DB + 'zones-meta.json'), opt(I18N + 'entities.json'), opt(I18N + 'dungeon-fa.json'), getJSON(DB + 'dungeons.json').catch(function () { return null; }), opt(DB + 'boss-audit.json'), opt('data/forever/phases.json')]).then(function (r) {
     var zs = r[0] && r[0].zones;
     if (zs) (Array.isArray(zs) ? zs : Object.keys(zs).map(function (k) { return zs[k]; })).forEach(function (z) { ZBYNAME[z.name] = z; });
     ENT = (r[1] && r[1].types) || {};
     FA = r[2] || null;
     LIST = r[3] && r[3].dungeons ? r[3].dungeons : null;
     AU = r[4] || null;
+    PH = r[5] || null;
     if (!LIST) return fail('فهرست دانجن‌ها بارگذاری نشد.');
     if (slug == null || slug === '') { LS = { q: '', type: '' }; return listPaint(); }
     if (!/^[a-z0-9-]{1,60}$/.test(slug)) return fail('شناسهٔ دانجن معتبر نیست.');
