@@ -512,6 +512,18 @@
     var html = esc(t).replace(/\n/g, "<br>");
     return (window.WFTR && WFTR.faTokens) ? WFTR.faTokens(html) : stripMk(html);
   }
+  /* TALENT-NOTE-BEGIN */
+  /* lane-a5, Brain review of #443 open point 5: a node with no client description
+     (the ADD-only ForeverDB nodes that fail the rank rule) must not render an empty
+     description area — the tooltip shows the same muted note the no-text state
+     promises. Nodes WITH d render unchanged. Both helpers are pure (no DOM). */
+  function ttipNoDescNote() {
+    return '<p class="ttip-desc" dir="rtl">توضیح این تلنت هنوز در Forever در دسترس نیست</p>';
+  }
+  function ttipNoDesc(x, useFa) {
+    return (!x || x.d || useFa) ? "" : ttipNoDescNote();
+  }
+  /* TALENT-NOTE-END */
   function tipHTML(t, name) {
     var nd = nodeData(t, name);
     if (!nd) return "";
@@ -538,7 +550,7 @@
       (isActive(x) ? '<span class="ttip-badge" data-tk="uiLabels">' + lb("\u062a\u0648\u0627\u0646\u0627\u06cc\u06cc \u0641\u0639\u0627\u0644", "Active ability") + "</span>" : "") +
       (hfOn(x) ? '<span class="ttip-badge hf-un" title="' + HF_TITLE + '" style="color:#3a2703;background:linear-gradient(135deg,#f8dd8f,#d9a53a);border-color:#b8860b;font-weight:800" data-tk="uiLabels">' + HF_BADGE + "</span>" : "") +
       '<span class="ttip-badge" data-tk="uiLabels">' + (ui ? "\u0631\u062f\u06cc\u0641 " + faNum(nd.ti + 1) : "Row " + (nd.ti + 1)) + "</span></div>" +
-      reqLine + desc +
+      reqLine + desc + ttipNoDesc(x, useFa) +
       (hfOn(x) ? '<p class="ttip-hf" dir="' + dirU + '" style="margin:.35rem 0 0;font-size:.78rem;color:#8a6d1a" data-tk="uiLabels">\u26a0 ' + HF_LINE + "</p>" : "") +
       (pinnedKey ? '<div class="ttip-act" dir="ltr">' +
         '<button type="button" class="ttip-btn" data-act="minus">\u2212</button>' +
