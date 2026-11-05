@@ -1,0 +1,1806 @@
+{
+ "pack": "item-tip-14",
+ "kind": "item-tip",
+ "spec": 3,
+ "build": "",
+ "how_to": "فایل را به مترجم بده؛ خروجی را با نام fa-out-item-tip-14.json برگردان.",
+ "rules": "به فارسی روان و معنادار ترجمه کن، نه آوانگاری؛ فقط نام خاص شخص/مکان آوانگاری می‌شود. هر ⟦...⟧ را دقیقاً همان‌طور و به تعداد اصلی نگه دار (جابه‌جایی در جمله مجاز است). عددها را حفظ کن (ارقام فارسی یا لاتین فرقی ندارد). ی و ک فارسی، نیم‌فاصله در «می‌»، «ها» و «ای». هیچ حرف لاتین در خروجی نباشد مگر داخل ⟦...⟧. از glossary برای واژه‌ها پیروی کن. خروجی فقط JSON: {\"pack\": <همین pack>, \"fa\": {\"<کلید>\": \"ترجمه\"}} با همهٔ کلیدهای rows، نه کم نه زیاد.",
+ "tokens_note": "⟦عدد⟧ = کد بازی (نام بازیکن، خط جدید، رنگ). ⟦E..⟧ = نام مصوب؛ معنی‌اش در entities است. هر دو را دست‌نخورده نگه دار.",
+ "entities": {
+  "E1": {
+   "en": "Equip",
+   "fa": "مجهز به",
+   "kind": "tm"
+  },
+  "E2": {
+   "en": "Causes",
+   "fa": "ایجاد می‌کند",
+   "kind": "tm"
+  },
+  "E3": {
+   "en": "chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E4": {
+   "en": "Mana",
+   "fa": "مانا",
+   "kind": "tm"
+  },
+  "E5": {
+   "en": "Chance",
+   "fa": "شانس",
+   "kind": "tm"
+  },
+  "E6": {
+   "en": "spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E7": {
+   "en": "target",
+   "fa": "هدف",
+   "kind": "tm"
+  },
+  "E8": {
+   "en": "attack power",
+   "fa": "قدرت حمله",
+   "kind": "tm"
+  },
+  "E9": {
+   "en": "sec",
+   "fa": "ثانیه",
+   "kind": "tm"
+  },
+  "E10": {
+   "en": "Chance on hit",
+   "fa": "شانس در ضربه",
+   "kind": "tm"
+  },
+  "E11": {
+   "en": "Arcane damage",
+   "fa": "آسیب اسرار",
+   "kind": "tm"
+  },
+  "E12": {
+   "en": "damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E13": {
+   "en": "nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E14": {
+   "en": "party",
+   "fa": "گروه",
+   "kind": "tm"
+  },
+  "E15": {
+   "en": "critical strike",
+   "fa": "ضربهٔ بحرانی",
+   "kind": "tm"
+  },
+  "E16": {
+   "en": "strike",
+   "fa": "ضربه",
+   "kind": "tm"
+  },
+  "E17": {
+   "en": "melee",
+   "fa": "نزدیک‌زن",
+   "kind": "tm"
+  },
+  "E18": {
+   "en": "Nature damage",
+   "fa": "آسیب طبیعت",
+   "kind": "tm"
+  },
+  "E19": {
+   "en": "Fire damage",
+   "fa": "آسیب آتش",
+   "kind": "tm"
+  },
+  "E20": {
+   "en": "Decreases",
+   "fa": "کاهش می‌دهد",
+   "kind": "tm"
+  },
+  "E21": {
+   "en": "cooldown",
+   "fa": "کول‌داون",
+   "kind": "tm"
+  },
+  "E22": {
+   "en": "Feign Death",
+   "fa": "تظاهر به مرگ",
+   "kind": "sp"
+  },
+  "E23": {
+   "en": "Kick",
+   "fa": "لگد",
+   "kind": "sp"
+  },
+  "E24": {
+   "en": "Healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E25": {
+   "en": "heal",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E26": {
+   "en": "reduces",
+   "fa": "کاهش می‌دهد",
+   "kind": "tm"
+  },
+  "E27": {
+   "en": "Swiftmend",
+   "fa": "شفای شتابان",
+   "kind": "sp"
+  },
+  "E28": {
+   "en": "Healing Touch",
+   "fa": "لمس شفا",
+   "kind": "sp"
+  },
+  "E29": {
+   "en": "Grants",
+   "fa": "می‌بخشد",
+   "kind": "tm"
+  },
+  "E30": {
+   "en": "enemy",
+   "fa": "دشمن",
+   "kind": "tm"
+  },
+  "E31": {
+   "en": "Furbolg",
+   "fa": "فوربولگ",
+   "kind": "npc"
+  },
+  "E32": {
+   "en": "Immune to",
+   "fa": "مصون در برابر",
+   "kind": "tm"
+  },
+  "E33": {
+   "en": "Disarm",
+   "fa": "خلع سلاح",
+   "kind": "sp"
+  },
+  "E34": {
+   "en": "Spirit",
+   "fa": "روح",
+   "kind": "tm"
+  },
+  "E35": {
+   "en": "Fist Weapons",
+   "fa": "سلاح مشت‌زنی",
+   "kind": "tm"
+  },
+  "E36": {
+   "en": "Increases",
+   "fa": "افزایش می‌دهد",
+   "kind": "tm"
+  },
+  "E37": {
+   "en": "healing",
+   "fa": "شفا",
+   "kind": "tm"
+  },
+  "E38": {
+   "en": "yards",
+   "fa": "یارد",
+   "kind": "tm"
+  },
+  "E39": {
+   "en": "pet",
+   "fa": "حیوان خانگی",
+   "kind": "tm"
+  },
+  "E40": {
+   "en": "Chain Lightning",
+   "fa": "زنجیرهٔ آذرخش",
+   "kind": "sp"
+  },
+  "E41": {
+   "en": "Lightning Bolt",
+   "fa": "تیر آذرخش",
+   "kind": "sp"
+  },
+  "E42": {
+   "en": "Flash of Light",
+   "fa": "جرقهٔ نور",
+   "kind": "sp"
+  },
+  "E43": {
+   "en": "Lesser Healing Wave",
+   "fa": "موج شفای کوچک",
+   "kind": "sp"
+  },
+  "E44": {
+   "en": "Block Value",
+   "fa": "مقدار بلوک",
+   "kind": "tm"
+  },
+  "E45": {
+   "en": "Holy Shield",
+   "fa": "سپر مقدس",
+   "kind": "sp"
+  },
+  "E46": {
+   "en": "Power Word: Shield",
+   "fa": "کلام قدرت: سپر",
+   "kind": "sp"
+  },
+  "E47": {
+   "en": "effect",
+   "fa": "اثر",
+   "kind": "tm"
+  },
+  "E48": {
+   "en": "hit",
+   "fa": "اصابت",
+   "kind": "tm"
+  },
+  "E49": {
+   "en": "Starfire",
+   "fa": "آتش ستاره",
+   "kind": "sp"
+  },
+  "E50": {
+   "en": "Stormstrike",
+   "fa": "ضربهٔ توفان",
+   "kind": "sp"
+  },
+  "E51": {
+   "en": "ability",
+   "fa": "توانایی",
+   "kind": "tm"
+  },
+  "E52": {
+   "en": "Judgement",
+   "fa": "داوری مقدس",
+   "kind": "sp"
+  },
+  "E53": {
+   "en": "Moonfire",
+   "fa": "آتش ماه",
+   "kind": "sp"
+  },
+  "E54": {
+   "en": "duration",
+   "fa": "مدت",
+   "kind": "tm"
+  },
+  "E55": {
+   "en": "Hammer of Justice",
+   "fa": "چکش عدالت",
+   "kind": "sp"
+  },
+  "E56": {
+   "en": "Flame Shock",
+   "fa": "شوک آتش",
+   "kind": "sp"
+  },
+  "E57": {
+   "en": "Insect Swarm",
+   "fa": "ازدحام حشرات",
+   "kind": "sp"
+  },
+  "E58": {
+   "en": "Seal",
+   "fa": "مهر",
+   "kind": "tm"
+  },
+  "E59": {
+   "en": "Holy damage",
+   "fa": "آسیب مقدس",
+   "kind": "tm"
+  },
+  "E60": {
+   "en": "Rain of Fire",
+   "fa": "باران آتش",
+   "kind": "sp"
+  },
+  "E61": {
+   "en": "Hellfire",
+   "fa": "آتش دوزخ",
+   "kind": "sp"
+  },
+  "E62": {
+   "en": "Armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E63": {
+   "en": "Undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E64": {
+   "en": "stealth",
+   "fa": "مخفی‌کاری",
+   "kind": "tm"
+  },
+  "E65": {
+   "en": "level",
+   "fa": "لِوِل",
+   "kind": "tm"
+  },
+  "E66": {
+   "en": "armor",
+   "fa": "زره",
+   "kind": "tm"
+  },
+  "E67": {
+   "en": "Nearby",
+   "fa": "نزدیک",
+   "kind": "tm"
+  },
+  "E68": {
+   "en": "Gahz'ridian",
+   "fa": "گاز‌ریدین",
+   "kind": "qs"
+  },
+  "E69": {
+   "en": "grants",
+   "fa": "می‌بخشد",
+   "kind": "tm"
+  },
+  "E70": {
+   "en": "Reduces",
+   "fa": "کاهش می‌دهد",
+   "kind": "tm"
+  },
+  "E71": {
+   "en": "Healing Wave",
+   "fa": "موج شفا",
+   "kind": "sp"
+  },
+  "E72": {
+   "en": "Holy Light",
+   "fa": "نور مقدس",
+   "kind": "sp"
+  },
+  "E73": {
+   "en": "Counterspell",
+   "fa": "پادافسون",
+   "kind": "sp"
+  },
+  "E74": {
+   "en": "Grounding Totem",
+   "fa": "تتمِ گراوندینگ",
+   "kind": "npc"
+  },
+  "E75": {
+   "en": "Fade",
+   "fa": "محو شدن",
+   "kind": "sp"
+  },
+  "E76": {
+   "en": "Shifting Power",
+   "fa": "تبدیل نیرو",
+   "kind": "sp"
+  },
+  "E77": {
+   "en": "Swift Judgement",
+   "fa": "داوری تند",
+   "kind": "sp"
+  },
+  "E78": {
+   "en": "talent",
+   "fa": "تلنت",
+   "kind": "tm"
+  },
+  "E79": {
+   "en": "Hamstring",
+   "fa": "پارگی تاندون",
+   "kind": "sp"
+  },
+  "E80": {
+   "en": "points",
+   "fa": "واحد",
+   "kind": "tm"
+  },
+  "E81": {
+   "en": "Fear",
+   "fa": "ترس",
+   "kind": "tm"
+  },
+  "E82": {
+   "en": "Silence",
+   "fa": "سکوت",
+   "kind": "tm"
+  },
+  "E83": {
+   "en": "Stun",
+   "fa": "فلج",
+   "kind": "tm"
+  },
+  "E84": {
+   "en": "Cleanse",
+   "fa": "پاک‌سازی جادو",
+   "kind": "sp"
+  },
+  "E85": {
+   "en": "Battle",
+   "fa": "نبرد",
+   "kind": "tm"
+  },
+  "E86": {
+   "en": "Maul",
+   "fa": "کوبش خرس",
+   "kind": "sp"
+  },
+  "E87": {
+   "en": "Spell",
+   "fa": "اسپیل",
+   "kind": "tm"
+  },
+  "E88": {
+   "en": "Damage",
+   "fa": "آسیب",
+   "kind": "tm"
+  },
+  "E89": {
+   "en": "Thrown",
+   "fa": "پرتابی",
+   "kind": "tm"
+  },
+  "E90": {
+   "en": "enemies",
+   "fa": "دشمنان",
+   "kind": "tm"
+  },
+  "E91": {
+   "en": "in combat",
+   "fa": "درگیر نبرد",
+   "kind": "tm"
+  },
+  "E92": {
+   "en": "Set",
+   "fa": "ست",
+   "kind": "tm"
+  },
+  "E93": {
+   "en": "Medallion of Station",
+   "fa": "مدال جایگاه",
+   "kind": "qs"
+  },
+  "E94": {
+   "en": "Silithus",
+   "fa": "سیلیتوس",
+   "kind": "zn"
+  },
+  "E95": {
+   "en": "Rage",
+   "fa": "خشم",
+   "kind": "tm"
+  },
+  "E96": {
+   "en": "Enrage",
+   "fa": "خشم‌گرفتن",
+   "kind": "sp"
+  },
+  "E97": {
+   "en": "Energy",
+   "fa": "انرژی",
+   "kind": "tm"
+  },
+  "E98": {
+   "en": "generates",
+   "fa": "ایجاد می‌کند",
+   "kind": "tm"
+  },
+  "E99": {
+   "en": "Lacerate",
+   "fa": "شکافتن",
+   "kind": "sp"
+  },
+  "E100": {
+   "en": "Primal Bite",
+   "fa": "گاز غریزی",
+   "kind": "sp"
+  },
+  "E101": {
+   "en": "Weapon",
+   "fa": "سلاح",
+   "kind": "tm"
+  },
+  "E102": {
+   "en": "Wasteland",
+   "fa": "سرزمین ویران",
+   "kind": "zn"
+  },
+  "E103": {
+   "en": "Held In Off-hand",
+   "fa": "نگه‌داشته در دست چپ",
+   "kind": "tm"
+  },
+  "E104": {
+   "en": "Miscellaneous",
+   "fa": "متفرقه",
+   "kind": "tm"
+  },
+  "E105": {
+   "en": "Legs",
+   "fa": "پاها",
+   "kind": "tm"
+  },
+  "E106": {
+   "en": "Main Hand",
+   "fa": "دست اصلی",
+   "kind": "tm"
+  },
+  "E107": {
+   "en": "Mace",
+   "fa": "گرز",
+   "kind": "it"
+  },
+  "E108": {
+   "en": "One-Hand",
+   "fa": "یک‌دستی",
+   "kind": "tm"
+  },
+  "E109": {
+   "en": "Cleansing",
+   "fa": "پاک‌سازی",
+   "kind": "sp"
+  },
+  "E110": {
+   "en": "Requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E111": {
+   "en": "Requires Level",
+   "fa": "سطح مورد نیاز",
+   "kind": "tm"
+  },
+  "E112": {
+   "en": "Poisons",
+   "fa": "زهرها",
+   "kind": "sp"
+  },
+  "E113": {
+   "en": "Sell Price",
+   "fa": "قیمت فروش",
+   "kind": "tm"
+  },
+  "E114": {
+   "en": "Trinket",
+   "fa": "آویز",
+   "kind": "tm"
+  },
+  "E115": {
+   "en": "Mail",
+   "fa": "زره حلقه‌ای",
+   "kind": "tm"
+  },
+  "E116": {
+   "en": "Two-Hand",
+   "fa": "دودستی",
+   "kind": "tm"
+  },
+  "E117": {
+   "en": "Use",
+   "fa": "استفاده",
+   "kind": "tm"
+  },
+  "E118": {
+   "en": "increases",
+   "fa": "افزایش می‌دهد",
+   "kind": "tm"
+  },
+  "E119": {
+   "en": "decreases",
+   "fa": "کاهش می‌دهد",
+   "kind": "tm"
+  },
+  "E120": {
+   "en": "min",
+   "fa": "دقیقه",
+   "kind": "tm"
+  },
+  "E121": {
+   "en": "movement speed",
+   "fa": "سرعت حرکت",
+   "kind": "tm"
+  },
+  "E122": {
+   "en": "Physical damage",
+   "fa": "آسیب فیزیکی",
+   "kind": "tm"
+  },
+  "E123": {
+   "en": "Arcanite Dragonling",
+   "fa": "اژدهای کوچکِ ارکانیت",
+   "kind": "npc"
+  },
+  "E124": {
+   "en": "Mechanical Dragonling",
+   "fa": "اژدهای کوچک مچانیکال",
+   "kind": "npc"
+  },
+  "E125": {
+   "en": "Mithril Mechanical Dragonling",
+   "fa": "بچه‌اژدهای مکانیکیِ میتریل",
+   "kind": "it"
+  },
+  "E126": {
+   "en": "Naxxramas",
+   "fa": "ناکس‌راماس",
+   "kind": "zn"
+  },
+  "E127": {
+   "en": "allies",
+   "fa": "متحدان",
+   "kind": "tm"
+  },
+  "E128": {
+   "en": "Shaman",
+   "fa": "شمن",
+   "kind": "sp"
+  },
+  "E129": {
+   "en": "spell damage",
+   "fa": "آسیب اسپیل",
+   "kind": "tm"
+  },
+  "E130": {
+   "en": "requires",
+   "fa": "نیازمند",
+   "kind": "tm"
+  },
+  "E131": {
+   "en": "Deeprock Salt",
+   "fa": "نمک دیپ‌راک",
+   "kind": "it"
+  },
+  "E132": {
+   "en": "Refined Deeprock Salt",
+   "fa": "نمکِ تصفیه‌شدهٔ سنگ‌ژرف",
+   "kind": "it"
+  },
+  "E133": {
+   "en": "root",
+   "fa": "محبوس‌شدن در جا",
+   "kind": "tm"
+  },
+  "E134": {
+   "en": "Felwood",
+   "fa": "فل‌وود",
+   "kind": "zn"
+  },
+  "E135": {
+   "en": "Ryson's Eye in the Sky",
+   "fa": "ریسون چشم این سکی",
+   "kind": "npc"
+  },
+  "E136": {
+   "en": "Dire Maul",
+   "fa": "دایر مول",
+   "kind": "zn"
+  },
+  "E137": {
+   "en": "Zul'Gurub",
+   "fa": "زول‌گوروب",
+   "kind": "zn"
+  },
+  "E138": {
+   "en": "Blood of the Lightbringer",
+   "fa": "خونِ نورآور",
+   "kind": "it"
+  },
+  "E139": {
+   "en": "Benevolent Bouquet",
+   "fa": "دسته‌گلِ خیرخواه",
+   "kind": "it"
+  },
+  "E140": {
+   "en": "Moonkin",
+   "fa": "ماه‌زاد",
+   "kind": "npc"
+  },
+  "E141": {
+   "en": "Aura",
+   "fa": "هاله",
+   "kind": "tm"
+  },
+  "E142": {
+   "en": "Omokk's Head",
+   "fa": "سرِ اوموک",
+   "kind": "it"
+  },
+  "E143": {
+   "en": "Roughshod Pike",
+   "fa": "نیزهٔ سخت‌نعل",
+   "kind": "it"
+  },
+  "E144": {
+   "en": "Nimboya's Laden Pike",
+   "fa": "نیزهٔ بارزدهٔ نیم‌بویا",
+   "kind": "it"
+  },
+  "E145": {
+   "en": "Gni'kiv Medallion",
+   "fa": "مدالِ گنی‌کیو",
+   "kind": "it"
+  },
+  "E146": {
+   "en": "Spike",
+   "fa": "سپیک",
+   "kind": "npc"
+  },
+  "E147": {
+   "en": "block",
+   "fa": "بلوک",
+   "kind": "tm"
+  },
+  "E148": {
+   "en": "disarm",
+   "fa": "خلع سلاح",
+   "kind": "tm"
+  },
+  "E149": {
+   "en": "two-handed",
+   "fa": "دو دستی",
+   "kind": "tm"
+  },
+  "E150": {
+   "en": "Replica Ironforge Air Rifle",
+   "fa": "تفنگ بادی بدلِ آهن‌فورج",
+   "kind": "it"
+  },
+  "E151": {
+   "en": "dispel",
+   "fa": "رفع جادو",
+   "kind": "tm"
+  },
+  "E152": {
+   "en": "curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E153": {
+   "en": "undead",
+   "fa": "مرده‌متحرک",
+   "kind": "tm"
+  },
+  "E154": {
+   "en": "Accursed Skull",
+   "fa": "جمجمهٔ نفرین‌شده",
+   "kind": "it"
+  },
+  "E155": {
+   "en": "Raw Brilliant Smallfish",
+   "fa": "ماهی کوچکِ درخشانِ خام",
+   "kind": "it"
+  },
+  "E156": {
+   "en": "Curse",
+   "fa": "نفرین",
+   "kind": "tm"
+  },
+  "E157": {
+   "en": "Bane",
+   "fa": "بلا",
+   "kind": "tm"
+  },
+  "E158": {
+   "en": "Poison",
+   "fa": "زهر",
+   "kind": "tm"
+  },
+  "E159": {
+   "en": "demon",
+   "fa": "اهریمن",
+   "kind": "tm"
+  },
+  "E160": {
+   "en": "Moonkin form",
+   "fa": "شکل مونکین",
+   "kind": "tm"
+  },
+  "E161": {
+   "en": "Uthek's Staff",
+   "fa": "عصای اوثِک",
+   "kind": "it"
+  },
+  "E162": {
+   "en": "Draenethyst Crystal",
+   "fa": "بلور درائنیستیت",
+   "kind": "it"
+  },
+  "E163": {
+   "en": "Balance",
+   "fa": "تعادل",
+   "kind": "sp"
+  },
+  "E164": {
+   "en": "Burning Exile",
+   "fa": "تبعیدی سوزان",
+   "kind": "npc"
+  },
+  "E165": {
+   "en": "Cresting Exile",
+   "fa": "تبعیدی موج‌خیز",
+   "kind": "npc"
+  },
+  "E166": {
+   "en": "Thundering Exile",
+   "fa": "تبعیدی رعدآسا",
+   "kind": "npc"
+  },
+  "E167": {
+   "en": "Dire Mottled Boar",
+   "fa": "گراز خال‌دار هولناک",
+   "kind": "npc"
+  },
+  "E168": {
+   "en": "Gray Forest Wolf",
+   "fa": "گرگ جنگل خاکستری",
+   "kind": "npc"
+  },
+  "E169": {
+   "en": "Large Crag Boar",
+   "fa": "گراز بزرگ صخره",
+   "kind": "npc"
+  },
+  "E170": {
+   "en": "Nightsaber Stalker",
+   "fa": "کمین‌گر شب‌دندان",
+   "kind": "npc"
+  },
+  "E171": {
+   "en": "Prairie Stalker",
+   "fa": "کمین‌گر مرغزار",
+   "kind": "npc"
+  },
+  "E172": {
+   "en": "Rockhide Boar",
+   "fa": "گراز سنگ‌پوست",
+   "kind": "npc"
+  },
+  "E173": {
+   "en": "Snow Leopard",
+   "fa": "پلنگ برفی",
+   "kind": "npc"
+  },
+  "E174": {
+   "en": "Strigid Screecher",
+   "fa": "جغددرندهٔ جیغ‌زن",
+   "kind": "npc"
+  },
+  "E175": {
+   "en": "Surf Crawler",
+   "fa": "خزندهٔ موج",
+   "kind": "npc"
+  },
+  "E176": {
+   "en": "Swoop",
+   "fa": "شیرجه‌زن",
+   "kind": "npc"
+  },
+  "E177": {
+   "en": "Webwood Lurker",
+   "fa": "کمین‌گر تارچوب",
+   "kind": "npc"
+  },
+  "E178": {
+   "en": "Crawler",
+   "fa": "خزنده",
+   "kind": "npc"
+  },
+  "E179": {
+   "en": "Young Forest Bear",
+   "fa": "خرس جنگلی جوان",
+   "kind": "npc"
+  },
+  "E180": {
+   "en": "Adult Plainstrider",
+   "fa": "دشت‌دونده بالغ",
+   "kind": "npc"
+  },
+  "E181": {
+   "en": "Armored Scorpid",
+   "fa": "عقرب زره‌پوش",
+   "kind": "npc"
+  },
+  "E182": {
+   "en": "Ice Claw Bear",
+   "fa": "خرس چنگال‌یخ",
+   "kind": "npc"
+  },
+  "E183": {
+   "en": "Blessing",
+   "fa": "برکت",
+   "kind": "tm"
+  },
+  "E184": {
+   "en": "Stranglethorn Vale",
+   "fa": "درهٔ استرنگل‌تورن",
+   "kind": "zn"
+  },
+  "E185": {
+   "en": "Echeyakee",
+   "fa": "اچیاکی",
+   "kind": "npc"
+  },
+  "E186": {
+   "en": "Burns",
+   "fa": "بورنس",
+   "kind": "npc"
+  },
+  "E187": {
+   "en": "Anathema",
+   "fa": "آناتما",
+   "kind": "it"
+  },
+  "E188": {
+   "en": "Benediction",
+   "fa": "برکت",
+   "kind": "it"
+  },
+  "E189": {
+   "en": "Timbermaw Ancestor",
+   "fa": "نیاِ آرواره‌چوب",
+   "kind": "npc"
+  },
+  "E190": {
+   "en": "Stratholme",
+   "fa": "استراتهولم",
+   "kind": "zn"
+  }
+ },
+ "glossary": {
+  "Equip": "مجهز به",
+  "Causes": "ایجاد می‌کند",
+  "chance": "شانس",
+  "Mana": "مانا",
+  "Chance": "شانس",
+  "spell": "اسپیل",
+  "target": "هدف",
+  "attack power": "قدرت حمله",
+  "sec": "ثانیه",
+  "Chance on hit": "شانس در ضربه",
+  "Arcane damage": "آسیب اسرار",
+  "damage": "آسیب",
+  "nearby": "نزدیک",
+  "party": "گروه",
+  "critical strike": "ضربهٔ بحرانی",
+  "strike": "ضربه",
+  "melee": "نزدیک‌زن",
+  "Nature damage": "آسیب طبیعت",
+  "Fire damage": "آسیب آتش",
+  "Decreases": "کاهش می‌دهد",
+  "cooldown": "کول‌داون",
+  "Feign Death": "تظاهر به مرگ",
+  "Kick": "لگد",
+  "Healing": "شفا",
+  "heal": "شفا",
+  "reduces": "کاهش می‌دهد",
+  "Swiftmend": "شفای شتابان",
+  "Healing Touch": "لمس شفا",
+  "Grants": "می‌بخشد",
+  "enemy": "دشمن",
+  "Furbolg": "فوربولگ",
+  "Immune to": "مصون در برابر",
+  "Disarm": "خلع سلاح",
+  "Spirit": "روح",
+  "Fist Weapons": "سلاح مشت‌زنی",
+  "Increases": "افزایش می‌دهد",
+  "healing": "شفا",
+  "yards": "یارد",
+  "pet": "حیوان خانگی",
+  "Chain Lightning": "زنجیرهٔ آذرخش",
+  "Lightning Bolt": "تیر آذرخش",
+  "Flash of Light": "جرقهٔ نور",
+  "Lesser Healing Wave": "موج شفای کوچک",
+  "Block Value": "مقدار بلوک",
+  "Holy Shield": "سپر مقدس",
+  "Power Word: Shield": "کلام قدرت: سپر",
+  "effect": "اثر",
+  "hit": "اصابت",
+  "Starfire": "آتش ستاره",
+  "Stormstrike": "ضربهٔ توفان",
+  "ability": "توانایی",
+  "Judgement": "داوری مقدس",
+  "Moonfire": "آتش ماه",
+  "duration": "مدت",
+  "Hammer of Justice": "چکش عدالت",
+  "Flame Shock": "شوک آتش",
+  "Insect Swarm": "ازدحام حشرات",
+  "Seal": "مهر",
+  "Holy damage": "آسیب مقدس",
+  "Rain of Fire": "باران آتش",
+  "Hellfire": "آتش دوزخ",
+  "Armor": "زره",
+  "Undead": "مرده‌متحرک",
+  "stealth": "مخفی‌کاری",
+  "level": "لِوِل",
+  "armor": "زره",
+  "Nearby": "نزدیک",
+  "Gahz'ridian": "گاز‌ریدین",
+  "grants": "می‌بخشد",
+  "Reduces": "کاهش می‌دهد",
+  "Healing Wave": "موج شفا",
+  "Holy Light": "نور مقدس",
+  "Counterspell": "پادافسون",
+  "Grounding Totem": "تتمِ گراوندینگ",
+  "Fade": "محو شدن",
+  "Shifting Power": "تبدیل نیرو",
+  "Swift Judgement": "داوری تند",
+  "talent": "تلنت",
+  "Hamstring": "پارگی تاندون",
+  "points": "واحد",
+  "Fear": "ترس",
+  "Silence": "سکوت",
+  "Stun": "فلج",
+  "Cleanse": "پاک‌سازی جادو",
+  "Battle": "نبرد",
+  "Maul": "کوبش خرس",
+  "Spell": "اسپیل",
+  "Damage": "آسیب",
+  "Thrown": "پرتابی",
+  "enemies": "دشمنان",
+  "in combat": "درگیر نبرد",
+  "Set": "ست",
+  "Medallion of Station": "مدال جایگاه",
+  "Silithus": "سیلیتوس",
+  "Rage": "خشم",
+  "Enrage": "خشم‌گرفتن",
+  "Energy": "انرژی",
+  "generates": "ایجاد می‌کند",
+  "Lacerate": "شکافتن",
+  "Primal Bite": "گاز غریزی",
+  "Weapon": "سلاح",
+  "Wasteland": "سرزمین ویران",
+  "Held In Off-hand": "نگه‌داشته در دست چپ",
+  "Miscellaneous": "متفرقه",
+  "Legs": "پاها",
+  "Main Hand": "دست اصلی",
+  "Mace": "گرز",
+  "One-Hand": "یک‌دستی",
+  "Cleansing": "پاک‌سازی",
+  "Requires": "نیازمند",
+  "Requires Level": "سطح مورد نیاز",
+  "Poisons": "زهرها",
+  "Sell Price": "قیمت فروش",
+  "Trinket": "آویز",
+  "Mail": "زره حلقه‌ای",
+  "Two-Hand": "دودستی",
+  "Use": "استفاده",
+  "increases": "افزایش می‌دهد",
+  "decreases": "کاهش می‌دهد",
+  "min": "دقیقه",
+  "movement speed": "سرعت حرکت",
+  "Physical damage": "آسیب فیزیکی",
+  "Arcanite Dragonling": "اژدهای کوچکِ ارکانیت",
+  "Mechanical Dragonling": "اژدهای کوچک مچانیکال",
+  "Mithril Mechanical Dragonling": "بچه‌اژدهای مکانیکیِ میتریل",
+  "Naxxramas": "ناکس‌راماس",
+  "allies": "متحدان",
+  "Shaman": "شمن",
+  "spell damage": "آسیب اسپیل",
+  "requires": "نیازمند",
+  "Deeprock Salt": "نمک دیپ‌راک",
+  "Refined Deeprock Salt": "نمکِ تصفیه‌شدهٔ سنگ‌ژرف",
+  "root": "محبوس‌شدن در جا",
+  "Felwood": "فل‌وود",
+  "Ryson's Eye in the Sky": "ریسون چشم این سکی",
+  "Dire Maul": "دایر مول",
+  "Zul'Gurub": "زول‌گوروب",
+  "Blood of the Lightbringer": "خونِ نورآور",
+  "Benevolent Bouquet": "دسته‌گلِ خیرخواه",
+  "Moonkin": "ماه‌زاد",
+  "Aura": "هاله",
+  "Omokk's Head": "سرِ اوموک",
+  "Roughshod Pike": "نیزهٔ سخت‌نعل",
+  "Nimboya's Laden Pike": "نیزهٔ بارزدهٔ نیم‌بویا",
+  "Gni'kiv Medallion": "مدالِ گنی‌کیو",
+  "Spike": "سپیک",
+  "block": "بلوک",
+  "disarm": "خلع سلاح",
+  "two-handed": "دو دستی",
+  "Replica Ironforge Air Rifle": "تفنگ بادی بدلِ آهن‌فورج",
+  "dispel": "رفع جادو",
+  "curse": "نفرین",
+  "undead": "مرده‌متحرک",
+  "Accursed Skull": "جمجمهٔ نفرین‌شده",
+  "Raw Brilliant Smallfish": "ماهی کوچکِ درخشانِ خام",
+  "Curse": "نفرین",
+  "Bane": "بلا",
+  "Poison": "زهر",
+  "demon": "اهریمن",
+  "Moonkin form": "شکل مونکین",
+  "Uthek's Staff": "عصای اوثِک",
+  "Draenethyst Crystal": "بلور درائنیستیت",
+  "Balance": "تعادل",
+  "Burning Exile": "تبعیدی سوزان",
+  "Cresting Exile": "تبعیدی موج‌خیز",
+  "Thundering Exile": "تبعیدی رعدآسا",
+  "Dire Mottled Boar": "گراز خال‌دار هولناک",
+  "Gray Forest Wolf": "گرگ جنگل خاکستری",
+  "Large Crag Boar": "گراز بزرگ صخره",
+  "Nightsaber Stalker": "کمین‌گر شب‌دندان",
+  "Prairie Stalker": "کمین‌گر مرغزار",
+  "Rockhide Boar": "گراز سنگ‌پوست",
+  "Snow Leopard": "پلنگ برفی",
+  "Strigid Screecher": "جغددرندهٔ جیغ‌زن",
+  "Surf Crawler": "خزندهٔ موج",
+  "Swoop": "شیرجه‌زن",
+  "Webwood Lurker": "کمین‌گر تارچوب",
+  "Crawler": "خزنده",
+  "Young Forest Bear": "خرس جنگلی جوان",
+  "Adult Plainstrider": "دشت‌دونده بالغ",
+  "Armored Scorpid": "عقرب زره‌پوش",
+  "Ice Claw Bear": "خرس چنگال‌یخ",
+  "Blessing": "برکت",
+  "Stranglethorn Vale": "درهٔ استرنگل‌تورن",
+  "Echeyakee": "اچیاکی",
+  "Burns": "بورنس",
+  "Anathema": "آناتما",
+  "Benediction": "برکت",
+  "Timbermaw Ancestor": "نیاِ آرواره‌چوب",
+  "Stratholme": "استراتهولم"
+ },
+ "tokens": {
+  "1": "\t",
+  "2": "\t",
+  "3": "\t",
+  "4": "{{c:15}}",
+  "5": "{{c:25}}",
+  "6": "{{c:35}}",
+  "7": "{{c:3}}",
+  "8": "{{c:40}}",
+  "9": "{{c:62}}",
+  "10": "{{c:82}}",
+  "11": "{{c:87}}",
+  "12": "{{g:1}}",
+  "13": "{{s:18}}",
+  "14": "{{c:50}}",
+  "15": "{{g:1}}",
+  "16": "{{s:27}}",
+  "17": "{{c:6}}",
+  "18": "{{s:10}}",
+  "19": "{{s:12}}",
+  "20": "{{c:50}}",
+  "21": "{{s:17}}",
+  "22": "{{c:17}}",
+  "23": "{{s:17}}",
+  "24": "{{c:20}}",
+  "25": "{{s:17}}",
+  "26": "{{c:85}}",
+  "27": "{{s:1}}",
+  "28": "{{s:1}}",
+  "29": "{{c:62}}",
+  "30": "{{s:20}}",
+  "31": "{{s:23}}",
+  "32": "{{c:64}}",
+  "33": "{{s:2}}",
+  "34": "{{s:34}}",
+  "35": "{{s:3}}",
+  "36": "{{c:37}}",
+  "37": "{{s:46}}",
+  "38": "{{c:18}}",
+  "39": "{{s:56}}",
+  "40": "{{c:25}}",
+  "41": "{{s:5}}",
+  "42": "{{s:71}}",
+  "43": "{{c:37}}",
+  "44": "{{s:9}}",
+  "45": "\t",
+  "46": "\t"
+ },
+ "rows": {
+  "tip:249441:4": "⟦E1⟧: ⟦E2⟧ Wrath to have a 50% ⟦E3⟧ to restore 35 ⟦E4⟧.",
+  "tip:275630:3": "⟦E1⟧: ⟦E5⟧ on harmful ⟦E6⟧ cast to reduce ⟦E7⟧'s ⟦E8⟧ by 60 for 30 ⟦E9⟧.",
+  "tip:260205:4": "⟦E1⟧: ⟦E10⟧ to deal 75 ⟦E11⟧. Deals 2 times as much ⟦E12⟧ to Naga and Satyrs.",
+  "tip:12802:6": "⟦E1⟧: ⟦E10⟧ to grant ⟦E13⟧ ⟦E14⟧ members 4% increased ⟦E15⟧ ⟦E3⟧.",
+  "tip:19289:6": "⟦E1⟧: ⟦E5⟧ to ⟦E16⟧ your ⟦E17⟧ ⟦E7⟧ with lightning for 250 ⟦E18⟧.",
+  "tip:17182:11": "⟦E1⟧: Deals 7 ⟦E19⟧ to anyone who strikes you with a ⟦E17⟧ attack.",
+  "tip:13347:5": "⟦E1⟧: Deals ⟦E12⟧ and drains 300 mana every second if you are not worthy.",
+  "tip:19621:8": "⟦E1⟧: ⟦E20⟧ the ⟦E21⟧ of ⟦E22⟧ by $/1000;s1 ⟦E9⟧.",
+  "tip:19617:8": "⟦E1⟧: ⟦E20⟧ the ⟦E21⟧ of ⟦E23⟧ by $/1000;S1 ⟦E9⟧.",
+  "tip:19609:9": "⟦E1⟧: ⟦E20⟧ the mana cost of your ⟦E24⟧ Stream and ⟦E4⟧ Spring totems by 20.",
+  "tip:226546:4": "⟦E1⟧: Detect large objects beneath the sand.",
+  "tip:272429:3": "⟦E1⟧: Each of your ⟦E25⟧ over time effects on the ⟦E7⟧ ⟦E26⟧ the remaining ⟦E21⟧ on ⟦E27⟧ by 1 ⟦E9⟧ when you cast it.",
+  "tip:23004:4": "⟦E1⟧: Gain up to 25 mana each time you cast ⟦E28⟧.",
+  "tip:21190:4": "⟦E1⟧: Gives a ⟦E3⟧ when your harmful spells land to increase the ⟦E12⟧ of your spells and effects by 132 for 10 ⟦E9⟧.",
+  "tip:19290:6": "⟦E1⟧: Gives the wearer a 10% ⟦E3⟧ of being able to resurrect with 20% health and mana.",
+  "tip:12805:4": "⟦E1⟧: ⟦E29⟧ a ⟦E3⟧ on striking the ⟦E30⟧ for 60 ⟦E19⟧.",
+  "tip:269741:4": "⟦E1⟧: Harmful ⟦E6⟧ casts and attacks against ⟦E31⟧ have a ⟦E3⟧ to deal 105 ⟦E18⟧.",
+  "tip:12639:6": "⟦E1⟧: ⟦E32⟧ ⟦E33⟧.",
+  "tip:10036:4": "⟦E1⟧: Impress others with your fashion sense.",
+  "tip:6182:3": "⟦E1⟧: Increase the ⟦E34⟧ of ⟦E13⟧ ⟦E14⟧ members by 4.",
+  "tip:20005:6": "⟦E1⟧: Increased ⟦E35⟧ +4.",
+  "tip:249396:4": "⟦E1⟧: ⟦E36⟧ ⟦E34⟧ by 5%.",
+  "tip:21568:7": "⟦E1⟧: ⟦E36⟧ all Resistances by 2. Gain an additional 4 to all Resistances in Forest and Grassland areas.",
+  "tip:21567:7": "⟦E1⟧: ⟦E36⟧ all Resistances by 3. Gain an additional 7 to all Resistances in Forest and Grassland areas.",
+  "tip:22630:8": "⟦E1⟧: ⟦E36⟧ ⟦E12⟧ and ⟦E37⟧ done by magical spells and effects of all ⟦E14⟧ members within 30 ⟦E38⟧ by up to 33.",
+  "tip:22061:6": "⟦E1⟧: ⟦E36⟧ ⟦E12⟧ dealt by your ⟦E39⟧ by 3%.",
+  "tip:23199:4": "⟦E1⟧: ⟦E36⟧ ⟦E12⟧ done by ⟦E40⟧ and ⟦E41⟧ by up to 33.",
+  "tip:23006:4": "⟦E1⟧: ⟦E36⟧ ⟦E37⟧ done by ⟦E42⟧ by up to 83.",
+  "tip:22396:4": "⟦E1⟧: ⟦E36⟧ ⟦E37⟧ done by ⟦E43⟧ by up to 80.",
+  "tip:22631:9": "⟦E1⟧: ⟦E36⟧ ⟦E37⟧ done by magical spells and effects of all ⟦E14⟧ members within 30 ⟦E38⟧ by up to 62.",
+  "tip:7052:6": "⟦E1⟧: ⟦E36⟧ swim speed by 15%.",
+  "tip:279247:3": "⟦E1⟧: ⟦E36⟧ the ⟦E44⟧ of your shield by 30% while ⟦E45⟧ is active.",
+  "tip:19594:8": "⟦E1⟧: ⟦E36⟧ the amount of ⟦E12⟧ absorbed by ⟦E46⟧ by 35.",
+  "tip:18608:13": "⟦E1⟧: ⟦E36⟧ the critical ⟦E47⟧ ⟦E3⟧ of your Holy spells by 2%.",
+  "tip:19613:9": "⟦E1⟧: ⟦E36⟧ the critical ⟦E48⟧ ⟦E3⟧ of Wrath and ⟦E49⟧ by 2%.",
+  "tip:228176:3": "⟦E1⟧: ⟦E36⟧ the ⟦E15⟧ ⟦E3⟧ of ⟦E41⟧ by 1%.",
+  "tip:279249:3": "⟦E1⟧: ⟦E36⟧ the ⟦E15⟧ ⟦E3⟧ of your ⟦E43⟧ ⟦E6⟧ by 4%.",
+  "tip:280604:7": "⟦E1⟧: ⟦E36⟧ the ⟦E12⟧ dealt by your ⟦E50⟧ ⟦E51⟧ by 10%.",
+  "tip:18355:6": "⟦E1⟧: ⟦E36⟧ the ⟦E12⟧ done by your pets by 4%.",
+  "tip:272435:3": "⟦E1⟧: ⟦E36⟧ the ⟦E12⟧ of your ⟦E52⟧ ⟦E51⟧ by 4%.",
+  "tip:23197:4": "⟦E1⟧: ⟦E36⟧ the ⟦E12⟧ of your ⟦E53⟧ ⟦E6⟧ by up to 33.",
+  "tip:19588:9": "⟦E1⟧: ⟦E36⟧ the ⟦E54⟧ of ⟦E55⟧ by $/1000;S1 ⟦E9⟧.",
+  "tip:272433:3": "⟦E1⟧: ⟦E36⟧ the ⟦E54⟧ of your ⟦E56⟧ ⟦E51⟧ by 3 ⟦E9⟧.",
+  "tip:272430:3": "⟦E1⟧: ⟦E36⟧ the ⟦E54⟧ of your ⟦E57⟧ ⟦E51⟧ by 2 ⟦E9⟧.",
+  "tip:13503:7": "⟦E1⟧: ⟦E36⟧ the effects that ⟦E37⟧ and mana potions have on the wearer by 20%.",
+  "tip:23203:4": "⟦E1⟧: ⟦E36⟧ the ⟦E17⟧ ⟦E8⟧ bonus of your ⟦E58⟧ of the Crusader by 48 and the ⟦E59⟧ increase of your ⟦E52⟧ of the Crusader by 33.",
+  "tip:19605:7": "⟦E1⟧: ⟦E36⟧ the radius of ⟦E60⟧ and ⟦E61⟧ by 1 yard.",
+  "tip:22589:9": "⟦E1⟧: ⟦E36⟧ the ⟦E6⟧ critical ⟦E3⟧ of all ⟦E14⟧ members within 30 ⟦E38⟧ by 2%.",
+  "tip:263435:3": "⟦E1⟧: ⟦E36⟧ your ⟦E62⟧ contribution from items by 4%.",
+  "tip:249397:4": "⟦E1⟧: ⟦E36⟧ your ⟦E12⟧ against ⟦E63⟧ by 1%.",
+  "tip:10501:5": "⟦E1⟧: ⟦E36⟧ your effective ⟦E64⟧ detection ⟦E65⟧ by 3.",
+  "tip:22003:6": "⟦E1⟧: ⟦E36⟧ your effective ⟦E64⟧ ⟦E65⟧ by 1.6.",
+  "tip:4248:5": "⟦E1⟧: ⟦E36⟧ your lockpicking skill slightly.",
+  "tip:22060:7": "⟦E1⟧: ⟦E36⟧ your ⟦E39⟧'s ⟦E66⟧ by 10%.",
+  "tip:22013:7": "⟦E1⟧: ⟦E36⟧ your ⟦E39⟧'s maximum health by 3%.",
+  "tip:9978:4": "⟦E1⟧: ⟦E67⟧ ⟦E68⟧ appears on the minimap.",
+  "tip:4491:4": "⟦E1⟧: ⟦E67⟧ elven gems appear on the minimap.",
+  "tip:22194:5": "⟦E1⟧: On successful ⟦E17⟧ or ranged attack gain 8 mana and if possible drain 8 mana from the ⟦E7⟧.",
+  "tip:191312:6": "⟦E1⟧: Prevents an attack that would otherwise kill you. Triggering this ⟦E47⟧ also ⟦E69⟧ you 3 ⟦E9⟧ of ⟦E12⟧ immunity and shatters the phylactery.",
+  "tip:15138:7": "⟦E1⟧: Protects the wearer from being fully engulfed by Shadow Flame.",
+  "tip:272431:3": "⟦E1⟧: ⟦E70⟧ the ⟦E4⟧ cost of your ⟦E71⟧ ⟦E51⟧ by 5%.",
+  "tip:272436:3": "⟦E1⟧: ⟦E70⟧ the ⟦E4⟧ cost of your ⟦E72⟧ ⟦E51⟧ by 5%.",
+  "tip:19601:8": "⟦E1⟧: ⟦E70⟧ the ⟦E21⟧ of ⟦E73⟧ by $/1000;s1 ⟦E9⟧.",
+  "tip:249443:3": "⟦E1⟧: ⟦E70⟧ the ⟦E21⟧ of ⟦E74⟧ by 1 ⟦E9⟧.",
+  "tip:14154:8": "⟦E1⟧: ⟦E70⟧ the ⟦E21⟧ of your ⟦E75⟧ ⟦E51⟧ by $/1000;s1 ⟦E9⟧.",
+  "tip:272427:3": "⟦E1⟧: ⟦E70⟧ the ⟦E21⟧ of your ⟦E76⟧ ⟦E51⟧ by 0.5 ⟦E9⟧.",
+  "tip:272434:3": "⟦E1⟧: ⟦E70⟧ the ⟦E21⟧ of your ⟦E77⟧ ⟦E78⟧ by 10 ⟦E9⟧.",
+  "tip:279250:3": "⟦E1⟧: ⟦E70⟧ the ⟦E21⟧ of your ⟦E27⟧ ⟦E6⟧ by 3 ⟦E9⟧.",
+  "tip:19577:8": "⟦E1⟧: ⟦E70⟧ the cost of your ⟦E79⟧ ⟦E51⟧ by $/10;s1 rage ⟦E80⟧.",
+  "tip:275671:4": "⟦E1⟧: ⟦E70⟧ the ⟦E48⟧ ⟦E3⟧ of Charm effects against you by 6%.",
+  "tip:19986:6": "⟦E1⟧: ⟦E70⟧ the ⟦E48⟧ ⟦E3⟧ of ⟦E81⟧ effects against you by 4%.",
+  "tip:21517:7": "⟦E1⟧: ⟦E70⟧ the ⟦E48⟧ ⟦E3⟧ of ⟦E82⟧ effects against you by 10%.",
+  "tip:16009:3": "⟦E1⟧: ⟦E70⟧ the ⟦E48⟧ ⟦E3⟧ of ⟦E82⟧ effects against you by 7%.",
+  "tip:17759:4": "⟦E1⟧: ⟦E70⟧ the ⟦E48⟧ ⟦E3⟧ of ⟦E83⟧ and ⟦E81⟧ effects against you by 1%.",
+  "tip:263412:3": "⟦E1⟧: ⟦E70⟧ the mana cost of ⟦E56⟧ and ⟦E41⟧ by 5 ⟦E4⟧.",
+  "tip:22402:4": "⟦E1⟧: ⟦E70⟧ the mana cost of your ⟦E84⟧ ⟦E6⟧ by 25.",
+  "tip:263436:3": "⟦E1⟧: ⟦E70⟧ the mana cost of your totems by 5%.",
+  "tip:18706:8": "⟦E1⟧: ⟦E70⟧ your ⟦E12⟧ taken by 5% in the ⟦E85⟧ Ring and The ⟦E86⟧.",
+  "tip:19024:6": "⟦E1⟧: ⟦E70⟧ your ⟦E12⟧ taken by 6% in the ⟦E85⟧ Ring and The ⟦E86⟧.",
+  "tip:23005:4": "⟦E1⟧: Regain up to 10 mana each time you cast ⟦E43⟧.",
+  "tip:22632:9": "⟦E1⟧: Restores 11 mana per 5 seconds to all ⟦E14⟧ members within 30 ⟦E38⟧.",
+  "tip:19287:6": "⟦E1⟧: Sometimes heals bearer of 150 ⟦E12⟧ when damaging an ⟦E30⟧ in ⟦E17⟧.",
+  "tip:22191:5": "⟦E1⟧: ⟦E87⟧ ⟦E88⟧ received is reduced by 10.",
+  "tip:285276:9": "⟦E1⟧: ⟦E89⟧ attacks explode on impact, causing 10.8 ⟦E19⟧ to ⟦E13⟧ ⟦E90⟧.",
+  "tip:285277:9": "⟦E1⟧: ⟦E89⟧ attacks explode on impact, causing 16.6 ⟦E19⟧ to ⟦E13⟧ ⟦E90⟧.",
+  "tip:285278:8": "⟦E1⟧: ⟦E89⟧ attacks explode on impact, causing 20.6 ⟦E19⟧ to ⟦E13⟧ ⟦E90⟧.",
+  "tip:285275:9": "⟦E1⟧: ⟦E89⟧ attacks explode on impact, causing 6.2 ⟦E19⟧ to ⟦E13⟧ ⟦E90⟧.",
+  "tip:21526:7": "⟦E1⟧: Underwater Breath lasts 50% longer than normal.",
+  "tip:10506:6": "⟦E1⟧: Water breathing lasts 100% longer than normal.",
+  "tip:22198:12": "⟦E1⟧: When struck by a harmful ⟦E6⟧, the caster of that ⟦E6⟧ has a 5% ⟦E3⟧ to be silenced for 3 ⟦E9⟧.",
+  "tip:7375:6": "⟦E1⟧: When struck by a ⟦E17⟧ attacker, that attacker has a 5% ⟦E3⟧ of being put to sleep for 10 ⟦E9⟧. Only affects ⟦E90⟧ ⟦E65⟧ 50 and below.",
+  "tip:22196:7": "⟦E1⟧: When struck by a non-periodic ⟦E12⟧ ⟦E6⟧ you have a 30% ⟦E3⟧ of getting a 6 ⟦E9⟧ ⟦E6⟧ shield that absorbs 400 of that school of ⟦E12⟧.",
+  "tip:7939:6": "⟦E1⟧: When struck ⟦E91⟧ has a 3% ⟦E3⟧ to ⟦E25⟧ you for 80.",
+  "tip:18815:6": "⟦E1⟧: When struck ⟦E91⟧ inflicts 13 ⟦E19⟧ to the attacker.",
+  "tip:282080:5": "⟦E1⟧: When struck ⟦E91⟧, inflicts 2 ⟦E19⟧ to the attacker.",
+  "tip:18168:8": "⟦E1⟧: When the shield blocks, it releases an electrical charge that damages all ⟦E13⟧ ⟦E90⟧. This also has a ⟦E3⟧ of damaging the shield.",
+  "tip:20451:2": "⟦E1⟧: When worn with the Twilight Trappings ⟦E92⟧ and the ⟦E93⟧, allows access to a Greater Wind Stone.",
+  "tip:20422:1": "⟦E1⟧: When worn with the Twilight Trappings ⟦E92⟧, allows access to a Wind Stone in ⟦E94⟧.",
+  "tip:18951:5": "⟦E1⟧: While equipped, the wearer suffers less ⟦E12⟧ from falls.",
+  "tip:8345:7": "⟦E1⟧: You gain an additional 5 ⟦E95⟧ from activating ⟦E96⟧ and an additional 5 ⟦E97⟧ from activating ⟦E76⟧.",
+  "tip:272428:3": "⟦E1⟧: Your ⟦E96⟧ ⟦E51⟧ ⟦E98⟧ an additional 10 ⟦E95⟧ over its ⟦E54⟧.",
+  "tip:279251:3": "⟦E1⟧: Your ⟦E99⟧ hits have a 10% ⟦E3⟧ to reset the ⟦E21⟧ on ⟦E100⟧.",
+  "tip:272432:3": "⟦E1⟧: Your ⟦E41⟧ ⟦E51⟧ can now also trigger the Maelstrom ⟦E101⟧ ⟦E78⟧, but with a 50% reduced ⟦E3⟧.",
+  "tip:277950:5": "⟦E1⟧: Your Well Fed buffs metabolize 50% slower. This ⟦E47⟧ is increased by an additional 50% in ⟦E102⟧ areas.",
+  "tip:21566:7": "⟦E1⟧: Your spells pierce 2 Magical Resistances. Gain an additional 4 ⟦E87⟧ Piercing in Forest and Grassland areas.",
+  "tip:21565:7": "⟦E1⟧: Your spells pierce 3 Magical Resistances. Gain an additional 7 ⟦E87⟧ Piercing in Forest and Grassland areas.",
+  "tip:23082:5": "Garb of the ⟦E63⟧ Slayer (0/3)",
+  "tip:280317:2": "⟦E103⟧⟦1⟧⟦E104⟧",
+  "tip:16037:1": "⟦E105⟧",
+  "tip:2056:1": "⟦E106⟧⟦2⟧⟦E107⟧",
+  "tip:213105:2": "⟦E108⟧⟦3⟧⟦E107⟧",
+  "tip:23084:6": "Regalia of ⟦E63⟧ ⟦E109⟧ (0/3)",
+  "tip:285289:3": "⟦E110⟧ Blacksmithing (110)",
+  "tip:285290:3": "⟦E110⟧ Blacksmithing (195)",
+  "tip:285291:3": "⟦E110⟧ Blacksmithing (270)",
+  "tip:277154:5": "⟦E111⟧ 60",
+  "tip:5654:4": "⟦E110⟧ ⟦E112⟧",
+  "tip:2895:3": "⟦E110⟧ ⟦E112⟧ (100)",
+  "tip:5657:2": "⟦E110⟧ ⟦E112⟧ (120)",
+  "tip:2896:3": "⟦E110⟧ ⟦E112⟧ (150)",
+  "tip:2927:3": "⟦E110⟧ ⟦E112⟧ (190)",
+  "tip:216879:4": "⟦E113⟧: ⟦4⟧",
+  "tip:241650:3": "⟦E113⟧: ⟦5⟧",
+  "tip:226856:6": "⟦E113⟧: ⟦6⟧",
+  "tip:997:4": "⟦E113⟧: ⟦7⟧",
+  "tip:210708:3": "⟦E113⟧: ⟦8⟧",
+  "tip:1072:2": "⟦E113⟧: ⟦9⟧",
+  "tip:202251:3": "⟦E113⟧: ⟦10⟧",
+  "tip:966:4": "⟦E113⟧: ⟦11⟧",
+  "tip:220606:4": "⟦E113⟧: ⟦12⟧ ⟦13⟧ ⟦14⟧",
+  "tip:213105:5": "⟦E113⟧: ⟦15⟧ ⟦16⟧ ⟦17⟧",
+  "tip:232611:3": "⟦E113⟧: ⟦18⟧",
+  "tip:232324:3": "⟦E113⟧: ⟦19⟧ ⟦20⟧",
+  "tip:211527:5": "⟦E113⟧: ⟦21⟧ ⟦22⟧",
+  "tip:3278:6": "⟦E113⟧: ⟦23⟧ ⟦24⟧",
+  "tip:1851:2": "⟦E113⟧: ⟦25⟧ ⟦26⟧",
+  "tip:250976:4": "⟦E113⟧: ⟦27⟧",
+  "tip:1402:3": "⟦E113⟧: ⟦28⟧ ⟦29⟧",
+  "tip:232433:4": "⟦E113⟧: ⟦30⟧",
+  "tip:2808:5": "⟦E113⟧: ⟦31⟧ ⟦32⟧",
+  "tip:1352:4": "⟦E113⟧: ⟦33⟧",
+  "tip:223168:2": "⟦E113⟧: ⟦34⟧",
+  "tip:1400:3": "⟦E113⟧: ⟦35⟧ ⟦36⟧",
+  "tip:221315:4": "⟦E113⟧: ⟦37⟧ ⟦38⟧",
+  "tip:239021:4": "⟦E113⟧: ⟦39⟧ ⟦40⟧",
+  "tip:223912:4": "⟦E113⟧: ⟦41⟧",
+  "tip:221316:5": "⟦E113⟧: ⟦42⟧ ⟦43⟧",
+  "tip:221325:4": "⟦E113⟧: ⟦44⟧",
+  "tip:12468:2": "Speed 0.50",
+  "tip:280317:3": "Speed 2.00",
+  "tip:14392:2": "Speed 2.80",
+  "tip:221518:3": "Speed 3.40",
+  "tip:211941:3": "Speed 3.60",
+  "tip:211940:3": "Speed 3.70",
+  "tip:10418:3": "⟦E114⟧⟦45⟧⟦E115⟧",
+  "tip:221518:2": "⟦E116⟧⟦46⟧⟦E107⟧",
+  "tip:23081:5": "⟦E63⟧ Slayer's ⟦E62⟧ (0/3)",
+  "tip:225943:3": "⟦E117⟧: ???",
+  "tip:4952:3": "⟦E117⟧: A powerful brew that ⟦E118⟧ your strength by 4 and ⟦E119⟧ your intellect by 5 for 5 ⟦E120⟧.",
+  "tip:10721:6": "⟦E117⟧: A shield of force protects you from the next 500 ⟦E12⟧ done over the next 10 ⟦E120⟧. WARNING: Force Field may overload when struck temporarily removing the wearer from this dimension.",
+  "tip:21721:2": "⟦E117⟧: A strangely glowing alcoholic beverage.",
+  "tip:269990:5": "⟦E117⟧: Absorb Twilight magic from Empowered Brutes, Twilight Ritualists, or Twilight Ritual Circles.",
+  "tip:191292:3": "⟦E117⟧: Absorb the life force of those around you, increasing stamina by 3 for each ⟦E7⟧ ⟦E48⟧. This ⟦E47⟧ stacks up to 40 and lasts for 1 hr.",
+  "tip:276895:4": "⟦E117⟧: Absorb up to 280 ⟦E12⟧ and ⟦E83⟧ yourself for 5 ⟦E9⟧. When the ⟦E83⟧ expires, gain 60% increased ⟦E121⟧ for 8 ⟦E9⟧.",
+  "tip:19024:7": "⟦E117⟧: Absorbs 1080 ⟦E12⟧. Lasts 20 ⟦E9⟧.",
+  "tip:6049:3": "⟦E117⟧: Absorbs 1300 fire ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:6050:3": "⟦E117⟧: Absorbs 1800 frost ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:6052:3": "⟦E117⟧: Absorbs 1800 nature ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:22682:3": "⟦E117⟧: Absorbs 2000 fire ⟦E12⟧. Lasts 1 hr.",
+  "tip:13461:3": "⟦E117⟧: Absorbs 2600 arcane ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:13457:3": "⟦E117⟧: Absorbs 2600 fire ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:13456:3": "⟦E117⟧: Absorbs 2600 frost ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:13460:3": "⟦E117⟧: Absorbs 2600 holy ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:13458:3": "⟦E117⟧: Absorbs 2600 nature ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:13459:3": "⟦E117⟧: Absorbs 2600 shadow ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:10543:6": "⟦E117⟧: Absorbs 400 ⟦E19⟧. Lasts 1 ⟦E120⟧.",
+  "tip:6051:3": "⟦E117⟧: Absorbs 400 holy ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:272437:6": "⟦E117⟧: Absorbs 450 ⟦E12⟧ for 15 ⟦E9⟧. If this shield expires before 15 ⟦E9⟧, 100 ⟦E18⟧ will be dealt to all ⟦E90⟧ in ⟦E17⟧ range.",
+  "tip:4376:3": "⟦E117⟧: Absorbs 500 ⟦E19⟧. Lasts 1 ⟦E120⟧.",
+  "tip:4386:3": "⟦E117⟧: Absorbs 600 frost ⟦E12⟧. Lasts 1 ⟦E120⟧.",
+  "tip:8367:11": "⟦E117⟧: Absorbs 600 magical ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:17759:5": "⟦E117⟧: Absorbs 780 ⟦E122⟧. Lasts 10 ⟦E9⟧.",
+  "tip:23558:6": "⟦E117⟧: Absorbs 900 ⟦E12⟧. Lasts 20 ⟦E9⟧.",
+  "tip:6048:3": "⟦E117⟧: Absorbs 900 shadow ⟦E12⟧. Lasts 2 ⟦E120⟧.",
+  "tip:260828:5": "⟦E117⟧: Activate a set of jets to increase your ⟦E121⟧ by up to 140%, for up to 8 ⟦E9⟧.",
+  "tip:4529:5": "⟦E117⟧: Activates Trelane's tower defenses.",
+  "tip:16022:6": "⟦E117⟧: Activates your ⟦E123⟧ to fight for you for 1 ⟦E120⟧.",
+  "tip:4396:6": "⟦E117⟧: Activates your ⟦E124⟧ to fight for you for 1 ⟦E120⟧.",
+  "tip:10576:6": "⟦E117⟧: Activates your ⟦E125⟧ to fight for you for 1 ⟦E120⟧.",
+  "tip:191313:2": "⟦E117⟧: Adopt the visage of a denizen of ⟦E126⟧.",
+  "tip:191660:3": "⟦E117⟧: Affix the bolts to your neck, applying a positive or negative charge at random that ⟦E69⟧ 1% increased ⟦E12⟧ and ⟦E37⟧. This ⟦E47⟧ stacks while near ⟦E127⟧ who have a similar charge, and deals ⟦E18⟧ to ⟦E127⟧ who have an opposite charge.",
+  "tip:247963:4": "⟦E117⟧: Aids in ⟦E37⟧ and growth of verdant vegetation.",
+  "tip:19344:7": "⟦E117⟧: Aligns the ⟦E128⟧ with nature, increasing ⟦E129⟧ by 20%, improving ⟦E25⟧ effects by 20%, and increasing mana cost of spells by 20% for 20 ⟦E9⟧.",
+  "tip:273857:4": "⟦E117⟧: Allow a wisp to rejoin its ancestral roots.",
+  "tip:17716:3": "⟦E117⟧: Allows an experienced engineer to turn water into a snowball. The Snowmaster ⟦E130⟧ a day to build up enough chill to freeze another snowball.",
+  "tip:15846:3": "⟦E117⟧: Allows an experienced leatherworker to turn ⟦E131⟧ into ⟦E132⟧. ⟦E117⟧ of the device exposes the user to sub-core micro radiation and should not be used more than once every few days.",
+  "tip:7506:5": "⟦E117⟧: Allows control of a mechanical ⟦E7⟧ for a short time. It may not always work and may just ⟦E133⟧ the machine or make it very very angry. Gnomish engineering at its finest.",
+  "tip:15871:3": "⟦E117⟧: Allows opening of difficult locks. The skeleton key is consumed in the process.",
+  "tip:15872:3": "⟦E117⟧: Allows opening of hard locks. The skeleton key is consumed in the process.",
+  "tip:15869:3": "⟦E117⟧: Allows opening of simple locks. The skeleton key is consumed in the process.",
+  "tip:15870:3": "⟦E117⟧: Allows opening of standard locks. The skeleton key is consumed in the process.",
+  "tip:18294:3": "⟦E117⟧: Allows the Imbiber to breathe water for 1 hr.",
+  "tip:5996:3": "⟦E117⟧: Allows the Imbiber to breathe water for 30 ⟦E120⟧.",
+  "tip:239005:5": "⟦E117⟧: Allows the user to temporarily see demonic shades within ⟦E134⟧.",
+  "tip:17224:4": "⟦E117⟧: Allows user to view the Alliance stronghold through ⟦E135⟧ when used in conjunction with a Globe of Scrying.",
+  "tip:17364:4": "⟦E117⟧: Allows user to view the Horde stronghold through ⟦E135⟧ when used in conjunction with a Globe of Scrying.",
+  "tip:22115:4": "⟦E117⟧: Allows wielder to see ghosts of the recently deceased.",
+  "tip:238830:2": "⟦E117⟧: Allows you to look far into the distance in the pursuit of apples.",
+  "tip:184937:2": "⟦E117⟧: Alters the fabric of time, suspending beneficial world effects from dragonslaying, ⟦E136⟧, ⟦E137⟧, and ⟦E134⟧.",
+  "tip:232312:5": "⟦E117⟧: Apply the ⟦E138⟧ to consecrate your weapon.",
+  "tip:11570:4": "⟦E117⟧: Apply to the Preserved Threshadon Carcass.",
+  "tip:260245:4": "⟦E117⟧: Assemble 5 Vibrant Flowers to create a ⟦E139⟧.",
+  "tip:279979:3": "⟦E117⟧: Assembles a camp chair that allows you and others sitting ⟦E13⟧ to gain 2% increased ⟦E15⟧ ⟦E3⟧ with all spells and attacks, mutually exclusive with ⟦E140⟧ ⟦E141⟧. ⟦E110⟧ a Campfire ⟦E13⟧. All camping features share a ⟦E21⟧ of 1 hr.",
+  "tip:12534:4": "⟦E117⟧: At Urok's Tribute Pile, combine ⟦E142⟧ with the ⟦E143⟧.",
+  "tip:15002:5": "⟦E117⟧: Attach 20 Witherbark Skulls to create ⟦E144⟧.",
+  "tip:259846:7": "⟦E117⟧: Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 ⟦E120⟧.",
+  "tip:7741:2": "⟦E117⟧: Attach to the ⟦E145⟧.",
+  "tip:7740:3": "⟦E117⟧: Attach to the Shaft of Tsol.",
+  "tip:7967:3": "⟦E117⟧: Attaches a Mithril ⟦E146⟧ to your shield that deals ⟦E12⟧ every time you ⟦E147⟧ with it.",
+  "tip:12645:3": "⟦E117⟧: Attaches a Thorium ⟦E146⟧ to your shield that deals ⟦E12⟧ every time you ⟦E147⟧ with it.",
+  "tip:6041:3": "⟦E117⟧: Attaches a chain to your weapon, making it impossible to ⟦E148⟧.",
+  "tip:6043:3": "⟦E117⟧: Attaches a counterweight to a ⟦E149⟧ sword, mace, axe or polearm making it 3% faster.",
+  "tip:18283:3": "⟦E117⟧: Attaches a permanent scope to a bow or gun that ⟦E118⟧ its ⟦E3⟧ to ⟦E48⟧ by 3%.",
+  "tip:4405:3": "⟦E117⟧: Attaches a permanent scope to a bow or gun that ⟦E118⟧ its ⟦E12⟧ by 1.",
+  "tip:4406:3": "⟦E117⟧: Attaches a permanent scope to a bow or gun that ⟦E118⟧ its ⟦E12⟧ by 2.",
+  "tip:4407:3": "⟦E117⟧: Attaches a permanent scope to a bow or gun that ⟦E118⟧ its ⟦E12⟧ by 3.",
+  "tip:10546:3": "⟦E117⟧: Attaches a permanent scope to a bow or gun that ⟦E118⟧ its ⟦E12⟧ by 5.",
+  "tip:10548:3": "⟦E117⟧: Attaches a permanent scope to a bow or gun that ⟦E118⟧ its ⟦E12⟧ by 7.",
+  "tip:279272:3": "⟦E117⟧: Attaches a permanent scope to a bow, gun, or crossbow that ⟦E118⟧ its ⟦E15⟧ ⟦E3⟧ by 2%.",
+  "tip:6042:3": "⟦E117⟧: Attaches an Iron ⟦E146⟧ to your shield that deals ⟦E12⟧ every time you ⟦E147⟧ with it.",
+  "tip:7969:3": "⟦E117⟧: Attaches spurs to your boots that increase your mounted ⟦E121⟧ slightly.",
+  "tip:281060:3": "⟦E117⟧: Attempt to ⟦E83⟧ other players who also have a ⟦E150⟧ equipped.",
+  "tip:258661:5": "⟦E117⟧: Attempt to ⟦E151⟧ the necromantic ⟦E152⟧ on buried ⟦E153⟧.",
+  "tip:256061:5": "⟦E117⟧: Attempt to ⟦E151⟧ the necromantic ⟦E152⟧ on the ⟦E154⟧.",
+  "tip:206344:3": "⟦E117⟧: Attempt to fillet a ⟦E155⟧.",
+  "tip:254870:4": "⟦E117⟧: Attempt to infuse necromantic energy into Orgrul's Skeletons.",
+  "tip:255403:4": "⟦E117⟧: Attempt to raise ⟦E153⟧ by hurling shadowy magic toward suspicious bones.",
+  "tip:241128:2": "⟦E117⟧: Attempt to use a Portiporter yourself to see what the fuss is about. Can only be used in New Avalon and after ensuring relative safety with other test subjects.",
+  "tip:274918:3": "⟦E117⟧: Attempts to remove 1 ⟦E156⟧ or ⟦E157⟧, and 1 Disease from the igniter.",
+  "tip:13462:3": "⟦E117⟧: Attempts to remove one ⟦E156⟧ or ⟦E157⟧, one Disease and one ⟦E158⟧ from the Imbiber.",
+  "tip:232652:4": "⟦E117⟧: Attune with the darkness within, allowing you better control over your inner ⟦E159⟧.",
+  "tip:231909:4": "⟦E117⟧: Attune with the heavens, allowing you to replace your ⟦E160⟧ with a more celestial visage.",
+  "tip:256058:5": "⟦E117⟧: Augment ⟦E161⟧ with a ⟦E162⟧.",
+  "tip:13536:5": "⟦E117⟧: Awaken the sleeping druid.",
+  "tip:210195:5": "⟦E117⟧: ⟦E163⟧ the Powers of the Moon, Emerald Dream, and Wild to learn a new ⟦E51⟧.",
+  "tip:4481:3": "⟦E117⟧: Banishes a ⟦E164⟧",
+  "tip:4480:3": "⟦E117⟧: Banishes a ⟦E165⟧",
+  "tip:4479:3": "⟦E117⟧: Banishes a ⟦E166⟧",
+  "tip:279277:3": "⟦E117⟧: Beckon forth the being guarding the Mathystral Ruins at a Fathom Stone.",
+  "tip:23716:5": "⟦E117⟧: Become a hulking purple ogre for 10 ⟦E120⟧!",
+  "tip:15917:5": "⟦E117⟧: Begins taming a ⟦E167⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:266253:5": "⟦E117⟧: Begins taming a ⟦E168⟧ to be your companion for 10 ⟦E120⟧. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15911:5": "⟦E117⟧: Begins taming a ⟦E169⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15922:5": "⟦E117⟧: Begins taming a ⟦E170⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15915:5": "⟦E117⟧: Begins taming a ⟦E171⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:266158:5": "⟦E117⟧: Begins taming a ⟦E172⟧ to be your companion for 10 ⟦E120⟧. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15913:5": "⟦E117⟧: Begins taming a ⟦E173⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15923:5": "⟦E117⟧: Begins taming a ⟦E174⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15919:5": "⟦E117⟧: Begins taming a ⟦E175⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15916:5": "⟦E117⟧: Begins taming a ⟦E176⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:264163:5": "⟦E117⟧: Begins taming a Vuldren Alpha to be your companion for 10 ⟦E120⟧. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15921:5": "⟦E117⟧: Begins taming a ⟦E177⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:267272:5": "⟦E117⟧: Begins taming a Windsong ⟦E178⟧ to be your companion for 10 ⟦E120⟧. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:266254:5": "⟦E117⟧: Begins taming a ⟦E179⟧ to be your companion for 10 ⟦E120⟧. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15914:5": "⟦E117⟧: Begins taming an ⟦E180⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15920:5": "⟦E117⟧: Begins taming an ⟦E181⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:15908:5": "⟦E117⟧: Begins taming an ⟦E182⟧ to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:267298:5": "⟦E117⟧: Begins taming an Ornery Galestrider to be your companion for 10 ⟦E120⟧. If you lose the beast's attention for any reason, the taming process will fail.",
+  "tip:268582:4": "⟦E117⟧: Begins the final ritual summoning.",
+  "tip:210712:2": "⟦E117⟧: Behold a vision at Je'neu's bonfire.",
+  "tip:277484:5": "⟦E117⟧: Bewitch the ⟦E7⟧ Beast, reducing the ⟦E122⟧ it does to you by 15%.",
+  "tip:18594:3": "⟦E117⟧: Blasts open nearly any locked door.",
+  "tip:4367:3": "⟦E117⟧: Blasts open simple locked doors.",
+  "tip:284869:3": "⟦E117⟧: Bless the grenade with the Light.",
+  "tip:737:4": "⟦E117⟧: ⟦E183⟧ from the Holy Spring of ⟦E184⟧.",
+  "tip:10327:5": "⟦E117⟧: Blow near ⟦E185⟧'s Lair.",
+  "tip:8066:4": "⟦E117⟧: Blow on the whistle to let Fizzule know you're an ally.",
+  "tip:249390:5": "⟦E117⟧: Break the seals, releasing their energy.",
+  "tip:240845:2": "⟦E117⟧: Briefly reveal and supercharge your prototype magnet in attempt to catch stray metallic objects.",
+  "tip:279386:5": "⟦E117⟧: Bring to the Hillsbrad Town Hall's bookkeeping table.",
+  "tip:8546:4": "⟦E117⟧: Brings a dead player back to life with 15% of their health and mana. Cannot be used when ⟦E91⟧.",
+  "tip:279981:3": "⟦E117⟧: Builds a basic campfire that allows cooking and the placement of up to 3 additional camp features. Players sitting or crafting ⟦E13⟧ for 1 ⟦E120⟧ will gain benefits from other camp features.",
+  "tip:229415:2": "⟦E117⟧: Builds a foundation for a survival campsite. Bring additional supplies to this campsite to construct a shelter.",
+  "tip:279961:3": "⟦E117⟧: Builds a journeyman campfire that allows cooking and the placement of up to 5 additional camp features. Players sitting or crafting ⟦E13⟧ for 1 ⟦E120⟧ will gain benefits from other camp features.",
+  "tip:279978:3": "⟦E117⟧: Builds a tent that allows you and others sitting ⟦E13⟧ to increase Rested experience to 5% of a ⟦E65⟧. No ⟦E47⟧ if Rested experience already exceeds that value. ⟦E110⟧ a Campfire ⟦E13⟧. All camping features share a ⟦E21⟧ of 1 hr.",
+  "tip:279974:3": "⟦E117⟧: Builds an expert campfire that allows cooking and the placement of up to 10 additional camp features. Players sitting or crafting ⟦E13⟧ for 1 ⟦E120⟧ will gain benefits from other camp features.",
+  "tip:273801:5": "⟦E117⟧: Burn the crushed herbs, creating a cleansing smoke to ward against terror and haunting memories.",
+  "tip:260818:2": "⟦E117⟧: ⟦E186⟧ 900 mana from those in the blast radius and deals 50% of the mana drained in ⟦E12⟧ to the ⟦E7⟧. Also Silences targets in the blast for 5 ⟦E9⟧.",
+  "tip:16040:3": "⟦E117⟧: ⟦E186⟧ 900 mana from those in the blast radius and does 50% of the mana drained in ⟦E12⟧ to the ⟦E7⟧. Also Silences targets in the blast for 5 ⟦E9⟧.",
+  "tip:16333:4": "⟦E117⟧: Bury at Marla's Grave.",
+  "tip:279378:4": "⟦E117⟧: Call a Sentinel to monitor an area.",
+  "tip:1127:3": "⟦E117⟧: Call down a pillar of fire, burning all ⟦E90⟧ within the area for 63 ⟦E19⟧ and an additional 12 ⟦E19⟧ every 2 for 8 ⟦E9⟧.",
+  "tip:235518:5": "⟦E117⟧: Call forth Timbermaw reinforcements to face Prince Halanox.",
+  "tip:274379:6": "⟦E117⟧: Call upon newly awakened power to increase the limit of Artisan's Tier items you can equip to 2.",
+  "tip:21891:5": "⟦E117⟧: Calls down a meteor, burning all ⟦E90⟧ within the area for 421 total ⟦E19⟧.",
+  "tip:18608:12": "⟦E117⟧: Calls forth ⟦E187⟧.",
+  "tip:18609:11": "⟦E117⟧: Calls forth ⟦E188⟧.",
+  "tip:268873:5": "⟦E117⟧: Calls forth a Barkskin Ancestor to fight at your side and ⟦E25⟧ you for 20 ⟦E9⟧.",
+  "tip:21326:5": "⟦E117⟧: Calls forth a ⟦E189⟧ to fight at your side and ⟦E25⟧ you for 20 ⟦E9⟧.",
+  "tip:226472:3": "⟦E117⟧: Capture the echo of a powerful denizen of ⟦E190⟧. Only usable on corpses."
+ },
+ "context": {
+  "tip:249441:4": "Talons of Wrath (item 249441, q2)",
+  "tip:275630:3": "Depleted Eye of Influence (item 275630, q2)",
+  "tip:260205:4": "Highborne Research Tablet (item 260205, q2)",
+  "tip:12802:6": "Darkspear (item 12802, q2)",
+  "tip:19289:6": "Darkmoon Card: Maelstrom (item 19289, q2)",
+  "tip:17182:11": "Sulfuras, Hand of Ragnaros (item 17182, q2)",
+  "tip:13347:5": "Crystal of Zin-Malor (item 13347, q2)",
+  "tip:19621:8": "Maelstrom's Wrath (item 19621, q2)",
+  "tip:19617:8": "Zandalarian Shadow Mastery Talisman (item 19617, q2)",
+  "tip:19609:9": "Unmarred Vision of Voodress (item 19609, q2)",
+  "tip:226546:4": "Desert Sonar (item 226546, q2)",
+  "tip:272429:3": "Idol of Synthesis (item 272429, q2)",
+  "tip:23004:4": "Idol of Longevity (item 23004, q2)",
+  "tip:21190:4": "Wrath of Cenarius (item 21190, q2)",
+  "tip:19290:6": "Darkmoon Card: Twisting Nether (item 19290, q2)",
+  "tip:12805:4": "Orb of Fire (item 12805, q2)",
+  "tip:269741:4": "Scented Runewood Brooch (item 269741, q2)",
+  "tip:12639:6": "Stronghold Gauntlets (item 12639, q2)",
+  "tip:10036:4": "Tuxedo Jacket (item 10036, q2)",
+  "tip:6182:3": "Dim Torch (item 6182, q2)",
+  "tip:20005:6": "Devilsaur Claws (item 20005, q2)",
+  "tip:249396:4": "Mystic Mushroom (item 249396, q2)",
+  "tip:21568:7": "Rune of Duty (item 21568, q2)",
+  "tip:21567:7": "Rune of Duty (item 21567, q2)",
+  "tip:22630:8": "Atiesh, Greatstaff of the Guardian (item 22630, q2)",
+  "tip:22061:6": "Beastmaster's Boots (item 22061, q2)",
+  "tip:23199:4": "Totem of the Storm (item 23199, q2)",
+  "tip:23006:4": "Libram of Light (item 23006, q2)",
+  "tip:22396:4": "Totem of Life (item 22396, q2)",
+  "tip:22631:9": "Atiesh, Greatstaff of the Guardian (item 22631, q2)",
+  "tip:7052:6": "Azure Silk Belt (item 7052, q2)",
+  "tip:279247:3": "Steadfast Libram (item 279247, q2)",
+  "tip:19594:8": "The All-Seeing Eye of Zuldazar (item 19594, q2)",
+  "tip:18608:13": "Benediction (item 18608, q2)",
+  "tip:19613:9": "Pristine Enchanted South Seas Kelp (item 19613, q2)",
+  "tip:228176:3": "Totem of Thunder (item 228176, q2)",
+  "tip:279249:3": "Totem of Urgency (item 279249, q2)",
+  "tip:280604:7": "Rage of the Storm (item 280604, q2)",
+  "tip:18355:6": "Ferra's Collar (item 18355, q2)",
+  "tip:272435:3": "Libram of Law (item 272435, q2)",
+  "tip:23197:4": "Idol of the Moon (item 23197, q2)",
+  "tip:19588:9": "Hero's Brand (item 19588, q2)",
+  "tip:272433:3": "Burning Totem (item 272433, q2)",
+  "tip:272430:3": "Swarming Idol (item 272430, q2)",
+  "tip:13503:7": "Alchemist's Stone (item 13503, q2)",
+  "tip:23203:4": "Libram of Fervor (item 23203, q2)",
+  "tip:19605:7": "Kezan's Unstoppable Taint (item 19605, q2)",
+  "tip:22589:9": "Atiesh, Greatstaff of the Guardian (item 22589, q2)",
+  "tip:263435:3": "Mark of Urs'endris (item 263435, q2)",
+  "tip:249397:4": "Tenets of the Silver Hand (item 249397, q2)",
+  "tip:10501:5": "Catseye Ultra Goggles (item 10501, q2)",
+  "tip:22003:6": "Darkmantle Boots (item 22003, q2)",
+  "tip:4248:5": "Dark Leather Gloves (item 4248, q2)",
+  "tip:22060:7": "Beastmaster's Tunic (item 22060, q2)",
+  "tip:22013:7": "Beastmaster's Cap (item 22013, q2)",
+  "tip:9978:4": "Gahz'ridian Detector (item 9978, q2)",
+  "tip:4491:4": "Goggles of Gem Hunting (item 4491, q2)",
+  "tip:22194:5": "Black Grasp of the Destroyer (item 22194, q2)",
+  "tip:191312:6": "Failsafe Phylactery (item 191312, q2)",
+  "tip:15138:7": "Onyxia Scale Cloak (item 15138, q2)",
+  "tip:272431:3": "Tidal Totem (item 272431, q2)",
+  "tip:272436:3": "Libram of Economy (item 272436, q2)",
+  "tip:19601:8": "Jewel of Kajaro (item 19601, q2)",
+  "tip:249443:3": "Totem of Ancestral Protection (item 249443, q2)",
+  "tip:14154:8": "Truefaith Vestments (item 14154, q2)",
+  "tip:272427:3": "Howling Idol (item 272427, q2)",
+  "tip:272434:3": "Sentinel's Libram (item 272434, q2)",
+  "tip:279250:3": "Idol of Swiftness (item 279250, q2)",
+  "tip:19577:8": "Rage of Mugamba (item 19577, q2)",
+  "tip:275671:4": "Field Agent Beverage (item 275671, q2)",
+  "tip:19986:6": "Pirate's Eye Patch (item 19986, q2)",
+  "tip:21517:7": "Gnomish Turban of Psychic Might (item 21517, q2)",
+  "tip:16009:3": "Voice Amplification Modulator (item 16009, q2)",
+  "tip:17759:4": "Mark of Resolution (item 17759, q2)",
+  "tip:263412:3": "Totem of Charged Flames (item 263412, q2)",
+  "tip:22402:4": "Libram of Grace (item 22402, q2)",
+  "tip:263436:3": "Firestorm Totem (item 263436, q2)",
+  "tip:18706:8": "Arena Master (item 18706, q2)",
+  "tip:19024:6": "Arena Grand Master (item 19024, q2)",
+  "tip:23005:4": "Totem of Flowing Water (item 23005, q2)",
+  "tip:22632:9": "Atiesh, Greatstaff of the Guardian (item 22632, q2)",
+  "tip:19287:6": "Darkmoon Card: Heroism (item 19287, q2)",
+  "tip:22191:5": "Obsidian Mail Tunic (item 22191, q2)",
+  "tip:285276:9": "Satchel of Bronze Bombs (item 285276, q2)",
+  "tip:285277:9": "Satchel of Iron Bombs (item 285277, q2)",
+  "tip:285278:8": "Satchel of Dark Iron Bombs (item 285278, q2)",
+  "tip:285275:9": "Satchel of Copper Bombs (item 285275, q2)",
+  "tip:21526:7": "Band of Icy Depths (item 21526, q2)",
+  "tip:10506:6": "Deepdive Helmet (item 10506, q2)",
+  "tip:22198:12": "Jagged Obsidian Shield (item 22198, q2)",
+  "tip:7375:6": "Green Whelp Armor (item 7375, q2)",
+  "tip:22196:7": "Thick Obsidian Breastplate (item 22196, q2)",
+  "tip:7939:6": "Truesilver Breastplate (item 7939, q2)",
+  "tip:18815:6": "Essence of the Pure Flame (item 18815, q2)",
+  "tip:282080:5": "Flame Seared Signet (item 282080, q2)",
+  "tip:18168:8": "Force Reactive Disk (item 18168, q2)",
+  "tip:20451:2": "Twilight Cultist Ring of Lordship (item 20451, q2)",
+  "tip:20422:1": "Twilight Cultist Medallion of Station (item 20422, q2)",
+  "tip:18951:5": "Evonice's Landin' Pilla (item 18951, q2)",
+  "tip:8345:7": "Wolfshead Helm (item 8345, q2)",
+  "tip:272428:3": "Enraged Idol (item 272428, q2)",
+  "tip:279251:3": "Idol of the Ursine Twins (item 279251, q2)",
+  "tip:272432:3": "Totem of the Storm (item 272432, q2)",
+  "tip:277950:5": "Wastewanderer Rations (item 277950, q2)",
+  "tip:21566:7": "Rune of Perfection (item 21566, q2)",
+  "tip:21565:7": "Rune of Perfection (item 21565, q2)",
+  "tip:23082:5": "Handguards of Undead Slaying (item 23082)",
+  "tip:280317:2": "Frying Pan (item 280317, q1)",
+  "tip:16037:1": "PVP Cloth Legs Horde (item 16037)",
+  "tip:2056:1": "The Velvet Hammer (item 2056, q1)",
+  "tip:213105:2": "Shawarmageddon (item 213105, q1)",
+  "tip:23084:6": "Gloves of Undead Cleansing (item 23084)",
+  "tip:285289:3": "Plans: Cracked Blacksmith Hammer (item 285289)",
+  "tip:285290:3": "Plans: Mithril Blacksmith Hammer (item 285290)",
+  "tip:285291:3": "Plans: Arcanite Blacksmith Hammer (item 285291)",
+  "tip:277154:5": "Corrupted Gemstone (item 277154)",
+  "tip:5654:4": "Instant Toxin (item 5654)",
+  "tip:2895:3": "Creeping Pain (item 2895)",
+  "tip:5657:2": "Recipe: Instant Toxin (item 5657)",
+  "tip:2896:3": "Creeping Anguish (item 2896)",
+  "tip:2927:3": "Creeping Torment (item 2927)",
+  "tip:216879:4": "Mysterious Troll Scroll (item 216879, sell)",
+  "tip:241650:3": "Major Discolored Healing Potion (item 241650, sell)",
+  "tip:226856:6": "Guided Buoyancy Accelerant (item 226856, sell)",
+  "tip:997:4": "Fire Sword of Crippling (item 997, sell)",
+  "tip:210708:3": "Elixir of Coalesced Regret (item 210708, sell)",
+  "tip:1072:2": "Full Moonshine (item 1072, sell)",
+  "tip:202251:3": "Bag of Pet Treats (item 202251, sell)",
+  "tip:966:4": "Tome of Frost Shield (item 966, sell)",
+  "tip:220606:4": "Idol of the Dream (item 220606, sell)",
+  "tip:213105:5": "Shawarmageddon (item 213105, sell)",
+  "tip:232611:3": "Magnificent Trollshine (item 232611, sell)",
+  "tip:232324:3": "Bird Whistle (item 232324, sell)",
+  "tip:211527:5": "Cozy Sleeping Bag (item 211527, sell)",
+  "tip:3278:6": "Aura Proc Damage Sword (item 3278, sell)",
+  "tip:1851:2": "Cleansing Water (item 1851, sell)",
+  "tip:250976:4": "Recipe: Minor Spellblasting Potion (item 250976, sell)",
+  "tip:1402:3": "Brimstone (item 1402, sell)",
+  "tip:232433:4": "Dense Runecloth Bandage (item 232433, sell)",
+  "tip:2808:5": "Torch of Flame (item 2808, sell)",
+  "tip:1352:4": "Cracked Skull Mortar (item 1352, sell)",
+  "tip:223168:2": "Worldcore Fragment (item 223168, sell)",
+  "tip:1400:3": "Swiftfeather Token (item 1400, sell)",
+  "tip:221315:4": "Traveler's Symbols (item 221315, sell)",
+  "tip:239021:4": "Carrie's Cookbook (item 239021, sell)",
+  "tip:223912:4": "Purification Potion (item 223912, sell)",
+  "tip:221316:5": "Premo's Poise-Demanding Uniform (item 221316, sell)",
+  "tip:221325:4": "EZ-Splode Blasting Charge (item 221325, sell)",
+  "tip:12468:2": "Chilton Wand (item 12468)",
+  "tip:280317:3": "Frying Pan (item 280317)",
+  "tip:14392:2": "Durability Staff (item 14392)",
+  "tip:221518:3": "Whisper (item 221518)",
+  "tip:211941:3": "Windwalker's Yari (item 211941)",
+  "tip:211940:3": "Ecks'av's Tribal Guardian (item 211940)",
+  "tip:10418:3": "Glimmering Mithril Insignia (item 10418)",
+  "tip:221518:2": "Whisper (item 221518, q1)",
+  "tip:23081:5": "Handwraps of Undead Slaying (item 23081)",
+  "tip:225943:3": "Rancid Hunk of Flesh (item 225943, q2)",
+  "tip:4952:3": "Stormstout (item 4952, q2)",
+  "tip:10721:6": "Gnomish Harm Prevention Belt (item 10721, q2)",
+  "tip:21721:2": "Moonglow (item 21721, q2)",
+  "tip:269990:5": "Crystal Catalyst (item 269990, q2)",
+  "tip:191292:3": "Ritual Dagger (item 191292, q2)",
+  "tip:276895:4": "Transformative Cocoon (item 276895, q2)",
+  "tip:19024:7": "Arena Grand Master (item 19024, q2)",
+  "tip:6049:3": "Fire Protection Potion (item 6049, q2)",
+  "tip:6050:3": "Frost Protection Potion (item 6050, q2)",
+  "tip:6052:3": "Nature Protection Potion (item 6052, q2)",
+  "tip:22682:3": "Frozen Rune (item 22682, q2)",
+  "tip:13461:3": "Greater Arcane Protection Potion (item 13461, q2)",
+  "tip:13457:3": "Greater Fire Protection Potion (item 13457, q2)",
+  "tip:13456:3": "Greater Frost Protection Potion (item 13456, q2)",
+  "tip:13460:3": "Greater Holy Protection Potion (item 13460, q2)",
+  "tip:13458:3": "Greater Nature Protection Potion (item 13458, q2)",
+  "tip:13459:3": "Greater Shadow Protection Potion (item 13459, q2)",
+  "tip:10543:6": "Goblin Construction Helmet (item 10543, q2)",
+  "tip:6051:3": "Holy Protection Potion (item 6051, q2)",
+  "tip:272437:6": "Adaptive Combat Assistant (item 272437, q2)",
+  "tip:4376:3": "Flame Deflector (item 4376, q2)",
+  "tip:4386:3": "Ice Deflector (item 4386, q2)",
+  "tip:8367:11": "Dragonscale Breastplate (item 8367, q2)",
+  "tip:17759:5": "Mark of Resolution (item 17759, q2)",
+  "tip:23558:6": "The Burrower's Shell (item 23558, q2)",
+  "tip:6048:3": "Shadow Protection Potion (item 6048, q2)",
+  "tip:260828:5": "SAF-T Nitro Boosts (item 260828, q2)",
+  "tip:4529:5": "Enchanted Agate (item 4529, q2)",
+  "tip:16022:6": "Arcanite Dragonling (item 16022, q2)",
+  "tip:4396:6": "Mechanical Dragonling (item 4396, q2)",
+  "tip:10576:6": "Mithril Mechanical Dragonling (item 10576, q2)",
+  "tip:191313:2": "Mask of Death (item 191313, q2)",
+  "tip:191660:3": "Thaddius' Lightning Bolts (item 191660, q2)",
+  "tip:247963:4": "Herbal Soil Poultice (item 247963, q2)",
+  "tip:19344:7": "Natural Alignment Crystal (item 19344, q2)",
+  "tip:273857:4": "Enchanted Branch (item 273857, q2)",
+  "tip:17716:3": "Snowmaster 9000 (item 17716, q2)",
+  "tip:15846:3": "Salt Shaker (item 15846, q2)",
+  "tip:7506:5": "Gnomish Universal Remote (item 7506, q2)",
+  "tip:15871:3": "Truesilver Skeleton Key (item 15871, q2)",
+  "tip:15872:3": "Arcanite Skeleton Key (item 15872, q2)",
+  "tip:15869:3": "Silver Skeleton Key (item 15869, q2)",
+  "tip:15870:3": "Golden Skeleton Key (item 15870, q2)",
+  "tip:18294:3": "Draught of Greater Water Breathing (item 18294, q2)",
+  "tip:5996:3": "Draught of Water Breathing (item 5996, q2)",
+  "tip:239005:5": "Distilled Demonic Essence (item 239005, q2)",
+  "tip:17224:4": "Scrying Scope (item 17224, q2)",
+  "tip:17364:4": "Scrying Scope (item 17364, q2)",
+  "tip:22115:4": "Extra-Dimensional Ghost Revealer (item 22115, q2)",
+  "tip:238830:2": "Apple Scope (item 238830, q2)",
+  "tip:184937:2": "Chronoboon Displacer (item 184937, q2)",
+  "tip:232312:5": "Blood of the Lightbringer (item 232312, q2)",
+  "tip:11570:4": "Preserved Pheromone Mixture (item 11570, q2)",
+  "tip:260245:4": "Vibrant Flower (item 260245, q2)",
+  "tip:279979:3": "Camp Chair (item 279979, q2)",
+  "tip:12534:4": "Omokk's Head (item 12534, q2)",
+  "tip:15002:5": "Nimboya's Pike (item 15002, q2)",
+  "tip:259846:7": "Wide-Brimmed Fishing Hat (item 259846, q2)",
+  "tip:7741:2": "The Shaft of Tsol (item 7741, q2)",
+  "tip:7740:3": "Gni'kiv Medallion (item 7740, q2)",
+  "tip:7967:3": "Mithril Shield Spike (item 7967, q2)",
+  "tip:12645:3": "Thorium Shield Spike (item 12645, q2)",
+  "tip:6041:3": "Steel Weapon Chain (item 6041, q2)",
+  "tip:6043:3": "Iron Counterweight (item 6043, q2)",
+  "tip:18283:3": "Biznicks 247x128 Accurascope (item 18283, q2)",
+  "tip:4405:3": "Crude Scope (item 4405, q2)",
+  "tip:4406:3": "Standard Scope (item 4406, q2)",
+  "tip:4407:3": "Accurate Scope (item 4407, q2)",
+  "tip:10546:3": "Deadly Scope (item 10546, q2)",
+  "tip:10548:3": "Sniper Scope (item 10548, q2)",
+  "tip:279272:3": "SAF-T Ultra Precision Scope (item 279272, q2)",
+  "tip:6042:3": "Iron Shield Spike (item 6042, q2)",
+  "tip:7969:3": "Mithril Spurs (item 7969, q2)",
+  "tip:281060:3": "Replica Ironforge Air Rifle (item 281060, q2)",
+  "tip:258661:5": "Uthek's Draenethyst Staff (item 258661, q2)",
+  "tip:256061:5": "Uthek's Draenethyst Staff (item 256061, q2)",
+  "tip:206344:3": "Knife Set (item 206344, q2)",
+  "tip:254870:4": "Rudimentary Necromancy Staff (item 254870, q2)",
+  "tip:255403:4": "Enhanced Necromancy Staff (item 255403, q2)",
+  "tip:241128:2": "Pile of Portiporters (item 241128, q2)",
+  "tip:274918:3": "Warding Candle (item 274918, q2)",
+  "tip:13462:3": "Purification Potion (item 13462, q2)",
+  "tip:232652:4": "Zila Amanemodas (item 232652, q2)",
+  "tip:231909:4": "Crystallized Starlight (item 231909, q2)",
+  "tip:256058:5": "Uthek's Staff (item 256058, q2)",
+  "tip:13536:5": "Horn of Awakening (item 13536, q2)",
+  "tip:210195:5": "Unbalanced Idol (item 210195, q2)",
+  "tip:4481:3": "Cresting Charm (item 4481, q2)",
+  "tip:4480:3": "Thundering Charm (item 4480, q2)",
+  "tip:4479:3": "Burning Charm (item 4479, q2)",
+  "tip:279277:3": "Mathystral Amulet (item 279277, q2)",
+  "tip:23716:5": "Carved Ogre Idol (item 23716, q2)",
+  "tip:15917:5": "Taming Rod (item 15917, q2)",
+  "tip:266253:5": "Taming Rod (item 266253, q2)",
+  "tip:15911:5": "Taming Rod (item 15911, q2)",
+  "tip:15922:5": "Taming Rod (item 15922, q2)",
+  "tip:15915:5": "Taming Rod (item 15915, q2)",
+  "tip:266158:5": "Taming Rod (item 266158, q2)",
+  "tip:15913:5": "Taming Rod (item 15913, q2)",
+  "tip:15923:5": "Taming Rod (item 15923, q2)",
+  "tip:15919:5": "Taming Rod (item 15919, q2)",
+  "tip:15916:5": "Taming Rod (item 15916, q2)",
+  "tip:264163:5": "Taming Rod (item 264163, q2)",
+  "tip:15921:5": "Taming Rod (item 15921, q2)",
+  "tip:267272:5": "Taming Rod (item 267272, q2)",
+  "tip:266254:5": "Taming Rod (item 266254, q2)",
+  "tip:15914:5": "Taming Rod (item 15914, q2)",
+  "tip:15920:5": "Taming Rod (item 15920, q2)",
+  "tip:15908:5": "Taming Rod (item 15908, q2)",
+  "tip:267298:5": "Taming Rod (item 267298, q2)",
+  "tip:268582:4": "Corrupted Totems (item 268582, q2)",
+  "tip:210712:2": "Elixir of Insight (item 210712, q2)",
+  "tip:277484:5": "Scroll of Confuse Beast (item 277484, q2)",
+  "tip:18594:3": "Powerful Seaforium Charge (item 18594, q2)",
+  "tip:4367:3": "Small Seaforium Charge (item 4367, q2)",
+  "tip:284869:3": "Unsanctified Grenade (item 284869, q2)",
+  "tip:737:4": "Holy Spring Water (item 737, q2)",
+  "tip:10327:5": "Horn of Echeyakee (item 10327, q2)",
+  "tip:8066:4": "Fizzule's Whistle (item 8066, q2)",
+  "tip:249390:5": "Seals of the Sin'dorei (item 249390, q2)",
+  "tip:240845:2": "Prototype Magnet (item 240845, q2)",
+  "tip:279386:5": "Sealed Company Request (item 279386, q2)",
+  "tip:8546:4": "Powerful Smelling Salts (item 8546, q2)",
+  "tip:279981:3": "Basic Campfire Kit (item 279981, q2)",
+  "tip:229415:2": "Survival Supplies (item 229415, q2)",
+  "tip:279961:3": "Journeyman Campfire Kit (item 279961, q2)",
+  "tip:279978:3": "Camp Tent (item 279978, q2)",
+  "tip:279974:3": "Expert Campfire Kit (item 279974, q2)",
+  "tip:273801:5": "Marn's Warding Incense (item 273801, q2)",
+  "tip:260818:2": "EZ-Thro Mana Bomb (item 260818, q2)",
+  "tip:16040:3": "Arcane Bomb (item 16040, q2)",
+  "tip:16333:4": "Samuel's Remains (item 16333, q2)",
+  "tip:279378:4": "Lunar Pendant (item 279378, q2)",
+  "tip:1127:3": "Flash Bundle (item 1127, q2)",
+  "tip:235518:5": "Timbermaw War Banner (item 235518, q2)",
+  "tip:274379:6": "Rousing Seed Pod (item 274379, q2)",
+  "tip:21891:5": "Shard of the Fallen Star (item 21891, q2)",
+  "tip:18608:12": "Benediction (item 18608, q2)",
+  "tip:18609:11": "Anathema (item 18609, q2)",
+  "tip:268873:5": "Defender of the Barkskin (item 268873, q2)",
+  "tip:21326:5": "Defender of the Timbermaw (item 21326, q2)",
+  "tip:226472:3": "Stratholme Shadow Jar (item 226472, q2)"
+ },
+ "note": "Item tooltip lines (one row = one line of an item tooltip). Translate the line only, short and game-like, as the Persian client would print it: Use: = استفاده:، Equip: = هنگام تجهیز:، Chance on hit: = احتمال هنگام ضربه:، Requires = نیازمند. A line in quotes is flavor text: keep the quotes. Keep every ⟦..⟧ exactly (⟦n⟧ may be a TAB between two columns, a coin or a link: never drop it)."
+}
