@@ -1,0 +1,223 @@
+{
+ "v": 1,
+ "product": "forever",
+ "build": "1.60.1.70790",
+ "previous_build": "1.60.1.70755",
+ "generated": "2026-11-04T19:59:43Z",
+ "source": "wow-raw manifests/forever/changes/1.60.1.70790.json",
+ "totals": {
+  "added": 262,
+  "removed": 122,
+  "changed": 354,
+  "tables": 28
+ },
+ "domains": {
+  "world": {
+   "added": 0,
+   "removed": 0,
+   "changed": 9,
+   "tables": [
+    "CurrencyTypes",
+    "SkillLine"
+   ],
+   "label": "دستاورد، ارز، فکشن، عنوان، رویداد"
+  },
+  "items": {
+   "added": 1,
+   "removed": 0,
+   "changed": 15,
+   "tables": [
+    "Item",
+    "ItemSparse",
+    "SpellItemEnchantment"
+   ],
+   "label": "آیتم‌ها"
+  },
+  "spells": {
+   "added": 261,
+   "removed": 122,
+   "changed": 330,
+   "tables": [
+    "SkillLineAbility",
+    "Spell",
+    "SpellAuraOptions",
+    "SpellCategories",
+    "SpellClassOptions",
+    "SpellCooldowns",
+    "SpellDescriptionVariables",
+    "SpellEffect",
+    "SpellEquippedItems",
+    "SpellLevels",
+    "SpellMisc",
+    "SpellName",
+    "SpellPower",
+    "SpellShapeshift",
+    "SpellTargetRestrictions",
+    "SpellXDescriptionVariables",
+    "TraitCond",
+    "TraitDefinition",
+    "TraitEdge",
+    "TraitNode",
+    "TraitNodeEntry",
+    "TraitNodeGroupXTraitNode",
+    "TraitNodeXTraitNodeEntry"
+   ],
+   "label": "اسپل و تلنت"
+  }
+ },
+ "actions": [
+  {
+   "kind": "review",
+   "domain": "items",
+   "title": "استت/قیمت/بایند آیتم قدیمی عوض شد",
+   "how": "تولتیپ این‌ها از اسنپ‌شات 70658 است و شاید الان غلط باشد",
+   "count": 6,
+   "examples": [
+    "Torn Page (281347): MaxCount",
+    "Keystone Fragment (281350): BagFamily",
+    "Ancient Runestone (281352): BagFamily",
+    "Stone Key (281358): BagFamily",
+    "Dormant Runestone (281359): BagFamily, MaxCount",
+    "Letter Opener (287090): BuyPrice, SellPrice"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "items",
+   "title": "عدد/فیلد عوض شد (SpellItemEnchantment)",
+   "how": "بازبینی",
+   "count": 5,
+   "examples": [
+    "Deadly Poison V (2630): Charges",
+    "Instant Poison VI (625): Charges",
+    "Deadly Poison IV (627): Charges",
+    "Mind-Numbing Poison III (643): Charges",
+    "Wound Poison IV (706): Charges"
+   ]
+  },
+  {
+   "kind": "review",
+   "domain": "items",
+   "title": "عدد/فیلد عوض شد (Item)",
+   "how": "بازبینی",
+   "count": 3,
+   "examples": [
+    "id (281350): ClassID",
+    "id (281352): ClassID, ItemGroupSoundsID",
+    "id (281359): ClassID, IconFileDataID, ItemGroupSoundsID"
+   ]
+  },
+  {
+   "kind": "check",
+   "domain": "spells",
+   "title": "اسپل/تلنت عوض شد",
+   "how": "forever_check همین بیلد را می‌سنجد: site-check.md و queue.json کنار همین فایل",
+   "count": 713,
+   "examples": [
+    "SkillLineAbility",
+    "Spell",
+    "SpellAuraOptions",
+    "SpellCategories",
+    "SpellClassOptions",
+    "SpellCooldowns",
+    "SpellDescriptionVariables",
+    "SpellEffect",
+    "SpellEquippedItems",
+    "SpellLevels",
+    "SpellMisc",
+    "SpellName",
+    "SpellPower",
+    "SpellShapeshift",
+    "SpellTargetRestrictions"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "items",
+   "title": "ردیف تازه در Item",
+   "how": "سازنده‌ها در سینک بعدی برمی‌دارند",
+   "count": 1,
+   "examples": [
+    "id (289555)"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "items",
+   "title": "استت/قیمت/بایند آیتم عوض شد (آیتم‌های db2)",
+   "how": "آیتم‌های db2 خودکار بازسازی می‌شوند (forever_new_items refresh)",
+   "count": 1,
+   "examples": [
+    "Brittle Key (221324): BagFamily, BuyPrice, Flags_1, SellPrice"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "world",
+   "title": "عدد/فیلد عوض شد (SkillLine)",
+   "how": "سازنده‌ها با سینک بعدی می‌گیرند",
+   "count": 7,
+   "examples": [
+    "Feral Combat (134): Flags",
+    "Assassination (253): Flags",
+    "Fury (256): Flags",
+    "Protection (257): Flags",
+    "Arms (26): Flags",
+    "Combat (38): Flags",
+    "Subtlety (39): Flags"
+   ]
+  },
+  {
+   "kind": "auto",
+   "domain": "world",
+   "title": "عدد/فیلد عوض شد (CurrencyTypes)",
+   "how": "سازنده‌ها با سینک بعدی می‌گیرند",
+   "count": 2,
+   "examples": [
+    "[DNT] Class Talent Reset (3498): RechargingCycleDurationMS",
+    "[DNT] Legacy Talent Reset (3499): RechargingCycleDurationMS"
+   ]
+  }
+ ],
+ "action_counts": {
+  "page": 0,
+  "review": 3,
+  "translate": 0,
+  "server": 0,
+  "check": 1,
+  "auto": 4
+ },
+ "alarms": [
+  "TraitEdge: 6 ردیف حذف شد (بیش از ۳٪)",
+  "جدول TraitNodeXTraitCond در این بیلد نیست (تغییر ساختار)"
+ ],
+ "details": {
+  "world": [
+   "- CurrencyTypes [DNT] Class Talent Reset (3498): RechargingCycleDurationMS 3600000→604800000",
+   "- CurrencyTypes [DNT] Legacy Talent Reset (3499): RechargingCycleDurationMS 3600000→604800000",
+   "- SkillLine Feral Combat (134): Flags 1040→66576",
+   "- SkillLine Assassination (253): Flags 1040→66576",
+   "- SkillLine Fury (256): Flags 1040→66576",
+   "- SkillLine Protection (257): Flags 1040→66576",
+   "- SkillLine Arms (26): Flags 1040→66576"
+  ],
+  "items": [
+   "- Item id (289555) +",
+   "- Item id (281350): ClassID 15→13",
+   "- Item id (281352): ClassID 15→13, ItemGroupSoundsID 20→22",
+   "- Item id (281359): ClassID 15→13, IconFileDataID 134378→134456, ItemGroupSoundsID 20→22",
+   "- ItemSparse Brittle Key (221324): BagFamily 0→256, BuyPrice 0→17, Flags_1 24580→28676, SellPrice 0→17",
+   "- ItemSparse Torn Page (281347): MaxCount 0→1",
+   "- ItemSparse Keystone Fragment (281350): BagFamily 0→256",
+   "- ItemSparse Ancient Runestone (281352): BagFamily 0→256",
+   "- ItemSparse Stone Key (281358): BagFamily 0→256",
+   "- ItemSparse Dormant Runestone (281359): BagFamily 0→256, MaxCount 0→1",
+   "- ItemSparse Letter Opener (287090): BuyPrice 192→170, SellPrice 38→170",
+   "- SpellItemEnchantment Deadly Poison V (2630): Charges 180→240",
+   "- SpellItemEnchantment Instant Poison VI (625): Charges 175→250",
+   "- SpellItemEnchantment Deadly Poison IV (627): Charges 160→240",
+   "- SpellItemEnchantment Mind-Numbing Poison III (643): Charges 150→225",
+   "- SpellItemEnchantment Wound Poison IV (706): Charges 160→240"
+  ]
+ }
+}
