@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forever — کوئست، دانجن، آیتم، تلنت و نقشهٔ زندهٔ جهان | wowfarsi</title>
-<meta name="description" content="مرکز Forever در وارکرفت فارسی: نقشهٔ زندهٔ ۵۶ نقشه، کوئست‌ها، NPCها، آیتم‌ها، دانجن‌ها و رییدها، تلنت‌ها و کتاب اسپل‌ها، همه به فارسی.">
+<meta name="description" content="مرکز WoW Forever در وارکرفت فارسی: نقشهٔ زندهٔ جهان، کوئست‌ها، NPCها، آیتم‌ها، دانجن‌ها و رییدها، تلنت‌ها و کتاب اسپل‌ها، همه به فارسی و زنده از دادهٔ خود بازی.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://wowfarsi.ir/forever.html">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -27,6 +27,19 @@
 <link rel="stylesheet" href="assets/css/support.css?v=20261031a">
 <link rel="stylesheet" href="assets/css/forever.css?v=20261028c">
 <link rel="stylesheet" href="assets/css/forever-hub.css?v=20261102k">
+<style>
+/* live strip under the hero (forever-live.js fills every [data-live]) */
+.lv-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;max-width:1000px;margin:-.4rem auto 2.4rem;padding:0 1rem}
+.lv-cell{padding:.85rem 1rem;border:1px solid rgba(214,178,94,.22);border-radius:12px;background:linear-gradient(160deg,rgba(20,16,10,.6),rgba(10,8,5,.72));text-align:center;text-decoration:none;color:inherit}
+.lv-cell small{display:block;font-size:.72rem;color:#b7ad97;margin-bottom:.3rem}
+.lv-cell b{display:block;font-size:1.05rem;color:#f0e6c8}
+.lv-cell em{display:block;font-style:normal;font-size:.75rem;color:#f0c75e;margin-top:.2rem}
+a.lv-cell:hover{border-color:rgba(240,199,94,.55)}
+.lv-live{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;color:#9fd38a}
+.lv-live i{width:6px;height:6px;border-radius:50%;background:#9fd38a;box-shadow:0 0 7px #9fd38a}
+[data-live-hide][hidden]{display:none!important}
+.fv-stat b{font-variant-numeric:tabular-nums}
+</style>
 </head>
 <body>
 
@@ -45,9 +58,8 @@
     </a>
     <nav class="nav-links">
       <a href="index.html">خانه</a>
-      <a href="retail.html">Midnight</a>
       <a href="forever.html" class="is-active">Forever</a>
-      <a href="talents.html">Talent Tree</a>
+      <a href="retail.html">Midnight</a>
       <a href="news.html">wowheadFA</a>
       <a href="addon.html">افزونه</a>
       <a href="status.html">وضعیت ترجمه</a>
@@ -66,9 +78,17 @@
     <h1 class="fv-title font-cinzel" dir="ltr">Forever</h1>
     <div class="fv-rule" aria-hidden="true"><i></i></div>
     <p class="fv-sub">
-      جهانِ همیشگی آزرُث کلاسیک — به‌همراه زون‌های تازه: جزیرهٔ زفراس، کوه هیجال،
-      ریورگلیدز و شن‌درالاس. هر چیزی که لازم داری این‌جاست؛ از همین صفحه وارد هر بخش بشو.
+      جهانِ همیشگی آزرُث کلاسیک، با زون‌ها و محتوای تازهٔ Forever. هر چیزی که لازم داری این‌جاست،
+      همه به فارسی و مستقیم از دادهٔ خود بازی؛ از همین صفحه وارد هر بخش بشو.
     </p>
+  </section>
+
+  <!-- ================= live strip ================= -->
+  <section class="lv-strip" aria-label="وضعیت زندهٔ Forever">
+    <div class="lv-cell"><small><span class="lv-live"><i></i>زنده</span> بیلد بازی</small><b dir="ltr" data-live="build">—</b><em data-live="buildDate"></em></div>
+    <div class="lv-cell" data-live-hide hidden><small>رییدهای فاز بعد</small><b data-live="phase.date">—</b><em data-live="phase.days"></em></div>
+    <a class="lv-cell" href="status.html"><small>ترجمهٔ فارسی</small><b data-live="fa.pct">—</b><em>وضعیت ترجمه ›</em></a>
+    <div class="lv-cell"><small>آخرین به‌روزرسانی داده</small><b data-live="updated">—</b><em data-live="updatedDate"></em></div>
   </section>
 
   <!-- ================= hub (v6: every door is a piece of the game's own UI) ================= -->
@@ -107,7 +127,7 @@
           <span class="fh-mmz" id="fh-mmz">آزرُث</span>
           <a class="fh-mm" id="fh-mm" href="#maps" aria-label="نقشهٔ زندهٔ جهان"><span class="fh-mmn"><span>N</span></span><span class="fh-mmc"><span class="fh-mmi"></span><span class="fh-mmp"></span></span></a>
           <span class="fh-mmxy" id="fh-mmxy" dir="ltr"></span>
-          <div class="fh-frf"><span class="fh-n">۵۶ نقشه</span><a class="btn btn-stone btn-sm" href="#maps">باز کردن نقشه</a></div>
+          <div class="fh-frf"><span class="fh-n"><span data-live="count.zones">…</span> نقشه</span><a class="btn btn-stone btn-sm" href="#maps">باز کردن نقشه</a></div>
         </div>
       </div>
     </div>
@@ -141,20 +161,20 @@
     </div>
   </section>
 
-  <!-- ================= stats ================= -->
+  <!-- ================= stats (live: forever-live.js, from data/forever/coverage.json) ================= -->
   <section class="fv-stats" aria-label="آمار بخش Forever">
-    <div class="fv-stat"><b data-count="6616">۰</b><small>کوئست کلاسیک</small></div>
-    <div class="fv-stat"><b data-count="3535">۰</b><small>ترجمه‌شدهٔ فارسی</small></div>
-    <div class="fv-stat"><b data-count="116">۰</b><small>زون و محل</small></div>
-    <div class="fv-stat"><b data-count="2928">۰</b><small>آیتم فارسی</small></div>
-    <div class="fv-stat"><b data-count="2441">۰</b><small>نام‌آوا در گلاساری</small></div>
+    <div class="fv-stat"><b data-live="count.items">—</b><small>آیتم با اسم و تولتیپ</small></div>
+    <div class="fv-stat"><b data-live="count.quests">—</b><small>کوئست</small></div>
+    <div class="fv-stat"><b data-live="count.npcs">—</b><small>NPC</small></div>
+    <div class="fv-stat"><b data-live="count.dungeons">—</b><small>دانجن و رِیید</small></div>
+    <div class="fv-stat"><b data-live="fa.pct">—</b><small>فارسی شده</small></div>
   </section>
 
   <!-- ================= live map ================= -->
   <section class="fv-sec" id="maps">
     <div class="fv-sec-hd">
       <h2>نقشهٔ زندهٔ جهان</h2>
-      <p>همهٔ ۵۶ نقشهٔ Forever — دو قاره، زون‌ها، شهرها، میدان‌های نبرد و ۵ زون تازه — با اسکرول زوم کنید، با درگ جابه‌جا شوید</p>
+      <p>همهٔ <span data-live="count.zones">…</span> نقشهٔ Forever (دو قاره، زون‌ها، شهرها، میدان‌های نبرد و زون‌های تازه)؛ با اسکرول زوم کنید، با درگ جابه‌جا شوید</p>
     </div>
 
     <div class="fmap-wrap">
@@ -195,8 +215,8 @@
     </p>
     <p class="fv-hint">با دکمهٔ «لایه‌ها» (آرم ما، بالا سمت راست نقشه) خدمات، مربی‌ها و فروشنده‌ها را روی نقشهٔ هر زون روشن کن؛ روی نقشهٔ قاره‌ها نقطه‌ای نشان داده نمی‌شود.</p>
     <p class="fv-note">
-      داده‌ها از <b>دیتابیس Forever</b> می‌آید و خودکار به‌روز می‌شود؛
-      همین صفحه با تکمیل هر بخش، بزرگ‌تر خواهد شد.
+      داده‌ها مستقیم از فایل‌های خود بازی (بیلد <span dir="ltr" data-live="build">—</span>) می‌آید و خودکار به‌روز می‌شود؛
+      آخرین به‌روزرسانی: <span data-live="updated">—</span>.
     </p>
   </section>
 </main>
@@ -207,13 +227,15 @@
   <p class="footer-line">ساخته‌شده برای جامعهٔ ایرانیِ وارکرفت</p>
   <div class="footer-links">
     <a href="index.html">خانه</a><span>✦</span>
-    <a href="retail.html">Retail</a><span>✦</span>
     <a href="forever.html">Forever</a><span>✦</span>
+    <a href="status.html">وضعیت ترجمه</a><span>✦</span>
+    <a href="retail.html">Midnight</a><span>✦</span>
     <a href="news.html">اخبار</a><span>✦</span>
     <a href="https://github.com/pvwvuow/wowfa" target="_blank" rel="noreferrer">گیت‌هاب</a>
   </div>
 </footer>
 
+<script src="assets/js/forever-live.js?v=20261105a"></script>
 <script src="assets/js/forever-hub.js?v=20261102k"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
 <script src="assets/js/nav-menu.js?v=20261201a"></script>

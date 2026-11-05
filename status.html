@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وضعیت ترجمه — wowfarsi</title>
-<meta name="description" content="وضعیت لحظه‌ای ترجمهٔ هر کلاس و کوئست‌های Midnight: چه‌قدر فارسی شده، کجا چیپ بازی مانده و کجا متن انگلیسی.">
+<title>وضعیت ترجمهٔ Forever (زنده) — wowfarsi</title>
+<meta name="description" content="وضعیت زندهٔ ترجمهٔ فارسی WoW Forever: آیتم‌ها، کوئست‌ها، NPCها، اسپل‌ها، دانجن‌ها و نقشه‌ها؛ هر بار که دادهٔ سایت به‌روز می‌شود دوباره شمرده می‌شود.">
+<link rel="canonical" href="https://wowfarsi.ir/status.html">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
@@ -14,6 +15,49 @@
 <link rel="stylesheet" href="assets/css/extra.css?v=20261030a">
 <link rel="stylesheet" href="assets/css/support.css?v=20261031a">
 <link rel="stylesheet" href="assets/css/panels.css?v=20261030a">
+<style>
+.fs-wrap{max-width:1060px;margin:0 auto;padding:0 1rem}
+.fs-hero{display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:center;margin:1.4rem auto 1.8rem;padding:1.4rem 1.6rem;border:1px solid rgba(214,178,94,.25);border-radius:16px;background:linear-gradient(160deg,rgba(20,16,10,.62),rgba(10,8,5,.72))}
+.fs-big{font-size:3.2rem;line-height:1;margin:0;font-weight:800;color:#f0c75e;text-shadow:0 0 18px rgba(240,199,94,.25)}
+.fs-big small{display:block;font-size:.8rem;font-weight:500;color:#b7ad97;margin-top:.45rem;text-align:center}
+.fs-hero p{margin:.2rem 0;line-height:1.95;color:#d9cfb6;font-size:.92rem}
+.fs-live{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#9fd38a;border:1px solid rgba(159,211,138,.35);border-radius:99px;padding:.12rem .6rem}
+.fs-live i{width:7px;height:7px;border-radius:50%;background:#9fd38a;box-shadow:0 0 8px #9fd38a;animation:fsp 2s ease-in-out infinite}
+@keyframes fsp{50%{opacity:.35}}
+.fs-meta{font-size:.8rem;color:#b7ad97}
+.fs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.fs-card{display:block;padding:1.1rem 1.2rem 1.2rem;border:1px solid rgba(214,178,94,.22);border-radius:14px;background:linear-gradient(160deg,rgba(20,16,10,.55),rgba(10,8,5,.68));color:inherit;text-decoration:none;transition:transform .25s ease,border-color .25s ease}
+.fs-card:hover{transform:translateY(-3px);border-color:rgba(240,199,94,.55)}
+.fs-top{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem}
+.fs-name{font-size:1.02rem;color:#f0e6c8}
+.fs-cnt{font-size:.75rem;color:#b7ad97}
+.fs-pct{font-size:2.1rem;font-weight:800;margin:.35rem 0 .45rem;color:#f0c75e}
+.fs-full .fs-pct{color:#9fd38a}
+.fs-bar{display:block;height:6px;border-radius:99px;background:rgba(240,199,94,.12);overflow:hidden}
+.fs-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#8a6a2a,#f0c75e)}
+.fs-full .fs-bar i{background:linear-gradient(90deg,#4d7a3c,#9fd38a)}
+.fs-sub{font-size:.8rem;color:#cfc4ab;margin:.55rem 0 .2rem}
+.fs-ok{color:#9fd38a}.fs-left{color:#f0b35e}
+.fs-what{font-size:.78rem;color:#9d947f;margin:0}
+.fs-h{margin:2.2rem 0 .8rem;font-size:1.05rem;color:#f0e6c8}
+.fs-list{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.fs-list li{display:flex;flex-wrap:wrap;gap:.35rem .8rem;align-items:baseline;padding:.65rem .9rem;border:1px solid rgba(214,178,94,.16);border-radius:10px;background:rgba(10,8,5,.45);font-size:.86rem}
+.fs-n{color:#f0b35e;font-size:.78rem}
+.fs-ex{flex-basis:100%;font-size:.78rem;color:#b7ad97}
+.fs-ex a{color:#f0c75e}
+.fs-allok,.fs-none{color:#9fd38a;text-align:center;padding:1rem 0}
+.fs-none{color:#b7ad97}
+.fs-how{margin-top:1.6rem;font-size:.82rem;line-height:2;color:#b7ad97}
+.fs-how b{color:#d9cfb6}
+.fs-md{margin:2.6rem auto 0;max-width:1060px;border:1px solid rgba(198,79,217,.28);border-radius:14px;background:rgba(10,8,5,.5)}
+.fs-md>summary{cursor:pointer;list-style:none;padding:1rem 1.2rem;display:flex;align-items:center;gap:.7rem;color:#e6d6f0}
+.fs-md>summary::-webkit-details-marker{display:none}
+.fs-md>summary small{color:#b7ad97;font-size:.78rem}
+.fs-md>summary::after{content:"+";margin-inline-start:auto;font-size:1.2rem;color:#c64fd9}
+.fs-md[open]>summary::after{content:"\2212"}
+.fs-md-in{padding:0 1.2rem 1.4rem}
+@media (max-width:620px){.fs-hero{grid-template-columns:1fr;text-align:center}.fs-big{font-size:2.6rem}}
+</style>
 </head>
 <body>
 <div class="bg-layers" aria-hidden="true">
@@ -32,9 +76,9 @@
     </a>
     <nav class="nav-links">
       <a href="index.html">خانه</a>
-      <a href="retail.html">Midnight</a>
       <a href="forever.html">Forever</a>
-      <a href="talents.html">Talent Tree</a>
+      <a href="retail.html">Midnight</a>
+      <a href="forever-talents.html">تلنت‌ها</a>
       <a href="news.html">wowheadFA</a>
       <a href="addon.html">افزونه</a>
       <a href="status.html" class="is-active">وضعیت ترجمه</a>
@@ -48,68 +92,73 @@
 <section class="section" style="padding-top:7.5rem" id="status">
   <div class="bg-scrim" aria-hidden="true"></div>
   <div class="sect-head reveal">
-    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>وضعیت ترجمه</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
-    <p class="sect-en font-cinzel" dir="ltr">Translation Status</p>
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>وضعیت ترجمهٔ Forever</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-en font-cinzel" dir="ltr">Translation Status · Live</p>
   </div>
 
-  <div class="st-wrap">
-    <div class="st-jump reveal">
-      <a href="#status" class="btn btn-stone btn-sm">تلنت‌ها</a>
-      <a href="#quests" class="btn btn-medallion btn-sm">کوئست‌های Midnight</a>
+  <div class="fs-wrap" id="forever">
+    <div class="fs-hero">
+      <p class="fs-big"><span data-live="fa.pct">—</span><small>فارسی شده</small></p>
+      <div>
+        <span class="fs-live"><i></i>زنده</span>
+        <p>از <b data-live="fa.total">—</b> متن و اسمی که در بخش Forever سایت دیده می‌شود، <b data-live="fa.done">—</b> تا فارسی است و <b data-live="fa.left">—</b> تا مانده.</p>
+        <p class="fs-meta">آخرین شمارش: <span data-live="updated">—</span> · دادهٔ بازی: بیلد <span dir="ltr" data-live="build">—</span></p>
+      </div>
     </div>
-    <p class="st-lead" id="st-lead">در حال خواندن داده‌ها…</p>
-    <div class="st-list" id="st-list"></div>
-    <div class="st-legend">
-      <p><b>بدون فارسی</b> تلنتی که هنوز متن فارسی ندارد.</p>
-      <p><b><span class="st-chip st-game" style="display:inline-block">چیپ بازی</span></b> عددی که به آمار شخصیت بستگی دارد یا بلیزارد داده‌اش را عمومی نکرده؛ ادآن داخل بازی آن را محاسبه می‌کند. این مورد خطا نیست. در صفحهٔ Talent Tree هم به‌صورت یک جعبهٔ سبز کوچک دیده می‌شود.</p>
-      <p><b>متن انگلیسی</b> جملهٔ انگلیسی بلندی که وسط متن فارسی مانده؛ بیشتر ارجاع به اسپل دیگری که هنوز ترجمه نشده.</p>
-      <p>متن‌های این فهرست‌ها با شاخهٔ پایهٔ شرط‌ها نشان داده می‌شوند (همان چیزی که در صفحهٔ Talent Tree می‌بینی)، نه با کدهای خام <code dir="ltr">$?a…</code>.</p>
+
+    <div class="fs-grid" id="fv-cards"><p class="fs-none">در حال شمردن…</p></div>
+
+    <h3 class="fs-h">هنوز چه چیزی مانده؟</h3>
+    <div id="fv-left"><p class="fs-none">…</p></div>
+
+    <div class="fs-how">
+      <p><b>این اعداد از کجا می‌آیند؟</b> هر بار که دادهٔ سایت به‌روز می‌شود، یک ربات (بدون هوش مصنوعی) همهٔ متن‌ها و اسم‌های بخش Forever را دوباره می‌شمرد و این صفحه همان شمارش را نشان می‌دهد. هیچ عددی دستی نوشته نشده.</p>
+      <p><b>«فارسی شده» یعنی چه؟</b> یعنی آن متن یا اسم یک ترجمهٔ فارسی دارد. اسم‌ها و متن‌ها در صفحه‌ها با کلید «شخصی‌سازی ترجمه» قابل تغییرند؛ اگر چیزی را انگلیسی می‌بینی شاید آن کلید را خاموش کرده باشی.</p>
+      <p><b>دادهٔ بازی</b> مستقیم از فایل‌های خود کلاینت Forever خوانده می‌شود؛ با هر بیلد تازهٔ بازی، این بخش هم خودکار تازه می‌شود. <a href="translate.html" style="color:#f0c75e">شخصی‌سازی ترجمه</a></p>
     </div>
   </div>
 </section>
 
-<!-- ================= quests (merged from quests.html) ================= -->
-<section class="section" id="quests" style="padding-top:4.5rem">
-  <div class="bg-scrim" aria-hidden="true"></div>
-  <div class="sect-head reveal">
-    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>کوئست‌های Midnight</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
-    <p class="sect-en font-cinzel" dir="ltr">Quest Translation</p>
-  </div>
-
-  <div class="st-wrap">
-    <p class="st-lead">تلنت‌ها تمام شده‌اند و ترجمهٔ کوئست‌های <span class="font-cinzel" dir="ltr">Midnight</span> هم تقریباً تمام است. متن انگلیسی هر کوئست جمع شد، زون‌به‌زون ترجمه شد، و حالا بازبینی نهایی در جریان است تا غلط‌ها و اصطلاح‌های ناهماهنگ درست شوند.</p>
-
-    <div class="stat-strip" style="margin-top:0">
-      <div class="stat-row">
-        <div class="stat"><b class="text-gold-grad" id="qs-stat-total">۱٬۵۲۲</b><span>کوئست شناسایی‌شده</span></div>
-        <span class="stat-divider"></span>
-        <div class="stat"><b class="text-gold-grad" id="qs-stat-en">۱٬۵۱۰</b><span>متن انگلیسی جمع‌شده</span></div>
-        <span class="stat-divider"></span>
-        <div class="stat"><b class="text-gold-grad" id="qs-stat-fa">۱٬۵۰۹</b><span>ترجمه‌شده</span></div>
-        <span class="stat-divider"></span>
-        <div class="stat"><b class="text-gold-grad" id="qs-stat-pct">۹۹٪</b><span>پیشرفت کل</span></div>
+<!-- ================= Midnight (collapsed; loads only when opened) ================= -->
+<section class="section" style="padding-top:1rem">
+  <details class="fs-md" id="midnight">
+    <summary><span class="font-cinzel" dir="ltr">Midnight</span><span>نسخهٔ زندهٔ بازی: تلنت‌ها و کوئست‌ها</span><small>ترجمه شده · در حالت نگهداری</small></summary>
+    <div class="fs-md-in st-wrap">
+      <h3 class="qs-h" id="talents">تلنت‌های هر ۱۳ کلاس</h3>
+      <p class="st-lead" id="st-lead">با باز کردن این بخش خوانده می‌شود…</p>
+      <div class="st-list" id="st-list"></div>
+      <div class="st-legend">
+        <p><b>بدون فارسی</b> تلنتی که هنوز متن فارسی ندارد.</p>
+        <p><b><span class="st-chip st-game" style="display:inline-block">چیپ بازی</span></b> عددی که به آمار شخصیت بستگی دارد؛ افزونه داخل بازی آن را حساب می‌کند. خطا نیست.</p>
+        <p><b>متن انگلیسی</b> جملهٔ انگلیسی بلندی که وسط متن فارسی مانده.</p>
       </div>
-    </div>
 
-    <h3 class="qs-h">کوئست‌ها به تفکیک زون</h3>
-    <div class="st-list" id="qs-zones"></div>
-    <p class="qs-note">اعداد این صفحه به‌صورت خودکار از <b dir="ltr">data/quests.json</b> ساخته می‌شود — همان خروجی <b dir="ltr">tools/quests.py status</b> ریپو wowfa (پچ <span id="qs-build">۱۲.۱.۵</span>، آخرین به‌روزرسانی داده: <span id="qs-gen">—</span>). کوئست‌های مشترکِ بین زون‌ها (مثل کمپین) در گروه Shared شمرده می‌شوند.</p>
-
-    <h3 class="qs-h">مراحل کار</h3>
-    <div class="qs-steps">
-      <div class="qs-step"><i></i><b>۱. جمع‌کردن متن انگلیسی</b><span>تقریباً تمام. بلیزارد جدول Quest را از فایل‌های بازی حذف کرده، پس متن‌ها از ویکی warcraft.wiki.gg، Wowhead و wago جمع شد. حدود ۱۳ کوئست هیچ منبع آنلاینی ندارند؛ آن‌ها فقط با افزونهٔ جمع‌کننده از داخل بازی پر می‌شوند.</span></div>
-      <div class="qs-step"><i></i><b>۲. ترجمه زون‌به‌زون</b><span>تقریباً تمام. <span id="qs-done-count">۱٬۵۰۹</span> کوئست از <span id="qs-total-count">۱٬۵۲۲</span> ترجمه شده است.</span></div>
-      <div class="qs-step qs-now"><i></i><b>۳. بازبینی نهایی</b><span>در جریان. هر زون یک بار از نظر واژهٔ غلط، اصطلاح‌های هم‌شکل و نیم‌فاصله خوانده و اصلاح می‌شود.</span></div>
-      <div class="qs-step qs-now"><i></i><b>۴. نمایش در بازی</b><span>در حال آماده‌سازی. داده‌ها آمادهٔ خروجی گرفتن‌اند و افزونهٔ نمایش کوئست روی همان موتور فارسی‌نویس افزونهٔ تلنت‌ها ساخته می‌شود. تاریخ انتشار بعد از تست افزونهٔ تلنت‌ها داخل بازی معلوم می‌شود.</span></div>
+      <h3 class="qs-h" id="quests">کوئست‌های Midnight</h3>
+      <div class="stat-strip" style="margin-top:0">
+        <div class="stat-row">
+          <div class="stat"><b class="text-gold-grad" id="qs-stat-total">—</b><span>کوئست شناسایی‌شده</span></div>
+          <span class="stat-divider"></span>
+          <div class="stat"><b class="text-gold-grad" id="qs-stat-fa">—</b><span>ترجمه‌شده</span></div>
+          <span class="stat-divider"></span>
+          <div class="stat"><b class="text-gold-grad" id="qs-stat-pct">—</b><span>پیشرفت کل</span></div>
+        </div>
+      </div>
+      <div class="st-list" id="qs-zones"></div>
+      <p class="qs-note">پچ <span id="qs-build">—</span> · آخرین به‌روزرسانی داده: <span id="qs-gen">—</span></p>
     </div>
-  </div>
+  </details>
 </section>
 </main>
 
 <script src="assets/js/main.js?v=20261104b"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
+<script src="assets/js/forever-live.js?v=20261105a"></script>
+<script src="assets/js/status-forever.js?v=20261105a"></script>
 <script>
+/* Midnight: retail talent + quest status, loaded only when the section is opened */
 (function () {
+  var box = document.getElementById("midnight"), started = false;
+  if (!box) return;
   var CLASSES = [
     ["death-knight", "Death Knight"], ["demon-hunter", "Demon Hunter"], ["druid", "Druid"],
     ["evoker", "Evoker"], ["hunter", "Hunter"], ["mage", "Mage"], ["monk", "Monk"],
@@ -121,11 +170,7 @@
   var RAW = /\$(\{|<|\d*[A-Za-z]+\d*)/;
   var NOISE = /\|[cC][0-9A-Fa-f]{8}|\|[rR]|\$\{[^}]*\}|\$<[^>]*>|\$[@\w]+|[\[\]]/g;
   var ENRUN = /(?:[A-Za-z][A-Za-z'\u2019\-]*[\s,.:;]+){5,}[A-Za-z]/;
-  /* leftover $-tokens in a list line are drawn as small green game chips */
   var TOK = /\$\{[^}]*\}|\$<[^>]*>|\$\d*[A-Za-z@]+\d*/g;
-
-  /* ---- conditions: same rules as the Talent Tree page, no spec known ----
-     every term (cN, aN, sN) counts as false, "!term" as true, so the else-branch is shown. */
   function findClose(s, i) {
     var depth = 0;
     for (var j = i; j < s.length; j++) {
@@ -169,7 +214,6 @@
     }
     return s;
   }
-
   function walk(o, out) {
     if (Array.isArray(o)) { o.forEach(function (x) { walk(x, out); }); return; }
     if (o && typeof o === "object") {
@@ -197,8 +241,6 @@
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function fa(n) { return Number(n).toLocaleString("fa-IR"); }
-  /* escape the text, turn each leftover token into a green chip (raw token in the tooltip),
-     and clip to ~max visible chars without ever cutting a token in half */
   function chipify(s, max) {
     var out = "", used = 0, last = 0, m;
     TOK.lastIndex = 0;
@@ -222,69 +264,69 @@
     var more = arr.length > 80 ? '<li class="st-more">و ' + fa(arr.length - 80) + " مورد دیگر</li>" : "";
     return "<h4>" + title + " (" + fa(arr.length) + ")</h4><ul>" + rows + more + "</ul>";
   }
-
-  var list = document.getElementById("st-list");
-  var lead = document.getElementById("st-lead");
-  list.innerHTML = CLASSES.map(function (c) {
-    return '<div class="st-row" id="st-' + c[0] + '"><div class="st-head"><span class="st-name font-cinzel" dir="ltr">' + c[1] + '</span><span class="st-track"><i style="width:0"></i></span><span class="st-pct">…</span></div></div>';
-  }).join("");
-
-  var sum = { total: 0, fa: 0, missing: 0, raw: 0, en: 0 }, got = 0;
-  Promise.all(CLASSES.map(function (c) {
-    return fetch("trees/" + c[0] + ".json?v=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (tree) {
-      var row = document.getElementById("st-" + c[0]);
-      if (!tree) { row.querySelector(".st-pct").textContent = "—"; return; }
-      var a = analyse(tree), pct = a.total ? Math.round(a.fa / a.total * 100) : 0;
-      got++; sum.total += a.total; sum.fa += a.fa; sum.missing += a.missing.length; sum.raw += a.raw.length; sum.en += a.en.length;
-      row.querySelector(".st-track i").style.width = pct + "%";
-      row.querySelector(".st-pct").textContent = fa(pct) + "٪";
-      /* the game chip is informational, not an error — only missing/English
-         text count as problems, so a class with only game chips stays st-ok */
-      var bad = a.missing.length + a.en.length;
-      var chips = '<span class="st-chip">' + fa(a.total) + " تلنت</span>" +
-        (a.missing.length ? '<span class="st-chip st-warn">' + fa(a.missing.length) + " بدون فارسی</span>" : "") +
-        (a.raw.length ? '<span class="st-chip st-game">' + fa(a.raw.length) + " چیپ بازی</span>" : "") +
-        (a.en.length ? '<span class="st-chip st-warn">' + fa(a.en.length) + " متن انگلیسی</span>" : "") +
-        (bad ? "" : '<span class="st-chip st-ok">بدون مشکل</span>');
-      var det = document.createElement("details");
-      det.innerHTML = "<summary>" + chips + "</summary><div class=\"st-detail\">" +
-        group("بدون فارسی", a.missing, "d") + group("متن انگلیسی", a.en, "f") + group("چیپ بازی", a.raw, "f") + "</div>";
-      row.appendChild(det);
-    });
-  })).then(function () {
-    var pct = sum.total ? Math.round(sum.fa / sum.total * 100) : 0;
-    lead.textContent = got ? ("در مجموع " + fa(sum.total) + " تلنت یکتا در " + fa(got) + " کلاس؛ " + fa(pct) + "٪ فارسی شده، " + fa(sum.missing) + " مورد بدون فارسی، " + fa(sum.raw) + " مورد چیپ بازی (عددش را ادآن داخل بازی محاسبه می‌کند) و " + fa(sum.en) + " مورد متن انگلیسی دارد.") : "داده‌ای پیدا نشد.";
-  });
-})();
-</script>
-<script>
-(function () {
-  function fa(n) { return Number(n).toLocaleString("fa-IR"); }
-  function set(id, n) { var el = document.getElementById(id); if (el) el.textContent = fa(n); }
-  fetch("data/quests.json?v=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (D) {
-    if (!D) return;
-    var rows = D.zones.filter(function (z) { return z.total > 0; });
-    document.getElementById("qs-zones").innerHTML = rows.map(function (z) {
-      var pct = Math.round(z.done / z.total * 100);
-      return '<div class="st-row"><div class="st-head"><span class="st-name font-cinzel" dir="ltr">' + z.name + '</span><span class="st-track"><i style="width:' + pct + '%"></i></span><span class="st-pct">' + fa(z.done) + ' / ' + fa(z.total) + '</span></div></div>';
+  function talents() {
+    var list = document.getElementById("st-list"), lead = document.getElementById("st-lead");
+    lead.textContent = "در حال خواندن داده‌ها…";
+    list.innerHTML = CLASSES.map(function (c) {
+      return '<div class="st-row" id="st-' + c[0] + '"><div class="st-head"><span class="st-name font-cinzel" dir="ltr">' + c[1] + '</span><span class="st-track"><i style="width:0"></i></span><span class="st-pct">…</span></div></div>';
     }).join("");
-    set("qs-stat-total", D.all.total);
-    set("qs-stat-en", D.all.title);
-    set("qs-stat-fa", D.all.done);
-    set("qs-done-count", D.all.done);
-    set("qs-total-count", D.all.total);
-    var pctEl = document.getElementById("qs-stat-pct");
-    if (pctEl && D.all.total) pctEl.textContent = fa(Math.floor(D.all.done / D.all.total * 100)) + "٪";
-    var genEl = document.getElementById("qs-gen");
-    if (genEl && D.generated) {
-      try { genEl.textContent = new Date(D.generated).toLocaleDateString("fa-IR", { year: "numeric", month: "long", day: "numeric" }); }
-      catch (e) { genEl.textContent = D.generated; }
-    }
-    if (D.build && document.getElementById("qs-build")) document.getElementById("qs-build").textContent = D.build.split(".").slice(0, 3).join(".");
-  });
+    var sum = { total: 0, fa: 0, missing: 0, raw: 0, en: 0 }, got = 0;
+    Promise.all(CLASSES.map(function (c) {
+      return fetch("trees/" + c[0] + ".json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (tree) {
+        var row = document.getElementById("st-" + c[0]);
+        if (!tree) { row.querySelector(".st-pct").textContent = "—"; return; }
+        var a = analyse(tree), pct = a.total ? Math.round(a.fa / a.total * 100) : 0;
+        got++; sum.total += a.total; sum.fa += a.fa; sum.missing += a.missing.length; sum.raw += a.raw.length; sum.en += a.en.length;
+        row.querySelector(".st-track i").style.width = pct + "%";
+        row.querySelector(".st-pct").textContent = fa(pct) + "٪";
+        var bad = a.missing.length + a.en.length;
+        var chips = '<span class="st-chip">' + fa(a.total) + " تلنت</span>" +
+          (a.missing.length ? '<span class="st-chip st-warn">' + fa(a.missing.length) + " بدون فارسی</span>" : "") +
+          (a.raw.length ? '<span class="st-chip st-game">' + fa(a.raw.length) + " چیپ بازی</span>" : "") +
+          (a.en.length ? '<span class="st-chip st-warn">' + fa(a.en.length) + " متن انگلیسی</span>" : "") +
+          (bad ? "" : '<span class="st-chip st-ok">بدون مشکل</span>');
+        var det = document.createElement("details");
+        det.innerHTML = "<summary>" + chips + "</summary><div class=\"st-detail\">" +
+          group("بدون فارسی", a.missing, "d") + group("متن انگلیسی", a.en, "f") + group("چیپ بازی", a.raw, "f") + "</div>";
+        row.appendChild(det);
+      });
+    })).then(function () {
+      var pct = sum.total ? Math.round(sum.fa / sum.total * 100) : 0;
+      lead.textContent = got ? ("در مجموع " + fa(sum.total) + " تلنت یکتا در " + fa(got) + " کلاس؛ " + fa(pct) + "٪ فارسی شده، " + fa(sum.missing) + " مورد بدون فارسی، " + fa(sum.raw) + " مورد چیپ بازی و " + fa(sum.en) + " مورد متن انگلیسی.") : "داده‌ای پیدا نشد.";
+    });
+  }
+  function quests() {
+    function set(id, n) { var el = document.getElementById(id); if (el) el.textContent = fa(n); }
+    fetch("data/quests.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (D) {
+      if (!D || !D.all) return;
+      var rows = (D.zones || []).filter(function (z) { return z.total > 0; });
+      document.getElementById("qs-zones").innerHTML = rows.map(function (z) {
+        var pct = Math.round(z.done / z.total * 100);
+        return '<div class="st-row"><div class="st-head"><span class="st-name font-cinzel" dir="ltr">' + esc(z.name) + '</span><span class="st-track"><i style="width:' + pct + '%"></i></span><span class="st-pct">' + fa(z.done) + ' / ' + fa(z.total) + '</span></div></div>';
+      }).join("");
+      set("qs-stat-total", D.all.total);
+      set("qs-stat-fa", D.all.done);
+      var pctEl = document.getElementById("qs-stat-pct");
+      if (pctEl && D.all.total) pctEl.textContent = fa(Math.floor(D.all.done / D.all.total * 100)) + "٪";
+      var genEl = document.getElementById("qs-gen");
+      if (genEl && D.generated) {
+        try { genEl.textContent = new Date(D.generated).toLocaleDateString("fa-IR", { year: "numeric", month: "long", day: "numeric" }); }
+        catch (e) { genEl.textContent = D.generated; }
+      }
+      if (D.build && document.getElementById("qs-build")) document.getElementById("qs-build").textContent = D.build.split(".").slice(0, 3).join(".");
+    });
+  }
+  function start() { if (started) return; started = true; talents(); quests(); }
+  box.addEventListener("toggle", function () { if (box.open) start(); });
+  /* old links (status.html#quests / #talents / #midnight) open the Midnight part directly */
+  if (/^#(quests|talents|midnight)$/.test(location.hash)) {
+    box.open = true;
+    start();
+    var t = document.getElementById(location.hash.slice(1));
+    if (t) setTimeout(function () { t.scrollIntoView(); }, 50);
+  }
 })();
 </script>
-<script src="assets/js/status-forever.js?v=20261102a"></script>
 <script src="assets/js/nav-menu.js?v=20261115b"></script>
 </body>
 </html>

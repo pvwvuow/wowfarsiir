@@ -2,9 +2,10 @@
    wowfarsi — THE canonical header nav (single source of truth)
 
    Every page (static HTML, JS shells, news/item/guides) ends up
-   with the SAME nav, in the SAME order:
+   with the SAME nav, in the SAME order (Forever first since 5 Nov 2026:
+   the site's focus is WoW Forever; Midnight is translated and maintained):
 
-     خانه · Midnight ▾ · Forever · wowheadFA · آیتم‌ها
+     خانه · Forever · Midnight ▾ · حرفه‌ها · wowheadFA · آیتم‌ها
            · افزونه · وضعیت ترجمه · حمایت
 
    Midnight is a click-driven dropdown ("golden thread" choreography):
@@ -18,7 +19,9 @@
 
    Forever is a PLAIN LINK to forever.html: that page is the hub (every
    Forever section as grouped cards: map, dungeons, quests, NPCs, items,
-   talents, spellbook, patch notes ...). The old long dropdown is gone.
+   talents, spellbook, patch notes ...). The top-level آیتم‌ها link opens
+   the Forever item bank (item.html?ver=forever); the Midnight items live
+   in the Midnight dropdown.
 
    How consistency is guaranteed:
      1. this script REWRITES .nav-links on every page (nav.dataset
@@ -102,12 +105,15 @@
   /* ------------------------------------------------ paths */
   var path = location.pathname;
   function onPage(f) { return new RegExp("[/]" + f.replace(/\./g, "\\.") + "$").test(path); }
-  var M_MID = onPage("retail.html") || onPage("db.html") || onPage("guide.html") ||
-              onPage("item.html") || /^\/item\//.test(path) || /^\/guides\//.test(path);
+  /* item.html serves both games: ?ver=forever is the Forever bank, everything else Midnight */
+  var VER_FVR = /[?&]ver=forever(?:&|$)/.test(location.search);
+  var ON_ITEM = onPage("item.html") || onPage("db.html");
+  var M_MID = onPage("retail.html") || onPage("guide.html") ||
+              (ON_ITEM && !VER_FVR) || /^\/item\//.test(path) || /^\/guides\//.test(path);
   var M_FVR = onPage("forever.html") || onPage("forever-talents.html") ||
               onPage("spellbook.html") || onPage("patch-notes.html") || onPage("items.html") ||
               onPage("quest.html") || onPage("quests.html") || onPage("npc.html") || onPage("dungeon.html") ||
-              onPage("professions.html") || onPage("profession.html");
+              onPage("professions.html") || onPage("profession.html") || onPage("forever-market.html");
   var M_PROF = onPage("professions.html") || onPage("profession.html");
   var M_NEWS = onPage("news.html") || onPage("article.html") || onPage("news-translate.html") || /^\/news\//.test(path);
   var ON_INDEX = /\/(?:index\.html)?$/.test(path) && !M_MID && !M_FVR && !M_NEWS;
@@ -156,11 +162,11 @@
   nav.dataset.canonical = "1";
   var html =
     '<a href="' + (ON_INDEX ? "#top" : BASE + "index.html") + '">خانه</a>' +
-    '<span class="rtx-wrap" data-dd="midnight"></span>' +
     '<a href="' + BASE + 'forever.html"' + (M_FVR && !M_PROF ? ' class="is-active"' : "") + '>Forever</a>' +
+    '<span class="rtx-wrap" data-dd="midnight"></span>' +
     '<a href="' + BASE + 'professions.html"' + (M_PROF ? ' class="is-active"' : "") + '>حرفه‌ها</a>' +
     '<a href="' + BASE + 'news.html"' + (M_NEWS ? ' class="is-active"' : "") + '>wowheadFA</a>' +
-    '<a href="' + BASE + 'item.html"' + (onPage("item.html") || onPage("db.html") ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
+    '<a href="' + BASE + 'item.html?ver=forever"' + (ON_ITEM && VER_FVR ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
     '<a href="' + BASE + 'addon.html"' + (onPage("addon.html") ? ' class="is-active"' : "") + '>افزونه</a>' +
     '<a href="' + BASE + 'status.html"' + (onPage("status.html") ? ' class="is-active"' : "") + '>وضعیت ترجمه</a>' +
     '<a href="' + BASE + 'donate.html" class="dn-nav' + (onPage("donate.html") ? " is-active" : "") + '">حمایت</a>';
