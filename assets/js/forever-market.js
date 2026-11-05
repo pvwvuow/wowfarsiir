@@ -268,7 +268,8 @@
         "</a> · به‌روزرسانی: " + esc(m.updated || "—");
     });
     if (!parts.length) parts = ['<a href="https://wow.gg/developers" target="_blank" rel="noreferrer">wow.gg</a>'];
-    el.innerHTML = "منبع داده: " + parts.join(" · ") + " — wow.gg (CC BY 4.0)";
+    el.innerHTML = "داده‌های مارکت این صفحه از " + parts.join(" · ") +
+      ' <span dir="ltr">(CC BY 4.0)</span> گردآوری شده است.';
   }
 
   function bind(selId, fn) {
@@ -290,7 +291,8 @@
       document.getElementById("fm-empty").hidden = false;
       document.getElementById("fp-empty").hidden = false;
       document.getElementById("fm-src").innerHTML =
-        'منبع داده: <a href="https://wow.gg/developers" target="_blank" rel="noreferrer">wow.gg</a> (CC BY 4.0)';
+        'داده‌های مارکت این صفحه از <a href="https://wow.gg/developers" target="_blank" rel="noreferrer">wow.gg</a>' +
+        ' <span dir="ltr">(CC BY 4.0)</span> گردآوری شده است.';
     });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
