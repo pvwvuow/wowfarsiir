@@ -1,7 +1,11 @@
 /* truth-badge.js - Forever item pages: how sure we are about this page (Brain 5 Nov 2026,
    wow-ops docs/RISK_AUDIT.md R1 R3 R13). Reads data/forever/db/truth-<id % 24>.json written by
    tools/item_truth.py and puts one line above the item card: absent / hidden / changed / same.
-   Stat type ids: 3 Agi 4 Str 5 Int 6 Spi 7 Sta; others are shown as their Forever id until named. */
+   Stat type ids: 3 Agi 4 Str 5 Int 6 Spi 7 Sta; others are shown as their Forever id until named.
+   W1c fix (inbox/14 B3): retail.js re-renders #rt-root (loading -> card, language toggle), which
+   wiped the badge right after it was placed, and the old observer had already disconnected. The
+   badge is now re-inserted whenever #rt-root has content but no badge; tools/test_truth_badge.js
+   guards this. */
 (function () {
   var T = {
   absent: "\u0627\u06cc\u0646 \u0622\u06cc\u062a\u0645 \u062f\u0631 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0628\u0627\u0632\u06cc Forever \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f\u061b \u0645\u0645\u06a9\u0646 \u0627\u0633\u062a \u062f\u0631 Forever \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u062f.",
@@ -48,10 +52,13 @@
     if (ent.s !== "absent") box.appendChild(el("div", "font-size:11.5px;color:#bdb7a6", ent.src === "cache" ? T.srcc : T.src));
     return box;
   }
-  function place(node) {
+  /* idempotent: a fresh badge goes in only when #rt-root has content and no badge. A re-render
+     (innerHTML) drops the old node; the observer below puts a new one back. Our own insert
+     triggers one more callback, which is a no-op because the badge is now there. */
+  function ensure(ent) {
     var root = document.getElementById("rt-root");
     if (!root || !root.firstChild) return false;
-    if (!root.querySelector(".truth-badge")) root.insertBefore(node, root.firstChild);
+    if (!root.querySelector(".truth-badge")) root.insertBefore(badge(ent), root.firstChild);
     return true;
   }
   fetch("data/forever/db/truth-" + (+id % 24) + ".json")
@@ -59,11 +66,10 @@
     .then(function (j) {
       var ent = j && j.items && j.items[id];
       if (!ent || !T[ent.s]) return;
-      var node = badge(ent);
-      if (place(node)) return;
-      var mo = new MutationObserver(function () { if (place(node)) mo.disconnect(); });
-      mo.observe(document.body, {childList: true, subtree: true});
-      setTimeout(function () { mo.disconnect(); }, 15000);
+      ensure(ent);
+      if (typeof MutationObserver === "undefined") return;
+      new MutationObserver(function () { ensure(ent); })
+        .observe(document.body, {childList: true, subtree: true});
     })
     .catch(function () {});
 })();
