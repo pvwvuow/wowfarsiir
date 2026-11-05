@@ -1124,6 +1124,60 @@
     relCur: ["این ارز خرج این‌ها می‌شود", "This currency buys"]
   };
   function fsr(t) { return TLANG === "en" ? t[1] : t[0]; }
+  /* lane-b3 W2b: per-row provenance label (docs/SOURCES.md tiers — src-index.json
+     "tiers").  T4 rows say the data is Classic, not confirmed in Forever; T3 rows
+     say ForeverDB; T1/T2 and legacy rows without a tail show nothing (no crash).
+     lane-b4: ONE note per SECTION instead of a badge on every row — when every
+     row of a section has the same tier 3/4, one fex-note line renders under the
+     section title and rows carry no badges; mixed tiers badge only the rows that
+     differ from the section's best tier; T1/T2-only and legacy rows: nothing. */
+  /* TIER-LABEL-BEGIN */
+  function fsrTier(t) {
+    if (t === 4) return { cls: "fex-tier4", fa: "منبع Classic، در Forever تأیید نشده", en: "Classic source, not confirmed in Forever" };
+    if (t === 3) return { cls: "fex-tier3", fa: "ForeverDB", en: "ForeverDB" };
+    return null;
+  }
+  /* section note text (lane-b4, lane text verbatim for fa) */
+  function fsrTierNote(t) {
+    if (t === 4) return { fa: "این منبع‌ها از Classic هستند و در Forever تأیید نشده‌اند", en: "These sources are Classic data, not confirmed in Forever" };
+    if (t === 3) return { fa: "منبع: ForeverDB", en: "Source: ForeverDB" };
+    return null;
+  }
+  /* section decision: {note: t} = every row has the SAME tier 3/4 (one note,
+     no row badges); {best: t} = mixed tiers (badge only rows that differ from
+     the best tier present); null = T1/T2-only or legacy rows (nothing, as now). */
+  function fsrSecTier(rows, tIdx) {
+    if (!rows || !rows.length) return null;
+    var note = (rows[0][tIdx] === 3 || rows[0][tIdx] === 4) ? rows[0][tIdx] : null;
+    var best = null, has34 = false, i, t;
+    for (i = 0; i < rows.length; i++) {
+      t = rows[i][tIdx];
+      if (note != null && t !== note) note = null;
+      if (typeof t === "number" && t >= 1 && t <= 4 && (best == null || t < best)) best = t;
+      if (t === 3 || t === 4) has34 = true;
+    }
+    if (note != null) return { note: note };
+    return has34 ? { best: best } : null;
+  }
+  /* per-row badge decision given the section's best tier: badge only when the
+     row's own tier is 3/4 AND differs from best (in the all-same case best
+     equals the row tier, so rows stay clean while the section note speaks). */
+  function fsrRowTierBadge(t, best) {
+    if (best == null) return fsrTier(t);
+    return t === best ? null : fsrTier(t);
+  }
+  /* TIER-LABEL-END */
+  function fsrTierHtml(r, tIdx, best) {
+    var lb = fsrRowTierBadge(r[tIdx], best);
+    if (!lb) return "";
+    return '<span class="fex-tierb ' + lb.cls + '">' + esc(fsr([lb.fa, lb.en])) + "</span>";
+  }
+  /* lane-b4: the ONE fex-note line under a section title (all-same tier 3/4) */
+  function fsrTierNoteHtml(t) {
+    var nt = fsrTierNote(t);
+    if (!nt) return "";
+    return '<p class="fex-note">' + esc(fsr([nt.fa, nt.en])) + "</p>";
+  }
   function fsrLv(v) { return v == null ? "" : (TLANG === "en" ? String(v) : faNum(v)); }
   function fsrLvRange(a, b) {
     if (a == null && b == null) return "";
@@ -1183,8 +1237,8 @@
     }
     return h + "</div>";
   }
-  function fsrNpcRow(r, S) {
-    /* r: [id, name, minL, maxL, rank, zk, dn, ch] */
+  function fsrNpcRow(r, S, best) {
+    /* r: [id, name, minL, maxL, rank, zk, dn, ch, t, via, gone?] */
     var nm = r[1], rk = r[4], dn = r[6], ch = r[7];
     var faNm = trNpc(nm);
     var zd = r[5] && S.z && S.z[r[5]];
@@ -1201,7 +1255,9 @@
       (faNm ? '<span class="fex-sub rt-en" dir="ltr">' + esc(nm) + "</span>" : "") +
       (lv ? '<span class="fex-lv">' + lv + "</span>" : "") + badge +
       (ch != null ? '<span class="fex-ch">' + fsrLv(ch) + "٪</span>" : "") +
-      (dn || z ? '<span class="fex-z' + ((dnfa || zfa) ? "" : " rt-en") + '"' + ((dnfa || zfa) ? "" : ' dir="ltr"') + ">" + esc(dnfa || zfa || dn || z) + "</span>" : "") + close;
+      (dn || z ? '<span class="fex-z' + ((dnfa || zfa) ? "" : " rt-en") + '"' + ((dnfa || zfa) ? "" : ' dir="ltr"') + ">" + esc(dnfa || zfa || dn || z) + "</span>" : "") +
+      fsrTierHtml(r, 8, best) +
+      (r[10] === 1 ? '<span class="fex-tierb fex-goneb">' + esc(fsr(["NPC در بانک فعلی نیست", "NPC left the npc bank"])) + "</span>" : "") + close;
   }
   function fsrZoneList(S, key) {
     /* unique mapped zones used by section rows, in row order */
@@ -1441,13 +1497,16 @@
       if (S) {
         if (S.d && S.d.length) {
           var zones = fsrZoneList(S, "d");
-          var body = S.d.map(function (r) { return fsrNpcRow(r, S); }).join("");
+          var dT = fsrSecTier(S.d, 8), dBest = dT ? (dT.note != null ? dT.note : dT.best) : null;
+          var body = S.d.map(function (r) { return fsrNpcRow(r, S, dBest); }).join("");
+          if (dT && dT.note != null) body = fsrTierNoteHtml(dT.note) + body;
           if (S.td > S.d.length) body += '<p class="fex-more">' + FSR_LBL.more(S.td - S.d.length) + "</p>";
           body += fsrMap(zones, null, ["ناحیهٔ دراپ", "Drop zone"]);
           body += '<p class="fex-note">' + fsr(FSR_LBL.chanceNote) + "</p>";
           secs += fsrSec(fsr(FSR_LBL.drops), S.td || S.d.length, body, { delay: 140 });
         }
         if (S.q && S.q.length) {
+          var qT = fsrSecTier(S.q, 7), qBest = qT ? (qT.note != null ? qT.note : qT.best) : null;
           var tOn = trOn("namesQuest"), dOn = trOn("textDesc");
           var qb = S.q.map(function (r) {
             var zk = r[4], zd = zk && S.z[zk];
@@ -1466,26 +1525,33 @@
               '<div class="fex-quest-m">' +
               (r[6] ? "<span>" + esc(fsr(FSR_LBL.turnin)) + ': <b' + (qturn ? ">" : ' class="rt-en" dir="ltr">') + esc(qturn || r[6]) + "</b>" +
                 (qturn ? '<span class="fex-sub rt-en" dir="ltr">' + esc(r[6]) + "</span>" : "") + "</span>" : "") +
-              (zd ? '<span class="fex-z' + (zfa ? "" : " rt-en") + '"' + (zfa ? "" : ' dir="ltr"') + ">" + esc(zfa || zd[0]) + "</span>" : "") + "</div>" +
+              (zd ? '<span class="fex-z' + (zfa ? "" : " rt-en") + '"' + (zfa ? "" : ' dir="ltr"') + ">" + esc(zfa || zd[0]) + "</span>" : "") +
+              fsrTierHtml(r, 7, qBest) + "</div>" +
               (link ? '<a class="fex-w" href="quest.html?id=' + esc(r[0]) + '">' + esc(fsr(FSR_LBL.qlpage)) + "</a>" : "") +
               "</div></div>";
           }).join("");
+          if (qT && qT.note != null) qb = fsrTierNoteHtml(qT.note) + qb;
           secs += fsrSec(fsr(FSR_LBL.quests), S.q.length, qb, { delay: 200 });
         }
         if (S.v && S.v.length) {
           var vz = fsrZoneList(S, "v");
-          var vb = S.v.map(function (r) { return fsrNpcRow(r, S); }).join("");
+          var vT = fsrSecTier(S.v, 8), vBest = vT ? (vT.note != null ? vT.note : vT.best) : null;
+          var vb = S.v.map(function (r) { return fsrNpcRow(r, S, vBest); }).join("");
+          if (vT && vT.note != null) vb = fsrTierNoteHtml(vT.note) + vb;
           if (S.tv > S.v.length) vb += '<p class="fex-more">' + FSR_LBL.more(S.tv - S.v.length) + "</p>";
           vb += fsrMap(vz, null, ["محل فروش", "Vendor location"]);
           secs += fsrSec(fsr(FSR_LBL.vends), S.tv || S.v.length, vb, { delay: 260 });
         }
         if (S.o && S.o.length) {
           var oz = fsrZoneList(S, "o");
+          var oT = fsrSecTier(S.o, 4), oBest = oT ? (oT.note != null ? oT.note : oT.best) : null;
           var ob = S.o.map(function (r) {
             return '<span class="fex-npc fex-obj"><i class="fex-med fex-objd" aria-hidden="true"></i>' +
               '<span class="fex-npc-nm rt-en" dir="ltr">' + esc(r[1]) + "</span>" +
-              (r[2] ? '<span class="fex-z rt-en" dir="ltr">' + esc((S.z[r[2]] || [""])[0]) + "</span>" : "") + "</span>";
+              (r[2] ? '<span class="fex-z rt-en" dir="ltr">' + esc((S.z[r[2]] || [""])[0]) + "</span>" : "") +
+              fsrTierHtml(r, 4, oBest) + "</span>";
           }).join("");
+          if (oT && oT.note != null) ob = fsrTierNoteHtml(oT.note) + ob;
           if (S.to > S.o.length) ob += '<p class="fex-more">' + FSR_LBL.more(S.to - S.o.length) + "</p>";
           ob += fsrMap(oz, function (zk) {
             var out = [];
@@ -1499,11 +1565,14 @@
           secs += fsrSec(fsr(FSR_LBL.objs), S.to || S.o.length, ob, { delay: 320 });
         }
         if (S.c && S.c.length) {
+          var cT = fsrSecTier(S.c, 2), cBest = cT ? (cT.note != null ? cT.note : cT.best) : null;
           var cb = S.c.map(function (r) {
             return '<a class="fex-npc" href="item.html?ver=forever&id=' + esc(r[0]) + '">' +
               '<i class="fex-med fex-objd" aria-hidden="true"></i>' +
-              '<span class="fex-npc-nm rt-en" dir="ltr">' + esc(r[1]) + "</span></a>";
+              '<span class="fex-npc-nm rt-en" dir="ltr">' + esc(r[1]) + "</span>" +
+              fsrTierHtml(r, 2, cBest) + "</a>";
           }).join("");
+          if (cT && cT.note != null) cb = fsrTierNoteHtml(cT.note) + cb;
           secs += fsrSec(fsr(FSR_LBL.conts), S.c.length, cb, { delay: 380 });
         }
       }
