@@ -250,7 +250,16 @@
       var c = CNQ[name];
       return c ? '<span style="color:' + c + '">' + inner + '</span>' : inner;
     });
-    s = s.replace(/[|]r/g, '');
+    /* lane-a10: the stray-|r strip must skip {{...}} marker segments (same idea
+       as tr.js gameCodes) — the family pass above resolves only the 8 single-pipe
+       families, so an item link "{{i:123|rough stone|1}}" (text starts lowercase r)
+       survives to this strip and the old global strip ate its |r and broke it */
+    var fparts = s.split(/([{][{][^}]*[}][}])/), fout = [], fi;
+    for (fi = 0; fi < fparts.length; fi++) {
+      if (fi % 2) { fout.push(fparts[fi]); continue; } /* marker segment — untouched */
+      if (fparts[fi]) fout.push(fparts[fi].replace(/[|]r/g, ''));
+    }
+    s = fout.join('');
     s = s.replace(/[$][Gg]([^;$:]*):([^;$]*);/g, function (m, a, b) { return a.trim() + ' / ' + b.trim(); });
     s = s.replace(/[$][Nn]/g, isFa ? 'قهرمان' : '&lt;name&gt;');
     s = s.replace(/[$][Cc]/g, isFa ? 'کلاس تو' : '&lt;class&gt;');

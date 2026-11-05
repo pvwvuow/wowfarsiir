@@ -483,14 +483,26 @@
      raw — the small game chip the talent pages use, raw token in the tooltip */
   var SPVAR_RE = /\$(?:\/\d+;[sS]|\d+[sS])\d+/g;
   function gameCodes(s) {
-    return s
-      .replace(CN_RE, function (m, name, inner) {
-        var c = CN_QUAL[name];
-        return c ? '<span style="color:' + c + '">' + inner + "</span>" : inner;
-      })
-      .replace(/\|r/g, "") /* stray closers (paired ones consumed above) */
-      .replace(/\|cn[A-Za-z0-9_]+:/g, "") /* unpaired openers — keep inner text plain */
-      .replace(SPVAR_RE, function (m) { return '<span class="tk" title="' + m + '"></span>'; });
+    /* lane-a10: the stray-|r / unpaired-opener strips run while {{...}} markers
+       are still in the string (tokens() calls gameCodes(anchorPass(txt)) BEFORE
+       the marker replacement) — a display text that starts with a lowercase r
+       ("{{i:123|rough stone|1}}", "{{npc:X|rogue}}") carries a literal |r inside
+       the marker, and the old global strip ate it and broke the marker. Same
+       idea as anchorPass: split on {{...}} segments and never strip inside one. */
+    var parts = String(s).split(/(\{\{[^}]*\}\})/), out = [], i;
+    for (i = 0; i < parts.length; i++) {
+      if (i % 2) { out.push(parts[i]); continue; } /* marker segment — untouched */
+      if (!parts[i]) continue;
+      out.push(parts[i]
+        .replace(CN_RE, function (m, name, inner) {
+          var c = CN_QUAL[name];
+          return c ? '<span style="color:' + c + '">' + inner + "</span>" : inner;
+        })
+        .replace(/\|r/g, "") /* stray closers (paired ones consumed above) */
+        .replace(/\|cn[A-Za-z0-9_]+:/g, "") /* unpaired openers — keep inner text plain */
+        .replace(SPVAR_RE, function (m) { return '<span class="tk" title="' + m + '"></span>'; }));
+    }
+    return out.join("");
   }
   function defLink(pid) { return "item.html?ver=forever&id=" + pid; }
   /* anchor pass — skip {{...}} marker segments so nested constructs and

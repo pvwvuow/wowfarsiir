@@ -911,16 +911,27 @@
     return p.then(function (d) { return (d.tips && d.tips[String(id)]) || null; });
   }
   function tipTokensBase(txt, fa) {
-    return txt
-      /* lane-a9 D: |cn<NAME>:…|r game colour codes + $…s1 spell variables —
-         same contract as tr.js gameCodes (fallback parity) */
-      .replace(/\|cn([A-Za-z0-9_]+):((?:(?!\|r).)*)\|r/g, function (m, name, inner) {
-        var c = CNQ[name];
-        return c ? '<span style="color:' + c + '">' + inner + "</span>" : inner;
-      })
-      .replace(/\|r/g, "")
-      .replace(/\|cn[A-Za-z0-9_]+:/g, "")
-      .replace(/\$(?:\/\d+;[sS]|\d+[sS])\d+/g, function (m) { return '<span class="tk" title="' + m + '"></span>'; })
+    /* lane-a10: the stray-|r / unpaired-opener strips must skip {{...}} marker
+       segments (same idea as tr.js gameCodes / anchorPass) — a display text that
+       starts with a lowercase r ("{{i:123|rough stone|1}}") carries a literal |r
+       inside the marker, and the old global strip ate it and broke the marker
+       before the {{i: replacement below could render the link */
+    var parts = String(txt).split(/(\{\{[^}]*\}\})/), outs = [], pi;
+    for (pi = 0; pi < parts.length; pi++) {
+      if (pi % 2) { outs.push(parts[pi]); continue; } /* marker segment — untouched */
+      if (!parts[pi]) continue;
+      outs.push(parts[pi]
+        /* lane-a9 D: |cn<NAME>:…|r game colour codes + $…s1 spell variables —
+           same contract as tr.js gameCodes (fallback parity) */
+        .replace(/\|cn([A-Za-z0-9_]+):((?:(?!\|r).)*)\|r/g, function (m, name, inner) {
+          var c = CNQ[name];
+          return c ? '<span style="color:' + c + '">' + inner + "</span>" : inner;
+        })
+        .replace(/\|r/g, "")
+        .replace(/\|cn[A-Za-z0-9_]+:/g, "")
+        .replace(/\$(?:\/\d+;[sS]|\d+[sS])\d+/g, function (m) { return '<span class="tk" title="' + m + '"></span>'; }));
+    }
+    return outs.join("")
       .replace(/\{\{i:(\d+)\|([^}]*)\|(\d*)\}\}/g, function (m, pid, t, q) {
         return '<a class="rt-en" dir="ltr" style="color:' + (QCOL[+q] || "#f0c75e") + '" href="' + itemLink(pid) + '">' + t + "</a>";
       })
