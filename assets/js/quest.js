@@ -491,10 +491,113 @@
   }
 
   /* ---------- detail page ---------- */
+  /* W3b (lane-b5) + lane-b6: per-field provenance (docs/SOURCES.md Quests table —
+     the record's "tsrc" map, field -> [t, via]). ONE note per page, not five:
+     when every TEXT field the record carries (name, desc, objectives, details,
+     progress, completion) has the SAME tier 3/4, the ONE note renders under the
+     hero title and the sections stay quiet; when the text blocks differ, a note
+     renders ONLY on the blocks whose tier differs from the title's (name) tier.
+     The rewards block keeps its own single note, by the same within-block rule.
+     T4 "Classic or wiki, not confirmed in Forever", T3 "ForeverDB"; T1/T2 blocks
+     and old records without tails show nothing (no crash). The note always
+     speaks about the ENGLISH source the text (and its Persian translation) came
+     from — the fa record's own pack id is separate and never shown here. */
+  /* QUEST-LABEL-BEGIN */
+  var Q_TEXT_FIELDS = ["name", "desc", "objectives", "details", "progress", "completion"];
+  function qFieldTier(q, f) {
+    var t = q && q.tsrc && q.tsrc[f];
+    return (t && t.length) ? t[0] : null;
+  }
+  function qCarries(q, f) {
+    if (!q) return false;
+    var v = q[f];
+    if (v == null || v === "") return false;
+    if (typeof v === "object" && v.length === 0) return false;
+    return true;
+  }
+  function qTierNote(t) {
+    if (t === 4) return { fa: "این متن از Classic یا ویکی است و در Forever تأیید نشده", en: "This text is from Classic or a wiki, not confirmed in Forever" };
+    if (t === 3) return { fa: "منبع: ForeverDB", en: "Source: ForeverDB" };
+    return null;   /* T1/T2 (observed / client build) and anything else: nothing */
+  }
+  function qPageNote(q) {
+    /* the ONE page note: every carried TEXT field the same tier 3/4 */
+    var t0 = null, i, f, t, n = 0;
+    if (!q) return null;
+    for (i = 0; i < Q_TEXT_FIELDS.length; i++) {
+      f = Q_TEXT_FIELDS[i];
+      if (!qCarries(q, f)) continue;
+      t = qFieldTier(q, f);
+      if (t == null) return null;            /* carried but unattributed -> no page claim */
+      if (t !== 3 && t !== 4) return null;   /* T1/T2/estimate among the texts -> no page note */
+      if (t0 == null) t0 = t; else if (t !== t0) return null;   /* mixed -> block notes instead */
+      n++;
+    }
+    return n ? qTierNote(t0) : null;
+  }
+  function qBlockTier(q, fields) {
+    var ts = [], i, t;
+    for (i = 0; i < (fields || []).length; i++) {
+      t = q && q.tsrc && q.tsrc[fields[i]];
+      if (!t || !t.length) return null;   /* a block field without a tail -> unknown block */
+      ts.push(t[0]);
+    }
+    return ts.length ? ts : null;
+  }
+  function qBlockNote(q, fields) {
+    var ts = qBlockTier(q, fields), t0, i;
+    if (!ts) return null;
+    t0 = ts[0];
+    for (i = 1; i < ts.length; i++) if (ts[i] !== t0) return null;   /* mixed tiers -> nothing */
+    return qTierNote(t0);
+  }
+  function qSecNote(q, fields) {
+    /* lane-b6: uniform page -> the hero title carries the one note, sections
+       quiet; mixed page -> a note only on the blocks whose tier differs from
+       the title's (name) tier; no title tier -> every 3/4 block speaks. */
+    if (qPageNote(q)) return null;
+    var ts = qBlockTier(q, fields), t, a;
+    if (!ts) return null;
+    t = ts[0];
+    if (t !== 3 && t !== 4) return null;
+    a = qFieldTier(q, "name");
+    if (a != null && t === a) return null;
+    return qBlockNote(q, fields);
+  }
+  function qXpEst(q) {
+    /* lane-b6: tier 0 "estimate (curve)" — a computed XP is not a source value */
+    var t = q && q.tsrc && q.tsrc.rewXp;
+    return !!(t && t.length && t[0] === 0);
+  }
+  /* QUEST-LABEL-END */
+  function qPageNoteHtml(q) {
+    var nt = qPageNote(q);
+    return nt ? '<p class="npc-note">' + esc(lbl(nt.fa, nt.en)) + '</p>' : '';
+  }
+  function qSecNoteHtml(q, fields) {
+    var nt = qSecNote(q, fields);
+    return nt ? '<p class="npc-note">' + esc(lbl(nt.fa, nt.en)) + '</p>' : '';
+  }
+  function qNoteHtml(q, fields) {
+    var nt = qBlockNote(q, fields);
+    return nt ? '<p class="npc-note">' + esc(lbl(nt.fa, nt.en)) + '</p>' : '';
+  }
   function money2(q) { return typeof q.rewMoney === 'number' && q.rewMoney > 0 ? q.rewMoney : 0; }
   function rewardsHtml(q) {
     var h = '', rw = S.rw, ch, it, hasAny = false, rep;
-    if (typeof q.rewXp === 'number' && q.rewXp > 0) { h += frow(lbl('تجربه', 'Experience'), '<b>' + num(q.rewXp) + '</b> XP'); hasAny = true; }
+    /* W3b: the rewards block note — over the fields the record actually carries */
+    var rf = [];
+    if (typeof q.rewXp === 'number' && q.rewXp > 0) rf.push('rewXp');
+    if (money2(q)) rf.push('rewMoney');
+    if (arr(q.rewRep).length) rf.push('rewRep');
+    if (arr(q.rewItems).length) rf.push('rewItems');
+    if (arr(q.rewChoice).length) rf.push('rewChoice');
+    h = qNoteHtml(q, rf);
+    /* lane-b6: a tier-0 "estimate (curve)" XP is a computed value, not a source
+       value — shown as ≈ <xp> with a small muted «تخمینی، تأیید نشده» label;
+       ForeverDB / cache XP (tiers 3/1) render unchanged */
+    var xpEst = qXpEst(q);
+    if (typeof q.rewXp === 'number' && q.rewXp > 0) { h += frow(lbl('تجربه', 'Experience'), (xpEst ? '≈ ' : '') + '<b>' + num(q.rewXp) + '</b> XP' + (xpEst ? ' <small class="fex-xpest">' + lbl('تخمینی، تأیید نشده', 'estimated, unconfirmed') + '</small>' : '')); hasAny = true; }
     if (money2(q)) { h += frow(lbl('پول', 'Money'), '<b>' + esc(money(money2(q))) + '</b>'); hasAny = true; }
     rep = arr(q.rewRep);
     if (rep.length) {
@@ -553,6 +656,7 @@
     hero = '<header class="fex-hero q1 fFade"><div class="fex-hid"><p class="fex-eyebrow font-cinzel" dir="ltr"><i></i>QUEST' + (q.repeatable ? ' · REPEATABLE' : '') + '<i></i></p>'
       + '<h1' + (fa ? '>' : ' class="rt-en" dir="ltr">') + (fa ? tt(title) : esc(title)) + hb + '</h1>'
       + (fa && q.name ? '<p class="fx-ensub rt-en" dir="ltr">' + esc(q.name) + '</p>' : '')
+      + qPageNoteHtml(q)
       + '<div class="fex-hchips">'
       + (q.questLevel ? chip(lbl('سطح کوئست', 'Quest level'), num(q.questLevel)) : '')
       + (q.requiredLevel ? chip(lbl('حداقل سطح', 'Required level'), num(q.requiredLevel)) : '')
@@ -569,14 +673,14 @@
       var same = !!enKey(q.objectives) && enKey(q.objectives) === enKey(q.desc);
       var objFaTxt = arr(f.obj).length ? f.obj : (same ? f.desc : f.obj);
       var objHtml = paras(q.objectives, objFaTxt), sumHtml = paras(q.desc, f.desc);
-      texts += sec(lbl('هدف', 'Objectives'), null, objHtml, txtB(q.objectives, objFaTxt));
-      if (!same && sumHtml !== objHtml) texts += sec(lbl('شرح', 'Summary'), null, sumHtml, txtB(q.desc, f.desc));
+      texts += sec(lbl('هدف', 'Objectives'), null, qSecNoteHtml(q, ['objectives']) + objHtml, txtB(q.objectives, objFaTxt));
+      if (!same && sumHtml !== objHtml) texts += sec(lbl('شرح', 'Summary'), null, qSecNoteHtml(q, ['desc']) + sumHtml, txtB(q.desc, f.desc));
     } else {
-      texts += sec(lbl('هدف', 'Objectives'), null, paras(q.desc, f.desc), txtB(q.desc, f.desc));
+      texts += sec(lbl('هدف', 'Objectives'), null, qSecNoteHtml(q, ['desc']) + paras(q.desc, f.desc), txtB(q.desc, f.desc));
     }
-    texts += sec(lbl('توضیح', 'Description'), null, paras(q.details, f.details), txtB(q.details, f.details));
-    texts += sec(lbl('پیشرفت', 'Progress'), null, paras(q.progress, f.progress), txtB(q.progress, f.progress));
-    texts += sec(lbl('تحویل', 'Completion'), null, paras(q.completion, f.completion), txtB(q.completion, f.completion));
+    texts += sec(lbl('توضیح', 'Description'), null, qSecNoteHtml(q, ['details']) + paras(q.details, f.details), txtB(q.details, f.details));
+    texts += sec(lbl('پیشرفت', 'Progress'), null, qSecNoteHtml(q, ['progress']) + paras(q.progress, f.progress), txtB(q.progress, f.progress));
+    texts += sec(lbl('تحویل', 'Completion'), null, qSecNoteHtml(q, ['completion']) + paras(q.completion, f.completion), txtB(q.completion, f.completion));
     /* quest-hunt v2 targets: creatures to kill / items to collect */
     if (arr(q.killTargets).length) {
       texts += sec(lbl('شکار', 'Kill targets'), q.killTargets.length,
