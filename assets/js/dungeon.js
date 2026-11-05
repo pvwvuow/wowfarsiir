@@ -27,6 +27,19 @@
   function num(v) { return on('uiLabels') ? faNum(v) : String(v); }
   function lbl(fa, en) { return on('uiLabels') ? esc(fa) : '<span class="rt-en" dir="ltr">' + esc(en) + '</span>'; }
   function enSpan(t) { return '<span class="rt-en" dir="ltr">' + esc(t) + '</span>'; }
+  /* DESC-TOK-BEGIN — lane-a9 A: FA dungeon descriptions go through the ONE text
+     pipeline (WFTR.faTokens) exactly like every other FA text on the site: the
+     text is escaped FIRST, then the marker family {{zn|npc|tm|sp|qs:EN|FA}} is
+     resolved per switch, then the token markup. Data can never inject raw HTML
+     (`<` in data stays escaped) and with tr.js absent the old plain-esc render
+     is the fallback. Re-render on the translation-style change is already
+     covered: paint() re-runs from WF.onChange. tools/test_dungeon_desc.js
+     guards this contract. */
+  function faDescHtml(desc) {
+    var e = esc(desc);
+    return WF && WF.faTokens ? WF.faTokens(e) : e;
+  }
+  /* DESC-TOK-END */
   function arr(v) { return Array.isArray(v) ? v : []; }
   function nz(s) {
     var o = '', i, c;
@@ -274,7 +287,7 @@
       + (st ? '<span class="fex-chip dg-st">' + st + '</span>' : '') + '</div></div></header>';
 
     A += artHtml(L.slug);
-    if (LANG === 'fa' && f.desc) desc = '<p class="q-p">' + esc(f.desc) + '</p>';
+    if (LANG === 'fa' && f.desc) desc = '<p class="q-p">' + faDescHtml(f.desc) + '</p>';
     else if (d.descriptionEn) desc = '<p class="q-p rt-en" dir="ltr">' + esc(d.descriptionEn) + '</p>';
     if (desc) A += sec(lbl('درباره', 'About'), null,
       (LANG === 'fa' && !f.desc ? '<p class="str-note npc-note">' + lbl('ترجمهٔ فارسی این توضیح هنوز آماده نیست؛ متن انگلیسی نشان داده می‌شود.', 'The Persian text is not ready yet; English is shown.') + '</p>' : '') + desc);
