@@ -470,6 +470,28 @@
        (tools/markerize_fa.py), which also keeps embedded EN names safe. */
   var QCOL = { 0: "#b4b4b4", 1: "#ffffff", 2: "#1eff00", 3: "#3a9bff", 4: "#c06cff", 5: "#ff8000", 6: "#e6cc80", 7: "#00cc98" };
   var CC = { c1: "#c79c6e", c2: "#f58cba", c3: "#abd473", c4: "#fff569", c5: "#ffffff", c6: "#c41e3a", c7: "#0070de", c8: "#69ccf0", c9: "#9482c9", c10: "#00ff96", c11: "#ff7d0a", c12: "#a330c9", c13: "#33937f" };
+  /* lane-a9 D: game colour codes |cn<NAME>:…|r — the opener and the |r are
+     stripped, the inner text stays; ONLY known quality tokens get the site
+     quality colour, everything else renders plain. Data check 2026-11-06:
+     the shipped rows carry IQ1 (60), EPIC_PURPLE_COLOR (136),
+     RARE_BLUE_COLOR (102), always paired with |r. IQ<n> = QCOL[n] by
+     definition; the two long names map to their quality. */
+  var CN_QUAL = { IQ0: QCOL[0], IQ1: QCOL[1], IQ2: QCOL[2], IQ3: QCOL[3], IQ4: QCOL[4], IQ5: QCOL[5], IQ6: QCOL[6], IQ7: QCOL[7],
+    EPIC_PURPLE_COLOR: QCOL[4], RARE_BLUE_COLOR: QCOL[3] };
+  var CN_RE = /\|cn([A-Za-z0-9_]+):((?:(?!\|r).)*)\|r/g;
+  /* spell variables the game computes ("$/1000;s1", "$439164s1") never show
+     raw — the small game chip the talent pages use, raw token in the tooltip */
+  var SPVAR_RE = /\$(?:\/\d+;[sS]|\d+[sS])\d+/g;
+  function gameCodes(s) {
+    return s
+      .replace(CN_RE, function (m, name, inner) {
+        var c = CN_QUAL[name];
+        return c ? '<span style="color:' + c + '">' + inner + "</span>" : inner;
+      })
+      .replace(/\|r/g, "") /* stray closers (paired ones consumed above) */
+      .replace(/\|cn[A-Za-z0-9_]+:/g, "") /* unpaired openers — keep inner text plain */
+      .replace(SPVAR_RE, function (m) { return '<span class="tk" title="' + m + '"></span>'; });
+  }
   function defLink(pid) { return "item.html?ver=forever&id=" + pid; }
   /* anchor pass — skip {{...}} marker segments so nested constructs and
      item-link display texts are never wrapped */
@@ -488,7 +510,7 @@
   var SPANS = [];
   function tokens(txt, linker, fa) {
     var L = linker || defLink;
-    var s = anchorPass(String(txt));
+    var s = gameCodes(anchorPass(String(txt)));
     return s
       .replace(/\{\{i:(\d+)\|([^}]*)\|(\d*)\}\}/g, function (m, pid, t, q) {
         return '<a class="rt-en" dir="ltr" style="color:' + (QCOL[+q] || "#f0c75e") + '" href="' + L(pid) + '">' + t + "</a>";

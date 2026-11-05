@@ -108,6 +108,9 @@
     world: "Drop", quest: "Quest", vendor: "Vendor", object: "Object", container: "Container" };
   var QFA = ["ضعیف", "معمولی", "غیرمعمول", "کمیاب", "حماسی", "افسانه‌ای", "آرتیفکت", "وارثی"];
   var QCOL = ["#b4b4b4", "#ffffff", "#1eff00", "#3a9bff", "#c06cff", "#ff8000", "#e6cc80", "#00cc98"];
+  /* lane-a9 D: |cn<NAME> quality tokens -> the site quality colours (tr.js gameCodes mirror) */
+  var CNQ = { IQ0: QCOL[0], IQ1: QCOL[1], IQ2: QCOL[2], IQ3: QCOL[3], IQ4: QCOL[4], IQ5: QCOL[5], IQ6: QCOL[6], IQ7: QCOL[7],
+    EPIC_PURPLE_COLOR: QCOL[4], RARE_BLUE_COLOR: QCOL[3] };
   var CAT_FA = { gear: "گیر و سلاح", gems: "سنگ‌ها", materials: "مواد اولیه", consumables: "مصرفی‌ها", recipes: "دستورها", housing: "خانه‌داری", quest: "کوئست", misc: "متفرقه", news: "اخبار",
     /* classic 12-bucket names (Forever rows carry cat=fc) - additive, retail cats untouched */
     weapon: "سلاح", armor: "زره", container: "کیسه", tradegoods: "مواد اولیه", projectile: "مهمات", quiver: "کیسهٔ تیر", reagent: "ریجنت", key: "کلید" };
@@ -909,6 +912,15 @@
   }
   function tipTokensBase(txt, fa) {
     return txt
+      /* lane-a9 D: |cn<NAME>:…|r game colour codes + $…s1 spell variables —
+         same contract as tr.js gameCodes (fallback parity) */
+      .replace(/\|cn([A-Za-z0-9_]+):((?:(?!\|r).)*)\|r/g, function (m, name, inner) {
+        var c = CNQ[name];
+        return c ? '<span style="color:' + c + '">' + inner + "</span>" : inner;
+      })
+      .replace(/\|r/g, "")
+      .replace(/\|cn[A-Za-z0-9_]+:/g, "")
+      .replace(/\$(?:\/\d+;[sS]|\d+[sS])\d+/g, function (m) { return '<span class="tk" title="' + m + '"></span>'; })
       .replace(/\{\{i:(\d+)\|([^}]*)\|(\d*)\}\}/g, function (m, pid, t, q) {
         return '<a class="rt-en" dir="ltr" style="color:' + (QCOL[+q] || "#f0c75e") + '" href="' + itemLink(pid) + '">' + t + "</a>";
       })

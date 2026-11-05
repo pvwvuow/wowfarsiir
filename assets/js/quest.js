@@ -33,6 +33,10 @@
   var MICON = { s: 'assets/img/map-icons/questgiver.png', e: 'assets/img/map-icons/quest-turnin.png' };
   /* marker family inside the Persian quest text -> the switch that owns it (tr.js MK) */
   var MKSW = { npc: 'namesNpc', zn: 'namesZone', it: 'namesItem', sp: 'namesSpell', ob: 'namesObj', qs: 'namesQuest', cls: 'namesClass', tm: 'terms' };
+  /* lane-a9 D: |cn<NAME> quality tokens -> the site quality colours (tr.js gameCodes mirror;
+     the site QCOL: 0 poor, 1 common, 2 uncommon, 3 rare, 4 epic, 5 legendary, 6 artifact, 7 heirloom) */
+  var CNQ = { IQ0: '#b4b4b4', IQ1: '#ffffff', IQ2: '#1eff00', IQ3: '#3a9bff', IQ4: '#c06cff', IQ5: '#ff8000', IQ6: '#e6cc80', IQ7: '#00cc98',
+    EPIC_PURPLE_COLOR: '#c06cff', RARE_BLUE_COLOR: '#3a9bff' };
 
   /* ---------- helpers ---------- */
   function esc(s) {
@@ -239,12 +243,23 @@
       return on(MKSW[mk]) ? fa : '<span class="rt-en" dir="ltr">' + en + '</span>';
     });
     s = s.replace(/[|]c[0-9a-fA-F]{2}([0-9a-fA-F]{6})(.*?)[|]r/g, '<span style="color:#$1">$2</span>');
+    /* lane-a9 D: |cn<NAME>:…|r game colour codes — opener + |r stripped, inner
+       text kept; ONLY known quality tokens get the site quality colour (same
+       map as tr.js gameCodes; retail.js QCOL[3] rare / QCOL[4] epic) */
+    s = s.replace(/[|]cn([A-Za-z0-9_]+):((?:(?![|]r).)*)[|]r/g, function (m, name, inner) {
+      var c = CNQ[name];
+      return c ? '<span style="color:' + c + '">' + inner + '</span>' : inner;
+    });
     s = s.replace(/[|]r/g, '');
     s = s.replace(/[$][Gg]([^;$:]*):([^;$]*);/g, function (m, a, b) { return a.trim() + ' / ' + b.trim(); });
     s = s.replace(/[$][Nn]/g, isFa ? 'قهرمان' : '&lt;name&gt;');
     s = s.replace(/[$][Cc]/g, isFa ? 'کلاس تو' : '&lt;class&gt;');
     s = s.replace(/[$][Rr]/g, isFa ? 'نژاد تو' : '&lt;race&gt;');
     s = s.replace(/[$][Bb]/g, '<br>');
+    /* lane-a9 D: spell variables the game computes ("$/1000;s1", "$439164s1")
+       never show raw — the small game chip (tr.js gameCodes), raw token in the
+       tooltip; runs BEFORE the generic $-code drop so it can win the match */
+    s = s.replace(/[$](?:[\/]\d+;[sS]|\d+[sS])\d+/g, function (m) { return '<span class="tk" title="' + m + '"></span>'; });
     s = s.replace(/[$][A-Za-z]/g, '');
     return s;
   }
