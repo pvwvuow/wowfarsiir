@@ -243,21 +243,20 @@
       return on(MKSW[mk]) ? fa : '<span class="rt-en" dir="ltr">' + en + '</span>';
     });
     s = s.replace(/[|]c[0-9a-fA-F]{2}([0-9a-fA-F]{6})(.*?)[|]r/g, '<span style="color:#$1">$2</span>');
-    /* lane-a9 D: |cn<NAME>:…|r game colour codes — opener + |r stripped, inner
-       text kept; ONLY known quality tokens get the site quality colour (same
-       map as tr.js gameCodes; retail.js QCOL[3] rare / QCOL[4] epic) */
-    s = s.replace(/[|]cn([A-Za-z0-9_]+):((?:(?![|]r).)*)[|]r/g, function (m, name, inner) {
-      var c = CNQ[name];
-      return c ? '<span style="color:' + c + '">' + inner + '</span>' : inner;
-    });
-    /* lane-a10: the stray-|r strip must skip {{...}} marker segments (same idea
-       as tr.js gameCodes) — the family pass above resolves only the 8 single-pipe
-       families, so an item link "{{i:123|rough stone|1}}" (text starts lowercase r)
-       survives to this strip and the old global strip ate its |r and broke it */
+    /* lane-a10 (inbox/18 C): the |cn<NAME>:…|r pair replace moved INSIDE the {{...}}
+       split (same as tr.js gameCodes) — run before the split it could match INTO a
+       marker: "|cnIQ1:x {{i:1|rough|1}}" has no closer before the marker, so the old
+       pre-loop pair regex matched the marker's "|rough" as its |r and ate it */
     var fparts = s.split(/([{][{][^}]*[}][}])/), fout = [], fi;
     for (fi = 0; fi < fparts.length; fi++) {
       if (fi % 2) { fout.push(fparts[fi]); continue; } /* marker segment — untouched */
-      if (fparts[fi]) fout.push(fparts[fi].replace(/[|]r/g, ''));
+      if (fparts[fi]) fout.push(fparts[fi]
+        .replace(/[|]cn([A-Za-z0-9_]+):((?:(?![|]r).)*)[|]r/g, function (m, name, inner) {
+          var c = CNQ[name];
+          return c ? '<span style="color:' + c + '">' + inner + '</span>' : inner;
+        })
+        .replace(/[|]r/g, '')
+        .replace(/[|]cn[A-Za-z0-9_]+:/g, '')); /* unpaired opener — inner stays plain */
     }
     s = fout.join('');
     s = s.replace(/[$][Gg]([^;$:]*):([^;$]*);/g, function (m, a, b) { return a.trim() + ' / ' + b.trim(); });
