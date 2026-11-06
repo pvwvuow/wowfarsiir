@@ -48,6 +48,12 @@
   function on(k) { try { return WF && WF.on ? !!WF.on(k) : true; } catch (e) { return true; } }
   function num(v) { return on('uiLabels') ? faNum(v) : String(v); }
   function lbl(fa, en) { return on('uiLabels') ? esc(fa) : '<span class="rt-en" dir="ltr">' + esc(en) + '</span>'; }
+  /* lane-c17: html-safe twin of lbl() for string-built html. lbl() returns a MARKUP
+     string in EN mode (the rt-en span); putting it through esc() again (or through
+     textContent) paints the tags on the page. lblHtml escapes each language exactly
+     once and builds the span only from already-escaped text — DOM-node safety, in
+     the string idiom every renderer in this file already uses. */
+  function lblHtml(fa, en) { return on('uiLabels') ? esc(fa) : enSpan(en); }
   function enSpan(t) { return '<span class="rt-en" dir="ltr">' + esc(t) + '</span>'; }
   /* quest titles can quote a name: {{fam:EN|FA}}. Each marker follows ITS switch (like the text body); plain text for
      document.title and search */
@@ -595,15 +601,15 @@
   /* QUEST-LABEL-END */
   function qPageNoteHtml(q) {
     var nt = qPageNote(q);
-    return nt ? '<p class="npc-note">' + esc(lbl(nt.fa, nt.en)) + '</p>' : '';
+    return nt ? '<p class="npc-note">' + lblHtml(nt.fa, nt.en) + '</p>' : '';
   }
   function qSecNoteHtml(q, fields) {
     var nt = qSecNote(q, fields);
-    return nt ? '<p class="npc-note">' + esc(lbl(nt.fa, nt.en)) + '</p>' : '';
+    return nt ? '<p class="npc-note">' + lblHtml(nt.fa, nt.en) + '</p>' : '';
   }
   function qNoteHtml(q, fields) {
     var nt = qBlockNote(q, fields);
-    return nt ? '<p class="npc-note">' + esc(lbl(nt.fa, nt.en)) + '</p>' : '';
+    return nt ? '<p class="npc-note">' + lblHtml(nt.fa, nt.en) + '</p>' : '';
   }
   function money2(q) { return typeof q.rewMoney === 'number' && q.rewMoney > 0 ? q.rewMoney : 0; }
   function rewardsHtml(q) {
