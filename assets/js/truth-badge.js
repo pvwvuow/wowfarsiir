@@ -5,7 +5,8 @@
    W1c fix (inbox/14 B3): retail.js re-renders #rt-root (loading -> card, language toggle), which
    wiped the badge right after it was placed, and the old observer had already disconnected. The
    badge is now re-inserted whenever #rt-root has content but no badge; tools/test_truth_badge.js
-   guards this. */
+   guards this. lane-a14 (R35/R13): a second fetch (effect-diff.json) adds one
+   provenance line for the Use/Equip numbers, which item_truth never sees. */
 (function () {
   var T = {
   absent: "\u0627\u06cc\u0646 \u0622\u06cc\u062a\u0645 \u062f\u0631 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0628\u0627\u0632\u06cc Forever \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f\u061b \u0645\u0645\u06a9\u0646 \u0627\u0633\u062a \u062f\u0631 Forever \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u062f.",
@@ -23,7 +24,16 @@
   src: "\u0645\u0646\u0628\u0639: \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0628\u0627\u0632\u06cc Forever",
   srcc: "\u0645\u0646\u0628\u0639: \u062f\u0627\u062f\u0647\u0654 \u0633\u0631\u0648\u0631 Forever (\u06a9\u0634 \u0628\u0627\u0632\u06cc)",
   none: "\u0628\u062f\u0648\u0646 \u0627\u0633\u062a\u062a"
+  };  /* R35/R13 (lane-a14): the numbers on the Use:/Equip:/Chance line live in the on-use SPELL,
+     item_truth cannot see them. effect-diff.json (tools/effect_diff.py, the lane-a14 data PR)
+     marks those rows: applied = the numbers were refreshed from the Forever client files,
+     listed = the client template was rewritten and only the full-text path can refresh them
+     (the numbers shown are still the old bank's). One extra line on the badge, build stamped. */
+  var FX_T = {
+  applied: "\u0627\u0639\u062f\u0627\u062f \u062e\u0637 Use/Equip \u0627\u0632 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0628\u0627\u0632\u06cc Forever \u0627\u0633\u062a.",
+  listed: "\u0627\u0639\u062f\u0627\u062f \u062e\u0637 Use/Equip \u0647\u0646\u0648\u0632 \u0627\u0632 \u06a9\u0644\u0627\u0633\u06cc\u06a9 \u0627\u0633\u062a\u061b \u0647\u0645\u200c\u0633\u0646\u062c\u06cc \u0628\u0627 \u06a9\u0644\u0627\u06cc\u0646\u062a \u06a9\u0627\u0645\u0644 \u0646\u06cc\u0633\u062a."
   };
+  var fx = null;
   var NAMES = {3: "Agility", 4: "Strength", 5: "Intellect", 6: "Spirit", 7: "Stamina", 32: "Critical Strike",
                36: "Haste", 31: "Hit", 45: "Spell Power"};
   var p = new URLSearchParams(location.search);
@@ -49,6 +59,9 @@
     if (ent.x && ent.x.length) {
       box.appendChild(el("div", "", T.x + ": " + ent.x.map(function (t) { return NAMES[t] || ("#" + t); }).join("\u060c ")));
     }
+    if (fx && FX_T[fx.state]) {
+      box.appendChild(el("div", "font-size:11.5px;color:#bdb7a6", FX_T[fx.state] + (fx.build ? " (" + fx.build + ")" : "")));
+    }
     if (ent.s !== "absent") box.appendChild(el("div", "font-size:11.5px;color:#bdb7a6", ent.src === "cache" ? T.srcc : T.src));
     return box;
   }
@@ -61,9 +74,17 @@
     if (!root.querySelector(".truth-badge")) root.insertBefore(badge(ent), root.firstChild);
     return true;
   }
-  fetch("data/forever/db/truth-" + (+id % 24) + ".json")
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (j) {
+  Promise.all([
+    fetch("data/forever/db/truth-" + (+id % 24) + ".json")
+      .then(function (r) { return r.ok ? r.json() : null; }),
+    fetch("data/forever/db/effect-diff.json")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; })
+  ])
+    .then(function (res) {
+      var j = res[0];
+      var raw = res[1] && res[1].items && res[1].items[id];
+      fx = raw ? {state: raw.state, build: res[1].build || ""} : null;
       var ent = j && j.items && j.items[id];
       if (!ent || !T[ent.s]) return;
       ensure(ent);
