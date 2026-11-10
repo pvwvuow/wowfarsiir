@@ -305,7 +305,10 @@
      ONE map: marker code -> the global switch that owns it. The same pair
      is what tools/markerize_fa.py writes into fa-*.json at build time. */
   var MK = { sp: "namesSpell", tm: "terms", ts: "textStats", it: "namesItem", npc: "namesNpc",
-    zn: "namesZone", qs: "namesQuest", ob: "namesObj", cls: "namesClass" };
+    zn: "namesZone", qs: "namesQuest", ob: "namesObj", cls: "namesClass",
+    set: "namesItem" };
+  /* set = the item-SET name marker {{set:EN|FA}} (written into the fa bank's
+     setb lines); it flips with namesItem — per the marker doc, "SET names too". */
   /* cls = class + spec names («جنگاور», «کیفر», «استادی حیوان»…), written by
      the build markerizer from the glossary-locked bank — owned by namesClass,
      NOT namesSpell/textReq, so the drawer flips them independently. */
@@ -552,7 +555,7 @@
        each generated span is parked (\u0002) until after tokens() so the
        anchor pass inside tokens() cannot wrap its EN fallback text again
        into nested .tok-tm spans (round-2 review: 4 spans instead of 2) */
-    var mks = ["sp", "tm", "ts", "it", "npc", "zn", "qs", "ob", "cls"], i;
+    var mks = ["sp", "tm", "ts", "it", "npc", "zn", "qs", "ob", "cls", "set"], i;
     for (i = 0; i < mks.length; i++) {
       (function (mk) {
         var sw = MK[mk];
