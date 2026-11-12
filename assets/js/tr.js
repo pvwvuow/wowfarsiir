@@ -315,6 +315,16 @@
   /* ts = glossary term INSIDE a stats/damage line (Damage/Agility/Armor…):
      owned by textStats, NOT terms — so the whole stat block flips with ONE
      switch («آمار، آسیب و اعداد»). terms stays for desc/flavor glossary. */
+  /* 72-A: a tm glossary term inside a line owned by a TEXT switch resolves
+     with THAT line's switch, not terms — the data build (markerize_fa) still
+     writes tm on set / Equip lines, and with terms off the line rendered
+     Persian EXCEPT its words (the owner's "half/half" set bonuses). The
+     caller passes the line's own catTk switch as owner (retail.js tipLine);
+     callers without a line context (studio samples, other pages) keep the
+     pure terms rule. Same rule as the addon's T.Markers(s, owner)
+     (wowfa PR 171) so site and addon stay identical. */
+  var TXT_OWNER = { textDesc: 1, textStats: 1, textReq: 1, textBind: 1,
+    textDetail: 1, textFlavor: 1 };
   var MARKERS = ["sp", "tm", "it", "npc", "zn", "qs", "ob", "i", "cc", "col", "g", "s", "c", "sock", "t"];
   /* protection regex built FROM THE LIST (was hand-written): only the markup
      markers — the marker family (MK) must survive protection so faTokens can
@@ -544,7 +554,7 @@
           : '<span class="' + esc(c) + '">' + t + "</span>";
       });
   }
-  function faTokens(txt, linker) {
+  function faTokens(txt, linker, owner) {
     var s = String(txt);
     var marks = [];
     /* protect all {{...}} markup from the marker resolution pass */
@@ -559,6 +569,8 @@
     for (i = 0; i < mks.length; i++) {
       (function (mk) {
         var sw = MK[mk];
+        /* 72-A: the line's own text switch owns the tm words it renders */
+        if (mk === "tm" && owner && TXT_OWNER[owner]) sw = owner;
         s = s.replace(new RegExp("\\{\\{" + mk + ":([^|}]*)\\|([^}]*)\\}\\}", "g"),
           function (m, en, faTxt) {
             SPANS.push('<span class="tok-' + mk + '" data-tk="' + sw + '">' +

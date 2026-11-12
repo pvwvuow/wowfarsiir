@@ -960,16 +960,22 @@
      FAMILY ({{sp|tm|it|npc|zn|qs|ob:EN|FA}}) resolved per switch + markup.
      Fallback resolves the family with sensible defaults when tr.js is
      absent (static pages never carry merged FA lines anyway). */
-  function faTipTokens(txt) {
+  /* 72-A: the text switches that own the tm markers of the line they render
+     (the site's setb cat maps to textDesc; textSet exists only in the addon) */
+  var TXT_OWNER_FB = { textDesc: 1, textStats: 1, textReq: 1, textBind: 1,
+    textDetail: 1, textFlavor: 1 };
+  function faTipTokens(txt, tk) {
     var wf = window.WFTR;
-    if (wf && wf.faTokens) return wf.faTokens(txt);
+    if (wf && wf.faTokens) return wf.faTokens(txt, null, tk);
     var MKB = (wf && wf.MK) || { sp: "namesSpell", tm: "terms", it: "namesItem", npc: "namesNpc", zn: "namesZone", qs: "namesQuest", ob: "namesObj" };
     var s = String(txt), mk;
     for (mk in MKB) {
       if (!Object.prototype.hasOwnProperty.call(MKB, mk)) continue;
       (function (code, sw) {
         s = s.replace(new RegExp("\\{\\{" + code + ":([^|}]*)\\|([^}]*)\\}\\}", "g"), function (m, en, fa) {
-          var onSw = wf && wf.on ? wf.on(sw) : sw === "namesQuest" || sw === "textDesc";
+          /* 72-A: the line's own switch owns the tm words it renders */
+          var eff = (code === "tm" && tk && TXT_OWNER_FB[tk]) ? tk : sw;
+          var onSw = wf && wf.on ? wf.on(eff) : eff === "namesQuest" || eff === "textDesc";
           return onSw ? fa : '<span class="rt-en" dir="ltr">' + en + "</span>";
         });
       })(mk, MKB[mk]);
@@ -1001,8 +1007,8 @@
     if (disp.indexOf("\t") >= 0) {
       var i = disp.indexOf("\t"), left = disp.slice(0, i), right = disp.slice(i + 1).trim();
       var lcl = cls.split(" ")[0];
-      var lft = showFa ? faTipTokens(esc(left)) : tipTokens(esc(left));
-      var rgt = right ? (showFa ? faTipTokens(esc(right)) : tipTokens(esc(right))) : "";
+      var lft = showFa ? faTipTokens(esc(left), tk) : tipTokens(esc(left));
+      var rgt = right ? (showFa ? faTipTokens(esc(right), tk) : tipTokens(esc(right))) : "";
       return '<div class="tl tc"' + tipCatAttr(cat, tk) + '><span' + (showFa ? ">" : ' class="rt-en">') + lft + "</span>" +
         (right ? '<span class="' + esc(lcl) + (showFa ? '" dir="rtl">' : ' rt-en">') + rgt + "</span>" : "") + "</div>";
     }
@@ -1010,7 +1016,7 @@
     if (/^\(\d+\)\s*Set/i.test(en)) lc = "qset"; /* inactive set bonus -> red, like Wowhead */
     /* one language per line, chosen per tooltip category - never both */
     var h = '<div class="tl' + (lc ? " " + esc(lc) : "") + (showFa ? " fa" : "") + '"' + tipCatAttr(cat, tk) + (showFa ? ' dir="rtl"' : "") + ">";
-    h += showFa ? faTipTokens(esc(fa)) : tipTokens(esc(en));
+    h += showFa ? faTipTokens(esc(fa), tk) : tipTokens(esc(en));
     return h + "</div>";
   }
   function tipHtml(lines) {
