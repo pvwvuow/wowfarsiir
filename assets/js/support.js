@@ -106,16 +106,6 @@
     if (document.body.getAttribute("data-rt") === "guide") add("assets/js/retail-ext.js?v=20261026b");
   }
 
-  /* the wowfa repo is private (visitors would get a 404): every link to it goes to the
-     public addon repo, where the Releases with the download live */
-  var ADDON_REPO = "https://github.com/pvwvuow/wowfarsi-addon";
-  function fixRepoLinks() {
-    Array.prototype.forEach.call(document.querySelectorAll('a[href^="https://github.com/pvwvuow/wowfa"]'), function (a) {
-      var h = a.getAttribute("href").replace(/\/+$/, "");
-      if (h === "https://github.com/pvwvuow/wowfa") a.setAttribute("href", ADDON_REPO);
-    });
-  }
-
   /* put a nav link in place if the page's own nav does not have it yet */
   function ensureLink(nav, file, text, afterFile) {
     if (nav.querySelector('a[href$="' + file + '"]')) return;
@@ -226,7 +216,6 @@
   }
 
   ready(function () {
-    fixRepoLinks();
     fixNav();
     addNavLink();
     addFloat();

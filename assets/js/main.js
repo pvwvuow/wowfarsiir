@@ -4,10 +4,6 @@
 "use strict";
 
 /* ---------- data snapshot (source: repo data/live 12.1.5.70575) ---------- */
-const REPO_URL = "https://github.com/pvwvuow/wowfa";
-const PR_URL = "https://github.com/pvwvuow/wowfa/pull/2";
-const CLONE_CMD = "git clone https://github.com/pvwvuow/wowfa.git";
-
 /* fa = how Persian gamers say the class (transliteration, not a translation) */
 const CLASSES = [
   { id: 1, en: "Warrior", fa: "واریور", color: "#C69B6D", talents: 224, done: 0, specs: [{ n: "Arms", h: "Colossus · Slayer" }, { n: "Fury", h: "Mountain Thane · Slayer" }, { n: "Protection", h: "Colossus · Mountain Thane" }], heroes: ["Colossus", "Mountain Thane", "Slayer"] },
@@ -366,23 +362,6 @@ function initProgress() {
   }
 }
 
-/* ---------- copy button ---------- */
-function initCopy() {
-  const code = document.getElementById("clone-cmd");
-  const btn = document.getElementById("copy-btn");
-  if (!code || !btn) return;
-  code.textContent = CLONE_CMD;
-  btn.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(CLONE_CMD);
-      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0c75e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
-      setTimeout(() => {
-        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
-      }, 1600);
-    } catch (_) { /* clipboard unavailable */ }
-  });
-}
-
 /* ---------- embers (deterministic) ---------- */
 const EMBERS = [
   [4, 0, 12, 4, 0.45, 38], [12, 3.5, 14, 3, 0.35, -26], [21, 7, 11, 2, 0.5, 44],
@@ -405,7 +384,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderClassCloud();
   renderSpellbook();
   initProgress();
-  initCopy();
   setupReveals();
   const search = document.getElementById("class-search");
   if (search) search.addEventListener("input", (e) => { query = e.target.value; renderClassCloud(); });
