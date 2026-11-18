@@ -46,15 +46,25 @@
     (document.head || document.documentElement).appendChild(crit);
   }
 
-  /* news list: every card opens the article's own static page (news/<id>-<slug>.html, built by
-     tools/build_news.py); the slug is read from the card's wowheadFA link. Without it we fall
-     back to the dynamic article.html?id=... page. */
+  /* Keep static URLs in cards for SEO and sharing. Ordinary clicks probe the
+     generated page first so missing pages can fall back to the full feed reader. */
   function articleUrl(el) {
     var id = el.getAttribute("data-read");
     var card = el.closest ? el.closest(".nw-card") : null;
     var src = card && card.querySelector('a[href*="/article/"]');
     var m = src && src.getAttribute("href").match(/\/article\/([^\/?#]+)\.html/);
     return m ? "news/" + m[1] + ".html" : "article.html?id=" + encodeURIComponent(id);
+  }
+  function staticPageExists(url) {
+    try {
+      var probe = new URL(url, location.href);
+      probe.searchParams.set("_wf_head", String(Date.now()));
+      return fetch(probe.href, { method: "HEAD", cache: "no-store" })
+        .then(function (response) { return response.ok; })
+        .catch(function () { return false; });
+    } catch (_) {
+      return Promise.resolve(false);
+    }
   }
   function newsLinks() {
     if (page !== "news.html") return;
@@ -65,10 +75,22 @@
     if (q && inp) inp.value = q;
     document.addEventListener("click", function (e) {
       var t = e.target && e.target.closest ? e.target.closest("[data-read]") : null;
-      if (!t) return;
+      if (!t || (e.button != null && e.button !== 0) || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
       e.stopImmediatePropagation();
-      location.href = articleUrl(t);
+      var id = t.getAttribute("data-read");
+      var url = articleUrl(t);
+      staticPageExists(url).then(function (exists) {
+        if (exists) {
+          location.href = url;
+          return;
+        }
+        if (window.WFNewsReader && typeof window.WFNewsReader.open === "function") {
+          window.WFNewsReader.open(id);
+          return;
+        }
+        location.href = "article.html?id=" + encodeURIComponent(id);
+      });
     }, true);
     var grid = document.getElementById("nw-grid");
     if (grid && window.MutationObserver) {
