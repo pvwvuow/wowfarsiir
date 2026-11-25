@@ -61,7 +61,18 @@
 .dv-sec-h h2::after{content:"";position:absolute;right:0;bottom:0;width:min(100%,320px);height:1px;background:linear-gradient(270deg,var(--g),transparent)}
 .dv-sec-h h2::before{content:"";position:absolute;right:-3px;bottom:-3px;width:7px;height:7px;transform:rotate(45deg);background:var(--g-hi)}
 
-.dv-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:4.5rem;align-items:start}
+/* centred heads for the full-width sections */
+.dv-sec-c{text-align:center}
+.dv-sec-c h2::after{right:50%;transform:translateX(50%);width:min(70%,360px);background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.dv-sec-c h2::before{right:50%;margin-right:-3.5px}
+
+/* two halls side by side: biggest | first */
+.dv-halls{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.dv-h3{display:flex;align-items:center;gap:.7rem;margin:0 0 .9rem;padding:0 1rem;font-size:1.05rem;font-weight:700;color:var(--g-hi);letter-spacing:.02em}
+.dv-h3::after{content:"";flex:1;height:1px;background:linear-gradient(270deg,rgba(200,169,94,.45),transparent)}
+.dv-h3-ic{position:relative;display:inline-grid;place-items:center;width:2rem;height:2rem;font-size:.9rem;line-height:1;color:var(--g-hi)}
+.dv-h3-ic::before{content:"";position:absolute;inset:4px;border:1px solid rgba(200,169,94,.55);transform:rotate(45deg)}
+.dv-quest{margin-top:5.5rem}
 
 /* the roll of founders: game menu rows, a highlight bar instead of a box */
 .dv-roll{list-style:none;margin:0;padding:0;border-top:1px solid rgba(200,169,94,.14)}
@@ -73,7 +84,7 @@
 .dv-who b{font-size:1.15rem;font-weight:700;color:var(--ink)}
 .dv-row.is-top .dv-who b{color:var(--g-hi);text-shadow:0 0 16px rgba(232,190,110,.4)}
 .dv-tag{display:inline-block;margin-inline-start:.7rem;padding:.12rem .55rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;vertical-align:.2em;color:var(--g);border:1px solid rgba(200,169,94,.45)}
-.dv-row.is-top .dv-tag-top{color:#1a1207;background:linear-gradient(180deg,var(--g-hi),var(--g));border-color:transparent}
+.dv-row .dv-tag-top{color:#1a1207;background:linear-gradient(180deg,var(--g-hi),var(--g));border-color:transparent}
 .dv-who em{display:block;margin-top:.35rem;font-size:.86rem;font-style:normal;color:#b9ae94}
 .dv-who em::before{content:"« "}.dv-who em::after{content:" »"}
 .dv-amt{text-align:left;white-space:nowrap}
@@ -90,6 +101,10 @@
 .dv-log li::before{content:"";position:absolute;right:0;top:.55rem;width:9px;height:9px;transform:rotate(45deg);background:#0b0805;border:1px solid var(--g-hi);box-shadow:0 0 8px rgba(232,217,168,.5)}
 .dv-log b{display:block;margin-bottom:.3rem;font-size:1rem;color:var(--ink)}
 .dv-log p{margin:0;font-size:.88rem;line-height:1.95;color:var(--dim)}
+.dv-log-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem;padding-top:1.6rem}
+.dv-log-row::before{right:0;left:0;top:4px;bottom:auto;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--g) 15%,var(--g) 85%,transparent)}
+.dv-log-row li{padding:1.1rem 0 0;text-align:center}
+.dv-log-row li::before{right:50%;top:-1.6rem;margin-right:-4.5px}
 
 /* ------------------------------------------------------------ crypto: an item tooltip */
 .dv-item{margin:5.5rem 0 0}
@@ -129,11 +144,16 @@
   .dv-lead{margin-inline:auto}
   .dv-cta{align-items:center}
   .dv-cta-note{padding:0}
-  .dv-grid{grid-template-columns:1fr;gap:3.6rem}
+  .dv-halls{grid-template-columns:1fr;gap:3rem}
+  .dv-log-row{grid-template-columns:1fr 1fr;row-gap:2.6rem}
+  .dv-log-row::before{display:none}
+  .dv-log-row li::before{top:-.4rem}
+  .dv-log-row li{padding-top:1.4rem}
   .dv-hud{gap:1.4rem;margin:2.4rem 0 3.6rem}
   .dv-hud::before,.dv-hud::after{display:none}
 }
 @media (max-width:600px){
+  .dv-log-row{grid-template-columns:1fr}
   .dv-row{grid-template-columns:2rem 1fr;padding:1rem .6rem}
   .dv-amt{grid-column:2;text-align:right}
   .dv-tip{grid-template-columns:1fr;justify-items:center;padding:1.5rem 1.2rem;text-align:center}

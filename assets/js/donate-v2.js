@@ -29,28 +29,37 @@
     return out;
   }
 
-  function renderNames(list) {
-    var ol = $("dv-names");
+  function row(s, i, tag) {
+    var li = el("li", "dv-row" + (i === 0 ? " is-top" : ""));
+    li.appendChild(el("span", "dv-no", fa(i + 1)));
+    var who = el("div", "dv-who");
+    who.appendChild(el("b", null, s.name || ""));
+    if (i === 0 && tag) who.appendChild(el("span", "dv-tag dv-tag-top", tag));
+    if (s.msg) who.appendChild(el("em", null, s.msg));
+    li.appendChild(who);
+    var amt = el("div", "dv-amt");
+    amt.appendChild(el("b", null, num(s.amount) + " \u062a\u0648\u0645\u0627\u0646"));
+    if (s.date_fa) amt.appendChild(el("small", null, s.date_fa));
+    li.appendChild(amt);
+    return li;
+  }
+
+  function fill(id, list, tag) {
+    var ol = $(id);
     if (!ol || !list.length) return;
-    var top = 0;
-    list.forEach(function (s, i) { if ((+s.amount || 0) > (+list[top].amount || 0)) top = i; });
     ol.textContent = "";
-    list.forEach(function (s, i) {
-      var li = el("li", "dv-row" + (i === top && list.length > 1 ? " is-top" : ""));
-      li.appendChild(el("span", "dv-no", fa(i + 1)));
-      var who = el("div", "dv-who");
-      who.appendChild(el("b", null, s.name || ""));
-      if (i === 0) who.appendChild(el("span", "dv-tag", "نخستین حامی"));
-      if (i === top && list.length > 1) who.appendChild(el("span", "dv-tag dv-tag-top", "♛ بزرگ‌ترین حمایت"));
-      if (s.msg) who.appendChild(el("em", null, s.msg));
-      li.appendChild(who);
-      var amt = el("div", "dv-amt");
-      amt.appendChild(el("b", null, num(s.amount) + " تومان"));
-      if (s.date_fa) amt.appendChild(el("small", null, s.date_fa));
-      li.appendChild(amt);
-      ol.appendChild(li);
-    });
+    list.forEach(function (s, i) { ol.appendChild(row(s, i, tag)); });
     watch(ol.querySelectorAll(".dv-row"), 120);
+  }
+
+  // two halls, 5 names each: the biggest (ties keep the older one first) and the first in time
+  function renderNames(list) {
+    if (!list.length) return;
+    var big = list.map(function (s, i) { return [s, i]; }).sort(function (x, y) {
+      return ((+y[0].amount || 0) - (+x[0].amount || 0)) || (x[1] - y[1]);
+    }).map(function (p) { return p[0]; });
+    fill("dv-top", big.slice(0, 5), "\u0628\u0632\u0631\u06af\u200c\u062a\u0631\u06cc\u0646 \u062d\u0645\u0627\u06cc\u062a");
+    fill("dv-first", list.slice(0, 5), "\u0646\u062e\u0633\u062a\u06cc\u0646 \u062d\u0627\u0645\u06cc");
   }
 
   var io = null;
