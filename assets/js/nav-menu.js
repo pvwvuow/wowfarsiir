@@ -172,6 +172,8 @@
     '<a href="' + BASE + 'addon.html"' + (onPage("addon.html") ? ' class="is-active"' : "") + '>افزونه</a>' +
     '<a href="' + BASE + 'status.html"' + (onPage("status.html") ? ' class="is-active"' : "") + '>وضعیت ترجمه</a>' +
     '<a href="' + BASE + 'report.html"' + (onPage("report.html") ? ' class="is-active"' : "") + '>گزارش باگ</a>' +
+    '<a href="' + BASE + '14k.html" class="k14-nav' + (onPage("14k.html") ? " is-active" : "") + '" data-k14>' +
+      '<i class="k14-dot" aria-hidden="true"></i><span class="k14-t">14k</span></a>' +
     '<a href="' + BASE + 'donate.html" class="dn-nav' + (onPage("donate.html") ? " is-active" : "") + '">حمایت</a>';
   nav.innerHTML = html;
 
@@ -435,4 +437,35 @@
   if (window.MutationObserver) {
     new MutationObserver(dropOwned).observe(nav, { childList: true });
   }
+
+  /* ================================================ 5) 14k (25 Nov 2026, the owner)
+     «14k» is a plain link to 14k.html. While the channel is live (data/14k.json, refreshed
+     every 5 minutes by the update-14k workflow) it reads «14k لایو گذاشته» with a red dot. */
+  (function () {
+    var a = nav.querySelector("[data-k14]");
+    if (!a) return;
+    if (!document.getElementById("k14-css")) {
+      var st = document.createElement("style");
+      st.id = "k14-css";
+      st.textContent =
+        ".k14-nav .k14-dot{display:none}" +
+        ".k14-nav.is-live{color:#ff6b5e!important;font-weight:700}" +
+        ".k14-nav.is-live .k14-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b30;margin-inline-end:.4rem;animation:k14p 1.6s infinite}" +
+        "@keyframes k14p{0%{box-shadow:0 0 0 0 rgba(255,59,48,.65)}70%{box-shadow:0 0 0 8px rgba(255,59,48,0)}100%{box-shadow:0 0 0 0 rgba(255,59,48,0)}}";
+      document.head.appendChild(st);
+    }
+    var label = a.querySelector(".k14-t");
+    function paint(on) {
+      a.classList.toggle("is-live", !!on);
+      label.textContent = on ? "14k لایو گذاشته" : "14k";
+    }
+    function load() {
+      fetch(BASE + "data/14k.json?t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) paint(!!(d.live && d.live.on)); })
+        .catch(function () {});
+    }
+    load();
+    setInterval(load, 120000);
+  })();
 })();
