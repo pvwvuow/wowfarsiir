@@ -1,4 +1,4 @@
-/* wowfarsi - donate page v2 (25 Nov 2026): everything on the page comes from data/donations.json
+/* wowfarsi - donate page v3 (25 Nov 2026): everything on the page comes from data/donations.json
    (the static HTML is the fallback). supporters = every supporter in the order they came;
    older files without it fall back to first/top. Names and messages go in as text, never HTML. */
 (function () {
@@ -36,13 +36,12 @@
     list.forEach(function (s, i) { if ((+s.amount || 0) > (+list[top].amount || 0)) top = i; });
     ol.textContent = "";
     list.forEach(function (s, i) {
-      var li = el("li", "dv-name");
-      li.appendChild(el("span", "dv-seal", fa(i + 1)));
+      var li = el("li", "dv-row" + (i === top && list.length > 1 ? " is-top" : ""));
+      li.appendChild(el("span", "dv-no", fa(i + 1)));
       var who = el("div", "dv-who");
-      var b = el("b", null, s.name || "");
-      if (i === 0) b.appendChild(el("span", "dv-first", "نخستین حامی"));
-      if (i === top && list.length > 1) b.appendChild(el("span", "dv-crown", "♛ بزرگ‌ترین حمایت"));
-      who.appendChild(b);
+      who.appendChild(el("b", null, s.name || ""));
+      if (i === 0) who.appendChild(el("span", "dv-tag", "نخستین حامی"));
+      if (i === top && list.length > 1) who.appendChild(el("span", "dv-tag dv-tag-top", "♛ بزرگ‌ترین حمایت"));
       if (s.msg) who.appendChild(el("em", null, s.msg));
       li.appendChild(who);
       var amt = el("div", "dv-amt");
@@ -51,7 +50,7 @@
       li.appendChild(amt);
       ol.appendChild(li);
     });
-    watch(ol.querySelectorAll(".dv-name"), 140);
+    watch(ol.querySelectorAll(".dv-row"), 120);
   }
 
   var io = null;
@@ -86,7 +85,8 @@
     var btn = $("dv-copy"), addr = $("dv-addr");
     if (btn && addr) btn.addEventListener("click", function () {
       var txt = addr.textContent.trim();
-      function done(ok) { btn.textContent = ok ? "کپی شد ✓" : "کپی نشد؛ دستی انتخاب کن"; setTimeout(function () { btn.textContent = "کپی آدرس"; }, 2200); }
+      var lab = btn.querySelector(".dv-btn-in") || btn;
+      function done(ok) { lab.textContent = ok ? "کپی شد ✓" : "کپی نشد؛ دستی انتخاب کن"; setTimeout(function () { lab.textContent = "کپی آدرس"; }, 2200); }
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function () { done(true); }, function () { done(false); });
       else {
         try { var r = document.createRange(); r.selectNodeContents(addr); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done(document.execCommand("copy")); } catch (e) { done(false); }
