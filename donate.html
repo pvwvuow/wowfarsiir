@@ -13,6 +13,17 @@
 <link rel="stylesheet" href="assets/css/extra.css?v=20261025c">
 <link rel="stylesheet" href="assets/css/support.css?v=20261031a">
 <link rel="stylesheet" href="assets/css/donate.css?v=20261025h">
+<style>
+/* hall of firsts (25 Nov 2026): first + biggest supporter, from data/donations.json first/top */
+.dn-hall{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem;margin:0 0 2rem}
+.dn-hall-c{position:relative;padding:1.1rem 1.2rem 1rem;border:1px solid rgba(214,178,94,.35);border-radius:14px;background:linear-gradient(160deg,rgba(40,28,10,.7),rgba(12,9,5,.8));text-align:center;overflow:hidden}
+.dn-hall-c::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(240,199,94,.18),transparent 65%);pointer-events:none}
+.dn-hall-k{display:block;font-size:.78rem;letter-spacing:.02em;color:#c9b88f;margin-bottom:.35rem}
+.dn-hall-ic{display:block;font-size:1.5rem;line-height:1;margin-bottom:.35rem;color:#f0c75e;text-shadow:0 0 12px rgba(240,199,94,.5)}
+.dn-hall-c b{display:block;font-size:1.35rem;color:#f5e6c0}
+.dn-hall-c small{display:block;margin-top:.3rem;font-size:.8rem;color:#b7ad97}
+.dn-hall-note{font-size:.8rem;color:#a89f8a;text-align:center;margin:-1.2rem 0 2rem}
+</style>
 </head>
 <body>
 <div class="bg-layers" aria-hidden="true">
@@ -56,8 +67,8 @@
 
     <div class="dn-hero">
       <p class="dn-hero-label">تا امروز حمایت شده</p>
-      <p class="dn-hero-total"><span id="dn-toman">۰</span> <small>تومان</small></p>
-      <p class="dn-hero-sub">آخرین به‌روزرسانی: <span id="dn-updated">۳ آبان ۱۴۰۵</span></p>
+      <p class="dn-hero-total"><span id="dn-toman">۱۰۰٬۰۰۰</span> <small>تومان</small></p>
+      <p class="dn-hero-sub">آخرین به‌روزرسانی: <span id="dn-updated">۴ آذر ۱۴۰۵</span></p>
       <p class="dn-hero-sub dn-hero-delay">این آمار خودکار و لحظه‌ای به‌روز نمی‌شه؛ هر حمایت حداکثر تا یک روز بعد اینجا ثبت می‌شه.</p>
       <a class="btn btn-medallion dn-hero-btn" href="https://reymit.ir/stagvii" target="_blank" rel="noopener noreferrer">♥ حمایت از stagVII در ریمیت</a>
       <p class="dn-hero-note">با کارت بانکی ایرانی، از ۱٬۰۰۰ تا ۵۰۰٬۰۰۰ تومان</p>
@@ -66,8 +77,15 @@
     <div class="dn-stats">
       <div class="dn-stat"><b id="dn-start">۳ آبان ۱۴۰۵</b><span>شروع کار</span></div>
       <div class="dn-stat"><b id="dn-usdt" dir="ltr">۰ USDT</b><span>حمایت‌های رمزارزی</span></div>
-      <div class="dn-stat"><b id="dn-count">۰</b><span>تعداد حامیان</span></div>
+      <div class="dn-stat"><b id="dn-count">۱</b><span>تعداد حامیان</span></div>
     </div>
+
+    <h3 class="dn-h">تالار نخستین‌ها</h3>
+    <div class="dn-hall">
+      <div class="dn-hall-c" id="dn-first"><i class="dn-hall-ic" aria-hidden="true">✦</i><span class="dn-hall-k">اولین حامی</span><b>دانیال</b><small>۱۰۰٬۰۰۰ تومان · ۴ آذر ۱۴۰۵</small></div>
+      <div class="dn-hall-c" id="dn-top"><i class="dn-hall-ic" aria-hidden="true">♛</i><span class="dn-hall-k">بیشترین حمایت</span><b>دانیال</b><small>۱۰۰٬۰۰۰ تومان · ۴ آذر ۱۴۰۵</small></div>
+    </div>
+    <p class="dn-hall-note">این‌جا می‌مونه که یادمون نره اولین‌ها کی بودن. ممنون دانیال ♥</p>
 
     <h3 class="dn-h">حمایتت کجا خرج می‌شه؟</h3>
     <div class="dn-list">
@@ -109,6 +127,21 @@
 
 <script src="assets/js/main.js?v=20261104b"></script>
 <script src="assets/js/support.js?v=20261031a"></script>
-<script src="assets/js/nav-menu.js?v=20261115b"></script>
+<script src="assets/js/nav-menu.js?v=20261125c"></script>
+<script>
+/* hall of firsts: first + top from data/donations.json (static text above is the fallback) */
+(function () {
+  function fa(n) { return Number(n).toLocaleString("fa-IR"); }
+  function put(id, x) {
+    var el = document.getElementById(id);
+    if (!el || !x || !x.name) return;
+    el.querySelector("b").textContent = x.name;
+    el.querySelector("small").textContent = fa(x.amount || 0) + " تومان" + (x.date_fa ? " · " + x.date_fa : "");
+  }
+  fetch("data/donations.json?v=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; })
+    .catch(function () { return null; })
+    .then(function (D) { if (D) { put("dn-first", D.first); put("dn-top", D.top); } });
+})();
+</script>
 </body>
 </html>
