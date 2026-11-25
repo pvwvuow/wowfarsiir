@@ -5,8 +5,12 @@
    with the SAME nav, in the SAME order (Forever first since 5 Nov 2026:
    the site's focus is WoW Forever; Midnight is translated and maintained):
 
-     خانه · Forever · Midnight ▾ · حرفه‌ها · wowheadFA · آیتم‌ها
-           · افزونه · وضعیت ترجمه · حمایت
+     خانه · Forever · Midnight ▾ · wowheadFA · افزونه
+           · وضعیت ترجمه · گزارش باگ · حمایت
+
+   (25 Nov 2026, the owner: حرفه‌ها and آیتم‌ها left the top nav; both live
+   inside the Forever hub, so their pages light up «Forever». گزارش باگ =
+   report.html.)
 
    Midnight is a click-driven dropdown ("golden thread" choreography):
 
@@ -19,8 +23,8 @@
 
    Forever is a PLAIN LINK to forever.html: that page is the hub (every
    Forever section as grouped cards: map, dungeons, quests, NPCs, items,
-   talents, spellbook, patch notes ...). The top-level آیتم‌ها link opens
-   the Forever item bank (item.html?ver=forever); the Midnight items live
+   talents, spellbook, professions, patch notes ...). The Forever item bank
+   (item.html?ver=forever) is reached from the hub; the Midnight items live
    in the Midnight dropdown.
 
    How consistency is guaranteed:
@@ -113,8 +117,8 @@
   var M_FVR = onPage("forever.html") || onPage("forever-talents.html") ||
               onPage("spellbook.html") || onPage("patch-notes.html") || onPage("items.html") ||
               onPage("quest.html") || onPage("quests.html") || onPage("npc.html") || onPage("dungeon.html") ||
-              onPage("professions.html") || onPage("profession.html") || onPage("forever-market.html");
-  var M_PROF = onPage("professions.html") || onPage("profession.html");
+              onPage("professions.html") || onPage("profession.html") || onPage("forever-market.html") ||
+              (ON_ITEM && VER_FVR);
   var M_NEWS = onPage("news.html") || onPage("article.html") || onPage("news-translate.html") || /^\/news\//.test(path);
   var ON_INDEX = /\/(?:index\.html)?$/.test(path) && !M_MID && !M_FVR && !M_NEWS;
   var ACT = " is-active";
@@ -162,13 +166,12 @@
   nav.dataset.canonical = "1";
   var html =
     '<a href="' + (ON_INDEX ? "#top" : BASE + "index.html") + '">خانه</a>' +
-    '<a href="' + BASE + 'forever.html"' + (M_FVR && !M_PROF ? ' class="is-active"' : "") + '>Forever</a>' +
+    '<a href="' + BASE + 'forever.html"' + (M_FVR ? ' class="is-active"' : "") + '>Forever</a>' +
     '<span class="rtx-wrap" data-dd="midnight"></span>' +
-    '<a href="' + BASE + 'professions.html"' + (M_PROF ? ' class="is-active"' : "") + '>حرفه‌ها</a>' +
     '<a href="' + BASE + 'news.html"' + (M_NEWS ? ' class="is-active"' : "") + '>wowheadFA</a>' +
-    '<a href="' + BASE + 'item.html?ver=forever"' + (ON_ITEM && VER_FVR ? ' class="is-active"' : "") + '>آیتم‌ها</a>' +
     '<a href="' + BASE + 'addon.html"' + (onPage("addon.html") ? ' class="is-active"' : "") + '>افزونه</a>' +
     '<a href="' + BASE + 'status.html"' + (onPage("status.html") ? ' class="is-active"' : "") + '>وضعیت ترجمه</a>' +
+    '<a href="' + BASE + 'report.html"' + (onPage("report.html") ? ' class="is-active"' : "") + '>گزارش باگ</a>' +
     '<a href="' + BASE + 'donate.html" class="dn-nav' + (onPage("donate.html") ? " is-active" : "") + '">حمایت</a>';
   nav.innerHTML = html;
 
@@ -417,8 +420,11 @@
   /* ================================================ 4) keep it canonical
      support.js fixNav() may run after us (DOMContentLoaded) and re-add
      plain links that now live inside the Midnight dropdown — remove them again.
-     (forever.html is NOT in this list: the Forever nav item is a plain link on purpose.) */
-  var DD_OWNED = /(?:^|[/])(?:retail|spellbook|forever-talents|patch-notes)\.html(?:[?#].*)?$/;
+     (forever.html is NOT in this list: the Forever nav item is a plain link on purpose.)
+     25 Nov 2026: professions + the item banks left the top nav (they live in the
+     Forever hub / Midnight dropdown), so any plain item/items/professions link that
+     support.js or retail.js chrome() puts back is removed too. */
+  var DD_OWNED = /(?:^|[/])(?:(?:retail|spellbook|forever-talents|patch-notes|professions|items?)\.html(?:[?#].*)?)$/;
   function dropOwned() {
     Array.prototype.forEach.call(nav.querySelectorAll("a"), function (a) {
       var h = a.getAttribute("href") || "";
