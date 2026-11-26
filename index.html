@@ -136,6 +136,51 @@ a.lv-n:hover{border-color:rgba(240,199,94,.5)}
   </div>
 </section>
 
+<!-- ================= video (14K) ================= -->
+<style>
+.vd-wrap{max-width:860px;margin:1.6rem auto 0;padding:0 1rem}
+.vd-frame{position:relative;aspect-ratio:16/9;border:1px solid rgba(214,178,94,.28);border-radius:14px;overflow:hidden;background:#0b0a08;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.vd-frame iframe,.vd-poster{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vd-poster{cursor:pointer;padding:0;background:#0b0a08 center/cover no-repeat;display:block}
+.vd-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 55%)}
+.vd-play{position:absolute;z-index:1;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;background:rgba(10,8,5,.72);border:2px solid #f0c75e;display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
+.vd-poster:hover .vd-play,.vd-poster:focus-visible .vd-play{transform:scale(1.08)}
+.vd-play svg{width:30px;height:30px;fill:#f0c75e}
+.vd-cap{text-align:center;color:#cfc4ab;font-size:.86rem;line-height:1.9;margin:.9rem 0 0}
+.vd-cap a{color:#f0c75e}
+.vd-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:1rem}
+</style>
+<section class="section" id="video">
+  <div class="bg-scrim" aria-hidden="true"></div>
+  <div class="sect-head reveal">
+    <div class="sect-head-row"><span class="wf-sect-line"></span><span class="wf-sect-dot"></span><h2>ببین چطور کار می‌کند</h2><span class="wf-sect-dot"></span><span class="wf-sect-line"></span></div>
+    <p class="sect-en font-cinzel" dir="ltr">Watch</p>
+  </div>
+  <div class="vd-wrap reveal">
+    <div class="vd-frame">
+      <button type="button" class="vd-poster" id="vd-poster" aria-label="پخش ویدیو" style="background-image:url('https://i.ytimg.com/vi/XPEPq9yyHLw/hqdefault.jpg')"><span class="vd-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+    </div>
+    <p class="vd-cap">«ورلد آو وارکرفت رو کاملاً فارسی تجربه کن! فارسی‌ساز وو. عجب چیزیه!»<br>ویدیوی کانال <a href="https://www.youtube.com/@14k-" target="_blank" rel="noopener">14K</a> در یوتیوب</p>
+    <div class="vd-cta"><a href="addon.html" class="btn btn-medallion btn-sm">افزونه</a><a href="14k.html" class="btn btn-stone btn-sm">ویدیوهای ۱۴K</a></div>
+  </div>
+</section>
+<script>
+/* the video loads only on click (no YouTube requests before that) */
+(function () {
+  var b = document.getElementById("vd-poster");
+  if (!b) return;
+  b.addEventListener("click", function () {
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/XPEPq9yyHLw?autoplay=1&rel=0";
+    f.title = "ورلد آو وارکرفت رو کاملاً فارسی تجربه کن";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.setAttribute("allowfullscreen", "");
+    b.replaceWith(f);
+  });
+})();
+</script>
+
 <!-- ================= Forever, live ================= -->
 <section class="section" id="live">
   <div class="bg-scrim" aria-hidden="true"></div>
