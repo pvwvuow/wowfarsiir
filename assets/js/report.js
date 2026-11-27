@@ -189,3 +189,98 @@
     }).then(function () { busy = false; btn.disabled = false; });
   });
 })();
+
+/* Community impact (27 Nov 2026): what the players' reports got fixed. Reads the public ledger
+   docs/community.json of the addon repo (pvwvuow/wowfa2): every fix that came from a report adds
+   a row there (npc, buff, spell, ui ... with a count). Nothing is sent and nothing is stored.
+   If the ledger can not be read the section is simply not shown. */
+(function () {
+  "use strict";
+  var LEDGER = "https://raw.githubusercontent.com/pvwvuow/wowfa2/main/docs/community.json";
+  var LABEL = {
+    npc: "\u0646\u0627\u0645 NPC", quest: "\u06a9\u0648\u0626\u0633\u062a", buff: "\u0628\u0627\u0641 \u0648 \u062f\u06cc\u0628\u0627\u0641", spell: "\u0627\u0633\u067e\u0644 \u0648 \u062d\u0631\u0641\u0647",
+    ui: "\u067e\u0646\u062c\u0631\u0647\u200c\u0647\u0627\u06cc \u0628\u0627\u0632\u06cc", sys: "\u067e\u06cc\u0627\u0645 \u0633\u06cc\u0633\u062a\u0645 \u0648 \u0647\u0634\u062f\u0627\u0631", dlg: "\u06af\u0641\u062a\u06af\u0648\u06cc NPC", other: "\u0633\u0627\u06cc\u0631"
+  };
+  var wrap = document.querySelector(".ad-wrap");
+  if (!wrap || !window.fetch) return;
+
+  function faNum(v) { return String(v).replace(/[0-9]/g, function (d) { return "\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9".charAt(+d); }); }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function jdate(iso) {
+    try { return new Date(iso + "T12:00:00Z").toLocaleDateString("fa-IR-u-ca-persian", { year: "numeric", month: "long", day: "numeric" }); }
+    catch (e) { return iso; }
+  }
+  function totals(rows) {
+    var by = {}, sum = 0, last = "";
+    rows.forEach(function (r) {
+      var c = (r && r.c) || {};
+      Object.keys(c).forEach(function (k) {
+        var n = +c[k] || 0;
+        if (n > 0) { by[k] = (by[k] || 0) + n; sum += n; }
+      });
+      if (r && typeof r.d === "string" && r.d > last) last = r.d;
+    });
+    return { by: by, sum: sum, last: last };
+  }
+
+  function css() {
+    var s = document.createElement("style");
+    s.textContent =
+      ".cm-card{margin-top:1.4rem}" +
+      ".cm-title{margin:0 0 .4rem;font-size:1.15rem;color:#f5d97a}" +
+      ".cm-lead{margin:0 0 .8rem;opacity:.85;line-height:1.8}" +
+      ".cm-total{margin:0 0 1rem;font-size:1rem}" +
+      ".cm-num{font-size:2rem;color:#f5d97a;margin-inline-start:.3rem}" +
+      ".cm-bars{display:grid;gap:.55rem}" +
+      ".cm-row{display:grid;grid-template-columns:9rem 1fr 3rem;gap:.7rem;align-items:center}" +
+      ".cm-name{font-size:.92rem}" +
+      ".cm-track{height:.8rem;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}" +
+      ".cm-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#d4af37,#f5d97a)}" +
+      ".cm-n{font-size:.92rem;text-align:left}" +
+      ".cm-foot{margin:1rem 0 0;font-size:.8rem;opacity:.7}" +
+      "@media(max-width:520px){.cm-row{grid-template-columns:6.5rem 1fr 2.4rem}}";
+    document.head.appendChild(s);
+  }
+
+  function render(doc) {
+    var rows = doc && doc.rows;
+    if (!rows || !rows.length) return;
+    var t = totals(rows);
+    if (!t.sum) return;
+    var keys = Object.keys(t.by).sort(function (a, b) { return t.by[b] - t.by[a]; });
+    var max = t.by[keys[0]];
+    css();
+    var card = el("div", "ad-card cm-card");
+    card.appendChild(el("h3", "cm-title", "\u06af\u0632\u0627\u0631\u0634\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0686\u0647 \u06a9\u0631\u062f\u0646\u062f\u061f"));
+    card.appendChild(el("p", "cm-lead", "\u0647\u0631 \u0645\u062a\u0646\u06cc \u06a9\u0647 \u0628\u0627 \u06af\u0632\u0627\u0631\u0634 \u0628\u0627\u0632\u06cc\u06a9\u0646\u200c\u0647\u0627 \u062f\u0631\u0633\u062a \u0634\u062f\u0647 \u06cc\u0627 \u062a\u0631\u062c\u0645\u0647 \u0634\u062f\u0647\u060c \u0647\u0645\u06cc\u0646\u200c\u062c\u0627 \u0634\u0645\u0631\u062f\u0647 \u0645\u06cc\u200c\u0634\u0648\u062f."));
+    var big = el("p", "cm-total");
+    big.appendChild(el("b", "cm-num", faNum(t.sum)));
+    big.appendChild(document.createTextNode(" \u0645\u0648\u0631\u062f \u062a\u0627 \u062d\u0627\u0644\u0627 \u0628\u0627 \u06af\u0632\u0627\u0631\u0634 \u0634\u0645\u0627 \u062f\u0631\u0633\u062a \u06cc\u0627 \u062a\u0631\u062c\u0645\u0647 \u0634\u062f\u0647 \u0627\u0633\u062a"));
+    card.appendChild(big);
+    var list = el("div", "cm-bars");
+    keys.forEach(function (k) {
+      var n = t.by[k], row = el("div", "cm-row");
+      row.appendChild(el("span", "cm-name", LABEL[k] || LABEL.other));
+      var track = el("div", "cm-track"), fill = el("div", "cm-fill");
+      fill.style.width = Math.max(4, Math.round(100 * n / max)) + "%";
+      track.appendChild(fill);
+      row.appendChild(track);
+      row.appendChild(el("span", "cm-n", faNum(n)));
+      list.appendChild(row);
+    });
+    card.appendChild(list);
+    var foot = "\u0634\u0645\u0627\u0631\u0634 \u0627\u0632 " + jdate(doc.since || rows[0].d) + " \u00b7 \u0622\u062e\u0631\u06cc\u0646 \u0645\u0648\u0631\u062f: " + jdate(t.last);
+    card.appendChild(el("p", "cm-foot", foot));
+    wrap.appendChild(card);
+  }
+
+  fetch(LEDGER, { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(render)
+    .catch(function () { /* the section stays hidden */ });
+})();
